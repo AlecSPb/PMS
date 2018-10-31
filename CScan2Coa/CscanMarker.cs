@@ -24,6 +24,7 @@ namespace ImportTargetPhotoIntoReport
         private PhotoProcess process;
         private void InitializeThis()
         {
+            this.Text = "Cscan图像批量标记水印程序 designed by xs.zhou";
             helper = new ProcessHelper();
             process = new PhotoProcess();
 
@@ -61,7 +62,7 @@ namespace ImportTargetPhotoIntoReport
         }
         private void StartProcess()
         {
-            process.ProcessPhoto();
+            process.ProcessCscanPhoto();
             helper.AddStatus(this, TxtStatus, "处理完毕");
 
             this.Invoke(new Action(() =>

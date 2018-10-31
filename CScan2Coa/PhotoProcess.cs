@@ -23,6 +23,7 @@ namespace ImportTargetPhotoIntoReport
         public bool IsOpenOutputDirectory { get; set; }
 
         public PhotoMarkerControlParameter PhotoMarkerControl { get; set; }
+
         public PhotoProcess()
         {
             DocxFiles = new List<string>();
@@ -39,7 +40,7 @@ namespace ImportTargetPhotoIntoReport
         {
             if (!Directory.Exists(jpegFolder))
             {
-                throw new DirectoryNotFoundException("没有找到docx或者jpeg文件夹");
+                TriggerMessageEvent("没有找到docx或者jpeg文件夹");
             }
             else
             {
@@ -68,7 +69,7 @@ namespace ImportTargetPhotoIntoReport
         {
             if (!Directory.Exists(docxFolder) || !Directory.Exists(jpegFolder))
             {
-                throw new DirectoryNotFoundException("没有找到docx或者jpeg文件夹");
+                TriggerMessageEvent("没有找到docx或者jpeg文件夹");
             }
             else
             {
@@ -106,7 +107,10 @@ namespace ImportTargetPhotoIntoReport
 
         private string error_prefix = "[Error]:";
 
-        public void Process()
+        /// <summary>
+        /// 批量处理Docx文件
+        /// </summary>
+        public void ProcessDocx()
         {
             int total = DocxFiles.Count;
             int count = 0;
@@ -175,8 +179,10 @@ namespace ImportTargetPhotoIntoReport
             }
         }
 
-
-        public void ProcessPhoto()
+        /// <summary>
+        /// 批量处理图片
+        /// </summary>
+        public void ProcessCscanPhoto()
         {
             int total = JpegFiles.Count;
             int count = 0;
@@ -247,6 +253,7 @@ namespace ImportTargetPhotoIntoReport
                 string targetFile = Path.GetFileName(docxFile);
                 string newDocxFile = Path.Combine(targetFolder, targetFile);
                 doc.SaveAs(newDocxFile);
+                doc.Dispose();
             }
             else
             {
@@ -344,9 +351,12 @@ namespace ImportTargetPhotoIntoReport
                 string file_name = Path.GetFileNameWithoutExtension(jpgName);
                 string product_id = GetProductIDFromJPEGName(file_name);
 
+                float x = 5, y = 5;
+                float interval = 15;
+
                 if (PhotoMarkerControl.HasProductID)
                 {
-                    g.DrawString(product_id, font, Brushes.Orange, 5, 5);
+                    g.DrawString(product_id, font, Brushes.Orange,x, y);
                 }
 
                 if (PhotoMarkerControl.HasWeldingRation || PhotoMarkerControl.HasComposition)
@@ -362,14 +372,16 @@ namespace ImportTargetPhotoIntoReport
                         if (PhotoMarkerControl.HasComposition)
                         {
                             string composition = bonding.TargetComposition;
-                            g.DrawString(composition, font, Brushes.Orange, 5, 20);
+                            y += interval;
+                            g.DrawString(composition, font, Brushes.Orange, x,y );
 
                         }
 
                         if (PhotoMarkerControl.HasWeldingRation)
                         {
                             string composition = bonding.WeldingRate.ToString("F2") + "%";
-                            g.DrawString(composition, font, Brushes.Orange, 5, 35);
+                            y += interval;
+                            g.DrawString(composition, font, Brushes.Orange, x, y);
                         }
                     }
                 }

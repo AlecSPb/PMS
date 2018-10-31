@@ -1,8 +1,13 @@
-﻿using System;
+﻿#define PROG
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace ImportTargetPhotoIntoReport
 {
@@ -16,7 +21,11 @@ namespace ImportTargetPhotoIntoReport
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+#if PROG
             Application.Run(new CscanMarker());
+#else
+            Application.Run(new CscanToCoa());
+#endif
         }
     }
 }

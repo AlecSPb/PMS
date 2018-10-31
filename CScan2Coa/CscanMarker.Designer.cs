@@ -39,6 +39,7 @@
             this.BtnStart = new System.Windows.Forms.Button();
             this.TxtStatus = new System.Windows.Forms.TextBox();
             this.chkOpenOutput = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -54,14 +55,15 @@
             // 
             this.TxtPhotos.Location = new System.Drawing.Point(135, 11);
             this.TxtPhotos.Name = "TxtPhotos";
+            this.TxtPhotos.ReadOnly = true;
             this.TxtPhotos.Size = new System.Drawing.Size(656, 25);
             this.TxtPhotos.TabIndex = 1;
             // 
             // BtnFolder
             // 
-            this.BtnFolder.Location = new System.Drawing.Point(806, 11);
+            this.BtnFolder.Location = new System.Drawing.Point(806, 7);
             this.BtnFolder.Name = "BtnFolder";
-            this.BtnFolder.Size = new System.Drawing.Size(86, 23);
+            this.BtnFolder.Size = new System.Drawing.Size(86, 32);
             this.BtnFolder.TabIndex = 2;
             this.BtnFolder.Text = "浏览";
             this.BtnFolder.UseVisualStyleBackColor = true;
@@ -79,7 +81,7 @@
             this.CkProductID.AutoSize = true;
             this.CkProductID.Checked = true;
             this.CkProductID.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CkProductID.Location = new System.Drawing.Point(13, 50);
+            this.CkProductID.Location = new System.Drawing.Point(61, 51);
             this.CkProductID.Name = "CkProductID";
             this.CkProductID.Size = new System.Drawing.Size(75, 19);
             this.CkProductID.TabIndex = 4;
@@ -92,7 +94,7 @@
             this.CKComposition.AutoSize = true;
             this.CKComposition.Checked = true;
             this.CKComposition.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CKComposition.Location = new System.Drawing.Point(94, 50);
+            this.CKComposition.Location = new System.Drawing.Point(142, 51);
             this.CKComposition.Name = "CKComposition";
             this.CKComposition.Size = new System.Drawing.Size(59, 19);
             this.CKComposition.TabIndex = 4;
@@ -105,7 +107,7 @@
             this.CKWeldingRation.AutoSize = true;
             this.CKWeldingRation.Checked = true;
             this.CKWeldingRation.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CKWeldingRation.Location = new System.Drawing.Point(159, 50);
+            this.CKWeldingRation.Location = new System.Drawing.Point(207, 51);
             this.CKWeldingRation.Name = "CKWeldingRation";
             this.CKWeldingRation.Size = new System.Drawing.Size(74, 19);
             this.CKWeldingRation.TabIndex = 4;
@@ -147,6 +149,15 @@
             this.chkOpenOutput.UseVisualStyleBackColor = true;
             this.chkOpenOutput.CheckedChanged += new System.EventHandler(this.chkOpenOutput_CheckedChanged);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "选项";
+            // 
             // CscanMarker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -161,6 +172,7 @@
             this.Controls.Add(this.PbValue);
             this.Controls.Add(this.BtnFolder);
             this.Controls.Add(this.TxtPhotos);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -168,7 +180,7 @@
             this.MinimizeBox = false;
             this.Name = "CscanMarker";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cscan图像批量标记程序 designed by xs.zhou";
+            this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,5 +198,6 @@
         private System.Windows.Forms.Button BtnStart;
         private System.Windows.Forms.TextBox TxtStatus;
         private System.Windows.Forms.CheckBox chkOpenOutput;
+        private System.Windows.Forms.Label label2;
     }
 }

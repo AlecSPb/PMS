@@ -59,7 +59,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="FileProcessHelper.cs" />
+    <Compile Include="ProcessHelper.cs" />
     <Compile Include="CscanToCoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,7 +75,6 @@
     <Compile Include="PhotoMarkerControlParameter.cs" />
     <Compile Include="PhotoProcess.cs" />
     <Compile Include="ProcessMessageEventArg.cs" />
-    <Compile Include="ProcessError.cs" />
     <Compile Include="ProcessValueEventArg.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

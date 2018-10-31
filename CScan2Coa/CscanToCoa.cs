@@ -23,7 +23,7 @@ namespace ImportTargetPhotoIntoReport
 
         private void InitializeThis()
         {
-            this.Text = "COA报告批量追加超声照片辅助程序 designed by xs.zhou";
+            this.Text = "COA报告批量追加超声照片程序 designed by xs.zhou";
 
             helper = new ProcessHelper();
             process = new PhotoProcess();
@@ -77,7 +77,7 @@ namespace ImportTargetPhotoIntoReport
 
         private void StartProcess()
         {
-            process.Process();
+            process.ProcessDocx();
             helper.AddStatus(this, TxtStatus, "处理完毕");
 
             this.Invoke(new Action(() =>
