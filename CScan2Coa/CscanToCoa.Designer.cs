@@ -1,6 +1,6 @@
 ﻿namespace ImportTargetPhotoIntoReport
 {
-    partial class Form1
+    partial class CscanToCoa
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CscanToCoa));
             this.label1 = new System.Windows.Forms.Label();
             this.TxtCoaFolder = new System.Windows.Forms.TextBox();
             this.BtnCoaFolderSelect = new System.Windows.Forms.Button();
@@ -38,7 +38,6 @@
             this.BtnStart = new System.Windows.Forms.Button();
             this.PbValue = new System.Windows.Forms.ProgressBar();
             this.TxtStatus = new System.Windows.Forms.TextBox();
-            this.ChkPrintProductID = new System.Windows.Forms.CheckBox();
             this.chkOpenOutput = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -118,7 +117,7 @@
             this.PbValue.Location = new System.Drawing.Point(13, 102);
             this.PbValue.Margin = new System.Windows.Forms.Padding(4);
             this.PbValue.Name = "PbValue";
-            this.PbValue.Size = new System.Drawing.Size(651, 29);
+            this.PbValue.Size = new System.Drawing.Size(804, 29);
             this.PbValue.TabIndex = 4;
             // 
             // TxtStatus
@@ -131,19 +130,6 @@
             this.TxtStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TxtStatus.Size = new System.Drawing.Size(1229, 636);
             this.TxtStatus.TabIndex = 5;
-            // 
-            // ChkPrintProductID
-            // 
-            this.ChkPrintProductID.AutoSize = true;
-            this.ChkPrintProductID.Checked = true;
-            this.ChkPrintProductID.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkPrintProductID.Location = new System.Drawing.Point(684, 107);
-            this.ChkPrintProductID.Name = "ChkPrintProductID";
-            this.ChkPrintProductID.Size = new System.Drawing.Size(150, 19);
-            this.ChkPrintProductID.TabIndex = 6;
-            this.ChkPrintProductID.Text = "图片左上角加入ID";
-            this.ChkPrintProductID.UseVisualStyleBackColor = true;
-            this.ChkPrintProductID.CheckedChanged += new System.EventHandler(this.ChkPrintProductID_CheckedChanged);
             // 
             // chkOpenOutput
             // 
@@ -164,7 +150,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1261, 792);
             this.Controls.Add(this.chkOpenOutput);
-            this.Controls.Add(this.ChkPrintProductID);
             this.Controls.Add(this.TxtStatus);
             this.Controls.Add(this.PbValue);
             this.Controls.Add(this.BtnStart);
@@ -198,7 +183,6 @@
         private System.Windows.Forms.Button BtnStart;
         private System.Windows.Forms.ProgressBar PbValue;
         private System.Windows.Forms.TextBox TxtStatus;
-        private System.Windows.Forms.CheckBox ChkPrintProductID;
         private System.Windows.Forms.CheckBox chkOpenOutput;
     }
 }

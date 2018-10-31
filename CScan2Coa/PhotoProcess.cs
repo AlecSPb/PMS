@@ -9,6 +9,8 @@ using Xceed.Words.NET;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using ImportTargetPhotoIntoReport.MainService;
+
 
 namespace ImportTargetPhotoIntoReport
 {
@@ -18,20 +20,45 @@ namespace ImportTargetPhotoIntoReport
         private List<string> DocxFiles;
         private List<string> JpegFiles;
 
-        public bool HasWaterPrint { get; set; }
         public bool IsOpenOutputDirectory { get; set; }
 
+        public PhotoMarkerControlParameter PhotoMarkerControl { get; set; }
         public PhotoProcess()
         {
             DocxFiles = new List<string>();
             JpegFiles = new List<string>();
             targetFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            HasWaterPrint = true;
             IsOpenOutputDirectory = true;
+            PhotoMarkerControl = new PhotoMarkerControlParameter();
         }
 
         public event EventHandler<ProcessMessageEventArg> ChangeMessage;
         public event EventHandler<ProcessValueEventArg> ChangeProcess;
+
+        public void LoadFile(string jpegFolder)
+        {
+            if (!Directory.Exists(jpegFolder))
+            {
+                throw new DirectoryNotFoundException("没有找到docx或者jpeg文件夹");
+            }
+            else
+            {
+                JpegFiles = GetJPEGFullNames(jpegFolder);
+                TriggerMessageEvent("文件载入完毕");
+                TriggerMessageEvent($"图片文件夹中有{JpegFiles.Count}个jpg文件");
+
+
+                //在docxfolder中创建targetfolder
+                targetFolder = Path.Combine(jpegFolder, "处理后的照片");
+                if (!Directory.Exists(targetFolder))
+                {
+                    Directory.CreateDirectory(targetFolder);
+                }
+                TriggerMessageEvent($"目标文件夹创建完毕{targetFolder}");
+
+            }
+        }
+
         /// <summary>
         /// 加载所有的docx，jpeg文件到处理列表
         /// </summary>
@@ -78,6 +105,7 @@ namespace ImportTargetPhotoIntoReport
         }
 
         private string error_prefix = "[Error]:";
+
         public void Process()
         {
             int total = DocxFiles.Count;
@@ -92,7 +120,7 @@ namespace ImportTargetPhotoIntoReport
                 }
 
                 //模拟演示
-                System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(500);
 
                 string product_id = GetProductIDFromDocxName(docx).Replace('_', '-');
                 if (product_id != "")
@@ -147,6 +175,42 @@ namespace ImportTargetPhotoIntoReport
             }
         }
 
+
+        public void ProcessPhoto()
+        {
+            int total = JpegFiles.Count;
+            int count = 0;
+
+            foreach (var jpeg in JpegFiles)
+            {
+                if (!File.Exists(jpeg))
+                {
+                    TriggerMessageEvent($"没有找到对应的{Path.GetFileNameWithoutExtension(jpeg)}文件");
+                    continue;
+                }
+
+                //模拟演示
+                //System.Threading.Thread.Sleep(500);
+
+                AddWaterPrintMarker(jpeg);
+
+                count++;
+
+                int progress_value = count * 100 / total;
+                if (progress_value <= 100)
+                {
+                    TriggerProgressEvent(progress_value);
+                }
+
+
+            }
+
+            if (IsOpenOutputDirectory)
+            {
+                System.Diagnostics.Process.Start(targetFolder);
+            }
+        }
+
         /// <summary>
         /// 追加图片到文档结尾并另存
         /// </summary>
@@ -166,10 +230,6 @@ namespace ImportTargetPhotoIntoReport
                 Xceed.Words.NET.Image img;
                 //图片追加处理
                 string img_file = jpegFile;
-                if (HasWaterPrint)
-                {
-                    img_file = AddWaterPrintToImage(jpegFile);
-                }
 
                 if (img_file == null)
                 {
@@ -267,31 +327,68 @@ namespace ImportTargetPhotoIntoReport
             }
         }
 
+
         /// <summary>
         /// 在图片左上角插入文件名
         /// </summary>
         /// <param name="jpgName"></param>
         /// <returns></returns>
-        private string AddWaterPrintToImage(string jpgName)
+        private void AddWaterPrintMarker(string jpgName)
         {
             try
             {
                 System.Drawing.Image img = System.Drawing.Image.FromFile(jpgName);
                 Graphics g = Graphics.FromImage(img);
-                string product_id = Path.GetFileNameWithoutExtension(jpgName);
-                System.Drawing.Font font = new System.Drawing.Font("Arial", 15);
-                g.DrawString(product_id, font, Brushes.Orange, 10, 10);
+                System.Drawing.Font font = new System.Drawing.Font("Arial", 8);
+
+                string file_name = Path.GetFileNameWithoutExtension(jpgName);
+                string product_id = GetProductIDFromJPEGName(file_name);
+
+                if (PhotoMarkerControl.HasProductID)
+                {
+                    g.DrawString(product_id, font, Brushes.Orange, 5, 5);
+                }
+
+                if (PhotoMarkerControl.HasWeldingRation || PhotoMarkerControl.HasComposition)
+                {
+                    DcRecordBonding bonding = null;
+                    using (var service = new RecordBondingServiceClient())
+                    {
+                        bonding = service.GetRecordBondingByProductID(product_id).FirstOrDefault();
+                    }
+
+                    if (bonding != null)
+                    {
+                        if (PhotoMarkerControl.HasComposition)
+                        {
+                            string composition = bonding.TargetComposition;
+                            g.DrawString(composition, font, Brushes.Orange, 5, 20);
+
+                        }
+
+                        if (PhotoMarkerControl.HasWeldingRation)
+                        {
+                            string composition = bonding.WeldingRate.ToString("F2") + "%";
+                            g.DrawString(composition, font, Brushes.Orange, 5, 35);
+                        }
+                    }
+                }
+
+
+
+
+
                 MemoryStream ms = new MemoryStream();
-                string tmp = Path.Combine(Environment.CurrentDirectory, "tmp", "tmp.jpg");
-                img.Save(tmp);
+                string targetFile = Path.GetFileName(jpgName);
+                string newFile = Path.Combine(targetFolder, targetFile);
+
+                img.Save(newFile);
                 g.Dispose();
                 img.Dispose();
-                return tmp;
             }
             catch (Exception ex)
             {
                 TriggerMessageEvent($"{error_prefix}{ex.Message}");
-                return null;
             }
         }
 
