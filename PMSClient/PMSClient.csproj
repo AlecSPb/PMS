@@ -169,7 +169,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CheckLogic\CheckMessage.cs" />
-    <Compile Include="CheckLogic\RecordTestLogic.cs" />
+    <Compile Include="CheckLogic\OrderCheckLogic.cs" />
+    <Compile Include="CheckLogic\RecordTestCheckLogic.cs" />
     <Compile Include="CsvOutputHelper\CsvOutputBase.cs" />
     <Compile Include="CsvOutputHelper\CsvOutputFeedback.cs" />
     <Compile Include="CsvOutputHelper\CsvOutputOutSource.cs" />

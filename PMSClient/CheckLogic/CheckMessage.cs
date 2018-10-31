@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMSClient.CheckLogic
 {
-    public class CheckMessage
+    public class CheckResult
     {
-        public bool isCheckOK { get; set; } = false;
+        public bool IsCheckOK { get; set; } = false;
         public string Message { get; set; } = string.Empty;
     }
 }

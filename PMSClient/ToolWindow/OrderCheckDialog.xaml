@@ -26,8 +26,12 @@
                  Style="{StaticResource StyleTextBoxReadOnly}"
                  FontSize="25" Foreground="Blue"/>
         <TextBlock Grid.Row="2" Grid.Column="0" Text="策略类型" Style="{StaticResource StyleDGTextBlockCommon}"/>
-        <ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+            <ComboBox  Style="{StaticResource StyleComboBoxCommon}"
                   SelectedItem="{Binding CurrentOrder.PolicyType}" ItemsSource="{Binding PolicyTypes}"/>
+            <TextBlock Style="{StaticResource StyleDGTextBlockSpecial2}" Text="如果是外购，请选择外包"/>
+        </StackPanel>
+
         
         <TextBlock Grid.Row="3" Grid.Column="0" Text="订单状态" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <ComboBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"

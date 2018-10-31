@@ -192,8 +192,8 @@ namespace PMSClient.ViewModel
             double.TryParse(CurrentRecordTest.Density, out density);
             if (!string.IsNullOrEmpty(abbr) && density != 0)
             {
-                CheckMessage msg = RecordTestLogic.IsDensityOK(abbr, density);
-                if (!msg.isCheckOK)
+                CheckResult msg = RecordTestCheckLogic.IsDensityOK(abbr, density);
+                if (!msg.IsCheckOK)
                 {
                     PMSDialogService.ShowWarning(msg.Message);
                 }

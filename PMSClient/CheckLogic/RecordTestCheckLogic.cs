@@ -6,31 +6,31 @@ using System.Threading.Tasks;
 
 namespace PMSClient.CheckLogic
 {
-    public static class RecordTestLogic
+    public static class RecordTestCheckLogic
     {
-        public static CheckMessage IsDensityOK(string abbr, double density_actual)
+        public static CheckResult IsDensityOK(string abbr, double density_actual)
         {
-            var check = new CheckMessage();
-            check.isCheckOK = false;
+            var check = new CheckResult();
+            check.IsCheckOK = false;
             if (CheckElementExists(abbr, "Cu-In-Ga-Se") || abbr.Contains("CIGS"))
             {
-                check.isCheckOK = density_actual > 5.65;
-                check.Message = "Cu-In-Ga-Se的密度一般大于5.65g/cm3";
+                check.IsCheckOK = density_actual >= 5.65;
+                check.Message = "Cu-In-Ga-Se的密度一般≥5.65g/cm3";
             }
             else if (CheckElementExists(abbr, "Se-As-Ge"))
             {
-                check.isCheckOK = density_actual > 4.3;
-                check.Message = "Se-As-Ge的密度一般大于4.3g/cm3";
+                check.IsCheckOK = density_actual >= 4.3;
+                check.Message = "Se-As-Ge的密度一般≥4.3g/cm3";
             }
             else if (abbr.Contains("InS"))
             {
-                check.isCheckOK = density_actual > 4.4;
-                check.Message = "In-S的密度一般大于4.4g/cm3";
+                check.IsCheckOK = density_actual >= 4.4;
+                check.Message = "In-S的密度一般≥4.4g/cm3";
             }
             else if (abbr.Contains("InSe"))
             {
-                check.isCheckOK = density_actual > 5.4;
-                check.Message = "In-Se的密度一般大于5.4g/cm3";
+                check.IsCheckOK = density_actual >= 5.4;
+                check.Message = "In-Se的密度一般≥5.4g/cm3";
             }
             return check;
         }

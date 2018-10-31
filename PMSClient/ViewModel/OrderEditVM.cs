@@ -9,7 +9,7 @@ using GalaSoft.MvvmLight.Messaging;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using PMSClient.BasicService;
-
+using PMSClient.CheckLogic;
 
 namespace PMSClient.ViewModel
 {
@@ -124,6 +124,18 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
+
+            //check
+            string remark=CurrentOrder.Remark;
+            string requirement = CurrentOrder.DimensionDetails;
+            CheckResult is_outsource = OrderCheckLogic.OutSourceCheck(new string[] { remark, requirement });
+            if (is_outsource.IsCheckOK)
+            {
+                PMSDialogService.ShowWarning(is_outsource.Message);
+            }
+
+
+
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
