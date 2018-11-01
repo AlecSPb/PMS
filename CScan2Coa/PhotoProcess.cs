@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using ImportTargetPhotoIntoReport.MainService;
+using System.Diagnostics;
 
 
 namespace ImportTargetPhotoIntoReport
@@ -50,7 +51,7 @@ namespace ImportTargetPhotoIntoReport
 
 
                 //在docxfolder中创建targetfolder
-                targetFolder = Path.Combine(jpegFolder, "处理后的照片");
+                targetFolder = Path.Combine(jpegFolder, "添加水印的照片");
                 if (!Directory.Exists(targetFolder))
                 {
                     Directory.CreateDirectory(targetFolder);
@@ -112,6 +113,9 @@ namespace ImportTargetPhotoIntoReport
         /// </summary>
         public void ProcessDocx()
         {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
             int total = DocxFiles.Count;
             int count = 0;
 
@@ -124,7 +128,7 @@ namespace ImportTargetPhotoIntoReport
                 }
 
                 //模拟演示
-                System.Threading.Thread.Sleep(500);
+                //System.Threading.Thread.Sleep(500);
 
                 string product_id = GetProductIDFromDocxName(docx).Replace('_', '-');
                 if (product_id != "")
@@ -165,6 +169,7 @@ namespace ImportTargetPhotoIntoReport
                     {
                         TriggerProgressEvent(progress_value);
                     }
+
                 }
                 else
                 {
@@ -172,6 +177,9 @@ namespace ImportTargetPhotoIntoReport
                 }
 
             }
+
+            sw.Stop();
+            TriggerMessageEvent($"消耗时间:{sw.ElapsedMilliseconds}ms");
 
             if (IsOpenOutputDirectory)
             {
@@ -184,6 +192,9 @@ namespace ImportTargetPhotoIntoReport
         /// </summary>
         public void ProcessCscanPhoto()
         {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
             int total = JpegFiles.Count;
             int count = 0;
 
@@ -210,7 +221,8 @@ namespace ImportTargetPhotoIntoReport
 
 
             }
-
+            sw.Stop();
+            TriggerMessageEvent($"消耗时间:{sw.ElapsedMilliseconds}ms");
             if (IsOpenOutputDirectory)
             {
                 System.Diagnostics.Process.Start(targetFolder);
@@ -356,7 +368,7 @@ namespace ImportTargetPhotoIntoReport
 
                 if (PhotoMarkerControl.HasProductID)
                 {
-                    g.DrawString(product_id, font, Brushes.Orange,x, y);
+                    g.DrawString(product_id, font, Brushes.Orange, x, y);
                 }
 
                 if (PhotoMarkerControl.HasWeldingRation || PhotoMarkerControl.HasComposition)
@@ -373,7 +385,7 @@ namespace ImportTargetPhotoIntoReport
                         {
                             string composition = bonding.TargetComposition;
                             y += interval;
-                            g.DrawString(composition, font, Brushes.Orange, x,y );
+                            g.DrawString(composition, font, Brushes.Orange, x, y);
 
                         }
 
@@ -387,6 +399,11 @@ namespace ImportTargetPhotoIntoReport
                 }
 
 
+                //左下角添加PMI标志
+                int height = img.Height;
+                y = height - 25;
+
+                g.DrawString("CSCAN@CDPMI", font, Brushes.White, x, y);
 
 
 
