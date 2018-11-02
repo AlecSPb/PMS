@@ -1,0 +1,46 @@
+﻿good news.  we are starting to get orders from Intermolecular again.  please enter the following:
+
+
+Intermolecular-PO#036235
+PO Date:  10/08/2018
+
+
+2 pieces 50.8mm OD x 4.318mm thick As-46 Ge-14 Se-40 (atomic%)
+
+
+2 piece 50.8mm OD x 4.318mm thick As-41 B-10 Ge-13 Se-36 (atomic%)
+
+
+Mr. Zhou, please laser mark the backing plates (4 pieces) as follows:
+
+
+181004839 090-0000605-00, TARGET, 2", As46Ge14Se40, 99.995%, STRT, ELA
+181004840 090-0000605-00, TARGET, 2", As46Ge14Se40, 99.995%, STRT, ELA
+181004841 090-0000606-00, TARGET, 2", As41B10Ge13Se36, 99.995%, STRT, ELA
+181004842 090-0000606-00, TARGET, 2", As41B10Ge13Se36, 99.995%, STRT, ELA
+
+
+including this order, we will need a total of 
+IMI-PO#036171   (10 pieces)
+IMI-PO#036172   (24 pieces)
+IMI-PO#036235   (4 pieces)
+             
+38 backing plates.  i checked our inventory and we have 40 BPs in stock now so we should be fine on backing plates for this order.
+
+
+Mr. Zhou,  i will be returning to the US on 10/18/2018 (next thursday).  we will be purchasing the InGaZnO4 targets from a different
+vendor for Intermolecular-PO#036172.  please laser inscribe 3 backing plates as follows:
+
+
+180918827 090-0000600-00, TARGET, 2", Ga1In1O4Zn1, 99.999%, STRT, ELA
+180918828 090-0000600-00, TARGET, 2", Ga1In1O4Zn1, 99.999%, STRT, ELA
+180918829 090-0000600-00, TARGET, 2", Ga1In1O4Zn1, 99.999%, STRT, ELA
+
+
+i would like to take these 3 backing plates back with me.
+
+
+thanks much,
+
+
+leon

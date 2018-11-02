@@ -1,0 +1,59 @@
+﻿please see this separate order from Intermolecular-PO#036172 (PO Date 09/19/2018):
+
+
+all pieces 50.8mm OD x 4.318mm;  no samples needed.
+
+
+A.   3 pieces     As-50 Ge-50 (atomic%)
+part#090-0000599-00
+SN#180918820
+SN#180918821
+SN#180918822
+
+
+please ship by 11/01/2018
+---------------------------------------------------------------------------------
+B.    2 pieces     As-40 Ge-40 Se-20 (atomic%)
+part#090-0000595-00
+SN#180918823
+SN#180918824
+
+
+please ship by 11/01/2018
+----------------------------------------------------------------------------------
+C.    2 pieces As-40 Ge-40 Te-20 (atomic%)
+part#090-0000596-00
+SN#180918825
+SN#180918826
+
+
+please ship by 11/01/2018
+--------------------------------------------------------------------------------------
+D.   3 pieces In1Ga1Zn1O4
+part#090-0000600-00
+SN#180918827
+SN#180918828
+SN#180918829
+
+
+don't enter this in the system.  i will purchase these targets from Kojundo.  please prepare the 
+backing plates to be inscribed.  ship by 11/08/2018
+----------------------------------------------------------------------------------------------
+E.    2 pieces As-30 Ge-235 Se-40 Te-5 (atomic%)
+part#090-0000498-00
+SN#180918830
+SN#180918831
+
+
+please ship by 11/08/2018
+----------------------------------------------------------------------------------------------
+F.    2 pieces As-29 Ge-13 Se-50 Si-8 (atomic%)
+part#090-0000441-00
+SN#180918832
+SN#180918833
+
+
+please ship by 11/08/2018
+
+
+please update the production schedule and the send out the updated .xls
