@@ -15,11 +15,15 @@ namespace IntermolecularLotParser
         public Form1()
         {
             InitializeComponent();
+            TxtInput.Text = System.IO.File.ReadAllText("Example1.txt");
+
         }
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
-            
+            var pp = new LotProcess();
+            pp.InputString = TxtInput.Text;
+            pp.Process();
         }
     }
 }

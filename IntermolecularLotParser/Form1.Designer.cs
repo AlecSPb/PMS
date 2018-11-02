@@ -34,9 +34,12 @@
             // 
             // TxtInput
             // 
+            this.TxtInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtInput.Location = new System.Drawing.Point(13, 62);
             this.TxtInput.Name = "TxtInput";
-            this.TxtInput.Size = new System.Drawing.Size(809, 513);
+            this.TxtInput.Size = new System.Drawing.Size(809, 526);
             this.TxtInput.TabIndex = 0;
             this.TxtInput.Text = "";
             // 
@@ -58,7 +61,9 @@
             this.Controls.Add(this.BtnStart);
             this.Controls.Add(this.TxtInput);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

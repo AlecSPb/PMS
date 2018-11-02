@@ -48,7 +48,7 @@ namespace TargetCutterSimulator
         {
             if (e.LeftButton == MouseButtonState.Pressed)
             {
-                previousPoint = new Point(tlt.X,tlt.Y);
+                previousPoint = new Point(tlt.X, tlt.Y);
             }
         }
     }
