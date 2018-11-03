@@ -118,7 +118,7 @@
             this.PbValue.Location = new System.Drawing.Point(19, 102);
             this.PbValue.Margin = new System.Windows.Forms.Padding(4);
             this.PbValue.Name = "PbValue";
-            this.PbValue.Size = new System.Drawing.Size(824, 29);
+            this.PbValue.Size = new System.Drawing.Size(705, 29);
             this.PbValue.TabIndex = 4;
             // 
             // TxtStatus
@@ -137,7 +137,7 @@
             this.chkOpenOutput.AutoSize = true;
             this.chkOpenOutput.Checked = true;
             this.chkOpenOutput.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkOpenOutput.Location = new System.Drawing.Point(850, 109);
+            this.chkOpenOutput.Location = new System.Drawing.Point(850, 108);
             this.chkOpenOutput.Name = "chkOpenOutput";
             this.chkOpenOutput.Size = new System.Drawing.Size(179, 19);
             this.chkOpenOutput.TabIndex = 7;
@@ -147,7 +147,7 @@
             // ChkToPdf
             // 
             this.ChkToPdf.AutoSize = true;
-            this.ChkToPdf.Location = new System.Drawing.Point(731, 109);
+            this.ChkToPdf.Location = new System.Drawing.Point(731, 108);
             this.ChkToPdf.Name = "ChkToPdf";
             this.ChkToPdf.Size = new System.Drawing.Size(113, 19);
             this.ChkToPdf.TabIndex = 7;

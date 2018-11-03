@@ -59,6 +59,10 @@ namespace ImportTargetPhotoIntoReport
             {
                 Task.Factory.StartNew(StartProcess);
             }
+            else
+            {
+                BtnStart.Enabled = true;
+            }
         }
         private void StartProcess()
         {
