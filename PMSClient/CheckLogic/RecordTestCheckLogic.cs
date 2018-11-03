@@ -11,7 +11,8 @@ namespace PMSClient.CheckLogic
         public static CheckResult IsDensityOK(string abbr, double density_actual)
         {
             var check = new CheckResult();
-            check.IsCheckOK = false;
+            check.IsCheckOK = true;
+            check.Message = "没有检验密度";
             if (CheckElementExists(abbr, "Cu-In-Ga-Se") || abbr.Contains("CIGS"))
             {
                 check.IsCheckOK = density_actual >= 5.65;

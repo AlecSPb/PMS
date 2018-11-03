@@ -109,6 +109,8 @@ namespace PMSClient
         FillingTool,
         FillingToolEdit,
         MillingTool,
-        MillingToolEdit
+        MillingToolEdit,
+        Failure,
+        FailureEdit
     }
 }

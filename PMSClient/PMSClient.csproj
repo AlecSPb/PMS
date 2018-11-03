@@ -442,6 +442,8 @@
     <Compile Include="Tool\ToolViewModelLocator.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
+    <Compile Include="ViewModel\FailureEditVM.cs" />
+    <Compile Include="ViewModel\FailureVM.cs" />
     <Compile Include="ViewModel\FillingToolEditVM.cs" />
     <Compile Include="ViewModel\FillingToolVM.cs" />
     <Compile Include="ViewModel\ToDoEditVM.cs" />
@@ -516,6 +518,12 @@
     </Compile>
     <Compile Include="View\CheckListEditView.xaml.cs">
       <DependentUpon>CheckListEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FailureEditView.xaml.cs">
+      <DependentUpon>FailureEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FailureView.xaml.cs">
+      <DependentUpon>FailureView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FillingToolEditView.xaml.cs">
       <DependentUpon>FillingToolEditView.xaml</DependentUpon>
@@ -1056,6 +1064,14 @@
     <Page Include="View\CheckListEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\FailureEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FailureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\FillingToolEditView.xaml">
       <SubType>Designer</SubType>

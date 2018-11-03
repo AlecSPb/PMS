@@ -145,9 +145,21 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<FillingToolVM>();
             SimpleIoc.Default.Register<FillingToolEditVM>();
 
+            SimpleIoc.Default.Register<FailureVM>();
+            SimpleIoc.Default.Register<FailureEditVM>();
 
         }
         #region Properties
+        public FailureVM Failure
+        {
+            get { return SimpleIoc.Default.GetInstance<FailureVM>(); }
+        }
+
+        public FailureEditVM FailureEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<FailureEditVM>(); }
+        }
+
         public FillingToolVM FillingTool
         {
             get
@@ -155,6 +167,7 @@ namespace PMSClient.ViewModel
                 return SimpleIoc.Default.GetInstance<FillingToolVM>();
             }
         }
+
         public FillingToolEditVM FillingToolEdit
         {
             get

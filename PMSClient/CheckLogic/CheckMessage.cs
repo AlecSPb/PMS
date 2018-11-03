@@ -8,7 +8,7 @@ namespace PMSClient.CheckLogic
 {
     public class CheckResult
     {
-        public bool IsCheckOK { get; set; } = false;
+        public bool IsCheckOK { get; set; } = true;
         public string Message { get; set; } = string.Empty;
     }
 }
