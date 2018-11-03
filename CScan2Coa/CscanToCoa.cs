@@ -65,6 +65,9 @@ namespace ImportTargetPhotoIntoReport
             BtnStart.Enabled = false;
             helper.ClearStatusMessage();
 
+            process.IsToPdf = ChkToPdf.Checked;
+            process.IsOpenOutputDirectory = chkOpenOutput.Checked;
+
             process.LoadFile(TxtCoaFolder.Text, TxtCscanFolder.Text);
             if (MessageBox.Show("载入文件完成，继续处理吗？", "请问", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
                 == DialogResult.OK)
@@ -86,9 +89,5 @@ namespace ImportTargetPhotoIntoReport
             }));
         }
 
-        private void chkOpenOutput_CheckedChanged(object sender, EventArgs e)
-        {
-            process.IsOpenOutputDirectory = chkOpenOutput.Checked;
-        }
     }
 }

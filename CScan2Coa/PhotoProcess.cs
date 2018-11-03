@@ -11,7 +11,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using ImportTargetPhotoIntoReport.MainService;
 using System.Diagnostics;
-
+using BatchPdfHelper;
 
 namespace ImportTargetPhotoIntoReport
 {
@@ -23,6 +23,8 @@ namespace ImportTargetPhotoIntoReport
 
         public bool IsOpenOutputDirectory { get; set; }
 
+        public bool IsToPdf { get; set; }
+
         public PhotoMarkerControlParameter PhotoMarkerControl { get; set; }
 
         public PhotoProcess()
@@ -31,6 +33,7 @@ namespace ImportTargetPhotoIntoReport
             JpegFiles = new List<string>();
             targetFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             IsOpenOutputDirectory = true;
+            IsToPdf = true;
             PhotoMarkerControl = new PhotoMarkerControlParameter();
         }
 
@@ -187,6 +190,8 @@ namespace ImportTargetPhotoIntoReport
             }
         }
 
+        private ConvertHelper pdf_helper = new ConvertHelper();
+
         /// <summary>
         /// 批量处理图片
         /// </summary>
@@ -266,6 +271,15 @@ namespace ImportTargetPhotoIntoReport
                 string newDocxFile = Path.Combine(targetFolder, targetFile);
                 doc.SaveAs(newDocxFile);
                 doc.Dispose();
+
+                //转换为pdf
+                if (IsToPdf)
+                {
+                    string pdfFileName = Path.Combine(targetFolder, 
+                        Path.GetFileNameWithoutExtension(docxFile) + ".pdf");
+                    pdf_helper.Convert(newDocxFile, pdfFileName);
+                }
+
             }
             else
             {

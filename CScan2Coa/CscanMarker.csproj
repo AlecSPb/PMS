@@ -219,5 +219,11 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\MainService\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BatchPdfHelper\BatchPdfHelper\BatchPdfHelper.csproj">
+      <Project>{a6c740e5-71c2-409a-8f73-dbba0417a507}</Project>
+      <Name>BatchPdfHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

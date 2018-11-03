@@ -39,12 +39,13 @@
             this.PbValue = new System.Windows.Forms.ProgressBar();
             this.TxtStatus = new System.Windows.Forms.TextBox();
             this.chkOpenOutput = new System.Windows.Forms.CheckBox();
+            this.ChkToPdf = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 16);
+            this.label1.Location = new System.Drawing.Point(19, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 15);
@@ -114,10 +115,10 @@
             // 
             // PbValue
             // 
-            this.PbValue.Location = new System.Drawing.Point(13, 102);
+            this.PbValue.Location = new System.Drawing.Point(19, 102);
             this.PbValue.Margin = new System.Windows.Forms.Padding(4);
             this.PbValue.Name = "PbValue";
-            this.PbValue.Size = new System.Drawing.Size(804, 29);
+            this.PbValue.Size = new System.Drawing.Size(824, 29);
             this.PbValue.TabIndex = 4;
             // 
             // TxtStatus
@@ -142,16 +143,26 @@
             this.chkOpenOutput.TabIndex = 7;
             this.chkOpenOutput.Text = "完成后打开目标文件夹";
             this.chkOpenOutput.UseVisualStyleBackColor = true;
-            this.chkOpenOutput.CheckedChanged += new System.EventHandler(this.chkOpenOutput_CheckedChanged);
             // 
-            // Form1
+            // ChkToPdf
+            // 
+            this.ChkToPdf.AutoSize = true;
+            this.ChkToPdf.Location = new System.Drawing.Point(731, 109);
+            this.ChkToPdf.Name = "ChkToPdf";
+            this.ChkToPdf.Size = new System.Drawing.Size(113, 19);
+            this.ChkToPdf.TabIndex = 7;
+            this.ChkToPdf.Text = "同时生成pdf";
+            this.ChkToPdf.UseVisualStyleBackColor = true;
+            // 
+            // CscanToCoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1261, 792);
+            this.Controls.Add(this.PbValue);
+            this.Controls.Add(this.ChkToPdf);
             this.Controls.Add(this.chkOpenOutput);
             this.Controls.Add(this.TxtStatus);
-            this.Controls.Add(this.PbValue);
             this.Controls.Add(this.BtnStart);
             this.Controls.Add(this.BtnScanFolderSelect);
             this.Controls.Add(this.TxtCscanFolder);
@@ -164,7 +175,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "CscanToCoa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -184,6 +195,7 @@
         private System.Windows.Forms.ProgressBar PbValue;
         private System.Windows.Forms.TextBox TxtStatus;
         private System.Windows.Forms.CheckBox chkOpenOutput;
+        private System.Windows.Forms.CheckBox ChkToPdf;
     }
 }
 
