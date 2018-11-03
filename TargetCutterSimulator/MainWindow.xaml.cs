@@ -30,12 +30,14 @@ namespace TargetCutterSimulator
 
         private void Initialize()
         {
-            this.Title = "靶材切割设计器";
+            this.Title = "靶材切割设计器 designed by xs.zhou";
         }
 
         private const double ratio = 2.0;
-        private const double normal_thickness = 3.0;
-        private const double select_thickness = 4.0;
+        private const double normal_thickness = 2.0;
+        private const double select_thickness = 3.0;
+
+        private Brush fill_brush = Brushes.LightGray;
 
         private void AddEllipse(double diameter)
         {
@@ -44,41 +46,45 @@ namespace TargetCutterSimulator
 
         private Ellipse CreateEllipse(double diameter)
         {
-            Ellipse circle = new Ellipse();
-            circle.Height = diameter * ratio;
-            circle.Width = diameter * ratio;
-            circle.Fill = Brushes.Wheat;
-            circle.StrokeThickness = normal_thickness;
-            circle.Stroke = Brushes.Blue;
+            Ellipse shape = new Ellipse();
+            shape.Height = diameter * ratio;
+            shape.Width = diameter * ratio;
+            shape.Fill = fill_brush;
+            shape.StrokeThickness = normal_thickness;
+            shape.Stroke = Brushes.Blue;
 
-            circle.MouseDown += Shape_MouseDown;
-            circle.MouseMove += Shape_MouseMove;
-            circle.MouseUp += Shape_MouseUp;
+            shape.MouseDown += Shape_MouseDown;
+            shape.MouseMove += Shape_MouseMove;
+            shape.MouseUp += Shape_MouseUp;
 
             TransformGroup transformGroup = new TransformGroup();
             transformGroup.Children.Add(new RotateTransform());
             transformGroup.Children.Add(new TranslateTransform());
-            circle.RenderTransform = transformGroup;
-            return circle;
+            shape.RenderTransform = transformGroup;
+
+            shape.ContextMenu = this.Resources["ShapeContextMenu"] as ContextMenu;
+            return shape;
         }
 
         private Rectangle CreateRectangle(double width, double height)
         {
-            Rectangle rect = new Rectangle();
-            rect.Height = height * ratio;
-            rect.Width = width * ratio;
-            rect.Fill = Brushes.Wheat;
-            rect.StrokeThickness = normal_thickness;
-            rect.Stroke = Brushes.Blue;
-            rect.MouseDown += Shape_MouseDown;
-            rect.MouseMove += Shape_MouseMove;
-            rect.MouseUp += Shape_MouseUp;
+            Rectangle shape = new Rectangle();
+            shape.Height = height * ratio;
+            shape.Width = width * ratio;
+            shape.Fill = fill_brush;
+            shape.StrokeThickness = normal_thickness;
+            shape.Stroke = Brushes.Blue;
+            shape.MouseDown += Shape_MouseDown;
+            shape.MouseMove += Shape_MouseMove;
+            shape.MouseUp += Shape_MouseUp;
 
             TransformGroup transformGroup = new TransformGroup();
             transformGroup.Children.Add(new RotateTransform());
             transformGroup.Children.Add(new TranslateTransform());
-            rect.RenderTransform = transformGroup;
-            return rect;
+            shape.RenderTransform = transformGroup;
+
+            shape.ContextMenu = this.Resources["ShapeContextMenu"] as ContextMenu;
+            return shape;
         }
 
         private void AddRectangle(double width, double height)
@@ -90,10 +96,15 @@ namespace TargetCutterSimulator
         {
             if (e.ButtonState == MouseButtonState.Pressed)
             {
-                currentShape = e.OriginalSource as Shape;
-                previousPoint = e.GetPosition(currentShape);
-                currentShape.StrokeThickness = select_thickness;
+                if (e.OriginalSource is Shape)
+                {
+                    currentShape = e.OriginalSource as Shape;
+                    previousPoint = e.GetPosition(currentShape);
+                    currentShape.StrokeThickness = select_thickness;
+                }
             }
+            System.Diagnostics.Debug.WriteLine("Down");
+
         }
 
         private void MoveCurrentShapeToTop()
@@ -162,7 +173,6 @@ namespace TargetCutterSimulator
                 currentShape.StrokeThickness = normal_thickness;
 
             }
-            //currentShape = null;
             System.Diagnostics.Debug.WriteLine("Up");
 
         }
@@ -206,6 +216,8 @@ namespace TargetCutterSimulator
             {
                 CopyShape(currentShape);
             }
+            System.Diagnostics.Debug.WriteLine("Copy");
+
         }
 
         private void CmDelete_Click(object sender, RoutedEventArgs e)
@@ -215,6 +227,8 @@ namespace TargetCutterSimulator
                 MainCanvas.Children.Remove(currentShape);
                 currentShape = null;
             }
+            System.Diagnostics.Debug.WriteLine("Delete");
+
         }
 
         private string targetFolder = IO.Path.Combine(Environment.CurrentDirectory, "SaveAs");
@@ -280,6 +294,11 @@ namespace TargetCutterSimulator
         private void CmMoveBottom_Click(object sender, RoutedEventArgs e)
         {
             MoveCurrentShapeToBottom();
+        }
+
+        private void MainCanvas_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
