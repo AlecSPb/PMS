@@ -29,22 +29,22 @@
                         <Image Source="../Resource/Icons/noticegreen.png"  Style="{StaticResource StyleImageIcon}"/>
                     </StackPanel>
                 </Button>
-                <Button Content="{StaticResource ButtonImportantCode}" Style="{StaticResource StyleButtonCommon}"
+                <!--<Button Content="{StaticResource ButtonImportantCode}" Style="{StaticResource StyleButtonCommon}"
                        Command="{Binding ImportantCode}" />
                 <Button Content="{StaticResource ButtonLaserRule}" Style="{StaticResource StyleButtonCommon}"
                        Command="{Binding LaserRule}" />
                 <Button Content="{StaticResource ButtonCodeRule}" Style="{StaticResource StyleButtonCommon}"
-                        Command="{Binding CodeRule}"/>
+                        Command="{Binding CodeRule}"/>-->
+                <Button Content="{StaticResource ButtonToDoList}" Style="{StaticResource StyleButtonSpecial}"
+                        Command="{Binding ToDoList}"/>
+                <Button Content="{StaticResource PageIntegratedSearch}"  Style="{StaticResource StyleButtonCommon}"
+                        Command="{Binding GoToIntegratedSearch }"/>
                 <Button  Style="{StaticResource StyleButtonCommon}" Command="{Binding Help}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{StaticResource ButtonHelp}"/>
                         <Image Source="../Resource/Icons/help.png"  Style="{StaticResource StyleImageIcon}"/>
                     </StackPanel>
                 </Button>
-                <Button Content="{StaticResource ButtonToDoList}" Style="{StaticResource StyleButtonSpecial}"
-                        Command="{Binding ToDoList}"/>
-                <Button Content="{StaticResource PageIntegratedSearch}"  Style="{StaticResource StyleButtonCommon}"
-                        Command="{Binding GoToIntegratedSearch }"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Style="{StaticResource StyleStackPanelNavigationBar}" HorizontalAlignment="Right">
                 <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}" Margin="5,0,0,0"/>
@@ -124,8 +124,8 @@
                         Command="{Binding GoToPlanConclusion}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageCompound}" Grid.Row="2" Grid.Column="4"
                         Command="{Binding GoToBDCompound}" Style="{StaticResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PageTool}" Grid.Row="2" Grid.Column="5" Style="{StaticResource StyleButtonNavigation}"
-                        Command="{Binding GoToTool}" IsEnabled="False"/>
+                        <Button Content="{StaticResource BottomBarTargetCutterSimlulator}" FontSize="15" Grid.Row="2" Grid.Column="5" Style="{StaticResource StyleButtonNavigation}"
+                          Name="BtnTargetCutterSimlulator"  Click="BtnTargetCutterSimlulator_Click"/>
 
                         <Button Content="{StaticResource PageRecord}" Grid.Row="3" Grid.Column="0"  Style="{StaticResource StyleButtonNavigationTitle}" />
                         <Button Content="{StaticResource PageRecordMilling}" Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleButtonNavigation}"

@@ -101,9 +101,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="SaveAs\DoNotDeleteThisFolder.txt">
+    <Content Include="SaveAs\DoNotDeleteThisFolder.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="pen.ico" />

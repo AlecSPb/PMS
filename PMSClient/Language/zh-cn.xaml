@@ -899,6 +899,11 @@
     <sys:String x:Key="BottomBarLabelStandard">标签</sys:String>
     <sys:String x:Key="BottomBarEmptyTextBox">文本</sys:String>
 
+    <sys:String x:Key="BottomBarAdvancedTool">高级工具</sys:String>
+    <sys:String x:Key="BottomBarPdfTool">docx批量转换Pdf</sys:String>
+    <sys:String x:Key="BottomBarCSCAN2PdfTool">报告追加超声照片</sys:String>
+    <sys:String x:Key="BottomBarTargetCutterSimlulator">靶材切割模拟器</sys:String>
+
 
     <!--每个页面最前面的提示信息-->
     <sys:String x:Key="HelpTipOrderEdit">

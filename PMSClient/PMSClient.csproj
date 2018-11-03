@@ -1944,6 +1944,10 @@
       <Project>{0bb4a729-ac1e-4973-a915-f857fd75740d}</Project>
       <Name>PMSCommon</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TargetCutterSimulator\TargetCutterSimulator.csproj">
+      <Project>{32a0b9c1-7441-4ebe-a1bf-21854bd2a57a}</Project>
+      <Name>TargetCutterSimulator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WpfControls\WpfControls.csproj">
       <Project>{b34d1e0a-02b9-4512-a07f-0603ad29ad3a}</Project>
       <Name>WpfControls</Name>

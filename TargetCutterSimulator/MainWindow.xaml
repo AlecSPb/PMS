@@ -31,7 +31,7 @@
             <TextBlock Text="H=" Style="{StaticResource tb}"/>
             <TextBox Name="TxtHeight"  Style="{StaticResource txt}" Text="80"/>
             <Button Name="BtnAddRectangle" Content="方" Style="{StaticResource btn}" Click="BtnAddRectangle_Click"/>
-            <TextBlock Text="右键复制和删除" Style="{StaticResource tb}"/>
+            <TextBlock Text="右键复制删除置顶" Style="{StaticResource tb}"/>
             <Button Name="BtnClearAll" Content="清除所有" Style="{StaticResource btn}" Click="BtnClearAll_Click"/>
 
             <Button Name="BtnSaveAs" Content="保存图片" Style="{StaticResource btn}" Click="BtnSaveAs_Click"/>
