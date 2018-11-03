@@ -37,6 +37,10 @@
                 <ContextMenu>
                     <MenuItem Name="CmCopy" Header="复制" Click="CmCopy_Click"/>
                     <MenuItem Name="CmDelete" Header="删除" Click="CmDelete_Click"/>
+                    <Separator/>
+                    <MenuItem Name="CmMoveTop" Header="置顶" Click="CmMoveTop_Click"/>
+                    <MenuItem Name="CmMoveBottom" Header="置底" Click="CmMoveBottom_Click"/>
+
                 </ContextMenu>
             </Canvas.ContextMenu>
             <!--<Ellipse Name="Shape1" Height="250" Width="250" Stroke="Blue" StrokeThickness="1" Canvas.Left="125" Canvas.Top="85"

@@ -39,12 +39,18 @@ namespace TargetCutterSimulator
 
         private void AddEllipse(double diameter)
         {
+            MainCanvas.Children.Add(CreateEllipse(diameter));
+        }
+
+        private Ellipse CreateEllipse(double diameter)
+        {
             Ellipse circle = new Ellipse();
             circle.Height = diameter * ratio;
             circle.Width = diameter * ratio;
-            circle.Fill = Brushes.Transparent;
+            circle.Fill = Brushes.Wheat;
             circle.StrokeThickness = normal_thickness;
             circle.Stroke = Brushes.Blue;
+
             circle.MouseDown += Shape_MouseDown;
             circle.MouseMove += Shape_MouseMove;
             circle.MouseUp += Shape_MouseUp;
@@ -53,16 +59,15 @@ namespace TargetCutterSimulator
             transformGroup.Children.Add(new RotateTransform());
             transformGroup.Children.Add(new TranslateTransform());
             circle.RenderTransform = transformGroup;
-
-            MainCanvas.Children.Add(circle);
+            return circle;
         }
 
-        private void AddRectangle(double width, double height)
+        private Rectangle CreateRectangle(double width, double height)
         {
             Rectangle rect = new Rectangle();
             rect.Height = height * ratio;
             rect.Width = width * ratio;
-            rect.Fill = Brushes.Transparent;
+            rect.Fill = Brushes.Wheat;
             rect.StrokeThickness = normal_thickness;
             rect.Stroke = Brushes.Blue;
             rect.MouseDown += Shape_MouseDown;
@@ -73,8 +78,12 @@ namespace TargetCutterSimulator
             transformGroup.Children.Add(new RotateTransform());
             transformGroup.Children.Add(new TranslateTransform());
             rect.RenderTransform = transformGroup;
+            return rect;
+        }
 
-            MainCanvas.Children.Add(rect);
+        private void AddRectangle(double width, double height)
+        {
+            MainCanvas.Children.Add(CreateRectangle(width, height));
         }
 
         private void Shape_MouseDown(object sender, MouseButtonEventArgs e)
@@ -86,6 +95,27 @@ namespace TargetCutterSimulator
                 currentShape.StrokeThickness = select_thickness;
             }
         }
+
+        private void MoveCurrentShapeToTop()
+        {
+            int shape_count = MainCanvas.Children.Count;
+            if (currentShape != null && shape_count > 0)
+            {
+                MainCanvas.Children.Remove(currentShape);
+                MainCanvas.Children.Insert(shape_count - 1, currentShape);
+            }
+        }
+
+        private void MoveCurrentShapeToBottom()
+        {
+            int shape_count = MainCanvas.Children.Count;
+            if (currentShape != null && shape_count > 0)
+            {
+                MainCanvas.Children.Remove(currentShape);
+                MainCanvas.Children.Insert(0, currentShape);
+            }
+        }
+
 
         private Point previousPoint = new Point(0, 0);
         private Shape currentShape = null;
@@ -121,8 +151,8 @@ namespace TargetCutterSimulator
             if (result1 && result2 && width > 0 && height > 0)
             {
                 AddRectangle(width, height);
-
             }
+
         }
 
         private void Shape_MouseUp(object sender, MouseButtonEventArgs e)
@@ -134,22 +164,48 @@ namespace TargetCutterSimulator
             }
             //currentShape = null;
             System.Diagnostics.Debug.WriteLine("Up");
+
+        }
+
+        private TranslateTransform GetTranslateTransform(Shape shape)
+        {
+            if (shape != null)
+            {
+                return (shape.RenderTransform as TransformGroup).Children[1] as TranslateTransform;
+            }
+            return null;
+        }
+
+        private void CopyTranslateTransformXY(Shape source, Shape target, double offset = 5)
+        {
+            if (source != null && target != null)
+            {
+                GetTranslateTransform(target).X = GetTranslateTransform(source).X + offset;
+                GetTranslateTransform(target).Y = GetTranslateTransform(source).Y + offset;
+            }
+        }
+        private void CopyShape(Shape currentShape)
+        {
+            if (currentShape.GetType() == typeof(Rectangle))
+            {
+                var newShape = CreateRectangle(currentShape.Width / ratio, currentShape.Height / ratio);
+                CopyTranslateTransformXY(currentShape, newShape);
+                MainCanvas.Children.Add(newShape);
+            }
+            else if (currentShape.GetType() == typeof(Ellipse))
+            {
+                var newShape = CreateEllipse(currentShape.Width / ratio);
+                CopyTranslateTransformXY(currentShape, newShape);
+                MainCanvas.Children.Add(newShape);
+            }
         }
 
         private void CmCopy_Click(object sender, RoutedEventArgs e)
         {
             if (currentShape != null)
             {
-                if (currentShape.GetType() == typeof(Rectangle))
-                {
-                    AddRectangle(currentShape.Width / ratio, currentShape.Height / ratio);
-                }
-                else if (currentShape.GetType() == typeof(Ellipse))
-                {
-                    AddEllipse(currentShape.Width / ratio);
-                }
+                CopyShape(currentShape);
             }
-            e.Handled = true;
         }
 
         private void CmDelete_Click(object sender, RoutedEventArgs e)
@@ -159,7 +215,6 @@ namespace TargetCutterSimulator
                 MainCanvas.Children.Remove(currentShape);
                 currentShape = null;
             }
-            e.Handled = true;
         }
 
         private string targetFolder = IO.Path.Combine(Environment.CurrentDirectory, "SaveAs");
@@ -183,24 +238,26 @@ namespace TargetCutterSimulator
                 var enc = new System.Windows.Media.Imaging.PngBitmapEncoder();
                 enc.Frames.Add(System.Windows.Media.Imaging.BitmapFrame.Create(rtb));
 
-                string fileName = IO.Path.Combine(targetFolder, $"TC_{DateTime.Now.ToString("yyyyMMddHHmmss")}.png");
+                string fileName = IO.Path.Combine(targetFolder, $"TC{DateTime.Now.ToString("yyyyMMddHHmmss")}.png");
                 using (var stm = IO.File.Create(fileName))
                 {
                     enc.Save(stm);
                 }
 
-                MessageBox.Show("保存成功");
-                System.Diagnostics.Process.Start(targetFolder);
+                MessageBox.Show("保存成功", "保存", MessageBoxButton.OK, MessageBoxImage.Information);
+                //System.Diagnostics.Process.Start(targetFolder);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void BtnOpenSaveFolder_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start(targetFolder);
+
         }
 
         private void BtnClearAll_Click(object sender, RoutedEventArgs e)
@@ -213,6 +270,16 @@ namespace TargetCutterSimulator
                 }
             }
 
+        }
+
+        private void CmMoveTop_Click(object sender, RoutedEventArgs e)
+        {
+            MoveCurrentShapeToTop();
+        }
+
+        private void CmMoveBottom_Click(object sender, RoutedEventArgs e)
+        {
+            MoveCurrentShapeToBottom();
         }
     }
 }
