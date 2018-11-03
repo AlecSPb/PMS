@@ -11,25 +11,53 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Content="圆" Style="{StaticResource btn}"/>
-            <Button Content="方" Style="{StaticResource btn}"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Gray">
+            <Button Name="BtnAddCircle" Content="圆" Style="{StaticResource btn}"
+                    Click="BtnAddCircle_Click"/>
+            <Button Name="BtnAddRectangle" Content="方" Style="{StaticResource btn}"
+                    Click="BtnAddRectangle_Click"/>
+            <Button Name="BtnHorizontalLine" Content="横线" Style="{StaticResource btn}"/>
+            <Button Name="BtnVerticalLine" Content="竖线" Style="{StaticResource btn}"/>
 
         </StackPanel>
-        <Canvas Name="MainCanvas" Margin="0,0,-0.4,0.4" Grid.RowSpan="2">
-            <Ellipse Name="Shape1" Height="200" Width="200" Stroke="Blue" StrokeThickness="1" Canvas.Left="125" Canvas.Top="85"
-                     MouseDown="Shape1_MouseDown"
-                     MouseMove="Shape1_MouseMove"
-                     MouseLeave="Shape1_MouseLeave"
-                     Fill="White">
+        
+        <Canvas Name="MainCanvas" Grid.Row="1">
+            <Ellipse Name="Shape1" Height="124.5" Width="124.5" Stroke="Blue" StrokeThickness="1" Canvas.Left="125" Canvas.Top="85"
+                     MouseDown="Shape_MouseDown"
+                     MouseMove="Shape_MouseMove"
+                     MouseUp="Shape_MouseUp"
+                     Fill="Transparent">
                 <Ellipse.RenderTransform>
                     <TransformGroup>
-                        <ScaleTransform x:Name="sfr"/>
-                        <TranslateTransform x:Name="tlt"/>
+                        <ScaleTransform/>
+                        <TranslateTransform/>
                     </TransformGroup>
                 </Ellipse.RenderTransform>
             </Ellipse>
-            
+            <Ellipse x:Name="Shape2" Height="50.8" Width="50.8" Stroke="Blue" StrokeThickness="1" Canvas.Left="398" Canvas.Top="85"
+                MouseDown="Shape_MouseDown"
+                MouseMove="Shape_MouseMove"
+                Fill="Transparent">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Rectangle x:Name="rect" Height="200" Width="300" Stroke="Blue" StrokeThickness="1" Canvas.Left="100" Canvas.Top="100"
+                       MouseDown="Shape_MouseDown"
+                       MouseMove="Shape_MouseMove"
+                       Fill="Transparent"
+                       >
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+
         </Canvas>
     </Grid>
 </Window>

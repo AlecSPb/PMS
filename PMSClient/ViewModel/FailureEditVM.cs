@@ -8,5 +8,6 @@ namespace PMSClient.ViewModel
 {
     public class FailureEditVM
     {
+
     }
 }
