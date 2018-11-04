@@ -35,7 +35,7 @@ namespace PMSClient.View
                 var model = (DcToDo)e.Row.DataContext;
                 if (model != null)
                 {
-                    if (model.Priority.Contains("优先"))
+                    if (model.Priority.Contains("优先")&&model.Status== "未完成")
                         e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
                     switch (model.Status)
                     {

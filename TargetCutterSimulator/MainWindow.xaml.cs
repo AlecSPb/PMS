@@ -252,6 +252,11 @@ namespace TargetCutterSimulator
                 var enc = new System.Windows.Media.Imaging.PngBitmapEncoder();
                 enc.Frames.Add(System.Windows.Media.Imaging.BitmapFrame.Create(rtb));
 
+
+                if (!IO.Directory.Exists(targetFolder))
+                {
+                    IO.Directory.CreateDirectory(targetFolder);
+                }
                 string fileName = IO.Path.Combine(targetFolder, $"TC{DateTime.Now.ToString("yyyyMMddHHmmss")}.png");
                 using (var stm = IO.File.Create(fileName))
                 {
@@ -270,6 +275,10 @@ namespace TargetCutterSimulator
 
         private void BtnOpenSaveFolder_Click(object sender, RoutedEventArgs e)
         {
+            if (!IO.Directory.Exists(targetFolder))
+            {
+                IO.Directory.CreateDirectory(targetFolder);
+            }
             System.Diagnostics.Process.Start(targetFolder);
 
         }
