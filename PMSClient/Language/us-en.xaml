@@ -866,7 +866,8 @@
     <sys:String x:Key="FCreator">Creator</sys:String>
     <sys:String x:Key="FState">State</sys:String>
     <sys:String x:Key="FProductID">ProductID</sys:String>
-    <sys:String x:Key="Details">Details</sys:String>
+    <sys:String x:Key="FComposition">Composition</sys:String>
+    <sys:String x:Key="FDetails">Details</sys:String>
 
     <sys:String x:Key="FStage">Stage</sys:String>
     <sys:String x:Key="FProblem">Problem</sys:String>

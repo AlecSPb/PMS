@@ -19,21 +19,13 @@
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
-            <TextBlock Text="{StaticResource FBProductID}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBlock Text="{StaticResource FStage}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" 
-                     Style="{StaticResource StyleTextBoxSearch}"/>
-            <TextBlock Text="{StaticResource FBComposition}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
-                     Style="{StaticResource StyleTextBoxSearch}"/>
-            <TextBlock Text="{StaticResource FBCustomer}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
-            <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding FeedBacks}"
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Failures}"
                   >
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
@@ -47,23 +39,23 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource FBCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                <DataGridTextColumn Header="{StaticResource FCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource FBProductID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                <DataGridTextColumn Header="{StaticResource FProductID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding ProductID}"/>
-                <DataGridTextColumn Header="{StaticResource FBProductType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding ProductType}"/>
-                <DataGridTextColumn Header="{StaticResource FBComposition}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                <DataGridTextColumn Header="{StaticResource FComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
-                <DataGridTextColumn Header="{StaticResource FBCustomer}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Customer}"/>
-                <DataGridTextColumn Header="{StaticResource FBProblem}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource FDetails}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding Composition}"/>
+                <DataGridTextColumn Header="{StaticResource FStage}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Stage}"/>
+                <DataGridTextColumn Header="{StaticResource FProblem}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Problem}"/>
-                <DataGridTextColumn Header="{StaticResource FBProcessWay}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding ProcessWay}"/>
-                <DataGridTextColumn Header="{StaticResource FBRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource FProcess}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Process}"/>
+                <DataGridTextColumn Header="{StaticResource FRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
-                <DataGridTextColumn Header="{StaticResource FBCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                <DataGridTextColumn Header="{StaticResource FCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>
         </DataGrid>

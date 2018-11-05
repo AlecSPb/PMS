@@ -870,7 +870,9 @@
     <sys:String x:Key="FCreator">创建人</sys:String>
     <sys:String x:Key="FState">状态</sys:String>
     <sys:String x:Key="FProductID">产品ID</sys:String>
-    <sys:String x:Key="Details">细节</sys:String>
+    <sys:String x:Key="FComposition">成分</sys:String>
+
+    <sys:String x:Key="FDetails">细节</sys:String>
 
     <sys:String x:Key="FStage">报废环节</sys:String>
     <sys:String x:Key="FProblem">报废原因</sys:String>

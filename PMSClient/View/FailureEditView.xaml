@@ -52,52 +52,53 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock  Grid.Row="0"  Grid.Column="0" Text="{StaticResource FBProductType}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="0" Grid.Column="1" 
-                          ItemsSource="{Binding DataContext.ProductTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                           SelectedItem="{Binding ProductType}"
-                          Style="{StaticResource StyleComboBoxCommon}"/>
-                <TextBlock Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="产品类型"/>
-
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource FBProductID}"
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource FBProductID}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
-                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource FBComposition}"
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource FBComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
+                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
                            Text="成分"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource FBCustomer}"
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource FDetails}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="3" Grid.Column="1" Name="cboCustomerNames"
-                      Style="{StaticResource StyleComboBoxCommon}" HorizontalAlignment="Stretch"
-                      ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                      SelectedItem="{Binding Customer}"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Details}"
+                          Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="#选择客户名称，如果没有该客户信息，请先添加客户信息"/>
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource FBProblem}"
+                
+                <TextBlock  Grid.Row="3"  Grid.Column="0" Text="{StaticResource FStage}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="3" Grid.Column="1" 
+                          ItemsSource="{Binding DataContext.FailureStages,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                           SelectedItem="{Binding Stage}"
+                          Style="{StaticResource StyleComboBoxCommon}"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="报废类型"/>
+                
+                
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource FProblem}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Problem}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource FBProcessWay}"
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource FProcess}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding ProcessWay}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding Process}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource FBRemark}"
+                
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource FRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RPState}"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource FState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
@@ -106,13 +107,13 @@
                            Text="状态,发货代表该产品已发货，库存代表该产品还在仓库中"/>
 
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RPCreateTime}"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource FCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建时间"/>
 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RPCreator}"
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource FCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
