@@ -215,6 +215,10 @@ namespace PMSClient.ViewModel
                     case PMSViews.PlanEdit:
                         PMSHelper.ViewModels.PlanEdit.SetBySelect(plan.PlanMisson.Plan);
                         break;
+
+                    case PMSViews.FailureEdit:
+                        PMSHelper.ViewModels.FailureEdit.SetBySelect(plan.PlanMisson);
+                        break;
                     default:
                         break;
                 }

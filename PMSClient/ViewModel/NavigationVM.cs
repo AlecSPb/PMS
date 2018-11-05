@@ -151,6 +151,8 @@ namespace PMSClient.ViewModel
                   var window = new ToolWindow.DataOutputWindow();
                   window.Show();
               });
+
+            GoToFailure = new RelayCommand(() => NavigationService.GoTo(PMSViews.Failure));
             #endregion
         }
 
@@ -303,6 +305,8 @@ namespace PMSClient.ViewModel
 
         public RelayCommand GoToFillingTool { get; set; }
         public RelayCommand GoToMillingTool { get; set; }
+
+        public RelayCommand GoToFailure { get; set; }
 
         private void InitializeData()
         {

@@ -28,6 +28,18 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
+            Duplicate = new RelayCommand<DcFailure>(ActionDuplicate, CanDuplicate);
+        }
+
+        private void ActionDuplicate(DcFailure obj)
+        {
+            PMSHelper.ViewModels.FailureEdit.SetDuplicate(obj);
+            NavigationService.GoTo(PMSViews.FailureEdit);
+        }
+
+        private bool CanDuplicate(DcFailure arg)
+        {
+            return PMSHelper.CurrentSession.IsOKGroup(groupnames);
         }
 
         private void ActionAll()
@@ -41,26 +53,27 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
+        private string[] groupnames = { "管理员", "制粉组", "热压组", "加工组", "测试组", "质量组", "发货组", "发货专员", "生产经理", "仓库专员", "熔铸部门" };
         private bool CanEdit(DcFailure arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditFeedback);
+            return PMSHelper.CurrentSession.IsOKGroup(groupnames);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditFeedback);
+            return PMSHelper.CurrentSession.IsOKGroup(groupnames);
         }
 
         private void ActionEdit(DcFailure model)
         {
             PMSHelper.ViewModels.FailureEdit.SetEdit(model);
-            NavigationService.GoTo(PMSViews.FeedBackEdit);
+            NavigationService.GoTo(PMSViews.FailureEdit);
         }
 
         private void ActionAdd()
         {
             PMSHelper.ViewModels.FailureEdit.SetNew();
-            NavigationService.GoTo(PMSViews.FeedBackEdit);
+            NavigationService.GoTo(PMSViews.FailureEdit);
         }
 
         public void RefreshData()
@@ -104,7 +117,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand Add { get; set; }
         public RelayCommand<DcFailure> Edit { get; set; }
-
+        public RelayCommand<DcFailure> Duplicate { get; set; }
         #endregion
 
     }

@@ -20,7 +20,7 @@
                     Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
             <TextBlock Text="{StaticResource FStage}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" 
+            <TextBox Text="{Binding SearchStage,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
@@ -35,20 +35,23 @@
                                 <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource FCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource FStage}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Stage}"/>
                 <DataGridTextColumn Header="{StaticResource FProductID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding ProductID}"/>
                 <DataGridTextColumn Header="{StaticResource FComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="{StaticResource FDetails}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding Composition}"/>
-                <DataGridTextColumn Header="{StaticResource FStage}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Stage}"/>
                 <DataGridTextColumn Header="{StaticResource FProblem}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Problem}"/>
                 <DataGridTextColumn Header="{StaticResource FProcess}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

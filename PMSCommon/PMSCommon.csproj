@@ -53,6 +53,7 @@
     <Compile Include="AccessState.cs" />
     <Compile Include="BondingState.cs" />
     <Compile Include="DeliveryState.cs" />
+    <Compile Include="FailureStage.cs" />
     <Compile Include="MaterialOrderItemPriority.cs" />
     <Compile Include="MaterialOrderItemState.cs" />
     <Compile Include="MaterialOrderState.cs" />
