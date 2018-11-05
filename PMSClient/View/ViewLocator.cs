@@ -132,9 +132,27 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<FillingToolView>();
             SimpleIoc.Default.Register<FillingToolEditView>();
 
+            SimpleIoc.Default.Register<FailureView>();
+            SimpleIoc.Default.Register<FailureEditView>();
+
         }
 
         #region NavigationProperties
+        public FailureView Failure
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<FailureView>();
+            }
+        }
+
+        public FailureEditView FailureEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<FailureEditView>();
+            }
+        }
 
         public FillingToolView FillingTool
         {

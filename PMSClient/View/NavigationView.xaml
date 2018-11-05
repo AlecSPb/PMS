@@ -96,7 +96,7 @@
                         Command="{Binding GoToFeedBack }"/>
                         <!--<Button Content="{StaticResource PageConsumable}" Grid.Row="0" Grid.Column="5" Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToConsumable }"/>-->
-                        
+
 
                         <Button Content="{StaticResource PageMaterial}" Grid.Row="1" Grid.Column="0"
                         Style="{StaticResource StyleButtonNavigationTitle}"/>
@@ -124,8 +124,8 @@
                         Command="{Binding GoToPlanConclusion}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageCompound}" Grid.Row="2" Grid.Column="4"
                         Command="{Binding GoToBDCompound}" Style="{StaticResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource BottomBarTargetCutterSimlulator}" FontSize="15" Grid.Row="2" Grid.Column="5" Style="{StaticResource StyleButtonNavigation}"
-                          Name="BtnTargetCutterSimlulator"  Click="BtnTargetCutterSimlulator_Click"/>
+                        <Button Content="{StaticResource PageFailure}" Grid.Row="2" Grid.Column="5" Style="{StaticResource StyleButtonNavigation}"
+                          Command="{Binding GoToFailure}"/>
 
                         <Button Content="{StaticResource PageRecord}" Grid.Row="3" Grid.Column="0"  Style="{StaticResource StyleButtonNavigationTitle}" />
                         <Button Content="{StaticResource PageRecordMilling}" Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleButtonNavigation}"

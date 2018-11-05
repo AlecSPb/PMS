@@ -49,16 +49,5 @@ namespace PMSClient.View
             CurrentTime.Text = $"时间:{DateTime.Now.ToShortTimeString()}";
         }
 
-        private void BtnTargetCutterSimlulator_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                System.Diagnostics.Process.Start("TargetCutterSimulator.exe");
-            }
-            catch (Exception)
-            {
-                   
-            }
-        }
     }
 }

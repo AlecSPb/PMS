@@ -24,21 +24,36 @@ namespace PMSClient
                 var tool = new ToolWindow.ComplexQueryTool();
                 tool.Show();
             });
+
             MaterialNeedCalculator = new RelayCommand(() =>
             {
                 var tool = new Tool.MaterialNeedCalculationWindow();
                 tool.Show();
             });
+
             ToOne = new RelayCommand(() =>
             {
                 var tool = new ToolWindow.CompositionToOne();
                 tool.Show();
             });
+
             PressureTool = new RelayCommand(() =>
             {
                 var tool = new ToolWindow.PressureChangeTool();
                 tool.Show();
             });
+
+            Cutter = new RelayCommand(() =>
+              {
+                  try
+                  {
+                      System.Diagnostics.Process.Start("TargetCutterSimulator.exe");
+                  }
+                  catch (Exception)
+                  {
+
+                  }
+              });
             #endregion
             #region Info
             HelpInfo = new RelayCommand(() =>
@@ -131,7 +146,7 @@ namespace PMSClient
                       PMSHelper.CurrentLog.Error(ex);
                   }
               });
-            Symbol = new RelayCommand(()=>
+            Symbol = new RelayCommand(() =>
             {
                 var tool = new ToolWindow.SymbolWindow();
                 tool.Show();
@@ -197,5 +212,7 @@ namespace PMSClient
         public RelayCommand LabelStandard { get; set; }
 
         public RelayCommand EmptyTextBox { get; set; }
+
+        public RelayCommand Cutter { get; set; }
     }
 }

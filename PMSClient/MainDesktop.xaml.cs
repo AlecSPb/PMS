@@ -481,6 +481,12 @@ namespace PMSClient
                 case PMSViews.History:
                     //TODO:实现历史页面导航
                     break;
+                case PMSViews.Failure:
+                    NavigateTo(_views.Failure);
+                    break;
+                case PMSViews.FailureEdit:
+                    NavigateTo(_views.FailureEdit);
+                    break;
                 default:
                     break;
             }

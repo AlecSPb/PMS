@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient"
-             mc:Ignorable="d" d:DesignWidth="1000">
+             mc:Ignorable="d" d:DesignWidth="1200">
     <Border>
         <Border.Background>
             <LinearGradientBrush StartPoint="0 0" EndPoint="1 0">
@@ -28,8 +28,10 @@
                 Command="{Binding Symbol}"/>
             <Button Content="{StaticResource BottomBarEmptyTextBox}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding EmptyTextBox}"/>
+            <Button Content="{StaticResource BottomBarTargetCutterSimlulator}" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding Cutter}"/>
             
-            
+
             <TextBlock Text="{StaticResource BottomBarRule}" Style="{StaticResource StyleDGTextBlockCommon}"/>
             <Button Content="{StaticResource BottomBarCodeRule}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding CodeRule}"/>
