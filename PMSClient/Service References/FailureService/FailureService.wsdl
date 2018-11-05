@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FailureService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.16.254:8002/FailureService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/FailureService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/FailureService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFailureService_GetFailures_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFailures" />
+  </wsdl:message>
+  <wsdl:message name="IFailureService_GetFailures_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFailuresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFailureService_GetFailuresCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFailuresCount" />
+  </wsdl:message>
+  <wsdl:message name="IFailureService_GetFailuresCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFailuresCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFailureService_AddFailure_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFailure" />
+  </wsdl:message>
+  <wsdl:message name="IFailureService_AddFailure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFailureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFailureService_UpdateFailure_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFailure" />
+  </wsdl:message>
+  <wsdl:message name="IFailureService_UpdateFailure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFailureResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFailureService">
+    <wsdl:operation name="GetFailures">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFailureService/GetFailures" message="tns:IFailureService_GetFailures_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFailureService/GetFailuresResponse" message="tns:IFailureService_GetFailures_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFailuresCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFailureService/GetFailuresCount" message="tns:IFailureService_GetFailuresCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFailureService/GetFailuresCountResponse" message="tns:IFailureService_GetFailuresCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFailure">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFailureService/AddFailure" message="tns:IFailureService_AddFailure_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFailureService/AddFailureResponse" message="tns:IFailureService_AddFailure_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFailure">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFailureService/UpdateFailure" message="tns:IFailureService_UpdateFailure_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFailureService/UpdateFailureResponse" message="tns:IFailureService_UpdateFailure_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="failures" type="tns:IFailureService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFailures">
+      <soap:operation soapAction="http://tempuri.org/IFailureService/GetFailures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailuresCount">
+      <soap:operation soapAction="http://tempuri.org/IFailureService/GetFailuresCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFailure">
+      <soap:operation soapAction="http://tempuri.org/IFailureService/AddFailure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFailure">
+      <soap:operation soapAction="http://tempuri.org/IFailureService/UpdateFailure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FailureService">
+    <wsdl:port name="failures" binding="tns:failures">
+      <soap:address location="http://192.168.16.254:8002/FailureService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

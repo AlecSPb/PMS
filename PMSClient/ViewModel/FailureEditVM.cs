@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ViewModel
 {
-    public class FailureEditVM
+    public class FailureEditVM:BaseViewModelEdit
     {
 
     }

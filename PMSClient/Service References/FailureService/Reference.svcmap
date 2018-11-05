@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="272be3ce-cfef-444c-9490-4976979354e7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.16.254:8002/FailureService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FailureService.xsd" MetadataType="Schema" ID="b3cb9d45-6c3f-4d23-bef4-788c6dd6c288" SourceId="1" SourceUrl="http://192.168.16.254:8002/FailureService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FailureService1.xsd" MetadataType="Schema" ID="ed2a66d5-8d2b-4c6b-a0a7-ea9f04c593e7" SourceId="1" SourceUrl="http://192.168.16.254:8002/FailureService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FailureService.wsdl" MetadataType="Wsdl" ID="341e9cf8-e149-4b8d-996a-22b399f2da55" SourceId="1" SourceUrl="http://192.168.16.254:8002/FailureService.svc?wsdl" />
+    <MetadataFile FileName="FailureService2.xsd" MetadataType="Schema" ID="844d2b71-5a62-480e-95ae-5108118c6c62" SourceId="1" SourceUrl="http://192.168.16.254:8002/FailureService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FailureService.disco" MetadataType="Disco" ID="7fe5b956-e05a-4888-8ae2-7a1474912fe7" SourceId="1" SourceUrl="http://192.168.16.254:8002/FailureService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

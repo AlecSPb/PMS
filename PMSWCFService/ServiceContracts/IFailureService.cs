@@ -11,11 +11,14 @@ namespace PMSWCFService.ServiceContracts
     [ServiceContract]
     public interface IFailureService
     {
+        [OperationContract]
         List<DcFailure> GetFailures(int s, int t, string stage);
+        [OperationContract]
         int GetFailuresCount(string stage);
 
-
+        [OperationContract]
         int AddFailure(DcFailure model);
+        [OperationContract]
         int UpdateFailure(DcFailure model);//update and delete
 
     }
