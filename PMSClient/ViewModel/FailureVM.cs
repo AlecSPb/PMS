@@ -33,8 +33,15 @@ namespace PMSClient.ViewModel
 
         private void ActionDuplicate(DcFailure obj)
         {
-            PMSHelper.ViewModels.FailureEdit.SetDuplicate(obj);
-            NavigationService.GoTo(PMSViews.FailureEdit);
+            if (PMSDialogService.ShowYesNo("请问", "确定复用这条记录？"))
+            {
+                if (obj != null)
+                {
+                    PMSHelper.ViewModels.FailureEdit.SetDuplicate(obj);
+                    NavigationService.GoTo(PMSViews.FailureEdit);
+                }
+            }
+
         }
 
         private bool CanDuplicate(DcFailure arg)
