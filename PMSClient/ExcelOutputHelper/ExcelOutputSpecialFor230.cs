@@ -58,7 +58,28 @@ namespace PMSClient.ExcelOutputHelper
                     "Min-1",
                     "Min-2",
                     "Min-3",
-                    "Min-4"};
+                    "Min-4",
+                    "Comp-1-1",
+                    "Comp-1-2",
+                    "Comp-1-3",
+                    "Comp-1-4",
+                    "Comp-2-1",
+                    "Comp-2-2",
+                    "Comp-2-3",
+                    "Comp-2-4",
+                    "Comp-3-1",
+                    "Comp-3-2",
+                    "Comp-3-3",
+                    "Comp-3-4",
+                    "Comp-4-1",
+                    "Comp-4-2",
+                    "Comp-4-3",
+                    "Comp-4-4",
+                    "Comp-5-1",
+                    "Comp-5-2",
+                    "Comp-5-3",
+                    "Comp-5-4"
+                };
                 helper.AddRowTitle(titles);
 
                 //插入数据行
@@ -69,7 +90,7 @@ namespace PMSClient.ExcelOutputHelper
                     System.Diagnostics.Debug.WriteLine($"{pageIndex} ");
                     s = pageIndex * pageSize;
                     t = pageSize;
-
+                    
                     var pageData = service.GetAll230Data(s, t);
                     foreach (var item in pageData)
                     {
@@ -134,7 +155,25 @@ namespace PMSClient.ExcelOutputHelper
                                     col_index++;
                                 }
                             }
-
+                            //插入具体的成分
+                            int compo_count = 0;
+                            if (result.Compostions.Count > 0)
+                            {
+                                foreach (var compo_line in result.Compostions)
+                                {
+                                    col_index = start_col_index + 12 + 4 * compo_count;
+                                    if (compo_line.Count > 0)
+                                    {
+                                        foreach (var compo_col in compo_line)
+                                        {
+                                            helper.CreateAndSetCell(col_index,
+                                                compo_col.ToString("F2"));
+                                            col_index++;
+                                        }
+                                    }
+                                    compo_count++;
+                                }
+                            }
                         }
 
 
@@ -144,7 +183,7 @@ namespace PMSClient.ExcelOutputHelper
                         rowIndex++;
                     }
                     pageIndex++;
-
+                    System.Threading.Thread.Sleep(200);
                 }
 
 
