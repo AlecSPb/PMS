@@ -43,7 +43,7 @@ namespace PMSClient.ViewModel
             {
                 CurrentFailure.ProductID = UsefulPackage.PMSTranslate.PlanLot(plan);
                 CurrentFailure.Composition = plan.Misson.CompositionStandard;
-                CurrentFailure.Details = "";
+                CurrentFailure.Details = plan.Misson.PMINumber;
                 //RaisePropertyChanged(nameof(CurrentRecordTest));
             }
         }

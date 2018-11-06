@@ -8,7 +8,7 @@ namespace PMSCommon
 {
     public enum FailureStage
     {
-        原料,
+        熔炼,
         制粉,
         装料,
         热压,

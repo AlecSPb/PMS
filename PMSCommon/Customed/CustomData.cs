@@ -8,20 +8,54 @@ namespace PMSCommon
 {
     public static class CustomData
     {
-        public static List<string> FailureStage
+        public static List<string> FailureProcess
         {
             get
             {
                 var data = new List<string>
                 {
-                    "熔炼",
-                    "制粉",
-                    "热压",
-                    "加工",
-                    "绑定",
-                    "测试",
-                    "入库",
-                    "发货"
+                    "彻底报废",
+                    "回收重压"
+                };
+                return data;
+            }
+        }
+
+        public static List<string> FailureProblem
+        {
+            get
+            {
+                var data = new List<string>
+                {
+                    "熔炼-未知",
+                    "熔炼-爆管",
+                    "熔炼-严重氧化",
+                    "装料-未知",
+                    "装料-意外",
+                    "制粉-未知",
+                    "制粉-严重氧化",
+                    "制粉-混入杂质",
+                    "制粉-粉料异常",
+                    "热压-未知",
+                    "热压-高温熔融",
+                    "热压-热压机故障导致毁损",
+                    "取模-毛坯开裂",
+                    "取模-毛坯严重崩边",
+                    "取模-意外",
+                    "加工-未知",
+                    "加工-严重崩边",
+                    "加工-开裂",
+                    "加工-意外",
+                    "绑定-未知",
+                    "绑定-开裂严重",
+                    "绑定-崩边严重",
+                    "绑定-焊合空腔严重",
+                    "测试-未知",
+                    "测试-意外",
+                    "库存-未知",
+                    "库存-意外",
+                    "发货-未知",
+                    "发货-意外"
                 };
                 return data;
             }

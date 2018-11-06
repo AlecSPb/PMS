@@ -54,7 +54,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock  Grid.Row="0"  Grid.Column="0" Text="{StaticResource FStage}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="0" Grid.Column="1" 
+                <ComboBox Name="CboStages" Grid.Row="0" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.FailureStages,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                            SelectedItem="{Binding Stage}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
@@ -78,19 +78,29 @@
                 <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Details}"
                           Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="#选择客户名称，如果没有该客户信息，请先添加客户信息"/>
+                           Text=""/>
                                
                 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource FProblem}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Problem}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                <TextBox Name="TxtProblem"  Grid.Row="4" Grid.Column="1" Text="{Binding Problem}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnSelectScrapProblem" Content="选择"
+                            Style="{StaticResource StyleButtonCommon}" Click="BtnSelectScrapProblem_Click"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="可以选择报废原因，没有就自己填写"/>
+                </StackPanel>
+
+                
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource FProcess}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding Process}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                <TextBox Name="TxtProcess" Grid.Row="5" Grid.Column="1" Text="{Binding Process}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnSelectScrapProcess" Content="选择" Click="BtnSelectScrapProcess_Click"
+                            Style="{StaticResource StyleButtonCommon}"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="可以选择处理方式，没有就自己填写"/>
+                </StackPanel>
                 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource FRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -104,7 +114,7 @@
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="状态,发货代表该产品已发货，库存代表该产品还在仓库中"/>
+                           Text="状态"/>
 
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource FCreateTime}"

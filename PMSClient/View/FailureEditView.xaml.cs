@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMSClient.ToolWindow;
+using PMSCommon;
 
 namespace PMSClient.View
 {
@@ -23,6 +25,39 @@ namespace PMSClient.View
         public FailureEditView()
         {
             InitializeComponent();
+        }
+
+        private SingleStringSelector selector;
+
+        private void BtnSelectScrapProblem_Click(object sender, RoutedEventArgs e)
+        {
+            selector = new SingleStringSelector();
+            List<string> ds = new List<string>();
+            PMSBasicDataService.SetListDS<string>(CustomData.FailureProblem,ds);
+            string stage = CboStages.SelectedItem.ToString();
+            if (!string.IsNullOrEmpty(stage))
+            {
+                selector.SetDataSource(ds, stage);
+            }
+            else
+            {
+                selector.SetDataSource(ds);
+            }
+            if (selector.ShowDialog()==true){
+                PMSMethods.SetTextBox(TxtProblem, selector.SelectedString);
+            }
+        }
+
+        private void BtnSelectScrapProcess_Click(object sender, RoutedEventArgs e)
+        {
+            selector = new SingleStringSelector();
+            List<string> ds = new List<string>();
+            PMSBasicDataService.SetListDS<string>(CustomData.FailureProcess, ds);
+            selector.SetDataSource(ds);
+            if (selector.ShowDialog() == true)
+            {
+                PMSMethods.SetTextBox(TxtProcess, selector.SelectedString);
+            }
         }
     }
 }

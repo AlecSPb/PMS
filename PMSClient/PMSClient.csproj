@@ -403,6 +403,9 @@
     <Compile Include="ToolWindow\TargetCuttingTool.xaml.cs">
       <DependentUpon>TargetCuttingTool.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\SingleStringSelector.xaml.cs">
+      <DependentUpon>SingleStringSelector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolWindow\TargetDefects.xaml.cs">
       <DependentUpon>TargetDefects.xaml</DependentUpon>
     </Compile>
@@ -986,6 +989,10 @@
     <Page Include="ToolWindow\TargetCuttingTool.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\SingleStringSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ToolWindow\TargetDefects.xaml">
       <SubType>Designer</SubType>

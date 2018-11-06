@@ -1,0 +1,26 @@
+﻿<Window x:Class="PMSClient.ToolWindow.SingleStringSelector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        Title="选择" Height="450" Width="500"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Style="{StaticResource StyleDGTextBlockCommon}" Text="单机选择,再次选择取消" Background="Orange"
+                   FontSize="20"/>
+        <ListBox Grid.Row="1" Margin="2" Name="LstStrings" SelectionMode="Single">
+        </ListBox>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="取消" Style="{StaticResource StyleButtonCommon}" Name="BtnCancel" Click="BtnCancel_Click"/>
+            <Button Content="确定" Style="{StaticResource StyleButtonCommon}" Name="BtnOK" Click="BtnOK_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

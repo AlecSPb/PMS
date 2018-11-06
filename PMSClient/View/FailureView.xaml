@@ -51,7 +51,7 @@
                 <DataGridTextColumn Header="{StaticResource FComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="{StaticResource FDetails}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding Composition}"/>
+                                    Binding="{Binding Details}"/>
                 <DataGridTextColumn Header="{StaticResource FProblem}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Problem}"/>
                 <DataGridTextColumn Header="{StaticResource FProcess}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
