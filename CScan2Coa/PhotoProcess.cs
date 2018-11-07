@@ -245,41 +245,43 @@ namespace ImportTargetPhotoIntoReport
             if (File.Exists(docxFile) && File.Exists(jpegFile))
             {
                 DocX doc = DocX.Load(docxFile);
-
-                doc.InsertSectionPageBreak();
-                doc.InsertParagraph("CSCAN IMAGE", false, new Formatting() { Size = 20 }).Alignment = Alignment.center;
-
-
-                Xceed.Words.NET.Image img;
-                //图片追加处理
-                string img_file = jpegFile;
-
-                if (img_file == null)
+                var table = doc.Tables.FirstOrDefault();
+                if (table != null)
                 {
-                    return;
+                    Xceed.Words.NET.Image img;
+                    //图片追加处理
+                    string img_file = jpegFile;
+
+                    if (img_file == null)
+                    {
+                        return;
+                    }
+
+                    img = doc.AddImage(img_file);
+
+                    var pic = img.CreatePicture();
+                    pic.Width = pic.Height = 260;
+
+                    var pic_p = table.Rows[10].Cells[0].Paragraphs[0];
+                    var pic_pp = pic_p.InsertPicture(pic);
+
+                    //合并三个单元格
+                    table.MergeCellsInColumn(0, 10, 12);
+
+
+                    string targetFile = Path.GetFileName(docxFile);
+                    string newDocxFile = Path.Combine(targetFolder, targetFile);
+                    doc.SaveAs(newDocxFile);
+                    doc.Dispose();
+
+                    //转换为pdf
+                    if (IsToPdf)
+                    {
+                        string pdfFileName = Path.Combine(targetFolder,
+                            Path.GetFileNameWithoutExtension(docxFile) + ".pdf");
+                        pdf_helper.Convert(newDocxFile, pdfFileName);
+                    }
                 }
-
-                img = doc.AddImage(img_file);
-
-                var pic = img.CreatePicture();
-                doc.InsertParagraph().AppendPicture(pic).Alignment = Alignment.center;
-
-
-
-
-                string targetFile = Path.GetFileName(docxFile);
-                string newDocxFile = Path.Combine(targetFolder, targetFile);
-                doc.SaveAs(newDocxFile);
-                doc.Dispose();
-
-                //转换为pdf
-                if (IsToPdf)
-                {
-                    string pdfFileName = Path.Combine(targetFolder, 
-                        Path.GetFileNameWithoutExtension(docxFile) + ".pdf");
-                    pdf_helper.Convert(newDocxFile, pdfFileName);
-                }
-
             }
             else
             {
