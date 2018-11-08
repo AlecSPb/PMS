@@ -37,6 +37,7 @@
             this.TxtInput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtInput.Font = new System.Drawing.Font("黑体", 12F);
             this.TxtInput.Location = new System.Drawing.Point(13, 62);
             this.TxtInput.Name = "TxtInput";
             this.TxtInput.Size = new System.Drawing.Size(809, 526);

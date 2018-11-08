@@ -51,14 +51,13 @@ namespace PMSClient.CustomControls
             this.Close();
         }
 
-        private void btnCrack_Click(object sender, RoutedEventArgs e)
+        private void btnDefects_Click(object sender, RoutedEventArgs e)
         {
-            txtDefects.Text = "裂缝;";
-        }
-
-        private void btnBreach_Click(object sender, RoutedEventArgs e)
-        {
-            txtDefects.Text = "缺口;";
+            Button button = sender as Button;
+            if (button != null)
+            {
+                txtDefects.Text += button.Content.ToString() + ";";
+            }
         }
     }
 }

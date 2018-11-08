@@ -54,9 +54,6 @@ namespace ImportTargetPhotoIntoReport
             helper.LoadManual(TxtStatus, manual_file);
 
 
-
-
-
         }
 
 
