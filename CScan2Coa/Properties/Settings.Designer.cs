@@ -22,5 +22,29 @@ namespace ImportTargetPhotoIntoReport.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string docx_folder {
+            get {
+                return ((string)(this["docx_folder"]));
+            }
+            set {
+                this["docx_folder"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string image_folder {
+            get {
+                return ((string)(this["image_folder"]));
+            }
+            set {
+                this["image_folder"] = value;
+            }
+        }
     }
 }

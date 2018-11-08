@@ -37,12 +37,26 @@ namespace ImportTargetPhotoIntoReport
                 helper.ChangeProgressBarValue(this, PbValue, e.Progress);
             };
 
-
-            TxtCoaFolder.Text = helper.DefaultCoaFolder;
-            TxtCscanFolder.Text = helper.DefaultScanFolder;
+            string docx = Properties.Settings.Default.docx_folder;
+            string img = Properties.Settings.Default.image_folder;
+            if (string.IsNullOrEmpty(docx) || string.IsNullOrEmpty(img))
+            {
+                TxtCoaFolder.Text = helper.DefaultCoaFolder;
+                TxtCscanFolder.Text = helper.DefaultScanFolder;
+            }
+            else
+            {
+                TxtCoaFolder.Text = docx;
+                TxtCscanFolder.Text = img;
+            }
 
             string manual_file = System.IO.Path.Combine(Environment.CurrentDirectory, "manual1.txt");
             helper.LoadManual(TxtStatus, manual_file);
+
+
+
+
+
         }
 
 
@@ -93,5 +107,11 @@ namespace ImportTargetPhotoIntoReport
             }));
         }
 
+        private void CscanToCoa_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.image_folder = TxtCscanFolder.Text;
+            Properties.Settings.Default.docx_folder = TxtCoaFolder.Text;
+            Properties.Settings.Default.Save();
+        }
     }
 }
