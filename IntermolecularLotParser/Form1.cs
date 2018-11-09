@@ -23,7 +23,7 @@ namespace IntermolecularLotParser
         {
             var pp = new LotProcess();
             pp.InputString = TxtInput.Text;
-            pp.Process();
+            pp.ProcessEmail1();
         }
     }
 }

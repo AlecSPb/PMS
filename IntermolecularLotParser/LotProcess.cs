@@ -24,6 +24,16 @@ namespace IntermolecularLotParser
 
         public void Process()
         {
+
+        }
+
+        public void ProcessEmail2()
+        {
+
+        }
+
+        public void ProcessEmail1()
+        {
             string[] lines = InputString.Split(new string[] { "\n" },
                         StringSplitOptions.RemoveEmptyEntries);
 

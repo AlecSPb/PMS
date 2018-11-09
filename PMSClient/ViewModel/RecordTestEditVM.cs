@@ -190,6 +190,12 @@ namespace PMSClient.ViewModel
             string abbr = CurrentRecordTest.CompositionAbbr;
             double density = 0;
             double.TryParse(CurrentRecordTest.Density, out density);
+
+            //if (string.IsNullOrEmpty(CurrentRecordTest.CompositionXRF))
+            //{
+            //    CurrentRecordTest.CompositionXRF = "无";
+            //}
+
             if (!string.IsNullOrEmpty(abbr) && density != 0)
             {
                 CheckResult msg = RecordTestCheckLogic.IsDensityOK(abbr, density);

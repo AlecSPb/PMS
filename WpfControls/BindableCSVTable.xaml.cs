@@ -71,11 +71,18 @@ namespace WPFControls
 
             if (lines.Count()<2)
             {
-                Paragraph p1 = new Paragraph();
-                p1.Inlines.Add(new Run(lines[0]));
-                p1.Foreground = Brushes.Blue;
-                p1.Margin = new Thickness(5);
-                doc.Blocks.Add(p1);
+                try
+                {
+                    Paragraph p1 = new Paragraph();
+                    p1.Inlines.Add(new Run(lines.FirstOrDefault()));
+                    p1.Foreground = Brushes.Blue;
+                    p1.Margin = new Thickness(5);
+                    doc.Blocks.Add(p1);
+                }
+                catch (Exception)
+                {
+                    System.Diagnostics.Debug.WriteLine("xrf error");
+                }
                 return;
             }
             else
