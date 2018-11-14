@@ -27,6 +27,27 @@ namespace IntermolecularLotParser
 
         }
 
+        /// <summary>
+        /// 判定Email类型
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        public EmailType CheckEmailType(string content)
+        {
+            if (content.Contains("part#") && content.Contains("SN#"))
+            {
+                return EmailType.Email1;
+            }
+            else if (Regex.IsMatch(content, @"(\d{9})\s(\d{3}-\d{7}-\d{2})"))
+            {
+                return EmailType.Email2;
+            }
+            else
+            {
+                return EmailType.Other;
+            }
+        }
+
         public void ProcessEmail2()
         {
 
@@ -86,10 +107,10 @@ namespace IntermolecularLotParser
 
             string fileName = "tmp.docx";
             DocX doc = DocX.Create(fileName);
-            Table table = doc.AddTable(1,1);
+            Table table = doc.AddTable(1, 1);
             table.Alignment = Alignment.center;
             table.AutoFit = AutoFit.Window;
-            
+
 
             int row = 0, col = 0;
             table.Rows[row].Cells[col].Paragraphs[0].Append("激光标刻内容集合");

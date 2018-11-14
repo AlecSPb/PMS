@@ -27,6 +27,12 @@ namespace UsefulPackage
         {
             return DateTime.Now.ToString("yyMMdd") + "-A-1";
         }
+
+        public static string OutSourceLot()
+        {
+            return DateTime.Now.ToString("yyMMdd") + "-OS-1";
+        }
+
         /// <summary>
         /// 利用传递日期和代码来构造
         /// </summary>

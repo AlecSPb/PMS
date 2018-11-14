@@ -25,7 +25,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://192.168.16.254:8001/PMS/publish.html/</InstallUrl>
+    <InstallUrl>http://192.168.16.254:8001/PMS/</InstallUrl>
     <UpdateUrl>http://192.168.16.254:8001/pms/</UpdateUrl>
     <SupportUrl>http://www.cd-pmi.com</SupportUrl>
     <ProductName>PMS</ProductName>
@@ -380,6 +380,10 @@
     <Compile Include="ToolWindow\OrderCheckDialog.xaml.cs">
       <DependentUpon>OrderCheckDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\OutSourceAdder.xaml.cs">
+      <DependentUpon>OutSourceAdder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindow\OutSourceAdderVM.cs" />
     <Compile Include="ToolWindow\PlainTextWindow.xaml.cs">
       <DependentUpon>PlainTextWindow.xaml</DependentUpon>
     </Compile>
@@ -959,6 +963,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolWindow\OrderCheckDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\OutSourceAdder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

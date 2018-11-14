@@ -51,6 +51,7 @@ namespace PMSClient.ViewModel
             model.Composition = "成分";
             model.Abbr = "缩写";
             model.Weight = "";
+            model.PO = "TBD";
             model.Customer = "Midsummer";
             model.Position = PMSCommon.GoodPosition.A1.ToString();
             model.ProductType = PMSCommon.ProductType.靶材.ToString();

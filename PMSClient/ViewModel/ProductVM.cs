@@ -39,6 +39,14 @@ namespace PMSClient.ViewModel
             OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
 
             ScanAdd = new RelayCommand(ActionScanAdd,CanScanAdd);
+
+            OutSourceAdd = new RelayCommand(ActionOutSourceAdd, CanScanAdd);
+        }
+
+        private void ActionOutSourceAdd()
+        {
+            var win = new ToolWindow.OutSourceAdder();
+            win.Show();
         }
 
         private bool CanScanAdd()
@@ -205,6 +213,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcProduct> SearchRecordTest { get; set; }
         public RelayCommand<DcProduct> SelectAndSend { get; set; }
         public RelayCommand OnlyUnCompleted { get; set; }
+
+        public RelayCommand OutSourceAdd { get; set; }
 
         public RelayCommand ScanAdd { get; set; }
 
