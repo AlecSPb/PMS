@@ -1,0 +1,34 @@
+﻿<Window x:Class="PMSClient.ToolWindow.LabelItemSelect"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="ToolWindow"
+        Title="标签内容选择" Height="300" Width="300">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <CheckBox Name="ChkProductID" Content="产品ID" Style="{StaticResource StyleCheckBoxCommon}"
+                      IsChecked="True"/>
+            <CheckBox Name="ChkComposition" Content="成分" Style="{StaticResource StyleCheckBoxCommon}"
+                      IsChecked="True"/>
+            <CheckBox Name="ChkCustomer" Content="客户" Style="{StaticResource StyleCheckBoxCommon}"
+                      IsChecked="True"/>
+            <CheckBox Name="ChkDimension" Content="尺寸" Style="{StaticResource StyleCheckBoxCommon}"
+                      IsChecked="False"/>
+            <CheckBox Name="ChkPO" Content="PO" Style="{StaticResource StyleCheckBoxCommon}"
+                      IsChecked="True"/>
+            <CheckBox Name="ChkPlateLot" Content="背板批号(仅限绑定靶材)" Style="{StaticResource StyleCheckBoxCommon}"
+                      IsChecked="False"/>
+        </StackPanel>
+        <Button Name="BtnOK" Grid.Row="1" Content="确定" Style="{StaticResource StyleButtonCommon}" 
+                HorizontalAlignment="Stretch" Margin="5" Padding="10" FontSize="18"
+                Click="BtnOK_Click"/>
+    </Grid>
+</Window>

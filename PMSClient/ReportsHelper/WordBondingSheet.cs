@@ -48,7 +48,7 @@ namespace PMSClient.ReportsHelper
                 using (DocX document = DocX.Load(tempFile))
                 {
                     #region 基本字段
-                    document.ReplaceText("[CreateDate]", DateTime.Now.ToString("yyyy-MM-dd"));
+                    document.ReplaceText("[CreateDate]", DateTime.Now.ToString("yyyy-MM-dd dddd"));
 
                     if (document.Tables[0] != null)
                     {

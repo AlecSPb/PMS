@@ -303,6 +303,7 @@ namespace PMSClient.ViewModel
             //    btApp.Quit(bt.BtSaveOptions.btSaveChanges);
             //}
             #endregion
+
             if (model != null)
             {
                 string country = model.Country;
@@ -310,18 +311,68 @@ namespace PMSClient.ViewModel
                 DcDeliveryItem[] items;
                 using (var service = new DeliveryServiceClient())
                 {
-                    items = service.GetDeliveryItemByDeliveryID(model.ID).OrderBy(i => i.PackNumber).ToArray();
+                    items = service.GetDeliveryItemByDeliveryID(model.ID);
                 }
-                //int counter = 1;
+
+                var select_win = new ToolWindow.LabelItemSelect();
+                select_win.ShowDialog();
+                if (select_win.DialogResult == false)
+                {
+                    return;
+                }
+                var dialog_result = select_win.Result;
+
                 foreach (var item in items)
                 {
-                    //sb.Append(item.Composition.Trim());
-                    sb.Append($"[{item.PackNumber.ToString()}]");
-                    sb.Append($">[{item.ProductID.Trim()}]");
-                    sb.AppendLine($">[PO#{item.PO.ToString()}]");
-                    //counter++;
+                    if (dialog_result.HasProductID)
+                    {
+                        sb.Append("ID:");
+                        sb.AppendLine(item.ProductID.Trim());
+                    }
+                    if (dialog_result.HasComposition)
+                    {
+                        //sb.Append("Composition:");
+                        sb.AppendLine(item.Composition);
+                    }
+                    if (dialog_result.HasDimension)
+                    {
+                        //sb.Append("Dimension:");
+                        sb.AppendLine(item.Dimension);
+                    }
+                    if (dialog_result.HasCustomer)
+                    {
+                        //sb.Append("Customer:");
+                        sb.AppendLine(item.Customer);
+                    }
+                    if (dialog_result.HasPO)
+                    {
+                        sb.Append("PO:");
+                        sb.AppendLine(item.PO);
+                    }
+                    if (dialog_result.HasPlateLot)
+                    {
+                        try
+                        {
+                            using (var s_bonding = new RecordBondingServiceClient())
+                            {
+                                var bonding = s_bonding.GetRecordBondingByProductID(item.ProductID)
+                                    .FirstOrDefault();
+                                if (bonding != null)
+                                {
+                                    sb.Append("Plate Lot:");
+                                    sb.AppendLine(bonding.PlateLot);
+                                }
+                            }
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+
+                    }
+                    sb.AppendLine("-----------------------------");
                 }
-                string mainContent = $"发往: {country}\r{sb.ToString()}";
+                string mainContent = $"发往: {country}\r-----------------\r{sb.ToString()}";
 
                 var pageTitle = "发货单标签打印输出";
                 var tips = "请复制左边内容后点击打开模板按钮，粘贴到模板合适位置，可以自行修改，然后打印标签";
@@ -329,7 +380,8 @@ namespace PMSClient.ViewModel
                 var helpimage = "deliverysheet.png";
                 PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.Delivery, pageTitle,
                     tips, template, mainContent, helpimage);
-                NavigationService.GoTo(PMSViews.LabelOutPut);
+                var win = new Tool.LabelOutPutWindow();
+                win.ShowDialog();
             }
         }
 

@@ -54,6 +54,11 @@ namespace PMSClient
 
                   }
               });
+            BondingLabel = new RelayCommand(() =>
+              {
+                  var win =new DataProcess.BatchLabel.BatchLabelGenerator();
+                  win.Show();
+              });
             #endregion
             #region Info
             HelpInfo = new RelayCommand(() =>
@@ -214,5 +219,8 @@ namespace PMSClient
         public RelayCommand EmptyTextBox { get; set; }
 
         public RelayCommand Cutter { get; set; }
+        public RelayCommand BondingLabel { get; set; }
+
+
     }
 }

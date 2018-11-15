@@ -187,14 +187,18 @@
                 <DataGridTemplateColumn Header="{StaticResource RDCustomer}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Customer}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBox Style="{StaticResource StyleDGTextBox}"
+                                         Text="{Binding Customer,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                                         TextAlignment="Center"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RDPO}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding PO}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBox Style="{StaticResource StyleDGTextBox}"
+                                         Text="{Binding PO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                                         TextAlignment="Center"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

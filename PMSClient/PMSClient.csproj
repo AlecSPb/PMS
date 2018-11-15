@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>93</ApplicationRevision>
+    <ApplicationRevision>96</ApplicationRevision>
     <ApplicationVersion>4.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -208,6 +208,9 @@
     <Compile Include="CustomControls\ProgressIndicator.xaml.cs">
       <DependentUpon>ProgressIndicator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataProcess\BatchLabel\BatchLabelGenerator.xaml.cs">
+      <DependentUpon>BatchLabelGenerator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataProcess\QuickReport\ProcessReport.cs" />
     <Compile Include="DataProcess\QuickReport\QuickReport.xaml.cs">
       <DependentUpon>QuickReport.xaml</DependentUpon>
@@ -372,6 +375,9 @@
     <Compile Include="ToolWindow\EmptyTextBox.xaml.cs">
       <DependentUpon>EmptyTextBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\LabelItemSelect.xaml.cs">
+      <DependentUpon>LabelItemSelect.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolWindow\MaterialPriceTool.xaml.cs">
       <DependentUpon>MaterialPriceTool.xaml</DependentUpon>
     </Compile>
@@ -432,6 +438,9 @@
     <Compile Include="Tool\HelpImagePathConverter.cs" />
     <Compile Include="ToolWindow\LabelCopyWindow.xaml.cs">
       <DependentUpon>LabelCopyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\LabelOutPutWindow.xaml.cs">
+      <DependentUpon>LabelOutPutWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tool\LabelOutPutView.xaml.cs">
       <DependentUpon>LabelOutPutView.xaml</DependentUpon>
@@ -882,6 +891,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DataProcess\BatchLabel\BatchLabelGenerator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DataProcess\QuickReport\QuickReport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -958,6 +971,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ToolWindow\LabelItemSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ToolWindow\MaterialPriceTool.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1029,6 +1046,10 @@
     <Page Include="ToolWindow\LabelCopyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tool\LabelOutPutWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Tool\LabelOutPutView.xaml">
       <Generator>MSBuild:Compile</Generator>

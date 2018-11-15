@@ -34,7 +34,7 @@ namespace PMSClient.ReportsHelperNew
                 #region 字段
                 string createDate = DateTime.Today.ToShortDateString();
                 doc.ReplaceText("[CreateDate]", createDate ?? "");
-                doc.ReplaceText("[SearchCode]", searchCode ?? "");
+                doc.ReplaceText("[SearchCode]", selectedDate.ToString("yyyy-MM-dd dddd") ?? "");
 
                 Table table = doc.Tables[0];
                 using (var service = new MissonServiceClient())
