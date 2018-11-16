@@ -83,7 +83,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
-                                where t.ProductID == productId
+                                where t.ProductID == productId && t.State!="作废"
                                 orderby t.CreateTime descending
                                 select t;
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordTest, DcRecordTest>());

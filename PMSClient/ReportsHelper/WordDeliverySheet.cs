@@ -91,7 +91,7 @@ namespace PMSClient.ReportsHelper
                                     .FontSize(10).Alignment = Alignment.center;
 
                                 //查找230mm靶材的绑定记录
-                                if (item.Dimension.Contains("230"))
+                                if (item.Dimension.Trim().StartsWith("230"))
                                 {
                                     try
                                     {

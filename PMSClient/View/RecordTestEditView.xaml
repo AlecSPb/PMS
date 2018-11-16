@@ -80,8 +80,11 @@
                 </StackPanel>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="#后续工作类型"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RTProductID}"  Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtProductID" Grid.Row="2" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxBig}" Background="Yellow"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RTProductID}"  
+                           Style="{StaticResource StyleTextBlockCommon}"
+                           Background="Blue" Foreground="White"/>
+                <TextBox Name="TxtProductID" Grid.Row="2" Grid.Column="1" Text="{Binding ProductID}"
+                         Style="{StaticResource StyleTextBoxBig}" Background="Yellow" FontSize="18" FontWeight="Bold"/>
                 <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" Button.Click="StackPanel_Click">
                     <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="AA-1"/>
                     <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="AA-2"/>
@@ -130,15 +133,14 @@
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtWeight" Grid.Row="10" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxBig}"  Background="Yellow"/>
+                <TextBox Name="TxtWeight" Grid.Row="10" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxBig}" />
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="单位：g"/>
 
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RTDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="TxtDensity" Grid.Row="10" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxBig}" 
-                             HorizontalAlignment="Left"
-                             Background="Yellow"/>
+                             HorizontalAlignment="Left"/>
                     <Button Name="btnCalculator" Click="BtnCalculator_Click" Content="计算器" Style="{StaticResource StyleButtonCommon}"/>
                 </StackPanel>
                 <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位:g/cm3"/>
@@ -147,7 +149,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="12" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="txtResistance" Text="{Binding Resistance}"
-                             Style="{StaticResource StyleTextBoxBig}"  Background="Yellow" Width="200"/>
+                             Style="{StaticResource StyleTextBoxBig}"  Width="200"/>
                     <Button Content="超限" Style="{StaticResource StyleButtonCommon}" Click="BtnResistance_Click"/>
                 </StackPanel>
                 <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位：Ωcm，最多两位有效数字即可"/>
@@ -156,7 +158,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="13" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="TxtDimension" Text="{Binding DimensionActual}"
-                             Style="{StaticResource StyleTextBoxBig}" Width="200"   Background="Yellow"/>
+                             Style="{StaticResource StyleTextBoxBig}" Width="200" />
                     <Button Content="选择" Style="{StaticResource StyleButtonCommon}"
                             Command="{Binding DataContext.SelectDimensionActual,
                                 RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
@@ -168,7 +170,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="14" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="TxtDefects" Style="{StaticResource StyleTextBoxCommon}"
-                             Text="{Binding Defects}" Width="200" Background="Yellow"/>
+                             Text="{Binding Defects}" Width="200" />
                     <Button Content="缺陷" Style="{StaticResource StyleButtonCommon}"
                             Name="BtnDefects" Click="BtnDefects_Click"/>
                 </StackPanel>
@@ -187,7 +189,7 @@
                 <TextBox  x:Name="txtCompositionXRF" Grid.Row="16" Grid.Column="1"
                          Text="{Binding CompositionXRF,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
                           AcceptsReturn="True"
-                          VerticalScrollBarVisibility="Auto" Background="Yellow"
+                          VerticalScrollBarVisibility="Auto"
                          Height="120"/>
                 <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="需要选择CSV格式的文件"/>
 

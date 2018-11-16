@@ -171,6 +171,26 @@ namespace PMSClient.ViewModel
                 return;
             }
 
+            //新建的时候检查产品ID是否正确
+            if (IsNew)
+            {
+                if (!CheckLogic.RecordTestCheckLogic.IsProductIDUnique(CurrentRecordTest.ProductID))
+                {
+                    PMSDialogService.ShowWarning("该产品ID有重复，无法保存，产品ID必须唯一，请仔细核对");
+                    return;
+                }
+
+                if (!CheckLogic.RecordTestCheckLogic.IsProductIDLogic(CurrentRecordTest.ProductID,
+                    CurrentRecordTest.Dimension))
+                {
+                    if (!PMSDialogService.ShowYesNo("提醒","改产品ID可能不符合生产惯例,即热压日期1到2天（230mm）后才测试，要继续保存吗？"))
+                    {
+                        return;
+                    }
+                }
+            }
+
+
             string composition = CurrentRecordTest.CompositionXRF;
             //检测是否错误输入Si，S，P，B，C之类不可测试的元素
             if (composition.Contains("Si atm%")

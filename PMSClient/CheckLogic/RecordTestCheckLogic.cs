@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PMSClient.MainService;
 
 namespace PMSClient.CheckLogic
 {
@@ -52,6 +53,33 @@ namespace PMSClient.CheckLogic
             }
             return true;
         }
+
+        public static bool IsProductIDUnique(string productid)
+        {
+            //检查是否存在相同ID
+            using (var service = new RecordTestServiceClient())
+            {
+                var recordtest = service.GetRecordTestByProductID(productid).FirstOrDefault();
+                return recordtest == null;
+            }
+        }
+
+        public static bool IsProductIDLogic(string productid, string dimension)
+        {
+
+            if (dimension.Trim().StartsWith("230"))
+            {
+                return DateTime.Now.AddDays(-2).ToString("yyMMdd")
+                    .CompareTo(productid.Substring(0, 6))>=0;
+            }
+            else
+            {
+                return DateTime.Now.AddDays(-1).ToString("yyMMdd")
+                    .CompareTo(productid.Substring(0, 6)) >= 0;
+            }
+        }
+
+
     }
 
 
