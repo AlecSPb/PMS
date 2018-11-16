@@ -30,8 +30,6 @@
                 Command="{Binding EmptyTextBox}"/>
             <Button Content="{StaticResource BottomBarTargetCutterSimlulator}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding Cutter}"/>
-            <!--<Button Content="{StaticResource BottomBar230BondingLabel}" Style="{StaticResource StyleButtonCommonNarrow}"
-                Command="{Binding BondingLabel}"/>-->
 
             <TextBlock Text="{StaticResource BottomBarRule}" Style="{StaticResource StyleDGTextBlockCommon}"/>
             <Button Content="{StaticResource BottomBarCodeRule}" Style="{StaticResource StyleButtonCommonNarrow}"
@@ -50,7 +48,8 @@
                 Command="{Binding UpdateInfo}"/>
             <Button Content="{StaticResource BottomBarElement}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding Element}"/>
-            
+            <Button Content="{StaticResource BottomBarPhotoStd}" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding PhotoStd}"/>
         </StackPanel>
     </Border>
 </UserControl>

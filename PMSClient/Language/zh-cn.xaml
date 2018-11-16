@@ -906,7 +906,7 @@
     <sys:String x:Key="BottomBarPdfTool">docx批量转换Pdf</sys:String>
     <sys:String x:Key="BottomBarCSCAN2PdfTool">报告追加超声照片</sys:String>
     <sys:String x:Key="BottomBarTargetCutterSimlulator">切割</sys:String>
-    <sys:String x:Key="BottomBar230BondingLabel">标签</sys:String>
+    <sys:String x:Key="BottomBarPhotoStd">照片</sys:String>
 
 
     <!--每个页面最前面的提示信息-->

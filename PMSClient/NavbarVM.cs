@@ -45,19 +45,11 @@ namespace PMSClient
 
             Cutter = new RelayCommand(() =>
               {
-                  try
-                  {
-                      System.Diagnostics.Process.Start("TargetCutterSimulator.exe");
-                  }
-                  catch (Exception)
-                  {
-
-                  }
+                  OpenFileOrProgram("TargetCutterSimulator.exe");
               });
-            BondingLabel = new RelayCommand(() =>
+            PhotoStd = new RelayCommand(() =>
               {
-                  var win =new DataProcess.BatchLabel.BatchLabelGenerator();
-                  win.Show();
+                  OpenFileOrProgram(@"StandardDocs\产品拍照规范流程.pptx");
               });
             #endregion
             #region Info
@@ -201,6 +193,19 @@ namespace PMSClient
             #endregion
         }
 
+        private void OpenFileOrProgram(string filePath)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(filePath);
+            }
+            catch (Exception ex)
+            {
+                PMSDialogService.ShowWarning(ex.Message);
+            }
+        }
+
+
         public RelayCommand IntergratedSearch { get; set; }
         public RelayCommand MaterialNeedCalculator { get; set; }
         public RelayCommand ToOne { get; set; }
@@ -219,7 +224,7 @@ namespace PMSClient
         public RelayCommand EmptyTextBox { get; set; }
 
         public RelayCommand Cutter { get; set; }
-        public RelayCommand BondingLabel { get; set; }
+        public RelayCommand PhotoStd { get; set; }
 
 
     }
