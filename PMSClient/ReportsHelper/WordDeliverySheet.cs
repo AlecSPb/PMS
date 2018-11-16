@@ -75,7 +75,8 @@ namespace PMSClient.ReportsHelper
 
                         using (var service = new DeliveryServiceClient())
                         {
-                            var result = service.GetDeliveryItemByDeliveryID(model.ID).OrderBy(i => i.PackNumber);
+                            var result = service.GetDeliveryItemByDeliveryID(model.ID).OrderBy(i => i.PackNumber)
+                                .OrderBy(i=>i.ProductID);
                             int rownumber = 1;
                             int datanumber = 1;
                             foreach (var item in result)
@@ -125,8 +126,8 @@ namespace PMSClient.ReportsHelper
                 #endregion
                 //复制到临时文件
                 ReportHelper.FileCopy(tempFile, targetFile);
-                PMSDialogService.Show("原材料报告创建成功，请在桌面查看");
-
+                PMSDialogService.Show("原材料报告创建成功，即将打开");
+                System.Diagnostics.Process.Start(targetFile);
             }
             catch (Exception ex)
             {

@@ -189,7 +189,7 @@
                         <DataTemplate>
                             <TextBox Style="{StaticResource StyleDGTextBox}"
                                          Text="{Binding Customer,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
-                                         TextAlignment="Center"/>
+                                         Width="120"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -198,7 +198,7 @@
                         <DataTemplate>
                             <TextBox Style="{StaticResource StyleDGTextBox}"
                                          Text="{Binding PO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
-                                         TextAlignment="Center"/>
+                                         Width="120"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -226,7 +226,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBox Style="{StaticResource StyleDGTextBox}"
                                          Text="{Binding PackNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
-                                         TextAlignment="Center"/>
+                                         TextAlignment="Center" Width="50" Background="Wheat"/>
                                 <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.QuickSave,RelativeSource={RelativeSource 
                                                 Mode=FindAncestor,AncestorType=UserControl}}"
