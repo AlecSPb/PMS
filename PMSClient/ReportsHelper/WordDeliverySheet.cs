@@ -80,14 +80,37 @@ namespace PMSClient.ReportsHelper
                             int datanumber = 1;
                             foreach (var item in result)
                             {
-                                mainTable.Rows[rownumber].Cells[0].Paragraphs[0].Append(datanumber.ToString()).FontSize(10).Alignment=Alignment.center;
+                                mainTable.Rows[rownumber].Cells[0].Paragraphs[0].Append(datanumber.ToString()).FontSize(10).Alignment = Alignment.center;
                                 mainTable.Rows[rownumber].Cells[1].Paragraphs[0].Append(item.ProductID).FontSize(10);
                                 mainTable.Rows[rownumber].Cells[2].Paragraphs[0].Append(item.ProductType).FontSize(10);
                                 mainTable.Rows[rownumber].Cells[3].Paragraphs[0].Append(item.Composition).FontSize(10);
                                 mainTable.Rows[rownumber].Cells[4].Paragraphs[0].Append(item.Customer).FontSize(10);
                                 mainTable.Rows[rownumber].Cells[5].Paragraphs[0].Append(item.PO).FontSize(10);
                                 mainTable.Rows[rownumber].Cells[6].Paragraphs[0].Append(item.Dimension).FontSize(10);
-                                mainTable.Rows[rownumber].Cells[7].Paragraphs[0].Append(item.PackNumber.ToString()).FontSize(10).Alignment = Alignment.center;
+                                mainTable.Rows[rownumber].Cells[7].Paragraphs[0].Append(item.PackNumber.ToString())
+                                    .FontSize(10).Alignment = Alignment.center;
+
+                                //查找230mm靶材的绑定记录
+                                if (item.Dimension.Contains("230"))
+                                {
+                                    try
+                                    {
+                                        using (var s_bonding = new RecordBondingServiceClient())
+                                        {
+                                            var bonding = s_bonding.GetRecordBondingByProductID(item.ProductID)
+                                                .FirstOrDefault();
+                                            if (bonding != null)
+                                            {
+                                                mainTable.Rows[rownumber].Cells[8].Paragraphs[0].Append(bonding.PlateLot)
+                                                    .FontSize(10).Alignment = Alignment.left;
+                                            }
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                    }
+                                }
 
                                 mainTable.InsertRow();
                                 datanumber++;

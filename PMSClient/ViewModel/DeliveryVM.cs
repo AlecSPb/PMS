@@ -169,7 +169,6 @@ namespace PMSClient.ViewModel
                     WordDeliverySheet report = new WordDeliverySheet(dialog.DeliverySheetType);
                     report.SetModel(model);
                     report.Output();
-                    PMSDialogService.Show("生成成功", "请打开桌面上的发货单文档\r\n如果排版变形，请全选更改为宋体");
                 }
                 catch (Exception ex)
                 {
