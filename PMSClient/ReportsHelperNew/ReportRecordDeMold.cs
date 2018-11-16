@@ -56,7 +56,7 @@ namespace PMSClient.ReportsHelperNew
                         s = pageIndex * pageSize;
                         t = pageSize;
                         var pageData = service.GetPlanExtra(s, t, searchCode, empty);
-                        var ordered = pageData.OrderBy(i => i.Plan.PlanLot).OrderBy(i => i.Plan.SearchCode);
+                        var ordered = pageData.OrderBy(i => i.Plan.PlanLot).ThenBy(i => i.Plan.SearchCode);
                         foreach (var item in ordered)
                         {
                             for (int i = 1; i < item.Plan.Quantity + 1; i++)

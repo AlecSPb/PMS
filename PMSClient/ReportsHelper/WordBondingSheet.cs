@@ -54,7 +54,7 @@ namespace PMSClient.ReportsHelper
                     {
                         Table mainTable = document.Tables[0];
                         int rownumber = 1;
-                        var ordered = model.OrderBy(i => i.TargetProductID).OrderBy(i => i.PlanBatchNumber);
+                        var ordered = model.OrderBy(i => i.TargetProductID).ThenBy(i => i.PlanBatchNumber);
 
                         foreach (var item in ordered)
                         {
