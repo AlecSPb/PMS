@@ -270,9 +270,11 @@ namespace PMSClient.ViewModel
             {
 
                 var sb = new StringBuilder();
-                sb.AppendLine(model.RecordTest.Composition);
                 sb.AppendLine(model.RecordTest.ProductID);
+                sb.AppendLine(model.RecordTest.Composition);
                 sb.AppendLine(model.RecordTest.Dimension);
+                sb.AppendLine(model.RecordTest.Customer);
+                sb.AppendLine(model.RecordTest.PO);
 
                 var mainContent = sb.ToString();
 

@@ -326,7 +326,6 @@ namespace PMSClient.ViewModel
                 {
                     if (dialog_result.HasProductID)
                     {
-                        sb.Append("ID:");
                         sb.AppendLine(item.ProductID.Trim());
                     }
                     if (dialog_result.HasComposition)
@@ -346,7 +345,10 @@ namespace PMSClient.ViewModel
                     }
                     if (dialog_result.HasPO)
                     {
-                        sb.Append("PO:");
+                        if (!item.PO.StartsWith("PO"))
+                        {
+                            sb.Append("PO:");
+                        }
                         sb.AppendLine(item.PO);
                     }
                     if (dialog_result.HasPlateLot)
@@ -359,7 +361,7 @@ namespace PMSClient.ViewModel
                                     .FirstOrDefault();
                                 if (bonding != null)
                                 {
-                                    sb.Append("Plate Lot:");
+                                    sb.Append("BP-Lot:");
                                     sb.AppendLine(bonding.PlateLot);
                                 }
                             }

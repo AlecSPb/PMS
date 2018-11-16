@@ -17,9 +17,9 @@
             <CheckBox Name="ChkProductID" Content="产品ID" Style="{StaticResource StyleCheckBoxCommon}"
                       IsChecked="True"/>
             <CheckBox Name="ChkComposition" Content="成分" Style="{StaticResource StyleCheckBoxCommon}"
-                      IsChecked="True"/>
+                      IsChecked="False"/>
             <CheckBox Name="ChkCustomer" Content="客户" Style="{StaticResource StyleCheckBoxCommon}"
-                      IsChecked="True"/>
+                      IsChecked="False"/>
             <CheckBox Name="ChkDimension" Content="尺寸" Style="{StaticResource StyleCheckBoxCommon}"
                       IsChecked="False"/>
             <CheckBox Name="ChkPO" Content="PO" Style="{StaticResource StyleCheckBoxCommon}"
