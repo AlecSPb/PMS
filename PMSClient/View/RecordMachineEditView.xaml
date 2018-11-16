@@ -57,7 +57,8 @@
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RMMVHPPlanLot}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxBig}"
+                          Background="Yellow" FontSize="18" FontWeight="Bold"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="#热压编号170111-M-1,热压日期-设备号-第1片"/>
 
