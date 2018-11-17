@@ -64,5 +64,8 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         int GetOrderUnFinishedCount();
+
+        [OperationContract]
+        double GetUnFinishedTargetCount();
     }
 }

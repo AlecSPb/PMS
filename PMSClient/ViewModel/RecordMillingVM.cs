@@ -18,7 +18,7 @@ namespace PMSClient.ViewModel
         {
 
             searchVHPPlanLot = searchComposition = "";
-
+            AllPowderWeight = 0;
             RecordMillings = new ObservableCollection<DcRecordMilling>();
             SetPageParametersWhenConditionChange();
             InitializeCommands();
@@ -173,6 +173,8 @@ namespace PMSClient.ViewModel
             take = PageSize;
             var service = new RecordMillingServiceClient();
             var models = service.GetRecordMillingsByVHPPlanLot(skip, take, SearchVHPPlanLot, SearchComposition);
+
+            AllPowderWeight = service.GetAllPowderWeight()/1000;
             service.Close();
             RecordMillings.Clear();
             models.ToList().ForEach(o => RecordMillings.Add(o));
@@ -193,6 +195,20 @@ namespace PMSClient.ViewModel
             get { return searchComposition; }
             set { searchComposition = value; RaisePropertyChanged(nameof(SearchComposition)); }
         }
+        private double allPowderWeight;
+        public double AllPowderWeight
+        {
+            get
+            {
+                return allPowderWeight;
+            }
+            set
+            {
+                allPowderWeight = value;RaisePropertyChanged(nameof(AllPowderWeight));
+            }
+        }
+
+
         #region DerivedPart
         private DcRecordMilling currentRecordMilling;
 

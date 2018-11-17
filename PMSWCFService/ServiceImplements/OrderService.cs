@@ -544,10 +544,29 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
-                                where (o.State == OrderState.未完成.ToString()
-                                 || o.State == OrderState.暂停.ToString())
+                                where o.State == OrderState.未完成.ToString()
                                 select o;
                     return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public double GetUnFinishedTargetCount()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from o in dc.Orders
+                                where o.ProductType == "靶材" && (o.State == OrderState.未完成.ToString()
+                                 || o.State == OrderState.未核验.ToString())
+                                select o;
+                    return query.Sum(i=>i.Quantity);
                 }
             }
             catch (Exception ex)

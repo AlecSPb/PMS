@@ -16,7 +16,11 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource PageRecordMilling}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <TextBlock Text="{StaticResource PageRecordMilling}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+                <TextBlock Text="{Binding AllPowderWeight,StringFormat=截至今日共制粉重量{0:F0}kg}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Red"/>
+
+        </StackPanel>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource  StyleButtonCommon}"
                     Command="{Binding GoToNavigation}" />

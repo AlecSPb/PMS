@@ -46,6 +46,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             missonTarget = 0;
+            UnVHPTargetCount = 0;
             SearchCompositionStandard = SearchPMINumber = "";
             Missons = new ObservableCollection<DcOrder>();
             PlanVHPs = new ObservableCollection<DcPlanVHP>();
@@ -278,6 +279,9 @@ namespace PMSClient.ViewModel
                 RecordCount = service.GetMissonsCountBySearch(SearchCompositionStandard, SearchPMINumber);
 
                 MissonTarget = service.GetMissonUnCompletedCount();
+
+                UnVHPTargetCount =(int)service.GetUnVHPTargetCount();
+
                 service.Close();
                 ActionPaging();
             }
@@ -339,8 +343,19 @@ namespace PMSClient.ViewModel
             set { missonTarget = value; RaisePropertyChanged(nameof(MissonTarget)); }
         }
 
-
-
+        private int unVHPTargetCount;
+        public int UnVHPTargetCount
+        {
+            get
+            {
+                return unVHPTargetCount;
+            }
+            set
+            {
+                unVHPTargetCount = value;
+                RaisePropertyChanged(nameof(UnVHPTargetCount));
+            }
+        }
         #endregion
 
         #region Commands

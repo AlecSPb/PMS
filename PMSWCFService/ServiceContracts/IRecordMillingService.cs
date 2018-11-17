@@ -33,5 +33,11 @@ namespace PMSWCFService.ServiceContracts
         int UpdateRecordMillingByUID(DcRecordMilling model, string uid);
         [OperationContract]
         int DeleteRecordMilling(Guid id);
+
+
+
+        [OperationContract]
+        double GetAllPowderWeight();
+
     }
 }

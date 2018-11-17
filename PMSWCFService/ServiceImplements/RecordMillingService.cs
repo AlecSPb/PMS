@@ -229,5 +229,24 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public double GetAllPowderWeight()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from r in dc.RecordMillings
+                                where r.State != PMSCommon.SimpleState.作废.ToString()
+                                select r;
+                    return query.Sum(i=>i.WeightOut);
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

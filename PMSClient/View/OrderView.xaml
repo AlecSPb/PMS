@@ -18,8 +18,10 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="{StaticResource PageOrder}" Style="{StaticResource StyleTextBlockPageTitle}"/>
-            <TextBlock Text="{Binding UnFinishedOrderCount,StringFormat=共有{0}个订单等待完成}"
+            <TextBlock Text="{Binding UnFinishedOrderCount,StringFormat=共有{0}个订单}"
                        Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
+            <TextBlock Text="{Binding UnFinishedTargetCount,StringFormat=共计{0}块靶材等待完成}"
+                       Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Red"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource  ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>

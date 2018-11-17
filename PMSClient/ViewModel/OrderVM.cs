@@ -54,6 +54,7 @@ namespace PMSClient.ViewModel
             searchPMINumber = "";
             MainOrders = new ObservableCollection<DcOrder>();
             UnFinishedOrderCount = 0;
+            UnFinishedTargetCount = 0;
         }
         private void InitializeCommands()
         {
@@ -246,6 +247,8 @@ namespace PMSClient.ViewModel
                     RecordCount = service.GetOrderCount(SearchCustomer, SearchCompositionStandard, SearchPMINumber);
                     //获得未完成的订单数
                     UnFinishedOrderCount = service.GetOrderUnFinishedCount();
+
+                    UnFinishedTargetCount = (int)service.GetUnFinishedTargetCount();
                     service.Close();
                 }
                 ActionPaging();
@@ -291,6 +294,21 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(nameof(UnFinishedOrderCount));
             }
         }
+
+        private int unFinishedTargetCount;
+        public int UnFinishedTargetCount
+        {
+            get
+            {
+                return unFinishedTargetCount;
+            }
+            set
+            {
+                unFinishedTargetCount = value;
+                RaisePropertyChanged(nameof(UnFinishedTargetCount));
+            }
+        }
+
         private string searchPMINumber;
         public string SearchPMINumber
         {

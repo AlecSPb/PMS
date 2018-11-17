@@ -246,8 +246,7 @@ namespace PMSWCFService
                 {
                     var query = from o in dc.Orders
                                 where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
-                                 && (o.State == OrderState.未完成.ToString()
-                                 || o.State == OrderState.暂停.ToString())
+                                 && o.State == OrderState.未完成.ToString()
                                 select o;
                     return query.Count();
                 }
@@ -576,5 +575,25 @@ namespace PMSWCFService
             }
         }
 
+        public double GetUnVHPTargetCount()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from o in dc.Orders
+                                where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
+                                 && o.State == OrderState.未完成.ToString()
+                                 && o.ProductType=="靶材"
+                                select o;
+                    return query.Sum(i=>i.Quantity);
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

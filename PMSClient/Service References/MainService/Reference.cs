@@ -8272,6 +8272,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderUnFinishedCount", ReplyAction="http://tempuri.org/IOrderService/GetOrderUnFinishedCountResponse")]
         System.Threading.Tasks.Task<int> GetOrderUnFinishedCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetUnFinishedTargetCount", ReplyAction="http://tempuri.org/IOrderService/GetUnFinishedTargetCountResponse")]
+        double GetUnFinishedTargetCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetUnFinishedTargetCount", ReplyAction="http://tempuri.org/IOrderService/GetUnFinishedTargetCountResponse")]
+        System.Threading.Tasks.Task<double> GetUnFinishedTargetCountAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8459,6 +8465,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetOrderUnFinishedCountAsync() {
             return base.Channel.GetOrderUnFinishedCountAsync();
+        }
+        
+        public double GetUnFinishedTargetCount() {
+            return base.Channel.GetUnFinishedTargetCount();
+        }
+        
+        public System.Threading.Tasks.Task<double> GetUnFinishedTargetCountAsync() {
+            return base.Channel.GetUnFinishedTargetCountAsync();
         }
     }
     
@@ -9650,6 +9664,12 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCountResponse")]
         System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetUnVHPTargetCount", ReplyAction="http://tempuri.org/IMissonService/GetUnVHPTargetCountResponse")]
+        double GetUnVHPTargetCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetUnVHPTargetCount", ReplyAction="http://tempuri.org/IMissonService/GetUnVHPTargetCountResponse")]
+        System.Threading.Tasks.Task<double> GetUnVHPTargetCountAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedSample", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedSampleResponse")]
         PMSClient.MainService.DcOrder[] GetMissonUnCompletedSample(int skip, int take);
         
@@ -9808,6 +9828,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync() {
             return base.Channel.GetMissonUnCompletedCountAsync();
+        }
+        
+        public double GetUnVHPTargetCount() {
+            return base.Channel.GetUnVHPTargetCount();
+        }
+        
+        public System.Threading.Tasks.Task<double> GetUnVHPTargetCountAsync() {
+            return base.Channel.GetUnVHPTargetCountAsync();
         }
         
         public PMSClient.MainService.DcOrder[] GetMissonUnCompletedSample(int skip, int take) {
@@ -10991,6 +11019,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/DeleteRecordMilling", ReplyAction="http://tempuri.org/IRecordMillingService/DeleteRecordMillingResponse")]
         System.Threading.Tasks.Task<int> DeleteRecordMillingAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetAllPowderWeight", ReplyAction="http://tempuri.org/IRecordMillingService/GetAllPowderWeightResponse")]
+        double GetAllPowderWeight();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetAllPowderWeight", ReplyAction="http://tempuri.org/IRecordMillingService/GetAllPowderWeightResponse")]
+        System.Threading.Tasks.Task<double> GetAllPowderWeightAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11098,6 +11132,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> DeleteRecordMillingAsync(System.Guid id) {
             return base.Channel.DeleteRecordMillingAsync(id);
+        }
+        
+        public double GetAllPowderWeight() {
+            return base.Channel.GetAllPowderWeight();
+        }
+        
+        public System.Threading.Tasks.Task<double> GetAllPowderWeightAsync() {
+            return base.Channel.GetAllPowderWeightAsync();
         }
     }
     

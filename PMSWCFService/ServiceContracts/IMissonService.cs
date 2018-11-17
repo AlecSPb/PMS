@@ -32,6 +32,8 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetMissonUnCompletedCount();
 
+        [OperationContract]
+        double GetUnVHPTargetCount();
 
         [OperationContract]
         List<DcOrder> GetMissonUnCompletedSample(int skip, int take);

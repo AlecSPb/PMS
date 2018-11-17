@@ -19,7 +19,8 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <TextBlock Text="{StaticResource PageMisson}" Style="{StaticResource StyleTextBlockPageTitle}"/>
-            <TextBlock Text="{Binding MissonTarget,StringFormat=共有{0}个新订单需要完成}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
+            <TextBlock Text="{Binding MissonTarget,StringFormat=有{0}个新订单}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
+            <TextBlock Text="{Binding UnVHPTargetCount,StringFormat=共计{0}块靶材需要完成}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Red"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}"
