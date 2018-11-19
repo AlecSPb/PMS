@@ -310,7 +310,7 @@ namespace PMSClient.ViewModel
                 DcDeliveryItem[] items;
                 using (var service = new DeliveryServiceClient())
                 {
-                    items = service.GetDeliveryItemByDeliveryID(model.ID);
+                    items = service.GetDeliveryItemByDeliveryID(model.ID).OrderBy(i=>i.PackNumber).ThenBy(i=>i.ProductID).ToArray();
                 }
 
                 var select_win = new ToolWindow.LabelItemSelect();
@@ -382,7 +382,7 @@ namespace PMSClient.ViewModel
                 PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.Delivery, pageTitle,
                     tips, template, mainContent, helpimage);
                 var win = new Tool.LabelOutPutWindow();
-                win.ShowDialog();
+                win.Show();
             }
         }
 

@@ -54,7 +54,7 @@ namespace PMSClient.ExcelOutputHelper
                     "Max-1",
                     "Max-2",
                     "Max-3",
-                    "Min-4",
+                    "Max-4",
                     "Min-1",
                     "Min-2",
                     "Min-3",
@@ -183,7 +183,7 @@ namespace PMSClient.ExcelOutputHelper
                         rowIndex++;
                     }
                     pageIndex++;
-                    System.Threading.Thread.Sleep(200);
+                    //System.Threading.Thread.Sleep(200);
                 }
 
 

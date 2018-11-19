@@ -102,7 +102,12 @@ namespace PMSClient.ReportsHelper
                                                 .FirstOrDefault();
                                             if (bonding != null)
                                             {
-                                                mainTable.Rows[rownumber].Cells[8].Paragraphs[0].Append(bonding.PlateLot)
+                                                string bp_lot = bonding.PlateLot;
+                                                if (bp_lot.EndsWith("A"))
+                                                {
+                                                    bp_lot += "(old)";
+                                                }
+                                                mainTable.Rows[rownumber].Cells[8].Paragraphs[0].Append(bp_lot)
                                                     .FontSize(10).Alignment = Alignment.left;
                                             }
                                         }
