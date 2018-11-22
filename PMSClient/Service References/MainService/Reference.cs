@@ -10713,6 +10713,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestByProductID", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestByProductIDResponse")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcRecordTest[]> GetRecordTestByProductIDAsync(string productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTestResponse")]
+        PMSClient.MainService.DcRecordTest[] GetUnFinishedRecordTest();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTestResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordTest[]> GetUnFinishedRecordTestAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10820,6 +10826,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordTest[]> GetRecordTestByProductIDAsync(string productId) {
             return base.Channel.GetRecordTestByProductIDAsync(productId);
+        }
+        
+        public PMSClient.MainService.DcRecordTest[] GetUnFinishedRecordTest() {
+            return base.Channel.GetUnFinishedRecordTest();
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordTest[]> GetUnFinishedRecordTestAsync() {
+            return base.Channel.GetUnFinishedRecordTestAsync();
         }
     }
     

@@ -384,6 +384,7 @@ namespace PMSClient.ViewModel
                 var helpimage = "deliverysheet.png";
                 PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.Delivery, pageTitle,
                     tips, template, mainContent, helpimage);
+
                 var win = new Tool.LabelOutPutWindow();
                 win.Show();
             }

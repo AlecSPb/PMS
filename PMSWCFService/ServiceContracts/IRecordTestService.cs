@@ -35,5 +35,9 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         List<DcRecordTest> GetRecordTestByProductID(string productId);
+
+
+        [OperationContract]
+        List<DcRecordTest> GetUnFinishedRecordTest();
     }
 }

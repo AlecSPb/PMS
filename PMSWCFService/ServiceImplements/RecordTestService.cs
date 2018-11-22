@@ -83,7 +83,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
-                                where t.ProductID == productId && t.State!="作废"
+                                where t.ProductID == productId && t.State != "作废"
                                 orderby t.CreateTime descending
                                 select t;
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordTest, DcRecordTest>());
@@ -181,6 +181,28 @@ namespace PMSWCFService
                                 && t.State == CommonState.已核验.ToString()
                                 select t;
                     return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcRecordTest> GetUnFinishedRecordTest()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from t in dc.RecordTests
+                                where t.State == CommonState.未录入.ToString()
+                                orderby t.CreateTime descending
+                                select t;
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordTest, DcRecordTest>());
+                    var products = Mapper.Map<List<RecordTest>, List<DcRecordTest>>(query.ToList());
+                    return products;
                 }
             }
             catch (Exception ex)

@@ -40,6 +40,8 @@
                     Command="{Binding QuickDoc}"/>
             <Button Content="{StaticResource ButtonQuickChart}" Style="{StaticResource    StyleButtonSpecial}"
                     Command="{Binding QuickChart}"/>
+            <Button Content="{StaticResource ButtonQuickLabel}" Style="{StaticResource    StyleButtonSpecial}"
+                    Command="{Binding QuickLabel}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorNoInput}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource NoInputBrush}"/>
 

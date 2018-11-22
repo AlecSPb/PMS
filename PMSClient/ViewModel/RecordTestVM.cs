@@ -71,6 +71,37 @@ namespace PMSClient.ViewModel
             QuickChart = new RelayCommand(ActionQuickChart, CanQuickChart);
 
             Compare = new RelayCommand<RecordTestExtra>(ActionCompare);
+            QuickLabel = new RelayCommand(ActionQuickLabel);
+        }
+
+        private void ActionQuickLabel()
+        {
+            using (var service = new RecordTestServiceClient())
+            {
+                StringBuilder sb = new StringBuilder();
+                var result = service.GetUnFinishedRecordTest();
+
+                if (result.Count() == 0)
+                {
+                    PMSDialogService.ShowWarning("无[未录入-红色]的测试记录");
+                    return;
+                }
+
+
+                foreach (var item in result)
+                {
+                    sb.AppendLine(item.ProductID);
+                    sb.AppendLine(item.Composition);
+                    sb.AppendLine(item.Dimension);
+                    sb.AppendLine(item.PO);
+                    sb.AppendLine(item.Customer);
+                    sb.AppendLine("--------------------");
+                }
+                var win = new LabelCopyWindow();
+                win.LabelInformation = sb.ToString();
+                win.BasicInformation = "仔细核对，认真检查，防止出错";
+                win.Show();
+            }
         }
 
         private void ActionQuickChart()
@@ -487,6 +518,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand QuickDoc { get; set; }
         public RelayCommand QuickChart { get; set; }
+        public RelayCommand QuickLabel { get; set; }
         #endregion
     }
 }

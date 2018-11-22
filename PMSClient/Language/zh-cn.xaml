@@ -220,6 +220,7 @@
     <sys:String x:Key="ButtonChart">曲线图</sys:String>
     <sys:String x:Key="ButtonRecordSheet">记录单</sys:String>
     <sys:String x:Key="ButtonLabel">标签</sys:String>
+    <sys:String x:Key="ButtonQuickLabel">快速标签</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">清单</sys:String>
     <sys:String x:Key="ButtonMisson">任务</sys:String>
     <sys:String x:Key="ButtonHistory">历史</sys:String>

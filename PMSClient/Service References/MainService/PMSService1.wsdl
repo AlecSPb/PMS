@@ -992,6 +992,12 @@
   <wsdl:message name="IRecordTestService_GetRecordTestByProductID_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordTestByProductIDResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetUnFinishedRecordTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnFinishedRecordTest" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetUnFinishedRecordTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnFinishedRecordTestResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordVHPService_GetRecordVHP_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordVHP" />
   </wsdl:message>
@@ -1966,6 +1972,10 @@
     <wsdl:operation name="GetRecordTestByProductID">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestByProductID" message="tns:IRecordTestService_GetRecordTestByProductID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestByProductIDResponse" message="tns:IRecordTestService_GetRecordTestByProductID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnFinishedRecordTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTest" message="tns:IRecordTestService_GetUnFinishedRecordTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTestResponse" message="tns:IRecordTestService_GetUnFinishedRecordTest_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordVHPService">
@@ -3678,6 +3688,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetRecordTestByProductID">
       <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetRecordTestByProductID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnFinishedRecordTest">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTest" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
