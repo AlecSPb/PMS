@@ -17,6 +17,7 @@ namespace PMSClient.ToolWindow
 
     public class LabelItemSelectResult
     {
+        public bool HasSeperator { get; set; } = true;
         public bool HasProductID { get; set; } = true;
         public bool HasComposition { get; set; } = true;
         public bool HasCustomer { get; set; } = true;
@@ -44,7 +45,7 @@ namespace PMSClient.ToolWindow
             result.HasCustomer = (bool)ChkCustomer.IsChecked;
             result.HasPO = (bool)ChkPO.IsChecked;
             result.HasPlateLot = (bool)ChkPlateLot.IsChecked;
-
+            result.HasSeperator = (bool)ChkSeperator.IsChecked;
             this.DialogResult = true;
         }
 

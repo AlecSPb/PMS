@@ -43,7 +43,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource FCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
                 <DataGridTextColumn Header="{StaticResource FStage}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Stage}"/>
                 <DataGridTextColumn Header="{StaticResource FProductID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"

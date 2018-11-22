@@ -43,7 +43,6 @@ namespace PMSClient.ViewModel
         {
             SearchCompositionStd = "";
             SearchProductID = vhpnumber;
-            SetPageParametersWhenConditionChange();
         }
 
         public void RefreshData()
@@ -69,8 +68,30 @@ namespace PMSClient.ViewModel
             Output = new RelayCommand(ActionOutput);
             BatchDoc = new RelayCommand(ActionBatchDoc);
             QuickDoc = new RelayCommand(ActionQuickDoc, CanQuickDoc);
+            QuickChart = new RelayCommand(ActionQuickChart, CanQuickChart);
 
             Compare = new RelayCommand<RecordTestExtra>(ActionCompare);
+        }
+
+        private void ActionQuickChart()
+        {
+            if (RecordTestExtras.Count < 3)
+            {
+                PMSDialogService.ShowWarning("至少要显示出3条记录，才可以使用图表功能");
+                return;
+            }
+            var chart = new DensityChart();
+            var vm = new DensityChartVM();
+
+            vm.DisplayRecord(RecordTestExtras.ToList());
+
+            chart.DataContext = vm;
+            chart.Show();
+        }
+
+        private bool CanQuickChart()
+        {
+            return true;
         }
 
         private bool CanCheck(RecordTestExtra arg)
@@ -465,6 +486,7 @@ namespace PMSClient.ViewModel
         public RelayCommand Output { get; set; }
 
         public RelayCommand QuickDoc { get; set; }
+        public RelayCommand QuickChart { get; set; }
         #endregion
     }
 }

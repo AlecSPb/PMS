@@ -29,11 +29,11 @@ namespace PMSClient.ViewModel
             Select = new RelayCommand(ActionSelect);
             Calculator = new RelayCommand(AcionCalculator);
         }
-        public void SetDensity(double density,double ratiodensity)
+        public void SetDensity(double density, double ratiodensity)
         {
             CurrentRecordDeMold.Density = density;
             CurrentRecordDeMold.RatioDensity = ratiodensity;
-           
+
         }
         private void AcionCalculator()
         {
@@ -113,12 +113,35 @@ namespace PMSClient.ViewModel
             }
         }
 
+        #region 处理大靶编号
+        private bool IsBigTargetLot(DcPlanWithMisson item)
+        {
+
+            return item.Plan.FillingRequirement.Contains("#")
+                                    && (item.Plan.PlanType.Contains("其他") ||
+                                            item.Plan.PlanType.Contains("加工"));
+        }
+
+        private string GetBigNumber(string millling)
+        {
+            if (string.IsNullOrEmpty(millling))
+                return "";
+            return System.Text.RegularExpressions.Regex.Match(millling, @"#\d*").Value;
+        }
+        #endregion
+
         public void SetBySelect(DcPlanWithMisson plan)
         {
             if (plan != null)
             {
-                CurrentRecordDeMold.Composition = plan.Misson.CompositionStandard;
                 CurrentRecordDeMold.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot(plan);
+                //如果是要加工的440大靶，则给lot号后面添加上它的序列编号
+                if (IsBigTargetLot(plan))
+                {
+                    CurrentRecordDeMold.VHPPlanLot += GetBigNumber(plan.Plan.MillingRequirement);
+                }
+
+                CurrentRecordDeMold.Composition = plan.Misson.CompositionStandard;
                 CurrentRecordDeMold.PMINumber = plan.Misson.PMINumber;
                 CurrentRecordDeMold.Dimension = plan.Misson.Dimension;
                 CurrentRecordDeMold.PlanType = plan.Plan.PlanType;

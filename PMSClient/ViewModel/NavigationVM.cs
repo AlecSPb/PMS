@@ -94,7 +94,6 @@ namespace PMSClient.ViewModel
             GoToDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.Delivery), () => _session.IsAuthorized(PMSAccess.ReadDelivery));
             GoToDeliveryItemList = new RelayCommand(() => NavigationService.GoTo(PMSViews.DeliveryItemList), () => _session.IsAuthorized(PMSAccess.ReadDelivery));
 
-            GoToMaintenance = new RelayCommand(() => NavigationService.GoTo(PMSViews.Maintanence), () => _session.IsAuthorized(PMSAccess.ReadMaintenance));
             GoToBDCustomer = new RelayCommand(() => NavigationService.GoTo(PMSViews.Customer), () => _session.IsAuthorized(PMSAccess.ReadCustomer));
             #region 临时
             //GoToBDCompound = new RelayCommand(() => NavigationService.GoTo(PMSViews.BDCompound), () => _session.IsAuthorized("浏览化合物信息"));
@@ -271,7 +270,6 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToStatisticPlan { get; private set; }
         public RelayCommand GoToStatisticProduct { get; private set; }
 
-        public RelayCommand GoToMaintenance { get; set; }
         public RelayCommand GoToBDCustomer { get; set; }
         public RelayCommand GoToBDCompound { get; set; }
         public RelayCommand GoToBDVHPDevice { get; set; }

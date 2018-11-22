@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>97</ApplicationRevision>
+    <ApplicationRevision>99</ApplicationRevision>
     <ApplicationVersion>4.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -371,6 +371,10 @@
     <Compile Include="ToolWindow\DensityCalculation.xaml.cs">
       <DependentUpon>DensityCalculation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\DensityChart.xaml.cs">
+      <DependentUpon>DensityChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindow\DensityChartVM.cs" />
     <Compile Include="ToolWindow\DialogWindowBase.cs" />
     <Compile Include="ToolWindow\EmptyTextBox.xaml.cs">
       <DependentUpon>EmptyTextBox.xaml</DependentUpon>
@@ -964,6 +968,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolWindow\DensityCalculation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\DensityChart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1975,12 +1983,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

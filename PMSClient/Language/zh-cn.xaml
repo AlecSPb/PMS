@@ -308,6 +308,7 @@
     <sys:String x:Key="ButtonScanAdd">扫描</sys:String>
     <sys:String x:Key="ButtonOutSource">外包入库</sys:String>
     <sys:String x:Key="ButtonQuickDoc">快速报告</sys:String>
+    <sys:String x:Key="ButtonQuickChart">快速图表</sys:String>
 
     <sys:String x:Key="ButtonCompare">对比</sys:String>
 

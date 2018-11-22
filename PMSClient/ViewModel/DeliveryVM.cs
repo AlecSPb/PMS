@@ -371,7 +371,10 @@ namespace PMSClient.ViewModel
                         }
 
                     }
-                    sb.AppendLine("-----------------------------");
+                    if (dialog_result.HasSeperator)
+                    {
+                        sb.AppendLine("-----------------------------");
+                    }
                 }
                 string mainContent = $"发往: {country}\r-----------------\r{sb.ToString()}";
 

@@ -1,0 +1,45 @@
+﻿<Window x:Class="PMSClient.ToolWindow.DensityChart"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        Title="密度对比图" Height="450" Width="1000" Topmost="False"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <CheckBox Name="ChkTopMost" IsChecked="False" Style="{StaticResource StyleCheckBoxCommon}"
+                      Content="保持最前面" Click="ChkTopMost_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGNavigationBar}">
+            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Foreground="White"
+                       Text="密度参考线"/>
+            <TextBox Text="{Binding ReferenceDensity}" Style="{StaticResource StyleTextBoxCommon}" Background="White"/>
+            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Foreground="White"
+                       Text="Y最大"/>
+            <TextBox Text="{Binding YMax}" Style="{StaticResource StyleTextBoxCommon}" Background="White"/>
+            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Foreground="White"
+                       Text="Y最小"/>
+            <TextBox Text="{Binding YMin}" Style="{StaticResource StyleTextBoxCommon}" Background="White"/>
+            <Button Content="刷新" Style="{StaticResource StyleButtonCommon}" Command="{Binding Refresh}"/>
+        </StackPanel>
+        <Border Grid.Row="2" Style="{StaticResource StyleBorderCommon}">
+            <lvc:CartesianChart Series="{Binding DataSeries}" LegendLocation="Top">
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis Title="{Binding  XAxisTitle }" Labels="{Binding XLabels}" Visibility="Hidden"/>
+                </lvc:CartesianChart.AxisX>
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title="{Binding  YAxisTitle}"  MinValue="{Binding YMin}"
+                              MaxValue="{Binding YMax}"/>
+                </lvc:CartesianChart.AxisY>
+            </lvc:CartesianChart>
+        </Border>
+    </Grid>
+</Window>

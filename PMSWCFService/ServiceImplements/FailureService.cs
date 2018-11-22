@@ -48,7 +48,7 @@ namespace PMSWCFService
                 {
                     var query = from m in db.Failures
                                 where m.Stage.Contains(stage) && m.State!="作废"
-                                orderby m.CreateTime
+                                orderby m.CreateTime descending
                                 select m;
 
                     var list = Mapper.Map<List<Failure>, List<DcFailure>>(query.Skip(s).Take(t).ToList());
