@@ -44,11 +44,11 @@ namespace PMSClient.ToolWindow
             result.HasProductID = (bool)ChkProductID.IsChecked;
             result.HasComposition = (bool)ChkComposition.IsChecked;
             result.HasDimension = (bool)ChkDimension.IsChecked;
+            result.HasCompositionAbbr = (bool)ChkCompositionAbbr.IsChecked;
             result.HasCustomer = (bool)ChkCustomer.IsChecked;
             result.HasPO = (bool)ChkPO.IsChecked;
             result.HasPlateLot = (bool)ChkPlateLot.IsChecked;
             result.HasSeperator = (bool)ChkSeperator.IsChecked;
-            result.Has
             this.DialogResult = true;
         }
 

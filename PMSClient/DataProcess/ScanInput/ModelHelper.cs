@@ -151,7 +151,7 @@ namespace PMSClient.DataProcess.ScanInput
             model.PO = "";
             model.Customer = "";
             model.Weight = ss.Weight;
-            model.DetailRecord = "细节";
+            model.DetailRecord = "无";
             model.Remark = "无";
             model.PackNumber = boxNumber;
             model.Position = "B2";

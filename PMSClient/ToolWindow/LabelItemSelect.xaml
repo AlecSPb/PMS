@@ -16,16 +16,16 @@
         <StackPanel Grid.Row="0">
             <CheckBox Name="ChkSeperator" Content="每个项目之间生成分割符" Style="{StaticResource StyleCheckBoxCommon}"
                       IsChecked="True"/>
-            <CheckBox Name="ChkProductID" Content="产品ID" Style="{StaticResource StyleCheckBoxCommon}"
-                      IsChecked="True"/>
             <CheckBox Name="ChkComposition" Content="成分-全" Style="{StaticResource StyleCheckBoxCommon}"
                       IsChecked="False"/>
             <CheckBox Name="ChkCompositionAbbr" Content="成分-缩写" Style="{StaticResource StyleCheckBoxCommon}"
-                      IsChecked="False"/>
+                      IsChecked="False" Visibility="Collapsed"/>
             <CheckBox Name="ChkCustomer" Content="客户" Style="{StaticResource StyleCheckBoxCommon}"
                       IsChecked="False"/>
             <CheckBox Name="ChkDimension" Content="尺寸" Style="{StaticResource StyleCheckBoxCommon}"
                       IsChecked="False"/>
+            <CheckBox Name="ChkProductID" Content="产品ID" Style="{StaticResource StyleCheckBoxCommon}"
+                      IsChecked="True"/>
             <CheckBox Name="ChkPO" Content="PO" Style="{StaticResource StyleCheckBoxCommon}"
                       IsChecked="True"/>
             <CheckBox Name="ChkPlateLot" Content="背板批号(仅限绑定靶材)" Style="{StaticResource StyleCheckBoxCommon}"

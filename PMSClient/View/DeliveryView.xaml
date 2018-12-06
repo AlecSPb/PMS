@@ -15,6 +15,8 @@
             <RowDefinition Height="180"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageDelivery}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
@@ -156,6 +158,10 @@
                                 <Button Content="{StaticResource ButtonRecordTest}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.SearchRecordTest,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.QuickSave,RelativeSource={RelativeSource 
+                                                Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -189,7 +195,7 @@
                         <DataTemplate>
                             <TextBox Style="{StaticResource StyleDGTextBox}"
                                          Text="{Binding Customer,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
-                                         Width="120" Background="Wheat"/>
+                                         Width="120" Background="LightYellow"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -198,7 +204,7 @@
                         <DataTemplate>
                             <TextBox Style="{StaticResource StyleDGTextBox}"
                                          Text="{Binding PO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
-                                         Width="120" Background="Wheat"/>
+                                         Width="120" Background="LightYellow"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -226,11 +232,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBox Style="{StaticResource StyleDGTextBox}"
                                          Text="{Binding PackNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
-                                         TextAlignment="Center" Width="50" Background="Wheat"/>
-                                <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleDGButton}"
-                                        Command="{Binding DataContext.QuickSave,RelativeSource={RelativeSource 
-                                                Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
+                                         TextAlignment="Center" Width="50" Background="LightYellow"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -248,5 +250,9 @@
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Text="{Binding TotalItems,StringFormat=共{0}片}" Style="{StaticResource StyleDGTextBlockCommon}"/>
+            <Button Content="全部保存" Style="{StaticResource StyleButtonCommon}" Command="{Binding SaveAllItems}"/>
+        </StackPanel>
     </Grid>
 </UserControl>

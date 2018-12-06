@@ -60,6 +60,33 @@ namespace PMSClient.ViewModel
             ScanAdd = new RelayCommand<DcDelivery>(AcitonScanAdd, CanScanAdd);
 
             QuickSave = new RelayCommand<DcDeliveryItem>(ActionQuickSave, CanQuickSave);
+            SaveAllItems = new RelayCommand(ActionSaveAllItems, CanSaveAllItems);
+        }
+
+        private void ActionSaveAllItems()
+        {
+            try
+            {
+                using (var service = new DeliveryServiceClient())
+                {
+                    foreach (var item in DeliveryItems)
+                    {
+                        service.UpdateDeliveryItemByUID(item, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    }
+                }
+                PMSDialogService.Show("全部保存成功，确定后刷新");
+                ActionSelectionChanged(CurrentSelectItem);
+
+            }
+            catch (Exception)
+            {
+                PMSDialogService.Show("保存失败");
+            }
+        }
+
+        private bool CanSaveAllItems()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
         }
 
         private void ActionQuickSave(DcDeliveryItem obj)
@@ -72,7 +99,8 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateDeliveryItemByUID(obj, PMSHelper.CurrentSession.CurrentUser.UserName);
                 }
-                PMSDialogService.Show("已保存到服务器");
+                PMSDialogService.Show("已保存到服务器,确定后刷新");
+                ActionSelectionChanged(CurrentSelectItem);
             }
             catch (Exception ex)
             {
@@ -243,7 +271,7 @@ namespace PMSClient.ViewModel
                 {
                     var result = service.GetDeliveryItemByDeliveryID(model.ID);
                     DeliveryItems.Clear();
-                    result.OrderBy(i=>i.PackNumber).ThenBy(i=>i.ProductID).ToList().ForEach(i => DeliveryItems.Add(i));
+                    result.OrderBy(i => i.PackNumber).ThenBy(i => i.ProductID).ToList().ForEach(i => DeliveryItems.Add(i));
 
                     CurrentSelectItem = model;
                 }
@@ -310,7 +338,7 @@ namespace PMSClient.ViewModel
                 DcDeliveryItem[] items;
                 using (var service = new DeliveryServiceClient())
                 {
-                    items = service.GetDeliveryItemByDeliveryID(model.ID).OrderBy(i=>i.PackNumber).ThenBy(i=>i.ProductID).ToArray();
+                    items = service.GetDeliveryItemByDeliveryID(model.ID).OrderBy(i => i.PackNumber).ThenBy(i => i.ProductID).ToArray();
                 }
 
                 var select_win = new ToolWindow.LabelItemSelect();
@@ -323,24 +351,28 @@ namespace PMSClient.ViewModel
 
                 foreach (var item in items)
                 {
-                    if (dialog_result.HasProductID)
-                    {
-                        sb.AppendLine(item.ProductID.Trim());
-                    }
                     if (dialog_result.HasComposition)
                     {
                         //sb.Append("Composition:");
                         sb.AppendLine(item.Composition);
                     }
-                    if (dialog_result.HasCompositionAbbr)
-                    {
-                        sb.AppendLine();
-                    }
+
                     if (dialog_result.HasDimension)
                     {
                         //sb.Append("Dimension:");
                         sb.AppendLine(item.Dimension);
                     }
+
+                    if (dialog_result.HasProductID)
+                    {
+                        sb.AppendLine(item.ProductID.Trim());
+                    }
+
+                    if (dialog_result.HasCompositionAbbr)
+                    {
+                        //sb.AppendLine();
+                    }
+
                     if (dialog_result.HasCustomer)
                     {
                         //sb.Append("Customer:");
@@ -447,6 +479,16 @@ namespace PMSClient.ViewModel
         #region Properties
         public ObservableCollection<DcDelivery> Deliveries { get; set; }
         public ObservableCollection<DcDeliveryItem> DeliveryItems { get; set; }
+
+        public int TotalItems
+        {
+            get
+            {
+                return DeliveryItems.Count;
+            }
+        }
+
+
         private int currentSelectIndex;
 
         public int CurrentSelectIndex
@@ -488,6 +530,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcDelivery> ScanAdd { get; set; }
 
         public RelayCommand<DcDeliveryItem> QuickSave { get; set; }
+        public RelayCommand SaveAllItems { get; set; }
         #endregion
 
 
