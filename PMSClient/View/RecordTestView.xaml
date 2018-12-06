@@ -31,10 +31,10 @@
             <TextBlock Text="{StaticResource RTComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch }" />
-            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
-            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
-            <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource    StyleButtonSpecial}" Command="{Binding Output}"/>
-            <Button Content="{StaticResource ButtonBatchDoc}" Style="{StaticResource    StyleButtonSpecial}"
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommonNarrow}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommonNarrow}" Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource    StyleButtonCommonNarrow}" Command="{Binding Output}"/>
+            <Button Content="{StaticResource ButtonBatchDoc}" Style="{StaticResource    StyleButtonCommonNarrow}"
                     Command="{Binding BatchDoc}"/>
             <Button Content="{StaticResource ButtonQuickDoc}" Style="{StaticResource    StyleButtonSpecial}"
                     Command="{Binding QuickDoc}"/>

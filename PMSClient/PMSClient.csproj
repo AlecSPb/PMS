@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>99</ApplicationRevision>
+    <ApplicationRevision>101</ApplicationRevision>
     <ApplicationVersion>4.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -242,6 +242,7 @@
     <Compile Include="ExcelOutputHelper\ExcelOutputSpecialFor230.cs" />
     <Compile Include="ExcelOutputHelper\Libs\SpecialFor230.cs" />
     <Compile Include="ExcelOutputHelper\NPOIHelper.cs" />
+    <Compile Include="Helpers\CompositionHelper.cs" />
     <Compile Include="Helpers\Converter\LastDayConverter.cs" />
     <Compile Include="Helpers\Converter\LastDayImageConverter.cs" />
     <Compile Include="Helpers\Converter\MissonStateToBoolConverter.cs" />

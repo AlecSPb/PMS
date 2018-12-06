@@ -36,10 +36,10 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            searchPMINumber = "";
-            searchSupplier = "";
-            searchComposition = "";
-            searchOrderItemNumber = "";
+            SearchPMINumber = "";
+            SearchSupplier = "";
+            SearchComposition = "";
+            SearchOrderItemNumber = "";
             MaterialOrderItemExtras = new ObservableCollection<DcMaterialOrderItemExtra>();
         }
         private void InitializeCommands()

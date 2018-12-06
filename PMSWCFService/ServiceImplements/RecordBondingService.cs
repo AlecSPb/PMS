@@ -139,6 +139,51 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+        public int GetRecordBondingCountNew(string productid, string composition,string platelot)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    return dc.RecordBondings.Where(p => p.TargetProductID.Contains(productid) 
+                    && p.TargetComposition.Contains(composition)
+                    && p.PlateLot.Contains(platelot)
+                      && p.State != BondingState.作废.ToString()).Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcRecordBonding> GetRecordBondingsNew(int skip, int take, string productid, string composition,string platelot)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.RecordBondings
+                                where p.TargetProductID.Contains(productid)
+                                && p.TargetComposition.Contains(composition)
+                                && p.PlateLot.Contains(platelot)
+                                && p.State != BondingState.作废.ToString()
+                                orderby DbFunctions.TruncateTime(p.CreateTime) descending,
+                                    p.PlanBatchNumber descending, p.TargetProductID descending
+                                select p;
+                    var result = query.Skip(skip).Take(take).ToList();
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordBonding, DcRecordBonding>());
+                    var products = Mapper.Map<List<RecordBonding>, List<DcRecordBonding>>(result);
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
 
         public List<DcRecordBonding> GetUnFinishedRecordBondings()
         {

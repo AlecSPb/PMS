@@ -174,7 +174,7 @@ namespace PMSClient.DataProcess.ScanInput
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.ProductType = ss.ProductType;
-            model.ProductID = DateTime.Now.ToString("yyMMdd");
+            model.ProductID = ss.ProductID;
             model.Composition = ss.Composition;
             model.Abbr = ss.Abbr;
             model.PO = ss.PO;

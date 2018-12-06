@@ -11495,6 +11495,18 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingCount", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingCountResponse")]
         System.Threading.Tasks.Task<int> GetRecordBondingCountAsync(string productid, string composition);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsNew", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsNewResponse")]
+        PMSClient.MainService.DcRecordBonding[] GetRecordBondingsNew(int skip, int take, string productid, string composition, string platelot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsNew", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsNewResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingsNewAsync(int skip, int take, string productid, string composition, string platelot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingCountNew", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingCountNewResponse")]
+        int GetRecordBondingCountNew(string productid, string composition, string platelot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingCountNew", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingCountNewResponse")]
+        System.Threading.Tasks.Task<int> GetRecordBondingCountNewAsync(string productid, string composition, string platelot);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/AddRecordBongding", ReplyAction="http://tempuri.org/IRecordBondingService/AddRecordBongdingResponse")]
         int AddRecordBongding(PMSClient.MainService.DcRecordBonding model);
         
@@ -11579,6 +11591,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetRecordBondingCountAsync(string productid, string composition) {
             return base.Channel.GetRecordBondingCountAsync(productid, composition);
+        }
+        
+        public PMSClient.MainService.DcRecordBonding[] GetRecordBondingsNew(int skip, int take, string productid, string composition, string platelot) {
+            return base.Channel.GetRecordBondingsNew(skip, take, productid, composition, platelot);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingsNewAsync(int skip, int take, string productid, string composition, string platelot) {
+            return base.Channel.GetRecordBondingsNewAsync(skip, take, productid, composition, platelot);
+        }
+        
+        public int GetRecordBondingCountNew(string productid, string composition, string platelot) {
+            return base.Channel.GetRecordBondingCountNew(productid, composition, platelot);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRecordBondingCountNewAsync(string productid, string composition, string platelot) {
+            return base.Channel.GetRecordBondingCountNewAsync(productid, composition, platelot);
         }
         
         public int AddRecordBongding(PMSClient.MainService.DcRecordBonding model) {

@@ -31,9 +31,12 @@
             <TextBlock Text="{StaticResource BDTargetComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch }" />
-            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource StyleButtonCommon}"
+            <TextBlock Text="{StaticResource BDPlateLot}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchPlateLot,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch }" />
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource StyleButtonCommonNarrow}"
                     Command="{Binding Search}"/>
-            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}"
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommonNarrow}"
                     Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonRecordSheet}" Style="{StaticResource StyleButtonSpecial}"
                     Command="{Binding RecordSheet}"/>

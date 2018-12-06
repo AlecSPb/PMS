@@ -20,6 +20,8 @@ namespace PMSClient.ToolWindow
         public bool HasSeperator { get; set; } = true;
         public bool HasProductID { get; set; } = true;
         public bool HasComposition { get; set; } = true;
+        public bool HasCompositionAbbr { get; set; } = true;
+
         public bool HasCustomer { get; set; } = true;
         public bool HasDimension { get; set; } = true;
         public bool HasPO { get; set; } = true;
@@ -46,6 +48,7 @@ namespace PMSClient.ToolWindow
             result.HasPO = (bool)ChkPO.IsChecked;
             result.HasPlateLot = (bool)ChkPlateLot.IsChecked;
             result.HasSeperator = (bool)ChkSeperator.IsChecked;
+            result.Has
             this.DialogResult = true;
         }
 

@@ -1226,6 +1226,18 @@
   <wsdl:message name="IRecordBondingService_GetRecordBondingCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordBondingCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetRecordBondingsNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordBondingsNew" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetRecordBondingsNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordBondingsNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetRecordBondingCountNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordBondingCountNew" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetRecordBondingCountNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordBondingCountNewResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordBondingService_AddRecordBongding_InputMessage">
     <wsdl:part name="parameters" element="tns:AddRecordBongding" />
   </wsdl:message>
@@ -2138,6 +2150,14 @@
     <wsdl:operation name="GetRecordBondingCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingCount" message="tns:IRecordBondingService_GetRecordBondingCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingCountResponse" message="tns:IRecordBondingService_GetRecordBondingCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordBondingsNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsNew" message="tns:IRecordBondingService_GetRecordBondingsNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsNewResponse" message="tns:IRecordBondingService_GetRecordBondingsNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordBondingCountNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingCountNew" message="tns:IRecordBondingService_GetRecordBondingCountNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingCountNewResponse" message="tns:IRecordBondingService_GetRecordBondingCountNew_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddRecordBongding">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/AddRecordBongding" message="tns:IRecordBondingService_AddRecordBongding_InputMessage" />
@@ -4054,6 +4074,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetRecordBondingCount">
       <soap:operation soapAction="http://tempuri.org/IRecordBondingService/GetRecordBondingCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordBondingsNew">
+      <soap:operation soapAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordBondingCountNew">
+      <soap:operation soapAction="http://tempuri.org/IRecordBondingService/GetRecordBondingCountNew" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

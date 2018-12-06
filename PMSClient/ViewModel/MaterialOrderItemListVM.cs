@@ -147,10 +147,10 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            searchPMINumber = "";
-            searchSupplier = "";
-            searchOrderItemNumber = "";
-            searchComposition = "";
+            SearchPMINumber = "";
+            SearchSupplier = "";
+            SearchOrderItemNumber = "";
+            SearchComposition = "";
             SetPageParametersWhenConditionChange();
         }
 

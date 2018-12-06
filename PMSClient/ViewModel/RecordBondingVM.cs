@@ -17,7 +17,7 @@ namespace PMSClient.ViewModel
             RecordBondings = new ObservableCollection<DcRecordBonding>();
 
             InitializeCommands();
-            searchCompositionStd = searchProductID = "";
+            searchCompositionStd = searchProductID = SearchPlateLot = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -71,7 +71,7 @@ namespace PMSClient.ViewModel
             {
                 if (obj == null) return;
                 obj.State = PMSCommon.BondingState.未录入.ToString();
-                using (var service=new RecordBondingServiceClient())
+                using (var service = new RecordBondingServiceClient())
                 {
                     service.UpdateRecordBongdingByUID(obj, PMSHelper.CurrentSession.CurrentUser.UserName);
                 }
@@ -160,8 +160,8 @@ namespace PMSClient.ViewModel
 
         private bool RecordBondingStateTransfer(DcRecordBonding arg)
         {
-            return arg.State == PMSCommon.BondingState.未完成.ToString()||
-                arg.State==PMSCommon.BondingState.未录入.ToString();
+            return arg.State == PMSCommon.BondingState.未完成.ToString() ||
+                arg.State == PMSCommon.BondingState.未录入.ToString();
         }
 
         private void ActionFinish(DcRecordBonding model)
@@ -231,7 +231,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            SearchProductID = SearchCompositionStd = "";
+            SearchProductID = SearchCompositionStd=SearchPlateLot = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -257,7 +257,7 @@ namespace PMSClient.ViewModel
             PageSize = 30;
             using (var service = new RecordBondingServiceClient())
             {
-                RecordCount = service.GetRecordBondingCount(SearchProductID, SearchCompositionStd);
+                RecordCount = service.GetRecordBondingCountNew(SearchProductID, SearchCompositionStd, SearchPlateLot);
             }
 
             ActionPaging();
@@ -270,7 +270,8 @@ namespace PMSClient.ViewModel
 
             using (var service = new RecordBondingServiceClient())
             {
-                var orders = service.GetRecordBondings(skip, take, SearchProductID, SearchCompositionStd);
+                var orders = service.GetRecordBondingsNew(skip, take, 
+                    SearchProductID, SearchCompositionStd,SearchPlateLot);
                 RecordBondings.Clear();
                 orders.ToList().ForEach(o => RecordBondings.Add(o));
             }
@@ -292,7 +293,12 @@ namespace PMSClient.ViewModel
             get { return searchProductID; }
             set { searchProductID = value; RaisePropertyChanged(nameof(SearchProductID)); }
         }
-
+        private string searchPlateLot;
+        public string SearchPlateLot
+        {
+            get { return searchPlateLot; }
+            set { searchPlateLot = value; RaisePropertyChanged(nameof(SearchPlateLot)); }
+        }
 
         public RelayCommand Add { get; set; }
         public RelayCommand QuickAdd { get; set; }

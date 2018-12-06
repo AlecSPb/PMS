@@ -332,6 +332,10 @@ namespace PMSClient.ViewModel
                         //sb.Append("Composition:");
                         sb.AppendLine(item.Composition);
                     }
+                    if (dialog_result.HasCompositionAbbr)
+                    {
+                        sb.AppendLine();
+                    }
                     if (dialog_result.HasDimension)
                     {
                         //sb.Append("Dimension:");

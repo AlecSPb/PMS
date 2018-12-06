@@ -17,7 +17,10 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetRecordBondingCount(string productid, string composition);
 
-
+        [OperationContract]
+        List<DcRecordBonding> GetRecordBondingsNew(int skip, int take, string productid, string composition,string platelot);
+        [OperationContract]
+        int GetRecordBondingCountNew(string productid, string composition,string platelot);
 
 
         [OperationContract]
