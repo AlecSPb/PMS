@@ -19,7 +19,7 @@
             <CheckBox Name="ChkComposition" Content="成分-全" Style="{StaticResource StyleCheckBoxCommon}"
                       IsChecked="False"/>
             <CheckBox Name="ChkCompositionAbbr" Content="成分-缩写" Style="{StaticResource StyleCheckBoxCommon}"
-                      IsChecked="False" Visibility="Collapsed"/>
+                      IsChecked="False"/>
             <CheckBox Name="ChkCustomer" Content="客户" Style="{StaticResource StyleCheckBoxCommon}"
                       IsChecked="False"/>
             <CheckBox Name="ChkDimension" Content="尺寸" Style="{StaticResource StyleCheckBoxCommon}"

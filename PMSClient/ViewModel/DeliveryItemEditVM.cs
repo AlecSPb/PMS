@@ -57,9 +57,9 @@ namespace PMSClient.ViewModel
             model.DetailRecord = "细节";
             model.Remark = "无";
             model.PackNumber = 1;
-            model.Position = "B2";
-            model.Dimension = "";
-            model.DimensionActual = "";
+            model.Position = "无";
+            model.Dimension = "无";
+            model.DimensionActual = "无";
             model.Defects = "无";
             model.State = PMSCommon.SimpleState.正常.ToString();
             #endregion

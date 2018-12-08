@@ -31,7 +31,7 @@ namespace PMSWCFService
                             where dd.State == "正常" && bbdata.State == "已核验" && ccdata.State == "完成"
                             && (dd.Customer == "Midsummer" || dd.Customer == "Chaozhou")
                             && dd.Dimension.Contains("230")
-                            orderby dd.ProductID ascending
+                            orderby dd.ProductID descending
                             select new EFModel
                             {
                                 Delivery = dd,

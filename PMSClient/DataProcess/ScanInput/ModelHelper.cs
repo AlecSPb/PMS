@@ -149,12 +149,12 @@ namespace PMSClient.DataProcess.ScanInput
             model.Composition = ss.PlateMaterial;
             model.Abbr = ss.PlateMaterial;
             model.PO = "";
-            model.Customer = "";
+            model.Customer = "无";
             model.Weight = ss.Weight;
             model.DetailRecord = "无";
             model.Remark = "无";
             model.PackNumber = boxNumber;
-            model.Position = "B2";
+            model.Position = "无";
             model.Dimension = ss.Dimension;
             model.DimensionActual = ss.Dimension;
             model.Defects = ss.Defects;
@@ -180,10 +180,10 @@ namespace PMSClient.DataProcess.ScanInput
             model.PO = ss.PO;
             model.Customer = ss.Customer;
             model.Weight = ss.Weight;
-            model.DetailRecord = "细节";
+            model.DetailRecord = "无";
             model.Remark = "无";
             model.PackNumber = 1;
-            model.Position = "B2";
+            model.Position = "无";
             model.Dimension = ss.Dimension;
             model.DimensionActual = ss.DimensionActual;
             model.Defects = ss.Defects;

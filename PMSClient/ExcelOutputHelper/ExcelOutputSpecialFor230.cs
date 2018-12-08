@@ -46,7 +46,8 @@ namespace PMSClient.ExcelOutputHelper
                     "Plate Number",
                     "Bonding Date",
                     "Bonding Rate",
-                    "Delivery Date",
+                    "Shipment Date",
+                    "Shipment Number",
                     "Ave-1",
                     "Ave-2",
                     "Ave-3",
@@ -114,6 +115,7 @@ namespace PMSClient.ExcelOutputHelper
                         helper.CreateAndSetCell(11, item.Bond?.CreateTime.ToShortDateString());
                         helper.CreateAndSetCell(12, item.Bond?.WeldingRate.ToString());
                         helper.CreateAndSetCell(13, item.Delivery?.CreateTime.ToShortDateString());
+                        helper.CreateAndSetCell(14, item.Delivery?.Position);
 
 
                         //XRF成分处理
@@ -125,7 +127,7 @@ namespace PMSClient.ExcelOutputHelper
 
 
                             int col_index = 0;
-                            const int start_col_index = 14;
+                            const int start_col_index = 15;
 
                             col_index = start_col_index;
                             if (result.Average.Count > 0)

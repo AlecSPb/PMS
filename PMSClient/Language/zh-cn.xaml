@@ -614,7 +614,7 @@
     <sys:String x:Key="RDDetailRecord">记录细节</sys:String>
     <sys:String x:Key="RDWeight">重量</sys:String>
     <sys:String x:Key="RDPackNumber">装箱号</sys:String>
-    <sys:String x:Key="RDPosition">货架位置</sys:String>
+    <sys:String x:Key="RDPosition">货运单号</sys:String>
     <sys:String x:Key="RDItemState">状态</sys:String>
     <sys:String x:Key="RDDimension">尺寸</sys:String>
     <!--Product-->

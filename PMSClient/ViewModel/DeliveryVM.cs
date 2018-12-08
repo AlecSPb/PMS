@@ -10,6 +10,7 @@ using PMSClient.MainService;
 using GalaSoft.MvvmLight.Messaging;
 using PMSClient.ReportsHelper;
 //using bt = BarTender;
+using PMSClient.Helpers;
 
 
 
@@ -65,6 +66,8 @@ namespace PMSClient.ViewModel
 
         private void ActionSaveAllItems()
         {
+            if (!PMSDialogService.ShowYesNo("请问", "确定全部保存吗？"))
+                return;
             try
             {
                 using (var service = new DeliveryServiceClient())
@@ -163,6 +166,7 @@ namespace PMSClient.ViewModel
                         model.FinishTime = DateTime.Now;
                         service.UpdateDeliveryByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
+
                     NavigationService.Status("发货完成");
                     SetPageParametersWhenConditionChange();
                 }
@@ -273,6 +277,7 @@ namespace PMSClient.ViewModel
                     DeliveryItems.Clear();
                     result.OrderBy(i => i.PackNumber).ThenBy(i => i.ProductID).ToList().ForEach(i => DeliveryItems.Add(i));
 
+                    RaisePropertyChanged(nameof(TotalItems));
                     CurrentSelectItem = model;
                 }
             }
@@ -357,20 +362,32 @@ namespace PMSClient.ViewModel
                         sb.AppendLine(item.Composition);
                     }
 
+                    if (dialog_result.HasCompositionAbbr)
+                    {
+                        string abbr = "";
+                        if (item.Dimension.Contains("230"))
+                        {
+                            var result = CompositionHelper.WhatItIs(item.Composition);
+                            if (result == TargetType.CIGS)
+                            {
+                                abbr = result.ToString() + "-" + CompositionHelper.GetGa(item.Composition);
+                            }
+                            else
+                            {
+                                abbr = result.ToString();
+                            }
+                        }
+                        else
+                        {
+                            abbr = item.Abbr;
+                        }
+                        sb.AppendLine(abbr);
+                    }
+
                     if (dialog_result.HasDimension)
                     {
                         //sb.Append("Dimension:");
                         sb.AppendLine(item.Dimension);
-                    }
-
-                    if (dialog_result.HasProductID)
-                    {
-                        sb.AppendLine(item.ProductID.Trim());
-                    }
-
-                    if (dialog_result.HasCompositionAbbr)
-                    {
-                        //sb.AppendLine();
                     }
 
                     if (dialog_result.HasCustomer)
@@ -378,6 +395,12 @@ namespace PMSClient.ViewModel
                         //sb.Append("Customer:");
                         sb.AppendLine(item.Customer);
                     }
+
+                    if (dialog_result.HasProductID)
+                    {
+                        sb.AppendLine(item.ProductID.Trim());
+                    }
+
                     if (dialog_result.HasPO)
                     {
                         if (!item.PO.StartsWith("PO"))

@@ -193,18 +193,18 @@
                 <DataGridTemplateColumn Header="{StaticResource RDCustomer}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Style="{StaticResource StyleDGTextBox}"
+                            <TextBox Style="{StaticResource StyleDGTextBoxStrench}"
                                          Text="{Binding Customer,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
-                                         Width="120" Background="LightYellow"/>
+                                         Background="LightYellow"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RDPO}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Style="{StaticResource StyleDGTextBox}"
+                            <TextBox Style="{StaticResource StyleDGTextBoxStrench}"
                                          Text="{Binding PO,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
-                                         Width="120" Background="LightYellow"/>
+                                         Background="LightYellow"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -220,19 +220,20 @@
                 <DataGridTemplateColumn Header="{StaticResource RDDetailRecord}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding DetailRecord}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBox Text="{Binding DetailRecord,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                                     Style="{StaticResource StyleDGTextBoxStrench}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource RDPackNumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding PackNumber}"/>
+                <!--<DataGridTextColumn Header="{StaticResource RDPackNumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PackNumber}"/>-->
                 <DataGridTemplateColumn Header="{StaticResource RDPackNumber}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <TextBox Style="{StaticResource StyleDGTextBox}"
+                                <TextBox Style="{StaticResource StyleDGTextBoxStrench}"
                                          Text="{Binding PackNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
-                                         TextAlignment="Center" Width="50" Background="LightYellow"/>
+                                         TextAlignment="Center"  Background="LightYellow"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -240,19 +241,26 @@
                 <DataGridTemplateColumn Header="{StaticResource RDPosition}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Position}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBox Text="{Binding Position,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                       Style="{StaticResource StyleDGTextBoxStrench}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource RDRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Remark}"/>
+                <DataGridTemplateColumn Header="{StaticResource RDRemark}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding Remark,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                                     Style="{StaticResource StyleDGTextBoxStrench}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource RDCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right">
-            <TextBlock Text="{Binding TotalItems,StringFormat=共{0}片}" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Background="LightYellow">
             <Button Content="全部保存" Style="{StaticResource StyleButtonCommon}" Command="{Binding SaveAllItems}"/>
+            <TextBlock Text="{Binding TotalItems,StringFormat=此发货单中共{0}片}" Style="{StaticResource StyleDGTextBlockCommon}"/>
         </StackPanel>
     </Grid>
 </UserControl>
