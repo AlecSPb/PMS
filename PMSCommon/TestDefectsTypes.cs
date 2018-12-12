@@ -9,11 +9,13 @@ namespace PMSCommon
     public enum TestDefectsTypes
     {
         无缺陷,
-        花纹,
+        单面花纹,
+        两面花纹,
         多个暗点,
         网状斑点,
         边缘小裂纹,
-        裂纹,
+        小裂纹,
+        大裂纹,
         小缺口,
         大缺口,
         污物,

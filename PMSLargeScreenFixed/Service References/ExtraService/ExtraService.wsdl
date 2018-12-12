@@ -139,6 +139,66 @@
   <wsdl:message name="IToDoService_DeleteToDo_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteToDoResponse" />
   </wsdl:message>
+  <wsdl:message name="IToolInventoryService_GetToolFillings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetToolFillings" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_GetToolFillings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetToolFillingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_GetToolFillingsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetToolFillingsCount" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_GetToolFillingsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetToolFillingsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_AddToolFilling_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToolFilling" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_AddToolFilling_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToolFillingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_UpdateToolFilling_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateToolFilling" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_UpdateToolFilling_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateToolFillingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_DeleteToolFilling_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteToolFilling" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_DeleteToolFilling_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteToolFillingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_GetToolMillings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetToolMillings" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_GetToolMillings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetToolMillingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_GetToolMillingsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetToolMillingsCount" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_GetToolMillingsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetToolMillingsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_AddToolMilling_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToolMilling" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_AddToolMilling_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToolMillingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_UpdateToolMilling_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateToolMilling" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_UpdateToolMilling_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateToolMillingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_DeleteToolMilling_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteToolMilling" />
+  </wsdl:message>
+  <wsdl:message name="IToolInventoryService_DeleteToolMilling_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteToolMillingResponse" />
+  </wsdl:message>
   <wsdl:portType name="IItemDebitService">
     <wsdl:operation name="GetItemDebit">
       <wsdl:input wsaw:Action="http://tempuri.org/IItemDebitService/GetItemDebit" message="tns:IItemDebitService_GetItemDebit_InputMessage" />
@@ -235,6 +295,48 @@
     <wsdl:operation name="DeleteToDo">
       <wsdl:input wsaw:Action="http://tempuri.org/IToDoService/DeleteToDo" message="tns:IToDoService_DeleteToDo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IToDoService/DeleteToDoResponse" message="tns:IToDoService_DeleteToDo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IToolInventoryService">
+    <wsdl:operation name="GetToolFillings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolInventoryService/GetToolFillings" message="tns:IToolInventoryService_GetToolFillings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolInventoryService/GetToolFillingsResponse" message="tns:IToolInventoryService_GetToolFillings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToolFillingsCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolInventoryService/GetToolFillingsCount" message="tns:IToolInventoryService_GetToolFillingsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolInventoryService/GetToolFillingsCountResponse" message="tns:IToolInventoryService_GetToolFillingsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToolFilling">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolInventoryService/AddToolFilling" message="tns:IToolInventoryService_AddToolFilling_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolInventoryService/AddToolFillingResponse" message="tns:IToolInventoryService_AddToolFilling_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateToolFilling">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolInventoryService/UpdateToolFilling" message="tns:IToolInventoryService_UpdateToolFilling_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolInventoryService/UpdateToolFillingResponse" message="tns:IToolInventoryService_UpdateToolFilling_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteToolFilling">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolInventoryService/DeleteToolFilling" message="tns:IToolInventoryService_DeleteToolFilling_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolInventoryService/DeleteToolFillingResponse" message="tns:IToolInventoryService_DeleteToolFilling_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToolMillings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolInventoryService/GetToolMillings" message="tns:IToolInventoryService_GetToolMillings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolInventoryService/GetToolMillingsResponse" message="tns:IToolInventoryService_GetToolMillings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToolMillingsCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolInventoryService/GetToolMillingsCount" message="tns:IToolInventoryService_GetToolMillingsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolInventoryService/GetToolMillingsCountResponse" message="tns:IToolInventoryService_GetToolMillingsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToolMilling">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolInventoryService/AddToolMilling" message="tns:IToolInventoryService_AddToolMilling_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolInventoryService/AddToolMillingResponse" message="tns:IToolInventoryService_AddToolMilling_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateToolMilling">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolInventoryService/UpdateToolMilling" message="tns:IToolInventoryService_UpdateToolMilling_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolInventoryService/UpdateToolMillingResponse" message="tns:IToolInventoryService_UpdateToolMilling_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteToolMilling">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolInventoryService/DeleteToolMilling" message="tns:IToolInventoryService_DeleteToolMilling_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolInventoryService/DeleteToolMillingResponse" message="tns:IToolInventoryService_DeleteToolMilling_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="itemdebit" type="tns:IItemDebitService">
@@ -450,6 +552,99 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="toolinventory" type="tns:IToolInventoryService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetToolFillings">
+      <soap:operation soapAction="http://tempuri.org/IToolInventoryService/GetToolFillings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToolFillingsCount">
+      <soap:operation soapAction="http://tempuri.org/IToolInventoryService/GetToolFillingsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToolFilling">
+      <soap:operation soapAction="http://tempuri.org/IToolInventoryService/AddToolFilling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateToolFilling">
+      <soap:operation soapAction="http://tempuri.org/IToolInventoryService/UpdateToolFilling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteToolFilling">
+      <soap:operation soapAction="http://tempuri.org/IToolInventoryService/DeleteToolFilling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToolMillings">
+      <soap:operation soapAction="http://tempuri.org/IToolInventoryService/GetToolMillings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToolMillingsCount">
+      <soap:operation soapAction="http://tempuri.org/IToolInventoryService/GetToolMillingsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToolMilling">
+      <soap:operation soapAction="http://tempuri.org/IToolInventoryService/AddToolMilling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateToolMilling">
+      <soap:operation soapAction="http://tempuri.org/IToolInventoryService/UpdateToolMilling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteToolMilling">
+      <soap:operation soapAction="http://tempuri.org/IToolInventoryService/DeleteToolMilling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="ExtraService">
     <wsdl:port name="itemdebit" binding="tns:itemdebit">
       <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
@@ -464,6 +659,9 @@
       <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
     </wsdl:port>
     <wsdl:port name="todo" binding="tns:todo">
+      <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
+    </wsdl:port>
+    <wsdl:port name="toolinventory" binding="tns:toolinventory">
       <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
     </wsdl:port>
   </wsdl:service>

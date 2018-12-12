@@ -51,7 +51,7 @@
             <local:SingleUnit Grid.Row="1"  Grid.Column="2" x:Name="unit6" CurrentModel="{Binding Model6}" />
         </Grid>
         <TextBlock Grid.Row="1"  Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig}"
-                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                   HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" Background="{StaticResource BG2}">
             <TextBlock Text="{Binding Status}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
             <TextBlock Text="{Binding ErrorMessage}" Style="{StaticResource StyleTextBlock}" Foreground="Yellow"/>

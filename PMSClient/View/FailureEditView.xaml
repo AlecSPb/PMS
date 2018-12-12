@@ -52,34 +52,35 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock  Grid.Row="0"  Grid.Column="0" Text="{StaticResource FStage}"
+
+                
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource FBProductID}"
+                           Style="{StaticResource StyleTextBlockSpecial}"/>
+                <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource FBComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Name="CboStages" Grid.Row="0" Grid.Column="1" 
+                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
+                           Text="成分"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource FDetails}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Details}"
+                          Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+
+                <TextBlock  Grid.Row="3"  Grid.Column="0" Text="{StaticResource FStage}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Name="CboStages" Grid.Row="3" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.FailureStages,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                            SelectedItem="{Binding Stage}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
-                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="报废类型"/>
-                
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource FBProductID}"
-                           Style="{StaticResource StyleTextBlockSpecial}"/>
-                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource FBComposition}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
-                           Text="成分"/>
-
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource FDetails}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Details}"
-                          Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-                               
+                           Text="报废类型"/>
                 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource FProblem}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

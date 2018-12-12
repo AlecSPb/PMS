@@ -157,6 +157,12 @@
     <None Include="Service References\ExtraService\PMSLargeScreen.ExtraService.DcToDo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ExtraService\PMSLargeScreen.ExtraService.DcToolFilling.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExtraService\PMSLargeScreen.ExtraService.DcToolMilling.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\LargeScreenService\LargeScreenService1.wsdl" />
     <None Include="Service References\LargeScreenService\LargeScreenService3.xsd">
       <SubType>Designer</SubType>

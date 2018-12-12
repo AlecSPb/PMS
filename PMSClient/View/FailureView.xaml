@@ -44,14 +44,14 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource FCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
-                <DataGridTextColumn Header="{StaticResource FStage}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Stage}"/>
                 <DataGridTextColumn Header="{StaticResource FProductID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding ProductID}"/>
                 <DataGridTextColumn Header="{StaticResource FComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="{StaticResource FDetails}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding Details}"/>
+                <DataGridTextColumn Header="{StaticResource FStage}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Stage}"/>
                 <DataGridTextColumn Header="{StaticResource FProblem}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Problem}"/>
                 <DataGridTextColumn Header="{StaticResource FProcess}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

@@ -782,6 +782,9 @@ namespace PMSLargeScreen.ExtraService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TitleField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -944,6 +947,301 @@ namespace PMSLargeScreen.ExtraService {
                 if ((object.ReferenceEquals(this.TitleField, value) != true)) {
                     this.TitleField = value;
                     this.RaisePropertyChanged("Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcToolFilling", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcToolFilling : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionAbbrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ToolNumberField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CompositionAbbr {
+            get {
+                return this.CompositionAbbrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionAbbrField, value) != true)) {
+                    this.CompositionAbbrField = value;
+                    this.RaisePropertyChanged("CompositionAbbr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ToolNumber {
+            get {
+                return this.ToolNumberField;
+            }
+            set {
+                if ((this.ToolNumberField.Equals(value) != true)) {
+                    this.ToolNumberField = value;
+                    this.RaisePropertyChanged("ToolNumber");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcToolMilling", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcToolMilling : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionAbbrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ToolNumberField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CompositionAbbr {
+            get {
+                return this.CompositionAbbrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionAbbrField, value) != true)) {
+                    this.CompositionAbbrField = value;
+                    this.RaisePropertyChanged("CompositionAbbr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ToolNumber {
+            get {
+                return this.ToolNumberField;
+            }
+            set {
+                if ((this.ToolNumberField.Equals(value) != true)) {
+                    this.ToolNumberField = value;
+                    this.RaisePropertyChanged("ToolNumber");
                 }
             }
         }
@@ -1428,6 +1726,179 @@ namespace PMSLargeScreen.ExtraService {
         
         public System.Threading.Tasks.Task<int> DeleteToDoAsync(System.Guid id) {
             return base.Channel.DeleteToDoAsync(id);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ExtraService.IToolInventoryService")]
+    public interface IToolInventoryService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/GetToolFillings", ReplyAction="http://tempuri.org/IToolInventoryService/GetToolFillingsResponse")]
+        PMSLargeScreen.ExtraService.DcToolFilling[] GetToolFillings(int s, int t, string elementA, string elementB);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/GetToolFillings", ReplyAction="http://tempuri.org/IToolInventoryService/GetToolFillingsResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcToolFilling[]> GetToolFillingsAsync(int s, int t, string elementA, string elementB);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/GetToolFillingsCount", ReplyAction="http://tempuri.org/IToolInventoryService/GetToolFillingsCountResponse")]
+        int GetToolFillingsCount(string elementA, string elementB);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/GetToolFillingsCount", ReplyAction="http://tempuri.org/IToolInventoryService/GetToolFillingsCountResponse")]
+        System.Threading.Tasks.Task<int> GetToolFillingsCountAsync(string elementA, string elementB);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/AddToolFilling", ReplyAction="http://tempuri.org/IToolInventoryService/AddToolFillingResponse")]
+        int AddToolFilling(PMSLargeScreen.ExtraService.DcToolFilling model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/AddToolFilling", ReplyAction="http://tempuri.org/IToolInventoryService/AddToolFillingResponse")]
+        System.Threading.Tasks.Task<int> AddToolFillingAsync(PMSLargeScreen.ExtraService.DcToolFilling model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/UpdateToolFilling", ReplyAction="http://tempuri.org/IToolInventoryService/UpdateToolFillingResponse")]
+        int UpdateToolFilling(PMSLargeScreen.ExtraService.DcToolFilling model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/UpdateToolFilling", ReplyAction="http://tempuri.org/IToolInventoryService/UpdateToolFillingResponse")]
+        System.Threading.Tasks.Task<int> UpdateToolFillingAsync(PMSLargeScreen.ExtraService.DcToolFilling model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/DeleteToolFilling", ReplyAction="http://tempuri.org/IToolInventoryService/DeleteToolFillingResponse")]
+        int DeleteToolFilling(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/DeleteToolFilling", ReplyAction="http://tempuri.org/IToolInventoryService/DeleteToolFillingResponse")]
+        System.Threading.Tasks.Task<int> DeleteToolFillingAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/GetToolMillings", ReplyAction="http://tempuri.org/IToolInventoryService/GetToolMillingsResponse")]
+        PMSLargeScreen.ExtraService.DcToolMilling[] GetToolMillings(int s, int t, string elementA, string elementB);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/GetToolMillings", ReplyAction="http://tempuri.org/IToolInventoryService/GetToolMillingsResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcToolMilling[]> GetToolMillingsAsync(int s, int t, string elementA, string elementB);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/GetToolMillingsCount", ReplyAction="http://tempuri.org/IToolInventoryService/GetToolMillingsCountResponse")]
+        int GetToolMillingsCount(string elementA, string elementB);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/GetToolMillingsCount", ReplyAction="http://tempuri.org/IToolInventoryService/GetToolMillingsCountResponse")]
+        System.Threading.Tasks.Task<int> GetToolMillingsCountAsync(string elementA, string elementB);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/AddToolMilling", ReplyAction="http://tempuri.org/IToolInventoryService/AddToolMillingResponse")]
+        int AddToolMilling(PMSLargeScreen.ExtraService.DcToolMilling model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/AddToolMilling", ReplyAction="http://tempuri.org/IToolInventoryService/AddToolMillingResponse")]
+        System.Threading.Tasks.Task<int> AddToolMillingAsync(PMSLargeScreen.ExtraService.DcToolMilling model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/UpdateToolMilling", ReplyAction="http://tempuri.org/IToolInventoryService/UpdateToolMillingResponse")]
+        int UpdateToolMilling(PMSLargeScreen.ExtraService.DcToolMilling model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/UpdateToolMilling", ReplyAction="http://tempuri.org/IToolInventoryService/UpdateToolMillingResponse")]
+        System.Threading.Tasks.Task<int> UpdateToolMillingAsync(PMSLargeScreen.ExtraService.DcToolMilling model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/DeleteToolMilling", ReplyAction="http://tempuri.org/IToolInventoryService/DeleteToolMillingResponse")]
+        int DeleteToolMilling(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolInventoryService/DeleteToolMilling", ReplyAction="http://tempuri.org/IToolInventoryService/DeleteToolMillingResponse")]
+        System.Threading.Tasks.Task<int> DeleteToolMillingAsync(System.Guid id);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IToolInventoryServiceChannel : PMSLargeScreen.ExtraService.IToolInventoryService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ToolInventoryServiceClient : System.ServiceModel.ClientBase<PMSLargeScreen.ExtraService.IToolInventoryService>, PMSLargeScreen.ExtraService.IToolInventoryService {
+        
+        public ToolInventoryServiceClient() {
+        }
+        
+        public ToolInventoryServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public ToolInventoryServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ToolInventoryServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ToolInventoryServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public PMSLargeScreen.ExtraService.DcToolFilling[] GetToolFillings(int s, int t, string elementA, string elementB) {
+            return base.Channel.GetToolFillings(s, t, elementA, elementB);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcToolFilling[]> GetToolFillingsAsync(int s, int t, string elementA, string elementB) {
+            return base.Channel.GetToolFillingsAsync(s, t, elementA, elementB);
+        }
+        
+        public int GetToolFillingsCount(string elementA, string elementB) {
+            return base.Channel.GetToolFillingsCount(elementA, elementB);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetToolFillingsCountAsync(string elementA, string elementB) {
+            return base.Channel.GetToolFillingsCountAsync(elementA, elementB);
+        }
+        
+        public int AddToolFilling(PMSLargeScreen.ExtraService.DcToolFilling model) {
+            return base.Channel.AddToolFilling(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddToolFillingAsync(PMSLargeScreen.ExtraService.DcToolFilling model) {
+            return base.Channel.AddToolFillingAsync(model);
+        }
+        
+        public int UpdateToolFilling(PMSLargeScreen.ExtraService.DcToolFilling model) {
+            return base.Channel.UpdateToolFilling(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateToolFillingAsync(PMSLargeScreen.ExtraService.DcToolFilling model) {
+            return base.Channel.UpdateToolFillingAsync(model);
+        }
+        
+        public int DeleteToolFilling(System.Guid id) {
+            return base.Channel.DeleteToolFilling(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteToolFillingAsync(System.Guid id) {
+            return base.Channel.DeleteToolFillingAsync(id);
+        }
+        
+        public PMSLargeScreen.ExtraService.DcToolMilling[] GetToolMillings(int s, int t, string elementA, string elementB) {
+            return base.Channel.GetToolMillings(s, t, elementA, elementB);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcToolMilling[]> GetToolMillingsAsync(int s, int t, string elementA, string elementB) {
+            return base.Channel.GetToolMillingsAsync(s, t, elementA, elementB);
+        }
+        
+        public int GetToolMillingsCount(string elementA, string elementB) {
+            return base.Channel.GetToolMillingsCount(elementA, elementB);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetToolMillingsCountAsync(string elementA, string elementB) {
+            return base.Channel.GetToolMillingsCountAsync(elementA, elementB);
+        }
+        
+        public int AddToolMilling(PMSLargeScreen.ExtraService.DcToolMilling model) {
+            return base.Channel.AddToolMilling(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddToolMillingAsync(PMSLargeScreen.ExtraService.DcToolMilling model) {
+            return base.Channel.AddToolMillingAsync(model);
+        }
+        
+        public int UpdateToolMilling(PMSLargeScreen.ExtraService.DcToolMilling model) {
+            return base.Channel.UpdateToolMilling(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateToolMillingAsync(PMSLargeScreen.ExtraService.DcToolMilling model) {
+            return base.Channel.UpdateToolMillingAsync(model);
+        }
+        
+        public int DeleteToolMilling(System.Guid id) {
+            return base.Channel.DeleteToolMilling(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteToolMillingAsync(System.Guid id) {
+            return base.Channel.DeleteToolMillingAsync(id);
         }
     }
 }

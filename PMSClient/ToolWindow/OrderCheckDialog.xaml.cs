@@ -51,7 +51,6 @@ namespace PMSClient.ToolWindow
             RaisePropertyChanged(nameof(DcOrder));
         }
         public DcOrder CurrentOrder { get; set; }
-
         public List<string> PolicyTypes { get; set; }
         public List<string> OrderStates { get; set; }
         public List<string> OrderPriorities { get; set; }
@@ -60,9 +59,12 @@ namespace PMSClient.ToolWindow
         {
             if (CurrentOrder == null)
                 return;
+            string user = PMSHelper.CurrentSession.CurrentUser.UserName;
+            CurrentOrder.Reviewer = user;
+            CurrentOrder.ReviewTime = DateTime.Now;
             using (var service = new OrderServiceClient())
             {
-                service.UpdateOrderByUID(CurrentOrder, PMSHelper.CurrentSession.CurrentUser.UserName);
+                service.UpdateOrderByUID(CurrentOrder, user);
             }
             this.Close();
         }

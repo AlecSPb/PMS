@@ -385,7 +385,9 @@
     <sys:String x:Key="OrderFinishTime">完成日期</sys:String>
     <sys:String x:Key="OrderPlanIndex">热压指数</sys:String>
     <sys:String x:Key="OrderMaterialIndex">原料指数</sys:String>
-
+    <sys:String x:Key="OrderReviewer">审核者</sys:String>
+    <sys:String x:Key="OrderReviewTime">审核时间</sys:String>
+    
     <!--Plan-->
     <sys:String x:Key="PlanState">计划状态</sys:String>
     <sys:String x:Key="PlanCreator">创建人</sys:String>

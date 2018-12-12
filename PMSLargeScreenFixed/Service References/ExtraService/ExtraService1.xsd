@@ -97,7 +97,44 @@
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcToDo" nillable="true" type="tns:DcToDo" />
+  <xs:complexType name="ArrayOfDcToolFilling">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcToolFilling" nillable="true" type="tns:DcToolFilling" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcToolFilling" nillable="true" type="tns:ArrayOfDcToolFilling" />
+  <xs:complexType name="DcToolFilling">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompositionAbbr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToolNumber" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcToolFilling" nillable="true" type="tns:DcToolFilling" />
+  <xs:complexType name="ArrayOfDcToolMilling">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcToolMilling" nillable="true" type="tns:DcToolMilling" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcToolMilling" nillable="true" type="tns:ArrayOfDcToolMilling" />
+  <xs:complexType name="DcToolMilling">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompositionAbbr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToolNumber" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcToolMilling" nillable="true" type="tns:DcToolMilling" />
 </xs:schema>

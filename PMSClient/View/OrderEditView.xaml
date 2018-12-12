@@ -60,7 +60,7 @@
                       Style="{StaticResource StyleComboBoxCommon}" HorizontalAlignment="Stretch"
                       ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" SelectedItem="{Binding CustomerName}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="选择客户名称，如果没有该客户信息，请先添加客户信息" Background="LightGreen"/>
+                           Text="*选择客户名称，如果没有该客户信息，请先添加客户信息" Background="LightGreen"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource OrderPO}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -78,11 +78,12 @@
                         RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
                 </StackPanel>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="自动生成的工作号不一定唯一和合适，请自行修改"  Background="LightGreen"/>
+                           Text="*自动生成的工作号不一定唯一和合适，请自行修改 CD开头"  Background="LightGreen"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource OrderOriginalComposition}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Name="txtCompositionOrignal" Grid.Row="3" Grid.Column="1" Text="{Binding CompositionOriginal}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Name="txtCompositionOrignal" Grid.Row="3" Grid.Column="1" Text="{Binding CompositionOriginal}" Background="LightBlue"
+                         Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
                            Text="*订单成分原始表示，不会显示给其他人，只存作备忘" />
                 <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
@@ -100,14 +101,14 @@
                 <TextBox  Name="txtCompositionStandard" Grid.Row="5" Grid.Column="1" Text="{Binding CompositionStandard}" Background="Yellow"
                           Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="标准成分，即这种材料一直以来的规范名称，默认At%比例"  Background="LightGreen"/>
+                           Text="*标准成分，即这种材料一直以来的规范名称，默认At%比例"  Background="LightGreen"/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource OrderAbbrComposition}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox  Name="txtCompositionAbbr"  Grid.Row="6" Grid.Column="1" Text="{Binding CompositionAbbr}"  Background="Yellow"
                           Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="成分的缩写，尽量简洁不包含数字,不包含符号，不包含添加剂成分"  Background="LightGreen"/>
+                           Text="*成分的缩写，尽量简洁不包含数字,不包含符号，不包含添加剂成分"  Background="LightGreen"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource OrderProductType}"
                            Style="{StaticResource StyleTextBlockCommon}" />
@@ -142,7 +143,7 @@
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}" Background="Yellow"/>
                 <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="尺寸信息,必须写成230mm OD x4mm的格式"  Background="LightGreen"/>
+                           Text="*尺寸信息,必须写成230mm OD x4mm的格式"  Background="LightGreen"/>
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource OrderDimensionDetails}"
                            Style="{StaticResource StyleTextBlockCommon}" />

@@ -69,7 +69,7 @@ namespace PMSClient.ViewModel
             order.CompositionAbbr = "";
             order.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             order.CreateTime = DateTime.Now;
-            order.PMINumber = UsefulPackage.PMSTranslate.PMINumber();
+            order.PMINumber = $"CD{UsefulPackage.PMSTranslate.PMINumber()}";
             order.ProductType = PMSCommon.OrderProductType.靶材.ToString();
             order.Purity = "99.99";
             order.Quantity = 1;
@@ -126,7 +126,7 @@ namespace PMSClient.ViewModel
             }
 
             //check
-            string remark=CurrentOrder.Remark;
+            string remark = CurrentOrder.Remark;
             string requirement = CurrentOrder.DimensionDetails;
             CheckResult is_outsource = OrderCheckLogic.OutSourceCheck(new string[] { remark, requirement });
             if (is_outsource.IsCheckOK)

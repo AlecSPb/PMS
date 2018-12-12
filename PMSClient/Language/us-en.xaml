@@ -377,6 +377,9 @@
     <sys:String x:Key="OrderFinishTime">Finish Time</sys:String>
     <sys:String x:Key="OrderPlanIndex">Plan Index</sys:String>
     <sys:String x:Key="OrderMaterialIndex">Material Index</sys:String>
+    <sys:String x:Key="OrderReviewer">Reviewer</sys:String>
+    <sys:String x:Key="OrderReviewTime">Reviewer Time</sys:String>
+    
     
     <!--Plan-->
     <sys:String x:Key="PlanState">State</sys:String>

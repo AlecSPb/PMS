@@ -174,8 +174,14 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="{StaticResource OrderFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding Creator}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding CreateTime}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderReviewer}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding Reviewer}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderReviewTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding ReviewTime}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Expander Grid.Column="1" Header="" IsExpanded="False" ExpandDirection="Left">
@@ -186,6 +192,8 @@
                             <ColumnDefinition Width="300"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
@@ -278,6 +286,16 @@
                         <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource OrderCreator}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                         <TextBlock Grid.Row="17" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}" />
+
+                        <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource OrderReviewTime}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                        <TextBlock Grid.Row="18" Grid.Column="1" Text="{Binding ReviewTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                        <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource OrderReviewer}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                        <TextBlock Grid.Row="19" Grid.Column="1" Text="{Binding Reviewer}" Style="{StaticResource StyleTextBlockCommon}" />
+
+
                     </Grid>
                 </ScrollViewer>
             </Expander>

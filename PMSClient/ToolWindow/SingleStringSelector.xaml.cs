@@ -48,10 +48,14 @@ namespace PMSClient.ToolWindow
 
         private void BtnOK_Click(object sender, RoutedEventArgs e)
         {
-            SelectedString = LstStrings.SelectedItem.ToString();
+            if (LstStrings.SelectedItem != null)
+            {
+                SelectedString = LstStrings.SelectedItem.ToString();
 
-            this.DialogResult = true;
-            Close();
+                this.DialogResult = true;
+                Close();
+            }
+
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
