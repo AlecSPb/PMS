@@ -13,6 +13,10 @@
             </LinearGradientBrush>
         </Border.Background>
         <StackPanel  Orientation="Horizontal">
+            <TextBlock Text="{StaticResource BottomBarPublic}" Style="{StaticResource StyleDGTextBlockCommon}"/>
+            <Button Content="{StaticResource BottomBarPlan}" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding OpenPlan}"/>
+            
             <TextBlock Text="{StaticResource BottomBarTool}" Style="{StaticResource StyleDGTextBlockCommon}"/>
             <Button Content="{StaticResource BottomBarFillCalculator}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding MaterialNeedCalculator}"/>
@@ -50,6 +54,8 @@
                 Command="{Binding Element}"/>
             <Button Content="{StaticResource BottomBarPhotoStd}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding PhotoStd}"/>
+            <Button Content="{StaticResource BottomBarDrawingRule}" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding DrawingRule}"/>
         </StackPanel>
     </Border>
 </UserControl>

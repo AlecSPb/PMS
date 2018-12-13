@@ -87,6 +87,10 @@ namespace PMSClient.ViewModel
             order.FinishTime = DateTime.Now;
             order.ProductionIndex = 0;
             order.MaterialIndex = 0;
+            order.WithBackingPlate = "无";
+            order.Drawing = "默认";
+            order.SampleForAnlysis = "分析样品";
+            order.ShipTo = "暂定";
             #endregion
             CurrentOrder = order;
         }
@@ -129,7 +133,7 @@ namespace PMSClient.ViewModel
             string remark = CurrentOrder.Remark;
             string requirement = CurrentOrder.DimensionDetails;
             CheckResult is_outsource = OrderCheckLogic.OutSourceCheck(new string[] { remark, requirement });
-            if (is_outsource.IsCheckOK)
+            if (!is_outsource.IsCheckOK)
             {
                 PMSDialogService.ShowWarning(is_outsource.Message);
             }

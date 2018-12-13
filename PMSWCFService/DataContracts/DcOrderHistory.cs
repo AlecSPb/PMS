@@ -55,6 +55,14 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Remark { get; set; }
 
+        [DataMember]
+        public string Drawing { get; set; }//图纸
+        [DataMember]
+        public string SampleForAnlysis { get; set; }//PMI是否需要取样分析
+        [DataMember]
+        public string ShipTo { get; set; }//发货目的地
+        [DataMember]
+        public string WithBackingPlate { get; set; }//是否配对应背板
         //热压指数
         [DataMember]
         public double ProductionIndex { get; set; }

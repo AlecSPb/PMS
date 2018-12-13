@@ -51,6 +51,17 @@ namespace PMSClient
               {
                   OpenFileOrProgram(@"StandardDocs\产品拍照规范流程.pptx");
               });
+
+            DrawingRule = new RelayCommand(() =>
+              {
+                  OpenFileOrProgram(@"StandardDocs\DrawingRule.docx");
+
+              });
+            OpenPlan = new RelayCommand(() =>
+              {
+                  View.PlanWindow pw = new View.PlanWindow();
+                  pw.Show();
+              });
             #endregion
             #region Info
             HelpInfo = new RelayCommand(() =>
@@ -225,7 +236,9 @@ namespace PMSClient
 
         public RelayCommand Cutter { get; set; }
         public RelayCommand PhotoStd { get; set; }
+        public RelayCommand DrawingRule { get; set; }
 
+        public RelayCommand OpenPlan { get; set; }
 
     }
 }

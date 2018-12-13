@@ -50,6 +50,9 @@ namespace PMSClient.MainService {
         private string DimensionDetailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DrawingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime FinishTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -98,13 +101,22 @@ namespace PMSClient.MainService {
         private string ReviewerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SampleForAnlysisField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SampleNeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShipToField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateRemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WithBackingPlateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -229,6 +241,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.DimensionDetailsField, value) != true)) {
                     this.DimensionDetailsField = value;
                     this.RaisePropertyChanged("DimensionDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Drawing {
+            get {
+                return this.DrawingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DrawingField, value) != true)) {
+                    this.DrawingField = value;
+                    this.RaisePropertyChanged("Drawing");
                 }
             }
         }
@@ -442,6 +467,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SampleForAnlysis {
+            get {
+                return this.SampleForAnlysisField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SampleForAnlysisField, value) != true)) {
+                    this.SampleForAnlysisField = value;
+                    this.RaisePropertyChanged("SampleForAnlysis");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string SampleNeed {
             get {
                 return this.SampleNeedField;
@@ -450,6 +488,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.SampleNeedField, value) != true)) {
                     this.SampleNeedField = value;
                     this.RaisePropertyChanged("SampleNeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShipTo {
+            get {
+                return this.ShipToField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShipToField, value) != true)) {
+                    this.ShipToField = value;
+                    this.RaisePropertyChanged("ShipTo");
                 }
             }
         }
@@ -476,6 +527,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.StateRemarkField, value) != true)) {
                     this.StateRemarkField = value;
                     this.RaisePropertyChanged("StateRemark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WithBackingPlate {
+            get {
+                return this.WithBackingPlateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WithBackingPlateField, value) != true)) {
+                    this.WithBackingPlateField = value;
+                    this.RaisePropertyChanged("WithBackingPlate");
                 }
             }
         }
@@ -525,6 +589,9 @@ namespace PMSClient.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DimensionDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DrawingField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime FinishTimeField;
@@ -584,13 +651,22 @@ namespace PMSClient.MainService {
         private string ReviewerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SampleForAnlysisField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SampleNeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShipToField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateRemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WithBackingPlateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -715,6 +791,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.DimensionDetailsField, value) != true)) {
                     this.DimensionDetailsField = value;
                     this.RaisePropertyChanged("DimensionDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Drawing {
+            get {
+                return this.DrawingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DrawingField, value) != true)) {
+                    this.DrawingField = value;
+                    this.RaisePropertyChanged("Drawing");
                 }
             }
         }
@@ -967,6 +1056,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SampleForAnlysis {
+            get {
+                return this.SampleForAnlysisField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SampleForAnlysisField, value) != true)) {
+                    this.SampleForAnlysisField = value;
+                    this.RaisePropertyChanged("SampleForAnlysis");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string SampleNeed {
             get {
                 return this.SampleNeedField;
@@ -975,6 +1077,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.SampleNeedField, value) != true)) {
                     this.SampleNeedField = value;
                     this.RaisePropertyChanged("SampleNeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShipTo {
+            get {
+                return this.ShipToField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShipToField, value) != true)) {
+                    this.ShipToField = value;
+                    this.RaisePropertyChanged("ShipTo");
                 }
             }
         }
@@ -1001,6 +1116,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.StateRemarkField, value) != true)) {
                     this.StateRemarkField = value;
                     this.RaisePropertyChanged("StateRemark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WithBackingPlate {
+            get {
+                return this.WithBackingPlateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WithBackingPlateField, value) != true)) {
+                    this.WithBackingPlateField = value;
+                    this.RaisePropertyChanged("WithBackingPlate");
                 }
             }
         }

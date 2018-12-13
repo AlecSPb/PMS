@@ -128,13 +128,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource OrderSampleNeed}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding SampleNeed}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource OrderMIniummAcceptDefect}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -142,6 +135,17 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource OrderDrawing}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding Drawing}"/>
+                <DataGridTemplateColumn Header="{StaticResource OrderSampleNeed}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding SampleNeed}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource OrderSampleForAnlysis}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding SampleForAnlysis}"/>
                 <DataGridTextColumn Header="{StaticResource OrderCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTemplateColumn Header="{StaticResource OrderDeadLine}">

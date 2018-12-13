@@ -11,9 +11,10 @@ namespace PMSClient.CheckLogic
         public static CheckResult OutSourceCheck(string[] check_string)
         {
             var msg = new CheckResult();
+            msg.IsCheckOK = true;
             if (check_string == null)
             {
-                msg.IsCheckOK = false;
+                msg.IsCheckOK = true;
                 return msg;
             }
 
@@ -25,7 +26,7 @@ namespace PMSClient.CheckLogic
                 }
                 if (check_str.Contains("外包")||check_str.Contains("外购"))
                 {
-                    msg.IsCheckOK = true;
+                    msg.IsCheckOK = false;
                     msg.Message = "外购项目，请在随后的核验中将【策略类型】设置为 【外包】\r\n如此，生产部门将不会看到该订单";
                     break;
                 }

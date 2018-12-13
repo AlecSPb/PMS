@@ -374,7 +374,7 @@
     <sys:String x:Key="OrderQuantityUnit">单位</sys:String>
     <sys:String x:Key="OrderDimension">加工尺寸</sys:String>
     <sys:String x:Key="OrderDimensionDetails">加工要求</sys:String>
-    <sys:String x:Key="OrderSampleNeed">样品需求</sys:String>
+    <sys:String x:Key="OrderSampleNeed">客户样品</sys:String>
     <sys:String x:Key="OrderMIniummAcceptDefect">可接受缺陷</sys:String>
     <sys:String x:Key="OrderRemark">备注</sys:String>
     <sys:String x:Key="OrderPriority">优先级</sys:String>
@@ -387,7 +387,11 @@
     <sys:String x:Key="OrderMaterialIndex">原料指数</sys:String>
     <sys:String x:Key="OrderReviewer">审核者</sys:String>
     <sys:String x:Key="OrderReviewTime">审核时间</sys:String>
-    
+    <sys:String x:Key="OrderShipTo">发货到</sys:String>
+    <sys:String x:Key="OrderDrawing">图纸</sys:String>
+    <sys:String x:Key="OrderSampleForAnlysis">自分析样品</sys:String>
+    <sys:String x:Key="OrderWithBackingPlate">配有背板</sys:String>
+
     <!--Plan-->
     <sys:String x:Key="PlanState">计划状态</sys:String>
     <sys:String x:Key="PlanCreator">创建人</sys:String>
@@ -887,6 +891,10 @@
 
 
     <!--底部工具栏-->
+    <sys:String x:Key="BottomBarPublic">公共</sys:String>
+    <sys:String x:Key="BottomBarPlan">计划</sys:String>
+
+    
     <sys:String x:Key="BottomBarTool">工具</sys:String>
     <sys:String x:Key="BottomBarFillCalculator">装料</sys:String>
     <sys:String x:Key="BottomBarPressure">压力</sys:String>
@@ -912,6 +920,7 @@
     <sys:String x:Key="BottomBarCSCAN2PdfTool">报告追加超声照片</sys:String>
     <sys:String x:Key="BottomBarTargetCutterSimlulator">切割</sys:String>
     <sys:String x:Key="BottomBarPhotoStd">照片</sys:String>
+    <sys:String x:Key="BottomBarDrawingRule">图纸</sys:String>
 
 
     <!--每个页面最前面的提示信息-->

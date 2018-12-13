@@ -36,6 +36,12 @@ namespace PMSDAL
         public string Dimension { get; set; }//尺寸标准表示
         public string DimensionDetails { get; set; }//尺寸细节
         public string SampleNeed { get; set; }//是否需要样品
+
+        public string Drawing { get; set; }//图纸
+        public string SampleForAnlysis { get; set; }//PMI是否需要取样分析
+        public string ShipTo { get; set; }//发货目的地
+        public string WithBackingPlate { get; set; }//是否配对应背板
+
         public DateTime DeadLine { get; set; }
 
         public string MinimumAcceptDefect { get; set; }//密度要求，加工要求，表面洁净度，多大的缺口可以接受，多大的裂缝可以接受，表面有花纹是否可以接受，表面有坑是否可以接受

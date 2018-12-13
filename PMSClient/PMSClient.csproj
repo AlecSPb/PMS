@@ -1548,6 +1548,9 @@
     <Content Include="Resource\DocTemplate\Reports\SampleSheet.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="StandardDocs\DrawingRule.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Service References\ExtraService\PMSClient.ExtraService.DcEnvironmentInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

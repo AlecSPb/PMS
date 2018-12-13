@@ -97,5 +97,22 @@ namespace PMSClient.View
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
+
+        private void BtnSendCustomer_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            if (button.Name == "BtnSendTCB")
+            {
+                PMSMethods.SetTextBox(TxtShipTo, "TCB");
+
+            }
+            else
+            {
+                PMSMethods.SetTextBox(TxtShipTo, "客户");
+
+            }
+
+            e.Handled = true;
+        }
     }
 }
