@@ -4382,6 +4382,9 @@ namespace PMSClient.MainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4554,6 +4557,19 @@ namespace PMSClient.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderNumber {
+            get {
+                return this.OrderNumberField;
+            }
+            set {
+                if ((this.OrderNumberField.Equals(value) != true)) {
+                    this.OrderNumberField = value;
+                    this.RaisePropertyChanged("OrderNumber");
                 }
             }
         }

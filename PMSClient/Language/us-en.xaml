@@ -586,7 +586,8 @@
     <sys:String x:Key="RTSample">Sample</sys:String>
     <sys:String x:Key="RTDefects">Defects</sys:String>
     <sys:String x:Key="RTFollowUp">Follow Up</sys:String>
-    <!--Shipment-->
+    
+    <!--Delivery-->
     <sys:String x:Key="RDCreator">Creator</sys:String>
     <sys:String x:Key="RDCreateTime">Create Time</sys:String>
     <sys:String x:Key="RDState">State</sys:String>
@@ -613,6 +614,8 @@
     <sys:String x:Key="RDPosition">Shipment Number</sys:String>
     <sys:String x:Key="RDItemState">Item State</sys:String>
     <sys:String x:Key="RDDimension">Dimension</sys:String>
+    <sys:String x:Key="RDOrderNumber">Order Number</sys:String>
+
     <!--Product-->
     <sys:String x:Key="RPCreator">Creator</sys:String>
     <sys:String x:Key="RPCreateTime">Create Time</sys:String>

@@ -160,7 +160,7 @@ namespace PMSClient.ViewModel
 
         private bool CanQuickDoc()
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest);
+            return true;
         }
 
         private void ActionQuickDoc()

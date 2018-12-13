@@ -89,7 +89,7 @@ namespace PMSClient.ReportsHelper
                             var descriptionMesseage = $"Processing fee to cast {item.Purity} [{item.Composition}] atomic%;please deliver by {item.DeliveryDate.ToShortDateString()};";
                             if (!string.IsNullOrEmpty(item.ProvideRawMaterial.Trim()))
                             {
-                                descriptionMesseage += $"(PMI to provide { item.ProvideRawMaterial})";
+                                descriptionMesseage += $"{ item.ProvideRawMaterial})";
                             }
                             descriptionMesseage += item.Description;
 

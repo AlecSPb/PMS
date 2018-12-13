@@ -99,7 +99,7 @@ namespace PMSClient.ReportsHelper
                             var descriptionMesseage = "";
                             if (!string.IsNullOrEmpty(item.ProvideRawMaterial.Trim()))
                             {
-                                descriptionMesseage = $"PMI to provide { item.ProvideRawMaterial}；{item.Description}";
+                                descriptionMesseage = $"{ item.ProvideRawMaterial}；{item.Description}";
                             }
                             descriptionMesseage += item.Description;
 
@@ -137,7 +137,8 @@ namespace PMSClient.ReportsHelper
                 #endregion
                 //复制到临时文件
                 ReportHelper.FileCopy(tempFile, targetFile);
-                PMSDialogService.Show("原材料报告创建成功，请在桌面查看");
+                PMSDialogService.Show("原材料报告创建成功，即将打开……");
+                System.Diagnostics.Process.Start(targetFile);
             }
             catch (Exception ex)
             {

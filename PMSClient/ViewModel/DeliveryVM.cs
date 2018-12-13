@@ -275,7 +275,10 @@ namespace PMSClient.ViewModel
                 {
                     var result = service.GetDeliveryItemByDeliveryID(model.ID);
                     DeliveryItems.Clear();
-                    result.OrderBy(i => i.PackNumber).ThenBy(i => i.ProductID).ToList().ForEach(i => DeliveryItems.Add(i));
+                    result.OrderBy(i => i.OrderNumber)
+                        .ThenBy(i=>i.PackNumber)
+                        .ThenBy(i => i.ProductID)
+                        .ToList().ForEach(i => DeliveryItems.Add(i));
 
                     RaisePropertyChanged(nameof(TotalItems));
                     CurrentSelectItem = model;

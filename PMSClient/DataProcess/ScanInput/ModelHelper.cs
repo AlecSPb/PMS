@@ -159,6 +159,8 @@ namespace PMSClient.DataProcess.ScanInput
             model.DimensionActual = ss.Dimension;
             model.Defects = ss.Defects;
             model.State = PMSCommon.SimpleState.正常.ToString();
+            model.OrderNumber = 0;
+
             #endregion
 
             return model;
@@ -188,6 +190,8 @@ namespace PMSClient.DataProcess.ScanInput
             model.DimensionActual = ss.DimensionActual;
             model.Defects = ss.Defects;
             model.State = PMSCommon.SimpleState.正常.ToString();
+            model.OrderNumber = 0;
+
             #endregion
 
             return model;

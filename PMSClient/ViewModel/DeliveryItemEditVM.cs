@@ -62,6 +62,7 @@ namespace PMSClient.ViewModel
             model.DimensionActual = "无";
             model.Defects = "无";
             model.State = PMSCommon.SimpleState.正常.ToString();
+            model.OrderNumber = 0;
             #endregion
             CurrentDeliveryItem = model;
         }

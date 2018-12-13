@@ -14,9 +14,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="180"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
             <RowDefinition Height="Auto"/>
-
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageDelivery}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
@@ -146,7 +145,16 @@
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
-        <DataGrid Grid.Row="4" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding DeliveryItems}">
+        <Grid Grid.Row="4" Background="Wheat">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="排序先后顺序 1=次序 2=装箱号 3=产品ID"
+                           Style="{StaticResource StyleDGTextBlockSpecial}" Background="Red" Foreground="White"/>
+                <TextBlock Text="{Binding TotalItems,StringFormat=此发货单中共{0}片}"
+                           Style="{StaticResource StyleDGTextBlockCommon}"/>
+                <Button Content="全部保存" Style="{StaticResource StyleButtonCommon}" Command="{Binding SaveAllItems}"/>
+            </StackPanel>
+        </Grid>
+        <DataGrid Grid.Row="5" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding DeliveryItems}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
@@ -163,6 +171,15 @@
                                                 Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RDOrderNumber}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding OrderNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                                     Style="{StaticResource StyleDGTextBoxStrench}" MinWidth="30"
+                                     TextAlignment="Center"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -230,11 +247,9 @@
                 <DataGridTemplateColumn Header="{StaticResource RDPackNumber}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBox Style="{StaticResource StyleDGTextBoxStrench}"
+                            <TextBox Style="{StaticResource StyleDGTextBoxStrench}"
                                          Text="{Binding PackNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
                                          TextAlignment="Center"  Background="LightYellow"/>
-                            </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -258,9 +273,6 @@
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Grid.Row="5" Orientation="Horizontal" Background="LightYellow">
-            <Button Content="全部保存" Style="{StaticResource StyleButtonCommon}" Command="{Binding SaveAllItems}"/>
-            <TextBlock Text="{Binding TotalItems,StringFormat=此发货单中共{0}片}" Style="{StaticResource StyleDGTextBlockCommon}"/>
-        </StackPanel>
+
     </Grid>
 </UserControl>
