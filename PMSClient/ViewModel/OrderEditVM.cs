@@ -69,7 +69,7 @@ namespace PMSClient.ViewModel
             order.CompositionAbbr = "";
             order.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             order.CreateTime = DateTime.Now;
-            order.PMINumber = $"CD{UsefulPackage.PMSTranslate.PMINumber()}";
+            order.PMINumber = Helpers.DefaultHelper.DefaultPMINumber();
             order.ProductType = PMSCommon.OrderProductType.靶材.ToString();
             order.Purity = "99.99";
             order.Quantity = 1;

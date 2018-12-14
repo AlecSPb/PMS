@@ -30,7 +30,7 @@ namespace PMSClient.ViewModel
             empty.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             empty.State = PMSCommon.SimpleState.正常.ToString();
             empty.Composition = "需求原料成分";
-            empty.PMINumber = DateTime.Now.ToString("yyMMdd");
+            empty.PMINumber = Helpers.DefaultHelper.DefaultPMINumber();
             empty.Purity = "5N";
             empty.Weight = 1;
             #endregion

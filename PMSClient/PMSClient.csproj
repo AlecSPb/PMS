@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>104</ApplicationRevision>
+    <ApplicationRevision>106</ApplicationRevision>
     <ApplicationVersion>4.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -247,6 +247,7 @@
     <Compile Include="Helpers\Converter\LastDayImageConverter.cs" />
     <Compile Include="Helpers\Converter\MissonStateToBoolConverter.cs" />
     <Compile Include="Helpers\Converter\VisibilityConverter2.cs" />
+    <Compile Include="Helpers\DefaultHelper.cs" />
     <Compile Include="Helpers\ExitHelper.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\OK\PMSAccess.cs" />

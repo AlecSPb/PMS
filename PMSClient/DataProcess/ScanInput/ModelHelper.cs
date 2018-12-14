@@ -121,7 +121,7 @@ namespace PMSClient.DataProcess.ScanInput
             model.Abbr = ss.CompositionAbbr;
             model.Weight = ss.Weight;
             model.Customer = ss.Customer;
-            model.Position = PMSCommon.GoodPosition.A1.ToString();
+            model.Position ="无";
             model.ProductType = PMSCommon.ProductType.靶材.ToString();
             model.State = PMSCommon.InventoryState.库存.ToString();
             model.Remark = "";

@@ -53,7 +53,7 @@ namespace PMSClient.ViewModel
             model.Weight = "";
             model.PO = "TBD";
             model.Customer = "Midsummer";
-            model.Position = PMSCommon.GoodPosition.A1.ToString();
+            model.Position = "无";
             model.ProductType = PMSCommon.ProductType.靶材.ToString();
             model.State = PMSCommon.InventoryState.库存.ToString();
             model.Remark = "";

@@ -57,7 +57,7 @@ namespace PMSClient.ViewModel
             #region 初始化
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
-            model.PMINumber = "";
+            model.PMINumber = Helpers.DefaultHelper.DefaultPMINumber();
             model.FollowUps = "发货";
             model.Composition = "成分";
             model.ProductID = UsefulPackage.PMSTranslate.PlanLot();

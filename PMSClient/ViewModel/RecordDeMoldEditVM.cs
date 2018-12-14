@@ -71,7 +71,7 @@ namespace PMSClient.ViewModel
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
             model.DeMoldType = PMSCommon.DeMoldType.手动轻松.ToString();
             model.PlanType = PMSCommon.VHPPlanType.加工.ToString();
-            model.PMINumber = UsefulPackage.PMSTranslate.PMINumber();
+            model.PMINumber = Helpers.DefaultHelper.DefaultPMINumber();
             model.Dimension = "无";
             model.CalculateDimension = "无";
             model.CalculationDensity = 0;

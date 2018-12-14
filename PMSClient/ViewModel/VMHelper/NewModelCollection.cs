@@ -14,7 +14,7 @@ namespace PMSClient.ViewModel
             var model = new DcRecordTest();
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
-            model.PMINumber = "";
+            model.PMINumber = Helpers.DefaultHelper.DefaultPMINumber();
             model.FollowUps = "发货";
             model.Composition = "成分";
             model.ProductID = UsefulPackage.PMSTranslate.PlanLot();
@@ -42,7 +42,7 @@ namespace PMSClient.ViewModel
             var model = new DcRecordMachine();
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
-            model.PMINumber = "";
+            model.PMINumber = Helpers.DefaultHelper.DefaultPMINumber();
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
@@ -69,7 +69,7 @@ namespace PMSClient.ViewModel
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
             model.DeMoldType = PMSCommon.DeMoldType.手动轻松.ToString();
             model.PlanType = PMSCommon.VHPPlanType.加工.ToString();
-            model.PMINumber = UsefulPackage.PMSTranslate.PMINumber();
+            model.PMINumber = Helpers.DefaultHelper.DefaultPMINumber();
             model.Dimension = "无";
             model.CalculateDimension = "无";
             model.CalculationDensity = 0;
@@ -98,7 +98,7 @@ namespace PMSClient.ViewModel
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.PlanBatchNumber = 0;
-            model.PMINumber = UsefulPackage.PMSTranslate.PMINumber();
+            model.PMINumber = Helpers.DefaultHelper.DefaultPMINumber();
             model.RoomHumidity = 0;
             model.RoomTemperature = 0;
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();

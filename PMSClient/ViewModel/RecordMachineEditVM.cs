@@ -45,7 +45,7 @@ namespace PMSClient.ViewModel
             var model = new DcRecordMachine();
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
-            model.PMINumber = "";
+            model.PMINumber = Helpers.DefaultHelper.DefaultPMINumber(); ;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();

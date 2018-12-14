@@ -42,7 +42,7 @@ namespace PMSClient.ViewModel
                 var prefix = order.OrderPO;
                 item.OrderItemNumber = prefix + (GetNowItemCount(order) + 1).ToString();
                 item.Composition = "需求成分";
-                item.PMINumber = DateTime.Now.ToString("yyMMdd");
+                item.PMINumber = Helpers.DefaultHelper.DefaultPMINumber();
                 item.Purity = "5N";
                 item.Description = "";
                 item.ProvideRawMaterial = "";

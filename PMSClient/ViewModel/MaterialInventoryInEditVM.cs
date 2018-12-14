@@ -26,7 +26,7 @@ namespace PMSClient.ViewModel
             var empty = new DcMaterialInventoryIn();
             #region 初始化
             empty.Id = Guid.NewGuid();
-            empty.PMINumber = DateTime.Now.ToString("yyMMdd");
+            empty.PMINumber = Helpers.DefaultHelper.DefaultPMINumber();
             empty.MaterialLot = DateTime.Now.ToString("yyMMdd") + "A";
             empty.Composition = "成分";
             empty.State = PMSCommon.InventoryState.库存.ToString();

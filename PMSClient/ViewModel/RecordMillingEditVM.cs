@@ -66,7 +66,7 @@ namespace PMSClient.ViewModel
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.PlanBatchNumber = 0;
-            model.PMINumber = UsefulPackage.PMSTranslate.PMINumber();
+            model.PMINumber = Helpers.DefaultHelper.DefaultPMINumber();
             model.RoomHumidity = 0;
             model.RoomTemperature = 0;
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
