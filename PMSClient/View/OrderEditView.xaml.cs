@@ -109,7 +109,7 @@ namespace PMSClient.View
             }
             else
             {
-                PMSMethods.SetTextBox(TxtShipTo, "客户");
+                PMSMethods.SetTextBox(TxtShipTo, cboCustomerNames.SelectedItem.ToString());
 
             }
 
@@ -132,14 +132,14 @@ namespace PMSClient.View
 
         private void BtnBasicRequirement_Click(object sender, RoutedEventArgs e)
         {
-            string s = @"D=±0.1mm T=±0.1mm RS=2mm Ra<50um";
+            string s = @"TD±0.1mm TH±0.1mm Ra<50um RS=2mm";
             PMSMethods.SetTextBox(TxtDimensionDetails, s);
 
         }
 
         private void BtnAcceptDefects_Click(object sender, RoutedEventArgs e)
         {
-            string s = @"密度>g/cm3 允许小缺陷";
+            string s = @"ρ>3g/cm3 允许小缺陷";
             PMSMethods.SetTextBox(TxtAcceptDefects, s);
         }
     }
