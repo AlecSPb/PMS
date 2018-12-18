@@ -183,19 +183,28 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource RDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTemplateColumn Header="{StaticResource RDProductType}">
+                <DataGridTemplateColumn Header="{StaticResource RDPackNumber}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding ProductType}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBox Style="{StaticResource StyleDGTextBoxStrench}"
+                                         Text="{Binding PackNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                                         TextAlignment="Center"  Background="LightYellow"
+                                     MinWidth="40"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+
                 <DataGridTemplateColumn Header="{StaticResource RDProductID}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding ProductID}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RDProductType}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ProductType}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -244,15 +253,7 @@
                 </DataGridTemplateColumn>
                 <!--<DataGridTextColumn Header="{StaticResource RDPackNumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding PackNumber}"/>-->
-                <DataGridTemplateColumn Header="{StaticResource RDPackNumber}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBox Style="{StaticResource StyleDGTextBoxStrench}"
-                                         Text="{Binding PackNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
-                                         TextAlignment="Center"  Background="LightYellow"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+
                 <DataGridTemplateColumn Header="{StaticResource RDPosition}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -269,6 +270,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CreateTime}"/>
                 <DataGridTextColumn Header="{StaticResource RDCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>

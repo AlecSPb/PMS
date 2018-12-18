@@ -1,0 +1,46 @@
+﻿<Window x:Class="PMSClient.ToolWindow.OrderDetailsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        Title="订单细节要求设置" Height="400" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="最低密度D=g/cm3" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox Name="TxtLowestDensity" Grid.Row="0" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="公差直径d=mm" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox Name="TxtToleranceD" Grid.Row="1" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="公差厚度h=mm" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox Name="TxtToleranceH" Grid.Row="2" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="溅射面圆弧R=mm" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox Name="TxtRadius" Grid.Row="3" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="粗糙度Ra=um" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox Name="TxtRoughness" Grid.Row="4" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+
+        <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+            <Button Name="BtnYes" Content="填写" Style="{StaticResource StyleButtonCommon}"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

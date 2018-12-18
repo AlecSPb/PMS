@@ -29,7 +29,7 @@
             <Grid  DataContext="{Binding CurrentOrder}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="400"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -145,28 +145,40 @@
 
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource OrderDimension}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}" Background="Yellow"/>
+                <TextBox Name="TxtDimension" Grid.Row="11" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}" Background="Yellow"/>
                 <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="*尺寸信息,必须写成230mm OD x4mm的格式"  Background="LightGreen"/>
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource OrderDimensionDetails}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding DimensionDetails}" Style="{StaticResource StyleTextBoxCommon}" />
-                <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="尺寸要求的细节"/>
+                <TextBox Name="TxtDimensionDetails" Grid.Row="12" Grid.Column="1" Text="{Binding DimensionDetails}" Style="{StaticResource StyleTextBoxCommon}" />
+                <StackPanel Grid.Row="12" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnBasicRequirement" Click="BtnBasicRequirement_Click" Content="默认内容" Style="{StaticResource StyleButtonCommon}"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="尺寸要求的细节,比如公差TD TH，粗糙度Ra，是否有溅射面圆角RS，特殊符号输入请使用底部工具栏的符号工具"/>
+                </StackPanel>
 
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource OrderMIniummAcceptDefect}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding MinimumAcceptDefect}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="填写客户最低的要求，比如可以接受小缺口"/>
+                <TextBox Name="TxtAcceptDefects" Grid.Row="13" Grid.Column="1" Text="{Binding MinimumAcceptDefect}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="13" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnAcceptDefects" Click="BtnAcceptDefects_Click" 
+                            Content="默认内容" Style="{StaticResource StyleButtonCommon}"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="填写客户最低的要求，比如,最低密度，是否接受小缺陷"/>
+                </StackPanel>
+
 
                 <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource OrderDrawing}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Drawing}"
+                <TextBox Name="TxtDrawing" Grid.Row="14" Grid.Column="1" Text="{Binding Drawing}"
                          Style="{StaticResource StyleTextBoxCommon}" Background="Wheat"/>
-                <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="图纸编号,具体规则，参考底部工具栏-图纸"/>
+                <StackPanel  Grid.Row="14" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnGenerateDrawingNumber" Click="BtnGenerateDrawingNumber_Click" Content="自动生成图纸编号" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                    <TextBlock Style="{StaticResource StyleTextBlockTip}"
+                           Text="图纸编号,具体规则，规则参考底部工具栏-图纸，自动生成不一定符合要求，请人工核对"/>
+                </StackPanel>
+
 
                 <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource OrderSampleNeed}"
                            Style="{StaticResource StyleTextBlockCommon}" />
@@ -184,14 +196,14 @@
                          Style="{StaticResource StyleTextBoxCommon}" />
                 <TextBlock Grid.Row="16" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="是否保留自分析样品"/>
-                
+
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource OrderWithBackingPlate}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding WithBackingPlate}"
                          Style="{StaticResource StyleTextBoxCommon}" />
                 <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="是否配套背板，如果需要，写明背板要求"/>
-                
+
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource OrderDeadLine}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <DatePicker Grid.Row="18" Grid.Column="1" SelectedDate="{Binding DeadLine,Mode=TwoWay}"

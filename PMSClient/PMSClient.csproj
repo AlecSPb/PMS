@@ -392,6 +392,9 @@
     <Compile Include="ToolWindow\OrderCheckDialog.xaml.cs">
       <DependentUpon>OrderCheckDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\OrderDetailsDialog.xaml.cs">
+      <DependentUpon>OrderDetailsDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolWindow\OutSourceAdder.xaml.cs">
       <DependentUpon>OutSourceAdder.xaml</DependentUpon>
     </Compile>
@@ -990,6 +993,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolWindow\OrderCheckDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\OrderDetailsDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

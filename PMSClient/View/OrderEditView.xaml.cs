@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace PMSClient.View
 {
@@ -113,6 +114,33 @@ namespace PMSClient.View
             }
 
             e.Handled = true;
+        }
+
+        private void BtnGenerateDrawingNumber_Click(object sender, RoutedEventArgs e)
+        {
+            string s = TxtDimension.Text.Trim();
+            if (string.IsNullOrEmpty(s))
+                return;
+            string pattern = @"\d+\.\d+|\d+";
+            var matches = Regex.Matches(s, pattern);
+            string d = matches[0].Value;
+            string t = matches[1].Value;
+            string drawing = $"TC-{d}-{t}";
+            PMSMethods.SetTextBox(TxtDrawing, drawing);
+
+        }
+
+        private void BtnBasicRequirement_Click(object sender, RoutedEventArgs e)
+        {
+            string s = @"D=±0.1mm T=±0.1mm RS=2mm Ra<50um";
+            PMSMethods.SetTextBox(TxtDimensionDetails, s);
+
+        }
+
+        private void BtnAcceptDefects_Click(object sender, RoutedEventArgs e)
+        {
+            string s = @"密度>g/cm3 允许小缺陷";
+            PMSMethods.SetTextBox(TxtAcceptDefects, s);
         }
     }
 }
