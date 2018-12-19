@@ -132,7 +132,7 @@ namespace PMSClient.View
 
         private void BtnBasicRequirement_Click(object sender, RoutedEventArgs e)
         {
-            string s = @"TD±0.1mm TH±0.1mm Ra<50um RS=2mm";
+            string s = @"TD±0.1mm TH±0.1mm Ra<50um FR=2mm";
             PMSMethods.SetTextBox(TxtDimensionDetails, s);
 
         }

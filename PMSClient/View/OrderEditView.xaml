@@ -155,7 +155,7 @@
                 <StackPanel Grid.Row="12" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnBasicRequirement" Click="BtnBasicRequirement_Click" Content="默认内容" Style="{StaticResource StyleButtonCommon}"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="尺寸要求的细节,比如公差TD TH，粗糙度Ra，是否有溅射面圆角RS，特殊符号输入请使用底部工具栏的符号工具"/>
+                           Text="尺寸细节,比如公差直径TD 厚度TH，粗糙度Ra，溅射面圆角FR，特殊符号输入请使用底部工具栏的符号工具"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource OrderMIniummAcceptDefect}"

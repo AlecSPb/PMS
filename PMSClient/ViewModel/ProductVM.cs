@@ -38,9 +38,34 @@ namespace PMSClient.ViewModel
 
             OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
 
-            ScanAdd = new RelayCommand(ActionScanAdd,CanScanAdd);
+            ScanAdd = new RelayCommand(ActionScanAdd, CanScanAdd);
 
             OutSourceAdd = new RelayCommand(ActionOutSourceAdd, CanScanAdd);
+            SelectAndSend = new RelayCommand<DcProduct>(ActionSend, CanSend);
+        }
+
+        private void ActionSend(DcProduct obj)
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定发货吗？"))
+                return;
+            try
+            {
+                obj.State = PMSCommon.InventoryState.发货.ToString();
+                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
+                var service = new ProductServiceClient();
+                service.UpdateProductByUID(obj, uid);
+                service.Close();
+                PMSHelper.ViewModels.Product.RefreshData();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+        }
+
+        private bool CanSend(DcProduct arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
         }
 
         private void ActionOutSourceAdd()
