@@ -35,6 +35,7 @@ namespace PMSClient.ViewModel
             model.Density = "0";
             model.Defects = "无";
             model.OrderDate = DateTime.Now.AddDays(-30);
+            model.Roughness = "无";
             return model;
         }
         public static DcRecordMachine NewRecordMachine()

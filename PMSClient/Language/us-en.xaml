@@ -589,7 +589,8 @@
     <sys:String x:Key="RTSample">Sample</sys:String>
     <sys:String x:Key="RTDefects">Defects</sys:String>
     <sys:String x:Key="RTFollowUp">Follow Up</sys:String>
-    
+    <sys:String x:Key="RTRoughness">Roughness</sys:String>
+
     <!--Delivery-->
     <sys:String x:Key="RDCreator">Creator</sys:String>
     <sys:String x:Key="RDCreateTime">Create Time</sys:String>

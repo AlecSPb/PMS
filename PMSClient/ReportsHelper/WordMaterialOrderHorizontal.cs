@@ -101,7 +101,6 @@ namespace PMSClient.ReportsHelper
                             {
                                 descriptionMesseage = $"{ item.ProvideRawMaterial}；{item.Description}";
                             }
-                            descriptionMesseage += item.Description;
 
                             p.Append(descriptionMesseage).FontSize(8);
 

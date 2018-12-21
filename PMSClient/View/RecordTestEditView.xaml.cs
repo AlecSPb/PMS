@@ -150,5 +150,11 @@ namespace PMSClient.View
             string first = old.Substring(0, 7);
             return $"{first}{postfix}";
         }
+
+        private void BtnRoughness_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtRoughness, "Ra-A=5um Ra-B=5um");
+
+        }
     }
 }

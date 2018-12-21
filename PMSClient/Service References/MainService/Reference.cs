@@ -5511,6 +5511,9 @@ namespace PMSClient.MainService {
         private string ResistanceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RoughnessField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SampleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5762,6 +5765,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.ResistanceField, value) != true)) {
                     this.ResistanceField = value;
                     this.RaisePropertyChanged("Resistance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Roughness {
+            get {
+                return this.RoughnessField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RoughnessField, value) != true)) {
+                    this.RoughnessField = value;
+                    this.RaisePropertyChanged("Roughness");
                 }
             }
         }

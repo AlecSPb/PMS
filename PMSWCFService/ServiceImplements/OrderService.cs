@@ -78,7 +78,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.Orders
-                                where i.PMINumber == pminumber
+                                where i.PMINumber == pminumber && i.State != "作废"
                                 select i;
                     return query.Count() > 0;
                 }
@@ -566,7 +566,7 @@ namespace PMSWCFService
                                 where o.ProductType == "靶材" && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.未核验.ToString())
                                 select o;
-                    return query.Sum(i=>i.Quantity);
+                    return query.Sum(i => i.Quantity);
                 }
             }
             catch (Exception ex)

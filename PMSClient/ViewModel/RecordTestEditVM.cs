@@ -73,12 +73,13 @@ namespace PMSClient.ViewModel
             model.Weight = "0";
             model.Remark = "";
             model.Resistance = "0";
-            model.Sample = "";
+            model.Sample = "无";
             model.CompositionXRF = "暂无";
             model.Density = "0";
             model.Defects = "无";
             model.OrderDate = DateTime.Now.AddDays(-30);
             model.FollowUps = PMSCommon.TestFollowUps.发货.ToString();
+            model.Roughness = "无";
             #endregion
             CurrentRecordTest = model;
         }

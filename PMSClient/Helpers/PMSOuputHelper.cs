@@ -145,6 +145,10 @@ namespace PMSClient
                 sb.Append(o.CreateTime);
                 sb.Append(",");
                 sb.Append(o.Creator);
+                sb.Append(",");
+                sb.Append(o.Remark);
+                sb.Append(",");
+                sb.Append(o.Roughness);
                 #endregion
                 sb.AppendLine();
             });

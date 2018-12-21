@@ -54,5 +54,8 @@ namespace PMSWCFService.DataContracts
         public DateTime OrderDate { get; set; }
         [DataMember]
         public string FollowUps { get; set; }
+        [DataMember]
+        public string Roughness { get; set; }
+
     }
 }

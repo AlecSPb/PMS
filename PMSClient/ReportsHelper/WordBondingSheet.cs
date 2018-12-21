@@ -119,7 +119,7 @@ namespace PMSClient.ReportsHelper
                         }
                     }
                     var bottom_p = document.InsertParagraph();
-                    bottom_p.Append("取下压块时的温度:A=[       ]℃,B=[      ]℃");
+                    //bottom_p.Append("取下压块时的温度:A=[       ]℃,B=[      ]℃");
                     document.Save();
                     #endregion
                 }

@@ -275,7 +275,7 @@ namespace PMSClient.ViewModel
             string outputfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
                 , "导出数据-测试" + DateTime.Now.ToString("yyyyMMddmmhhss") + ".csv");
             StreamWriter sw = new StreamWriter(new FileStream(outputfile, FileMode.Append), System.Text.Encoding.GetEncoding("GB2312"));
-            string titleString = "状态,后续,产品ID,测试类型,成分,缩写,内部编号,PO,客户,要求尺寸,重量,密度,电阻率,缺陷,实际尺寸,样品,创建时间,创建者";
+            string titleString = "状态,后续,产品ID,测试类型,成分,缩写,内部编号,PO,客户,要求尺寸,重量,密度,电阻率,缺陷,实际尺寸,样品,创建时间,创建者,备注,粗糙度";
             sw.WriteLine(titleString);
             using (var service = new RecordTestServiceClient())
             {

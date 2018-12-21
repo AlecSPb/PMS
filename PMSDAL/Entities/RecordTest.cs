@@ -35,5 +35,8 @@ namespace PMSDAL
         public DateTime OrderDate { get; set; }
         [DefaultValue("未定")]
         public string FollowUps { get; set; }
+
+
+        public string Roughness { get; set; }
     }
 }
