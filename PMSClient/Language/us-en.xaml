@@ -409,6 +409,8 @@
     <sys:String x:Key="PlanVaccum">Vaccum</sys:String>
     <sys:String x:Key="PlanKeepTempTime">Keep Time</sys:String>
     <sys:String x:Key="PlanProcessCode">Process</sys:String>
+    <sys:String x:Key="PlanVHPRequirement">Details</sys:String>
+
     <sys:String x:Key="PlanMillingRequirement">Milling Details</sys:String>
     <sys:String x:Key="PlanFillingRequirement">Filling Details</sys:String>
     <sys:String x:Key="PlanMachineRequirement">Machine Details</sys:String>

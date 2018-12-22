@@ -416,7 +416,9 @@
     <sys:String x:Key="PlanPressure">压力</sys:String>
     <sys:String x:Key="PlanVaccum">真空度</sys:String>
     <sys:String x:Key="PlanKeepTempTime">保温</sys:String>
-    <sys:String x:Key="PlanProcessCode">工艺</sys:String>
+    <sys:String x:Key="PlanProcessCode">工艺代码</sys:String>
+    <sys:String x:Key="PlanVHPRequirement">工艺细节</sys:String>
+
     <sys:String x:Key="PlanMillingRequirement">制粉要求</sys:String>
     <sys:String x:Key="PlanFillingRequirement">装料要求</sys:String>
     <sys:String x:Key="PlanMachineRequirement">加工要求</sys:String>

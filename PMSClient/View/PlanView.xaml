@@ -103,6 +103,9 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockRightBlue}"/>
                     <DataGridTextColumn Header="{StaticResource PlanKeepTempTime}" Binding="{Binding Plan.KeepTempTime}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRightBlue}"/>
+                    <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Header="{StaticResource PlanVHPRequirement}" 
+                                    Binding="{Binding Plan.VHPRequirement}" MaxWidth="400"/>
                     <DataGridTextColumn Header="{StaticResource PlanMillingRequirement}" Binding="{Binding Plan.MillingRequirement}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource PlanFillingRequirement}" Binding="{Binding Plan.FillingRequirement}"
@@ -157,6 +160,7 @@
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
@@ -164,7 +168,7 @@
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
-                            <RowDefinition/>
+                            <RowDefinition Height="0*"/>
                         </Grid.RowDefinitions>
 
                         <TextBlock  Grid.Row="0"  Grid.Column="0" Text="{StaticResource PlanPlanDate}"
@@ -255,29 +259,33 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding Plan.ProcessCode}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                        <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource PlanMillingRequirement}"
+                        <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource PlanVHPRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding Plan.MillingRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding Plan.VHPRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                        <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource PlanFillingRequirement}"
+                        <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource PlanMillingRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding Plan.FillingRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding Plan.MillingRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                        <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource PlanMachineRequirement}"
+                        <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource PlanFillingRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding Plan.MachineRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding Plan.FillingRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                        <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource PlanSpecialRequirement}"
+                        <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource PlanMachineRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="25" Grid.Column="1" Text="{Binding Plan.SpecialRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="25" Grid.Column="1" Text="{Binding Plan.MachineRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                        <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource PlanCreateTime}"
+                        <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource PlanSpecialRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBlock Grid.Row="26" Grid.Column="1" Text="{Binding Plan.CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="26" Grid.Column="1" Text="{Binding Plan.SpecialRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                        <TextBlock Grid.Row="27" Grid.Column="0" Text="{StaticResource PlanCreator}"
+                        <TextBlock Grid.Row="27" Grid.Column="0" Text="{StaticResource PlanCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBlock Grid.Row="27" Grid.Column="1" Text="{Binding Plan.Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBlock Grid.Row="27" Grid.Column="1" Text="{Binding Plan.CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                        <TextBlock Grid.Row="28" Grid.Column="0" Text="{StaticResource PlanCreator}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBlock Grid.Row="28" Grid.Column="1" Text="{Binding Plan.Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
                     </Grid>
                 </ScrollViewer>
 

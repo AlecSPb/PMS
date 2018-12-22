@@ -61,6 +61,7 @@ namespace PMSClient.ViewModel
                 CurrentPlan.MachineRequirement = model.MachineRequirement;
                 CurrentPlan.FillingRequirement = model.FillingRequirement;
                 CurrentPlan.SpecialRequirement = model.SpecialRequirement;
+                CurrentPlan.VHPRequirement = model.VHPRequirement;
             }
         }
 
@@ -103,6 +104,7 @@ namespace PMSClient.ViewModel
             plan.MachineRequirement = "无";
             plan.FillingRequirement = PMSCommon.CustomData.FillingRequirement[2];
             plan.SpecialRequirement = "无";
+            plan.VHPRequirement = "无";
             plan.Grade = 0;
             plan.Conclusion = "无";
             plan.UpdateTime = DateTime.Now;

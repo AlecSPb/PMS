@@ -363,7 +363,9 @@
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Header="{StaticResource PlanRoomHumidity}" Binding="{Binding RoomHumidity}"/>
 
-
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Header="{StaticResource PlanVHPRequirement}" 
+                                    Binding="{Binding VHPRequirement}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanMillingRequirement}" Binding="{Binding MillingRequirement}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
