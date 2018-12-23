@@ -381,6 +381,7 @@
     <sys:String x:Key="OrderReviewTime">Reviewer Time</sys:String>
     <sys:String x:Key="OrderShipTo">ShipTo</sys:String>
     <sys:String x:Key="OrderDrawing">Drawing</sys:String>
+    <sys:String x:Key="OrderSpecialRequirement">Special Req.</sys:String>
     <sys:String x:Key="OrderSampleForAnlysis">Sample For Anlysis</sys:String>
     <sys:String x:Key="OrderWithBackingPlate">With Plate</sys:String>
 

@@ -388,7 +388,8 @@
     <sys:String x:Key="OrderReviewer">审核者</sys:String>
     <sys:String x:Key="OrderReviewTime">审核时间</sys:String>
     <sys:String x:Key="OrderShipTo">发货到</sys:String>
-    <sys:String x:Key="OrderDrawing">图纸</sys:String>
+    <sys:String x:Key="OrderDrawing">加工图纸</sys:String>
+    <sys:String x:Key="OrderSpecialRequirement">特殊要求</sys:String>
     <sys:String x:Key="OrderSampleForAnlysis">自分析样品</sys:String>
     <sys:String x:Key="OrderWithBackingPlate">配有背板</sys:String>
 

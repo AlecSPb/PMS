@@ -100,6 +100,9 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                     <DataGridTextColumn Header="{StaticResource PlanProcessCode}" Binding="{Binding Plan.ProcessCode}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanVHPRequirement}"
+                                        Binding="{Binding Plan.VHPRequirement}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource PlanCreateTime}" Binding="{Binding Plan.CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource PlanCreator}" Binding="{Binding Plan.Creator}"

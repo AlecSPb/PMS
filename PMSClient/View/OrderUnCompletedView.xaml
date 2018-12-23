@@ -172,6 +172,8 @@
                                         Binding="{Binding ShipTo}"/>
                     <DataGridTextColumn Header="{StaticResource OrderWithBackingPlate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                         Binding="{Binding WithBackingPlate}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderSpecialRequirement}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding SpecialRequirement}"/>
                     <DataGridTextColumn Header="{StaticResource OrderCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                         Binding="{Binding Creator}"/>
                     <DataGridTextColumn Header="{StaticResource OrderCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -207,6 +209,7 @@
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
@@ -293,26 +296,29 @@
                            Style="{StaticResource StyleTextBlockCommon}" />
                         <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding ShipTo}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-
-                        <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource OrderRemark}"
+                        <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource OrderSpecialRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                        <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding SpecialRequirement}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                        <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource OrderCreateTime}"
+                        <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource OrderRemark}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                        <TextBlock Grid.Row="20" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                        <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource OrderCreator}"
+                        <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource OrderCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                        <TextBlock Grid.Row="21" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}" />
+                        <TextBlock Grid.Row="21" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                        <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource OrderReviewTime}"
+                        <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource OrderCreator}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                        <TextBlock Grid.Row="22" Grid.Column="1" Text="{Binding ReviewTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBlock Grid.Row="22" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}" />
 
-                        <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource OrderReviewer}"
+                        <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource OrderReviewTime}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                        <TextBlock Grid.Row="23" Grid.Column="1" Text="{Binding Reviewer}" Style="{StaticResource StyleTextBlockCommon}" />
+                        <TextBlock Grid.Row="23" Grid.Column="1" Text="{Binding ReviewTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                        <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource OrderReviewer}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                        <TextBlock Grid.Row="24" Grid.Column="1" Text="{Binding Reviewer}" Style="{StaticResource StyleTextBlockCommon}" />
 
 
                     </Grid>

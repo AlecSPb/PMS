@@ -90,7 +90,8 @@ namespace PMSClient.ViewModel
             order.WithBackingPlate = "无";
             order.Drawing = "默认";
             order.SampleForAnlysis = "分析样品";
-            order.ShipTo = "暂定";
+            order.ShipTo = "未定";
+            order.SpecialRequirement = "无";
             #endregion
             CurrentOrder = order;
         }

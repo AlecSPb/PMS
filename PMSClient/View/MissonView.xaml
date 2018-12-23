@@ -169,6 +169,8 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{StaticResource OrderSpecialRequirement}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding SpecialRequirement}"/>
                     <DataGridTemplateColumn Header="{StaticResource OrderPlanIndex}">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -217,11 +219,12 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
-                            <RowDefinition/>
+                            <RowDefinition Height="0*"/>
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource OrderPMINumber}"
@@ -283,9 +286,14 @@
                         <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource OrderDrawing}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                         <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding Drawing}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                        <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource OrderCustomer}"
+
+                        <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource OrderSpecialRequirement}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                        <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding SpecialRequirement}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+                        <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource OrderCustomer}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding CustomerName}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding CustomerName}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
                     </Grid>
                 </ScrollViewer>

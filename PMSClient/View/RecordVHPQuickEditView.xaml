@@ -179,6 +179,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
@@ -189,7 +190,7 @@
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock  Grid.Column="0" Name="txtCurrentTime" Text="现在时间: 2018-05-16 21:24:33" Style="{StaticResource StyleTextBlockCommon}"
-                       FontWeight="Bold"  Foreground="Blue" FontSize="20"/>
+                       FontWeight="Bold"  Foreground="Black" FontSize="20"/>
                         <TextBlock Grid.Column="1"
                                    Text="{Binding DataContext.EditStatus,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
                                    Style="{StaticResource StyleTextBlockCommon}" FontSize="20" Foreground="Blue"/>
@@ -210,15 +211,21 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.PlanDate,StringFormat=热压日期:{0:yyMMdd}}"/>
                         <TextBlock Grid.Column="1" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.VHPDeviceCode,StringFormat=热压设备:{0}}"/>
-                        <TextBlock Grid.Column="2" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.PreTemperature,StringFormat=预压温度:{0}℃}"/>
-                        <TextBlock Grid.Column="3" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.PrePressure,StringFormat=预压压力:{0}ton}"/>
-                        <TextBlock Grid.Column="4" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.Temperature,StringFormat=温度:{0}℃}"/>
-                        <TextBlock Grid.Column="5" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.Pressure,StringFormat=压力:{0}ton}"/>
-                        <TextBlock Grid.Column="6" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.Vaccum,StringFormat=真空:{0:#.###E00}Pa}"/>
-                        <TextBlock Grid.Column="7" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.KeepTempTime,StringFormat=保温时间:{0}min}"/>
+                        <TextBlock Grid.Column="2" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.Temperature,StringFormat=温度:{0}℃}" Foreground="Red"/>
+                        <TextBlock Grid.Column="3" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.Pressure,StringFormat=压力:{0}ton}" Foreground="Red"/>
+                        <TextBlock Grid.Column="4" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.KeepTempTime,StringFormat=保温时间:{0}min}"  Foreground="Red"/>
+                        <TextBlock Grid.Column="5" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.Vaccum,StringFormat=真空:{0:#.###E00}Pa}"/>
+                        <TextBlock Grid.Column="6" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.PreTemperature,StringFormat=预压温度:{0}℃}"/>
+                        <TextBlock Grid.Column="7" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.PrePressure,StringFormat=预压压力:{0}ton}"/>
                     </Grid>
                 </Border>
-                <Border Grid.Row="2" Style="{StaticResource StyleBorderCommon}">
+                <Border Grid.Row="2" Style="{StaticResource StyleBorderCommon}"
+                         DataContext="{Binding DataContext.CurrentPlanWithMisson,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}">
+                    <TextBlock Text="{Binding Plan.VHPRequirement,StringFormat=工艺细节:{0}}"
+                               Style="{StaticResource StyleDGTextBlockCommon}" Foreground="Orange"
+                               TextWrapping="WrapWithOverflow"/>
+                </Border>
+                <Border Grid.Row="3" Style="{StaticResource StyleBorderCommon}">
                     <Grid  DataContext="{Binding CurrentRecordVHP}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>
@@ -282,7 +289,7 @@
                     </Grid>
 
                 </Border>
-                <DataGrid Name="dgitem" Grid.Row="3" Style="{StaticResource StyleDataGridCommon}" FrozenColumnCount="1"
+                <DataGrid Name="dgitem" Grid.Row="4" Style="{StaticResource StyleDataGridCommon}" FrozenColumnCount="1"
                   ItemsSource="{Binding RecordVHPs}">
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Header="{StaticResource DGOperate}" >

@@ -51,6 +51,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -126,7 +127,7 @@
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="纯度要求（4N,5N）"/>
+                           Text="纯度要求"/>
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource OrderQuantity}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
@@ -203,18 +204,25 @@
                          Style="{StaticResource StyleTextBoxCommon}" />
                 <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="是否配套背板，如果需要，写明背板要求"/>
-
-                <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource OrderDeadLine}"
+                
+                <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource OrderSpecialRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <DatePicker Grid.Row="18" Grid.Column="1" SelectedDate="{Binding DeadLine,Mode=TwoWay}"
-                            Style="{StaticResource StyleDatePickerCommon}"/>
+                <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding SpecialRequirement}"
+                         Style="{StaticResource StyleTextBoxCommon}" />
                 <TextBlock Grid.Row="18" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="如果有特殊要求，可以卸载这里，生产会看到"/>
+                
+                <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource OrderDeadLine}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <DatePicker Grid.Row="19" Grid.Column="1" SelectedDate="{Binding DeadLine,Mode=TwoWay}"
+                            Style="{StaticResource StyleDatePickerCommon}"/>
+                <TextBlock Grid.Row="19" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="最后交付期限，默认订单日期之后的1个月"/>
 
-                <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource OrderShipTo}"
+                <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource OrderShipTo}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Name="TxtShipTo" Grid.Row="19" Grid.Column="1" Text="{Binding ShipTo}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <StackPanel Grid.Row="19" Grid.Column="2" Orientation="Horizontal">
+                <TextBox Name="TxtShipTo" Grid.Row="20" Grid.Column="1" Text="{Binding ShipTo}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="20" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnSendTCB" Content="TCB" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnSendCustomer_Click"/>
                     <Button Name="BtnSendCustomer" Content="客户" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnSendCustomer_Click"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
@@ -222,19 +230,19 @@
                 </StackPanel>
 
 
-                <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource OrderRemark}"
+                <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource OrderRemark}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="20" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
-                           Text="*备注信息一般只有你自己看得到"/>
+                <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="21" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
+                           Text="*备注信息只有你自己看得到"/>
 
-                <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource OrderCreateTime}"
+                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource OrderCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBlock Grid.Row="21" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="22" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource OrderCreator}"
+                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource OrderCreator}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBlock Grid.Row="22" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="23" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
             </Grid>
         </ScrollViewer>
     </Grid>

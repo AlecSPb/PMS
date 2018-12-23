@@ -62,7 +62,9 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string ShipTo { get; set; }//发货目的地
         [DataMember]
-        public string WithBackingPlate { get; set; }//是否配对应背板
+        public string WithBackingPlate { get; set; }//是否配对应背板        
+        [DataMember]
+        public string SpecialRequirement { get; set; }
         //热压指数
         [DataMember]
         public double ProductionIndex { get; set; }

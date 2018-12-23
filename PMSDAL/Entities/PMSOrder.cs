@@ -41,6 +41,7 @@ namespace PMSDAL
         public string SampleForAnlysis { get; set; }//PMI是否需要取样分析
         public string ShipTo { get; set; }//发货目的地
         public string WithBackingPlate { get; set; }//是否配对应背板
+        public string SpecialRequirement { get; set; }
 
         public DateTime DeadLine { get; set; }
 
