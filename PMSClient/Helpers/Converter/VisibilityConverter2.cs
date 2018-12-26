@@ -15,12 +15,12 @@ namespace PMSClient.Helpers.Converter
         {
             if (value == null)
             {
-                return Visibility.Hidden;
+                return Visibility.Collapsed;
             }
             string sampleRequirement = value.ToString();
-            if (sampleRequirement.Contains("无需样品") || sampleRequirement == "")
+            if (sampleRequirement.Contains("无需") || sampleRequirement == "")
             {
-                return Visibility.Hidden;
+                return Visibility.Collapsed;
             }
 
             return Visibility.Visible;

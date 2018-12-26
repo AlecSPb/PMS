@@ -96,7 +96,7 @@ namespace PMSClient.ViewModel
         private void ActionFinish(DcOrder model)
         {
             //样品信息提示
-            if (!model.SampleNeed.Contains("无需样品"))
+            if (!model.SampleNeed.Contains("无需") && !model.SampleForAnlysis.Contains("无需"))
             {
                 PMSDialogService.ShowWarning("提示：请注意，该任务可能有【样品要求】，请确定准备了样品");
             }

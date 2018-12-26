@@ -47,8 +47,9 @@
                                     <TextBlock Text="{Binding Quantity,StringFormat=共{0}片}" Style="{StaticResource StyleTextBlockSmall}"/>
                                     <TextBlock Text="{Binding PMINumber,StringFormat={}{0}}" Style="{StaticResource StyleTextBlockSmall}" Foreground="Red"/>
                                 </StackPanel>
-                                <TextBlock Grid.Row="3" Text="{Binding FillRequirement}" Style="{StaticResource StyleTextBlockSmall}"
-                                           TextWrapping="WrapWithOverflow"/>
+                                <TextBlock Grid.Row="3" Text="{Binding VHPRequirement}" Style="{StaticResource StyleTextBlockSmall}"
+                                           TextWrapping="WrapWithOverflow" FontSize="10" Foreground="Blue"
+                                           HorizontalAlignment="Stretch"/>
                             </Grid>
                         </Border>
                     </DataTemplate>

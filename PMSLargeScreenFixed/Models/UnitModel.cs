@@ -44,6 +44,7 @@ namespace PMSLargeScreen.Models
         public string ProcessCode { get; set; }
         public string PlanType { get; set; }
         public string FillRequirement { get; set; }
+        public string VHPRequirement { get; set; }
     }
 
 }

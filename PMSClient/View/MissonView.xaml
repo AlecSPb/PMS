@@ -84,12 +84,24 @@
                     <DataGridTemplateColumn Header="">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Ellipse Width="10" Height="10" Fill="Red"
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Ellipse Grid.Column="0" Width="8" Height="8" Fill="Red" Margin="2"
                                      Visibility="{Binding SampleNeed,Converter={StaticResource VisibilityConverter2}}">
-                                    <Ellipse.ToolTip>
-                                        <TextBlock Text="样品标识"/>
-                                    </Ellipse.ToolTip>
-                                </Ellipse>
+                                        <Ellipse.ToolTip>
+                                            <TextBlock Text="{Binding SampleNeed}"/>
+                                        </Ellipse.ToolTip>
+                                    </Ellipse>
+                                    <Rectangle Grid.Column="1" Width="8" Height="8" Margin="2" Fill="Blue"
+                                     Visibility="{Binding SampleForAnlysis,Converter={StaticResource VisibilityConverter2}}">
+                                        <Rectangle.ToolTip>
+                                            <TextBlock Text="{Binding SampleForAnlysis}"/>
+                                        </Rectangle.ToolTip>
+                                    </Rectangle>
+                                </Grid>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -159,7 +171,8 @@
                     </DataGridTemplateColumn>
                     <DataGridTextColumn Header="{StaticResource OrderSampleForAnlysis}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                         Binding="{Binding SampleForAnlysis}"/>
-
+                    <DataGridTextColumn Header="{StaticResource OrderSpecialRequirement}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding SpecialRequirement}"/>
                     <DataGridTextColumn Header="{StaticResource OrderCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                     <DataGridTemplateColumn Header="{StaticResource OrderDeadLine}">
@@ -169,8 +182,7 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="{StaticResource OrderSpecialRequirement}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding SpecialRequirement}"/>
+
                     <DataGridTemplateColumn Header="{StaticResource OrderPlanIndex}">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

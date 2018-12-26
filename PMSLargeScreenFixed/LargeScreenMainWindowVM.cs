@@ -141,7 +141,7 @@ namespace PMSLargeScreen
                 modelItem.Quantity = item.Plan.Quantity;
                 modelItem.ProcessCode = item.Plan.ProcessCode;
                 modelItem.FillRequirement = item.Plan.FillingRequirement;
-
+                modelItem.VHPRequirement = item.Plan.VHPRequirement;
                 model.Items.Add(modelItem);
             }
             return model;
