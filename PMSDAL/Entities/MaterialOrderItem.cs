@@ -24,6 +24,7 @@ namespace PMSDAL
         public double Weight { get; set; }
         public string Priority { get; set; }
         public Guid? MaterialOrderID { get; set; }
+        public string HowManyTargets { get; set; }
         //2017-12-17
         public string SJIngredient { get; set; }//用作Remark
 

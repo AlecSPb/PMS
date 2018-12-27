@@ -427,6 +427,7 @@
     <sys:String x:Key="PlanRemark">备注信息</sys:String>
     <sys:String x:Key="PlanGrade">得分</sys:String>
     <sys:String x:Key="PlanConclusion">计划总结</sys:String>
+    
     <!--MaterialNeed-->
     <sys:String x:Key="MNState">需求状态</sys:String>
     <sys:String x:Key="MNCreator">创建者</sys:String>
@@ -437,6 +438,7 @@
     <sys:String x:Key="MNSupplier">供应商</sys:String>
     <sys:String x:Key="MNSpecialNeeds">备注</sys:String>
     <sys:String x:Key="MNPMINumber">内部编号</sys:String>
+    <sys:String x:Key="MNHowManyTargets">靶材数目</sys:String>
 
     <!--MaterialOrder-->
     <sys:String x:Key="MOState">状态</sys:String>
@@ -470,6 +472,7 @@
     <sys:String x:Key="MOIUnitPrice">单价</sys:String>
     <sys:String x:Key="MOIWeight">重量(kg)</sys:String>
     <sys:String x:Key="MOIPriority">优先级</sys:String>
+    <sys:String x:Key="MOIHowManyTargets">靶材数目</sys:String>
 
     <!--Plate-->
     <sys:String x:Key="PlateState">状态</sys:String>

@@ -21,6 +21,7 @@ namespace PMSDAL
         public double Weight { get; set; }
         public string SpecialNeeds { get; set; }
         public string PMINumber { get; set; }
+        public string HowManyTargets { get; set; }
 
         //操作者和操作时间
         [Key]

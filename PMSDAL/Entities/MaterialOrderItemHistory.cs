@@ -27,6 +27,7 @@ namespace PMSDAL
         public Guid? MaterialOrderID { get; set; }
         //2017-12-17
         public string SJIngredient { get; set; }//用作Remark
+        public string HowManyTargets { get; set; }
 
         //操作者和操作时间
         [Key]

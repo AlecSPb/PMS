@@ -53,6 +53,8 @@
                                     Binding="{Binding MaterialNeed.CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource MNComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialNeed.Composition}"/>
+                <DataGridTextColumn Header="{StaticResource MNHowManyTargets}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialNeed.HowManyTargets}"/>
                 <DataGridTextColumn Header="{StaticResource MNPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding MaterialNeed.PMINumber}"/>
                 <DataGridTextColumn Header="{StaticResource MNPurity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

@@ -46,6 +46,8 @@
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource MNComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
+                <DataGridTextColumn Header="{StaticResource MNHowManyTargets}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding HowManyTargets}"/>
                 <DataGridTextColumn Header="{StaticResource MNPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding PMINumber}"/>
                 <DataGridTextColumn Header="{StaticResource MNPurity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

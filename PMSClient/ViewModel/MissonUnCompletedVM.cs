@@ -80,7 +80,7 @@ namespace PMSClient.ViewModel
                 PMSHelper.ViewModels.MaterialInventoryIn.SetSearchCondition("", model.PMINumber);
                 //NavigationService.GoTo(PMSViews.MaterialInventoryIn);
                 View.MaterialInventoryInWindow miw = new View.MaterialInventoryInWindow();
-                miw.Show(); 
+                miw.Show();
             }
         }
 
@@ -149,7 +149,12 @@ namespace PMSClient.ViewModel
 
         private bool CanEditPlan(DcPlanVHP arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan) && MissonStateConverter(CurrentSelectItem.State);
+            bool isUsed = true;
+            if (arg != null)
+            {
+                isUsed = arg.PlanDate > DateTime.Today;
+            }
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan) && MissonStateConverter(CurrentSelectItem.State) && isUsed;
         }
         /// <summary>
         /// 权限控制=编辑任务

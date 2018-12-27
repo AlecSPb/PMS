@@ -1815,6 +1815,9 @@ namespace PMSClient.MainService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HowManyTargetsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1877,6 +1880,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HowManyTargets {
+            get {
+                return this.HowManyTargetsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HowManyTargetsField, value) != true)) {
+                    this.HowManyTargetsField = value;
+                    this.RaisePropertyChanged("HowManyTargets");
                 }
             }
         }
@@ -2247,6 +2263,9 @@ namespace PMSClient.MainService {
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HowManyTargetsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2353,6 +2372,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
                     this.DescriptionField = value;
                     this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HowManyTargets {
+            get {
+                return this.HowManyTargetsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HowManyTargetsField, value) != true)) {
+                    this.HowManyTargetsField = value;
+                    this.RaisePropertyChanged("HowManyTargets");
                 }
             }
         }

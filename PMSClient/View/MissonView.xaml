@@ -319,7 +319,8 @@
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipMisson}" Foreground="Black"/>
         </StackPanel>
-        <DataGrid Name="dgplans" Grid.Row="4" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PlanVHPs}" LoadingRow="dgplans_LoadingRow">
+        <DataGrid Name="dgplans" Grid.Row="4" Style="{StaticResource StyleDataGridCommon}"
+                  ItemsSource="{Binding PlanVHPs}" LoadingRow="dgplans_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>

@@ -28,5 +28,7 @@ namespace PMSWCFService.DataContracts
         public string SpecialNeeds { get; set; }
         [DataMember]
         public string PMINumber { get; set; }
+        [DataMember]
+        public string HowManyTargets { get; set; }
     }
 }

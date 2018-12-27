@@ -151,6 +151,7 @@
       <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HowManyTargets" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="ser:guid" />
       <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
@@ -198,6 +199,7 @@
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DeliveryDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HowManyTargets" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="MaterialOrderID" type="ser:guid" />
       <xs:element minOccurs="0" name="MaterialPrice" type="xs:double" />

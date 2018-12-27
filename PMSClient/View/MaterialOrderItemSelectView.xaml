@@ -66,6 +66,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource MOIHowManyTargets}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding HowManyTargets}"/>
                 <DataGridTemplateColumn Header="{StaticResource MOIPurity}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

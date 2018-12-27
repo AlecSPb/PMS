@@ -66,6 +66,8 @@
                                     Binding="{Binding MaterialOrderItem.Creator}"/>
                 <DataGridTextColumn Header="{StaticResource MOIComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.Composition}"/>
+                <DataGridTextColumn Header="{StaticResource MOIHowManyTargets}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrderItem.HowManyTargets}"/>
                 <DataGridTextColumn Header="{StaticResource MOIPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.PMINumber}"/>
                 <DataGridTextColumn Header="{StaticResource MOIPurity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

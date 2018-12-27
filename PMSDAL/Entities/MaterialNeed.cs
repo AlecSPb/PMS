@@ -21,5 +21,7 @@ namespace PMSDAL
         public double Weight { get; set; }
         public string SpecialNeeds { get; set; }
         public string PMINumber { get; set; }
+
+        public string HowManyTargets { get; set; }
     }
 }

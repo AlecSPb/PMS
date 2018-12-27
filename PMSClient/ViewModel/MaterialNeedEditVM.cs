@@ -33,6 +33,7 @@ namespace PMSClient.ViewModel
             empty.PMINumber = Helpers.DefaultHelper.DefaultPMINumber();
             empty.Purity = "5N";
             empty.Weight = 1;
+            empty.HowManyTargets = "1pcs";
             #endregion
             IsNew = true;
             CurrentMaterialNeed = empty;

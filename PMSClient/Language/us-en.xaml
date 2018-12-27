@@ -429,6 +429,8 @@
     <sys:String x:Key="MNSupplier">Supplier</sys:String>
     <sys:String x:Key="MNSpecialNeeds">Remark</sys:String>
     <sys:String x:Key="MNPMINumber">PMI Number</sys:String>
+    <sys:String x:Key="MNHowManyTargets">How Many Targets</sys:String>
+
 
     <!--MaterialOrder-->
     <sys:String x:Key="MOState">State</sys:String>
@@ -463,6 +465,8 @@
     <sys:String x:Key="MOIWeight">Weight</sys:String>
     <sys:String x:Key="MOIPriority">Priority</sys:String>
     <sys:String x:Key="MOSJIngredient">Remark</sys:String>
+    <sys:String x:Key="MOIHowManyTargets">How Many Targets</sys:String>
+
     <!--Plate-->
     <sys:String x:Key="PlateState">State</sys:String>
     <sys:String x:Key="PlateCreator">Creator</sys:String>
