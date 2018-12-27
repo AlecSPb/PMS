@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <TextBlock Text="{StaticResource PageDeliveryEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
-            <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
+            <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitleTip}"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">

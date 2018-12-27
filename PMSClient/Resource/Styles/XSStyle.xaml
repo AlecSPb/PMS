@@ -237,6 +237,11 @@
         <Setter Property="Foreground" Value="{StaticResource BGNavigationBar}"/>
         <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
     </Style>
+    <Style x:Key="StyleTextBlockPageTitleTip" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
+        <Setter Property="Foreground" Value="Yellow"/>
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
+        <Setter Property="Background" Value="Red"/>
+    </Style>
     <Style x:Key="StyleTextBlockPageTitleMD" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="Foreground" Value="{StaticResource BGNavigationBar}"/>
         <Setter Property="FontSize" Value="{StaticResource FontMD}"/>

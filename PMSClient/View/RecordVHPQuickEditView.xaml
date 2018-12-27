@@ -190,7 +190,7 @@
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock  Grid.Column="0" Name="txtCurrentTime" Text="现在时间: 2018-05-16 21:24:33" Style="{StaticResource StyleTextBlockCommon}"
-                       FontWeight="Bold"  Foreground="Black" FontSize="20"/>
+                       FontWeight="Bold"  Foreground="Black" FontSize="20" HorizontalAlignment="Stretch" Margin="2,2,417,2.2"/>
                         <TextBlock Grid.Column="1"
                                    Text="{Binding DataContext.EditStatus,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
                                    Style="{StaticResource StyleTextBlockCommon}" FontSize="20" Foreground="Blue"/>

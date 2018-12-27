@@ -18,7 +18,7 @@ namespace PMSClient.Helpers.Converter
                 return Visibility.Collapsed;
             }
             string sampleRequirement = value.ToString();
-            if (sampleRequirement.Contains("无需") || sampleRequirement == "")
+            if (sampleRequirement.Contains("无") || sampleRequirement == "")
             {
                 return Visibility.Collapsed;
             }

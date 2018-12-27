@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <TextBlock Text="{StaticResource PageOrderEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
-            <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
+            <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitleTip}"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}"
@@ -196,7 +196,7 @@
                 <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding SampleForAnlysis}"
                          Style="{StaticResource StyleTextBoxCommon}" />
                 <TextBlock Grid.Row="16" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="是否保留自分析样品"/>
+                           Text="是否保留自分析样品，不需要写【无需样品】"/>
 
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource OrderWithBackingPlate}"
                            Style="{StaticResource StyleTextBlockCommon}" />
@@ -208,9 +208,9 @@
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource OrderSpecialRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding SpecialRequirement}"
-                         Style="{StaticResource StyleTextBoxCommon}" />
+                         Style="{StaticResource StyleTextBoxCommon}" Background="LightPink"/>
                 <TextBlock Grid.Row="18" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="如果有特殊要求，可以写在这里，生产会看到"/>
+                           Text="如果有特殊要求如添加剂，可以写在这里，生产会看到"/>
                 
                 <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource OrderDeadLine}"
                            Style="{StaticResource StyleTextBlockCommon}" />

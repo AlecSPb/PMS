@@ -101,13 +101,13 @@
                                     <Ellipse Grid.Column="0" Width="8" Height="8" Fill="Red" Margin="2"
                                      Visibility="{Binding SampleNeed,Converter={StaticResource VisibilityConverter2}}">
                                         <Ellipse.ToolTip>
-                                            <TextBlock Text="{Binding SampleNeed}"/>
+                                            <TextBlock Text="{Binding SampleNeed,StringFormat=客户:{0}}"/>
                                         </Ellipse.ToolTip>
                                     </Ellipse>
                                     <Rectangle Grid.Column="1" Width="8" Height="8" Margin="2" Fill="Blue"
                                      Visibility="{Binding SampleForAnlysis,Converter={StaticResource VisibilityConverter2}}">
                                         <Rectangle.ToolTip>
-                                            <TextBlock Text="{Binding SampleForAnlysis}"/>
+                                            <TextBlock Text="{Binding SampleForAnlysis,StringFormat=自分析:{0}}"/>
                                         </Rectangle.ToolTip>
                                     </Rectangle>
                                 </Grid>
