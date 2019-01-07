@@ -269,8 +269,11 @@ namespace PMSCommon
                 data.Add("裸板");
                 data.Add("BN");
                 data.Add("BN+石墨纸");
+                data.Add("BN+双石墨纸");
                 data.Add("BN+石墨纸+Al2O3纸");
+                data.Add("BN+双石墨纸+双Al2O3纸");
                 data.Add("BN+Al2O3纸");
+                data.Add("BN+双Al2O3纸");
                 data.Add("SiC隔板");
                 #endregion
                 return data;

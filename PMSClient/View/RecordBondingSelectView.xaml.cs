@@ -38,7 +38,7 @@ namespace PMSClient.View
                         case "未完成":
                             e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
                             break;
-                        case "未录入":
+                        case "未录完":
                             e.Row.Background = this.FindResource("NoInputBrush") as SolidColorBrush;
                             break;
                         case "暂停":

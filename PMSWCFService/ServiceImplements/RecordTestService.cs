@@ -197,7 +197,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
-                                where t.State == CommonState.未录入.ToString()
+                                where t.State == CommonState.未录完.ToString()
                                 orderby t.CreateTime descending
                                 select t;
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordTest, DcRecordTest>());

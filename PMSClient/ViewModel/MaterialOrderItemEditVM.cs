@@ -87,6 +87,7 @@ namespace PMSClient.ViewModel
                 CurrentMaterialOrderItem.Composition = need.Composition;
                 CurrentMaterialOrderItem.PMINumber = need.PMINumber;
                 CurrentMaterialOrderItem.Weight = need.Weight;
+                CurrentMaterialOrderItem.HowManyTargets = need.HowManyTargets;
                 //RaisePropertyChanged(nameof(CurrentMaterialOrderItem));
             }
         }

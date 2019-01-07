@@ -44,6 +44,7 @@ namespace PMSClient.ViewModel
                 CurrentPlan.Temperature = model.Temperature;
                 CurrentPlan.Pressure = model.Temperature;
                 CurrentPlan.Vaccum = model.Vaccum;
+                CurrentPlan.SearchCode = "";
                 CurrentPlan.ProcessCode = model.ProcessCode;
                 CurrentPlan.PrePressure = model.PrePressure;
                 CurrentPlan.PreTemperature = model.PreTemperature;

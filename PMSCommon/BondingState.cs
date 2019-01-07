@@ -11,7 +11,7 @@ namespace PMSCommon
         作废,
         暂停,
         未完成,
-        未录入,
+        未录完,
         完成,
         失败
     }

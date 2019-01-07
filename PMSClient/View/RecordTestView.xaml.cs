@@ -37,7 +37,7 @@ namespace PMSClient.View
                 {
                     switch (order.State)
                     {
-                        case "未录入":
+                        case "未录完":
                             e.Row.Background = this.FindResource("NoInputBrush") as SolidColorBrush;
                             break;
                         case "未核验":

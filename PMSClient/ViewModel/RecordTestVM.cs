@@ -83,7 +83,7 @@ namespace PMSClient.ViewModel
 
                 if (result.Count() == 0)
                 {
-                    PMSDialogService.ShowWarning("无[未录入-红色]的测试记录");
+                    PMSDialogService.ShowWarning("无[未录完-红色]的测试记录");
                     return;
                 }
 

@@ -12,7 +12,7 @@ namespace PMSCommon
     public enum CommonState
     {
         作废,
-        未录入,
+        未录完,
         未核验,
         已核验
     }

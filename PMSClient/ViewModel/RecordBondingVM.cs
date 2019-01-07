@@ -65,12 +65,12 @@ namespace PMSClient.ViewModel
 
         private void ActionTempFinish(DcRecordBonding obj)
         {
-            if (PMSDialogService.ShowYesNo("请问?", "确定绑定已经完成但暂时还未录入数据？") == false)
+            if (PMSDialogService.ShowYesNo("请问?", "确定绑定已经完成但暂时还未录完数据？") == false)
                 return;
             try
             {
                 if (obj == null) return;
-                obj.State = PMSCommon.BondingState.未录入.ToString();
+                obj.State = PMSCommon.BondingState.未录完.ToString();
                 using (var service = new RecordBondingServiceClient())
                 {
                     service.UpdateRecordBongdingByUID(obj, PMSHelper.CurrentSession.CurrentUser.UserName);
@@ -121,7 +121,7 @@ namespace PMSClient.ViewModel
 
         private void ActionRecordSheet()
         {
-            if (!PMSDialogService.ShowYesNo("警告", "确定要生成[未完成]的绑定计划的记录单吗？\r\n 不包含[未录入]"))
+            if (!PMSDialogService.ShowYesNo("警告", "确定要生成[未完成]的绑定计划的记录单吗？\r\n 不包含[未录完]"))
                 return;
             try
             {
@@ -161,7 +161,7 @@ namespace PMSClient.ViewModel
         private bool RecordBondingStateTransfer(DcRecordBonding arg)
         {
             return arg.State == PMSCommon.BondingState.未完成.ToString() ||
-                arg.State == PMSCommon.BondingState.未录入.ToString();
+                arg.State == PMSCommon.BondingState.未录完.ToString();
         }
 
         private void ActionFinish(DcRecordBonding model)

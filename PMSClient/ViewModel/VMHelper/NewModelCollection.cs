@@ -26,7 +26,7 @@ namespace PMSClient.ViewModel
             model.Customer = "客户信息";
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.TestType = PMSCommon.TestType.靶材.ToString();
-            model.State = PMSCommon.CommonState.未录入.ToString();
+            model.State = PMSCommon.CommonState.未录完.ToString();
             model.Weight = "0";
             model.Remark = "";
             model.Resistance = "0";

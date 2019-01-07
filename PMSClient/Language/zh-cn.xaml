@@ -328,7 +328,7 @@
     <sys:String x:Key="IndicatorPaused">暂停</sys:String>
     <sys:String x:Key="IndicatorEmergency">紧急</sys:String>
     <sys:String x:Key="IndicatorFailed">失败</sys:String>
-    <sys:String x:Key="IndicatorNoInput">未录入</sys:String>
+    <sys:String x:Key="IndicatorNoInput">未录完</sys:String>
 
 
     <sys:String x:Key="IndicatorStored">库存</sys:String>
@@ -398,8 +398,8 @@
     <sys:String x:Key="PlanCreator">创建人</sys:String>
     <sys:String x:Key="PlanCreateTime">创建时间</sys:String>
     <sys:String x:Key="PlanPlanDate">计划日期</sys:String>
-    <sys:String x:Key="PlanVHPDeviceCode">设备</sys:String>
-    <sys:String x:Key="PlanPlanLot">批次</sys:String>
+    <sys:String x:Key="PlanVHPDeviceCode">机</sys:String>
+    <sys:String x:Key="PlanPlanLot">批</sys:String>
     <sys:String x:Key="PlanPlanType">类型</sys:String>
     <sys:String x:Key="PlanMoldType">模具</sys:String>
     <sys:String x:Key="PlanCalculationDensity">密度</sys:String>
@@ -411,14 +411,14 @@
     <sys:String x:Key="PlanGrainSize">粉粒</sys:String>
     <sys:String x:Key="PlanRoomTemperature">室温</sys:String>
     <sys:String x:Key="PlanRoomHumidity">湿度</sys:String>
-    <sys:String x:Key="PlanPreTemperature">预压温度</sys:String>
-    <sys:String x:Key="PlanPrePressure">预压压力</sys:String>
+    <sys:String x:Key="PlanPreTemperature">预温度</sys:String>
+    <sys:String x:Key="PlanPrePressure">预压力</sys:String>
     <sys:String x:Key="PlanTemperature">温度</sys:String>
     <sys:String x:Key="PlanPressure">压力</sys:String>
     <sys:String x:Key="PlanVaccum">真空度</sys:String>
     <sys:String x:Key="PlanKeepTempTime">保温</sys:String>
-    <sys:String x:Key="PlanProcessCode">工艺代码</sys:String>
-    <sys:String x:Key="PlanVHPRequirement">工艺细节</sys:String>
+    <sys:String x:Key="PlanProcessCode">工艺</sys:String>
+    <sys:String x:Key="PlanVHPRequirement">热压细节</sys:String>
 
     <sys:String x:Key="PlanMillingRequirement">制粉要求</sys:String>
     <sys:String x:Key="PlanFillingRequirement">装料要求</sys:String>
