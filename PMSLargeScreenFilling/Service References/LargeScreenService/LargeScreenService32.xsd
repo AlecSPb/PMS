@@ -45,6 +45,7 @@
       <xs:element minOccurs="0" name="SampleForAnlysis" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SampleNeed" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ShipTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecialRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="StateRemark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WithBackingPlate" nillable="true" type="xs:string" />

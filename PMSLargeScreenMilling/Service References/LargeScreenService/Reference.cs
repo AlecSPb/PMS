@@ -171,6 +171,9 @@ namespace PMSLargeScreen.LargeScreenService {
         private string ShipToField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SpecialRequirementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -562,6 +565,19 @@ namespace PMSLargeScreen.LargeScreenService {
                 if ((object.ReferenceEquals(this.ShipToField, value) != true)) {
                     this.ShipToField = value;
                     this.RaisePropertyChanged("ShipTo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SpecialRequirement {
+            get {
+                return this.SpecialRequirementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SpecialRequirementField, value) != true)) {
+                    this.SpecialRequirementField = value;
+                    this.RaisePropertyChanged("SpecialRequirement");
                 }
             }
         }

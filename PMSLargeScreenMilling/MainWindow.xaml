@@ -8,6 +8,9 @@
         Language="zh-cn"
         mc:Ignorable="d"
         Title="热压制粉计划安排大屏幕显示程序" Height="1000" Width="1600">
+    <Window.Resources>
+        <local:VisibilityConverter2 x:Key="VisibilityConverter2"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -47,12 +50,36 @@
                                     Binding="{Binding Plan.VHPDeviceCode}"/>
                 <DataGridTextColumn Header="成分" ElementStyle="{StaticResource StyleTextBlock}"
                                     Binding="{Binding Misson.CompositionStandard}"/>
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Ellipse Grid.Column="0" Width="12" Height="12" Fill="Red" Margin="2"
+                                     Visibility="{Binding Misson.SampleNeed,Converter={StaticResource VisibilityConverter2}}">
+                                    <Ellipse.ToolTip>
+                                        <TextBlock Text="{Binding SampleNeed,StringFormat=客户:{0}}"/>
+                                    </Ellipse.ToolTip>
+                                </Ellipse>
+                                <Rectangle Grid.Column="1" Width="12" Height="12" Margin="2" Fill="Blue"
+                                     Visibility="{Binding Misson.SampleForAnlysis,Converter={StaticResource VisibilityConverter2}}">
+                                    <Rectangle.ToolTip>
+                                        <TextBlock Text="{Binding SampleForAnlysis,StringFormat=自分析:{0}}"/>
+                                    </Rectangle.ToolTip>
+                                </Rectangle>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="内部编号" ElementStyle="{StaticResource StyleTextBlockCenter}"
                                     Binding="{Binding Misson.PMINumber}"/>
                 <DataGridTextColumn Header="计划类型" ElementStyle="{StaticResource StyleTextBlockCenter}"
                                     Binding="{Binding Plan.PlanType}"/>
-                <!--<DataGridTextColumn Header="工艺" ElementStyle="{StaticResource StyleTextBlockCenter}"
-                                    Binding="{Binding Plan.ProcessCode}"/>-->
+                <DataGridTextColumn Header="工艺" ElementStyle="{StaticResource StyleTextBlockCenter}"
+                                    Binding="{Binding Plan.ProcessCode}"/>
                 <!--<DataGridTextColumn Header="模具类型" ElementStyle="{StaticResource StyleTextBlockCenterBold}"
                                     Binding="{Binding Plan.MoldType}"/>-->
                 <DataGridTextColumn Header="模具直径" ElementStyle="{StaticResource StyleTextBlockRightBold}"
