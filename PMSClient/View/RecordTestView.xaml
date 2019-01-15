@@ -190,6 +190,8 @@
                         <DataGridTextColumn Header="{StaticResource RTSample}" Binding="{Binding RecordTest.Sample}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource RTRoughness}"
                                             Binding="{Binding RecordTest.Roughness}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource RTWarping}"
+                                            Binding="{Binding RecordTest.Warping}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
 
                         <DataGridTemplateColumn Header="{StaticResource RTRemark}">
                             <DataGridTemplateColumn.CellTemplate>
@@ -245,7 +247,8 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
-                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="0*"/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RTProductID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -297,10 +300,13 @@
                             <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTSample}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                             <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding RecordTest.Sample}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                           
+
                             <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTRoughness}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                             <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding RecordTest.Roughness}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTWarping}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding RecordTest.Warping}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
                         </Grid>
                     </ScrollViewer>

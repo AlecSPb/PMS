@@ -80,6 +80,7 @@ namespace PMSClient.ViewModel
             model.OrderDate = DateTime.Now.AddDays(-30);
             model.FollowUps = PMSCommon.TestFollowUps.发货.ToString();
             model.Roughness = "无";
+            model.Warping = "未知";
             #endregion
             CurrentRecordTest = model;
         }

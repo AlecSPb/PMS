@@ -105,6 +105,7 @@
       <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DimensionActual" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="OrderNumber" type="xs:int" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PackNumber" type="xs:int" />
       <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
@@ -136,6 +137,7 @@
       <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Resistance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Roughness" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Sample" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TestType" nillable="true" type="xs:string" />

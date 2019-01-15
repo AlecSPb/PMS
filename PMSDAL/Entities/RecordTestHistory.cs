@@ -36,6 +36,9 @@ namespace PMSDAL
         [DefaultValue("未定")]
         public string FollowUps { get; set; }
         public string Roughness { get; set; }
+
+        public string Warping { get; set; }
+
         //操作者和操作时间
         [Key]
         public Guid HistoryID { get; set; }

@@ -54,6 +54,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -157,12 +158,14 @@
 
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <StackPanel Grid.Row="13" Grid.Column="1" Orientation="Horizontal">
+                <StackPanel Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
                     <TextBox Name="TxtDimension" Text="{Binding DimensionActual}"
                              Style="{StaticResource StyleTextBoxBig}" Width="200" />
                     <Button Content="选择" Style="{StaticResource StyleButtonCommon}"
                             Command="{Binding DataContext.SelectDimensionActual,
                                 RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockWarning2}"
+                           Text="请优先使用重新测量的数据，不要使用加工记录里的数据"/>
                 </StackPanel>
                 <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
@@ -199,7 +202,7 @@
                 <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
-                
+
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RTRoughness}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Name="TxtRoughness" Grid.Row="18" Grid.Column="1" Text="{Binding Roughness}" Style="{StaticResource StyleTextBoxBig}"/>
@@ -210,26 +213,41 @@
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
                            Text="单位um 有写，没有默认"/>
                 </StackPanel>
-                <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RTRemark}"
+
+                <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RTWarping}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="txtRemark" Grid.Row="19" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox Name="TxtWarping" Grid.Row="19" Grid.Column="1" Text="{Binding Warping}" 
+                         Style="{StaticResource StyleTextBoxBig}"/>
+
                 <StackPanel Grid.Row="19" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnWarpingYes" Content="有翘曲" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnWarpingYes_Click"/>
+                    <Button Name="BtnWarpingNo" Content="无翘曲" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnWarpingNo_Click"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+                </StackPanel>
+
+                <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RTRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="txtRemark" Grid.Row="20" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
+                <StackPanel Grid.Row="20" Grid.Column="2" Orientation="Horizontal">
                     <Button Content="附有背板" Name="btnAddPlate" Style="{StaticResource StyleButtonCommon}" Click="BtnAddPlate_Click"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"   Text=""/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RTState}"  Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="20" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"  FontSize="{StaticResource TabletFontLG}"
+                <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RTState}"  Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="21" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"  FontSize="{StaticResource TabletFontLG}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="20" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"    Text="状态"/>
+                <TextBlock Grid.Row="21" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"    Text="状态"/>
 
-                <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RTCreator}"
+                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource RTCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="21" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"   />
-                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource RTCreateTime}"
+                <TextBlock Grid.Row="22" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"   />
+                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource RTCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="22" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
+                <TextBlock Grid.Row="23" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
             </Grid>
         </ScrollViewer>
     </Grid>

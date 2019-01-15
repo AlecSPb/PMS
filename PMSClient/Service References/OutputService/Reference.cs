@@ -1314,6 +1314,9 @@ namespace PMSClient.OutputService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1486,6 +1489,19 @@ namespace PMSClient.OutputService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderNumber {
+            get {
+                return this.OrderNumberField;
+            }
+            set {
+                if ((this.OrderNumberField.Equals(value) != true)) {
+                    this.OrderNumberField = value;
+                    this.RaisePropertyChanged("OrderNumber");
                 }
             }
         }
@@ -1666,6 +1682,9 @@ namespace PMSClient.OutputService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ResistanceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RoughnessField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SampleField;
@@ -1919,6 +1938,19 @@ namespace PMSClient.OutputService {
                 if ((object.ReferenceEquals(this.ResistanceField, value) != true)) {
                     this.ResistanceField = value;
                     this.RaisePropertyChanged("Resistance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Roughness {
+            get {
+                return this.RoughnessField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RoughnessField, value) != true)) {
+                    this.RoughnessField = value;
+                    this.RaisePropertyChanged("Roughness");
                 }
             }
         }

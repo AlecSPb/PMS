@@ -43,7 +43,7 @@
                   ItemsSource="{Binding PlanExtras}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="日期" ElementStyle="{StaticResource StyleTextBlock}"
-                                    Binding="{Binding Plan.PlanDate,StringFormat={}{0:yyMMdd dddd}}"/>
+                                    Binding="{Binding Plan.PlanDate,StringFormat={}{0:MM-dd}}"/>
                 <DataGridTextColumn Header="批次" ElementStyle="{StaticResource StyleTextBlockCenter}"
                                     Binding="{Binding Plan.PlanLot}"/>
                 <DataGridTextColumn Header="压机" ElementStyle="{StaticResource StyleTextBlockCenterBold}"
@@ -96,6 +96,8 @@
                                     Binding="{Binding Plan.AllWeight}"/>
                 <!--<DataGridTextColumn Header="装料" ElementStyle="{StaticResource StyleTextBlockBold}"
                                     Binding="{Binding Plan.FillingRequirement}"/>-->
+                <!--<DataGridTextColumn Header="要求" ElementStyle="{StaticResource StyleTextBlockSmall}"
+                                    Binding="{Binding Plan.MillingRequirement}"/>-->
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock Grid.Row="3" Style="{StaticResource StyleTextBlockBold}" Text="制粉计划"

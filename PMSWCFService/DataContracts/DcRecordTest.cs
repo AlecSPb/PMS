@@ -57,5 +57,9 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Roughness { get; set; }
 
+        [DataMember]
+        public string Warping { get; set; }
+
+
     }
 }

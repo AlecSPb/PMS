@@ -156,5 +156,15 @@ namespace PMSClient.View
             PMSMethods.SetTextBox(TxtRoughness, "Ra-A=5um Ra-B=5um");
 
         }
+
+        private void BtnWarpingNo_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtWarping, "无翘曲");
+        }
+
+        private void BtnWarpingYes_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtWarping, "有翘曲");
+        }
     }
 }

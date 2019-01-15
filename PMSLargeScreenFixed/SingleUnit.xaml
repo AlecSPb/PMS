@@ -18,9 +18,9 @@
                 <TextBlock Text="{Binding DeviceCode,StringFormat=设备{0}}" Style="{StaticResource StyleTextBlockBig}" Foreground="Blue"/>
                 <TextBlock Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockBigDarkBlue}" VerticalAlignment="Bottom"/>
                 <TextBlock Text="{Binding MoldInnerDiameter,StringFormat={}{0}mm}" Style="{StaticResource StyleTextBlockBigDarkBlue}" VerticalAlignment="Bottom"/>
-                <TextBlock Text="{Binding Temp,StringFormat={}{0}℃}" Style="{StaticResource StyleTextBlockBigDarkBlue}"/>
+                <!--<TextBlock Text="{Binding Temp,StringFormat={}{0}℃}" Style="{StaticResource StyleTextBlockBigDarkBlue}"/>
                 <TextBlock Text="{Binding Pressure,StringFormat={}{0}t}" Style="{StaticResource StyleTextBlockBigDarkBlue}"/>
-                <TextBlock Text="{Binding KeepTime,StringFormat={}{0}min}" Style="{StaticResource StyleTextBlockBigDarkBlue}"/>
+                <TextBlock Text="{Binding KeepTime,StringFormat={}{0}min}" Style="{StaticResource StyleTextBlockBigDarkBlue}"/>-->
             </StackPanel>
 
             <ListBox Grid.Row="1" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch" Background="LightYellow"

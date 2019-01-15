@@ -5587,6 +5587,9 @@ namespace PMSClient.MainService {
         private string TestTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WarpingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WeightField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -5881,6 +5884,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.TestTypeField, value) != true)) {
                     this.TestTypeField = value;
                     this.RaisePropertyChanged("TestType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Warping {
+            get {
+                return this.WarpingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WarpingField, value) != true)) {
+                    this.WarpingField = value;
+                    this.RaisePropertyChanged("Warping");
                 }
             }
         }

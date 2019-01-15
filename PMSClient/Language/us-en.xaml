@@ -597,6 +597,7 @@
     <sys:String x:Key="RTDefects">Defects</sys:String>
     <sys:String x:Key="RTFollowUp">Follow Up</sys:String>
     <sys:String x:Key="RTRoughness">Roughness</sys:String>
+    <sys:String x:Key="RTWarping">Warping</sys:String>
 
     <!--Delivery-->
     <sys:String x:Key="RDCreator">Creator</sys:String>
