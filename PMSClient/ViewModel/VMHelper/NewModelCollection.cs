@@ -37,6 +37,7 @@ namespace PMSClient.ViewModel
             model.OrderDate = DateTime.Now.AddDays(-30);
             model.Roughness = "无";
             model.Warping = "未知";
+            model.QC = "无";
             return model;
         }
         public static DcRecordMachine NewRecordMachine()

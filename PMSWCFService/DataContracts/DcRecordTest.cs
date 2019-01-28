@@ -59,7 +59,9 @@ namespace PMSWCFService.DataContracts
 
         [DataMember]
         public string Warping { get; set; }
+        [DataMember]
 
+        public string QC { get; set; }
 
     }
 }

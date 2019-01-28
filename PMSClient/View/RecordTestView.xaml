@@ -192,6 +192,8 @@
                                             Binding="{Binding RecordTest.Roughness}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource RTWarping}"
                                             Binding="{Binding RecordTest.Warping}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource RTQC}"
+                                            Binding="{Binding RecordTest.QC}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
 
                         <DataGridTemplateColumn Header="{StaticResource RTRemark}">
                             <DataGridTemplateColumn.CellTemplate>
@@ -247,6 +249,7 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
+                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="0*"/>
                             </Grid.RowDefinitions>
@@ -304,10 +307,16 @@
                             <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTRoughness}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                             <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding RecordTest.Roughness}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            
                             <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTWarping}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                             <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding RecordTest.Warping}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
+                            <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RTQC}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding RecordTest.QC}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+
+                            
                         </Grid>
                     </ScrollViewer>
                     <control:BindableCSVTable Grid.Row="1"  CSVContent="{Binding  CurrentSelectItem.RecordTest.CompositionXRF}"

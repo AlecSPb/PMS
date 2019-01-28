@@ -166,5 +166,10 @@ namespace PMSClient.View
         {
             PMSMethods.SetTextBox(TxtWarping, "有翘曲");
         }
+
+        private void BtnQC_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtQC, "A=;B=;");
+        }
     }
 }

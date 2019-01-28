@@ -34,6 +34,8 @@ namespace PMSDAL
         public string Sample { get; set; }
         public DateTime OrderDate { get; set; }
         public string Warping { get; set; }
+
+        public string QC { get; set; }
         [DefaultValue("未定")]
         public string FollowUps { get; set; }
 

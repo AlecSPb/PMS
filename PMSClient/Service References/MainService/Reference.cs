@@ -5569,6 +5569,9 @@ namespace PMSClient.MainService {
         private string ProductIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string QCField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5806,6 +5809,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
                     this.ProductIDField = value;
                     this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string QC {
+            get {
+                return this.QCField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.QCField, value) != true)) {
+                    this.QCField = value;
+                    this.RaisePropertyChanged("QC");
                 }
             }
         }

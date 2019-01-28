@@ -193,12 +193,17 @@ namespace PMSClient.ViewModel
 
         private bool CanEditPlan(DcPlanVHP arg)
         {
-            bool isUsed = true;
+            bool isUsed = true, isAdmin = false;
             if (arg != null)
             {
                 isUsed = arg.PlanDate >= DateTime.Today;
             }
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan) && MissonStateConverter(CurrentSelectItem.State) && isUsed;
+            if (PMSHelper.CurrentSession.CurrentUserRole.GroupName == "管理员")
+            {
+                isAdmin = true;
+            }
+            return (PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan) &&
+                MissonStateConverter(CurrentSelectItem.State) && isUsed) || isAdmin;
         }
         /// <summary>
         /// 权限控制=编辑任务

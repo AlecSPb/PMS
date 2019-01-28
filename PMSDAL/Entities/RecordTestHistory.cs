@@ -38,6 +38,7 @@ namespace PMSDAL
         public string Roughness { get; set; }
 
         public string Warping { get; set; }
+        public string QC { get; set; }
 
         //操作者和操作时间
         [Key]

@@ -81,6 +81,7 @@ namespace PMSClient.ViewModel
             model.FollowUps = PMSCommon.TestFollowUps.发货.ToString();
             model.Roughness = "无";
             model.Warping = "未知";
+            model.QC = "无";
             #endregion
             CurrentRecordTest = model;
         }

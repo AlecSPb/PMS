@@ -141,6 +141,7 @@
       <xs:element minOccurs="0" name="Sample" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TestType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warping" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

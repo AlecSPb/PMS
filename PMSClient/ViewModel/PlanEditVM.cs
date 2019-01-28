@@ -203,6 +203,13 @@ namespace PMSClient.ViewModel
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 var service = new PlanVHPServiceClient();
+
+                if (CurrentPlan.PlanDate.Date < DateTime.Now.Date)
+                {
+                    PMSDialogService.ShowWarning("不允许计划日期早于今天日期");
+                    return;
+                }
+
                 if (IsNew)
                 {
                     //新添加-检查流程
@@ -223,7 +230,7 @@ namespace PMSClient.ViewModel
                     string check_result = Helpers.VHPHelper.CheckPlanTypeAndProcessCode(CurrentPlan.PlanType, CurrentPlan.ProcessCode);
                     if (check_result != "")
                     {
-                        if (!PMSDialogService.ShowYesNo("提醒", 
+                        if (!PMSDialogService.ShowYesNo("提醒",
                             $"{check_result},\r\n而当前工艺代码是[{CurrentPlan.ProcessCode}],热压类型是[{CurrentPlan.PlanType}],\r\n仍继续添加此计划吗？"))
                             return;
                     }

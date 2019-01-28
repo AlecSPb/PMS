@@ -139,20 +139,6 @@ namespace PMSClient.ViewModel
                 PMSDialogService.ShowWarning(is_outsource.Message);
             }
 
-            if (CurrentOrder != null)
-            {
-                using (var service = new OrderServiceClient())
-                {
-                    if (service.CheckPMINumberExisit(CurrentOrder.PMINumber))
-                    {
-                        PMSDialogService.ShowWarning($"PMI Number【{CurrentOrder.PMINumber}】" +
-                            $"已经被占用,无法保存");
-                        return;
-                    }
-                }
-
-            }
-
 
             try
             {
@@ -160,6 +146,16 @@ namespace PMSClient.ViewModel
                 var service = new OrderServiceClient();
                 if (IsNew)
                 {
+                    if (CurrentOrder != null)
+                    {
+                        if (service.CheckPMINumberExisit(CurrentOrder.PMINumber))
+                        {
+                            PMSDialogService.ShowWarning($"PMI Number【{CurrentOrder.PMINumber}】" +
+                                $"已经被占用,无法保存");
+                            return;
+                        }
+
+                    }
                     service.AddOrderByUID(CurrentOrder, uid);
                 }
                 else

@@ -604,6 +604,7 @@
     <sys:String x:Key="RTFollowUp">后续</sys:String>
     <sys:String x:Key="RTRoughness">粗糙度</sys:String>
     <sys:String x:Key="RTWarping">翘曲</sys:String>
+    <sys:String x:Key="RTQC">QC</sys:String>
     <!--Delivery-->
     <sys:String x:Key="RDCreator">创建者</sys:String>
     <sys:String x:Key="RDCreateTime">创建时间</sys:String>

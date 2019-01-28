@@ -108,7 +108,7 @@ namespace PMSClient.ReportsHelper
                             //添加间隔背景颜色
                             if (rownumber % 2 == 1)
                             {
-                                for (int i = 0; i < 14; i++)
+                                for (int i = 0; i < 15; i++)
                                 {
                                     current_row.Cells[i].FillColor = Color.LightGray;
                                 }

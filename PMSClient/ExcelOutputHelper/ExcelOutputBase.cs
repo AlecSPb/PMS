@@ -34,7 +34,7 @@ namespace PMSClient.ExcelOutputHelper
         /// <param name="excel2007FileName"></param>
         /// <param name="sheetName"></param>
         /// <param name="pageSize"></param>
-        public void Intialize(string excel2007FileName, string sheetName = "Default", int pageSize = 20)
+        public void Intialize(string excel2007FileName, string sheetName = "Default", int pageSize = 50)
         {
             this.sheetName = sheetName;
             string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
