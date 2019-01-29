@@ -83,6 +83,7 @@
     <sys:String x:Key="PagePlanSearch">生产计划[搜索]</sys:String>
     <sys:String x:Key="PagePlan">生产计划</sys:String>
     <sys:String x:Key="PagePlanWindow">生产计划-窗口模式</sys:String>
+    <sys:String x:Key="PagePlanWindowTrace">生产计划-只显示会被加工和发货的热压计划</sys:String>
     <sys:String x:Key="PagePlanEdit">计划编辑</sys:String>
     <sys:String x:Key="PagePlanConclusion">生产总结</sys:String>
     <sys:String x:Key="PagePlanConclusionEdit">生产总结编辑</sys:String>
@@ -178,9 +179,10 @@
     <sys:String x:Key="PageToDoEdit">项目目标编辑</sys:String>
 
     <sys:String x:Key="PageConsumable">耗材统计</sys:String>
+    <sys:String x:Key="PageCounter">PMI计数</sys:String>
+    <sys:String x:Key="PagePlanForProduct">生产追踪</sys:String>
 
-    
-    
+
     <sys:String x:Key="PressureChangeTool">压力换算</sys:String>
     <!--TXT-->
     <sys:String x:Key="TxtWelcome">欢迎使用PMS生产管理系统</sys:String>

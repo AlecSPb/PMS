@@ -76,6 +76,13 @@ namespace PMSWCFService.ServiceContracts
         List<DcPlanWithMisson> GetPlanExtra(int skip, int take, string searchCode, string composition);
         [OperationContract]
         int GetPlanExtraCount(string searchCode, string composition);
+
+
+        //当前使用的服务
+        [OperationContract]
+        List<DcPlanWithMisson> GetPlanExtraForProduct(int skip, int take, string searchCode, string composition);
+        [OperationContract]
+        int GetPlanExtraForProductCount(string searchCode, string composition);
         #endregion
 
 

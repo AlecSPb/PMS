@@ -668,6 +668,18 @@
   <wsdl:message name="IMissonService_GetPlanExtraCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPlanExtraCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanExtraForProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraForProduct" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanExtraForProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraForProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanExtraForProductCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraForProductCount" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanExtraForProductCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraForProductCountResponse" />
+  </wsdl:message>
   <wsdl:message name="IDeliveryService_GetDelivery_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDelivery" />
   </wsdl:message>
@@ -1760,6 +1772,14 @@
     <wsdl:operation name="GetPlanExtraCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlanExtraCount" message="tns:IMissonService_GetPlanExtraCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetPlanExtraCountResponse" message="tns:IMissonService_GetPlanExtraCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraForProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlanExtraForProduct" message="tns:IMissonService_GetPlanExtraForProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetPlanExtraForProductResponse" message="tns:IMissonService_GetPlanExtraForProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraForProductCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlanExtraForProductCount" message="tns:IMissonService_GetPlanExtraForProductCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetPlanExtraForProductCountResponse" message="tns:IMissonService_GetPlanExtraForProductCount_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IDeliveryService">
@@ -3210,6 +3230,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetPlanExtraCount">
       <soap:operation soapAction="http://tempuri.org/IMissonService/GetPlanExtraCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraForProduct">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetPlanExtraForProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraForProductCount">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetPlanExtraForProductCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -148,8 +148,16 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<FailureVM>();
             SimpleIoc.Default.Register<FailureEditVM>();
 
+            SimpleIoc.Default.Register<PlanTraceVM>();
         }
         #region Properties
+        public PlanTraceVM PlanTrace
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<PlanTraceVM>();
+            }
+        }
         public FailureVM Failure
         {
             get { return SimpleIoc.Default.GetInstance<FailureVM>(); }

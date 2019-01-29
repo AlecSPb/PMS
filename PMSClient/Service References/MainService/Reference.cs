@@ -10001,6 +10001,18 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraCount", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraCountResponse")]
         System.Threading.Tasks.Task<int> GetPlanExtraCountAsync(string searchCode, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraForProduct", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraForProductResponse")]
+        PMSClient.MainService.DcPlanWithMisson[] GetPlanExtraForProduct(int skip, int take, string searchCode, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraForProduct", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraForProductResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcPlanWithMisson[]> GetPlanExtraForProductAsync(int skip, int take, string searchCode, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraForProductCount", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraForProductCountResponse")]
+        int GetPlanExtraForProductCount(string searchCode, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraForProductCount", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraForProductCountResponse")]
+        System.Threading.Tasks.Task<int> GetPlanExtraForProductCountAsync(string searchCode, string composition);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10188,6 +10200,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetPlanExtraCountAsync(string searchCode, string composition) {
             return base.Channel.GetPlanExtraCountAsync(searchCode, composition);
+        }
+        
+        public PMSClient.MainService.DcPlanWithMisson[] GetPlanExtraForProduct(int skip, int take, string searchCode, string composition) {
+            return base.Channel.GetPlanExtraForProduct(skip, take, searchCode, composition);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlanWithMisson[]> GetPlanExtraForProductAsync(int skip, int take, string searchCode, string composition) {
+            return base.Channel.GetPlanExtraForProductAsync(skip, take, searchCode, composition);
+        }
+        
+        public int GetPlanExtraForProductCount(string searchCode, string composition) {
+            return base.Channel.GetPlanExtraForProductCount(searchCode, composition);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlanExtraForProductCountAsync(string searchCode, string composition) {
+            return base.Channel.GetPlanExtraForProductCountAsync(searchCode, composition);
         }
     }
     

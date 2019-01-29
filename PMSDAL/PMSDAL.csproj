@@ -62,6 +62,8 @@
     <Compile Include="Entities\EnvironmentInfo.cs" />
     <Compile Include="Entities\Failure.cs" />
     <Compile Include="Entities\FeedBack.cs" />
+    <Compile Include="Entities\ModelBase.cs" />
+    <Compile Include="Entities\PMICounter.cs" />
     <Compile Include="Entities\ToolFilling.cs" />
     <Compile Include="Entities\ItemDebitHistory.cs" />
     <Compile Include="Entities\LogError.cs" />
@@ -619,6 +621,10 @@
     <Compile Include="Migrations\201901150535359_change71.Designer.cs">
       <DependentUpon>201901150535359_change71.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901290223561_change72.cs" />
+    <Compile Include="Migrations\201901290223561_change72.Designer.cs">
+      <DependentUpon>201901290223561_change72.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -1043,6 +1049,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901150535359_change71.resx">
       <DependentUpon>201901150535359_change71.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901290223561_change72.resx">
+      <DependentUpon>201901290223561_change72.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

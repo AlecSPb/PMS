@@ -152,6 +152,11 @@ namespace PMSClient.ViewModel
               });
 
             GoToFailure = new RelayCommand(() => NavigationService.GoTo(PMSViews.Failure));
+            GoToPlanForProduct = new RelayCommand(() =>
+              {
+                  var window = new View.PlanTraceWindow();
+                  window.Show();
+              }, () => _session.IsAuthorized(PMSAccess.ReadOrder));
             #endregion
         }
 
@@ -287,6 +292,8 @@ namespace PMSClient.ViewModel
 
         public RelayCommand GoToOutput { get; set; }
 
+        public RelayCommand GoToPlanForProduct { get; set; }
+
         //public RelayCommand GoToAdminUser { get; set; }
         //public RelayCommand GoToAdminRole { get; set; }
         //public RelayCommand GoToAdminAccess { get; set; }
@@ -320,7 +327,7 @@ namespace PMSClient.ViewModel
                     PlanedCount = service.GetPlanCount();
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }

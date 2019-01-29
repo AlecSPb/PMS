@@ -83,6 +83,7 @@
     <sys:String x:Key="PagePlanSearch">Plan Search</sys:String>
     <sys:String x:Key="PagePlan">Plan</sys:String>
     <sys:String x:Key="PagePlanWindow">Plan-Window Style</sys:String>
+    <sys:String x:Key="PagePlanWindowTrace">Plan-Only Show Product Plan</sys:String>
     <sys:String x:Key="PagePlanEdit">Plan Edit</sys:String>
     <sys:String x:Key="PagePlanConclusion">Plan Conclusion</sys:String>
     <sys:String x:Key="PagePlanConclusionEdit">Plan Conclusion Edit</sys:String>
@@ -178,6 +179,8 @@
     <sys:String x:Key="PageToDo">To Do List</sys:String>
     <sys:String x:Key="PageToDoEdit">To Do List Edit</sys:String>
     <sys:String x:Key="PageConsumable">Consumable</sys:String>
+    <sys:String x:Key="PageCounter">PMI Counter</sys:String>
+    <sys:String x:Key="PagePlanForProduct">Product Trace</sys:String>
 
     <!--TXT-->
     <sys:String x:Key="TxtWelcome">Welcome to use Production Management System</sys:String>
