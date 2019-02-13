@@ -156,7 +156,9 @@
                         Command="{Binding GoToStatisticProduct}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageStatisticDelivery}" Grid.Row="5" Grid.Column="4"
                         Command="{Binding GoToStatisticDelivery}" Style="{StaticResource StyleButtonNavigation}"/>
-
+                        
+                        <Button Content="{StaticResource PageCounter}" Grid.Row="5" Grid.Column="5"
+                        Command="{Binding GoToCounter}" Style="{StaticResource StyleButtonNavigation}"/>
 
                         <Button Content="{StaticResource PageOther}" Grid.Row="6" Grid.Column="0"
                                 Style="{StaticResource StyleButtonNavigationTitle}"/>
@@ -170,9 +172,6 @@
                         <Button Content="{StaticResource PageOutput}" Style="{StaticResource StyleButtonNavigation}"
                                 Command="{Binding GoToOutput}" Grid.Row="6" Grid.Column="3"/>
                         
-                        <Button Content="{StaticResource PageCounter}" Grid.Row="6" Grid.Column="4"
-                        Command="{Binding GoToProduct}" Style="{StaticResource StyleButtonNavigation}"/>
-
                         <Button Content="{StaticResource PageAdmin}" Grid.Row="7" Grid.Column="0" 
                         Style="{StaticResource StyleButtonNavigationTitle}" />
                         <Button Content="{StaticResource PageDebug}" Grid.Row="7" Grid.Column="1"

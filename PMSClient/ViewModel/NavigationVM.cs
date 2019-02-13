@@ -157,6 +157,12 @@ namespace PMSClient.ViewModel
                   var window = new View.PlanTraceWindow();
                   window.Show();
               }, () => _session.IsAuthorized(PMSAccess.ReadOrder));
+
+
+            GoToCounter = new RelayCommand(() =>
+              {
+
+              }, () => _session.IsAuthorized(PMSAccess.ReadPlate));
             #endregion
         }
 
@@ -312,6 +318,8 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToMillingTool { get; set; }
 
         public RelayCommand GoToFailure { get; set; }
+
+        public RelayCommand GoToCounter { get; set; }
 
         private void InitializeData()
         {

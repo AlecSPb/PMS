@@ -107,6 +107,7 @@
     <Compile Include="DataContracts\DcNotice.cs" />
     <Compile Include="DataContracts\DcPlanWithMisson.cs" />
     <Compile Include="DataContracts\DcPlanExtra.cs" />
+    <Compile Include="DataContracts\DcPMICounter.cs" />
     <Compile Include="DataContracts\DcRecordBonding.cs" />
     <Compile Include="DataContracts\DcStatistic.cs" />
     <Compile Include="DataContracts\DcStatisticProduct.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="ServiceContracts\INoticeService.cs" />
     <Compile Include="ServiceContracts\IFeedBackService.cs" />
     <Compile Include="ServiceContracts\IOutSourceService.cs" />
+    <Compile Include="ServiceContracts\IPMICounterService.cs" />
     <Compile Include="ServiceContracts\IPMSIndexService.cs" />
     <Compile Include="ServiceContracts\ITaskPlanService.cs" />
     <Compile Include="ServiceContracts\IToDoService.cs" />
@@ -199,6 +201,7 @@
     <Compile Include="ServiceImplements\OutputService.cs" />
     <Compile Include="ServiceImplements\OutSourceService.cs" />
     <Compile Include="ServiceImplements\PlateService.cs" />
+    <Compile Include="ServiceImplements\PMICounterService.cs" />
     <Compile Include="ServiceImplements\PMSIndexService.cs" />
     <Compile Include="ServiceImplements\ProductService.cs" />
     <Compile Include="ServiceImplements\RecordBondingService.cs" />
