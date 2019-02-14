@@ -52,6 +52,8 @@
                 Command="{Binding UpdateInfo}"/>
             <Button Content="{StaticResource BottomBarElement}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding Element}"/>
+            <Button Content="{StaticResource BottomBarPeriodicTable}" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding PeriodicTable}"/>
             <Button Content="{StaticResource BottomBarPhotoStd}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding PhotoStd}"/>
             <Button Content="{StaticResource BottomBarDrawingRule}" Style="{StaticResource StyleButtonCommonNarrow}"

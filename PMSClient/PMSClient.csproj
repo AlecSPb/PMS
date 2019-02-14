@@ -1511,6 +1511,9 @@
     <Content Include="StandardDocs\产品拍照规范流程.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="StandardDocs\化学元素周期表%28高清%29.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Documents\维护.txt" />
     <Resource Include="CsvOutputHelper\目录介绍.txt" />
     <Resource Include="Note\综合查询思路.txt" />

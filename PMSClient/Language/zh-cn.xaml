@@ -923,6 +923,7 @@
     <sys:String x:Key="BottomBarLaserRule">标刻</sys:String>
     <sys:String x:Key="BottomBarFillingToolRule">装具</sys:String>
     <sys:String x:Key="BottomBarElement">元素</sys:String>
+    <sys:String x:Key="BottomBarPeriodicTable">周期表</sys:String>
     <sys:String x:Key="BottomBarLabelStandard">标签</sys:String>
     <sys:String x:Key="BottomBarEmptyTextBox">文本</sys:String>
 

@@ -919,6 +919,7 @@
     <sys:String x:Key="BottomBarCodeRule">Code</sys:String>
     <sys:String x:Key="BottomBarLaserRule">Laser</sys:String>
     <sys:String x:Key="BottomBarFillingToolRule">FillingRule</sys:String>
+    <sys:String x:Key="BottomBarPeriodicTable">PeriodicTable</sys:String>
     <sys:String x:Key="BottomBarElement">Element</sys:String>
     <sys:String x:Key="BottomBarLabelStandard">Label</sys:String>
 

@@ -62,6 +62,10 @@ namespace PMSClient
                   View.PlanWindow pw = new View.PlanWindow();
                   pw.Show();
               });
+            PeriodicTable = new RelayCommand(() =>
+              {
+                  OpenFileOrProgram(@"StandardDocs\化学元素周期表(高清).pdf");
+              });
             #endregion
             #region Info
             HelpInfo = new RelayCommand(() =>
@@ -239,6 +243,8 @@ namespace PMSClient
         public RelayCommand DrawingRule { get; set; }
 
         public RelayCommand OpenPlan { get; set; }
+        public RelayCommand PeriodicTable { get; set; }
+        
 
     }
 }
