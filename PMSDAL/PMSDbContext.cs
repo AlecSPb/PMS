@@ -128,5 +128,7 @@ namespace PMSDAL
         public DbSet<Failure> Failures { get; set; }
 
         public DbSet<PMICounter> PMICounters { get; set; }
+
+        public DbSet<RemainInventory> RemainInventories { get; set; }
     }
 }

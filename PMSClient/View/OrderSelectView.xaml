@@ -1,0 +1,185 @@
+﻿<UserControl x:Class="PMSClient.View.OrderSelectView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             xmlns:local="clr-namespace:PMSClient.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=OrderSelect}">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{StaticResource PageOrderSelect}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
+            <TextBlock Text="{StaticResource OrderCustomer}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource  StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource OrderStandardComposition}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchCompositionStandard,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource OrderPMINumber}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommonNarrow}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonUnCompleted}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding OnlyUnCompleted}"/>
+            <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Output}"/>
+            <Button Content="{StaticResource ButtonSample}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding SampleSheet}"/>
+
+            <!--图例-->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+                <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
+                <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
+                <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
+                <TextBlock Text="{StaticResource IndicatorEmergency}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource EmergencyBrush}"/>
+                <TextBlock Text="{StaticResource IndicatorVHPCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource VHPCompletedBrush}"/>
+                <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
+            </StackPanel>
+        </StackPanel>
+        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MainOrders}" LoadingRow="DataGrid_LoadingRow">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="{StaticResource ButtonSelect}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.Select,
+                                            RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{StaticResource OrderState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                            Binding="{Binding State}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                            Binding="{Binding Priority}"/>
+                    <DataGridTemplateColumn Header="">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Ellipse Grid.Column="0" Width="8" Height="8" Fill="Red" Margin="2"
+                                     Visibility="{Binding SampleNeed,Converter={StaticResource VisibilityConverter2}}">
+                                        <Ellipse.ToolTip>
+                                            <TextBlock Text="{Binding SampleNeed,StringFormat=客户:{0}}"/>
+                                        </Ellipse.ToolTip>
+                                    </Ellipse>
+                                    <Rectangle Grid.Column="1" Width="8" Height="8" Margin="2" Fill="Blue"
+                                     Visibility="{Binding SampleForAnlysis,Converter={StaticResource VisibilityConverter2}}">
+                                        <Rectangle.ToolTip>
+                                            <TextBlock Text="{Binding SampleForAnlysis,StringFormat=自分析:{0}}"/>
+                                        </Rectangle.ToolTip>
+                                    </Rectangle>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{StaticResource OrderCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                            Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderDeadLine}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                            Binding="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderPolicy}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                            Binding="{Binding PolicyType}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                            Binding="{Binding PMINumber}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderCustomer}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                            Binding="{Binding CustomerName}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" ElementStyle="{StaticResource StyleDGTextBlockSpecial2}"
+                                            Binding="{Binding CompositionStandard}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderAbbrComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CompositionAbbr}"/>
+                    <DataGridTemplateColumn Header="{StaticResource OrderPurity}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding  Purity}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="{StaticResource OrderPO}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding PO}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{StaticResource OrderProductType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding ProductType}"/>
+                    <DataGridTemplateColumn Header="{StaticResource OrderQuantity}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Quantity}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="{StaticResource OrderQuantityUnit}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding  QuantityUnit}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="{StaticResource OrderDimension}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Dimension}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="{StaticResource OrderDimensionDetails}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DimensionDetails}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{StaticResource OrderMIniummAcceptDefect}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding MinimumAcceptDefect}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{StaticResource OrderDrawing}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding Drawing}"/>
+                    <DataGridTemplateColumn Header="{StaticResource OrderSampleNeed}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SampleNeed}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{StaticResource OrderSampleForAnlysis}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding SampleForAnlysis}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderShipTo}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding ShipTo}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderWithBackingPlate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding WithBackingPlate}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderSpecialRequirement}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding SpecialRequirement}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding Creator}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding CreateTime}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderReviewer}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding Reviewer}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderReviewTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding ReviewTime}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"
+                             LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
+                             LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
+    </Grid>
+</UserControl>

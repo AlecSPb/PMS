@@ -25,6 +25,7 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<OrderEditView>();
             SimpleIoc.Default.Register<OrderUnCompletedView>();
             SimpleIoc.Default.Register<OrderCheckEditView>();
+            SimpleIoc.Default.Register<OrderSelectView>();
 
             SimpleIoc.Default.Register<OutSourceView>();
             SimpleIoc.Default.Register<OutSourceEditView>();
@@ -225,6 +226,13 @@ namespace PMSClient.View
             get
             {
                 return SimpleIoc.Default.GetInstance<OrderEditView>();
+            }
+        }
+        public OrderSelectView OrderSelect
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<OrderSelectView>();
             }
         }
         public OrderCheckEditView OrderCheckEdit

@@ -474,6 +474,7 @@
     <Compile Include="ViewModel\FailureVM.cs" />
     <Compile Include="ViewModel\FillingToolEditVM.cs" />
     <Compile Include="ViewModel\FillingToolVM.cs" />
+    <Compile Include="ViewModel\OrderSelectVM.cs" />
     <Compile Include="ViewModel\PlanTraceVM.cs" />
     <Compile Include="ViewModel\ToDoEditVM.cs" />
     <Compile Include="ViewModel\ToDoVM.cs" />
@@ -565,6 +566,9 @@
     </Compile>
     <Compile Include="View\MaterialInventoryInUnCompletedWindow.xaml.cs">
       <DependentUpon>MaterialInventoryInUnCompletedWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderSelectView.xaml.cs">
+      <DependentUpon>OrderSelectView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PlanTraceWindow.xaml.cs">
       <DependentUpon>PlanTraceWindow.xaml</DependentUpon>
@@ -1142,6 +1146,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MaterialInventoryInUnCompletedWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\OrderSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
