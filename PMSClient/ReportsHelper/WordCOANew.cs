@@ -61,8 +61,9 @@ namespace PMSClient.ReportsHelper
                     document.ReplaceText("[Density]", model.Density ?? "");
                     document.ReplaceText("[Resistance]", model.Resistance ?? "");
                     document.ReplaceText("[DimensionActual]", COAHelper.StandardizeDimension(model.DimensionActual) ?? "");
-                    document.ReplaceText("[OrderDate]", model.CreateTime.AddDays(-15).ToString("MM/dd/yyyy"));
-                    document.ReplaceText("[CreateDate]", model.CreateTime.ToString("MM/dd/yyyy"));
+
+                    document.ReplaceText("[OrderDate]", COAHelper.GetCreateDateFromPMINumber(model.PMINumber));
+                    document.ReplaceText("[CreateDate]", DateTime.Now.ToString("MM/dd/yyyy"));
                     #endregion
 
                     //如果是是230mm的靶材，查找背板编号填入

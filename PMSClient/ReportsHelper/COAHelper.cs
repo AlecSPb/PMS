@@ -14,5 +14,17 @@ namespace PMSClient.ReportsHelper
                 return dimension;
             return dimension + " thick";
         }
+
+        public static string GetCreateDateFromPMINumber(string pminumber)
+        {
+            if (pminumber.StartsWith("CD"))
+            {
+                return $"{pminumber.Substring(4, 2)}/{pminumber.Substring(6, 2)}/20{pminumber.Substring(2, 2)}";
+            }
+            else
+            {
+                return "unknown";
+            }
+        }
     }
 }

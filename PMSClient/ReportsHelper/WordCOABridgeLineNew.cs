@@ -64,8 +64,9 @@ namespace PMSClient.ReportsHelper
                     document.ReplaceText("[Resistance]", model.Resistance ?? "");
                     document.ReplaceText("[Dimension]", COAHelper.StandardizeDimension(model.Dimension) ?? "");
                     document.ReplaceText("[DimensionActual]", COAHelper.StandardizeDimension(model.DimensionActual) ?? "");
-                    document.ReplaceText("[OrderDate]", model.CreateTime.AddDays(-15).ToString("MM/dd/yyyy"));
-                    document.ReplaceText("[CreateDate]", model.CreateTime.ToString("MM/dd/yyyy"));
+
+                    document.ReplaceText("[OrderDate]", COAHelper.GetCreateDateFromPMINumber(model.PMINumber));
+                    document.ReplaceText("[CreateDate]", DateTime.Now.ToString("MM/dd/yyyy"));
 
                     //填充XRF表格
                     //填充XRF表格
