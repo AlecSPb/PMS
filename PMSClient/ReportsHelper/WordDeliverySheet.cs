@@ -35,6 +35,7 @@ namespace PMSClient.ReportsHelper
                 tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "DeliverySheet_zh_cn_Temp.docx");
             }
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
+            sheetType = deliverySheetType;
         }
         public void SetModel(DcDelivery model)
         {
@@ -46,7 +47,7 @@ namespace PMSClient.ReportsHelper
                 targetFile = Path.Combine(targetDir, targetName);
             }
         }
-
+        private string sheetType = "";
         private DcDelivery model;
         public override void Output()
         {
@@ -81,11 +82,39 @@ namespace PMSClient.ReportsHelper
                                 .ThenBy(i=>i.ProductID);
                             int rownumber = 1;
                             int datanumber = 1;
+
                             foreach (var item in result)
                             {
                                 mainTable.Rows[rownumber].Cells[0].Paragraphs[0].Append(datanumber.ToString()).FontSize(10).Alignment = Alignment.center;
                                 mainTable.Rows[rownumber].Cells[1].Paragraphs[0].Append(item.ProductID).FontSize(10);
-                                mainTable.Rows[rownumber].Cells[2].Paragraphs[0].Append(item.ProductType).FontSize(10);
+                                string itemType = "";
+                                if (sheetType == "English")
+                                {
+                                    if (item.ProductType.Contains("靶材"))
+                                    {
+                                        itemType = "Target";
+
+                                    }
+                                    else if(item.ProductType.Contains("背板"))
+                                    {
+                                        itemType = "BP";
+
+                                    }
+                                    else if (item.ProductType.Contains("绑定"))
+                                    {
+                                        itemType = "Bonding";
+
+                                    }
+                                    else
+                                    {
+                                        itemType = item.ProductType;
+                                    }
+                                }
+                                else
+                                {
+                                    itemType = item.ProductType;
+                                }
+                                mainTable.Rows[rownumber].Cells[2].Paragraphs[0].Append(itemType).FontSize(10);
                                 mainTable.Rows[rownumber].Cells[3].Paragraphs[0].Append(item.Composition).FontSize(10);
                                 mainTable.Rows[rownumber].Cells[4].Paragraphs[0].Append(item.Customer).FontSize(10);
                                 mainTable.Rows[rownumber].Cells[5].Paragraphs[0].Append(item.PO).FontSize(10);

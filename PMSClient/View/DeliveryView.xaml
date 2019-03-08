@@ -211,7 +211,7 @@
                 <DataGridTemplateColumn Header="{StaticResource RDComposition}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Composition}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBox Text="{Binding Composition}" Style="{StaticResource StyleDGTextBoxStrench}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
