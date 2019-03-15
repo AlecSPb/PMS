@@ -111,6 +111,8 @@ namespace PMSClient
         MillingTool,
         MillingToolEdit,
         Failure,
-        FailureEdit
+        FailureEdit,
+        PMICounter,
+        PMICounterEdit
     }
 }

@@ -901,6 +901,25 @@
     <sys:String x:Key="FRemark">备注信息</sys:String>
 
 
+    
+    <!--PMICounter-->
+    <sys:String x:Key="PagePMICounter">PMI计数器</sys:String>
+    <sys:String x:Key="PagePMICounterEdit">PMI计数器编辑</sys:String>
+
+    <sys:String x:Key="CID">ID</sys:String>
+    <sys:String x:Key="CCreator">创建者</sys:String>
+    <sys:String x:Key="CCreateTime">创建时间</sys:String>
+    <sys:String x:Key="CItemGroup">组</sys:String>
+    <sys:String x:Key="CItemName">名称</sys:String>
+    <sys:String x:Key="CItemSpecification">规格</sys:String>
+    <sys:String x:Key="CItemDetails">细节</sys:String>
+    <sys:String x:Key="CItemCount">数量</sys:String>
+    <sys:String x:Key="CUnit">单位</sys:String>
+    <sys:String x:Key="CState">状态</sys:String>
+
+
+
+
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">公共</sys:String>
     <sys:String x:Key="BottomBarPlan">计划</sys:String>

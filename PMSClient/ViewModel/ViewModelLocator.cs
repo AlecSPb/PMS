@@ -150,8 +150,21 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<FailureEditVM>();
 
             SimpleIoc.Default.Register<PlanTraceVM>();
+
+
+            SimpleIoc.Default.Register<PMICounterVM>();
+            SimpleIoc.Default.Register<PMICounterEditVM>();
         }
         #region Properties
+        public PMICounterEditVM PMICounterEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<PMICounterEditVM>(); }
+        }
+        public PMICounterVM PMICounter
+        {
+            get { return SimpleIoc.Default.GetInstance<PMICounterVM>(); }
+        }
+
         public PlanTraceVM PlanTrace
         {
             get

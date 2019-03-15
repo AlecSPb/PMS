@@ -136,9 +136,28 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<FailureView>();
             SimpleIoc.Default.Register<FailureEditView>();
 
+
+            SimpleIoc.Default.Register<PMICounterView>();
+            SimpleIoc.Default.Register<PMICounterEditView>();
         }
 
         #region NavigationProperties
+        public PMICounterView PMICounter
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<PMICounterView>();
+            }
+        }
+
+        public PMICounterEditView PMICounterEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<PMICounterEditView>();
+            }
+        }
+
         public FailureView Failure
         {
             get

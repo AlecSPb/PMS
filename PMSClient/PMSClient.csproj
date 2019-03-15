@@ -470,7 +470,9 @@
     <Compile Include="Tool\ToolViewModelLocator.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
+    <Compile Include="ViewModel\PMICounterEditVM.cs" />
     <Compile Include="ViewModel\FailureEditVM.cs" />
+    <Compile Include="ViewModel\PMICounterVM.cs" />
     <Compile Include="ViewModel\FailureVM.cs" />
     <Compile Include="ViewModel\FillingToolEditVM.cs" />
     <Compile Include="ViewModel\FillingToolVM.cs" />
@@ -549,8 +551,14 @@
     <Compile Include="View\CheckListEditView.xaml.cs">
       <DependentUpon>CheckListEditView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PMICounterEditView.xaml.cs">
+      <DependentUpon>PMICounterEditView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FailureEditView.xaml.cs">
       <DependentUpon>FailureEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PMICounterView.xaml.cs">
+      <DependentUpon>PMICounterView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FailureView.xaml.cs">
       <DependentUpon>FailureView.xaml</DependentUpon>
@@ -1125,9 +1133,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\PMICounterEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\FailureEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PMICounterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\FailureView.xaml">
       <SubType>Designer</SubType>

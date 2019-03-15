@@ -897,8 +897,22 @@
     <sys:String x:Key="FProblem">Problem</sys:String>
     <sys:String x:Key="FProcess">Process</sys:String>
     <sys:String x:Key="FRemark">Remark</sys:String>
+    
+    <!--PMICounter-->
+    <sys:String x:Key="PagePMICounter">PMI Counter</sys:String>
+    <sys:String x:Key="PagePMICounterEdit">PMI Counter Edit</sys:String>
+    <sys:String x:Key="CID">ID</sys:String>
+    <sys:String x:Key="CCreator">Creator</sys:String>
+    <sys:String x:Key="CCreateTime">Create Time</sys:String>
+    <sys:String x:Key="CItemGroup">Item Group</sys:String>
+    <sys:String x:Key="CItemName">ItemName</sys:String>
+    <sys:String x:Key="CItemSpecification">Specification</sys:String>
+    <sys:String x:Key="CItemDetails">Details</sys:String>
+    <sys:String x:Key="CItemCount">Count</sys:String>
+    <sys:String x:Key="CUnit">Unit</sys:String>
+    <sys:String x:Key="CState">State</sys:String>
 
-
+    
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">Public</sys:String>
     <sys:String x:Key="BottomBarPlan">Plan</sys:String>

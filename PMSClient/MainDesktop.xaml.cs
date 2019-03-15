@@ -487,6 +487,12 @@ namespace PMSClient
                 case PMSViews.FailureEdit:
                     NavigateTo(_views.FailureEdit);
                     break;
+                case PMSViews.PMICounter:
+                    NavigateTo(_views.PMICounter);
+                    break;
+                case PMSViews.PMICounterEdit:
+                    NavigateTo(_views.PMICounterEdit);
+                    break;
                 default:
                     break;
             }
