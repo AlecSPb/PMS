@@ -54,6 +54,7 @@ namespace PMSClient.ViewModel
         private void ActionOutput()
         {
             //TODO:添加Excel导出功能
+            PMSDialogService.Show("这个功能还没有做");
         }
 
         private void ActionGiveUp()

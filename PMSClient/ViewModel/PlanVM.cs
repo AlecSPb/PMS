@@ -208,10 +208,13 @@ namespace PMSClient.ViewModel
                 lb.AppendLine(model.Misson.CompositionStandard);
                 lb.Append("模具:");
                 lb.AppendLine(model.Plan.MoldDiameter.ToString() + "mm OD x " + model.Plan.Thickness + "mm");
-                lb.Append("产品:");
-                lb.AppendLine(model.Misson.Dimension);
                 lb.Append("订单:");
                 lb.AppendLine(model.Misson.PMINumber);
+                if (!model.Plan.PlanType.Contains("回收"))
+                {
+                    lb.Append("产品:");
+                    lb.AppendLine(model.Misson.Dimension);
+                }
                 lb.AppendLine();
                 lb.AppendLine("=====  一般标签↑，样品标签↓  =====");
                 lb.AppendLine();
