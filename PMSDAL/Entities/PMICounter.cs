@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
+    /// <summary>
+    /// 对日常的背板等物品进行统计
+    /// </summary>
     public class PMICounter:ModelBase
     {
         public string ItemGroup { get; set; }
