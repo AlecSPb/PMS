@@ -50,6 +50,17 @@ namespace PMSClient.View
                             break;
                     }
 
+                    switch (order.FollowUps)
+                    {
+                        case "未定":
+                            e.Row.Background = this.FindResource("UnknownBrush") as SolidColorBrush;
+                            break;
+                        case "报废":
+                            e.Row.Background = this.FindResource("WastedBrush") as SolidColorBrush;
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
             catch (Exception ex)

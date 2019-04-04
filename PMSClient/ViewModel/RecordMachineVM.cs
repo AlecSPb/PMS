@@ -155,7 +155,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 30;
             var service = new RecordMachineServiceClient();
             RecordCount = service.GetRecordMachineCountByVHPPlanLot(SearchVHPPlanLot);
             service.Close();

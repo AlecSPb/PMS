@@ -16,6 +16,7 @@
         </Grid.RowDefinitions>
         <TextBlock Style="{StaticResource StyleTextBlockPageTitle}" Text="{Binding PageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Style="{StaticResource StyleButtonCommon}" Content="毛坯模版" Name="BtnLabelTemplate" Click="BtnLabelTemplate_Click"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock Text="注意：要提前安装BarTender 10.1 UltraLite版本方可使用" Style="{StaticResource StyleTextBlockWarning}"/>
         </StackPanel>

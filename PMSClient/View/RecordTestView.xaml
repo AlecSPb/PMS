@@ -46,6 +46,8 @@
             <TextBlock Text="{StaticResource IndicatorNoInput}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource NoInputBrush}"/>
 
             <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorUnknown}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnknownBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorFailed}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource WastedBrush}"/>
 
         </StackPanel>
         <Grid Grid.Row="2">

@@ -30,7 +30,7 @@
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding All}" />
             <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Output}"/>
             <Button Content="{StaticResource ButtonRecordSheet}" Style="{StaticResource StyleButtonCommon}" Command="{Binding RecordSheet}"/>
-            <!--<Button Content="{StaticResource ButtonHistory}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMisson}"/>-->
+            <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding BatchLabel}"/>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
                 <TextBlock Text="{StaticResource IndicatorYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource StyleTextBlockCommon}"/>

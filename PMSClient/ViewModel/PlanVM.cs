@@ -50,6 +50,62 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcPlanWithMisson>(ActionSelectionChanged);
             Output = new RelayCommand<MainService.DcPlanWithMisson>(ActionOutput);
             RecordSheet = new RelayCommand(ActionRecordSheet);
+            BatchLabel = new RelayCommand(ActionBatchLabel);
+        }
+
+        private void ActionBatchLabel()
+        {
+            try
+            {
+                var tool = new ToolWindow.DateSelector();
+                if (tool.ShowDialog() == false)
+                    return;
+                DateTime selectedDate = tool.SelectedDate;
+                string searchCode = selectedDate.ToString("yyMMdd");
+                using (var service = new MissonServiceClient())
+                {
+                    var pageData = service.GetPlanExtra(0, 100, searchCode, "");
+                    var ordered = pageData.OrderBy(i => i.Plan.PlanLot).ThenBy(i => i.Plan.SearchCode);
+                    StringBuilder lb = new StringBuilder();
+                    foreach (var item in ordered)
+                    {
+                        lb.Append(UsefulPackage.PMSTranslate.PlanLot(item));
+                        lb.Append(" ");
+                        lb.Append(item.Plan.PlanType);
+                        lb.Append(" ");
+                        lb.AppendLine(item.Plan.ProcessCode);
+
+                        lb.AppendLine(item.Misson.CompositionStandard);
+                        lb.Append("模具:");
+                        lb.AppendLine(item.Plan.MoldDiameter.ToString() + "mm OD x " + item.Plan.Thickness + "mm");
+                        lb.Append("订单:");
+                        lb.AppendLine(item.Misson.PMINumber);
+                        if (!item.Plan.PlanType.Contains("回收"))
+                        {
+                            lb.Append("产品:");
+                            lb.AppendLine(item.Misson.Dimension);
+                        }
+                        lb.AppendLine("=====  一般标签↑，样品标签↓  =====");
+                        lb.AppendLine(item.Misson.CompositionStandard);
+                        lb.AppendLine("样品      g");
+                        lb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(item));
+                        lb.AppendLine();
+                        lb.AppendLine("################下一块靶材######################");
+                        lb.AppendLine();
+
+                    }
+                    PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.Plan, "批量",
+                        null, null, lb.ToString(), null);
+
+                }
+                var win = new Tool.LabelOutPutWindow();
+                win.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                PMSDialogService.ShowWarning(ex.Message);
+            }
+
         }
 
         private void ActionRecordSheet()
@@ -62,7 +118,7 @@ namespace PMSClient.ViewModel
             try
             {
                 var word = new ReportsHelperNew.ReportRecordDeMold();
-                word.Intialize("取模记录单",50);
+                word.Intialize("取模记录单", 50);
                 word.Output();
             }
             catch (Exception ex)
@@ -292,6 +348,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPlanWithMisson> SelectionChanged { get; set; }
         public RelayCommand<DcPlanWithMisson> Output { get; set; }
         public RelayCommand RecordSheet { get; set; }
+        public RelayCommand BatchLabel { get; set; }
         #endregion
 
         #region Properties

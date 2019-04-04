@@ -24,5 +24,27 @@ namespace PMSClient.Tool
         {
             InitializeComponent();
         }
+
+        private void BtnLabelTemplate_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var filepath = System.IO.Path.Combine(Environment.CurrentDirectory, "Resource", "DocTemplate", "BarTender101", "毛坯标签" + ".btw");
+                var targetpath = System.IO.Path.Combine(Environment.CurrentDirectory, "Resource", "DocTemplate", "BarTender101", "毛坯标签" + "_temp.btw");
+                //复制一下
+                if (System.IO.File.Exists(targetpath))
+                {
+                    System.IO.File.Delete(targetpath);
+                }
+                System.IO.File.Copy(filepath, targetpath);
+
+                System.Diagnostics.Process.Start(targetpath);
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                NavigationService.Status(ex.Message);
+            }
+        }
     }
 }

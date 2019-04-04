@@ -322,7 +322,8 @@
     <sys:String x:Key="IndicatorCompleted">Completed</sys:String>
     <sys:String x:Key="IndicatorPaused">Paused</sys:String>
     <sys:String x:Key="IndicatorEmergency">Emergency</sys:String>
-    <sys:String x:Key="IndicatorFailed">Failded</sys:String>
+    <sys:String x:Key="IndicatorFailed">Failed</sys:String>
+    <sys:String x:Key="IndicatorUnknown">Unknown</sys:String>
     <sys:String x:Key="IndicatorNoInput">No Input</sys:String>
 
 

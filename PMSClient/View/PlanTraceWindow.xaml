@@ -11,7 +11,6 @@
              mc:Ignorable="d" 
              Title="产品追踪窗口"
              WindowStartupLocation="CenterScreen"
-             WindowState="Maximized"
              d:DesignHeight="600" d:DesignWidth="1000"
             DataContext="{Binding Source={StaticResource Locator},Path=PlanTrace}">
     <Grid Background="{StaticResource BGBrushWindow}">

@@ -178,7 +178,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 30;
             var service = new RecordDeMoldServiceClient();
             RecordCount = service.GetRecordDeMoldsCountByVHPPlanLot(SearchVHPPlanLot, SearchComposition);
             service.Close();
