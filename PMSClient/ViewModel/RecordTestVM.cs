@@ -72,6 +72,58 @@ namespace PMSClient.ViewModel
 
             Compare = new RelayCommand<RecordTestExtra>(ActionCompare);
             QuickLabel = new RelayCommand(ActionQuickLabel);
+
+            ShowOrderInformation = new RelayCommand<RecordTestExtra>(ActionShowOrderInformation);
+        }
+
+        private void ActionShowOrderInformation(RecordTestExtra obj)
+        {
+            if (obj != null)
+            {
+                using (var service=new OrderServiceClient())
+                {
+                    var result = service.GetOrders(0, 1, "", "", obj.RecordTest.PMINumber).FirstOrDefault();
+                    if (result != null)
+                    {
+                        var window = new ToolWindow.InformationWindow();
+                        window.WindowTitle = "订单信息";
+                        StringBuilder sb = new StringBuilder();
+                        #region 订单信息
+                        sb.Append("【成分】:");
+                        sb.AppendLine(result.CompositionStandard);
+                        sb.Append("【客户】:");
+                        sb.AppendLine(result.CustomerName);
+                        sb.Append("【PO】:");
+                        sb.AppendLine(result.PO);
+                        sb.Append("【尺寸】:");
+                        sb.AppendLine(result.Dimension);
+                        sb.Append("【尺寸要求】:");
+                        sb.AppendLine(result.DimensionDetails);
+                        sb.Append("【最低要求】:");
+                        sb.AppendLine(result.MinimumAcceptDefect);
+                        sb.Append("【客户样品】:");
+                        sb.AppendLine(result.SampleNeed);
+                        sb.Append("【自分析样品】:");
+                        sb.AppendLine(result.SampleForAnlysis);
+                        sb.Append("【配有背板】:");
+                        sb.AppendLine(result.WithBackingPlate);
+                        sb.Append("【特殊要求】:");
+                        sb.AppendLine(result.SpecialRequirement);
+                        sb.Append("【交付日期】:");
+                        sb.AppendLine(result.DeadLine.ToLongDateString());
+                        #endregion
+
+
+
+
+
+
+
+                        window.WindowContent = sb.ToString();
+                        window.ShowDialog();
+                    }
+                }
+            }
         }
 
         private void ActionQuickLabel()
@@ -519,6 +571,9 @@ namespace PMSClient.ViewModel
         public RelayCommand QuickDoc { get; set; }
         public RelayCommand QuickChart { get; set; }
         public RelayCommand QuickLabel { get; set; }
+
+
+        public RelayCommand<RecordTestExtra> ShowOrderInformation { get; set; }
         #endregion
     }
 }

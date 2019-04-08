@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>122</ApplicationRevision>
+    <ApplicationRevision>123</ApplicationRevision>
     <ApplicationVersion>4.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -380,6 +380,9 @@
     <Compile Include="ToolWindow\DialogWindowBase.cs" />
     <Compile Include="ToolWindow\EmptyTextBox.xaml.cs">
       <DependentUpon>EmptyTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindow\InformationWindow.xaml.cs">
+      <DependentUpon>InformationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolWindow\LabelItemSelect.xaml.cs">
       <DependentUpon>LabelItemSelect.xaml</DependentUpon>
@@ -994,6 +997,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolWindow\EmptyTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\InformationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

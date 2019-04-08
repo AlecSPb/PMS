@@ -1,0 +1,13 @@
+﻿<Window x:Class="PMSClient.ToolWindow.InformationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        Title="InformationWindow" Height="450" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid Background="Blue">
+        <TextBox Name="TxtContent" TextWrapping="WrapWithOverflow" IsReadOnly="True" Margin="1"
+                 FontSize="18" Text="helloworld"/>
+    </Grid>
+</Window>
