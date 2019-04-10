@@ -14,6 +14,14 @@
             <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="DA-2"/>
             <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="DB-1"/>
             <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="DB-2"/>
+            <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="EA-1"/>
+            <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="EA-2"/>
+            <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="EB-1"/>
+            <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="EB-2"/>
+            <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="FA-1"/>
+            <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="FA-2"/>
+            <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="FB-1"/>
+            <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="FB-2"/>
         </WrapPanel>
     </Grid>
 </Window>
