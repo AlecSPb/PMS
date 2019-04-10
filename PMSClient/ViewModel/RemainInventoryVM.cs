@@ -24,11 +24,18 @@ namespace PMSClient.ViewModel
         private void InitializeCommands()
         {
             Add = new RelayCommand(ActionAdd, CanAdd);
+            QuickAdd = new RelayCommand(ActionQuickAdd, CanAdd);
             Edit = new RelayCommand<DcRemainInventory>(ActionEdit, CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             Duplicate = new RelayCommand<DcRemainInventory>(ActionDuplicate, CanDuplicate);
+        }
+
+        private void ActionQuickAdd()
+        {
+            var win =new ToolDialog.QuickRemainInventoryWindow();
+            win.Show();
         }
 
         private void ActionDuplicate(DcRemainInventory obj)
@@ -129,6 +136,7 @@ namespace PMSClient.ViewModel
         public ObservableCollection<DcRemainInventory> RemainInventorys { get; set; }
 
         public RelayCommand Add { get; set; }
+        public RelayCommand QuickAdd { get; set; }
         public RelayCommand<DcRemainInventory> Edit { get; set; }
         public RelayCommand<DcRemainInventory> Duplicate { get; set; }
         #endregion

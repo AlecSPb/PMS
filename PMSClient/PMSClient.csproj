@@ -351,6 +351,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ToolDialog\QuickRemainInventoryWindow.xaml.cs">
+      <DependentUpon>QuickRemainInventoryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolDialog\QuickRemainInventoryVM.cs" />
     <Compile Include="ToolWindow\BigFontWarningWindow.xaml.cs">
       <DependentUpon>BigFontWarningWindow.xaml</DependentUpon>
     </Compile>
@@ -971,6 +975,10 @@
     <Page Include="Resource\Styles\XSStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToolDialog\QuickRemainInventoryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolWindow\BigFontWarningWindow.xaml">
       <SubType>Designer</SubType>

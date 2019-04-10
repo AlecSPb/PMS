@@ -153,7 +153,8 @@ namespace PMSClient.ViewModel
         public RelayCommand Add { get; set; }
         public RelayCommand<DcPlate> Edit { get; set; }
         public RelayCommand<DcPlate> SelectAndSend { get; set; }
-
+        public RelayCommand<DcPlate> Duplicate { get; set; }
+        public RelayCommand OnlyUnCompleted { get; set; }
 
         private string searchPlateLot;
         public string SearchPlateLot
@@ -213,7 +214,6 @@ namespace PMSClient.ViewModel
         }
 
         #endregion
-        public RelayCommand<DcPlate> Duplicate { get; set; }
-        public RelayCommand OnlyUnCompleted { get; set; }
+
     }
 }
