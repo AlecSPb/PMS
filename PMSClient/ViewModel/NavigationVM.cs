@@ -136,6 +136,7 @@ namespace PMSClient.ViewModel
                 win.ContentText = fileContent;
                 win.ShowDialog();
             });
+
             LaserRule = new RelayCommand(ActionLaserRule);
 
             ToDoList = new RelayCommand(() => NavigationService.GoTo(PMSViews.ToDo));
@@ -158,11 +159,16 @@ namespace PMSClient.ViewModel
                   window.Show();
               }, () => _session.IsAuthorized(PMSAccess.ReadOrder));
 
-
+            //PMI计数模块
             GoToCounter = new RelayCommand(() =>
               {
-
+                  NavigationService.GoTo(PMSViews.PMICounter);
               }, () => _session.IsAuthorized(PMSAccess.ReadPlate));
+            //储备库存
+            GoToRemainInventory = new RelayCommand(() =>
+              {
+                NavigationService.GoTo(PMSViews.RemainInventory);
+              }, ()=>_session.IsAuthorized(PMSAccess.ReadProduct));
             #endregion
         }
 
@@ -320,6 +326,8 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToFailure { get; set; }
 
         public RelayCommand GoToCounter { get; set; }
+
+        public RelayCommand GoToRemainInventory { get; set; }
 
         private void InitializeData()
         {

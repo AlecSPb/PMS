@@ -111,7 +111,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var result = dc.RecordMachines.Where(r => r.State != PMSCommon.SimpleState.作废.ToString())
-                        .OrderByDescending(i => i.CreateTime).Skip(skip).Take(take).ToList();
+                        .OrderByDescending(i => i.VHPPlanLot).Skip(skip).Take(take).ToList();
 
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMachine, DcRecordMachine>());
                     return Mapper.Map<List<RecordMachine>, List<DcRecordMachine>>(result);
@@ -134,7 +134,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMachine, DcRecordMachine>());
                     var query = from r in dc.RecordMachines
                                 where r.VHPPlanLot.Contains(vhpplanlot) && r.State != PMSCommon.SimpleState.作废.ToString()
-                                orderby r.CreateTime descending
+                                orderby r.VHPPlanLot descending
                                 select r;
                     return Mapper.Map<List<RecordMachine>, List<DcRecordMachine>>(query.Skip(skip).Take(take).ToList());
                 }

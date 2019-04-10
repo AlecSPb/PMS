@@ -135,7 +135,9 @@
     <sys:String x:Key="PageDeliveryEdit">Shipment Edit</sys:String>
     <sys:String x:Key="PageDeliveryItemEdit">Shipment Item Edit</sys:String>
     <sys:String x:Key="PageDeliveryItemList">Shipment Item List</sys:String>
-
+    <sys:String x:Key="PageRemainInventory">Remain Inventory</sys:String>
+    <sys:String x:Key="PageRemainInventoryEdit">Remain Inventory Edit</sys:String>
+    
     <sys:String x:Key="PageStatisticPMSIndex">PMS Index</sys:String>
     <sys:String x:Key="PageStatisticOrder">Statistic Order</sys:String>
     <sys:String x:Key="PageStatisticDelivery">Statistic Shipment</sys:String>

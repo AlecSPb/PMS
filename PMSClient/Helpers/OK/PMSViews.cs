@@ -113,6 +113,8 @@ namespace PMSClient
         Failure,
         FailureEdit,
         PMICounter,
-        PMICounterEdit
+        PMICounterEdit,
+        RemainInventory,
+        RemainInventoryEdit,
     }
 }

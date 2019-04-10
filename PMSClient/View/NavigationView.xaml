@@ -139,13 +139,16 @@
                         <Button Content="{StaticResource PageProductTitle}" Grid.Row="4" Grid.Column="0" Style="{StaticResource StyleButtonNavigationTitle}" />
                         <Button Content="{StaticResource PageProduct}" Grid.Row="4" Grid.Column="1"
                         Command="{Binding GoToProduct}" Style="{StaticResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PagePlate}"  Grid.Row="4" Grid.Column="2"
+                        <Button Content="{StaticResource PageRemainInventory}" Grid.Row="4" Grid.Column="2"
+                        Command="{Binding GoToRemainInventory}" Style="{StaticResource StyleButtonNavigation}"/>
+                        <Button Content="{StaticResource PagePlate}"  Grid.Row="4" Grid.Column="3"
                         Command="{Binding GoToPlate}" Style="{StaticResource StyleButtonNavigation}" />
-                        <Button Content="{StaticResource PageDelivery}" Grid.Row="4" Grid.Column="3"
+                        <Button Content="{StaticResource PageDelivery}" Grid.Row="4" Grid.Column="4"
                         Command="{Binding GoToDelivery}" Style="{StaticResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PageDeliveryItemList}" Grid.Row="4" Grid.Column="4"
+                        <Button Content="{StaticResource PageDeliveryItemList}" Grid.Row="4" Grid.Column="5"
                         Command="{Binding GoToDeliveryItemList}" Style="{StaticResource StyleButtonNavigation}"/>
 
+                        
                         <Button Content="{StaticResource PageStatistic}" Grid.Row="5" Grid.Column="0"
                                 Style="{StaticResource StyleButtonNavigationTitle}"/>
                         <Button Content="{StaticResource PageStatisticOrder}" Grid.Row="5" Grid.Column="1"

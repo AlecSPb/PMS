@@ -136,6 +136,10 @@
     <sys:String x:Key="PageDeliveryItemEdit">发货项记录编辑</sys:String>
     <sys:String x:Key="PageDeliveryItemList">发货流水</sys:String>
 
+    <sys:String x:Key="PageRemainInventory">储备库存</sys:String>
+    <sys:String x:Key="PageRemainInventoryEdit">储备库存编辑</sys:String>
+
+
     <sys:String x:Key="PageStatisticPMSIndex">PMS 指数</sys:String>
     <sys:String x:Key="PageStatisticOrder">订单统计</sys:String>
     <sys:String x:Key="PageStatisticDelivery">发货统计</sys:String>
