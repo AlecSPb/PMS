@@ -922,6 +922,14 @@
     <sys:String x:Key="CUnit">单位</sys:String>
     <sys:String x:Key="CState">状态</sys:String>
 
+    <!--RemainInventory-->
+    <sys:String x:Key="RIID">ID</sys:String>
+    <sys:String x:Key="RICreator">创建者</sys:String>
+    <sys:String x:Key="RICreateTime">创建时间</sys:String>
+    <sys:String x:Key="RIProductID">产品ID</sys:String>
+    <sys:String x:Key="RIComposition">成分</sys:String>
+    <sys:String x:Key="RIDimension">规格</sys:String>
+    <sys:String x:Key="RIDetails">细节</sys:String>
 
 
 
