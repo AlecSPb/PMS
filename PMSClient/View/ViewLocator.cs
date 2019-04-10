@@ -139,9 +139,28 @@ namespace PMSClient.View
 
             SimpleIoc.Default.Register<PMICounterView>();
             SimpleIoc.Default.Register<PMICounterEditView>();
+
+            SimpleIoc.Default.Register<RemainInventoryView>();
+            SimpleIoc.Default.Register<RemainInventoryEditView>();
         }
 
         #region NavigationProperties
+        public RemainInventoryView RemainInventory
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RemainInventoryView>();
+            }
+        }
+
+        public RemainInventoryEditView RemainInventoryEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RemainInventoryEditView>();
+            }
+        }
+
         public PMICounterView PMICounter
         {
             get

@@ -230,6 +230,7 @@
     <Compile Include="ServiceContracts\IVHPMoldService.cs" />
     <Compile Include="ServiceContracts\IVHPProcessService.cs" />
     <Compile Include="ServiceImplements\RecordVHPService.cs" />
+    <Compile Include="ServiceImplements\RemainInventoryService.cs" />
     <Compile Include="ServiceImplements\SanjieService.cs" />
     <Compile Include="ServiceImplements\StatisticService.cs" />
     <Compile Include="ServiceImplements\ToolInventoryService.cs" />

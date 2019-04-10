@@ -164,6 +164,7 @@ namespace PMSClient.ViewModel
               {
                   NavigationService.GoTo(PMSViews.PMICounter);
               }, () => _session.IsAuthorized(PMSAccess.ReadPlate));
+
             //储备库存
             GoToRemainInventory = new RelayCommand(() =>
               {
