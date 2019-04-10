@@ -39,7 +39,7 @@ namespace PMSWCFService
                     var query = from p in dc.RemainInventories
                                 where p.ProductID.Contains(productid)
                                 && p.Composition.Contains(composition)
-                                && p.State != PMSCommon.SimpleState.正常.ToString()
+                                && p.State == PMSCommon.SimpleState.正常.ToString()
                                 orderby p.ProductID descending
                                 select p;
                     var result = query.Skip(s).Take(t).ToList();
@@ -64,7 +64,7 @@ namespace PMSWCFService
                     var query = from p in dc.RemainInventories
                                 where p.ProductID.Contains(productid)
                                 && p.Composition.Contains(composition)
-                                && p.State != PMSCommon.SimpleState.正常.ToString()
+                                && p.State == PMSCommon.SimpleState.正常.ToString()
                                 orderby p.ProductID descending
                                 select p;
                     return query.Count();

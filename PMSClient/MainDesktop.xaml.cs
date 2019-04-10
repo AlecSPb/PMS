@@ -493,6 +493,12 @@ namespace PMSClient
                 case PMSViews.PMICounterEdit:
                     NavigateTo(_views.PMICounterEdit);
                     break;
+                case PMSViews.RemainInventory:
+                    NavigateTo(_views.RemainInventory);
+                    break;
+                case PMSViews.RemainInventoryEdit:
+                    NavigateTo(_views.RemainInventoryEdit);
+                    break;
                 default:
                     break;
             }

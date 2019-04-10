@@ -27,7 +27,7 @@
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipProductEdit}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-            <Grid  DataContext="{Binding CurrentFailure}">
+            <Grid  DataContext="{Binding CurrentPMICounter}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="300"/>
@@ -54,7 +54,9 @@
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource CItemGroup}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
-                <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding ItemGroup}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                          ItemsSource="{Binding DataContext.PMICounterGroups,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding ItemGroup}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 

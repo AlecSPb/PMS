@@ -79,6 +79,7 @@
     <Compile Include="NavigationToken.cs" />
     <Compile Include="OrderUnit.cs" />
     <Compile Include="InventoryState.cs" />
+    <Compile Include="PMICounterGroup.cs" />
     <Compile Include="ProductType.cs" />
     <Compile Include="QuickVHPMessege.cs" />
     <Compile Include="SimpleState.cs" />

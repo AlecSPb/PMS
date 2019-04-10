@@ -1613,6 +1613,12 @@
     <None Include="Service References\ExtraService\PMSClient.ExtraService.DcEnvironmentInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ExtraService\PMSClient.ExtraService.DcPMICounter.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExtraService\PMSClient.ExtraService.DcRemainInventory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ExtraService\PMSClient.ExtraService.DcToDo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

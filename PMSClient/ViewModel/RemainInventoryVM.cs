@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSClient.FailureService;
+using PMSClient.ExtraService;
 
 namespace PMSClient.ViewModel
 {
@@ -13,8 +13,8 @@ namespace PMSClient.ViewModel
     {
         public RemainInventoryVM()
         {
-            searchStage = "";
-            Failures = new ObservableCollection<DcFailure>();
+            searchProductID =searchComposition= "";
+            RemainInventorys = new ObservableCollection<DcRemainInventory>();
 
             InitializeCommands();
 
@@ -24,34 +24,34 @@ namespace PMSClient.ViewModel
         private void InitializeCommands()
         {
             Add = new RelayCommand(ActionAdd, CanAdd);
-            Edit = new RelayCommand<DcFailure>(ActionEdit, CanEdit);
+            Edit = new RelayCommand<DcRemainInventory>(ActionEdit, CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
-            Duplicate = new RelayCommand<DcFailure>(ActionDuplicate, CanDuplicate);
+            Duplicate = new RelayCommand<DcRemainInventory>(ActionDuplicate, CanDuplicate);
         }
 
-        private void ActionDuplicate(DcFailure obj)
+        private void ActionDuplicate(DcRemainInventory obj)
         {
             if (PMSDialogService.ShowYesNo("请问", "确定复用这条记录？"))
             {
                 if (obj != null)
                 {
-                    PMSHelper.ViewModels.FailureEdit.SetDuplicate(obj);
-                    NavigationService.GoTo(PMSViews.FailureEdit);
+                    PMSHelper.ViewModels.RemainInventoryEdit.SetDuplicate(obj);
+                    NavigationService.GoTo(PMSViews.RemainInventoryEdit);
                 }
             }
 
         }
 
-        private bool CanDuplicate(DcFailure arg)
+        private bool CanDuplicate(DcRemainInventory arg)
         {
             return PMSHelper.CurrentSession.IsOKGroup(groupnames);
         }
 
         private void ActionAll()
         {
-            SearchStage = "";
+            SearchProductID = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -61,7 +61,7 @@ namespace PMSClient.ViewModel
         }
 
         private string[] groupnames = { "管理员", "制粉组", "热压组", "加工组", "测试组", "质量组", "发货组", "发货专员", "生产经理", "仓库专员", "熔铸部门" };
-        private bool CanEdit(DcFailure arg)
+        private bool CanEdit(DcRemainInventory arg)
         {
             return PMSHelper.CurrentSession.IsOKGroup(groupnames);
         }
@@ -71,16 +71,16 @@ namespace PMSClient.ViewModel
             return PMSHelper.CurrentSession.IsOKGroup(groupnames);
         }
 
-        private void ActionEdit(DcFailure model)
+        private void ActionEdit(DcRemainInventory model)
         {
-            PMSHelper.ViewModels.FailureEdit.SetEdit(model);
-            NavigationService.GoTo(PMSViews.FailureEdit);
+            PMSHelper.ViewModels.RemainInventoryEdit.SetEdit(model);
+            NavigationService.GoTo(PMSViews.RemainInventoryEdit);
         }
 
         private void ActionAdd()
         {
-            PMSHelper.ViewModels.FailureEdit.SetNew();
-            NavigationService.GoTo(PMSViews.FailureEdit);
+            PMSHelper.ViewModels.RemainInventoryEdit.SetNew();
+            NavigationService.GoTo(PMSViews.RemainInventoryEdit);
         }
 
         public void RefreshData()
@@ -89,21 +89,27 @@ namespace PMSClient.ViewModel
         }
 
 
-        private string searchStage;
-        public string SearchStage
+        private string searchProductID;
+        public string SearchProductID
         {
-            get { return searchStage; }
-            set { searchStage = value; RaisePropertyChanged(nameof(SearchStage)); }
+            get { return searchProductID; }
+            set { searchProductID = value; RaisePropertyChanged(nameof(SearchProductID)); }
         }
 
+        private string searchComposition;
+        public string SearchComposition
+        {
+            get { return searchComposition; }
+            set { searchComposition = value; RaisePropertyChanged(nameof(SearchComposition)); }
+        }
 
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
             PageSize = 30;
-            using (var service = new FailureServiceClient())
+            using (var service = new RemainInventoryServiceClient())
             {
-                RecordCount = service.GetFailuresCount(SearchStage);
+                RecordCount = service.GetRemainInventoryCounter(SearchProductID,SearchComposition);
             }
             ActionPaging();
         }
@@ -112,19 +118,19 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            using (var service = new FailureServiceClient())
+            using (var service = new RemainInventoryServiceClient())
             {
-                var orders = service.GetFailures(skip, take, SearchStage);
-                Failures.Clear();
-                orders.ToList().ForEach(o => Failures.Add(o));
+                var orders = service.GetRemainInventories(SearchProductID, SearchComposition, skip, take);
+                RemainInventorys.Clear();
+                orders.ToList().ForEach(o => RemainInventorys.Add(o));
             }
         }
         #region Commands
-        public ObservableCollection<DcFailure> Failures { get; set; }
+        public ObservableCollection<DcRemainInventory> RemainInventorys { get; set; }
 
         public RelayCommand Add { get; set; }
-        public RelayCommand<DcFailure> Edit { get; set; }
-        public RelayCommand<DcFailure> Duplicate { get; set; }
+        public RelayCommand<DcRemainInventory> Edit { get; set; }
+        public RelayCommand<DcRemainInventory> Duplicate { get; set; }
         #endregion
 
     }

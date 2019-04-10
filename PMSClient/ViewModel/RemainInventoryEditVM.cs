@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSClient.FailureService;
+using PMSClient.ExtraService;
 using PMSClient.MainService;
 
 namespace PMSClient.ViewModel
@@ -16,9 +16,6 @@ namespace PMSClient.ViewModel
         {
             States = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.SimpleState>(States);
-
-            FailureStages = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.FailureStage>(FailureStages);
 
             InitializeCommands();
         }
@@ -33,7 +30,7 @@ namespace PMSClient.ViewModel
 
         private void ActionSelect()
         {
-            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.FailureEdit);
+            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RemainInventoryEdit);
             PMSHelper.ViewModels.PlanSelect.RefreshData();
             NavigationService.GoTo(PMSViews.PlanSelect);
         }
@@ -41,16 +38,17 @@ namespace PMSClient.ViewModel
         {
             if (plan != null)
             {
-                CurrentFailure.ProductID = UsefulPackage.PMSTranslate.PlanLot(plan);
-                CurrentFailure.Composition = plan.Misson.CompositionStandard;
-                CurrentFailure.Details = plan.Misson.PMINumber;
+                CurrentRemainInventory.ProductID = UsefulPackage.PMSTranslate.PlanLot(plan);
+                CurrentRemainInventory.Composition = plan.Misson.CompositionStandard;
+                CurrentRemainInventory.Dimension = plan.Misson.Dimension;
+                CurrentRemainInventory.Details = plan.Misson.PMINumber;
                 //RaisePropertyChanged(nameof(CurrentRecordTest));
             }
         }
         public void SetNew()
         {
             IsNew = true;
-            var model = new DcFailure();
+            var model = new DcRemainInventory();
             #region 初始化
             IsNew = true;
             model.ID = Guid.NewGuid();
@@ -60,45 +58,39 @@ namespace PMSClient.ViewModel
             model.ProductID = "无";
             model.Composition = "无";
             model.Details = "无";
-            model.Stage = FailureStages[0];
-            model.Problem = "无";
-            model.Process = "未处理";
-            model.Remark = "无";
+            model.Dimension = "未知";
 
             #endregion
-            CurrentFailure = model;
+            CurrentRemainInventory = model;
         }
-        public void SetDuplicate(DcFailure model)
+        public void SetDuplicate(DcRemainInventory model)
         {
             if (model != null)
             {
                 IsNew = true;
-                CurrentFailure = new DcFailure();
-                CurrentFailure.ID = Guid.NewGuid();
-                CurrentFailure.CreateTime = DateTime.Now;
-                CurrentFailure.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                CurrentFailure.State = PMSCommon.SimpleState.正常.ToString();
-                CurrentFailure.ProductID = model.ProductID;
-                CurrentFailure.Composition = model.Composition;
-                CurrentFailure.Details = model.Details;
-                CurrentFailure.Stage = model.Stage; ;
-                CurrentFailure.Problem = model.Problem;
-                CurrentFailure.Process = model.Process;
-                CurrentFailure.Remark = model.Remark;
+                CurrentRemainInventory = new DcRemainInventory();
+                CurrentRemainInventory.ID = Guid.NewGuid();
+                CurrentRemainInventory.CreateTime = DateTime.Now;
+                CurrentRemainInventory.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                CurrentRemainInventory.State = PMSCommon.SimpleState.正常.ToString();
+                CurrentRemainInventory.ProductID = model.ProductID;
+                CurrentRemainInventory.Composition = model.Composition;
+                CurrentRemainInventory.Details = model.Details;
+                CurrentRemainInventory.Dimension = model.Dimension;
             }
         }
-        public void SetEdit(DcFailure model)
+        public void SetEdit(DcRemainInventory model)
         {
             if (model != null)
             {
                 IsNew = false;
-                CurrentFailure = model;
+                CurrentRemainInventory = model;
             }
         }
 
         private static void GoBack()
         {
-            NavigationService.GoTo(PMSViews.Failure);
+            NavigationService.GoTo(PMSViews.RemainInventory);
         }
 
         private void ActionSave()
@@ -107,7 +99,7 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
-            if (CurrentFailure.State == "作废")
+            if (CurrentRemainInventory.State == "作废")
             {
                 if (!PMSDialogService.ShowYesNo("请问", "确定要作废吗？"))
                 {
@@ -117,17 +109,17 @@ namespace PMSClient.ViewModel
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
-                var service = new FailureServiceClient();
+                var service = new RemainInventoryServiceClient();
                 if (IsNew)
                 {
-                    service.AddFailure(CurrentFailure);
+                    service.AddRemainInventory(CurrentRemainInventory);
                 }
                 else
                 {
-                    service.UpdateFailure(CurrentFailure);
+                    service.UpdateRemainInventory(CurrentRemainInventory);
                 }
                 service.Close();
-                PMSHelper.ViewModels.Failure.RefreshData();
+                PMSHelper.ViewModels.RemainInventory.RefreshData();
                 GoBack();
             }
             catch (Exception ex)
@@ -135,17 +127,17 @@ namespace PMSClient.ViewModel
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
-        public List<string> FailureStages { get; set; }
+        public List<string> RemainInventoryStages { get; set; }
         public List<string> States { get; set; }
 
-        private DcFailure currentFailure;
-        public DcFailure CurrentFailure
+        private DcRemainInventory currentRemainInventory;
+        public DcRemainInventory CurrentRemainInventory
         {
-            get { return currentFailure; }
+            get { return currentRemainInventory; }
             set
             {
-                currentFailure = value;
-                RaisePropertyChanged(nameof(CurrentFailure));
+                currentRemainInventory = value;
+                RaisePropertyChanged(nameof(CurrentRemainInventory));
             }
         }
 

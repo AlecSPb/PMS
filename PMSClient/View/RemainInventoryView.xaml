@@ -19,16 +19,16 @@
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
-            <TextBlock Text="{StaticResource CItemGroup}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchGroup,UpdateSourceTrigger=PropertyChanged}" 
+            <TextBlock Text="{StaticResource RIProductID}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
-            <TextBlock Text="{StaticResource CItemName}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchName,UpdateSourceTrigger=PropertyChanged}" 
+            <TextBlock Text="{StaticResource RIComposition}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Failures}"
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RemainInventorys}"
                   >
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
@@ -45,20 +45,16 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource CCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                <DataGridTextColumn Header="{StaticResource RICreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
-                <DataGridTextColumn Header="{StaticResource CItemGroup}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding ItemGroup}"/>
-                <DataGridTextColumn Header="{StaticResource CItemName}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding ItemName}"/>
-                <DataGridTextColumn Header="{StaticResource CItemSpecification}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding ItemSpecification}"/>
-                <DataGridTextColumn Header="{StaticResource CItemCount}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding ItemCount}"/>
-                <DataGridTextColumn Header="{StaticResource CUnit}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Unit}"/>
-                <DataGridTextColumn Header="{StaticResource CItemDetails}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding ItemDetails}"/>
+                <DataGridTextColumn Header="{StaticResource RIProductID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding ProductID}"/>
+                <DataGridTextColumn Header="{StaticResource RIComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Composition}"/>
+                <DataGridTextColumn Header="{StaticResource RIDimension}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding Dimension}"/>
+                <DataGridTextColumn Header="{StaticResource RIDetails}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Details}"/>
                 <DataGridTextColumn Header="{StaticResource CCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>
