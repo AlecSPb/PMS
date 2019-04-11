@@ -53,7 +53,7 @@
                                     Binding="{Binding ItemName}"/>
                 <DataGridTextColumn Header="{StaticResource CItemSpecification}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding ItemSpecification}"/>
-                <DataGridTextColumn Header="{StaticResource CItemCount}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource CItemCount}" ElementStyle="{StaticResource StyleDGTextBlockCenter}"
                                     Binding="{Binding ItemCount}"/>
                 <DataGridTextColumn Header="{StaticResource CUnit}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Unit}"/>

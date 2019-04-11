@@ -1586,6 +1586,9 @@
     <Content Include="Resource\Files\NewLabelStandard.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Documents\储备库整理操作说明.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Note\2016.docx" />
     <Content Include="Resource\DocTemplate\Reports\DeliverySheet_zh_cn.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

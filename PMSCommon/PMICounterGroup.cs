@@ -9,6 +9,6 @@ namespace PMSCommon
     public enum PMICounterGroup
     {
         背板,
-        靶材
+        其他
     }
 }

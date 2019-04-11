@@ -60,7 +60,7 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private string[] groupnames = { "管理员", "制粉组", "热压组", "加工组", "测试组", "质量组", "发货组", "发货专员", "生产经理", "仓库专员", "熔铸部门" };
+        private string[] groupnames = { "管理员", "测试组", "质量组", "统筹组" };
         private bool CanEdit(DcPMICounter arg)
         {
             return PMSHelper.CurrentSession.IsOKGroup(groupnames);

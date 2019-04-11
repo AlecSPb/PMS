@@ -13,7 +13,7 @@ namespace PMSClient.ViewModel
     {
         public RemainInventoryVM()
         {
-            searchProductID =searchComposition= "";
+            searchProductID = searchComposition = "";
             RemainInventorys = new ObservableCollection<DcRemainInventory>();
 
             InitializeCommands();
@@ -30,11 +30,40 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             Duplicate = new RelayCommand<DcRemainInventory>(ActionDuplicate, CanDuplicate);
+            Send = new RelayCommand<DcRemainInventory>(ActionSend, CanEdit);
+            Doc = new RelayCommand(ActionDoc);
+        }
+
+        private void ActionDoc()
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("Documents\\储备库整理操作说明.docx");
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void ActionSend(DcRemainInventory obj)
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定要标记为发货吗？")) return;
+            if (obj != null)
+            {
+                using (var service = new RemainInventoryServiceClient())
+                {
+                    obj.State = PMSCommon.InventoryState.发货.ToString();
+                    service.UpdateRemainInventory(obj);
+                }
+                SetPageParametersWhenConditionChange();
+
+            }
         }
 
         private void ActionQuickAdd()
         {
-            var win =new ToolDialog.QuickRemainInventoryWindow();
+            var win = new ToolDialog.QuickRemainInventoryWindow();
             win.Show();
         }
 
@@ -58,7 +87,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            SearchProductID = "";
+            SearchProductID = SearchComposition = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -67,7 +96,7 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private string[] groupnames = { "管理员", "制粉组", "热压组", "加工组", "测试组", "质量组", "发货组", "发货专员", "生产经理", "仓库专员", "熔铸部门" };
+        private string[] groupnames = { "管理员", "测试组", "质量组", "统筹组" };
         private bool CanEdit(DcRemainInventory arg)
         {
             return PMSHelper.CurrentSession.IsOKGroup(groupnames);
@@ -116,7 +145,7 @@ namespace PMSClient.ViewModel
             PageSize = 30;
             using (var service = new RemainInventoryServiceClient())
             {
-                RecordCount = service.GetRemainInventoryCounter(SearchProductID,SearchComposition);
+                RecordCount = service.GetRemainInventoryCounter(SearchProductID, SearchComposition);
             }
             ActionPaging();
         }
@@ -139,6 +168,9 @@ namespace PMSClient.ViewModel
         public RelayCommand QuickAdd { get; set; }
         public RelayCommand<DcRemainInventory> Edit { get; set; }
         public RelayCommand<DcRemainInventory> Duplicate { get; set; }
+        public RelayCommand<DcRemainInventory> Send { get; set; }
+        public RelayCommand Doc { get; set; }
+
         #endregion
 
     }

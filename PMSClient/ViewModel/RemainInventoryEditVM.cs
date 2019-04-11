@@ -54,7 +54,7 @@ namespace PMSClient.ViewModel
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.State = PMSCommon.SimpleState.正常.ToString();
+            model.State = PMSCommon.InventoryState.库存.ToString();
             model.ProductID = "无";
             model.Composition = "无";
             model.Details = "无";
@@ -72,7 +72,7 @@ namespace PMSClient.ViewModel
                 CurrentRemainInventory.ID = Guid.NewGuid();
                 CurrentRemainInventory.CreateTime = DateTime.Now;
                 CurrentRemainInventory.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                CurrentRemainInventory.State = PMSCommon.SimpleState.正常.ToString();
+                CurrentRemainInventory.State = PMSCommon.InventoryState.库存.ToString();
                 CurrentRemainInventory.ProductID = model.ProductID;
                 CurrentRemainInventory.Composition = model.Composition;
                 CurrentRemainInventory.Details = model.Details;

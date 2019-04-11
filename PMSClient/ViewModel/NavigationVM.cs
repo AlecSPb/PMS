@@ -75,7 +75,7 @@ namespace PMSClient.ViewModel
             GoToMaterialInventory = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryIn), () => _session.IsAuthorized(PMSAccess.ReadMaterialInventoryIn));
             GoToMaterialInventoryOut = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut), () => _session.IsAuthorized(PMSAccess.ReadMaterialInventoryOut));
 
-            GoToPlate = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plate), () => _session.IsAuthorized(PMSAccess.ReadPlate));
+            GoToPlate = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plate), () => _session.IsAuthorized(PMSAccess.ReadProduct));
 
             GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson), () => _session.IsAuthorized(PMSAccess.ReadMisson));
             GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan), () => _session.IsAuthorized(PMSAccess.ReadPlan));
@@ -163,7 +163,7 @@ namespace PMSClient.ViewModel
             GoToCounter = new RelayCommand(() =>
               {
                   NavigationService.GoTo(PMSViews.PMICounter);
-              }, () => _session.IsAuthorized(PMSAccess.ReadPlate));
+              }, () => _session.IsAuthorized(PMSAccess.ReadProduct));
 
             //储备库存
             GoToRemainInventory = new RelayCommand(() =>
