@@ -35,7 +35,7 @@ namespace PMSClient.ToolDialog
                 model.ID = Guid.NewGuid();
                 model.CreateTime = DateTime.Now;
                 model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                model.State = PMSCommon.SimpleState.正常.ToString();
+                model.State = PMSCommon.InventoryState.库存.ToString();
 
                 model.ProductID = obj.Plan.SearchCode+"-1";
                 model.Composition = obj.Misson.CompositionStandard;
