@@ -914,7 +914,14 @@
     <sys:String x:Key="CItemCount">Count</sys:String>
     <sys:String x:Key="CUnit">Unit</sys:String>
     <sys:String x:Key="CState">State</sys:String>
-
+    <!--RemainInventory-->
+    <sys:String x:Key="RIID">ID</sys:String>
+    <sys:String x:Key="RICreator">Creator</sys:String>
+    <sys:String x:Key="RICreateTime">Create Time</sys:String>
+    <sys:String x:Key="RIProductID">Product ID</sys:String>
+    <sys:String x:Key="RIComposition">Composition</sys:String>
+    <sys:String x:Key="RIDimension">Specification</sys:String>
+    <sys:String x:Key="RIDetails">Details</sys:String>
     
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">Public</sys:String>

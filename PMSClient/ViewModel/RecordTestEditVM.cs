@@ -243,6 +243,11 @@ namespace PMSClient.ViewModel
                 var service = new RecordTestServiceClient();
                 if (IsNew)
                 {
+                    //新建#编号的产品测试记录的时候自动设置为未定
+                    if (CurrentRecordTest.ProductID.Contains("#"))
+                    {
+                        CurrentRecordTest.FollowUps = PMSCommon.TestFollowUps.未定.ToString();
+                    }
                     service.AddRecordTestByUID(CurrentRecordTest, uid);
                 }
                 else

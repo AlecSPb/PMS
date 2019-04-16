@@ -190,10 +190,10 @@
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock  Grid.Column="0" Name="txtCurrentTime" Text="现在时间: 2018-05-16 21:24:33" Style="{StaticResource StyleTextBlockCommon}"
-                       FontWeight="Bold"  Foreground="Black" FontSize="20" HorizontalAlignment="Stretch" Margin="2,2,417,2.2"/>
+                       FontWeight="Bold"  Foreground="Black" FontSize="16" HorizontalAlignment="Stretch" Margin="2,2,417,2.2"/>
                         <TextBlock Grid.Column="1"
                                    Text="{Binding DataContext.EditStatus,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
-                                   Style="{StaticResource StyleTextBlockCommon}" FontSize="20" Foreground="Blue"/>
+                                   Style="{StaticResource StyleTextBlockCommon}" FontSize="16" Foreground="Blue"/>
                     </Grid>
                 </Border>
                 <Border Grid.Row="1" Style="{StaticResource StyleBorderCommon}">
@@ -250,7 +250,7 @@
                         <Button Grid.Row="0" Grid.Column="10" Margin="5" Content="{StaticResource ButtonNewMode}"  Style="{StaticResource btnBase}"
                    Command="{Binding DataContext.New,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
                         <Button Content="{StaticResource ButtonSave}" Grid.Row="1" Grid.Column="10" Grid.RowSpan="2" Margin="5" 
-                                Style="{StaticResource btnBase}"
+                                Style="{StaticResource btnBase}" IsDefault="True"
                     FontSize="20"
                     Command="{Binding DataContext.Save,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
                         <TextBlock Text="{StaticResource RVHPPV1}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="0" Grid.Column="0"/>

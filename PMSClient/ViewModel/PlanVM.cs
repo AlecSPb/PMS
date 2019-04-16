@@ -69,6 +69,9 @@ namespace PMSClient.ViewModel
                     StringBuilder lb = new StringBuilder();
                     foreach (var item in ordered)
                     {
+                        lb.AppendLine($"共{item.Plan.Quantity}片");
+                        lb.AppendLine();
+
                         lb.Append(UsefulPackage.PMSTranslate.PlanLot(item));
                         lb.Append(" ");
                         lb.Append(item.Plan.PlanType);

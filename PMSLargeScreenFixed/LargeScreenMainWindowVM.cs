@@ -98,12 +98,13 @@ namespace PMSLargeScreen
                     #endregion
 
                 }
+                CenterMessage = string.Empty;
+
                 if (Model1 == null && Model2 == null && Model3 == null
                     && Model4 == null && Model5 == null && Model6 == null)
                 {
                     CenterMessage = $"今日没有安排热压计划";
                 }
-                CenterMessage = string.Empty;
                 ErrorMessage = "读取正常";
                 Status = $"刷新全部数据于{DateTime.Now.ToString("HH:mm:ss")}";
             }
