@@ -12,6 +12,7 @@ using System.IO;
 using PMSClient.ViewModel.Model;
 using PMSClient.ReportsHelper;
 using PMSClient.ToolWindow;
+using PMSClient.CheckLogic;
 
 namespace PMSClient.ViewModel
 {
@@ -76,6 +77,10 @@ namespace PMSClient.ViewModel
             ShowOrderInformation = new RelayCommand<RecordTestExtra>(ActionShowOrderInformation);
         }
 
+        /// <summary>
+        /// 显示订单信息
+        /// </summary>
+        /// <param name="obj"></param>
         private void ActionShowOrderInformation(RecordTestExtra obj)
         {
             if (obj != null)
@@ -99,6 +104,8 @@ namespace PMSClient.ViewModel
                         sb.AppendLine(result.Dimension);
                         sb.Append("【尺寸要求】:");
                         sb.AppendLine(result.DimensionDetails);
+                        sb.Append("【数量】:");
+                        sb.AppendLine($"{result.Quantity}{result.QuantityUnit}");
                         sb.Append("【最低要求】:");
                         sb.AppendLine(result.MinimumAcceptDefect);
                         sb.Append("【客户样品】:");
@@ -194,6 +201,58 @@ namespace PMSClient.ViewModel
                     {
                         var model = obj.RecordTest;
                         model.State = PMSCommon.CommonState.已核验.ToString();
+
+                        #region 核验
+
+
+                        string composition = model.CompositionXRF;
+                        //检测是否错误输入Si，S，P，B，C之类不可测试的元素
+                        if (composition.Contains("Si atm%")
+                            || composition.Contains("S atm%")
+                            || composition.Contains("P atm%")
+                            || composition.Contains("B atm%")
+                            || composition.Contains("C atm%")
+                            )
+                        {
+                            if (!PMSDialogService.ShowYesNo("请问", "成分误包含有Si，S，P，B，C,确定继续保存吗？"))
+                            {
+                                return;
+                            }
+                        }
+
+                        //密度检查
+                        string abbr = model.CompositionAbbr;
+                        double density = 0;
+                        double.TryParse(model.Density, out density);
+
+                        //if (string.IsNullOrEmpty(CurrentRecordTest.CompositionXRF))
+                        //{
+                        //    CurrentRecordTest.CompositionXRF = "无";
+                        //}
+
+                        if (!string.IsNullOrEmpty(abbr) && density != 0)
+                        {
+                            CheckResult msg = RecordTestCheckLogic.IsDensityOK(abbr, density);
+                            if (!msg.IsCheckOK)
+                            {
+                                PMSDialogService.ShowWarning(msg.Message);
+                            }
+                        }
+
+                        //BridgeLine成分检查警告
+                        if (!RecordTestCheckLogic.IsBridgeLineCompositionOK(model.Customer,
+                            model.CompositionXRF))
+                        {
+                            RecordTestCheckLogic.ShowWarningDialog("BridgeLine的成分测试需要有13点数据！");
+
+                        }
+
+                        #endregion
+
+
+
+
+
                         service.UpdateRecordTestByUID(model, uid);
                     }
 

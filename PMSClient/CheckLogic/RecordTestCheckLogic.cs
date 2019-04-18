@@ -9,6 +9,14 @@ namespace PMSClient.CheckLogic
 {
     public static class RecordTestCheckLogic
     {
+        public static void ShowWarningDialog(string warningmsg)
+        {
+            var win = new Tool.WarningDialog();
+            win.WarningMessage = warningmsg;
+            win.ShowDialog();
+        }
+
+
         public static CheckResult IsDensityOK(string abbr, double density_actual)
         {
             var check = new CheckResult();
@@ -79,7 +87,15 @@ namespace PMSClient.CheckLogic
             }
         }
 
-
+        public static bool IsBridgeLineCompositionOK(string customerName,string composition)
+        {
+            if (customerName.ToLower().Contains("bridgeline"))
+            {
+                int line_count = composition.Split('\r').Length;
+                return line_count > 15;
+            }
+            return true;
+        }
     }
 
 

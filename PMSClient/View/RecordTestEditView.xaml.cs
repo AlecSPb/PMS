@@ -70,10 +70,6 @@ namespace PMSClient.View
             PMSMethods.SetTextBox(txtRemark, "附有背板");
         }
 
-        private void BtnSimulator_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void BtnCalculator_Click(object sender, RoutedEventArgs e)
         {
@@ -89,6 +85,12 @@ namespace PMSClient.View
         private void btnSimulator_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             CompositionSimulator simulator = new CompositionSimulator();
+
+            if (cboCustomerNames.Text.ToLower().Contains("bridgeline"))
+            {
+                simulator.SetForBridgeLine();
+            }
+
             simulator.FillIn += (s, args) =>
             {
                 PMSMethods.SetTextBox(txtCompositionXRF, args);

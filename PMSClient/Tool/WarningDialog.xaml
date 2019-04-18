@@ -1,0 +1,22 @@
+﻿<Window x:Class="PMSClient.Tool.WarningDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.Tool"
+        mc:Ignorable="d"
+        Title="WarningDialog" Height="180" Width="400"
+        WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <Grid Background="Yellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Margin="10" Text="Warning" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" FontSize="40" Foreground="Red"
+                   FontWeight="Bold"/>
+        <TextBlock Name="TxtWarningMessage" Grid.Row="1" Margin="2" Text="信息" HorizontalAlignment="Center"
+                   TextWrapping="Wrap" FontSize="18" Foreground="Blue"/>
+
+    </Grid>
+</Window>

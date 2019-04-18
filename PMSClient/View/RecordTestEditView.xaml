@@ -123,7 +123,7 @@
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTCustomer}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <!--<TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource StyleTextBoxBig}" />-->
-                <ComboBox Grid.Row="8" Grid.Column="1" Name="cboCustomerNames"
+                <ComboBox  Grid.Row="8" Grid.Column="1" Name="cboCustomerNames"
                       Style="{StaticResource StyleComboBoxCommon}" HorizontalAlignment="Stretch"
                       ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                       SelectedItem="{Binding Customer}"/>
@@ -187,7 +187,7 @@
                     <Button Content="{StaticResource ButtonInput}" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnCsv_Click"/>
                     <Button Name="btnSimulator"
                             MouseDoubleClick="btnSimulator_MouseDoubleClick"
-                            Content="Sim"
+                            Content="S"
                             MinWidth="30"
                             Style="{StaticResource StyleButtonCommon}"/>
                 </StackPanel>
@@ -196,7 +196,7 @@
                          Text="{Binding CompositionXRF,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
                           AcceptsReturn="True"
                           VerticalScrollBarVisibility="Auto"
-                         Height="120"/>
+                          Height="120"/>
                 <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="需要选择CSV格式的文件"/>
 
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTSample}"

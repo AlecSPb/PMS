@@ -173,13 +173,15 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
+            #region 核验部分
 
+            #endregion
             //新建的时候检查产品ID是否正确
             if (IsNew)
             {
                 if (!CheckLogic.RecordTestCheckLogic.IsProductIDUnique(CurrentRecordTest.ProductID))
                 {
-                    PMSDialogService.ShowWarning("该产品ID有重复，无法保存，产品ID必须唯一，请仔细核对");
+                    RecordTestCheckLogic.ShowWarningDialog("该产品ID有重复，无法保存，产品ID必须唯一，请仔细核对");
                     return;
                 }
 
@@ -228,7 +230,13 @@ namespace PMSClient.ViewModel
                 }
             }
 
+            //BridgeLine成分检查警告
+            if (!RecordTestCheckLogic.IsBridgeLineCompositionOK(CurrentRecordTest.Customer,
+                CurrentRecordTest.CompositionXRF))
+            {
+                RecordTestCheckLogic.ShowWarningDialog("BridgeLine的成分测试需要有13点数据！");
 
+            }
 
             if (CurrentRecordTest.State == "作废")
             {
@@ -237,6 +245,33 @@ namespace PMSClient.ViewModel
                     return;
                 }
             }
+
+            //报废记录添加
+            if (CurrentRecordTest.FollowUps.Contains("报废"))
+            {
+                if (PMSDialogService.ShowYesNo("请问", "确定同时给[报废记录]当中添加该靶材信息吗？已经添加过的，请选择【否】"))
+                {
+
+                    var model =new FailureService.DcFailure();
+                    model.ID = Guid.NewGuid();
+                    model.CreateTime = DateTime.Now;
+                    model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                    model.ProductID = CurrentRecordTest.ProductID;
+                    model.Composition = CurrentRecordTest.Composition;
+                    model.Problem = "测试未通过";
+                    model.Details = CurrentRecordTest.PMINumber;
+                    model.Stage = "测试";
+                    model.Process = "无";
+                    model.Remark = CurrentRecordTest.Defects;
+                    model.State = PMSCommon.SimpleState.正常.ToString();
+
+                    using (var service=new FailureService.FailureServiceClient())
+                    {
+                        service.AddFailure(model);
+                    }
+                }
+            }
+
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;

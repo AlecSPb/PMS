@@ -22,16 +22,30 @@ namespace PMSClient.ToolWindow
         public CompositionSimulator()
         {
             InitializeComponent();
+            txtCondition.Text = point + composition_cigs;
+        }
+
+        public void SetForBridgeLine()
+        {
+            point = "13\r\n";
+            txtCondition.Text = point + composition_sag;
         }
 
         public event EventHandler<string> FillIn;
 
-
+        private string point= "5\r\n";
+        private string composition_cigs = "Cu+22.8\r\nIn+20\r\nGa+7\r\nSe+50.2";
+        private string composition_inse = "In+2\r\nSe+3";
+        private string composition_cgs = "Cu+1\r\nGa+1\r\nSe+2";
+        private string composition_sag = "Se+44\r\nAs+33\r\nGe+22";
+        private string composition_bitese = "Bi+39\r\nTe+59\r\nSe+2";
+        private string composition_bisbte = "Bi+9\r\nSb+31\r\nTe+60";
 
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+                txtCondition.Text = point + composition_cigs;
                 string input = txtCondition.Text;
                 if (string.IsNullOrEmpty(input)) return;
                 CompositionSimulatorHelper helper = new CompositionSimulatorHelper();
@@ -72,22 +86,22 @@ namespace PMSClient.ToolWindow
             switch (btn.Content.ToString())
             {
                 case "CIGS":
-                    txtCondition.Text = "5\r\nCu+22.8\r\nIn+20\r\nGa+7\r\nSe+50.2";
+                    txtCondition.Text = point+composition_cigs;
                     break;
                 case "InSe":
-                    txtCondition.Text = "5\r\nIn+2\r\nSe+3";
+                    txtCondition.Text = point+composition_inse;
                     break;
                 case "CuGaSe":
-                    txtCondition.Text = "5\r\nCu+1\r\nGa+1\r\nSe+2";
+                    txtCondition.Text = point+composition_cgs;
                     break;
                 case "BiTeSe":
-                    txtCondition.Text = "5\r\nBi+39\r\nTe+59\r\nSe+2";
+                    txtCondition.Text = point+composition_bitese;
                     break;
                 case "BiSbTe":
-                    txtCondition.Text = "5\r\nBi+9\r\nSb+31\r\nTe+60";
+                    txtCondition.Text = point+composition_bisbte;
                     break;
                 case "SeAsGe":
-                    txtCondition.Text = "5\r\nSe+44\r\nAs+33\r\nGe+22";
+                    txtCondition.Text = point+composition_sag;
                     break;
                 default:
                     break;
