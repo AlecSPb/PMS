@@ -163,13 +163,13 @@ namespace PMSClient.ViewModel
             GoToCounter = new RelayCommand(() =>
               {
                   NavigationService.GoTo(PMSViews.PMICounter);
-              }, () => _session.IsAuthorized(PMSAccess.ReadProduct));
+              }, () => _session.IsAuthorized(PMSAccess.ReadMaterialInventoryIn));
 
             //储备库存
             GoToRemainInventory = new RelayCommand(() =>
               {
                 NavigationService.GoTo(PMSViews.RemainInventory);
-              }, ()=>_session.IsAuthorized(PMSAccess.ReadProduct));
+              }, ()=>_session.IsAuthorized(PMSAccess.ReadMaterialInventoryIn));
             #endregion
         }
 

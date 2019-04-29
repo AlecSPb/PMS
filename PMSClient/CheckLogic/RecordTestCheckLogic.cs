@@ -92,7 +92,7 @@ namespace PMSClient.CheckLogic
             if (customerName.ToLower().Contains("bridgeline"))
             {
                 int line_count = composition.Split('\r').Length;
-                return line_count > 15;
+                return line_count >= 15;
             }
             return true;
         }

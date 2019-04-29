@@ -45,7 +45,6 @@ namespace PMSClient.ToolWindow
         {
             try
             {
-                txtCondition.Text = point + composition_cigs;
                 string input = txtCondition.Text;
                 if (string.IsNullOrEmpty(input)) return;
                 CompositionSimulatorHelper helper = new CompositionSimulatorHelper();

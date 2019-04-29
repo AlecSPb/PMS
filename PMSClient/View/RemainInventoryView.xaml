@@ -67,6 +67,8 @@
                                     Binding="{Binding Details}"/>
                 <DataGridTextColumn Header="{StaticResource CCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
+                <DataGridTextColumn Header="{StaticResource CState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding State}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"

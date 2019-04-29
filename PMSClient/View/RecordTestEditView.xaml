@@ -137,13 +137,13 @@
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtWeight" Grid.Row="10" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxBig}" />
+                <TextBox Name="TxtWeight" Grid.Row="10" Grid.Column="1" Text="{Binding Weight,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxBig}" />
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="单位：g"/>
 
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RTDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="TxtDensity" Grid.Row="10" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxBig}" 
+                    <TextBox Name="TxtDensity" Grid.Row="10" Grid.Column="1" Text="{Binding Density,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxBig}" 
                              HorizontalAlignment="Left"/>
                     <Button Name="btnCalculator" Click="BtnCalculator_Click" Content="计算器" Style="{StaticResource StyleButtonCommon}"/>
                 </StackPanel>
@@ -152,7 +152,7 @@
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RTResistance}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="12" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtResistance" Text="{Binding Resistance}"
+                    <TextBox Name="txtResistance" Text="{Binding Resistance,UpdateSourceTrigger=PropertyChanged}"
                              Style="{StaticResource StyleTextBoxBig}"  Width="200"/>
                     <Button Content="超限" Style="{StaticResource StyleButtonCommon}" Click="BtnResistance_Click"/>
                 </StackPanel>
@@ -161,7 +161,7 @@
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
-                    <TextBox Name="TxtDimension" Text="{Binding DimensionActual}"
+                    <TextBox Name="TxtDimension" Text="{Binding DimensionActual,UpdateSourceTrigger=PropertyChanged}"
                              Style="{StaticResource StyleTextBoxBig}" Width="200" />
                     <Button Content="选择" Style="{StaticResource StyleButtonCommon}"
                             Command="{Binding DataContext.SelectDimensionActual,
@@ -176,7 +176,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="14" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="TxtDefects" Style="{StaticResource StyleTextBoxCommon}"
-                             Text="{Binding Defects}" Width="200" />
+                             Text="{Binding Defects,UpdateSourceTrigger=PropertyChanged}" Width="200" />
                     <Button Content="缺陷" Style="{StaticResource StyleButtonCommon}"
                             Name="BtnDefects" Click="BtnDefects_Click"/>
                 </StackPanel>
@@ -207,7 +207,7 @@
 
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RTRoughness}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtRoughness" Grid.Row="18" Grid.Column="1" Text="{Binding Roughness}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox Name="TxtRoughness" Grid.Row="18" Grid.Column="1" Text="{Binding Roughness,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxBig}"/>
 
                 <StackPanel Grid.Row="18" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnRoughness" Content="标准格式" Style="{StaticResource StyleButtonCommon}"

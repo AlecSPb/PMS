@@ -15,7 +15,7 @@ namespace PMSClient.ViewModel
         public RemainInventoryEditVM()
         {
             States = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.SimpleState>(States);
+            PMSBasicDataService.SetListDS<PMSCommon.InventoryState>(States);
 
             InitializeCommands();
         }
