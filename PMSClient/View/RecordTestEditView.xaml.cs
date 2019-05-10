@@ -103,6 +103,11 @@ namespace PMSClient.View
             CboFollowUps.SelectedItem = "绑定";
         }
 
+        private void BtnFail_Click(object sender, RoutedEventArgs e)
+        {
+            CboFollowUps.SelectedItem = "作废";
+        }
+
         private void BtnDefects_Click(object sender, RoutedEventArgs e)
         {
             var win = new ToolWindow.TargetDefects();
@@ -173,5 +178,6 @@ namespace PMSClient.View
         {
             PMSMethods.SetTextBox(TxtQC, "A=;B=;");
         }
+
     }
 }

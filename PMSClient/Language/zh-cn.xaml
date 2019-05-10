@@ -207,7 +207,8 @@
     <sys:String x:Key="ButtonAll">全部</sys:String>
     <sys:String x:Key="ButtonSave">保存</sys:String>
     <sys:String x:Key="ButtonAdd">添加</sys:String>
-    <sys:String x:Key="ButtonQuickAdd">快速添加</sys:String>
+    <sys:String x:Key="ButtonQuickAdd">快改</sys:String>
+    <sys:String x:Key="ButtonQuickChange">快速更改</sys:String>
     <sys:String x:Key="ButtonEdit">编辑</sys:String>
     <sys:String x:Key="ButtonDuplicate">复用</sys:String>
     <sys:String x:Key="ButtonBatchDuplicate">复用</sys:String>

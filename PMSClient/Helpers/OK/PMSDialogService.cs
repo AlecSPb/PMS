@@ -10,6 +10,10 @@ namespace PMSClient
 {
     public static class PMSDialogService
     {
+        public static void ShowToDo()
+        {
+            MessageBox.Show("这个功能还没有实现");
+        }
         public static bool ShowYesNo(string title, string content)
         {
             var result = MessageBox.Show(content, title, MessageBoxButton.YesNo, MessageBoxImage.Question);

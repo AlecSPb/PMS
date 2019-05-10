@@ -81,6 +81,8 @@
                           Style="{StaticResource StyleComboBoxCommon}"/>
                     <Button Style="{StaticResource StyleButtonCommon}" Content="绑定"
                             Name="BtnBonding" Click="BtnBonding_Click"/>
+                    <Button Style="{StaticResource StyleButtonCommon}" Content="作废"
+                            Name="BtnFail" Click="BtnFail_Click"/>
                 </StackPanel>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="#后续工作类型"/>
 

@@ -29,6 +29,19 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             Duplicate = new RelayCommand<DcPMICounter>(ActionDuplicate, CanDuplicate);
+            QuickChange = new RelayCommand<DcPMICounter>(ActionQuickChange, CanQuickChange);
+
+        }
+
+        private bool CanQuickChange(DcPMICounter arg)
+        {
+            return CanAdd();
+        }
+
+        private void ActionQuickChange(DcPMICounter obj)
+        {
+            //TODO
+            PMSDialogService.ShowToDo();
         }
 
         private void ActionDuplicate(DcPMICounter obj)
@@ -129,6 +142,7 @@ namespace PMSClient.ViewModel
         public ObservableCollection<DcPMICounter> PMICounters { get; set; }
 
         public RelayCommand Add { get; set; }
+        public RelayCommand<DcPMICounter> QuickChange { get; set; }
         public RelayCommand<DcPMICounter> Edit { get; set; }
         public RelayCommand<DcPMICounter> Duplicate { get; set; }
         #endregion

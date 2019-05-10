@@ -127,7 +127,7 @@ namespace PMSClient.ViewModel
 
 
                         window.WindowContent = sb.ToString();
-                        window.ShowDialog();
+                        window.Show();
                     }
                 }
             }
