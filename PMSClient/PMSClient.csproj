@@ -351,6 +351,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ToolDialog\PMICounterEditType.cs" />
+    <Compile Include="ToolDialog\PMICounterQuickEditDialog.xaml.cs">
+      <DependentUpon>PMICounterQuickEditDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolDialog\QuickRemainInventoryWindow.xaml.cs">
       <DependentUpon>QuickRemainInventoryWindow.xaml</DependentUpon>
     </Compile>
@@ -978,6 +982,10 @@
     <Page Include="Resource\Styles\XSStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToolDialog\PMICounterQuickEditDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolDialog\QuickRemainInventoryWindow.xaml">
       <SubType>Designer</SubType>
@@ -2070,12 +2078,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

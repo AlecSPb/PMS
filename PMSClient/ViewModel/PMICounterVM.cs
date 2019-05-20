@@ -13,7 +13,7 @@ namespace PMSClient.ViewModel
     {
         public PMICounterVM()
         {
-            searchItemName=searchItemGroup = "";
+            searchItemName = searchItemGroup = "";
             PMICounters = new ObservableCollection<DcPMICounter>();
 
             InitializeCommands();
@@ -41,7 +41,26 @@ namespace PMSClient.ViewModel
         private void ActionQuickChange(DcPMICounter obj)
         {
             //TODO
-            PMSDialogService.ShowToDo();
+            //PMSDialogService.ShowToDo();
+            var dialog = new ToolDialog.PMICounterQuickEditDialog();
+            dialog.ShowDialog();
+            if (dialog.EditType == ToolDialog.PMICounterEditType.IsCancel)
+                return;
+            else if (dialog.EditType == ToolDialog.PMICounterEditType.IsAdd)
+            {
+                obj.ItemCount += dialog.Counter;
+            }
+            else
+            {
+                obj.ItemCount -= dialog.Counter;
+
+            }
+            using (var service = new PMICounterServiceClient())
+            {
+                service.UpdatePMICounter(obj);
+                SetPageParametersWhenConditionChange();
+
+            }
         }
 
         private void ActionDuplicate(DcPMICounter obj)
@@ -64,7 +83,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            SearchItemName=SearchItemGroup = "";
+            SearchItemName = SearchItemGroup = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -122,7 +141,7 @@ namespace PMSClient.ViewModel
             PageSize = 30;
             using (var service = new PMICounterServiceClient())
             {
-                RecordCount = service.GetPMICounterCount(SearchItemGroup,SearchItemName);
+                RecordCount = service.GetPMICounterCount(SearchItemGroup, SearchItemName);
             }
             ActionPaging();
         }
