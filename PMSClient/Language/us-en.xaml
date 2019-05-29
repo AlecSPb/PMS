@@ -605,6 +605,7 @@
     <sys:String x:Key="RTFollowUp">Follow Up</sys:String>
     <sys:String x:Key="RTRoughness">Roughness</sys:String>
     <sys:String x:Key="RTWarping">Warping</sys:String>
+    <sys:String x:Key="RTBP">BP</sys:String>
     <sys:String x:Key="RTQC">QC</sys:String>
     <!--Delivery-->
     <sys:String x:Key="RDCreator">Creator</sys:String>

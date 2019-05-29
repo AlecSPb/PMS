@@ -105,7 +105,7 @@ namespace PMSClient.View
 
         private void BtnFail_Click(object sender, RoutedEventArgs e)
         {
-            CboFollowUps.SelectedItem = "作废";
+            CboFollowUps.SelectedItem = "报废";
         }
 
         private void BtnDefects_Click(object sender, RoutedEventArgs e)

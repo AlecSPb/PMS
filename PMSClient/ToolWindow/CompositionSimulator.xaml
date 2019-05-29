@@ -46,8 +46,12 @@
             </TextBlock>
         </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal"  Background="Orange">
-            <Button Name="BtnCreate" Click="BtnCreate_Click" Content="模拟" Style="{StaticResource StyleButtonCommon}"/>
-            <Button Name="BtnFill" Click="BtnFill_Click" Content="填入" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Name="BtnRead" Click="BtnRead_Click" Content="读取" 
+                    Style="{StaticResource StyleButtonCommon}"/>
+            <Button Name="BtnCreate" Click="BtnCreate_Click" Content="模拟" 
+                    Style="{StaticResource StyleButtonCommon}"/>
+            <Button Name="BtnFill" Click="BtnFill_Click" Content="填入" 
+                    Style="{StaticResource StyleButtonCommon}"/>
         </StackPanel>
         <TextBox Name="txtCsv" Grid.Row="3" Margin="3" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
     </Grid>

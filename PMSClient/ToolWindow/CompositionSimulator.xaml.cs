@@ -106,5 +106,10 @@ namespace PMSClient.ToolWindow
                     break;
             }
         }
+
+        private void BtnRead_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

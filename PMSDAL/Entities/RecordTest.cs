@@ -39,7 +39,8 @@ namespace PMSDAL
         [DefaultValue("未定")]
         public string FollowUps { get; set; }
 
-
+        [DefaultValue("无")]
+        public string BackingPlateLot { get; set; }
         public string Roughness { get; set; }
     }
 }

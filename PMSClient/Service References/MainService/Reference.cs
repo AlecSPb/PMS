@@ -5521,6 +5521,9 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BackingPlateLotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5602,6 +5605,19 @@ namespace PMSClient.MainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BackingPlateLot {
+            get {
+                return this.BackingPlateLotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BackingPlateLotField, value) != true)) {
+                    this.BackingPlateLotField = value;
+                    this.RaisePropertyChanged("BackingPlateLot");
+                }
             }
         }
         

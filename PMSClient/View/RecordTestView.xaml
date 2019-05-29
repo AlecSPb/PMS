@@ -196,7 +196,8 @@
                                             Binding="{Binding RecordTest.Warping}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource RTQC}"
                                             Binding="{Binding RecordTest.QC}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-
+                        <DataGridTextColumn Header="{StaticResource RTBP}"
+                                            Binding="{Binding RecordTest.BackingPlateLot}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTemplateColumn Header="{StaticResource RTRemark}">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate >
@@ -252,6 +253,7 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
+                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="0*"/>
@@ -324,6 +326,10 @@
                             <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTQC}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                             <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding RecordTest.QC}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            
+                            <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RTBP}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding RecordTest.BackingPlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
 
                         </Grid>

@@ -40,6 +40,8 @@ namespace PMSDAL
         public string Warping { get; set; }
         public string QC { get; set; }
 
+        [DefaultValue("无")]
+        public string BackingPlateLot { get; set; }
         //操作者和操作时间
         [Key]
         public Guid HistoryID { get; set; }

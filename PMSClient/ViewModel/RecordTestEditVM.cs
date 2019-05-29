@@ -82,6 +82,7 @@ namespace PMSClient.ViewModel
             model.Roughness = "无";
             model.Warping = "未知";
             model.QC = "无";
+            model.BackingPlateLot = "无";
             #endregion
             CurrentRecordTest = model;
         }
