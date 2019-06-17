@@ -177,24 +177,25 @@ namespace PMSClient.ViewModel
             #region 核验部分
 
             #endregion
+
             //新建的时候检查产品ID是否正确
-            if (IsNew)
+            //if (IsNew)
+            //{
+            if (!CheckLogic.RecordTestCheckLogic.IsProductIDUnique(CurrentRecordTest.ProductID))
             {
-                if (!CheckLogic.RecordTestCheckLogic.IsProductIDUnique(CurrentRecordTest.ProductID))
+                RecordTestCheckLogic.ShowWarningDialog("该产品ID有重复，无法保存，产品ID必须唯一，请仔细核对");
+                return;
+            }
+
+            if (!CheckLogic.RecordTestCheckLogic.IsProductIDLogic(CurrentRecordTest.ProductID,
+                CurrentRecordTest.Dimension))
+            {
+                if (!PMSDialogService.ShowYesNo("提醒", "改产品ID可能不符合生产惯例,即热压日期1到2天（230mm）后才测试，要继续保存吗？"))
                 {
-                    RecordTestCheckLogic.ShowWarningDialog("该产品ID有重复，无法保存，产品ID必须唯一，请仔细核对");
                     return;
                 }
-
-                if (!CheckLogic.RecordTestCheckLogic.IsProductIDLogic(CurrentRecordTest.ProductID,
-                    CurrentRecordTest.Dimension))
-                {
-                    if (!PMSDialogService.ShowYesNo("提醒","改产品ID可能不符合生产惯例,即热压日期1到2天（230mm）后才测试，要继续保存吗？"))
-                    {
-                        return;
-                    }
-                }
             }
+            //}
 
 
             string composition = CurrentRecordTest.CompositionXRF;
@@ -253,7 +254,7 @@ namespace PMSClient.ViewModel
                 if (PMSDialogService.ShowYesNo("请问", "确定同时给[报废记录]当中添加该靶材信息吗？已经添加过的，请选择【否】"))
                 {
 
-                    var model =new FailureService.DcFailure();
+                    var model = new FailureService.DcFailure();
                     model.ID = Guid.NewGuid();
                     model.CreateTime = DateTime.Now;
                     model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
@@ -266,7 +267,7 @@ namespace PMSClient.ViewModel
                     model.Remark = CurrentRecordTest.Defects;
                     model.State = PMSCommon.SimpleState.正常.ToString();
 
-                    using (var service=new FailureService.FailureServiceClient())
+                    using (var service = new FailureService.FailureServiceClient())
                     {
                         service.AddFailure(model);
                     }

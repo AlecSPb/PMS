@@ -179,5 +179,9 @@ namespace PMSClient.View
             PMSMethods.SetTextBox(TxtQC, "A=;B=;");
         }
 
+        private void btnAddBP_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtBP, $"{DateTime.Today.ToString("yyMMdd")}-BP-1");
+        }
     }
 }

@@ -250,7 +250,12 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Name="TxtBP" Grid.Row="21" Grid.Column="1" Text="{Binding BackingPlateLot}" 
                          Style="{StaticResource StyleTextBoxBig}"/>
-                
+                <StackPanel Grid.Row="21" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="辅助填写" Name="btnAddBP" Style="{StaticResource StyleButtonCommon}" Click="btnAddBP_Click"/>
+                    <TextBlock Grid.Row="21" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="如附带有背板，请在此处填写对应背板Lot号，如果没有填无"/>
+                </StackPanel>
+
                 <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Name="txtRemark" Grid.Row="22" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>

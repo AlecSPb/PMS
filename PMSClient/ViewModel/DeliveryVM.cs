@@ -418,7 +418,7 @@ namespace PMSClient.ViewModel
                         {
                             using (var s_bonding = new RecordBondingServiceClient())
                             {
-                                var bonding = s_bonding.GetRecordBondingByProductID(item.ProductID)
+                                var bonding = s_bonding.GetRecordBondingByProductID(item.ProductID.Trim())
                                     .FirstOrDefault();
                                 if (bonding != null)
                                 {

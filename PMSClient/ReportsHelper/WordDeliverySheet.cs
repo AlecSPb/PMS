@@ -1,12 +1,8 @@
 ﻿using Novacode;
 using PMSClient.MainService;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
 
 
 namespace PMSClient.ReportsHelper
@@ -78,8 +74,8 @@ namespace PMSClient.ReportsHelper
                         {
                             var result = service.GetDeliveryItemByDeliveryID(model.ID)
                                 .OrderBy(i => i.OrderNumber)
-                                .ThenBy(i=>i.PackNumber)
-                                .ThenBy(i=>i.ProductID);
+                                .ThenBy(i => i.PackNumber)
+                                .ThenBy(i => i.ProductID);
                             int rownumber = 1;
                             int datanumber = 1;
 
@@ -87,6 +83,71 @@ namespace PMSClient.ReportsHelper
                             {
                                 mainTable.Rows[rownumber].Cells[0].Paragraphs[0].Append(datanumber.ToString()).FontSize(10).Alignment = Alignment.center;
                                 mainTable.Rows[rownumber].Cells[1].Paragraphs[0].Append(item.ProductID).FontSize(10);
+
+                                mainTable.Rows[rownumber].Cells[3].Paragraphs[0].Append(item.Composition).FontSize(10);
+                                mainTable.Rows[rownumber].Cells[4].Paragraphs[0].Append(item.Customer).FontSize(10);
+                                mainTable.Rows[rownumber].Cells[5].Paragraphs[0].Append(item.PO).FontSize(10);
+                                mainTable.Rows[rownumber].Cells[6].Paragraphs[0].Append(item.Dimension).FontSize(10);
+                                mainTable.Rows[rownumber].Cells[7].Paragraphs[0].Append(item.PackNumber.ToString())
+                                    .FontSize(10).Alignment = Alignment.center;
+
+
+                                if (item.ProductType != "背板")
+                                {
+                                    //查找230mm靶材的[绑定记录],并填写到背板编号栏
+                                    if (item.Dimension.Trim().StartsWith("230"))
+                                    {
+                                        try
+                                        {
+                                            using (var s_bonding = new RecordBondingServiceClient())
+                                            {
+                                                var bonding = s_bonding.GetRecordBondingByProductID(item.ProductID)
+                                                    .FirstOrDefault();
+                                                if (bonding != null)
+                                                {
+                                                    string bp_lot = bonding.PlateLot;
+                                                    mainTable.Rows[rownumber].Cells[8].Paragraphs[0]
+                                                        .Append(bp_lot)
+                                                        .FontSize(10).Alignment = Alignment.left;
+
+                                                    if (bp_lot.EndsWith("A"))
+                                                    {
+                                                        mainTable.Rows[rownumber].Cells[9].Paragraphs[0]
+                                                            .Append("old")
+                                                            .FontSize(10).Alignment = Alignment.left;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        catch (Exception)
+                                        {
+
+                                        }
+                                    }
+                                    else//在[测试记录]中查找非绑定靶材的背板记录
+                                    {
+                                        try
+                                        {
+                                            using (var s_recordTest = new RecordTestServiceClient())
+                                            {
+                                                var test = s_recordTest.GetRecordTestByProductID(item.ProductID).FirstOrDefault();
+                                                if (test != null)
+                                                {
+                                                    string bp_lot = test.BackingPlateLot;
+                                                    mainTable.Rows[rownumber].Cells[8].Paragraphs[0]
+                                                    .Append(bp_lot)
+                                                    .FontSize(10).Alignment = Alignment.left;
+                                                }
+                                            }
+                                        }
+                                        catch (Exception)
+                                        {
+
+                                        }
+                                    }
+                                }
+
+                                //按照文档中英文类型更改类型文字
                                 string itemType = "";
                                 if (sheetType == "English")
                                 {
@@ -95,7 +156,7 @@ namespace PMSClient.ReportsHelper
                                         itemType = "Target";
 
                                     }
-                                    else if(item.ProductType.Contains("背板"))
+                                    else if (item.ProductType.Contains("背板"))
                                     {
                                         itemType = "BP";
 
@@ -115,43 +176,8 @@ namespace PMSClient.ReportsHelper
                                     itemType = item.ProductType;
                                 }
                                 mainTable.Rows[rownumber].Cells[2].Paragraphs[0].Append(itemType).FontSize(10);
-                                mainTable.Rows[rownumber].Cells[3].Paragraphs[0].Append(item.Composition).FontSize(10);
-                                mainTable.Rows[rownumber].Cells[4].Paragraphs[0].Append(item.Customer).FontSize(10);
-                                mainTable.Rows[rownumber].Cells[5].Paragraphs[0].Append(item.PO).FontSize(10);
-                                mainTable.Rows[rownumber].Cells[6].Paragraphs[0].Append(item.Dimension).FontSize(10);
-                                mainTable.Rows[rownumber].Cells[7].Paragraphs[0].Append(item.PackNumber.ToString())
-                                    .FontSize(10).Alignment = Alignment.center;
 
-                                //查找230mm靶材的绑定记录
-                                if (item.Dimension.Trim().StartsWith("230"))
-                                {
-                                    try
-                                    {
-                                        using (var s_bonding = new RecordBondingServiceClient())
-                                        {
-                                            var bonding = s_bonding.GetRecordBondingByProductID(item.ProductID)
-                                                .FirstOrDefault();
-                                            if (bonding != null)
-                                            {
-                                                string bp_lot = bonding.PlateLot;
-                                                mainTable.Rows[rownumber].Cells[8].Paragraphs[0]
-                                                    .Append(bp_lot)
-                                                    .FontSize(10).Alignment = Alignment.left;
 
-                                                if (bp_lot.EndsWith("A"))
-                                                {
-                                                    mainTable.Rows[rownumber].Cells[9].Paragraphs[0]
-                                                        .Append("old")
-                                                        .FontSize(10).Alignment = Alignment.left;
-                                                }
-                                            }
-                                        }
-                                    }
-                                    catch (Exception)
-                                    {
-
-                                    }
-                                }
 
                                 mainTable.InsertRow();
                                 datanumber++;

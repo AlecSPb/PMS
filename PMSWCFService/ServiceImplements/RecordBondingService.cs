@@ -79,7 +79,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.RecordBondings
-                                where p.TargetProductID == productid
+                                where p.TargetProductID.Trim() == productid.Trim()
                                 && p.State != BondingState.作废.ToString()
                                 orderby DbFunctions.TruncateTime(p.CreateTime) descending,
                                     p.PlanBatchNumber descending, p.TargetProductID descending
