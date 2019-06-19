@@ -8,7 +8,6 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSXMLCreator.MainService;
 
-
 namespace PMSXMLCreator
 {
     public class MainWindowViewModel : ViewModelBase
@@ -40,22 +39,24 @@ namespace PMSXMLCreator
         {
             if (model == null) return null;
 
-            var temp = new ECOA();
-            temp.ProductID = model.ProductID;
-            temp.ProductName = model.Composition;
-            temp.PONumber = model.PO;
-            
-            temp.DeliveryTo = "TCB";
-            temp.ScheduledShipDate = DateTime.Today;
-            temp.ActualShipDate = DateTime.Today.AddDays(12);
+            var temp = new ECOA
+            {
+                ProductID = model.ProductID,
+                ProductName = model.Composition,
+                PONumber = model.PO,
 
-            temp.Weight = model.Weight;
-            temp.Density = model.Density;
-            temp.ActualDimension = model.DimensionActual;
+                DeliveryTo = "TCB",
+                ScheduledShipDate = DateTime.Today,
+                ActualShipDate = DateTime.Today.AddDays(12),
 
-            temp.Resistance = model.Resistance;
-            temp.GDMS = "Li=0 B=0 P=0 F=0";
-            temp.Composition = model.CompositionXRF;
+                Weight = model.Weight,
+                Density = model.Density,
+                ActualDimension = model.DimensionActual,
+
+                Resistance = model.Resistance,
+                GDMS = "Li=0 B=0 P=0 F=0",
+                Composition = model.CompositionXRF
+            };
             return temp;
         }
 
@@ -64,9 +65,15 @@ namespace PMSXMLCreator
             return true;
         }
 
+        private ECOAXMLHelper helper = new ECOAXMLHelper();
         private void ActionCreate()
         {
-            throw new NotImplementedException();
+            if (CurrentCOA == null)
+            {
+                CommonHelper.ShowMessage("当前数据模型为空");
+                return;
+            }
+            helper.CreateXMLFile(CurrentCOA);
         }
 
         private bool CanSearch()

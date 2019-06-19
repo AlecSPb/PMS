@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSXMLCreator"
         mc:Ignorable="d"
-        WindowState="Maximized"
-        Title="XML Format eCoA Creater" Height="900" Width="800">
+        Icon="xml.png"
+        WindowStartupLocation="CenterScreen"
+        Title="XML Format eCoA Creater" Height="750" Width="1200">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="200"/>
+            <RowDefinition Height="150"/>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -26,7 +27,10 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Select" Style="{StaticResource StyleDGButton}"/>
+                            <Button Content="Select" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Select,
+                                RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                    CommandParameter="{Binding}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -49,9 +53,9 @@
                         Command="{Binding Create}"/>
             </StackPanel>
         </Grid>
-        <ScrollViewer Grid.Row="3" Margin="5" VerticalScrollBarVisibility="Auto" 
-                      HorizontalScrollBarVisibility="Disabled">
-            <Grid DataContext="{Binding CurrentCOA}">
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" 
+                      HorizontalScrollBarVisibility="Disabled" Background="Wheat">
+            <Grid DataContext="{Binding CurrentCOA}" Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -79,7 +83,7 @@
                 <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="Product ID"/>
                 <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding ProductID}"/>
+                     Text="{Binding ProductID}" FontWeight="Bold"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text=""/>
 

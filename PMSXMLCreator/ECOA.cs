@@ -10,22 +10,24 @@ namespace PMSXMLCreator
     {
         public static ECOA NewInstance()
         {
-            ECOA model = new ECOA();
-            model.ID = Guid.NewGuid();
-            model.ProductID = $"{DateTime.Today.ToString("yyMMdd")}-C-1";
-            model.ProductName = "Se44As33Ge22";
-            model.PONumber = "123456";
-            model.DeliveryTo = "TCB";
-            model.ScheduledShipDate = DateTime.Today.AddDays(10);
-            model.ActualShipDate = DateTime.Today.AddDays(12);
+            ECOA model = new ECOA
+            {
+                ID = Guid.NewGuid(),
+                ProductID = $"{DateTime.Today.ToString("yyMMdd")}-C-1",
+                ProductName = "Se44As33Ge22",
+                PONumber = "123456",
+                DeliveryTo = "TCB",
+                ScheduledShipDate = DateTime.Today.AddDays(10),
+                ActualShipDate = DateTime.Today.AddDays(12),
 
-            model.Weight = "5040";
-            model.Density = "4.3";
-            model.Resistance = "OutOfRange";
-            model.ActualDimension = "440mm ODx 7.8mm thickness";
+                Weight = "5040",
+                Density = "4.3",
+                Resistance = "OutOfRange",
+                ActualDimension = "440mm ODx 7.8mm thickness",
 
-            model.Composition = "none";
-            model.GDMS = "Li=30 B=40 P=56 F=23";
+                Composition = "none",
+                GDMS = "Li=30 B=40 P=56 F=23"
+            };
 
             return model;
         }
