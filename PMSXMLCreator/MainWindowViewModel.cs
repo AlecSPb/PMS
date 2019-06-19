@@ -20,7 +20,7 @@ namespace PMSXMLCreator
 
         private void Initialize()
         {
-            SearchProductID = "190615-F-1";
+            SearchProductID = "190615";
             CurrentCOA = ECOA.NewInstance();
             RecordTests = new ObservableCollection<DcRecordTest>();
 
