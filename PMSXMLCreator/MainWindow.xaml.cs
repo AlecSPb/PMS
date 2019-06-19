@@ -23,6 +23,7 @@ namespace PMSXMLCreator
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel();
         }
     }
 }
