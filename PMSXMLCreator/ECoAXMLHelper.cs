@@ -94,6 +94,8 @@ namespace PMSXMLCreator
             SingleMaterialParameter(writer, "Resistance", "Resistance", "ohm cm", "Value", model.Resistance);
             SingleMaterialParameter(writer, "Actual Dimension", "Actual Dimension", "mm", "Value", model.ActualDimension);
 
+            AddGDMSPart(writer, model.GDMS);
+
             writer.WriteEndElement();
             #endregion
 
@@ -121,8 +123,8 @@ namespace PMSXMLCreator
         }
 
 
-        public void SingleMaterialParameter(XmlWriter writer,
-            string  character,string shortname,string unit,string mtype,string mvalue)
+        private void SingleMaterialParameter(XmlWriter writer,
+            string character, string shortname, string unit, string mtype, string mvalue)
         {
             writer.WriteStartElement("MaterialParameter");
             writer.WriteElementString("Characteristic", character);
@@ -138,5 +140,38 @@ namespace PMSXMLCreator
 
             writer.WriteEndElement();
         }
+
+        private void AddGDMSPart(XmlWriter writer, string gdms)
+        {
+            string[] items = gdms.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (items.Length > 0)
+            {
+                writer.WriteStartElement("MaterialParameter");
+                writer.WriteElementString("Characteristic", "GDMS Items");
+                writer.WriteElementString("ShortName", "GDMS");
+                writer.WriteElementString("UnitOfMeasure", "ppm");
+                writer.WriteStartElement("Measurements");
+
+                foreach (var item in items)
+                {
+                    string[] temp = item.Split(new char[] { '=' }, StringSplitOptions.RemoveEmptyEntries);
+                    if (temp.Length >= 2)
+                    {
+                        writer.WriteStartElement("Measurement");
+                        writer.WriteElementString("MeasurementType", $"GDMS-{temp[0]}");
+                        writer.WriteElementString("MeasurementValue", temp[1]);
+
+                        writer.WriteEndElement();
+                    }
+
+                }
+
+
+                writer.WriteEndElement();
+                writer.WriteEndElement();
+            }
+        }
+
     }
 }
