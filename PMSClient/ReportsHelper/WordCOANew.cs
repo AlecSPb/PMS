@@ -54,6 +54,18 @@ namespace PMSClient.ReportsHelper
                     string productid = (model.CompositionAbbr ?? "") + "-" + (model.ProductID ?? "");
                     document.ReplaceText("[ProductID]", productid ?? "");
                     document.ReplaceText("[PO]", model.PO ?? "");
+
+                    string purity = "99.995%默认";
+                    using (var orderService=new OrderServiceClient())
+                    {
+                        var order = orderService.GetOrderByPMINumber(model.PMINumber);
+                        if (order != null)
+                        {
+                            purity = order.Purity;
+                        }
+                    }
+                    document.ReplaceText("[Purity]", purity);
+
                     document.ReplaceText("[COADate]", DateTime.Now.ToString("MM/dd/yyyy"));
                     document.ReplaceText("[Composition]", model.Composition ?? "");
                     document.ReplaceText("[Dimension]", COAHelper.StandardizeDimension(model.Dimension) ?? "");

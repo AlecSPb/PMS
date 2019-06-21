@@ -58,6 +58,17 @@ namespace PMSClient.ReportsHelper
                     document.ReplaceText("[PO]", model.PO ?? "");
                     document.ReplaceText("[COADate]", DateTime.Now.ToString("MM/dd/yyyy"));
 
+                    string purity = "99.995%默认";
+                    using (var orderService = new OrderServiceClient())
+                    {
+                        var order = orderService.GetOrderByPMINumber(model.PMINumber);
+                        if (order != null)
+                        {
+                            purity = order.Purity;
+                        }
+                    }
+                    document.ReplaceText("[Purity]", purity);
+
                     document.ReplaceText("[Composition]", model.Composition ?? "");
                     document.ReplaceText("[Weight]", model.Weight ?? "");
                     document.ReplaceText("[Density]", model.Density ?? "");

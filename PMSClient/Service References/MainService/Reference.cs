@@ -8550,6 +8550,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetUnFinishedTargetCount", ReplyAction="http://tempuri.org/IOrderService/GetUnFinishedTargetCountResponse")]
         System.Threading.Tasks.Task<double> GetUnFinishedTargetCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderByPMINumber", ReplyAction="http://tempuri.org/IOrderService/GetOrderByPMINumberResponse")]
+        PMSClient.MainService.DcOrder GetOrderByPMINumber(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderByPMINumber", ReplyAction="http://tempuri.org/IOrderService/GetOrderByPMINumberResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder> GetOrderByPMINumberAsync(string pminumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8745,6 +8751,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<double> GetUnFinishedTargetCountAsync() {
             return base.Channel.GetUnFinishedTargetCountAsync();
+        }
+        
+        public PMSClient.MainService.DcOrder GetOrderByPMINumber(string pminumber) {
+            return base.Channel.GetOrderByPMINumber(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder> GetOrderByPMINumberAsync(string pminumber) {
+            return base.Channel.GetOrderByPMINumberAsync(pminumber);
         }
     }
     

@@ -575,5 +575,28 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public DcOrder GetOrderByPMINumber(string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var result = mapper.Map<PMSOrder, DcOrder>(
+                        dc.Orders.Where(i=>i.PMINumber==pminumber).FirstOrDefault());
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

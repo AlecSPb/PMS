@@ -67,5 +67,9 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         double GetUnFinishedTargetCount();
+
+
+        [OperationContract]
+        DcOrder GetOrderByPMINumber(string pminumber);
     }
 }

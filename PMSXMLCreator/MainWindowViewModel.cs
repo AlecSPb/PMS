@@ -44,6 +44,7 @@ namespace PMSXMLCreator
                 ProductID = model.ProductID,
                 ProductName = model.Composition,
                 PONumber = model.PO,
+                ProductAbbr = model.CompositionAbbr,
 
                 DeliveryTo = "TCB",
                 ScheduledShipDate = DateTime.Today,
@@ -55,7 +56,7 @@ namespace PMSXMLCreator
 
                 Resistance = model.Resistance,
                 GDMS = "Li=0 B=0 P=0 F=0",
-                Composition = model.CompositionXRF
+                XRF = model.CompositionXRF
             };
             return temp;
         }

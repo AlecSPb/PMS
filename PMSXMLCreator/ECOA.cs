@@ -15,6 +15,7 @@ namespace PMSXMLCreator
                 ID = Guid.NewGuid(),
                 ProductID = $"{DateTime.Today.ToString("yyMMdd")}-C-1",
                 ProductName = "Se44As33Ge22",
+                ProductAbbr="SeAsGe",
                 PONumber = "123456",
                 DeliveryTo = "TCB",
                 ScheduledShipDate = DateTime.Today.AddDays(10),
@@ -25,7 +26,7 @@ namespace PMSXMLCreator
                 Resistance = "OutOfRange",
                 ActualDimension = "440mm ODx 7.8mm thickness",
 
-                Composition = "none",
+                XRF = "none",
                 GDMS = "Li=30 B=40 P=56 F=23"
             };
 
@@ -34,6 +35,7 @@ namespace PMSXMLCreator
         public Guid ID { get; set; }
 
         public string ProductID { get; set; }
+        public string ProductAbbr { get; set; }
         public string ProductName { get; set; }
         public string PONumber { get; set; }
 
@@ -47,7 +49,7 @@ namespace PMSXMLCreator
         public string Resistance { get; set; }
         public string ActualDimension { get; set; }
 
-        public string Composition { get; set; }
+        public string XRF { get; set; }
 
         //GDMS
         public string GDMS { get; set; }

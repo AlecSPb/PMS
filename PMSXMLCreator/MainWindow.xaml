@@ -41,13 +41,13 @@
                 <DataGridTextColumn Header="PO Number" Binding="{Binding PO}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid Grid.Row="2" Background="LightGreen">
+        <Grid Grid.Row="2" Background="Wheat">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="After Checking Every Parameters, Click Create XML"/>
+                       Text="After Checking Every Parameters, Click Create XML" Foreground="Blue"/>
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1">
                 <Button Content="Create XML" Style="{StaticResource StyleButtonCommon}"
                         Command="{Binding Create}"/>
@@ -154,7 +154,7 @@
                 <TextBlock Grid.Row="10" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="Composition" VerticalAlignment="Top"/>
                 <TextBox Grid.Row="10" Grid.Column="1" Style="{StaticResource StyleTextBoxMultiline}"
-                     Text="{Binding Composition}"/>
+                     Text="{Binding XRF}"/>
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="请使用csv格式" VerticalAlignment="Top"/>
 

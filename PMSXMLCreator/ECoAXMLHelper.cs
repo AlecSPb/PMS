@@ -13,7 +13,12 @@ namespace PMSXMLCreator
         public void CreateXMLFile(ECOA model)
         {
             string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string filePath = Path.Combine(desktop, $"{DateTime.Now.ToString("yyMMddHHmmss")}.xml");
+            string folder = Path.Combine(desktop, "XML Files");
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+            string filePath = Path.Combine(folder, $"{model.ProductID}-{model.ProductAbbr}-{DateTime.Now.ToString("HHmmss")}.xml");
             FileInfo file = new FileInfo(filePath);
 
             //使用xmlwriter
@@ -88,13 +93,15 @@ namespace PMSXMLCreator
 
             #region MaterialParameters
             writer.WriteStartElement("MaterialParameters");
-            //Weight
-            SingleMaterialParameter(writer, "Target Weight", "Weight", "g", "Value", model.Weight);
-            SingleMaterialParameter(writer, "Target Density", "Density", "g/cm3", "Value", model.Density);
-            SingleMaterialParameter(writer, "Resistance", "Resistance", "ohm cm", "Value", model.Resistance);
-            SingleMaterialParameter(writer, "Actual Dimension", "Actual Dimension", "mm", "Value", model.ActualDimension);
-
-            AddGDMSPart(writer, model.GDMS);
+            //Basic
+            AddBasic(writer, "Target Weight", "Weight", "g", "Value", model.Weight);
+            AddBasic(writer, "Target Density", "Density", "g/cm3", "Value", model.Density);
+            AddBasic(writer, "Resistance", "Resistance", "ohm cm", "Value", model.Resistance);
+            AddBasic(writer, "Actual Dimension", "Actual Dimension", "mm", "Value", model.ActualDimension);
+            //XRF
+            AddXRF(writer, model.XRF);
+            //GDMS
+            AddGDMS(writer, model.GDMS);
 
             writer.WriteEndElement();
             #endregion
@@ -123,7 +130,7 @@ namespace PMSXMLCreator
         }
 
 
-        private void SingleMaterialParameter(XmlWriter writer,
+        private void AddBasic(XmlWriter writer,
             string character, string shortname, string unit, string mtype, string mvalue)
         {
             writer.WriteStartElement("MaterialParameter");
@@ -141,7 +148,7 @@ namespace PMSXMLCreator
             writer.WriteEndElement();
         }
 
-        private void AddGDMSPart(XmlWriter writer, string gdms)
+        private void AddGDMS(XmlWriter writer, string gdms)
         {
             string[] items = gdms.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -172,6 +179,37 @@ namespace PMSXMLCreator
                 writer.WriteEndElement();
             }
         }
+
+
+        private void AddXRF(XmlWriter writer, string xrf)
+        {
+
+            string[] lines = xrf.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+            writer.WriteStartElement("MaterialParameter");
+            writer.WriteElementString("Characteristic", "Target Composition");
+            writer.WriteElementString("ShortName", "XRF");
+            writer.WriteElementString("UnitOfMeasure", "atm %");
+            writer.WriteStartElement("Measurements");
+
+
+            string[] title = lines[0].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] values = lines[1].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int j = 1; j < title.Length; j++)
+            {
+                writer.WriteStartElement("Measurement");
+                writer.WriteElementString("MeasurementType", title[j]);
+
+
+                writer.WriteElementString("MeasurementValue", values[j]);
+                writer.WriteEndElement();
+            }
+
+
+            writer.WriteEndElement();
+            writer.WriteEndElement();
+        }
+
 
     }
 }
