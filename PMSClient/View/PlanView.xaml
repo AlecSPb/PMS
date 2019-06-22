@@ -59,6 +59,9 @@
                                     <Button Style="{StaticResource StyleDGButton}" Content="{StaticResource ButtonLocation}" 
                                         Command="{Binding DataContext.SearchMisson,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                    <Button Style="{StaticResource StyleDGButton}" Content="{StaticResource ButtonCompare}" 
+                                        Command="{Binding DataContext.Compare,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                                     <Button Style="{StaticResource StyleDGButton}" Content="{StaticResource ButtonLabel}" 
                                         Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>

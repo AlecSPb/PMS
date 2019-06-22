@@ -156,14 +156,14 @@
                 <TextBox Grid.Row="10" Grid.Column="1" Style="{StaticResource StyleTextBoxMultiline}"
                      Text="{Binding XRF}"/>
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="请使用csv格式" VerticalAlignment="Top"/>
+                       Text="use csv format" VerticalAlignment="Top"/>
 
                 <TextBlock Grid.Row="11" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="GDMS"/>
                 <TextBox Grid.Row="11" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
                      Text="{Binding GDMS}" Background="LightBlue"/>
                 <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="请使用类似Li=30 B=40 P=56 F=23格式"/>
+                       Text="use format like Li=30 B=40 P=56 F=23"/>
 
             </Grid>
         </ScrollViewer>

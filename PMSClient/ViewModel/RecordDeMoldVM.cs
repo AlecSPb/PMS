@@ -21,7 +21,7 @@ namespace PMSClient.ViewModel
             RecordDeMolds = new ObservableCollection<DcRecordDeMold>();
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcRecordDeMold>(ActionEdit, CanEdit);
-            SetPageParametersWhenConditionChange();
+
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             Label = new RelayCommand<DcRecordDeMold>(ActionLabel);
@@ -29,7 +29,23 @@ namespace PMSClient.ViewModel
             Duplicate = new RelayCommand<DcRecordDeMold>(ActionDuplicate, CanDuplicate);
             TempRecordSheet = new RelayCommand(ActionTempRecordSheet);
             QuickAdd = new RelayCommand(ActionQuickAdd, CanQuickAdd);
+            Compare = new RelayCommand<DcRecordDeMold>(ActionCompare, CanQuickAdd);
+
+            SetPageParametersWhenConditionChange();
+
         }
+
+        private void ActionCompare(DcRecordDeMold obj)
+        {
+            SearchComposition = obj.Composition.Trim();
+            SetPageParametersWhenConditionChange();
+        }
+
+        private bool CanQuickAdd(DcRecordDeMold arg)
+        {
+            return true;
+        }
+
         /// <summary>
         /// 综合查询
         /// </summary>
@@ -227,6 +243,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcRecordDeMold> Edit { get; set; }
         public RelayCommand<DcRecordDeMold> Duplicate { get; set; }
         public RelayCommand<DcRecordDeMold> Label { get; set; }
+        public RelayCommand<DcRecordDeMold> Compare { get; set; }
         public RelayCommand TempRecordSheet { get; set; }
         public RelayCommand QuickAdd { get; set; }
     }

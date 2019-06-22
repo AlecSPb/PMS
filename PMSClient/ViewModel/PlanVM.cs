@@ -51,6 +51,13 @@ namespace PMSClient.ViewModel
             Output = new RelayCommand<MainService.DcPlanWithMisson>(ActionOutput);
             RecordSheet = new RelayCommand(ActionRecordSheet);
             BatchLabel = new RelayCommand(ActionBatchLabel);
+            Compare = new RelayCommand<DcPlanWithMisson>(ActionCompare);
+        }
+
+        private void ActionCompare(DcPlanWithMisson obj)
+        {
+            SearchComposition = obj.Misson.CompositionStandard.Trim();
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionBatchLabel()
@@ -350,6 +357,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPlanWithMisson> SearchMisson { get; set; }
         public RelayCommand<DcPlanWithMisson> SelectionChanged { get; set; }
         public RelayCommand<DcPlanWithMisson> Output { get; set; }
+        public RelayCommand<DcPlanWithMisson> Compare { get; set; }
         public RelayCommand RecordSheet { get; set; }
         public RelayCommand BatchLabel { get; set; }
         #endregion

@@ -199,9 +199,8 @@ namespace PMSXMLCreator
             {
                 writer.WriteStartElement("Measurement");
                 writer.WriteElementString("MeasurementType", title[j]);
-
-
                 writer.WriteElementString("MeasurementValue", values[j]);
+
                 writer.WriteEndElement();
             }
 
