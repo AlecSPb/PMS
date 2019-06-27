@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
+using System.Windows;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSLargeScreen.LargeScreenService;
@@ -28,6 +29,17 @@ namespace PMSLargeScreen
             _timerLoadData.Start();
 
             #endregion
+
+            CompositionVisibility = Visibility.Visible;
+            Hide = new RelayCommand(ActionHide);
+        }
+
+        private void ActionHide()
+        {
+            if (CompositionVisibility == Visibility.Visible)
+                CompositionVisibility = Visibility.Collapsed;
+            else
+                CompositionVisibility = Visibility.Visible;
         }
 
         private void _timerLoadData_Elapsed(object sender, ElapsedEventArgs e)
@@ -129,6 +141,19 @@ namespace PMSLargeScreen
                 return IntervalLoadData / 1000;
             }
         }
+
+        private Visibility compositionVisibility;
+        public Visibility CompositionVisibility
+        {
+            get { return compositionVisibility; }
+            set
+            {
+                compositionVisibility = value;
+                RaisePropertyChanged(nameof(CompositionVisibility));
+            }
+        }
+
+        public RelayCommand Hide { get; set; }
         #endregion
 
 

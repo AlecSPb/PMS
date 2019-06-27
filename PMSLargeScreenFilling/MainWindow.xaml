@@ -32,6 +32,8 @@
             <StackPanel Grid.Column="3" Orientation="Horizontal">
                 <TextBlock Text="{Binding IntervalRefreshLoadData,StringFormat=数据刷新间隔:{0}s}" Style="{StaticResource StyleTextBlockLightBig}"/>
                 <Button  Name="btnClose" Click="btnClose_Click" Content="退出" Style="{StaticResource StyleButton}"/>
+                <Button  Name="btnHide"  Content="隐藏/显示" Style="{StaticResource StyleButton}"
+                         Command="{Binding Hide}"/>
             </StackPanel>
         </Grid>
         <TextBlock Grid.Row="1" Style="{StaticResource StyleTextBlockBold}" Text="装料前，需仔细核对模具和装料要求"                  
@@ -45,8 +47,18 @@
                                     Binding="{Binding Plan.PlanLot}"/>
                 <DataGridTextColumn Header="压机" ElementStyle="{StaticResource StyleTextBlockCenterBold}"
                                     Binding="{Binding Plan.VHPDeviceCode}"/>
-                <DataGridTextColumn Header="成分" ElementStyle="{StaticResource StyleTextBlock}"
-                                    Binding="{Binding Misson.CompositionStandard}"/>
+                <!--<DataGridTextColumn Header="成分" ElementStyle="{StaticResource StyleTextBlock}"
+                                    Binding="{Binding Misson.CompositionStandard}"/>-->
+                <DataGridTemplateColumn Header="成分">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Style="{StaticResource StyleTextBlock}" 
+                                Text="{Binding Misson.CompositionStandard}"
+                                       Visibility="{Binding DataContext.CompositionVisibility,
+                                    RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="内部编号" ElementStyle="{StaticResource StyleTextBlockCenter}"
                                     Binding="{Binding Misson.PMINumber}"/>
                 <DataGridTextColumn Header="计划类型" ElementStyle="{StaticResource StyleTextBlockCenter}"

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace PMSClient.ToolWindow
 {
@@ -33,7 +34,7 @@ namespace PMSClient.ToolWindow
 
         public event EventHandler<string> FillIn;
 
-        private string point= "5\r\n";
+        private string point = "5\r\n";
         private string composition_cigs = "Cu+22.8\r\nIn+20\r\nGa+7\r\nSe+50.2";
         private string composition_inse = "In+2\r\nSe+3";
         private string composition_cgs = "Cu+1\r\nGa+1\r\nSe+2";
@@ -85,22 +86,22 @@ namespace PMSClient.ToolWindow
             switch (btn.Content.ToString())
             {
                 case "CIGS":
-                    txtCondition.Text = point+composition_cigs;
+                    txtCondition.Text = point + composition_cigs;
                     break;
                 case "InSe":
-                    txtCondition.Text = point+composition_inse;
+                    txtCondition.Text = point + composition_inse;
                     break;
                 case "CuGaSe":
-                    txtCondition.Text = point+composition_cgs;
+                    txtCondition.Text = point + composition_cgs;
                     break;
                 case "BiTeSe":
-                    txtCondition.Text = point+composition_bitese;
+                    txtCondition.Text = point + composition_bitese;
                     break;
                 case "BiSbTe":
-                    txtCondition.Text = point+composition_bisbte;
+                    txtCondition.Text = point + composition_bisbte;
                     break;
                 case "SeAsGe":
-                    txtCondition.Text = point+composition_sag;
+                    txtCondition.Text = point + composition_sag;
                     break;
                 default:
                     break;
@@ -109,7 +110,31 @@ namespace PMSClient.ToolWindow
 
         private void BtnRead_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                ViewModel.RecordTestEditVM vm = PMSHelper.ViewModels.RecordTestEdit;
+                string compostion = vm.CurrentRecordTest.Composition;
+                var elements= Regex.Matches(compostion, @"[A-Za-z]+");
 
+
+                var numbers = Regex.Matches(compostion, @"\d+(\.\d+)?");
+                StringBuilder sb = new StringBuilder();
+                sb.Clear();
+                sb.AppendLine("5");
+
+                for (int i = 0; i < elements.Count; i++)
+                {
+                    sb.Append(elements[i].Value);
+                    sb.Append("+");
+                    sb.AppendLine(numbers[i].Value);
+                }
+
+                txtCondition.Text = sb.ToString();
+            }
+            catch (Exception)
+            {
+                PMSDialogService.ShowWarning("读取错误，请手动按照格式输入");
+            }
         }
     }
 }

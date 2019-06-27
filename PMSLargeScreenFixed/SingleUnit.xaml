@@ -39,7 +39,9 @@
                                 <TextBlock Grid.Row="0" Text="{Binding Composition}"
                                            Style="{StaticResource StyleTextBlockBigDarkBlue}" FontSize="16"
                                            Foreground="Blue"
-                                           TextWrapping="WrapWithOverflow"/>
+                                           TextWrapping="WrapWithOverflow"
+                                           Visibility="{Binding DataContext.CompositionVisibility,
+                                    RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}}"/>
                                 <StackPanel Grid.Row="2" Orientation="Horizontal">
                                     <TextBlock Text="{Binding PlanType}" Style="{StaticResource StyleTextBlockSmall}"/>
                                     <TextBlock Text="{Binding ProcessCode}" Style="{StaticResource StyleTextBlockSmall}"/>

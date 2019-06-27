@@ -9,6 +9,7 @@ using PMSLargeScreen.Models;
 using PMSLargeScreen.LargeScreenService;
 using System.Timers;
 using System.Collections.ObjectModel;
+using System.Windows;
 
 namespace PMSLargeScreen
 {
@@ -32,8 +33,11 @@ namespace PMSLargeScreen
 
             CenterMessage = $"准备数据中，请等待，{IntervalLoadData / 1000}s后显示";
 
-            #region 设定定时器
-            _timerLoadData = new Timer();
+            CompositionVisibility = Visibility.Visible;
+            Hide = new RelayCommand(ActionHide);
+
+        #region 设定定时器
+        _timerLoadData = new Timer();
             _timerLoadData.Interval = IntervalLoadData;
             _timerLoadData.Elapsed += _timerLoadData_Elapsed;
             _timerLoadData.Start();
@@ -42,6 +46,14 @@ namespace PMSLargeScreen
 
             //首次加载数据
             GetDataFromService();
+        }
+
+        private void ActionHide()
+        {
+            if (CompositionVisibility == Visibility.Visible)
+                CompositionVisibility = Visibility.Collapsed;
+            else
+                CompositionVisibility = Visibility.Visible;
         }
 
         private void _timerLoadData_Elapsed(object sender, ElapsedEventArgs e)
@@ -236,6 +248,17 @@ namespace PMSLargeScreen
             }
         }
         #endregion
+        private Visibility compositionVisibility;
+        public Visibility CompositionVisibility
+        {
+            get { return compositionVisibility; }
+            set
+            {
+                compositionVisibility = value;
+                RaisePropertyChanged(nameof(CompositionVisibility));
+            }
+        }
 
+        public RelayCommand Hide { get; set; }
     }
 }

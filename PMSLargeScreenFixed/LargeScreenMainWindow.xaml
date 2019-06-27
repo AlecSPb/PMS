@@ -31,6 +31,8 @@
                 <TextBlock Text="{Binding IntervalRefreshLoadData,StringFormat=数据刷新间隔:{0}s}"
                                Style="{StaticResource StyleTextBlockBigWhite}"/>
                 <Button  Name="btnClose" Click="btnClose_Click" Content="退出" Style="{StaticResource StyleButton}"/>
+                <Button  Name="btnHide"  Content="隐藏/显示" Style="{StaticResource StyleButton}"
+                         Command="{Binding Hide}"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
