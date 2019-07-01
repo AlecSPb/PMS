@@ -46,7 +46,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDuplicate(DcFailure arg)
         {
-            return PMSHelper.CurrentSession.IsOKGroup(groupnames);
+            return PMSHelper.CurrentSession.IsOKInGroup(groupnames);
         }
 
         private void ActionAll()
@@ -63,12 +63,12 @@ namespace PMSClient.ViewModel
         private string[] groupnames = { "管理员", "制粉组", "热压组", "加工组", "测试组", "质量组", "发货组", "发货专员", "生产经理", "仓库专员", "熔铸部门","统筹组" };
         private bool CanEdit(DcFailure arg)
         {
-            return PMSHelper.CurrentSession.IsOKGroup(groupnames);
+            return PMSHelper.CurrentSession.IsOKInGroup(groupnames);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsOKGroup(groupnames);
+            return PMSHelper.CurrentSession.IsOKInGroup(groupnames);
         }
 
         private void ActionEdit(DcFailure model)

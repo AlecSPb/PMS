@@ -168,8 +168,13 @@ namespace PMSClient.ViewModel
             //储备库存
             GoToRemainInventory = new RelayCommand(() =>
               {
-                NavigationService.GoTo(PMSViews.RemainInventory);
-              }, ()=>_session.IsAuthorized(PMSAccess.ReadMaterialInventoryIn));
+                  NavigationService.GoTo(PMSViews.RemainInventory);
+              }, () => _session.IsAuthorized(PMSAccess.ReadMaterialInventoryIn));
+
+            GoToOutsideProcess = new RelayCommand(() =>
+              {
+                  NavigationService.GoTo(PMSViews.OutsideProcess);
+              }, () => _session.IsOKInGroup(AccessGrant.ViewOutsideProcess));
             #endregion
         }
 
@@ -329,6 +334,7 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToCounter { get; set; }
 
         public RelayCommand GoToRemainInventory { get; set; }
+        public RelayCommand GoToOutsideProcess { get; set; }
 
         private void InitializeData()
         {

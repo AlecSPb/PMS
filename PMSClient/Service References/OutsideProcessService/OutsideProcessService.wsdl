@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="OutsideProcessService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.16.254:8002/OutsideProcessService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/OutsideProcessService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/OutsideProcessService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOutsideProcessService_GetOutsideProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutsideProcess" />
+  </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_GetOutsideProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutsideProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_GetOutsideProcessCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutsideProcessCount" />
+  </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_GetOutsideProcessCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutsideProcessCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_GetOutsideProcessUnCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutsideProcessUnCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_GetOutsideProcessUnCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutsideProcessUnCompletedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_GetOutsideProcessUnCompletedCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutsideProcessUnCompletedCount" />
+  </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_GetOutsideProcessUnCompletedCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutsideProcessUnCompletedCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IOutsideProcessService">
+    <wsdl:operation name="GetOutsideProcess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcess" message="tns:IOutsideProcessService_GetOutsideProcess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessResponse" message="tns:IOutsideProcessService_GetOutsideProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutsideProcessCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessCount" message="tns:IOutsideProcessService_GetOutsideProcessCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessCountResponse" message="tns:IOutsideProcessService_GetOutsideProcessCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutsideProcessUnCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompleted" message="tns:IOutsideProcessService_GetOutsideProcessUnCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedResponse" message="tns:IOutsideProcessService_GetOutsideProcessUnCompleted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutsideProcessUnCompletedCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedCount" message="tns:IOutsideProcessService_GetOutsideProcessUnCompletedCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedCountResponse" message="tns:IOutsideProcessService_GetOutsideProcessUnCompletedCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutsideProcessService/Add" message="tns:IOutsideProcessService_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutsideProcessService/AddResponse" message="tns:IOutsideProcessService_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutsideProcessService/Update" message="tns:IOutsideProcessService_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutsideProcessService/UpdateResponse" message="tns:IOutsideProcessService_Update_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="outsideprocess" type="tns:IOutsideProcessService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetOutsideProcess">
+      <soap:operation soapAction="http://tempuri.org/IOutsideProcessService/GetOutsideProcess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutsideProcessCount">
+      <soap:operation soapAction="http://tempuri.org/IOutsideProcessService/GetOutsideProcessCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutsideProcessUnCompleted">
+      <soap:operation soapAction="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompleted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutsideProcessUnCompletedCount">
+      <soap:operation soapAction="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap:operation soapAction="http://tempuri.org/IOutsideProcessService/Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/IOutsideProcessService/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OutsideProcessService">
+    <wsdl:port name="outsideprocess" binding="tns:outsideprocess">
+      <soap:address location="http://192.168.16.254:8002/OutsideProcessService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

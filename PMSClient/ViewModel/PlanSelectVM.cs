@@ -82,6 +82,9 @@ namespace PMSClient.ViewModel
                 case PMSViews.DeliveryItemEdit:
                     PMSDialogService.Show("产品库和发货在此处无法使用多选功能");
                     break;
+
+                case PMSViews.OutsideProcessEdit:
+                    break;
                 default:
                     break;
             }
@@ -221,6 +224,9 @@ namespace PMSClient.ViewModel
                         break;
                     case PMSViews.RemainInventoryEdit:
                         PMSHelper.ViewModels.RemainInventoryEdit.SetBySelect(plan.PlanMisson);
+                        break;
+                    case PMSViews.OutsideProcessEdit:
+                        PMSHelper.ViewModels.OutsideProcessEdit.SetBySelect(plan.PlanMisson);
                         break;
                     default:
                         break;

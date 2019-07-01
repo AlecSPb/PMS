@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BasicDataService.svc" />
+    <Content Include="OutsideProcessService.svc" />
     <Content Include="OutputService.svc" />
     <Content Include="HeartBeatService.svc" />
     <Content Include="HistoryService.svc" />
@@ -105,6 +106,7 @@
     <Compile Include="DataContracts\DcFailure.cs" />
     <Compile Include="DataContracts\DcMaterialOrderItemExtra.cs" />
     <Compile Include="DataContracts\DcNotice.cs" />
+    <Compile Include="DataContracts\DcOutsideProcess.cs" />
     <Compile Include="DataContracts\DcPlanWithMisson.cs" />
     <Compile Include="DataContracts\DcPlanExtra.cs" />
     <Compile Include="DataContracts\DcPMICounter.cs" />
@@ -201,6 +203,8 @@
     <Compile Include="ServiceImplements\BasicDataService.cs" />
     <Compile Include="ServiceImplements\MaintenanceService.cs" />
     <Compile Include="ServiceImplements\OutputService.cs" />
+    <Compile Include="ServiceContracts\IOutsideProcessService.cs" />
+    <Compile Include="ServiceImplements\OutsideProcessService.cs" />
     <Compile Include="ServiceImplements\OutSourceService.cs" />
     <Compile Include="ServiceImplements\PlateService.cs" />
     <Compile Include="ServiceImplements\PMICounterService.cs" />

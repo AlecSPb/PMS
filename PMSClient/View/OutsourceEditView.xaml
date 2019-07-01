@@ -125,6 +125,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Name="TxtRemark" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Remark}"
                          Style="{StaticResource StyleTextBoxCommon}"/>
+                
                 <StackPanel Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
                     <Button Name="BtnPay" Content="付款" Style="{StaticResource StyleButtonCommon}" Click="BtnPay_Click"/>
                     <Button Name="BtnGood" Content="收到货物" Style="{StaticResource StyleButtonCommon}"

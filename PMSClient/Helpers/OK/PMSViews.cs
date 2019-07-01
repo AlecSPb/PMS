@@ -116,5 +116,7 @@ namespace PMSClient
         PMICounterEdit,
         RemainInventory,
         RemainInventoryEdit,
+        OutsideProcessEdit,
+        OutsideProcess,
     }
 }

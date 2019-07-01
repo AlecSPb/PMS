@@ -82,7 +82,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDuplicate(DcRemainInventory arg)
         {
-            return PMSHelper.CurrentSession.IsOKGroup(groupnames);
+            return PMSHelper.CurrentSession.IsOKInGroup(groupnames);
         }
 
         private void ActionAll()
@@ -99,12 +99,12 @@ namespace PMSClient.ViewModel
         private string[] groupnames = { "管理员", "测试组", "质量组", "统筹组" };
         private bool CanEdit(DcRemainInventory arg)
         {
-            return PMSHelper.CurrentSession.IsOKGroup(groupnames);
+            return PMSHelper.CurrentSession.IsOKInGroup(groupnames);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsOKGroup(groupnames);
+            return PMSHelper.CurrentSession.IsOKInGroup(groupnames);
         }
 
         private void ActionEdit(DcRemainInventory model)

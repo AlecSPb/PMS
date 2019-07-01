@@ -933,7 +933,22 @@
     <sys:String x:Key="RIDimension">规格</sys:String>
     <sys:String x:Key="RIDetails">细节</sys:String>
 
-
+    <!--OutsideProcess-->
+    <sys:String x:Key="PageOutsideProcess">外协加工</sys:String>
+    <sys:String x:Key="PageOutsideProcessEdit">外协加工编辑</sys:String>
+    <sys:String x:Key="OPID">ID</sys:String>
+    <sys:String x:Key="OPCreator">创建者</sys:String>
+    <sys:String x:Key="OPCreateTime">创建时间</sys:String>
+    <sys:String x:Key="OPProductID">产品ID</sys:String>
+    <sys:String x:Key="OPComposition">成分</sys:String>
+    <sys:String x:Key="OPDimension">尺寸</sys:String>
+    <sys:String x:Key="OPState">状态</sys:String>
+    <sys:String x:Key="OPPMINumber">工作号</sys:String>
+    <sys:String x:Key="OPPONumber">PO</sys:String>
+    <sys:String x:Key="OPCustomer">客户</sys:String>
+    <sys:String x:Key="OPProcessor">委托方</sys:String>
+    <sys:String x:Key="OPProgressBar">进度记录</sys:String>
+    <sys:String x:Key="OPRemark">备注</sys:String>
 
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">公共</sys:String>

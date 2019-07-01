@@ -130,5 +130,11 @@ namespace PMSDAL
         public DbSet<PMICounter> PMICounters { get; set; }
 
         public DbSet<RemainInventory> RemainInventories { get; set; }
+
+
+
+        //
+        public DbSet<OutsideProcess> OutsideProcesses { get; set; }
+
     }
 }

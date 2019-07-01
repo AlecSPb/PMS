@@ -1,0 +1,146 @@
+﻿<UserControl x:Class="PMSClient.View.OutsideProcessEditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSClient.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=OutsideProcessEdit}">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Text="{StaticResource PageOutsideProcessEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+            <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitleTip}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}"
+                    Command="{Binding GiveUp}"/>
+            <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
+                    Command="{Binding Save}"/>
+            <Button Content="{StaticResource ButtonSelect}" Style="{StaticResource StyleButtonSpecial}"
+                    Command="{Binding Select}"/>
+            <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipOutSourceEdit}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+            <Grid  DataContext="{Binding CurrentOutsideProcess}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource OPProductID}"
+                           Style="{StaticResource StyleTextBlockSpecial}"/>
+                <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="ProductID"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource OPComposition}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
+                           Text="Composition"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource OPProcessor}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="2" Grid.Column="1" Name="cboSuppliers"
+                      Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Stretch"
+                      ItemsSource="{Binding DataContext.Processors,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                      Text="{Binding Processor}"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="外协商"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource OSDimension}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="规格要求"/>
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource OPPMINumber}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource OPPONumber}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding PONumber}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource OPCustomer}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource OPState}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                          ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding State}"/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="外包状态"/>
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource OPProgressBar}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="TxtRemark" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2"  Text="{Binding ProgressBar}"
+                         Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+                    <Button Name="BtnSend" Content="发出" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnSend_Click"/>
+                    <Button Name="BtnReceive" Content="收到" Style="{StaticResource StyleButtonCommonNarrow}"
+                            Click="BtnReceive_Click"/>
+                    <Button Name="BtnFail" Content="加工失败" Style="{StaticResource StyleButtonCommonNarrow}"
+                            Click="BtnFail_Click"/>
+                    <Button Name="BtnAgain" Content="再次加工" Style="{StaticResource StyleButtonCommonNarrow}"
+                            Click="BtnAgain_Click"/>
+                </StackPanel>
+
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource OPRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource OSCreateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="创建时间"/>
+
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource OSCreator}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="创建者"/>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
+

@@ -37,7 +37,7 @@ namespace PMSClient.ReportsHelperNew
                     recordCount = service.GetMissonUnCompletedCountSample();
                     if (recordCount == 0)
                     {
-                        PMSDialogService.Show("没有未完成的任务");
+                        PMSDialogService.Show("没有未完成的外协计划");
                         return;
                     }
 

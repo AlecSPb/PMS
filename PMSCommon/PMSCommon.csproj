@@ -57,6 +57,8 @@
     <Compile Include="MaterialOrderItemPriority.cs" />
     <Compile Include="MaterialOrderItemState.cs" />
     <Compile Include="MaterialOrderState.cs" />
+    <Compile Include="OutsideProcessor.cs" />
+    <Compile Include="OutsideProcessState.cs" />
     <Compile Include="OutSourcePaidState.cs" />
     <Compile Include="OutSourceSupplier.cs" />
     <Compile Include="OutSourceType.cs" />

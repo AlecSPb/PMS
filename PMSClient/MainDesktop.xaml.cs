@@ -499,6 +499,12 @@ namespace PMSClient
                 case PMSViews.RemainInventoryEdit:
                     NavigateTo(_views.RemainInventoryEdit);
                     break;
+                case PMSViews.OutsideProcess:
+                    NavigateTo(_views.OutsideProcess);
+                    break;
+                case PMSViews.OutsideProcessEdit:
+                    NavigateTo(_views.OutsideProcessEdit);
+                    break;
                 default:
                     break;
             }

@@ -124,6 +124,9 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockRightBlue}"/>
                 <DataGridTextColumn Header="{StaticResource PlanKeepTempTime}" Binding="{Binding PlanMisson.Plan.KeepTempTime}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRightBlue}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Header="{StaticResource PlanVHPRequirement}" 
+                                    Binding="{Binding PlanMisson.Plan.VHPRequirement}"/>
                 <DataGridTextColumn Header="{StaticResource PlanMillingRequirement}" Binding="{Binding PlanMisson.Plan.MillingRequirement}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanFillingRequirement}" Binding="{Binding PlanMisson.Plan.FillingRequirement}"

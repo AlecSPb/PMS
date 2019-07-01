@@ -92,7 +92,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private static void GoBack()
+        private  void GoBack()
         {
             NavigationService.GoTo(PMSViews.OutSource);
         }

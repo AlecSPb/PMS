@@ -123,9 +123,12 @@
 
                     <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MOIDescription}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Description}" Style="{StaticResource StyleTextBoxCommon}"/>
-                    <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="备注信息"/>
+                    <TextBox Name="TxtDescription" Grid.Row="6" Grid.Column="1" Text="{Binding Description}" Style="{StaticResource StyleTextBoxCommon}"/>
+                    <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal">
+                        <Button Name="BtnDefaultMemo" Style="{StaticResource StyleButtonCommonNarrow}" Content="补料"
+                                Click="BtnDefaultMemo_Click"/>
+                    </StackPanel>
+
 
                     <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MOIProvideRawMaterial}"
                            Style="{StaticResource StyleTextBlockCommon}" Background="LightGreen"/>
@@ -138,9 +141,9 @@
                              Style="{StaticResource StyleTextBoxCommon}"
                               Background="LightGreen"/>
                     <StackPanel Grid.Row="8" Grid.Column="2" Orientation="Horizontal">
+                        <Button Content="辅助" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnAsist" Click="BtnAsist_Click"/>
                         <TextBlock Style="{StaticResource StyleTextBlockTip}"
                            Text="RMB"/>
-                        <Button Content="辅助" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnAsist" Click="BtnAsist_Click"/>
                     </StackPanel>
 
                     <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource MOIDeliveryDate}"

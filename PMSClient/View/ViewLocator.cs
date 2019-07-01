@@ -142,9 +142,27 @@ namespace PMSClient.View
 
             SimpleIoc.Default.Register<RemainInventoryView>();
             SimpleIoc.Default.Register<RemainInventoryEditView>();
+
+
+            SimpleIoc.Default.Register<OutsideProcessView>();
+            SimpleIoc.Default.Register<OutsideProcessEditView>();
         }
 
         #region NavigationProperties
+        public OutsideProcessView OutsideProcess
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<OutsideProcessView>();
+            }
+        }
+        public OutsideProcessEditView OutsideProcessEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<OutsideProcessEditView>();
+            }
+        }
         public RemainInventoryView RemainInventory
         {
             get

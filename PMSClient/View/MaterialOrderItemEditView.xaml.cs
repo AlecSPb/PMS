@@ -50,5 +50,10 @@ namespace PMSClient.View
             }
 
         }
+
+        private void BtnDefaultMemo_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtDescription,"第1次补料");
+        }
     }
 }

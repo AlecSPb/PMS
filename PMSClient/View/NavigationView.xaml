@@ -115,11 +115,15 @@
                         Command="{Binding GoToMisson}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PagePlan}" Grid.Row="2" Grid.Column="2"
                         Command="{Binding GoToPlan}" Style="{StaticResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PageCompound}" Grid.Row="2" Grid.Column="3"
+                        <Button Content="{StaticResource PageOutsideProcess}" Grid.Row="2" Grid.Column="3"
+                        Command="{Binding GoToOutsideProcess}" Style="{StaticResource StyleButtonNavigation}"/>
+
+                        <Button Content="{StaticResource PageCompound}" Grid.Row="2" Grid.Column="4"
                         Command="{Binding GoToBDCompound}" Style="{StaticResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PageFailure}" Grid.Row="2" Grid.Column="4"
+                        <Button Content="{StaticResource PageFailure}" Grid.Row="2" Grid.Column="5"
                                 Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToFailure}"/>
-                        <Button Content="{StaticResource PagePlanConclusion}" Grid.Row="2" Grid.Column="5"
+
+                        <Button Content="{StaticResource PagePlanConclusion}" Grid.Row="2" Grid.Column="6"
                         Command="{Binding GoToPlanConclusion}" Style="{StaticResource StyleButtonNavigation}"/>
                         
                         <Button Content="{StaticResource PageRecord}" Grid.Row="3" Grid.Column="0"  Style="{StaticResource StyleButtonNavigationTitle}" />

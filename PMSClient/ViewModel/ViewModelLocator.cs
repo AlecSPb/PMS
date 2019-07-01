@@ -157,9 +157,20 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<RemainInventoryVM>();
             SimpleIoc.Default.Register<RemainInventoryEditVM>();
+
+            SimpleIoc.Default.Register<OutsideProcessVM>();
+            SimpleIoc.Default.Register<OutsideProcessEditVM>();
+
         }
         #region Properties
-
+        public OutsideProcessVM OutsideProcess
+        {
+            get { return SimpleIoc.Default.GetInstance<OutsideProcessVM>(); }
+        }
+        public OutsideProcessEditVM OutsideProcessEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<OutsideProcessEditVM>(); }
+        }
         public RemainInventoryEditVM RemainInventoryEdit
         {
             get { return SimpleIoc.Default.GetInstance<RemainInventoryEditVM>(); }
