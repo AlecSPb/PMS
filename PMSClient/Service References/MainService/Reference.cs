@@ -4300,6 +4300,9 @@ namespace PMSClient.MainService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeliveryExpressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DeliveryNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4387,6 +4390,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeliveryExpress {
+            get {
+                return this.DeliveryExpressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryExpressField, value) != true)) {
+                    this.DeliveryExpressField = value;
+                    this.RaisePropertyChanged("DeliveryExpress");
                 }
             }
         }
@@ -10384,6 +10400,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemByProductID", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemByProductIDResponse")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItem[]> GetDeliveryItemByProductIDAsync(string productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryUnFinished", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryUnFinishedResponse")]
+        PMSClient.MainService.DcDelivery[] GetDeliveryUnFinished();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryUnFinished", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryUnFinishedResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcDelivery[]> GetDeliveryUnFinishedAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10587,6 +10609,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItem[]> GetDeliveryItemByProductIDAsync(string productid) {
             return base.Channel.GetDeliveryItemByProductIDAsync(productid);
+        }
+        
+        public PMSClient.MainService.DcDelivery[] GetDeliveryUnFinished() {
+            return base.Channel.GetDeliveryUnFinished();
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcDelivery[]> GetDeliveryUnFinishedAsync() {
+            return base.Channel.GetDeliveryUnFinishedAsync();
         }
     }
     

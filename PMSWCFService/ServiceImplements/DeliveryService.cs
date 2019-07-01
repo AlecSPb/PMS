@@ -517,5 +517,31 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public List<DcDelivery> GetDeliveryUnFinished()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from d in dc.Deliverys
+                                where d.State == PMSCommon.DeliveryState.未完成.ToString()
+                                orderby d.CreateTime descending
+                                select d;
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<Delivery, DcDelivery>();
+                    });
+
+                    var records = Mapper.Map<List<Delivery>, List<DcDelivery>>(query.ToList());
+                    return records;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

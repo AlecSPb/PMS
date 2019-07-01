@@ -30,7 +30,8 @@ namespace PMSClient.ViewModel
             model.State = PMSCommon.DeliveryState.未核验.ToString();
             model.DeliveryName = $"FH{DateTime.Now.ToString("yyMMdd")}";
             model.InvoiceNumber = "无";
-            model.DeliveryNumber = "UPS";
+            model.DeliveryExpress = "USP";
+            model.DeliveryNumber = "";
             model.PackageInformation = "无";
             model.PackageType = PMSCommon.PackageType.木箱.ToString();
             model.Remark = "";
@@ -63,6 +64,9 @@ namespace PMSClient.ViewModel
 
             PackageTypes = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.PackageType>(PackageTypes);
+
+            DeliveryExpresses = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.DeliveryExpress>(DeliveryExpresses);
         }
 
         private void InitialCommands()
@@ -129,6 +133,7 @@ namespace PMSClient.ViewModel
         public List<string> OrderStates { get; set; }
         public List<string> Countries { get; set; }
         public List<string> PackageTypes { get; set; }
+        public List<string> DeliveryExpresses { get; set; }
         #endregion
 
     }

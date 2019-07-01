@@ -93,6 +93,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RDDelivery}"
+                                    Binding="{Binding DeliveryExpress}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource RDDeliveryNumber}" Binding="{Binding DeliveryNumber}"
                                         ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTemplateColumn Header="{StaticResource RDCountry}">

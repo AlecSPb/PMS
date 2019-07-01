@@ -25,6 +25,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string InvoiceNumber { get; set; }
         [DataMember]
+        public string DeliveryExpress { get; set; }
+        [DataMember]
         public string DeliveryNumber { get; set; }
         [DataMember]
         public string Country { get; set; }

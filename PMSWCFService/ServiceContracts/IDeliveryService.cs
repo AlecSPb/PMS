@@ -69,5 +69,8 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcDeliveryItem> GetDeliveryItemByProductID(string productid);
 
+        [OperationContract]
+        List<DcDelivery> GetDeliveryUnFinished();
+
     }
 }

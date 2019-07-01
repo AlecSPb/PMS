@@ -614,7 +614,8 @@
     <sys:String x:Key="RDFinishTime">FinishTime</sys:String>
     <sys:String x:Key="RDDeliveryName">Shipment Name</sys:String>
     <sys:String x:Key="RDInvoiceNumber">Invoice Number</sys:String>
-    <sys:String x:Key="RDDeliveryNumber">Shipment Number</sys:String>
+    <sys:String x:Key="RDDelivery">Express</sys:String>
+    <sys:String x:Key="RDDeliveryNumber">Express Number</sys:String>
     <sys:String x:Key="RDCountry">Country</sys:String>
     <sys:String x:Key="RDAddress">Address</sys:String>
     <sys:String x:Key="RDShipTime">Ship Time</sys:String>

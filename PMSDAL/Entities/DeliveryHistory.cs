@@ -18,6 +18,7 @@ namespace PMSDAL
         public DateTime FinishTime { get; set; }
         public string DeliveryName { get; set; }
         public string InvoiceNumber { get; set; }
+        public string DeliveryExpress { get; set; }
         public string DeliveryNumber { get; set; }
 
         public string Country { get; set; }
