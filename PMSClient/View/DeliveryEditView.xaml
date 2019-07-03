@@ -74,14 +74,14 @@
                           Text="{Binding DeliveryExpress}"
                           Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Left"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
-                           Text="物流"/>
+                           Text="物流公司代码"/>
                 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RDDeliveryNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding DeliveryNumber}" Style="{StaticResource StyleTextBoxCommon}"
                          />
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
-                           Text="物流信息，比如运单号"/>
+                           Text="完整运单号，多个用+隔开"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RDCountry}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

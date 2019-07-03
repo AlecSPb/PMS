@@ -62,7 +62,7 @@ namespace PMSClient
                 var titleName = (App.Current as App).FindResource("AppNameDesktop").ToString();
                 //var versonName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 //这里自定义版本号
-                var versonName = "4.8.66.15";
+                var versonName = "4.8.80.5";
                 Title = $"{titleName}-{versonName}";
             }
             catch (Exception)
@@ -542,9 +542,9 @@ namespace PMSClient
         }
         private void Window_Closing(object sender, CancelEventArgs e)
         {
-            //执行一些警示通知
-            var warningMe = new ExitHelper();
-            warningMe.ProcessWhenExitApp();
+            ////执行一些警示通知
+            //var warningMe = new ExitHelper();
+            //warningMe.ProcessWhenExitApp();
 
 
             bool result = false;

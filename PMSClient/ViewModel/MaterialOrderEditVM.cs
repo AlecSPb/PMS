@@ -84,10 +84,8 @@ namespace PMSClient.ViewModel
             }
             if (CurrentMaterialOrder.State == "作废")
             {
-                if (!PMSDialogService.ShowYesNo("请问", "确定作废这条订单记录？"))
-                {
-                    return;
-                }
+                PMSDialogService.Show("作废功能被限制");
+                return;
             }
             try
             {

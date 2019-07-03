@@ -31,7 +31,10 @@
                     Command="{Binding Print}"/>
 
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorNoInput}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource NoInputBrush}"/>
         </StackPanel>
         <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding OutsideProcesses}"
                   LoadingRow="DataGrid_LoadingRow">
@@ -61,19 +64,19 @@
                 <DataGridTextColumn Header="{StaticResource OPCustomer}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Customer}"/>
                 <DataGridTextColumn Header="{StaticResource OPPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding PMINumber}"/>
+                                    Binding="{Binding PMINumber}" Width="100"/>
                 <DataGridTextColumn Header="{StaticResource OPPONumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding PONumber}"/>
+                                    Binding="{Binding PONumber}" Width="100"/>
                 <DataGridTextColumn Header="{StaticResource OPProcessor}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Binding="{Binding Processor}"/>
                 <DataGridTextColumn Header="{StaticResource OPProgressBar}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding ProgressBar}"/>
+                <DataGridTextColumn Header="{StaticResource OPRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource OPCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
                 <DataGridTextColumn Header="{StaticResource OPCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource OPRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Remark}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"

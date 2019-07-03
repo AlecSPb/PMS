@@ -312,6 +312,9 @@
     <sys:String x:Key="ButtonQuickChart">Quick Chart</sys:String>
     <sys:String x:Key="ButtonCompare">Compare</sys:String>
     <sys:String x:Key="ButtonSample">Sample Prepare</sys:String>
+    <sys:String x:Key="ButtonExpressTrack">Express Track</sys:String>
+    <sys:String x:Key="ButtonLock">Express Lock</sys:String>
+    <sys:String x:Key="ButtonUnLock">Express UnLock</sys:String>
 
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">Color Indicator=></sys:String>
@@ -426,6 +429,8 @@
     <sys:String x:Key="PlanRemark">Remark</sys:String>
     <sys:String x:Key="PlanGrade">Grade</sys:String>
     <sys:String x:Key="PlanConclusion">Conclusion</sys:String>
+    <sys:String x:Key="PlanLock">Lock</sys:String>
+
     <!--MaterialNeed-->
     <sys:String x:Key="MNState">State</sys:String>
     <sys:String x:Key="MNCreator">Creator</sys:String>

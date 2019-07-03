@@ -10,6 +10,7 @@ namespace PMSCommon
     {
         UPS,
         SF,
+        UHL,
         TNT,
         FedEx
     }

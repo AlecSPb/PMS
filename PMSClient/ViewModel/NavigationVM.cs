@@ -91,8 +91,10 @@ namespace PMSClient.ViewModel
 
 
             GoToProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.Product), () => _session.IsAuthorized(PMSAccess.ReadProduct));
-            GoToDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.Delivery), () => _session.IsAuthorized(PMSAccess.ReadDelivery));
-            GoToDeliveryItemList = new RelayCommand(() => NavigationService.GoTo(PMSViews.DeliveryItemList), () => _session.IsAuthorized(PMSAccess.ReadDelivery));
+            GoToDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.Delivery),
+                () => _session.IsOKInGroup(AccessGrant.ViewDeliveryItemList));
+            GoToDeliveryItemList = new RelayCommand(() => NavigationService.GoTo(PMSViews.DeliveryItemList), 
+                () => _session.IsOKInGroup(AccessGrant.ViewDeliveryItemList));
 
             GoToBDCustomer = new RelayCommand(() => NavigationService.GoTo(PMSViews.Customer), () => _session.IsAuthorized(PMSAccess.ReadCustomer));
             #region 临时

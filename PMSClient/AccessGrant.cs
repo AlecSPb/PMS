@@ -22,5 +22,20 @@ namespace PMSClient
                     "主管", "检测组","热压组" };
             }
         }
+        public static string[] ViewExpressTrackAtLogin
+        {
+            get
+            {
+                return new string[] { "管理员", "统筹组" };
+            }
+        }
+        public static string[] ViewDeliveryItemList
+        {
+            get
+            {
+                return new string[] { "管理员", "统筹组", "生产经理", "发货组",
+                    "主管", "检测组","热压组" };
+            }
+        }
     }
 }

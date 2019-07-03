@@ -88,10 +88,8 @@ namespace PMSClient.ViewModel
             }
             if (CurrentDelivery.State == "作废")
             {
-                if (!PMSDialogService.ShowYesNo("请问", "确定作废这条记录？"))
-                {
-                    return;
-                }
+                PMSDialogService.Show("作废功能被限制");
+                return;
             }
             try
             {

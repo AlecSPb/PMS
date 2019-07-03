@@ -27,7 +27,7 @@ namespace PMSClient.View
 
         private void BtnSend_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}发到;");
+            PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}发出;");
         }
 
         private void BtnReceive_Click(object sender, RoutedEventArgs e)

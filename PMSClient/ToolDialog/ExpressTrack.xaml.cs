@@ -23,5 +23,12 @@ namespace PMSClient.ToolDialog
         {
             InitializeComponent();
         }
+        public string TrackInfo
+        {
+            set
+            {
+                TxtTrackInfo.Text = value;
+            }
+        }
     }
 }

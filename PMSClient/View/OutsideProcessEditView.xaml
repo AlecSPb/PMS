@@ -69,45 +69,46 @@
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
                            Text="Composition"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource OPProcessor}"
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource OSDimension}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="2" Grid.Column="1" Name="cboSuppliers"
+                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="规格要求"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource OPPMINumber}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+
+                <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource OPPONumber}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding PONumber}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource OPCustomer}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource OPState}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                          ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding State}"/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="状态"/>
+                
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource OPProcessor}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="7" Grid.Column="1" Name="cboSuppliers"
                       Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Stretch"
                       ItemsSource="{Binding DataContext.Processors,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                       Text="{Binding Processor}"/>
-                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="外协商"/>
-
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource OSDimension}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="规格要求"/>
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource OPPMINumber}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource OPPONumber}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding PONumber}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource OPCustomer}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource OPState}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
-                          ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding State}"/>
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="外包状态"/>
-
+                           Text="外协"/>
+                
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource OPProgressBar}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Name="TxtRemark" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2"  Text="{Binding ProgressBar}"
@@ -116,7 +117,7 @@
                     <Button Name="BtnSend" Content="发出" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnSend_Click"/>
                     <Button Name="BtnReceive" Content="收到" Style="{StaticResource StyleButtonCommonNarrow}"
                             Click="BtnReceive_Click"/>
-                    <Button Name="BtnFail" Content="加工失败" Style="{StaticResource StyleButtonCommonNarrow}"
+                    <Button Name="BtnFail" Content="失败" Style="{StaticResource StyleButtonCommonNarrow}"
                             Click="BtnFail_Click"/>
                     <Button Name="BtnAgain" Content="再次加工" Style="{StaticResource StyleButtonCommonNarrow}"
                             Click="BtnAgain_Click"/>

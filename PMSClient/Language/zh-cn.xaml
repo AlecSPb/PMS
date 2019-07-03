@@ -321,7 +321,10 @@
     <sys:String x:Key="ButtonCompare">对比</sys:String>
 
     <sys:String x:Key="ButtonSample">样品准备</sys:String>
-
+    <sys:String x:Key="ButtonExpressTrack">物流追踪</sys:String>
+    
+    <sys:String x:Key="ButtonLock">锁定</sys:String>
+    <sys:String x:Key="ButtonUnLock">解锁</sys:String>
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>
     <sys:String x:Key="IndicatorYesterday">昨天</sys:String>
@@ -427,6 +430,7 @@
     <sys:String x:Key="PlanKeepTempTime">保温</sys:String>
     <sys:String x:Key="PlanProcessCode">工艺</sys:String>
     <sys:String x:Key="PlanVHPRequirement">热压细节</sys:String>
+    <sys:String x:Key="PlanLock">锁定</sys:String>
 
     <sys:String x:Key="PlanMillingRequirement">制粉要求</sys:String>
     <sys:String x:Key="PlanFillingRequirement">装料要求</sys:String>

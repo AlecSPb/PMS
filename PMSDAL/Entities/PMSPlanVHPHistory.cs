@@ -59,6 +59,9 @@ namespace PMSDAL
 
         public string Remark { get; set; }
 
+        public bool IsLocked { get; set; }
+
+
         public int Grade { get; set; }
         public string Conclusion { get; set; }
 

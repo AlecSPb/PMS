@@ -87,6 +87,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Remark { get; set; }
         [DataMember]
+        public bool IsLocked { get; set; }
+        [DataMember]
         public int Grade { get; set; }
         [DataMember]
         public string Conclusion { get; set; }

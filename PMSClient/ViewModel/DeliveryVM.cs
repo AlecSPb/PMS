@@ -62,6 +62,21 @@ namespace PMSClient.ViewModel
 
             QuickSave = new RelayCommand<DcDeliveryItem>(ActionQuickSave, CanQuickSave);
             SaveAllItems = new RelayCommand(ActionSaveAllItems, CanSaveAllItems);
+            ExpressTrack = new RelayCommand(ActionExpressTrack,CanExpressTrack);
+        }
+
+        private bool CanExpressTrack()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
+        }
+
+        private void ActionExpressTrack()
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定追踪【未完成】的发货物流情况吗？"))
+                return;
+            //追踪物流情况
+            new Express.Operation().TrackUnCompleted();
+
         }
 
         private void ActionSaveAllItems()
@@ -480,7 +495,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 5;
+            PageSize = 20;
             var service = new DeliveryServiceClient();
             RecordCount = service.GetDeliveryCountBySearch(SearchDeliveryName);
             service.Close();
@@ -557,6 +572,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand<DcDeliveryItem> QuickSave { get; set; }
         public RelayCommand SaveAllItems { get; set; }
+        public RelayCommand ExpressTrack { get; set; }
         #endregion
 
 
