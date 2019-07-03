@@ -63,6 +63,7 @@
       <xs:element minOccurs="0" name="Grade" type="xs:int" />
       <xs:element minOccurs="0" name="GrainSize" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsLocked" type="xs:boolean" />
       <xs:element minOccurs="0" name="KeepTempTime" type="xs:double" />
       <xs:element minOccurs="0" name="MachineRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MillingRequirement" nillable="true" type="xs:string" />

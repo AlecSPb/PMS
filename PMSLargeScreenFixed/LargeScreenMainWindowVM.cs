@@ -130,7 +130,7 @@ namespace PMSLargeScreen
         {
             var model = new UnitModel();
             if (plans.Count() == 0)
-                return null;
+                return model;
             //标题部分
             model.DeviceCode = deviceCode;
             model.PlanLot = planLot;
@@ -144,7 +144,7 @@ namespace PMSLargeScreen
                 model.Temp = item.Plan.Temperature;
                 model.Vaccum = item.Plan.Vaccum;
                 model.KeepTime = item.Plan.KeepTempTime;
-
+                model.IsLocked = item.Plan.IsLocked;
                 //具体计划
                 var modelItem = new UnitModelItem();
                 modelItem.Composition = item.Misson.CompositionStandard;

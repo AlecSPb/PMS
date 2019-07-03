@@ -98,8 +98,17 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridCheckBoxColumn Header="{StaticResource PlanLockAbbr}"
-                                            Binding="{Binding Plan.IsLocked}" ElementStyle="{StaticResource StyleDGCheckBoxCommonReadOnly}"/>
+                <DataGridTemplateColumn Header="{StaticResource PlanLockAbbr}" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border Height="20" Width="20" BorderThickness="1" BorderBrush="Red" Margin="2" 
+                           Visibility="{Binding Plan.IsLocked,Converter={StaticResource IsLockedCT}}">
+                                <!--<TextBlock HorizontalAlignment="Center">🔒</TextBlock>-->
+                                <Image Source="../Resource/Icons/lock.png"/>
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>                
                 <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding PlanMisson.Misson.CompositionStandard}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource OrderPMINumber}" Binding="{Binding PlanMisson.Misson.PMINumber}"

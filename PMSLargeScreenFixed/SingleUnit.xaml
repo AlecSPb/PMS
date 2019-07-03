@@ -6,6 +6,9 @@
              xmlns:local="clr-namespace:PMSLargeScreen"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:IsLockedConverter x:Key="IsLockedCT"/>
+    </UserControl.Resources>
     <Border Style="{StaticResource StyleBorder}" Margin="1">
         <Grid Name="mainGrid">
             <Grid.RowDefinitions>
@@ -27,6 +30,10 @@
                 <TextBlock Text="{Binding KeepTime,StringFormat={}{0}min}" Style="{StaticResource StyleTextBlockBigDarkBlue}"
                             Visibility="{Binding DataContext.CompositionVisibility,
                                     RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}}"/>
+                <Border Height="20" Width="20" BorderThickness="1" BorderBrush="Red" Margin="2" 
+                           Visibility="{Binding IsLocked,Converter={StaticResource IsLockedCT}}">
+                    <TextBlock HorizontalAlignment="Center">🔒</TextBlock>
+                </Border>
             </StackPanel>
 
             <ListBox Grid.Row="1" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch" Background="LightYellow"

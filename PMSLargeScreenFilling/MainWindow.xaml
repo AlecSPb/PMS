@@ -8,6 +8,9 @@
         Language="zh-cn"
         mc:Ignorable="d"
         Title="热压制粉计划安排大屏幕显示程序" Height="1000" Width="1600">
+    <Window.Resources>
+        <local:IsLockedConverter x:Key="IsLockedCT"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -41,6 +44,17 @@
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGrid}"
                   ItemsSource="{Binding PlanExtras}">
             <DataGrid.Columns>
+                <DataGridTemplateColumn Header="锁"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Border Height="20" Width="20" BorderThickness="1" BorderBrush="Red" Margin="2" 
+                           Visibility="{Binding Plan.IsLocked,Converter={StaticResource IsLockedCT}}">
+                                <TextBlock HorizontalAlignment="Center">🔒</TextBlock>
+                            </Border>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="日期" ElementStyle="{StaticResource StyleTextBlock}"
                                     Binding="{Binding Plan.PlanDate,StringFormat={}{0:yyMMdd dddd}}"/>
                 <DataGridTextColumn Header="批次" ElementStyle="{StaticResource StyleTextBlockCenter}"

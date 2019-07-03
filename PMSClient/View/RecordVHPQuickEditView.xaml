@@ -76,8 +76,17 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridCheckBoxColumn Header="{StaticResource PlanLockAbbr}"
-                                            Binding="{Binding Plan.IsLocked}" ElementStyle="{StaticResource StyleDGCheckBoxCommonReadOnly}"/>
+                        <DataGridTemplateColumn Header="{StaticResource PlanLockAbbr}" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Height="20" Width="20" BorderThickness="1" BorderBrush="Red" Margin="2" 
+                           Visibility="{Binding Plan.IsLocked,Converter={StaticResource IsLockedCT}}">
+                                        <!--<TextBlock HorizontalAlignment="Center">🔒</TextBlock>-->
+                                        <Image Source="../Resource/Icons/lock.png"/>
+                                    </Border>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <DataGridTextColumn Header="{StaticResource PlanPlanDate}" Binding="{Binding  Plan.PlanDate,StringFormat={}{0:yyMMdd dddd}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding Plan.PlanLot}"

@@ -115,7 +115,7 @@
                          Style="{StaticResource StyleTextBoxCommon}"/>
                 <StackPanel Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
                     <Button Name="BtnSend" Content="发出" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnSend_Click"/>
-                    <Button Name="BtnReceive" Content="收到" Style="{StaticResource StyleButtonCommonNarrow}"
+                    <Button Name="BtnReceive" Content="返回" Style="{StaticResource StyleButtonCommonNarrow}"
                             Click="BtnReceive_Click"/>
                     <Button Name="BtnFail" Content="失败" Style="{StaticResource StyleButtonCommonNarrow}"
                             Click="BtnFail_Click"/>

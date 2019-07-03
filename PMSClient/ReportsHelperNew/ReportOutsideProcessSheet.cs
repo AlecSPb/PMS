@@ -49,7 +49,7 @@ namespace PMSClient.ReportsHelperNew
                     {
                         s = pageIndex * pageSize;
                         t = pageSize;
-                        var pageData = service.GetOutsideProcessUnCompleted(s, t);
+                        var pageData = service.GetOutsideProcessUnCompleted(s, t).OrderBy(i=>i.ProductID);
                         foreach (var item in pageData)
                         {
                             Row row = table.InsertRow();
