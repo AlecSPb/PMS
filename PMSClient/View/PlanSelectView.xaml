@@ -98,6 +98,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridCheckBoxColumn Header="{StaticResource PlanLockAbbr}"
+                                            Binding="{Binding Plan.IsLocked}" ElementStyle="{StaticResource StyleDGCheckBoxCommonReadOnly}"/>
                 <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding PlanMisson.Misson.CompositionStandard}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource OrderPMINumber}" Binding="{Binding PlanMisson.Misson.PMINumber}"

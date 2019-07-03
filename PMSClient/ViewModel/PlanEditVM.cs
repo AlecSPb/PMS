@@ -63,6 +63,7 @@ namespace PMSClient.ViewModel
                 CurrentPlan.FillingRequirement = model.FillingRequirement;
                 CurrentPlan.SpecialRequirement = model.SpecialRequirement;
                 CurrentPlan.VHPRequirement = model.VHPRequirement;
+                CurrentPlan.IsLocked = false;
             }
         }
 
@@ -110,6 +111,7 @@ namespace PMSClient.ViewModel
             plan.Conclusion = "无";
             plan.UpdateTime = DateTime.Now;
             plan.Updator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            plan.IsLocked = false;
             #endregion
             CurrentPlan = plan;
         }
@@ -132,6 +134,7 @@ namespace PMSClient.ViewModel
                 CurrentPlan.CreateTime = DateTime.Now;
                 CurrentPlan.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 CurrentPlan.State = PMSCommon.VHPPlanState.已核验.ToString();
+                CurrentPlan.IsLocked = false;
             }
         }
 

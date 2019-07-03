@@ -330,6 +330,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridCheckBoxColumn Header="{StaticResource PlanLockAbbr}"
+                                            Binding="{Binding IsLocked}" ElementStyle="{StaticResource StyleDGCheckBoxCommonReadOnly}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanPlanDate}" Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"

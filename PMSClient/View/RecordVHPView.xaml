@@ -64,6 +64,8 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    <DataGridCheckBoxColumn Header="{StaticResource PlanLockAbbr}"
+                                            Binding="{Binding Plan.IsLocked}" ElementStyle="{StaticResource StyleDGCheckBoxCommonReadOnly}"/>
                     <DataGridTextColumn Header="{StaticResource PlanPlanDate}" Binding="{Binding  Plan.PlanDate,StringFormat={}{0:yyMMdd dddd}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding Plan.PlanLot}"

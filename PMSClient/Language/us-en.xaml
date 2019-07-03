@@ -430,6 +430,7 @@
     <sys:String x:Key="PlanGrade">Grade</sys:String>
     <sys:String x:Key="PlanConclusion">Conclusion</sys:String>
     <sys:String x:Key="PlanLock">Lock</sys:String>
+    <sys:String x:Key="PlanLockAbbr">L</sys:String>
 
     <!--MaterialNeed-->
     <sys:String x:Key="MNState">State</sys:String>

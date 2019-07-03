@@ -431,6 +431,7 @@
     <sys:String x:Key="PlanProcessCode">工艺</sys:String>
     <sys:String x:Key="PlanVHPRequirement">热压细节</sys:String>
     <sys:String x:Key="PlanLock">锁定</sys:String>
+    <sys:String x:Key="PlanLockAbbr">锁</sys:String>
 
     <sys:String x:Key="PlanMillingRequirement">制粉要求</sys:String>
     <sys:String x:Key="PlanFillingRequirement">装料要求</sys:String>

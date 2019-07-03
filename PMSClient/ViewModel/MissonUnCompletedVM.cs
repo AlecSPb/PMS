@@ -213,6 +213,11 @@ namespace PMSClient.ViewModel
         {
             if (plan != null)
             {
+                if (plan.IsLocked)
+                {
+                    PMSDialogService.ShowWarning("该计划已经被【热压组】锁定执行，不允许再修改.\r\n如果一定要修改,请联系【热压组】解锁");
+                    return;
+                }
                 PMSHelper.ViewModels.PlanEdit.SetEdit(plan);
                 NavigationService.GoTo(PMSViews.PlanEdit);
             }

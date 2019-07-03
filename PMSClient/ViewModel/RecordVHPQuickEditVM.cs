@@ -59,6 +59,49 @@ namespace PMSClient.ViewModel
 
 
             PageChanged = new RelayCommand(ActionPaging);
+
+            Lock = new RelayCommand<DcPlanWithMisson>(ActionLock);
+            UnLock = new RelayCommand<DcPlanWithMisson>(ActionUnLock);
+        }
+
+        private void ActionUnLock(DcPlanWithMisson obj)
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "【解锁】后，计划可以修改，确定要【解锁】这个计划吗？"))
+                return;
+            try
+            {
+                var plan = obj.Plan;
+                plan.IsLocked = false;
+                using (var service = new PlanVHPServiceClient())
+                {
+                    service.UpdateVHPPlan(plan);
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSDialogService.ShowWarning(ex.Message);
+            }
+            SetPageParametersWhenConditionChange();
+        }
+
+        private void ActionLock(DcPlanWithMisson obj)
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "【锁定】后，计划无法修改，确定要【锁定】这个计划吗？"))
+                return;
+            try
+            {
+                var plan = obj.Plan;
+                plan.IsLocked = true;
+                using (var service = new PlanVHPServiceClient())
+                {
+                    service.UpdateVHPPlan(plan);
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSDialogService.ShowWarning(ex.Message);
+            }
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionDeleteItem(DcRecordVHP model)
@@ -77,7 +120,7 @@ namespace PMSClient.ViewModel
                     {
                         model.State = PMSCommon.SimpleState.作废.ToString();
 
-                        service.UpdateRecordVHPByUID(model,uid);
+                        service.UpdateRecordVHPByUID(model, uid);
                         service.Close();
                         ReLoadRecordVHPs();
                         //EmptyCurrentRecordVHP();
@@ -155,7 +198,7 @@ namespace PMSClient.ViewModel
                 temp.PV3 = 0;
                 temp.SV = 0;
                 temp.Ton = 5;
-                temp.Vaccum=0;
+                temp.Vaccum = 0;
                 temp.Shift1 = 0;
                 temp.Shift2 = 0;
                 temp.Omega = 0;
@@ -187,11 +230,11 @@ namespace PMSClient.ViewModel
                         if (isNew)
                         {
                             CurrentRecordVHP.CurrentTime = DateTime.Now;
-                            service.AddRecordVHPByUID(CurrentRecordVHP,uid);
+                            service.AddRecordVHPByUID(CurrentRecordVHP, uid);
                         }
                         else
                         {
-                            service.UpdateRecordVHPByUID(CurrentRecordVHP,uid);
+                            service.UpdateRecordVHPByUID(CurrentRecordVHP, uid);
                         }
                         service.Close();
                         ReLoadRecordVHPs();
@@ -324,6 +367,9 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcRecordVHP> EditItem { get; set; }
         public RelayCommand<DcRecordVHP> DeleteItem { get; set; }
         public RelayCommand<DcRecordVHP> CopyFill { get; set; }
+
+        public RelayCommand<DcPlanWithMisson> Lock { get; set; }
+        public RelayCommand<DcPlanWithMisson> UnLock { get; set; }
 
         public RelayCommand Chart { get; set; }
         #endregion
