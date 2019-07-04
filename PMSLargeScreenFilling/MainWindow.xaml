@@ -89,8 +89,8 @@
                                     Binding="{Binding Plan.Quantity}"/>
                 <DataGridTextColumn Header="单片" ElementStyle="{StaticResource StyleTextBlockRightBold}"
                                     Binding="{Binding Plan.SingleWeight}"/>
-                <!--<DataGridTextColumn Header="装料" ElementStyle="{StaticResource StyleTextBlockBold}"
-                                    Binding="{Binding Plan.FillingRequirement}"/>-->
+                <DataGridTextColumn Header="装料" ElementStyle="{StaticResource StyleTextBlockBold}"
+                                    Binding="{Binding Plan.FillingRequirement}"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock Grid.Row="3" Style="{StaticResource StyleTextBlockBold}" Text="制粉计划"

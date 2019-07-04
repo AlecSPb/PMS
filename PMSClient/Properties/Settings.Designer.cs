@@ -70,5 +70,17 @@ namespace PMSClient.Properties {
                 this["Language"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CheckExpressAtStartup {
+            get {
+                return ((bool)(this["CheckExpressAtStartup"]));
+            }
+            set {
+                this["CheckExpressAtStartup"] = value;
+            }
+        }
     }
 }

@@ -75,7 +75,7 @@ namespace PMSClient.ViewModel
             if (!PMSDialogService.ShowYesNo("请问", "确定追踪【未完成】的发货物流情况吗？"))
                 return;
             //追踪物流情况
-            new Express.Operation().TrackUnCompleted();
+            new Express.Operation().TraceUnCompleted();
 
         }
 

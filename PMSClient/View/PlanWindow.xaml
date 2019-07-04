@@ -71,7 +71,12 @@
                                 <Border Height="20" Width="20" BorderThickness="1" BorderBrush="Red" Margin="2" 
                            Visibility="{Binding Plan.IsLocked,Converter={StaticResource IsLockedCT}}">
                                     <!--<TextBlock HorizontalAlignment="Center">🔒</TextBlock>-->
-                                    <Image Source="../Resource/Icons/lock.png"/>
+                                    <Image Source="../Resource/Icons/lock.png">
+                                        <Image.ToolTip>
+                                            <TextBlock Text="锁代表该计划已经被热压组执行"
+                                                       TextWrapping="Wrap" Width="100"/>
+                                        </Image.ToolTip>
+                                    </Image>
                                 </Border>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

@@ -67,9 +67,9 @@
                                 <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
                                                 Command="{Binding Path=DataContext.Label,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}"
                                         CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
+                                <!--<Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
                                                 Command="{Binding Path=DataContext.Finish,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}"
-                                        CommandParameter="{Binding}"/>
+                                        CommandParameter="{Binding}"/>-->
 
                             </StackPanel>
                         </DataTemplate>
@@ -91,8 +91,16 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource RDDelivery}"
                                     Binding="{Binding DeliveryExpress}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="{StaticResource RDDeliveryNumber}" Binding="{Binding DeliveryNumber}"
-                                        ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <!--<DataGridTextColumn Header="{StaticResource RDDeliveryNumber}" Binding="{Binding DeliveryNumber}"
+                                        ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>-->
+                <DataGridTemplateColumn Header="{StaticResource RDDeliveryNumber}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Style="{StaticResource StyleDGTextBoxStrench}"
+                                     Text="{Binding DeliveryNumber}" IsReadOnly="True"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RDCountry}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolDialog"
         mc:Ignorable="d"
-        Title="ExpressTrack" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="ExpressTrack 快递轨迹追踪  追踪所有未完成的发货记录 测试版本" Height="450" Width="1000" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBox Margin="5" VerticalScrollBarVisibility="Visible"
-                 TextWrapping="Wrap" AcceptsReturn="True" Name="TxtTrackInfo"/>
+                 TextWrapping="Wrap" AcceptsReturn="True" Name="TxtTrackInfo"
+                 IsReadOnly="True"/>
     </Grid>
 </Window>

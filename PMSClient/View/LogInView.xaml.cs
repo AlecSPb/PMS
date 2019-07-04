@@ -66,10 +66,12 @@ namespace PMSClient.View
                 {
                     //PMSHelper.CurrentLog.Log("登录成功");
                     NavigationService.GoTo(PMSViews.Navigation);
+
                     //加载快递追踪情况
-                    if (PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.ViewExpressTrackAtLogin))
+                    if (PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.ViewExpressTrackAtLogin)
+                        &&Properties.Settings.Default.CheckExpressAtStartup)
                     {
-                        //new Express.ExpressOperation().TrackUnCompleted();
+                        new Express.Operation().TraceUnCompleted();
                     }
                 }
                 else
