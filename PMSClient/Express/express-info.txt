@@ -1,0 +1,6 @@
+﻿快递鸟
+用户ID：1548634
+API key：542f3be4-a58b-45c1-bdbb-b0b02d3f450b
+
+使用快递鸟的即时查询模块
+http://www.kdniao.com/api-track
