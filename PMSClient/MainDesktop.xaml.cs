@@ -117,13 +117,35 @@ namespace PMSClient
         {
             try
             {
+                using (var remote_heartbeat=new PMSClient.RemoteHeartBeatService.HeartBeatSeriveClient())
+                {
+                    if (remote_heartbeat.Beat() == "ok")
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            TxtRemoteHeartBeat.Text = "外网服务器通信正常";
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    TxtRemoteHeartBeat.Text = "外网心跳检测出错";
+                });
+                PMSHelper.CurrentLog.Error(ex);
+            }
+
+            try
+            {
                 using (var heartbeat = new PMSClient.HeartBeatService.HeartBeatSeriveClient())
                 {
                     if (heartbeat.Beat() == "ok")
                     {
                         this.Dispatcher.Invoke(() =>
                         {
-                            txtHeartBeat.Text = "服务器通信正常";
+                            txtHeartBeat.Text = "内网服务器通信正常";
                         });
                         //txtHeartBeat.Text = "服务器通信正常";
                     }
@@ -134,11 +156,12 @@ namespace PMSClient
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    txtHeartBeat.Text = ex.Message;
+                    txtHeartBeat.Text = "内网心跳检测出错";
                 });
                 PMSHelper.CurrentLog.Error(ex);
                 return false;
             }
+
         }
 
         public int noticeCount = 0;
@@ -536,6 +559,7 @@ namespace PMSClient
         /// <param name="e"></param>
         protected override void OnClosed(EventArgs e)
         {
+            _timerMain.Stop();
             RemoveNofiyIcon();
             Messenger.Default.Unregister(this);
             base.OnClosed(e);

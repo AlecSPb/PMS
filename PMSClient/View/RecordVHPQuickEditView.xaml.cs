@@ -88,5 +88,10 @@ namespace PMSClient.View
             CompoundWindow win = new View.CompoundWindow();
             win.ShowDialog();
         }
+
+        private void UserControl_Unloaded(object sender, RoutedEventArgs e)
+        {
+            _timer.Stop();
+        }
     }
 }
