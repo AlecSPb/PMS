@@ -9,8 +9,8 @@ namespace PMSClient.Express
     public static class Url
     {
         public static string FormalUrl { get; set; } 
-            = "http://sandboxapi.kdniao.com:8080/kdniaosandbox/gateway/exterfaceInvoke.json";
+            = @"http://sandboxapi.kdniao.com:8080/kdniaosandbox/gateway/exterfaceInvoke.json";
         public static string TestUrl { get; set; } 
-            = "http://api.kdniao.com/Ebusiness/EbusinessOrderHandle.aspx";
+            = @"http://api.kdniao.com/Ebusiness/EbusinessOrderHandle.aspx";
     }
 }

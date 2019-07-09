@@ -82,5 +82,29 @@ namespace PMSClient.Properties {
                 this["CheckExpressAtStartup"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("秦雪梅")]
+        public string ExpressSender {
+            get {
+                return ((string)(this["ExpressSender"]));
+            }
+            set {
+                this["ExpressSender"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("13808071935")]
+        public string ExpressSenderPhone {
+            get {
+                return ((string)(this["ExpressSenderPhone"]));
+            }
+            set {
+                this["ExpressSenderPhone"] = value;
+            }
+        }
     }
 }

@@ -137,6 +137,7 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockRightBlue}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanVHPRequirement}" 
+                                    Width="200"
                                     Binding="{Binding PlanMisson.Plan.VHPRequirement}"/>
                 <DataGridTextColumn Header="{StaticResource PlanMillingRequirement}" Binding="{Binding PlanMisson.Plan.MillingRequirement}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>

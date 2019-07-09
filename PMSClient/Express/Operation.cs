@@ -40,7 +40,7 @@ namespace PMSClient.Express
             //分别实现不同快递公司的服务接口
             foreach (var item in models)
             {
-                sb.AppendLine($"【{item.DeliveryName}】查询结果:");
+                sb.AppendLine($"【{item.DeliveryName}查询结果如下】");
 
                 string express = item.DeliveryExpress;
                 string[] numbers = item.DeliveryNumber.Split(new string[] { "+" }, StringSplitOptions.RemoveEmptyEntries);
@@ -49,26 +49,32 @@ namespace PMSClient.Express
 
             }
 
-            var msgbox = new ToolDialog.ExpressTrack();
-            msgbox.TrackInfo = sb.ToString();
-            msgbox.ShowDialog();
+            var express_track = new ToolDialog.ExpressTrack();
+            express_track.TrackInfo = sb.ToString();
+            express_track.Tip = "需要自动查询的物流记录请设置状态为【未完成】 绿色，不需要则设置为其他状态；目前只支持UPS和SF";
+            express_track.ShowDialog();
         }
 
         private void TraceNumber(string express, string[] numbers, StringBuilder sb)
         {
-            var api = new ApiVisit();
+            var api = new KDBird();
+            var sf = new SF();
+            if (numbers.Length == 0)
+            {
+                sb.AppendLine("还没有填写单号");
+                return;
+            }
             foreach (var number in numbers)
             {
                 switch (express)
                 {
                     case Shipper.SF:
                         {
-                            //不支持其他途径下单的顺丰单号查询
-                            //string json = api.GetOrderTracesByJson(new Request("", Shipper.SF, number));
-                            //string ok_str = ProcessResponce(json);
-                            //sb.AppendLine(ok_str);
-                            new SF().SFOrder();
-                            //sb.AppendLine($"暂时搞不定顺丰查询，请使用手工查询{number}");
+                            string result = sf.SFOrder(number);
+                            sb.AppendLine($"查询的SF单号为{number}");
+                            sb.AppendLine($"此单按照发件人为{sf.Sender}-{sf.SenderPhone}来查询，如有变化，联系管理员");
+                            sb.AppendLine("--------------------------------------------------------");
+                            sb.AppendLine(result);
                         }
                         break;
                     case Shipper.UPS:
@@ -90,10 +96,11 @@ namespace PMSClient.Express
             StringBuilder sb = new StringBuilder();
             sb.Clear();
             Response response = JsonConvert.DeserializeObject<Response>(json);
+            sb.Append("查询单号");
             sb.Append(response.ShipperCode);
             sb.Append(":");
             sb.AppendLine(response.LogisticCode);
-            sb.AppendLine("----------");
+            sb.AppendLine("--------------------------------------------------------");
             if (!response.Success)
             {
                 sb.AppendLine(response.Reason);

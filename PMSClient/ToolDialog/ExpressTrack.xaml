@@ -5,9 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolDialog"
         mc:Ignorable="d"
-        Title="ExpressTrack 快递轨迹追踪  追踪所有未完成的发货记录 测试版本" Height="450" Width="1000" WindowStartupLocation="CenterScreen">
+        Title="ExpressTrack 快递轨迹追踪程序  追踪所有【未完成】的发货记录 测试版本" 
+        Height="550" Width="1000" WindowStartupLocation="CenterScreen">
     <Grid>
-        <TextBox Margin="5" VerticalScrollBarVisibility="Visible"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="提示信息" Name="TxtTip" Style="{StaticResource StyleDGTextBlockCommon}"
+                   Background="Orange" Foreground="White"/>
+        <TextBox Grid.Row="1" Margin="5" VerticalScrollBarVisibility="Visible"
                  TextWrapping="Wrap" AcceptsReturn="True" Name="TxtTrackInfo"
                  IsReadOnly="True"/>
     </Grid>

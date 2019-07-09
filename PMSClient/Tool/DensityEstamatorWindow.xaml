@@ -16,11 +16,10 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Style="{StaticResource StyleTextBlockPageTitle}" Text="热压毛坯密度估算程序"/>
+        <TextBlock Style="{StaticResource StyleTextBlockPageTitle}" Text="热压毛坯密度估算程序-结果仅供参考"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
-            <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Save}"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
-            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="不需要每个尺寸都有，没有的是0就行了"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="石墨纸的规格有就选择，没有就自己输入到绿色框"/>
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -75,11 +74,19 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="石墨纸直径" />
-                    <TextBox Name="txtGraphiteDiameter" Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"   Text="{Binding GraphiteDiameter,StringFormat={}{0:F2}}"/>
+                    <TextBox Name="txtGraphiteDiameter" Grid.Row="0" Grid.Column="1" 
+                             Style="{StaticResource StyleTextBoxCommon}"   
+                             Text="{Binding GraphiteDiameter,StringFormat={}{0:F2}}"/>
                     <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="石墨纸重量" />
-                    <TextBox Name="txtGraphiteWeight" Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="{Binding GraphiteWeight,StringFormat={}{0:F2}}"/>
+                    <TextBox Name="txtGraphiteWeight" Grid.Row="1" Grid.Column="1" 
+                             Style="{StaticResource StyleTextBoxCommon}" 
+                             Text="{Binding GraphiteWeight,StringFormat={}{0:F2}}"
+                             Background="LightGreen"/>
                     <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="石墨纸厚度" />
-                    <TextBox Name="txtGraphiteThickness" Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"    Text="{Binding GraphiteThickness,StringFormat={}{0:F2}}"/>
+                    <TextBox Name="txtGraphiteThickness" Grid.Row="2" Grid.Column="1" 
+                             Style="{StaticResource StyleTextBoxCommon}"    
+                             Text="{Binding GraphiteThickness,StringFormat={}{0:F2}}"
+                             Background="LightGreen"/>
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="重量" />
                     <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"    Text="{Binding Weight,StringFormat={}{0:F2}}"/>
@@ -103,9 +110,22 @@
                     <TextBox Grid.Row="11" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"    Text="{Binding Density,StringFormat={}{0:F2}}"/>
                     <TextBlock Grid.Row="12" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="密度%" />
                     <TextBox Grid.Row="12" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"    Text="{Binding RatioDensity,StringFormat={}{0:P2}}"/>
-                    <Button Grid.Row="13" Grid.Column="0" Style="{StaticResource StyleButtonCommon}" Command="{Binding DataContext.RefreshCalculation,
+                    <StackPanel Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="2" 
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Right">
+                        <Button Grid.Row="13" Grid.Column="0" Style="{StaticResource StyleButtonCommon}" 
+                            Command="{Binding DataContext.RefreshCalculation,
                         RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
-                            Content="刷新计算"/>
+                            Content="刷新"/>
+                        <Button Content="{StaticResource ButtonSave}" 
+                            Style="{StaticResource StyleButtonCommon}" 
+                            Command="{Binding DataContext.Save,
+                            RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"/>
+                        <Button Content="关闭" Style="{StaticResource StyleButtonCommon}"
+                                Name="BtnClose" Click="BtnClose_Click"/>
+                    </StackPanel>
+
+
                 </Grid>
             </Border>
             <Border Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleBorderCommon}"/>

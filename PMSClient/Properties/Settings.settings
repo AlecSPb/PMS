@@ -17,5 +17,11 @@
     <Setting Name="CheckExpressAtStartup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="ExpressSender" Type="System.String" Scope="User">
+      <Value Profile="(Default)">秦雪梅</Value>
+    </Setting>
+    <Setting Name="ExpressSenderPhone" Type="System.String" Scope="User">
+      <Value Profile="(Default)">13808071935</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

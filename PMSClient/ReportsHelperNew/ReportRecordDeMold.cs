@@ -74,12 +74,12 @@ namespace PMSClient.ReportsHelperNew
                                 row.Cells[3].VerticalAlignment = VerticalAlignment.Center;
 
                                 //添加440 加工的大靶材到记录单
-                                if ((item.Plan.MillingRequirement.Contains("#") ||
-                                            item.Plan.FillingRequirement.Contains("#"))
+                                if (item.Plan.VHPRequirement.Contains("#")
                                     && (item.Plan.PlanType.Contains("其他") ||
-                                            item.Plan.PlanType.Contains("加工")))
+                                            item.Plan.PlanType.Contains("加工")
+                                            ||item.Plan.PlanType.Contains("外协")))
                                 {
-                                    string remark = GetBigNumber(item.Plan.MillingRequirement);
+                                    string remark = GetBigNumber(item.Plan.VHPRequirement);
                                     row.Cells[13].Paragraphs[0].Append(remark);
                                     row.Cells[13].VerticalAlignment = VerticalAlignment.Center;
                                 }

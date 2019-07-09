@@ -25,5 +25,10 @@ namespace PMSClient.Tool
         {
             InitializeComponent();
         }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

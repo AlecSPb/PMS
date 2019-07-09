@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>142</ApplicationRevision>
+    <ApplicationRevision>144</ApplicationRevision>
     <ApplicationVersion>4.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -247,8 +247,11 @@
     <Compile Include="ExcelOutputHelper\ExcelOutputSpecialFor230.cs" />
     <Compile Include="ExcelOutputHelper\Libs\SpecialFor230.cs" />
     <Compile Include="ExcelOutputHelper\NPOIHelper.cs" />
-    <Compile Include="Express\ApiVisit.cs" />
+    <Compile Include="Express\KDBird.cs" />
     <Compile Include="Express\ID.cs" />
+    <Compile Include="Express\Useless\KD100.cs" />
+    <Compile Include="Express\Useless\KDRequest.cs" />
+    <Compile Include="Express\Useless\KDResponse.cs" />
     <Compile Include="Express\Request.cs" />
     <Compile Include="Express\Response.cs" />
     <Compile Include="Express\SF.cs" />
@@ -360,6 +363,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\PMSIndexService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SF\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -1632,6 +1640,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Resource Include="Express\express-info.txt" />
+    <Resource Include="Express\SF.xml" />
     <Content Include="Resource\DocTemplate\Reports\OutsideProcessSheet.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1648,6 +1657,18 @@
     <Resource Include="Resource\Icons\lock.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <None Include="Service References\SF\configuration91.svcinfo" />
+    <None Include="Service References\SF\configuration.svcinfo" />
+    <None Include="Service References\SF\PMSClient.SF.expressServiceForRouteLabelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SF\PMSClient.SF.sfexpressServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SF\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="StandardDocs\产品拍照规范流程.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1797,6 +1818,7 @@
     </None>
     <None Include="Service References\PMSIndexService\configuration.svcinfo" />
     <None Include="Service References\PMSIndexService\configuration91.svcinfo" />
+    <None Include="Service References\SF\CommonServiceService.wsdl" />
     <None Include="Service References\UserSimpleService\UserSimpleService1.disco" />
     <None Include="Service References\StatisticService\MainStatisticService1.wsdl" />
     <None Include="Service References\StatisticService\StatisticService1.disco" />
@@ -2179,6 +2201,7 @@
     <WCFMetadataStorage Include="Service References\OutputService\" />
     <WCFMetadataStorage Include="Service References\OutsideProcessService\" />
     <WCFMetadataStorage Include="Service References\PMSIndexService\" />
+    <WCFMetadataStorage Include="Service References\SF\" />
     <WCFMetadataStorage Include="Service References\StatisticService\" />
     <WCFMetadataStorage Include="Service References\UserSimpleService\" />
   </ItemGroup>

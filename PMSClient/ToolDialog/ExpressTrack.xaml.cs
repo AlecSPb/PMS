@@ -30,5 +30,12 @@ namespace PMSClient.ToolDialog
                 TxtTrackInfo.Text = value;
             }
         }
+        public string Tip
+        {
+            set
+            {
+                TxtTip.Text = value;
+            }
+        }
     }
 }

@@ -79,9 +79,9 @@
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RDDeliveryNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding DeliveryNumber}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                         Background="LightGreen"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
-                           Text="完整运单号，多个用+隔开"/>
+                           Text="需要填入完整运单号，多个单号请用+隔开"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RDCountry}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

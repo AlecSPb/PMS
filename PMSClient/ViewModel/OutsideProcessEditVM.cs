@@ -31,23 +31,47 @@ namespace PMSClient.ViewModel
             Select = new RelayCommand(ActionSelect);
         }
 
+        /// <summary>
+        /// 从备注字符串中获取#165格式的编号
+        /// </summary>
+        /// <param name="millling"></param>
+        /// <returns></returns>
+        private string GetBigNumber(string millling)
+        {
+            if (string.IsNullOrEmpty(millling))
+                return "";
+            return System.Text.RegularExpressions.Regex.Match(millling, @"#\d*").Value;
+        }
+
+
         private void ActionSelect()
         {
             PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.OutsideProcessEdit);
             PMSHelper.ViewModels.PlanSelect.RefreshData();
             NavigationService.GoTo(PMSViews.PlanSelect);
         }
-        public void SetBySelect(DcPlanWithMisson plan)
+        public void SetBySelect(DcPlanWithMisson model)
         {
-            if (plan != null)
+            if (model != null)
             {
-                CurrentOutsideProcess.ProductID = plan.Plan.SearchCode+"-1";
-                CurrentOutsideProcess.Composition = plan.Misson.CompositionStandard;
-                CurrentOutsideProcess.Customer = plan.Misson.CustomerName;
-                CurrentOutsideProcess.Dimension = plan.Misson.Dimension;
-                CurrentOutsideProcess.PMINumber = plan.Misson.PMINumber;
-                CurrentOutsideProcess.PONumber = plan.Misson.PO;
-                
+                CurrentOutsideProcess.ProductID = model.Plan.SearchCode + "-1";
+
+
+                //添加440 加工的大靶材到记录单
+                if (model.Plan.VHPRequirement.Contains("#")
+                    && (model.Plan.PlanType.Contains("其他") ||
+                            model.Plan.PlanType.Contains("加工")
+                            || model.Plan.PlanType.Contains("外协")))
+                {
+                    string postfix = GetBigNumber(model.Plan.VHPRequirement);
+                    CurrentOutsideProcess.ProductID += postfix;
+                }
+                CurrentOutsideProcess.Composition = model.Misson.CompositionStandard;
+                CurrentOutsideProcess.Customer = model.Misson.CustomerName;
+                CurrentOutsideProcess.Dimension = model.Misson.Dimension;
+                CurrentOutsideProcess.PMINumber = model.Misson.PMINumber;
+                CurrentOutsideProcess.PONumber = model.Misson.PO;
+
                 //RaisePropertyChanged(nameof(CurrentRecordTest));
             }
         }

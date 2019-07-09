@@ -584,7 +584,8 @@ namespace PMSWCFService
                     var query = from p in dc.VHPPlans
                                 join o in dc.Orders on p.OrderID equals o.ID
                                 where p.State == PMSCommon.CommonState.已核验.ToString()
-                                && (p.PlanType=="加工"||p.PlanType=="其他")
+                                && (p.PlanType=="加工"||p.PlanType=="其他"
+                                        ||p.PlanType=="外协" || p.PlanType == "代工" || p.PlanType == "发货")
                                      && p.SearchCode.Contains(searchCode)
                                      && o.CompositionStandard.Contains(composition)
                                 orderby DbFunctions.TruncateTime(p.PlanDate) descending, p.PlanLot descending, p.VHPDeviceCode descending, DbFunctions.TruncateTime(p.CreateTime) descending
@@ -619,7 +620,8 @@ namespace PMSWCFService
                     var query = from p in dc.VHPPlans
                                 join o in dc.Orders on p.OrderID equals o.ID
                                 where p.State == PMSCommon.CommonState.已核验.ToString()
-                                & (p.PlanType == "加工" || p.PlanType == "其他")
+                                & (p.PlanType == "加工" || p.PlanType == "其他" 
+                                || p.PlanType == "外协" || p.PlanType == "代工" || p.PlanType == "发货")
                                      && p.SearchCode.Contains(searchCode)
                                      && o.CompositionStandard.Contains(composition)
                                 select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
