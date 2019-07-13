@@ -60,8 +60,49 @@ namespace PMSClient.ViewModel
 
             PageChanged = new RelayCommand(ActionPaging);
 
-            Lock = new RelayCommand<DcPlanWithMisson>(ActionLock);
-            UnLock = new RelayCommand<DcPlanWithMisson>(ActionUnLock);
+            Lock = new RelayCommand<DcPlanWithMisson>(ActionLock, CanLock);
+            UnLock = new RelayCommand<DcPlanWithMisson>(ActionUnLock, CanUnLock);
+
+            LockAll = new RelayCommand(ActionLockAll);
+        }
+
+        private void ActionLockAll()
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定要一键锁定今天所有的计划吗？"))
+                return;
+            try
+            {
+
+                var plandate = DateTime.Today.ToString("yyMMdd");
+                var misson_service = new MissonServiceClient();
+                var today_plans = misson_service.GetPlanExtra(0, 100, plandate, string.Empty);
+                var plan_service = new PlanVHPServiceClient();
+                foreach (var item in today_plans)
+                {
+                    var plan = item.Plan;
+                    plan.IsLocked = true;
+                    plan_service.UpdateVHPPlan(plan);
+                }
+                plan_service.Close();
+                misson_service.Close();
+            }
+            catch (Exception ex)
+            {
+                PMSDialogService.ShowWarning(ex.Message);
+            }
+            SetPageParametersWhenConditionChange();
+        }
+
+        private bool CanUnLock(DcPlanWithMisson arg)
+        {
+            if (arg == null) return true;
+            return arg.Plan.PlanDate >= DateTime.Today && arg.Plan.IsLocked;
+        }
+
+        private bool CanLock(DcPlanWithMisson arg)
+        {
+            if (arg == null) return true;
+            return arg.Plan.PlanDate >= DateTime.Today && !arg.Plan.IsLocked;
         }
 
         private void ActionUnLock(DcPlanWithMisson obj)
@@ -372,6 +413,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPlanWithMisson> UnLock { get; set; }
 
         public RelayCommand Chart { get; set; }
+
+        public RelayCommand LockAll { get; set; }
         #endregion
     }
 }

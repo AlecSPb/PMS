@@ -32,28 +32,45 @@ namespace PMSClient.Express
             }
         }
 
-        private void Trace(DcDelivery[] models)
+        private async void Trace(DcDelivery[] models)
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Clear();
-
-            //分别实现不同快递公司的服务接口
-            foreach (var item in models)
-            {
-                sb.AppendLine($"【{item.DeliveryName}查询结果如下】");
-
-                string express = item.DeliveryExpress;
-                string[] numbers = item.DeliveryNumber.Split(new string[] { "+" }, StringSplitOptions.RemoveEmptyEntries);
-
-                TraceNumber(express, numbers, sb);
-
-            }
-
             var express_track = new ToolDialog.ExpressTrack();
-            express_track.TrackInfo = sb.ToString();
             express_track.Tip = "需要自动查询的物流记录请设置状态为【未完成】 绿色，不需要则设置为其他状态；目前只支持UPS和SF";
+            express_track.TrackInfo = await GetTraceInformationAsync(models);
             express_track.ShowDialog();
         }
+
+        /// <summary>
+        /// 使用异步处理最费时间的地方
+        /// </summary>
+        /// <param name="models"></param>
+        /// <returns></returns>
+        private Task<string> GetTraceInformationAsync(DcDelivery[] models)
+        {
+            var rs = Task<string>.Run(() =>
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Clear();
+
+                //分别实现不同快递公司的服务接口
+                foreach (var item in models)
+                {
+                    sb.AppendLine($"【{item.DeliveryName}查询结果如下】");
+                    sb.AppendLine($"发货目的地:{item.Country}");
+
+                    string express = item.DeliveryExpress;
+                    string[] numbers = item.DeliveryNumber.Split(new string[] { "+" }, StringSplitOptions.RemoveEmptyEntries);
+
+                    TraceNumber(express, numbers, sb);
+
+                }
+                return sb.ToString();
+            });
+
+            return rs;
+        }
+
+
 
         private void TraceNumber(string express, string[] numbers, StringBuilder sb)
         {
@@ -79,6 +96,11 @@ namespace PMSClient.Express
                         break;
                     case Shipper.UPS:
                         {
+                            sb.Append("查询单号");
+                            sb.Append(express);
+                            sb.Append(":");
+                            sb.AppendLine(number);
+                            sb.AppendLine("--------------------------------------------------------");
                             string json = api.GetOrderTracesByJson(new Request("", Shipper.UPS, number));
                             string ok_str = ProcessResponce(json);
                             sb.AppendLine(ok_str);
@@ -96,11 +118,6 @@ namespace PMSClient.Express
             StringBuilder sb = new StringBuilder();
             sb.Clear();
             Response response = JsonConvert.DeserializeObject<Response>(json);
-            sb.Append("查询单号");
-            sb.Append(response.ShipperCode);
-            sb.Append(":");
-            sb.AppendLine(response.LogisticCode);
-            sb.AppendLine("--------------------------------------------------------");
             if (!response.Success)
             {
                 sb.AppendLine(response.Reason);
@@ -119,7 +136,6 @@ namespace PMSClient.Express
                     }
                 }
             }
-
 
 
             return sb.ToString();

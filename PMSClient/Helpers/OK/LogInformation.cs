@@ -84,5 +84,9 @@ namespace PMSClient.Helper
             return false;
         }
 
+        public bool IsLogIn()
+        {
+            return CurrentUser != null;
+        }
     }
 }

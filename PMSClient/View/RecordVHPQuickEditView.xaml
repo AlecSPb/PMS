@@ -24,6 +24,7 @@
             <Button x:Name="btnPressureTool" Content="{StaticResource PressureChangeTool}" Style="{StaticResource StyleButtonSpecial}"
                    Click="btnPressureTool_Click" />
             <Button Name="txtCompound" Click="txtCompound_Click" Content="{StaticResource ButtonCompoundLib}" Style="{StaticResource StyleButtonSpecial}"/>
+            <Button Content="一键锁定" Style="{StaticResource StyleButtonSpecial}" Command="{Binding LockAll}"/>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
                 <TextBlock Text="{StaticResource IndicatorYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
