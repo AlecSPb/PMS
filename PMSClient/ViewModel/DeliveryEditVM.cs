@@ -30,7 +30,7 @@ namespace PMSClient.ViewModel
             model.State = PMSCommon.DeliveryState.未核验.ToString();
             model.DeliveryName = $"FH{DateTime.Now.ToString("yyMMdd")}";
             model.InvoiceNumber = "无";
-            model.DeliveryExpress = "USP";
+            model.DeliveryExpress = "UPS";
             model.DeliveryNumber = "";
             model.PackageInformation = "无";
             model.PackageType = PMSCommon.PackageType.木箱.ToString();

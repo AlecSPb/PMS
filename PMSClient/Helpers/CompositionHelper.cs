@@ -21,6 +21,14 @@ namespace PMSClient.Helpers
 
     public static class CompositionHelper
     {
+        public static string RemoveNumbers(string compostion)
+        {
+            string pattern = @"(\-|\+)?\d+(\.\d+)?";
+            return Regex.Replace(compostion, pattern, "");
+        }
+
+
+
         public static string GetGa(string comp)
         {
             if (WhatItIs(comp) == TargetType.CIGS)

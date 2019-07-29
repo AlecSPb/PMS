@@ -413,6 +413,8 @@
                                     Header="{StaticResource PlanSpecialRequirement}" Binding="{Binding SpecialRequirement}"/>
                 <!--<DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanRemark}" Binding="{Binding Remark}"/>-->
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Header="{StaticResource PlanCreateTime}" Binding="{Binding CreateTime}"/>
 
             </DataGrid.Columns>
         </DataGrid>

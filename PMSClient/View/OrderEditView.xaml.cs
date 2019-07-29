@@ -132,7 +132,7 @@ namespace PMSClient.View
 
         private void BtnBasicRequirement_Click(object sender, RoutedEventArgs e)
         {
-            string s = @"TD±0.1mm TH±0.1mm Ra<50um FR=2mm";
+            string s = @"TD±0.1mm TH±0.1mm Ra<1.6um FR=2mm";
             PMSMethods.SetTextBox(TxtDimensionDetails, s);
 
         }
@@ -141,6 +141,23 @@ namespace PMSClient.View
         {
             string s = @"ρ>3g/cm3 允许小缺陷";
             PMSMethods.SetTextBox(TxtAcceptDefects, s);
+        }
+
+        private void BtnPurity1_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtPurity, "99.990%");
+        }
+
+        private void BtnPurity2_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtPurity, "99.995%");
+
+        }
+
+        private void BtnPurity3_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtPurity, "99.999%");
+
         }
     }
 }

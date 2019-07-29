@@ -71,7 +71,7 @@ namespace PMSClient.ViewModel
             order.CreateTime = DateTime.Now;
             order.PMINumber = Helpers.DefaultHelper.DefaultPMINumber();
             order.ProductType = PMSCommon.OrderProductType.靶材.ToString();
-            order.Purity = "99.99";
+            order.Purity = "99.990%";
             order.Quantity = 1;
             order.QuantityUnit = PMSCommon.OrderUnit.片.ToString();
             order.Dimension = "230mm OD x  4mm";

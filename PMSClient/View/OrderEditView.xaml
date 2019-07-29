@@ -125,9 +125,20 @@
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource OrderPurity}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Purity}"
+                         Name="TxtPurity" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="8" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnPurity1" Click="BtnPurity1_Click" Content="99.990" 
+                            Style="{StaticResource StyleButtonCommonNarrow}"/>
+                    <Button Name="BtnPurity2" Click="BtnPurity2_Click" Content="99.995" 
+                            Style="{StaticResource StyleButtonCommonNarrow}"/>
+                    <Button Name="BtnPurity3" Click="BtnPurity3_Click" Content="99.999" 
+                            Style="{StaticResource StyleButtonCommonNarrow}"/>
+
+                    <TextBlock Style="{StaticResource StyleTextBlockTip}"
                            Text="纯度要求"/>
+                </StackPanel>
+
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource OrderQuantity}"
                            Style="{StaticResource StyleTextBlockSpecial}" />

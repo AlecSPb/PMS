@@ -100,6 +100,7 @@ namespace PMSClient.ViewModel
                         lb.AppendLine("样品      g");
                         lb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(item));
                         lb.AppendLine();
+
                         lb.AppendLine("################下一块靶材######################");
                         lb.AppendLine();
 
@@ -285,8 +286,14 @@ namespace PMSClient.ViewModel
                 lb.AppendLine("=====  一般标签↑，样品标签↓  =====");
                 lb.AppendLine();
                 lb.AppendLine(model.Misson.CompositionStandard);
-                lb.AppendLine("样品      g");
+                lb.AppendLine("Weight      g");
                 lb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
+
+                lb.AppendLine("=====  简成分样品标签↓  =====");
+                lb.AppendLine(Helpers.CompositionHelper.RemoveNumbers(model.Misson.CompositionStandard));
+                lb.AppendLine("Weight      g");
+                lb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
+                lb.AppendLine();
 
                 var lcw = new ToolWindow.LabelCopyWindow();
                 lcw.LabelInformation = lb.ToString();

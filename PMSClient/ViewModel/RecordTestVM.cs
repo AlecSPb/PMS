@@ -85,7 +85,7 @@ namespace PMSClient.ViewModel
         {
             if (obj != null)
             {
-                using (var service=new OrderServiceClient())
+                using (var service = new OrderServiceClient())
                 {
                     var result = service.GetOrders(0, 1, "", "", obj.RecordTest.PMINumber).FirstOrDefault();
                     if (result != null)
@@ -438,7 +438,16 @@ namespace PMSClient.ViewModel
                 sb.AppendLine(model.RecordTest.Dimension);
                 sb.AppendLine(model.RecordTest.Customer);
                 sb.AppendLine(model.RecordTest.PO);
-
+                sb.AppendLine("=====  简成分样品标签↓  =====");
+                sb.AppendLine(Helpers.CompositionHelper.RemoveNumbers(model.RecordTest.Composition));
+                sb.AppendLine("Weight      g");
+                sb.AppendLine(model.RecordTest.ProductID);
+                sb.AppendLine();
+                sb.AppendLine("=====  全成分样品标签↓  =====");
+                sb.AppendLine(model.RecordTest.Composition);
+                sb.AppendLine("Weight      g");
+                sb.AppendLine(model.RecordTest.ProductID);
+                sb.AppendLine();
                 var mainContent = sb.ToString();
 
                 //var pageTitle = "产品标签打印输出";

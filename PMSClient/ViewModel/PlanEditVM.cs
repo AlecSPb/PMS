@@ -37,6 +37,7 @@ namespace PMSClient.ViewModel
         {
             if (model != null && CurrentPlan != null)
             {
+                CurrentPlan.PlanDate = DateTime.Today;
                 CurrentPlan.PlanLot = model.PlanLot;
                 CurrentPlan.PlanType = model.PlanType;
                 CurrentPlan.MoldType = model.MoldType;
@@ -79,7 +80,7 @@ namespace PMSClient.ViewModel
             var plan = new DcPlanVHP();
             plan.ID = Guid.NewGuid();
             plan.OrderID = order.ID;
-            plan.PlanDate = DateTime.Now.Date;
+            plan.PlanDate = DateTime.Today;
             plan.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             plan.PlanLot = 1;
             plan.PlanType = PMSCommon.VHPPlanType.加工.ToString();
@@ -126,6 +127,7 @@ namespace PMSClient.ViewModel
 
         public void SetDuplicate(DcPlanVHP plan)
         {
+            //TODO:这里需要深度拷贝
             if (plan != null)
             {
                 IsNew = true;
@@ -135,6 +137,7 @@ namespace PMSClient.ViewModel
                 CurrentPlan.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 CurrentPlan.State = PMSCommon.VHPPlanState.已核验.ToString();
                 CurrentPlan.IsLocked = false;
+                CurrentPlan.PlanDate = DateTime.Today;
             }
         }
 

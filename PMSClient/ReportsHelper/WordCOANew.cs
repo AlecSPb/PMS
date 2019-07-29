@@ -78,6 +78,19 @@ namespace PMSClient.ReportsHelper
                     document.ReplaceText("[CreateDate]", DateTime.Now.ToString("MM/dd/yyyy"));
                     #endregion
 
+                    //如果是440靶材，加入粗糙度值
+                    if (model.ProductID.Contains("#"))
+                    {
+                        document.ReplaceText("[Roughness]", model.Roughness);
+
+                    }
+                    else
+                    {
+                        document.ReplaceText("[Roughness]","-");
+                    }
+
+
+
                     //如果是是230mm的靶材，查找背板编号填入
                     if (model.Dimension.Contains("230"))
                     {
