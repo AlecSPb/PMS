@@ -29,6 +29,7 @@ namespace PMSDAL
         [DefaultValue("未知")]
         public string MaterialType { get; set; }
         public string MaterialSource { get; set; }//MaterialSource
+        public string RecycleID { get; set; }
         public string Remark { get; set; }
         public string MillingTool { get; set; }
         public string GasProtection { get; set; }

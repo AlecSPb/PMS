@@ -52,6 +52,20 @@ namespace PMSClient.ViewModel
             Calculator = new RelayCommand(ActionCalculator);
             QuickAdd = new RelayCommand(ActionQuickAdd, CanQuickAdd);
             Output = new RelayCommand(ActionOutput);
+            Trace = new RelayCommand<DcRecordMilling>(ActionTrace);
+        }
+
+        private void ActionTrace(DcRecordMilling obj)
+        {
+            if (obj != null && !string.IsNullOrEmpty(obj.RecycleID) && !obj.RecycleID.Contains("无"))
+            {
+                SearchVHPPlanLot = obj.RecycleID.Substring(0, 8);
+                SetPageParametersWhenConditionChange();
+            }
+            else
+            {
+                PMSDialogService.ShowWarning("没有填写有效的回收ID");
+            }
         }
 
         private void ActionOutput()
@@ -174,7 +188,7 @@ namespace PMSClient.ViewModel
             var service = new RecordMillingServiceClient();
             var models = service.GetRecordMillingsByVHPPlanLot(skip, take, SearchVHPPlanLot, SearchComposition);
 
-            AllPowderWeight = service.GetAllPowderWeight()/1000;
+            AllPowderWeight = service.GetAllPowderWeight() / 1000;
             service.Close();
             RecordMillings.Clear();
             models.ToList().ForEach(o => RecordMillings.Add(o));
@@ -204,7 +218,7 @@ namespace PMSClient.ViewModel
             }
             set
             {
-                allPowderWeight = value;RaisePropertyChanged(nameof(AllPowderWeight));
+                allPowderWeight = value; RaisePropertyChanged(nameof(AllPowderWeight));
             }
         }
 
@@ -227,6 +241,7 @@ namespace PMSClient.ViewModel
         public RelayCommand Calculator { get; set; }
 
         public RelayCommand<DcRecordMilling> Label { get; set; }
+        public RelayCommand<DcRecordMilling> Trace { get; set; }
 
         public RelayCommand QuickAdd { get; set; }
 

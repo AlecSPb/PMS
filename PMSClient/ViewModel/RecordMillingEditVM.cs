@@ -75,6 +75,7 @@ namespace PMSClient.ViewModel
             model.GrainSize = "未知";
             model.MaterialType = PMSCommon.CustomData.MaterialTypes[4];//默认其他
             model.MaterialSource = PMSCommon.MillingMaterialSource.SJ.ToString();
+            model.RecycleID = "无";
             model.MillingTool = PMSCommon.MillingTool.行星球磨.ToString();
             model.MillingTime = "无";
             model.Remark = "";

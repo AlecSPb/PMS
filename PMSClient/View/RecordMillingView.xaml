@@ -17,8 +17,8 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <TextBlock Text="{StaticResource PageRecordMilling}" Style="{StaticResource StyleTextBlockPageTitle}"/>
-                <TextBlock Text="{Binding AllPowderWeight,StringFormat=截至今日共制粉重量{0:F0}kg}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Red"/>
+            <TextBlock Text="{StaticResource PageRecordMilling}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+            <TextBlock Text="{Binding AllPowderWeight,StringFormat=截至今日共制粉重量{0:F0}kg}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Red"/>
 
         </StackPanel>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
@@ -71,6 +71,9 @@
                                     <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                    <Button Content="{StaticResource ButtonTrace}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Trace,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -88,6 +91,8 @@
                                     Binding="{Binding MaterialType}"/>
                     <DataGridTextColumn Header="{StaticResource RMMaterialSource}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialSource}"/>
+                    <DataGridTextColumn Header="{StaticResource RMRecycleID}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding RecycleID}"/>
                     <DataGridTextColumn Header="{StaticResource RMRoomTemperature}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding RoomTemperature}"/>
                     <DataGridTextColumn Header="{StaticResource RMRoomHumidity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -138,6 +143,7 @@
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="Auto"/>
@@ -178,74 +184,78 @@
                         <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RMMaterialSource}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding MaterialSource}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-
-                        <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMRoomTemperature}"
+                        
+                        <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMRecycleID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding RoomTemperature}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding RecycleID}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                        <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMRoomHumidity}"
+                        <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMRoomTemperature}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding RoomHumidity}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding RoomTemperature}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                        <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMMillingTool}"
+                        <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMRoomHumidity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding MillingTool}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding RoomHumidity}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                        <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMGasProtection}"
+                        <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMMillingTool}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding GasProtection}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding MillingTool}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                        <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RMGrainSize}"
+                        <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RMGasProtection}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding GrainSize}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding GasProtection}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                        <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RMMillingTime}"
+                        <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RMGrainSize}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding MillingTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding GrainSize}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-
-                        <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RMWeightIn}"
+                        <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RMMillingTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Name="txtWeightIn" Grid.Row="11" Grid.Column="1" Text="{Binding WeightIn}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding MillingTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                        <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RMWeightOut}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Name="txtWeightOut" Grid.Row="12" Grid.Column="1" Text="{Binding WeightOut}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                        <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RMWeightRemain}"
+                        <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RMWeightIn}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Name="txtWeightRemain" Grid.Row="13" Grid.Column="1" Text="{Binding WeightRemain}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Name="txtWeightIn" Grid.Row="12" Grid.Column="1" Text="{Binding WeightIn}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                        <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RMRatio}"
+                        <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RMWeightOut}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <StackPanel Grid.Row="14" Grid.Column="1" Orientation="Horizontal">
+                        <TextBox Name="txtWeightOut" Grid.Row="13" Grid.Column="1" Text="{Binding WeightOut}" Style="{StaticResource StyleTextBoxReadOnly}" />
+
+                        <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RMWeightRemain}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Name="txtWeightRemain" Grid.Row="14" Grid.Column="1" Text="{Binding WeightRemain}" Style="{StaticResource StyleTextBoxReadOnly}" />
+
+                        <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RMRatio}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <StackPanel Grid.Row="15" Grid.Column="1" Orientation="Horizontal">
                             <TextBox Name="txtRatio"  Text="{Binding Ratio,StringFormat={}{0:P}}" Style="{StaticResource StyleTextBoxReadOnly}"  Width="80"/>
                         </StackPanel>
 
-                        <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RMOxygen}"
+                        <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RMOxygen}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox  Grid.Row="15" Grid.Column="1" Text="{Binding Oxygen}" Style="{StaticResource StyleTextBoxReadOnly}" HorizontalAlignment="Left" />
+                        <TextBox  Grid.Row="16" Grid.Column="1" Text="{Binding Oxygen}" Style="{StaticResource StyleTextBoxReadOnly}" HorizontalAlignment="Left" />
 
-                        <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RMWater}"
+                        <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RMWater}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding Water}" Style="{StaticResource StyleTextBoxReadOnly}" HorizontalAlignment="Left" />
+                        <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding Water}" Style="{StaticResource StyleTextBoxReadOnly}" HorizontalAlignment="Left" />
 
-                        <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RMMeltingPoint}"
+                        <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RMMeltingPoint}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding MeltingPoint}" Style="{StaticResource StyleTextBoxReadOnly}" HorizontalAlignment="Left" />
+                        <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding MeltingPoint}" Style="{StaticResource StyleTextBoxReadOnly}" HorizontalAlignment="Left" />
 
-                        <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RMRemark}"
+                        <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RMRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
 
-                        <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RMCreator}"
+                        <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RMCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBlock Grid.Row="19" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBlock Grid.Row="20" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                        <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RMCreateTime}"
+                        <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RMCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBlock Grid.Row="20" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBlock Grid.Row="21" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
 
 
                     </Grid>

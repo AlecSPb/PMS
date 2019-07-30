@@ -39,6 +39,9 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string MaterialSource { get; set; }//MaterialSource
         [DataMember]
+        public string RecycleID { get; set; }
+
+        [DataMember]
         public string Remark { get; set; }
         [DataMember]
         public string MillingTool { get; set; }

@@ -3891,6 +3891,9 @@ namespace PMSClient.MainService {
         private double RatioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecycleIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4118,6 +4121,19 @@ namespace PMSClient.MainService {
                 if ((this.RatioField.Equals(value) != true)) {
                     this.RatioField = value;
                     this.RaisePropertyChanged("Ratio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecycleID {
+            get {
+                return this.RecycleIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecycleIDField, value) != true)) {
+                    this.RecycleIDField = value;
+                    this.RaisePropertyChanged("RecycleID");
                 }
             }
         }
