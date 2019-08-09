@@ -1212,6 +1212,9 @@ namespace PMSXMLCreator.MainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsLockedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double KeepTempTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1418,6 +1421,19 @@ namespace PMSXMLCreator.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsLocked {
+            get {
+                return this.IsLockedField;
+            }
+            set {
+                if ((this.IsLockedField.Equals(value) != true)) {
+                    this.IsLockedField = value;
+                    this.RaisePropertyChanged("IsLocked");
                 }
             }
         }
@@ -2656,6 +2672,9 @@ namespace PMSXMLCreator.MainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsLockedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double KeepTempTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2881,6 +2900,19 @@ namespace PMSXMLCreator.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsLocked {
+            get {
+                return this.IsLockedField;
+            }
+            set {
+                if ((this.IsLockedField.Equals(value) != true)) {
+                    this.IsLockedField = value;
+                    this.RaisePropertyChanged("IsLocked");
                 }
             }
         }
@@ -3859,6 +3891,9 @@ namespace PMSXMLCreator.MainService {
         private double RatioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecycleIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4091,6 +4126,19 @@ namespace PMSXMLCreator.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecycleID {
+            get {
+                return this.RecycleIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecycleIDField, value) != true)) {
+                    this.RecycleIDField = value;
+                    this.RaisePropertyChanged("RecycleID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Remark {
             get {
                 return this.RemarkField;
@@ -4300,6 +4348,9 @@ namespace PMSXMLCreator.MainService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeliveryExpressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DeliveryNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4387,6 +4438,19 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeliveryExpress {
+            get {
+                return this.DeliveryExpressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryExpressField, value) != true)) {
+                    this.DeliveryExpressField = value;
+                    this.RaisePropertyChanged("DeliveryExpress");
                 }
             }
         }
@@ -8550,6 +8614,12 @@ namespace PMSXMLCreator.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetUnFinishedTargetCount", ReplyAction="http://tempuri.org/IOrderService/GetUnFinishedTargetCountResponse")]
         System.Threading.Tasks.Task<double> GetUnFinishedTargetCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderByPMINumber", ReplyAction="http://tempuri.org/IOrderService/GetOrderByPMINumberResponse")]
+        PMSXMLCreator.MainService.DcOrder GetOrderByPMINumber(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderByPMINumber", ReplyAction="http://tempuri.org/IOrderService/GetOrderByPMINumberResponse")]
+        System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcOrder> GetOrderByPMINumberAsync(string pminumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8745,6 +8815,14 @@ namespace PMSXMLCreator.MainService {
         
         public System.Threading.Tasks.Task<double> GetUnFinishedTargetCountAsync() {
             return base.Channel.GetUnFinishedTargetCountAsync();
+        }
+        
+        public PMSXMLCreator.MainService.DcOrder GetOrderByPMINumber(string pminumber) {
+            return base.Channel.GetOrderByPMINumber(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcOrder> GetOrderByPMINumberAsync(string pminumber) {
+            return base.Channel.GetOrderByPMINumberAsync(pminumber);
         }
     }
     
@@ -10370,6 +10448,12 @@ namespace PMSXMLCreator.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemByProductID", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemByProductIDResponse")]
         System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcDeliveryItem[]> GetDeliveryItemByProductIDAsync(string productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryUnFinished", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryUnFinishedResponse")]
+        PMSXMLCreator.MainService.DcDelivery[] GetDeliveryUnFinished();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryUnFinished", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryUnFinishedResponse")]
+        System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcDelivery[]> GetDeliveryUnFinishedAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10573,6 +10657,14 @@ namespace PMSXMLCreator.MainService {
         
         public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcDeliveryItem[]> GetDeliveryItemByProductIDAsync(string productid) {
             return base.Channel.GetDeliveryItemByProductIDAsync(productid);
+        }
+        
+        public PMSXMLCreator.MainService.DcDelivery[] GetDeliveryUnFinished() {
+            return base.Channel.GetDeliveryUnFinished();
+        }
+        
+        public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcDelivery[]> GetDeliveryUnFinishedAsync() {
+            return base.Channel.GetDeliveryUnFinishedAsync();
         }
     }
     

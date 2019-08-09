@@ -49,8 +49,8 @@
             <TextBlock Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="After Checking Every Parameters, Click Create XML" Foreground="Blue"/>
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1">
-                <Button Content="Create XML" Style="{StaticResource StyleButtonCommon}"
-                        Command="{Binding Create}"/>
+                <Button Content="Create XML COA" Style="{StaticResource StyleButtonCommon}"
+                        Command="{Binding Create}" Height="40" Width="200" FontSize="18"/>
             </StackPanel>
         </Grid>
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" 

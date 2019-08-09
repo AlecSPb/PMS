@@ -134,6 +134,12 @@
   <wsdl:message name="IOrderService_GetUnFinishedTargetCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUnFinishedTargetCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderByPMINumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByPMINumber" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderByPMINumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByPMINumberResponse" />
+  </wsdl:message>
   <wsdl:message name="IPlanVHPService_GetVHPPlansByOrderID_InputMessage">
     <wsdl:part name="parameters" element="tns:GetVHPPlansByOrderID" />
   </wsdl:message>
@@ -812,6 +818,12 @@
   <wsdl:message name="IDeliveryService_GetDeliveryItemByProductID_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDeliveryItemByProductIDResponse" />
   </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryUnFinished_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryUnFinished" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryUnFinished_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryUnFinishedResponse" />
+  </wsdl:message>
   <wsdl:message name="IPlateService_GetPlates_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPlates" />
   </wsdl:message>
@@ -1407,6 +1419,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetUnFinishedTargetCount" message="tns:IOrderService_GetUnFinishedTargetCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetUnFinishedTargetCountResponse" message="tns:IOrderService_GetUnFinishedTargetCount_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetOrderByPMINumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderByPMINumber" message="tns:IOrderService_GetOrderByPMINumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderByPMINumberResponse" message="tns:IOrderService_GetOrderByPMINumber_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IPlanVHPService">
     <wsdl:operation name="GetVHPPlansByOrderID">
@@ -1870,6 +1886,10 @@
     <wsdl:operation name="GetDeliveryItemByProductID">
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemByProductID" message="tns:IDeliveryService_GetDeliveryItemByProductID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemByProductIDResponse" message="tns:IDeliveryService_GetDeliveryItemByProductID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryUnFinished">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryUnFinished" message="tns:IDeliveryService_GetDeliveryUnFinished_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryUnFinishedResponse" message="tns:IDeliveryService_GetDeliveryUnFinished_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IPlateService">
@@ -2414,6 +2434,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetUnFinishedTargetCount">
       <soap:operation soapAction="http://tempuri.org/IOrderService/GetUnFinishedTargetCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByPMINumber">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrderByPMINumber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3449,6 +3478,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetDeliveryItemByProductID">
       <soap:operation soapAction="http://tempuri.org/IDeliveryService/GetDeliveryItemByProductID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryUnFinished">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/GetDeliveryUnFinished" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
