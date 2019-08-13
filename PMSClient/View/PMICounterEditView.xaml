@@ -40,6 +40,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -89,7 +90,7 @@
                 <TextBox Name="TxtProblem"  Grid.Row="4" Grid.Column="1" Text="{Binding ItemCount}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Horizontal">
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                           Text="此处保存时不会产生任何历史记录，初次设置建议设置数量0，然后通过快改变动数量"/>
                 </StackPanel>
 
 
@@ -101,25 +102,34 @@
                            Text=""/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource CState}"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource CItemHistory}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding ItemHistory}" 
+                          Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="此处更改建议通过【快改】进行；非要手改，请遵守格式" VerticalAlignment="Top"/>
+                </StackPanel>
+                
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource CState}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="状态"/>
 
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource FCreateTime}"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource FCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建时间"/>
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource FCreator}"
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource FCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建者"/>
             </Grid>
         </ScrollViewer>

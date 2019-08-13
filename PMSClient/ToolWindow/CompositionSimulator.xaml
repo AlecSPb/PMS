@@ -43,6 +43,8 @@
                 输入格式：
                 <LineBreak/>
                 成分+比例
+                <LineBreak/>
+                结果中剔除偏差过大的值或者负值
             </TextBlock>
         </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal"  Background="Orange">
@@ -51,6 +53,8 @@
             <Button Name="BtnCreate" Click="BtnCreate_Click" Content="模拟" 
                     Style="{StaticResource StyleButtonCommon}"/>
             <Button Name="BtnFill" Click="BtnFill_Click" Content="填入" 
+                    Style="{StaticResource StyleButtonCommon}"/>
+            <Button Name="BtnOneClick" Click="BtnOneClick_Click" Content="一键" 
                     Style="{StaticResource StyleButtonCommon}"/>
         </StackPanel>
         <TextBox Name="txtCsv" Grid.Row="3" Margin="3" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>

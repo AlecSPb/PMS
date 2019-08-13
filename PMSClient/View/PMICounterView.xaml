@@ -64,6 +64,14 @@
                                     Binding="{Binding ItemDetails}"/>
                 <DataGridTextColumn Header="{StaticResource CCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
+                <DataGridTemplateColumn Header="{StaticResource CItemHistory}" Width="400">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding ItemHistory}" VerticalAlignment="Center"
+                                     IsReadOnly="True" Style="{StaticResource StyleDGTextBoxStrench}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"

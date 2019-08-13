@@ -21,6 +21,8 @@ namespace PMSWCFService.DataContracts
         public double ItemCount { get; set; }
         [DataMember]
         public string Unit { get; set; }
+        [DataMember]
+        public string ItemHistory { get; set; }
 
         [DataMember]
         public Guid ID { get; set; }

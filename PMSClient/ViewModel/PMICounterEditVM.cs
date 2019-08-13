@@ -63,6 +63,7 @@ namespace PMSClient.ViewModel
             model.ItemCount = 1;
             model.ItemDetails = "无";
             model.Unit = "片";
+            model.ItemHistory = "";
 
             #endregion
             CurrentPMICounter = model;
@@ -83,6 +84,7 @@ namespace PMSClient.ViewModel
                 CurrentPMICounter.ItemSpecification = model.ItemSpecification;
                 CurrentPMICounter.ItemDetails = model.ItemDetails;
                 CurrentPMICounter.Unit = model.Unit;
+                CurrentPMICounter.ItemHistory = "";
             }
         }
         public void SetEdit(DcPMICounter model)
@@ -112,6 +114,7 @@ namespace PMSClient.ViewModel
                     return;
                 }
             }
+
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;

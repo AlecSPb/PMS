@@ -49,11 +49,12 @@ namespace PMSClient.ViewModel
             else if (dialog.EditType == ToolDialog.PMICounterEditType.IsAdd)
             {
                 obj.ItemCount += dialog.Counter;
+                obj.ItemHistory = AddItemHistory(obj.ItemHistory,"+", dialog.Counter);
             }
             else
             {
                 obj.ItemCount -= dialog.Counter;
-
+                obj.ItemHistory = AddItemHistory(obj.ItemHistory, "-", dialog.Counter);
             }
             using (var service = new PMICounterServiceClient())
             {
@@ -61,6 +62,11 @@ namespace PMSClient.ViewModel
                 SetPageParametersWhenConditionChange();
 
             }
+        }
+
+        private string AddItemHistory(string history,string sign,int count)
+        {
+            return $"{DateTime.Today.ToString("yyMMdd")}{sign}{count};{history}";
         }
 
         private void ActionDuplicate(DcPMICounter obj)

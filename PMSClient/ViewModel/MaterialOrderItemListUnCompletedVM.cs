@@ -128,7 +128,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 30;
             var service = new MaterialOrderServiceClient();
             RecordCount = service.GetMaterialOrderItemExtrasCountUnCompleted(SearchComposition, SearchPMINumber,
                 SearchOrderItemNumber, SearchSupplier);

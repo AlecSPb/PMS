@@ -17,6 +17,6 @@ namespace PMSDAL
         public string ItemDetails { get; set; }
         public double ItemCount { get; set; }
         public string Unit { get; set; }
-
+        public string ItemHistory { get; set; }
     }
 }

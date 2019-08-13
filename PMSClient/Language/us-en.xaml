@@ -722,6 +722,7 @@
 
 
     <sys:String x:Key="BDPlateLot">Plate Lot</sys:String>
+    <sys:String x:Key="BDPlateLotTimes">LotNumbers</sys:String>
     <sys:String x:Key="BDWeldingRate">WeldingRate</sys:String>
     <sys:String x:Key="BDPlateMaterial">Plate Material</sys:String>
     <sys:String x:Key="BDPlateBelong">Plate Belong</sys:String>
@@ -925,6 +926,8 @@
     <sys:String x:Key="CItemCount">Count</sys:String>
     <sys:String x:Key="CUnit">Unit</sys:String>
     <sys:String x:Key="CState">State</sys:String>
+    <sys:String x:Key="CItemHistory">History</sys:String>
+
     <!--RemainInventory-->
     <sys:String x:Key="RIID">ID</sys:String>
     <sys:String x:Key="RICreator">Creator</sys:String>

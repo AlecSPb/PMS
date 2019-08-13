@@ -1441,6 +1441,9 @@ namespace PMSClient.ExtraService {
         private string ItemGroupField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ItemHistoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ItemNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1536,6 +1539,19 @@ namespace PMSClient.ExtraService {
                 if ((object.ReferenceEquals(this.ItemGroupField, value) != true)) {
                     this.ItemGroupField = value;
                     this.RaisePropertyChanged("ItemGroup");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemHistory {
+            get {
+                return this.ItemHistoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemHistoryField, value) != true)) {
+                    this.ItemHistoryField = value;
+                    this.RaisePropertyChanged("ItemHistory");
                 }
             }
         }

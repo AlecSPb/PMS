@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolDialog"
         mc:Ignorable="d"
-        Title="PMI计数器快速编辑对话框" Height="100" Width="400"
+        Title="PMI计数器快速编辑对话框-【此对话框操作会产生历史记录】" Height="100" Width="400"
         WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">

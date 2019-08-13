@@ -114,13 +114,22 @@ namespace PMSClient.ToolWindow
             {
                 ViewModel.RecordTestEditVM vm = PMSHelper.ViewModels.RecordTestEdit;
                 string compostion = vm.CurrentRecordTest.Composition;
+                string customer = vm.CurrentRecordTest.Customer;
                 var elements= Regex.Matches(compostion, @"[A-Za-z]+");
 
 
                 var numbers = Regex.Matches(compostion, @"\d+(\.\d+)?");
                 StringBuilder sb = new StringBuilder();
                 sb.Clear();
-                sb.AppendLine("5");
+
+                if(customer.ToLower().Contains("bridgeline"))
+                {
+                    sb.AppendLine("13");
+                }
+                else
+                {
+                    sb.AppendLine("5");
+                }
 
                 for (int i = 0; i < elements.Count; i++)
                 {
@@ -135,6 +144,13 @@ namespace PMSClient.ToolWindow
             {
                 PMSDialogService.ShowWarning("读取错误，请手动按照格式输入");
             }
+        }
+
+        private void BtnOneClick_Click(object sender, RoutedEventArgs e)
+        {
+            BtnRead_Click(sender, e);
+            BtnCreate_Click(sender, e);
+            BtnFill_Click(sender, e);
         }
     }
 }

@@ -725,6 +725,7 @@
 
 
     <sys:String x:Key="BDPlateLot">背板批号</sys:String>
+    <sys:String x:Key="BDPlateLotTimes">已使用次数</sys:String>
     <sys:String x:Key="BDWeldingRate">焊合率</sys:String>
     <sys:String x:Key="BDPlateMaterial">背板材料</sys:String>
     <sys:String x:Key="BDPlateBelong">背板归属</sys:String>
@@ -931,6 +932,7 @@
     <sys:String x:Key="CItemCount">数量</sys:String>
     <sys:String x:Key="CUnit">单位</sys:String>
     <sys:String x:Key="CState">状态</sys:String>
+    <sys:String x:Key="CItemHistory">历史</sys:String>
 
     <!--RemainInventory-->
     <sys:String x:Key="RIID">ID</sys:String>

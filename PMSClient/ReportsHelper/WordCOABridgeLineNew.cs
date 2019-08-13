@@ -78,17 +78,21 @@ namespace PMSClient.ReportsHelper
 
                     document.ReplaceText("[OrderDate]", COAHelper.GetCreateDateFromPMINumber(model.PMINumber));
                     document.ReplaceText("[CreateDate]", DateTime.Now.ToString("MM/dd/yyyy"));
-                    
-                    //如果是440靶材，加入粗糙度值
-                    if (model.ProductID.Contains("#"))
-                    {
-                        document.ReplaceText("[Roughness]", model.Roughness);
 
-                    }
-                    else
-                    {
-                        document.ReplaceText("[Roughness]", "-");
-                    }
+                    string roughness = model.Roughness == "无" ? "None" : model.Roughness;
+                    document.ReplaceText("[Roughness]", roughness);
+
+
+                    ////如果是440靶材，加入粗糙度值
+                    //if (model.ProductID.Contains("#"))
+                    //{
+                    //    document.ReplaceText("[Roughness]", model.Roughness);
+
+                    //}
+                    //else
+                    //{
+                    //    document.ReplaceText("[Roughness]", "-");
+                    //}
 
                     //填充XRF表格
                     //填充XRF表格
