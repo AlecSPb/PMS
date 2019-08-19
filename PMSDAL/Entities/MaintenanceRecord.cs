@@ -13,8 +13,12 @@ namespace PMSDAL
         public DateTime CreateTime { get; set; }
         public string State { get; set; }
 
-        public Guid PlanID { get; set; }
-        public string MaintenancePersons { get; set; }//负责维护的人员
-        public string MaintenanceContent { get; set; }//维护日志
+        public string Device { get; set; }
+        public string Part { get; set; }
+
+        public string Persons { get; set; }//负责维护的人员
+        public string Content { get; set; }//维护日志
+
+        public string Remark { get; set; }
     }
 }

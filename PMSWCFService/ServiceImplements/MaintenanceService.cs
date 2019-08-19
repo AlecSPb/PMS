@@ -109,18 +109,48 @@ namespace PMSWCFService
 
         }
 
-        public List<DcMaintenanceRecord> GetMaintenanceRecords(Guid planid)
+        public List<DcMaintenanceRecord> GetMaintenanceRecords(string device, string part, int s, int t)
         {
             try
             {
-                throw new NotImplementedException();
+                using (var db=new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<MaintenanceRecord, DcMaintenanceRecord>());
+                    var query = from m in db.MaintenanceRecords
+                                where m.State != PMSCommon.SimpleState.作废.ToString()
+                                && m.Device.Contains(device)
+                                && m.Part.Contains(part)
+                                select m;
+                    var result = query.ToList().Skip(s).Take(t);
+                    return Mapper.Map<List<MaintenanceRecord>,List<DcMaintenanceRecord>>(result.ToList());
+                }
             }
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
                 throw;
             }
+        }
 
+        public int GetMaintenanceRecordsCount(string device, string part)
+        {
+            try
+            {
+                using (var db = new PMSDbContext())
+                {
+                    var query = from m in db.MaintenanceRecords
+                                where m.State != PMSCommon.SimpleState.作废.ToString()
+                                && m.Device.Contains(device)
+                                && m.Part.Contains(part)
+                                select m;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
         }
 
         public int UpdateMainitenancePlan(DcMaintenancePlan model)

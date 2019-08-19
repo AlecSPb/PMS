@@ -61,7 +61,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 30;
             var service = new SanjieServiceClient();
             RecordCount = service.GetMaterialInventoryInCount(SearchComposition, SearchMaterialLot, SearchPMINumber);
             service.Close();

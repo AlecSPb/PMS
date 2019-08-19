@@ -89,14 +89,15 @@
                                     Binding="{Binding CoverPlateNumber}"/>-->
                 <DataGridTextColumn Header="{StaticResource BDPlateType}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding PlateType}"/>
-                
+
                 <DataGridTextColumn Header="{StaticResource BDPlateLot}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding PlateLot}"/>
                 <DataGridTextColumn Header="{StaticResource BDPlateLotTimes}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockCenter}"
                                     Binding="{Binding PlateLot,
                                     Converter={StaticResource PlateUseNumberConverter}}"/>
-                
+                <DataGridTextColumn Header="{StaticResource BDTargetCoverPlateNumber}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding CoverPlateNumber}"/>
                 <DataGridTextColumn Header="{StaticResource BDWeldingRate}" ElementStyle="{StaticResource StyleDGTextBlockRightBlue}" 
                                     Binding="{Binding WeldingRate,StringFormat={}{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource BDRemark}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 

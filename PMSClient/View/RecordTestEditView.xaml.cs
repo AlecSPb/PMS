@@ -183,5 +183,14 @@ namespace PMSClient.View
         {
             PMSMethods.SetTextBox(TxtBP, $"{DateTime.Today.ToString("yyMMdd")}-BP-1");
         }
+
+        private void BtnDimensionMark_Click(object sender, RoutedEventArgs e)
+        {
+            string symbol = "★";
+            string s = TxtDimension.Text.Replace("★", "");
+            s = $"{symbol}{s}";
+            PMSMethods.SetTextBox(TxtDimension, s);
+        }
+
     }
 }

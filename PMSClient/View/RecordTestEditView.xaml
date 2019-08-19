@@ -169,8 +169,10 @@
                     <Button Content="选择" Style="{StaticResource StyleButtonCommon}"
                             Command="{Binding DataContext.SelectDimensionActual,
                                 RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+                    <Button Content="标记" Name="BtnDimensionMark" Click="BtnDimensionMark_Click"
+                            Style="{StaticResource StyleButtonCommonNarrow}"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockWarning2}"
-                           Text="请优先使用重新测量的数据，不要使用加工记录里的数据"/>
+                           Text="请优先使用重新测量的数据，不要使用加工记录里的数据；如果尺寸不符合尺寸要求，请标记一下。"/>
                 </StackPanel>
                 <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>

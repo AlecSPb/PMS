@@ -31,6 +31,8 @@ namespace PMSClient.CustomControls
         public string Defects { get { return txtDefects.Text; } }
         public string WeldingRate { get { return txtWeldingRate.Text; } }
 
+        public string CoverPlateNumber { get { return txtCoverPlateNumber.Text; } }
+
         public string ProductID
         {
             set
@@ -57,6 +59,7 @@ namespace PMSClient.CustomControls
             if (button != null)
             {
                 txtDefects.Text += button.Content.ToString() + ";";
+                txtDefects.Text = txtDefects.Text.Replace("无", "");
             }
         }
     }

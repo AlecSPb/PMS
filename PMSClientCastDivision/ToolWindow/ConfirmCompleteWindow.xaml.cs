@@ -36,7 +36,8 @@ namespace PMSClient.ToolWindow
                     Weight = double.Parse(txtWeight.Text),
                     ActualWeight = double.Parse(txtActualWeight.Text),
                     MeltingPoint = txtMeltingPoint.Text,
-                    Remark=txtRemark.Text
+                    Remark = txtRemark.Text,
+                    MaterialSource = txtMaterialSource.Text
                 };
                 return model;
             }
@@ -49,6 +50,7 @@ namespace PMSClient.ToolWindow
                 txtActualWeight.Text = value.ActualWeight.ToString();
                 txtMeltingPoint.Text = value.MeltingPoint;
                 txtRemark.Text = value.Remark;
+                txtMaterialSource.Text = value.MaterialSource;
             }
 
         }
