@@ -258,15 +258,28 @@ namespace ImportTargetPhotoIntoReport
                     }
 
                     img = doc.AddImage(img_file);
-
                     var pic = img.CreatePicture();
                     pic.Width = pic.Height = 260;
 
-                    var pic_p = table.Rows[10].Cells[0].Paragraphs[0];
-                    var pic_pp = pic_p.InsertPicture(pic);
+                    if (docxFile.ToLower().Contains("bridgeline"))
+                    {
+                        var pic_p = table.Rows[12].Cells[0].Paragraphs[0];
+                        var pic_pp = pic_p.InsertPicture(pic);
+                        //合并三个单元格
+                        table.MergeCellsInColumn(0, 12, 14);
+                    }
+                    else
+                    {
+                        var pic_p = table.Rows[10].Cells[0].Paragraphs[0];
+                        var pic_pp = pic_p.InsertPicture(pic);                    
+                        //合并三个单元格
+                        table.MergeCellsInColumn(0, 10, 12);
+                    }
 
-                    //合并三个单元格
-                    table.MergeCellsInColumn(0, 10, 12);
+
+
+
+
 
 
                     string targetFile = Path.GetFileName(docxFile);

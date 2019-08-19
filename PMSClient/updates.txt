@@ -2,6 +2,10 @@
 Updates Briefs
 本次更新
 Updates==
+2019-8-19
+修复了COA生成bug
+更改了Bonding记录单的样式
+
 2019-8-14
 添加粗糙度到所有COA报告当中
 更改测试部分流程
