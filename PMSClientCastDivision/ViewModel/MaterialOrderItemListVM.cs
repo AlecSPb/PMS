@@ -122,7 +122,9 @@ namespace PMSClient.ViewModel
                 var helpimage = "productionlabel.png";
                 PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.MaterialOrderItemList, pageTitle,
                     tips, template, mainContent, helpimage);
-                NavigationService.GoTo(PMSViews.LabelOutPut);
+                //NavigationService.GoTo(PMSViews.LabelOutPut);
+                var win = new Tool.LabelOutPutWindow();
+                win.ShowDialog();
             }
         }
 
@@ -184,6 +186,7 @@ namespace PMSClient.ViewModel
                         materialInModel.Creator = uid;
                         materialInModel.State = PMSCommon.InventoryState.暂入库.ToString();
                         materialInModel.Remark = preFix+" "+m.Remark;
+                        materialInModel.MaterialSource = m.MaterialSource;
 
                         service.AddToMaterialIn(materialInModel, uid);
 

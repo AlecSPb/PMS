@@ -3342,6 +3342,9 @@ namespace PMSClient.MainService {
         private string MaterialLotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MaterialSourceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3433,6 +3436,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.MaterialLotField, value) != true)) {
                     this.MaterialLotField = value;
                     this.RaisePropertyChanged("MaterialLot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MaterialSource {
+            get {
+                return this.MaterialSourceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialSourceField, value) != true)) {
+                    this.MaterialSourceField = value;
+                    this.RaisePropertyChanged("MaterialSource");
                 }
             }
         }

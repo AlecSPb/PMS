@@ -37,7 +37,7 @@ namespace PMSClient.ToolWindow
                     ActualWeight = double.Parse(txtActualWeight.Text),
                     MeltingPoint = txtMeltingPoint.Text,
                     Remark = txtRemark.Text,
-                    MaterialSource = txtMaterialSource.Text
+                    MaterialSource = TxtMaterialSource.Text
                 };
                 return model;
             }
@@ -50,7 +50,7 @@ namespace PMSClient.ToolWindow
                 txtActualWeight.Text = value.ActualWeight.ToString();
                 txtMeltingPoint.Text = value.MeltingPoint;
                 txtRemark.Text = value.Remark;
-                txtMaterialSource.Text = value.MaterialSource;
+                TxtMaterialSource.Text = value.MaterialSource;
             }
 
         }
@@ -72,6 +72,11 @@ namespace PMSClient.ToolWindow
             SureType = "All";
             this.DialogResult = true;
             this.Close();
+        }
+
+        private void BtnMaterialSource_Click(object sender, RoutedEventArgs e)
+        {
+            TxtMaterialSource.Text = $"{TxtMaterialSource.Text}组分=来源;";
         }
     }
 }

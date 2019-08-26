@@ -48,5 +48,11 @@ namespace PMSClient.View
                 PMSMethods.SetTextBox(TxtQuickRemark, str);
             }
         }
+
+        private void BtnMaterialSource_Click(object sender, RoutedEventArgs e)
+        {
+            string s = $"{TxtMaterialSource.Text}元素=来源;";
+            PMSMethods.SetTextBox(TxtMaterialSource, s);
+        }
     }
 }

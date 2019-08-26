@@ -50,7 +50,7 @@ namespace PMSClient.ViewModel
         {
             if (arg != null)
             {
-                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder) 
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder)
                     && CheckOrderItemState(arg.Item.MaterialOrderItem.State);
             }
             else
@@ -122,7 +122,9 @@ namespace PMSClient.ViewModel
                 var helpimage = "productionlabel.png";
                 PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.MaterialOrderItemList, pageTitle,
                     tips, template, mainContent, helpimage);
-                NavigationService.GoTo(PMSViews.LabelOutPut);
+                //NavigationService.GoTo(PMSViews.LabelOutPut);
+                var win = new Tool.LabelOutPutWindow();
+                win.ShowDialog();
             }
         }
 
@@ -139,8 +141,8 @@ namespace PMSClient.ViewModel
                         Composition = model.Item.MaterialOrderItem.Composition,
                         PMINumber = model.Item.MaterialOrderItem.PMINumber,
                         Weight = model.Item.MaterialOrderItem.Weight,
-                        ActualWeight=model.Item.MaterialOrderItem.Weight,
-                        MeltingPoint="",
+                        ActualWeight = model.Item.MaterialOrderItem.Weight,
+                        MeltingPoint = "",
                         Remark = ""
                     };
 
@@ -168,7 +170,7 @@ namespace PMSClient.ViewModel
                             preFix = "部分交付";
                             model.Item.MaterialOrderItem.SJIngredient += DateTime.Now.ToString("yyMMdd")
                                 + "交付" + m.ActualWeight.ToString("F3");
-                           service.UpdateMaterialOrderItem(model.Item.MaterialOrderItem, uid);
+                            service.UpdateMaterialOrderItem(model.Item.MaterialOrderItem, uid);
                         }
                         //保存材料入库信息
                         DcMaterialInventoryIn materialInModel = new DcMaterialInventoryIn();
@@ -183,8 +185,9 @@ namespace PMSClient.ViewModel
                         materialInModel.Creator = uid;
                         materialInModel.State = PMSCommon.InventoryState.暂入库.ToString();
                         materialInModel.Remark = preFix + " " + m.Remark;
+                        materialInModel.MaterialSource = m.MaterialSource;
 
-                       service.AddToMaterialIn(materialInModel, uid);
+                        service.AddToMaterialIn(materialInModel, uid);
 
                         //保存原料熔点信息
                         DcBDCompound compound = new DcBDCompound();
@@ -197,7 +200,7 @@ namespace PMSClient.ViewModel
                         compound.SpecialProperty = "";
                         compound.State = PMSCommon.SimpleState.正常.ToString();
                         compound.CreateTime = DateTime.Now;
-                        compound.Creator =uid;
+                        compound.Creator = uid;
                         compound.Remark = "";
                         service.AddToCompound(compound, uid);
 

@@ -33,7 +33,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Remark { get; set; }
         [DataMember]
-
+        public string MaterialSource { get; set; }
+        [DataMember]
         public string QuickRemark { get; set; }
     }
 }

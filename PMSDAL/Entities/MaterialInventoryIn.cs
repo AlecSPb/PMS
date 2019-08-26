@@ -22,5 +22,7 @@ namespace PMSDAL
         public string Remark { get; set; }
         public string QuickRemark { get; set; }//部分出库临时记录
 
+        public string MaterialSource { get; set; }
+
     }
 }

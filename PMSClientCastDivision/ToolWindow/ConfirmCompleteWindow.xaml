@@ -7,11 +7,12 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow"
-        Title="确定完成该项目吗？" Height="400" Width="450">
-    <Grid Margin="5">
+        Title="确定完成该项目吗？" Height="400" Width="550">
+    <Grid Margin="5" Background="{StaticResource BGBrushWindow}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -40,12 +41,15 @@
         <TextBlock Grid.Row="5" Grid.Column="0" Text="熔点信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBox Name="txtMeltingPoint" Grid.Row="5" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
         
-        <TextBlock Grid.Row="6" Grid.Column="0" Text="原料来源信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
-        <TextBox Name="txtMaterialSource" Grid.Row="6" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
-        
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="成分信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox Name="TxtMaterialSource" Grid.Row="6" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+        <Button Style="{StaticResource StyleButtonCommon}" Grid.Row="6" Grid.Column="2"
+                Content="添加" Name="BtnMaterialSource" Click="BtnMaterialSource_Click"/>
+
+
         <TextBlock Grid.Row="7" Grid.Column="0" Text="备注信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBox Name="txtRemark" Grid.Row="7" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
-        <StackPanel Grid.Row="8" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="8" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="btnCancel" Style="{StaticResource StyleButtonCommon}" Content="取消" Click="btnCancel_Click"/>
             <Button Name="btnSurePart" Style="{StaticResource StyleButtonCommon}" Content="交付部分(不完成)" Click="btnSurePart_Click"/>
             <Button Name="btnSureAll" Style="{StaticResource StyleButtonCommon}" Content="最终完成" Click="btnSureAll_Click" FontWeight="Bold"/>

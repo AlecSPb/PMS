@@ -199,6 +199,9 @@
     <Compile Include="Tool\IngredientDialog.xaml.cs">
       <DependentUpon>IngredientDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tool\LabelOutPutWindow.xaml.cs">
+      <DependentUpon>LabelOutPutWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tool\LabelOutPutView.xaml.cs">
       <DependentUpon>LabelOutPutView.xaml</DependentUpon>
     </Compile>
@@ -347,6 +350,10 @@
     <Page Include="Tool\IngredientDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tool\LabelOutPutWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Tool\LabelOutPutView.xaml">
       <Generator>MSBuild:Compile</Generator>

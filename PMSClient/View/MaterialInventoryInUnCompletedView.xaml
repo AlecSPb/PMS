@@ -80,6 +80,8 @@
 
                 <DataGridTextColumn Header="{StaticResource MIIRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
+                <DataGridTextColumn Header="{StaticResource MIIMaterialSource}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialSource}" MaxWidth="500"/>
                 <DataGridTextColumn Header="{StaticResource MIICreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>

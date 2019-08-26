@@ -72,6 +72,8 @@
 
                 <DataGridTextColumn Header="{StaticResource MIIRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
+                <DataGridTextColumn Header="{StaticResource MIIMaterialSource}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding MaterialSource}"/>
                 <DataGridTextColumn Header="{StaticResource MIICreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>

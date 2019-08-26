@@ -60,6 +60,12 @@
                     <ColumnDefinition/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
+                <!--作为水印效果-->
+                <!--<StackPanel>
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="../Resource/Images/building.jpg" Stretch="UniformToFill"/>
+                    </StackPanel.Background>
+                </StackPanel>-->
                 <Border BorderBrush="{StaticResource BGNavigationBar}" Margin="2" BorderThickness="1">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -125,7 +131,7 @@
 
                         <Button Content="{StaticResource PagePlanConclusion}" Grid.Row="2" Grid.Column="6"
                         Command="{Binding GoToPlanConclusion}" Style="{StaticResource StyleButtonNavigation}"/>
-                        
+
                         <Button Content="{StaticResource PageRecord}" Grid.Row="3" Grid.Column="0"  Style="{StaticResource StyleButtonNavigationTitle}" />
                         <Button Content="{StaticResource PageRecordMilling}" Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToRecordMilling}"/>
@@ -152,7 +158,7 @@
                         <Button Content="{StaticResource PageDeliveryItemList}" Grid.Row="4" Grid.Column="5"
                         Command="{Binding GoToDeliveryItemList}" Style="{StaticResource StyleButtonNavigation}"/>
 
-                        
+
                         <Button Content="{StaticResource PageStatistic}" Grid.Row="5" Grid.Column="0"
                                 Style="{StaticResource StyleButtonNavigationTitle}"/>
                         <Button Content="{StaticResource PageStatisticOrder}" Grid.Row="5" Grid.Column="1"
@@ -163,7 +169,7 @@
                         Command="{Binding GoToStatisticProduct}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageStatisticDelivery}" Grid.Row="5" Grid.Column="4"
                         Command="{Binding GoToStatisticDelivery}" Style="{StaticResource StyleButtonNavigation}"/>
-                        
+
                         <Button Content="{StaticResource PageCounter}" Grid.Row="5" Grid.Column="5"
                         Command="{Binding GoToCounter}" Style="{StaticResource StyleButtonNavigation}"/>
 
@@ -178,7 +184,7 @@
 
                         <Button Content="{StaticResource PageOutput}" Style="{StaticResource StyleButtonNavigation}"
                                 Command="{Binding GoToOutput}" Grid.Row="6" Grid.Column="3"/>
-                        
+
                         <Button Content="{StaticResource PageAdmin}" Grid.Row="7" Grid.Column="0" 
                         Style="{StaticResource StyleButtonNavigationTitle}" />
                         <Button Content="{StaticResource PageDebug}" Grid.Row="7" Grid.Column="1"
@@ -235,6 +241,7 @@
                         </Grid>
                     </Border>
                 </Expander>
+
             </Grid>
         </ScrollViewer>
     </Grid>

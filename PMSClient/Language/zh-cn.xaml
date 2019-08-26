@@ -680,6 +680,7 @@
     <sys:String x:Key="MIIWeight">重量</sys:String>
     <sys:String x:Key="MIIRemark">备注</sys:String>
     <sys:String x:Key="MIIQuickRemark">快速备注</sys:String>
+    <sys:String x:Key="MIIMaterialSource">组分来源</sys:String>
 
     <!--材料出库-->
     <sys:String x:Key="MIOState">状态</sys:String>

@@ -1630,6 +1630,9 @@ namespace PMSClient.OutputService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BackingPlateLotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1678,6 +1681,9 @@ namespace PMSClient.OutputService {
         private string ProductIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string QCField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1708,6 +1714,19 @@ namespace PMSClient.OutputService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BackingPlateLot {
+            get {
+                return this.BackingPlateLotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BackingPlateLotField, value) != true)) {
+                    this.BackingPlateLotField = value;
+                    this.RaisePropertyChanged("BackingPlateLot");
+                }
             }
         }
         
@@ -1915,6 +1934,19 @@ namespace PMSClient.OutputService {
                 if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
                     this.ProductIDField = value;
                     this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string QC {
+            get {
+                return this.QCField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.QCField, value) != true)) {
+                    this.QCField = value;
+                    this.RaisePropertyChanged("QC");
                 }
             }
         }
