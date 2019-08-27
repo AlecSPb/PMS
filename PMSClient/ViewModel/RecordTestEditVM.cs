@@ -144,13 +144,39 @@ namespace PMSClient.ViewModel
                 CurrentRecordTest.Composition = plan.Misson.CompositionStandard;
                 CurrentRecordTest.CompositionAbbr = plan.Misson.CompositionAbbr;
                 CurrentRecordTest.PO = plan.Misson.PO;
-                CurrentRecordTest.ProductID = UsefulPackage.PMSTranslate.PlanLot(plan);
+
+                //如果是440mm，自动加上后缀
+                //添加440 加工的大靶材到记录单
+                if (plan.Plan.VHPRequirement.Contains("#"))
+                {
+                    string remark = GetBigNumber(plan.Plan.VHPRequirement);
+                    CurrentRecordTest.ProductID = UsefulPackage.PMSTranslate.PlanLot(plan) + remark;
+                }
+                else
+                {
+                    CurrentRecordTest.ProductID = UsefulPackage.PMSTranslate.PlanLot(plan);
+                }
+
+
+
                 CurrentRecordTest.Customer = plan.Misson.CustomerName;
                 CurrentRecordTest.Dimension = plan.Misson.Dimension;
                 CurrentRecordTest.DimensionActual = plan.Misson.Dimension;
                 CurrentRecordTest.OrderDate = plan.Misson.CreateTime;
                 //RaisePropertyChanged(nameof(CurrentRecordTest));
             }
+        }
+
+        /// <summary>
+        /// 从备注字符串中获取#165格式的编号
+        /// </summary>
+        /// <param name="millling"></param>
+        /// <returns></returns>
+        private string GetBigNumber(string millling)
+        {
+            if (string.IsNullOrEmpty(millling))
+                return "";
+            return System.Text.RegularExpressions.Regex.Match(millling, @"#\d*").Value;
         }
 
         private void ActionSelectMisson()
