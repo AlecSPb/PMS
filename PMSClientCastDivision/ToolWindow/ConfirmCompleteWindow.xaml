@@ -41,10 +41,10 @@
         <TextBlock Grid.Row="5" Grid.Column="0" Text="熔点信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBox Name="txtMeltingPoint" Grid.Row="5" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
         
-        <TextBlock Grid.Row="6" Grid.Column="0" Text="成分信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="组分信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBox Name="TxtMaterialSource" Grid.Row="6" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
         <Button Style="{StaticResource StyleButtonCommon}" Grid.Row="6" Grid.Column="2"
-                Content="添加" Name="BtnMaterialSource" Click="BtnMaterialSource_Click"/>
+                Content="辅助" Name="BtnMaterialSource" Click="BtnMaterialSource_Click"/>
 
 
         <TextBlock Grid.Row="7" Grid.Column="0" Text="备注信息" Style="{StaticResource StyleDGTextBlockCommon}"/>

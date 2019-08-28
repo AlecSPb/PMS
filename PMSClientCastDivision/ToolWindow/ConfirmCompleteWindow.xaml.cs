@@ -76,7 +76,22 @@ namespace PMSClient.ToolWindow
 
         private void BtnMaterialSource_Click(object sender, RoutedEventArgs e)
         {
-            TxtMaterialSource.Text = $"{TxtMaterialSource.Text}组分=来源;";
+            string composition = Model.Composition.Replace("pcs", "").Replace("(", "");
+            var elements = Helpers.CompositionHelper.GetElements(composition);
+            if (elements.Count > 0)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (var item in elements)
+                {
+                    sb.Append($"{item}=来源;");
+                }
+                TxtMaterialSource.Text = $"{TxtMaterialSource.Text}{sb.ToString()}"; ;
+
+            }
+            else
+            {
+                TxtMaterialSource.Text = $"{TxtMaterialSource.Text}组分=来源;";
+            }
         }
     }
 }

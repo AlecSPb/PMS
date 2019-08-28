@@ -19,5 +19,9 @@ namespace PMSWCFService.ServiceContracts
         DcStatisticProduct GetStatisticProduct();
         [OperationContract]
         DcStatisticDelivery GetStatisticDelivery();
+
+
+
+
     }
 }
