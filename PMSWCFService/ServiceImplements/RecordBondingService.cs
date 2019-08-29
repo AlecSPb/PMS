@@ -139,13 +139,13 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-        public int GetRecordBondingCountNew(string productid, string composition,string platelot)
+        public int GetRecordBondingCountNew(string productid, string composition, string platelot)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.RecordBondings.Where(p => p.TargetProductID.Contains(productid) 
+                    return dc.RecordBondings.Where(p => p.TargetProductID.Contains(productid)
                     && p.TargetComposition.Contains(composition)
                     && p.PlateLot.Contains(platelot)
                       && p.State != BondingState.作废.ToString()).Count();
@@ -158,7 +158,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcRecordBonding> GetRecordBondingsNew(int skip, int take, string productid, string composition,string platelot)
+        public List<DcRecordBonding> GetRecordBondingsNew(int skip, int take, string productid, string composition, string platelot)
         {
             try
             {
@@ -262,6 +262,31 @@ namespace PMSWCFService
             }
         }
 
+        public int SetAllUnFinsihToTempFinish()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.RecordBondings
+                                where p.State != BondingState.未完成.ToString()
+                                select p;
 
+                    int result = 0;
+                    foreach (var item in query)
+                    {
+                        item.State = BondingState.未录完.ToString();
+                        dc.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                    }
+                    result = dc.SaveChanges();
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                return 0;
+            }
+        }
     }
 }

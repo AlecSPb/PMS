@@ -272,6 +272,7 @@
     <sys:String x:Key="ButtonBrowse">浏览</sys:String>
     <sys:String x:Key="ButtonInput">导入</sys:String>
     <sys:String x:Key="ButtonOutput">导出</sys:String>
+    <sys:String x:Key="ButtonOneKeyTempFinsih">一键暂完</sys:String>
     <sys:String x:Key="ButtonBatchDoc">批量报告</sys:String>
     <sys:String x:Key="ButtonDoc">文档</sys:String>
     <sys:String x:Key="ButtonDocTest">测试报告</sys:String>

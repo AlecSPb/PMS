@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>155</ApplicationRevision>
+    <ApplicationRevision>159</ApplicationRevision>
     <ApplicationVersion>4.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -83,7 +83,7 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetZone>Custom</TargetZone>
+    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -1647,7 +1647,7 @@
     </Compile>
     <Resource Include="Express\express-info.txt" />
     <Resource Include="Express\SF.xml" />
-    <Resource Include="Documents\生产经理超级视角.txt" />
+    <Resource Include="Documents\超级视角.txt" />
     <Resource Include="Documents\重大工艺变化记录.txt" />
     <Content Include="Resource\DocTemplate\Reports\OutsideProcessSheet.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

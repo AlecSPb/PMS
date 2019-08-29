@@ -47,6 +47,35 @@ namespace PMSClient.ViewModel
             RecordSheet = new RelayCommand(ActionRecordSheet);
             ScanAdd = new RelayCommand(ActionScanAdd, CanScanAdd);
             Output = new RelayCommand(ActionOutput);
+            OneKeyTempFinish = new RelayCommand(ActionOneKeyTempFinish);
+        }
+
+        private void ActionOneKeyTempFinish()
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定要讲所有未完成设置为【未录完】"))
+                return;
+
+            try
+            {
+                using (var service = new RecordBondingServiceClient())
+                {
+                    int result = service.SetAllUnFinsihToTempFinish();
+                    if (result> 0)
+                    {
+                        SetPageParametersWhenConditionChange();
+                    }
+                    else
+                    {
+                        PMSDialogService.ShowWarning("未完成任何操作");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
 
         private bool CanTempFinish(DcRecordBonding arg)
@@ -232,7 +261,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            SearchProductID = SearchCompositionStd=SearchPlateLot = "";
+            SearchProductID = SearchCompositionStd = SearchPlateLot = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -271,8 +300,8 @@ namespace PMSClient.ViewModel
 
             using (var service = new RecordBondingServiceClient())
             {
-                var orders = service.GetRecordBondingsNew(skip, take, 
-                    SearchProductID, SearchCompositionStd,SearchPlateLot);
+                var orders = service.GetRecordBondingsNew(skip, take,
+                    SearchProductID, SearchCompositionStd, SearchPlateLot);
                 RecordBondings.Clear();
                 orders.ToList().ForEach(o => RecordBondings.Add(o));
             }
@@ -313,5 +342,6 @@ namespace PMSClient.ViewModel
         public RelayCommand ScanAdd { get; set; }
 
         public RelayCommand Output { get; set; }
+        public RelayCommand OneKeyTempFinish { get; set; }
     }
 }

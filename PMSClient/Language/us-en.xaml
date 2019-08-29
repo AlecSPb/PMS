@@ -266,6 +266,7 @@
     <sys:String x:Key="ButtonBrowse">Browse</sys:String>
     <sys:String x:Key="ButtonInput">Input</sys:String>
     <sys:String x:Key="ButtonOutput">Output</sys:String>
+    <sys:String x:Key="ButtonOneKeyTempFinsih">One Key Temp Finish</sys:String>
     <sys:String x:Key="ButtonBatchDoc">Batch COA</sys:String>
     <sys:String x:Key="ButtonDoc">Doc</sys:String>
     <sys:String x:Key="ButtonDocTest">Doc Test</sys:String>

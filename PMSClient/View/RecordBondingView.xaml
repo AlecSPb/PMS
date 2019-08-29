@@ -42,6 +42,8 @@
                     Command="{Binding RecordSheet}"/>
             <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Output}"/>
+            <Button Content="{StaticResource ButtonOneKeyTempFinsih}" Style="{StaticResource StyleButtonCommon}"
+                    Command="{Binding ButtonOneKeyTempFinsih}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
             <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>

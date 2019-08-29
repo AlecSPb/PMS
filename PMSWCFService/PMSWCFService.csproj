@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BasicDataService.svc" />
+    <Content Include="Documents\数据说明.txt" />
     <Content Include="OutsideProcessService.svc" />
     <Content Include="OutputService.svc" />
     <Content Include="HeartBeatService.svc" />
@@ -172,6 +173,7 @@
     <Compile Include="ServiceContracts\IPMICounterService.cs" />
     <Compile Include="ServiceContracts\IPMSIndexService.cs" />
     <Compile Include="ServiceContracts\IRemainInventoryService.cs" />
+    <Compile Include="ServiceContracts\IStatisticManager.cs" />
     <Compile Include="ServiceContracts\ITaskPlanService.cs" />
     <Compile Include="ServiceContracts\IToDoService.cs" />
     <Compile Include="ServiceContracts\IToolInventoryService.cs" />

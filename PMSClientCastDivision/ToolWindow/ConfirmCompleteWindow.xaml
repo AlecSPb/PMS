@@ -50,9 +50,9 @@
         <TextBlock Grid.Row="7" Grid.Column="0" Text="备注信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBox Name="txtRemark" Grid.Row="7" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
         <StackPanel Grid.Row="8" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Name="btnCancel" Style="{StaticResource StyleButtonCommon}" Content="取消" Click="btnCancel_Click"/>
-            <Button Name="btnSurePart" Style="{StaticResource StyleButtonCommon}" Content="交付部分(不完成)" Click="btnSurePart_Click"/>
-            <Button Name="btnSureAll" Style="{StaticResource StyleButtonCommon}" Content="最终完成" Click="btnSureAll_Click" FontWeight="Bold"/>
+            <Button Name="btnCancel" Style="{StaticResource StyleButtonNavigationFixed}" Content="取消" Click="btnCancel_Click"/>
+            <Button Name="btnSurePart" Style="{StaticResource StyleButtonNavigationFixed}" Content="交付部分(不完成)" Click="btnSurePart_Click"/>
+            <Button Name="btnSureAll" Style="{StaticResource StyleButtonNavigationFixed}" Content="最终完成" Click="btnSureAll_Click" FontWeight="Bold"/>
         </StackPanel>
     </Grid>
 </Window>

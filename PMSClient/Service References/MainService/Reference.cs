@@ -11956,6 +11956,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingByProductID", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingByProductIDResponse")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingByProductIDAsync(string productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinish", ReplyAction="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinishResponse")]
+        int SetAllUnFinsihToTempFinish();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinish", ReplyAction="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinishResponse")]
+        System.Threading.Tasks.Task<int> SetAllUnFinsihToTempFinishAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -12071,6 +12077,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingByProductIDAsync(string productid) {
             return base.Channel.GetRecordBondingByProductIDAsync(productid);
+        }
+        
+        public int SetAllUnFinsihToTempFinish() {
+            return base.Channel.SetAllUnFinsihToTempFinish();
+        }
+        
+        public System.Threading.Tasks.Task<int> SetAllUnFinsihToTempFinishAsync() {
+            return base.Channel.SetAllUnFinsihToTempFinishAsync();
         }
     }
     
