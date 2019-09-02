@@ -414,11 +414,6 @@ namespace PMSClient.ViewModel
                         sb.AppendLine(item.Customer);
                     }
 
-                    if (dialog_result.HasProductID)
-                    {
-                        sb.AppendLine(item.ProductID.Trim());
-                    }
-
                     if (dialog_result.HasPO)
                     {
                         if (!item.PO.StartsWith("PO"))
@@ -448,6 +443,11 @@ namespace PMSClient.ViewModel
                         }
 
                     }
+                    if (dialog_result.HasProductID)
+                    {
+                        sb.AppendLine(item.ProductID.Trim());
+                    }
+
                     if (dialog_result.HasSeperator)
                     {
                         sb.AppendLine("-----------------------------");

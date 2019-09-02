@@ -83,6 +83,19 @@ namespace PMSWCFService.ServiceContracts
         List<DcPlanWithMisson> GetPlanExtraForProduct(int skip, int take, string searchCode, string composition);
         [OperationContract]
         int GetPlanExtraForProductCount(string searchCode, string composition);
+
+
+        //当前使用的服务-添加了根据内部编号查询
+        [OperationContract]
+        List<DcPlanWithMisson> GetPlanExtra2(int skip, int take, string searchCode, string composition,string pminumber);
+        [OperationContract]
+        int GetPlanExtraCount2(string searchCode, string composition,string pminumber);
+
+        //当前使用的服务
+        [OperationContract]
+        List<DcPlanWithMisson> GetPlanExtraForProduct2(int skip, int take, string searchCode, string composition,string pminumber);
+        [OperationContract]
+        int GetPlanExtraForProductCount2(string searchCode, string composition,string pminumber);
         #endregion
 
 

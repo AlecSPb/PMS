@@ -26,12 +26,12 @@ namespace PMSClient.View
             InitializeComponent();
             InitializeTimer();
         }
-
+        private Timer timer;
         private void InitializeTimer()
         {
             ShowNow();
 
-            Timer timer = new Timer();
+            timer = new Timer();
             timer.Interval = 60 * 1000;
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
@@ -49,5 +49,9 @@ namespace PMSClient.View
             CurrentTime.Text = $"时间:{DateTime.Now.ToShortTimeString()}";
         }
 
+        private void UserControl_Unloaded(object sender, RoutedEventArgs e)
+        {
+            timer.Stop();
+        }
     }
 }

@@ -117,6 +117,7 @@ namespace PMSClient.ViewModel
             model.WeightRemain = 0;
             model.Ratio = 0;
             model.MeltingPoint = "无";
+            model.Details = "";
             return model;
         }
         public static DcMaterialOrderItem NewMaterialOrderItem(DcMaterialOrder order)

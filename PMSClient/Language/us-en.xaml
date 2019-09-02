@@ -354,6 +354,7 @@
     <sys:String x:Key="SearchProductID">Product ID</sys:String>
     <sys:String x:Key="SearchPlateLot">Plate Lot</sys:String>
     <sys:String x:Key="SearchCustomer">Customer</sys:String>
+    <sys:String x:Key="SearchPMINumber">PMINumber</sys:String>
 
 
 

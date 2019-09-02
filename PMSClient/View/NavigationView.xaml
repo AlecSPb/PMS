@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:PMSClient.View"
              mc:Ignorable="d" 
              d:DesignHeight="1000" d:DesignWidth="1000"
-             DataContext="{Binding Source={StaticResource Locator},Path=Navigation}">
+             DataContext="{Binding Source={StaticResource Locator},Path=Navigation}"
+             Unloaded="UserControl_Unloaded">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

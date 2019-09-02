@@ -68,7 +68,12 @@
 
         <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="btnCancel" Content="取消" Style="{StaticResource StyleButtonCommon}" Click="btnCancel_Click"/>
-            <Button Name="btnYes" Content="确定" Style="{StaticResource StyleButtonCommon}" Click="btnYes_Click"/>
+            <Button Name="btnYes" Content="确定" Style="{StaticResource StyleButtonCommon}" Click="btnYes_Click"
+                    IsDefault="True">
+                <Button.ToolTip>
+                    <TextBlock Text="可以直接按回车确定"/>
+                </Button.ToolTip>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>

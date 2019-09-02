@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
 
         private void IntitializeProperties()
         {
-            searchComposition = searchVHPDate = "";
+            SearchComposition = SearchVHPDate = SearchPMINumber = "";
             PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
         }
 
@@ -71,7 +71,7 @@ namespace PMSClient.ViewModel
                 string searchCode = selectedDate.ToString("yyMMdd");
                 using (var service = new MissonServiceClient())
                 {
-                    var pageData = service.GetPlanExtra(0, 100, searchCode, "");
+                    var pageData = service.GetPlanExtra2(0, 100, searchCode, "","");
                     var ordered = pageData.OrderBy(i => i.Plan.PlanLot).ThenBy(i => i.Plan.SearchCode);
                     StringBuilder lb = new StringBuilder();
                     foreach (var item in ordered)
@@ -154,7 +154,7 @@ namespace PMSClient.ViewModel
             int recordCount = 0;
             using (var service = new MissonServiceClient())
             {
-                recordCount = service.GetPlanExtraCount(SearchVHPDate, SearchComposition);
+                recordCount = service.GetPlanExtraCount2(SearchVHPDate, SearchComposition,SearchPMINumber);
             }
 
             int pageCount = recordCount / PageSize + (recordCount % PageSize == 0 ? 0 : 1);
@@ -204,7 +204,8 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchComposition) && string.IsNullOrEmpty(SearchVHPDate));
+            return !(string.IsNullOrEmpty(SearchComposition) && string.IsNullOrEmpty(SearchVHPDate)
+                && string.IsNullOrEmpty(SearchPMINumber));
         }
 
         private void ActionSearch()
@@ -304,7 +305,8 @@ namespace PMSClient.ViewModel
         }
         private void ActionAll()
         {
-            SearchComposition = SearchVHPDate = "";
+            SearchComposition = SearchVHPDate = SearchPMINumber = "";
+
             SetPageParametersWhenConditionChange();
         }
 
@@ -314,7 +316,7 @@ namespace PMSClient.ViewModel
             PageSize = 30;
             using (var service = new MissonServiceClient())
             {
-                RecordCount = service.GetPlanExtraCount(SearchVHPDate, SearchComposition);
+                RecordCount = service.GetPlanExtraCount2(SearchVHPDate, SearchComposition,SearchPMINumber);
             }
             ActionPaging();
         }
@@ -329,7 +331,7 @@ namespace PMSClient.ViewModel
             //只显示Checked过的计划
             using (var service = new MissonServiceClient())
             {
-                var models = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
+                var models = service.GetPlanExtra2(skip, take, SearchVHPDate, SearchComposition, SearchPMINumber);
                 PlanWithMissons.Clear();
                 models.ToList().ForEach(o => PlanWithMissons.Add(o));
             }
@@ -356,7 +358,12 @@ namespace PMSClient.ViewModel
             get { return searchVHPDate; }
             set { searchVHPDate = value; RaisePropertyChanged(nameof(searchVHPDate)); }
         }
-
+        private string searchPMINumber;
+        public string SearchPMINumber
+        {
+            get { return searchPMINumber; }
+            set { searchPMINumber = value; RaisePropertyChanged(nameof(searchPMINumber)); }
+        }
         #region Commands
         public RelayCommand GoToMisson { get; set; }
         public RelayCommand GoToSearchPlan { get; set; }

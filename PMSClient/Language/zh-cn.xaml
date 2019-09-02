@@ -363,6 +363,7 @@
     <sys:String x:Key="SearchProductID">产品ID</sys:String>
     <sys:String x:Key="SearchPlateLot">背板批号</sys:String>
     <sys:String x:Key="SearchCustomer">客户</sys:String>
+    <sys:String x:Key="SearchPMINumber">内部编号</sys:String>
 
 
 

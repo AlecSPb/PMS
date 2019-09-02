@@ -66,5 +66,9 @@ namespace PMSWCFService.DataContracts
         //2017-12-15
         [DataMember]
         public string MeltingPoint { get; set; }
+
+        //2019-9-2
+        [DataMember]
+        public string Details { get; set; }
     }
 }

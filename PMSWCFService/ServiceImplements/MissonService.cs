@@ -655,5 +655,125 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public List<DcPlanWithMisson> GetPlanExtra2(int skip, int take, string searchCode, string composition, string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    var query = from p in dc.VHPPlans
+                                join o in dc.Orders on p.OrderID equals o.ID
+                                where p.State == PMSCommon.CommonState.已核验.ToString()
+                                     && p.SearchCode.Contains(searchCode)
+                                     && o.CompositionStandard.Contains(composition)
+                                     && o.PMINumber.Contains(pminumber)
+                                orderby DbFunctions.TruncateTime(p.PlanDate) descending, p.PlanLot descending, p.VHPDeviceCode descending, DbFunctions.TruncateTime(p.CreateTime) descending
+                                select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
+
+                    var final = query.Skip(skip).Take(take).ToList();
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<PMSPlanWithMissonModel, DcPlanWithMisson>();
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                        cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                    });
+
+                    var result = Mapper.Map<List<PMSPlanWithMissonModel>, List<DcPlanWithMisson>>(final);
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetPlanExtraCount2(string searchCode, string composition, string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    var query = from p in dc.VHPPlans
+                                join o in dc.Orders on p.OrderID equals o.ID
+                                where p.State == PMSCommon.CommonState.已核验.ToString()
+                                     && p.SearchCode.Contains(searchCode)
+                                     && o.CompositionStandard.Contains(composition)
+                                     && o.PMINumber.Contains(pminumber)
+                                select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcPlanWithMisson> GetPlanExtraForProduct2(int skip, int take, string searchCode, string composition, string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    var query = from p in dc.VHPPlans
+                                join o in dc.Orders on p.OrderID equals o.ID
+                                where p.State == PMSCommon.CommonState.已核验.ToString()
+                                && (p.PlanType == "加工" || p.PlanType == "其他"
+                                        || p.PlanType == "外协" || p.PlanType == "代工" || p.PlanType == "发货")
+                                     && p.SearchCode.Contains(searchCode)
+                                     && o.CompositionStandard.Contains(composition)
+                                     && o.PMINumber.Contains(pminumber)
+                                orderby DbFunctions.TruncateTime(p.PlanDate) descending, p.PlanLot descending, p.VHPDeviceCode descending, DbFunctions.TruncateTime(p.CreateTime) descending
+                                select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
+
+                    var final = query.Skip(skip).Take(take).ToList();
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<PMSPlanWithMissonModel, DcPlanWithMisson>();
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                        cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                    });
+
+                    var result = Mapper.Map<List<PMSPlanWithMissonModel>, List<DcPlanWithMisson>>(final);
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetPlanExtraForProductCount2(string searchCode, string composition, string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    var query = from p in dc.VHPPlans
+                                join o in dc.Orders on p.OrderID equals o.ID
+                                where p.State == PMSCommon.CommonState.已核验.ToString()
+                                & (p.PlanType == "加工" || p.PlanType == "其他"
+                                || p.PlanType == "外协" || p.PlanType == "代工" || p.PlanType == "发货")
+                                     && p.SearchCode.Contains(searchCode)
+                                     && o.CompositionStandard.Contains(composition)
+                                     && o.PMINumber.Contains(pminumber)
+                                select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

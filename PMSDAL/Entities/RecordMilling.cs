@@ -45,5 +45,9 @@ namespace PMSDAL
         public string Water { get; set; }
         //2017-12-15
         public string MeltingPoint { get; set; }
+
+
+        //2019-9-2
+        public string Details { get; set; }
     }
 }

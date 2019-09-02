@@ -39,7 +39,9 @@ namespace PMSClient.ViewModel
         private void IntitializeProperties()
         {
             PlanWithMissonExtras = new ObservableCollection<PlanWithMissonExtra>();
-            SearchComposition = SearchVHPDate = "";
+            SearchComposition = SearchVHPDate = SearchPMINumber = "";
+
+
         }
 
         private void IntitializeCommands()
@@ -237,13 +239,14 @@ namespace PMSClient.ViewModel
         }
         private void ActionAll()
         {
-            SearchComposition = SearchVHPDate = "";
+            SearchComposition = SearchVHPDate = SearchPMINumber = "";
+
             SetPageParametersWhenConditionChange();
         }
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchComposition) && string.IsNullOrEmpty(SearchVHPDate));
+            return !(string.IsNullOrEmpty(SearchComposition) && string.IsNullOrEmpty(SearchVHPDate) && string.IsNullOrEmpty(SearchPMINumber));
         }
 
         private void ActionSearch()
@@ -257,7 +260,7 @@ namespace PMSClient.ViewModel
             PageSize = 30;
             using (var service = new MissonServiceClient())
             {
-                RecordCount = service.GetPlanExtraCount(SearchVHPDate, SearchComposition);
+                RecordCount = service.GetPlanExtraCount2(SearchVHPDate, SearchComposition, SearchPMINumber);
             }
             ActionPaging();
         }
@@ -272,7 +275,7 @@ namespace PMSClient.ViewModel
             //只显示Checked过的计划
             using (var service = new MissonServiceClient())
             {
-                var orders = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
+                var orders = service.GetPlanExtra2(skip, take, SearchVHPDate, SearchComposition, SearchPMINumber);
                 PlanWithMissonExtras.Clear();
                 orders.ToList().ForEach(o => PlanWithMissonExtras.Add(new PlanWithMissonExtra { IsSelected = false, PlanMisson = o }));
             }
@@ -303,6 +306,12 @@ namespace PMSClient.ViewModel
         {
             get { return searchVHPDate; }
             set { searchVHPDate = value; RaisePropertyChanged(nameof(searchVHPDate)); }
+        }
+        private string searchPMINumber;
+        public string SearchPMINumber
+        {
+            get { return searchPMINumber; }
+            set { searchPMINumber = value; RaisePropertyChanged(nameof(searchPMINumber)); }
         }
         #endregion
 

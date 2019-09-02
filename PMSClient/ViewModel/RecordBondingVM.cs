@@ -52,7 +52,7 @@ namespace PMSClient.ViewModel
 
         private void ActionOneKeyTempFinish()
         {
-            if (!PMSDialogService.ShowYesNo("请问", "确定要讲所有未完成设置为【未录完】"))
+            if (!PMSDialogService.ShowYesNo("请问", "确定要将所有【未完成】设置为【未录完】吗？"))
                 return;
 
             try
@@ -70,10 +70,9 @@ namespace PMSClient.ViewModel
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                PMSHelper.CurrentLog.Error(ex);
             }
 
         }
