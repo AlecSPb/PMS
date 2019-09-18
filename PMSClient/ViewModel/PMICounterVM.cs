@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSClient.ExtraService;
+using PMSClient.MainService;
 
 namespace PMSClient.ViewModel
 {
@@ -40,8 +41,6 @@ namespace PMSClient.ViewModel
 
         private void ActionQuickChange(DcPMICounter obj)
         {
-            //TODO
-            //PMSDialogService.ShowToDo();
             var dialog = new ToolDialog.PMICounterQuickEditDialog();
             dialog.ShowDialog();
             if (dialog.EditType == ToolDialog.PMICounterEditType.IsCancel)
@@ -53,11 +52,54 @@ namespace PMSClient.ViewModel
             }
             else
             {
-                //TODO:添加自动添加背板库存记录功能
-                if (PMSDialogService.ShowYesNo("请问", "需要添加对应数量的此背板到背板库存里面？"))
+                if (obj.ItemGroup == "背板")
                 {
-                    PMSDialogService.ShowToDo();
+                    //TODO:添加自动添加背板库存记录功能
+                    if (PMSDialogService.ShowYesNo("请问", "需要添加对应数量的此背板到背板库存里面？"))
+                    {
+                        var model = new DcPlate();
+                        #region 初始化
+                        model.ID = Guid.NewGuid();
+                        model.CreateTime = DateTime.Now;
+                        model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                        model.State = PMSCommon.InventoryState.库存.ToString();
+                        model.PlateLot = UsefulPackage.PMSTranslate.PlateLot();
+                        model.PrintNumber = "无";
+                        model.PlateMaterial = PMSCommon.PlateMaterial.Cu.ToString();
+                        model.Supplier = PMSCommon.CustomData.PlateSupplier[3];
+                        model.UseCount = "0";
+                        model.Hardness = "未知";
+                        model.LastWeldMaterial = PMSCommon.CustomData.PlateLastWeldMaterial[0].ToString();
+                        model.Weight = "未知";
+                        model.Appearance = "正常";
+                        model.Defects = "无";
+
+                        model.Remark = obj.ItemDetails;
+                        model.Dimension = obj.ItemSpecification;
+
+                        #endregion
+
+                        int number = dialog.Counter;
+                        string prefix = model.PlateLot.Substring(0, 10);
+                        string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
+
+                        using (var service = new PlateServiceClient())
+                        {
+                            for (int i = 0; i < number; i++)
+                            {
+                                model.ID = Guid.NewGuid();
+                                model.CreateTime = DateTime.Now;
+                                model.PlateLot = prefix + (i + 1).ToString();
+                                service.AddPlateByUID(model, uid);
+                            }
+                        }
+
+
+
+
+                    }
                 }
+
 
                 obj.ItemCount -= dialog.Counter;
                 obj.ItemHistory = AddItemHistory(obj.ItemHistory, "-", dialog.Counter);

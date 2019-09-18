@@ -62,7 +62,7 @@ namespace PMSClient
                 var titleName = (App.Current as App).FindResource("AppNameDesktop").ToString();
                 //var versonName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 //这里自定义版本号
-                var versonName = "4.8.125.65";
+                var versonName = Properties.Settings.Default.Version;
                 Title = $"{titleName}-{versonName}";
             }
             catch (Exception)
