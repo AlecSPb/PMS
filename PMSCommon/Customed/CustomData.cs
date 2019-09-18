@@ -8,6 +8,23 @@ namespace PMSCommon
 {
     public static class CustomData
     {
+        public static List<string> MaterialReOrderReason
+        {
+            get
+            {
+                var data = new List<string>
+                {
+                    "[制粉失败]",
+                    "[热压失败]",
+                    "[加工失败]",
+                    "[绑定失败]",
+                    "[检验未过]",
+                    "[退货原因]"
+                };
+                return data;
+            }
+        }
+
         public static List<string> FailureProcess
         {
             get

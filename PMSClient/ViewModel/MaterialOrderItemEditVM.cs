@@ -52,6 +52,7 @@ namespace PMSClient.ViewModel
                 item.Priority = PMSCommon.MaterialOrderItemPriority.普通.ToString();
                 item.SJIngredient = "无";
                 item.HowManyTargets = "1pcs";
+                item.Remark = "";
                 #endregion
 
                 CurrentMaterialOrderItem = item;
@@ -88,6 +89,7 @@ namespace PMSClient.ViewModel
                 CurrentMaterialOrderItem.PMINumber = need.PMINumber;
                 CurrentMaterialOrderItem.Weight = need.Weight;
                 CurrentMaterialOrderItem.HowManyTargets = need.HowManyTargets;
+                CurrentMaterialOrderItem.Remark = need.SpecialNeeds;
                 //RaisePropertyChanged(nameof(CurrentMaterialOrderItem));
             }
         }

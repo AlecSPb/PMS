@@ -49,10 +49,16 @@ namespace PMSClient.ViewModel
             else if (dialog.EditType == ToolDialog.PMICounterEditType.IsAdd)
             {
                 obj.ItemCount += dialog.Counter;
-                obj.ItemHistory = AddItemHistory(obj.ItemHistory,"+", dialog.Counter);
+                obj.ItemHistory = AddItemHistory(obj.ItemHistory, "+", dialog.Counter);
             }
             else
             {
+                //TODO:添加自动添加背板库存记录功能
+                if (PMSDialogService.ShowYesNo("请问", "需要添加对应数量的此背板到背板库存里面？"))
+                {
+                    PMSDialogService.ShowToDo();
+                }
+
                 obj.ItemCount -= dialog.Counter;
                 obj.ItemHistory = AddItemHistory(obj.ItemHistory, "-", dialog.Counter);
             }
@@ -64,7 +70,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private string AddItemHistory(string history,string sign,int count)
+        private string AddItemHistory(string history, string sign, int count)
         {
             return $"{DateTime.Today.ToString("yyMMdd")}{sign}{count};{history}";
         }

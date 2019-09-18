@@ -482,6 +482,7 @@
     <sys:String x:Key="MOIPriority">Priority</sys:String>
     <sys:String x:Key="MOSJIngredient">Remark</sys:String>
     <sys:String x:Key="MOIHowManyTargets">How Many Targets</sys:String>
+    <sys:String x:Key="MOIRemark">Inner Remark</sys:String>
 
     <!--Plate-->
     <sys:String x:Key="PlateState">State</sys:String>

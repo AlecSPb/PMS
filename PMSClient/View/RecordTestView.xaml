@@ -225,19 +225,24 @@
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
             </Grid>
             <Expander Grid.Column="1" Header="" IsExpanded="False" ExpandDirection="Left">
-                <Grid Width="350">
+                <Grid Width="350" DataContext="{Binding  CurrentSelectItem}">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Grid.Row="0">
-                        <Grid  DataContext="{Binding  CurrentSelectItem}">
+                    <Button Content="订单信息" Grid.Column="0"
+                                    Style="{StaticResource StyleButtonCommon}" HorizontalAlignment="Stretch"
+                                    Command="{Binding DataContext.ShowOrderInformation,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"
+                                    />
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Grid.Row="1">
+                        <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
@@ -258,83 +263,78 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="0*"/>
                             </Grid.RowDefinitions>
-                            <Button Content="订单信息" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                                    Style="{StaticResource StyleButtonCommon}" HorizontalAlignment="Stretch"
-                                    Command="{Binding DataContext.ShowOrderInformation,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                    CommandParameter="{Binding}"
-                                    />
 
-                            <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RTProductID}"
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RTProductID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding RecordTest.ProductID}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding RecordTest.ProductID}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                            <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RTComposition}"
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RTComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding RecordTest.Composition}" Style="{StaticResource StyleTextBoxReadOnly}"  />
+                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding RecordTest.Composition}" Style="{StaticResource StyleTextBoxReadOnly}"  />
 
-                            <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RTCompositionAbbr}"
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RTCompositionAbbr}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding RecordTest.CompositionAbbr}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding RecordTest.CompositionAbbr}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RTPMINumber}"
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RTPMINumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding RecordTest.PMINumber}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding RecordTest.PMINumber}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                            <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RTPO}"
+                            <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RTPO}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding RecordTest.PO}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding RecordTest.PO}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                            <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RTCustomer}"
+                            <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RTCustomer}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding RecordTest.Customer}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding RecordTest.Customer}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                            <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RTDimension}"
+                            <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RTDimension}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding RecordTest.Dimension}" Style="{StaticResource StyleTextBoxReadOnly}" />
-                            <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTDensity}"
+                            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding RecordTest.Dimension}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                            <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RTDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding RecordTest.Density}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                            <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTWeight}"
+                            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding RecordTest.Density}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                            <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding RecordTest.Weight}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                            <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTResistance}"
+                            <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding RecordTest.Weight}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                            <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTResistance}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding RecordTest.Resistance}" Style="{StaticResource StyleTextBoxReadOnly}"  />
-                            <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RTDefects}"
+                            <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding RecordTest.Resistance}" Style="{StaticResource StyleTextBoxReadOnly}"  />
+                            <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTDefects}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding RecordTest.Defects}" Style="{StaticResource StyleTextBoxReadOnly}" />
-                            <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
+                            <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding RecordTest.Defects}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                            <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding RecordTest.DimensionActual}" Style="{StaticResource StyleTextBoxReadOnly}"  />
+                            <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding RecordTest.DimensionActual}" Style="{StaticResource StyleTextBoxReadOnly}"  />
 
-                            <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTRemark}"
+                            <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding RecordTest.Remark}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding RecordTest.Remark}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTSample}"
+                            <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTSample}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding RecordTest.Sample}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                            <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding RecordTest.Sample}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                            <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTRoughness}"
+                            <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTRoughness}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding RecordTest.Roughness}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding RecordTest.Roughness}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RTWarping}"
+                            <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTWarping}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding RecordTest.Warping}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding RecordTest.Warping}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTQC}"
+                            <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RTQC}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding RecordTest.QC}" Style="{StaticResource StyleTextBoxReadOnly}"   />
-                            
-                            <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RTBP}"
+                            <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding RecordTest.QC}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+
+                            <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTBP}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding RecordTest.BackingPlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding RecordTest.BackingPlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
 
                         </Grid>
                     </ScrollViewer>
-                    <control:BindableCSVTable Grid.Row="1"  CSVContent="{Binding  CurrentSelectItem.RecordTest.CompositionXRF}"
+                    <control:BindableCSVTable Grid.Row="2"  CSVContent="{Binding  CurrentSelectItem.RecordTest.CompositionXRF}"
                                           Margin="5" Height="220" VerticalAlignment="Top"/>
                 </Grid>
 

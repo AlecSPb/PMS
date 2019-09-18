@@ -82,6 +82,8 @@
                                     Binding="{Binding MaterialOrderItem.DeliveryDate,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource MOILastDay}" ElementStyle="{StaticResource StyleDGTextBlockCenter}"
                                     Binding="{Binding MaterialOrderItem.DeliveryDate,Converter={StaticResource LastDayConverter}}"/>
+                <DataGridTextColumn Header="{StaticResource MOIRemark}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding MaterialOrderItem.Remark}"/>
                 <DataGridTemplateColumn Header="交付标记">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

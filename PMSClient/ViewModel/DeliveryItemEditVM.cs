@@ -89,6 +89,10 @@ namespace PMSClient.ViewModel
                 CurrentDeliveryItem.Dimension = model.Dimension;
                 CurrentDeliveryItem.DimensionActual = model.DimensionActual;
                 CurrentDeliveryItem.Defects = model.Defects;
+
+                //TODO:背板编号的处理
+                var platelot = Helpers.DeliveryHelper.GetBPLotFromTest(model.ProductID);
+                CurrentDeliveryItem.Remark = platelot;
                 //RaisePropertyChanged(nameof(CurrentDeliveryItem));
             }
         }

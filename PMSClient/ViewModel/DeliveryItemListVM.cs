@@ -54,7 +54,28 @@ namespace PMSClient.ViewModel
         private void ActionOutput()
         {
             //TODO:添加Excel导出功能
-            PMSDialogService.ShowToDo();
+            //PMSDialogService.ShowToDo();
+
+            //生成绑定计划报表
+
+            if (!PMSDialogService.ShowYesNo("请问", "确定要导出全部数据吗？"))
+            {
+                return;
+            }
+            PMSDialogService.Show("导出数据时间会比较长，请耐性等待完成消息出现,不要重复点击");
+
+
+            try
+            {
+                var excel = new ExcelOutputHelper.ExcelOutputDeliveryItemList();
+                excel.Intialize("发货记录导出记录", "发货记录");
+                excel.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+
         }
 
         private void ActionGiveUp()

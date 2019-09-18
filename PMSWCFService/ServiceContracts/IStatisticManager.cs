@@ -9,6 +9,7 @@ namespace PMSWCFService.ServiceContracts
 {
     /// <summary>
     /// 生产经理超级视角服务
+    /// 
     /// </summary>
     [ServiceContract]
     public interface IStatisticManager

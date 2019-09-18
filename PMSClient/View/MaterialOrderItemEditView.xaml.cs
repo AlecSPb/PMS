@@ -53,7 +53,17 @@ namespace PMSClient.View
 
         private void BtnDefaultMemo_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBox(TxtDescription,"第1次补料");
+            PMSMethods.SetTextBox(TxtRemark, "第1次补料");
+        }
+
+        private void BtnReOrderReason_Click(object sender, RoutedEventArgs e)
+        {
+            var tool = new ToolWindow.ReOrderReason();
+            tool.ShowDialog();
+            if (!string.IsNullOrEmpty(tool.WindowContent))
+            {
+                PMSMethods.SetTextBoxAppend(TxtRemark, tool.WindowContent);
+            }
         }
     }
 }

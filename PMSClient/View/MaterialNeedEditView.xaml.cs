@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMSCommon;
 
 namespace PMSClient.View
 {
@@ -35,6 +36,22 @@ namespace PMSClient.View
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
+            }
+        }
+
+        private void BtnDefaultMemo_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtRemark, "第1次补料");
+
+        }
+
+        private void BtnReOrderReason_Click(object sender, RoutedEventArgs e)
+        {
+            var tool = new ToolWindow.ReOrderReason();
+            tool.ShowDialog();
+            if (!string.IsNullOrEmpty(tool.WindowContent))
+            {
+                PMSMethods.SetTextBoxAppend(TxtRemark, tool.WindowContent);
             }
         }
     }

@@ -46,6 +46,10 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string SJIngredient { get; set; }//用作Remark
 
+        //2019-9-16
+        [DataMember]
+        public string Remark { get; set; }
+
         [DataMember]
         public double MaterialPrice { get; set; }
 

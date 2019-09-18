@@ -97,53 +97,26 @@ namespace PMSClient.ReportsHelper
                                     //查找230mm靶材的[绑定记录],并填写到背板编号栏
                                     if (item.Dimension.Trim().StartsWith("230"))
                                     {
-                                        try
-                                        {
-                                            using (var s_bonding = new RecordBondingServiceClient())
-                                            {
-                                                var bonding = s_bonding.GetRecordBondingByProductID(item.ProductID)
-                                                    .FirstOrDefault();
-                                                if (bonding != null)
-                                                {
-                                                    string bp_lot = bonding.PlateLot;
-                                                    mainTable.Rows[rownumber].Cells[8].Paragraphs[0]
-                                                        .Append(bp_lot)
-                                                        .FontSize(10).Alignment = Alignment.left;
 
-                                                    if (bp_lot.EndsWith("A"))
-                                                    {
-                                                        mainTable.Rows[rownumber].Cells[9].Paragraphs[0]
-                                                            .Append("old")
-                                                            .FontSize(10).Alignment = Alignment.left;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        catch (Exception)
-                                        {
+                                        string bp_lot = Helpers.DeliveryHelper.GetBPLotFromBonding(item.ProductID);
+                                        mainTable.Rows[rownumber].Cells[8].Paragraphs[0]
+                                            .Append(bp_lot)
+                                            .FontSize(10).Alignment = Alignment.left;
 
+                                        if (bp_lot.EndsWith("A"))
+                                        {
+                                            mainTable.Rows[rownumber].Cells[9].Paragraphs[0]
+                                                .Append("old")
+                                                .FontSize(10).Alignment = Alignment.left;
                                         }
+
                                     }
                                     else//在[测试记录]中查找非绑定靶材的背板记录
                                     {
-                                        try
-                                        {
-                                            using (var s_recordTest = new RecordTestServiceClient())
-                                            {
-                                                var test = s_recordTest.GetRecordTestByProductID(item.ProductID).FirstOrDefault();
-                                                if (test != null)
-                                                {
-                                                    string bp_lot = test.BackingPlateLot;
-                                                    mainTable.Rows[rownumber].Cells[8].Paragraphs[0]
+                                        string bp_lot = Helpers.DeliveryHelper.GetBPLotFromTest(item.ProductID);
+                                        mainTable.Rows[rownumber].Cells[8].Paragraphs[0]
                                                     .Append(bp_lot)
                                                     .FontSize(10).Alignment = Alignment.left;
-                                                }
-                                            }
-                                        }
-                                        catch (Exception)
-                                        {
-
-                                        }
                                     }
                                 }
 

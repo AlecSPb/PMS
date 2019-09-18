@@ -2306,6 +2306,9 @@ namespace PMSClient.MainService {
         private string PurityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SJIngredientField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2505,6 +2508,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PurityField, value) != true)) {
                     this.PurityField = value;
                     this.RaisePropertyChanged("Purity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
                 }
             }
         }

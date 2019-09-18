@@ -247,7 +247,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
+                <DataGridTextColumn Header="{StaticResource MOIRemark}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding Remark}"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="5" Orientation="Horizontal">

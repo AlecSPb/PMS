@@ -269,7 +269,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.RecordBondings
-                                where p.State != BondingState.未完成.ToString()
+                                where p.State == BondingState.未完成.ToString()
                                 select p;
 
                     int result = 0;

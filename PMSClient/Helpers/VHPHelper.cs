@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMSClient.MainService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,14 @@ namespace PMSClient.Helpers
 {
     public static class VHPHelper
     {
+
+
+        /// <summary>
+        /// 检查热压类型和工艺代码是否匹配
+        /// </summary>
+        /// <param name="planType"></param>
+        /// <param name="processCode"></param>
+        /// <returns></returns>
         public static string CheckPlanTypeAndProcessCode(string planType, string processCode)
         {
 

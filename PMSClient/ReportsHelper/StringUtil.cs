@@ -10,7 +10,13 @@ namespace PMSClient.ReportsHelper
     {
         public static string RemoveSlash(string str)
         {
-            return str.Replace("\\","").Replace("/","");
+            return str.Replace("\\", "")
+                      .Replace("/", "")
+                      .Replace("%", "")
+                      .Replace("<", "")
+                      .Replace(">", "")
+                      .Replace(":", "")
+                      .Replace("*", "");
 
         }
     }

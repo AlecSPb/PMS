@@ -101,9 +101,17 @@
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource MNSpecialNeeds}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding SpecialNeeds}" Style="{StaticResource StyleTextBoxCommon}" />
-                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                <TextBox Name="TxtRemark" Grid.Row="5" Grid.Column="1" Text="{Binding SpecialNeeds}" Style="{StaticResource StyleTextBoxCommon}" />
+                <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal">
+                    <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal" Grid.RowSpan="3">
+                        <Button Name="BtnDefaultMemo" Style="{StaticResource StyleButtonCommonNarrow}" Content="补料"
+                                Click="BtnDefaultMemo_Click"/>
+                        <Button Content="补料原因" Name="BtnReOrderReason" Click="BtnReOrderReason_Click"
+                                Style="{StaticResource StyleButtonCommon}"/>
+                        <TextBlock Style="{StaticResource StyleTextBlockTip}"
+                           Text="内部备注，供应商那边看不到" Background="LightBlue"/>
+                    </StackPanel>
+                </StackPanel>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MNState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

@@ -60,7 +60,7 @@ namespace PMSClient.ViewModel
                 using (var service = new RecordBondingServiceClient())
                 {
                     int result = service.SetAllUnFinsihToTempFinish();
-                    if (result> 0)
+                    if (result > 0)
                     {
                         SetPageParametersWhenConditionChange();
                     }
@@ -149,27 +149,35 @@ namespace PMSClient.ViewModel
 
         private void ActionRecordSheet()
         {
-            if (!PMSDialogService.ShowYesNo("警告", "确定要生成[未完成]的绑定计划的记录单吗？\r\n 不包含[未录完]"))
+            if (!PMSDialogService.ShowYesNo("询问", "确定要生成[未完成]的绑定计划的[记录单]和[靶材缺陷告知单]吗？\r\n 不包含[未录完]"))
                 return;
             try
             {
-                using (var service = new RecordBondingServiceClient())
+                var service = new RecordBondingServiceClient();
+                //int count = service.GetUnFinishedRecordBondings().Count();
+                //PMSDialogService.ShowYes($"共有{count}条绑定记录");
+                var report = new WordBondingSheet();
+                var models = service.GetUnFinishedRecordBondings();
+                service.Close();
+                if (models.Count() > 0)
                 {
-                    //int count = service.GetUnFinishedRecordBondings().Count();
-                    //PMSDialogService.ShowYes($"共有{count}条绑定记录");
-                    var report = new WordBondingSheet();
-                    var models = service.GetUnFinishedRecordBondings();
-                    if (models.Count() > 0)
-                    {
-                        report.SetModel(models.ToList());
-                        report.Output();
-                    }
-                    else
-                    {
-                        PMSDialogService.Show("暂时没有绑定计划");
-                    }
+                    report.SetModel(models.ToList());
+                    report.Output();
+
+                    //缺陷告知单
+                    var word = new ReportsHelperNew.ReportBondingTargetDefects();
+                    word.Intialize("绑定靶材缺陷告知单");
+                    word.Output();
 
                 }
+                else
+                {
+                    PMSDialogService.Show("暂时没有绑定计划");
+                }
+
+
+
+
             }
             catch (Exception ex)
             {

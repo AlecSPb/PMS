@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>159</ApplicationRevision>
+    <ApplicationRevision>162</ApplicationRevision>
     <ApplicationVersion>4.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -268,6 +268,7 @@
     <Compile Include="Helpers\Converter\PlateUseNumberConverter.cs" />
     <Compile Include="Helpers\Converter\VisibilityConverter2.cs" />
     <Compile Include="Helpers\DefaultHelper.cs" />
+    <Compile Include="Helpers\DeliveryHelper.cs" />
     <Compile Include="Helpers\ExitHelper.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\Converter\IsLockedConverter.cs" />
@@ -306,6 +307,7 @@
     <Compile Include="Helpers\OK\NavigationService.cs" />
     <Compile Include="Helpers\VToken.cs" />
     <Compile Include="ReportsHelperNew\ReportBase.cs" />
+    <Compile Include="ReportsHelperNew\ReportBondingTargetDefects.cs" />
     <Compile Include="ReportsHelperNew\ReportFillingTool.cs" />
     <Compile Include="ReportsHelperNew\ReportRecordDeMold.cs" />
     <Compile Include="ReportsHelperNew\ReportSampleSheet.cs" />
@@ -464,6 +466,9 @@
     </Compile>
     <Compile Include="DataProcess\ScanInput\LotModel.cs" />
     <Compile Include="DataProcess\ScanInput\ScanInputRecordBondingVM.cs" />
+    <Compile Include="ToolWindow\ReOrderReason.xaml.cs">
+      <DependentUpon>ReOrderReason.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolWindow\SymbolWindow.xaml.cs">
       <DependentUpon>SymbolWindow.xaml</DependentUpon>
     </Compile>
@@ -1122,6 +1127,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ToolWindow\ReOrderReason.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ToolWindow\SymbolWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1652,6 +1661,9 @@
     <Content Include="Resource\DocTemplate\Reports\OutsideProcessSheet.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resource\DocTemplate\Reports\BondingTargetDefects.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Service References\OutsideProcessService\OutsideProcessService.disco" />
     <None Include="Service References\OutsideProcessService\configuration91.svcinfo" />
     <None Include="Service References\OutsideProcessService\configuration.svcinfo" />
@@ -1691,7 +1703,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Resource Include="Resource\Images\building.jpg" />
+    <Resource Include="Resource\Images\building.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="StandardDocs\产品拍照规范流程.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2203,12 +2217,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

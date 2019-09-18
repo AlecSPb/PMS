@@ -140,6 +140,7 @@ namespace PMSClient.ViewModel
             item.DeliveryDate = DateTime.Now.AddDays(7);
             item.Priority = PMSCommon.MaterialOrderItemPriority.普通.ToString();
             item.SJIngredient = "无";
+            item.Remark = "";
             #endregion
             return item;
         }

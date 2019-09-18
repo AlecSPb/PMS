@@ -121,7 +121,7 @@ namespace PMSClient.DataProcess.ScanInput
             model.Abbr = ss.CompositionAbbr;
             model.Weight = ss.Weight;
             model.Customer = ss.Customer;
-            model.Position ="无";
+            model.Position = "无";
             model.ProductType = PMSCommon.ProductType.靶材.ToString();
             model.State = PMSCommon.InventoryState.库存.ToString();
             model.Remark = "";
@@ -152,7 +152,6 @@ namespace PMSClient.DataProcess.ScanInput
             model.Customer = "无";
             model.Weight = ss.Weight;
             model.DetailRecord = "无";
-            model.Remark = "无";
             model.PackNumber = boxNumber;
             model.Position = "无";
             model.Dimension = ss.Dimension;
@@ -161,6 +160,7 @@ namespace PMSClient.DataProcess.ScanInput
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.OrderNumber = 0;
 
+            model.Remark = "无";
             #endregion
 
             return model;
@@ -183,7 +183,6 @@ namespace PMSClient.DataProcess.ScanInput
             model.Customer = ss.Customer;
             model.Weight = ss.Weight;
             model.DetailRecord = "无";
-            model.Remark = "无";
             model.PackNumber = 1;
             model.Position = "无";
             model.Dimension = ss.Dimension;
@@ -191,7 +190,14 @@ namespace PMSClient.DataProcess.ScanInput
             model.Defects = ss.Defects;
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.OrderNumber = 0;
+            model.Remark = "无";
 
+            //TODO:背板编号的处理
+            if (model.ProductType == PMSCommon.ProductType.靶材.ToString())
+            {
+                var platelot = Helpers.DeliveryHelper.GetBPLotFromTest(model.ProductID);
+                model.Remark = platelot;
+            }
             #endregion
 
             return model;

@@ -489,6 +489,7 @@
     <sys:String x:Key="MOIWeight">重量(kg)</sys:String>
     <sys:String x:Key="MOIPriority">优先级</sys:String>
     <sys:String x:Key="MOIHowManyTargets">靶材数目</sys:String>
+    <sys:String x:Key="MOIRemark">内部备注</sys:String>
 
     <!--Plate-->
     <sys:String x:Key="PlateState">状态</sys:String>
