@@ -152,9 +152,11 @@ namespace PMSClient.ViewModel
             bool isUsed = true;
             if (arg != null)
             {
-                isUsed = arg.PlanDate > DateTime.Today;
+                isUsed = arg.PlanDate >= DateTime.Today;
             }
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan) && MissonStateConverter(CurrentSelectItem.State) && isUsed;
+            bool isOK = Helpers.AccessHelper.IsAdmin() || (PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan) &&
+                MissonStateConverter(CurrentSelectItem.State) && isUsed);
+            return isOK;
         }
         /// <summary>
         /// 权限控制=编辑任务
@@ -213,7 +215,7 @@ namespace PMSClient.ViewModel
         {
             if (plan != null)
             {
-                if (plan.IsLocked)
+                if (plan.IsLocked && !Helpers.AccessHelper.IsAdmin())
                 {
                     PMSDialogService.ShowWarning("该计划已经被【热压组】锁定执行，不允许再修改.\r\n如果一定要修改,请联系【热压组】解锁");
                     return;

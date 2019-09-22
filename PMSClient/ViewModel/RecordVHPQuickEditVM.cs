@@ -96,13 +96,15 @@ namespace PMSClient.ViewModel
         private bool CanUnLock(DcPlanWithMisson arg)
         {
             if (arg == null) return true;
-            return arg.Plan.PlanDate >= DateTime.Today && arg.Plan.IsLocked;
+
+            return Helpers.AccessHelper.IsAdmin() || (arg.Plan.PlanDate >= DateTime.Today && arg.Plan.IsLocked);
         }
 
         private bool CanLock(DcPlanWithMisson arg)
         {
             if (arg == null) return true;
-            return arg.Plan.PlanDate >= DateTime.Today && !arg.Plan.IsLocked;
+
+            return Helpers.AccessHelper.IsAdmin() || (arg.Plan.PlanDate >= DateTime.Today && !arg.Plan.IsLocked);
         }
 
         private void ActionUnLock(DcPlanWithMisson obj)

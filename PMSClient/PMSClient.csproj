@@ -15,7 +15,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>C:\Users\XS\Documents\source\publish\ClickOncePublish\PMS\</PublishUrl>
+    <PublishUrl>C:\Users\XS\source\publish\ClickOncePublish\PMS\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>65</ApplicationRevision>
+    <ApplicationRevision>69</ApplicationRevision>
     <ApplicationVersion>4.8.125.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -261,6 +261,7 @@
     <Compile Include="Express\Operation.cs" />
     <Compile Include="Express\SystemParameter.cs" />
     <Compile Include="Express\Trace.cs" />
+    <Compile Include="Helpers\AccessHelper.cs" />
     <Compile Include="Helpers\CompositionHelper.cs" />
     <Compile Include="Helpers\Converter\LastDayConverter.cs" />
     <Compile Include="Helpers\Converter\LastDayImageConverter.cs" />

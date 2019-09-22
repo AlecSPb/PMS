@@ -76,6 +76,10 @@ namespace PMSClient.ViewModel
             }
         }
 
+        /// <summary>
+        /// 从测试记录中获得发货信息
+        /// </summary>
+        /// <param name="model"></param>
         public void SetBySelect(DcRecordTest model)
         {
             if (model != null)
@@ -90,12 +94,16 @@ namespace PMSClient.ViewModel
                 CurrentDeliveryItem.DimensionActual = model.DimensionActual;
                 CurrentDeliveryItem.Defects = model.Defects;
 
-                //TODO:背板编号的处理
+                //背板编号的处理
                 var platelot = Helpers.DeliveryHelper.GetBPLotFromTest(model.ProductID);
                 CurrentDeliveryItem.Remark = platelot;
                 //RaisePropertyChanged(nameof(CurrentDeliveryItem));
             }
         }
+        /// <summary>
+        /// 从产品中获取发货信息
+        /// </summary>
+        /// <param name="model"></param>
         public void SetBySelect(DcProduct model)
         {
             if (model != null)
@@ -110,6 +118,9 @@ namespace PMSClient.ViewModel
                 CurrentDeliveryItem.Dimension = model.Dimension;
                 CurrentDeliveryItem.DimensionActual = model.DimensionActual;
                 CurrentDeliveryItem.Defects = model.Defects;
+                //背板编号的处理
+                var platelot = Helpers.DeliveryHelper.GetBPLotFromTest(model.ProductID);
+                CurrentDeliveryItem.Remark = platelot;
                 //RaisePropertyChanged(nameof(CurrentDeliveryItem));
             }
         }

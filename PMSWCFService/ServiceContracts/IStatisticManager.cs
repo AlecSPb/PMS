@@ -14,25 +14,14 @@ namespace PMSWCFService.ServiceContracts
     [ServiceContract]
     public interface IStatisticManager
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <returns></returns>
         [OperationContract]
-        int GetPlanCount(DateTime start, DateTime end,string deviceCode);
+        Dictionary<string,List<string>> GetStatisticData(DateTime start, DateTime end);
 
-        [OperationContract]
-        Dictionary<string, string> GetMoldUsage(DateTime start, DateTime end);
-
-        [OperationContract]
-        Dictionary<string, string> GetVHPType(DateTime start, DateTime end);
-
-        [OperationContract]
-        Dictionary<string, string> GetFollowUp(DateTime start, DateTime end);
-
-        [OperationContract]
-        int GetBondingCount(DateTime start, DateTime end);
-
-        [OperationContract]
-        int GetTestingCount(DateTime start, DateTime end);
-
-        [OperationContract]
-        int GetDeliveryCount(DateTime start, DateTime end);
     }
 }

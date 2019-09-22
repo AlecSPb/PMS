@@ -39,10 +39,16 @@ namespace PMSClient.View
 
         private void _timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            this.Dispatcher.Invoke(() =>
+            try
             {
-                txtCurrentTime.Text = $"现在时间:{DateTime.Now.ToString("yyyy-MM-dd dddd HH:mm:ss")}";
-            });
+                this.Dispatcher.Invoke(() =>
+                {
+                    txtCurrentTime.Text = $"现在时间:{DateTime.Now.ToString("yyyy-MM-dd dddd HH:mm:ss")}";
+                });
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
