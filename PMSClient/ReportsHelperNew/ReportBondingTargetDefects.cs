@@ -28,9 +28,10 @@ namespace PMSClient.ReportsHelperNew
                 Table table = doc.Tables[0];
                 var service = new RecordBondingServiceClient();
                 //获取所有未完成的绑定数据
-                var bondings = service.GetUnFinishedRecordBondings();
+                var bondings = service.GetUnFinishedRecordBondings()
+                                      .OrderBy(i => i.TargetProductID)
+                                      .ThenBy(i => i.PlanBatchNumber);
                 service.Close();
-
 
                 int rownumber = 1;
                 foreach (var item in bondings)

@@ -4,13 +4,13 @@
     <SolidColorBrush x:Key="VHPCompletedBrush" Color="Wheat"/>
     <SolidColorBrush x:Key="UnCompletedBrush" Color="#00FF80"/>
     <SolidColorBrush x:Key="UnknownBrush" Color="#04A8DD"/>
-    <SolidColorBrush x:Key="WastedBrush" Color="#0D4A4A"/>
+    <SolidColorBrush x:Key="WastedBrush" Color="LightGray"/>
 
     <SolidColorBrush x:Key="PausedBrush" Color="LightGray"/>
     <SolidColorBrush x:Key="UnCheckedBrush" Color="Yellow"/>
     <SolidColorBrush x:Key="EmergencyBrush" Color="LightCoral"/>
     <SolidColorBrush x:Key="CheckedBrush" Color="White"/>
-    <SolidColorBrush x:Key="FailedBrush" Color="Gray"/>
+    <SolidColorBrush x:Key="FailedBrush" Color="LightGray"/>
     <SolidColorBrush x:Key="NoInputBrush" Color="LightSalmon"/>
     
     <SolidColorBrush x:Key="YesterdayBrush" Color="LightBlue"/>

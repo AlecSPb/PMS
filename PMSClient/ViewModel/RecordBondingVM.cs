@@ -291,7 +291,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 30;
+            PageSize = 36;
             using (var service = new RecordBondingServiceClient())
             {
                 RecordCount = service.GetRecordBondingCountNew(SearchProductID, SearchCompositionStd, SearchPlateLot);

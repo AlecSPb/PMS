@@ -334,7 +334,7 @@
 
                         </Grid>
                     </ScrollViewer>
-                    <control:BindableCSVTable Grid.Row="2"  CSVContent="{Binding  CurrentSelectItem.RecordTest.CompositionXRF}"
+                    <control:BindableCSVTable Grid.Row="2"  CSVContent="{Binding  RecordTest.CompositionXRF}"
                                           Margin="5" Height="220" VerticalAlignment="Top"/>
                 </Grid>
 
