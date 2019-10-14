@@ -262,7 +262,8 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Name="txtRemark" Grid.Row="22" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
                 <StackPanel Grid.Row="22" Grid.Column="2" Orientation="Horizontal">
-                    <Button Content="附有背板" Name="btnAddPlate" Style="{StaticResource StyleButtonCommon}" Click="BtnAddPlate_Click"/>
+                    <Button Content="附有背板" Name="BtnAddPlate" Style="{StaticResource StyleButtonCommon}" Click="BtnAddPlate_Click"/>
+                    <Button Content="回收重做" Name="BtnRecycle" Style="{StaticResource StyleButtonCommon}" Click="BtnRecycle_Click"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"   Text=""/>
                 </StackPanel>
 
