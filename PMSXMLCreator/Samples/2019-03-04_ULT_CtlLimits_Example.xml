@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<QualityCertificateFile xmlns="x-schema:../Schema/UltQualityCertificateSchema2016Dec.xml">
+	<FileCreationInfo>
+		<responsiblePartyEmail>xs.zhou@cdpmi.net</responsiblePartyEmail>
+	</FileCreationInfo>
+	<BusinessSites>
+		<BusinessSiteDescription>
+			<manufacturerNumber>######</manufacturerNumber>
+			<manufacturerName>Pioneer Materials,Inc</manufacturerName>
+			<manufacturingPlantCode>YOUR PLT #</manufacturingPlantCode>
+			<incomingFaxNumber>800-555-1234</incomingFaxNumber>  
+			<QualityCertificates>
+				<QualityCertificate certificateType="SingleCertificate">
+					<thisDocumentGenerationDateTime>2018-12-29T16:03:00</thisDocumentGenerationDateTime>
+					<releaseType>00</releaseType>
+					<ProductDescription>
+						<productName>Se51.0As30.6Ge12.7Si5.7</productName>
+						<manufacturerPartNumber>SUPPLER PART NUMBER</manufacturerPartNumber>
+						<manufacturerOrderNumber>OPTIONAL</manufacturerOrderNumber>
+						<partNumber>INTEL PART NUMBER</partNumber>
+						<partRevisionNumber>BUILT-TO-REV#</partRevisionNumber>
+						<lotCreatedDate>2018-12-28</lotCreatedDate>
+						<lotNumber>190810-E-1#273</lotNumber>
+					</ProductDescription>
+					<Shipment>
+						<deliverTo>INTEL-FAB-e.g.D1C</deliverTo>
+						<Containers>
+							<containerNumber>######1</containerNumber>
+							<containerNumber>######2</containerNumber>
+						</Containers>
+					</Shipment>
+					<Comments>
+						<comment>ULT QualityCertificate</comment>
+					</Comments>
+					<MaterialParameters>
+            <!--Speficiation-Density-->
+            <MaterialParameter>
+              <characteristic>Density</characteristic>
+              <shortName>DEN</shortName>
+              <unitOfMeasure>g/cm3</unitOfMeasure>
+              <measurements>
+                <measurement>
+                  <measurementType>Value</measurementType>
+                  <measurementValue>4.4</measurementValue>
+                  <UCL>4.5</UCL>
+                  <LCL>4.2</LCL>
+                  <MDL>0</MDL>
+                  <CLCalc>Temp</CLCalc>
+                </measurement>
+              </measurements>
+            </MaterialParameter>
+
+            <MaterialParameter>
+              <characteristic>Weight</characteristic>
+              <shortName>Weight</shortName>
+              <unitOfMeasure>g</unitOfMeasure>
+              <measurements>
+                <measurement>
+                  <measurementType>Value</measurementType>
+                  <measurementValue>5030</measurementValue>
+                  <UCL>8000</UCL>
+                  <LCL>0</LCL>
+                  <MDL>0</MDL>
+                  <CLCalc>Temp</CLCalc>
+                </measurement>
+              </measurements>
+            </MaterialParameter>
+            
+            <MaterialParameter>
+              <characteristic>Target Blank OD</characteristic>
+              <shortName>TAR_BOD</shortName>
+              <unitOfMeasure>mm</unitOfMeasure>
+              <measurements>
+                <measurement>
+                  <measurementType>Value</measurementType>
+                  <measurementValue>444.7</measurementValue>
+                  <UCL>450</UCL>
+                  <LCL>0</LCL>
+                  <MDL>0</MDL>
+                  <CLCalc>Temp</CLCalc>
+                </measurement>
+              </measurements>
+            </MaterialParameter>
+            
+            <!--Composition-Selenium-->
+            <MaterialParameter>
+              <characteristic>Selenium</characteristic>
+              <shortName>ZSE</shortName>
+              <unitOfMeasure>%</unitOfMeasure>
+              <measurements>
+                <measurement>
+                  <measurementType>Value</measurementType>
+                  <measurementValue>51</measurementValue>
+                  <UCL>100</UCL>
+                  <LCL>0</LCL>
+                  <MDL>0</MDL>
+                  <CLCalc>Temp</CLCalc>
+                </measurement>
+              </measurements>
+            </MaterialParameter>
+            <MaterialParameter>
+              <characteristic>Arsenic</characteristic>
+              <shortName>ZAS</shortName>
+              <unitOfMeasure>%</unitOfMeasure>
+              <measurements>
+                <measurement>
+                  <measurementType>Value</measurementType>
+                  <measurementValue>30.6</measurementValue>
+                  <UCL>100</UCL>
+                  <LCL>0</LCL>
+                  <MDL>0</MDL>
+                  <CLCalc>Temp</CLCalc>
+                </measurement>
+              </measurements>
+            </MaterialParameter>
+            <MaterialParameter>
+              <characteristic>Germanium</characteristic>
+              <shortName>ZGE</shortName>
+              <unitOfMeasure>%</unitOfMeasure>
+              <measurements>
+                <measurement>
+                  <measurementType>Value</measurementType>
+                  <measurementValue>12.7</measurementValue>
+                  <UCL>100</UCL>
+                  <LCL>0</LCL>
+                  <MDL>0</MDL>
+                  <CLCalc>Temp</CLCalc>
+                </measurement>
+              </measurements>
+            </MaterialParameter>
+            <MaterialParameter>
+              <characteristic>Sillicon</characteristic>
+              <shortName>ZSI</shortName>
+              <unitOfMeasure>%</unitOfMeasure>
+              <measurements>
+                <measurement>
+                  <measurementType>Value</measurementType>
+                  <measurementValue>5.7</measurementValue>
+                  <UCL>100</UCL>
+                  <LCL>0</LCL>
+                  <MDL>0</MDL>
+                  <CLCalc>Temp</CLCalc>
+                </measurement>
+              </measurements>
+            </MaterialParameter>
+            <!--Trace Metals-Aluminum-->
+            <MaterialParameter>
+              <characteristic>Aluminum</characteristic>
+              <shortName>ZAL</shortName>
+              <unitOfMeasure>ppm</unitOfMeasure>
+              <measurements>
+                <measurement>
+                  <measurementType>Value</measurementType>
+                  <measurementValue>10</measurementValue>
+                  <UCL>50</UCL>
+                  <LCL>0</LCL>
+                  <MDL>0</MDL>
+                  <CLCalc>Temp</CLCalc>
+                </measurement>
+              </measurements>
+            </MaterialParameter>
+            
+            
+            
+    
+					</MaterialParameters>
+				</QualityCertificate>
+			</QualityCertificates>
+		</BusinessSiteDescription>
+	</BusinessSites>
+</QualityCertificateFile>

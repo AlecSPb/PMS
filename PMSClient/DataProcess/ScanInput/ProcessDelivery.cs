@@ -91,7 +91,7 @@ namespace PMSClient.DataProcess.ScanInput
                                     record.State = PMSCommon.InventoryState.发货.ToString();
                                     ss.UpdatePlateByUID(record, uid);
                                 }
-                                model = ModelHelper.GetDeliveryItem(record,Number);
+                                model = ModelHelper.GetDeliveryItem(record, Number);
                             }
                         }
                         else
@@ -109,7 +109,7 @@ namespace PMSClient.DataProcess.ScanInput
                                     ss.UpdateProductByUID(record, uid);
                                 }
 
-                                model = ModelHelper.GetDeliveryItem(record);
+                                model = ModelHelper.GetDeliveryItem(record, Number);
                             }
                         }
 

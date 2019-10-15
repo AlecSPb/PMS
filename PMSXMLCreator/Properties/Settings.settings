@@ -1,7 +1,21 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PMSXMLCreator.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ResponsiblePartyEmail" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xs.zhou@cdpmi.net</Value>
+    </Setting>
+    <Setting Name="ManufacturerNumber" Type="System.String" Scope="User">
+      <Value Profile="(Default)">109575</Value>
+    </Setting>
+    <Setting Name="ManufacturerName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Pioneer Materials Inc.</Value>
+    </Setting>
+    <Setting Name="ManufacturerPlantCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">####</Value>
+    </Setting>
+    <Setting Name="IncomingFaxNumber" Type="System.String" Scope="User">
+      <Value Profile="(Default)">028-66519527</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

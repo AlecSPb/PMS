@@ -2306,6 +2306,9 @@ namespace PMSXMLCreator.MainService {
         private string PurityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SJIngredientField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2505,6 +2508,19 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.PurityField, value) != true)) {
                     this.PurityField = value;
                     this.RaisePropertyChanged("Purity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
                 }
             }
         }
@@ -3342,6 +3358,9 @@ namespace PMSXMLCreator.MainService {
         private string MaterialLotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MaterialSourceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3433,6 +3452,19 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.MaterialLotField, value) != true)) {
                     this.MaterialLotField = value;
                     this.RaisePropertyChanged("MaterialLot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MaterialSource {
+            get {
+                return this.MaterialSourceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialSourceField, value) != true)) {
+                    this.MaterialSourceField = value;
+                    this.RaisePropertyChanged("MaterialSource");
                 }
             }
         }
@@ -3855,6 +3887,9 @@ namespace PMSXMLCreator.MainService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string GasProtectionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3965,6 +4000,19 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Details {
+            get {
+                return this.DetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
+                    this.DetailsField = value;
+                    this.RaisePropertyChanged("Details");
                 }
             }
         }
@@ -10107,6 +10155,30 @@ namespace PMSXMLCreator.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraForProductCount", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraForProductCountResponse")]
         System.Threading.Tasks.Task<int> GetPlanExtraForProductCountAsync(string searchCode, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtra2", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtra2Response")]
+        PMSXMLCreator.MainService.DcPlanWithMisson[] GetPlanExtra2(int skip, int take, string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtra2", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtra2Response")]
+        System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcPlanWithMisson[]> GetPlanExtra2Async(int skip, int take, string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraCount2", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraCount2Response")]
+        int GetPlanExtraCount2(string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraCount2", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraCount2Response")]
+        System.Threading.Tasks.Task<int> GetPlanExtraCount2Async(string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraForProduct2", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraForProduct2Response")]
+        PMSXMLCreator.MainService.DcPlanWithMisson[] GetPlanExtraForProduct2(int skip, int take, string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraForProduct2", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraForProduct2Response")]
+        System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcPlanWithMisson[]> GetPlanExtraForProduct2Async(int skip, int take, string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraForProductCount2", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraForProductCount2Response")]
+        int GetPlanExtraForProductCount2(string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraForProductCount2", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraForProductCount2Response")]
+        System.Threading.Tasks.Task<int> GetPlanExtraForProductCount2Async(string searchCode, string composition, string pminumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10310,6 +10382,38 @@ namespace PMSXMLCreator.MainService {
         
         public System.Threading.Tasks.Task<int> GetPlanExtraForProductCountAsync(string searchCode, string composition) {
             return base.Channel.GetPlanExtraForProductCountAsync(searchCode, composition);
+        }
+        
+        public PMSXMLCreator.MainService.DcPlanWithMisson[] GetPlanExtra2(int skip, int take, string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtra2(skip, take, searchCode, composition, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcPlanWithMisson[]> GetPlanExtra2Async(int skip, int take, string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtra2Async(skip, take, searchCode, composition, pminumber);
+        }
+        
+        public int GetPlanExtraCount2(string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtraCount2(searchCode, composition, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlanExtraCount2Async(string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtraCount2Async(searchCode, composition, pminumber);
+        }
+        
+        public PMSXMLCreator.MainService.DcPlanWithMisson[] GetPlanExtraForProduct2(int skip, int take, string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtraForProduct2(skip, take, searchCode, composition, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcPlanWithMisson[]> GetPlanExtraForProduct2Async(int skip, int take, string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtraForProduct2Async(skip, take, searchCode, composition, pminumber);
+        }
+        
+        public int GetPlanExtraForProductCount2(string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtraForProductCount2(searchCode, composition, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlanExtraForProductCount2Async(string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtraForProductCount2Async(searchCode, composition, pminumber);
         }
     }
     
@@ -11940,6 +12044,12 @@ namespace PMSXMLCreator.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingByProductID", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingByProductIDResponse")]
         System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordBonding[]> GetRecordBondingByProductIDAsync(string productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinish", ReplyAction="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinishResponse")]
+        int SetAllUnFinsihToTempFinish();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinish", ReplyAction="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinishResponse")]
+        System.Threading.Tasks.Task<int> SetAllUnFinsihToTempFinishAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -12055,6 +12165,14 @@ namespace PMSXMLCreator.MainService {
         
         public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordBonding[]> GetRecordBondingByProductIDAsync(string productid) {
             return base.Channel.GetRecordBondingByProductIDAsync(productid);
+        }
+        
+        public int SetAllUnFinsihToTempFinish() {
+            return base.Channel.SetAllUnFinsihToTempFinish();
+        }
+        
+        public System.Threading.Tasks.Task<int> SetAllUnFinsihToTempFinishAsync() {
+            return base.Channel.SetAllUnFinsihToTempFinishAsync();
         }
     }
     

@@ -166,7 +166,7 @@ namespace PMSClient.DataProcess.ScanInput
             return model;
         }
 
-        public static DcDeliveryItem GetDeliveryItem(DcProduct ss)
+        public static DcDeliveryItem GetDeliveryItem(DcProduct ss, int boxNumber = 1)
         {
             if (ss == null)
                 return null;
@@ -183,7 +183,7 @@ namespace PMSClient.DataProcess.ScanInput
             model.Customer = ss.Customer;
             model.Weight = ss.Weight;
             model.DetailRecord = "细节";
-            model.PackNumber = 1;
+            model.PackNumber = boxNumber;
             model.Position = "无";
             model.Dimension = ss.Dimension;
             model.DimensionActual = ss.DimensionActual;

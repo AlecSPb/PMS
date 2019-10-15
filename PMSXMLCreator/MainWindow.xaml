@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Icon="xml.png"
         WindowStartupLocation="CenterScreen"
-        Title="XML Format eCoA Creator" Height="750" Width="1200">
+        Title="XML Format eCoA Creator" Height="2000" Width="1200"
+        WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -161,10 +162,10 @@
                 <TextBlock Grid.Row="11" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="GDMS"/>
                 <TextBox Grid.Row="11" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding GDMS}" Background="LightBlue"/>
-                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
+                     Text="{Binding GDMS}" Background="LightBlue" Grid.ColumnSpan="2"/>
+                <TextBlock Grid.Row="12" Grid.Column="1" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="use format like Li=30 B=40 P=56 F=23"/>
-
+                
             </Grid>
         </ScrollViewer>
     </Grid>

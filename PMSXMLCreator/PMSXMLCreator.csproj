@@ -74,6 +74,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\ParameterList.cs" />
+    <Compile Include="XMLGenerator\Helper.cs" />
+    <Compile Include="Model\Measurement.cs" />
+    <Compile Include="Model\Parameter.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -82,14 +86,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CommonHelper.cs" />
+    <Compile Include="XMLGenerator\CommonHelper.cs" />
     <Compile Include="Connected Services\MainService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="ECOA.cs" />
-    <Compile Include="ECOAXMLHelper.cs" />
+    <Compile Include="Model\ECOA.cs" />
+    <Compile Include="XMLGenerator\ECOAXMLGenerator.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -236,6 +240,18 @@
   <ItemGroup>
     <Resource Include="xml.ico" />
     <Resource Include="xml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Documents\模型字段.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Samples\2019-03-04_ULT_CtlLimits_Example.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Documents\测试项目.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Documents\视图模型.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

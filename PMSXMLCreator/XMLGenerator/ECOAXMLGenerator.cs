@@ -8,7 +8,7 @@ using System.Xml;
 
 namespace PMSXMLCreator
 {
-    public class ECOAXMLHelper
+    public class ECOAXMLGenerator
     {
         public void CreateXMLFile(ECOA model)
         {
@@ -27,23 +27,24 @@ namespace PMSXMLCreator
             settings.Encoding = new UTF8Encoding(false);
             settings.NewLineChars = Environment.NewLine;
 
-
             FileStream stream = file.Create();
 
             XmlWriter writer = XmlWriter.Create(stream, settings);
             #region 写入数据到xml
-            writer.WriteStartDocument();
+            //true表示standalone
+            writer.WriteStartDocument(true);
 
-            writer.WriteStartElement("QualityCertificateFile", "http://www.cpdmi.net");
-            writer.WriteAttributeString("xmlns", "xsi", null, "http://www.w3.org/2001/XMLSchema-instance");
+            writer.WriteStartElement("QualityCertificateFile", "x-schema../Schema/UltQualityCertificateSchema2016Dec.xml");
+            //writer.WriteAttributeString("xmlns", "xsi", null, "http://www.w3.org/2001/XMLSchema-instance");
             //writer.WriteAttributeString("xsi", "schemaLocation", null,
             //    "http://www.cdpmi.net PMITargetForIntelSchema.xsd");
 
             #region FileCreationInfo
             writer.WriteStartElement("FileCreationInfo");
 
-            writer.WriteElementString("ResponsiblePartyEmail", "cdpmi@pioneer-materials.com");
-            writer.WriteElementString("FileCreateDate", $"{DateTime.Today}");
+            string email = Properties.Settings.Default.ResponsiblePartyEmail;
+            writer.WriteElementString("responsiblePartyEmail", email);
+            //writer.WriteElementString("FileCreateDate", $"{DateTime.Today}");
 
             writer.WriteEndElement();
             #endregion
@@ -54,41 +55,55 @@ namespace PMSXMLCreator
             writer.WriteStartElement("BusinessSiteDescription");
 
 
-            writer.WriteElementString("Manufacture", "Pioneer Materials Inc.");
-            writer.WriteElementString("ManufactureNumber", "00");
-            writer.WriteElementString("ManufacturePlantCode", "01");
-            writer.WriteElementString("ManufactureWebSite", "http://www.cdpmi.net");
-            writer.WriteElementString("ManufactureContact", "leon chiu@pioneer-material.com");
+            writer.WriteElementString("manufactureNumber", Properties.Settings.Default.ManufacturerNumber);
+            writer.WriteElementString("manufactureName", Properties.Settings.Default.ManufacturerName);
+            writer.WriteElementString("manufacturePlantCode", Properties.Settings.Default.ManufacturerPlantCode);
+            writer.WriteElementString("incomingFaxNumber", Properties.Settings.Default.IncomingFaxNumber);
+            //writer.WriteElementString("ManufactureWebSite", "http://www.cdpmi.net");
+            //writer.WriteElementString("ManufactureContact", "leon chiu@pioneer-material.com");
 
 
             #region QualityCertificates
             writer.WriteStartElement("QualityCertificates");
             writer.WriteStartElement("QualityCertificate");
 
-            writer.WriteAttributeString("CertificateType", "Single");
-            writer.WriteElementString("GenerationTime", $"{DateTime.Now}");
-            writer.WriteElementString("ReleaseType", "version1.0");
+            writer.WriteAttributeString("CertificateType", "SingleCertificate");
 
+            writer.WriteElementString("thisDocumentGenerationDateTime",
+                $"{DateTime.Now.ToString("yyyy-MM-dd")}");
+
+            //00表示全新，05表示替换
+            writer.WriteElementString("ReleaseType", "00");
+
+            #region ProductDescription
             writer.WriteStartElement("ProductDescription");
-            writer.WriteElementString("ProductID", model.ProductID);
-            writer.WriteElementString("ProductName", model.ProductName);
-            writer.WriteElementString("PONumber", model.PONumber);
-            writer.WriteElementString("ManufacturePartNumber", "12345678");
-            writer.WriteElementString("PartNumber", "00");
-            writer.WriteElementString("PartRevisionNumber", "00");
+            writer.WriteElementString("productName", model.ProductName);
+            writer.WriteElementString("manufacturePartNumber", "12345678");
+            writer.WriteElementString("manufactureOrderNumber", "12345678");
+
+            writer.WriteElementString("partNumber", "500383762");
+            writer.WriteElementString("partRevisionNumber", "01");
+
+            writer.WriteElementString("lotCreatedDate",
+                $"{DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd")}");
+            writer.WriteElementString("lotNumber", model.ProductID);
+
+
             writer.WriteEndElement();
+            #endregion
 
             writer.WriteStartElement("Shipment");
-            writer.WriteElementString("DeliveryTo", model.DeliveryTo);
-            writer.WriteElementString("ScheduledShipDate", model.ScheduledShipDate.ToShortDateString());
-            writer.WriteElementString("ActualShipDate", model.ActualShipDate.ToShortDateString());
-            writer.WriteStartElement("Containers");
-            writer.WriteElementString("Container", "USP19251654");
+            writer.WriteElementString("deliveryTo", model.DeliveryTo);
+            writer.WriteElementString("scheduledshipdate", model.ScheduledShipDate.ToShortDateString());
+            writer.WriteElementString("actualshipdate", model.ActualShipDate.ToShortDateString());
+            writer.WriteStartElement("containers");
+            writer.WriteElementString("container", "USP19251654");
+            writer.WriteElementString("container", "USP19251655");
             writer.WriteEndElement();
             writer.WriteEndElement();
 
             writer.WriteStartElement("Comments");
-            writer.WriteElementString("Comment", "none");
+            writer.WriteElementString("Comment", "");
             writer.WriteEndElement();
 
             #region MaterialParameters
@@ -155,19 +170,23 @@ namespace PMSXMLCreator
             if (items.Length > 0)
             {
                 writer.WriteStartElement("MaterialParameter");
-                writer.WriteElementString("Characteristic", "GDMS Items");
-                writer.WriteElementString("ShortName", "GDMS");
-                writer.WriteElementString("UnitOfMeasure", "ppm");
-                writer.WriteStartElement("Measurements");
+                //writer.WriteElementString("Characteristic", "GDMS Items");
+                writer.WriteElementString("shortName", "GDMS");
+                writer.WriteElementString("unitOfMeasure", "ppm");
+                writer.WriteStartElement("measurements");
 
                 foreach (var item in items)
                 {
                     string[] temp = item.Split(new char[] { '=' }, StringSplitOptions.RemoveEmptyEntries);
                     if (temp.Length >= 2)
                     {
-                        writer.WriteStartElement("Measurement");
-                        writer.WriteElementString("MeasurementType", $"GDMS-{temp[0]}");
-                        writer.WriteElementString("MeasurementValue", temp[1]);
+                        writer.WriteStartElement("measurement");
+                        writer.WriteElementString("measurementType", $"GDMS-{temp[0]}");
+                        writer.WriteElementString("measurementValue", temp[1]);
+                        writer.WriteElementString("UCL", temp[1]);
+                        writer.WriteElementString("LCL", temp[1]);
+                        writer.WriteElementString("MDL", temp[1]);
+                        writer.WriteElementString("CLCalc", temp[1]);
 
                         writer.WriteEndElement();
                     }

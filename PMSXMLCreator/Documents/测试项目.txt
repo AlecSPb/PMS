@@ -1,0 +1,49 @@
+﻿Assay Composition
+	Selenium+ZSE+%
+	Arsenic+ZAS+%
+	Germanium+ZGE+%
+	Sillicon+ZSI+%
+
+Functional Speicifications
+	Target Blank OD+TAR_BOD+mm
+	Target Blank Thickness+TAR_BTHK+mm
+
+	Target Black 2mm Top Rad+TAR_BTOP+mm
+	BP Diameter+BP_DIA+mm
+	BP Flange Thickness+BP_DFTHK
+	BP Sidewall Height+BP_SH
+	BP Pocket Depth+BP_PDE
+	BP Target Blank Step+BP_TBS
+	BP Side Wall Dia+BP_SDIA
+	BP Pocket Dia+BP_PDIA
+	BP Bonded Surface Flatness+BP_BSF
+
+	Density+DEN
+	Weight+Weight
+	Target Blank Flatness+TAR_BFLA
+	Target Blank Parallism+TAR_BPAR
+	Target Blank Surface Roughness+TAR_BSUR
+	BP Backside Flatness+BF_BF
+
+Trace Metals
+	Alumium+ZZL
+	Bismuth+ZBI
+	Chromium+ZCR
+	Copper+ZCU
+	Iron=ZA
+	Gallium+GH
+	Magnesium+ZMG
+	Manganese+ZMN
+	Nickel+ZNI
+	Lead+ZPB
+	Scandium+SCA
+	Sulfur+ZS
+	Titanium+ZTI
+	Yttrium+YTR
+	Tungsten+TUNG
+	Zirconium+XXR
+	Total Metallic Impurities+TMI
+Vapor Phase IMpurities
+	Oxygen+ZO
+	Nitrogen+ZN
+

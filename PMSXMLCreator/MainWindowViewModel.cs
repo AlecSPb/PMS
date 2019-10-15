@@ -55,7 +55,7 @@ namespace PMSXMLCreator
                 ActualDimension = model.DimensionActual,
 
                 Resistance = model.Resistance,
-                GDMS = "Li=0 B=0 P=0 F=0",
+                GDMS = Helper.GDMS,
                 XRF = model.CompositionXRF
             };
             return temp;
@@ -66,7 +66,7 @@ namespace PMSXMLCreator
             return true;
         }
 
-        private ECOAXMLHelper helper = new ECOAXMLHelper();
+        private ECOAXMLGenerator helper = new ECOAXMLGenerator();
         private void ActionCreate()
         {
             if (CurrentCOA == null)

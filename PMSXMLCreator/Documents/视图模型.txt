@@ -1,0 +1,27 @@
+﻿文件信息
+	responsiblePartyEmail
+供应商信息
+	manufacturerNumber
+	manufacturerName
+	manufacturerPlantCode
+	incomingFaxNumber			
+测试报告生成信息
+	thisDocumentGenerationDateTime
+	releaseType
+靶材信息
+	productName
+	manufacturerPartNumber
+	manufacturerOrderNumber
+	partNumber
+	partRevisionNumber
+	lotCreatedDate
+	lotNumber
+运输信息
+	deliverTo
+	scheduledshipdate
+	actualshipdate
+	container
+备注信息
+	comment
+测试结果信息
+	略
