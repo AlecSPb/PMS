@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:PMSXMLCreator">
+    <SolidColorBrush x:Key="FileInfo" Color="LightBlue"/>
+    <SolidColorBrush x:Key="SupplierInfo" Color="LightGreen"/>
+    <SolidColorBrush x:Key="GenerationInfo" Color="LightSalmon"/>
+    <SolidColorBrush x:Key="DeliveryInfo" Color="Green"/>
+    <SolidColorBrush x:Key="Comment" Color="LightSlateGray"/>
+    <SolidColorBrush x:Key="TargetInfo" Color="LightSeaGreen"/>
+    <SolidColorBrush x:Key="MaterialParameterInfo" Color="LightSteelBlue"/>
+</ResourceDictionary>

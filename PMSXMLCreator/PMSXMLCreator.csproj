@@ -75,9 +75,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\ParameterList.cs" />
+    <Compile Include="XMLGenerator\Analysis.cs" />
     <Compile Include="XMLGenerator\Helper.cs" />
     <Compile Include="Model\Measurement.cs" />
     <Compile Include="Model\Parameter.cs" />
+    <Compile Include="XMLGenerator\ParameterDict.cs" />
+    <Compile Include="XMLGenerator\ParameterUnit.cs" />
+    <Page Include="CommonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,7 +93,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="XMLGenerator\CommonHelper.cs" />
     <Compile Include="Connected Services\MainService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -253,5 +259,6 @@
   <ItemGroup>
     <Resource Include="Documents\视图模型.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

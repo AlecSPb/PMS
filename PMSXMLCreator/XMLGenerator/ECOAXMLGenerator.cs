@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Xml;
 
-namespace PMSXMLCreator
+namespace PMSXMLCreator.XMLGenerator
 {
     public class ECOAXMLGenerator
     {
+
+        private Analysis analysis = new Analysis();
+
         public void CreateXMLFile(ECOA model)
         {
             string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -18,7 +21,7 @@ namespace PMSXMLCreator
             {
                 Directory.CreateDirectory(folder);
             }
-            string filePath = Path.Combine(folder, $"{model.ProductID}-{model.ProductAbbr}-{DateTime.Now.ToString("HHmmss")}.xml");
+            string filePath = Path.Combine(folder, $"{model.LotNumber}-{model.ProductName}-{DateTime.Now.ToString("HHmmss")}.xml");
             FileInfo file = new FileInfo(filePath);
 
             //使用xmlwriter
@@ -42,8 +45,7 @@ namespace PMSXMLCreator
             #region FileCreationInfo
             writer.WriteStartElement("FileCreationInfo");
 
-            string email = Properties.Settings.Default.ResponsiblePartyEmail;
-            writer.WriteElementString("responsiblePartyEmail", email);
+            writer.WriteElementString("responsiblePartyEmail", model.ResponsiblePartyEmail);
             //writer.WriteElementString("FileCreateDate", $"{DateTime.Today}");
 
             writer.WriteEndElement();
@@ -55,10 +57,10 @@ namespace PMSXMLCreator
             writer.WriteStartElement("BusinessSiteDescription");
 
 
-            writer.WriteElementString("manufactureNumber", Properties.Settings.Default.ManufacturerNumber);
-            writer.WriteElementString("manufactureName", Properties.Settings.Default.ManufacturerName);
-            writer.WriteElementString("manufacturePlantCode", Properties.Settings.Default.ManufacturerPlantCode);
-            writer.WriteElementString("incomingFaxNumber", Properties.Settings.Default.IncomingFaxNumber);
+            writer.WriteElementString("manufactureNumber", model.ManufacturerNumber);
+            writer.WriteElementString("manufactureName", model.ManufacturerName);
+            writer.WriteElementString("manufacturePlantCode", model.ManufacturerPlantCode);
+            writer.WriteElementString("incomingFaxNumber", model.IncomingFaxNumber);
             //writer.WriteElementString("ManufactureWebSite", "http://www.cdpmi.net");
             //writer.WriteElementString("ManufactureContact", "leon chiu@pioneer-material.com");
 
@@ -70,53 +72,50 @@ namespace PMSXMLCreator
             writer.WriteAttributeString("CertificateType", "SingleCertificate");
 
             writer.WriteElementString("thisDocumentGenerationDateTime",
-                $"{DateTime.Now.ToString("yyyy-MM-dd")}");
+                $"{model.ThisDocumentGenerationDateTime.ToString("yyyy-MM-dd")}");
 
             //00表示全新，05表示替换
-            writer.WriteElementString("ReleaseType", "00");
+            writer.WriteElementString("ReleaseType", model.ReleaseType);
 
             #region ProductDescription
             writer.WriteStartElement("ProductDescription");
             writer.WriteElementString("productName", model.ProductName);
-            writer.WriteElementString("manufacturePartNumber", "12345678");
-            writer.WriteElementString("manufactureOrderNumber", "12345678");
+            writer.WriteElementString("manufacturePartNumber", model.ManufacturerPartNumber);
+            writer.WriteElementString("manufactureOrderNumber", model.ManufacturerOrderNumber);
 
-            writer.WriteElementString("partNumber", "500383762");
-            writer.WriteElementString("partRevisionNumber", "01");
+            writer.WriteElementString("partNumber", model.PartNumber);
+            writer.WriteElementString("partRevisionNumber", model.PartRevisionNumber);
 
             writer.WriteElementString("lotCreatedDate",
-                $"{DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd")}");
-            writer.WriteElementString("lotNumber", model.ProductID);
+                $"{model.LotCreatedDate.ToString("yyyy-MM-dd")}");
+            writer.WriteElementString("lotNumber", model.LotNumber);
 
 
             writer.WriteEndElement();
             #endregion
 
             writer.WriteStartElement("Shipment");
-            writer.WriteElementString("deliveryTo", model.DeliveryTo);
+            writer.WriteElementString("deliveryTo", model.DeliverTo);
             writer.WriteElementString("scheduledshipdate", model.ScheduledShipDate.ToShortDateString());
             writer.WriteElementString("actualshipdate", model.ActualShipDate.ToShortDateString());
             writer.WriteStartElement("containers");
-            writer.WriteElementString("container", "USP19251654");
-            writer.WriteElementString("container", "USP19251655");
+            writer.WriteElementString("container", model.Containers);
             writer.WriteEndElement();
             writer.WriteEndElement();
 
             writer.WriteStartElement("Comments");
-            writer.WriteElementString("Comment", "");
+            writer.WriteElementString("Comment", model.Comment);
             writer.WriteEndElement();
 
             #region MaterialParameters
             writer.WriteStartElement("MaterialParameters");
-            //Basic
-            AddBasic(writer, "Target Weight", "Weight", "g", "Value", model.Weight);
-            AddBasic(writer, "Target Density", "Density", "g/cm3", "Value", model.Density);
-            AddBasic(writer, "Resistance", "Resistance", "ohm cm", "Value", model.Resistance);
-            AddBasic(writer, "Actual Dimension", "Actual Dimension", "mm", "Value", model.ActualDimension);
-            //XRF
-            AddXRF(writer, model.XRF);
-            //GDMS
-            AddGDMS(writer, model.GDMS);
+
+            List<Parameter> parameters = analysis.GetParamenters(model);
+
+            foreach (var p in parameters)
+            {
+                AddMaterialParameter(writer, p);
+            }
 
             writer.WriteEndElement();
             #endregion
@@ -139,10 +138,43 @@ namespace PMSXMLCreator
             stream.Close();
 
 
-            CommonHelper.ShowMessage("创建完毕");
+            Helper.ShowMessage("创建完毕");
             System.Diagnostics.Process.Start(filePath);
 
         }
+
+        /// <summary>
+        /// 添加MaterialParameter
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="p"></param>
+        private void AddMaterialParameter(XmlWriter writer, Parameter p)
+        {
+            writer.WriteStartElement("MaterialParameter");
+            writer.WriteElementString("Characteristic", p.Characteristic);
+            writer.WriteElementString("ShortName", p.ShortName);
+            writer.WriteElementString("UnitOfMeasure", p.UnitOfMeasure);
+            writer.WriteElementString("SourceComponent", p.SourceComponent);
+
+            writer.WriteStartElement("Measurements");
+            foreach (var item in p.Measurements)
+            {
+                writer.WriteStartElement("Measurement");
+                writer.WriteElementString("MeasurementType", item.MeasurementType);
+                writer.WriteElementString("MeasurementValue", item.MeasurementValue);
+                writer.WriteElementString("UCL", item.UCL);
+                writer.WriteElementString("LCL", item.LCL);
+                writer.WriteElementString("MDL", item.MDL);
+                writer.WriteElementString("CLCalc", item.CLCalc);
+                writer.WriteEndElement();
+            }
+            writer.WriteEndElement();
+
+            writer.WriteEndElement();
+        }
+
+
+
 
 
         private void AddBasic(XmlWriter writer,
@@ -170,7 +202,7 @@ namespace PMSXMLCreator
             if (items.Length > 0)
             {
                 writer.WriteStartElement("MaterialParameter");
-                //writer.WriteElementString("Characteristic", "GDMS Items");
+                writer.WriteElementString("Characteristic", "GDMS Items");
                 writer.WriteElementString("shortName", "GDMS");
                 writer.WriteElementString("unitOfMeasure", "ppm");
                 writer.WriteStartElement("measurements");

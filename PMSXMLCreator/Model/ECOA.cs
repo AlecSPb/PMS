@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PMSXMLCreator.XMLGenerator;
 
 namespace PMSXMLCreator
 {
@@ -20,12 +21,31 @@ namespace PMSXMLCreator
             ThisDocumentGenerationDateTime = DateTime.Now;
             ReleaseType = "00";
 
-            DeliverTo = "";
+            DeliverTo = "TCB";
             ScheduledShipDate = DateTime.Today.AddDays(14);
             ActualShipDate = DateTime.Today.AddDays(14);
-            Containers = "";
+            Containers = "wood box#ups";
 
-            Comment = "";
+            Comment = "Quality Certificate";
+
+
+            ProductName = "";
+            ManufacturerPartNumber = "";
+            ManufacturerOrderNumber = "";
+            PartNumber = "########";
+            PartRevisionNumber = "######";
+            LotCreatedDate = DateTime.Now;
+            LotNumber = "";
+
+            Density = "";
+            Weight = "";
+
+            TargetDimension = "";
+            PlateSpec = "";
+
+            XRF = "";
+            GDMS = Helper.GDMS;
+            VPI = Helper.VPI;
         }
 
 
@@ -64,7 +84,7 @@ namespace PMSXMLCreator
         public string ManufacturerOrderNumber { get; set; }
         public string PartNumber { get; set; }
         public string PartRevisionNumber { get; set; }
-        public string LotCreatedDate { get; set; }
+        public DateTime LotCreatedDate { get; set; }
         public string LotNumber { get; set; }
 
         #endregion
@@ -73,15 +93,12 @@ namespace PMSXMLCreator
 
 
         #region MaterialParameterInfo
-        public List<Parameter> MaterialParameters { get; set; }
-        #endregion
-
-
         //Material Parameters
         public string Density { get; set; }
         public string Weight { get; set; }
-        public string ActualDimension { get; set; }
-        public string ActualDimension { get; set; }
+
+        public string TargetDimension { get; set; }
+        public string PlateSpec { get; set; }
 
         public string XRF { get; set; }
 
@@ -90,6 +107,10 @@ namespace PMSXMLCreator
 
         //Vapor Phase Impurities
         public string VPI { get; set; }
+        #endregion
+
+
+
 
     }
 }
