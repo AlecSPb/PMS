@@ -244,11 +244,9 @@
                        Text=""/>
 
                     <TextBlock Grid.Row="21" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="Plate Spec"   Background="{StaticResource MaterialParameterInfo}"/>
+                       Text="More Spec"   Background="{StaticResource MaterialParameterInfo}"/>
                     <TextBox Grid.Row="21" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
                      Text="{Binding PlateSpec}" Grid.ColumnSpan="2"/>
-                    <TextBlock Grid.Row="21" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text=""/>
 
                     <TextBlock Grid.Row="22" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="Composition" VerticalAlignment="Top"   Background="{StaticResource MaterialParameterInfo}"/>

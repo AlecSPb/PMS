@@ -138,7 +138,7 @@ namespace PMSXMLCreator.XMLGenerator
             stream.Close();
 
 
-            Helper.ShowMessage("创建完毕");
+            Helper.ShowMessage("创建完毕,即将打开");
             System.Diagnostics.Process.Start(filePath);
 
         }

@@ -41,9 +41,9 @@ namespace PMSXMLCreator
             Weight = "";
 
             TargetDimension = "";
-            PlateSpec = "";
+            PlateSpec = Helper.Plate;
 
-            XRF = "";
+            XRF = Helper.XRF;
             GDMS = Helper.GDMS;
             VPI = Helper.VPI;
         }

@@ -21,7 +21,7 @@ namespace PMSXMLCreator
 
         private void Initialize()
         {
-            SearchProductID = "";
+            SearchProductID = "190809-C-1#272";
             CurrentCOA = new ECOA();
             RecordTests = new ObservableCollection<DcRecordTest>();
 
@@ -33,7 +33,7 @@ namespace PMSXMLCreator
 
         private void ActionSelect(DcRecordTest record)
         {
-            if(Helper.ShowDialog($"确定使用该条数据[{record.ProductID}]？"))
+            if (Helper.ShowDialog($"确定使用该条数据[{record.ProductID}]？"))
             {
                 CurrentCOA = ToECOA(record);
             }
@@ -45,7 +45,7 @@ namespace PMSXMLCreator
 
             var temp = new ECOA();
             #region 赋值
-            temp.ThisDocumentGenerationDateTime=DateTime.Now;
+            temp.ThisDocumentGenerationDateTime = DateTime.Now;
             temp.ProductName = model.Composition;
             temp.LotCreatedDate = model.CreateTime;
             temp.LotNumber = model.ProductID;
@@ -54,7 +54,6 @@ namespace PMSXMLCreator
             temp.TargetDimension = model.DimensionActual;
             temp.ManufacturerOrderNumber = model.PMINumber;
             temp.ManufacturerPartNumber = model.PMINumber;
-            
             #endregion
             return temp;
         }
