@@ -71,7 +71,10 @@ namespace PMSXMLCreator
                 Helper.ShowMessage("当前数据模型为空");
                 return;
             }
-            helper.CreateXMLFile(CurrentCOA);
+            if (Helper.ShowDialog($"确定使用该条数据[{CurrentCOA.LotNumber}]生成xml文件？"))
+            {
+                helper.CreateXMLFile(CurrentCOA);
+            }
         }
 
         private bool CanSearch()

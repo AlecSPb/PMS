@@ -36,7 +36,7 @@ namespace PMSXMLCreator.XMLGenerator
             parameters.Add("BP Side Wall Dia", "BP_SDIA");
             parameters.Add("BP Pocket Dia", "BP_PDIA");
             parameters.Add("BP Bonded Surface Flatness", "BP_BSF");
-            parameters.Add("BP BackSide Flatness", "BP_BF");
+            parameters.Add("BP Backside Flatness", "BP_BF");
             parameters.Add("BP Overall Height", "BP_OH");
             parameters.Add("Aluminum", "ZAL");
             parameters.Add("Bismuth", "ZBI");

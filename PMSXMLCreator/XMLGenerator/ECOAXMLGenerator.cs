@@ -112,10 +112,14 @@ namespace PMSXMLCreator.XMLGenerator
 
             List<Parameter> parameters = analysis.GetParamenters(model);
 
+
+            StringBuilder sb = new StringBuilder();
             foreach (var p in parameters)
             {
                 AddMaterialParameter(writer, p);
+                sb.AppendLine($"{p.Characteristic}-{p.ShortName}");
             }
+            new Log().LogIt(sb.ToString());
 
             writer.WriteEndElement();
             #endregion

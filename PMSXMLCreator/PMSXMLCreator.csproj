@@ -80,6 +80,7 @@
     <Compile Include="XMLGenerator\Helper.cs" />
     <Compile Include="Model\Measurement.cs" />
     <Compile Include="Model\Parameter.cs" />
+    <Compile Include="XMLGenerator\Log.cs" />
     <Compile Include="XMLGenerator\ParameterDict.cs" />
     <Compile Include="XMLGenerator\ParameterUnit.cs" />
     <Page Include="CommonStyle.xaml">

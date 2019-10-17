@@ -13,7 +13,8 @@ namespace PMSXMLCreator.XMLGenerator
             "BP Diameter=0;BP Flange Thickness=0;BP Sidewall Height=0;BP Pocket Depth=0;BP Side Wall Dia=0;" +
             "BP Pocket Dia=0;BP Bonded Surface Flatness=0;" +
             "Target Blank 2mm Top Rad=Go;" +
-            "Target Blank Flatness=0;Target Blank Parallism=0;Target Blank Surface Roughness=0;";
+            "Target Blank Flatness=0;Target Blank Parallism=0;Target Blank Surface Roughness=0;" +
+            "BP Backside Flatness=0;BP Overall Height=0;";
 
         public static string XRF { get; set; } = "Se=51.0;As=30.6;Ge=12.7;Si=5.7;";
         public static string GDMS { get; set; } =
