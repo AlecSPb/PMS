@@ -21,7 +21,8 @@ namespace PMSXMLCreator.XMLGenerator
             {
                 Directory.CreateDirectory(folder);
             }
-            string filePath = Path.Combine(folder, $"{model.LotNumber}-{model.ProductName}-{DateTime.Now.ToString("HHmmss")}.xml");
+            string filename = $"{model.LotNumber}-{model.ProductName}-{DateTime.Now.ToString("yyyyMMddHHmmss")}.xml";
+            string filePath = Path.Combine(folder, filename.Replace("#", "-"));
             FileInfo file = new FileInfo(filePath);
 
             //使用xmlwriter

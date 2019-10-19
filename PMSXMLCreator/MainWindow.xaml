@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Icon="xml.png"
         WindowStartupLocation="CenterScreen"
-        Title="XML Format eCoA Creator" Height="2000" Width="1200"
+        Title="XML Format eCoA Creator for Pioneer Materials,Inc." Height="2000" Width="1200"
         WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" Background="{StaticResource BGNavigationBar}">
             <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Foreground="White" Text="Product ID" />
-            <TextBox Style="{StaticResource StyleTextBoxSearch}" Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Style="{StaticResource StyleTextBoxSearch}" Width="200" Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}"/>
             <Button Content="Search" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding Search}"/>
         </StackPanel>
@@ -249,7 +249,7 @@
                      Text="{Binding PlateSpec}" Grid.ColumnSpan="2"/>
 
                     <TextBlock Grid.Row="22" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="Composition" VerticalAlignment="Top"   Background="{StaticResource MaterialParameterInfo}"/>
+                       Text="Composition"   Background="{StaticResource MaterialParameterInfo}"/>
                     <TextBox Grid.Row="22" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
                      Text="{Binding XRF}" Grid.ColumnSpan="2"/>
 

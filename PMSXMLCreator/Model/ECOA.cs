@@ -26,7 +26,7 @@ namespace PMSXMLCreator
             ActualShipDate = DateTime.Today.AddDays(14);
             Containers = "wood box#ups";
 
-            Comment = "Quality Certificate";
+            Comment = "This is a Quality Certificate";
 
 
             ProductName = "";
