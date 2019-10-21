@@ -13,6 +13,8 @@ namespace ConsoleTest
         {
 
             new Test().TestReportDataProcessHelper();
+
+            Console.Read();
         }
     }
 }

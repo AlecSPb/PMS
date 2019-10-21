@@ -100,8 +100,17 @@ namespace PMSClient.ReportsHelper
                     {
                         Table mainTable = document.Tables[0];
                         Paragraph p = mainTable.Rows[9].Cells[0].Paragraphs[0];
-                        InsertCompositionXRFTable(document, p, model.CompositionXRF, "No Composition Test Results");
 
+                        string xrfWithStdDev = model.CompositionXRF;
+                        //如果是bridgeline的数据，计算并追加标准差
+                        if (model.Customer.Contains("Bridgeline"))
+                        {
+                            var stddev = new PMSClient.ReportsHelperNew.ReportDataProcessHelper();
+                            xrfWithStdDev = stddev.AppendStdDev(model.CompositionXRF);
+                        }
+
+
+                        InsertCompositionXRFTable(document, p, xrfWithStdDev, "No Composition Test Results");
 
                         //填充标称的成分
                         if (!string.IsNullOrEmpty(model.Composition))

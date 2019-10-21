@@ -12050,6 +12050,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinish", ReplyAction="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinishResponse")]
         System.Threading.Tasks.Task<int> SetAllUnFinsihToTempFinishAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimes", ReplyAction="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimesResponse")]
+        int CheckPlateUsedTimes(string platelot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimes", ReplyAction="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimesResponse")]
+        System.Threading.Tasks.Task<int> CheckPlateUsedTimesAsync(string platelot);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -12173,6 +12179,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> SetAllUnFinsihToTempFinishAsync() {
             return base.Channel.SetAllUnFinsihToTempFinishAsync();
+        }
+        
+        public int CheckPlateUsedTimes(string platelot) {
+            return base.Channel.CheckPlateUsedTimes(platelot);
+        }
+        
+        public System.Threading.Tasks.Task<int> CheckPlateUsedTimesAsync(string platelot) {
+            return base.Channel.CheckPlateUsedTimesAsync(platelot);
         }
     }
     

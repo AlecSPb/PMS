@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>72</ApplicationRevision>
+    <ApplicationRevision>73</ApplicationRevision>
     <ApplicationVersion>4.8.125.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -284,6 +284,7 @@
     <Compile Include="Helpers\OK\PMSFolderPath.cs" />
     <Compile Include="Helpers\PMSOuputHelper.cs" />
     <Compile Include="Helpers\PMSStatus.cs" />
+    <Compile Include="Helpers\RecordBondingHelper.cs" />
     <Compile Include="Helpers\UserfullPackage\MaterialDensityCalculation.cs" />
     <Compile Include="Helpers\UserfullPackage\MaterialDensityCalculationItem.cs" />
     <Compile Include="Helpers\UserfullPackage\PMSTranslate.cs" />

@@ -43,5 +43,9 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int SetAllUnFinsihToTempFinish();
 
+
+        [OperationContract]
+        int CheckPlateUsedTimes(string platelot);
+
     }
 }

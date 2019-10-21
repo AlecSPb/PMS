@@ -288,5 +288,26 @@ namespace PMSWCFService
                 return 0;
             }
         }
+
+        public int CheckPlateUsedTimes(string platelot)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.RecordBondings
+                                where p.State != CommonState.作废.ToString()
+                                && p.PlateLot.TrimEnd(new char[] { 'A' }) == platelot
+                                select p;
+
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                return 0;
+            }
+        }
     }
 }

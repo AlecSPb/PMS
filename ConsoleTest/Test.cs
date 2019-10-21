@@ -28,8 +28,8 @@ namespace ConsoleTest
 13,55.45,22.33,22.21
 Average,55.70,22.18,22.13";
 
-            helper.AppendStdDev(testdata);
-
+            string str = helper.AppendStdDev(testdata);
+            Console.WriteLine(str);
         }
     }
 }

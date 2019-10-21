@@ -16,7 +16,7 @@ namespace PMSClient.ReportsHelperNew
         /// 计算韩国的XRF成分的标准差,并追加标准差数据到XRF数据团后面
         /// </summary>
         /// <param name="xrf">xrf的csv格式的数据</param>
-        /// <returns></returns>
+        /// <returns>追加了stddev到xrf字符串的尾行</returns>
         public string AppendStdDev(string xrf)
         {
             string[] lines = xrf.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
@@ -45,7 +45,7 @@ namespace PMSClient.ReportsHelperNew
                 {
                     numbers[i] = data[i, j];
                 }
-                double std_dev = GetStdDev(numbers);
+                double std_dev = CalculateStdDev(numbers);
                 sb.Append(",");
                 sb.Append(std_dev.ToString("F2"));
             }
@@ -60,7 +60,7 @@ namespace PMSClient.ReportsHelperNew
         /// </summary>
         /// <param name="numbers"></param>
         /// <returns></returns>
-        private double GetStdDev(double[] numbers)
+        private double CalculateStdDev(double[] numbers)
         {
             double ret = 0;
             if (numbers.Count() > 0)
