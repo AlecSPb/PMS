@@ -31,6 +31,9 @@
             <TextBlock Text="{StaticResource RTComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch }" />
+            <TextBlock Text="{StaticResource OrderPMINumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch }" />
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommonNarrow}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommonNarrow}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource    StyleButtonCommonNarrow}" Command="{Binding Output}"/>
@@ -198,6 +201,9 @@
                                             Binding="{Binding RecordTest.QC}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource RTBP}"
                                             Binding="{Binding RecordTest.BackingPlateLot}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource RTCSCAN}"
+                                            Binding="{Binding RecordTest.CScan}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+
                         <DataGridTemplateColumn Header="{StaticResource RTRemark}">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate >
@@ -261,6 +267,7 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="0*"/>
                             </Grid.RowDefinitions>
 
@@ -319,17 +326,22 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                             <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding RecordTest.Roughness}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTWarping}"
+                            <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTCSCAN}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding RecordTest.Warping}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding RecordTest.CScan}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RTQC}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding RecordTest.QC}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTBP}"
+                            <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RTWarping}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding RecordTest.BackingPlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding RecordTest.Warping}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+
+                            <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTQC}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding RecordTest.QC}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+
+                            <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RTBP}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding RecordTest.BackingPlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
 
                         </Grid>

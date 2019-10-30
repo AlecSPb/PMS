@@ -42,5 +42,7 @@ namespace PMSDAL
         [DefaultValue("无")]
         public string BackingPlateLot { get; set; }
         public string Roughness { get; set; }
+        [DefaultValue("无")]
+        public string CScan { get; set; }
     }
 }

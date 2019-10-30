@@ -14,6 +14,8 @@ namespace PMSCommon
         绑定,
         发货,
         报废,
+        试验,
+        返工,
         未定
     }
 }

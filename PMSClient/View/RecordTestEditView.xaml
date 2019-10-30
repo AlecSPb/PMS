@@ -30,7 +30,7 @@
             <Grid  DataContext="{Binding CurrentRecordTest}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="400"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -51,6 +51,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -154,18 +155,18 @@
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RTResistance}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <StackPanel Grid.Row="12" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtResistance" Text="{Binding Resistance,UpdateSourceTrigger=PropertyChanged}"
-                             Style="{StaticResource StyleTextBoxBig}"  Width="200"/>
+                <TextBox Grid.Row="12" Grid.Column="1" Name="txtResistance" Text="{Binding Resistance,UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource StyleTextBoxCommon}" />
+                <StackPanel Grid.Row="12" Grid.Column="2" Orientation="Horizontal">
                     <Button Content="超限" Style="{StaticResource StyleButtonCommon}" Click="BtnResistance_Click"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"  Text="单位：Ωcm，最多两位有效数字即可"/>
                 </StackPanel>
-                <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位：Ωcm，最多两位有效数字即可"/>
 
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <StackPanel Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
-                    <TextBox Name="TxtDimension" Text="{Binding DimensionActual,UpdateSourceTrigger=PropertyChanged}"
-                             Style="{StaticResource StyleTextBoxBig}" Width="200" />
+                <TextBox Grid.Row="13" Grid.Column="1" Name="TxtDimension" Text="{Binding DimensionActual,UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource StyleTextBoxCommon}" />
+                <StackPanel Grid.Row="13" Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal">
                     <Button Content="选择" Style="{StaticResource StyleButtonCommon}"
                             Command="{Binding DataContext.SelectDimensionActual,
                                 RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
@@ -174,16 +175,16 @@
                     <TextBlock  Style="{StaticResource StyleTextBlockWarning2}"
                            Text="请优先使用重新测量的数据，不要使用加工记录里的数据；如果尺寸不符合尺寸要求，请标记一下。"/>
                 </StackPanel>
-                <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
 
                 <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTDefects}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <StackPanel Grid.Row="14" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="TxtDefects" Style="{StaticResource StyleTextBoxCommon}"
-                             Text="{Binding Defects,UpdateSourceTrigger=PropertyChanged}" Width="200" />
+                <TextBox  Grid.Row="14" Grid.Column="1" Name="TxtDefects" Style="{StaticResource StyleTextBoxCommon}"
+                             Text="{Binding Defects,UpdateSourceTrigger=PropertyChanged}" />
+                <StackPanel Grid.Row="14" Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal">
                     <Button Content="缺陷" Style="{StaticResource StyleButtonCommon}"
                             Name="BtnDefects" Click="BtnDefects_Click"/>
+                    <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="这里的缺陷会显示在绑定记录单当中"
+                               Background="Yellow"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTCompositionXRF}"
@@ -194,15 +195,19 @@
                             MouseDoubleClick="btnSimulator_MouseDoubleClick"
                             Content="S"
                             MinWidth="30"
-                            Style="{StaticResource StyleButtonCommon}"/>
+                            Style="{StaticResource StyleButtonCommon}">
+                        <Button.ToolTip>
+                            <TextBlock Text="XRF Simulator"/>
+                        </Button.ToolTip>
+                    </Button>
                 </StackPanel>
 
                 <TextBox  x:Name="txtCompositionXRF" Grid.Row="16" Grid.Column="1"
                          Text="{Binding CompositionXRF,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
                           AcceptsReturn="True"
                           VerticalScrollBarVisibility="Auto"
-                          Height="120"/>
-                <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="需要选择CSV格式的文件"/>
+                          Height="80"/>
+                <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="CSV格式"/>
 
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTSample}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -247,7 +252,7 @@
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
                            Text="高度计测量数据及其他：厚度1 厚度2 厚度3 厚度4 中心厚度"/>
                 </StackPanel>
-                
+
                 <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RTBP}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Name="TxtBP" Grid.Row="21" Grid.Column="1" Text="{Binding BackingPlateLot}" 
@@ -258,27 +263,43 @@
                            Text="如附带有背板，请在此处填写对应背板Lot号，如果没有填无"/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource RTRemark}"
+                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource RTCSCAN}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="txtRemark" Grid.Row="22" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox Name="TxtCSCAN" Grid.Row="22" Grid.Column="1" Text="{Binding CScan}" 
+                         Style="{StaticResource StyleTextBoxBig}"/>
                 <StackPanel Grid.Row="22" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="辅助填写" Name="btnAddCSCAN" Style="{StaticResource StyleButtonCommon}" Click="btnAddCSCAN_Click"/>
+                    <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="如超声有缺陷，填写缺陷，如果没有填无"/>
+                </StackPanel>
+
+
+                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource RTRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="txtRemark" Grid.Row="23" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
+                <StackPanel Grid.Row="23" Grid.Column="2" Orientation="Horizontal">
                     <Button Content="附有背板" Name="BtnAddPlate" Style="{StaticResource StyleButtonCommon}" Click="BtnAddPlate_Click"/>
                     <Button Content="回收重做" Name="BtnRecycle" Style="{StaticResource StyleButtonCommon}" Click="BtnRecycle_Click"/>
+                    <Button Content="异常发货" Name="BtnSpecial" Style="{StaticResource StyleButtonCommon}" Click="BtnSpecial_Click">
+                        <Button.ToolTip>
+                            <TextBlock Text="不符合发货标准，但是同意发货"/>
+                        </Button.ToolTip>
+                    </Button>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"   Text=""/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource RTState}"  Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="23" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"  FontSize="{StaticResource TabletFontLG}"
+                <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource RTState}"  Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="24" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"  FontSize="{StaticResource TabletFontLG}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="23" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"    Text="状态"/>
+                <TextBlock Grid.Row="24" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"    Text="状态"/>
 
-                <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource RTCreator}"
+                <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource RTCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="24" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"   />
-                <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource RTCreateTime}"
+                <TextBlock Grid.Row="25" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"   />
+                <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource RTCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="25" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
+                <TextBlock Grid.Row="26" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
             </Grid>
         </ScrollViewer>
     </Grid>

@@ -63,6 +63,8 @@ namespace PMSWCFService.DataContracts
         public string QC { get; set; }
         [DataMember]
         public string BackingPlateLot { get; set; }
+        [DataMember]
+        public string CScan { get; set; }
 
     }
 }

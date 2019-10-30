@@ -15,6 +15,13 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetRecordTestCountBySearchInPage(string productId, string compositionStd);
 
+        //2019-10-30 增加
+        [OperationContract]
+        List<DcRecordTest> GetRecordTestBySearch(int skip, int take, string productId, string compositionStd,string pminumber);
+        [OperationContract]
+        int GetRecordTestCountBySearch(string productId, string compositionStd,string pminumber);
+
+
         [OperationContract]
         List<DcRecordTest> GetRecordTestChecked(int skip, int take, string productId, string compositionStd);
         [OperationContract]

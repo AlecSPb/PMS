@@ -12,7 +12,12 @@ namespace ConsoleTest
         static void Main(string[] args)
         {
 
-            new Test().TestReportDataProcessHelper();
+            //new Test().TestReportDataProcessHelper();
+            new Test().TestSF();
+
+
+
+
 
             Console.Read();
         }

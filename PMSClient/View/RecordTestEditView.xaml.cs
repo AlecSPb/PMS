@@ -67,7 +67,7 @@ namespace PMSClient.View
 
         private void BtnAddPlate_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBoxAppend(txtRemark, "附有背板");
+            PMSMethods.SetTextBoxAppend(txtRemark, "附有背板;");
         }
 
 
@@ -194,7 +194,19 @@ namespace PMSClient.View
 
         private void BtnRecycle_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBoxAppend(txtRemark, "回收重做");
+            PMSMethods.SetTextBoxAppend(txtRemark, "回收重做;");
+        }
+
+        private void btnAddCSCAN_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtCSCAN, "明显孔洞");
+
+        }
+
+        private void BtnSpecial_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBoxAppend(txtRemark, "异常发货;");
+
         }
     }
 }

@@ -624,6 +624,7 @@
     <sys:String x:Key="RTWarping">翘曲</sys:String>
     <sys:String x:Key="RTQC">QC</sys:String>
     <sys:String x:Key="RTBP">附带背板</sys:String>
+    <sys:String x:Key="RTCSCAN">超声情况</sys:String>
     <!--Delivery-->
     <sys:String x:Key="RDCreator">创建者</sys:String>
     <sys:String x:Key="RDCreateTime">创建时间</sys:String>

@@ -42,6 +42,9 @@ namespace PMSDAL
 
         [DefaultValue("无")]
         public string BackingPlateLot { get; set; }
+        [DefaultValue("无")]
+        public string CScan { get; set; }
+
         //操作者和操作时间
         [Key]
         public Guid HistoryID { get; set; }

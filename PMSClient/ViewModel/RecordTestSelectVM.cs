@@ -140,12 +140,12 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !string.IsNullOrEmpty(SearchProductID) || !string.IsNullOrEmpty(SearchCompositionStd);
+            return !string.IsNullOrEmpty(SearchProductID) || !string.IsNullOrEmpty(SearchCompositionStd) || !string.IsNullOrEmpty(SearchPMINumber);
         }
 
         private void ActionAll()
         {
-            SearchProductID = SearchCompositionStd = "";
+            SearchProductID = SearchCompositionStd = SearchPMINumber = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -180,16 +180,16 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             RecordTestExtras = new ObservableCollection<RecordTestExtra>();
-            SearchCompositionStd = searchProductID = "";
+            SearchCompositionStd = SearchProductID = SearchPMINumber = "";
 
         }
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 30;
             using (var service = new RecordTestServiceClient())
             {
-                RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositionStd);
+                RecordCount = service.GetRecordTestCountBySearch(SearchProductID, SearchCompositionStd, SearchPMINumber);
             }
             ActionPaging();
         }
@@ -200,7 +200,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new RecordTestServiceClient())
             {
-                var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositionStd);
+                var orders = service.GetRecordTestBySearch(skip, take, SearchProductID, SearchCompositionStd, SearchPMINumber);
                 RecordTestExtras.Clear();
                 orders.ToList().ForEach(o => RecordTestExtras.Add(new Model.RecordTestExtra { RecordTest = o }));
             }
@@ -211,6 +211,18 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Properties
+        private string searchPMINumber;
+        public string SearchPMINumber
+        {
+            get { return searchPMINumber; }
+            set
+            {
+                if (searchPMINumber == value)
+                    return;
+                searchPMINumber = value;
+                RaisePropertyChanged(() => SearchPMINumber);
+            }
+        }
         private string searchProductID;
         public string SearchProductID
         {

@@ -992,6 +992,18 @@
   <wsdl:message name="IRecordTestService_GetRecordTestCountBySearchInPage_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordTestCountBySearchInPageResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetRecordTestBySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestBySearch" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetRecordTestBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestBySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetRecordTestCountBySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestCountBySearch" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetRecordTestCountBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestCountBySearchResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordTestService_GetRecordTestChecked_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordTestChecked" />
   </wsdl:message>
@@ -2044,6 +2056,14 @@
     <wsdl:operation name="GetRecordTestCountBySearchInPage">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPage" message="tns:IRecordTestService_GetRecordTestCountBySearchInPage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPageResponse" message="tns:IRecordTestService_GetRecordTestCountBySearchInPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordTestBySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestBySearch" message="tns:IRecordTestService_GetRecordTestBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestBySearchResponse" message="tns:IRecordTestService_GetRecordTestBySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordTestCountBySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearch" message="tns:IRecordTestService_GetRecordTestCountBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchResponse" message="tns:IRecordTestService_GetRecordTestCountBySearch_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetRecordTestChecked">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestChecked" message="tns:IRecordTestService_GetRecordTestChecked_InputMessage" />
@@ -3808,6 +3828,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetRecordTestCountBySearchInPage">
       <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordTestBySearch">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetRecordTestBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordTestCountBySearch">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearch" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

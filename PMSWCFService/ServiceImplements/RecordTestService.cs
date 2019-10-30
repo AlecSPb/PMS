@@ -98,6 +98,54 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcRecordTest> GetRecordTestBySearch(int skip, int take, string productId, string compositionStd, string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from t in dc.RecordTests
+                                where t.ProductID.Contains(productId)
+                                && t.Composition.Contains(compositionStd)
+                                && t.PMINumber.Contains(pminumber)
+                                && t.State != CommonState.作废.ToString()
+                                orderby t.CreateTime descending
+                                select t;
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordTest, DcRecordTest>());
+                    var products = Mapper.Map<List<RecordTest>, List<DcRecordTest>>(query.Skip(skip).Take(take).ToList());
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetRecordTestCountBySearch(string productId, string compositionStd, string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from t in dc.RecordTests
+                                where t.ProductID.Contains(productId)
+                                && t.Composition.Contains(compositionStd)
+                                && t.PMINumber.Contains(pminumber)
+                                && t.State != CommonState.作废.ToString()
+                                select t;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
+        }
+
         public List<DcRecordTest> GetRecordTestBySearchInPage(int skip, int take, string productId, string compositionStd)
         {
             try
@@ -146,6 +194,7 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
 
         public int GetRecordTestCountBySearchInPage(string productId, string compositionStd)
         {

@@ -500,12 +500,12 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !string.IsNullOrEmpty(SearchProductID) || !string.IsNullOrEmpty(SearchCompositionStd);
+            return !string.IsNullOrEmpty(SearchProductID) || !string.IsNullOrEmpty(SearchCompositionStd) || !string.IsNullOrEmpty(SearchPMINumber);
         }
 
         private void ActionAll()
         {
-            SearchProductID = SearchCompositionStd = "";
+            SearchProductID = SearchCompositionStd = SearchPMINumber = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -551,7 +551,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             RecordTestExtras = new ObservableCollection<RecordTestExtra>();
-            SearchCompositionStd = searchProductID = "";
+            SearchCompositionStd = SearchProductID = SearchPMINumber = "";
 
         }
         private void SetPageParametersWhenConditionChange()
@@ -560,7 +560,7 @@ namespace PMSClient.ViewModel
             PageSize = 30;
             using (var service = new RecordTestServiceClient())
             {
-                RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositionStd);
+                RecordCount = service.GetRecordTestCountBySearch(SearchProductID, SearchCompositionStd, SearchPMINumber);
             }
 
             ActionPaging();
@@ -573,7 +573,7 @@ namespace PMSClient.ViewModel
 
             using (var service = new RecordTestServiceClient())
             {
-                var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositionStd);
+                var orders = service.GetRecordTestBySearch(skip, take, SearchProductID, SearchCompositionStd, SearchPMINumber);
                 RecordTestExtras.Clear();
                 orders.ToList().ForEach(o => RecordTestExtras.Add(new RecordTestExtra { RecordTest = o }));
             }
@@ -582,6 +582,18 @@ namespace PMSClient.ViewModel
         }
 
         #region 属性
+        private string searchPMINumber;
+        public string SearchPMINumber
+        {
+            get { return searchPMINumber; }
+            set
+            {
+                if (searchPMINumber == value)
+                    return;
+                searchPMINumber = value;
+                RaisePropertyChanged(() => SearchPMINumber);
+            }
+        }
         private string searchProductID;
         public string SearchProductID
         {

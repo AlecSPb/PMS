@@ -618,6 +618,7 @@
     <sys:String x:Key="RTWarping">Warping</sys:String>
     <sys:String x:Key="RTBP">BP</sys:String>
     <sys:String x:Key="RTQC">QC</sys:String>
+    <sys:String x:Key="RTCSCAN">CSCAN</sys:String>
     <!--Delivery-->
     <sys:String x:Key="RDCreator">Creator</sys:String>
     <sys:String x:Key="RDCreateTime">Create Time</sys:String>

@@ -30,6 +30,8 @@
             <Button Content="{StaticResource ButtonExpressTrack}" 
                     Style="{StaticResource StyleButtonSpecial}"
                     Command="{Binding ExpressTrack}"/>
+            <Button Content="设置" 
+                    Style="{StaticResource StyleButtonCommon}" Name="BtnSetting" Click="BtnSetting_Click"/>
             <Button Content="{StaticResource ButtonDeliveryItemList}" Style="{StaticResource StyleButtonSpecial}"
                     Command="{Binding GoToDeliveryItemList}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>

@@ -4,11 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSClient.ReportsHelperNew;
+using PMSClient.Express;
 
 namespace ConsoleTest
 {
     public class Test
     {
+
+        public void TestSF()
+        {
+            string express_number = "265976836784";
+            string phone = "15223459638";
+            //string phone = "13808071935";
+
+            var sf = new SF();
+            sf.SenderPhone = phone;
+            string result = sf.SFOrder(express_number);
+
+
+            Console.WriteLine(result);
+
+        }
+
         public void TestReportDataProcessHelper()
         {
             ReportDataProcessHelper helper = new ReportDataProcessHelper();

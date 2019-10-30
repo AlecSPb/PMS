@@ -24,7 +24,7 @@
       <Value Profile="(Default)">13808071935</Value>
     </Setting>
     <Setting Name="Version" Type="System.String" Scope="User">
-      <Value Profile="(Default)">4.8.128.75</Value>
+      <Value Profile="(Default)">4.8.130.5</Value>
     </Setting>
   </Settings>
 </SettingsFile>

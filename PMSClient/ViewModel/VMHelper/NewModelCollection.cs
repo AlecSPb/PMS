@@ -39,6 +39,7 @@ namespace PMSClient.ViewModel
             model.Warping = "未知";
             model.QC = "无";
             model.BackingPlateLot = "无";
+            model.CScan = "无";
             return model;
         }
         public static DcRecordMachine NewRecordMachine()

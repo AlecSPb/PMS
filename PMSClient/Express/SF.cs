@@ -53,10 +53,11 @@ namespace PMSClient.Express
         private string checkWord = "UxfmVRiKnTHjD3My8jUGduBJndgNvtwf";
         public string SFOrder(string trackingNumber)
         {
+            string last4Digital = SenderPhone.Substring(SenderPhone.Length - 4, 4);
             string xml = @"<Request service='RouteService' lang='zh-CN'>
                            <Head>" + clientCode + @"</Head>
                                 <Body>
-                                    <RouteRequest tracking_type='1' method_type='1' tracking_number='306975876140' check_phoneNo='1935'/>
+                                    <RouteRequest tracking_type='1' method_type='1' tracking_number='306975876140' check_phoneNo=" + $"'{last4Digital}'" + @"/>
                                 </Body>
                            </Request>";
 
