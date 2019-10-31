@@ -221,7 +221,7 @@
                 <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding SpecialRequirement}"
                          Style="{StaticResource StyleTextBoxCommon}" Background="LightPink"/>
                 <TextBlock Grid.Row="18" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="如果有特殊要求如添加剂，可以写在这里，生产会看到"/>
+                           Text="如果有特殊要求如添加剂,对热压模具的要求，可以写在这里，生产会看到"/>
                 
                 <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource OrderDeadLine}"
                            Style="{StaticResource StyleTextBlockCommon}" />

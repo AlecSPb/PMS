@@ -230,7 +230,7 @@
                 <control:SimplePager Grid.Row="1" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
             </Grid>
-            <Expander Grid.Column="1" Header="" IsExpanded="False" ExpandDirection="Left">
+            <Expander Grid.Column="1" Header="" IsExpanded="True" ExpandDirection="Left">
                 <Grid Width="350" DataContext="{Binding  CurrentSelectItem}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>

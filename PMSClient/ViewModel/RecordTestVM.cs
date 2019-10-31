@@ -120,12 +120,14 @@ namespace PMSClient.ViewModel
                         sb.AppendLine(result.DeadLine.ToLongDateString());
                         #endregion
 
-
-
-
-
-
-
+                        if (result.DimensionDetails.Contains("FR="))
+                        {
+                            window.WindowWarning = "此靶材有倒角要求";
+                        }
+                        else
+                        {
+                            window.WindowWarning = "";
+                        }
                         window.WindowContent = sb.ToString();
                         window.Show();
                     }

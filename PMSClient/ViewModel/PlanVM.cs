@@ -71,7 +71,7 @@ namespace PMSClient.ViewModel
                 string searchCode = selectedDate.ToString("yyMMdd");
                 using (var service = new MissonServiceClient())
                 {
-                    var pageData = service.GetPlanExtra2(0, 100, searchCode, "","");
+                    var pageData = service.GetPlanExtra2(0, 100, searchCode, "", "");
                     var ordered = pageData.OrderBy(i => i.Plan.PlanLot).ThenBy(i => i.Plan.SearchCode);
                     StringBuilder lb = new StringBuilder();
                     foreach (var item in ordered)
@@ -86,14 +86,18 @@ namespace PMSClient.ViewModel
                         lb.AppendLine(item.Plan.ProcessCode);
 
                         lb.AppendLine(item.Misson.CompositionStandard);
-                        lb.Append("模具:");
-                        lb.AppendLine(item.Plan.MoldDiameter.ToString() + "mm OD x " + item.Plan.Thickness + "mm");
+                        if (item.Plan.PlanType.Contains("回收"))
+                        {
+                            lb.Append("模具:");
+                            lb.AppendLine(item.Plan.MoldDiameter.ToString() + "mm OD x " +item.Plan.Thickness + "mm");
+                        }
                         lb.Append("订单:");
                         lb.AppendLine(item.Misson.PMINumber);
                         if (!item.Plan.PlanType.Contains("回收"))
                         {
                             lb.Append("产品:");
                             lb.AppendLine(item.Misson.Dimension);
+                            lb.AppendLine(item.Misson.DimensionDetails);
                         }
                         lb.AppendLine("=====  一般标签↑，样品标签↓  =====");
                         lb.AppendLine(item.Misson.CompositionStandard);
@@ -154,7 +158,7 @@ namespace PMSClient.ViewModel
             int recordCount = 0;
             using (var service = new MissonServiceClient())
             {
-                recordCount = service.GetPlanExtraCount2(SearchVHPDate, SearchComposition,SearchPMINumber);
+                recordCount = service.GetPlanExtraCount2(SearchVHPDate, SearchComposition, SearchPMINumber);
             }
 
             int pageCount = recordCount / PageSize + (recordCount % PageSize == 0 ? 0 : 1);
@@ -274,14 +278,20 @@ namespace PMSClient.ViewModel
                 lb.AppendLine(model.Plan.ProcessCode);
 
                 lb.AppendLine(model.Misson.CompositionStandard);
-                lb.Append("模具:");
-                lb.AppendLine(model.Plan.MoldDiameter.ToString() + "mm OD x " + model.Plan.Thickness + "mm");
+
+                if (model.Plan.PlanType.Contains("回收"))
+                {
+                    lb.Append("模具:");
+                    lb.AppendLine(model.Plan.MoldDiameter.ToString() + "mm OD x " + model.Plan.Thickness + "mm");
+                }
+
                 lb.Append("订单:");
                 lb.AppendLine(model.Misson.PMINumber);
                 if (!model.Plan.PlanType.Contains("回收"))
                 {
                     lb.Append("产品:");
                     lb.AppendLine(model.Misson.Dimension);
+                    lb.AppendLine(model.Misson.DimensionDetails);
                 }
                 lb.AppendLine();
                 lb.AppendLine("=====  一般标签↑，样品标签↓  =====");
@@ -316,7 +326,7 @@ namespace PMSClient.ViewModel
             PageSize = 30;
             using (var service = new MissonServiceClient())
             {
-                RecordCount = service.GetPlanExtraCount2(SearchVHPDate, SearchComposition,SearchPMINumber);
+                RecordCount = service.GetPlanExtraCount2(SearchVHPDate, SearchComposition, SearchPMINumber);
             }
             ActionPaging();
         }

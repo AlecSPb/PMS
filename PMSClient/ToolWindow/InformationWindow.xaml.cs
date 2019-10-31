@@ -37,5 +37,14 @@ namespace PMSClient.ToolWindow
                 this.TxtContent.Text = value;
             }
         }
+
+        public string WindowWarning
+        {
+            set
+            {
+                TxtWarning.Text = value;
+            }
+        }
+
     }
 }

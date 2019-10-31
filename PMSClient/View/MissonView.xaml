@@ -206,7 +206,7 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-            <Expander Grid.Column="1" Header="" IsExpanded="False" ExpandDirection="Left">
+            <Expander Grid.Column="1" Header="" IsExpanded="True" ExpandDirection="Left">
                 <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
                     <Grid  DataContext="{Binding CurrentSelectItem}">
                         <Grid.ColumnDefinitions>
