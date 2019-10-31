@@ -989,6 +989,7 @@
     <sys:String x:Key="BottomBarElement">元素</sys:String>
     <sys:String x:Key="BottomBarPeriodicTable">周期表</sys:String>
     <sys:String x:Key="BottomBarLabelStandard">标签</sys:String>
+    <sys:String x:Key="BottomBarTargetStandard">标准</sys:String>
     <sys:String x:Key="BottomBarEmptyTextBox">文本</sys:String>
 
     <sys:String x:Key="BottomBarAdvancedTool">高级工具</sys:String>

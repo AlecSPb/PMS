@@ -101,22 +101,22 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Ellipse Grid.Column="0" Width="10" Height="10" Fill="Red" Margin="2"
-                                     Visibility="{Binding SampleNeed,Converter={StaticResource VisibilityConverter2}}">
-                                        <Ellipse.ToolTip>
-                                            <TextBlock Text="{Binding SampleNeed,StringFormat=客户:{0}}"/>
-                                        </Ellipse.ToolTip>
-                                    </Ellipse>
-                                    <Rectangle Grid.Column="1" Width="10" Height="10" Margin="2" Fill="Black"
+                                    <Rectangle  Width="12" Height="12"  Fill="LightBlue" Stroke="Blue" StrokeThickness="1"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
                                      Visibility="{Binding SampleForAnlysis,Converter={StaticResource VisibilityConverter2}}">
                                         <Rectangle.ToolTip>
                                             <TextBlock Text="{Binding SampleForAnlysis,StringFormat=自分析:{0}}"/>
                                         </Rectangle.ToolTip>
                                     </Rectangle>
+                                    <Ellipse  Width="10" Height="10" Fill="Red"  
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                     Visibility="{Binding SampleNeed,Converter={StaticResource VisibilityConverter2}}">
+                                        <Ellipse.ToolTip>
+                                            <TextBlock Text="{Binding SampleNeed,StringFormat=客户:{0}}"/>
+                                        </Ellipse.ToolTip>
+                                    </Ellipse>
                                 </Grid>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

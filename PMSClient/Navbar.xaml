@@ -44,6 +44,8 @@
                 Command="{Binding FillingToolRule}"/>
             <Button Content="{StaticResource BottomBarLabelStandard}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding LabelStandard}"/>
+            <Button Content="{StaticResource BottomBarTargetStandard}" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding TargetStandard}"/>
             
             <TextBlock Text="{StaticResource BottomBarInformation}" Style="{StaticResource StyleDGTextBlockCommon}"/>
             <Button Content="{StaticResource BottomBarHelp}" Style="{StaticResource StyleButtonCommonNarrow}"

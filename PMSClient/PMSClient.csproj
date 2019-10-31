@@ -1665,6 +1665,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="StandardDocs\成都先锋材料有限公司靶材检验标准.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Express\express-info.txt" />
     <Resource Include="Express\SF.xml" />
     <Resource Include="Documents\超级视角.txt" />
@@ -1717,7 +1720,9 @@
     <Resource Include="Resource\Images\building.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resource\Icons\lock.png" />
+    <Resource Include="Resource\Icons\lock.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="StandardDocs\产品拍照规范流程.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

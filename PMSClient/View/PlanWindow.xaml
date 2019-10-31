@@ -71,7 +71,7 @@
                     <DataGridTemplateColumn Header="{StaticResource PlanLockAbbr}" >
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Border Height="20" Width="20" BorderThickness="1" BorderBrush="Red" Margin="2" 
+                                <Border Height="20" Width="20" BorderThickness="0" BorderBrush="Red" Margin="2" 
                            Visibility="{Binding Plan.IsLocked,Converter={StaticResource IsLockedCT}}">
                                     <!--<TextBlock HorizontalAlignment="Center">🔒</TextBlock>-->
                                     <Image Source="../Resource/Icons/lock.png">
@@ -106,22 +106,22 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Ellipse Grid.Column="0" Width="10" Height="10" Fill="Red" Margin="2"
-                                     Visibility="{Binding Misson.SampleNeed,Converter={StaticResource VisibilityConverter2}}">
-                                        <Ellipse.ToolTip>
-                                            <TextBlock Text="{Binding Misson.SampleNeed,StringFormat=客户:{0}}"/>
-                                        </Ellipse.ToolTip>
-                                    </Ellipse>
-                                    <Rectangle Grid.Column="1" Width="10" Height="10" Margin="2" Fill="Black"
+                                    <Rectangle  Width="12" Height="12"  Fill="LightBlue" Stroke="Blue" StrokeThickness="1"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
                                      Visibility="{Binding Misson.SampleForAnlysis,Converter={StaticResource VisibilityConverter2}}">
                                         <Rectangle.ToolTip>
                                             <TextBlock Text="{Binding Misson.SampleForAnlysis,StringFormat=自分析:{0}}"/>
                                         </Rectangle.ToolTip>
                                     </Rectangle>
+                                    <Ellipse  Width="10" Height="10" Fill="Red"  
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                     Visibility="{Binding Misson.SampleNeed,Converter={StaticResource VisibilityConverter2}}">
+                                        <Ellipse.ToolTip>
+                                            <TextBlock Text="{Binding Misson.SampleNeed,StringFormat=客户:{0}}"/>
+                                        </Ellipse.ToolTip>
+                                    </Ellipse>
                                 </Grid>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

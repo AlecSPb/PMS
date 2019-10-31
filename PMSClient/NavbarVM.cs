@@ -204,7 +204,13 @@ namespace PMSClient
               });
 
 
+            TargetStandard = new RelayCommand(() =>
+              {
+                  string helpFileName = "成都先锋材料有限公司靶材检验标准.docx";
+                  string helpFile = System.IO.Path.Combine(Environment.CurrentDirectory, "StandardDocs", helpFileName);
 
+                  OpenFileOrProgram(helpFile);
+              });
             #endregion
         }
 
@@ -212,7 +218,10 @@ namespace PMSClient
         {
             try
             {
-                System.Diagnostics.Process.Start(filePath);
+                if (File.Exists(filePath))
+                {
+                    System.Diagnostics.Process.Start(filePath);
+                }
             }
             catch (Exception ex)
             {
@@ -235,6 +244,7 @@ namespace PMSClient
 
         public RelayCommand Element { get; set; }
         public RelayCommand LabelStandard { get; set; }
+        public RelayCommand TargetStandard { get; set; }
 
         public RelayCommand EmptyTextBox { get; set; }
 

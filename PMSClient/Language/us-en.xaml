@@ -985,6 +985,7 @@
     <sys:String x:Key="BottomBarPeriodicTable">PeriodicTable</sys:String>
     <sys:String x:Key="BottomBarElement">Element</sys:String>
     <sys:String x:Key="BottomBarLabelStandard">Label</sys:String>
+    <sys:String x:Key="BottomBarTargetStandard">Std</sys:String>
 
     <sys:String x:Key="BottomBarEmptyTextBox">TextBox</sys:String>
 
