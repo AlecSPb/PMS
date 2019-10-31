@@ -267,6 +267,7 @@
     <Compile Include="Helpers\Converter\LastDayImageConverter.cs" />
     <Compile Include="Helpers\Converter\MissonStateToBoolConverter.cs" />
     <Compile Include="Helpers\Converter\PlateUseNumberConverter.cs" />
+    <Compile Include="Helpers\Converter\VisibilityConverter3.cs" />
     <Compile Include="Helpers\Converter\VisibilityConverter2.cs" />
     <Compile Include="Helpers\DefaultHelper.cs" />
     <Compile Include="Helpers\DeliveryHelper.cs" />
@@ -1684,7 +1685,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Resource Include="Resource\Icons\lock.png">
+    <Resource Include="Resource\Icons\lock2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <None Include="Service References\RemoteHeartBeatService\HeartBeatService.wsdl" />
@@ -1716,6 +1717,7 @@
     <Resource Include="Resource\Images\building.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resource\Icons\lock.png" />
     <Content Include="StandardDocs\产品拍照规范流程.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

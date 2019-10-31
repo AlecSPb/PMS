@@ -5,6 +5,7 @@
     <local:LastDayConverter x:Key="LastDayConverter"/>
     <local:LastDayImageConverter x:Key="LastDayImageConverter"/>
     <local:VisibilityConverter2 x:Key="VisibilityConverter2"/>
+    <local:VisibilityConverter3 x:Key="VisibilityConverter3"/>
     <local:IsLockedConverter x:Key="IsLockedCT"/>
     <local:PlateUseNumberConverter x:Key="PlateUseNumberConverter"/>
 </ResourceDictionary>

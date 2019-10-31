@@ -57,19 +57,19 @@ namespace PMSClient.View
             }
             //成分标准化
             string std = source.Replace(" ", "")
-                                               .Replace("(","")
+                                               .Replace("(", "")
                                                .Replace(")", "")
                                                .Replace("atomic", "")
-                                               .Replace("%","");
+                                               .Replace("%", "");
             //成分缩写
-            string abbr="";
+            string abbr = "";
             if (IsCIGS(std))
             {
                 abbr = "CIGS";
             }
             else
             {
-               var matches = System.Text.RegularExpressions.Regex.Matches(std, @"[a-zA-Z]", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+                var matches = System.Text.RegularExpressions.Regex.Matches(std, @"[a-zA-Z]", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
                 foreach (var item in matches)
                 {
                     abbr += item.ToString();
@@ -157,6 +157,27 @@ namespace PMSClient.View
         private void BtnPurity3_Click(object sender, RoutedEventArgs e)
         {
             PMSMethods.SetTextBox(TxtPurity, "99.999%");
+
+        }
+
+        private void BtnCurve_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, $"{btn.Content};");
+            }
+        }
+
+        private void BtnUseMold_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "使用模具[];");
+
+        }
+
+        private void BtnBonding_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "成都绑定;");
 
         }
     }

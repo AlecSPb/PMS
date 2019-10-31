@@ -90,7 +90,14 @@
                                             Binding="{Binding State}"/>
                     <DataGridTextColumn Header="{StaticResource OrderPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                             Binding="{Binding Priority}"/>
-                    <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="样">
+                                <TextBlock.ToolTip>
+                                    <TextBlock Text="样品要求"/>
+                                </TextBlock.ToolTip>
+                            </TextBlock>
+                        </DataGridTemplateColumn.Header>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -98,19 +105,57 @@
                                         <ColumnDefinition Width="auto"/>
                                         <ColumnDefinition Width="auto"/>
                                     </Grid.ColumnDefinitions>
-                                    <Ellipse Grid.Column="0" Width="8" Height="8" Fill="Red" Margin="2"
+                                    <Ellipse Grid.Column="0" Width="10" Height="10" Fill="Red" Margin="2"
                                      Visibility="{Binding SampleNeed,Converter={StaticResource VisibilityConverter2}}">
                                         <Ellipse.ToolTip>
                                             <TextBlock Text="{Binding SampleNeed,StringFormat=客户:{0}}"/>
                                         </Ellipse.ToolTip>
                                     </Ellipse>
-                                    <Rectangle Grid.Column="1" Width="8" Height="8" Margin="2" Fill="Blue"
+                                    <Rectangle Grid.Column="1" Width="10" Height="10" Margin="2" Fill="Black"
                                      Visibility="{Binding SampleForAnlysis,Converter={StaticResource VisibilityConverter2}}">
                                         <Rectangle.ToolTip>
                                             <TextBlock Text="{Binding SampleForAnlysis,StringFormat=自分析:{0}}"/>
                                         </Rectangle.ToolTip>
                                     </Rectangle>
                                 </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="加">
+                                <TextBlock.ToolTip>
+                                    <TextBlock Text="机加工的细节要求"/>
+                                </TextBlock.ToolTip>
+                            </TextBlock>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Ellipse Grid.Column="0" Width="10" Height="10" Fill="Green" Margin="2" 
+                                         Visibility="{Binding DimensionDetails,Converter={StaticResource VisibilityConverter3}}">
+                                    <Ellipse.ToolTip>
+                                        <TextBlock Text="{Binding DimensionDetails}"/>
+                                    </Ellipse.ToolTip>
+                                </Ellipse>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="特">
+                                <TextBlock.ToolTip>
+                                    <TextBlock Text="订单特殊要求"/>
+                                </TextBlock.ToolTip>
+                            </TextBlock>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Ellipse Grid.Column="0" Width="10" Height="10" Fill="Blue" Margin="2" 
+                                         Visibility="{Binding SpecialRequirement,Converter={StaticResource VisibilityConverter3}}">
+                                    <Ellipse.ToolTip>
+                                        <TextBlock Text="{Binding SpecialRequirement}"/>
+                                    </Ellipse.ToolTip>
+                                </Ellipse>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

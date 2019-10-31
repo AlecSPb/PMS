@@ -167,7 +167,8 @@
                 <StackPanel Grid.Row="12" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnBasicRequirement" Click="BtnBasicRequirement_Click" Content="默认内容" Style="{StaticResource StyleButtonCommon}"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="尺寸细节,比如公差直径TD 厚度TH，粗糙度Ra，溅射面圆角FR，特殊符号输入请使用底部工具栏的符号工具"/>
+                           Text="尺寸细节,比如公差直径TD 厚度TH，粗糙度Ra，溅射面圆角FR，特殊符号输入请使用底部工具栏的符号工具"
+                                Background="LightGreen"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource OrderMIniummAcceptDefect}"
@@ -219,9 +220,22 @@
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource OrderSpecialRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding SpecialRequirement}"
-                         Style="{StaticResource StyleTextBoxCommon}" Background="LightPink"/>
-                <TextBlock Grid.Row="18" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="如果有特殊要求如添加剂,对热压模具的要求，可以写在这里，生产会看到"/>
+                         Style="{StaticResource StyleTextBoxCommon}" Background="LightPink" Name="TxtSpecialRequirement"/>
+                <StackPanel Grid.Row="18" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnCurve1" Content="双面标刻" Style="{StaticResource StyleButtonCommonNarrow}" 
+                            Click="BtnCurve_Click"/>
+                    <Button Name="BtnCurve2" Content="单面标刻" Style="{StaticResource StyleButtonCommonNarrow}" 
+                            Click="BtnCurve_Click"/>
+                    <Button Name="BtnCurve3" Content="无需标刻" Style="{StaticResource StyleButtonCommonNarrow}" 
+                            Click="BtnCurve_Click"/>
+                    <Button Name="BtnUseMold" Content="使用模具[]" Style="{StaticResource StyleButtonCommonNarrow}" 
+                            Click="BtnUseMold_Click"/>
+                    <Button Name="BtnBonding" Content="成都绑定" Style="{StaticResource StyleButtonCommonNarrow}" 
+                            Click="BtnBonding_Click"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="如果有特殊要求，如添加剂,对热压模具的要求，绑定的要求，可以写在这里，生产会看到"/>
+                </StackPanel>
+
                 
                 <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource OrderDeadLine}"
                            Style="{StaticResource StyleTextBlockCommon}" />

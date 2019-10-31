@@ -75,7 +75,7 @@
                     <DataGridTemplateColumn Header="{StaticResource PlanLockAbbr}" >
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Border Height="20" Width="20" BorderThickness="1" BorderBrush="Red" Margin="2" 
+                                <Border Height="20" Width="20" BorderThickness="0" BorderBrush="Red" Margin="2" 
                            Visibility="{Binding Plan.IsLocked,Converter={StaticResource IsLockedCT}}">
                                     <!--<TextBlock HorizontalAlignment="Center">🔒</TextBlock>-->
                                     <Image Source="../Resource/Icons/lock.png">
@@ -99,7 +99,14 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
                     <DataGridTextColumn Header="{StaticResource PlanProcessCode}" Binding="{Binding Plan.ProcessCode}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                    <DataGridTemplateColumn Header="样">
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="样">
+                                <TextBlock.ToolTip>
+                                    <TextBlock Text="样品要求"/>
+                                </TextBlock.ToolTip>
+                            </TextBlock>
+                        </DataGridTemplateColumn.Header>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -107,19 +114,57 @@
                                         <ColumnDefinition Width="auto"/>
                                         <ColumnDefinition Width="auto"/>
                                     </Grid.ColumnDefinitions>
-                                    <Ellipse Grid.Column="0" Width="8" Height="8" Fill="Red" Margin="2"
+                                    <Ellipse Grid.Column="0" Width="10" Height="10" Fill="Red" Margin="2"
                                      Visibility="{Binding Misson.SampleNeed,Converter={StaticResource VisibilityConverter2}}">
                                         <Ellipse.ToolTip>
                                             <TextBlock Text="{Binding Misson.SampleNeed,StringFormat=客户:{0}}"/>
                                         </Ellipse.ToolTip>
                                     </Ellipse>
-                                    <Rectangle Grid.Column="1" Width="8" Height="8" Margin="2" Fill="Blue"
+                                    <Rectangle Grid.Column="1" Width="10" Height="10" Margin="2" Fill="Black"
                                      Visibility="{Binding Misson.SampleForAnlysis,Converter={StaticResource VisibilityConverter2}}">
                                         <Rectangle.ToolTip>
                                             <TextBlock Text="{Binding Misson.SampleForAnlysis,StringFormat=自分析:{0}}"/>
                                         </Rectangle.ToolTip>
                                     </Rectangle>
                                 </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="加">
+                                <TextBlock.ToolTip>
+                                    <TextBlock Text="机加工的细节要求"/>
+                                </TextBlock.ToolTip>
+                            </TextBlock>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Ellipse Grid.Column="0" Width="10" Height="10" Fill="Green" Margin="2" 
+                                         Visibility="{Binding Misson.DimensionDetails,Converter={StaticResource VisibilityConverter3}}">
+                                    <Ellipse.ToolTip>
+                                        <TextBlock Text="{Binding Misson.DimensionDetails}"/>
+                                    </Ellipse.ToolTip>
+                                </Ellipse>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="特">
+                                <TextBlock.ToolTip>
+                                    <TextBlock Text="订单特殊要求"/>
+                                </TextBlock.ToolTip>
+                            </TextBlock>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Ellipse Grid.Column="0" Width="10" Height="10" Fill="Blue" Margin="2" 
+                                         Visibility="{Binding Misson.SpecialRequirement,Converter={StaticResource VisibilityConverter3}}">
+                                    <Ellipse.ToolTip>
+                                        <TextBlock Text="{Binding Misson.SpecialRequirement}"/>
+                                    </Ellipse.ToolTip>
+                                </Ellipse>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -169,6 +214,12 @@
                     <DataGridTextColumn Header="{StaticResource PlanPrePressure}" Binding="{Binding Plan.PrePressure}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                     <DataGridTextColumn Header="{StaticResource PlanVaccum}" Binding="{Binding Plan.Vaccum,StringFormat={}{0:#.##E00}}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderDimension}" Binding="{Binding Misson.Dimension,StringFormat={}{0:#.##E00}}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderDimensionDetails}" Binding="{Binding Misson.DimensionDetails,StringFormat={}{0:#.##E00}}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderSpecialRequirement}" Binding="{Binding Misson.SpecialRequirement,StringFormat={}{0:#.##E00}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                     <DataGridTextColumn Header="{StaticResource PlanCreateTime}" Binding="{Binding Plan.CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
