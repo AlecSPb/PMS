@@ -34,5 +34,7 @@ namespace PMSWCFService.ServiceContracts
         List<DcRecordMilling> GetRecordMillings(DateTime planDate);
 
 
+        [OperationContract]
+        List<DcPlanWithMisson> GetPlanOfMachine();
     }
 }

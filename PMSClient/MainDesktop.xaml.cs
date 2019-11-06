@@ -115,26 +115,30 @@ namespace PMSClient
         }
         private bool HeartBeatCheck()
         {
-            try
+
+            if (PMSHelper.CurrentSession?.CurrentUserRole?.GroupName == "管理员")
             {
-                using (var remote_heartbeat=new PMSClient.RemoteHeartBeatService.HeartBeatSeriveClient())
+                try
                 {
-                    if (remote_heartbeat.Beat() == "ok")
+                    using (var remote_heartbeat = new PMSClient.RemoteHeartBeatService.HeartBeatSeriveClient())
                     {
-                        this.Dispatcher.Invoke(() =>
+                        if (remote_heartbeat.Beat() == "ok")
                         {
-                            TxtRemoteHeartBeat.Text = "外网服务器通信正常";
-                        });
+                            this.Dispatcher.Invoke(() =>
+                            {
+                                TxtRemoteHeartBeat.Text = "外网服务器通信正常";
+                            });
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                this.Dispatcher.Invoke(() =>
+                catch (Exception ex)
                 {
-                    TxtRemoteHeartBeat.Text = "外网心跳检测出错";
-                });
-                PMSHelper.CurrentLog.Error(ex);
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        TxtRemoteHeartBeat.Text = "外网心跳检测出错";
+                    });
+                    PMSHelper.CurrentLog.Error(ex);
+                }
             }
 
             try

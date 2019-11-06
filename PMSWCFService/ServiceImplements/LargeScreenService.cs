@@ -199,5 +199,32 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public List<DcPlanWithMisson> GetPlanOfMachine()
+        {
+            using (var dc = new PMSDAL.PMSDbContext())
+            {
+                var queryPlan = (from p in dc.VHPPlans
+                                 where p.State != PMSCommon.CommonState.作废.ToString()
+                                 && p.PlanType == "加工"
+                                 orderby p.PlanDate descending
+                                 select p).Take(20);
+                var queryResult = from p in queryPlan
+                                  join o in dc.Orders
+                                  on p.OrderID equals o.ID
+                                  select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
+                var final = queryResult.ToList();
+                Mapper.Initialize(cfg =>
+                {
+                    cfg.CreateMap<PMSPlanWithMissonModel, DcPlanWithMisson>();
+                    cfg.CreateMap<PMSOrder, DcOrder>();
+                    cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                });
+
+                var result = Mapper.Map<List<PMSPlanWithMissonModel>, List<DcPlanWithMisson>>(final);
+
+                return result;
+            }
+        }
     }
 }

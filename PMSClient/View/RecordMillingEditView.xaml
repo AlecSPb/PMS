@@ -103,8 +103,13 @@
                           ItemsSource="{Binding DataContext.MillingMaterialSources,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding MaterialSource}"
                           Style="{StaticResource StyleComboBoxEditable}" FontSize="{StaticResource TabletFontLG}"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="原料备注,回收类型不需要填写"/>
+                <StackPanel Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleStackPanelCommon}">
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="原料备注"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}" Background="LightGreen"
+                           Text="回收类型此处不需要填写"/>
+                </StackPanel>
+
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMRecycleID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
