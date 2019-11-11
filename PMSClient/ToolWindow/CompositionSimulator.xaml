@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Topmost="True"
         WindowStartupLocation="CenterScreen"
-        Title="CSV成分格式辅助工具" Height="650" Width="500">
+        Title="CSV成分格式辅助工具" Height="650" Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -19,9 +19,9 @@
                   IsChecked="True"/>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="auto"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
 
             </Grid.ColumnDefinitions>
             <TextBox Name="txtCondition" Grid.Column="0" Margin="3"
@@ -42,9 +42,11 @@
             <TextBlock Grid.Column="2" Margin="3" Background="Wheat">
                 输入格式：
                 <LineBreak/>
-                成分+比例
+                成分+比例 
+                <LineBreak/> 或 <LineBreak/> 
+                成分+比例+偏差 默认偏差0.3
                 <LineBreak/>
-                结果中剔除偏差过大的值或者负值
+                总和为1，误差会被积累到最后一行
             </TextBlock>
         </Grid>
         <StackPanel Grid.Row="2" Orientation="Horizontal"  Background="Orange">

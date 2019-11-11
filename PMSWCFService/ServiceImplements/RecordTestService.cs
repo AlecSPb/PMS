@@ -261,6 +261,28 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcRecordTest> GetUnCheckedRecordTest()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from t in dc.RecordTests
+                                where t.State == CommonState.未核验.ToString()
+                                orderby t.CreateTime descending
+                                select t;
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordTest, DcRecordTest>());
+                    var products = Mapper.Map<List<RecordTest>, List<DcRecordTest>>(query.ToList());
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int UpdateRecordTest(DcRecordTest model)
         {
             try

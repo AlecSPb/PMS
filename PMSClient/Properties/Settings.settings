@@ -26,5 +26,8 @@
     <Setting Name="Version" Type="System.String" Scope="User">
       <Value Profile="(Default)">4.8.135.15</Value>
     </Setting>
+    <Setting Name="DevStatus" Type="System.String" Scope="User">
+      <Value Profile="(Default)">测试</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

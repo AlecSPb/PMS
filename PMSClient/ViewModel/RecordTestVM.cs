@@ -75,6 +75,43 @@ namespace PMSClient.ViewModel
             QuickLabel = new RelayCommand(ActionQuickLabel);
 
             ShowOrderInformation = new RelayCommand<RecordTestExtra>(ActionShowOrderInformation);
+
+            EnterCSCAN = new RelayCommand<RecordTestExtra>(ActionEnterCscan, CanEnterCscan);
+
+            OneKeyCheck = new RelayCommand(ActonOneKeyCheck);
+        }
+
+        private void ActonOneKeyCheck()
+        {
+            var win = new CheckLogic.RecordTestCheckDialog();
+            win.Show();
+        }
+
+        private bool CanEnterCscan(RecordTestExtra arg)
+        {
+            return PMSHelper.CurrentSession.IsOKInGroup(new string[] { "测试组", "热压组", "管理员" });
+        }
+
+        private void ActionEnterCscan(RecordTestExtra obj)
+        {
+
+            if (obj != null)
+            {
+                var dialog = new ToolDialog.EnterCSCAN();
+                dialog.ProductInformation = obj.RecordTest.ProductID + "+" + obj.RecordTest.Composition;
+                dialog.CSCAN = obj.RecordTest.CScan;
+
+                dialog.ShowDialog();
+                if (dialog.DialogResult == true)
+                {
+                    obj.RecordTest.CScan = dialog.CSCAN;
+
+                    using (var service = new RecordTestServiceClient())
+                    {
+                        service.UpdateRecordTestByUID(obj.RecordTest, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -656,6 +693,9 @@ namespace PMSClient.ViewModel
 
 
         public RelayCommand<RecordTestExtra> ShowOrderInformation { get; set; }
+        public RelayCommand<RecordTestExtra> EnterCSCAN { get; set; }
+
+        public RelayCommand OneKeyCheck { get; set; }
         #endregion
     }
 }

@@ -12,7 +12,7 @@ namespace PMSClient.ToolWindow.Model
         {
             Element = "";
             Ratio = 0;
-            Offset = 0.5;
+            Offset = 0.3;
             RealValues = new List<double>();
             Average = 0;
         }

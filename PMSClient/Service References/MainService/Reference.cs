@@ -11243,6 +11243,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTestResponse")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcRecordTest[]> GetUnFinishedRecordTestAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTestResponse")]
+        PMSClient.MainService.DcRecordTest[] GetUnCheckedRecordTest();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTestResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordTest[]> GetUnCheckedRecordTestAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11374,6 +11380,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordTest[]> GetUnFinishedRecordTestAsync() {
             return base.Channel.GetUnFinishedRecordTestAsync();
+        }
+        
+        public PMSClient.MainService.DcRecordTest[] GetUnCheckedRecordTest() {
+            return base.Channel.GetUnCheckedRecordTest();
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordTest[]> GetUnCheckedRecordTestAsync() {
+            return base.Channel.GetUnCheckedRecordTestAsync();
         }
     }
     

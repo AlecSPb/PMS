@@ -176,6 +176,9 @@
     <Compile Include="AccessGrant.cs" />
     <Compile Include="CheckLogic\CheckMessage.cs" />
     <Compile Include="CheckLogic\OrderCheckLogic.cs" />
+    <Compile Include="CheckLogic\RecordTestCheckDialog.xaml.cs">
+      <DependentUpon>RecordTestCheckDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CheckLogic\RecordTestCheckLogic.cs" />
     <Compile Include="CsvOutputHelper\CsvOutputBase.cs" />
     <Compile Include="CsvOutputHelper\CsvOutputFeedback.cs" />
@@ -393,6 +396,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ToolDialog\EnterCSCAN.xaml.cs">
+      <DependentUpon>EnterCSCAN.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolDialog\ExpressTrack.xaml.cs">
       <DependentUpon>ExpressTrack.xaml</DependentUpon>
@@ -970,6 +976,10 @@
     <Compile Include="ViewModel\RecordVHPQuickEditVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Page Include="CheckLogic\RecordTestCheckDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomControls\BatchDuplicateDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1045,6 +1055,10 @@
     <Page Include="Resource\Styles\XSStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToolDialog\EnterCSCAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolDialog\ExpressTrack.xaml">
       <SubType>Designer</SubType>
@@ -1665,6 +1679,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="densitychecklist.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="StandardDocs\成都先锋材料有限公司靶材检验标准.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2234,12 +2251,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

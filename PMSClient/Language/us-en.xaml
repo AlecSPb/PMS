@@ -197,6 +197,7 @@
     <sys:String x:Key="ButtonLogOut">Log Out</sys:String>
     <sys:String x:Key="ButtonBack">Back</sys:String>
     <sys:String x:Key="ButtonCheck">Check</sys:String>
+    <sys:String x:Key="ButtonCScan">CSCAN</sys:String>
     <sys:String x:Key="ButtonRefresh">Refresh</sys:String>
     <sys:String x:Key="ButtonSearch">Search</sys:String>
     <sys:String x:Key="ButtonAll">All</sys:String>
@@ -225,6 +226,7 @@
     <sys:String x:Key="ButtonTrace">Trace</sys:String>
     <sys:String x:Key="ButtonQuickLabel">Quick Label</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">Sheet</sys:String>
+    <sys:String x:Key="ButtonQuickCheck">OneKeyCheck</sys:String>
     <sys:String x:Key="ButtonMisson">Task</sys:String>
     <sys:String x:Key="ButtonHistory">History</sys:String>
     <sys:String x:Key="ButtonUnCompleted">UnCompleted</sys:String>

@@ -1,0 +1,34 @@
+﻿<Window x:Class="PMSClient.ToolDialog.EnterCSCAN"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolDialog"
+        mc:Ignorable="d"
+        Title="输入超声扫描的结果" Height="300" Width="450" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Content="保存" Style="{StaticResource StyleButtonCommon}" Name="BtnSave" Click="BtnSave_Click"/>
+        </StackPanel>
+        <TextBlock Grid.Row="1" Style="{StaticResource StyleDGTextBlockCommon}" Text="" Name="TxtProductInformation"
+                   Background="Yellow" FontWeight="Bold" FontSize="20" Foreground="Blue"/>
+        <TextBlock Grid.Row="2" Style="{StaticResource StyleDGTextBlockCommon}" Text="输入或者修改该靶材的超声扫描结果"/>
+        <TextBox Grid.Row="3" Style="{StaticResource StyleTextBoxCommon}" Name="TxtCscan"/>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Button.Click="StackPanel_Click">
+            <Button Content="小空腔" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Content="大空腔" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Content="空腔率=" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Content="报废" Style="{StaticResource StyleButtonCommon}"/>
+        </StackPanel>
+    </Grid>
+</Window>

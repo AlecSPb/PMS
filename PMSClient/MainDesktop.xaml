@@ -33,7 +33,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Name="txtStateMessage" Text="状态栏" Style="{StaticResource StyleTextBlockCommon}" Foreground="White" Grid.Column="0"/>
-            <TextBlock Grid.Column="1" Name="TxtRemoteHeartBeat" Text="外网心跳检测" Style="{StaticResource StyleTextBlockCommon}"
+            <TextBlock Grid.Column="1" Name="TxtRemoteHeartBeat" Text="" Style="{StaticResource StyleTextBlockCommon}"
                        Foreground="White"/>
             <TextBlock Grid.Column="2" Name="txtHeartBeat" Text="内网心跳检测" Style="{StaticResource StyleTextBlockCommon}"
                        Foreground="White"/>

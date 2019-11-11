@@ -1058,6 +1058,12 @@
   <wsdl:message name="IRecordTestService_GetUnFinishedRecordTest_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUnFinishedRecordTestResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetUnCheckedRecordTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnCheckedRecordTest" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetUnCheckedRecordTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnCheckedRecordTestResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordVHPService_GetRecordVHP_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordVHP" />
   </wsdl:message>
@@ -2100,6 +2106,10 @@
     <wsdl:operation name="GetUnFinishedRecordTest">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTest" message="tns:IRecordTestService_GetUnFinishedRecordTest_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTestResponse" message="tns:IRecordTestService_GetUnFinishedRecordTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnCheckedRecordTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTest" message="tns:IRecordTestService_GetUnCheckedRecordTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTestResponse" message="tns:IRecordTestService_GetUnCheckedRecordTest_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordVHPService">
@@ -3927,6 +3937,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetUnFinishedRecordTest">
       <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnCheckedRecordTest">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTest" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

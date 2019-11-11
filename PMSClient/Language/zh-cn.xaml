@@ -202,6 +202,7 @@
     <sys:String x:Key="ButtonLogOut">注销</sys:String>
     <sys:String x:Key="ButtonBack">返回</sys:String>
     <sys:String x:Key="ButtonCheck">核验</sys:String>
+    <sys:String x:Key="ButtonCScan">超声</sys:String>
     <sys:String x:Key="ButtonRefresh">刷新</sys:String>
     <sys:String x:Key="ButtonSearch">搜索</sys:String>
     <sys:String x:Key="ButtonAll">全部</sys:String>
@@ -229,6 +230,7 @@
     <sys:String x:Key="ButtonLabel">标签</sys:String>
     <sys:String x:Key="ButtonTrace">追踪</sys:String>
     <sys:String x:Key="ButtonQuickLabel">快速标签</sys:String>
+    <sys:String x:Key="ButtonQuickCheck">一键检查</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">清单</sys:String>
     <sys:String x:Key="ButtonMisson">任务</sys:String>
     <sys:String x:Key="ButtonHistory">历史</sys:String>

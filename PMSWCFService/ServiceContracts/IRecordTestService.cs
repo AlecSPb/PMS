@@ -17,9 +17,9 @@ namespace PMSWCFService.ServiceContracts
 
         //2019-10-30 增加
         [OperationContract]
-        List<DcRecordTest> GetRecordTestBySearch(int skip, int take, string productId, string compositionStd,string pminumber);
+        List<DcRecordTest> GetRecordTestBySearch(int skip, int take, string productId, string compositionStd, string pminumber);
         [OperationContract]
-        int GetRecordTestCountBySearch(string productId, string compositionStd,string pminumber);
+        int GetRecordTestCountBySearch(string productId, string compositionStd, string pminumber);
 
 
         [OperationContract]
@@ -46,5 +46,8 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         List<DcRecordTest> GetUnFinishedRecordTest();
+
+        [OperationContract]
+        List<DcRecordTest> GetUnCheckedRecordTest();
     }
 }

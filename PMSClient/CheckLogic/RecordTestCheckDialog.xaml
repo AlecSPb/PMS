@@ -1,0 +1,34 @@
+﻿<Window x:Class="PMSClient.CheckLogic.RecordTestCheckDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.CheckLogic"
+        mc:Ignorable="d"
+        Title="测试记录检查模块-测试版本-[对所有未核验的数据进行核验]" Height="450" Width="400"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="ToolWindow">
+    <Grid Background="Wheat">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Background="White" Margin="2">
+            <CheckBox Name="ChkDimension" Content="尺寸" Style="{StaticResource StyleCheckBoxCommon}"  IsChecked="True"/>
+            <StackPanel Orientation="Horizontal">
+                <CheckBox Name="ChkDensity" Content="密度" Style="{StaticResource StyleCheckBoxCommon}" IsChecked="True" />
+                <Button Name="BtnDensityCheckList" Content="密度检查表" Click="BtnDensityCheckList_Click"/>
+            </StackPanel>
+            <!--<CheckBox Name="ChkXRF" Content="成分XRF" Style="{StaticResource StyleCheckBoxCommon}"  IsChecked="True"/>-->
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGNavigationBar}">
+            <Button Name="BtnCheck" Content="检查" Style="{StaticResource StyleButtonCommon}" Click="BtnCheck_Click"/>
+            <TextBlock Style="{StaticResource StyleTextBlockCommon}" 
+                       Text="根据检查结果来处理测试数据" Foreground="White"/>
+        </StackPanel>
+
+        <TextBox Name="TxtResult" Grid.Row="2" Style="{StaticResource StyleTextBoxMultiline}" Height="300" Background="White"
+                 IsReadOnly="True"></TextBox>
+    </Grid>
+</Window>

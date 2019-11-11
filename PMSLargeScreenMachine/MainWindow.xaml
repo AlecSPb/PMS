@@ -58,7 +58,7 @@
                 </DataGridTemplateColumn>-->
                 <DataGridTextColumn Header="日期" ElementStyle="{StaticResource StyleTextBlock}"
                                     Binding="{Binding Plan.PlanDate,StringFormat={}{0:yyMMdd}}"/>
-                <DataGridTextColumn Header="压机" ElementStyle="{StaticResource StyleTextBlockCenterBold}"
+                <DataGridTextColumn Header="压机" ElementStyle="{StaticResource StyleTextBlockCenter}"
                                     Binding="{Binding Plan.VHPDeviceCode}"/>
                 <DataGridTextColumn Header="成分" ElementStyle="{StaticResource StyleTextBlock}"
                                     Binding="{Binding Misson.CompositionStandard}"/>

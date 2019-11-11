@@ -118,5 +118,17 @@ namespace PMSClient.Properties {
                 this["Version"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("测试")]
+        public string DevStatus {
+            get {
+                return ((string)(this["DevStatus"]));
+            }
+            set {
+                this["DevStatus"] = value;
+            }
+        }
     }
 }

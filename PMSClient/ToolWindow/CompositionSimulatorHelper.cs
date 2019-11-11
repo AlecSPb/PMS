@@ -140,7 +140,8 @@ namespace PMSClient.ToolWindow
                         //last element   for special way
                         if (j < elements.Count - 1)
                         {
-                            temp = s.Ratio * 100 + s.Offset - r.NextDouble();
+                            //核心随机算法
+                            temp = s.Ratio * 100 + r.NextDouble() * s.Offset * 2 - s.Offset;
                             sum += temp;
                         }
                         else
