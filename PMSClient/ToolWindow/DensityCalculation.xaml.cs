@@ -61,8 +61,8 @@ namespace PMSClient.ToolWindow
                 PMSClient.View.RecordTestEditView edit = PMSHelper.DesktopViews.RecordTestEdit;
                 Weight.Text = edit.TargetWeight;
                 string dimension = edit.TargetDimension;
-
-                string pattern = @"[1-9]\d*.\d*|0.\d*[1-9]\d*";
+                //string pattern = @"[1-9]\d*.\d*|0.\d*[1-9]\d*";
+                string pattern = @"[0-9]+([.]{1}[0-9]+){0,1}";
                 var results =Regex.Matches(dimension,pattern);
                 if (results.Count >= 2)
                 {

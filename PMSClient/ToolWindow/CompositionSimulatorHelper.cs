@@ -20,6 +20,14 @@ namespace PMSClient.ToolWindow
             recordCount = 5;
         }
 
+        private double offset = 0;
+        public CompositionSimulatorHelper(double offset, int count = 5)
+        {
+            elements = new List<SingleElement>();
+            recordCount = count;
+            this.offset = offset;
+        }
+
         private void ReadDataFromText(string input)
         {
             try
@@ -33,7 +41,7 @@ namespace PMSClient.ToolWindow
                 for (int i = 1; i < lines.Length; i++)
                 {
                     string[] arrays = lines[i].Split('+');
-                    SingleElement s = new SingleElement();
+                    SingleElement s = new SingleElement() { Offset = offset };
                     s.Element = arrays[0];
                     s.Ratio = double.Parse(arrays[1]);
                     //判断文件默认有没有设定Offset

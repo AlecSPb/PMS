@@ -109,7 +109,7 @@ namespace PMSClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4.8.135.15")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4.8.136.15")]
         public string Version {
             get {
                 return ((string)(this["Version"]));
@@ -128,6 +128,18 @@ namespace PMSClient.Properties {
             }
             set {
                 this["DevStatus"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.2")]
+        public double XRFOffset {
+            get {
+                return ((double)(this["XRFOffset"]));
+            }
+            set {
+                this["XRFOffset"] = value;
             }
         }
     }

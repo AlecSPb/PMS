@@ -41,9 +41,14 @@ namespace PMSClient.CheckLogic
                 }
             }
 
-            TxtResult.Text = "检查结果如下" + Environment.NewLine + sb.ToString();
+            TxtResult.Text = "检查结果如下(仅显示异常结果)" + Environment.NewLine + sb.ToString();
         }
 
+        /// <summary>
+        /// 检查各个项目
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public string Check(DcRecordTest model)
         {
             StringBuilder sb = new StringBuilder();
@@ -55,7 +60,7 @@ namespace PMSClient.CheckLogic
             //执行检查逻辑
             if (ChkDensity.IsChecked == true)
             {
-                sb.Append(CheckDensity(double.Parse(model.Density), 3, 8));
+                sb.Append(CheckDensity(model.Composition, double.Parse(model.Density)));
             }
 
             if (ChkDimension.IsChecked == true)
@@ -74,10 +79,94 @@ namespace PMSClient.CheckLogic
 
 
         #region 具体检查逻辑
-        public string CheckDensity(double fact, double min, double max)
+        /// <summary>
+        /// 检查密度是否在正常范围之内
+        /// </summary>
+        /// <param name="fact"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public string CheckDensity(string abbr, double fact)
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("密度未发现异常");
+
+            string[] lines = File.ReadAllLines("densitychecklist.txt");
+
+            Dictionary<string, Density> densities = new Dictionary<string, Density>();
+            foreach (var line in lines)
+            {
+                string[] temp = line.Split(new string[] { "+" }, StringSplitOptions.RemoveEmptyEntries);
+                var density = new Density
+                {
+                    Composition = temp[0],
+                    Min = double.Parse(temp[1]),
+                    Max = double.Parse(temp[2])
+                };
+                densities.Add(temp[0], density);
+            }
+
+            string key = "";
+            #region 判定类型
+            if (abbr.Contains("Cu")
+                && abbr.Contains("In")
+                && abbr.Contains("Ga")
+                && abbr.Contains("Se"))
+            {
+                key = "CIGS";
+            }
+            else if (abbr.Contains("Se")
+                && abbr.Contains("As")
+                && abbr.Contains("Ge"))
+            {
+                key = "SAG";
+            }
+            else if (abbr.Contains("Se")
+                && abbr.Contains("In")
+                && !abbr.Contains("Ga") && !abbr.Contains("Cu"))
+            {
+                key = "InSe";
+            }
+            else if (abbr.Contains("S")
+                && abbr.Contains("In")
+                && !abbr.Contains("Ga") && !abbr.Contains("Cu") && !abbr.Contains("Se") && !abbr.Contains("As"))
+            {
+                key = "InS";
+            }
+            else if (abbr.Contains("Se")
+                && abbr.Contains("Bi")
+                && abbr.Contains("Te"))
+            {
+                key = "BiTeSe";
+            }
+            else if (abbr.Contains("Sb")
+                && abbr.Contains("Bi")
+                && abbr.Contains("Te"))
+            {
+                key = "BiSbTe";
+            }
+            #endregion
+
+            double min = 0, max = 0;
+            if (densities.ContainsKey(key))
+            {
+                var choice = densities[key];
+                min = choice.Min;
+                max = choice.Max;
+                if (fact > min && fact < max)
+                {
+                }
+                else
+                {
+                    sb.AppendLine($"[密度]{fact}超出范围{key}:{min}-{max}");
+                }
+            }
+            else
+            {
+                sb.AppendLine("[密度]库里没有预设判定值，请人工判定");
+            }
+
+
+
             return sb.ToString();
         }
         /// <summary>
@@ -89,8 +178,9 @@ namespace PMSClient.CheckLogic
         public string CheckDimension(string fact, string expect)
         {
             StringBuilder sb = new StringBuilder();
-            string pattern = @"[1-9]\d*.\d*|0.\d*[1-9]\d*";
-
+            //string pattern = @"[1-9]\d*.\d*|0.\d*[1-9]\d*";
+            //匹配整数或者小数
+            string pattern = @"[0-9]+([.]{1}[0-9]+){0,1}";
             const double variable = 0.1d;
             double fact_d = 0, fact_h = 0, expect_d = 0, expect_h = 0;
 
@@ -111,11 +201,11 @@ namespace PMSClient.CheckLogic
                 }
                 if (fact_d > expect_d - variable && fact_d < expect_d + variable)
                 {
-                    //sb.Append("直径未发现异常;");
+                    //sb.Append("直径正常;");
                 }
                 else
                 {
-                    sb.Append($"直径异常,超出±{variable};");
+                    sb.AppendLine($"[直径]异常,超出±{variable};");
 
                 }
 
@@ -125,13 +215,13 @@ namespace PMSClient.CheckLogic
                 }
                 else
                 {
-                    sb.AppendLine($"厚度异常,超出±{variable};");
+                    sb.AppendLine($"[厚度]异常,超出±{variable};");
 
                 }
             }
             catch (Exception)
             {
-                sb.AppendLine("检查出错，请仔细核对实际尺寸和要求尺寸的格式是否正确");
+                sb.AppendLine("检查出错，核对尺寸格式");
             }
 
             return sb.ToString();
@@ -144,6 +234,7 @@ namespace PMSClient.CheckLogic
 
         private void BtnDensityCheckList_Click(object sender, RoutedEventArgs e)
         {
+            PMSDialogService.Show("缩写+密度最小值+密度最大值");
             System.Diagnostics.Process.Start("densitychecklist.txt");
         }
     }

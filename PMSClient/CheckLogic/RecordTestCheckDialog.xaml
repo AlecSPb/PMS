@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.CheckLogic"
         mc:Ignorable="d"
-        Title="测试记录检查模块-测试版本-[对所有未核验的数据进行核验]" Height="450" Width="400"
+        Title="测试记录检查模块-测试版本1.0-[只检查未核验-黄色]-仅供参考" Height="450" Width="450"
         WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow">
     <Grid Background="Wheat">
@@ -18,7 +18,7 @@
             <CheckBox Name="ChkDimension" Content="尺寸" Style="{StaticResource StyleCheckBoxCommon}"  IsChecked="True"/>
             <StackPanel Orientation="Horizontal">
                 <CheckBox Name="ChkDensity" Content="密度" Style="{StaticResource StyleCheckBoxCommon}" IsChecked="True" />
-                <Button Name="BtnDensityCheckList" Content="密度检查表" Click="BtnDensityCheckList_Click"/>
+                <Button Name="BtnDensityCheckList" Content="密度检查表" Click="BtnDensityCheckList_Click" Visibility="Hidden"/>
             </StackPanel>
             <!--<CheckBox Name="ChkXRF" Content="成分XRF" Style="{StaticResource StyleCheckBoxCommon}"  IsChecked="True"/>-->
         </StackPanel>

@@ -106,9 +106,9 @@
                                         <Button Content="{StaticResource ButtonCheck}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Check,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                        <Button Content="{StaticResource ButtonCScan}" Style="{StaticResource StyleDGButton}"
+                                        <!--<Button Content="{StaticResource ButtonCScan}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.EnterCSCAN,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
+                                        CommandParameter="{Binding}"/>-->
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>

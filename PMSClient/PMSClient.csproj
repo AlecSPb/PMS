@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>76</ApplicationRevision>
+    <ApplicationRevision>78</ApplicationRevision>
     <ApplicationVersion>4.8.125.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -57,7 +57,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -175,6 +175,7 @@
     </ApplicationDefinition>
     <Compile Include="AccessGrant.cs" />
     <Compile Include="CheckLogic\CheckMessage.cs" />
+    <Compile Include="CheckLogic\Density.cs" />
     <Compile Include="CheckLogic\OrderCheckLogic.cs" />
     <Compile Include="CheckLogic\RecordTestCheckDialog.xaml.cs">
       <DependentUpon>RecordTestCheckDialog.xaml</DependentUpon>

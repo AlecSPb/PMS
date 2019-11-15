@@ -69,14 +69,13 @@ namespace PMSClient.View
 
                     //加载快递追踪情况
                     //DEBUG下不运行
-#if RELEASE
+
                     if (PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.ViewExpressTrackAtLogin)
-            && Properties.Settings.Default.CheckExpressAtStartup)
+                        && Properties.Settings.Default.CheckExpressAtStartup)
                     {
                         new Express.Operation().TraceUnCompleted();
                     }
 
-#endif
                 }
                 else
                 {

@@ -24,10 +24,13 @@
       <Value Profile="(Default)">13808071935</Value>
     </Setting>
     <Setting Name="Version" Type="System.String" Scope="User">
-      <Value Profile="(Default)">4.8.135.15</Value>
+      <Value Profile="(Default)">4.8.136.15</Value>
     </Setting>
     <Setting Name="DevStatus" Type="System.String" Scope="User">
       <Value Profile="(Default)">测试</Value>
+    </Setting>
+    <Setting Name="XRFOffset" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.2</Value>
     </Setting>
   </Settings>
 </SettingsFile>

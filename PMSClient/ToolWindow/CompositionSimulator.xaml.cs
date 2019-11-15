@@ -48,7 +48,11 @@ namespace PMSClient.ToolWindow
             {
                 string input = txtCondition.Text;
                 if (string.IsNullOrEmpty(input)) return;
-                CompositionSimulatorHelper helper = new CompositionSimulatorHelper();
+                double offset = 0;
+                double.TryParse(TxtXRFOffset.Text.Trim(), out offset);
+                double currentOffset = offset;
+
+                CompositionSimulatorHelper helper = new CompositionSimulatorHelper(currentOffset);
                 string csv = helper.SimulateCompositionToCsvFormat(input);
                 txtCsv.Text = csv;
             }
@@ -115,16 +119,25 @@ namespace PMSClient.ToolWindow
                 ViewModel.RecordTestEditVM vm = PMSHelper.ViewModels.RecordTestEdit;
                 string compostion = vm.CurrentRecordTest.Composition;
                 string customer = vm.CurrentRecordTest.Customer;
-                var elements= Regex.Matches(compostion, @"[A-Za-z]+");
+                string dimension = vm.CurrentRecordTest.Dimension;
+                var elements = Regex.Matches(compostion, @"[A-Za-z]+");
 
 
                 var numbers = Regex.Matches(compostion, @"\d+(\.\d+)?");
                 StringBuilder sb = new StringBuilder();
                 sb.Clear();
 
-                if(customer.ToLower().Contains("bridgeline"))
+                if (customer.ToLower().Contains("bridgeline"))
                 {
-                    sb.AppendLine("13");
+                    //如果是大靶，尺寸以4开头
+                    if (dimension.StartsWith("4"))
+                    {
+                        sb.AppendLine("17");
+                    }
+                    else
+                    {
+                        sb.AppendLine("13");
+                    }
                 }
                 else
                 {
@@ -152,5 +165,6 @@ namespace PMSClient.ToolWindow
             BtnCreate_Click(sender, e);
             BtnFill_Click(sender, e);
         }
+
     }
 }
