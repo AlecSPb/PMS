@@ -12,6 +12,8 @@ namespace PMSClient.ReportsHelper
 {
     /// <summary>
     /// 订单报告
+    /// 
+    /// 2018-06-28 该模板作废
     /// </summary>
     public class WordCOABridgeLine : ReportBase
     {

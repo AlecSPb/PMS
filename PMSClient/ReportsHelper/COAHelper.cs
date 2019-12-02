@@ -27,9 +27,14 @@ namespace PMSClient.ReportsHelper
             }
         }
 
+        public static string[] SplitXRF(string xrf)
+        {
+            string[] lines = xrf.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
+            return lines;
+        }
 
-
+       
 
     }
 }

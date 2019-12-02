@@ -102,8 +102,11 @@ namespace PMSClient.ReportsHelper
                         Paragraph p = mainTable.Rows[9].Cells[0].Paragraphs[0];
 
                         string xrfWithStdDev = model.CompositionXRF;
+
                         //如果是bridgeline的数据，计算并追加标准差
-                        if (model.Customer.Contains("Bridgeline"))
+
+                        int lineCount = COAHelper.SplitXRF(model.CompositionXRF).Count();
+                        if (lineCount >= 2 && model.Customer.Contains("Bridgeline"))
                         {
                             var stddev = new PMSClient.ReportsHelperNew.ReportDataProcessHelper();
                             xrfWithStdDev = stddev.AppendStdDev(model.CompositionXRF);
@@ -152,6 +155,7 @@ namespace PMSClient.ReportsHelper
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
+
 
 
         private static void InsertCompositionXRFTable(DocX document, Paragraph p, string xrfComposition, string noCompositionMessage)

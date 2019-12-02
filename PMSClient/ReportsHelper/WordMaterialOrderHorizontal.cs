@@ -86,7 +86,7 @@ namespace PMSClient.ReportsHelper
                             p.Append(item.Weight.ToString("N2")).FontSize(8).Bold();
 
                             p = mainTable.Rows[i + 1].Cells[2].Paragraphs[0];
-                            p.Append($"[{item.Purity}] {item.Composition}").FontSize(8).Bold();
+                            p.Append($"[{item.Purity}] {item.Composition}({item.HowManyTargets})").FontSize(8).Bold();
 
                             p = mainTable.Rows[i + 1].Cells[3].Paragraphs[0];
                             p.Append(item.PMINumber).FontSize(8);

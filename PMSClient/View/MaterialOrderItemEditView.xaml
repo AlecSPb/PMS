@@ -95,7 +95,7 @@
                              Style="{StaticResource StyleTextBoxCommon}"
                              Background="Yellow" Height="28" />
                     <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="对应多少靶材，内部使用，不对供应商显示" />
+                           Text="对应多少靶材，留作参考，会显示在订单上" />
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource MOIPMINumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

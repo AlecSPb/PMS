@@ -208,6 +208,8 @@
                           VerticalScrollBarVisibility="Auto"
                           Height="80"/>
                 <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="CSV格式"/>
+                <TextBlock Grid.Row="16" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="如果没有测试结果填写暂无或者无法测试，不能换行"
+                           VerticalAlignment="Top"/>
 
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTSample}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
