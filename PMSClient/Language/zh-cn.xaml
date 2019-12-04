@@ -340,6 +340,7 @@
     <sys:String x:Key="IndicatorVHPCompleted">生产完成</sys:String>
     <sys:String x:Key="IndicatorCompleted">完成</sys:String>
     <sys:String x:Key="IndicatorPaused">暂停</sys:String>
+    <sys:String x:Key="IndicatorCancelled">取消</sys:String>
     <sys:String x:Key="IndicatorEmergency">紧急</sys:String>
     <sys:String x:Key="IndicatorFailed">报废</sys:String>
     <sys:String x:Key="IndicatorUnknown">未定</sys:String>

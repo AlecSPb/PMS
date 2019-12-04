@@ -11,6 +11,9 @@ using System.Data.Entity;
 
 namespace PMSWCFService
 {
+    /// <summary>
+    /// 2019-12-4 添加了对取消订单的过滤
+    /// </summary>
     public partial class PMSService : IMissonService
     {
         public List<DcOrder> GetMissons(int skip, int take)
@@ -27,7 +30,7 @@ namespace PMSWCFService
 
                     var result = from o in dc.Orders
                                  where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
-                                 && (o.State == OrderState.未完成.ToString()
+                                 && (o.State == OrderState.未完成.ToString() || o.State == OrderState.取消.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.完成.ToString())
                                  orderby o.CreateTime descending
@@ -53,7 +56,7 @@ namespace PMSWCFService
                 {
                     var query = from o in dc.Orders
                                 where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
-                                 && (o.State == OrderState.未完成.ToString()
+                                 && (o.State == OrderState.未完成.ToString() || o.State == OrderState.取消.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.生产完成.ToString()
                                  || o.State == OrderState.完成.ToString())
@@ -82,7 +85,7 @@ namespace PMSWCFService
 
                     var result = from o in dc.Orders
                                  where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
-                                 && (o.State == OrderState.未完成.ToString()
+                                 && (o.State == OrderState.未完成.ToString() || o.State == OrderState.取消.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.生产完成.ToString()
                                  || o.State == OrderState.完成.ToString())
@@ -113,7 +116,7 @@ namespace PMSWCFService
                                 where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
                                  && o.CompositionStandard.Contains(composition)
                                  && o.PMINumber.Contains(pminumber)
-                                 && (o.State == OrderState.未完成.ToString()
+                                 && (o.State == OrderState.未完成.ToString() || o.State == OrderState.取消.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.生产完成.ToString()
                                  || o.State == OrderState.完成.ToString())

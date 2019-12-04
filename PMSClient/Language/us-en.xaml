@@ -331,6 +331,7 @@
     <sys:String x:Key="IndicatorVHPCompleted">VHP Completed</sys:String>
     <sys:String x:Key="IndicatorCompleted">Completed</sys:String>
     <sys:String x:Key="IndicatorPaused">Paused</sys:String>
+    <sys:String x:Key="IndicatorCancelled">Cancelled</sys:String>
     <sys:String x:Key="IndicatorEmergency">Emergency</sys:String>
     <sys:String x:Key="IndicatorFailed">Failed</sys:String>
     <sys:String x:Key="IndicatorUnknown">Unknown</sys:String>

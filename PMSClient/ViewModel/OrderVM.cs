@@ -73,7 +73,7 @@ namespace PMSClient.ViewModel
                 NavigationService.GoTo(PMSViews.OrderEdit);
             }, CanEdit);
 
-            Duplicate = new RelayCommand<DcOrder>(ActionDuplicate, CanEdit);
+            Duplicate = new RelayCommand<DcOrder>(ActionDuplicate, CanDuplicate);
             Check = new RelayCommand<DcOrder>(ActionCheck, CanCheck);
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
@@ -188,9 +188,21 @@ namespace PMSClient.ViewModel
             }
         }
         #region 权限控制代码=编辑订单
-        private bool CanEdit(DcOrder arg)
+        private bool CanDuplicate(DcOrder arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized("编辑订单");
+        }
+        private bool CanEdit(DcOrder arg)
+        {
+            bool isOK = true;
+            if (arg != null)
+            {
+                if (arg.State != "未核验")
+                {
+                    isOK = false;
+                }
+            }
+            return PMSHelper.CurrentSession.IsAuthorized("编辑订单") && isOK;
         }
         private bool CanAdd()
         {

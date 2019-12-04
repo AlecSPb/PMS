@@ -7,6 +7,7 @@
     <SolidColorBrush x:Key="WastedBrush" Color="LightGray"/>
 
     <SolidColorBrush x:Key="PausedBrush" Color="LightGray"/>
+    <SolidColorBrush x:Key="CancelledBrush" Color="Gray"/>
     <SolidColorBrush x:Key="UnCheckedBrush" Color="Yellow"/>
     <SolidColorBrush x:Key="EmergencyBrush" Color="LightCoral"/>
     <SolidColorBrush x:Key="CheckedBrush" Color="White"/>

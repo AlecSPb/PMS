@@ -59,6 +59,15 @@ namespace PMSClient.ToolWindow
         {
             if (CurrentOrder == null)
                 return;
+            if (CurrentOrder.State == "作废")
+            {
+                if (!PMSDialogService.ShowYesNo("请问", "确定作废这条记录？"))
+                {
+                    return;
+                }
+            }
+
+
             string user = PMSHelper.CurrentSession.CurrentUser.UserName;
             CurrentOrder.Reviewer = user;
             CurrentOrder.ReviewTime = DateTime.Now;

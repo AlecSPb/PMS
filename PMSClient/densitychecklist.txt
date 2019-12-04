@@ -1,6 +1,6 @@
-﻿CIGS+5.5+5.8
+﻿CIGS+5.5+6
 InS+3.9+4.6
 InSe+4.0+6.0
-SAG+4.0+4.7
+SAG+4.0+5
 BiTeSe+5+8
 BiSbTe+5+8

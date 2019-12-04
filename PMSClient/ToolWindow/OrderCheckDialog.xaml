@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
-        Title="订单核验" Height="250" Width="350">
+        Title="订单核验" Height="350" Width="350">
     <Grid Margin="5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -32,14 +32,21 @@
             <TextBlock Style="{StaticResource StyleDGTextBlockSpecial2}" Text="如果是外购，请选择外包"/>
         </StackPanel>
 
-        
+
         <TextBlock Grid.Row="3" Grid.Column="0" Text="订单状态" Style="{StaticResource StyleDGTextBlockCommon}"/>
-        <ComboBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+            <ComboBox  Style="{StaticResource StyleComboBoxCommon}"
                   SelectedItem="{Binding CurrentOrder.State}" ItemsSource="{Binding OrderStates}"/>
+            <TextBlock Style="{StaticResource StyleDGTextBlockSpecial2}" Text="只有[未核验]状态订单才可以修改"/>
+        </StackPanel>
         
         <TextBlock Grid.Row="4" Grid.Column="0" Text="优先级" Style="{StaticResource StyleDGTextBlockCommon}"/>
-        <ComboBox Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+            <ComboBox  Style="{StaticResource StyleComboBoxCommon}"
                   SelectedItem="{Binding CurrentOrder.Priority}" ItemsSource="{Binding OrderPriorities}"/>
+            <TextBlock Style="{StaticResource StyleDGTextBlockSpecial2}" Text="优先级数字越大，优先级越高"/>
+        </StackPanel>
+
 
         <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="BtnCancel" Click="BtnCancel_Click" Style="{StaticResource StyleButtonCommon}"
@@ -47,6 +54,20 @@
             <Button Name="BtnSave" Click="BtnSave_Click" Style="{StaticResource StyleButtonCommon}"
                  Content="确定"/>
         </StackPanel>
+        <TextBlock Grid.Row="6"  Grid.ColumnSpan="2" Background="LightYellow"  Foreground="Blue"
+                   FontSize="10" Padding="2">
+            只有[未核验]状态可以修改订单，其他状态不可修改。
+            <LineBreak/>
+            如果发现已核验的订单有 成分 尺寸等重大错误，
+            <LineBreak/>
+            1订单还未开始生产，可以进行修改。方法：重新设置为[未核验]
+            <LineBreak/>
+            2订单已经开始生产，则不可以修改，否则会影响已进行生产的历史数据。
+            <LineBreak/>
+            重新复制一个新的订单出来（新的内部编号），在新订单上修改，并通知生产执行新订单。
+            <LineBreak/>
+            出错旧订单的状态设置为[取消]，并备注取消原因
+        </TextBlock>
 
     </Grid>
 </local:DialogWindowBase>
