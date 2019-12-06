@@ -115,7 +115,7 @@
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MIIQuickRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding MaterialSource}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding QuickRemark}" Style="{StaticResource StyleTextBoxCommon}"
                           Background="LightBlue" Name="TxtQuickRemark" />
                 <StackPanel Grid.Row="7" Grid.Column="2" Orientation="Horizontal">
                     <Button Content="追加备注" Name="BtnAddRemark" Click="BtnAddRemark_Click" Style="{StaticResource StyleButtonCommon}"/>
@@ -125,7 +125,7 @@
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource MIIMaterialSource}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding QuickRemark}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding MaterialSource}" Style="{StaticResource StyleTextBoxCommon}"
                           Background="LightBlue" Name="TxtMaterialSource" />
                 <StackPanel Grid.Row="8" Grid.Column="2" Orientation="Horizontal">
                     <Button Content="追加组分来源" Name="BtnMaterialSource" Click="BtnMaterialSource_Click" Style="{StaticResource StyleButtonCommon}"/>

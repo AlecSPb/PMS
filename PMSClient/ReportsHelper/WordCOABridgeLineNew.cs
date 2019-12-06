@@ -83,16 +83,26 @@ namespace PMSClient.ReportsHelper
                     document.ReplaceText("[Roughness]", roughness);
 
 
-                    ////如果是440靶材，加入粗糙度值
-                    //if (model.ProductID.Contains("#"))
-                    //{
-                    //    document.ReplaceText("[Roughness]", model.Roughness);
 
-                    //}
-                    //else
-                    //{
-                    //    document.ReplaceText("[Roughness]", "-");
-                    //}
+                    //写入CSCAN Flaw Data
+                    string flawarea = model.CScan == null ? "None" : model.CScan;
+
+                    document.ReplaceText("[FlawArea]", flawarea);
+
+
+
+
+
+                    //如果是440靶材，加入粗糙度值
+                    if (model.ProductID.Contains("#"))
+                    {
+                        document.ReplaceText("[Roughness]", model.Roughness);
+
+                    }
+                    else
+                    {
+                        document.ReplaceText("[Roughness]", "-");
+                    }
 
                     //填充XRF表格
                     //填充XRF表格

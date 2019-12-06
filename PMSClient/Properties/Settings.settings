@@ -24,7 +24,7 @@
       <Value Profile="(Default)">15223459638</Value>
     </Setting>
     <Setting Name="Version" Type="System.String" Scope="User">
-      <Value Profile="(Default)">4.8.138.20</Value>
+      <Value Profile="(Default)">4.8.138.22</Value>
     </Setting>
     <Setting Name="DevStatus" Type="System.String" Scope="User">
       <Value Profile="(Default)">测试</Value>

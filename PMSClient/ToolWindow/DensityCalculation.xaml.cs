@@ -43,7 +43,7 @@ namespace PMSClient.ToolWindow
                 double.TryParse(Diameter.Text.Trim(), out d);
                 double.TryParse(Thickness.Text.Trim(), out t);
 
-                double v = Math.PI * d * d / 4 * t/1000;
+                double v = Math.PI * d * d / 4 * t / 1000;
                 double density = w / v;
                 Density.Text = density.ToString("F2");
             }
@@ -63,7 +63,7 @@ namespace PMSClient.ToolWindow
                 string dimension = edit.TargetDimension;
                 //string pattern = @"[1-9]\d*.\d*|0.\d*[1-9]\d*";
                 string pattern = @"[0-9]+([.]{1}[0-9]+){0,1}";
-                var results =Regex.Matches(dimension,pattern);
+                var results = Regex.Matches(dimension, pattern);
                 if (results.Count >= 2)
                 {
                     Diameter.Text = results[0].Value;
@@ -88,6 +88,12 @@ namespace PMSClient.ToolWindow
         {
             //trigger event
             FillIn?.Invoke(this, Density.Text);
+        }
+
+        private void BtnOneKey_Click(object sender, RoutedEventArgs e)
+        {
+            Calculate_Click(sender, e);
+            BtnFillIn_Click(sender, e);
         }
     }
 }

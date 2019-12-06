@@ -370,7 +370,7 @@
                         </Grid>
                     </ScrollViewer>
                     <control:BindableCSVTable Grid.Row="2"  CSVContent="{Binding  RecordTest.CompositionXRF}"
-                                          Margin="5" Height="220" VerticalAlignment="Top"/>
+                                          Margin="5" Height="160" VerticalAlignment="Top"/>
                 </Grid>
 
             </Expander>

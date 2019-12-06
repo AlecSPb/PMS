@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolDialog"
         mc:Ignorable="d"
-        Title="输入超声扫描的结果" Height="300" Width="450" 
+        Title="输入超声扫描的结果" Height="300" Width="600" 
         WindowStartupLocation="CenterScreen" 
         WindowStyle="ToolWindow">
     <Grid>
@@ -25,10 +25,18 @@
         <TextBlock Grid.Row="2" Style="{StaticResource StyleDGTextBlockCommon}" Text="输入或者修改该靶材的超声扫描结果"/>
         <TextBox Grid.Row="3" Style="{StaticResource StyleTextBoxCommon}" Name="TxtCscan"/>
         <StackPanel Grid.Row="4" Orientation="Horizontal" Button.Click="StackPanel_Click">
-            <Button Content="小空腔" Style="{StaticResource StyleButtonCommon}"/>
-            <Button Content="大空腔" Style="{StaticResource StyleButtonCommon}"/>
-            <Button Content="空腔率=" Style="{StaticResource StyleButtonCommon}"/>
-            <Button Content="报废" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Content="总空腔率=%" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Content="最大空腔直径=mm" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Content="总空腔个数=" Style="{StaticResource StyleButtonCommon}"/>
+            <!--<Button Content="小空腔" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Content="大空腔" Style="{StaticResource StyleButtonCommon}"/>-->
         </StackPanel>
+        <TextBlock Grid.Row="5" Padding="5" Foreground="Blue">
+            附(生效于2019-12-4):<LineBreak/>
+            韩国[SEC]对超声结果要求：<LineBreak/>
+            1.总空腔面积小于0.05%<LineBreak/>
+            2.单个空腔直径&lt;10mm<LineBreak/>
+            3.总空腔数目&lt;300<LineBreak/>
+        </TextBlock>
     </Grid>
 </Window>

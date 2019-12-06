@@ -46,7 +46,8 @@ namespace PMSClient.ToolDialog
         private void StackPanel_Click(object sender, RoutedEventArgs e)
         {
             Button btn = e.OriginalSource as Button;
-            CSCAN = btn.Content.ToString();
+            string csan_str = CSCAN + " " + btn.Content.ToString();
+            CSCAN = csan_str.Replace("无", "").Trim();
             e.Handled = true;
         }
 

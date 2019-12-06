@@ -6,13 +6,14 @@
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d" Topmost="True"
         WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
-        Title="密度计算" Height="360" Width="300">
+        Title="密度计算" Height="380" Width="300">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -40,9 +41,11 @@
         <TextBox Name="Thickness" Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="4.02"/>
         <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="密度"/>
         <TextBox Name="Density" Grid.Row="5" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}" Text="0.0"/>
-        <Button Grid.Row="6" Grid.ColumnSpan="2" Name="Calculate" Margin="5" Padding="0 10"
+        <Button Grid.Row="7" Grid.ColumnSpan="2" Name="Calculate" Margin="5" Padding="0 10"
                  Content="计算" Click="Calculate_Click"/>
-        <Button Grid.Row="7" Grid.ColumnSpan="2" Name="BtnFillIn" Margin="5" Padding="0 10"
+        <Button Grid.Row="8" Grid.ColumnSpan="2" Name="BtnFillIn" Margin="5" Padding="0 10"
                  Content="填入" Click="BtnFillIn_Click"/>
+        <Button Grid.Row="6" Grid.ColumnSpan="2" Name="BtnOneKey" Margin="5" Padding="0 10"
+                 Content="[一键]" Click="BtnOneKey_Click" FontWeight="Bold"/>
     </Grid>
 </Window>
