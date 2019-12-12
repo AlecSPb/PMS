@@ -32,5 +32,13 @@ namespace PMSClient.ToolWindow
 
             TxtResult.Text = "Hello World " + TxtProductID.Text;
         }
+
+
+
+
+
+
+
+
     }
 }

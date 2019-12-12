@@ -113,6 +113,7 @@ namespace PMSClient.ReportsHelper
 
                         string xrfWithStdDev = model.CompositionXRF;
 
+
                         //如果是bridgeline的数据，计算并追加标准差
 
                         int lineCount = COAHelper.SplitXRF(model.CompositionXRF).Count();
@@ -122,8 +123,9 @@ namespace PMSClient.ReportsHelper
                             xrfWithStdDev = stddev.AppendStdDev(model.CompositionXRF);
                         }
 
-
                         InsertCompositionXRFTable(document, p, xrfWithStdDev, "No Composition Test Results");
+
+
 
                         //填充标称的成分
                         if (!string.IsNullOrEmpty(model.Composition))
@@ -173,6 +175,7 @@ namespace PMSClient.ReportsHelper
             if (!string.IsNullOrEmpty(xrfComposition))
             {
                 string[] lines = xrfComposition.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                //根据csv数据确定xrf表格
                 int rowCount = lines.Count();
                 int columnCount = lines[0].Split(',').Count();
 
@@ -187,15 +190,11 @@ namespace PMSClient.ReportsHelper
                     xrfTable.Alignment = Alignment.center;
                     xrfTable.AutoFit = AutoFit.Contents;
 
-                    StringBuilder sb1 = new StringBuilder();
-                    StringBuilder sb2 = new StringBuilder();
+
 
                     for (int i = 0; i < lines.Count(); i++)
                     {
                         string[] items = lines[i].Split(',');
-
-                        sb1.Clear();
-                        sb2.Clear();
                         for (int j = 0; j < items.Count(); j++)
                         {
                             Cell cell = xrfTable.Rows[i].Cells[j];
@@ -206,13 +205,26 @@ namespace PMSClient.ReportsHelper
                             {
                                 continue;
                             }
-                            sb1.Append(items[j] + "\r");
-                            sb2.Append("Atm%" + "\r");
                         }
                     }
                     p.InsertTableAfterSelf(xrfTable);
 
+
                     //添加平均成分到表格中
+
+                    StringBuilder sb1 = new StringBuilder();//收集数字
+                    StringBuilder sb2 = new StringBuilder();//收集单位
+                    //获取倒数第二行
+                    string average_line = lines[lines.Count() - 2];
+
+                    string[] items2 = average_line.Split(',');
+                    for (int j = 1; j < items2.Count(); j++)
+                    {
+                        sb1.Append(items2[j] + "\r");
+                        sb2.Append("Atm%" + "\r");
+                    }
+
+
                     Table mainTable = document.Tables[0];
                     Paragraph average = mainTable.Rows[7].Cells[3].Paragraphs[0];
                     Paragraph units = mainTable.Rows[7].Cells[4].Paragraphs[0];

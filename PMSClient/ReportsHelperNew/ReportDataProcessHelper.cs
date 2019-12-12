@@ -51,7 +51,7 @@ namespace PMSClient.ReportsHelperNew
             }
 
             //追加标准差行到最后一行
-            return xrf + Environment.NewLine + sb.ToString();
+            return xrf + sb.ToString();
         }
 
 
