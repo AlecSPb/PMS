@@ -565,6 +565,12 @@ namespace PMSClient.ViewModel
 
         private void ActionEdit(RecordTestExtra model)
         {
+            if (PMSDialogService.ShowYesNo("请问", "多人同时编辑需刷新为最新数据，以免更新冲突，\r\n确定要刷新吗？"))
+            {
+                SetPageParametersWhenConditionChange();
+                return;
+            }
+
             PMSHelper.ViewModels.RecordTestEdit.SetEdit(model.RecordTest);
             NavigationService.GoTo(PMSViews.RecordTestEdit);
         }

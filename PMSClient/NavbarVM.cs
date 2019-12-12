@@ -21,7 +21,9 @@ namespace PMSClient
             #region Tool
             IntergratedSearch = new RelayCommand(() =>
             {
-                var tool = new ToolWindow.ComplexQueryTool();
+                //var tool = new ToolWindow.ComplexQueryTool();
+                //tool.Show();
+                var tool = new ToolWindow.IntegratedSearch();
                 tool.Show();
             });
 

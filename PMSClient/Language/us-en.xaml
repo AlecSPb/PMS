@@ -336,7 +336,9 @@
     <sys:String x:Key="IndicatorFailed">Failed</sys:String>
     <sys:String x:Key="IndicatorUnknown">Unknown</sys:String>
     <sys:String x:Key="IndicatorNoInput">No Input</sys:String>
-
+    <sys:String x:Key="IndicatorUnSend">UnSend</sys:String>
+    <sys:String x:Key="IndicatorSend">Sended</sys:String>
+    <sys:String x:Key="IndicatorTakeBack">TakeBack</sys:String>
 
     <sys:String x:Key="IndicatorStored">Stored</sys:String>
     <sys:String x:Key="IndicatorDelivered">Delivered</sys:String>

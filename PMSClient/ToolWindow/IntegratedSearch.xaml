@@ -1,0 +1,27 @@
+﻿<Window x:Class="PMSClient.ToolWindow.IntegratedSearch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        Title="IntegratedSearch  version1.0" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="Product ID"/>
+            <TextBox Style="{StaticResource StyleTextBoxCommon}" Width="200" Name="TxtProductID"/>
+            <Button Content="Search" Style="{StaticResource StyleButtonCommon}" Name="BtnSearch" Click="BtnSearch_Click"/>
+        </StackPanel>
+        <TextBox Grid.Row="1" Style="{StaticResource StyleTextBoxCommon}" VerticalContentAlignment="Stretch"
+                 AcceptsReturn="True" VerticalScrollBarVisibility="Visible" VerticalAlignment="Stretch"
+                 TextWrapping="Wrap"
+                 Name="TxtResult">
+
+        </TextBox>
+    </Grid>
+</Window>

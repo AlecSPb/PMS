@@ -40,7 +40,7 @@ namespace PMSClient.ViewModel
 
         private void ActionPrint()
         {
-            if (!PMSDialogService.ShowYesNo("警告", "确定要生成[未完成]的外协加工清单吗？" +
+            if (!PMSDialogService.ShowYesNo("警告", "确定要生成[未发出]的外协加工清单吗？" +
                 "\r\n!!!外协加工单要交给承运人核对"))
                 return;
             try

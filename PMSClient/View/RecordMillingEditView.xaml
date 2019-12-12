@@ -167,7 +167,7 @@
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}" 
                            Text="制粉时间"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}" Background="LightGreen"
-                           Text="G=滚筒;X=行星;时间默认min,G480-1 X20-2 代表 滚筒480min1次 行星20min2次 "/>
+                           Text="G=滚筒;X=行星;时间默认min,G480X20 代表 滚筒总时间480min 行星总时间20min "/>
                 </StackPanel>
 
 

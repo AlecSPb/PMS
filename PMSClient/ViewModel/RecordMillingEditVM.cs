@@ -77,7 +77,7 @@ namespace PMSClient.ViewModel
             model.MaterialSource = PMSCommon.MillingMaterialSource.SJ.ToString();
             model.RecycleID = "无";
             model.MillingTool = PMSCommon.MillingTool.行星球磨.ToString();
-            model.MillingTime = "G0-1 X0-1";
+            model.MillingTime = "G0X0";
             model.Remark = "";
             model.WeightIn = 0;
             model.WeightOut = 0;

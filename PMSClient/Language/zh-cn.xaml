@@ -337,6 +337,7 @@
 
     <sys:String x:Key="IndicatorUnChecked">未核验</sys:String>
     <sys:String x:Key="IndicatorUnCompleted">未完成</sys:String>
+
     <sys:String x:Key="IndicatorVHPCompleted">生产完成</sys:String>
     <sys:String x:Key="IndicatorCompleted">完成</sys:String>
     <sys:String x:Key="IndicatorPaused">暂停</sys:String>
@@ -345,7 +346,9 @@
     <sys:String x:Key="IndicatorFailed">报废</sys:String>
     <sys:String x:Key="IndicatorUnknown">未定</sys:String>
     <sys:String x:Key="IndicatorNoInput">未录完</sys:String>
-
+    <sys:String x:Key="IndicatorUnSend">未发出</sys:String>
+    <sys:String x:Key="IndicatorSend">已发出</sys:String>
+    <sys:String x:Key="IndicatorTakeBack">已返回</sys:String>
 
     <sys:String x:Key="IndicatorStored">库存</sys:String>
     <sys:String x:Key="IndicatorDelivered">发货</sys:String>

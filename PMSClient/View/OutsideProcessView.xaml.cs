@@ -33,7 +33,7 @@ namespace PMSClient.View
                 var row = e.Row.DataContext as DcOutsideProcess;
                 if (row != null)
                 {
-                    if (row.State == PMSCommon.OutsideProcessState.未完成.ToString())
+                    if (row.State == PMSCommon.OutsideProcessState.待发出.ToString())
                     {
                         e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
                     }
@@ -41,7 +41,7 @@ namespace PMSClient.View
                     {
                         e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
                     }
-                    else if (row.State == PMSCommon.OutsideProcessState.未录完.ToString())
+                    else if (row.State == PMSCommon.OutsideProcessState.已发出.ToString())
                     {
                         e.Row.Background = this.FindResource("NoInputBrush") as SolidColorBrush;
                     }

@@ -84,7 +84,7 @@ namespace PMSClient.ViewModel
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.State = PMSCommon.OutsideProcessState.未完成.ToString();
+            model.State = PMSCommon.OutsideProcessState.待发出.ToString();
             model.ProductID = "ID";
             model.Composition = "成分";
             model.Customer = "";
@@ -107,7 +107,7 @@ namespace PMSClient.ViewModel
                 CurrentOutsideProcess.ID = Guid.NewGuid();
                 CurrentOutsideProcess.CreateTime = DateTime.Now;
                 CurrentOutsideProcess.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                CurrentOutsideProcess.State = PMSCommon.OutsideProcessState.未完成.ToString();
+                CurrentOutsideProcess.State = PMSCommon.OutsideProcessState.待发出.ToString();
                 CurrentOutsideProcess.ProductID = model.ProductID;
                 CurrentOutsideProcess.Composition = model.Composition;
                 CurrentOutsideProcess.Dimension = model.Dimension;

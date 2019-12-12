@@ -208,5 +208,10 @@ namespace PMSClient.View
             PMSMethods.SetTextBoxAppend(txtRemark, "异常发货;");
 
         }
+
+        private void BtnTakeAway_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBoxAppend(txtRemark, $"{DateTime.Now.ToString("yyMMdd")}[]拿走报废靶材;");
+        }
     }
 }

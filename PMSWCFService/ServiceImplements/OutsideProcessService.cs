@@ -83,7 +83,7 @@ namespace PMSWCFService
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<OutsideProcess, DcOutsideProcess>());
                     var query = from i in dc.OutsideProcesses
-                                where i.State == PMSCommon.OutsideProcessState.未完成.ToString()
+                                where i.State == PMSCommon.OutsideProcessState.待发出.ToString()
                                 orderby  i.ProductID descending,i.CreateTime descending
                                 select i;
                     return Mapper.Map<List<OutsideProcess>, List<DcOutsideProcess>>(query.Skip(s).Take(t).ToList());
@@ -103,7 +103,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.OutsideProcesses
-                                where i.State == PMSCommon.OutsideProcessState.未完成.ToString()
+                                where i.State == PMSCommon.OutsideProcessState.待发出.ToString()
                                 select i;
                     return query.Count();
                 }
