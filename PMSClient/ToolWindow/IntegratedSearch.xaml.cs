@@ -27,18 +27,7 @@ namespace PMSClient.ToolWindow
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
 
-
-
-
-            TxtResult.Text = "Hello World " + TxtProductID.Text;
         }
-
-
-
-
-
-
-
 
     }
 }

@@ -79,8 +79,6 @@ namespace PMSClient.ReportsHelperNew
                 System.Diagnostics.Process.Start(wordFileName);
                 #endregion
 
-
-
             }
 
 

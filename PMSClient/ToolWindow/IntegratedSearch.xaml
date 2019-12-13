@@ -17,11 +17,8 @@
             <TextBox Style="{StaticResource StyleTextBoxCommon}" Width="200" Name="TxtProductID"/>
             <Button Content="Search" Style="{StaticResource StyleButtonCommon}" Name="BtnSearch" Click="BtnSearch_Click"/>
         </StackPanel>
-        <TextBox Grid.Row="1" Style="{StaticResource StyleTextBoxCommon}" VerticalContentAlignment="Stretch"
-                 AcceptsReturn="True" VerticalScrollBarVisibility="Visible" VerticalAlignment="Stretch"
-                 TextWrapping="Wrap"
-                 Name="TxtResult">
-
-        </TextBox>
+        <DocumentViewer Grid.Row="1" Margin="5">
+            
+        </DocumentViewer>
     </Grid>
 </Window>
