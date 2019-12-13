@@ -16,10 +16,18 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetOutsideProcessCount(string productid, string composition);
 
+        //要发出的靶材
         [OperationContract]
         List<DcOutsideProcess> GetOutsideProcessUnCompleted(int s, int t);
         [OperationContract]
         int GetOutsideProcessUnCompletedCount();
+
+        //要取回的靶材
+        [OperationContract]
+        List<DcOutsideProcess> GetOutsideProcessUnCompletedBack(int s, int t);
+        [OperationContract]
+        int GetOutsideProcessUnCompletedBackCount();
+
 
         [OperationContract]
         int Add(DcOutsideProcess model);

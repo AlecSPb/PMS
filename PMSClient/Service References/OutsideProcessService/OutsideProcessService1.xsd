@@ -60,10 +60,37 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetOutsideProcessUnCompletedBack">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" type="xs:int" />
+        <xs:element minOccurs="0" name="t" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutsideProcessUnCompletedBackResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetOutsideProcessUnCompletedBackResult" nillable="true" type="q3:ArrayOfDcOutsideProcess" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutsideProcessUnCompletedBackCount">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutsideProcessUnCompletedBackCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOutsideProcessUnCompletedBackCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Add">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q3:DcOutsideProcess" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q4:DcOutsideProcess" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -77,7 +104,7 @@
   <xs:element name="Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q4:DcOutsideProcess" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q5:DcOutsideProcess" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

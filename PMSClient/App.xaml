@@ -11,6 +11,7 @@
                 <ResourceDictionary Source="Resource/CommonBrushes.xaml" />
                 <ResourceDictionary  Source="Language/zh-cn.xaml" />
                 <ResourceDictionary Source="Resource/Styles/XSStyle.xaml"/>
+                <ResourceDictionary Source="Resource/Styles/DocumentStyle.xaml"/>
                 <ResourceDictionary Source="Helpers/Converter/PMSConverter.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

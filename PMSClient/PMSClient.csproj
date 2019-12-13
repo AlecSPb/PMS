@@ -278,6 +278,7 @@
     <Compile Include="Helpers\ExitHelper.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\Converter\IsLockedConverter.cs" />
+    <Compile Include="Helpers\IntegratedSearchService.cs" />
     <Compile Include="Helpers\OK\PMSAccess.cs" />
     <Compile Include="Helpers\OK\BasicData.cs" />
     <Compile Include="Helpers\OK\PMSBasicDataService.cs" />
@@ -316,9 +317,10 @@
     <Compile Include="ReportsHelperNew\ReportBase.cs" />
     <Compile Include="ReportsHelperNew\ReportBondingTargetDefects.cs" />
     <Compile Include="ReportsHelperNew\ReportFillingTool.cs" />
+    <Compile Include="ReportsHelperNew\ReportOutsideProcessSheetOut.cs" />
     <Compile Include="ReportsHelperNew\ReportRecordDeMold.cs" />
     <Compile Include="ReportsHelperNew\ReportSampleSheet.cs" />
-    <Compile Include="ReportsHelperNew\ReportOutsideProcessSheet.cs" />
+    <Compile Include="ReportsHelperNew\ReportOutsideProcessSheetIn.cs" />
     <Compile Include="ReportsHelperNew\ReportDataProcessHelper.cs" />
     <Compile Include="ReportsHelper\COAHelper.cs" />
     <Compile Include="ReportsHelper\ReportBase.cs" />
@@ -1056,6 +1058,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Resource\Styles\DocumentStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resource\Styles\XSStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1701,6 +1707,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\DocTemplate\Reports\BondingTargetDefects.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\DocTemplate\Reports\OutsideProcessSheetBack.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Service References\OutsideProcessService\OutsideProcessService.disco" />

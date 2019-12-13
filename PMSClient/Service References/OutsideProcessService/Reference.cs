@@ -280,6 +280,22 @@ namespace PMSClient.OutsideProcessService {
             "se")]
         System.Threading.Tasks.Task<int> GetOutsideProcessUnCompletedCountAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedBack", ReplyAction="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedBackRespons" +
+            "e")]
+        PMSClient.OutsideProcessService.DcOutsideProcess[] GetOutsideProcessUnCompletedBack(int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedBack", ReplyAction="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedBackRespons" +
+            "e")]
+        System.Threading.Tasks.Task<PMSClient.OutsideProcessService.DcOutsideProcess[]> GetOutsideProcessUnCompletedBackAsync(int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedBackCount", ReplyAction="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedBackCountRe" +
+            "sponse")]
+        int GetOutsideProcessUnCompletedBackCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedBackCount", ReplyAction="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedBackCountRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<int> GetOutsideProcessUnCompletedBackCountAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutsideProcessService/Add", ReplyAction="http://tempuri.org/IOutsideProcessService/AddResponse")]
         int Add(PMSClient.OutsideProcessService.DcOutsideProcess model);
         
@@ -350,6 +366,22 @@ namespace PMSClient.OutsideProcessService {
         
         public System.Threading.Tasks.Task<int> GetOutsideProcessUnCompletedCountAsync() {
             return base.Channel.GetOutsideProcessUnCompletedCountAsync();
+        }
+        
+        public PMSClient.OutsideProcessService.DcOutsideProcess[] GetOutsideProcessUnCompletedBack(int s, int t) {
+            return base.Channel.GetOutsideProcessUnCompletedBack(s, t);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.OutsideProcessService.DcOutsideProcess[]> GetOutsideProcessUnCompletedBackAsync(int s, int t) {
+            return base.Channel.GetOutsideProcessUnCompletedBackAsync(s, t);
+        }
+        
+        public int GetOutsideProcessUnCompletedBackCount() {
+            return base.Channel.GetOutsideProcessUnCompletedBackCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetOutsideProcessUnCompletedBackCountAsync() {
+            return base.Channel.GetOutsideProcessUnCompletedBackCountAsync();
         }
         
         public int Add(PMSClient.OutsideProcessService.DcOutsideProcess model) {

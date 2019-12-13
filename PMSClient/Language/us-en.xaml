@@ -215,6 +215,8 @@
     <sys:String x:Key="ButtonEmpty">Empty</sys:String>
     <sys:String x:Key="ButtonQuick">Quick Edit</sys:String>
     <sys:String x:Key="ButtonPrint">Print</sys:String>
+    <sys:String x:Key="ButtonPrint1">Print [Out]</sys:String>
+    <sys:String x:Key="ButtonPrint2">Print [In]</sys:String>
     <sys:String x:Key="ButtonSelectEmpty">Select Empty</sys:String>
     <sys:String x:Key="ButtonFill">Fill</sys:String>
     <sys:String x:Key="ButtonSelect">Select</sys:String>

@@ -10,9 +10,9 @@ using PMSClient.OutsideProcessService;
 
 namespace PMSClient.ReportsHelperNew
 {
-    public class ReportOutsideProcessSheet : ReportBase
+    public class ReportOutsideProcessSheetOut : ReportBase
     {
-        public ReportOutsideProcessSheet()
+        public ReportOutsideProcessSheetOut()
         {
 
         }
@@ -21,8 +21,8 @@ namespace PMSClient.ReportsHelperNew
         {
             ResetParameters();
 
-            string source = Path.Combine(reportsFolder, "OutsideProcessSheet.docx");
-            string temp = Path.Combine(reportsFolder, "temp", "OutsideProcessSheet.docx");
+            string source = Path.Combine(reportsFolder, "OutsideProcessSheetBack.docx");
+            string temp = Path.Combine(reportsFolder, "temp", "OutsideProcessSheetBack.docx");
 
             File.Copy(source, temp, true);
 
@@ -35,7 +35,7 @@ namespace PMSClient.ReportsHelperNew
                 Table table = doc.Tables[0];
                 using (var service = new OutsideProcessServiceClient())
                 {
-                    recordCount = service.GetOutsideProcessUnCompletedCount();
+                    recordCount = service.GetOutsideProcessUnCompletedBackCount();
                     if (recordCount == 0)
                     {
                         PMSDialogService.Show("没有未完成的任务");
@@ -49,7 +49,7 @@ namespace PMSClient.ReportsHelperNew
                     {
                         s = pageIndex * pageSize;
                         t = pageSize;
-                        var pageData = service.GetOutsideProcessUnCompleted(s, t).OrderBy(i=>i.ProductID);
+                        var pageData = service.GetOutsideProcessUnCompletedBack(s, t).OrderBy(i=>i.ProductID);
                         foreach (var item in pageData)
                         {
                             Row row = table.InsertRow();
@@ -57,7 +57,7 @@ namespace PMSClient.ReportsHelperNew
                             row.Cells[1].Paragraphs[0].Append(item.PMINumber);
                             row.Cells[2].Paragraphs[0].Append("和上一片性质类似");
                             row.Cells[3].Paragraphs[0].Append(item.Dimension);
-                            row.Cells[4].Paragraphs[0].Append("");
+                            row.Cells[4].Paragraphs[0].Append(item.Remark);
 
                         }
 

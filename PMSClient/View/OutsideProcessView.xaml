@@ -27,9 +27,12 @@
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
-            <Button Content="{StaticResource ButtonPrint}" Style="{StaticResource StyleButtonSpecial}" 
-                    Command="{Binding Print}"/>
-
+            <Button Content="{StaticResource ButtonPrint1}" Style="{StaticResource StyleButtonSpecial}" 
+                    Command="{Binding Print1}"/>
+            
+            <Button Content="{StaticResource ButtonPrint2}" Style="{StaticResource StyleButtonSpecial}" 
+                    Command="{Binding Print2}"/>
+            
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
             <TextBlock Text="{StaticResource IndicatorUnSend}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>

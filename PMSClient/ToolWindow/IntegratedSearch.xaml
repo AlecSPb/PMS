@@ -6,19 +6,54 @@
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
         Title="IntegratedSearch  version1.0" Height="450" Width="800"
-        WindowStartupLocation="CenterScreen">
-    <Grid>
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="Product ID"/>
+            <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="Product ID[Complete]"/>
             <TextBox Style="{StaticResource StyleTextBoxCommon}" Width="200" Name="TxtProductID"/>
             <Button Content="Search" Style="{StaticResource StyleButtonCommon}" Name="BtnSearch" Click="BtnSearch_Click"/>
         </StackPanel>
-        <DocumentViewer Grid.Row="1" Margin="5">
-            
-        </DocumentViewer>
+        <FlowDocumentScrollViewer Grid.Row="1" Margin="5" Name="MainDoc">
+            <FlowDocument Background="White" >
+                <Paragraph Style="{StaticResource ParaHeader}">搜索结果如下</Paragraph>
+                <Paragraph Name="P_SearchItem">191112-A-1-CuGaSe2</Paragraph>
+                <Paragraph Style="{StaticResource ParaHeader}" Background="LightPink">测试记录</Paragraph>
+                <Paragraph>
+                    <Run>找到1条相关记录</Run>
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParaHeader}">热压记录</Paragraph>
+                <Paragraph>
+                    <Run>找到2条相关记录，请人工判定具体是那条记录</Run>
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParaHeader}">订单记录</Paragraph>
+                <Paragraph>
+                    <Run>找到2条相关记录，请人工判定具体是那条记录</Run>
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParaHeader}">制粉记录</Paragraph>
+                <Paragraph>
+                    <Run>找到2条相关记录，请人工判定具体是那条记录</Run>
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParaHeader}">热压记录</Paragraph>
+                <Paragraph>
+                    <Run>找到2条相关记录，请人工判定具体是那条记录</Run>
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParaHeader}">取模记录</Paragraph>
+                <Paragraph>
+                    <Run>找到2条相关记录，请人工判定具体是那条记录</Run>
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParaHeader}">绑定记录</Paragraph>
+                <Paragraph>
+                    <Run>找到2条相关记录，请人工判定具体是那条记录</Run>
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParaHeader}">发货记录</Paragraph>
+                <Paragraph>
+                    <Run>找到2条相关记录，请人工判定具体是那条记录</Run>
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
     </Grid>
 </Window>

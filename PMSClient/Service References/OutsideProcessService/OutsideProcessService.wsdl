@@ -31,6 +31,18 @@
   <wsdl:message name="IOutsideProcessService_GetOutsideProcessUnCompletedCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetOutsideProcessUnCompletedCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_GetOutsideProcessUnCompletedBack_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutsideProcessUnCompletedBack" />
+  </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_GetOutsideProcessUnCompletedBack_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutsideProcessUnCompletedBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_GetOutsideProcessUnCompletedBackCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutsideProcessUnCompletedBackCount" />
+  </wsdl:message>
+  <wsdl:message name="IOutsideProcessService_GetOutsideProcessUnCompletedBackCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutsideProcessUnCompletedBackCountResponse" />
+  </wsdl:message>
   <wsdl:message name="IOutsideProcessService_Add_InputMessage">
     <wsdl:part name="parameters" element="tns:Add" />
   </wsdl:message>
@@ -59,6 +71,14 @@
     <wsdl:operation name="GetOutsideProcessUnCompletedCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedCount" message="tns:IOutsideProcessService_GetOutsideProcessUnCompletedCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedCountResponse" message="tns:IOutsideProcessService_GetOutsideProcessUnCompletedCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutsideProcessUnCompletedBack">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedBack" message="tns:IOutsideProcessService_GetOutsideProcessUnCompletedBack_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedBackResponse" message="tns:IOutsideProcessService_GetOutsideProcessUnCompletedBack_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutsideProcessUnCompletedBackCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedBackCount" message="tns:IOutsideProcessService_GetOutsideProcessUnCompletedBackCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedBackCountResponse" message="tns:IOutsideProcessService_GetOutsideProcessUnCompletedBackCount_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Add">
       <wsdl:input wsaw:Action="http://tempuri.org/IOutsideProcessService/Add" message="tns:IOutsideProcessService_Add_InputMessage" />
@@ -100,6 +120,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetOutsideProcessUnCompletedCount">
       <soap:operation soapAction="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutsideProcessUnCompletedBack">
+      <soap:operation soapAction="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedBack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutsideProcessUnCompletedBackCount">
+      <soap:operation soapAction="http://tempuri.org/IOutsideProcessService/GetOutsideProcessUnCompletedBackCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

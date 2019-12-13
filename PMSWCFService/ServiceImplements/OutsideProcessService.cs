@@ -96,6 +96,46 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcOutsideProcess> GetOutsideProcessUnCompletedBack(int s, int t)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<OutsideProcess, DcOutsideProcess>());
+                    var query = from i in dc.OutsideProcesses
+                                where i.State == PMSCommon.OutsideProcessState.已发出.ToString()
+                                orderby i.ProductID descending, i.CreateTime descending
+                                select i;
+                    return Mapper.Map<List<OutsideProcess>, List<DcOutsideProcess>>(query.Skip(s).Take(t).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+        }
+
+        public int GetOutsideProcessUnCompletedBackCount()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.OutsideProcesses
+                                where i.State == PMSCommon.OutsideProcessState.已发出.ToString()
+                                select i;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+        }
+
         public int GetOutsideProcessUnCompletedCount()
         {
             try

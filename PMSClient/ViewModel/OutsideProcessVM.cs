@@ -35,17 +35,18 @@ namespace PMSClient.ViewModel
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcOutsideProcess>(ActionEdit, CanEdit);
             Duplicate = new RelayCommand<DcOutsideProcess>(ActionDuplicate, CanDuplicate);
-            Print = new RelayCommand(ActionPrint, CanPrint);
+            Print1 = new RelayCommand(ActionPrint1, CanPrint1);
+            Print2 = new RelayCommand(ActionPrint2, CanPrint1);
         }
 
-        private void ActionPrint()
+        private void ActionPrint2()
         {
-            if (!PMSDialogService.ShowYesNo("警告", "确定要生成[未发出]的外协加工清单吗？" +
+            if (!PMSDialogService.ShowYesNo("警告", "确定要生成[已发出]橙红色的外协加工清单吗？" +
                 "\r\n!!!外协加工单要交给承运人核对"))
                 return;
             try
             {
-                var word = new ReportsHelperNew.ReportOutsideProcessSheet();
+                var word = new ReportsHelperNew.ReportOutsideProcessSheetOut();
                 word.Intialize("外协清单", 50);
                 word.Output();
             }
@@ -55,7 +56,24 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private bool CanPrint()
+        private void ActionPrint1()
+        {
+            if (!PMSDialogService.ShowYesNo("警告", "确定要生成[未发出]绿色的外协加工清单吗？" +
+                "\r\n!!!外协加工单要交给承运人核对"))
+                return;
+            try
+            {
+                var word = new ReportsHelperNew.ReportOutsideProcessSheetIn();
+                word.Intialize("外协清单", 50);
+                word.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSDialogService.ShowWarning(ex.Message);
+            }
+        }
+
+        private bool CanPrint1()
         {
             return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.ViewOutsideProcess);
         }
@@ -176,7 +194,8 @@ namespace PMSClient.ViewModel
         public ObservableCollection<DcOutsideProcess> OutsideProcesses { get; set; }
         #endregion
         public RelayCommand<DcOutsideProcess> Duplicate { get; set; }
-        public RelayCommand Print { get; set; }
+        public RelayCommand Print1 { get; set; }
+        public RelayCommand Print2 { get; set; }
 
     }
 }

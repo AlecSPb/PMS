@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:PMSClient.Resource.Styles">
+    <Style TargetType="Paragraph" x:Key="ParaHeader">
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Background" Value="LightGreen"/>
+    </Style>
+</ResourceDictionary>
