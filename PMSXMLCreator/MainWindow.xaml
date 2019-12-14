@@ -16,19 +16,30 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="{StaticResource BGNavigationBar}">
-            <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Foreground="White" Text="Product ID" />
-            <TextBox Style="{StaticResource StyleTextBoxSearch}" Width="200" Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}"/>
-            <Button Content="Search" Style="{StaticResource StyleButtonCommon}" 
+        <Grid Grid.Row="0"  Background="{StaticResource BGNavigationBar}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Foreground="White" Text="Product ID" />
+                <TextBox Style="{StaticResource StyleTextBoxSearch}" Width="200" Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Content="Search" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding Search}"/>
-        </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Button Content="Load From XML COA File" Style="{StaticResource StyleButtonCommon}"
+                        Command="{Binding LoadFromFile}"/>
+            </StackPanel>
+        </Grid>
+
         <DataGrid Grid.Row="1" Style="{StaticResource StyleDataGridCommon}"
                  ItemsSource="{Binding RecordTests}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Select" Style="{StaticResource StyleDGButton}"
+                            <Button Content="Load Data" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Select,
                                 RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                     CommandParameter="{Binding}"/>
@@ -50,7 +61,7 @@
             <TextBlock Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="After Checking Every Parameters, Click Create XML" Foreground="Blue"/>
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1">
-                <Button Content="Create XML COA" Style="{StaticResource StyleButtonCommon}"
+                <Button Content="Save as XML COA" Style="{StaticResource StyleButtonCommon}"
                         Command="{Binding Create}"/>
             </StackPanel>
         </Grid>

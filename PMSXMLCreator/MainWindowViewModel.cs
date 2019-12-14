@@ -29,6 +29,12 @@ namespace PMSXMLCreator
             Search = new RelayCommand(ActionSearch, CanSearch);
             Create = new RelayCommand(ActionCreate, CanCreate);
             Select = new RelayCommand<DcRecordTest>(ActionSelect);
+            LoadFromFile = new RelayCommand(ActionLoadFromFile);
+        }
+
+        private void ActionLoadFromFile()
+        {
+           
         }
 
         private void ActionSelect(DcRecordTest record)
@@ -39,6 +45,11 @@ namespace PMSXMLCreator
             }
         }
 
+        /// <summary>
+        /// 转换数据模型
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         private ECOA ToECOA(DcRecordTest model)
         {
             if (model == null) return null;
@@ -148,6 +159,7 @@ namespace PMSXMLCreator
 
         public RelayCommand Search { get; set; }
         public RelayCommand Create { get; set; }
+        public RelayCommand LoadFromFile { get; set; }
 
         public RelayCommand<DcRecordTest> Select { get; set; }
 

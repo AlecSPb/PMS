@@ -215,6 +215,9 @@
     <None Include="Connected Services\MainService\PMSXMLCreator.MainService.PMSReadyOutMaterialModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <Content Include="DocTemplate\Intel COA.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
