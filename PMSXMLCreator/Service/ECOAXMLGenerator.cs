@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Xml;
 
-namespace PMSXMLCreator.XMLGenerator
+namespace PMSXMLCreator.Service
 {
     public class ECOAXMLGenerator
     {
 
         private Analysis analysis = new Analysis();
 
-        public void CreateXMLFile(ECOA model)
+        public void CreateFile(ECOA model)
         {
             string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string folder = Path.Combine(desktop, "XML Files");
@@ -111,6 +111,7 @@ namespace PMSXMLCreator.XMLGenerator
             #region MaterialParameters
             writer.WriteStartElement("MaterialParameters");
 
+            //分析参数
             List<Parameter> parameters = analysis.GetParamenters(model);
 
 

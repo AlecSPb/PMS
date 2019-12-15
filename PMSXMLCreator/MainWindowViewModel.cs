@@ -6,8 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using Microsoft.Win32;
 using PMSXMLCreator.MainService;
-using PMSXMLCreator.XMLGenerator;
+using PMSXMLCreator.Service;
 
 namespace PMSXMLCreator
 {
@@ -27,14 +28,41 @@ namespace PMSXMLCreator
 
 
             Search = new RelayCommand(ActionSearch, CanSearch);
-            Create = new RelayCommand(ActionCreate, CanCreate);
+            CreateXML = new RelayCommand(ActionCreateXML, CanCreateXML);
+            CreateDocx = new RelayCommand(ActionCreateDocx, CanCreateDocx);
             Select = new RelayCommand<DcRecordTest>(ActionSelect);
             LoadFromFile = new RelayCommand(ActionLoadFromFile);
         }
 
+        /// <summary>
+        /// 创建docx文件
+        /// </summary>
+        private void ActionCreateDocx()
+        {
+            if (CurrentCOA == null)
+            {
+                Helper.ShowMessage("当前数据模型为空");
+                return;
+            }
+            if (Helper.ShowDialog($"确定使用该条数据[{CurrentCOA.LotNumber}]生成Docx文件？"))
+            {
+                helper_docx.CreateFile(CurrentCOA);
+            }
+        }
+
+        private bool CanCreateDocx()
+        {
+            return true;
+        }
+
         private void ActionLoadFromFile()
         {
-           
+            var dialog = new OpenFileDialog();
+            dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dialog.Filter = "eCOA|*.xml";
+            dialog.ShowDialog();
+            string file = dialog.FileName;
+
         }
 
         private void ActionSelect(DcRecordTest record)
@@ -69,13 +97,17 @@ namespace PMSXMLCreator
             return temp;
         }
 
-        private bool CanCreate()
+        private bool CanCreateXML()
         {
             return true;
         }
 
-        private ECOAXMLGenerator helper = new ECOAXMLGenerator();
-        private void ActionCreate()
+        private ECOAXMLGenerator helper_xml = new ECOAXMLGenerator();
+        private Xml2DocxHelper helper_docx = new Xml2DocxHelper();
+        /// <summary>
+        /// 创建xml文件
+        /// </summary>
+        private void ActionCreateXML()
         {
             if (CurrentCOA == null)
             {
@@ -84,7 +116,7 @@ namespace PMSXMLCreator
             }
             if (Helper.ShowDialog($"确定使用该条数据[{CurrentCOA.LotNumber}]生成xml文件？"))
             {
-                helper.CreateXMLFile(CurrentCOA);
+                helper_xml.CreateFile(CurrentCOA);
             }
         }
 
@@ -158,7 +190,8 @@ namespace PMSXMLCreator
 
 
         public RelayCommand Search { get; set; }
-        public RelayCommand Create { get; set; }
+        public RelayCommand CreateXML { get; set; }
+        public RelayCommand CreateDocx { get; set; }
         public RelayCommand LoadFromFile { get; set; }
 
         public RelayCommand<DcRecordTest> Select { get; set; }

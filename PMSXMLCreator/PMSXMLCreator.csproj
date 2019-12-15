@@ -40,6 +40,9 @@
     <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net45\CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="DocX, Version=1.0.0.22, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.0.0.22\lib\net40\DocX.dll</HintPath>
+    </Reference>
     <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
     </Reference>
@@ -75,14 +78,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\ParameterList.cs" />
-    <Compile Include="XMLGenerator\Analysis.cs" />
-    <Compile Include="XMLGenerator\ElementFullNameDict.cs" />
-    <Compile Include="XMLGenerator\Helper.cs" />
+    <Compile Include="Service\Xml2DocxHelper.cs" />
+    <Compile Include="Service\Analysis.cs" />
+    <Compile Include="Service\ElementFullNameDict.cs" />
+    <Compile Include="Service\Helper.cs" />
     <Compile Include="Model\Measurement.cs" />
     <Compile Include="Model\Parameter.cs" />
-    <Compile Include="XMLGenerator\Log.cs" />
-    <Compile Include="XMLGenerator\ParameterDict.cs" />
-    <Compile Include="XMLGenerator\ParameterUnit.cs" />
+    <Compile Include="Service\Log.cs" />
+    <Compile Include="Service\ParameterDict.cs" />
+    <Compile Include="Service\ParameterUnit.cs" />
     <Page Include="CommonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,7 +105,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Model\ECOA.cs" />
-    <Compile Include="XMLGenerator\ECOAXMLGenerator.cs" />
+    <Compile Include="Service\ECOAXMLGenerator.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

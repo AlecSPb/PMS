@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
-namespace PMSXMLCreator.XMLGenerator
+namespace PMSXMLCreator.Service
 {
     /// <summary>
     /// 项目分析类
@@ -34,6 +34,21 @@ namespace PMSXMLCreator.XMLGenerator
 
             return parameters;
         }
+
+
+        public List<Parameter> GetPropertiesParameters(ECOA model)
+        {
+            List<Parameter> parameters = new List<Parameter>();
+            parameters.Add(GetParameter("Density", model.Density, ParameterUnit.Density, ucl: "4.4", lcl: "4.3"));
+            parameters.Add(GetParameter("Weight", model.Weight, ParameterUnit.Weight, ucl: "5290", lcl: "5030"));
+
+            parameters.AddRange(GetDimension(model.TargetDimension));
+
+            parameters.AddRange(GetParametersByKeyStr(model.PlateSpec));
+
+            return parameters;
+        }
+
 
         public Parameter GetParameter(string characteristic, string value, string unit = "mm", string type = "Value",
             string ucl = "100", string lcl = "0", string mdl = "0", string clcalc = "Temp")

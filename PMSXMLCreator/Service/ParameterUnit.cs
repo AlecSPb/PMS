@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSXMLCreator.XMLGenerator
+namespace PMSXMLCreator.Service
 {
     public static class ParameterUnit
     {

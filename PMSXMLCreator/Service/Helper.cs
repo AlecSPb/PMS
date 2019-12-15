@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace PMSXMLCreator.XMLGenerator
+namespace PMSXMLCreator.Service
 {
     public static class Helper
     {
