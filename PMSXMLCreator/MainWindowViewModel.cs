@@ -23,6 +23,7 @@ namespace PMSXMLCreator
         private void Initialize()
         {
             SearchProductID = "190809-C-1#272";
+            LoadingInformation = "";
             CurrentCOA = new ECOA();
             RecordTests = new ObservableCollection<DcRecordTest>();
 
@@ -63,6 +64,8 @@ namespace PMSXMLCreator
             dialog.ShowDialog();
             string file = dialog.FileName;
 
+            LoadingInformation = "Loading From XML File";
+
         }
 
         private void ActionSelect(DcRecordTest record)
@@ -70,6 +73,7 @@ namespace PMSXMLCreator
             if (Helper.ShowDialog($"确定使用该条数据[{record.ProductID}]？"))
             {
                 CurrentCOA = ToECOA(record);
+                LoadingInformation = "Loading From PMS";
             }
         }
 
@@ -143,6 +147,7 @@ namespace PMSXMLCreator
                         RecordTests.Add(item);
                     }
                     CurrentCOA = ToECOA(RecordTests.FirstOrDefault());
+                    LoadingInformation = "Loading From PMS";
                 }
             }
             catch (Exception)
@@ -183,6 +188,23 @@ namespace PMSXMLCreator
             }
         }
 
+
+        private string loadingInformation;
+        public string LoadingInformation
+        {
+            get
+            {
+                return loadingInformation;
+            }
+            set
+            {
+                if (loadingInformation != value)
+                {
+                    loadingInformation = value;
+                    RaisePropertyChanged(nameof(LoadingInformation));
+                }
+            }
+        }
 
         public ObservableCollection<DcRecordTest> RecordTests { get; set; }
 

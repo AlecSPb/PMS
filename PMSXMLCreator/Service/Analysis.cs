@@ -14,7 +14,12 @@ namespace PMSXMLCreator.Service
     {
         private ParameterDict dict_parameter = new ParameterDict();
         private ElementFullNameDict dict_element = new ElementFullNameDict();
-        public List<Parameter> GetParamenters(ECOA model)
+        /// <summary>
+        /// 获取所有ECOA模型参数
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public List<Parameter> GetAllECOAParamenters(ECOA model)
         {
             List<Parameter> parameters = new List<Parameter>();
 

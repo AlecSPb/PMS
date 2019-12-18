@@ -39,24 +39,28 @@ namespace PMSXMLCreator
                     doc.ReplaceText("[CreateTime]", model.LotCreatedDate.ToString());
                     doc.ReplaceText("[SuppNumber]", model.ManufacturerNumber);
                     doc.ReplaceText("[SuppPartNumber]", model.ManufacturerPartNumber);
+                    doc.ReplaceText("[ProductID]", model.LotNumber);
                     #endregion
 
                     Table main_table = doc.Tables[0];
+
+                    int start_index = 9;
+
 
                     #region 填写成分
                     List<Parameter> compositions = anlysis.GetProductNameComposition(model.ProductName);
                     foreach (var item in compositions)
                     {
-                        main_table.Rows[8].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
-                        main_table.Rows[8].Cells[4].Paragraphs[0].Append("1" + "\r").FontSize(6);
-                        main_table.Rows[8].Cells[5].Paragraphs[0].Append("1" + "\r").FontSize(6);
-                        main_table.Rows[8].Cells[6].Paragraphs[0].Append(item.Measurements[0]
+                        main_table.Rows[start_index].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
+                        main_table.Rows[start_index].Cells[4].Paragraphs[0].Append("1" + "\r").FontSize(6);
+                        main_table.Rows[start_index].Cells[5].Paragraphs[0].Append("1" + "\r").FontSize(6);
+                        main_table.Rows[start_index].Cells[6].Paragraphs[0].Append(item.Measurements[0]
                             .MeasurementValue + "\r").FontSize(6);
-                        main_table.Rows[8].Cells[7].Paragraphs[0].Append(item.UnitOfMeasure + "\r").FontSize(6);
-                        main_table.Rows[8].Cells[8].Paragraphs[0].Append(item.ShortName + "\r").FontSize(6);
-                        main_table.Rows[8].Cells[9].Paragraphs[0].Append("w/w" + "\r").FontSize(6);
-                        main_table.Rows[8].Cells[10].Paragraphs[0].Append("Batch" + "\r").FontSize(6);
-                        main_table.Rows[8].Cells[11].Paragraphs[0].Append("Key" + "\r").FontSize(6);
+                        main_table.Rows[start_index].Cells[7].Paragraphs[0].Append(item.UnitOfMeasure + "\r").FontSize(6);
+                        main_table.Rows[start_index].Cells[8].Paragraphs[0].Append(item.ShortName + "\r").FontSize(6);
+                        main_table.Rows[start_index].Cells[9].Paragraphs[0].Append("w/w" + "\r").FontSize(6);
+                        main_table.Rows[start_index].Cells[10].Paragraphs[0].Append("Batch" + "\r").FontSize(6);
+                        main_table.Rows[start_index].Cells[11].Paragraphs[0].Append("Key" + "\r").FontSize(6);
                     }
 
                     #endregion
@@ -65,16 +69,16 @@ namespace PMSXMLCreator
                     List<Parameter> properties = anlysis.GetPropertiesParameters(model);
                     foreach (var item in properties)
                     {
-                        main_table.Rows[11].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
-                        main_table.Rows[11].Cells[4].Paragraphs[0].Append("1" + "\r").FontSize(6);
-                        main_table.Rows[11].Cells[5].Paragraphs[0].Append("1" + "\r").FontSize(6);
-                        main_table.Rows[11].Cells[6].Paragraphs[0].Append(item.Measurements[0]
+                        main_table.Rows[start_index+3].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
+                        main_table.Rows[start_index + 3].Cells[4].Paragraphs[0].Append("1" + "\r").FontSize(6);
+                        main_table.Rows[start_index + 3].Cells[5].Paragraphs[0].Append("1" + "\r").FontSize(6);
+                        main_table.Rows[start_index + 3].Cells[6].Paragraphs[0].Append(item.Measurements[0]
                             .MeasurementValue + "\r").FontSize(6);
-                        main_table.Rows[11].Cells[7].Paragraphs[0].Append(item.UnitOfMeasure + "\r").FontSize(6);
-                        main_table.Rows[11].Cells[8].Paragraphs[0].Append(item.ShortName + "\r").FontSize(6);
+                        main_table.Rows[start_index + 3].Cells[7].Paragraphs[0].Append(item.UnitOfMeasure + "\r").FontSize(6);
+                        main_table.Rows[start_index + 3].Cells[8].Paragraphs[0].Append(item.ShortName + "\r").FontSize(6);
 
-                        main_table.Rows[11].Cells[10].Paragraphs[0].Append("Individual" + "\r").FontSize(6);
-                        main_table.Rows[11].Cells[11].Paragraphs[0].Append("Key" + "\r").FontSize(6);
+                        main_table.Rows[start_index + 3].Cells[10].Paragraphs[0].Append("Individual" + "\r").FontSize(6);
+                        main_table.Rows[start_index + 3].Cells[11].Paragraphs[0].Append("Key" + "\r").FontSize(6);
                     }
                     #endregion
 
@@ -83,14 +87,14 @@ namespace PMSXMLCreator
                     foreach (var item in purities)
                     {
 
-                        main_table.Rows[14].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
+                        main_table.Rows[start_index + 6].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
 
-                        main_table.Rows[14].Cells[5].Paragraphs[0].Append(item.Measurements[0]
+                        main_table.Rows[start_index + 6].Cells[5].Paragraphs[0].Append(item.Measurements[0]
                             .MeasurementValue + "\r").FontSize(6);
-                        main_table.Rows[14].Cells[7].Paragraphs[0].Append(item.UnitOfMeasure + "\r").FontSize(6);
-                        main_table.Rows[14].Cells[8].Paragraphs[0].Append(item.ShortName + "\r").FontSize(6);
-                        main_table.Rows[14].Cells[10].Paragraphs[0].Append("Batch" + "\r").FontSize(6);
-                        main_table.Rows[14].Cells[11].Paragraphs[0].Append("Key" + "\r").FontSize(6);
+                        main_table.Rows[start_index + 6].Cells[7].Paragraphs[0].Append(item.UnitOfMeasure + "\r").FontSize(6);
+                        main_table.Rows[start_index + 6].Cells[8].Paragraphs[0].Append(item.ShortName + "\r").FontSize(6);
+                        main_table.Rows[start_index + 6].Cells[10].Paragraphs[0].Append("Batch" + "\r").FontSize(6);
+                        main_table.Rows[start_index + 6].Cells[11].Paragraphs[0].Append("Key" + "\r").FontSize(6);
                     }
                     #endregion
 
@@ -99,14 +103,14 @@ namespace PMSXMLCreator
                     foreach (var item in vpis)
                     {
 
-                        main_table.Rows[17].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
+                        main_table.Rows[start_index + 9].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
 
-                        main_table.Rows[17].Cells[5].Paragraphs[0].Append(item.Measurements[0]
+                        main_table.Rows[start_index + 9].Cells[5].Paragraphs[0].Append(item.Measurements[0]
                             .MeasurementValue + "\r").FontSize(6);
-                        main_table.Rows[17].Cells[7].Paragraphs[0].Append(item.UnitOfMeasure + "\r").FontSize(6);
-                        main_table.Rows[17].Cells[8].Paragraphs[0].Append(item.ShortName + "\r").FontSize(6);
-                        main_table.Rows[17].Cells[10].Paragraphs[0].Append("Batch" + "\r").FontSize(6);
-                        main_table.Rows[17].Cells[11].Paragraphs[0].Append("Key" + "\r").FontSize(6);
+                        main_table.Rows[start_index + 9].Cells[7].Paragraphs[0].Append(item.UnitOfMeasure + "\r").FontSize(6);
+                        main_table.Rows[start_index + 9].Cells[8].Paragraphs[0].Append(item.ShortName + "\r").FontSize(6);
+                        main_table.Rows[start_index + 9].Cells[10].Paragraphs[0].Append("Batch" + "\r").FontSize(6);
+                        main_table.Rows[start_index + 9].Cells[11].Paragraphs[0].Append("Key" + "\r").FontSize(6);
                     }
                     #endregion
 

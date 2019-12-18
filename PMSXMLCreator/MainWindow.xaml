@@ -12,7 +12,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="150"/>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -28,7 +28,7 @@
                     Command="{Binding Search}"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
-                <Button Content="Load From XML" Style="{StaticResource StyleButtonCommon}"
+                <Button Content="Load XML" Style="{StaticResource StyleButtonCommon}"
                         Command="{Binding LoadFromFile}"/>
             </StackPanel>
         </Grid>
@@ -55,12 +55,14 @@
         </DataGrid>
         <Grid Grid.Row="2" Background="Wheat">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="After Checking Every Parameters, Click Create XML" Foreground="Blue"/>
-            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1">
+                       Text="Load from PMS or xml file first" Foreground="Blue"/>
+            <TextBlock Grid.Column="1" Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding LoadingInformation}"/>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="2">
                 <Button Content="Create XML" Style="{StaticResource StyleButtonCommon}"
                         Command="{Binding CreateXML}"/>
                 <Button Content="Create Docx" Style="{StaticResource StyleButtonCommon}"

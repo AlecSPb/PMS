@@ -112,7 +112,7 @@ namespace PMSXMLCreator.Service
             writer.WriteStartElement("MaterialParameters");
 
             //分析参数
-            List<Parameter> parameters = analysis.GetParamenters(model);
+            List<Parameter> parameters = analysis.GetAllECOAParamenters(model);
 
 
             StringBuilder sb = new StringBuilder();
