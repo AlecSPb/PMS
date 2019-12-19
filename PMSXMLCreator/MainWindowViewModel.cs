@@ -106,7 +106,7 @@ namespace PMSXMLCreator
             return true;
         }
 
-        private ECOAXMLGenerator helper_xml = new ECOAXMLGenerator();
+        private XmlHelper helper_xml = new XmlHelper();
         private Xml2DocxHelper helper_docx = new Xml2DocxHelper();
         /// <summary>
         /// 创建xml文件

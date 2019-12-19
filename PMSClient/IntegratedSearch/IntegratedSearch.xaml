@@ -1,0 +1,28 @@
+﻿<Window x:Class="PMSClient.ToolWindow.IntegratedSearch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        Title="IntegratedSearch  version1.0" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid Background="LightYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="Product ID[Complete]"/>
+            <TextBox Style="{StaticResource StyleTextBoxCommon}" Width="200" Name="TxtProductID" Text="191214-B-1"/>
+            <Button Content="Search" Style="{StaticResource StyleButtonCommon}" Name="BtnSearch" Click="BtnSearch_Click"/>
+        </StackPanel>
+        <FlowDocumentScrollViewer Grid.Row="1" Margin="5" >
+            <FlowDocument Background="White" Name="MainDoc">
+                <Paragraph Name="P_SearchItem"  FontFamily="微软雅黑">尚未开始检索</Paragraph>
+                <Paragraph Style="{StaticResource ParaHeader}">搜索结果如下</Paragraph>
+                <Paragraph Name="P_RecordResult" FontFamily="微软雅黑"></Paragraph>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Window>

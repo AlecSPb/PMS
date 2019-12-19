@@ -8,7 +8,7 @@ using System.Xml;
 
 namespace PMSXMLCreator.Service
 {
-    public class ECOAXMLGenerator
+    public class XmlHelper
     {
 
         private Analysis analysis = new Analysis();

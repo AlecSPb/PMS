@@ -303,6 +303,8 @@
     </Compile>
     <Compile Include="Helpers\VHPHelper.cs" />
     <Compile Include="Helpers\XRFCompositionAnalysis.cs" />
+    <Compile Include="IntegratedSearch\DataResultModel.cs" />
+    <Compile Include="IntegratedSearch\IntegratedSearchService.cs" />
     <Compile Include="Navbar.xaml.cs">
       <DependentUpon>Navbar.xaml</DependentUpon>
     </Compile>
@@ -450,7 +452,7 @@
     <Compile Include="ToolWindow\InformationWindow.xaml.cs">
       <DependentUpon>InformationWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ToolWindow\IntegratedSearch.xaml.cs">
+    <Compile Include="IntegratedSearch\IntegratedSearch.xaml.cs">
       <DependentUpon>IntegratedSearch.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolWindow\LabelItemSelect.xaml.cs">
@@ -1126,7 +1128,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ToolWindow\IntegratedSearch.xaml">
+    <Page Include="IntegratedSearch\IntegratedSearch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
