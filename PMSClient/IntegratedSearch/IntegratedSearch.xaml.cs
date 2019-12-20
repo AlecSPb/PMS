@@ -30,40 +30,28 @@ namespace PMSClient.ToolWindow
             string productid = TxtProductID.Text.Trim();
             if (string.IsNullOrEmpty(productid))
             {
-                ShowMessage("产品ID不能为空");
+                ChangeSearchItem("产品ID不能为空");
                 return;
             }
 
             if (productid.Length < 10)
             {
-                ShowMessage("产品ID至少应该是10位");
+                ChangeSearchItem("产品ID至少应该是10位");
                 return;
             }
 
-            P_SearchItem.Inlines.Clear();
-            P_SearchItem.Inlines.Add($"搜索ID为[{productid}]");
+            ChangeSearchItem($"搜索ID为[{productid}]");
+      
 
             var service = new IntegratedSearchService();
-
-            //获取测试结果
-            var record = service.GetRecordTestString(productid);
-            if (record.IsSucceed)
-            {
-                P_RecordResult.Inlines.Add(record.Result.ToString());
-            }
-            else
-            {
-                ShowMessage("没有找到相关记录，请检查输入ID是否正确");
-            }
-
+            P_RecordResult.Inlines.Add(service.GetSearchResult(productid));
         }
 
-        private void ShowMessage(string msg)
+        private void ChangeSearchItem(string msg)
         {
-            MainDoc.Blocks.Clear();
-            var p = new Paragraph();
-            p.Inlines.Add(msg);
-            MainDoc.Blocks.Add(p);
+
+            P_SearchItem.Inlines.Clear();
+            P_SearchItem.Inlines.Add(msg);
         }
 
         /// <summary>

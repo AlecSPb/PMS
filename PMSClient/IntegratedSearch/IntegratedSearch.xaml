@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
-        Title="IntegratedSearch  version1.0" Height="450" Width="800"
+        Title="顺藤摸瓜 IntegratedSearch  V1.0" Height="450" Width="800"
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
@@ -14,13 +14,13 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="Product ID[Complete]"/>
-            <TextBox Style="{StaticResource StyleTextBoxCommon}" Width="200" Name="TxtProductID" Text="191214-B-1"/>
+            <TextBox Style="{StaticResource StyleTextBoxCommon}" Width="200" Name="TxtProductID" Text="191212-AB-2"/>
             <Button Content="Search" Style="{StaticResource StyleButtonCommon}" Name="BtnSearch" Click="BtnSearch_Click"/>
         </StackPanel>
         <FlowDocumentScrollViewer Grid.Row="1" Margin="5" >
-            <FlowDocument Background="White" Name="MainDoc">
-                <Paragraph Name="P_SearchItem"  FontFamily="微软雅黑">尚未开始检索</Paragraph>
-                <Paragraph Style="{StaticResource ParaHeader}">搜索结果如下</Paragraph>
+            <FlowDocument Background="LightGray" Name="MainDoc">
+                <Paragraph Name="P_SearchItem"  FontFamily="微软雅黑">Enter product id and click search.</Paragraph>
+                <Paragraph Style="{StaticResource ParaHeader}">Integrated Search Result</Paragraph>
                 <Paragraph Name="P_RecordResult" FontFamily="微软雅黑"></Paragraph>
             </FlowDocument>
         </FlowDocumentScrollViewer>

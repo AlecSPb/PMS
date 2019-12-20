@@ -15,12 +15,13 @@ namespace PMSClient.IntegratedSearch
         {
             IsSucceed = false;
             Result = new StringBuilder();
-            SearchProductID = SearchPMINumber = SearchId = "";
+            SearchProductID = SearchPMINumber = "";
         }
         public bool IsSucceed { get; set; }
         public StringBuilder Result { get; set; }
         public string SearchProductID { get; set; }
         public string SearchPMINumber { get; set; }
-        public string SearchId { get; set; }
+        public Guid SearchOrderId { get; set; }
+        public Guid SearchPlanId { get; set; }
     }
 }

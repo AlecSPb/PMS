@@ -614,7 +614,7 @@
     <sys:String x:Key="RTDimension">Dimension</sys:String>
     <sys:String x:Key="RTDensity">Density</sys:String>
     <sys:String x:Key="RTWeight">Weight</sys:String>
-    <sys:String x:Key="RTResistance">Resitance</sys:String>
+    <sys:String x:Key="RTResistance">Resistance</sys:String>
     <sys:String x:Key="RTCompositionXRF">XRF</sys:String>
     <sys:String x:Key="RTDimensionActual">Dimension Actual</sys:String>
     <sys:String x:Key="RTRemark">Remark</sys:String>
