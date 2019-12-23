@@ -130,7 +130,7 @@
                 <StackPanel Grid.Row="8" Grid.Column="2" Orientation="Horizontal">
                     <Button Content="追加组分来源" Name="BtnMaterialSource" Click="BtnMaterialSource_Click" Style="{StaticResource StyleButtonCommon}"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="填写每个单质成分的来源信息，格式为 元素=来源;分号隔开" Background="LightGreen"/>
+                           Text="这是为供应商提供的选项，填写每个单质成分的来源信息，格式为 元素=来源;分号隔开" Background="LightGreen"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource MIIState}"

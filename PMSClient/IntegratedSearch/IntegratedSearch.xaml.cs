@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -41,7 +43,7 @@ namespace PMSClient.ToolWindow
             }
 
             ChangeSearchItem($"搜索ID为[{productid}]");
-      
+
 
             var service = new IntegratedSearchService();
             P_RecordResult.Inlines.Add(service.GetSearchResult(productid));
@@ -62,6 +64,22 @@ namespace PMSClient.ToolWindow
         private string GetSearchString(string productid)
         {
             return productid.Trim().Substring(0, 8);
+        }
+
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.FileName = TxtProductID.Text;
+            saveFile.Filter = "文本|*.txt";
+
+            if (saveFile.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                TextRange range = new TextRange(MainDoc.ContentStart,
+                    MainDoc.ContentEnd);
+                File.WriteAllText(saveFile.FileName, range.Text);
+                PMSDialogService.Show("保存成功");
+            }
+
         }
     }
 }

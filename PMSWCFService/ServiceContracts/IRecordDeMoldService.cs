@@ -35,5 +35,9 @@ namespace PMSWCFService.ServiceContracts
         int UpdateRecordDeMoldByUID(DcRecordDeMold model, string uid);
         [OperationContract]
         int DeleteRecordDeMold(Guid id);
+
+        //用于集成查询功能
+        [OperationContract]
+        List<DcRecordDeMold> GetRecordDeMoldsByPMINumber(string pminumber);
     }
 }

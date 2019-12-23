@@ -93,7 +93,7 @@ namespace PMSClient.ViewModel
             GoToProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.Product), () => _session.IsAuthorized(PMSAccess.ReadProduct));
             GoToDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.Delivery),
                 () => _session.IsOKInGroup(AccessGrant.ViewDeliveryItemList));
-            GoToDeliveryItemList = new RelayCommand(() => NavigationService.GoTo(PMSViews.DeliveryItemList), 
+            GoToDeliveryItemList = new RelayCommand(() => NavigationService.GoTo(PMSViews.DeliveryItemList),
                 () => _session.IsOKInGroup(AccessGrant.ViewDeliveryItemList));
 
             GoToBDCustomer = new RelayCommand(() => NavigationService.GoTo(PMSViews.Customer), () => _session.IsAuthorized(PMSAccess.ReadCustomer));
@@ -126,9 +126,12 @@ namespace PMSClient.ViewModel
 
             GoToIntegratedSearch = new RelayCommand(() =>
             {
-                ToolWindow.ComplexQueryTool tool = new ToolWindow.ComplexQueryTool();
+                //ToolWindow.ComplexQueryTool tool = new ToolWindow.ComplexQueryTool();
+                //tool.Show();
+
+                var tool = new ToolWindow.IntegratedSearch();
                 tool.Show();
-            });
+            }, () => _session.IsOKInGroup(new string[] { "统筹组", "测试组", "管理员" }));
 
             ImportantCode = new RelayCommand(() =>
             {

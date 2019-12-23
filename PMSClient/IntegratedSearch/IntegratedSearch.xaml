@@ -5,22 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
-        Title="顺藤摸瓜 IntegratedSearch  V1.0" Height="450" Width="800"
-        WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="顺藤摸瓜 IntegratedSearch  V1.0" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="Product ID[Complete]"/>
-            <TextBox Style="{StaticResource StyleTextBoxCommon}" Width="200" Name="TxtProductID" Text="191212-AB-2"/>
-            <Button Content="Search" Style="{StaticResource StyleButtonCommon}" Name="BtnSearch" Click="BtnSearch_Click"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Wheat">
+            <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="完整产品ID"/>
+            <TextBox Style="{StaticResource StyleTextBoxCommon}" Width="200" Name="TxtProductID" Text="191120-CB-1" Background="White"/>
+            <Button Content="检索" Style="{StaticResource StyleButtonCommon}" Name="BtnSearch" Click="BtnSearch_Click"/>
+            <Button Content="保存查询结果" Style="{StaticResource StyleButtonCommon}" Name="BtnSave" Click="BtnSave_Click"/>
         </StackPanel>
         <FlowDocumentScrollViewer Grid.Row="1" Margin="5" >
-            <FlowDocument Background="LightGray" Name="MainDoc">
+            <FlowDocument Background="LightYellow" Name="MainDoc">
                 <Paragraph Name="P_SearchItem"  FontFamily="微软雅黑">Enter product id and click search.</Paragraph>
-                <Paragraph Style="{StaticResource ParaHeader}">Integrated Search Result</Paragraph>
+                <Paragraph Style="{StaticResource ParaHeader}" FontFamily="微软雅黑">Integrated Search Result</Paragraph>
                 <Paragraph Name="P_RecordResult" FontFamily="微软雅黑"></Paragraph>
             </FlowDocument>
         </FlowDocumentScrollViewer>

@@ -1172,6 +1172,12 @@
   <wsdl:message name="IRecordMillingService_GetAllPowderWeight_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllPowderWeightResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordMillingService_GetRecordMillingsByPMINumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMillingsByPMINumber" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMillingService_GetRecordMillingsByPMINumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMillingsByPMINumberResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordMachineService_GetRecordMachines_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordMachines" />
   </wsdl:message>
@@ -1226,6 +1232,12 @@
   <wsdl:message name="IRecordMachineService_DeleteRecordMachine_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordMachineResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordMachineService_GetRecordMachinesByPMINumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMachinesByPMINumber" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMachineService_GetRecordMachinesByPMINumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMachinesByPMINumberResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordDeMoldService_GetRecordDeMolds_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordDeMolds" />
   </wsdl:message>
@@ -1279,6 +1291,12 @@
   </wsdl:message>
   <wsdl:message name="IRecordDeMoldService_DeleteRecordDeMold_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordDeMoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeMoldService_GetRecordDeMoldsByPMINumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordDeMoldsByPMINumber" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeMoldService_GetRecordDeMoldsByPMINumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordDeMoldsByPMINumberResponse" />
   </wsdl:message>
   <wsdl:message name="IRecordBondingService_GetRecordBondings_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordBondings" />
@@ -1357,6 +1375,12 @@
   </wsdl:message>
   <wsdl:message name="IRecordBondingService_CheckPlateUsedTimes_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckPlateUsedTimesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetRecordBondingsByPMINumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordBondingsByPMINumber" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetRecordBondingsByPMINumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordBondingsByPMINumberResponse" />
   </wsdl:message>
   <wsdl:message name="IOutSourceService_GetOutSources_InputMessage">
     <wsdl:part name="parameters" element="tns:GetOutSources" />
@@ -2187,6 +2211,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/GetAllPowderWeight" message="tns:IRecordMillingService_GetAllPowderWeight_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordMillingService/GetAllPowderWeightResponse" message="tns:IRecordMillingService_GetAllPowderWeight_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetRecordMillingsByPMINumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByPMINumber" message="tns:IRecordMillingService_GetRecordMillingsByPMINumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByPMINumberResponse" message="tns:IRecordMillingService_GetRecordMillingsByPMINumber_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordMachineService">
     <wsdl:operation name="GetRecordMachines">
@@ -2225,6 +2253,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordMachineService/DeleteRecordMachine" message="tns:IRecordMachineService_DeleteRecordMachine_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordMachineService/DeleteRecordMachineResponse" message="tns:IRecordMachineService_DeleteRecordMachine_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetRecordMachinesByPMINumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordMachineService/GetRecordMachinesByPMINumber" message="tns:IRecordMachineService_GetRecordMachinesByPMINumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordMachineService/GetRecordMachinesByPMINumberResponse" message="tns:IRecordMachineService_GetRecordMachinesByPMINumber_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordDeMoldService">
     <wsdl:operation name="GetRecordDeMolds">
@@ -2262,6 +2294,10 @@
     <wsdl:operation name="DeleteRecordDeMold">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMold" message="tns:IRecordDeMoldService_DeleteRecordDeMold_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMoldResponse" message="tns:IRecordDeMoldService_DeleteRecordDeMold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordDeMoldsByPMINumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByPMINumber" message="tns:IRecordDeMoldService_GetRecordDeMoldsByPMINumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByPMINumberResponse" message="tns:IRecordDeMoldService_GetRecordDeMoldsByPMINumber_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordBondingService">
@@ -2316,6 +2352,10 @@
     <wsdl:operation name="CheckPlateUsedTimes">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimes" message="tns:IRecordBondingService_CheckPlateUsedTimes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimesResponse" message="tns:IRecordBondingService_CheckPlateUsedTimes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordBondingsByPMINumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumber" message="tns:IRecordBondingService_GetRecordBondingsByPMINumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumberResponse" message="tns:IRecordBondingService_GetRecordBondingsByPMINumber_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IOutSourceService">
@@ -4121,6 +4161,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetRecordMillingsByPMINumber">
+      <soap:operation soapAction="http://tempuri.org/IRecordMillingService/GetRecordMillingsByPMINumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="recordmachine" type="tns:IRecordMachineService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -4205,6 +4254,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetRecordMachinesByPMINumber">
+      <soap:operation soapAction="http://tempuri.org/IRecordMachineService/GetRecordMachinesByPMINumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="recorddemold" type="tns:IRecordDeMoldService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -4282,6 +4340,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteRecordDeMold">
       <soap:operation soapAction="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordDeMoldsByPMINumber">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByPMINumber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4402,6 +4469,15 @@
     </wsdl:operation>
     <wsdl:operation name="CheckPlateUsedTimes">
       <soap:operation soapAction="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordBondingsByPMINumber">
+      <soap:operation soapAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

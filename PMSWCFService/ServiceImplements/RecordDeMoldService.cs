@@ -207,6 +207,24 @@ namespace PMSWCFService
             }
         }
 
-
+        public List<DcRecordDeMold> GetRecordDeMoldsByPMINumber(string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var result = dc.RecordDeMolds.Where(r => r.State != PMSCommon.SimpleState.作废.ToString()
+                    && r.PMINumber == pminumber)
+                        .OrderByDescending(i => i.CreateTime).ToList();
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordDeMold, DcRecordDeMold>());
+                    return Mapper.Map<List<RecordDeMold>, List<DcRecordDeMold>>(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

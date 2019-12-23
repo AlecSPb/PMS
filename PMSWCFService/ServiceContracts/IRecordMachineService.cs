@@ -32,5 +32,10 @@ namespace PMSWCFService.ServiceContracts
         int UpdateRecordMachineByUID(DcRecordMachine model, string uid);
         [OperationContract]
         int DeleteRecordMachine(Guid id);
+
+
+        //用于集成查询功能
+        [OperationContract]
+        List<DcRecordMachine> GetRecordMachinesByPMINumber(string pminumber);
     }
 }

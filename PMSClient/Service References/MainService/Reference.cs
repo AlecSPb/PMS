@@ -11593,6 +11593,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetAllPowderWeight", ReplyAction="http://tempuri.org/IRecordMillingService/GetAllPowderWeightResponse")]
         System.Threading.Tasks.Task<double> GetAllPowderWeightAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByPMINumber", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingsByPMINumberResponse")]
+        PMSClient.MainService.DcRecordMilling[] GetRecordMillingsByPMINumber(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByPMINumber", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingsByPMINumberResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordMilling[]> GetRecordMillingsByPMINumberAsync(string pminumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11709,6 +11715,14 @@ namespace PMSClient.MainService {
         public System.Threading.Tasks.Task<double> GetAllPowderWeightAsync() {
             return base.Channel.GetAllPowderWeightAsync();
         }
+        
+        public PMSClient.MainService.DcRecordMilling[] GetRecordMillingsByPMINumber(string pminumber) {
+            return base.Channel.GetRecordMillingsByPMINumber(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordMilling[]> GetRecordMillingsByPMINumberAsync(string pminumber) {
+            return base.Channel.GetRecordMillingsByPMINumberAsync(pminumber);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11770,6 +11784,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/DeleteRecordMachine", ReplyAction="http://tempuri.org/IRecordMachineService/DeleteRecordMachineResponse")]
         System.Threading.Tasks.Task<int> DeleteRecordMachineAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/GetRecordMachinesByPMINumber", ReplyAction="http://tempuri.org/IRecordMachineService/GetRecordMachinesByPMINumberResponse")]
+        PMSClient.MainService.DcRecordMachine[] GetRecordMachinesByPMINumber(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/GetRecordMachinesByPMINumber", ReplyAction="http://tempuri.org/IRecordMachineService/GetRecordMachinesByPMINumberResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordMachine[]> GetRecordMachinesByPMINumberAsync(string pminumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11870,6 +11890,14 @@ namespace PMSClient.MainService {
         public System.Threading.Tasks.Task<int> DeleteRecordMachineAsync(System.Guid id) {
             return base.Channel.DeleteRecordMachineAsync(id);
         }
+        
+        public PMSClient.MainService.DcRecordMachine[] GetRecordMachinesByPMINumber(string pminumber) {
+            return base.Channel.GetRecordMachinesByPMINumber(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordMachine[]> GetRecordMachinesByPMINumberAsync(string pminumber) {
+            return base.Channel.GetRecordMachinesByPMINumberAsync(pminumber);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11931,6 +11959,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMold", ReplyAction="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMoldResponse")]
         System.Threading.Tasks.Task<int> DeleteRecordDeMoldAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByPMINumber", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByPMINumberResponse")]
+        PMSClient.MainService.DcRecordDeMold[] GetRecordDeMoldsByPMINumber(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByPMINumber", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByPMINumberResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordDeMold[]> GetRecordDeMoldsByPMINumberAsync(string pminumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -12031,6 +12065,14 @@ namespace PMSClient.MainService {
         public System.Threading.Tasks.Task<int> DeleteRecordDeMoldAsync(System.Guid id) {
             return base.Channel.DeleteRecordDeMoldAsync(id);
         }
+        
+        public PMSClient.MainService.DcRecordDeMold[] GetRecordDeMoldsByPMINumber(string pminumber) {
+            return base.Channel.GetRecordDeMoldsByPMINumber(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordDeMold[]> GetRecordDeMoldsByPMINumberAsync(string pminumber) {
+            return base.Channel.GetRecordDeMoldsByPMINumberAsync(pminumber);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -12114,6 +12156,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimes", ReplyAction="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimesResponse")]
         System.Threading.Tasks.Task<int> CheckPlateUsedTimesAsync(string platelot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumber", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumberResponse")]
+        PMSClient.MainService.DcRecordBonding[] GetRecordBondingsByPMINumber(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumber", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumberResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingsByPMINumberAsync(string pminumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -12245,6 +12293,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> CheckPlateUsedTimesAsync(string platelot) {
             return base.Channel.CheckPlateUsedTimesAsync(platelot);
+        }
+        
+        public PMSClient.MainService.DcRecordBonding[] GetRecordBondingsByPMINumber(string pminumber) {
+            return base.Channel.GetRecordBondingsByPMINumber(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingsByPMINumberAsync(string pminumber) {
+            return base.Channel.GetRecordBondingsByPMINumberAsync(pminumber);
         }
     }
     

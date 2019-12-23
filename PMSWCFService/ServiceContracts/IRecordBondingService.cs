@@ -47,5 +47,9 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int CheckPlateUsedTimes(string platelot);
 
+        //用于集成查询功能
+        [OperationContract]
+        List<DcRecordBonding> GetRecordBondingsByPMINumber(string pminumber);
+
     }
 }

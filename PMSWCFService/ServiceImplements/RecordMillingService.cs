@@ -217,7 +217,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
                     var query = from r in dc.RecordMillings
                                 where r.State != PMSCommon.SimpleState.作废.ToString()
-                                && r.MaterialType==materialType
+                                && r.MaterialType == materialType
                                 orderby r.CreateTime descending
                                 select r;
                     return Mapper.Map<List<RecordMilling>, List<DcRecordMilling>>(query.Take(topCount).ToList());
@@ -239,7 +239,29 @@ namespace PMSWCFService
                     var query = from r in dc.RecordMillings
                                 where r.State != PMSCommon.SimpleState.作废.ToString()
                                 select r;
-                    return query.Sum(i=>i.WeightOut);
+                    return query.Sum(i => i.WeightOut);
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcRecordMilling> GetRecordMillingsByPMINumber(string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
+                    var query = from r in dc.RecordMillings
+                                where r.State != PMSCommon.SimpleState.作废.ToString()
+                                && r.PMINumber == pminumber
+                                orderby r.CreateTime descending
+                                select r;
+                    return Mapper.Map<List<RecordMilling>, List<DcRecordMilling>>(query.ToList());
                 }
             }
             catch (Exception ex)

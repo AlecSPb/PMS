@@ -14,11 +14,11 @@ namespace PMSClient.IntegratedSearch
         public DataResultModel()
         {
             IsSucceed = false;
-            Result = new StringBuilder();
+            Content = new StringBuilder();
             SearchProductID = SearchPMINumber = "";
         }
         public bool IsSucceed { get; set; }
-        public StringBuilder Result { get; set; }
+        public StringBuilder Content { get; set; }
         public string SearchProductID { get; set; }
         public string SearchPMINumber { get; set; }
         public Guid SearchOrderId { get; set; }

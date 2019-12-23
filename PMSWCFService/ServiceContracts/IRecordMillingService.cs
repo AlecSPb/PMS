@@ -39,5 +39,10 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         double GetAllPowderWeight();
 
+
+        //用于集成查询功能
+        [OperationContract]
+        List<DcRecordMilling> GetRecordMillingsByPMINumber(string pminumber);
+
     }
 }

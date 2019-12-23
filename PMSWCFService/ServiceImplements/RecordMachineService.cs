@@ -125,6 +125,27 @@ namespace PMSWCFService
 
         }
 
+        public List<DcRecordMachine> GetRecordMachinesByPMINumber(string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var result = dc.RecordMachines.Where(r => r.State != PMSCommon.SimpleState.作废.ToString()
+                    &&r.PMINumber==pminumber)
+                        .OrderByDescending(i => i.VHPPlanLot).ToList();
+
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordMachine, DcRecordMachine>());
+                    return Mapper.Map<List<RecordMachine>, List<DcRecordMachine>>(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcRecordMachine> GetRecordMachinesByVHPPlanLot(int skip, int take, string vhpplanlot)
         {
             try

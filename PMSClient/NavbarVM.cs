@@ -21,10 +21,9 @@ namespace PMSClient
             #region Tool
             IntergratedSearch = new RelayCommand(() =>
             {
-                //var tool = new ToolWindow.ComplexQueryTool();
-                //tool.Show();
-                var tool = new ToolWindow.IntegratedSearch();
+                var tool = new ToolWindow.ComplexQueryTool();
                 tool.Show();
+
             });
 
             MaterialNeedCalculator = new RelayCommand(() =>
