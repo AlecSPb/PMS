@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
-        Title="顺藤摸瓜 IntegratedSearch  V1.0" Height="600" Width="800"
+        Title="顺藤摸瓜 IntegratedSearch  V1.0" Height="600" Width="1000"
         WindowStartupLocation="CenterScreen">
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
@@ -20,8 +20,8 @@
         </StackPanel>
         <FlowDocumentScrollViewer Grid.Row="1" Margin="5" >
             <FlowDocument Background="LightYellow" Name="MainDoc">
-                <Paragraph Name="P_SearchItem"  FontFamily="微软雅黑">Enter product id and click search.</Paragraph>
-                <Paragraph Style="{StaticResource ParaHeader}" FontFamily="微软雅黑">Integrated Search Result</Paragraph>
+                <Paragraph Name="P_SearchItem"  FontFamily="微软雅黑">输入完成的产品ID号，然后点击查询</Paragraph>
+                <Paragraph Style="{StaticResource ParaHeader}" FontFamily="微软雅黑">综合查询结果</Paragraph>
                 <Paragraph Name="P_RecordResult" FontFamily="微软雅黑"></Paragraph>
             </FlowDocument>
         </FlowDocumentScrollViewer>

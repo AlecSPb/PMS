@@ -31,7 +31,7 @@ namespace PMSClient.IntegratedSearch
                 //只有测试记录搜索成功的前提下，才能搜索其他的东西
                 if (result.IsSucceed)
                 {
-                    AddMessage($"===========以下信息为测试记录【{productid}】对应的信息，请核实===========");
+                    AddMessage($"===========以下信息为测试记录【{productid}】关联的所有信息，请核实===========");
                     //订单信息
                     GetOrderString(result.SearchPMINumber);
                     if (result.IsSucceed)

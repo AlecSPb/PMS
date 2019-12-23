@@ -79,6 +79,22 @@ namespace PMSClient.ViewModel
             EnterCSCAN = new RelayCommand<RecordTestExtra>(ActionEnterCscan, CanEnterCscan);
 
             OneKeyCheck = new RelayCommand(ActonOneKeyCheck);
+
+            DeepSearch = new RelayCommand<RecordTestExtra>(ActionDeepSearch, CanDeepSearch);
+        }
+
+        private void ActionDeepSearch(RecordTestExtra obj)
+        {
+            if (obj == null) return;
+            var win = new ToolWindow.IntegratedSearch();
+            win.TxtProductID.Text = obj.RecordTest.ProductID;
+            win.TriggerBtnSearch_Click();
+            win.Show();
+        }
+
+        private bool CanDeepSearch(RecordTestExtra arg)
+        {
+            return PMSHelper.CurrentSession.IsOKInGroup(new string[] { "统筹组","测试组","管理员" });
         }
 
         private void ActonOneKeyCheck()
@@ -565,7 +581,7 @@ namespace PMSClient.ViewModel
 
         private void ActionEdit(RecordTestExtra model)
         {
-            if (PMSDialogService.ShowYesNo("请问", "多人同时编辑需刷新为最新数据，以免更新冲突，\r\n确定要刷新吗？"))
+            if (PMSDialogService.ShowYesNo("请问", "多人同时编辑需刷新为最新数据，以免更新冲突，\r\n 【是】刷新；【否】不刷新？"))
             {
                 SetPageParametersWhenConditionChange();
                 return;
@@ -700,6 +716,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand<RecordTestExtra> ShowOrderInformation { get; set; }
         public RelayCommand<RecordTestExtra> EnterCSCAN { get; set; }
+        public RelayCommand<RecordTestExtra> DeepSearch { get; set; }
 
         public RelayCommand OneKeyCheck { get; set; }
         #endregion

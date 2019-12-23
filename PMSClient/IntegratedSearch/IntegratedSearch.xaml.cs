@@ -27,6 +27,11 @@ namespace PMSClient.ToolWindow
             InitializeComponent();
         }
 
+
+        public void TriggerBtnSearch_Click()
+        {
+            BtnSearch_Click(this, null);
+        }
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
             string productid = TxtProductID.Text.Trim();

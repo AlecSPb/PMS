@@ -245,23 +245,29 @@
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal">
                         <Button Content="{StaticResource ButtonMisson}"
-                                    Style="{StaticResource StyleButtonCommon}" HorizontalAlignment="Stretch"
+                                    Style="{StaticResource StyleButtonCommonNarrow}" HorizontalAlignment="Stretch"
                                     Command="{Binding DataContext.ShowOrderInformation,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                     CommandParameter="{Binding}"
                                     />
                         <Button Content="{StaticResource ButtonCScan}"
-                                    Style="{StaticResource StyleButtonCommon}" HorizontalAlignment="Stretch"
+                                    Style="{StaticResource StyleButtonCommonNarrow}" HorizontalAlignment="Stretch"
                                     Command="{Binding DataContext.EnterCSCAN,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                     CommandParameter="{Binding}"
                                     />
                         <Button Content="{StaticResource ButtonCheck}"
-                                    Style="{StaticResource StyleButtonCommon}" HorizontalAlignment="Stretch"
+                                    Style="{StaticResource StyleButtonCommonNarrow}" HorizontalAlignment="Stretch"
                                     Command="{Binding DataContext.Check,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                     CommandParameter="{Binding}"
                                     />
                         <Button Content="{StaticResource ButtonDoc}"
-                                    Style="{StaticResource StyleButtonCommon}" HorizontalAlignment="Stretch"
+                                    Style="{StaticResource StyleButtonCommonNarrow}" HorizontalAlignment="Stretch"
                                     Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"
+                                    />
+
+                        <Button Content="{StaticResource ButtonIntegratedSearch}"
+                                    Style="{StaticResource StyleButtonCommonNarrow}" HorizontalAlignment="Stretch"
+                                    Command="{Binding DataContext.DeepSearch,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                     CommandParameter="{Binding}"
                                     />
                     </StackPanel>

@@ -205,6 +205,7 @@
     <sys:String x:Key="ButtonCScan">超声</sys:String>
     <sys:String x:Key="ButtonRefresh">刷新</sys:String>
     <sys:String x:Key="ButtonSearch">搜索</sys:String>
+    <sys:String x:Key="ButtonIntegratedSearch">深查</sys:String>
     <sys:String x:Key="ButtonAll">全部</sys:String>
     <sys:String x:Key="ButtonSave">保存</sys:String>
     <sys:String x:Key="ButtonAdd">添加</sys:String>

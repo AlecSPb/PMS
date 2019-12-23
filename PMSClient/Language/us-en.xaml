@@ -200,6 +200,7 @@
     <sys:String x:Key="ButtonCScan">CSCAN</sys:String>
     <sys:String x:Key="ButtonRefresh">Refresh</sys:String>
     <sys:String x:Key="ButtonSearch">Search</sys:String>
+    <sys:String x:Key="ButtonIntegratedSearch">DeepSearch</sys:String>
     <sys:String x:Key="ButtonAll">All</sys:String>
     <sys:String x:Key="ButtonSave">Save</sys:String>
     <sys:String x:Key="ButtonAdd">Add</sys:String>
