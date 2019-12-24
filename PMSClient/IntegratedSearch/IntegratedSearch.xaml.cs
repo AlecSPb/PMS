@@ -51,6 +51,7 @@ namespace PMSClient.ToolWindow
 
 
             var service = new IntegratedSearchService();
+            P_RecordResult.Inlines.Clear();
             P_RecordResult.Inlines.Add(service.GetSearchResult(productid));
         }
 

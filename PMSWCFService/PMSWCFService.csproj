@@ -105,7 +105,9 @@
     <Compile Include="DataContracts\DcBDSupplier.cs" />
     <Compile Include="DataContracts\DcComplexQueryResult.cs" />
     <Compile Include="DataContracts\DcFailure.cs" />
+    <Compile Include="DataContracts\DcMachineFix.cs" />
     <Compile Include="DataContracts\DcMaterialOrderItemExtra.cs" />
+    <Compile Include="DataContracts\DcModelBase.cs" />
     <Compile Include="DataContracts\DcNotice.cs" />
     <Compile Include="DataContracts\DcOutsideProcess.cs" />
     <Compile Include="DataContracts\DcPlanWithMisson.cs" />
@@ -165,6 +167,7 @@
     <Compile Include="DataContracts\DcOrderHistory.cs" />
     <Compile Include="ServiceContracts\IComplexQuery.cs" />
     <Compile Include="ServiceContracts\IFailureService.cs" />
+    <Compile Include="ServiceContracts\IMachineFixService.cs" />
     <Compile Include="ServiceContracts\IOutputService.cs" />
     <Compile Include="ServiceContracts\IEnvironmentInfoService.cs" />
     <Compile Include="ServiceContracts\INoticeService.cs" />
@@ -200,6 +203,7 @@
     <Compile Include="ServiceImplements\HeartBeatService.cs" />
     <Compile Include="ServiceImplements\HistoryService.cs" />
     <Compile Include="ServiceImplements\LargeScreenService.cs" />
+    <Compile Include="ServiceImplements\MachineFixService.cs" />
     <Compile Include="ServiceImplements\MainStatisticService.cs" />
     <Compile Include="ServiceImplements\MaterialInventoryService.cs" />
     <Compile Include="ServiceImplements\BasicDataService.cs" />

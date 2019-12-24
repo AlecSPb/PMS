@@ -136,5 +136,8 @@ namespace PMSDAL
         //
         public DbSet<OutsideProcess> OutsideProcesses { get; set; }
 
+
+        public DbSet<MachineFix> MachineFixes { get; set; }
+
     }
 }

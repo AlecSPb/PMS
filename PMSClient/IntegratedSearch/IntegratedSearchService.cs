@@ -14,7 +14,7 @@ namespace PMSClient.IntegratedSearch
         private DataResultModel result;
         public IntegratedSearchService()
         {
-            result = new DataResultModel();
+
         }
 
         /// <summary>
@@ -26,6 +26,7 @@ namespace PMSClient.IntegratedSearch
         {
             try
             {
+                result= new DataResultModel();
                 //测试记录
                 GetRecordTestString(productid);
                 //只有测试记录搜索成功的前提下，才能搜索其他的东西
