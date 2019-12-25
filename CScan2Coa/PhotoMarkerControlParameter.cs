@@ -12,6 +12,7 @@ namespace ImportTargetPhotoIntoReport
         public bool HasComposition { get; set; } = true;
         public bool HasWeldingRation { get; set; } = true;
         public float FontSize { get; set; } = 8f;
+        public string Logo { get; set; } = "CSCAN@CDPMI";
 
     }
 }

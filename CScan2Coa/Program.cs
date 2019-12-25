@@ -1,5 +1,5 @@
 ﻿#define PROG
-
+//定义了PROG编译的是 超声照片标记工具，注释掉后编译的是 超声照片添加到COA文件工具
 
 
 using System;

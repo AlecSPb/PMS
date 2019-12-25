@@ -24,7 +24,7 @@ namespace ImportTargetPhotoIntoReport
         private PhotoProcess process;
         private void InitializeThis()
         {
-            this.Text = "Cscan图像批量标记水印程序 designed by xs.zhou";
+            this.Text = "Cscan图像批量标记水印程序2.0 可处理任意靶材图片 designed by xs.zhou";
             helper = new ProcessHelper();
             process = new PhotoProcess();
 
@@ -105,6 +105,11 @@ namespace ImportTargetPhotoIntoReport
         private void TxtFontSize_TextChanged(object sender, EventArgs e)
         {
             process.PhotoMarkerControl.FontSize = float.Parse(TxtFontSize.Text.Trim());
+        }
+
+        private void TxtLogo_TextChanged(object sender, EventArgs e)
+        {
+            process.PhotoMarkerControl.Logo = TxtLogo.Text.Trim();
         }
     }
 }

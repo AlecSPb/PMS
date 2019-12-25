@@ -352,7 +352,7 @@ namespace ImportTargetPhotoIntoReport
         /// <returns></returns>
         public string GetProductIDFromJPEGName(string jpgName)
         {
-            return GetProductIDFromFileName(jpgName, @"\d{6}-\w{2}-\d{1}");
+            return GetProductIDFromFileName(jpgName, @"\d{6}-\w{1,2}-\d{1}[A-Z]{0,1}");
         }
 
 
@@ -360,7 +360,7 @@ namespace ImportTargetPhotoIntoReport
         {
             if (string.IsNullOrEmpty(fileName) && string.IsNullOrEmpty(pattern))
             {
-                return string.Empty;
+                return fileName;
             }
 
             var match = Regex.Match(fileName, pattern);
@@ -371,7 +371,7 @@ namespace ImportTargetPhotoIntoReport
             }
             else
             {
-                return string.Empty;
+                return fileName;
             }
         }
 
@@ -394,15 +394,35 @@ namespace ImportTargetPhotoIntoReport
 
                 float x = 5, y = 5;
                 float interval = PhotoMarkerControl.FontSize + 10;
-
+                //左上角绘制ProductID
                 if (PhotoMarkerControl.HasProductID)
                 {
                     g.DrawString(product_id, font, Brushes.Orange, x, y);
                 }
+                //左上角绘制成分
+                if (PhotoMarkerControl.HasComposition)
+                {
+                    DcRecordTest test = null;
+                    using (var s = new RecordTestServiceClient())
+                    {
+                        test = s.GetRecordTestByProductID(product_id).FirstOrDefault();
+                    }
+                    if (test != null)
+                    {
+                        if (PhotoMarkerControl.HasComposition)
+                        {
+                            string composition = test.Composition;
+                            y += interval;
+                            g.DrawString(composition, font, Brushes.Orange, x, y);
 
-                if (PhotoMarkerControl.HasWeldingRation || PhotoMarkerControl.HasComposition)
+                        }
+                    }
+                }
+                //左上角绘制焊合率
+                if (PhotoMarkerControl.HasWeldingRation)
                 {
                     DcRecordBonding bonding = null;
+
                     using (var service = new RecordBondingServiceClient())
                     {
                         bonding = service.GetRecordBondingByProductID(product_id).FirstOrDefault();
@@ -410,14 +430,6 @@ namespace ImportTargetPhotoIntoReport
 
                     if (bonding != null)
                     {
-                        if (PhotoMarkerControl.HasComposition)
-                        {
-                            string composition = bonding.TargetComposition;
-                            y += interval;
-                            g.DrawString(composition, font, Brushes.Orange, x, y);
-
-                        }
-
                         if (PhotoMarkerControl.HasWeldingRation)
                         {
                             string composition = bonding.WeldingRate.ToString("F2") + "%";
@@ -432,7 +444,7 @@ namespace ImportTargetPhotoIntoReport
                 int height = img.Height;
                 y = height - 25;
 
-                g.DrawString("CSCAN@CDPMI", font, Brushes.White, x, y);
+                g.DrawString(PhotoMarkerControl.Logo, font, Brushes.White, x, y);
 
 
 

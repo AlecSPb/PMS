@@ -42,6 +42,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TxtFontSize = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.TxtLogo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +75,7 @@
             // 
             // PbValue
             // 
-            this.PbValue.Location = new System.Drawing.Point(12, 91);
+            this.PbValue.Location = new System.Drawing.Point(13, 112);
             this.PbValue.Name = "PbValue";
             this.PbValue.Size = new System.Drawing.Size(880, 23);
             this.PbValue.TabIndex = 3;
@@ -83,7 +85,7 @@
             this.CkProductID.AutoSize = true;
             this.CkProductID.Checked = true;
             this.CkProductID.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CkProductID.Location = new System.Drawing.Point(61, 51);
+            this.CkProductID.Location = new System.Drawing.Point(61, 52);
             this.CkProductID.Name = "CkProductID";
             this.CkProductID.Size = new System.Drawing.Size(75, 19);
             this.CkProductID.TabIndex = 4;
@@ -96,7 +98,7 @@
             this.CKComposition.AutoSize = true;
             this.CKComposition.Checked = true;
             this.CKComposition.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CKComposition.Location = new System.Drawing.Point(142, 51);
+            this.CKComposition.Location = new System.Drawing.Point(142, 52);
             this.CKComposition.Name = "CKComposition";
             this.CKComposition.Size = new System.Drawing.Size(59, 19);
             this.CKComposition.TabIndex = 4;
@@ -109,11 +111,11 @@
             this.CKWeldingRation.AutoSize = true;
             this.CKWeldingRation.Checked = true;
             this.CKWeldingRation.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CKWeldingRation.Location = new System.Drawing.Point(207, 51);
+            this.CKWeldingRation.Location = new System.Drawing.Point(207, 52);
             this.CKWeldingRation.Name = "CKWeldingRation";
-            this.CKWeldingRation.Size = new System.Drawing.Size(74, 19);
+            this.CKWeldingRation.Size = new System.Drawing.Size(150, 19);
             this.CKWeldingRation.TabIndex = 4;
-            this.CKWeldingRation.Text = "焊合率";
+            this.CKWeldingRation.Text = "焊合率(绑定记录)";
             this.CKWeldingRation.UseVisualStyleBackColor = true;
             this.CKWeldingRation.CheckedChanged += new System.EventHandler(this.CKWeldingRation_CheckedChanged);
             // 
@@ -129,13 +131,13 @@
             // 
             // TxtStatus
             // 
-            this.TxtStatus.Location = new System.Drawing.Point(13, 121);
+            this.TxtStatus.Location = new System.Drawing.Point(13, 142);
             this.TxtStatus.Margin = new System.Windows.Forms.Padding(4);
             this.TxtStatus.Multiline = true;
             this.TxtStatus.Name = "TxtStatus";
             this.TxtStatus.ReadOnly = true;
             this.TxtStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TxtStatus.Size = new System.Drawing.Size(879, 464);
+            this.TxtStatus.Size = new System.Drawing.Size(879, 443);
             this.TxtStatus.TabIndex = 6;
             // 
             // chkOpenOutput
@@ -143,7 +145,7 @@
             this.chkOpenOutput.AutoSize = true;
             this.chkOpenOutput.Checked = true;
             this.chkOpenOutput.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkOpenOutput.Location = new System.Drawing.Point(498, 50);
+            this.chkOpenOutput.Location = new System.Drawing.Point(713, 85);
             this.chkOpenOutput.Name = "chkOpenOutput";
             this.chkOpenOutput.Size = new System.Drawing.Size(179, 19);
             this.chkOpenOutput.TabIndex = 8;
@@ -162,7 +164,7 @@
             // 
             // TxtFontSize
             // 
-            this.TxtFontSize.Location = new System.Drawing.Point(361, 44);
+            this.TxtFontSize.Location = new System.Drawing.Point(430, 49);
             this.TxtFontSize.Name = "TxtFontSize";
             this.TxtFontSize.Size = new System.Drawing.Size(47, 25);
             this.TxtFontSize.TabIndex = 9;
@@ -173,18 +175,38 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(288, 50);
+            this.label3.Location = new System.Drawing.Point(357, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 15);
             this.label3.TabIndex = 10;
             this.label3.Text = "字体大小";
+            // 
+            // TxtLogo
+            // 
+            this.TxtLogo.Location = new System.Drawing.Point(537, 50);
+            this.TxtLogo.Name = "TxtLogo";
+            this.TxtLogo.Size = new System.Drawing.Size(152, 25);
+            this.TxtLogo.TabIndex = 9;
+            this.TxtLogo.Text = "CSCAN@CDPMI";
+            this.TxtLogo.TextChanged += new System.EventHandler(this.TxtLogo_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(492, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 15);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "LOGO";
             // 
             // CscanMarker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 598);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.TxtLogo);
             this.Controls.Add(this.TxtFontSize);
             this.Controls.Add(this.chkOpenOutput);
             this.Controls.Add(this.TxtStatus);
@@ -224,5 +246,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtFontSize;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TxtLogo;
+        private System.Windows.Forms.Label label4;
     }
 }
