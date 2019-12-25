@@ -40,6 +40,8 @@
             this.TxtStatus = new System.Windows.Forms.TextBox();
             this.chkOpenOutput = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.TxtFontSize = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -158,11 +160,32 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "选项";
             // 
+            // TxtFontSize
+            // 
+            this.TxtFontSize.Location = new System.Drawing.Point(361, 44);
+            this.TxtFontSize.Name = "TxtFontSize";
+            this.TxtFontSize.Size = new System.Drawing.Size(47, 25);
+            this.TxtFontSize.TabIndex = 9;
+            this.TxtFontSize.Text = "8";
+            this.TxtFontSize.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtFontSize.TextChanged += new System.EventHandler(this.TxtFontSize_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(288, 50);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 15);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "字体大小";
+            // 
             // CscanMarker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 598);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.TxtFontSize);
             this.Controls.Add(this.chkOpenOutput);
             this.Controls.Add(this.TxtStatus);
             this.Controls.Add(this.BtnStart);
@@ -199,5 +222,7 @@
         private System.Windows.Forms.TextBox TxtStatus;
         private System.Windows.Forms.CheckBox chkOpenOutput;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtFontSize;
+        private System.Windows.Forms.Label label3;
     }
 }

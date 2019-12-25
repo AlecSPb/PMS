@@ -271,7 +271,7 @@ namespace ImportTargetPhotoIntoReport
                     else
                     {
                         var pic_p = table.Rows[10].Cells[0].Paragraphs[0];
-                        var pic_pp = pic_p.InsertPicture(pic);                    
+                        var pic_pp = pic_p.InsertPicture(pic);
                         //合并三个单元格
                         table.MergeCellsInColumn(0, 10, 12);
                     }
@@ -387,13 +387,13 @@ namespace ImportTargetPhotoIntoReport
             {
                 System.Drawing.Image img = System.Drawing.Image.FromFile(jpgName);
                 Graphics g = Graphics.FromImage(img);
-                System.Drawing.Font font = new System.Drawing.Font("Arial", 8);
+                System.Drawing.Font font = new System.Drawing.Font("Arial", PhotoMarkerControl.FontSize);
 
                 string file_name = Path.GetFileNameWithoutExtension(jpgName);
                 string product_id = GetProductIDFromJPEGName(file_name);
 
                 float x = 5, y = 5;
-                float interval = 15;
+                float interval = PhotoMarkerControl.FontSize + 10;
 
                 if (PhotoMarkerControl.HasProductID)
                 {

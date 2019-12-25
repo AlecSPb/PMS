@@ -493,6 +493,16 @@ namespace PMSClient.ViewModel
                 sb.AppendLine(model.RecordTest.Dimension);
                 sb.AppendLine(model.RecordTest.Customer);
                 sb.AppendLine(model.RecordTest.PO);
+                sb.AppendLine("=====  空行产品标签↓  =====");
+                sb.AppendLine(model.RecordTest.ProductID);
+                sb.AppendLine();
+                sb.AppendLine(model.RecordTest.Composition);
+                sb.AppendLine();
+                sb.AppendLine(model.RecordTest.Dimension);
+                //sb.AppendLine();
+                //sb.AppendLine(model.RecordTest.Customer);
+                //sb.AppendLine();
+                //sb.AppendLine(model.RecordTest.PO);
                 sb.AppendLine("=====  简成分样品标签↓  =====");
                 sb.AppendLine(Helpers.CompositionHelper.RemoveNumbers(model.RecordTest.Composition));
                 sb.AppendLine("Weight      g");

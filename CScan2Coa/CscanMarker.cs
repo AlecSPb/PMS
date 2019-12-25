@@ -101,5 +101,10 @@ namespace ImportTargetPhotoIntoReport
         {
             process.IsOpenOutputDirectory = chkOpenOutput.Checked;
         }
+
+        private void TxtFontSize_TextChanged(object sender, EventArgs e)
+        {
+            process.PhotoMarkerControl.FontSize = float.Parse(TxtFontSize.Text.Trim());
+        }
     }
 }
