@@ -59,7 +59,7 @@ namespace PMSWCFService
                                 where p.ItemGroup.Contains(itemGroup)
                                 && p.ItemName.Contains(itemName)
                                 && p.State == PMSCommon.SimpleState.正常.ToString()
-                                orderby p.ItemGroup ascending,p.ItemName ascending
+                                orderby p.ItemGroup ascending,p.ItemName ascending,p.ItemSpecification ascending
                                 select p;
                     var result = query.Skip(s).Take(t).ToList();
                     Mapper.Initialize(cfg => cfg.CreateMap<PMICounter, DcPMICounter>());

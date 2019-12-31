@@ -134,12 +134,11 @@ namespace PMSClient.ViewModel
             string remark = CurrentOrder.Remark;
             string requirement = CurrentOrder.DimensionDetails;
             CheckResult is_outsource = OrderCheckLogic.OutSourceCheck(new string[] { remark, requirement });
+
             if (!is_outsource.IsCheckOK)
             {
                 PMSDialogService.ShowWarning(is_outsource.Message);
             }
-
-
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
@@ -148,12 +147,20 @@ namespace PMSClient.ViewModel
                 {
                     if (CurrentOrder != null)
                     {
+                        //检查PMINumber是否符合格式规范
+                        if (!OrderCheckLogic.CheckPMINumber(CurrentOrder.PMINumber))
+                        {
+                            PMSDialogService.ShowWarning($"PMINumber【{CurrentOrder.PMINumber}】不符合规范要求，\r\n规范要求格式为CD191212-A");
+                            return;
+                        }
+                        //检查PMINumber是否被占用
                         if (service.CheckPMINumberExisit(CurrentOrder.PMINumber))
                         {
                             PMSDialogService.ShowWarning($"PMI Number【{CurrentOrder.PMINumber}】" +
                                 $"已经被占用,无法保存");
                             return;
                         }
+
 
                     }
                     service.AddOrderByUID(CurrentOrder, uid);

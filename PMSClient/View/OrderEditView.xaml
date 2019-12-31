@@ -82,8 +82,13 @@
                     <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="{Binding DataContext.CanUseThisPMINumber,
                         RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
                 </StackPanel>
-                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="*自动生成的工作号不一定唯一和合适，请自行修改 CD开头"  Background="LightGreen"/>
+                <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="*确保是CD191228-A的格式"  Background="Yellow"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="自动生成的工作号不一定唯一和合适，请自行修改 CD开头"  Background="LightGreen"/>
+                </StackPanel>
+
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource OrderOriginalComposition}"
                            Style="{StaticResource StyleTextBlockCommon}" />

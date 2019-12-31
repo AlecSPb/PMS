@@ -88,7 +88,7 @@ namespace PMSClient
             _timerMain = new DispatcherTimer();
             _timerMain.Interval = new TimeSpan(0, 0, 30);
             _timerMain.Tick += _timerMain_Tick; ;
-            //_timerMain.Start();
+            _timerMain.Start();
             #endregion
 
             #region 托盘部分
@@ -110,7 +110,7 @@ namespace PMSClient
         {
             if (HeartBeatCheck())
             {
-                NoticeCheck();
+                //NoticeCheck();
             }
         }
         private bool HeartBeatCheck()
@@ -118,6 +118,7 @@ namespace PMSClient
 
             if (PMSHelper.CurrentSession?.CurrentUserRole?.GroupName == "管理员")
             {
+                System.Diagnostics.Debug.WriteLine("外网心跳检测正常");
                 try
                 {
                     using (var remote_heartbeat = new PMSClient.RemoteHeartBeatService.HeartBeatSeriveClient())
@@ -143,6 +144,8 @@ namespace PMSClient
 
             try
             {
+                System.Diagnostics.Debug.WriteLine("内网心跳检测正常");
+
                 using (var heartbeat = new PMSClient.HeartBeatService.HeartBeatSeriveClient())
                 {
                     if (heartbeat.Beat() == "ok")
