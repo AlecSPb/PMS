@@ -80,8 +80,13 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding DeliveryNumber}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightGreen"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
-                           Text="需要填入完整运单号，多个单号请用+隔开"/>
+                <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}" 
+                           Text="需要填入完整运单号，"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}" Background="Orange"
+                           Text="多个单号请用加号+隔开"/>
+                </StackPanel>
+
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RDCountry}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

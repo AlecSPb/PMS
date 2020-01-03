@@ -21,6 +21,31 @@ namespace PMSClient.Helpers
 
     public static class CompositionHelper
     {
+
+        public static string CheckAllAdditive(string composition)
+        {
+            string postfix = "";
+            postfix = CheckSingleAdditive(composition, "NaF");
+            if (!string.IsNullOrEmpty(postfix)) return postfix;
+            postfix = CheckSingleAdditive(composition, "RbF");
+            if (!string.IsNullOrEmpty(postfix)) return postfix;
+            postfix = CheckSingleAdditive(composition, "Na2S");
+
+            if (!string.IsNullOrEmpty(postfix))
+                return postfix;
+            else
+                return string.Empty;
+        }
+
+        private static string CheckSingleAdditive(string composition, string additive)
+        {
+            if (composition.Contains(additive))
+                return additive;
+            else
+                return string.Empty;
+        }
+
+
         public static string RemoveNumbers(string compostion)
         {
             string pattern = @"(\-|\+)?\d+(\.\d+)?";
@@ -57,7 +82,7 @@ namespace PMSClient.Helpers
                 {
                     return TargetType.CIGS;
                 }
-                else if(comp.Contains("Ga"))
+                else if (comp.Contains("Ga"))
                 {
                     return TargetType.CuGaSe;
                 }
@@ -70,7 +95,7 @@ namespace PMSClient.Helpers
             {
                 if (comp.Contains("Se"))
                 {
-                   return TargetType.InSe;
+                    return TargetType.InSe;
                 }
                 else
                 {

@@ -62,7 +62,7 @@ namespace PMSClient.ViewModel
 
             QuickSave = new RelayCommand<DcDeliveryItem>(ActionQuickSave, CanQuickSave);
             SaveAllItems = new RelayCommand(ActionSaveAllItems, CanSaveAllItems);
-            ExpressTrack = new RelayCommand(ActionExpressTrack,CanExpressTrack);
+            ExpressTrack = new RelayCommand(ActionExpressTrack, CanExpressTrack);
         }
 
         private bool CanExpressTrack()
@@ -291,7 +291,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetDeliveryItemByDeliveryID(model.ID);
                     DeliveryItems.Clear();
                     result.OrderBy(i => i.OrderNumber)
-                        .ThenBy(i=>i.PackNumber)
+                        .ThenBy(i => i.PackNumber)
                         .ThenBy(i => i.ProductID)
                         .ToList().ForEach(i => DeliveryItems.Add(i));
 
@@ -398,6 +398,13 @@ namespace PMSClient.ViewModel
                         else
                         {
                             abbr = item.Abbr;
+                        }
+                        //2020-1-4
+                        //如果成分包含NaF或者KF或者RbF或者Na2S之类的字样，则保留
+                        string postfix = CompositionHelper.CheckAllAdditive(item.Composition);
+                        if (!string.IsNullOrEmpty(postfix))
+                        {
+                            abbr += "+" + postfix;
                         }
                         sb.AppendLine(abbr);
                     }
