@@ -352,7 +352,10 @@ namespace ImportTargetPhotoIntoReport
         /// <returns></returns>
         public string GetProductIDFromJPEGName(string jpgName)
         {
-            return GetProductIDFromFileName(jpgName, @"\d{6}-\w{1,2}-\d{1}[A-Z]{0,1}");
+            if (jpgName.Contains("#"))
+                return jpgName;
+            else
+                return GetProductIDFromFileName(jpgName, @"\d{6}-\w{1,2}-\d{1}[A-Z]{0,1}");
         }
 
 
@@ -442,7 +445,7 @@ namespace ImportTargetPhotoIntoReport
 
                 //左下角添加PMI标志
                 int height = img.Height;
-                y = height - 25;
+                y = height - PhotoMarkerControl.FontSize - 25;
 
                 g.DrawString(PhotoMarkerControl.Logo, font, Brushes.White, x, y);
 
