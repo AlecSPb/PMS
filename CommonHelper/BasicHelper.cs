@@ -14,6 +14,18 @@ namespace CommonHelper
     public class BasicHelper
     {
         #region 文件处理
+        /// <summary>
+        /// 创建新的文件夹在桌面上
+        /// </summary>
+        /// <param name="folderpath"></param>
+        public string CreateFolder(string foldername)
+        {
+            string folderpath = Path.Combine(GetDesktopPath(), foldername);
+            if (Directory.Exists(folderpath)) return folderpath;
+            Directory.CreateDirectory(folderpath);
+            return folderpath;
+        }
+
         //返回当前文件夹路径
         public string GetCurrentFolderPath()
         {
@@ -27,6 +39,7 @@ namespace CommonHelper
         {
             return Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
         }
+
         /// <summary>
         /// 获取当前时间文件名，精确到秒
         /// </summary>
@@ -42,9 +55,18 @@ namespace CommonHelper
         /// <param name="folder"></param>
         /// <param name="file"></param>
         /// <returns></returns>
-        public string GetFullFileName(string folder, string file)
+        public string GetFullFileName(string file, string folder)
         {
             return Path.Combine(folder, file);
+        }
+        /// <summary>
+        /// 获取完整文件名-默认桌面
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
+        public string GetFullFileName(string file)
+        {
+            return Path.Combine(GetDesktopPath(), file);
         }
         #endregion
 

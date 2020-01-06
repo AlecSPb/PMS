@@ -39,13 +39,13 @@
             this.DtpEnd = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.ChkIsOpen = new System.Windows.Forms.CheckBox();
             this.TxtStatus = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.TSProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.ChkShowProcessDetails = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +53,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 67);
+            this.label1.Location = new System.Drawing.Point(10, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 15);
             this.label1.TabIndex = 0;
@@ -61,7 +61,7 @@
             // 
             // TxtImageFolder
             // 
-            this.TxtImageFolder.Location = new System.Drawing.Point(121, 64);
+            this.TxtImageFolder.Location = new System.Drawing.Point(121, 90);
             this.TxtImageFolder.Name = "TxtImageFolder";
             this.TxtImageFolder.ReadOnly = true;
             this.TxtImageFolder.Size = new System.Drawing.Size(461, 25);
@@ -69,7 +69,7 @@
             // 
             // BtnSelectImageFolder
             // 
-            this.BtnSelectImageFolder.Location = new System.Drawing.Point(588, 64);
+            this.BtnSelectImageFolder.Location = new System.Drawing.Point(588, 90);
             this.BtnSelectImageFolder.Name = "BtnSelectImageFolder";
             this.BtnSelectImageFolder.Size = new System.Drawing.Size(77, 25);
             this.BtnSelectImageFolder.TabIndex = 2;
@@ -80,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 103);
+            this.label2.Location = new System.Drawing.Point(10, 129);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 15);
             this.label2.TabIndex = 0;
@@ -88,7 +88,7 @@
             // 
             // TxtOutputFolder
             // 
-            this.TxtOutputFolder.Location = new System.Drawing.Point(121, 100);
+            this.TxtOutputFolder.Location = new System.Drawing.Point(121, 126);
             this.TxtOutputFolder.Name = "TxtOutputFolder";
             this.TxtOutputFolder.ReadOnly = true;
             this.TxtOutputFolder.Size = new System.Drawing.Size(461, 25);
@@ -96,7 +96,7 @@
             // 
             // BtnSelectOutputFolder
             // 
-            this.BtnSelectOutputFolder.Location = new System.Drawing.Point(588, 102);
+            this.BtnSelectOutputFolder.Location = new System.Drawing.Point(588, 128);
             this.BtnSelectOutputFolder.Name = "BtnSelectOutputFolder";
             this.BtnSelectOutputFolder.Size = new System.Drawing.Size(77, 25);
             this.BtnSelectOutputFolder.TabIndex = 2;
@@ -106,7 +106,7 @@
             // 
             // BtnStart
             // 
-            this.BtnStart.Location = new System.Drawing.Point(569, 190);
+            this.BtnStart.Location = new System.Drawing.Point(569, 220);
             this.BtnStart.Name = "BtnStart";
             this.BtnStart.Size = new System.Drawing.Size(115, 34);
             this.BtnStart.TabIndex = 2;
@@ -116,7 +116,7 @@
             // 
             // DtpStart
             // 
-            this.DtpStart.Location = new System.Drawing.Point(122, 136);
+            this.DtpStart.Location = new System.Drawing.Point(122, 162);
             this.DtpStart.Name = "DtpStart";
             this.DtpStart.Size = new System.Drawing.Size(200, 25);
             this.DtpStart.TabIndex = 4;
@@ -124,7 +124,7 @@
             // 
             // DtpEnd
             // 
-            this.DtpEnd.Location = new System.Drawing.Point(382, 136);
+            this.DtpEnd.Location = new System.Drawing.Point(382, 162);
             this.DtpEnd.Name = "DtpEnd";
             this.DtpEnd.Size = new System.Drawing.Size(200, 25);
             this.DtpEnd.TabIndex = 4;
@@ -133,7 +133,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 141);
+            this.label3.Location = new System.Drawing.Point(10, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 15);
             this.label3.TabIndex = 0;
@@ -153,17 +153,29 @@
             this.groupBox1.Controls.Add(this.TxtOutputFolder);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(671, 172);
+            this.groupBox1.Size = new System.Drawing.Size(671, 203);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "基本设置";
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Yellow;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("宋体", 9F);
+            this.label4.Location = new System.Drawing.Point(13, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(652, 48);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "先从服务器下载全部绑定超声照片到本地,此工具会自动生成选定日期范围内已完成的230mm靶材的图集.\r\n";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ChkIsOpen
             // 
             this.ChkIsOpen.AutoSize = true;
             this.ChkIsOpen.Checked = true;
             this.ChkIsOpen.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkIsOpen.Location = new System.Drawing.Point(453, 199);
+            this.ChkIsOpen.Location = new System.Drawing.Point(453, 229);
             this.ChkIsOpen.Name = "ChkIsOpen";
             this.ChkIsOpen.Size = new System.Drawing.Size(104, 19);
             this.ChkIsOpen.TabIndex = 6;
@@ -172,13 +184,13 @@
             // 
             // TxtStatus
             // 
-            this.TxtStatus.Location = new System.Drawing.Point(12, 228);
+            this.TxtStatus.Location = new System.Drawing.Point(13, 261);
             this.TxtStatus.MaxLength = 3276700;
             this.TxtStatus.Multiline = true;
             this.TxtStatus.Name = "TxtStatus";
             this.TxtStatus.ReadOnly = true;
             this.TxtStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TxtStatus.Size = new System.Drawing.Size(671, 200);
+            this.TxtStatus.Size = new System.Drawing.Size(670, 207);
             this.TxtStatus.TabIndex = 7;
             // 
             // statusStrip1
@@ -187,7 +199,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.TSProgressBar});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 433);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 471);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(699, 25);
             this.statusStrip1.TabIndex = 8;
@@ -210,29 +222,18 @@
             this.ChkShowProcessDetails.AutoSize = true;
             this.ChkShowProcessDetails.Checked = true;
             this.ChkShowProcessDetails.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkShowProcessDetails.Location = new System.Drawing.Point(283, 199);
+            this.ChkShowProcessDetails.Location = new System.Drawing.Point(283, 229);
             this.ChkShowProcessDetails.Name = "ChkShowProcessDetails";
             this.ChkShowProcessDetails.Size = new System.Drawing.Size(149, 19);
             this.ChkShowProcessDetails.TabIndex = 6;
             this.ChkShowProcessDetails.Text = "显示详细处理过程";
             this.ChkShowProcessDetails.UseVisualStyleBackColor = true;
             // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Yellow;
-            this.label4.Font = new System.Drawing.Font("宋体", 9F);
-            this.label4.Location = new System.Drawing.Point(13, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(652, 24);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "先从服务器下载全部绑定超声照片,此工具会自动生成选定日期范围的230mm靶材的图集";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 458);
+            this.ClientSize = new System.Drawing.Size(699, 496);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.TxtStatus);
             this.Controls.Add(this.ChkShowProcessDetails);
