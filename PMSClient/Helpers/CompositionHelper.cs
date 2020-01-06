@@ -27,6 +27,8 @@ namespace PMSClient.Helpers
             string postfix = "";
             postfix = CheckSingleAdditive(composition, "NaF");
             if (!string.IsNullOrEmpty(postfix)) return postfix;
+            postfix = CheckSingleAdditive(composition, "KF");
+            if (!string.IsNullOrEmpty(postfix)) return postfix;
             postfix = CheckSingleAdditive(composition, "RbF");
             if (!string.IsNullOrEmpty(postfix)) return postfix;
             postfix = CheckSingleAdditive(composition, "Na2S");

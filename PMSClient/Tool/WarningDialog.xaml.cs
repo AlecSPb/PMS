@@ -31,5 +31,10 @@ namespace PMSClient.Tool
                 this.TxtWarningMessage.Text = value;
             }
         }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
