@@ -1382,6 +1382,12 @@
   <wsdl:message name="IRecordBondingService_GetRecordBondingsByPMINumber_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordBondingsByPMINumberResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetRecordBondingsByDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordBondingsByDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetRecordBondingsByDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordBondingsByDateTimeResponse" />
+  </wsdl:message>
   <wsdl:message name="IOutSourceService_GetOutSources_InputMessage">
     <wsdl:part name="parameters" element="tns:GetOutSources" />
   </wsdl:message>
@@ -2356,6 +2362,10 @@
     <wsdl:operation name="GetRecordBondingsByPMINumber">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumber" message="tns:IRecordBondingService_GetRecordBondingsByPMINumber_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumberResponse" message="tns:IRecordBondingService_GetRecordBondingsByPMINumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordBondingsByDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTime" message="tns:IRecordBondingService_GetRecordBondingsByDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTimeResponse" message="tns:IRecordBondingService_GetRecordBondingsByDateTime_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IOutSourceService">
@@ -4478,6 +4488,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetRecordBondingsByPMINumber">
       <soap:operation soapAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordBondingsByDateTime">
+      <soap:operation soapAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTime" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -51,5 +51,9 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcRecordBonding> GetRecordBondingsByPMINumber(string pminumber);
 
+
+        //用于时间范围搜索功能
+        [OperationContract]
+        List<DcRecordBonding> GetRecordBondingsByDateTime(DateTime start, DateTime end);
     }
 }

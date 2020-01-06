@@ -26,11 +26,7 @@ namespace GalleryOfCScanImage
             DtpStart.Value = DateTime.Today.AddDays(-30);
             DtpEnd.Value = DateTime.Today;
             LoadPaths();
-            helper.UpdateTextBox += (s, e) =>
-            {
-                TxtStatus.Text = e;
-            };
-            helper.InsertStatus("默认设置加载完毕");
+            UpdateStatus("默认设置加载完毕");
 
         }
 
@@ -56,23 +52,86 @@ namespace GalleryOfCScanImage
 
         private void BtnSelectImageFolder_Click(object sender, EventArgs e)
         {
-            TxtImageFolder.Text = helper.GetDirectoryPath("请选择超声图片所在的文件夹");
-            helper.InsertStatus("已设置超声图片文件夹路径");
+            PathParameter path = helper.GetDirectoryPath("请选择超声图片所在的文件夹");
+            if (path.IsOK)
+            {
+                TxtImageFolder.Text = path.SelectPath;
+                UpdateStatus("已设置超声图片文件夹路径");
+            }
+
         }
 
         private void BtnSelectOutputFolder_Click(object sender, EventArgs e)
         {
-            TxtOutputFolder.Text = helper.GetDirectoryPath("请选择输出文件所在的文件夹");
-            helper.InsertStatus("已设置输出图片文件夹路径");
+            PathParameter path = helper.GetDirectoryPath("请选择输出文件所在的文件夹");
+            if (path.IsOK)
+            {
+                TxtOutputFolder.Text = path.SelectPath;
+                UpdateStatus("已设置输出图片文件夹路径");
+            }
         }
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
-            helper.InsertStatus("开始处理，耐心等待");
-            parameters.OpenAfterCreated = ChkIsOpen.Checked;
+            parameters.OpenTheDocument = ChkIsOpen.Checked;
+            parameters.ShowProcessDetails = ChkShowProcessDetails.Checked;
+            parameters.ImageFolder = TxtImageFolder.Text;
+            parameters.OutputFolder = TxtOutputFolder.Text;
+            parameters.Start = DtpStart.Value;
+            parameters.End = DtpEnd.Value;
 
-
+            if (helper.ShowQuestion("载入文件完成，继续处理吗？"))
+            {
+                Task.Factory.StartNew(StartProcess);
+            }
         }
+
+
+        private void StartProcess()
+        {
+            this.Invoke(new Action(() =>
+            {
+                BtnStart.Enabled = false;
+            }));
+
+            GalleryService gs = new GalleryService();
+            gs.UpdateStatus += UpdateStatusInTask;
+            gs.UpdateProgressValue += UpdateProgressValueInTask;
+            gs.Parameters = parameters;
+
+            gs.Process();
+
+            this.Invoke(new Action(() =>
+            {
+                BtnStart.Enabled = true;
+            }));
+        }
+
+        #region 更新状态
+
+        private void UpdateStatus(string msg)
+        {
+            TxtStatus.Text = helper.InsertStatus(msg);
+        }
+
+        private void UpdateStatusInTask(object sender, string e)
+        {
+            this.Invoke(new Action(() =>
+            {
+                TxtStatus.Text = helper.InsertStatus(e);
+            }));
+        }
+
+        private void UpdateProgressValueInTask(object sender, int e)
+        {
+            this.Invoke(new Action(() =>
+            {
+                TSProgressBar.Value = e;
+            }));
+        }
+        #endregion
+
+
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -81,13 +140,12 @@ namespace GalleryOfCScanImage
 
         private void DtpStart_ValueChanged(object sender, EventArgs e)
         {
-            helper.InsertStatus($"开始日期已设置 {DtpStart.Value.ToShortDateString()}");
-
+            UpdateStatus($"开始日期已设置 {DtpStart.Value.ToShortDateString()}");
         }
 
         private void DtpEnd_ValueChanged(object sender, EventArgs e)
         {
-            helper.InsertStatus($"结束日期已设置 {DtpEnd.Value.ToShortDateString()}");
+            UpdateStatus($"结束日期已设置 {DtpEnd.Value.ToShortDateString()}");
         }
     }
 }

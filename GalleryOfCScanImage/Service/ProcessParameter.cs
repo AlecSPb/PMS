@@ -8,6 +8,12 @@ namespace GalleryOfCScanImage.Service
 {
     public class ProcessParameter
     {
-        public bool OpenAfterCreated { get; set; }
+        public string ImageFolder { get; set; }
+        public string OutputFolder { get; set; }
+        public bool OpenTheDocument { get; set; }
+        public bool ShowProcessDetails { get; set; }
+
+        public DateTime Start { get; set; }
+        public DateTime End { get; set; }
     }
 }

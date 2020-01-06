@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CommonHelper
 {
-    public class Class1
+    public class PathParameter
     {
+        public bool IsOK { get; set; }
+        public string SelectPath { get; set; }
     }
 }

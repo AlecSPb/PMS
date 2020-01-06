@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("GalleryOfCScanImage")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("designed by xszhou")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("xszhou made it")]
 [assembly: AssemblyProduct("GalleryOfCScanImage")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]

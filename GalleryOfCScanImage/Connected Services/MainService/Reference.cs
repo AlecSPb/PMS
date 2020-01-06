@@ -12162,6 +12162,12 @@ namespace GalleryOfCScanImage.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumber", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumberResponse")]
         System.Threading.Tasks.Task<GalleryOfCScanImage.MainService.DcRecordBonding[]> GetRecordBondingsByPMINumberAsync(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTime", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTimeResponse")]
+        GalleryOfCScanImage.MainService.DcRecordBonding[] GetRecordBondingsByDateTime(System.DateTime start, System.DateTime end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTime", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTimeResponse")]
+        System.Threading.Tasks.Task<GalleryOfCScanImage.MainService.DcRecordBonding[]> GetRecordBondingsByDateTimeAsync(System.DateTime start, System.DateTime end);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -12301,6 +12307,14 @@ namespace GalleryOfCScanImage.MainService {
         
         public System.Threading.Tasks.Task<GalleryOfCScanImage.MainService.DcRecordBonding[]> GetRecordBondingsByPMINumberAsync(string pminumber) {
             return base.Channel.GetRecordBondingsByPMINumberAsync(pminumber);
+        }
+        
+        public GalleryOfCScanImage.MainService.DcRecordBonding[] GetRecordBondingsByDateTime(System.DateTime start, System.DateTime end) {
+            return base.Channel.GetRecordBondingsByDateTime(start, end);
+        }
+        
+        public System.Threading.Tasks.Task<GalleryOfCScanImage.MainService.DcRecordBonding[]> GetRecordBondingsByDateTimeAsync(System.DateTime start, System.DateTime end) {
+            return base.Channel.GetRecordBondingsByDateTimeAsync(start, end);
         }
     }
     
