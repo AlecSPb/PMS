@@ -52,7 +52,7 @@ namespace GalleryOfCScanImage
 
         private void BtnSelectImageFolder_Click(object sender, EventArgs e)
         {
-            PathParameter path = helper.GetDirectoryPath("请选择超声图片所在的文件夹");
+            PathParameter path = helper.DilaogSelectDirectoryPath("请选择超声图片所在的文件夹");
             if (path.IsOK)
             {
                 TxtImageFolder.Text = path.SelectPath;
@@ -63,7 +63,7 @@ namespace GalleryOfCScanImage
 
         private void BtnSelectOutputFolder_Click(object sender, EventArgs e)
         {
-            PathParameter path = helper.GetDirectoryPath("请选择输出文件所在的文件夹");
+            PathParameter path = helper.DilaogSelectDirectoryPath("请选择输出文件所在的文件夹");
             if (path.IsOK)
             {
                 TxtOutputFolder.Text = path.SelectPath;
@@ -73,19 +73,29 @@ namespace GalleryOfCScanImage
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
-            parameters.OpenTheDocument = ChkIsOpen.Checked;
-            parameters.ShowProcessDetails = ChkShowProcessDetails.Checked;
-            parameters.ImageFolder = TxtImageFolder.Text;
-            parameters.OutputFolder = TxtOutputFolder.Text;
-            parameters.Start = DtpStart.Value;
-            parameters.End = DtpEnd.Value;
-
-            if (helper.ShowQuestion("载入文件完成，继续处理吗？"))
+            if (CheckFolderPath(TxtImageFolder.Text)
+                && CheckFolderPath(TxtOutputFolder.Text)
+                && DtpStart.Value < DtpEnd.Value)
             {
-                Task.Factory.StartNew(StartProcess);
+                parameters.OpenTheDocument = ChkIsOpen.Checked;
+                parameters.ShowProcessDetails = ChkShowProcessDetails.Checked;
+                parameters.ImageFolder = TxtImageFolder.Text;
+                parameters.OutputFolder = TxtOutputFolder.Text;
+                parameters.Start = DtpStart.Value;
+                parameters.End = DtpEnd.Value;
+
+                if (helper.DialogShowQuestion("载入文件完成，继续处理吗？"))
+                {
+                    Task.Factory.StartNew(StartProcess);
+                }
             }
+
         }
 
+        private bool CheckFolderPath(string folderpath)
+        {
+            return System.IO.Directory.Exists(folderpath);
+        }
 
         private void StartProcess()
         {
@@ -146,6 +156,17 @@ namespace GalleryOfCScanImage
         private void DtpEnd_ValueChanged(object sender, EventArgs e)
         {
             UpdateStatus($"结束日期已设置 {DtpEnd.Value.ToShortDateString()}");
+        }
+
+        private void BtnThisMonth_Click(object sender, EventArgs e)
+        {
+            DtpStart.Value = DateTime.Now.AddDays(1 - DateTime.Now.Day).Date;
+            DtpEnd.Value = DateTime.Now.AddDays(1 - DateTime.Now.Day).Date.AddMonths(1).AddSeconds(-1);
+        }
+        private void BtnLastMonth_Click(object sender, EventArgs e)
+        {
+            DtpStart.Value = DateTime.Now.AddDays(1 - DateTime.Now.Day).AddMonths(-1).Date;
+            DtpEnd.Value = DateTime.Now.AddDays(1 - DateTime.Now.Day).AddDays(-1).Date;
         }
     }
 }

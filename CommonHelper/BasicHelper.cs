@@ -9,18 +9,41 @@ using System.Windows.Forms;
 namespace CommonHelper
 {
     /// <summary>
-    /// 公共帮助类
+    /// 小工具的公共帮助类
     /// </summary>
     public class BasicHelper
     {
         #region 文件处理
         /// <summary>
-        /// 创建新的文件夹在桌面上
+        /// 打开文件
+        /// </summary>
+        /// <param name="filepath"></param>
+        public void OpenFile(string filepath)
+        {
+            try
+            {
+                if (File.Exists(filepath))
+                {
+                    System.Diagnostics.Process.Start(filepath);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        /// <summary>
+        /// 创建新的文件夹在某个位置
         /// </summary>
         /// <param name="folderpath"></param>
-        public string CreateFolder(string foldername)
+        public string CreateFolder(string folder, string foldername)
         {
-            string folderpath = Path.Combine(GetDesktopPath(), foldername);
+            if (string.IsNullOrEmpty(folder))
+            {
+                folder = GetDesktopPath();
+            }
+            string folderpath = Path.Combine(folder, foldername);
             if (Directory.Exists(folderpath)) return folderpath;
             Directory.CreateDirectory(folderpath);
             return folderpath;
@@ -76,7 +99,7 @@ namespace CommonHelper
         /// </summary>
         /// <param name="description"></param>
         /// <returns></returns>
-        public PathParameter GetDirectoryPath(string description)
+        public PathParameter DilaogSelectDirectoryPath(string description)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             dialog.Description = description;
@@ -93,15 +116,43 @@ namespace CommonHelper
         }
 
         /// <summary>
+        /// 显示信息对话框
+        /// </summary>
+        /// <param name="info"></param>
+        public void DialogShowInformation(string msg)
+        {
+            MessageBox.Show(msg, "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        /// <summary>
+        /// 显示警告对话框
+        /// </summary>
+        /// <param name="msg"></param>
+        public void DialogShowWarning(string msg)
+        {
+            MessageBox.Show(msg, "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+        /// <summary>
+        /// 显示错误对话框
+        /// </summary>
+        /// <param name="msg"></param>
+        public void DialogShowFatal(string msg)
+        {
+            MessageBox.Show(msg, "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        /// <summary>
         /// 显示提问对话框
         /// </summary>
         /// <param name="msg">信息</param>
         /// <param name="title">标题</param>
         /// <returns></returns>
-        public bool ShowQuestion(string msg, string title = "请问")
+        public bool DialogShowQuestion(string msg, string title = "请问")
         {
             return MessageBox.Show(msg, title, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK;
         }
+
+
+
+
         #endregion
 
 

@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="PathImage" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">C:\Users\XS\Pictures</Value>
     </Setting>
     <Setting Name="PathOutput" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">C:\Users\XS\Desktop</Value>
     </Setting>
   </Settings>
 </SettingsFile>

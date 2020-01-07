@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.TxtImageFolder = new System.Windows.Forms.TextBox();
             this.BtnSelectImageFolder = new System.Windows.Forms.Button();
@@ -46,6 +47,8 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.TSProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.ChkShowProcessDetails = new System.Windows.Forms.CheckBox();
+            this.BtnThisMonth = new System.Windows.Forms.Button();
+            this.BtnLastMonth = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -118,15 +121,15 @@
             // 
             this.DtpStart.Location = new System.Drawing.Point(122, 162);
             this.DtpStart.Name = "DtpStart";
-            this.DtpStart.Size = new System.Drawing.Size(200, 25);
+            this.DtpStart.Size = new System.Drawing.Size(143, 25);
             this.DtpStart.TabIndex = 4;
             this.DtpStart.ValueChanged += new System.EventHandler(this.DtpStart_ValueChanged);
             // 
             // DtpEnd
             // 
-            this.DtpEnd.Location = new System.Drawing.Point(382, 162);
+            this.DtpEnd.Location = new System.Drawing.Point(271, 162);
             this.DtpEnd.Name = "DtpEnd";
-            this.DtpEnd.Size = new System.Drawing.Size(200, 25);
+            this.DtpEnd.Size = new System.Drawing.Size(148, 25);
             this.DtpEnd.TabIndex = 4;
             this.DtpEnd.ValueChanged += new System.EventHandler(this.DtpEnd_ValueChanged);
             // 
@@ -149,6 +152,8 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.BtnSelectImageFolder);
+            this.groupBox1.Controls.Add(this.BtnLastMonth);
+            this.groupBox1.Controls.Add(this.BtnThisMonth);
             this.groupBox1.Controls.Add(this.BtnSelectOutputFolder);
             this.groupBox1.Controls.Add(this.TxtOutputFolder);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
@@ -167,7 +172,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(652, 48);
             this.label4.TabIndex = 0;
-            this.label4.Text = "先从服务器下载全部绑定超声照片到本地,此工具会自动生成选定日期范围内已完成的230mm靶材的图集.\r\n";
+            this.label4.Text = "先从服务器下载全部绑定超声照片到本地,此工具会自动生成选定日期范围内[已完成]的230mm靶材的图集.\r\n";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ChkIsOpen
@@ -209,8 +214,8 @@
             // 
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8F);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(127, 20);
-            this.toolStripStatusLabel1.Text = "前提:连接PMS服务";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(110, 20);
+            this.toolStripStatusLabel1.Text = "需连接PMS服务";
             // 
             // TSProgressBar
             // 
@@ -229,6 +234,26 @@
             this.ChkShowProcessDetails.Text = "显示详细处理过程";
             this.ChkShowProcessDetails.UseVisualStyleBackColor = true;
             // 
+            // BtnThisMonth
+            // 
+            this.BtnThisMonth.Location = new System.Drawing.Point(425, 162);
+            this.BtnThisMonth.Name = "BtnThisMonth";
+            this.BtnThisMonth.Size = new System.Drawing.Size(77, 25);
+            this.BtnThisMonth.TabIndex = 2;
+            this.BtnThisMonth.Text = "本月";
+            this.BtnThisMonth.UseVisualStyleBackColor = true;
+            this.BtnThisMonth.Click += new System.EventHandler(this.BtnThisMonth_Click);
+            // 
+            // BtnLastMonth
+            // 
+            this.BtnLastMonth.Location = new System.Drawing.Point(505, 162);
+            this.BtnLastMonth.Name = "BtnLastMonth";
+            this.BtnLastMonth.Size = new System.Drawing.Size(77, 25);
+            this.BtnLastMonth.TabIndex = 2;
+            this.BtnLastMonth.Text = "上月";
+            this.BtnLastMonth.UseVisualStyleBackColor = true;
+            this.BtnLastMonth.Click += new System.EventHandler(this.BtnLastMonth_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -241,10 +266,11 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "超声图片汇集工具-230mm";
+            this.Text = "超声图片汇集工具 for 230mm V1.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -275,6 +301,8 @@
         private System.Windows.Forms.ToolStripProgressBar TSProgressBar;
         private System.Windows.Forms.CheckBox ChkShowProcessDetails;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button BtnLastMonth;
+        private System.Windows.Forms.Button BtnThisMonth;
     }
 }
 

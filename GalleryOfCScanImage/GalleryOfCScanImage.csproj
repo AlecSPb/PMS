@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icecream_128px_1186376_easyicon.net.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -207,6 +210,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icecream_128px_1186376_easyicon.net.ico" />
+    <Content Include="icecream_833px_1186376_easyicon.net.png" />
     <Content Include="ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

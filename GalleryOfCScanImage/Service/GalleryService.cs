@@ -75,28 +75,16 @@ namespace GalleryOfCScanImage.Service
             return imagefile;
         }
 
-        private void OpenFile(string filepath)
-        {
-            try
-            {
-                if (File.Exists(filepath))
-                {
-                    System.Diagnostics.Process.Start(filepath);
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-
         private BasicHelper helper = new BasicHelper();
+        /// <summary>
+        /// 创建文档
+        /// </summary>
+        /// <param name="records"></param>
         private void CreateDocument(DcRecordBonding[] records)
         {
 
             string filename = helper.GetDateTimeFileName();
-            string outputFolder = helper.CreateFolder("PMS临时文件夹");
+            string outputFolder = helper.CreateFolder(Parameters.OutputFolder, "PMS临时文件夹");
             string filepath = helper.GetFullFileName(filename, outputFolder);
 
             try
@@ -116,7 +104,7 @@ namespace GalleryOfCScanImage.Service
                 doc.DifferentFirstPage = true;
                 Header header = doc.Headers.First;
                 var p0 = header.InsertParagraph();
-                p0.Append($"CDPMI Create@{DateTime.Now.ToString()};230 mm Target Bonding Image From{Parameters.Start.ToShortDateString()}To{Parameters.End.ToShortDateString()}");
+                p0.Append($"CDPMI Create@{DateTime.Now.ToString()}; 230 mm Target Bonding Image From {Parameters.Start.ToShortDateString()} To {Parameters.End.ToShortDateString()}");
 
                 Table table = doc.AddTable(1, 4);
                 table.AutoFit = AutoFit.Window;
@@ -128,17 +116,17 @@ namespace GalleryOfCScanImage.Service
                     Cell cell = table.Rows[row].Cells[column];
                     cell.VerticalAlignment = VerticalAlignment.Center;
                     Paragraph p = cell.Paragraphs[0];
+                    p.Append($"{records[i].TargetProductID} [{records[i].WeldingRate}%]");
+                    p.FontSize(8);
+                    p.Alignment = Alignment.center;
+
                     if (imagefile != null)
                     {
-                        p.Append(records[i].TargetProductID).FontSize(8);
                         //p.AppendLine(records[i].TargetAbbr).FontSize(6);
                         p.AppendPicture(doc.AddImage(imagefile).CreatePicture(imageSize, imageSize));
-                        p.Alignment = Alignment.center;
                     }
                     else
                     {
-                        p.Append($"{records[0].TargetProductID}").Alignment = Alignment.center;
-                        p.Alignment = Alignment.center;
                         cell.FillColor = System.Drawing.Color.Yellow;
                     }
 
@@ -153,7 +141,7 @@ namespace GalleryOfCScanImage.Service
                     //状态更新
                     if (Parameters.ShowProcessDetails)
                     {
-                        UpdateMessage($"已处理{i + 1}个 {records[i].TargetProductID} {records[i].TargetComposition}");
+                        UpdateMessage($"已处理{i + 1}个 {records[i].TargetProductID} {records[i].TargetComposition} [{records[i].WeldingRate}%]");
                     }
                     int progressValue = (int)((i + 1) * 100 / records.Count());
                     UpdateProgress(progressValue);
@@ -166,7 +154,7 @@ namespace GalleryOfCScanImage.Service
 
                 if (Parameters.OpenTheDocument)
                 {
-                    OpenFile(filepath);
+                    helper.OpenFile(filepath);
                 }
             }
             catch (Exception)

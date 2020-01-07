@@ -25,7 +25,7 @@ namespace GalleryOfCScanImage.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\XS\\Pictures")]
         public string PathImage {
             get {
                 return ((string)(this["PathImage"]));
@@ -37,7 +37,7 @@ namespace GalleryOfCScanImage.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\XS\\Desktop")]
         public string PathOutput {
             get {
                 return ((string)(this["PathOutput"]));
