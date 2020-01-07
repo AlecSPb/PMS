@@ -275,6 +275,7 @@
     <Compile Include="Helpers\Converter\VisibilityConverter2.cs" />
     <Compile Include="Helpers\DefaultHelper.cs" />
     <Compile Include="Helpers\DeliveryHelper.cs" />
+    <Compile Include="Helpers\EditLockHelper.cs" />
     <Compile Include="Helpers\ExitHelper.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\Converter\IsLockedConverter.cs" />

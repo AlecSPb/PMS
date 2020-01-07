@@ -663,5 +663,29 @@ namespace PMSClient
 
             }
         }
+
+        private void BtnUnLock_Click(object sender, RoutedEventArgs e)
+        {
+            if (PMSHelper.CurrentSession.CurrentUser == null)
+            {
+                PMSDialogService.Show("你还没有登录");
+                return;
+            }
+            if (PMSDialogService.ShowYesNo("确定？", "确定要解除你设置的所有编辑锁定？"))
+            {
+
+                //管理员解除所有锁定
+                //普通用户接触自己用户名的锁定
+                if (PMSHelper.CurrentSession.CurrentUserRole.GroupName == "管理员")
+                {
+                    Helpers.EditLockHelper.UnLockAll();
+                }
+                else
+                {
+                    Helpers.EditLockHelper.UnLockByCurrentUser();
+                }
+                PMSDialogService.Show("解除成功");
+            }
+        }
     }
 }

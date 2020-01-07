@@ -60,13 +60,13 @@ namespace PMSWCFService
 
         }
 
-        public void UnLock(Guid id)
+        public void UnLock(string fingerprint)
         {
             try
             {
                 using (var db = new PMSDbContext())
                 {
-                    var entity = db.EditLocker.Find(id);
+                    var entity = db.EditLocker.Where(i => i.FingerPrint == fingerprint).FirstOrDefault();
                     if (entity != null)
                     {
                         db.EditLocker.Remove(entity);

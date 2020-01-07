@@ -15,7 +15,7 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         void Lock(DcEditLock model);
         [OperationContract]
-        void UnLock(Guid id);
+        void UnLock(string fingerprint);
         [OperationContract]
         void UnLockAll();
         [OperationContract]

@@ -149,10 +149,10 @@ namespace PMSClient.EditLockService {
         System.Threading.Tasks.Task LockAsync(PMSClient.EditLockService.DcEditLock model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEditLockService/UnLock", ReplyAction="http://tempuri.org/IEditLockService/UnLockResponse")]
-        void UnLock(System.Guid id);
+        void UnLock(string fingerprint);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEditLockService/UnLock", ReplyAction="http://tempuri.org/IEditLockService/UnLockResponse")]
-        System.Threading.Tasks.Task UnLockAsync(System.Guid id);
+        System.Threading.Tasks.Task UnLockAsync(string fingerprint);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEditLockService/UnLockAll", ReplyAction="http://tempuri.org/IEditLockService/UnLockAllResponse")]
         void UnLockAll();
@@ -208,12 +208,12 @@ namespace PMSClient.EditLockService {
             return base.Channel.LockAsync(model);
         }
         
-        public void UnLock(System.Guid id) {
-            base.Channel.UnLock(id);
+        public void UnLock(string fingerprint) {
+            base.Channel.UnLock(fingerprint);
         }
         
-        public System.Threading.Tasks.Task UnLockAsync(System.Guid id) {
-            return base.Channel.UnLockAsync(id);
+        public System.Threading.Tasks.Task UnLockAsync(string fingerprint) {
+            return base.Channel.UnLockAsync(fingerprint);
         }
         
         public void UnLockAll() {

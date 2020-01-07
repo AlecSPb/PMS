@@ -22,11 +22,11 @@
     <MetadataSource Address="http://192.168.16.254:8002/EditLockService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="EditLockService.wsdl" MetadataType="Wsdl" ID="5b3ad2ab-416a-4661-b968-87ee52ce9559" SourceId="1" SourceUrl="http://192.168.16.254:8002/EditLockService.svc?wsdl" />
-    <MetadataFile FileName="EditLockService.xsd" MetadataType="Schema" ID="e2d010d7-4ab1-4cc6-a62c-ba871c8de1e1" SourceId="1" SourceUrl="http://192.168.16.254:8002/EditLockService.svc?xsd=xsd2" />
-    <MetadataFile FileName="EditLockService.disco" MetadataType="Disco" ID="af6f94bb-7717-4c2a-8a73-a07fab23217b" SourceId="1" SourceUrl="http://192.168.16.254:8002/EditLockService.svc?disco" />
     <MetadataFile FileName="EditLockService1.xsd" MetadataType="Schema" ID="d97561ca-0144-409f-8e84-ece4e48cb6fd" SourceId="1" SourceUrl="http://192.168.16.254:8002/EditLockService.svc?xsd=xsd1" />
     <MetadataFile FileName="EditLockService2.xsd" MetadataType="Schema" ID="d3885366-9b67-4378-9dc0-679142bb4bbd" SourceId="1" SourceUrl="http://192.168.16.254:8002/EditLockService.svc?xsd=xsd0" />
+    <MetadataFile FileName="EditLockService.disco" MetadataType="Disco" ID="af6f94bb-7717-4c2a-8a73-a07fab23217b" SourceId="1" SourceUrl="http://192.168.16.254:8002/EditLockService.svc?disco" />
+    <MetadataFile FileName="EditLockService.xsd" MetadataType="Schema" ID="e2d010d7-4ab1-4cc6-a62c-ba871c8de1e1" SourceId="1" SourceUrl="http://192.168.16.254:8002/EditLockService.svc?xsd=xsd2" />
+    <MetadataFile FileName="EditLockService.wsdl" MetadataType="Wsdl" ID="5b3ad2ab-416a-4661-b968-87ee52ce9559" SourceId="1" SourceUrl="http://192.168.16.254:8002/EditLockService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

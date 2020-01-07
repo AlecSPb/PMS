@@ -194,8 +194,14 @@ namespace PMSClient.ViewModel
             NavigationService.GoTo(PMSViews.PlanSelect);
         }
 
-        private static void GoBack()
+        private void GoBack()
         {
+            //取消编辑锁定
+            if (CurrentRecordTest != null)
+            {
+                Helpers.EditLockHelper.UnLock(CurrentRecordTest.ID);
+            }
+
             NavigationService.GoTo(PMSViews.RecordTest);
         }
 
@@ -342,9 +348,11 @@ namespace PMSClient.ViewModel
                     service.UpdateRecordTestByUID(CurrentRecordTest, uid);
                 }
                 service.Close();
+
+
                 PMSHelper.ViewModels.RecordTest.RefreshData();
                 NavigationService.Status("保存成功，请刷新列表");
-                GoBack();
+                GoBack();//这个方法内有取消编辑锁定代码，无需重复
             }
             catch (Exception ex)
             {

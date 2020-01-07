@@ -94,7 +94,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDeepSearch(RecordTestExtra arg)
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(new string[] { "统筹组","测试组","管理员" });
+            return PMSHelper.CurrentSession.IsOKInGroup(new string[] { "统筹组", "测试组", "管理员" });
         }
 
         private void ActonOneKeyCheck()
@@ -591,13 +591,35 @@ namespace PMSClient.ViewModel
 
         private void ActionEdit(RecordTestExtra model)
         {
-            //编辑锁定检查，如果有锁定提示，没有锁定继续
-            //三个地方解锁，保存后解锁，取消后解锁，管理全局解锁，自我全局解锁
+            if (model == null) return;
 
             if (PMSDialogService.ShowYesNo("请问", "多人同时编辑需刷新为最新数据，以免更新冲突，\r\n 【是】刷新；【否】不刷新？"))
             {
                 SetPageParametersWhenConditionChange();
                 return;
+            }
+            //编辑锁定检查，如果有锁定提示，没有锁定继续
+            //三个地方解锁，保存后解锁，取消后解锁，管理全局解锁，自我全局解锁
+
+            try
+            {
+                //检查编辑锁定
+                string lockinfo = Helpers.EditLockHelper.CheckLock(model.RecordTest.ID);
+                if (lockinfo != null)
+                {
+                    PMSDialogService.Show(lockinfo.ToString());
+                    return;
+                }
+                else
+                {
+                    //锁定
+                    Helpers.EditLockHelper.Lock(model.RecordTest.ID, "测试记录");
+                }
+
+            }
+            catch (Exception)
+            {
+
             }
 
             PMSHelper.ViewModels.RecordTestEdit.SetEdit(model.RecordTest);

@@ -31,6 +31,7 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Name="txtStateMessage" Text="状态栏" Style="{StaticResource StyleTextBlockCommon}" Foreground="White" Grid.Column="0"/>
             <TextBlock Grid.Column="1" Name="TxtRemoteHeartBeat" Text="" Style="{StaticResource StyleTextBlockCommon}"
@@ -46,6 +47,7 @@
                 <ComboBoxItem>English</ComboBoxItem>
             </ComboBox>
             <Button Grid.Column="6" Name="BtnMainLog" Click="BtnMainLog_Click" Content="日志" Height="25" Width="40"/>
+            <Button Grid.Column="7" Name="BtnUnLock" Click="BtnUnLock_Click" Content="解锁" Height="25" Width="40" Foreground="Blue"/>
         </Grid>
     </Grid>
 </Window>
