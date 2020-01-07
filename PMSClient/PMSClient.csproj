@@ -347,6 +347,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\EditLockService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ExtraService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1698,6 +1703,16 @@
     <Content Include="densitychecklist.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\EditLockService\EditLockService.disco" />
+    <None Include="Service References\EditLockService\configuration91.svcinfo" />
+    <None Include="Service References\EditLockService\configuration.svcinfo" />
+    <None Include="Service References\EditLockService\PMSClient.EditLockService.DcEditLock.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EditLockService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="StandardDocs\成都先锋材料有限公司靶材检验标准.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1714,6 +1729,16 @@
     <Content Include="Resource\DocTemplate\Reports\OutsideProcessSheetBack.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\EditLockService\EditLockService.wsdl" />
+    <None Include="Service References\EditLockService\EditLockService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EditLockService\EditLockService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EditLockService\EditLockService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\OutsideProcessService\OutsideProcessService.disco" />
     <None Include="Service References\OutsideProcessService\configuration91.svcinfo" />
     <None Include="Service References\OutsideProcessService\configuration.svcinfo" />
@@ -2284,6 +2309,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\BasicService\" />
+    <WCFMetadataStorage Include="Service References\EditLockService\" />
     <WCFMetadataStorage Include="Service References\ExtraService\" />
     <WCFMetadataStorage Include="Service References\FailureService\" />
     <WCFMetadataStorage Include="Service References\HeartBeatService\" />

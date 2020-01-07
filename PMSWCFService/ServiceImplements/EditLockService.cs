@@ -97,5 +97,21 @@ namespace PMSWCFService
             }
 
         }
+
+        public void UnLockByLocker(string locker)
+        {
+            try
+            {
+                using (var db = new PMSDbContext())
+                {
+                    db.EditLocker.RemoveRange(db.EditLocker.Where(i => i.Operator == locker));
+                    db.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }

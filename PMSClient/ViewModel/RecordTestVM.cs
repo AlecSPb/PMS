@@ -591,6 +591,9 @@ namespace PMSClient.ViewModel
 
         private void ActionEdit(RecordTestExtra model)
         {
+            //编辑锁定检查，如果有锁定提示，没有锁定继续
+            //三个地方解锁，保存后解锁，取消后解锁，管理全局解锁，自我全局解锁
+
             if (PMSDialogService.ShowYesNo("请问", "多人同时编辑需刷新为最新数据，以免更新冲突，\r\n 【是】刷新；【否】不刷新？"))
             {
                 SetPageParametersWhenConditionChange();

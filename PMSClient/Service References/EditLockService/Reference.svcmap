@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c6db8b41-5352-46db-b657-08a176e84aae" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.16.254:8002/EditLockService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EditLockService.wsdl" MetadataType="Wsdl" ID="5b3ad2ab-416a-4661-b968-87ee52ce9559" SourceId="1" SourceUrl="http://192.168.16.254:8002/EditLockService.svc?wsdl" />
+    <MetadataFile FileName="EditLockService.xsd" MetadataType="Schema" ID="e2d010d7-4ab1-4cc6-a62c-ba871c8de1e1" SourceId="1" SourceUrl="http://192.168.16.254:8002/EditLockService.svc?xsd=xsd2" />
+    <MetadataFile FileName="EditLockService.disco" MetadataType="Disco" ID="af6f94bb-7717-4c2a-8a73-a07fab23217b" SourceId="1" SourceUrl="http://192.168.16.254:8002/EditLockService.svc?disco" />
+    <MetadataFile FileName="EditLockService1.xsd" MetadataType="Schema" ID="d97561ca-0144-409f-8e84-ece4e48cb6fd" SourceId="1" SourceUrl="http://192.168.16.254:8002/EditLockService.svc?xsd=xsd1" />
+    <MetadataFile FileName="EditLockService2.xsd" MetadataType="Schema" ID="d3885366-9b67-4378-9dc0-679142bb4bbd" SourceId="1" SourceUrl="http://192.168.16.254:8002/EditLockService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
