@@ -139,5 +139,7 @@ namespace PMSDAL
 
         public DbSet<MachineFix> MachineFixes { get; set; }
 
+        public DbSet<EditLock> EditLocker { get; set; }
+
     }
 }

@@ -86,6 +86,7 @@
     <Content Include="PMSIndexService.svc" />
     <Content Include="ComplexQueryService.svc" />
     <Content Include="FailureService.svc" />
+    <Content Include="EditLockService.svc" />
     <Content Include="StatisticService.svc" />
     <Content Include="SanjieService.svc" />
     <Content Include="PMSService.svc" />
@@ -104,6 +105,7 @@
     <Compile Include="DataContracts\DcBDCompound.cs" />
     <Compile Include="DataContracts\DcBDSupplier.cs" />
     <Compile Include="DataContracts\DcComplexQueryResult.cs" />
+    <Compile Include="DataContracts\DcEditLock.cs" />
     <Compile Include="DataContracts\DcFailure.cs" />
     <Compile Include="DataContracts\DcMachineFix.cs" />
     <Compile Include="DataContracts\DcMaterialOrderItemExtra.cs" />
@@ -166,6 +168,7 @@
     <Compile Include="DataContracts\DcOutSource.cs" />
     <Compile Include="DataContracts\DcOrderHistory.cs" />
     <Compile Include="ServiceContracts\IComplexQuery.cs" />
+    <Compile Include="ServiceContracts\IEditLockService.cs" />
     <Compile Include="ServiceContracts\IFailureService.cs" />
     <Compile Include="ServiceContracts\IMachineFixService.cs" />
     <Compile Include="ServiceContracts\IOutputService.cs" />
@@ -181,6 +184,7 @@
     <Compile Include="ServiceContracts\IToDoService.cs" />
     <Compile Include="ServiceContracts\IToolInventoryService.cs" />
     <Compile Include="ServiceImplements\ComplexQueryService.cs" />
+    <Compile Include="ServiceImplements\EditLockService.cs" />
     <Compile Include="ServiceImplements\ExtraService.cs" />
     <Compile Include="ServiceContracts\ICheckListService.cs" />
     <Compile Include="ServiceContracts\IItemDebitService.cs" />
