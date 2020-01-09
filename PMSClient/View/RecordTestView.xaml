@@ -297,6 +297,7 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="0*"/>
                             </Grid.RowDefinitions>
 
@@ -371,7 +372,10 @@
                             <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RTBP}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                             <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding RecordTest.BackingPlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"   />
-
+                            
+                            <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RTRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding RecordTest.Remark}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
                         </Grid>
                     </ScrollViewer>
