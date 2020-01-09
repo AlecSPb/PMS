@@ -75,7 +75,7 @@ namespace GalleryOfCScanImage
         {
             if (CheckFolderPath(TxtImageFolder.Text)
                 && CheckFolderPath(TxtOutputFolder.Text)
-                && DtpStart.Value < DtpEnd.Value)
+                && (DtpStart.Value < DtpEnd.Value))
             {
                 parameters.OpenTheDocument = ChkIsOpen.Checked;
                 parameters.ShowProcessDetails = ChkShowProcessDetails.Checked;
@@ -88,6 +88,10 @@ namespace GalleryOfCScanImage
                 {
                     Task.Factory.StartNew(StartProcess);
                 }
+            }
+            else
+            {
+                helper.DialogShowWarning("路径设置有错误");
             }
 
         }

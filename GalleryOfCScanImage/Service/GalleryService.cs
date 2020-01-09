@@ -5,10 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using CommonHelper;
 using GalleryOfCScanImage.MainService;
-using Xceed.Words.NET;
-using Xceed.Document.NET;
 using System.IO;
-
+using Novacode;
 
 namespace GalleryOfCScanImage.Service
 {
@@ -102,7 +100,7 @@ namespace GalleryOfCScanImage.Service
 
                 doc.AddHeaders();
                 doc.DifferentFirstPage = true;
-                Header header = doc.Headers.First;
+                Header header = doc.Headers.first;
                 var p0 = header.InsertParagraph();
                 p0.Append($"CDPMI Create@{DateTime.Now.ToString()}; 230 mm Target Bonding Image From {Parameters.Start.ToShortDateString()} To {Parameters.End.ToShortDateString()}");
 

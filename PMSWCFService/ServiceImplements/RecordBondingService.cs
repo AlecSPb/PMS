@@ -345,8 +345,7 @@ namespace PMSWCFService
                                 where p.CreateTime >= DbFunctions.TruncateTime(start)
                                 && p.CreateTime <= DbFunctions.TruncateTime(end)
                                 && p.State != BondingState.作废.ToString()
-                                orderby p.CreateTime descending,
-                                    p.PlanBatchNumber descending, p.TargetProductID descending
+                                orderby p.CreateTime ascending
                                 select p;
                     var result = query.ToList();
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordBonding, DcRecordBonding>());
