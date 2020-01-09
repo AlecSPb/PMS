@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.CustomControls"
         mc:Ignorable="d"
-        Title="绑定结果？" Height="350" Width="450" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
+        Title="绑定结果快速录入工具" Height="400" Width="550" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Grid Background="{StaticResource BGBrushWindow}" Margin="2">
         <Grid.ColumnDefinitions>
@@ -19,40 +19,39 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource StyleDGTextBlockCommon}"
-                   Text="请选择合适内容后确认"/>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource StyleTextBlockCommon}"
+                   Text="仅供超声检查人员和最终核对人员使用"/>
 
-        <TextBlock Grid.Row="1" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
+        <TextBlock Grid.Row="1" Grid.Column="0"  Style="{StaticResource StyleTextBlockCommon}"
                    Text="靶材ID"/>
-        <TextBox Name="txtProductID"  Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="暂无"
-                 FontSize="20" IsReadOnly="True" Background="LightBlue"/>
-
-        <TextBlock Grid.Row="2" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
-                   Text="状态"/>
-        <ComboBox Name="cboState" Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"/>
+        <TextBox Name="txtProductID"  Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="暂无"  FontSize="20" IsReadOnly="True" Background="LightBlue"/>
         
-        <TextBlock Grid.Row="3" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
+        <TextBlock Grid.Row="2" Grid.Column="0"  Style="{StaticResource StyleTextBlockCommon}"
                    Text="盖板编号"/>
-        <TextBox Name="txtCoverPlateNumber"  Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="无"
-                 FontSize="20" Width="100" HorizontalAlignment="Left"/>
-        
-        <TextBlock Grid.Row="4" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
-                   Text="背板"/>
-        <TextBox Name="txtPlateNumber"  Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="无"
-                 FontSize="20"/>
+        <TextBox Name="txtCoverPlateNumber"  Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="无"  FontSize="20" Width="100" HorizontalAlignment="Left" Background="LightGreen"/>
 
-        <TextBlock Grid.Row="5" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
+        <TextBlock Grid.Row="3" Grid.Column="0"  Style="{StaticResource StyleTextBlockCommon}"
+                   Text="背板"/>
+        <TextBox Name="txtPlateNumber"  Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="无" FontSize="20"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0"  Style="{StaticResource StyleTextBlockCommon}"
                    Text="缺陷"/>
+        <TextBox  Grid.Row="4" Grid.Column="1" Name="txtDefects" Style="{StaticResource StyleTextBoxCommon}" 
+                  Text="无" Background="LightGreen"/>
+
         <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
-            <TextBox Name="txtDefects" Style="{StaticResource StyleTextBoxCommon}" Text="无"
-                  Width="200"/>
             <Button Name="btnCrackInner" Style="{StaticResource StyleButtonCommon}" Content="裂-内"
                   Click="btnDefects_Click" MinWidth="40"/>
             <Button Name="btnCrackOutside" Style="{StaticResource StyleButtonCommon}" Content="裂-外"
+                  Click="btnDefects_Click" MinWidth="40"/>
+            <Button Name="btnCavum1" Style="{StaticResource StyleButtonCommon}" Content="空腔-小"
+                  Click="btnDefects_Click" MinWidth="40"/>
+            <Button Name="btnCavum2" Style="{StaticResource StyleButtonCommon}" Content="空腔-小"
                   Click="btnDefects_Click" MinWidth="40"/>
             <Button Name="btnBreachSmall" Style="{StaticResource StyleButtonCommon}" Content="缺-小"
                   Click="btnDefects_Click" MinWidth="40"/>
@@ -60,13 +59,19 @@
                   Click="btnDefects_Click" MinWidth="40"/>
         </StackPanel>
 
-
         <TextBlock Grid.Row="6" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="焊合"/>
-        <TextBox Name="txtWeldingRate" Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="0"
-                 FontSize="20"/>
+        <TextBox Name="txtWeldingRate" Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="0" FontSize="20"  Background="LightGreen"/>
 
-        <StackPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right">
+        <TextBlock Grid.Row="7" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
+                   Text="状态"/>
+        <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
+            <ComboBox Name="cboState"  Style="{StaticResource StyleComboBoxCommon}"/>
+            <TextBlock  Style="{StaticResource StyleDGTextBlockCommon}"
+                   Text="此项超声检查人员无需设置，由最终审核人员设置为完成"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="btnCancel" Content="取消" Style="{StaticResource StyleButtonCommon}" Click="btnCancel_Click"/>
             <Button Name="btnYes" Content="确定" Style="{StaticResource StyleButtonCommon}" Click="btnYes_Click"
                     IsDefault="True">

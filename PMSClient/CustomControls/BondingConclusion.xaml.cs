@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMSClient.MainService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,10 +23,23 @@ namespace PMSClient.CustomControls
         public BondingConclusion()
         {
             InitializeComponent();
-            var ds = new string[] { "完成", "暂停", "失败" };
-            cboState.ItemsSource = ds;
-            cboState.SelectedIndex = 0;
+            var states = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.BondingState>(states);
+            cboState.ItemsSource = states;
         }
+
+        public DcRecordBonding BondingModel
+        {
+            set
+            {
+                txtProductID.Text = value.TargetProductID;
+                txtCoverPlateNumber.Text = value.CoverPlateNumber;
+                txtDefects.Text = value.TargetDefects;
+                txtWeldingRate.Text = value.WeldingRate.ToString();
+                cboState.SelectedItem = value.State;
+            }
+        }
+
         public string State { get { return cboState.SelectedItem.ToString(); } }
         public string PlateNumber { get { return txtPlateNumber.Text; } }
         public string Defects { get { return txtDefects.Text; } }

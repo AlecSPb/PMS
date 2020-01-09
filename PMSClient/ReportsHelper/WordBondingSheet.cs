@@ -93,23 +93,23 @@ namespace PMSClient.ReportsHelper
                                  .Append(plate_marker).FontSize(10).Bold().Alignment = Alignment.center;
                             cell_4.VerticalAlignment = VerticalAlignment.Center;
 
-                            var cell_11 = mainTable.Rows[rownumber].Cells[11];
-                            cell_11.Paragraphs[0]
-                                .Append("□").FontSize(10).Bold();
-                            cell_11.Paragraphs[0].Alignment = Alignment.center;
-                            cell_11.VerticalAlignment = VerticalAlignment.Center;
+                            //var cell_11 = mainTable.Rows[rownumber].Cells[11];
+                            //cell_11.Paragraphs[0]
+                            //    .Append("□").FontSize(10).Bold();
+                            //cell_11.Paragraphs[0].Alignment = Alignment.center;
+                            //cell_11.VerticalAlignment = VerticalAlignment.Center;
 
-                            var cell_13 = mainTable.Rows[rownumber].Cells[13];
-                            cell_13.Paragraphs[0]
-                                .Append("大 小").FontSize(10).Bold();
-                            cell_13.Paragraphs[0].Alignment = Alignment.center;
-                            cell_13.VerticalAlignment = VerticalAlignment.Center;
+                            //var cell_13 = mainTable.Rows[rownumber].Cells[13];
+                            //cell_13.Paragraphs[0]
+                            //    .Append("大 小").FontSize(10).Bold();
+                            //cell_13.Paragraphs[0].Alignment = Alignment.center;
+                            //cell_13.VerticalAlignment = VerticalAlignment.Center;
 
-                            var cell_14 = mainTable.Rows[rownumber].Cells[14];
-                            cell_14.Paragraphs[0]
-                                .Append("内 外").FontSize(10).Bold();
-                            cell_14.Paragraphs[0].Alignment = Alignment.center;
-                            cell_14.VerticalAlignment = VerticalAlignment.Center;
+                            //var cell_14 = mainTable.Rows[rownumber].Cells[14];
+                            //cell_14.Paragraphs[0]
+                            //    .Append("内 外").FontSize(10).Bold();
+                            //cell_14.Paragraphs[0].Alignment = Alignment.center;
+                            //cell_14.VerticalAlignment = VerticalAlignment.Center;
 
                             //添加间隔背景颜色
                             if (rownumber % 2 == 1)

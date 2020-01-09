@@ -7,6 +7,8 @@ using CommonHelper;
 using GalleryOfCScanImage.MainService;
 using System.IO;
 using Novacode;
+//Xceed版本在支持word2007上有bug
+
 
 namespace GalleryOfCScanImage.Service
 {
