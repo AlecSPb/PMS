@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Xml;
+using CommonHelper;
 
 namespace PMSXMLCreator.Service
 {
@@ -15,8 +16,7 @@ namespace PMSXMLCreator.Service
 
         public void CreateFile(ECOA model)
         {
-            string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string folder = Path.Combine(desktop, "XML Files");
+            string folder = XSHelper.FileHelper.GetDesktopPath();
             if (!Directory.Exists(folder))
             {
                 Directory.CreateDirectory(folder);

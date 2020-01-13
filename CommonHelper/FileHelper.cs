@@ -1,21 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace CommonHelper
 {
     /// <summary>
-    /// 小工具的公共帮助类
-    /// 
-    /// 兼容以前的一些程序而保留，不再更新
+    /// 文件处理相关的帮助类
     /// </summary>
-    public class BasicHelper
+    public class FileHelper
     {
-        #region 文件处理
         /// <summary>
         /// 打开文件
         /// </summary>
@@ -51,11 +48,15 @@ namespace CommonHelper
             return folderpath;
         }
 
-        //返回当前文件夹路径
-        public string GetCurrentFolderPath()
+        /// <summary>
+        /// 返回当前文件夹路径
+        /// </summary>
+        /// <returns></returns>
+        public string GetCurrentFolderPath(string dir = "")
         {
-            return Environment.CurrentDirectory;
+            return Path.Combine(Environment.CurrentDirectory, dir);
         }
+
         /// <summary>
         /// 返回桌面路径
         /// </summary>
@@ -64,6 +65,7 @@ namespace CommonHelper
         {
             return Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
         }
+
 
         /// <summary>
         /// 获取当前时间文件名，精确到秒
@@ -74,16 +76,18 @@ namespace CommonHelper
         {
             return $"{DateTime.Now.ToString("yyyyMMddHHmmss")}.{extensionName}";
         }
+
         /// <summary>
         /// 获取完整文件名
         /// </summary>
         /// <param name="folder"></param>
         /// <param name="file"></param>
         /// <returns></returns>
-        public string GetFullFileName(string file, string folder)
+        public string GetFullFileName(string file, string root, string folder = "")
         {
-            return Path.Combine(folder, file);
+            return Path.Combine(root, folder, file);
         }
+
         /// <summary>
         /// 获取完整文件名-默认桌面
         /// </summary>
@@ -93,9 +97,7 @@ namespace CommonHelper
         {
             return Path.Combine(GetDesktopPath(), file);
         }
-        #endregion
 
-        #region 对话框
         /// <summary>
         /// 在WinForm中获取文件夹位置
         /// </summary>
@@ -118,72 +120,23 @@ namespace CommonHelper
         }
 
         /// <summary>
-        /// 显示信息对话框
+        /// 写入文本
         /// </summary>
-        /// <param name="info"></param>
-        public void DialogShowInformation(string msg)
+        /// <param name="filename"></param>
+        /// <param name="filecontent"></param>
+        public void SaveText(string filename, string filecontent)
         {
-            MessageBox.Show(msg, "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            File.WriteAllText(filename, filecontent);
         }
+
         /// <summary>
-        /// 显示警告对话框
+        /// 读取文本
         /// </summary>
-        /// <param name="msg"></param>
-        public void DialogShowWarning(string msg)
-        {
-            MessageBox.Show(msg, "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
-        /// <summary>
-        /// 显示错误对话框
-        /// </summary>
-        /// <param name="msg"></param>
-        public void DialogShowFatal(string msg)
-        {
-            MessageBox.Show(msg, "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-        /// <summary>
-        /// 显示提问对话框
-        /// </summary>
-        /// <param name="msg">信息</param>
-        /// <param name="title">标题</param>
+        /// <param name="filename"></param>
         /// <returns></returns>
-        public bool DialogShowQuestion(string msg, string title = "请问")
+        public string ReadText(string filename)
         {
-            return MessageBox.Show(msg, title, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK;
+            return File.ReadAllText(filename);
         }
-
-
-
-
-        #endregion
-
-
-        #region 状态消息管理
-        private StringBuilder statusMessage = new StringBuilder();
-
-        public string InsertStatus(string msg)
-        {
-            statusMessage.Insert(0, $"{msg}\r\n");
-            return StatusMessage;
-        }
-
-        public string AppendStatus(string msg)
-        {
-            statusMessage.AppendLine(msg);
-            return StatusMessage;
-        }
-
-        public string StatusMessage
-        {
-            get { return statusMessage.ToString(); }
-        }
-
-        public void ClearStatus()
-        {
-            statusMessage.Clear();
-        }
-
-        #endregion
-
     }
 }

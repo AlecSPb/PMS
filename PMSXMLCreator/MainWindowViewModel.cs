@@ -9,6 +9,11 @@ using GalaSoft.MvvmLight.CommandWpf;
 using Microsoft.Win32;
 using PMSXMLCreator.MainService;
 using PMSXMLCreator.Service;
+using CommonHelper;
+using Newtonsoft.Json;
+using System.IO;
+
+
 
 namespace PMSXMLCreator
 {
@@ -33,6 +38,22 @@ namespace PMSXMLCreator
             CreateDocx = new RelayCommand(ActionCreateDocx, CanCreateDocx);
             Select = new RelayCommand<DcRecordTest>(ActionSelect);
             LoadFromFile = new RelayCommand(ActionLoadFromFile);
+            Save = new RelayCommand(ActionSave);
+        }
+
+        private void ActionSave()
+        {
+            if (XSHelper.MessageHelper.ShowYesNo("请问确定要保存吗"))
+            {
+                if (CurrentCOA != null)
+                {
+                    FileHelper fh = XSHelper.FileHelper;
+                    string json = JsonConvert.SerializeObject(CurrentCOA);
+                    string filepath = fh.GetFullFileName(fh.GetDateTimeFileName(".json"), fh.GetCurrentFolderPath(), "SavedFile");
+                    XSHelper.FileHelper.SaveText(filepath, json);
+                    XSHelper.MessageHelper.ShowInfo("保存数据成功");
+                }
+            }
         }
 
         /// <summary>
@@ -59,12 +80,20 @@ namespace PMSXMLCreator
         private void ActionLoadFromFile()
         {
             var dialog = new OpenFileDialog();
-            dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            dialog.Filter = "eCOA|*.xml";
-            dialog.ShowDialog();
-            string file = dialog.FileName;
+            dialog.InitialDirectory = XSHelper.FileHelper.GetCurrentFolderPath("SavedFile");
+            dialog.Filter = "Data|*.json";
+            if (dialog.ShowDialog() == true)
+            {
+                string file = dialog.FileName;
 
-            LoadingInformation = "Loading From XML File";
+                LoadingInformation = "Loading From XML File";
+
+                string json = XSHelper.FileHelper.ReadText(file);
+
+                CurrentCOA = JsonConvert.DeserializeObject<ECOA>(json);
+
+                XSHelper.MessageHelper.ShowInfo("载入数据成功");
+            }
 
         }
 
@@ -215,6 +244,7 @@ namespace PMSXMLCreator
         public RelayCommand CreateXML { get; set; }
         public RelayCommand CreateDocx { get; set; }
         public RelayCommand LoadFromFile { get; set; }
+        public RelayCommand Save { get; set; }
 
         public RelayCommand<DcRecordTest> Select { get; set; }
 

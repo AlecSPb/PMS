@@ -8,6 +8,7 @@ using System.IO;
 using PMSXMLCreator.Model;
 using System.Diagnostics;
 using System.Windows;
+using CommonHelper;
 
 namespace PMSXMLCreator
 {
@@ -15,8 +16,7 @@ namespace PMSXMLCreator
     {
         public void CreateFile(ECOA model)
         {
-            string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string folder = Path.Combine(desktop, "XML Files");
+            string folder = XSHelper.FileHelper.GetDesktopPath();
             if (!Directory.Exists(folder))
             {
                 Directory.CreateDirectory(folder);
