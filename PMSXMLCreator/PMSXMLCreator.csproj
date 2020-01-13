@@ -81,7 +81,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\ParameterList.cs" />
-    <Compile Include="Service\Xml2DocxHelper.cs" />
+    <Compile Include="Service\DocxHelper.cs" />
     <Compile Include="Service\Analysis.cs" />
     <Compile Include="Service\ElementFullNameDict.cs" />
     <Compile Include="Service\Helper.cs" />

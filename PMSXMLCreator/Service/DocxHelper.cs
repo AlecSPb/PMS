@@ -12,7 +12,7 @@ using CommonHelper;
 
 namespace PMSXMLCreator
 {
-    public class Xml2DocxHelper
+    public class DocxHelper
     {
         public void CreateFile(ECOA model)
         {

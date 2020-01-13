@@ -92,6 +92,7 @@ namespace PMSClient.ToolWindow
 
         private void BtnOneKey_Click(object sender, RoutedEventArgs e)
         {
+            TransformDimension_Click(sender, e);
             Calculate_Click(sender, e);
             BtnFillIn_Click(sender, e);
         }

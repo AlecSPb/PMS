@@ -49,7 +49,7 @@ namespace PMSXMLCreator
                 {
                     FileHelper fh = XSHelper.FileHelper;
                     string json = JsonConvert.SerializeObject(CurrentCOA);
-                    string filepath = fh.GetFullFileName(fh.GetDateTimeFileName(".json"), fh.GetCurrentFolderPath(), "SavedFile");
+                    string filepath = fh.GetFullFileName(fh.GetDateTimeFileName("json"), fh.GetCurrentFolderPath(), "SavedFile");
                     XSHelper.FileHelper.SaveText(filepath, json);
                     XSHelper.MessageHelper.ShowInfo("保存数据成功");
                 }
@@ -63,10 +63,10 @@ namespace PMSXMLCreator
         {
             if (CurrentCOA == null)
             {
-                Helper.ShowMessage("当前数据模型为空");
+                XSHelper.MessageHelper.ShowInfo("当前数据模型为空");
                 return;
             }
-            if (Helper.ShowDialog($"确定使用该条数据[{CurrentCOA.LotNumber}]生成Docx文件？"))
+            if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据[{CurrentCOA.LotNumber}]生成Docx文件？"))
             {
                 helper_docx.CreateFile(CurrentCOA);
             }
@@ -99,7 +99,7 @@ namespace PMSXMLCreator
 
         private void ActionSelect(DcRecordTest record)
         {
-            if (Helper.ShowDialog($"确定使用该条数据[{record.ProductID}]？"))
+            if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据覆盖下面当前的数据[{record.ProductID}]？"))
             {
                 CurrentCOA = ToECOA(record);
                 LoadingInformation = "Loading From PMS";
@@ -136,7 +136,7 @@ namespace PMSXMLCreator
         }
 
         private XmlHelper helper_xml = new XmlHelper();
-        private Xml2DocxHelper helper_docx = new Xml2DocxHelper();
+        private DocxHelper helper_docx = new DocxHelper();
         /// <summary>
         /// 创建xml文件
         /// </summary>
@@ -144,10 +144,10 @@ namespace PMSXMLCreator
         {
             if (CurrentCOA == null)
             {
-                Helper.ShowMessage("当前数据模型为空");
+                XSHelper.MessageHelper.ShowInfo("当前数据模型为空");
                 return;
             }
-            if (Helper.ShowDialog($"确定使用该条数据[{CurrentCOA.LotNumber}]生成xml文件？"))
+            if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据[{CurrentCOA.LotNumber}]生成xml文件？"))
             {
                 helper_xml.CreateFile(CurrentCOA);
             }
