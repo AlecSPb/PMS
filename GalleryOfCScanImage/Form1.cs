@@ -73,25 +73,31 @@ namespace GalleryOfCScanImage
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
-            if (CheckFolderPath(TxtImageFolder.Text)
-                && CheckFolderPath(TxtOutputFolder.Text)
-                && (DtpStart.Value < DtpEnd.Value))
+            if (!CheckFolderPath(TxtImageFolder.Text))
             {
-                parameters.OpenTheDocument = ChkIsOpen.Checked;
-                parameters.ShowProcessDetails = ChkShowProcessDetails.Checked;
-                parameters.ImageFolder = TxtImageFolder.Text;
-                parameters.OutputFolder = TxtOutputFolder.Text;
-                parameters.Start = DtpStart.Value;
-                parameters.End = DtpEnd.Value;
-
-                if (helper.DialogShowQuestion("载入文件完成，继续处理吗？"))
-                {
-                    Task.Factory.StartNew(StartProcess);
-                }
+                helper.DialogShowWarning("图片文件夹不存在");
+                return;
             }
-            else
+            if (!CheckFolderPath(TxtOutputFolder.Text))
             {
-                helper.DialogShowWarning("路径设置有错误");
+                helper.DialogShowWarning("输出文件夹不存在");
+                return;
+            }
+            if (DtpStart.Value >= DtpEnd.Value)
+            {
+                helper.DialogShowWarning("开始日期不得大于结束日期");
+                return;
+            }
+            parameters.OpenTheDocument = ChkIsOpen.Checked;
+            parameters.ShowProcessDetails = ChkShowProcessDetails.Checked;
+            parameters.ImageFolder = TxtImageFolder.Text;
+            parameters.OutputFolder = TxtOutputFolder.Text;
+            parameters.Start = DtpStart.Value;
+            parameters.End = DtpEnd.Value;
+
+            if (helper.DialogShowQuestion("载入文件完成，继续处理吗？"))
+            {
+                Task.Factory.StartNew(StartProcess);
             }
 
         }

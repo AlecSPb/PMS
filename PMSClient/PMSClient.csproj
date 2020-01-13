@@ -449,6 +449,9 @@
     </Compile>
     <Compile Include="ToolWindow\DensityChartVM.cs" />
     <Compile Include="ToolWindow\DialogWindowBase.cs" />
+    <Compile Include="ToolWindow\DuplicateNumberDialog.xaml.cs">
+      <DependentUpon>DuplicateNumberDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolWindow\EmptyTextBox.xaml.cs">
       <DependentUpon>EmptyTextBox.xaml</DependentUpon>
     </Compile>
@@ -604,6 +607,7 @@
     <Compile Include="ViewModel\DeliveryStatisticVM.cs" />
     <Compile Include="ViewModel\PlanStatisticVM.cs" />
     <Compile Include="ViewModel\ProductUnCompletedVM.cs" />
+    <Compile Include="Helpers\RecordTestDuplicateHelper.cs" />
     <Compile Include="ViewModel\VMHelper\NewModelCollection.cs" />
     <Compile Include="ViewModel\PlateVM.cs" />
     <Compile Include="ViewModel\PlateSelectVM.cs" />
@@ -1119,6 +1123,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolWindow\DensityChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\DuplicateNumberDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

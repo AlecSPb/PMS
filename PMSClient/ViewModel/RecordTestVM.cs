@@ -581,10 +581,24 @@ namespace PMSClient.ViewModel
 
         private void ActionDuplicate(RecordTestExtra model)
         {
-            if (PMSDialogService.ShowYesNo("请问", "确定复用这条记录？"))
+            if (!PMSDialogService.ShowYesNo("请问", "确定复用这条记录？")) return;
+            var dialog = new ToolWindow.DuplicateNumberDialog();
+            dialog.ShowDialog();
+
+            if (dialog.Quantity > 0)
             {
-                PMSHelper.ViewModels.RecordTestEdit.SetDuplicate(model.RecordTest);
-                NavigationService.GoTo(PMSViews.RecordTestEdit);
+                if (dialog.Quantity == 1)
+                {
+                    PMSHelper.ViewModels.RecordTestEdit.SetDuplicate(model.RecordTest);
+                    NavigationService.GoTo(PMSViews.RecordTestEdit);
+                }
+                else
+                {
+                    var modelhelper = new Helpers.RecordTestDuplicateHelper();
+                    modelhelper.Run(CurrentSelectItem.RecordTest, dialog.Quantity);
+                }
+                PMSDialogService.Show("复用完毕");
+                SetPageParametersWhenConditionChange();
             }
 
         }

@@ -1,0 +1,29 @@
+﻿<Window x:Class="PMSClient.ToolWindow.DuplicateNumberDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        Title="复用数量选择对话框" Height="150" Width="200"
+        WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="自动识别230编号和普通编号" 
+                   Style="{StaticResource StyleTextBlockCommon}"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="复用数量" Style="{StaticResource StyleTextBlockCommon}"/>
+        <ComboBox Grid.Row="1" Grid.Column="1"  Name="CboQuantity" Style="{StaticResource StyleComboBoxCommon}"/>
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="确定" Height="30" Margin="5"
+                Name="BtnOK" Click="BtnOK_Click"/>
+    </Grid>
+</Window>
