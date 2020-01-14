@@ -13,6 +13,7 @@ namespace CommonHelper
     /// 
     /// 兼容以前的一些程序而保留，不再更新
     /// </summary>
+    [Obsolete]
     public class BasicHelper
     {
         #region 文件处理
