@@ -32,9 +32,9 @@ namespace PMSXMLCreator.Service
 
             parameters.AddRange(GetParametersByKeyStr(model.PlateSpec));
 
-            parameters.AddRange(GetParametersByKeyStr(model.GDMS));
+            parameters.AddRange(GetParametersByKeyStr(model.GDMS, "est_max"));
 
-            parameters.AddRange(GetParametersByKeyStr(model.VPI));
+            parameters.AddRange(GetParametersByKeyStr(model.VPI, "est_max"));
 
 
             return parameters;
@@ -114,7 +114,7 @@ namespace PMSXMLCreator.Service
             return null;
         }
 
-        public List<Parameter> GetParametersByKeyStr(string str)
+        public List<Parameter> GetParametersByKeyStr(string str, string type = "value")
         {
             List<Parameter> parameters = new List<Parameter>();
             var matches = Regex.Matches(str, @"([a-zA-Z ]+)=(\d+);");
@@ -122,7 +122,7 @@ namespace PMSXMLCreator.Service
             {
                 string element_name = item.Groups[1].Value;
                 string element_value = item.Groups[2].Value;
-                parameters.Add(GetParameter(dict_element.GetShortName(element_name), element_value, ParameterUnit.PPM));
+                parameters.Add(GetParameter(dict_element.GetShortName(element_name), element_value, ParameterUnit.PPM, type));
             }
 
             return parameters;

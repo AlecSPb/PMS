@@ -110,11 +110,11 @@ namespace CommonHelper
             DialogResult result = dialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                return new PathParameter { IsOK = true, SelectPath = dialog.SelectedPath };
+                return new PathParameter { HasSelected = true, SelectPath = dialog.SelectedPath };
             }
             else
             {
-                return new PathParameter { IsOK = false };
+                return new PathParameter { HasSelected = false };
             }
         }
 

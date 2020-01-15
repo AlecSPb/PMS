@@ -8,7 +8,7 @@ namespace CommonHelper
 {
     public class PathParameter
     {
-        public bool IsOK { get; set; }
+        public bool HasSelected { get; set; }
         public string SelectPath { get; set; }
     }
 }

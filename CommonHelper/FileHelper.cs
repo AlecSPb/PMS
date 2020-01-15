@@ -34,6 +34,7 @@ namespace CommonHelper
 
         /// <summary>
         /// 创建新的文件夹在某个位置
+        /// 默认在桌面上创建文件夹
         /// </summary>
         /// <param name="folderpath"></param>
         public string CreateFolder(string folder, string foldername)
@@ -47,6 +48,27 @@ namespace CommonHelper
             Directory.CreateDirectory(folderpath);
             return folderpath;
         }
+
+        /// <summary>
+        /// 根据路径创建文件夹
+        /// </summary>
+        /// <param name="folderpath"></param>
+        /// <returns></returns>
+        public void CreateFolder(string folderpath)
+        {
+            if (Directory.Exists(folderpath)) return;
+            Directory.CreateDirectory(folderpath);
+        }
+
+        /// <summary>
+        /// 获取日期命名的文件夹名
+        /// </summary>
+        /// <returns></returns>
+        public string GetNameByDate()
+        {
+            return DateTime.Today.ToString("yyMMdd");
+        }
+
 
         /// <summary>
         /// 返回当前文件夹路径
@@ -103,7 +125,7 @@ namespace CommonHelper
         /// </summary>
         /// <param name="description"></param>
         /// <returns></returns>
-        public PathParameter DilaogSelectDirectoryPath(string description)
+        public PathParameter ShowFolderBrowserDialog(string description)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             dialog.Description = description;
@@ -111,11 +133,11 @@ namespace CommonHelper
             DialogResult result = dialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                return new PathParameter { IsOK = true, SelectPath = dialog.SelectedPath };
+                return new PathParameter { HasSelected = true, SelectPath = dialog.SelectedPath };
             }
             else
             {
-                return new PathParameter { IsOK = false };
+                return new PathParameter { HasSelected = false };
             }
         }
 
@@ -136,6 +158,7 @@ namespace CommonHelper
         /// <returns></returns>
         public string ReadText(string filename)
         {
+            if (!File.Exists(filename)) return null;
             return File.ReadAllText(filename);
         }
     }

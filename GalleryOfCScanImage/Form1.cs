@@ -53,7 +53,7 @@ namespace GalleryOfCScanImage
         private void BtnSelectImageFolder_Click(object sender, EventArgs e)
         {
             PathParameter path = helper.DilaogSelectDirectoryPath("请选择超声图片所在的文件夹");
-            if (path.IsOK)
+            if (path.HasSelected)
             {
                 TxtImageFolder.Text = path.SelectPath;
                 UpdateStatus("已设置超声图片文件夹路径");
@@ -64,7 +64,7 @@ namespace GalleryOfCScanImage
         private void BtnSelectOutputFolder_Click(object sender, EventArgs e)
         {
             PathParameter path = helper.DilaogSelectDirectoryPath("请选择输出文件所在的文件夹");
-            if (path.IsOK)
+            if (path.HasSelected)
             {
                 TxtOutputFolder.Text = path.SelectPath;
                 UpdateStatus("已设置输出图片文件夹路径");
