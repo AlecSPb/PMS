@@ -10195,6 +10195,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraForProductCount2", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraForProductCount2Response")]
         System.Threading.Tasks.Task<int> GetPlanExtraForProductCount2Async(string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetEmergencyOrderCount", ReplyAction="http://tempuri.org/IMissonService/GetEmergencyOrderCountResponse")]
+        int GetEmergencyOrderCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetEmergencyOrderCount", ReplyAction="http://tempuri.org/IMissonService/GetEmergencyOrderCountResponse")]
+        System.Threading.Tasks.Task<int> GetEmergencyOrderCountAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10430,6 +10436,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetPlanExtraForProductCount2Async(string searchCode, string composition, string pminumber) {
             return base.Channel.GetPlanExtraForProductCount2Async(searchCode, composition, pminumber);
+        }
+        
+        public int GetEmergencyOrderCount() {
+            return base.Channel.GetEmergencyOrderCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetEmergencyOrderCountAsync() {
+            return base.Channel.GetEmergencyOrderCountAsync();
         }
     }
     

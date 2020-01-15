@@ -98,7 +98,10 @@ namespace PMSWCFService.ServiceContracts
         int GetPlanExtraForProductCount2(string searchCode, string composition,string pminumber);
         #endregion
 
-
+        #region 2020
+        [OperationContract]
+        int GetEmergencyOrderCount();
+        #endregion
 
     }
 }

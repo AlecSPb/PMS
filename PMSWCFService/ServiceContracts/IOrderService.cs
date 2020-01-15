@@ -72,8 +72,5 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         DcOrder GetOrderByPMINumber(string pminumber);
 
-
-        [OperationContract]
-        int GetEmergencyOrderCount();
     }
 }

@@ -19,8 +19,16 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <TextBlock Text="{StaticResource PageMisson}" Style="{StaticResource StyleTextBlockPageTitle}"/>
-            <TextBlock Text="{Binding MissonTarget,StringFormat=有{0}个新任务}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
+            <TextBlock Text="{Binding MissonTarget,StringFormat=有{0}个新任务}" 
+                       Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
             <TextBlock Text="{Binding UnVHPTargetCount,StringFormat=共计{0}块靶材需要完成}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Red"/>
+            <TextBlock Text="{Binding EmergencyMisson,StringFormat=其中{0}个紧急任务}" 
+                       Style="{StaticResource StyleTextBlockPageTitle}" Foreground="White" Background="Red" 
+                       Visibility="{Binding EmergencyMisson,Converter={StaticResource VisibilityConverter4}}">
+                <TextBlock.ToolTip>
+                    <TextBlock Text="紧急任务请查看未完成视图"/>
+                </TextBlock.ToolTip>
+            </TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}"

@@ -45,7 +45,8 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            missonTarget = 0;
+            MissonTarget = 0;
+            EmergencyMisson = 0;
             UnVHPTargetCount = 0;
             SearchCompositionStandard = SearchPMINumber = "";
             Missons = new ObservableCollection<DcOrder>();
@@ -294,6 +295,7 @@ namespace PMSClient.ViewModel
                 MissonTarget = service.GetMissonUnCompletedCount();
 
                 UnVHPTargetCount = (int)service.GetUnVHPTargetCount();
+                EmergencyMisson = service.GetEmergencyOrderCount();
 
                 service.Close();
                 ActionPaging();
@@ -354,6 +356,17 @@ namespace PMSClient.ViewModel
         {
             get { return missonTarget; }
             set { missonTarget = value; RaisePropertyChanged(nameof(MissonTarget)); }
+        }
+
+        private int emergencyMisson;
+        public int EmergencyMisson
+        {
+            get { return emergencyMisson; }
+            set
+            {
+                emergencyMisson = value;
+                RaisePropertyChanged(nameof(emergencyMisson));
+            }
         }
 
         private int unVHPTargetCount;

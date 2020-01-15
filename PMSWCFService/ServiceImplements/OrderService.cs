@@ -599,21 +599,6 @@ namespace PMSWCFService
             }
         }
 
-        public int GetEmergencyOrderCount()
-        {
-            try
-            {
-                using (var dc = new PMSDbContext())
-                {
-                    return dc.Orders.Where(o => o.Priority.Contains("紧急")
-                    && o.State == OrderState.未完成.ToString()).Count();
-                }
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw ex;
-            }
-        }
+
     }
 }
