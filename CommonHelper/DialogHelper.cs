@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace CommonHelper
 {
+    /// <summary>
+    /// 各种常见的对话框
+    /// </summary>
     public class DialogHelper
     {
         /// <summary>
@@ -62,6 +65,34 @@ namespace CommonHelper
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 return new XSDialogResult() { HasSelected = true, SelectPath = dialog.FileName };
+            }
+            return new XSDialogResult() { HasSelected = false };
+        }
+
+        /// <summary>
+        /// 字体对话框
+        /// </summary>
+        /// <returns></returns>
+        public XSDialogResult ShowFontDialog()
+        {
+            var dialog = new FontDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                return new XSDialogResult() { HasSelected = true, SelectedFont = dialog.Font };
+            }
+            return new XSDialogResult() { HasSelected = false };
+        }
+
+        /// <summary>
+        /// 颜色对话框
+        /// </summary>
+        /// <returns></returns>
+        public XSDialogResult ShowColorDialog()
+        {
+            var dialog = new ColorDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                return new XSDialogResult() { HasSelected = true, SelectedColor = dialog.Color };
             }
             return new XSDialogResult() { HasSelected = false };
         }
