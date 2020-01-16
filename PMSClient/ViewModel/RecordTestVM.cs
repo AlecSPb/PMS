@@ -13,6 +13,9 @@ using PMSClient.ViewModel.Model;
 using PMSClient.ReportsHelper;
 using PMSClient.ToolWindow;
 using PMSClient.CheckLogic;
+using CommonHelper;
+using Newtonsoft.Json;
+
 
 namespace PMSClient.ViewModel
 {
@@ -81,6 +84,29 @@ namespace PMSClient.ViewModel
             OneKeyCheck = new RelayCommand(ActonOneKeyCheck);
 
             DeepSearch = new RelayCommand<RecordTestExtra>(ActionDeepSearch, CanDeepSearch);
+            SaveJson = new RelayCommand<RecordTestExtra>(ActionSaveJson, CanSaveJson);
+        }
+
+        private void ActionSaveJson(RecordTestExtra obj)
+        {
+            if (obj != null)
+            {
+                var json_obj = obj.RecordTest;
+                string json = JsonConvert.SerializeObject(json_obj);
+                string initialPath = XSHelper.FileHelper.GetDesktopPath();
+                string filename = $"{StringUtil.RemoveSlash(json_obj.Composition)}-{json_obj.ProductID}";
+                XSDialogResult parameter = XSHelper.DialogHelper.ShowSaveDialog(initialPath, "Data|*.json", filename);
+                if (parameter.HasSelected)
+                {
+                    XSHelper.FileHelper.SaveText(parameter.SelectPath, json);
+                    XSHelper.MessageHelper.ShowInfo("保存成功");
+                }
+            }
+        }
+
+        private bool CanSaveJson(RecordTestExtra arg)
+        {
+            return PMSHelper.CurrentSession.IsOKInGroup(new string[] { "统筹组", "测试组", "管理员" });
         }
 
         private void ActionDeepSearch(RecordTestExtra obj)
@@ -766,6 +792,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<RecordTestExtra> ShowOrderInformation { get; set; }
         public RelayCommand<RecordTestExtra> EnterCSCAN { get; set; }
         public RelayCommand<RecordTestExtra> DeepSearch { get; set; }
+        public RelayCommand<RecordTestExtra> SaveJson { get; set; }
 
         public RelayCommand OneKeyCheck { get; set; }
         #endregion

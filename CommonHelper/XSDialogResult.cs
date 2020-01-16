@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CommonHelper
 {
-    public class PathParameter
+    public class XSDialogResult
     {
         public bool HasSelected { get; set; }
         public string SelectPath { get; set; }

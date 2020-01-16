@@ -38,7 +38,31 @@ namespace PMSXMLCreator
             CreateDocx = new RelayCommand(ActionCreateDocx, CanCreateDocx);
             Select = new RelayCommand<DcRecordTest>(ActionSelect);
             LoadFromFile = new RelayCommand(ActionLoadFromFile);
+            LoadFromPMSFile = new RelayCommand(ActionLoadFromPMSFile);
             Save = new RelayCommand(ActionSave);
+        }
+
+        private void ActionLoadFromPMSFile()
+        {
+            try
+            {
+                string initialPath = XSHelper.FileHelper.GetDesktopPath();
+                string filter = "Data|*.json";
+                XSDialogResult openPath = XSHelper.DialogHelper.ShowOpenDialog(initialPath, filter);
+                if (openPath.HasSelected)
+                {
+                    string json = XSHelper.FileHelper.ReadText(openPath.SelectPath);
+                    DcRecordTest test = JsonConvert.DeserializeObject<DcRecordTest>(json);
+                    if (test != null)
+                    {
+                        CurrentCOA = ToECOA(test);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                //throw;
+            }
         }
 
         private void ActionSave()
@@ -79,12 +103,13 @@ namespace PMSXMLCreator
 
         private void ActionLoadFromFile()
         {
-            var dialog = new OpenFileDialog();
-            dialog.InitialDirectory = XSHelper.FileHelper.GetCurrentFolderPath("SavedFile");
-            dialog.Filter = "Data|*.json";
-            if (dialog.ShowDialog() == true)
+            string initialDirectory = XSHelper.FileHelper.GetCurrentFolderPath("SavedFile");
+            string filter = "Data|*.json";
+            XSDialogResult savePath = XSHelper.DialogHelper.ShowOpenDialog(initialDirectory, filter);
+
+            if (savePath.HasSelected == true)
             {
-                string file = dialog.FileName;
+                string file = savePath.SelectPath;
 
                 LoadingInformation = "Loading From XML File";
 
@@ -244,6 +269,7 @@ namespace PMSXMLCreator
         public RelayCommand CreateXML { get; set; }
         public RelayCommand CreateDocx { get; set; }
         public RelayCommand LoadFromFile { get; set; }
+        public RelayCommand LoadFromPMSFile { get; set; }
         public RelayCommand Save { get; set; }
 
         public RelayCommand<DcRecordTest> Select { get; set; }

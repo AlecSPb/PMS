@@ -270,6 +270,12 @@
                                     Command="{Binding DataContext.DeepSearch,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                     CommandParameter="{Binding}"
                                     />
+                        <Button Content="{StaticResource ButtonJson}" 
+                                Style="{StaticResource StyleButtonCommonNarrow}" HorizontalAlignment="Stretch"
+                                    Command="{Binding DataContext.SaveJson,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"
+                                    />
+                                
                     </StackPanel>
                     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Grid.Row="1">
                         <Grid>

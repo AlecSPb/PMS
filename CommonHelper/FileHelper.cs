@@ -125,7 +125,8 @@ namespace CommonHelper
         /// </summary>
         /// <param name="description"></param>
         /// <returns></returns>
-        public PathParameter ShowFolderBrowserDialog(string description)
+        [Obsolete]
+        public XSDialogResult ShowFolderBrowserDialog(string description)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             dialog.Description = description;
@@ -133,11 +134,11 @@ namespace CommonHelper
             DialogResult result = dialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                return new PathParameter { HasSelected = true, SelectPath = dialog.SelectedPath };
+                return new XSDialogResult { HasSelected = true, SelectPath = dialog.SelectedPath };
             }
             else
             {
-                return new PathParameter { HasSelected = false };
+                return new XSDialogResult { HasSelected = false };
             }
         }
 

@@ -62,6 +62,8 @@
                        Text="Load from PMS or xml file first" Foreground="Blue"/>
             <TextBlock Grid.Column="1" Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding LoadingInformation}"/>
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="2">
+                <Button Content="From PMSFile" Style="{StaticResource StyleButtonCommon}" 
+                    Command="{Binding LoadFromPMSFile}"/>
                 <Button Content="Load" Style="{StaticResource StyleButtonCommon}"
                         Command="{Binding LoadFromFile}"/>
                 <Button Content="Save" Style="{StaticResource StyleButtonCommon}"

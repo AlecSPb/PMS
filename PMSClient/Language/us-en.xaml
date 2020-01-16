@@ -322,7 +322,8 @@
     <sys:String x:Key="ButtonExpressTrack">Express Track</sys:String>
     <sys:String x:Key="ButtonLock">Express Lock</sys:String>
     <sys:String x:Key="ButtonUnLock">Express UnLock</sys:String>
-
+    <sys:String x:Key="ButtonJson">Json</sys:String>
+    <sys:String x:Key="ButtonXML">XML</sys:String>
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">Color Indicator=></sys:String>
     <sys:String x:Key="IndicatorYesterday">Yesterday</sys:String>

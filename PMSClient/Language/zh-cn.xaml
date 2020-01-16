@@ -332,6 +332,11 @@
     
     <sys:String x:Key="ButtonLock">锁定</sys:String>
     <sys:String x:Key="ButtonUnLock">解锁</sys:String>
+
+    <sys:String x:Key="ButtonJson">Json</sys:String>
+    <sys:String x:Key="ButtonXML">XML</sys:String>
+
+
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>
     <sys:String x:Key="IndicatorYesterday">昨天</sys:String>

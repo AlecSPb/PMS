@@ -2336,6 +2336,10 @@
     <WCFMetadataStorage Include="Service References\UserSimpleService\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommonHelper\CommonHelper.csproj">
+      <Project>{53952cc1-3e2e-4e39-8b20-6621502dbd45}</Project>
+      <Name>CommonHelper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PMSCommon\PMSCommon.csproj">
       <Project>{0bb4a729-ac1e-4973-a915-f857fd75740d}</Project>
       <Name>PMSCommon</Name>
