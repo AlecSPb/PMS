@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
+    /// <summary>
+    /// 此类用于管理 装料工具箱
+    /// </summary>
     public class ToolMilling
     {
         public Guid Id { get; set; }
