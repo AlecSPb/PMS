@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Response service="RouteService">
+  <Head>OK</Head>
+  <Body>
+    <RouteResponse mailno="306975876177">
+
+      <Route opcode="54" accept_address="成都市/资阳市/眉山市" accept_time="2019-07-05 15:57:17" remark="顺丰速运 已收取快件"/>
+
+      <Route opcode="50" accept_address="成都市/资阳市/眉山市" accept_time="2019-07-05 16:03:00" remark="顺丰速运 已收取快件"/>
+
+      <Route opcode="30" accept_address="成都市/资阳市/眉山市" accept_time="2019-07-05 19:20:54" remark="快件在【成都市郫县百草路营业部】已装车,准备发往下一站"/>
+
+      <Route opcode="36" accept_address="成都市/资阳市/眉山市" accept_time="2019-07-05 19:31:59" remark="快件已发车"/>
+
+      <Route opcode="31" accept_address="成都市/资阳市/眉山市" accept_time="2019-07-05 20:30:54" remark="快件到达 【成都总集散中心】"/>
+
+      <Route opcode="30" accept_address="成都市/资阳市/眉山市" accept_time="2019-07-05 22:01:05" remark="快件在【成都总集散中心】已装车,准备发往 【杭州总集散中心】"/>
+
+      <Route opcode="31" accept_address="杭州市" accept_time="2019-07-06 04:59:56" remark="快件到达 【杭州总集散中心】"/>
+
+      <Route opcode="30" accept_address="杭州市" accept_time="2019-07-06 06:40:04" remark="快件在【杭州总集散中心】已装车,准备发往 【南京江宁集散中心】"/>
+
+      <Route opcode="36" accept_address="杭州市" accept_time="2019-07-06 08:47:48" remark="快件已发车"/>
+
+      <Route opcode="31" accept_address="南京市" accept_time="2019-07-06 13:46:49" remark="快件到达 【南京江宁集散中心】"/>
+
+      <Route opcode="30" accept_address="南京市" accept_time="2019-07-06 14:53:23" remark="快件在【南京江宁集散中心】已装车,准备发往下一站"/>
+
+      <Route opcode="36" accept_address="南京市" accept_time="2019-07-06 15:48:40" remark="快件已发车"/>
+
+      <Route opcode="31" accept_address="南京市" accept_time="2019-07-06 16:27:20" remark="快件到达 【南京江宁麒麟门营业点】"/>
+
+      <Route opcode="44" accept_address="南京市" accept_time="2019-07-06 16:31:17" remark="正在派送途中,请您准备签收(派件人:薛军军，电话:17701597235)"/>
+
+      <Route opcode="204" accept_address="南京市" accept_time="2019-07-06 16:52:30" remark="快件交给薛军军，正在派送途中（联系电话：17701597235）"/>
+
+      <Route opcode="80" accept_address="南京市" accept_time="2019-07-06 17:14:22" remark="已签收,感谢使用顺丰,期待再次为您服务"/>
+
+      <Route opcode="8000" accept_address="南京市" accept_time="2019-07-06 17:14:24" remark="在官网运单资料签收图可查看签收人信息"/>
+
+    </RouteResponse>
+  </Body>
+</Response>
