@@ -345,6 +345,7 @@
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RoomHumidity" type="xs:double" />
       <xs:element minOccurs="0" name="RoomTemperature" type="xs:double" />
+      <xs:element minOccurs="0" name="SieveDescription" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VHPPlanLot" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Water" nillable="true" type="xs:string" />

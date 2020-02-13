@@ -49,5 +49,8 @@ namespace PMSDAL
 
         //2019-9-2
         public string Details { get; set; }
+
+        ///筛网描述
+        public string SieveDescription { get; set; }
     }
 }

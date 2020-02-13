@@ -120,6 +120,10 @@
                                     Binding="{Binding Water}"/>
                     <DataGridTextColumn Header="{StaticResource RMMeltingPoint}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MeltingPoint}"/>
+                    <DataGridTextColumn Header="{StaticResource RMMeltingPoint}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MeltingPoint}"/>
+                    <DataGridTextColumn Header="{StaticResource RMSieveDescription}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding SieveDescription}"/>
                     <DataGridTextColumn Header="{StaticResource RMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
                     <DataGridTextColumn Header="{StaticResource RMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -248,14 +252,17 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-
-                        <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RMCreator}"
+                        <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RMSieveDescription}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBlock Grid.Row="20" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                        <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RMCreateTime}"
+                        <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding SieveDescription}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        
+                        <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RMCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBlock Grid.Row="21" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBlock Grid.Row="21" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                        <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource RMCreateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBlock Grid.Row="22" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
 
 
                     </Grid>

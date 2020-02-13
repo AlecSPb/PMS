@@ -48,6 +48,10 @@ namespace PMSDAL
 
         //2019-9-2
         public string Details { get; set; }
+
+        ///筛网描述
+        public string SieveDescription { get; set; }
+
         //操作者和操作时间
         [Key]
         public Guid HistoryID { get; set; }

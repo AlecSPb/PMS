@@ -3938,6 +3938,9 @@ namespace PMSClient.MainService {
         private double RoomTemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SieveDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4221,6 +4224,19 @@ namespace PMSClient.MainService {
                 if ((this.RoomTemperatureField.Equals(value) != true)) {
                     this.RoomTemperatureField = value;
                     this.RaisePropertyChanged("RoomTemperature");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SieveDescription {
+            get {
+                return this.SieveDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SieveDescriptionField, value) != true)) {
+                    this.SieveDescriptionField = value;
+                    this.RaisePropertyChanged("SieveDescription");
                 }
             }
         }

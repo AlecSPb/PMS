@@ -70,5 +70,10 @@ namespace PMSWCFService.DataContracts
         //2019-9-2
         [DataMember]
         public string Details { get; set; }
+
+
+        ///筛网描述
+        [DataMember]
+        public string SieveDescription { get; set; }
     }
 }
