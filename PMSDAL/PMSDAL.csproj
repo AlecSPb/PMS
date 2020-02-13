@@ -68,6 +68,8 @@
     <Compile Include="Entities\OutsideProcess.cs" />
     <Compile Include="Entities\PMICounter.cs" />
     <Compile Include="Entities\RemainInventory.cs" />
+    <Compile Include="Entities\ToolMold.cs" />
+    <Compile Include="Entities\ToolSieve.cs" />
     <Compile Include="Entities\ToolFilling.cs" />
     <Compile Include="Entities\ItemDebitHistory.cs" />
     <Compile Include="Entities\LogError.cs" />
