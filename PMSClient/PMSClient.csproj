@@ -546,6 +546,9 @@
     <Compile Include="Tool\MaterialNeedCalculationView.xaml.cs">
       <DependentUpon>MaterialNeedCalculationView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tool\MillingTool.xaml.cs">
+      <DependentUpon>MillingTool.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tool\Models\DensityEstamatorModel.cs" />
     <Compile Include="Tool\Models\Element.cs" />
     <Compile Include="Tool\Models\GraphitePaper.cs" />
@@ -1244,6 +1247,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ToolWindow\PressureChangeTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tool\MillingTool.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
