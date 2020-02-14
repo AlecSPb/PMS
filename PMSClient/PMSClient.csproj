@@ -404,6 +404,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ToolService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\UserSimpleService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1733,6 +1738,16 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\ToolService\PMSClient.ToolService.DcToolSieve.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ToolService\ToolService.disco" />
+    <None Include="Service References\ToolService\configuration91.svcinfo" />
+    <None Include="Service References\ToolService\configuration.svcinfo" />
+    <None Include="Service References\ToolService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="StandardDocs\成都先锋材料有限公司靶材检验标准.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1954,6 +1969,19 @@
     <None Include="Service References\PMSIndexService\configuration.svcinfo" />
     <None Include="Service References\PMSIndexService\configuration91.svcinfo" />
     <None Include="Service References\SF\CommonServiceService.wsdl" />
+    <None Include="Service References\ToolService\ToolService.wsdl" />
+    <None Include="Service References\ToolService\ToolService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ToolService\ToolService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ToolService\ToolService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ToolService\ToolService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UserSimpleService\UserSimpleService1.disco" />
     <None Include="Service References\StatisticService\MainStatisticService1.wsdl" />
     <None Include="Service References\StatisticService\StatisticService1.disco" />
@@ -2340,6 +2368,7 @@
     <WCFMetadataStorage Include="Service References\RemoteHeartBeatService\" />
     <WCFMetadataStorage Include="Service References\SF\" />
     <WCFMetadataStorage Include="Service References\StatisticService\" />
+    <WCFMetadataStorage Include="Service References\ToolService\" />
     <WCFMetadataStorage Include="Service References\UserSimpleService\" />
   </ItemGroup>
   <ItemGroup>

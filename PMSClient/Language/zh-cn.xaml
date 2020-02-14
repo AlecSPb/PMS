@@ -980,6 +980,19 @@
     <sys:String x:Key="OPProgressBar">进度记录</sys:String>
     <sys:String x:Key="OPRemark">备注</sys:String>
 
+    <!--ToolSieve-->
+    <sys:String x:Key="TSID">ID</sys:String>
+    <sys:String x:Key="TSCreator">创建者</sys:String>
+    <sys:String x:Key="TSCreateTime">创建时间</sys:String>
+    <sys:String x:Key="TSSearchID">索引ID</sys:String>
+    <sys:String x:Key="TSManufacture">厂商</sys:String>
+    <sys:String x:Key="TSSpecification">规格</sys:String>
+    <sys:String x:Key="TSMaterialGroup">材料组</sys:String>
+    <sys:String x:Key="TSRemark">备注</sys:String>
+    <sys:String x:Key="TSStartTime">开始时间</sys:String>
+    <sys:String x:Key="TSStopTime">停止时间</sys:String>
+
+
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">公共</sys:String>
     <sys:String x:Key="BottomBarPlan">计划</sys:String>

@@ -971,7 +971,18 @@
     <sys:String x:Key="OPProgressBar">ProgressBar</sys:String>
     <sys:String x:Key="OPRemark">Remark</sys:String>
 
-
+    <!--ToolSieve-->
+    <sys:String x:Key="TSID">ID</sys:String>
+    <sys:String x:Key="TSCreator">Creator</sys:String>
+    <sys:String x:Key="TSCreateTime">Create Time</sys:String>
+    <sys:String x:Key="TSSearchID">Search ID</sys:String>
+    <sys:String x:Key="TSManufacture">Manugfacture</sys:String>
+    <sys:String x:Key="TSSpecification">Specification</sys:String>
+    <sys:String x:Key="TSMaterialGroup">Material Group</sys:String>
+    <sys:String x:Key="TSRemark">Remark</sys:String>
+    <sys:String x:Key="TSStartTime">Start Time</sys:String>
+    <sys:String x:Key="TSStopTime">Stop Time</sys:String>
+    
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">Public</sys:String>
     <sys:String x:Key="BottomBarPlan">Plan</sys:String>

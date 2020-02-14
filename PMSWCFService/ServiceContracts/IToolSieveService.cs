@@ -12,10 +12,14 @@ namespace PMSWCFService.ServiceContracts
     [ServiceContract]
     public interface IToolSieveService
     {
+        [OperationContract]
         List<DcToolSieve> GetToolSieve();
+        [OperationContract]
         int GetToolSieveCount();
 
+        [OperationContract]
         void AddToolSieve(ToolSieve model);
+        [OperationContract]
         void UpdateToolSieve(ToolSieve model);
     }
 }

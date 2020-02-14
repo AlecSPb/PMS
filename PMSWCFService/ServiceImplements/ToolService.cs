@@ -9,7 +9,7 @@ using AutoMapper;
 
 namespace PMSWCFService
 {
-    public partial class ExtraService : IToolSieveService
+    public class ToolService : IToolSieveService
     {
         public void AddToolSieve(ToolSieve model)
         {

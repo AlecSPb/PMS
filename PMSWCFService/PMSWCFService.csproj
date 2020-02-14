@@ -87,6 +87,7 @@
     <Content Include="ComplexQueryService.svc" />
     <Content Include="FailureService.svc" />
     <Content Include="EditLockService.svc" />
+    <Content Include="ToolService.svc" />
     <Content Include="StatisticService.svc" />
     <Content Include="SanjieService.svc" />
     <Content Include="PMSService.svc" />
