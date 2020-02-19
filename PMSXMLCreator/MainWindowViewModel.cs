@@ -67,8 +67,8 @@ namespace PMSXMLCreator
 
         private void ActionSave()
         {
-            if (XSHelper.MessageHelper.ShowYesNo("请问确定要保存吗"))
-            {
+            //if (XSHelper.MessageHelper.ShowYesNo("请问确定要保存吗"))
+            //{
                 if (CurrentCOA != null)
                 {
                     FileHelper fh = XSHelper.FileHelper;
@@ -78,7 +78,7 @@ namespace PMSXMLCreator
                     XSHelper.FileHelper.SaveText(filepath, json);
                     XSHelper.MessageHelper.ShowInfo("保存数据成功");
                 }
-            }
+            //}
         }
 
         /// <summary>

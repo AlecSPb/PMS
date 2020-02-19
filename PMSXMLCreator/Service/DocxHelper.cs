@@ -35,25 +35,25 @@ namespace PMSXMLCreator
                 using (var doc = DocX.Load(temp))
                 {
                     #region 填写基础信息
-                    doc.ReplaceText("[ProductName]", model.ProductName);
-                    doc.ReplaceText("[ProductID]", model.LotNumber);
+                    doc.ReplaceText("[ProductName]", model.ProductName??"");
+                    doc.ReplaceText("[ProductID]", model.LotNumber ?? "");
                     doc.ReplaceText("[PrintTime]", DateTime.Now.ToString());
-                    doc.ReplaceText("[CreateTime]", model.LotCreatedDate.ToString());
-                    doc.ReplaceText("[SuppNumber]", model.ManufacturerNumber);
-                    doc.ReplaceText("[SuppPartNumber]", model.ManufacturerPartNumber);
+                    doc.ReplaceText("[CreateTime]", model.LotCreatedDate.ToString() ?? "");
+                    doc.ReplaceText("[SuppNumber]", model.ManufacturerNumber ?? "");
+                    doc.ReplaceText("[SuppPartNumber]", model.ManufacturerPartNumber ?? "");
 
-                    doc.ReplaceText("[IntelPartDesc]", model.PartNumberDesc);
-                    doc.ReplaceText("[IntelPartNumber]", model.PartNumber);
-                    doc.ReplaceText("[IntelPartRev]", model.PartRevisionNumber);
+                    doc.ReplaceText("[IntelPartDesc]", model.PartNumberDesc ?? "");
+                    doc.ReplaceText("[IntelPartNumber]", model.PartNumber ?? "");
+                    doc.ReplaceText("[IntelPartRev]", model.PartRevisionNumber ?? "");
 
-                    doc.ReplaceText("[Comment]", model.Comment);
-                    doc.ReplaceText("[AMLStatus]", model.AMLStatus);
-                    doc.ReplaceText("[AMLNotes]", model.AMLNotes);
-                    doc.ReplaceText("[EHSNumber]", model.EHSNumber);
-                    doc.ReplaceText("[CSize]", model.ContainerSize);
-                    doc.ReplaceText("[CWt]", model.ContainerWeight);
-                    doc.ReplaceText("[SelfLife]", model.SelfLife);
-                    doc.ReplaceText("[BackPlateNumber]", model.BackPlateNumber);
+                    doc.ReplaceText("[Comment]", model.Comment ?? "");
+                    doc.ReplaceText("[AMLStatus]", model.AMLStatus ?? "");
+                    doc.ReplaceText("[AMLNotes]", model.AMLNotes ?? "");
+                    doc.ReplaceText("[EHSNumber]", model.EHSNumber ?? "");
+                    doc.ReplaceText("[CSize]", model.ContainerSize ?? "");
+                    doc.ReplaceText("[CWt]", model.ContainerWeight ?? "");
+                    doc.ReplaceText("[SelfLife]", model.SelfLife ?? "");
+                    doc.ReplaceText("[BackPlateNumber]", model.BackPlateNumber ?? "");
                     #endregion
 
                     Table main_table = doc.Tables[0];
