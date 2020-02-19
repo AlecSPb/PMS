@@ -48,7 +48,7 @@ namespace PMSXMLCreator.Service
             }
             else
             {
-                return key;
+                return "";
             }
         }
 
