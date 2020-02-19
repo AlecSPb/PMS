@@ -23,14 +23,15 @@ namespace PMSXMLCreator.Service
         {
             List<Parameter> parameters = new List<Parameter>();
 
-            parameters.AddRange(GetProductNameComposition(model.ProductName));
+            //parameters.AddRange(GetProductNameComposition(model.ProductName));
+            parameters.AddRange(GetXRF(model.XRF));
 
             parameters.Add(GetParameter("Density", model.Density, ParameterUnit.Density, ucl: "4.4", lcl: "4.3"));
             parameters.Add(GetParameter("Weight", model.Weight, ParameterUnit.Weight, ucl: "5290", lcl: "5030"));
 
             parameters.AddRange(GetDimension(model.TargetDimension));
 
-            parameters.AddRange(GetParametersByKeyStr(model.PlateSpec));
+            parameters.AddRange(GetParametersByKeyStr(model.PlateSpec,"mm"));
 
             parameters.AddRange(GetParametersByKeyStr(model.GDMS, "est_max"));
 
@@ -44,12 +45,12 @@ namespace PMSXMLCreator.Service
         public List<Parameter> GetPropertiesParameters(ECOA model)
         {
             List<Parameter> parameters = new List<Parameter>();
-            parameters.Add(GetParameter("Density", model.Density, ParameterUnit.Density, ucl: "4.4", lcl: "4.3"));
-            parameters.Add(GetParameter("Weight", model.Weight, ParameterUnit.Weight, ucl: "5290", lcl: "5030"));
+            parameters.Add(GetParameter("Density", model.Density, ParameterUnit.Density, ucl: "0", lcl: "0"));
+            parameters.Add(GetParameter("Weight", model.Weight, ParameterUnit.Weight, ucl: "0", lcl: "0"));
 
             parameters.AddRange(GetDimension(model.TargetDimension));
 
-            parameters.AddRange(GetParametersByKeyStr(model.PlateSpec));
+            parameters.AddRange(GetParametersByKeyStr(model.PlateSpec,"mm"));
 
             return parameters;
         }
@@ -111,18 +112,27 @@ namespace PMSXMLCreator.Service
         }
         public List<Parameter> GetXRF(string str)
         {
-            return null;
-        }
-
-        public List<Parameter> GetParametersByKeyStr(string str, string type = "value")
-        {
             List<Parameter> parameters = new List<Parameter>();
-            var matches = Regex.Matches(str, @"([a-zA-Z ]+)=(\d+);");
+            var matches = Regex.Matches(str, @"([a-zA-Z \d]+)=([\w.' ]+);");
             foreach (Match item in matches)
             {
                 string element_name = item.Groups[1].Value;
                 string element_value = item.Groups[2].Value;
-                parameters.Add(GetParameter(dict_element.GetShortName(element_name), element_value, ParameterUnit.PPM, type));
+                parameters.Add(GetParameter(dict_element.GetShortName(element_name), element_value, ParameterUnit.Percent, "value"));
+            }
+
+            return parameters;
+        }
+
+        public List<Parameter> GetParametersByKeyStr(string str, string unit = "ppm", string type = "value")
+        {
+            List<Parameter> parameters = new List<Parameter>();
+            var matches = Regex.Matches(str, @"([a-zA-Z \d]+)=([\w.' ]+);");
+            foreach (Match item in matches)
+            {
+                string element_name = item.Groups[1].Value;
+                string element_value = item.Groups[2].Value;
+                parameters.Add(GetParameter(dict_element.GetShortName(element_name), element_value, unit, type));
             }
 
             return parameters;

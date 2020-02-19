@@ -51,9 +51,9 @@ namespace PMSClient.ViewModel
             GrainSizes = new List<string>();
             PMSBasicDataService.SetListDS(PMSCommon.CustomData.GrainSize, GrainSizes);
             Sieves = new List<string>();
-            for (int i = 0; i < 100; i++)
+            for (int i = 1; i < 100; i++)
             {
-                Sieves.Add($"S{i.ToString().PadLeft(3, '0')}");
+                Sieves.Add($"S{i}");
             }
         }
         private void ActionCalculator()
@@ -92,7 +92,7 @@ namespace PMSClient.ViewModel
             model.Oxygen = "无";
             model.MeltingPoint = "无";
             model.Details = "";
-            model.SieveDescription = "S";
+            model.SieveDescription = "";
             #endregion
             CurrentRecordMilling = model;
         }

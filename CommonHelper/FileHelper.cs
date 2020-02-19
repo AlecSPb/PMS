@@ -98,7 +98,15 @@ namespace CommonHelper
         {
             return $"{DateTime.Now.ToString("yyyyMMddHHmmss")}.{extensionName}";
         }
-
+        /// <summary>
+        /// 获取当前时间文件名，精确到秒
+        /// </summary>
+        /// <param name="extensionName"></param>
+        /// <returns></returns>
+        public string GetGoodDateTimeFileName(string id,string extensionName = "docx")
+        {
+            return $"[{id}]-{DateTime.Now.ToString("yyyyMMddHHmmss")}.{extensionName}";
+        }
         /// <summary>
         /// 获取完整文件名
         /// </summary>

@@ -58,7 +58,7 @@
     <sys:String x:Key="PageDeliveryAddress">Shipment Address</sys:String>
     <sys:String x:Key="PageProcess">Process</sys:String>
     <sys:String x:Key="PageSupplier">Supplier</sys:String>
-    <sys:String x:Key="PageSieve">Sieve</sys:String>
+
 
     <sys:String x:Key="PageOutput">Output</sys:String>
 
@@ -971,7 +971,20 @@
     <sys:String x:Key="OPProgressBar">ProgressBar</sys:String>
     <sys:String x:Key="OPRemark">Remark</sys:String>
 
-
+    <!--ToolSieve-->
+    <sys:String x:Key="PageSieve">Sieve Libary</sys:String>
+    <sys:String x:Key="PageSieveEdit">Sieve Libary Edit</sys:String>
+    <sys:String x:Key="TSID">ID</sys:String>
+    <sys:String x:Key="TSCreator">Creator</sys:String>
+    <sys:String x:Key="TSCreateTime">Create Time</sys:String>
+    <sys:String x:Key="TSSearchID">Search ID</sys:String>
+    <sys:String x:Key="TSManufacture">Manugfacture</sys:String>
+    <sys:String x:Key="TSSpecification">Specification</sys:String>
+    <sys:String x:Key="TSMaterialGroup">Material Group</sys:String>
+    <sys:String x:Key="TSRemark">Remark</sys:String>
+    <sys:String x:Key="TSStartTime">Start Time</sys:String>
+    <sys:String x:Key="TSStopTime">Stop Time</sys:String>
+    
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">Public</sys:String>
     <sys:String x:Key="BottomBarPlan">Plan</sys:String>

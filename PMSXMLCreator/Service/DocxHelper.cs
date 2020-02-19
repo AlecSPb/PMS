@@ -35,11 +35,25 @@ namespace PMSXMLCreator
                 using (var doc = DocX.Load(temp))
                 {
                     #region 填写基础信息
+                    doc.ReplaceText("[ProductName]", model.ProductName??"");
+                    doc.ReplaceText("[ProductID]", model.LotNumber ?? "");
                     doc.ReplaceText("[PrintTime]", DateTime.Now.ToString());
-                    doc.ReplaceText("[CreateTime]", model.LotCreatedDate.ToString());
-                    doc.ReplaceText("[SuppNumber]", model.ManufacturerNumber);
-                    doc.ReplaceText("[SuppPartNumber]", model.ManufacturerPartNumber);
-                    doc.ReplaceText("[ProductID]", model.LotNumber);
+                    doc.ReplaceText("[CreateTime]", model.LotCreatedDate.ToString() ?? "");
+                    doc.ReplaceText("[SuppNumber]", model.ManufacturerNumber ?? "");
+                    doc.ReplaceText("[SuppPartNumber]", model.ManufacturerPartNumber ?? "");
+
+                    doc.ReplaceText("[IntelPartDesc]", model.PartNumberDesc ?? "");
+                    doc.ReplaceText("[IntelPartNumber]", model.PartNumber ?? "");
+                    doc.ReplaceText("[IntelPartRev]", model.PartRevisionNumber ?? "");
+
+                    doc.ReplaceText("[Comment]", model.Comment ?? "");
+                    doc.ReplaceText("[AMLStatus]", model.AMLStatus ?? "");
+                    doc.ReplaceText("[AMLNotes]", model.AMLNotes ?? "");
+                    doc.ReplaceText("[EHSNumber]", model.EHSNumber ?? "");
+                    doc.ReplaceText("[CSize]", model.ContainerSize ?? "");
+                    doc.ReplaceText("[CWt]", model.ContainerWeight ?? "");
+                    doc.ReplaceText("[SelfLife]", model.SelfLife ?? "");
+                    doc.ReplaceText("[BackPlateNumber]", model.BackPlateNumber ?? "");
                     #endregion
 
                     Table main_table = doc.Tables[0];
@@ -48,7 +62,8 @@ namespace PMSXMLCreator
 
 
                     #region 填写成分
-                    List<Parameter> compositions = anlysis.GetProductNameComposition(model.ProductName);
+                    //List<Parameter> compositions = anlysis.GetProductNameComposition(model.ProductName);
+                    List<Parameter> compositions = anlysis.GetXRF(model.XRF);
                     foreach (var item in compositions)
                     {
                         main_table.Rows[start_index].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
@@ -59,7 +74,7 @@ namespace PMSXMLCreator
                         main_table.Rows[start_index].Cells[7].Paragraphs[0].Append(item.UnitOfMeasure + "\r").FontSize(6);
                         main_table.Rows[start_index].Cells[8].Paragraphs[0].Append(item.ShortName + "\r").FontSize(6);
                         main_table.Rows[start_index].Cells[9].Paragraphs[0].Append("w/w" + "\r").FontSize(6);
-                        main_table.Rows[start_index].Cells[10].Paragraphs[0].Append("Batch" + "\r").FontSize(6);
+                        main_table.Rows[start_index].Cells[10].Paragraphs[0].Append("Individual" + "\r").FontSize(6);
                         main_table.Rows[start_index].Cells[11].Paragraphs[0].Append("Key" + "\r").FontSize(6);
                     }
 
@@ -69,7 +84,7 @@ namespace PMSXMLCreator
                     List<Parameter> properties = anlysis.GetPropertiesParameters(model);
                     foreach (var item in properties)
                     {
-                        main_table.Rows[start_index+3].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
+                        main_table.Rows[start_index + 3].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
                         main_table.Rows[start_index + 3].Cells[4].Paragraphs[0].Append("1" + "\r").FontSize(6);
                         main_table.Rows[start_index + 3].Cells[5].Paragraphs[0].Append("1" + "\r").FontSize(6);
                         main_table.Rows[start_index + 3].Cells[6].Paragraphs[0].Append(item.Measurements[0]

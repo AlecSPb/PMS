@@ -87,6 +87,7 @@
     <Content Include="ComplexQueryService.svc" />
     <Content Include="FailureService.svc" />
     <Content Include="EditLockService.svc" />
+    <Content Include="ToolService.svc" />
     <Content Include="StatisticService.svc" />
     <Content Include="SanjieService.svc" />
     <Content Include="PMSService.svc" />
@@ -122,6 +123,7 @@
     <Compile Include="DataContracts\DcStatisticDelivery.cs" />
     <Compile Include="DataContracts\DcStatisticPlan.cs" />
     <Compile Include="DataContracts\DcStatisticOrder.cs" />
+    <Compile Include="DataContracts\DcToolSieve.cs" />
     <Compile Include="DataContracts\DcUserAccess.cs" />
     <Compile Include="DataContracts\DcUserRole.cs" />
     <Compile Include="DataContracts\DcUser.cs" />
@@ -183,6 +185,7 @@
     <Compile Include="ServiceContracts\ITaskPlanService.cs" />
     <Compile Include="ServiceContracts\IToDoService.cs" />
     <Compile Include="ServiceContracts\IToolInventoryService.cs" />
+    <Compile Include="ServiceContracts\IToolSieveService.cs" />
     <Compile Include="ServiceImplements\ComplexQueryService.cs" />
     <Compile Include="ServiceImplements\EditLockService.cs" />
     <Compile Include="ServiceImplements\ExtraService.cs" />
@@ -248,6 +251,7 @@
     <Compile Include="ServiceImplements\SanjieService.cs" />
     <Compile Include="ServiceImplements\StatisticService.cs" />
     <Compile Include="ServiceImplements\ToolInventoryService.cs" />
+    <Compile Include="ServiceImplements\ToolService.cs" />
     <Compile Include="ServiceImplements\UserAccessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataContracts\DcOrder.cs" />

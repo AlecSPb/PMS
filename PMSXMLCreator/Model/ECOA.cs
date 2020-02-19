@@ -34,6 +34,7 @@ namespace PMSXMLCreator
             ManufacturerOrderNumber = "";
             PartNumber = "########";
             PartRevisionNumber = "######";
+            PartNumberDesc = "##";
             LotCreatedDate = DateTime.Now;
             LotNumber = "";
 
@@ -46,6 +47,14 @@ namespace PMSXMLCreator
             XRF = Helper.XRF;
             GDMS = Helper.GDMS;
             VPI = Helper.VPI;
+
+            AMLStatus = "ENGINEERING";
+            AMLNotes = "none";
+            EHSNumber = "none";
+            ContainerSize = "0";
+            ContainerWeight = "0";
+            BackPlateNumber = "none";
+            SelfLife = "12 months";
         }
 
 
@@ -58,6 +67,7 @@ namespace PMSXMLCreator
         public string ManufacturerName { get; set; }
         public string ManufacturerPlantCode { get; set; }
         public string IncomingFaxNumber { get; set; }
+
         #endregion
 
         #region GenerationInfo
@@ -71,6 +81,13 @@ namespace PMSXMLCreator
         public DateTime ActualShipDate { get; set; }
         public string Containers { get; set; }
 
+        public string AMLStatus { get; set; }
+        public string AMLNotes { get; set; }
+        public string EHSNumber { get; set; }
+        public string ContainerSize { get; set; }
+        public string ContainerWeight { get; set; }
+        public string SelfLife { get; set; }
+
         #endregion
 
         #region Comment
@@ -80,12 +97,16 @@ namespace PMSXMLCreator
 
         #region TargetInfo
         public string ProductName { get; set; }
-        public string ManufacturerPartNumber { get; set; }
-        public string ManufacturerOrderNumber { get; set; }
-        public string PartNumber { get; set; }
-        public string PartRevisionNumber { get; set; }
+        public string ManufacturerPartNumber { get; set; }//Part Nbr
+        public string ManufacturerOrderNumber { get; set; }//NBr
+        public string PartNumber { get; set; }//Nbr
+        public string PartRevisionNumber { get; set; }//Rev
+        public string PartNumberDesc { get; set; }//Desc
+
+
         public DateTime LotCreatedDate { get; set; }
         public string LotNumber { get; set; }
+        public string BackPlateNumber { get; set; }
 
         #endregion
 
