@@ -240,66 +240,67 @@
                     <TextBlock Grid.Row="16" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text=""/>
 
+
                     <TextBlock Grid.Row="17" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="BackPlateNumber"   Background="{StaticResource TargetInfo}"/>
+                       Text="ProductName"   Background="{StaticResource TargetInfo}"/>
                     <TextBox Grid.Row="17" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding BackPlateNumber}" />
+                     Text="{Binding ProductName}" />
                     <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text=""/>
 
                     <TextBlock Grid.Row="18" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="ProductName"   Background="{StaticResource TargetInfo}"/>
+                       Text="ManufacturerPartNumber"  Background="{StaticResource TargetInfo}"/>
                     <TextBox Grid.Row="18" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding ProductName}" />
+                     Text="{Binding ManufacturerPartNumber}"/>
                     <TextBlock Grid.Row="18" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text=""/>
 
                     <TextBlock Grid.Row="19" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="ManufacturerPartNumber"  Background="{StaticResource TargetInfo}"/>
+                       Text="ManufacturerOrderNumber"   Background="{StaticResource TargetInfo}"/>
                     <TextBox Grid.Row="19" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding ManufacturerPartNumber}"/>
+                     Text="{Binding ManufacturerOrderNumber}"/>
                     <TextBlock Grid.Row="19" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text=""/>
 
                     <TextBlock Grid.Row="20" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="ManufacturerOrderNumber"   Background="{StaticResource TargetInfo}"/>
+                       Text="IntelPartNumberDesc"   Background="{StaticResource TargetInfo}"/>
                     <TextBox Grid.Row="20" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding ManufacturerOrderNumber}"/>
+                     Text="{Binding PartNumberDesc}"/>
                     <TextBlock Grid.Row="20" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text=""/>
 
                     <TextBlock Grid.Row="21" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="IntelPartNumberDesc"   Background="{StaticResource TargetInfo}"/>
+                       Text="IntelPartNumber"   Background="{StaticResource TargetInfo}"/>
                     <TextBox Grid.Row="21" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding PartNumberDesc}"/>
+                     Text="{Binding PartNumber}"/>
                     <TextBlock Grid.Row="21" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text=""/>
 
                     <TextBlock Grid.Row="22" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="IntelPartNumber"   Background="{StaticResource TargetInfo}"/>
+                       Text="IntelPartRevisionNumber"   Background="{StaticResource TargetInfo}"/>
                     <TextBox Grid.Row="22" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding PartNumber}"/>
+                     Text="{Binding PartRevisionNumber}"/>
                     <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text=""/>
 
                     <TextBlock Grid.Row="23" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="IntelPartRevisionNumber"   Background="{StaticResource TargetInfo}"/>
+                       Text="LotCreatedDate"   Background="{StaticResource TargetInfo}"/>
                     <TextBox Grid.Row="23" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding PartRevisionNumber}"/>
+                     Text="{Binding LotCreatedDate}"/>
                     <TextBlock Grid.Row="23" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text=""/>
 
                     <TextBlock Grid.Row="24" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="LotCreatedDate"   Background="{StaticResource TargetInfo}"/>
+                       Text="LotNumber"   Background="{StaticResource TargetInfo}"/>
                     <TextBox Grid.Row="24" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding LotCreatedDate}"/>
+                     Text="{Binding LotNumber}"/>
                     <TextBlock Grid.Row="24" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text=""/>
 
                     <TextBlock Grid.Row="25" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="LotNumber"   Background="{StaticResource TargetInfo}"/>
+                       Text="BackPlateNumber"   Background="{StaticResource TargetInfo}"/>
                     <TextBox Grid.Row="25" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding LotNumber}"/>
+                     Text="{Binding BackPlateNumber}" />
                     <TextBlock Grid.Row="25" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text=""/>
 
