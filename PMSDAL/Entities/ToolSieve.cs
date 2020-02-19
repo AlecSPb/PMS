@@ -13,7 +13,7 @@ namespace PMSDAL.Entities
     {
         public string SearchID { get; set; }//给人看的编号  S-1
         public string Manufacture { get; set; }//制造商
-        public string Specification { get;; set; }//规格
+        public string Specification { get; set; }//规格
         public string MaterialGroup { get; set; }//材料组
         public string Remark { get; set; }
 
