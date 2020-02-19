@@ -72,7 +72,8 @@
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource MOIOrderItemNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <StackPanel Grid.Row="0"  Grid.Column="1"   Orientation="Horizontal">
-                        <TextBox Text="{Binding OrderItemNumber}" Style="{StaticResource StyleTextBoxCommon}"/>
+                        <TextBox Text="{Binding OrderItemNumber}" Style="{StaticResource StyleTextBoxCommon}" 
+                                 Width="180"/>
                         <Button Content="检查是否唯一" Style="{StaticResource StyleButtonCommon}"
                                 Command="{Binding DataContext.CheckOrderItemNumberExist,
                             RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>

@@ -568,6 +568,8 @@
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
+    <Compile Include="ViewModel\MillingToolEditVM.cs" />
+    <Compile Include="ViewModel\MillingToolVM.cs" />
     <Compile Include="ViewModel\OutsideProcessVM.cs" />
     <Compile Include="ViewModel\OutsideProcessEditVM.cs" />
     <Compile Include="ViewModel\RemainInventoryEditVM.cs" />
@@ -653,6 +655,12 @@
     </Compile>
     <Compile Include="View\CheckListEditView.xaml.cs">
       <DependentUpon>CheckListEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MillingToolEditView.xaml.cs">
+      <DependentUpon>MillingToolEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MillingToolView.xaml.cs">
+      <DependentUpon>MillingToolView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LogInViewCenter.xaml.cs">
       <DependentUpon>LogInViewCenter.xaml</DependentUpon>
@@ -1300,6 +1308,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CheckListEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MillingToolEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MillingToolView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

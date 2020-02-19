@@ -132,6 +132,8 @@ namespace PMSClient.View
 
             SimpleIoc.Default.Register<FillingToolView>();
             SimpleIoc.Default.Register<FillingToolEditView>();
+            SimpleIoc.Default.Register<MillingToolView>();
+            SimpleIoc.Default.Register<MillingToolEditView>();
 
             SimpleIoc.Default.Register<FailureView>();
             SimpleIoc.Default.Register<FailureEditView>();
@@ -225,6 +227,22 @@ namespace PMSClient.View
                 return SimpleIoc.Default.GetInstance<FillingToolEditView>();
             }
         }
+
+        public MillingToolView MillingTool
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<MillingToolView>();
+            }
+        }
+        public MillingToolEditView MillingToolEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<MillingToolEditView>();
+            }
+        }
+
 
         public ToDoView ToDo
         {

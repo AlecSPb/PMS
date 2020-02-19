@@ -146,6 +146,9 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<FillingToolVM>();
             SimpleIoc.Default.Register<FillingToolEditVM>();
 
+            SimpleIoc.Default.Register<MillingToolVM>();
+            SimpleIoc.Default.Register<MillingToolEditVM>();
+
             SimpleIoc.Default.Register<FailureVM>();
             SimpleIoc.Default.Register<FailureEditVM>();
 
@@ -219,6 +222,22 @@ namespace PMSClient.ViewModel
             get
             {
                 return SimpleIoc.Default.GetInstance<FillingToolEditVM>();
+            }
+        }
+
+        public MillingToolVM MillingTool
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<MillingToolVM>();
+            }
+        }
+
+        public MillingToolEditVM MillingToolEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<MillingToolEditVM>();
             }
         }
 

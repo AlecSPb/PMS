@@ -58,7 +58,6 @@
     <sys:String x:Key="PageDeliveryAddress">发货信息库</sys:String>
     <sys:String x:Key="PageProcess">工艺库</sys:String>
     <sys:String x:Key="PageSupplier">供应商库</sys:String>
-    <sys:String x:Key="PageSieve">筛网库</sys:String>
 
     <sys:String x:Key="PageOutput">数据导出</sys:String>
 
@@ -981,6 +980,8 @@
     <sys:String x:Key="OPRemark">备注</sys:String>
 
     <!--ToolSieve-->
+    <sys:String x:Key="PageSieve">筛网库</sys:String>
+    <sys:String x:Key="PageSieveEdit">筛网库编辑</sys:String>
     <sys:String x:Key="TSID">ID</sys:String>
     <sys:String x:Key="TSCreator">创建者</sys:String>
     <sys:String x:Key="TSCreateTime">创建时间</sys:String>

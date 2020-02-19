@@ -58,7 +58,7 @@
     <sys:String x:Key="PageDeliveryAddress">Shipment Address</sys:String>
     <sys:String x:Key="PageProcess">Process</sys:String>
     <sys:String x:Key="PageSupplier">Supplier</sys:String>
-    <sys:String x:Key="PageSieve">Sieve</sys:String>
+
 
     <sys:String x:Key="PageOutput">Output</sys:String>
 
@@ -972,6 +972,8 @@
     <sys:String x:Key="OPRemark">Remark</sys:String>
 
     <!--ToolSieve-->
+    <sys:String x:Key="PageSieve">Sieve Libary</sys:String>
+    <sys:String x:Key="PageSieveEdit">Sieve Libary Edit</sys:String>
     <sys:String x:Key="TSID">ID</sys:String>
     <sys:String x:Key="TSCreator">Creator</sys:String>
     <sys:String x:Key="TSCreateTime">Create Time</sys:String>
