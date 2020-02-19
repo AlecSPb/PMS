@@ -201,8 +201,8 @@ namespace PMSXMLCreator
                     {
                         RecordTests.Add(item);
                     }
-                    CurrentCOA = ToECOA(RecordTests.FirstOrDefault());
-                    LoadingInformation = "Loading From PMS";
+                    //CurrentCOA = ToECOA(RecordTests.FirstOrDefault());
+                    //LoadingInformation = "Loading From PMS";
                 }
             }
             catch (Exception)
