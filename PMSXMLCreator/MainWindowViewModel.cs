@@ -40,6 +40,19 @@ namespace PMSXMLCreator
             LoadFromFile = new RelayCommand(ActionLoadFromFile);
             LoadFromPMSFile = new RelayCommand(ActionLoadFromPMSFile);
             Save = new RelayCommand(ActionSave);
+            ClosingCommand = new RelayCommand(ActionClosing);
+        }
+
+        private void ActionClosing()
+        {
+            bool isChanged = !AutoSave.CompareJsonHash(CurrentCOA);
+            if (isChanged)
+            {
+                if (XSHelper.MessageHelper.ShowYesNo("当前内容已更改，但未保存，是否保存?"))
+                {
+                    ActionSave();
+                }
+            }
         }
 
         private void ActionLoadFromPMSFile()
@@ -56,6 +69,9 @@ namespace PMSXMLCreator
                     if (test != null)
                     {
                         CurrentCOA = ToECOA(test);
+
+                        //自动保存为临时文件
+                        AutoSave.SaveCurrentJson(CurrentCOA);
                     }
                 }
             }
@@ -69,15 +85,19 @@ namespace PMSXMLCreator
         {
             //if (XSHelper.MessageHelper.ShowYesNo("请问确定要保存吗"))
             //{
-                if (CurrentCOA != null)
-                {
-                    FileHelper fh = XSHelper.FileHelper;
-                    string json = JsonConvert.SerializeObject(CurrentCOA);
-                    string filepath = fh.GetFullFileName(fh.GetGoodDateTimeFileName(CurrentCOA.LotNumber,"json"),
-                        fh.GetCurrentFolderPath(), "SavedFile");
-                    XSHelper.FileHelper.SaveText(filepath, json);
-                    XSHelper.MessageHelper.ShowInfo("保存数据成功");
-                }
+            if (CurrentCOA != null)
+            {
+                FileHelper fh = XSHelper.FileHelper;
+                string json = JsonConvert.SerializeObject(CurrentCOA);
+                string filepath = fh.GetFullFileName(fh.GetGoodDateTimeFileName(CurrentCOA.LotNumber, "json"),
+                    fh.GetCurrentFolderPath(), "SavedFile");
+                XSHelper.FileHelper.SaveText(filepath, json);
+
+                //自动保存为临时文件
+                AutoSave.SaveCurrentJson(CurrentCOA);
+
+                XSHelper.MessageHelper.ShowInfo("保存数据成功");
+            }
             //}
         }
 
@@ -119,6 +139,9 @@ namespace PMSXMLCreator
                 CurrentCOA = JsonConvert.DeserializeObject<ECOA>(json);
 
                 XSHelper.MessageHelper.ShowInfo("载入数据成功");
+
+                //自动保存为临时文件
+                AutoSave.SaveCurrentJson(CurrentCOA);
             }
 
         }
@@ -129,6 +152,9 @@ namespace PMSXMLCreator
             {
                 CurrentCOA = ToECOA(record);
                 LoadingInformation = "Loading From PMS";
+
+                //自动保存为临时文件
+                AutoSave.SaveCurrentJson(CurrentCOA);
             }
         }
 
@@ -272,6 +298,7 @@ namespace PMSXMLCreator
         public RelayCommand LoadFromFile { get; set; }
         public RelayCommand LoadFromPMSFile { get; set; }
         public RelayCommand Save { get; set; }
+        public RelayCommand ClosingCommand { get; set; }
 
         public RelayCommand<DcRecordTest> Select { get; set; }
 
