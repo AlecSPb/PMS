@@ -26,6 +26,7 @@ namespace PMSXMLCreator.Service
             parameters.Add("Density", "DEN");
             parameters.Add("Weight", "Weight");
             parameters.Add("Target Blank Flatness", "TAR_BFLA");
+            parameters.Add("Target Blank 2mm Top Rad", "TAR_BTOP");
             parameters.Add("Target Blank Parallism", "TAR_BPAR");
             parameters.Add("Target Blank Surface Roughness", "TAR_BSUR");
             parameters.Add("BP Diameter", "BP_DIA");

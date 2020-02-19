@@ -73,7 +73,8 @@ namespace PMSXMLCreator
                 {
                     FileHelper fh = XSHelper.FileHelper;
                     string json = JsonConvert.SerializeObject(CurrentCOA);
-                    string filepath = fh.GetFullFileName(fh.GetDateTimeFileName("json"), fh.GetCurrentFolderPath(), "SavedFile");
+                    string filepath = fh.GetFullFileName(fh.GetGoodDateTimeFileName(CurrentCOA.LotNumber,"json"),
+                        fh.GetCurrentFolderPath(), "SavedFile");
                     XSHelper.FileHelper.SaveText(filepath, json);
                     XSHelper.MessageHelper.ShowInfo("保存数据成功");
                 }
