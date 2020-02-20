@@ -6,9 +6,9 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:PMSXMLCreator"
         mc:Ignorable="d"
-        Icon="xml.png"
+        Icon="xml2.png"
         WindowStartupLocation="CenterScreen"
-        Title="XML Format eCoA Creator for Pioneer Materials,Inc." Height="2000" Width="1200"
+        Title="eCoA Creator for Intel, Pioneer Materials,Inc. v1.5" Height="2000" Width="1200"
         WindowState="Maximized">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Closing">
@@ -28,10 +28,13 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <TextBlock Text="Load Online - &gt;" Style="{StaticResource StyleTextBlockCommon}" Background="Green" 
+                           Foreground="White"/>
                 <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Foreground="White" Text="Product ID" />
                 <TextBox Style="{StaticResource StyleTextBoxSearch}" Width="200" Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}"/>
                 <Button Content="Search From PMS" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding Search}"/>
+
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
 
@@ -44,7 +47,7 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Load This" Style="{StaticResource StyleDGButton}"
+                            <Button Content="Load This - &gt;" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Select,
                                 RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                     CommandParameter="{Binding}"/>
@@ -64,16 +67,23 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="Load from PMS or xml file first" Foreground="Blue"/>
-            <TextBlock Grid.Column="1" Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding LoadingInformation}"/>
-            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="2">
+            <StackPanel Grid.Column="0"  Orientation="Horizontal">
+                <TextBlock Text="Load Offline - &gt;" Style="{StaticResource StyleTextBlockCommon}" Background="Green" 
+                           Foreground="White"/>
                 <Button Content="From PMSFile" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding LoadFromPMSFile}"/>
                 <Button Content="Load" Style="{StaticResource StyleButtonCommon}"
                         Command="{Binding LoadFromFile}"/>
                 <Button Content="Save" Style="{StaticResource StyleButtonCommon}"
                         Command="{Binding Save}"/>
+                <TextBlock Style="{StaticResource StyleDGTextBlockCommon}"
+                       Text="!Load from PMS or saved file first" Foreground="White" Background="Red"/>
+            </StackPanel>
+
+            <TextBlock Grid.Column="1" Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding LoadingInformation}"/>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="2">
+                <TextBlock Text="Generate - &gt;" Style="{StaticResource StyleTextBlockCommon}" Background="Green" 
+                           Foreground="White"/>
                 <Button Content="Create XML" Style="{StaticResource StyleButtonCommon}"
                         Command="{Binding CreateXML}"/>
                 <Button Content="Create Docx" Style="{StaticResource StyleButtonCommon}"

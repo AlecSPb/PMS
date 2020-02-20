@@ -8,7 +8,7 @@ using System.Windows;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("PMSXMLCreator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("xs.zhou made this program")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("PMSXMLCreator")]

@@ -116,6 +116,7 @@ namespace PMSXMLCreator
             if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据[{CurrentCOA.LotNumber}]生成Docx文件？"))
             {
                 helper_docx.CreateFile(CurrentCOA);
+                XSHelper.MessageHelper.ShowInfo("此docx文件email给leon");
             }
         }
 
@@ -204,6 +205,8 @@ namespace PMSXMLCreator
             if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据[{CurrentCOA.LotNumber}]生成xml文件？"))
             {
                 helper_xml.CreateFile(CurrentCOA);
+                XSHelper.MessageHelper.ShowInfo("此xml文件使用[HubSpan PartnerConnect]发送给intel");
+
             }
         }
 
