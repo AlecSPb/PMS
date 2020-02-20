@@ -49,8 +49,8 @@ namespace PMSClient.ViewModel
             }
             try
             {
-                var tool = new ReportsHelperNew.ReportFillingTool();
-                tool.Intialize("装料具索引单");
+                var tool = new ReportsHelperNew.ReportMillingTool();
+                tool.Intialize("筛网工具索引单");
                 tool.Output();
             }
             catch (Exception ex)

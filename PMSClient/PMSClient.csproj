@@ -320,6 +320,7 @@
     <Compile Include="Helpers\VToken.cs" />
     <Compile Include="ReportsHelperNew\ReportBase.cs" />
     <Compile Include="ReportsHelperNew\ReportBondingTargetDefects.cs" />
+    <Compile Include="ReportsHelperNew\ReportMillingTool.cs" />
     <Compile Include="ReportsHelperNew\ReportFillingTool.cs" />
     <Compile Include="ReportsHelperNew\ReportOutsideProcessSheetOut.cs" />
     <Compile Include="ReportsHelperNew\ReportRecordDeMold.cs" />
@@ -1749,6 +1750,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\DocTemplate\Reports\BondingSheet_BK.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\DocTemplate\Reports\ToolMillingList.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Service References\EditLockService\EditLockService.disco" />
