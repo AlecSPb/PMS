@@ -53,6 +53,8 @@ namespace PMSXMLCreator
                     ActionSave();
                 }
             }
+            //最后删除临时文件
+            AutoSave.CleanTempFile();
         }
 
         private void ActionLoadFromPMSFile()

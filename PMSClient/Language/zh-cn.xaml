@@ -334,6 +334,7 @@
 
     <sys:String x:Key="ButtonJson">Json</sys:String>
     <sys:String x:Key="ButtonXML">XML</sys:String>
+    <sys:String x:Key="ButtonSieve">筛网</sys:String>
 
 
     <!--Indicator-->

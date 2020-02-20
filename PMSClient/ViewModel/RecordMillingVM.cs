@@ -53,6 +53,12 @@ namespace PMSClient.ViewModel
             QuickAdd = new RelayCommand(ActionQuickAdd, CanQuickAdd);
             Output = new RelayCommand(ActionOutput);
             Trace = new RelayCommand<DcRecordMilling>(ActionTrace);
+            Sieve = new RelayCommand(ActionSieve);
+        }
+
+        private void ActionSieve()
+        {
+            NavigationService.GoTo(PMSViews.MillingTool);
         }
 
         private void ActionTrace(DcRecordMilling obj)
@@ -246,6 +252,7 @@ namespace PMSClient.ViewModel
         public RelayCommand QuickAdd { get; set; }
 
         public RelayCommand Output { get; set; }
+        public RelayCommand Sieve { get; set; }
         #endregion
     }
 }

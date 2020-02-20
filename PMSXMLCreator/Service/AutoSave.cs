@@ -34,7 +34,9 @@ namespace PMSXMLCreator.Service
         /// <param name="temp_current_model"></param>
         public static bool CompareJsonHash(ECOA currentCOA, string temp_current_model = "temp_current_model.json")
         {
-            if (currentCOA == null) return false;
+            //文件不存在或者当前模型对象不存在的时候，返回true
+            if (currentCOA == null) return true;
+            if (!File.Exists(temp_current_model)) return true;
 
             string str_current, str_saved;
             str_current = JsonConvert.SerializeObject(currentCOA);
@@ -44,6 +46,19 @@ namespace PMSXMLCreator.Service
             return hash_current == hash_saved;
         }
 
+        public static void CleanTempFile(string path = "temp_current_model.json")
+        {
+            try
+            {
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+            }
+            catch (Exception)
+            {
 
+            }
+        }
     }
 }
