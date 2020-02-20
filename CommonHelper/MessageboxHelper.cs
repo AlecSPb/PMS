@@ -36,5 +36,9 @@ namespace CommonHelper
         {
             MessageBox.Show(content, caption, MessageBoxButtons.OK, MessageBoxIcon.Stop);
         }
+        public void ShowWarning(string content, string caption = "警告")
+        {
+            MessageBox.Show(content, caption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 }

@@ -40,7 +40,7 @@ namespace PMSXMLCreator.Service
             elements.Add("N", "Nitrogen");
         }
 
-        public string GetShortName(string key)
+        public string GetFullName(string key)
         {
             if (elements.ContainsKey(key))
             {
@@ -48,7 +48,7 @@ namespace PMSXMLCreator.Service
             }
             else
             {
-                return "";
+                return key;
             }
         }
 

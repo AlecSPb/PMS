@@ -16,6 +16,15 @@ namespace PMSXMLCreator.Service
 
         public void CreateFile(ECOA model)
         {
+            #region 检查逻辑
+            if (Service.CheckLogic.CheckLotNumber(model.LotNumber))
+            {
+                XSHelper.MessageHelper.ShowStop($"LotNumber[{model.LotNumber}]中的#000编号部分不能透漏给客户,请删除");
+                return;
+            }
+            #endregion
+
+
             string folder = XSHelper.FileHelper.GetDesktopPath();
             if (!Directory.Exists(folder))
             {
@@ -143,10 +152,11 @@ namespace PMSXMLCreator.Service
             stream.Flush();
             stream.Close();
 
+            if (XSHelper.MessageHelper.ShowYesNo("创建完毕,要打开吗？"))
+            {
+                System.Diagnostics.Process.Start(filePath);
 
-            Helper.ShowMessage("创建完毕,即将打开");
-            System.Diagnostics.Process.Start(filePath);
-
+            }
         }
 
         /// <summary>

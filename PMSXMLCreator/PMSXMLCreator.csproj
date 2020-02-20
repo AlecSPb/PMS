@@ -82,6 +82,7 @@
     </ApplicationDefinition>
     <Compile Include="Model\ParameterList.cs" />
     <Compile Include="Service\AutoSave.cs" />
+    <Compile Include="Service\CheckLogic.cs" />
     <Compile Include="Service\DocxHelper.cs" />
     <Compile Include="Service\Analysis.cs" />
     <Compile Include="Service\ElementFullNameDict.cs" />

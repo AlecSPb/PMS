@@ -343,8 +343,9 @@
                        Text=""/>
 
                     <TextBlock Grid.Row="29" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="More Spec"   Background="{StaticResource MaterialParameterInfo}"/>
-                    <TextBox Grid.Row="29" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
+                       Text="More Spec"   Background="{StaticResource MaterialParameterInfo}" VerticalAlignment="Stretch"/>
+                    <TextBox Grid.Row="29" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" TextWrapping="Wrap"
+                             Height="40"
                      Text="{Binding PlateSpec}" Grid.ColumnSpan="2"/>
 
                     <TextBlock Grid.Row="30" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"

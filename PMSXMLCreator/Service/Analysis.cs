@@ -24,18 +24,18 @@ namespace PMSXMLCreator.Service
             List<Parameter> parameters = new List<Parameter>();
 
             //parameters.AddRange(GetProductNameComposition(model.ProductName));
-            parameters.AddRange(GetXRF(model.XRF));
+            parameters.AddRange(GetXRFByKeyStr(model.XRF));
 
-            parameters.Add(GetParameter("Density", model.Density, ParameterUnit.Density, ucl: "4.4", lcl: "4.3"));
-            parameters.Add(GetParameter("Weight", model.Weight, ParameterUnit.Weight, ucl: "5290", lcl: "5030"));
+            parameters.Add(GetOtherParameter("Density", model.Density, ParameterUnit.Density, ucl: "4.4", lcl: "4.3"));
+            parameters.Add(GetOtherParameter("Weight", model.Weight, ParameterUnit.Weight, ucl: "5290", lcl: "5030"));
 
             parameters.AddRange(GetDimension(model.TargetDimension));
 
-            parameters.AddRange(GetParametersByKeyStr(model.PlateSpec,"mm"));
+            parameters.AddRange(GetPlateByKeyStr(model.PlateSpec, "mm"));
 
-            parameters.AddRange(GetParametersByKeyStr(model.GDMS, "est_max"));
+            parameters.AddRange(GetElementByKeyStr(model.GDMS, "est_max"));
 
-            parameters.AddRange(GetParametersByKeyStr(model.VPI, "est_max"));
+            parameters.AddRange(GetElementByKeyStr(model.VPI, "est_max"));
 
 
             return parameters;
@@ -45,22 +45,24 @@ namespace PMSXMLCreator.Service
         public List<Parameter> GetPropertiesParameters(ECOA model)
         {
             List<Parameter> parameters = new List<Parameter>();
-            parameters.Add(GetParameter("Density", model.Density, ParameterUnit.Density, ucl: "0", lcl: "0"));
-            parameters.Add(GetParameter("Weight", model.Weight, ParameterUnit.Weight, ucl: "0", lcl: "0"));
+            parameters.Add(GetOtherParameter("Density", model.Density, ParameterUnit.Density, ucl: "0", lcl: "0"));
+            parameters.Add(GetOtherParameter("Weight", model.Weight, ParameterUnit.Weight, ucl: "0", lcl: "0"));
 
             parameters.AddRange(GetDimension(model.TargetDimension));
-
-            parameters.AddRange(GetParametersByKeyStr(model.PlateSpec,"mm"));
+            parameters.AddRange(GetPlateByKeyStr(model.PlateSpec, "mm"));
 
             return parameters;
         }
 
 
-        public Parameter GetParameter(string characteristic, string value, string unit = "mm", string type = "Value",
-            string ucl = "100", string lcl = "0", string mdl = "0", string clcalc = "Temp")
+        #region 分析区域
+
+        public Parameter GetOtherParameter(string characteristic, string value, string unit = "mm",
+                string type = "Value", string ucl = "100", string lcl = "0", string mdl = "0", string clcalc = "Temp")
         {
             var p = new Parameter();
             p.Characteristic = characteristic;
+            //获取缩写名称
             p.ShortName = dict_parameter.GetShortName(characteristic);
             p.UnitOfMeasure = unit;
             p.Measurements.Add(new Measurement()
@@ -75,10 +77,37 @@ namespace PMSXMLCreator.Service
             return p;
         }
 
-
-
-
-        #region 分析区域
+        /// <summary>
+        /// 元素专用 shortname to longname
+        /// </summary>
+        /// <param name="shortname"></param>
+        /// <param name="value"></param>
+        /// <param name="unit"></param>
+        /// <param name="type"></param>
+        /// <param name="ucl"></param>
+        /// <param name="lcl"></param>
+        /// <param name="mdl"></param>
+        /// <param name="clcalc"></param>
+        /// <returns></returns>
+        public Parameter GetElementParameter(string shortname, string value, string unit = "mm",
+        string type = "Value", string ucl = "100", string lcl = "0", string mdl = "0", string clcalc = "Temp")
+        {
+            var p = new Parameter();
+            //获取元素完整名称
+            p.Characteristic = dict_element.GetFullName(shortname);
+            p.ShortName = shortname;
+            p.UnitOfMeasure = unit;
+            p.Measurements.Add(new Measurement()
+            {
+                MeasurementType = type,
+                MeasurementValue = value,
+                UCL = ucl,
+                LCL = lcl,
+                MDL = mdl,
+                CLCalc = clcalc
+            });
+            return p;
+        }
         /// <summary>
         /// 分析成分ProductName
         /// </summary>
@@ -90,27 +119,36 @@ namespace PMSXMLCreator.Service
             var matches = Regex.Matches(str, @"([a-zA-Z]+)([0-9]+([.]{1}[0-9]+){0,1})");
             foreach (Match item in matches)
             {
-                string element_name = item.Groups[1].Value;
+                string short_name = item.Groups[1].Value;
                 string element_value = item.Groups[2].Value;
-                parameters.Add(GetParameter(dict_element.GetShortName(element_name), element_value, ParameterUnit.Percent));
+                parameters.Add(GetElementParameter(short_name, element_value, ParameterUnit.Percent));
             }
             return parameters;
         }
+        /// <summary>
+        /// 获取尺寸
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public List<Parameter> GetDimension(string str)
         {
             List<Parameter> parameters = new List<Parameter>();
             var matches = Regex.Matches(str, @"[0-9]+([.]{1}[0-9]+){0,1}");
             string od_value = matches[0].Value;
             string th_value = matches[1].Value;
-            parameters.Add(GetParameter("Target Blank OD", od_value));
-            parameters.Add(GetParameter("Target Blank Thickness", th_value));
+            parameters.Add(GetOtherParameter("Target Blank OD", od_value));
+            parameters.Add(GetOtherParameter("Target Blank Thickness", th_value));
             return parameters;
         }
-        public void GetPlate(string str)
-        {
 
-        }
-        public List<Parameter> GetXRF(string str)
+        /// <summary>
+        /// 获取背板参数
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="unit"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public List<Parameter> GetPlateByKeyStr(string str, string unit = "mm",string type= "value")
         {
             List<Parameter> parameters = new List<Parameter>();
             var matches = Regex.Matches(str, @"([a-zA-Z \d]+)=([\w.' ]+);");
@@ -118,21 +156,55 @@ namespace PMSXMLCreator.Service
             {
                 string element_name = item.Groups[1].Value;
                 string element_value = item.Groups[2].Value;
-                parameters.Add(GetParameter(dict_element.GetShortName(element_name), element_value, ParameterUnit.Percent, "value"));
+                string tempUnit = unit;
+                if (element_name.Contains("Roughness"))
+                {
+                    tempUnit = ParameterUnit.UM;
+                }
+                else
+                {
+                    tempUnit = unit;
+                }
+                parameters.Add(GetOtherParameter(element_name, element_value, tempUnit, type));
+            }
+
+            return parameters;
+        }
+        /// <summary>
+        /// 获取XRF
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public List<Parameter> GetXRFByKeyStr(string str)
+        {
+            List<Parameter> parameters = new List<Parameter>();
+            var matches = Regex.Matches(str, @"([a-zA-Z \d]+)=([\w.' ]+);");
+            foreach (Match item in matches)
+            {
+                string short_name = item.Groups[1].Value;
+                string element_value = item.Groups[2].Value;
+                parameters.Add(GetElementParameter(short_name, element_value, ParameterUnit.Percent, "value"));
             }
 
             return parameters;
         }
 
-        public List<Parameter> GetParametersByKeyStr(string str, string unit = "ppm", string type = "value")
+        /// <summary>
+        /// 获取元素参数
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="unit"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public List<Parameter> GetElementByKeyStr(string str, string unit = "ppm", string type = "value")
         {
             List<Parameter> parameters = new List<Parameter>();
             var matches = Regex.Matches(str, @"([a-zA-Z \d]+)=([\w.' ]+);");
             foreach (Match item in matches)
             {
-                string element_name = item.Groups[1].Value;
+                string short_name = item.Groups[1].Value;
                 string element_value = item.Groups[2].Value;
-                parameters.Add(GetParameter(dict_element.GetShortName(element_name), element_value, unit, type));
+                parameters.Add(GetElementParameter(short_name, element_value, unit, type));
             }
 
             return parameters;

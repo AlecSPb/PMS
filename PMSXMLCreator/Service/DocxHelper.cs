@@ -16,6 +16,15 @@ namespace PMSXMLCreator
     {
         public void CreateFile(ECOA model)
         {
+            #region 检查逻辑
+            if (Service.CheckLogic.CheckLotNumber(model.LotNumber))
+            {
+                XSHelper.MessageHelper.ShowStop($"LotNumber[{model.LotNumber}]中的#000编号部分不能透漏给客户,请删除");
+                return;
+            }
+            #endregion
+
+
             string folder = XSHelper.FileHelper.GetDesktopPath();
             if (!Directory.Exists(folder))
             {
@@ -63,7 +72,7 @@ namespace PMSXMLCreator
 
                     #region 填写成分
                     //List<Parameter> compositions = anlysis.GetProductNameComposition(model.ProductName);
-                    List<Parameter> compositions = anlysis.GetXRF(model.XRF);
+                    List<Parameter> compositions = anlysis.GetXRFByKeyStr(model.XRF);
                     foreach (var item in compositions)
                     {
                         main_table.Rows[start_index].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
@@ -98,7 +107,7 @@ namespace PMSXMLCreator
                     #endregion
 
                     #region 填写纯度
-                    List<Parameter> purities = anlysis.GetParametersByKeyStr(model.GDMS);
+                    List<Parameter> purities = anlysis.GetElementByKeyStr(model.GDMS);
                     foreach (var item in purities)
                     {
 
@@ -114,7 +123,7 @@ namespace PMSXMLCreator
                     #endregion
 
                     #region 填写含氧量
-                    List<Parameter> vpis = anlysis.GetParametersByKeyStr(model.VPI);
+                    List<Parameter> vpis = anlysis.GetElementByKeyStr(model.VPI);
                     foreach (var item in vpis)
                     {
 
@@ -132,7 +141,11 @@ namespace PMSXMLCreator
                     doc.Save();
                 }
                 File.Copy(temp, filePath, true);
-                Process.Start(filePath);
+                if (XSHelper.MessageHelper.ShowYesNo("创建完毕,要打开吗？"))
+                {
+                    System.Diagnostics.Process.Start(filePath);
+
+                }
             }
             catch (Exception ex)
             {

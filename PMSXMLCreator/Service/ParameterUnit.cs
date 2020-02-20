@@ -8,7 +8,9 @@ namespace PMSXMLCreator.Service
 {
     public static class ParameterUnit
     {
+        public static string CM { get { return "cm"; } }
         public static string MM { get { return "mm"; } }
+        public static string UM { get { return "μm"; } }
         public static string PPB { get { return "ppb"; } }
         public static string PPM { get { return "ppm"; } }
         public static string Percent { get { return "%"; } }

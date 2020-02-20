@@ -22,7 +22,7 @@ namespace PMSXMLCreator
         public MainWindowViewModel()
         {
             Initialize();
-            LoadData();
+            //LoadData();
         }
 
         private void Initialize()
@@ -45,7 +45,7 @@ namespace PMSXMLCreator
 
         private void ActionClosing()
         {
-            bool isChanged = !AutoSave.CompareJsonHash(CurrentCOA);
+            bool isChanged = !AutoSaveHelper.CompareJsonHash(CurrentCOA);
             if (isChanged)
             {
                 if (XSHelper.MessageHelper.ShowYesNo("当前内容已更改，但未保存，是否保存?"))
@@ -54,7 +54,7 @@ namespace PMSXMLCreator
                 }
             }
             //最后删除临时文件
-            AutoSave.CleanTempFile();
+            AutoSaveHelper.CleanTempFile();
         }
 
         private void ActionLoadFromPMSFile()
@@ -73,7 +73,7 @@ namespace PMSXMLCreator
                         CurrentCOA = ToECOA(test);
 
                         //自动保存为临时文件
-                        AutoSave.SaveCurrentJson(CurrentCOA);
+                        AutoSaveHelper.SaveCurrentJson(CurrentCOA);
                     }
                 }
             }
@@ -96,7 +96,7 @@ namespace PMSXMLCreator
                 XSHelper.FileHelper.SaveText(filepath, json);
 
                 //自动保存为临时文件
-                AutoSave.SaveCurrentJson(CurrentCOA);
+                AutoSaveHelper.SaveCurrentJson(CurrentCOA);
 
                 XSHelper.MessageHelper.ShowInfo("保存数据成功");
             }
@@ -116,7 +116,7 @@ namespace PMSXMLCreator
             if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据[{CurrentCOA.LotNumber}]生成Docx文件？"))
             {
                 helper_docx.CreateFile(CurrentCOA);
-                XSHelper.MessageHelper.ShowInfo("此docx文件email给leon");
+                //XSHelper.MessageHelper.ShowInfo("此docx文件email给leon");
             }
         }
 
@@ -144,7 +144,7 @@ namespace PMSXMLCreator
                 XSHelper.MessageHelper.ShowInfo("载入数据成功");
 
                 //自动保存为临时文件
-                AutoSave.SaveCurrentJson(CurrentCOA);
+                AutoSaveHelper.SaveCurrentJson(CurrentCOA);
             }
 
         }
@@ -157,7 +157,7 @@ namespace PMSXMLCreator
                 LoadingInformation = "Loading From PMS";
 
                 //自动保存为临时文件
-                AutoSave.SaveCurrentJson(CurrentCOA);
+                AutoSaveHelper.SaveCurrentJson(CurrentCOA);
             }
         }
 
@@ -205,7 +205,7 @@ namespace PMSXMLCreator
             if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据[{CurrentCOA.LotNumber}]生成xml文件？"))
             {
                 helper_xml.CreateFile(CurrentCOA);
-                XSHelper.MessageHelper.ShowInfo("此xml文件使用[HubSpan PartnerConnect]发送给intel");
+                //XSHelper.MessageHelper.ShowInfo("此xml文件使用[HubSpan PartnerConnect]发送给intel");
 
             }
         }
