@@ -26,6 +26,10 @@ namespace PMSXMLCreator
         //匹配SPEED
         public string UnitOfMeasure { get; set; }
 
+        public string MeasurementQualifier  { get; set; }
+        public string MeasurementType { get; set; }
+        public string MeasurementValue { get; set; }
+
         public List<Measurement> Measurements { get; set; }
     }
 }

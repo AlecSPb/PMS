@@ -25,7 +25,8 @@ namespace PMSXMLCreator
             ScheduledShipDate = DateTime.Today.AddDays(3);
             ActualShipDate = DateTime.Today.AddDays(3);
             Containers = "wood box#ups";
-
+            ContainerNumber = "unknown";
+            ShipmentNumber = "unknown";
             Comment = "This is a Quality Certificate";
 
 
@@ -80,6 +81,8 @@ namespace PMSXMLCreator
         public DateTime ScheduledShipDate { get; set; }
         public DateTime ActualShipDate { get; set; }
         public string Containers { get; set; }
+        public string ContainerNumber { get; set; }
+        public string ShipmentNumber { get; set; }
 
         public string AMLStatus { get; set; }
         public string AMLNotes { get; set; }

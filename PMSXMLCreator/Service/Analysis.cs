@@ -58,13 +58,18 @@ namespace PMSXMLCreator.Service
         #region 分析区域
 
         public Parameter GetOtherParameter(string characteristic, string value, string unit = "mm",
-                string type = "Value", string ucl = "100", string lcl = "0", string mdl = "0", string clcalc = "Temp")
+                string type = "Value", string qualifier = "", string ucl = "100", string lcl = "0", string mdl = "0", string clcalc = "Temp")
         {
             var p = new Parameter();
             p.Characteristic = characteristic;
             //获取缩写名称
             p.ShortName = dict_parameter.GetShortName(characteristic);
             p.UnitOfMeasure = unit;
+
+            p.MeasurementQualifier = qualifier;
+            p.MeasurementType = type;
+            p.MeasurementValue = value;
+
             p.Measurements.Add(new Measurement()
             {
                 MeasurementType = type,
@@ -90,13 +95,18 @@ namespace PMSXMLCreator.Service
         /// <param name="clcalc"></param>
         /// <returns></returns>
         public Parameter GetElementParameter(string shortname, string value, string unit = "mm",
-        string type = "Value", string ucl = "100", string lcl = "0", string mdl = "0", string clcalc = "Temp")
+        string type = "Value", string qualifier = "", string ucl = "100", string lcl = "0", string mdl = "0", string clcalc = "Temp")
         {
             var p = new Parameter();
             //获取元素完整名称
             p.Characteristic = dict_element.GetFullName(shortname);
             p.ShortName = shortname;
             p.UnitOfMeasure = unit;
+
+            p.MeasurementQualifier = qualifier;
+            p.MeasurementType = type;
+            p.MeasurementValue = value;
+
             p.Measurements.Add(new Measurement()
             {
                 MeasurementType = type,
@@ -148,7 +158,7 @@ namespace PMSXMLCreator.Service
         /// <param name="unit"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public List<Parameter> GetPlateByKeyStr(string str, string unit = "mm",string type= "value")
+        public List<Parameter> GetPlateByKeyStr(string str, string unit = "mm", string type = "value")
         {
             List<Parameter> parameters = new List<Parameter>();
             var matches = Regex.Matches(str, @"([a-zA-Z \d]+)=([\w.' ]+);");
@@ -183,7 +193,7 @@ namespace PMSXMLCreator.Service
             {
                 string short_name = item.Groups[1].Value;
                 string element_value = item.Groups[2].Value;
-                parameters.Add(GetElementParameter(short_name, element_value, ParameterUnit.Percent, "value"));
+                parameters.Add(GetElementParameter(short_name, element_value, ParameterUnit.Percent, "value", "AT"));
             }
 
             return parameters;

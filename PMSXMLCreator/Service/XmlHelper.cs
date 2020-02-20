@@ -67,9 +67,9 @@ namespace PMSXMLCreator.Service
             writer.WriteStartElement("BusinessSiteDescription");
 
 
-            writer.WriteElementString("manufactureNumber", model.ManufacturerNumber);
-            writer.WriteElementString("manufactureName", model.ManufacturerName);
-            writer.WriteElementString("manufacturePlantCode", model.ManufacturerPlantCode);
+            writer.WriteElementString("manufacturerNumber", model.ManufacturerNumber);
+            writer.WriteElementString("manufacturerName", model.ManufacturerName);
+            writer.WriteElementString("manufacturingPlantCode", model.ManufacturerPlantCode);
             writer.WriteElementString("incomingFaxNumber", model.IncomingFaxNumber);
             //writer.WriteElementString("ManufactureWebSite", "http://www.cdpmi.net");
             //writer.WriteElementString("ManufactureContact", "leon chiu@pioneer-material.com");
@@ -82,7 +82,7 @@ namespace PMSXMLCreator.Service
             writer.WriteAttributeString("CertificateType", "SingleCertificate");
 
             writer.WriteElementString("thisDocumentGenerationDateTime",
-                $"{model.ThisDocumentGenerationDateTime.ToString("yyyy-MM-dd")}");
+                $"{model.ThisDocumentGenerationDateTime.ToString("yyyy-MM-ddTHH:mm:ss")}");//19个字符
 
             //00表示全新，05表示替换
             writer.WriteElementString("ReleaseType", model.ReleaseType);
@@ -90,8 +90,8 @@ namespace PMSXMLCreator.Service
             #region ProductDescription
             writer.WriteStartElement("ProductDescription");
             writer.WriteElementString("productName", model.ProductName);
-            writer.WriteElementString("manufacturePartNumber", model.ManufacturerPartNumber);
-            writer.WriteElementString("manufactureOrderNumber", model.ManufacturerOrderNumber);
+            writer.WriteElementString("manufacturerPartNumber", model.ManufacturerPartNumber);//35个字符
+            writer.WriteElementString("manufacturerOrderNumber", model.ManufacturerOrderNumber);
 
             writer.WriteElementString("partNumber", model.PartNumber);
             writer.WriteElementString("partRevisionNumber", model.PartRevisionNumber);
@@ -105,11 +105,12 @@ namespace PMSXMLCreator.Service
             #endregion
 
             writer.WriteStartElement("Shipment");
-            writer.WriteElementString("deliveryTo", model.DeliverTo);
-            writer.WriteElementString("scheduledshipdate", model.ScheduledShipDate.ToShortDateString());
-            writer.WriteElementString("actualshipdate", model.ActualShipDate.ToShortDateString());
+            writer.WriteElementString("deliverTo", model.DeliverTo);
+            writer.WriteElementString("shipmentnumber", model.ShipmentNumber);
+            //writer.WriteElementString("scheduledshipdate", model.ScheduledShipDate.ToShortDateString());
+            //writer.WriteElementString("actualshipdate", model.ActualShipDate.ToShortDateString());
             writer.WriteStartElement("containers");
-            writer.WriteElementString("container", model.Containers);
+            writer.WriteElementString("containernumber", model.ContainerNumber);
             writer.WriteEndElement();
             writer.WriteEndElement();
 
@@ -167,24 +168,28 @@ namespace PMSXMLCreator.Service
         private void AddMaterialParameter(XmlWriter writer, Parameter p)
         {
             writer.WriteStartElement("MaterialParameter");
+
+            writer.WriteElementString("SourceComponent", p.SourceComponent);
             writer.WriteElementString("Characteristic", p.Characteristic);
             writer.WriteElementString("ShortName", p.ShortName);
             writer.WriteElementString("UnitOfMeasure", p.UnitOfMeasure);
-            writer.WriteElementString("SourceComponent", p.SourceComponent);
+            writer.WriteElementString("measurementQualifier", p.MeasurementQualifier);
+            writer.WriteElementString("measurementType", p.MeasurementType);
+            writer.WriteElementString("measurementValue", p.MeasurementValue);
 
-            writer.WriteStartElement("Measurements");
-            foreach (var item in p.Measurements)
-            {
-                writer.WriteStartElement("Measurement");
-                writer.WriteElementString("MeasurementType", item.MeasurementType);
-                writer.WriteElementString("MeasurementValue", item.MeasurementValue);
-                writer.WriteElementString("UCL", item.UCL);
-                writer.WriteElementString("LCL", item.LCL);
-                writer.WriteElementString("MDL", item.MDL);
-                writer.WriteElementString("CLCalc", item.CLCalc);
-                writer.WriteEndElement();
-            }
-            writer.WriteEndElement();
+            //writer.WriteStartElement("Measurements");
+            //foreach (var item in p.Measurements)
+            //{
+            //    writer.WriteStartElement("Measurement");
+            //    writer.WriteElementString("MeasurementType", item.MeasurementType);
+            //    writer.WriteElementString("MeasurementValue", item.MeasurementValue);
+            //    writer.WriteElementString("UCL", item.UCL);
+            //    writer.WriteElementString("LCL", item.LCL);
+            //    writer.WriteElementString("MDL", item.MDL);
+            //    writer.WriteElementString("CLCalc", item.CLCalc);
+            //    writer.WriteEndElement();
+            //}
+            //writer.WriteEndElement();
 
             writer.WriteEndElement();
         }
