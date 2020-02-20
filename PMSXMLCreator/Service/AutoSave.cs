@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
 using System.Security.Cryptography;
+using CommonHelper;
 
 namespace PMSXMLCreator.Service
 {
@@ -38,18 +39,11 @@ namespace PMSXMLCreator.Service
             string str_current, str_saved;
             str_current = JsonConvert.SerializeObject(currentCOA);
             str_saved = File.ReadAllText(temp_current_model);
-            string hash_current = ComputeHash(str_current);
-            string hash_saved = ComputeHash(str_saved);
+            string hash_current = HashHelper.GetMD5String(str_current);
+            string hash_saved = HashHelper.GetMD5String(str_saved);
             return hash_current == hash_saved;
         }
 
-        private static string ComputeHash(string s)
-        {
-            MD5 md5 = MD5.Create();
-            byte[] encode_str = Encoding.Default.GetBytes(s);
-            byte[] hash = md5.ComputeHash(encode_str);
-            string hash_str = Encoding.Default.GetString(hash);
-            return hash_str;
-        }
+
     }
 }
