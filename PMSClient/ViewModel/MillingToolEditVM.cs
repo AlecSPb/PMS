@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.ExtraService;
+using PMSClient.ToolService;
 
 namespace PMSClient.ViewModel
 {
@@ -32,29 +33,34 @@ namespace PMSClient.ViewModel
         public void SetNew()
         {
             IsNew = true;
-            var model = new DcToolFilling();
+            var model = new DcToolSieve();
             model.Id = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
-            model.ToolNumber = 0;
-            model.CompositionAbbr = "CuInGaSe";
-            model.Remark = "";
+            model.Manufacture = "未知";
+            model.SearchID = "S";
+            model.Specification = "300mm-200mesh";
+            model.MaterialGroup = "A-B";
+            model.StartTime = DateTime.Now;
+            model.StopTime = DateTime.Now.AddYears(2);
+            model.State = PMSCommon.SimpleState.正常.ToString();
+            model.Remark = "无";
 
-            CurrentToolFilling = model;
+            CurrentToolSieve = model;
         }
 
-        public void SetEdit(DcToolFilling model)
+        public void SetEdit(DcToolSieve model)
         {
             if (model != null)
             {
                 IsNew = false;
-                CurrentToolFilling = model;
+                CurrentToolSieve = model;
             }
         }
         private void GoBack()
         {
-            NavigationService.GoTo(PMSViews.FillingTool);
+            NavigationService.GoTo(PMSViews.MillingTool);
         }
 
         private void ActionSave()
@@ -63,7 +69,7 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
-            if (CurrentToolFilling.State == "作废")
+            if (CurrentToolSieve.State == "作废")
             {
                 if (!PMSDialogService.ShowYesNo("请问", "确定要作废吗？"))
                 {
@@ -72,18 +78,18 @@ namespace PMSClient.ViewModel
             }
             try
             {
-                using (var service = new ToolInventoryServiceClient())
+                using (var service = new ToolSieveServiceClient())
                 {
                     if (IsNew)
                     {
-                        service.AddToolFilling(CurrentToolFilling);
+                        service.AddToolSieve(CurrentToolSieve);
                     }
                     else
                     {
-                        service.UpdateToolFilling(CurrentToolFilling);
+                        service.UpdateToolSieve(CurrentToolSieve);
                     }
                 }
-                PMSHelper.ViewModels.FillingTool.Refresh();
+                PMSHelper.ViewModels.MillingTool.Refresh();
                 GoBack();
             }
             catch (Exception ex)
@@ -93,17 +99,17 @@ namespace PMSClient.ViewModel
         }
         #region 属性
 
-        private DcToolFilling currentToolFilling;
-        public DcToolFilling CurrentToolFilling
+        private DcToolSieve currentToolSieve;
+        public DcToolSieve CurrentToolSieve
         {
             get
             {
-                return currentToolFilling;
+                return currentToolSieve;
             }
             set
             {
-                currentToolFilling = value;
-                RaisePropertyChanged(nameof(CurrentToolFilling));
+                currentToolSieve = value;
+                RaisePropertyChanged(nameof(CurrentToolSieve));
             }
         }
 

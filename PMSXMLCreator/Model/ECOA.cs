@@ -13,17 +13,17 @@ namespace PMSXMLCreator
         {
             ResponsiblePartyEmail = "xs.zhou@cdpmi.net";
 
-            ManufacturerNumber = "######";
+            ManufacturerNumber = "109575";
             ManufacturerName = "Pioneer Materials,Inc.";
-            ManufacturerPlantCode = "######";
+            ManufacturerPlantCode = "00";
             IncomingFaxNumber = "+86-028-66515927";
 
             ThisDocumentGenerationDateTime = DateTime.Now;
             ReleaseType = "00";
 
             DeliverTo = "TCB";
-            ScheduledShipDate = DateTime.Today.AddDays(14);
-            ActualShipDate = DateTime.Today.AddDays(14);
+            ScheduledShipDate = DateTime.Today.AddDays(3);
+            ActualShipDate = DateTime.Today.AddDays(3);
             Containers = "wood box#ups";
 
             Comment = "This is a Quality Certificate";

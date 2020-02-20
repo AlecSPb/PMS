@@ -11,7 +11,7 @@ namespace PMSWCFService
 {
     public class ToolService : IToolSieveService
     {
-        public void AddToolSieve(ToolSieve model)
+        public void AddToolSieve(DcToolSieve model)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcToolSieve> GetToolSieve()
+        public List<DcToolSieve> GetToolSieve(string searchid, string materialGroup, int s, int t)
         {
             try
             {
@@ -39,9 +39,11 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<ToolSieve, DcToolSieve>());
                     var query = from i in dc.ToolSieves
                                 where i.State == PMSCommon.SimpleState.正常.ToString()
+                                && i.SearchID.Contains(searchid)
+                                && i.MaterialGroup.Contains(materialGroup)
                                 orderby i.CreateTime descending
                                 select i;
-                    return Mapper.Map<List<ToolSieve>, List<DcToolSieve>>(query.ToList());
+                    return Mapper.Map<List<ToolSieve>, List<DcToolSieve>>(query.Skip(s).Take(t).ToList());
                 }
             }
             catch (Exception ex)
@@ -51,7 +53,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetToolSieveCount()
+        public int GetToolSieveCount(string searchid, string materialGroup)
         {
             try
             {
@@ -59,6 +61,8 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.ToolSieves
                                 where i.State == PMSCommon.SimpleState.正常.ToString()
+                                && i.SearchID.Contains(searchid)
+                                && i.MaterialGroup.Contains(materialGroup)
                                 orderby i.CreateTime descending
                                 select i;
                     return query.Count();
@@ -71,7 +75,7 @@ namespace PMSWCFService
             }
         }
 
-        public void UpdateToolSieve(ToolSieve model)
+        public void UpdateToolSieve(DcToolSieve model)
         {
             try
             {

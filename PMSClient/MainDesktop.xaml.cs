@@ -505,8 +505,10 @@ namespace PMSClient
                     NavigateTo(_views.FillingToolEdit);
                     break;
                 case PMSViews.MillingTool:
+                    NavigateTo(_views.MillingTool);
                     break;
                 case PMSViews.MillingToolEdit:
+                    NavigateTo(_views.MillingToolEdit);
                     break;
                 case PMSViews.History:
                     //TODO:实现历史页面导航

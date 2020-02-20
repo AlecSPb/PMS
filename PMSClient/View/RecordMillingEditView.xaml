@@ -166,8 +166,14 @@
                           ItemsSource="{Binding DataContext.Sieves,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding SieveDescription}"
                           Style="{StaticResource StyleComboBoxEditable}"  FontSize="{StaticResource TabletFontLG}"/>
-                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <StackPanel Grid.Row="11" Grid.Column="2" Orientation="Horizontal">
+
+                    <Button Name="BtnToolSieve" Style="{StaticResource StyleButtonCommon}" Content="筛网索引"
+                            Click="BtnToolSieve_Click"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
                            Text="筛网S开头ID编号,需要对每个筛网进行规范管理" Background="Green" Foreground="White"/>
+                </StackPanel>
+
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RMMillingTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

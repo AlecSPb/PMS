@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.ExtraService;
+using PMSClient.ToolService;
+
 
 namespace PMSClient.ViewModel
 {
@@ -20,17 +22,23 @@ namespace PMSClient.ViewModel
         private void Intialize()
         {
             searchElementA = searchElementB = "";
-            ToolFillings = new ObservableCollection<DcToolFilling>();
+            ToolSieves = new ObservableCollection<DcToolSieve>();
 
             PageChanged = new RelayCommand(ActionPaging);
             Add = new RelayCommand(ActionAdd, CanAdd);
-            Edit = new RelayCommand<DcToolFilling>(ActionEdit, CanEdit);
+            Edit = new RelayCommand<DcToolSieve>(ActionEdit, CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             PrintList = new RelayCommand(ActionPrintList);
             SetPageParametersWhenConditionChange();
 
+            Select = new RelayCommand<DcToolSieve>(ActionSelect);
+        }
 
+        private void ActionSelect(DcToolSieve obj)
+        {
+            if (obj == null) return;
+            PMSHelper.ViewModels.RecordMillingEdit.SetSieveDescription(obj.SearchID);
         }
 
         private void ActionPrintList()
@@ -68,35 +76,35 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private bool CanEdit(DcToolFilling arg)
+        private bool CanEdit(DcToolSieve arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordVHP);
+            return PMSHelper.CurrentSession.IsOKInGroup(new string[] { "管理员", "制粉组", "生产经理" });
         }
 
-        private void ActionEdit(DcToolFilling model)
+        private void ActionEdit(DcToolSieve model)
         {
-            PMSHelper.ViewModels.FillingToolEdit.SetEdit(model);
-            NavigationService.GoTo(PMSViews.FillingToolEdit);
+            PMSHelper.ViewModels.MillingToolEdit.SetEdit(model);
+            NavigationService.GoTo(PMSViews.MillingToolEdit);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordVHP);
+            return PMSHelper.CurrentSession.IsOKInGroup(new string[] { "管理员", "制粉组", "生产经理" });
         }
 
         private void ActionAdd()
         {
-            PMSHelper.ViewModels.FillingToolEdit.SetNew();
-            NavigationService.GoTo(PMSViews.FillingToolEdit);
+            PMSHelper.ViewModels.MillingToolEdit.SetNew();
+            NavigationService.GoTo(PMSViews.MillingToolEdit);
         }
 
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
             PageSize = 40;
-            using (var service = new ToolInventoryServiceClient())
+            using (var service = new ToolSieveServiceClient())
             {
-                RecordCount = service.GetToolFillingsCount(SearchElementA, SearchElementB);
+                RecordCount = service.GetToolSieveCount(SearchElementA, SearchElementB);
             }
             ActionPaging();
         }
@@ -105,11 +113,11 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            using (var service = new ToolInventoryServiceClient())
+            using (var service = new ToolSieveServiceClient())
             {
-                var data = service.GetToolFillings(skip, take, SearchElementA, SearchElementB);
-                ToolFillings.Clear();
-                data.ToList().ForEach(o => ToolFillings.Add(o));
+                var data = service.GetToolSieve(SearchElementA, SearchElementB, skip, take);
+                ToolSieves.Clear();
+                data.ToList().ForEach(o => ToolSieves.Add(o));
             }
         }
 
@@ -140,11 +148,12 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(nameof(SearchElementB));
             }
         }
-        public ObservableCollection<DcToolFilling> ToolFillings { get; set; }
+        public ObservableCollection<DcToolSieve> ToolSieves { get; set; }
         #endregion
         #region 命令
         public RelayCommand Add { get; set; }
-        public RelayCommand<DcToolFilling> Edit { get; set; }
+        public RelayCommand<DcToolSieve> Edit { get; set; }
+        public RelayCommand<DcToolSieve> Select { get; set; }
         public RelayCommand PrintList { get; set; }
         #endregion
 

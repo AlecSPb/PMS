@@ -659,6 +659,9 @@
     <Compile Include="View\MillingToolEditView.xaml.cs">
       <DependentUpon>MillingToolEditView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MillingToolWindow.xaml.cs">
+      <DependentUpon>MillingToolWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MillingToolView.xaml.cs">
       <DependentUpon>MillingToolView.xaml</DependentUpon>
     </Compile>
@@ -1312,6 +1315,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MillingToolEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MillingToolWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1987,9 +1994,6 @@
     <None Include="Service References\SF\CommonServiceService.wsdl" />
     <None Include="Service References\ToolService\ToolService.wsdl" />
     <None Include="Service References\ToolService\ToolService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ToolService\ToolService1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ToolService\ToolService2.xsd">

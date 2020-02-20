@@ -180,11 +180,13 @@
                                 Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToHistory}"/>
                         <Button Content="{StaticResource PageFillingTool}" Grid.Row="6" Grid.Column="2"
-                                Style="{StaticResource StyleButtonNavigation}"
-                        Command="{Binding GoToFillingTool}"/>
+                                Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToFillingTool}"/>
+
+                        <Button Content="{StaticResource PageMillingTool}" Grid.Row="6" Grid.Column="3"
+                                Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToMillingTool}"/>
 
                         <Button Content="{StaticResource PageOutput}" Style="{StaticResource StyleButtonNavigation}"
-                                Command="{Binding GoToOutput}" Grid.Row="6" Grid.Column="3"/>
+                                Command="{Binding GoToOutput}" Grid.Row="6" Grid.Column="4"/>
 
                         <Button Content="{StaticResource PageAdmin}" Grid.Row="7" Grid.Column="0" 
                         Style="{StaticResource StyleButtonNavigationTitle}" />

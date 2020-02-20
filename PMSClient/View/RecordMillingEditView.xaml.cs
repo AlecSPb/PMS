@@ -46,5 +46,11 @@ namespace PMSClient.View
 
             }
         }
+
+        private void BtnToolSieve_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new View.MillingToolWindow();
+            win.Show();
+        }
     }
 }

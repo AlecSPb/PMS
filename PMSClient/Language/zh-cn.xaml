@@ -907,8 +907,8 @@
     <sys:String x:Key="FTCompositionAbbr">成分缩写</sys:String>
     <sys:String x:Key="FTRemark">备注</sys:String>
     <!--MillingTool-->
-    <sys:String x:Key="PageMillingTool">制粉工具索引</sys:String>
-    <sys:String x:Key="PageMillingToolEdit">制粉工具索引-编辑</sys:String>
+    <sys:String x:Key="PageMillingTool">筛网索引</sys:String>
+    <sys:String x:Key="PageMillingToolEdit">筛网索引-编辑</sys:String>
     
     <sys:String x:Key="MTCreateTime">创建时间</sys:String>
     <sys:String x:Key="MTCreator">创建者</sys:String>

@@ -218,246 +218,33 @@ namespace PMSClient.ToolService {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ModelBase", Namespace="http://schemas.datacontract.org/2004/07/PMSDAL")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PMSClient.ToolService.ToolSieve))]
-    public partial class ModelBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreateTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StateField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreateTime {
-            get {
-                return this.CreateTimeField;
-            }
-            set {
-                if ((this.CreateTimeField.Equals(value) != true)) {
-                    this.CreateTimeField = value;
-                    this.RaisePropertyChanged("CreateTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Creator {
-            get {
-                return this.CreatorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
-                    this.CreatorField = value;
-                    this.RaisePropertyChanged("Creator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string State {
-            get {
-                return this.StateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateField, value) != true)) {
-                    this.StateField = value;
-                    this.RaisePropertyChanged("State");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ToolSieve", Namespace="http://schemas.datacontract.org/2004/07/PMSDAL")]
-    [System.SerializableAttribute()]
-    public partial class ToolSieve : PMSClient.ToolService.ModelBase {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ManufactureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MaterialGroupField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RemarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SearchIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SpecificationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime StartTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime StopTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Manufacture {
-            get {
-                return this.ManufactureField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ManufactureField, value) != true)) {
-                    this.ManufactureField = value;
-                    this.RaisePropertyChanged("Manufacture");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MaterialGroup {
-            get {
-                return this.MaterialGroupField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MaterialGroupField, value) != true)) {
-                    this.MaterialGroupField = value;
-                    this.RaisePropertyChanged("MaterialGroup");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Remark {
-            get {
-                return this.RemarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
-                    this.RemarkField = value;
-                    this.RaisePropertyChanged("Remark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SearchID {
-            get {
-                return this.SearchIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SearchIDField, value) != true)) {
-                    this.SearchIDField = value;
-                    this.RaisePropertyChanged("SearchID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Specification {
-            get {
-                return this.SpecificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SpecificationField, value) != true)) {
-                    this.SpecificationField = value;
-                    this.RaisePropertyChanged("Specification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime StartTime {
-            get {
-                return this.StartTimeField;
-            }
-            set {
-                if ((this.StartTimeField.Equals(value) != true)) {
-                    this.StartTimeField = value;
-                    this.RaisePropertyChanged("StartTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime StopTime {
-            get {
-                return this.StopTimeField;
-            }
-            set {
-                if ((this.StopTimeField.Equals(value) != true)) {
-                    this.StopTimeField = value;
-                    this.RaisePropertyChanged("StopTime");
-                }
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ToolService.IToolSieveService")]
     public interface IToolSieveService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/GetToolSieve", ReplyAction="http://tempuri.org/IToolSieveService/GetToolSieveResponse")]
-        PMSClient.ToolService.DcToolSieve[] GetToolSieve();
+        PMSClient.ToolService.DcToolSieve[] GetToolSieve(string searchid, string materialGroup, int s, int t);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/GetToolSieve", ReplyAction="http://tempuri.org/IToolSieveService/GetToolSieveResponse")]
-        System.Threading.Tasks.Task<PMSClient.ToolService.DcToolSieve[]> GetToolSieveAsync();
+        System.Threading.Tasks.Task<PMSClient.ToolService.DcToolSieve[]> GetToolSieveAsync(string searchid, string materialGroup, int s, int t);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/GetToolSieveCount", ReplyAction="http://tempuri.org/IToolSieveService/GetToolSieveCountResponse")]
-        int GetToolSieveCount();
+        int GetToolSieveCount(string searchid, string materialGroup);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/GetToolSieveCount", ReplyAction="http://tempuri.org/IToolSieveService/GetToolSieveCountResponse")]
-        System.Threading.Tasks.Task<int> GetToolSieveCountAsync();
+        System.Threading.Tasks.Task<int> GetToolSieveCountAsync(string searchid, string materialGroup);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/AddToolSieve", ReplyAction="http://tempuri.org/IToolSieveService/AddToolSieveResponse")]
-        void AddToolSieve(PMSClient.ToolService.ToolSieve model);
+        void AddToolSieve(PMSClient.ToolService.DcToolSieve model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/AddToolSieve", ReplyAction="http://tempuri.org/IToolSieveService/AddToolSieveResponse")]
-        System.Threading.Tasks.Task AddToolSieveAsync(PMSClient.ToolService.ToolSieve model);
+        System.Threading.Tasks.Task AddToolSieveAsync(PMSClient.ToolService.DcToolSieve model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/UpdateToolSieve", ReplyAction="http://tempuri.org/IToolSieveService/UpdateToolSieveResponse")]
-        void UpdateToolSieve(PMSClient.ToolService.ToolSieve model);
+        void UpdateToolSieve(PMSClient.ToolService.DcToolSieve model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/UpdateToolSieve", ReplyAction="http://tempuri.org/IToolSieveService/UpdateToolSieveResponse")]
-        System.Threading.Tasks.Task UpdateToolSieveAsync(PMSClient.ToolService.ToolSieve model);
+        System.Threading.Tasks.Task UpdateToolSieveAsync(PMSClient.ToolService.DcToolSieve model);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -487,35 +274,35 @@ namespace PMSClient.ToolService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.ToolService.DcToolSieve[] GetToolSieve() {
-            return base.Channel.GetToolSieve();
+        public PMSClient.ToolService.DcToolSieve[] GetToolSieve(string searchid, string materialGroup, int s, int t) {
+            return base.Channel.GetToolSieve(searchid, materialGroup, s, t);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.ToolService.DcToolSieve[]> GetToolSieveAsync() {
-            return base.Channel.GetToolSieveAsync();
+        public System.Threading.Tasks.Task<PMSClient.ToolService.DcToolSieve[]> GetToolSieveAsync(string searchid, string materialGroup, int s, int t) {
+            return base.Channel.GetToolSieveAsync(searchid, materialGroup, s, t);
         }
         
-        public int GetToolSieveCount() {
-            return base.Channel.GetToolSieveCount();
+        public int GetToolSieveCount(string searchid, string materialGroup) {
+            return base.Channel.GetToolSieveCount(searchid, materialGroup);
         }
         
-        public System.Threading.Tasks.Task<int> GetToolSieveCountAsync() {
-            return base.Channel.GetToolSieveCountAsync();
+        public System.Threading.Tasks.Task<int> GetToolSieveCountAsync(string searchid, string materialGroup) {
+            return base.Channel.GetToolSieveCountAsync(searchid, materialGroup);
         }
         
-        public void AddToolSieve(PMSClient.ToolService.ToolSieve model) {
+        public void AddToolSieve(PMSClient.ToolService.DcToolSieve model) {
             base.Channel.AddToolSieve(model);
         }
         
-        public System.Threading.Tasks.Task AddToolSieveAsync(PMSClient.ToolService.ToolSieve model) {
+        public System.Threading.Tasks.Task AddToolSieveAsync(PMSClient.ToolService.DcToolSieve model) {
             return base.Channel.AddToolSieveAsync(model);
         }
         
-        public void UpdateToolSieve(PMSClient.ToolService.ToolSieve model) {
+        public void UpdateToolSieve(PMSClient.ToolService.DcToolSieve model) {
             base.Channel.UpdateToolSieve(model);
         }
         
-        public System.Threading.Tasks.Task UpdateToolSieveAsync(PMSClient.ToolService.ToolSieve model) {
+        public System.Threading.Tasks.Task UpdateToolSieveAsync(PMSClient.ToolService.DcToolSieve model) {
             return base.Channel.UpdateToolSieveAsync(model);
         }
     }

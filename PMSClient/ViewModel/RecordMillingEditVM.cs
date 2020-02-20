@@ -61,6 +61,12 @@ namespace PMSClient.ViewModel
             PMSHelper.ToolViewModels.MaterialNeedCalcualtion.SetRequestView(PMSViews.RecordMillingEdit);
             NavigationService.GoTo(PMSViews.MaterialNeedCalcuationTool);
         }
+
+        public void SetSieveDescription(string searchID)
+        {
+            CurrentRecordMilling.SieveDescription = searchID;
+        }
+
         public void SetNew()
         {
             IsNew = true;

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://192.168.16.254:8002/ToolService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
-  <xs:import schemaLocation="http://192.168.16.254:8002/ToolService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/PMSDAL" />
   <xs:element name="GetToolSieve">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="materialGroup" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="s" type="xs:int" />
+        <xs:element minOccurs="0" name="t" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetToolSieveResponse">
@@ -16,7 +20,10 @@
   </xs:element>
   <xs:element name="GetToolSieveCount">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="materialGroup" nillable="true" type="xs:string" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetToolSieveCountResponse">
@@ -29,7 +36,7 @@
   <xs:element name="AddToolSieve">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PMSDAL" minOccurs="0" name="model" nillable="true" type="q2:ToolSieve" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q2:DcToolSieve" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -41,7 +48,7 @@
   <xs:element name="UpdateToolSieve">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PMSDAL" minOccurs="0" name="model" nillable="true" type="q3:ToolSieve" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q3:DcToolSieve" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

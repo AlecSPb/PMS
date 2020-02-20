@@ -22,12 +22,11 @@
     <MetadataSource Address="http://192.168.16.254:8002/ToolService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ToolService.wsdl" MetadataType="Wsdl" ID="688b647d-7619-4c42-b782-6f876a414fd3" SourceId="1" SourceUrl="http://192.168.16.254:8002/ToolService.svc?wsdl" />
     <MetadataFile FileName="ToolService.xsd" MetadataType="Schema" ID="71cd545f-a38a-4111-9aff-0e5be7aec9c7" SourceId="1" SourceUrl="http://192.168.16.254:8002/ToolService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ToolService.disco" MetadataType="Disco" ID="9b7155d7-b0f3-4cfd-868a-e35fa4717204" SourceId="1" SourceUrl="http://192.168.16.254:8002/ToolService.svc?disco" />
-    <MetadataFile FileName="ToolService1.xsd" MetadataType="Schema" ID="35f219bd-0020-45ca-b59c-589b478ded32" SourceId="1" SourceUrl="http://192.168.16.254:8002/ToolService.svc?xsd=xsd3" />
     <MetadataFile FileName="ToolService2.xsd" MetadataType="Schema" ID="663329a5-aa8b-40eb-b14d-8902aa4ab797" SourceId="1" SourceUrl="http://192.168.16.254:8002/ToolService.svc?xsd=xsd2" />
     <MetadataFile FileName="ToolService3.xsd" MetadataType="Schema" ID="4db1a9d5-c1f0-4eed-b1d0-69fd93e79235" SourceId="1" SourceUrl="http://192.168.16.254:8002/ToolService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ToolService.disco" MetadataType="Disco" ID="9b7155d7-b0f3-4cfd-868a-e35fa4717204" SourceId="1" SourceUrl="http://192.168.16.254:8002/ToolService.svc?disco" />
+    <MetadataFile FileName="ToolService.wsdl" MetadataType="Wsdl" ID="688b647d-7619-4c42-b782-6f876a414fd3" SourceId="1" SourceUrl="http://192.168.16.254:8002/ToolService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
