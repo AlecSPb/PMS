@@ -16,11 +16,9 @@ namespace CommonHelper
             MessageHelper = new MessageboxHelper();
             FileHelper = new FileHelper();
             DialogHelper = new DialogHelper();
-            HashHelper = new HashHelper();
         }
         public static MessageboxHelper MessageHelper { get; set; }
         public static FileHelper FileHelper { get; set; }
         public static DialogHelper DialogHelper { get; set; }
-        public static HashHelper HashHelper { get; set; }
     }
 }
