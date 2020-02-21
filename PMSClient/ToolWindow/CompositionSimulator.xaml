@@ -64,6 +64,8 @@
                     Style="{StaticResource StyleButtonCommon}"/>
             <Button Name="BtnOneClick" Click="BtnOneClick_Click" Content="一键" 
                     Style="{StaticResource StyleButtonCommon}"/>
+            <Button Name="BtnOneFile" Click="BtnOneFile_Click" Content="另存为" 
+                    Style="{StaticResource StyleButtonCommon}"/>
         </StackPanel>
         <TextBox Name="txtCsv" Grid.Row="4" Margin="3" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
     </Grid>

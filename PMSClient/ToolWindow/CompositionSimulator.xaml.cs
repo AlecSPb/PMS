@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
+using PMSClient.Simulator;
+using CommonHelper;
 
 namespace PMSClient.ToolWindow
 {
@@ -52,8 +54,11 @@ namespace PMSClient.ToolWindow
                 double.TryParse(TxtXRFOffset.Text.Trim(), out offset);
                 double currentOffset = offset;
 
-                CompositionSimulatorHelper helper = new CompositionSimulatorHelper(currentOffset);
-                string csv = helper.SimulateCompositionToCsvFormat(input);
+                //CompositionSimulatorHelper helper = new CompositionSimulatorHelper(currentOffset);
+                //string csv = helper.SimulateCompositionToCsvFormat(input);
+
+                var service = new CompositionSimulatorService(currentOffset);
+                string csv = service.Simulate(input);
                 txtCsv.Text = csv;
             }
             catch (Exception ex)
@@ -166,5 +171,14 @@ namespace PMSClient.ToolWindow
             BtnFill_Click(sender, e);
         }
 
+        private void BtnOneFile_Click(object sender, RoutedEventArgs e)
+        {
+            XSDialogResult result = XSHelper.DialogHelper.ShowSaveDialog(XSHelper.FileHelper.GetDesktopPath(),
+                  "(*.csv)|*.csv", "成分.csv");
+            if (result.HasSelected)
+            {
+                XSHelper.FileHelper.SaveText(result.SelectPath, txtCsv.Text);
+            }
+        }
     }
 }

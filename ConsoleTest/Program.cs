@@ -13,8 +13,8 @@ namespace ConsoleTest
         {
 
             //new Test().TestReportDataProcessHelper();
-            new Test().TestSF();
-
+            //new Test().TestSF();
+            new Test().TestCompositionSimulator();
 
 
 

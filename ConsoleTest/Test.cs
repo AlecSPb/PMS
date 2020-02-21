@@ -5,11 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 using PMSClient.ReportsHelperNew;
 using PMSClient.Express;
+using System.IO;
 
 namespace ConsoleTest
 {
     public class Test
     {
+        public void TestCompositionSimulator()
+        {
+            string input_str = @"100
+Te+30
+In+30
+Ge+20
+Se+20";
+            var service = new PMSClient.Simulator.CompositionSimulatorService(0.5);
+            string output_str = service.Simulate(input_str);
+            Console.WriteLine(output_str);
+
+            File.WriteAllText("data.csv", output_str);
+            System.Diagnostics.Process.Start("data.csv");
+
+        }
+
+
 
         public void TestSF()
         {

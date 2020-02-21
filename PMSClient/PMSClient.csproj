@@ -415,6 +415,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Simulator\InputModel.cs" />
+    <Compile Include="Simulator\InputValue.cs" />
+    <Compile Include="Simulator\CompositionSimulatorService.cs" />
+    <Compile Include="Simulator\OutputValue.cs" />
+    <Compile Include="Simulator\OutputModel.cs" />
     <Compile Include="ToolDialog\EnterCSCAN.xaml.cs">
       <DependentUpon>EnterCSCAN.xaml</DependentUpon>
     </Compile>
@@ -478,7 +483,7 @@
       <DependentUpon>MaterialPriceTool.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolWindow\MaterialPriceToolArgs.cs" />
-    <Compile Include="ToolWindow\Model\SingleElement.cs" />
+    <Compile Include="ToolWindow\SingleElement.cs" />
     <Compile Include="ToolWindow\OrderCheckDialog.xaml.cs">
       <DependentUpon>OrderCheckDialog.xaml</DependentUpon>
     </Compile>
@@ -2519,6 +2524,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ToolWindow\Model\" />
     <Folder Include="View\ToolView\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
