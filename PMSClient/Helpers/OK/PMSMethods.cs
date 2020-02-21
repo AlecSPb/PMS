@@ -23,6 +23,16 @@ namespace PMSClient
             {
                 control.Focus();
                 control.Text += text;
+
+            }
+        }
+
+        public static void RemoveSomeCharacters(TextBox control)
+        {
+            if (control != null)
+            {
+                control.Focus();
+                control.Text = control.Text.Replace("无", "");
             }
         }
 
@@ -33,7 +43,7 @@ namespace PMSClient
         /// <param name="ds">必须提前new</param>
         public static void SetListDS<T>(List<string> ds)
         {
-            if (ds!=null)
+            if (ds != null)
             {
                 ds.Clear();
                 Enum.GetNames(typeof(T)).ToList().ForEach(i => ds.Add(i));

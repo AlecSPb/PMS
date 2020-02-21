@@ -70,12 +70,12 @@ namespace PMSClient.ReportsHelper
 
                             var cell_1 = mainTable.Rows[rownumber].Cells[1];
                             cell_1.Paragraphs[0]
-                                .Append($"{item.TargetProductID}").FontSize(10).Bold();
+                                .Append($"{item.TargetProductID ?? ""}").FontSize(10).Bold();
                             cell_1.VerticalAlignment = VerticalAlignment.Center;
 
                             var cell_2 = mainTable.Rows[rownumber].Cells[2];
                             cell_2.Paragraphs[0]
-                                .Append(item.TargetComposition).FontSize(10).Bold();
+                                .Append(item.TargetComposition ?? "").FontSize(10).Bold();
                             cell_2.VerticalAlignment = VerticalAlignment.Center;
 
                             var cell_3 = mainTable.Rows[rownumber].Cells[3];
@@ -90,7 +90,7 @@ namespace PMSClient.ReportsHelper
                                 plate_marker = "★";
                             }
                             cell_4.Paragraphs[0]
-                                 .Append(plate_marker).FontSize(10).Bold().Alignment = Alignment.center;
+                                 .Append(plate_marker ?? "").FontSize(10).Bold().Alignment = Alignment.center;
                             cell_4.VerticalAlignment = VerticalAlignment.Center;
 
                             //var cell_11 = mainTable.Rows[rownumber].Cells[11];

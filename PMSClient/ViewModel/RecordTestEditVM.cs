@@ -76,7 +76,7 @@ namespace PMSClient.ViewModel
             model.Sample = "无";
             model.CompositionXRF = "暂无";
             model.Density = "0";
-            model.Defects = "";
+            model.Defects = "无";
             model.OrderDate = DateTime.Now.AddDays(-30);
             model.FollowUps = PMSCommon.TestFollowUps.发货.ToString();
             model.Roughness = "无";

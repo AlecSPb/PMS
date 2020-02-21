@@ -114,6 +114,7 @@ namespace PMSClient.View
             if (win.ShowDialog() == true)
             {
                 PMSMethods.SetTextBoxAppend(TxtDefects, win.AllDefects);
+                PMSMethods.RemoveSomeCharacters(TxtDefects);
             };
 
         }

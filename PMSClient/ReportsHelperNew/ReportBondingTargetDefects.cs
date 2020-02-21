@@ -40,15 +40,15 @@ namespace PMSClient.ReportsHelperNew
                     row.Height = 35;
                     row.Cells[0].Paragraphs[0].Append("□").Alignment = Alignment.center;
                     row.Cells[0].VerticalAlignment = VerticalAlignment.Center;
-                    row.Cells[1].Paragraphs[0].Append(item.TargetProductID);
+                    row.Cells[1].Paragraphs[0].Append(item.TargetProductID ?? "");
                     row.Cells[1].VerticalAlignment = VerticalAlignment.Center;
-                    row.Cells[2].Paragraphs[0].Append(item.TargetComposition);
+                    row.Cells[2].Paragraphs[0].Append(item.TargetComposition ?? "");
                     row.Cells[2].VerticalAlignment = VerticalAlignment.Center;
-                    row.Cells[3].Paragraphs[0].Append(item.TargetPMINumber);
+                    row.Cells[3].Paragraphs[0].Append(item.TargetPMINumber ?? "");
                     row.Cells[3].VerticalAlignment = VerticalAlignment.Center;
-                    row.Cells[4].Paragraphs[0].Append(item.TargetDimensionActual);
+                    row.Cells[4].Paragraphs[0].Append(item.TargetDimensionActual ?? "");
                     row.Cells[4].VerticalAlignment = VerticalAlignment.Center;
-                    row.Cells[5].Paragraphs[0].Append(item.TargetDefects);
+                    row.Cells[5].Paragraphs[0].Append(item.TargetDefects??"");
                     row.Cells[5].VerticalAlignment = VerticalAlignment.Center;
 
                     //添加间隔背景颜色
