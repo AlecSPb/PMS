@@ -9,6 +9,9 @@ using CommonHelper;
 
 namespace PMSXMLCreator.Service
 {
+    /// <summary>
+    /// 生成XML文件
+    /// </summary>
     public class XmlHelper
     {
 

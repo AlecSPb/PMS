@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace CommonHelper
+namespace XSHelper.Helpers
 {
     public class XSDialogResult
     {

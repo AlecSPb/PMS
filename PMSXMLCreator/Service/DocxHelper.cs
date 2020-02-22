@@ -12,6 +12,9 @@ using CommonHelper;
 
 namespace PMSXMLCreator
 {
+    /// <summary>
+    /// 生成docx文件
+    /// </summary>
     public class DocxHelper
     {
         public void CreateFile(ECOA model)
