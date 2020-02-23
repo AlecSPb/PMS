@@ -33,11 +33,12 @@ namespace XSHelper.Helpers
             if (model == null) return true;
             if (!File.Exists(temp_current_model)) return true;
 
+            var hash = new HashHelper();
             string str_current, str_saved;
             str_current = JsonConvert.SerializeObject(model);
             str_saved = File.ReadAllText(temp_current_model);
-            string hash_current = HashHelper.GetMD5String(str_current);
-            string hash_saved = HashHelper.GetMD5String(str_saved);
+            string hash_current = hash.GetMD5String(str_current);
+            string hash_saved = hash.GetMD5String(str_saved);
             return hash_current == hash_saved;
         }
 

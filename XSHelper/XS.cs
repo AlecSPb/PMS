@@ -12,11 +12,26 @@ namespace XSHelper
     /// </summary>
     public static class XS
     {
+        static XS()
+        {
+            AutoSave = new AutoSaveHelper();
+            Dialog = new DialogHelper();
+            File = new FileHelper();
+            Hash = new HashHelper();
+            MessageBox = new MessageboxHelper();
+            Status = new StatusHelper();
+            SimpleLog = new SimpleLogHelper();
+            ComputerInfo = new ComputerInfoHelper();
+        }
         public static AutoSaveHelper AutoSave { get; set; }
         public static DialogHelper Dialog { get; set; }
         public static FileHelper File { get; set; }
         public static HashHelper Hash { get; set; }
         public static MessageboxHelper MessageBox { get; set; }
         public static StatusHelper Status { get; set; }
+
+        public static SimpleLogHelper SimpleLog { get; set; }
+
+        public static ComputerInfoHelper ComputerInfo { get; set; }
     }
 }
