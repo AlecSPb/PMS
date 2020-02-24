@@ -19,6 +19,18 @@
   <wsdl:message name="IToolSieveService_GetToolSieveCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetToolSieveCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IToolSieveService_GetToolSieveUsed_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetToolSieveUsed" />
+  </wsdl:message>
+  <wsdl:message name="IToolSieveService_GetToolSieveUsed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetToolSieveUsedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToolSieveService_GetToolSieveUsedCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetToolSieveUsedCount" />
+  </wsdl:message>
+  <wsdl:message name="IToolSieveService_GetToolSieveUsedCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetToolSieveUsedCountResponse" />
+  </wsdl:message>
   <wsdl:message name="IToolSieveService_AddToolSieve_InputMessage">
     <wsdl:part name="parameters" element="tns:AddToolSieve" />
   </wsdl:message>
@@ -39,6 +51,14 @@
     <wsdl:operation name="GetToolSieveCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IToolSieveService/GetToolSieveCount" message="tns:IToolSieveService_GetToolSieveCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IToolSieveService/GetToolSieveCountResponse" message="tns:IToolSieveService_GetToolSieveCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToolSieveUsed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolSieveService/GetToolSieveUsed" message="tns:IToolSieveService_GetToolSieveUsed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolSieveService/GetToolSieveUsedResponse" message="tns:IToolSieveService_GetToolSieveUsed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToolSieveUsedCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolSieveService/GetToolSieveUsedCount" message="tns:IToolSieveService_GetToolSieveUsedCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolSieveService/GetToolSieveUsedCountResponse" message="tns:IToolSieveService_GetToolSieveUsedCount_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddToolSieve">
       <wsdl:input wsaw:Action="http://tempuri.org/IToolSieveService/AddToolSieve" message="tns:IToolSieveService_AddToolSieve_InputMessage" />
@@ -62,6 +82,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetToolSieveCount">
       <soap:operation soapAction="http://tempuri.org/IToolSieveService/GetToolSieveCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToolSieveUsed">
+      <soap:operation soapAction="http://tempuri.org/IToolSieveService/GetToolSieveUsed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToolSieveUsedCount">
+      <soap:operation soapAction="http://tempuri.org/IToolSieveService/GetToolSieveUsedCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

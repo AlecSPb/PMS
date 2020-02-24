@@ -34,7 +34,7 @@ namespace PMSClient.CustomControls
             {
                 txtProductID.Text = value.TargetProductID;
                 txtCoverPlateNumber.Text = value.CoverPlateNumber;
-                txtDefects.Text = value.TargetDefects;
+                txtDefects.Text = value.Remark;
                 txtWeldingRate.Text = value.WeldingRate.ToString();
                 cboState.SelectedItem = value.State;
             }

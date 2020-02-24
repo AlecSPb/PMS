@@ -234,6 +234,18 @@ namespace PMSClient.ToolService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/GetToolSieveCount", ReplyAction="http://tempuri.org/IToolSieveService/GetToolSieveCountResponse")]
         System.Threading.Tasks.Task<int> GetToolSieveCountAsync(string searchid, string materialGroup);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/GetToolSieveUsed", ReplyAction="http://tempuri.org/IToolSieveService/GetToolSieveUsedResponse")]
+        PMSClient.ToolService.DcToolSieve[] GetToolSieveUsed(string searchid, string materialGroup, int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/GetToolSieveUsed", ReplyAction="http://tempuri.org/IToolSieveService/GetToolSieveUsedResponse")]
+        System.Threading.Tasks.Task<PMSClient.ToolService.DcToolSieve[]> GetToolSieveUsedAsync(string searchid, string materialGroup, int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/GetToolSieveUsedCount", ReplyAction="http://tempuri.org/IToolSieveService/GetToolSieveUsedCountResponse")]
+        int GetToolSieveUsedCount(string searchid, string materialGroup);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/GetToolSieveUsedCount", ReplyAction="http://tempuri.org/IToolSieveService/GetToolSieveUsedCountResponse")]
+        System.Threading.Tasks.Task<int> GetToolSieveUsedCountAsync(string searchid, string materialGroup);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/AddToolSieve", ReplyAction="http://tempuri.org/IToolSieveService/AddToolSieveResponse")]
         void AddToolSieve(PMSClient.ToolService.DcToolSieve model);
         
@@ -288,6 +300,22 @@ namespace PMSClient.ToolService {
         
         public System.Threading.Tasks.Task<int> GetToolSieveCountAsync(string searchid, string materialGroup) {
             return base.Channel.GetToolSieveCountAsync(searchid, materialGroup);
+        }
+        
+        public PMSClient.ToolService.DcToolSieve[] GetToolSieveUsed(string searchid, string materialGroup, int s, int t) {
+            return base.Channel.GetToolSieveUsed(searchid, materialGroup, s, t);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.ToolService.DcToolSieve[]> GetToolSieveUsedAsync(string searchid, string materialGroup, int s, int t) {
+            return base.Channel.GetToolSieveUsedAsync(searchid, materialGroup, s, t);
+        }
+        
+        public int GetToolSieveUsedCount(string searchid, string materialGroup) {
+            return base.Channel.GetToolSieveUsedCount(searchid, materialGroup);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetToolSieveUsedCountAsync(string searchid, string materialGroup) {
+            return base.Channel.GetToolSieveUsedCountAsync(searchid, materialGroup);
         }
         
         public void AddToolSieve(PMSClient.ToolService.DcToolSieve model) {

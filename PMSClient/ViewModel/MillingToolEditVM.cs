@@ -22,7 +22,7 @@ namespace PMSClient.ViewModel
             GiveUp = new RelayCommand(ActionGiveUp);
             Save = new RelayCommand(ActionSave);
             States = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.SimpleState>(States);
+            PMSBasicDataService.SetListDS<PMSCommon.ToolState>(States);
         }
 
         private void ActionGiveUp()

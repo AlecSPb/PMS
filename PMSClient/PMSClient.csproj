@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>90</ApplicationRevision>
+    <ApplicationRevision>91</ApplicationRevision>
     <ApplicationVersion>4.8.125.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -575,6 +575,7 @@
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
     <Compile Include="ViewModel\MillingToolEditVM.cs" />
+    <Compile Include="ViewModel\MillingToolWindowVM.cs" />
     <Compile Include="ViewModel\MillingToolVM.cs" />
     <Compile Include="ViewModel\OutsideProcessVM.cs" />
     <Compile Include="ViewModel\OutsideProcessEditVM.cs" />
