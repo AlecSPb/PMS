@@ -234,6 +234,12 @@ namespace PMSClient.FailureService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFailureService/GetFailuresCount", ReplyAction="http://tempuri.org/IFailureService/GetFailuresCountResponse")]
         System.Threading.Tasks.Task<int> GetFailuresCountAsync(string stage);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFailureService/GetFailuresCountByProductID", ReplyAction="http://tempuri.org/IFailureService/GetFailuresCountByProductIDResponse")]
+        int GetFailuresCountByProductID(string productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFailureService/GetFailuresCountByProductID", ReplyAction="http://tempuri.org/IFailureService/GetFailuresCountByProductIDResponse")]
+        System.Threading.Tasks.Task<int> GetFailuresCountByProductIDAsync(string productid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFailureService/AddFailure", ReplyAction="http://tempuri.org/IFailureService/AddFailureResponse")]
         int AddFailure(PMSClient.FailureService.DcFailure model);
         
@@ -288,6 +294,14 @@ namespace PMSClient.FailureService {
         
         public System.Threading.Tasks.Task<int> GetFailuresCountAsync(string stage) {
             return base.Channel.GetFailuresCountAsync(stage);
+        }
+        
+        public int GetFailuresCountByProductID(string productid) {
+            return base.Channel.GetFailuresCountByProductID(productid);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetFailuresCountByProductIDAsync(string productid) {
+            return base.Channel.GetFailuresCountByProductIDAsync(productid);
         }
         
         public int AddFailure(PMSClient.FailureService.DcFailure model) {

@@ -15,6 +15,8 @@ namespace PMSWCFService.ServiceContracts
         List<DcFailure> GetFailures(int s, int t, string stage);
         [OperationContract]
         int GetFailuresCount(string stage);
+        [OperationContract]
+        int GetFailuresCountByProductID(string productid);
 
         [OperationContract]
         int AddFailure(DcFailure model);

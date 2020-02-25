@@ -307,27 +307,38 @@ namespace PMSClient.ViewModel
             //报废记录添加
             if (CurrentRecordTest.FollowUps.Contains("报废"))
             {
-                if (PMSDialogService.ShowYesNo("请问", "确定同时给[报废记录]当中添加该靶材信息吗？已经添加过的，请选择【否】"))
+                int check_exist_count = 0;
+                using (var service = new FailureService.FailureServiceClient())
                 {
-
-                    var model = new FailureService.DcFailure();
-                    model.ID = Guid.NewGuid();
-                    model.CreateTime = DateTime.Now;
-                    model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                    model.ProductID = CurrentRecordTest.ProductID;
-                    model.Composition = CurrentRecordTest.Composition;
-                    model.Problem = "测试未通过";
-                    model.Details = CurrentRecordTest.PMINumber;
-                    model.Stage = "测试";
-                    model.Process = "无";
-                    model.Remark = CurrentRecordTest.Defects;
-                    model.State = PMSCommon.SimpleState.正常.ToString();
-
-                    using (var service = new FailureService.FailureServiceClient())
+                    check_exist_count = service.GetFailuresCountByProductID(CurrentRecordTest.ProductID);
+                }
+                //如果报废库里已经存在，就不添加了
+                if (check_exist_count == 0)
+                {
+                    if (PMSDialogService.ShowYesNo("请问", "确定同时给[报废记录]当中添加该靶材信息吗？"))
                     {
-                        service.AddFailure(model);
+
+                        var model = new FailureService.DcFailure();
+                        model.ID = Guid.NewGuid();
+                        model.CreateTime = DateTime.Now;
+                        model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                        model.ProductID = CurrentRecordTest.ProductID;
+                        model.Composition = CurrentRecordTest.Composition;
+                        model.Problem = "测试未通过";
+                        model.Details = CurrentRecordTest.PMINumber;
+                        model.Stage = "测试";
+                        model.Process = "无";
+                        model.Remark = CurrentRecordTest.Defects;
+                        model.State = PMSCommon.SimpleState.正常.ToString();
+
+                        using (var service = new FailureService.FailureServiceClient())
+                        {
+                            service.AddFailure(model);
+                        }
                     }
                 }
+
+
             }
 
             try

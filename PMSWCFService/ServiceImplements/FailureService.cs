@@ -25,10 +25,10 @@ namespace PMSWCFService
                 Mapper.Initialize(cfg => cfg.CreateMap<DcFailure, Failure>());
                 var entity = Mapper.Map<Failure>(model);
                 int result = 0;
-                using (var db=new PMSDbContext())
+                using (var db = new PMSDbContext())
                 {
                     db.Failures.Add(entity);
-                    result=db.SaveChanges();
+                    result = db.SaveChanges();
                 }
                 return result;
             }
@@ -47,7 +47,7 @@ namespace PMSWCFService
                 using (var db = new PMSDbContext())
                 {
                     var query = from m in db.Failures
-                                where m.Stage.Contains(stage) && m.State!="作废"
+                                where m.Stage.Contains(stage) && m.State != "作废"
                                 orderby m.CreateTime descending
                                 select m;
 
@@ -66,10 +66,31 @@ namespace PMSWCFService
         {
             try
             {
-                using (var db=new PMSDbContext())
+                using (var db = new PMSDbContext())
                 {
                     var query = from m in db.Failures
                                 where m.Stage.Contains(stage) && m.State != "作废"
+                                select m;
+
+
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetFailuresCountByProductID(string productid)
+        {
+            try
+            {
+                using (var db = new PMSDbContext())
+                {
+                    var query = from m in db.Failures
+                                where m.ProductID == productid && m.State != "作废"
                                 select m;
 
 

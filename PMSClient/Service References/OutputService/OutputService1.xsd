@@ -120,6 +120,7 @@
   <xs:complexType name="DcRecordTest">
     <xs:sequence>
       <xs:element minOccurs="0" name="BackingPlateLot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CScan" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionAbbr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionXRF" nillable="true" type="xs:string" />

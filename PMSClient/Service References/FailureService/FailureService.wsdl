@@ -19,6 +19,12 @@
   <wsdl:message name="IFailureService_GetFailuresCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFailuresCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IFailureService_GetFailuresCountByProductID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFailuresCountByProductID" />
+  </wsdl:message>
+  <wsdl:message name="IFailureService_GetFailuresCountByProductID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFailuresCountByProductIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IFailureService_AddFailure_InputMessage">
     <wsdl:part name="parameters" element="tns:AddFailure" />
   </wsdl:message>
@@ -39,6 +45,10 @@
     <wsdl:operation name="GetFailuresCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IFailureService/GetFailuresCount" message="tns:IFailureService_GetFailuresCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFailureService/GetFailuresCountResponse" message="tns:IFailureService_GetFailuresCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFailuresCountByProductID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFailureService/GetFailuresCountByProductID" message="tns:IFailureService_GetFailuresCountByProductID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFailureService/GetFailuresCountByProductIDResponse" message="tns:IFailureService_GetFailuresCountByProductID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddFailure">
       <wsdl:input wsaw:Action="http://tempuri.org/IFailureService/AddFailure" message="tns:IFailureService_AddFailure_InputMessage" />
@@ -62,6 +72,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetFailuresCount">
       <soap:operation soapAction="http://tempuri.org/IFailureService/GetFailuresCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailuresCountByProductID">
+      <soap:operation soapAction="http://tempuri.org/IFailureService/GetFailuresCountByProductID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

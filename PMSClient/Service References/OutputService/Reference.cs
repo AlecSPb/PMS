@@ -1633,6 +1633,9 @@ namespace PMSClient.OutputService {
         private string BackingPlateLotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CScanField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1726,6 +1729,19 @@ namespace PMSClient.OutputService {
                 if ((object.ReferenceEquals(this.BackingPlateLotField, value) != true)) {
                     this.BackingPlateLotField = value;
                     this.RaisePropertyChanged("BackingPlateLot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CScan {
+            get {
+                return this.CScanField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CScanField, value) != true)) {
+                    this.CScanField = value;
+                    this.RaisePropertyChanged("CScan");
                 }
             }
         }
