@@ -14,8 +14,8 @@ namespace ConsoleTest
 
             //new Test().TestReportDataProcessHelper();
             //new Test().TestSF();
-            new Test().TestCompositionSimulator();
-
+            //new Test().TestCompositionSimulator();
+            new Test().TestCompositionHelper_Desend();
 
 
 

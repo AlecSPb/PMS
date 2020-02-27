@@ -267,6 +267,7 @@
     <Compile Include="Express\Trace.cs" />
     <Compile Include="Helpers\AccessHelper.cs" />
     <Compile Include="Helpers\CompositionHelper.cs" />
+    <Compile Include="Helpers\CompositionModel.cs" />
     <Compile Include="Helpers\Converter\LastDayConverter.cs" />
     <Compile Include="Helpers\Converter\LastDayImageConverter.cs" />
     <Compile Include="Helpers\Converter\MissonStateToBoolConverter.cs" />

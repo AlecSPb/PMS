@@ -21,7 +21,32 @@ namespace PMSClient.Helpers
 
     public static class CompositionHelper
     {
+        /// <summary>
+        /// 将靶材成分按照原子数降序重排
+        /// </summary>
+        /// <param name="composition"></param>
+        /// <returns></returns>
+        public static string ConvertToAtmDescend(string composition)
+        {
+            List<CompositionModel> elements = new List<CompositionModel>();
+            string pattern = @"([a-zA-Z]+)([0-9]+([.]{1}[0-9]+){0,1})";
+            var matches = Regex.Matches(composition, pattern);
+            foreach (Match item in matches)
+            {
+                var element = item.Groups[1].Value;
+                var value = double.Parse(item.Groups[2].Value);
+                elements.Add(new CompositionModel { Element = element, Value = value });
+            }
+            elements.Sort();
 
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in elements)
+            {
+                sb.Append(item.Element);
+                sb.Append(item.Value);
+            }
+            return sb.ToString();
+        }
         public static string CheckAllAdditive(string composition)
         {
             string postfix = "";

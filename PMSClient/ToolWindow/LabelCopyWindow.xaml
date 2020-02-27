@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
-        Title="标签信息拷贝窗口" Height="500" Width="800" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+        Title="标签信息拷贝窗口" Height="700" Width="800" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

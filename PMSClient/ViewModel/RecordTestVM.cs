@@ -525,6 +525,11 @@ namespace PMSClient.ViewModel
                 sb.AppendLine(model.RecordTest.Composition);
                 sb.AppendLine();
                 sb.AppendLine(model.RecordTest.Dimension);
+                sb.AppendLine("=====  二维码标签↓  =====");
+                sb.AppendLine(model.RecordTest.ProductID);
+                sb.AppendLine(model.RecordTest.Composition);
+                sb.AppendLine(Helpers.CompositionHelper.ConvertToAtmDescend(model.RecordTest.Composition));
+                sb.AppendLine(model.RecordTest.Customer);
                 //sb.AppendLine();
                 //sb.AppendLine(model.RecordTest.Customer);
                 //sb.AppendLine();
@@ -540,6 +545,7 @@ namespace PMSClient.ViewModel
                 sb.AppendLine(model.RecordTest.ProductID);
                 sb.AppendLine();
                 var mainContent = sb.ToString();
+
 
                 //var pageTitle = "产品标签打印输出";
                 //var tips = @"点击打开模板按钮，粘贴不同内容到模板合适位置，热压编号是自动生成的，可能不正确，请再自行修改，然后打印标签";

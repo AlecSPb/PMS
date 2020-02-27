@@ -9,8 +9,18 @@ using System.IO;
 
 namespace ConsoleTest
 {
+
     public class Test
     {
+        public void TestCompositionHelper_Desend()
+        {
+            string composition = "Cu23.72In19.76Ga8.32Se48.20";
+
+            string result = PMSClient.Helpers.CompositionHelper.ConvertToAtmDescend(composition);
+            Console.WriteLine(result);
+        }
+
+
         public void TestCompositionSimulator()
         {
             string input_str = @"100
