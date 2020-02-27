@@ -54,6 +54,7 @@ namespace PMSClient.ViewModel
             EditItem = new RelayCommand<DcDeliveryItem>(ActionEditItem, CanEditItem);
             SearchRecordTest = new RelayCommand<DcDeliveryItem>(ActionRecordTest, CanRecordTest);
             DeliverySheet = new RelayCommand<MainService.DcDelivery>(ActionDeliverySheet, CanDeliverySheet);
+            BarCode = new RelayCommand<DcDelivery>(ActionBarCode, CanDeliverySheet);
 
             SelectionChanged = new RelayCommand<DcDelivery>(ActionSelectionChanged);
             GoToDeliveryItemList = new RelayCommand(ActionGoToDeliveryItemList);
@@ -63,6 +64,15 @@ namespace PMSClient.ViewModel
             QuickSave = new RelayCommand<DcDeliveryItem>(ActionQuickSave, CanQuickSave);
             SaveAllItems = new RelayCommand(ActionSaveAllItems, CanSaveAllItems);
             ExpressTrack = new RelayCommand(ActionExpressTrack, CanExpressTrack);
+        }
+
+        private void ActionBarCode(DcDelivery obj)
+        {
+            if (obj == null) return;
+            var helper = new ReportsHelperNew.ReportDeliveryBarCode(obj.ID);
+            helper.Intialize("条形码.docx");
+            helper.Output();
+
         }
 
         private bool CanExpressTrack()
@@ -568,6 +578,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcDelivery> Label { get; set; }
         public RelayCommand<DcDelivery> Finish { get; set; }
         public RelayCommand<DcDelivery> DeliverySheet { get; set; }
+        public RelayCommand<DcDelivery> BarCode { get; set; }
         public RelayCommand<DcDelivery> AddItem { get; set; }
         public RelayCommand<DcDeliveryItem> EditItem { get; set; }
         public RelayCommand<DcDeliveryItem> SearchRecordTest { get; set; }

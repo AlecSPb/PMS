@@ -23,6 +23,8 @@ namespace PMSWCFService.DataContracts
         public string Unit { get; set; }
         [DataMember]
         public string ItemHistory { get; set; }
+        [DataMember]
+        public int RowOrder { get; set; }
 
         [DataMember]
         public Guid ID { get; set; }

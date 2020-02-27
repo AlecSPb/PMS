@@ -59,7 +59,7 @@ namespace PMSWCFService
                                 where p.ItemGroup.Contains(itemGroup)
                                 && p.ItemName.Contains(itemName)
                                 && p.State == PMSCommon.SimpleState.正常.ToString()
-                                orderby p.ItemGroup ascending,p.ItemName ascending,p.ItemSpecification ascending
+                                orderby p.RowOrder descending
                                 select p;
                     var result = query.Skip(s).Take(t).ToList();
                     Mapper.Initialize(cfg => cfg.CreateMap<PMICounter, DcPMICounter>());
@@ -84,7 +84,6 @@ namespace PMSWCFService
                                 where p.ItemGroup.Contains(itemGroup)
                                 && p.ItemName.Contains(itemName)
                                 && p.State == PMSCommon.SimpleState.正常.ToString()
-                                orderby p.ItemGroup ascending
                                 select p;
                     return query.Count();
                 }
@@ -104,7 +103,7 @@ namespace PMSWCFService
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<DcPMICounter, PMICounter>());
                     var product = Mapper.Map<PMICounter>(model);
-                    dc.Entry(product).State= System.Data.Entity.EntityState.Modified;
+                    dc.Entry(product).State = System.Data.Entity.EntityState.Modified;
                     return dc.SaveChanges();
                 }
             }

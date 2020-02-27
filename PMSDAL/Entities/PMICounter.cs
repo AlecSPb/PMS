@@ -18,5 +18,7 @@ namespace PMSDAL
         public double ItemCount { get; set; }
         public string Unit { get; set; }
         public string ItemHistory { get; set; }
+
+        public int RowOrder { get; set; }
     }
 }

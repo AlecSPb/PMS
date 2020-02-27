@@ -27,9 +27,15 @@
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <StackPanel Style="{StaticResource StyleStackPanelCommon}">
+                <TextBlock Text="库存警告&lt;" Background="{StaticResource InventoryWarningBrush}"
+                           Style="{StaticResource StyleTextBlockWarning}"/>
+                <TextBox Name="TxtAlarmValue" Style="{StaticResource StyleTextBoxCommon}" Text="5"
+                         TextAlignment="Center" MinWidth="30"
+                         Background="White"/>
+            </StackPanel>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PMICounters}"
-                  >
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PMICounters}" LoadingRow="dg_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
@@ -48,8 +54,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource CCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
                 <DataGridTextColumn Header="{StaticResource CItemGroup}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding ItemGroup}"/>
                 <DataGridTextColumn Header="{StaticResource CItemName}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -62,8 +66,7 @@
                                     Binding="{Binding Unit}"/>
                 <DataGridTextColumn Header="{StaticResource CItemDetails}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding ItemDetails}"/>
-                <DataGridTextColumn Header="{StaticResource CCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Creator}"/>
+                <DataGridTextColumn Header="{StaticResource CCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Binding="{Binding Creator}"/>
                 <DataGridTemplateColumn Header="{StaticResource CItemHistory}" Width="400">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -72,6 +75,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Row Order" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Binding="{Binding RowOrder}"/>
+                <DataGridTextColumn Header="{StaticResource CCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
