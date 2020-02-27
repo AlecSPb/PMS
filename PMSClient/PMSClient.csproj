@@ -181,6 +181,8 @@
     </ApplicationDefinition>
     <Compile Include="AccessGrant.cs" />
     <Compile Include="BarCodeService\BarCodeHelper.cs" />
+    <Compile Include="BarCodeService\Helper.cs" />
+    <Compile Include="BarCodeService\IBarCodeHelper.cs" />
     <Compile Include="BarCodeService\QRCodeHelper.cs" />
     <Compile Include="CheckLogic\CheckMessage.cs" />
     <Compile Include="CheckLogic\Density.cs" />
@@ -329,6 +331,7 @@
     <Compile Include="Helpers\VToken.cs" />
     <Compile Include="ReportsHelperNew\ReportBase.cs" />
     <Compile Include="ReportsHelperNew\ReportBondingTargetDefects.cs" />
+    <Compile Include="ReportsHelperNew\ReportDeliveryQRCode.cs" />
     <Compile Include="ReportsHelperNew\ReportDeliveryBarCode.cs" />
     <Compile Include="ReportsHelperNew\ReportMillingTool.cs" />
     <Compile Include="ReportsHelperNew\ReportFillingTool.cs" />
@@ -1774,6 +1777,9 @@
     <Content Include="Resource\DocTemplate\Reports\DeliverySheetBarCode.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resource\DocTemplate\Reports\DeliverySheetQRCode.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Service References\EditLockService\EditLockService.disco" />
     <None Include="Service References\EditLockService\configuration91.svcinfo" />
     <None Include="Service References\EditLockService\configuration.svcinfo" />
@@ -2386,12 +2392,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

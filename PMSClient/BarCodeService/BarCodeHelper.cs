@@ -10,36 +10,32 @@ using System.IO;
 
 namespace PMSClient.BarCodeService
 {
-    public class BarCodeHelper
+    public class BarCodeHelper:IBarCodeHelper
     {
         private string filename;
+        private Helper helper;
         public BarCodeHelper()
         {
-            filename = $"temp{Guid.NewGuid().ToString()}.png";
+            helper = new Helper();
+            
         }
-        public Image GetImage(string s)
+        public string CreateBarCodeImage(string s)
         {
+            filename = helper.GetTempFile($"temp{Guid.NewGuid().ToString()}.png");
             var barcode = new Barcode();
-            barcode.Height = 60;
-            barcode.Width = 500;
+            barcode.Height = 80;
+            barcode.Width = 600;
+            barcode.StandardizeLabel = true;
+            barcode.IncludeLabel = true;
+            barcode.LabelPosition = LabelPositions.TOPLEFT;
+            barcode.RotateFlipType = RotateFlipType.RotateNoneFlipNone;
+            barcode.Alignment = AlignmentPositions.LEFT;
             Image image = barcode.Encode(TYPE.CODE128, s);
-            return image;
-        }
-
-        public string SaveTemp(Image image)
-        {
             FileStream fs = new FileStream(filename, FileMode.Create);
             image.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
             fs.Close();
             return filename;
         }
 
-        public void Del()
-        {
-            if (File.Exists(filename))
-            {
-                File.Delete(filename);
-            }
-        }
     }
 }

@@ -9,10 +9,10 @@ using Novacode;
 
 namespace PMSClient.ReportsHelperNew
 {
-    public class ReportDeliveryBarCode : ReportBase
+    public class ReportDeliveryQRCode : ReportBase
     {
         private Guid id;
-        public ReportDeliveryBarCode(Guid id)
+        public ReportDeliveryQRCode(Guid id)
         {
             this.id = id;
         }
@@ -20,8 +20,8 @@ namespace PMSClient.ReportsHelperNew
         {
             ResetParameters();
 
-            string source = Path.Combine(reportsFolder, "DeliverySheetBarCode.docx");
-            string temp = Path.Combine(reportsFolder, "Temp", "DeliverySheetBarCode.docx");
+            string source = Path.Combine(reportsFolder, "DeliverySheetQRCode.docx");
+            string temp = Path.Combine(reportsFolder, "Temp", "DeliverySheetQRCode.docx");
             File.Copy(source, temp, true);
 
             using (var doc = DocX.Load(temp))
@@ -48,8 +48,7 @@ namespace PMSClient.ReportsHelperNew
 
         }
 
-        private BarCodeService.IBarCodeHelper helper = new BarCodeService.BarCodeHelper();
-
+        private BarCodeService.BarCodeHelper helper = new BarCodeService.BarCodeHelper();
         private void InsertBarcodeSection(DocX doc, string s)
         {
             string im = helper.CreateBarCodeImage(s);
