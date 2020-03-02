@@ -37,36 +37,36 @@
 
         <TextBlock Grid.Row="3" Grid.Column="0"  Style="{StaticResource StyleTextBlockCommon}"
                    Text="背板"/>
-        <TextBox Name="txtPlateNumber"  Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="无" FontSize="20"/>
+        <TextBox Name="txtPlateNumber"  Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="无" FontSize="20" Background="LightGreen"/>
 
         <TextBlock Grid.Row="4" Grid.Column="0"  Style="{StaticResource StyleTextBlockCommon}"
                    Text="缺陷"/>
         <TextBox  Grid.Row="4" Grid.Column="1" Name="txtDefects" Style="{StaticResource StyleTextBoxCommon}" 
-                  Text="无" Background="LightGreen"/>
+                  Text="无" Background="Yellow" FontSize="20"/>
 
         <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
             <Button Name="btnCrackInner" Style="{StaticResource StyleButtonCommon}" Content="裂-内"
                   Click="btnDefects_Click" MinWidth="40"/>
             <Button Name="btnCrackOutside" Style="{StaticResource StyleButtonCommon}" Content="裂-外"
                   Click="btnDefects_Click" MinWidth="40"/>
-            <Button Name="btnCavum1" Style="{StaticResource StyleButtonCommon}" Content="空腔-小"
-                  Click="btnDefects_Click" MinWidth="40"/>
-            <Button Name="btnCavum2" Style="{StaticResource StyleButtonCommon}" Content="空腔-小"
-                  Click="btnDefects_Click" MinWidth="40"/>
             <Button Name="btnBreachSmall" Style="{StaticResource StyleButtonCommon}" Content="缺-小"
                   Click="btnDefects_Click" MinWidth="40"/>
             <Button Name="btnBreachBig" Style="{StaticResource StyleButtonCommon}" Content="缺-大"
+                  Click="btnDefects_Click" MinWidth="40"/>
+            <Button Name="btnCavum1" Style="{StaticResource StyleButtonCommon}" Content="空腔-小"
+                  Click="btnDefects_Click" MinWidth="40"/>
+            <Button Name="btnCavum2" Style="{StaticResource StyleButtonCommon}" Content="空腔-大"
                   Click="btnDefects_Click" MinWidth="40"/>
         </StackPanel>
 
         <TextBlock Grid.Row="6" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="焊合"/>
-        <TextBox Name="txtWeldingRate" Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="0" FontSize="20"  Background="LightGreen"/>
+        <TextBox Name="txtWeldingRate" Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="0" FontSize="20"  Background="Yellow"/>
 
         <TextBlock Grid.Row="7" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="状态"/>
         <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
-            <ComboBox Name="cboState"  Style="{StaticResource StyleComboBoxCommon}"/>
+            <ComboBox Name="cboState"  Style="{StaticResource StyleComboBoxCommon}" FontSize="20"/>
             <TextBlock  Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="此项超声检查人员无需设置，由最终审核人员设置为完成"/>
         </StackPanel>

@@ -118,7 +118,7 @@ namespace PMSXMLCreator.Service
             writer.WriteEndElement();
 
             writer.WriteStartElement("Comments");
-            writer.WriteElementString("Comment", model.Comment);
+            writer.WriteElementString("Comment", $"{model.Comment} {model.BackPlateNumber}");
             writer.WriteEndElement();
 
             #region MaterialParameters

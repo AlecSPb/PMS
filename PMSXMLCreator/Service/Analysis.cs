@@ -193,7 +193,7 @@ namespace PMSXMLCreator.Service
             {
                 string short_name = item.Groups[1].Value;
                 string element_value = item.Groups[2].Value;
-                parameters.Add(GetElementParameter(short_name, element_value, ParameterUnit.Percent, "value", "AT"));
+                parameters.Add(GetElementParameter(short_name, element_value, ParameterUnit.Percent, "value", "at"));
             }
 
             return parameters;
