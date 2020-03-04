@@ -35,14 +35,15 @@ namespace PMSClient.View
             List<string> ds = new List<string>();
             PMSBasicDataService.SetListDS<string>(CustomData.FailureProblem,ds);
             string stage = CboStages.SelectedItem.ToString();
-            if (!string.IsNullOrEmpty(stage))
-            {
-                selector.SetDataSource(ds, stage);
-            }
-            else
-            {
-                selector.SetDataSource(ds);
-            }
+            //if (!string.IsNullOrEmpty(stage))
+            //{
+            //    selector.SetDataSource(ds, stage);
+            //}
+            //else
+            //{
+            //    selector.SetDataSource(ds);
+            //}
+            selector.SetDataSource(ds);
             if (selector.ShowDialog()==true){
                 PMSMethods.SetTextBox(TxtProblem, selector.SelectedString);
             }

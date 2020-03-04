@@ -11,8 +11,13 @@ namespace PMSWCFService.ServiceContracts
     [ServiceContract]
     public interface IFailureService
     {
+        //不再使用此方法，GetFailuresBySearch取代之
         [OperationContract]
         List<DcFailure> GetFailures(int s, int t, string stage);
+
+
+        [OperationContract]
+        List<DcFailure> GetFailuresBySearch(int s, int t, string productid, string composition, string stage);
         [OperationContract]
         int GetFailuresCount(string stage);
         [OperationContract]

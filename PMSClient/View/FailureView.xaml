@@ -14,11 +14,21 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource PageFailure}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{StaticResource PageFailure}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+            <TextBlock Text="{StaticResource PageFailureDescription}" 
+                       Style="{StaticResource StyleDGTextBlockCommon}"/>
+        </StackPanel>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
+            <TextBlock Text="{StaticResource FProductID}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource FComposition}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource FStage}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchStage,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>

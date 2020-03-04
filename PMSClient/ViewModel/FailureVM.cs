@@ -13,7 +13,7 @@ namespace PMSClient.ViewModel
     {
         public FailureVM()
         {
-            searchStage = "";
+            searchStage = searchComposition = searchProductID = "";
             Failures = new ObservableCollection<DcFailure>();
 
             InitializeCommands();
@@ -60,7 +60,7 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private string[] groupnames = { "管理员", "制粉组", "热压组", "加工组", "测试组", "质量组", "发货组", "发货专员", "生产经理", "仓库专员", "熔铸部门","统筹组" };
+        private string[] groupnames = { "管理员", "制粉组", "热压组", "加工组", "测试组", "质量组", "发货组", "发货专员", "生产经理", "仓库专员", "熔铸部门", "统筹组" };
         private bool CanEdit(DcFailure arg)
         {
             return PMSHelper.CurrentSession.IsOKInGroup(groupnames);
@@ -95,8 +95,18 @@ namespace PMSClient.ViewModel
             get { return searchStage; }
             set { searchStage = value; RaisePropertyChanged(nameof(SearchStage)); }
         }
-
-
+        private string searchProductID;
+        public string SearchProductID
+        {
+            get { return searchProductID; }
+            set { searchProductID = value; RaisePropertyChanged(nameof(SearchProductID)); }
+        }
+        private string searchComposition;
+        public string SearchComposition
+        {
+            get { return searchComposition; }
+            set { searchComposition = value; RaisePropertyChanged(nameof(SearchComposition)); }
+        }
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
@@ -114,7 +124,8 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new FailureServiceClient())
             {
-                var orders = service.GetFailures(skip, take, SearchStage);
+                var orders = service.GetFailuresBySearch(skip, take,
+                    SearchProductID, SearchComposition, SearchStage);
                 Failures.Clear();
                 orders.ToList().ForEach(o => Failures.Add(o));
             }

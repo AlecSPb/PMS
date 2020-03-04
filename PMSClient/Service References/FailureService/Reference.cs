@@ -228,6 +228,12 @@ namespace PMSClient.FailureService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFailureService/GetFailures", ReplyAction="http://tempuri.org/IFailureService/GetFailuresResponse")]
         System.Threading.Tasks.Task<PMSClient.FailureService.DcFailure[]> GetFailuresAsync(int s, int t, string stage);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFailureService/GetFailuresBySearch", ReplyAction="http://tempuri.org/IFailureService/GetFailuresBySearchResponse")]
+        PMSClient.FailureService.DcFailure[] GetFailuresBySearch(int s, int t, string productid, string composition, string stage);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFailureService/GetFailuresBySearch", ReplyAction="http://tempuri.org/IFailureService/GetFailuresBySearchResponse")]
+        System.Threading.Tasks.Task<PMSClient.FailureService.DcFailure[]> GetFailuresBySearchAsync(int s, int t, string productid, string composition, string stage);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFailureService/GetFailuresCount", ReplyAction="http://tempuri.org/IFailureService/GetFailuresCountResponse")]
         int GetFailuresCount(string stage);
         
@@ -286,6 +292,14 @@ namespace PMSClient.FailureService {
         
         public System.Threading.Tasks.Task<PMSClient.FailureService.DcFailure[]> GetFailuresAsync(int s, int t, string stage) {
             return base.Channel.GetFailuresAsync(s, t, stage);
+        }
+        
+        public PMSClient.FailureService.DcFailure[] GetFailuresBySearch(int s, int t, string productid, string composition, string stage) {
+            return base.Channel.GetFailuresBySearch(s, t, productid, composition, stage);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.FailureService.DcFailure[]> GetFailuresBySearchAsync(int s, int t, string productid, string composition, string stage) {
+            return base.Channel.GetFailuresBySearchAsync(s, t, productid, composition, stage);
         }
         
         public int GetFailuresCount(string stage) {

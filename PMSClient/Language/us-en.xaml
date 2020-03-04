@@ -917,6 +917,7 @@
 
     <!--报废产品-->
     <sys:String x:Key="PageFailure">Failure</sys:String>
+    <sys:String x:Key="PageFailureDescription">target,backing plate etc.</sys:String>
     <sys:String x:Key="PageFailureEdit">Failure Edit</sys:String>
 
     <sys:String x:Key="FID">ID</sys:String>
@@ -924,7 +925,7 @@
     <sys:String x:Key="FCreator">Creator</sys:String>
     <sys:String x:Key="FState">State</sys:String>
     <sys:String x:Key="FProductID">ProductID</sys:String>
-    <sys:String x:Key="FComposition">Composition</sys:String>
+    <sys:String x:Key="FComposition">>ProductName</sys:String>
     <sys:String x:Key="FDetails">Details</sys:String>
 
     <sys:String x:Key="FStage">Stage</sys:String>

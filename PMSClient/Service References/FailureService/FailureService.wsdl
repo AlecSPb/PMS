@@ -13,6 +13,12 @@
   <wsdl:message name="IFailureService_GetFailures_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFailuresResponse" />
   </wsdl:message>
+  <wsdl:message name="IFailureService_GetFailuresBySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFailuresBySearch" />
+  </wsdl:message>
+  <wsdl:message name="IFailureService_GetFailuresBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFailuresBySearchResponse" />
+  </wsdl:message>
   <wsdl:message name="IFailureService_GetFailuresCount_InputMessage">
     <wsdl:part name="parameters" element="tns:GetFailuresCount" />
   </wsdl:message>
@@ -42,6 +48,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IFailureService/GetFailures" message="tns:IFailureService_GetFailures_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFailureService/GetFailuresResponse" message="tns:IFailureService_GetFailures_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetFailuresBySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFailureService/GetFailuresBySearch" message="tns:IFailureService_GetFailuresBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFailureService/GetFailuresBySearchResponse" message="tns:IFailureService_GetFailuresBySearch_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetFailuresCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IFailureService/GetFailuresCount" message="tns:IFailureService_GetFailuresCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFailureService/GetFailuresCountResponse" message="tns:IFailureService_GetFailuresCount_OutputMessage" />
@@ -63,6 +73,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetFailures">
       <soap:operation soapAction="http://tempuri.org/IFailureService/GetFailures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailuresBySearch">
+      <soap:operation soapAction="http://tempuri.org/IFailureService/GetFailuresBySearch" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

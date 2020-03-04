@@ -54,17 +54,17 @@
                 </Grid.RowDefinitions>
 
                 
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource FBProductID}"
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource FProductID}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
                 <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                           Text="靶材写ID，背板写Lot"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource FBComposition}"
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource FComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
-                           Text="成分"/>
+                           Text="靶材写成分,如果是其他类型，直接写品名"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource FDetails}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -80,7 +80,7 @@
                            SelectedItem="{Binding Stage}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="报废类型"/>
+                           Text="报废环节"/>
                 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource FProblem}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

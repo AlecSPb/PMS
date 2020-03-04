@@ -921,6 +921,7 @@
 
     <!--报废产品-->
     <sys:String x:Key="PageFailure">报废记录</sys:String>
+    <sys:String x:Key="PageFailureDescription">靶材，背板等物品的报废记录</sys:String>
     <sys:String x:Key="PageFailureEdit">报废记录编辑</sys:String>
 
     <sys:String x:Key="FID">ID</sys:String>
@@ -928,7 +929,7 @@
     <sys:String x:Key="FCreator">创建人</sys:String>
     <sys:String x:Key="FState">状态</sys:String>
     <sys:String x:Key="FProductID">产品ID</sys:String>
-    <sys:String x:Key="FComposition">成分</sys:String>
+    <sys:String x:Key="FComposition">产品名称</sys:String>
 
     <sys:String x:Key="FDetails">细节</sys:String>
 
