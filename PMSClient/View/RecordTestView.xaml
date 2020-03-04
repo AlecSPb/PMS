@@ -275,7 +275,7 @@
                                     Command="{Binding DataContext.SaveJson,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                     CommandParameter="{Binding}"
                                     />
-                                
+
                     </StackPanel>
                     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Grid.Row="1">
                         <Grid>
@@ -295,7 +295,6 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
@@ -350,38 +349,34 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                             <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding RecordTest.DimensionActual}" Style="{StaticResource StyleTextBoxReadOnly}"  />
 
-                            <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RTRemark}"
+                            <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RTSample}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding RecordTest.Remark}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding RecordTest.Sample}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                            <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTSample}"
+                            <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTRoughness}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding RecordTest.Sample}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                            <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding RecordTest.Roughness}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTRoughness}"
+                            <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTCSCAN}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding RecordTest.Roughness}" Style="{StaticResource StyleTextBoxReadOnly}"   />
-
-                            <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTCSCAN}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding RecordTest.CScan}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding RecordTest.CScan}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
 
-                            <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RTWarping}"
+                            <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTWarping}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding RecordTest.Warping}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding RecordTest.Warping}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTQC}"
+                            <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RTQC}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding RecordTest.QC}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding RecordTest.QC}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RTBP}"
+                            <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTBP}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding RecordTest.BackingPlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"   />
-                            
-                            <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RTRemark}"
+                            <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding RecordTest.BackingPlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+
+                            <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding RecordTest.Remark}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding RecordTest.Remark}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
                         </Grid>
                     </ScrollViewer>
