@@ -282,6 +282,7 @@
     <Compile Include="Helpers\Converter\LastDayImageConverter.cs" />
     <Compile Include="Helpers\Converter\MissonStateToBoolConverter.cs" />
     <Compile Include="Helpers\Converter\PlateUseNumberConverter.cs" />
+    <Compile Include="Helpers\Converter\RatioDensityConverter.cs" />
     <Compile Include="Helpers\Converter\VisibilityConverter4.cs" />
     <Compile Include="Helpers\Converter\VisibilityConverter3.cs" />
     <Compile Include="Helpers\Converter\VisibilityConverter2.cs" />

@@ -9,4 +9,5 @@
     <local:VisibilityConverter4 x:Key="VisibilityConverter4"/>
     <local:IsLockedConverter x:Key="IsLockedCT"/>
     <local:PlateUseNumberConverter x:Key="PlateUseNumberConverter"/>
+    <local:RatioDensityConverter x:Key="RatioDensityCT"/>
 </ResourceDictionary>
