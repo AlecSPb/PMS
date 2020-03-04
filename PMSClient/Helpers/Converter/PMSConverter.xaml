@@ -10,4 +10,5 @@
     <local:IsLockedConverter x:Key="IsLockedCT"/>
     <local:PlateUseNumberConverter x:Key="PlateUseNumberConverter"/>
     <local:RatioDensityConverter x:Key="RatioDensityCT"/>
+    <local:CurrentVHPDateConverter x:Key="CurrentVHPDateCT"/>
 </ResourceDictionary>

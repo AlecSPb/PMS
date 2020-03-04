@@ -93,9 +93,7 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource RDDelivery}"
                                     Binding="{Binding DeliveryExpress}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <!--<DataGridTextColumn Header="{StaticResource RDDeliveryNumber}" Binding="{Binding DeliveryNumber}"
-                                        ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>-->
-                <DataGridTemplateColumn Header="{StaticResource RDDeliveryNumber}">
+                <DataGridTemplateColumn Header="{StaticResource RDDeliveryNumber}" Width="250">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBox Style="{StaticResource StyleDGTextBoxStrench}"

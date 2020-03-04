@@ -67,7 +67,7 @@
                     <DataGridTemplateColumn Header="{StaticResource PlanLockAbbr}" >
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Border Height="20" Width="20" BorderThickness="0" BorderBrush="Red" Margin="2" 
+                                <Border Height="15" Width="15" BorderThickness="0" BorderBrush="Red" Margin="2" 
                            Visibility="{Binding Plan.IsLocked,Converter={StaticResource IsLockedCT}}">
                                     <!--<TextBlock HorizontalAlignment="Center">🔒</TextBlock>-->
                                     <Image Source="../Resource/Icons/lock.png">

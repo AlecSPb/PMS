@@ -46,7 +46,7 @@
                     <RowDefinition Height="0"/>
                 </Grid.RowDefinitions>
                 <DataGrid x:Name="dg" Grid.Row="0"  LoadingRow="DataGrid_LoadingRow" Style="{StaticResource StyleDataGridCommon}"
-                          ItemsSource="{Binding PlanWithMissons}" FrozenColumnCount="3">
+                          ItemsSource="{Binding PlanWithMissons}" FrozenColumnCount="5">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
                             <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
@@ -81,7 +81,7 @@
                         <DataGridTemplateColumn Header="{StaticResource PlanLockAbbr}" >
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Border Height="20" Width="20" BorderThickness="0" BorderBrush="Red" Margin="2" 
+                                    <Border Height="15" Width="15" BorderThickness="0" BorderBrush="Red" Margin="2" 
                            Visibility="{Binding Plan.IsLocked,Converter={StaticResource IsLockedCT}}">
                                         <!--<TextBlock HorizontalAlignment="Center">🔒</TextBlock>-->
                                         <Image Source="../Resource/Icons/lock.png">
@@ -96,19 +96,26 @@
                         </DataGridTemplateColumn>
                         <DataGridTextColumn Header="{StaticResource PlanPlanDate}" Binding="{Binding  Plan.PlanDate,StringFormat={}{0:yyMMdd dddd}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding Plan.PlanLot}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
-                        
-                        <DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding Plan.VHPDeviceCode}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockSpecial}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanMoldType}" Binding="{Binding Plan.MoldType}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanMoldDiameter}" Binding="{Binding Plan.MoldDiameter}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                        <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding Misson.CompositionStandard}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                        <DataGridTextColumn Header="{StaticResource OrderPMINumber}" Binding="{Binding Misson.PMINumber}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockSpecial}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding Plan.PlanLot}" ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
+
+                        <!--<DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding Plan.VHPDeviceCode}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"/>-->
+                        <DataGridTemplateColumn Header="{StaticResource PlanVHPDeviceCode}">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                        <TextBlock Style="{StaticResource StyleDGTextBlockCommon}"
+                                               Text="{Binding Plan.VHPDeviceCode}"
+                                               Margin="0 2" HorizontalAlignment="Stretch"
+                                               Foreground="Blue" TextAlignment="Center"
+                                               Background="{Binding Plan.PlanDate,
+                                               Converter={StaticResource CurrentVHPDateCT}}"
+                                               />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="{StaticResource PlanMoldType}" Binding="{Binding Plan.MoldType}" ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanMoldDiameter}" Binding="{Binding Plan.MoldDiameter}" ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                        <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding Misson.CompositionStandard}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource OrderPMINumber}" Binding="{Binding Misson.PMINumber}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"/>
                     </DataGrid.Columns>
                 </DataGrid>
                 <control:SimplePager Grid.Row="1" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
