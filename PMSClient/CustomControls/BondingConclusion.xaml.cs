@@ -76,5 +76,10 @@ namespace PMSClient.CustomControls
                 txtDefects.Text = txtDefects.Text.Replace("无", "");
             }
         }
+
+        private void BtnFinish_Click(object sender, RoutedEventArgs e)
+        {
+            cboState.SelectedItem = PMSCommon.BondingState.完成.ToString();
+        }
     }
 }
