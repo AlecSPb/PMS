@@ -579,6 +579,7 @@
     <sys:String x:Key="RDMVHPPlanLot">热压编号</sys:String>
     <sys:String x:Key="RDMPMINumber">内部编号</sys:String>
     <sys:String x:Key="RDMComposition">成分</sys:String>
+    <sys:String x:Key="RDMTemperature">取脱模温度</sys:String>
     <sys:String x:Key="RDMTemperature1">取模温度</sys:String>
     <sys:String x:Key="RDMTemperature2">脱模温度</sys:String>
     <sys:String x:Key="RDMDeMoldType">脱模类型</sys:String>
@@ -591,6 +592,7 @@
     <sys:String x:Key="RDMWeight">重量</sys:String>
     <sys:String x:Key="RDMDiameter1">直径1</sys:String>
     <sys:String x:Key="RDMDiameter2">直径2</sys:String>
+    <sys:String x:Key="RDMThickness">厚度</sys:String>
     <sys:String x:Key="RDMThickness1">厚度1</sys:String>
     <sys:String x:Key="RDMThickness2">厚度2</sys:String>
     <sys:String x:Key="RDMThickness3">厚度3</sys:String>

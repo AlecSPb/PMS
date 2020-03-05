@@ -20,6 +20,7 @@
     <sys:Double x:Key="FontMD">14</sys:Double>
     <sys:Double x:Key="FontLG">18</sys:Double>
     <sys:Double x:Key="TabletFontLG">14</sys:Double>
+    <sys:Double x:Key="TabletFontTouch">20</sys:Double>
 
 
     <Thickness x:Key="ThicknessSM">2</Thickness>
@@ -305,7 +306,11 @@
     <Style x:Key="StyleTextBoxBig" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
         <Setter Property="FontSize" Value="{StaticResource TabletFontLG}"/>
     </Style>
-
+    
+    <Style x:Key="StyleTextBoxTouch" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
+        <Setter Property="FontSize" Value="{StaticResource TabletFontTouch}"/>
+    </Style>
+    
     <Style x:Key="StyleTextBoxLeft" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
         <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
@@ -358,6 +363,13 @@
         <Setter Property="IsEditable" Value="True"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
     </Style>
+
+    <Style x:Key="StyleComboBoxEditableTouch" TargetType="ComboBox" BasedOn="{StaticResource StyleComboBoxCommon}">
+        <Setter Property="IsEditable" Value="True"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="FontSize" Value="{StaticResource TabletFontTouch}"/>
+    </Style>
+
     <Style x:Key="StyleDatePickerCommon" TargetType="DatePicker">
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>

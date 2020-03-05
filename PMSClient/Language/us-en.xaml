@@ -570,6 +570,7 @@
     <sys:String x:Key="RDMVHPPlanLot">Plan Lot</sys:String>
     <sys:String x:Key="RDMPMINumber">PMI Number</sys:String>
     <sys:String x:Key="RDMComposition">Composition</sys:String>
+    <sys:String x:Key="RDMTemperature">Temperature</sys:String>
     <sys:String x:Key="RDMTemperature1">Temperature1</sys:String>
     <sys:String x:Key="RDMTemperature2">Temperature2</sys:String>
     <sys:String x:Key="RDMDeMoldType">DeMold Type</sys:String>
@@ -582,6 +583,7 @@
     <sys:String x:Key="RDMWeight">Weight</sys:String>
     <sys:String x:Key="RDMDiameter1">Diameter1</sys:String>
     <sys:String x:Key="RDMDiameter2">Diameter2</sys:String>
+    <sys:String x:Key="RDMThickness">Thickness</sys:String>
     <sys:String x:Key="RDMThickness1">Thickness1</sys:String>
     <sys:String x:Key="RDMThickness2">Thickness2</sys:String>
     <sys:String x:Key="RDMThickness3">Thickness3</sys:String>

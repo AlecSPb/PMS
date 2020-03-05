@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.CustomControls"
         mc:Ignorable="d"
-        Title="绑定结果快速录入工具" Height="400" Width="550" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
+        Title="绑定结果快速录入工具" Height="400" Width="600" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Grid Background="{StaticResource BGBrushWindow}" Margin="2">
         <Grid.ColumnDefinitions>
@@ -56,6 +56,8 @@
             <Button Name="btnCavum1" Style="{StaticResource StyleButtonCommon}" Content="空腔-小"
                   Click="btnDefects_Click" MinWidth="40"/>
             <Button Name="btnCavum2" Style="{StaticResource StyleButtonCommon}" Content="空腔-大"
+                  Click="btnDefects_Click" MinWidth="40"/>
+            <Button Name="btnFailure" Style="{StaticResource StyleButtonCommon}" Content="此片报废"
                   Click="btnDefects_Click" MinWidth="40"/>
         </StackPanel>
 
