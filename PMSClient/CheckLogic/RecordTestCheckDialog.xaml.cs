@@ -181,7 +181,11 @@ namespace PMSClient.CheckLogic
             //string pattern = @"[1-9]\d*.\d*|0.\d*[1-9]\d*";
             //匹配整数或者小数
             string pattern = @"[0-9]+([.]{1}[0-9]+){0,1}";
-            const double variable = 0.1d;
+
+            const double variable_low = 0.2d;
+            const double variable_upper = 0.1d;
+            const double variable_t = 0.1d;
+
             double fact_d = 0, fact_h = 0, expect_d = 0, expect_h = 0;
 
 
@@ -199,23 +203,23 @@ namespace PMSClient.CheckLogic
                     fact_d = double.Parse(result_fact[0].Value);
                     fact_h = double.Parse(result_fact[1].Value);
                 }
-                if (fact_d > expect_d - variable && fact_d < expect_d + variable)
+                if (fact_d > expect_d - variable_low && fact_d < expect_d + variable_upper)
                 {
                     //sb.Append("直径正常;");
                 }
                 else
                 {
-                    sb.AppendLine($"[直径]异常,超出±{variable};");
+                    sb.AppendLine($"[直径]异常,超出-{variable_low}+{variable_upper};");
 
                 }
 
-                if (fact_h > expect_h - variable && fact_h < expect_h + variable)
+                if (fact_h > expect_h - variable_t && fact_h < expect_h + variable_t)
                 {
                     //sb.AppendLine("厚度未发现异常;");
                 }
                 else
                 {
-                    sb.AppendLine($"[厚度]异常,超出±{variable};");
+                    sb.AppendLine($"[厚度]异常,超出±{variable_t};");
 
                 }
             }

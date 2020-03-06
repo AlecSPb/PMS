@@ -20,7 +20,7 @@ namespace PMSClient.Helpers.Converter
             }
             else
             {
-                return new SolidColorBrush(Colors.Green);
+                return new SolidColorBrush(Colors.Transparent);
             }
         }
 

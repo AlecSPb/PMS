@@ -7,7 +7,7 @@
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1000"
+             d:DesignHeight="800" d:DesignWidth="1200"
              DataContext="{Binding Source={StaticResource Locator},Path=RecordDeMold}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
@@ -40,6 +40,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBlock Text="{StaticResource IndicatorToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBlock Text="{StaticResource IndicatorTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Text="计算密度低于90%会特别显示" Style="{StaticResource StyleDGTextBlockBigSpecial}"/>
             </StackPanel>
         </StackPanel>
         <Grid Grid.Row="2">
@@ -102,7 +103,7 @@
                                                Style="{StaticResource StyleDGTextBlockRight}"
                                                HorizontalAlignment="Stretch"
                                                TextAlignment="Right"
-                                               Foreground="White"
+                                               Foreground="Blue"
                                                Margin="0 1"
                                                Background="{Binding RatioDensity,Converter={StaticResource RatioDensityCT}}"/>
                                 </DataTemplate>

@@ -114,7 +114,7 @@ namespace PMSClient.ViewModel
 
                 }
                 var win = new Tool.LabelOutPutWindow();
-                win.ShowDialog();
+                win.Show();
             }
             catch (Exception ex)
             {

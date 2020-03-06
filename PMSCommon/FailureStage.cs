@@ -17,6 +17,7 @@ namespace PMSCommon
         测试,
         绑定,
         库存,
-        发货
+        发货,
+        背板
     }
 }

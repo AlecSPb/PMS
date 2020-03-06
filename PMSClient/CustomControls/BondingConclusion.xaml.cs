@@ -33,8 +33,10 @@ namespace PMSClient.CustomControls
             set
             {
                 txtProductID.Text = value.TargetProductID;
+                txtProductComposition.Text = value.TargetComposition;
                 txtCoverPlateNumber.Text = value.CoverPlateNumber;
                 txtDefects.Text = value.Remark;
+                txtPlateNumber.Text = value.PlateLot;
                 txtWeldingRate.Text = value.WeldingRate.ToString();
                 cboState.SelectedItem = value.State;
             }

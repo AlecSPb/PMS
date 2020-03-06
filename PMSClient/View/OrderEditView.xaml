@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PMSClient.View"
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="800" DataContext="{Binding Source={StaticResource Locator},Path=OrderEdit}">
+             d:DesignHeight="800" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=OrderEdit}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -170,9 +170,14 @@
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Name="TxtDimensionDetails" Grid.Row="12" Grid.Column="1" Text="{Binding DimensionDetails}" Style="{StaticResource StyleTextBoxCommon}" />
                 <StackPanel Grid.Row="12" Grid.Column="2" Orientation="Horizontal">
-                    <Button Name="BtnBasicRequirement" Click="BtnBasicRequirement_Click" Content="默认内容" Style="{StaticResource StyleButtonCommon}"/>
+                    <Button Name="BtnBasicRequirement1" Click="BtnBasicRequirement1_Click" Content="正负公差" 
+                            Style="{StaticResource StyleButtonCommon}" MinWidth="50"/>
+                    <Button Name="BtnBasicRequirement2" Click="BtnBasicRequirement2_Click" Content="正公差" 
+                            Style="{StaticResource StyleButtonCommon}" MinWidth="50"/>
+                    <Button Name="BtnBasicRequirement3" Click="BtnBasicRequirement3_Click" Content="负公差" 
+                            Style="{StaticResource StyleButtonCommon}" MinWidth="50"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="尺寸细节,比如公差直径TD 厚度TH，粗糙度Ra，溅射面圆角FR，特殊符号输入请使用底部工具栏的符号工具"
+                           Text="公差直径TD;厚度TH;粗糙度Ra;溅射面圆角FR，无需写单位 除Ra单位um外，其余均为mm"
                                 Background="LightGreen"/>
                 </StackPanel>
 
@@ -192,7 +197,7 @@
                 <TextBox Name="TxtDrawing" Grid.Row="14" Grid.Column="1" Text="{Binding Drawing}"
                          Style="{StaticResource StyleTextBoxCommon}" Background="Wheat"/>
                 <StackPanel  Grid.Row="14" Grid.Column="2" Orientation="Horizontal">
-                    <Button Name="BtnGenerateDrawingNumber" Click="BtnGenerateDrawingNumber_Click" Content="自动生成图纸编号" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                    <Button Name="BtnGenerateDrawingNumber" Click="BtnGenerateDrawingNumber_Click" Content="自动图纸编号" Style="{StaticResource StyleButtonCommonNarrow}"/>
                     <TextBlock Style="{StaticResource StyleTextBlockTip}"
                            Text="图纸编号,具体规则，规则参考底部工具栏-图纸，自动生成不一定符合要求，请人工核对"/>
                 </StackPanel>
@@ -238,7 +243,7 @@
                     <Button Name="BtnBonding" Content="成都绑定" Style="{StaticResource StyleButtonCommonNarrow}" 
                             Click="BtnBonding_Click"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="如果有特殊要求，如添加剂,对热压模具的要求，绑定的要求，可以写在这里，生产会看到"/>
+                           Text="如有特殊要求，如添加剂,对热压模具的要求，绑定的要求，可以写在这里，生产会看到"/>
                 </StackPanel>
 
                 
