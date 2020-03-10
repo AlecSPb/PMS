@@ -30,7 +30,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw;
             }
 
@@ -45,7 +45,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -66,7 +66,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw;
             }
 
@@ -81,7 +81,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -101,7 +101,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw;
             }
 
@@ -122,7 +122,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw;
             }
 
@@ -149,7 +149,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
 
@@ -177,7 +177,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
 
@@ -197,7 +197,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
 
@@ -218,7 +218,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -240,7 +240,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
 
@@ -280,7 +280,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -310,7 +310,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -346,7 +346,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -367,7 +367,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -392,7 +392,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
 
@@ -407,7 +407,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -428,7 +428,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
 
@@ -443,7 +443,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -466,7 +466,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
             }
         }
         private void SaveHistory(DcDeliveryItem model, string uid)
@@ -487,7 +487,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
             }
         }
 
@@ -513,7 +513,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -539,7 +539,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }

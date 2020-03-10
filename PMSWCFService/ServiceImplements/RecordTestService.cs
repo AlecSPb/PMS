@@ -16,6 +16,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -28,7 +29,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
 
@@ -38,6 +39,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     SaveHistory(model, uid);
@@ -46,7 +48,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -55,6 +57,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -70,7 +73,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
 
@@ -80,6 +83,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
@@ -93,7 +97,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -102,6 +106,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
@@ -118,7 +123,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -127,6 +132,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
@@ -140,7 +146,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
 
@@ -150,6 +156,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
@@ -165,7 +172,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
 
@@ -175,6 +182,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
@@ -190,7 +198,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -200,6 +208,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
@@ -212,7 +221,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
 
@@ -222,6 +231,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
@@ -234,7 +244,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -243,6 +253,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
@@ -256,7 +267,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -265,6 +276,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
@@ -278,7 +290,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -287,6 +299,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -301,7 +314,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
 
@@ -311,6 +324,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     SaveHistory(model, uid);
@@ -319,7 +333,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
                 throw ex;
             }
         }
@@ -334,6 +348,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg =>
@@ -351,7 +366,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LS.CurrentLog.Error(ex);
+                XS.Current.Error(ex);
             }
         }
 
