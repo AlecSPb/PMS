@@ -5,9 +5,9 @@ using System.Web;
 
 namespace PMSWCFService
 {
-    public static class LocalService
+    public static class LogThis
     {
-        static LocalService()
+        static LogThis()
         {
             _log = new Log();
         }

@@ -168,7 +168,7 @@
     <Compile Include="DataContracts\DcToolMilling.cs" />
     <Compile Include="DataContracts\DcRawMaterialSheet.cs" />
     <Compile Include="DataContracts\DcSample.cs" />
-    <Compile Include="Log\LocalService.cs" />
+    <Compile Include="Log\LS.cs" />
     <Compile Include="Log\LogService.cs" />
     <Compile Include="DataContracts\DcOutSource.cs" />
     <Compile Include="DataContracts\DcOrderHistory.cs" />

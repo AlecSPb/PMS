@@ -57,8 +57,8 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LocalService.CurrentLog.Error(ex);
-                return 0;
+                LS.CurrentLog.Error(ex);
+                throw ex;
             }
 
         }
@@ -90,8 +90,8 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                LocalService.CurrentLog.Error(ex);
-                return 0;
+                LS.CurrentLog.Error(ex);
+                throw ex;
             }
 
 
