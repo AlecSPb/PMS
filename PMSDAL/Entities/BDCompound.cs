@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
-    /// <summary>
-    /// 化合物
-    /// </summary>
     public class BDCompound
     {
         public Guid ID { get; set; }

@@ -40,7 +40,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
 
         }
@@ -67,7 +67,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -86,7 +86,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -114,7 +114,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
         /// <summary>
@@ -143,7 +143,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -183,7 +183,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -208,7 +208,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
 
         }
@@ -243,7 +243,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -265,7 +265,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
         #endregion
@@ -304,7 +304,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -330,7 +330,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
 
         }
@@ -366,7 +366,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -389,7 +389,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
         public int GetOrderCountByYear(int year)
@@ -409,7 +409,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -438,7 +438,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -469,7 +469,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
 
         }
@@ -497,7 +497,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
         private void SaveHistory(DcOrder model, string uid)
@@ -552,7 +552,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -572,7 +572,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -595,7 +595,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 

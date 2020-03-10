@@ -44,7 +44,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -67,7 +67,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -102,7 +102,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -127,7 +127,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -159,7 +159,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -181,7 +181,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -213,7 +213,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -235,7 +235,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -255,7 +255,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -295,7 +295,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -319,7 +319,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
         /// <summary>
@@ -358,7 +358,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
         public int GetPlanWithMissonCheckedCount()
@@ -381,7 +381,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -419,7 +419,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -447,7 +447,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -486,7 +486,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -515,7 +515,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
 
         }
@@ -550,7 +550,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -572,7 +572,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -608,7 +608,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -632,7 +632,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -653,7 +653,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -688,7 +688,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -711,7 +711,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -748,7 +748,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -773,7 +773,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -790,7 +790,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
     }

@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
-    /// <summary>
-    /// 检查单
-    /// </summary>
     public class CheckList
     {
         public Guid ID { get; set; }

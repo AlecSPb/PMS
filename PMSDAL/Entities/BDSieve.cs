@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
-    /// <summary>
-    /// 筛子
-    /// </summary>
     public class BDSieve
     {
         public Guid ID { get; set; }

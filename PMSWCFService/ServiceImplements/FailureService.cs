@@ -35,7 +35,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 logger.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -58,7 +58,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 logger.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -85,7 +85,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 logger.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -106,7 +106,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 logger.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -127,7 +127,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 logger.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -148,7 +148,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 logger.Error(ex);
-                return 0;
+                throw ex;
             }
         }
     }

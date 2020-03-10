@@ -146,8 +146,5 @@ namespace PMSDAL
 
         public DbSet<Sample> Samples { get; set; }
         public DbSet<RawMaterialSheet> RawMaterialSheets { get; set; }
-
-
-        public DbSet<DeliveryChase> DeliveryChases { get; set; }
     }
 }

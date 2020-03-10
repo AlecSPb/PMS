@@ -46,7 +46,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -82,7 +82,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -150,7 +150,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
 
         }
@@ -178,7 +178,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
 
         }
@@ -198,7 +198,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
 
         }
@@ -219,7 +219,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -241,7 +241,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
 
         }
@@ -281,7 +281,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -311,7 +311,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
         public List<DcDeliveryItemExtra> GetDeliveryItemExtraByYear(int skip, int take, int year)
@@ -347,7 +347,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -368,7 +368,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -393,7 +393,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
 
         }
@@ -408,7 +408,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -429,7 +429,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
 
         }
@@ -444,7 +444,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -514,7 +514,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
 
@@ -540,7 +540,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                return 0;
+                throw ex;
             }
         }
     }

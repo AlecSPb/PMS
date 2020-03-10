@@ -7,9 +7,6 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
-    /// <summary>
-    /// 检查单历史记录
-    /// </summary>
     public class CheckListHistory
     {
         public Guid ID { get; set; }
