@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
+    /// <summary>
+    /// 模具
+    /// </summary>
     public class BDVHPMold
     {
         public Guid ID { get; set; }

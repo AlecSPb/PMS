@@ -12,6 +12,7 @@ namespace PMSDAL
     public class RawMaterialSheet : ModelBase
     {
         public string Lot { get; set; }
+        public string Composition { get; set; }
         public string Supplier { get; set; }
         public double Weight { get; set; }//kg
         public string Remark { get; set; }

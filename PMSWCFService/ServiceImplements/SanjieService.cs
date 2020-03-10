@@ -32,7 +32,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -53,7 +53,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -78,7 +78,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
         public int GetMaterialInventoryInCountByYear(int year)
@@ -100,7 +100,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
         public int GetMaterialInventoryInCount(string composition, string batchnumber, string pminumber)
@@ -123,7 +123,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -151,7 +151,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -177,7 +177,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -203,7 +203,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -228,7 +228,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -253,7 +253,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -281,7 +281,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -302,7 +302,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -325,7 +325,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -361,7 +361,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -386,7 +386,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -423,7 +423,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -449,7 +449,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
         public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtrasUnCompleted(int skip, int take, string composition, string pminumber, string orderitemnumber)
@@ -485,7 +485,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -511,7 +511,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -531,7 +531,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -568,7 +568,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -590,7 +590,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -605,7 +605,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -634,7 +634,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -660,7 +660,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
         
@@ -687,7 +687,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -713,7 +713,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
+                return 0;
             }
         }
         private void SaveHistory(MaterialOrderItem model, string uid)

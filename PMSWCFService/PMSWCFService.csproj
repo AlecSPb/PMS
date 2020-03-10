@@ -149,6 +149,7 @@
     <Compile Include="DataContracts\DcFeedBack.cs" />
     <Compile Include="DataContracts\DcItemDebit.cs" />
     <Compile Include="DataContracts\DcEnvironmentInfo.cs" />
+    <Compile Include="DataContracts\DcDeliveryChase.cs" />
     <Compile Include="DataContracts\Model\PMS230DataModel.cs" />
     <Compile Include="DataContracts\Model\PMSDeliveryItemExtra.cs" />
     <Compile Include="DataContracts\Model\PMSMaterialOrderItemExtra.cs" />
@@ -172,6 +173,7 @@
     <Compile Include="DataContracts\DcOutSource.cs" />
     <Compile Include="DataContracts\DcOrderHistory.cs" />
     <Compile Include="ServiceContracts\IComplexQuery.cs" />
+    <Compile Include="ServiceContracts\IDeliveryChaseService.cs" />
     <Compile Include="ServiceContracts\IEditLockService.cs" />
     <Compile Include="ServiceContracts\IFailureService.cs" />
     <Compile Include="ServiceContracts\IMachineFixService.cs" />

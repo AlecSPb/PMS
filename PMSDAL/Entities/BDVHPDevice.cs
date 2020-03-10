@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
+    /// <summary>
+    /// 热压设备
+    /// </summary>
     public class BDVHPDevice
     {
         public Guid ID { get; set; }

@@ -16,6 +16,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Lot { get; set; }
         [DataMember]
+        public string Composition { get; set; }
+        [DataMember]
         public string Supplier { get; set; }
         [DataMember]
         public double Weight { get; set; }//kg
