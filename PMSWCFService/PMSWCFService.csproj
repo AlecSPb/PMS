@@ -182,7 +182,9 @@
     <Compile Include="ServiceContracts\IOutSourceService.cs" />
     <Compile Include="ServiceContracts\IPMICounterService.cs" />
     <Compile Include="ServiceContracts\IPMSIndexService.cs" />
+    <Compile Include="ServiceContracts\IRawMaterialSheetService.cs" />
     <Compile Include="ServiceContracts\IRemainInventoryService.cs" />
+    <Compile Include="ServiceContracts\ISampleService.cs" />
     <Compile Include="ServiceContracts\IStatisticManager.cs" />
     <Compile Include="ServiceContracts\ITaskPlanService.cs" />
     <Compile Include="ServiceContracts\IToDoService.cs" />
