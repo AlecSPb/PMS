@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
+    /// <summary>
+    /// 供应商
+    /// </summary>
     public class BDSupplier
     {
         public Guid ID { get; set; }

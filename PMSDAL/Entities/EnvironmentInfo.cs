@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
+    /// <summary>
+    /// 用于存储自动记录的环境温度湿度
+    /// </summary>
     public class EnvironmentInfo
     {
         public Guid ID { get; set; }
