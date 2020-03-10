@@ -309,6 +309,7 @@
     
     <Style x:Key="StyleTextBoxTouch" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
         <Setter Property="FontSize" Value="{StaticResource TabletFontTouch}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
     </Style>
     
     <Style x:Key="StyleTextBoxLeft" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">

@@ -86,6 +86,8 @@
     <Compile Include="PMICounterGroup.cs" />
     <Compile Include="ProductType.cs" />
     <Compile Include="QuickVHPMessege.cs" />
+    <Compile Include="RawMaterialSheetState.cs" />
+    <Compile Include="SampleType.cs" />
     <Compile Include="SimpleState.cs" />
     <Compile Include="OrderPolicyType.cs" />
     <Compile Include="OrderPriority.cs" />

@@ -9,13 +9,18 @@ namespace PMSClient.Express.CheckHelper
     public class ExpressHelper
     {
 
-        public ErrorMessage  CheckSF(string number)
+        public ErrorMessage CheckSF(string number)
         {
             ErrorMessage message = new ErrorMessage();
-            message.Item = $"顺丰单号:{number}可能存在错误";
-            if (number.Length != 12)
+            message.Item = number;
+
+            if (number.Length != 15)
             {
-                message.Errors.Add("顺丰单号长度为12位");
+                message.Errors.Add("顺丰新单号长度为15位");
+            }
+            if (!number.StartsWith("SF"))
+            {
+                message.Errors.Add("顺丰新单号要以SF开头");
             }
             return message;
         }
@@ -24,13 +29,14 @@ namespace PMSClient.Express.CheckHelper
         public ErrorMessage CheckUPS(string number)
         {
             ErrorMessage message = new ErrorMessage();
-            message.Item = $"UPS单号:{number}可能存在错误";
-            if (number.Length != 16)
+            message.Item = number;
+
+            if (number.Length != 18)
             {
-                message.Errors.Add("UPS单号长度为12位");
+                message.Errors.Add("UPS单号长度为18位");
 
             }
-            if (number.StartsWith("1Z"))
+            if (!number.StartsWith("1Z"))
             {
                 message.Errors.Add("UPS单号通常以1Z开头");
 
@@ -42,10 +48,13 @@ namespace PMSClient.Express.CheckHelper
         public string ConcatErrorMessage(ErrorMessage message)
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine(message.Item);
-            foreach (var error in message.Errors)
+            if (message.Errors.Count > 0)
             {
-                sb.AppendLine(error);
+                sb.AppendLine($"单号:[{ message.Item}]可能存在{message.Errors.Count}个错误,请注意核对");
+                for (int i = 0; i < message.Errors.Count; i++)
+                {
+                    sb.AppendLine($"错误:{i + 1}-{message.Errors[i]}");
+                }
             }
             return sb.ToString();
         }

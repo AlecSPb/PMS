@@ -132,7 +132,7 @@ namespace PMSClient.ViewModel
                 CurrentRecordTest.ProductID = "请手动输入";
                 CurrentRecordTest.Customer = order.CustomerName;
                 CurrentRecordTest.Dimension = order.Dimension;
-                CurrentRecordTest.DimensionActual = order.Dimension;
+                CurrentRecordTest.DimensionActual = order.Dimension.Replace("thick","").Replace("thickness", "").Trim();
                 CurrentRecordTest.OrderDate = order.CreateTime;
             }
         }

@@ -165,6 +165,8 @@
     <Compile Include="DataContracts\Model\PMSReadyOutMaterialModel.cs" />
     <Compile Include="DataContracts\DcToolFilling.cs" />
     <Compile Include="DataContracts\DcToolMilling.cs" />
+    <Compile Include="DataContracts\DcRawMaterialSheet.cs" />
+    <Compile Include="DataContracts\DcSample.cs" />
     <Compile Include="Log\LocalService.cs" />
     <Compile Include="Log\LogService.cs" />
     <Compile Include="DataContracts\DcOutSource.cs" />

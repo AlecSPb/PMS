@@ -50,5 +50,7 @@ namespace PMSWCFService.DataContracts
         public double Thickness4 { get; set; }
         [DataMember]
         public string Defects { get; set; }
+        [DataMember]
+        public string HasPreparedSample { get; set; }
     }
 }

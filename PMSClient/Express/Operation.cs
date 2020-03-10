@@ -74,6 +74,7 @@ namespace PMSClient.Express
 
         private void TraceNumber(string express, string[] numbers, StringBuilder sb)
         {
+            var checker = new CheckHelper.ExpressHelper();
             var api = new KDBird();
             var sf = new SF();
             if (numbers.Length == 0)
@@ -91,6 +92,7 @@ namespace PMSClient.Express
                             sb.AppendLine($"查询的SF单号为{number}");
                             sb.AppendLine($"此单按照发件人为{sf.Sender}-{sf.SenderPhone}来查询，如有变化，联系管理员");
                             sb.AppendLine("--------------------------------------------------------");
+                            sb.AppendLine(checker.ConcatErrorMessage(checker.CheckSF(number)));
                             sb.AppendLine(result);
                         }
                         break;
@@ -101,6 +103,7 @@ namespace PMSClient.Express
                             sb.Append(":");
                             sb.AppendLine(number);
                             sb.AppendLine("--------------------------------------------------------");
+                            sb.AppendLine(checker.ConcatErrorMessage(checker.CheckUPS(number)));
                             string json = api.GetOrderTracesByJson(new Request("", Shipper.UPS, number));
                             string ok_str = ProcessResponce(json);
                             sb.AppendLine(ok_str);

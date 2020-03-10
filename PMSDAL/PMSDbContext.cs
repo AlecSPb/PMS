@@ -141,5 +141,10 @@ namespace PMSDAL
 
         public DbSet<EditLock> EditLocker { get; set; }
 
+
+        public DbSet<BasicDictionary> BasicDictionaries { get; set; }
+
+        public DbSet<Sample> Samples { get; set; }
+        public DbSet<RawMaterialSheet> RawMaterialSheets { get; set; }
     }
 }

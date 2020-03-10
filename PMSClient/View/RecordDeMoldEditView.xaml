@@ -169,8 +169,10 @@
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RDMDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox  Text="{Binding Density,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxTouch}" IsReadOnly="True"/>
-                    <TextBox  Text="{Binding RatioDensity,StringFormat={}{0:P2}}" Style="{StaticResource StyleTextBoxTouch}" IsReadOnly="True"/>
+                    <TextBox  Text="{Binding Density,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxTouch}" IsReadOnly="True"
+                              Background="LightBlue"/>
+                    <TextBox  Text="{Binding RatioDensity,StringFormat={}{0:P2}}" Style="{StaticResource StyleTextBoxTouch}" IsReadOnly="True"
+                              Background="LightBlue"/>
                     <Button  Content="密度计算工具" Style="{StaticResource StyleButtonCommon}" Width="120" 
                              Command="{Binding DataContext.Calculator,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                              VerticalAlignment="Stretch"/>

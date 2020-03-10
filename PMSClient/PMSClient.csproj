@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>96</ApplicationRevision>
+    <ApplicationRevision>101</ApplicationRevision>
     <ApplicationVersion>4.8.125.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -261,6 +261,7 @@
     <Compile Include="ExcelOutputHelper\ExcelOutputSpecialFor230.cs" />
     <Compile Include="ExcelOutputHelper\Libs\SpecialFor230.cs" />
     <Compile Include="ExcelOutputHelper\NPOIHelper.cs" />
+    <Compile Include="Express\CheckHelper\ErrorMessage.cs" />
     <Compile Include="Express\KDBird.cs" />
     <Compile Include="Express\ID.cs" />
     <Compile Include="Express\Useless\KD100.cs" />
@@ -291,6 +292,7 @@
     <Compile Include="Helpers\DeliveryHelper.cs" />
     <Compile Include="Helpers\EditLockHelper.cs" />
     <Compile Include="Helpers\ExitHelper.cs" />
+    <Compile Include="Express\CheckHelper\ExpressHelper.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\Converter\IsLockedConverter.cs" />
     <Compile Include="Helpers\IntegratedSearchService.cs" />
@@ -1770,6 +1772,9 @@
     <Content Include="densitychecklist.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Documents\样品管理思路.txt" />
+    <Resource Include="Documents\初级原来追踪思路.txt" />
+    <Resource Include="Documents\发出产品最总思路.txt" />
     <Content Include="Resource\DocTemplate\Reports\BondingSheet_BK.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2546,6 +2551,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Components\" />
     <Folder Include="ToolWindow\Model\" />
     <Folder Include="View\ToolView\" />
   </ItemGroup>

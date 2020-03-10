@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicDictionary.cs" />
     <Compile Include="Entities\BDElement.cs" />
     <Compile Include="Entities\BDElementGroup.cs" />
     <Compile Include="Entities\BDElementGroupItem.cs" />
@@ -67,7 +68,9 @@
     <Compile Include="Entities\ModelBase.cs" />
     <Compile Include="Entities\OutsideProcess.cs" />
     <Compile Include="Entities\PMICounter.cs" />
+    <Compile Include="Entities\RawMaterialSheet.cs" />
     <Compile Include="Entities\RemainInventory.cs" />
+    <Compile Include="Entities\Sample.cs" />
     <Compile Include="Entities\ToolMold.cs" />
     <Compile Include="Entities\ToolSieve.cs" />
     <Compile Include="Entities\ToolFilling.cs" />
@@ -699,6 +702,10 @@
     <Compile Include="Migrations\202002270323159_change89.Designer.cs">
       <DependentUpon>202002270323159_change89.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003100727143_change90.cs" />
+    <Compile Include="Migrations\202003100727143_change90.Designer.cs">
+      <DependentUpon>202003100727143_change90.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -1177,6 +1184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002270323159_change89.resx">
       <DependentUpon>202002270323159_change89.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003100727143_change90.resx">
+      <DependentUpon>202003100727143_change90.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -34,5 +34,7 @@ namespace PMSDAL
         public double Thickness4 { get; set; }
 
         public string Defects { get; set; }
+
+        public string HasPreparedSample { get; set; }
     }
 }
