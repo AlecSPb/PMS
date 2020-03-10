@@ -15,6 +15,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -37,6 +38,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 SaveHistory(model, uid);
                 return AddRecordDeMold(model);
             }
@@ -51,6 +53,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -72,6 +75,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var result = dc.RecordDeMolds.Where(r => r.State != PMSCommon.SimpleState.作废.ToString())
@@ -92,6 +96,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordDeMold, DcRecordDeMold>());
@@ -115,6 +120,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from r in dc.RecordDeMolds
@@ -136,6 +142,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     return dc.RecordDeMolds.Where(r => r.State != PMSCommon.SimpleState.作废.ToString()).Count();
@@ -153,6 +160,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -175,6 +183,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 SaveHistory(model, uid);
                 return UpdateRecordDeMold(model);
             }
@@ -190,6 +199,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<DcRecordDeMold, RecordDeMoldHistory>());
@@ -212,6 +222,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var result = dc.RecordDeMolds.Where(r => r.State != PMSCommon.SimpleState.作废.ToString()

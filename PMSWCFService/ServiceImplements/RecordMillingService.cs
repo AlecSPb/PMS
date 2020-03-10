@@ -15,6 +15,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -37,6 +38,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 SaveHistory(model, uid);
                 return AddRecordMilling(model);
             }
@@ -51,6 +53,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -72,6 +75,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     return dc.RecordMillings.Where(r => r.State != PMSCommon.SimpleState.作废.ToString()).Count();
@@ -90,6 +94,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
@@ -111,6 +116,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
@@ -134,6 +140,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from r in dc.RecordMillings
@@ -155,6 +162,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -177,6 +185,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 SaveHistory(model, uid);
                 return UpdateRecordMilling(model);
             }
@@ -190,6 +199,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<DcRecordMilling, RecordMillingHistory>());
@@ -212,6 +222,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
@@ -234,6 +245,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from r in dc.RecordMillings
@@ -253,6 +265,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());

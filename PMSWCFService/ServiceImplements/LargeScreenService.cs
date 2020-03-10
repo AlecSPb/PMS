@@ -17,6 +17,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.RecordBondings
@@ -38,6 +39,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.RecordBondings
@@ -56,6 +58,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 var result = new List<DcStatistic>();
                 var dc = new PMSDbContext();
                 var query = from i in dc.RecordBondings
@@ -77,6 +80,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var dateStart = planDate.Date;
@@ -114,6 +118,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var today = planDate.Date;
@@ -153,6 +158,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     List<DcStatistic> result = new List<DcStatistic>();
@@ -178,6 +184,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     List<DcRecordMilling> result = new List<DcRecordMilling>();
@@ -202,6 +209,7 @@ namespace PMSWCFService
 
         public List<DcPlanWithMisson> GetPlanOfMachine()
         {
+                XS.Run();
             using (var dc = new PMSDAL.PMSDbContext())
             {
                 var queryPlan = (from p in dc.VHPPlans

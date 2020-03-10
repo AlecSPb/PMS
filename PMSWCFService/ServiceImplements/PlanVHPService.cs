@@ -17,6 +17,7 @@ namespace PMSWCFService
         {
             try
             {                //自动生成搜索号
+                XS.Run();
                 model.SearchCode = $"{model.PlanDate.ToString("yyMMdd")}-{model.VHPDeviceCode}";
                 using (var dc = new PMSDbContext())
                 {
@@ -40,6 +41,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     SaveHistory(model, uid);
@@ -57,6 +59,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -81,6 +84,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var result = from p in dc.VHPPlans
@@ -101,6 +105,7 @@ namespace PMSWCFService
             Checker.CheckIfCanRun();
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<PMSPlanVHP, DcPlanVHP>());
@@ -123,6 +128,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 //自动生成搜索号
                 model.SearchCode = $"{model.PlanDate.ToString("yyMMdd")}-{model.VHPDeviceCode}";
                 using (var dc = new PMSDbContext())
@@ -147,6 +153,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     SaveHistory(model, uid);
@@ -164,6 +171,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<DcPlanVHP, PMSPlanVHPHistory>());

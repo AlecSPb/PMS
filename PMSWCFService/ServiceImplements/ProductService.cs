@@ -16,6 +16,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -37,6 +38,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 SaveHistory(model, uid);
                 return AddProduct(model);
             }
@@ -51,6 +53,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -75,6 +78,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.Products
@@ -98,6 +102,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.Products
@@ -125,6 +130,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.Products
@@ -147,6 +153,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.Products
@@ -176,6 +183,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.Products
@@ -200,6 +208,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -221,6 +230,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 SaveHistory(model, uid);
                 return UpdateProduct(model);
             }
@@ -235,6 +245,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<DcProduct, ProductHistory>());

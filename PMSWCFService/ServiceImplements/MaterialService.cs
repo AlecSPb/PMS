@@ -18,6 +18,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -41,6 +42,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 SaveHistory(model, uid);
                 return AddMaterialNeed(model);
             }
@@ -55,6 +57,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -81,6 +84,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 SaveHistory(model, uid);
                 return AddMaterialOrder(model);
             }
@@ -95,6 +99,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -118,6 +123,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 SaveHistory(model, uid);
                 return AddMaterialOrderItem(model);
             }
@@ -132,6 +138,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.MaterialOrderItems
@@ -151,6 +158,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -175,6 +183,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -205,6 +214,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -229,6 +239,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<MaterialNeed, DcMaterialNeed>());
@@ -253,6 +264,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     return dc.MaterialNeeds.Where(m => m.Composition.Contains(composition)
@@ -271,6 +283,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg =>
@@ -299,6 +312,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg =>
@@ -327,6 +341,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrders
@@ -349,6 +364,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrders
@@ -368,6 +384,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg =>
@@ -394,6 +411,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<MaterialOrderItem, DcMaterialOrderItem>());
@@ -417,6 +435,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrderItems
@@ -437,6 +456,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 var date = new DateTime(year, 1, 1);
                 using (var dc = new PMSDbContext())
                 {
@@ -472,6 +492,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 var date = new DateTime(year, 1, 1);
                 using (var dc = new PMSDbContext())
                 {
@@ -497,6 +518,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg =>
@@ -534,6 +556,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrderItems
@@ -560,6 +583,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg =>
@@ -597,6 +621,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrderItems
@@ -622,6 +647,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<MaterialOrderItem, DcMaterialOrderItem>());
@@ -644,6 +670,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrderItems
@@ -663,6 +690,7 @@ namespace PMSWCFService
         public int UpdateMaterialNeed(DcMaterialNeed model)
         {
 
+                XS.Run();
             using (var dc = new PMSDbContext())
             {
                 try
@@ -688,6 +716,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 SaveHistory(model, uid);
                 return UpdateMaterialNeed(model);
             }
@@ -702,6 +731,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -727,6 +757,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 SaveHistory(model, uid);
                 return UpdateMaterialOrder(model);
             }
@@ -741,6 +772,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -763,6 +795,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 SaveHistory(model, uid);
                 return UpdateMaterialOrderItem(model);
             }
@@ -778,6 +811,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg =>
@@ -803,6 +837,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg =>
@@ -828,6 +863,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg =>
@@ -860,6 +896,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     return dc.MaterialOrders.Where(i => i.State == MaterialOrderState.未核验.ToString()).Count() > 0;

@@ -23,6 +23,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var db = new PMSDbContext())
                 {
                     var query = from dd in db.DeliveryItems
@@ -67,6 +68,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var db = new PMSDbContext())
                 {
                     var query = from d in db.DeliveryItems

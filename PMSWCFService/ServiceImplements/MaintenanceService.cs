@@ -15,6 +15,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc=new PMSDbContext())
                 {
                     int result = 0;
@@ -36,6 +37,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -57,6 +59,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 throw new NotImplementedException();
             }
             catch (Exception ex)
@@ -71,6 +74,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 throw new NotImplementedException();
             }
             catch (Exception ex)
@@ -85,6 +89,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 throw new NotImplementedException();
             }
             catch (Exception ex)
@@ -99,6 +104,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 throw new NotImplementedException();
             }
             catch (Exception ex)
@@ -113,6 +119,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var db=new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<MaintenanceRecord, DcMaintenanceRecord>());
@@ -136,6 +143,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var db = new PMSDbContext())
                 {
                     var query = from m in db.MaintenanceRecords
@@ -157,6 +165,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -178,6 +187,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;

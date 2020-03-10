@@ -25,6 +25,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -48,6 +49,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -72,6 +74,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -93,6 +96,8 @@ namespace PMSWCFService
 
         public int AddElement(DcBDElement model)
         {
+            XS.Run();
+
             int result = 0;
             try
             {
@@ -115,6 +120,7 @@ namespace PMSWCFService
 
         public int AddElementGroupAndItems(string groupName, List<DcBDElementGroupItem> elements)
         {
+                XS.Run();
             int result = 0;
             try
             {
@@ -147,6 +153,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -170,6 +177,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -193,6 +201,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -216,6 +225,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -239,6 +249,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -260,6 +271,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -281,6 +293,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -302,6 +315,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 throw new NotImplementedException();
             }
             catch (Exception ex)
@@ -316,6 +330,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -338,6 +353,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -359,6 +375,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -380,6 +397,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -401,6 +419,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<BDCompound, DcBDCompound>());
@@ -420,6 +439,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<BDCompound, DcBDCompound>());
@@ -441,6 +461,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var model = dc.Compounds.Where(i => i.MaterialName.Contains(searchComposition));
@@ -458,6 +479,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<BDCustomer, DcBDCustomer>());
@@ -478,6 +500,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<BDDeliveryAddress, DcBDDeliveryAddress>());
@@ -497,6 +520,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<BDElementGroup, DcBDElementGroup>());
@@ -515,6 +539,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<BDElementGroupItem, DcBDElementGroupItem>());
@@ -533,6 +558,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<BDElement, DcBDElement>());
@@ -552,6 +578,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<BDSupplier, DcBDSupplier>());
@@ -571,6 +598,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<BDVHPDevice, DcBDVHPDevice>());
@@ -590,6 +618,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<BDVHPMold, DcBDVHPMold>());
@@ -609,6 +638,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<BDVHPProcess, DcBDVHPProcess>());
@@ -628,6 +658,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from c in dc.Compounds
@@ -647,6 +678,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -670,6 +702,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -692,6 +725,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -712,6 +746,7 @@ namespace PMSWCFService
 
         public int UpdateElement(DcBDElement model)
         {
+                XS.Run();
             int result = 0;
             try
             {
@@ -736,6 +771,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -759,6 +795,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -781,6 +818,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
@@ -804,6 +842,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {

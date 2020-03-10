@@ -29,11 +29,17 @@ namespace PMSWCFService
         /// <param name="caller"></param>
         public static void Run([CallerMemberName] string caller = "")
         {
-            //检查授权
-            Checker.CheckIfCanRun();
+            try
+            {
+                //检查授权
+                Checker.CheckIfCanRun();
+                //记录日志
+                log.Information(caller);
+            }
+            catch (Exception)
+            {
 
-            //记录日志
-            log.Information(caller);
+            }
         }
     }
 }

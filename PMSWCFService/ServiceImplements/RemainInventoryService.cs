@@ -15,6 +15,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<DcRemainInventory, RemainInventory>());
@@ -34,6 +35,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.RemainInventories
@@ -59,6 +61,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.RemainInventories
@@ -81,6 +84,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<DcRemainInventory, RemainInventory>());

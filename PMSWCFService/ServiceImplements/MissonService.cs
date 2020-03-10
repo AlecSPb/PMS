@@ -20,6 +20,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg =>
@@ -52,6 +53,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
@@ -75,6 +77,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg =>
@@ -110,6 +113,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
@@ -135,6 +139,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg =>
@@ -167,6 +172,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
@@ -189,6 +195,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg =>
@@ -221,6 +228,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
@@ -243,6 +251,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
@@ -269,6 +278,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var queryPlan = (from p in dc.VHPPlans
@@ -303,6 +313,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var queryPlan = (from p in dc.VHPPlans
@@ -332,6 +343,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var queryPlan = (from p in dc.VHPPlans
@@ -365,6 +377,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var queryPlan = (from p in dc.VHPPlans
@@ -389,6 +402,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 var startDate = dateStart.Date;
                 var endDate = dateEnd.Date;
                 using (var dc = new PMSDAL.PMSDbContext())
@@ -425,6 +439,7 @@ namespace PMSWCFService
 
         public int GetPlanWithMissonCheckedCountByDateRange(DateTime dateStart, DateTime dateEnd)
         {
+                XS.Run();
             var startDate = dateStart.Date;
             var endDate = dateEnd.Date;
             try
@@ -455,6 +470,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 var startDate = dateStart.Date;
                 var endDate = dateEnd.Date;
                 using (var dc = new PMSDAL.PMSDbContext())
@@ -492,6 +508,7 @@ namespace PMSWCFService
 
         public int GetPlanWithMissonCheckedCountByDateRange2(DateTime dateStart, DateTime dateEnd, string composition)
         {
+                XS.Run();
             var startDate = dateStart.Date;
             var endDate = dateEnd.Date;
             try
@@ -524,6 +541,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var query = from p in dc.VHPPlans
@@ -558,6 +576,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var query = from p in dc.VHPPlans
@@ -580,6 +599,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var query = from p in dc.VHPPlans
@@ -616,6 +636,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var query = from p in dc.VHPPlans
@@ -640,6 +661,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
@@ -661,6 +683,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var query = from p in dc.VHPPlans
@@ -696,6 +719,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var query = from p in dc.VHPPlans
@@ -719,6 +743,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var query = from p in dc.VHPPlans
@@ -756,6 +781,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var query = from p in dc.VHPPlans
@@ -781,6 +807,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     return dc.Orders.Where(o => o.Priority.Contains("紧急")

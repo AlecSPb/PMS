@@ -15,6 +15,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<DcOutSource, OutSource>());
@@ -35,6 +36,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var entity = dc.OutSources.Find(id);
@@ -49,16 +51,17 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcOutSource> GetOutSources(int s, int t, string orderlot,string ordername, string supplier)
+        public List<DcOutSource> GetOutSources(int s, int t, string orderlot, string ordername, string supplier)
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<OutSource, DcOutSource>());
                     var query = from i in dc.OutSources
                                 where i.State != PMSCommon.OrderState.作废.ToString()
-                                &&i.OrderLot.Contains(orderlot)
+                                && i.OrderLot.Contains(orderlot)
                                 && i.OrderName.Contains(ordername)
                                 && i.Supplier.Contains(supplier)
                                 orderby i.CreateTime descending
@@ -73,10 +76,11 @@ namespace PMSWCFService
             }
         }
 
-        public int GetOutSourcesCount(string orderlot,string ordername, string supplier)
+        public int GetOutSourcesCount(string orderlot, string ordername, string supplier)
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.OutSources
@@ -99,6 +103,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<DcOutSource, OutSource>());
@@ -121,6 +126,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<DcOutSource, OutSourceHistory>());

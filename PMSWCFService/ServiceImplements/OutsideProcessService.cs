@@ -15,6 +15,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<DcOutsideProcess, OutsideProcess>());
@@ -35,6 +36,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<OutsideProcess, DcOutsideProcess>());
@@ -42,7 +44,7 @@ namespace PMSWCFService
                                 where i.State != PMSCommon.OutsideProcessState.作废.ToString()
                                 && i.ProductID.Contains(productid)
                                 && i.Composition.Contains(composition)
-                                orderby i.ProductID descending,i.CreateTime descending
+                                orderby i.ProductID descending, i.CreateTime descending
                                 select i;
                     return Mapper.Map<List<OutsideProcess>, List<DcOutsideProcess>>(query.Skip(s).Take(t).ToList());
                 }
@@ -58,6 +60,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.OutsideProcesses
@@ -79,12 +82,13 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<OutsideProcess, DcOutsideProcess>());
                     var query = from i in dc.OutsideProcesses
                                 where i.State == PMSCommon.OutsideProcessState.待发出.ToString()
-                                orderby  i.ProductID descending,i.CreateTime descending
+                                orderby i.ProductID descending, i.CreateTime descending
                                 select i;
                     return Mapper.Map<List<OutsideProcess>, List<DcOutsideProcess>>(query.Skip(s).Take(t).ToList());
                 }
@@ -100,6 +104,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<OutsideProcess, DcOutsideProcess>());
@@ -121,6 +126,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.OutsideProcesses
@@ -140,6 +146,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.OutsideProcesses
@@ -159,6 +166,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<DcOutsideProcess, OutsideProcess>());

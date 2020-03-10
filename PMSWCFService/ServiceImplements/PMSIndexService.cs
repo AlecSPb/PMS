@@ -15,6 +15,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     var currentOrder = dc.Orders.Find(orderid);
@@ -42,6 +43,7 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
                 using (var dc = new PMSDbContext())
                 {
                     double planCount = dc.VHPPlans.Where(i => i.OrderID == orderid).Count();

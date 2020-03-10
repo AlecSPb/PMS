@@ -17,6 +17,8 @@ namespace PMSWCFService
             {
                 try
                 {
+                    XS.Run();
+
                     Mapper.Initialize(config =>
                     {
                         config.CreateMap<EditLock, DcEditLock>();
@@ -42,6 +44,8 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
+
                 Mapper.Initialize(config =>
                 {
                     config.CreateMap<DcEditLock, EditLock>();
@@ -64,6 +68,8 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
+
                 using (var db = new PMSDbContext())
                 {
                     var entity = db.EditLocker.Where(i => i.FingerPrint == fingerprint).FirstOrDefault();
@@ -85,6 +91,8 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
+
                 using (var db = new PMSDbContext())
                 {
                     db.EditLocker.RemoveRange(db.EditLocker.Where(i => i.ID != null));
@@ -102,6 +110,8 @@ namespace PMSWCFService
         {
             try
             {
+                XS.Run();
+
                 using (var db = new PMSDbContext())
                 {
                     db.EditLocker.RemoveRange(db.EditLocker.Where(i => i.Operator == locker));
