@@ -72,6 +72,10 @@ namespace PMSClient.DataProcess.ScanInput
                             model = ModelHelper.GetOutsideProcess(record_test);
                         }
 
+                        //TODO:以后考虑如果测试记录找不到，就直接从热压记录中获取
+
+
+
                         //插入到绑定记录
                         using (var service = new OutsideProcessServiceClient())
                         {
@@ -120,7 +124,7 @@ namespace PMSClient.DataProcess.ScanInput
         //{
         //    if (item.IsValid)
         //    {
-        //        using (var service = new ProductServiceClient())
+        //        using (var service = new MissonServiceClient())
         //        {
         //            //这里增加一个服务？
         //            int count = service.GetProductByProductID(item.Lot).Count();

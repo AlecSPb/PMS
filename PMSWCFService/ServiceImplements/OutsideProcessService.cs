@@ -44,7 +44,7 @@ namespace PMSWCFService
                                 where i.State != PMSCommon.OutsideProcessState.作废.ToString()
                                 && i.ProductID.Contains(productid)
                                 && i.Composition.Contains(composition)
-                                orderby i.ProductID descending, i.CreateTime descending
+                                orderby i.CreateTime descending, i.ProductID descending
                                 select i;
                     return Mapper.Map<List<OutsideProcess>, List<DcOutsideProcess>>(query.Skip(s).Take(t).ToList());
                 }
@@ -88,7 +88,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<OutsideProcess, DcOutsideProcess>());
                     var query = from i in dc.OutsideProcesses
                                 where i.State == PMSCommon.OutsideProcessState.待发出.ToString()
-                                orderby i.ProductID descending, i.CreateTime descending
+                                orderby i.CreateTime descending, i.ProductID descending
                                 select i;
                     return Mapper.Map<List<OutsideProcess>, List<DcOutsideProcess>>(query.Skip(s).Take(t).ToList());
                 }
@@ -110,7 +110,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<OutsideProcess, DcOutsideProcess>());
                     var query = from i in dc.OutsideProcesses
                                 where i.State == PMSCommon.OutsideProcessState.已发出.ToString()
-                                orderby i.ProductID descending, i.CreateTime descending
+                                orderby i.CreateTime descending, i.ProductID descending
                                 select i;
                     return Mapper.Map<List<OutsideProcess>, List<DcOutsideProcess>>(query.Skip(s).Take(t).ToList());
                 }

@@ -16,7 +16,7 @@ namespace PMSClient.Helpers.Converter
             double threshold = (double)value;
             if (threshold < 0.9)
             {
-                return new SolidColorBrush(Colors.Red);
+                return new SolidColorBrush(Colors.LightSalmon);
             }
             else
             {

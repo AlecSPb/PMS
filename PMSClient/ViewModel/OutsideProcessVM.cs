@@ -9,6 +9,7 @@ using PMSClient.MainService;
 using System.Collections.ObjectModel;
 
 using PMSClient.OutsideProcessService;
+using System.Windows;
 
 namespace PMSClient.ViewModel
 {
@@ -38,7 +39,54 @@ namespace PMSClient.ViewModel
             Print1 = new RelayCommand(ActionPrint1, CanPrint1);
             Print2 = new RelayCommand(ActionPrint2, CanPrint1);
             ScanAdd = new RelayCommand(ActionScanAdd, CanScanAdd);
+
+            Send = new RelayCommand<DcOutsideProcess>(ActionSend, CanEdit);
+            Receive = new RelayCommand<DcOutsideProcess>(ActionReceive, CanEdit);
         }
+
+        private void ActionReceive(DcOutsideProcess obj)
+        {
+            AddProcess(obj, "Receive");
+        }
+
+        private void ActionSend(DcOutsideProcess obj)
+        {
+            AddProcess(obj, "Send");
+        }
+
+        private void AddProcess(DcOutsideProcess obj, string type = "Send")
+        {
+            string ask_msg = type == "Send" ? "发出" : "取回";
+            if (!PMSDialogService.ShowYesNo("请问", $"确定要为[{obj.ProductID}]追加[{ask_msg}]记录吗？"))
+                return;
+            if (obj == null) return;
+
+            try
+            {
+                using (var s = new OutsideProcessServiceClient())
+                {
+                    string type_value = "";
+                    if (type == "Send")
+                    {
+                        type_value = Application.Current.Resources["ButtonSended"] as string;
+                        obj.State = PMSCommon.OutsideProcessState.已发出.ToString();
+                    }
+                    else
+                    {
+                        type_value = Application.Current.Resources["ButtonGetBack"] as string;
+                        obj.State = PMSCommon.OutsideProcessState.已取回.ToString();
+                    }
+                    obj.ProgressBar += $"{DateTime.Now.ToString("yyyy-MM-dd")}{type_value};";
+                    s.Update(obj);
+                }
+                SetPageParametersWhenConditionChange();
+            }
+            catch (Exception ex)
+            {
+                PMSDialogService.ShowWarning(ex.Message);
+            }
+        }
+
 
         private void ActionScanAdd()
         {
@@ -48,14 +96,14 @@ namespace PMSClient.ViewModel
 
             tool.TxtText.Visibility = System.Windows.Visibility.Visible;
             tool.CboText.Visibility = System.Windows.Visibility.Visible;
-            tool.CboText.Text = "外协商";
+            tool.TxtText.Text = "委托方";
 
             var context = new DataProcess.ScanInput.ScanInputOutsideProcessVM();
             var processors = new List<string>();
             PMSMethods.SetListDS<PMSCommon.OutsideProcessor>(processors);
             context.Texts.Clear();
             processors.ForEach(i => context.Texts.Add(i));
-            
+
             context.CurrentText = PMSCommon.OutsideProcessor.成都炬科光学.ToString();
             tool.DataContext = context;
             tool.Show();
@@ -221,6 +269,8 @@ namespace PMSClient.ViewModel
         public ObservableCollection<DcOutsideProcess> OutsideProcesses { get; set; }
         #endregion
         public RelayCommand<DcOutsideProcess> Duplicate { get; set; }
+        public RelayCommand<DcOutsideProcess> Send { get; set; }
+        public RelayCommand<DcOutsideProcess> Receive { get; set; }
         public RelayCommand Print1 { get; set; }
         public RelayCommand Print2 { get; set; }
         public RelayCommand ScanAdd { get; set; }

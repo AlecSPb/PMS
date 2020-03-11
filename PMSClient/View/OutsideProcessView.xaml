@@ -56,6 +56,14 @@
                                 <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                <Button Content="S" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Send,
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}" ToolTip="发出Send" MinWidth="20"/>
+                                <Button Content="R" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Receive,
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}" ToolTip="取回Receive" MinWidth="20"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
