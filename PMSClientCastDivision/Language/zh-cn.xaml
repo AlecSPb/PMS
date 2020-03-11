@@ -85,8 +85,8 @@
     <sys:String x:Key="PageMaterialOrder">订单</sys:String>
     <sys:String x:Key="PageMaterialOrderEdit">原料订单编辑</sys:String>
     <sys:String x:Key="PageMaterialOrderItemEdit">原料订单项编辑</sys:String>
-    <sys:String x:Key="PageMaterialOrderItemList">流水</sys:String>
-    <sys:String x:Key="PageMaterialOrderItemListUnCompleted">流水[未完成]</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemList">订单流水</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemListUnCompleted">订单流水[未完成]</sys:String>
 
     <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
     <sys:String x:Key="PageMaterialInventoryIn">入库-SJ到PM</sys:String>
@@ -743,6 +743,23 @@
     <sys:String x:Key="BDCCreateTime">创建时间</sys:String>
     <sys:String x:Key="BDCCreator">创建者</sys:String>
     
+    <!--原料库-->
+    <sys:String x:Key="PageRawMaterialSheet">基础原料库</sys:String>
+    <sys:String x:Key="PageRawMaterialSheetEdit">基础原料库-编辑</sys:String>
+
+    <sys:String x:Key="RMSID">ID</sys:String>
+    <sys:String x:Key="RMSState">状态</sys:String>
+    <sys:String x:Key="RMSCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RMSCreator">创建者</sys:String>
+    <sys:String x:Key="RMSLot">Lot</sys:String>
+    <sys:String x:Key="RMSComposition">成分</sys:String>
+    <sys:String x:Key="RMSSupplier">厂商</sys:String>
+    <sys:String x:Key="RMSWeight">重量</sys:String>
+    <sys:String x:Key="RMSRemark">备注</sys:String>
+    <sys:String x:Key="RMSStoreTime">入库时间</sys:String>
+
+
+
     <!--每个页面最前面的提示信息-->
     <sys:String x:Key="HelpTipOrderEdit">
         注意：请仔细输入每一项，能选择就选择，没有选项手动输入的时候一定要规范

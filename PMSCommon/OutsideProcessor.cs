@@ -8,9 +8,10 @@ namespace PMSCommon
 {
     public enum OutsideProcessor
     {
-        炬科光学,
-        超纯金属,
-        TCB
+        成都炬科光学,
+        成都超纯金属,
+        苏州精美科光,
+        美国TCB
 
     }
 }

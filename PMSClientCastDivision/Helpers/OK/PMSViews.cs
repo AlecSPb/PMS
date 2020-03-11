@@ -37,7 +37,7 @@ namespace PMSClient
         Misson,
         MissonSelect,
         Plan,
-        PlanSelect, 
+        PlanSelect,
         PlanEdit,
         PlanSearch,
         RecordMilling,
@@ -87,10 +87,12 @@ namespace PMSClient
         AdminAccesses,
         AdminAccess,
         AdminRole,
-       FeedBack,
-       FeedBackEdit,
-       Output,
-       Compound,
-       Debug
+        FeedBack,
+        FeedBackEdit,
+        Output,
+        Compound,
+        Debug,
+        RawMaterialSheet,
+        RawMaterialSheetEdit
     }
 }

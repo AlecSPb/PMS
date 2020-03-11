@@ -337,6 +337,11 @@
     <sys:String x:Key="ButtonSieve">筛网</sys:String>
     <sys:String x:Key="ButtonBarCode">条码</sys:String>
 
+    <sys:String x:Key="ButtonUnSend">待发出</sys:String>
+    <sys:String x:Key="ButtonSended">发出</sys:String>
+    <sys:String x:Key="ButtonGetBack">取回</sys:String>
+    <sys:String x:Key="ButtonFail">失败</sys:String>
+    <sys:String x:Key="ButtonReMachine">再次加工</sys:String>
 
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>
@@ -968,8 +973,8 @@
     <sys:String x:Key="RIDetails">细节</sys:String>
 
     <!--OutsideProcess-->
-    <sys:String x:Key="PageOutsideProcess">外协加工</sys:String>
-    <sys:String x:Key="PageOutsideProcessEdit">外协加工编辑</sys:String>
+    <sys:String x:Key="PageOutsideProcess">外协追踪</sys:String>
+    <sys:String x:Key="PageOutsideProcessEdit">外协追踪编辑</sys:String>
     <sys:String x:Key="OPID">ID</sys:String>
     <sys:String x:Key="OPCreator">创建者</sys:String>
     <sys:String x:Key="OPCreateTime">创建时间</sys:String>

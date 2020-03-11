@@ -37,6 +37,26 @@ namespace PMSClient.ViewModel
             Duplicate = new RelayCommand<DcOutsideProcess>(ActionDuplicate, CanDuplicate);
             Print1 = new RelayCommand(ActionPrint1, CanPrint1);
             Print2 = new RelayCommand(ActionPrint2, CanPrint1);
+            ScanAdd = new RelayCommand(ActionScanAdd, CanScanAdd);
+        }
+
+        private void ActionScanAdd()
+        {
+            var tool = new DataProcess.ScanInput.ScanInput();
+            tool.TxtNumber.Visibility = System.Windows.Visibility.Collapsed;
+            tool.CboNumber.Visibility = System.Windows.Visibility.Collapsed;
+            tool.TxtPlate.Visibility = System.Windows.Visibility.Collapsed;
+            tool.CboPlate.Visibility = System.Windows.Visibility.Collapsed;
+
+
+            var context = new DataProcess.ScanInput.ScanInputOutsideProcessVM();
+            tool.DataContext = context;
+            tool.Show();
+        }
+
+        private bool CanScanAdd()
+        {
+            return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.EditOutsideProcess);
         }
 
         private void ActionPrint2()
@@ -196,6 +216,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcOutsideProcess> Duplicate { get; set; }
         public RelayCommand Print1 { get; set; }
         public RelayCommand Print2 { get; set; }
+        public RelayCommand ScanAdd { get; set; }
 
     }
 }

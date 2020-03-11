@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7903baf5-bd50-45c3-a12c-1d1fa202897d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.16.254:8002/RawMaterialSheetService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RawMaterialSheetService.wsdl" MetadataType="Wsdl" ID="9ce50d31-b5ab-4a17-9e0e-5585907c286f" SourceId="1" SourceUrl="http://192.168.16.254:8002/RawMaterialSheetService.svc?wsdl" />
+    <MetadataFile FileName="RawMaterialSheetService.xsd" MetadataType="Schema" ID="69521d9a-6724-47c6-91a8-df65f85ecef4" SourceId="1" SourceUrl="http://192.168.16.254:8002/RawMaterialSheetService.svc?xsd=xsd1" />
+    <MetadataFile FileName="RawMaterialSheetService1.xsd" MetadataType="Schema" ID="1221d6f4-289b-456d-a45a-080285d50350" SourceId="1" SourceUrl="http://192.168.16.254:8002/RawMaterialSheetService.svc?xsd=xsd2" />
+    <MetadataFile FileName="RawMaterialSheetService.disco" MetadataType="Disco" ID="d408fbd1-1a6c-4f73-a86c-5e13519eeb14" SourceId="1" SourceUrl="http://192.168.16.254:8002/RawMaterialSheetService.svc?disco" />
+    <MetadataFile FileName="RawMaterialSheetService2.xsd" MetadataType="Schema" ID="8f5e9455-57e2-43a9-8a3b-cd466e05184c" SourceId="1" SourceUrl="http://192.168.16.254:8002/RawMaterialSheetService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

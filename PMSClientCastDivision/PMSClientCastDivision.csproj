@@ -182,6 +182,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\Other\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SanjieService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -219,6 +224,8 @@
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
     <Compile Include="ViewModel\CompoundVM.cs" />
     <Compile Include="ViewModel\DebugVM.cs" />
+    <Compile Include="ViewModel\RawMaterialSheetEditVM.cs" />
+    <Compile Include="ViewModel\RawMaterialSheetVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryInVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryOutVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemListUnCompletedVM.cs" />
@@ -233,6 +240,12 @@
     </Compile>
     <Compile Include="View\DebugView.xaml.cs">
       <DependentUpon>DebugView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RawMaterialSheetEditView.xaml.cs">
+      <DependentUpon>RawMaterialSheetEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RawMaterialSheetView.xaml.cs">
+      <DependentUpon>RawMaterialSheetView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
@@ -336,7 +349,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Resource\Language\zh-cn.xaml">
+    <Page Include="Language\zh-cn.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -365,6 +378,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\DebugView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RawMaterialSheetEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RawMaterialSheetView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -425,6 +446,26 @@
     <Content Include="Resource\DocTemplate\Reports\MaterialDeliverySheet.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\Other\PMSClient.Other.DcRawMaterialSheet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Other\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Other\configuration.svcinfo" />
+    <None Include="Service References\Other\configuration91.svcinfo" />
+    <None Include="Service References\Other\RawMaterialSheetService.disco" />
+    <None Include="Service References\Other\RawMaterialSheetService.wsdl" />
+    <None Include="Service References\Other\RawMaterialSheetService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Other\RawMaterialSheetService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Other\RawMaterialSheetService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\SanjieService\SanjieService1.disco" />
     <None Include="Service References\SanjieService\SanjieService1.wsdl" />
     <None Include="Service References\SanjieService\SanjieService3.xsd">
@@ -659,6 +700,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\BasicService\" />
     <WCFMetadataStorage Include="Service References\HeartBeatService\" />
+    <WCFMetadataStorage Include="Service References\Other\" />
     <WCFMetadataStorage Include="Service References\SanjieService\" />
     <WCFMetadataStorage Include="Service References\UserSimpleService\" />
   </ItemGroup>

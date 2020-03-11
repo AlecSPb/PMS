@@ -27,23 +27,24 @@ namespace PMSClient.View
 
         private void BtnSend_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}发出;");
+            PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}{BtnSend.Content};");
+            cboSuppliers.SelectedItem = PMSCommon.OutsideProcessState.已发出.ToString();
         }
 
         private void BtnReceive_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}返回;");
+            PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}{BtnReceive.Content};");
+            cboSuppliers.SelectedItem = PMSCommon.OutsideProcessState.已取回.ToString();
         }
 
         private void BtnFail_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}加工失败;");
-
+            PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}{BtnFail.Content};");
         }
 
         private void BtnAgain_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}再次加工;");
+            PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}{BtnAgain.Content};");
 
         }
     }

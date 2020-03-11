@@ -1,0 +1,129 @@
+﻿<UserControl x:Class="PMSClient.View.RawMaterialSheetEditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSClient.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=RawMaterialSheetEdit}">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Text="{StaticResource PageRawMaterialSheetEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}"
+                    Command="{Binding GiveUp}"/>
+            <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
+                    Command="{Binding Save}"/>
+            <Button Content="{StaticResource ButtonSelectVHPPlan}" Style="{StaticResource  StyleButtonSpecial}" Command="{Binding Select}"/>
+            <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipProductEdit}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+            <Grid  DataContext="{Binding CurrentFailure}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RMSStoreTime}"
+                           Style="{StaticResource StyleTextBlockSpecial}"/>
+                <DatePicker Grid.Row="0" Grid.Column="1" SelectedDate="{Binding StoreTime}"
+                            Style="{StaticResource StyleDatePickerCommon}"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="入库日期"/>
+                
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RMSLot}"
+                           Style="{StaticResource StyleTextBlockSpecial}"/>
+                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Lot}" Style="{StaticResource StyleTextBoxCommon}"
+                          Background="LightGreen"/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="材料批号(必填) 关键"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RMSComposition}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
+                          Background="LightGreen"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
+                           Text="材料成分(必填)"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RMSSupplier}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Supplier}"
+                          Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="供应商名称"/>
+
+                <TextBlock  Grid.Row="4"  Grid.Column="0" Text="{StaticResource RMSWeight}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Weight}"
+                          Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="kg"/>
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMSState}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="TxtProblem"  Grid.Row="5" Grid.Column="1" Text="{Binding Problem}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="可以选择报废原因，没有就自己填写"/>
+                </StackPanel>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMSRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMSState}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                          ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding State}"/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="状态"/>
+
+
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMSCreateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="创建时间"/>
+
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RMSCreator}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="创建者"/>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
+

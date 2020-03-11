@@ -115,8 +115,8 @@ namespace PMSClient.ViewModel
                 CurrentOutsideProcess.PMINumber = model.PMINumber;
                 CurrentOutsideProcess.PONumber = model.PONumber;
                 CurrentOutsideProcess.Processor = model.Processor;
-                CurrentOutsideProcess.ProgressBar = model.ProgressBar;
-                CurrentOutsideProcess.Remark = model.Remark;
+                CurrentOutsideProcess.ProgressBar = "";
+                CurrentOutsideProcess.Remark = "";
             }
 
         }

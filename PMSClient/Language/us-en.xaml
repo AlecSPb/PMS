@@ -327,6 +327,12 @@
     <sys:String x:Key="ButtonSieve">Sieve</sys:String>
     <sys:String x:Key="ButtonBarCode">Bar Code</sys:String>
 
+
+    <sys:String x:Key="ButtonUnSend">UnSend</sys:String>
+    <sys:String x:Key="ButtonSended">Sent</sys:String>
+    <sys:String x:Key="ButtonGetBack">GetBack</sys:String>
+    <sys:String x:Key="ButtonFail">Fail</sys:String>
+    <sys:String x:Key="ButtonReMachine">ReMachine</sys:String>
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">Color Indicator=></sys:String>
     <sys:String x:Key="IndicatorYesterday">Yesterday</sys:String>

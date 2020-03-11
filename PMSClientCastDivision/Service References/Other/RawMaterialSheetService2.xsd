@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.16.254:8002/RawMaterialSheetService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
+  <xs:element name="GetRawMaterialSheetAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" type="xs:int" />
+        <xs:element minOccurs="0" name="t" type="xs:int" />
+        <xs:element minOccurs="0" name="lot" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRawMaterialSheetAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetRawMaterialSheetAllResult" nillable="true" type="q1:ArrayOfDcRawMaterialSheet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRawMaterialSheetAllCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lot" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRawMaterialSheetAllCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRawMaterialSheetAllCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRawMaterialSheet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" type="xs:int" />
+        <xs:element minOccurs="0" name="t" type="xs:int" />
+        <xs:element minOccurs="0" name="lot" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRawMaterialSheetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetRawMaterialSheetResult" nillable="true" type="q2:ArrayOfDcRawMaterialSheet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRawMaterialSheetCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lot" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRawMaterialSheetCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRawMaterialSheetCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRawMaterialSheet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q3:DcRawMaterialSheet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRawMaterialSheetResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRawMaterialSheet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q4:DcRawMaterialSheet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRawMaterialSheetResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

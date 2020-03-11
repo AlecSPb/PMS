@@ -426,6 +426,12 @@
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Background" Value="Green"/>
     </Style>
+    
+    <Style x:Key="StyleDGTextBlockSpecialGreenReverse" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="Green"/>
+    </Style>
+    
     <Style x:Key="StyleDGTextBlockSpecial2" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="Foreground" Value="Blue"/>
     </Style>

@@ -27,9 +27,25 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<CompoundView>();
 
             SimpleIoc.Default.Register<DebugView>();
+
+            SimpleIoc.Default.Register<RawMaterialSheetView>();
+            SimpleIoc.Default.Register<RawMaterialSheetEditView>();
+
+
         }
 
         #region NavigationProperties
+
+
+        public RawMaterialSheetView RawMaterialSheet
+        {
+            get { return SimpleIoc.Default.GetInstance<RawMaterialSheetView>(); }
+        }
+
+        public RawMaterialSheetEditView RawMaterialSheetEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RawMaterialSheetEditView>(); }
+        }
         public LogInView LogIn
         {
             get { return SimpleIoc.Default.GetInstance<LogInView>(); }

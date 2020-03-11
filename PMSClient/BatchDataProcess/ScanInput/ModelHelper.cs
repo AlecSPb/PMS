@@ -4,11 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSClient.MainService;
+using PMSClient.OutsideProcessService;
 
 namespace PMSClient.DataProcess.ScanInput
 {
     public static class ModelHelper
     {
+
+        public static DcOutsideProcess GetOutsideProcess(DcRecordTest ss)
+        {
+            if (ss == null) return null;
+            var model = new DcOutsideProcess();
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.Creator= PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.ProductID = ss.ProductID;
+            model.Composition = ss.Composition;
+            model.Customer = ss.Customer;
+            model.Dimension = ss.Dimension;
+            model.PMINumber = ss.PMINumber;
+            model.PONumber = ss.PO;
+            model.Processor = PMSCommon.OutsideProcessor.成都炬科光学.ToString();
+            model.State = PMSCommon.OutsideProcessState.待发出.ToString();
+            model.ProgressBar = "";
+            model.Remark = "";
+            return model;
+        }
+
         public static DcRecordBonding GetRecordBonding(DcRecordTest ss, int batchNumber, string plate)
         {
             if (ss == null)
