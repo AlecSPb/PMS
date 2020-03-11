@@ -27,7 +27,7 @@
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipProductEdit}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-            <Grid  DataContext="{Binding CurrentFailure}">
+            <Grid  DataContext="{Binding CurrentRawMaterialSheet}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="300"/>
@@ -39,7 +39,6 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -58,7 +57,7 @@
                             Style="{StaticResource StyleDatePickerCommon}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="入库日期"/>
-                
+
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RMSLot}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
                 <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Lot}" Style="{StaticResource StyleTextBoxCommon}"
@@ -87,40 +86,32 @@
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="kg"/>
 
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMSState}"
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMSRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtProblem"  Grid.Row="5" Grid.Column="1" Text="{Binding Problem}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal">
-                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="可以选择报废原因，没有就自己填写"/>
-                </StackPanel>
-
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMSRemark}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMSState}"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMSState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="状态"/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="只有[在库]状态会显示给选择窗口"/>
 
 
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMSCreateTime}"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMSCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建时间"/>
 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RMSCreator}"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMSCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建者"/>
             </Grid>
         </ScrollViewer>

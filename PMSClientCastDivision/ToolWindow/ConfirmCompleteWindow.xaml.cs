@@ -76,22 +76,33 @@ namespace PMSClient.ToolWindow
 
         private void BtnMaterialSource_Click(object sender, RoutedEventArgs e)
         {
-            string composition = Model.Composition.Replace("pcs", "").Replace("(", "");
-            var elements = Helpers.CompositionHelper.GetElements(composition);
-            if (elements.Count > 0)
-            {
-                StringBuilder sb = new StringBuilder();
-                foreach (var item in elements)
-                {
-                    sb.Append($"{item}=来源;");
-                }
-                TxtMaterialSource.Text = $"{TxtMaterialSource.Text}{sb.ToString()}"; ;
+            //string composition = Model.Composition.Replace("pcs", "").Replace("(", "");
+            //var elements = Helpers.CompositionHelper.GetElements(composition);
+            //if (elements.Count > 0)
+            //{
+            //    StringBuilder sb = new StringBuilder();
+            //    foreach (var item in elements)
+            //    {
+            //        sb.Append($"{item}=来源;");
+            //    }
+            //    TxtMaterialSource.Text = $"{TxtMaterialSource.Text}{sb.ToString()}"; ;
 
-            }
-            else
-            {
-                TxtMaterialSource.Text = $"{TxtMaterialSource.Text}组分=来源;";
-            }
+            //}
+            //else
+            //{
+            //    TxtMaterialSource.Text = $"{TxtMaterialSource.Text}组分=来源;";
+            //}
+
+            var win = new View.RawMaterialSheetWindow();
+            var vm = win.DataContext as ViewModel.RawMaterialSheetWindowVM;
+            vm.FillData += Vm_FillData;
+
+            win.ShowDialog();
+        }
+
+        private void Vm_FillData(object sender, string e)
+        {
+            PMSMethods.SetTextBoxAppend(TxtMaterialSource, e);
         }
     }
 }

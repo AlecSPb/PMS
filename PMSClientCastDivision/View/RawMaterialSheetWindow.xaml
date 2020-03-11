@@ -1,27 +1,21 @@
-﻿<UserControl x:Class="PMSClient.View.RawMaterialSheetView"
+﻿<Window x:Class="PMSClient.View.RawMaterialSheetWindow"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
       xmlns:local="clr-namespace:PMSClient.View"
+      Title="请选择基础原料-只显示[在库]原料"
+      WindowStartupLocation="CenterScreen"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=RawMaterialSheet}">
+      Height="600" Width="500" DataContext="{Binding Source={StaticResource Locator},Path=RawMaterialSheetWindow}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="{StaticResource PageRawMaterialSheet}" Style="{StaticResource StyleTextBlockPageTitle}"/>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
-            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
-                    Command="{Binding GoToNavigation}"/>
-            <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}"
-                    Command="{Binding Add}"/>
+        <StackPanel Grid.Row="0" Style="{StaticResource StyleStackPanelNavigationBar}">
             <TextBlock Text="{StaticResource RMSLot}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchLot,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
@@ -32,18 +26,15 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" 
+        <DataGrid x:Name="dg" Grid.Row="1" Style="{StaticResource StyleDataGridCommon}" 
                   ItemsSource="{Binding RawMaterialSheets}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
-                                    Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
-                                    Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                <Button Content="{StaticResource ButtonSelect}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Select,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
@@ -62,17 +53,17 @@
                                     Binding="{Binding Supplier}"/>
                 <DataGridTextColumn Header="{StaticResource RMSWeight}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Weight,StringFormat={}{0:F2}}"/>
-                <DataGridTextColumn Header="{StaticResource RMSCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Creator}"/>
                 <DataGridTextColumn Header="{StaticResource RMSRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
+                <DataGridTextColumn Header="{StaticResource RMSCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Creator}"/>
                 <DataGridTextColumn Header="{StaticResource RMSCreateTime}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockSpecial}" 
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
+        <control:SimplePager Grid.Row="2" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
 
     </Grid>
-</UserControl>
+</Window>

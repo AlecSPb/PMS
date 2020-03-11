@@ -28,13 +28,13 @@ namespace PMSClient.View
         private void BtnSend_Click(object sender, RoutedEventArgs e)
         {
             PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}{BtnSend.Content};");
-            cboSuppliers.SelectedItem = PMSCommon.OutsideProcessState.已发出.ToString();
+            CboState.SelectedItem = PMSCommon.OutsideProcessState.已发出.ToString();
         }
 
         private void BtnReceive_Click(object sender, RoutedEventArgs e)
         {
             PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}{BtnReceive.Content};");
-            cboSuppliers.SelectedItem = PMSCommon.OutsideProcessState.已取回.ToString();
+            CboState.SelectedItem = PMSCommon.OutsideProcessState.已取回.ToString();
         }
 
         private void BtnFail_Click(object sender, RoutedEventArgs e)

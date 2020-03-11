@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using PMSClient.Other;
 
 namespace PMSClient.ViewModel
 {
@@ -13,10 +14,7 @@ namespace PMSClient.ViewModel
         public RawMaterialSheetEditVM()
         {
             States = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.SimpleState>(States);
-
-            FailureStages = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.FailureStage>(FailureStages);
+            PMSBasicDataService.SetListDS<PMSCommon.RawMaterialSheetState>(States);
 
             InitializeCommands();
         }
@@ -31,72 +29,59 @@ namespace PMSClient.ViewModel
 
         private void ActionSelect()
         {
-            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.FailureEdit);
-            PMSHelper.ViewModels.PlanSelect.RefreshData();
-            NavigationService.GoTo(PMSViews.PlanSelect);
+
         }
-        public void SetBySelect(DcPlanWithMisson plan)
-        {
-            if (plan != null)
-            {
-                CurrentFailure.ProductID = UsefulPackage.PMSTranslate.PlanLot(plan);
-                CurrentFailure.Composition = plan.Misson.CompositionStandard;
-                CurrentFailure.Details = plan.Misson.PMINumber;
-                //RaisePropertyChanged(nameof(CurrentRecordTest));
-            }
-        }
+
         public void SetNew()
         {
             IsNew = true;
-            var model = new DcFailure();
+            var model = new DcRawMaterialSheet();
             #region 初始化
             IsNew = true;
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.State = PMSCommon.SimpleState.正常.ToString();
-            model.ProductID = "无";
+            model.State = PMSCommon.RawMaterialSheetState.在库.ToString();
+            model.Lot= "无";
             model.Composition = "无";
-            model.Details = "无";
-            model.Stage = FailureStages[0];
-            model.Problem = "无";
-            model.Process = "未处理";
+            model.Supplier = "中国";
+            model.Weight = 0;
+            model.StoreTime = DateTime.Now;
             model.Remark = "无";
 
             #endregion
-            CurrentFailure = model;
+            CurrentRawMaterialSheet = model;
         }
-        public void SetDuplicate(DcFailure model)
+        public void SetDuplicate(DcRawMaterialSheet model)
         {
             if (model != null)
             {
                 IsNew = true;
-                CurrentFailure = new DcFailure();
-                CurrentFailure.ID = Guid.NewGuid();
-                CurrentFailure.CreateTime = DateTime.Now;
-                CurrentFailure.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                CurrentFailure.State = PMSCommon.SimpleState.正常.ToString();
-                CurrentFailure.ProductID = model.ProductID;
-                CurrentFailure.Composition = model.Composition;
-                CurrentFailure.Details = model.Details;
-                CurrentFailure.Stage = model.Stage; ;
-                CurrentFailure.Problem = model.Problem;
-                CurrentFailure.Process = model.Process;
-                CurrentFailure.Remark = model.Remark;
+                CurrentRawMaterialSheet = new DcRawMaterialSheet();
+                CurrentRawMaterialSheet.ID = Guid.NewGuid();
+                CurrentRawMaterialSheet.CreateTime = DateTime.Now;
+                CurrentRawMaterialSheet.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                CurrentRawMaterialSheet.State = PMSCommon.RawMaterialSheetState.在库.ToString();
+                CurrentRawMaterialSheet.Lot= model.Lot;
+                CurrentRawMaterialSheet.Composition = model.Composition;
+                CurrentRawMaterialSheet.Supplier = model.Supplier;
+                CurrentRawMaterialSheet.Weight = model.Weight;
+                CurrentRawMaterialSheet.StoreTime = DateTime.Now;
+                CurrentRawMaterialSheet.Remark = model.Remark;
             }
         }
-        public void SetEdit(DcFailure model)
+        public void SetEdit(DcRawMaterialSheet model)
         {
             if (model != null)
             {
                 IsNew = false;
-                CurrentFailure = model;
+                CurrentRawMaterialSheet = model;
             }
         }
 
         private static void GoBack()
         {
-            NavigationService.GoTo(PMSViews.Failure);
+            NavigationService.GoTo(PMSViews.RawMaterialSheet);
         }
 
         private void ActionSave()
@@ -105,7 +90,7 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
-            if (CurrentFailure.State == "作废")
+            if (CurrentRawMaterialSheet.State == "作废")
             {
                 if (!PMSDialogService.ShowYesNo("请问", "确定要作废吗？"))
                 {
@@ -115,17 +100,17 @@ namespace PMSClient.ViewModel
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
-                var service = new FailureServiceClient();
+                var service = new RawMaterialSheetServiceClient();
                 if (IsNew)
                 {
-                    service.AddFailure(CurrentFailure);
+                    service.AddRawMaterialSheet(CurrentRawMaterialSheet);
                 }
                 else
                 {
-                    service.UpdateFailure(CurrentFailure);
+                    service.UpdateRawMaterialSheet(CurrentRawMaterialSheet);
                 }
                 service.Close();
-                PMSHelper.ViewModels.Failure.RefreshData();
+                PMSHelper.ViewModels.RawMaterialSheet.RefreshData();
                 GoBack();
             }
             catch (Exception ex)
@@ -133,17 +118,16 @@ namespace PMSClient.ViewModel
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
-        public List<string> FailureStages { get; set; }
         public List<string> States { get; set; }
 
-        private DcFailure currentFailure;
-        public DcFailure CurrentFailure
+        private DcRawMaterialSheet currentRawMaterialSheet;
+        public DcRawMaterialSheet CurrentRawMaterialSheet
         {
-            get { return currentFailure; }
+            get { return currentRawMaterialSheet; }
             set
             {
-                currentFailure = value;
-                RaisePropertyChanged(nameof(CurrentFailure));
+                currentRawMaterialSheet = value;
+                RaisePropertyChanged(nameof(CurrentRawMaterialSheet));
             }
         }
 

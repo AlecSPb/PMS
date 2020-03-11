@@ -66,6 +66,7 @@ namespace PMSClient.ViewModel
             GoToOutput = new RelayCommand(() => NavigationService.GoTo(PMSViews.Output), () => _session.IsAuthorized(PMSAccess.CanOutput));
             GoToCompound = new RelayCommand(() => NavigationService.GoTo(PMSViews.Compound));
             GoToDebug = new RelayCommand(() => NavigationService.GoTo(PMSViews.Debug), () => _session.IsAuthorized(PMSAccess.CanDebug));
+            GoToRawMaterialSheet = new RelayCommand(() => NavigationService.GoTo(PMSViews.RawMaterialSheet), () => _session.IsAuthorized(PMSAccess.ReadMaterialOrder));
         }
 
         private bool CanNotice()
@@ -107,5 +108,6 @@ namespace PMSClient.ViewModel
         public RelayCommand Notice { get; set; }
 
         public RelayCommand GoToDebug { get; set; }
+        public RelayCommand GoToRawMaterialSheet{ get; set; }
     }
 }

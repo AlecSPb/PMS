@@ -46,9 +46,9 @@
             </Grid.RowDefinitions>
             <TextBlock Name="txtInformation" Text="{StaticResource AppNameDesktop}"
                        FontSize="20" Margin="5"/>
-            <TextBox  Name="txtNotice" Grid.Row="1" Margin="5" Background="Transparent" Foreground="Gray" VerticalScrollBarVisibility="Visible"
+            <TextBox  Name="txtNotice" Grid.Row="1" Margin="5" Background="Transparent" VerticalScrollBarVisibility="Visible"
                       AcceptsReturn="True" Text="" IsReadOnly="True" FontSize="14"/>
-            <TextBox  Name="txtUpdate" Grid.Row="2" Margin="5" Background="Transparent" Foreground="Gray" VerticalScrollBarVisibility="Visible"
+            <TextBox  Name="txtUpdate" Grid.Row="2" Margin="5" Background="Transparent" VerticalScrollBarVisibility="Visible"
                       AcceptsReturn="True" Text="" IsReadOnly="True" FontSize="14"/>
         </Grid>
     </Grid>

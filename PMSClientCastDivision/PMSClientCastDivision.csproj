@@ -225,6 +225,7 @@
     <Compile Include="ViewModel\CompoundVM.cs" />
     <Compile Include="ViewModel\DebugVM.cs" />
     <Compile Include="ViewModel\RawMaterialSheetEditVM.cs" />
+    <Compile Include="ViewModel\RawMaterialSheetWindowVM.cs" />
     <Compile Include="ViewModel\RawMaterialSheetVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryInVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryOutVM.cs" />
@@ -243,6 +244,9 @@
     </Compile>
     <Compile Include="View\RawMaterialSheetEditView.xaml.cs">
       <DependentUpon>RawMaterialSheetEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RawMaterialSheetWindow.xaml.cs">
+      <DependentUpon>RawMaterialSheetWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RawMaterialSheetView.xaml.cs">
       <DependentUpon>RawMaterialSheetView.xaml</DependentUpon>
@@ -382,6 +386,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\RawMaterialSheetEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RawMaterialSheetWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

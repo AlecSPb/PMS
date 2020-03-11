@@ -91,7 +91,7 @@ namespace PMSClient.ViewModel
             model.Dimension = "";
             model.PMINumber = "";
             model.PONumber = "";
-            model.Processor = "炬科光学";
+            model.Processor = PMSCommon.OutsideProcessor.成都炬科光学.ToString();
             model.ProgressBar = "";
             model.Remark = "";
 

@@ -49,12 +49,16 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<DebugVM>();
 
-            SimpleIoc.Default.Register<RawMaterialSheetVM>();
+            SimpleIoc.Default.Register<RawMaterialSheetVM>(); 
+            SimpleIoc.Default.Register<RawMaterialSheetWindowVM>();
             SimpleIoc.Default.Register<RawMaterialSheetEditVM>();
 
         }
         #region Properties
-
+        public RawMaterialSheetWindowVM RawMaterialSheetWindow
+        {
+            get { return SimpleIoc.Default.GetInstance<RawMaterialSheetWindowVM>(); }
+        }
         public RawMaterialSheetVM RawMaterialSheet
         {
             get { return SimpleIoc.Default.GetInstance<RawMaterialSheetVM>(); }

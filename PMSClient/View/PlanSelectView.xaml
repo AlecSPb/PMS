@@ -101,17 +101,17 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource PlanLockAbbr}" >
+                <!--<DataGridTemplateColumn Header="{StaticResource PlanLockAbbr}" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Border Height="20" Width="20" BorderThickness="1" BorderBrush="Red" Margin="2" 
                            Visibility="{Binding Plan.IsLocked,Converter={StaticResource IsLockedCT}}">
-                                <!--<TextBlock HorizontalAlignment="Center">🔒</TextBlock>-->
+                                --><!--<TextBlock HorizontalAlignment="Center">🔒</TextBlock>--><!--
                                 <Image Source="../Resource/Icons/lock.png"/>
                             </Border>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>                
+                </DataGridTemplateColumn>-->                
                 <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding PlanMisson.Misson.CompositionStandard}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource OrderPMINumber}" Binding="{Binding PlanMisson.Misson.PMINumber}"

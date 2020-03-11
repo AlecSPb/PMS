@@ -9,9 +9,9 @@ using PMSClient.Other;
 
 namespace PMSClient.ViewModel
 {
-    public class RawMaterialSheetVM : BaseViewModelPage
+    public class RawMaterialSheetWindowVM : BaseViewModelPage
     {
-        public RawMaterialSheetVM()
+        public RawMaterialSheetWindowVM()
         {
             searchLot = searchComposition = "";
             RawMaterialSheets = new ObservableCollection<DcRawMaterialSheet>();
@@ -29,6 +29,14 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             Duplicate = new RelayCommand<DcRawMaterialSheet>(ActionDuplicate, CanDuplicate);
+            Select = new RelayCommand<DcRawMaterialSheet>(ActionSelect);
+        }
+
+        public event EventHandler<string> FillData;
+
+        private void ActionSelect(DcRawMaterialSheet obj)
+        {
+            FillData?.Invoke(this, $"{obj.Composition}:{obj.Lot};");
         }
 
         private void ActionDuplicate(DcRawMaterialSheet obj)
@@ -107,7 +115,7 @@ namespace PMSClient.ViewModel
             PageSize = 30;
             using (var service = new RawMaterialSheetServiceClient())
             {
-                RecordCount = service.GetRawMaterialSheetAllCount(SearchLot, SearchComposition);
+                RecordCount = service.GetRawMaterialSheetCount(SearchLot, SearchComposition);
             }
             ActionPaging();
         }
@@ -118,7 +126,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new RawMaterialSheetServiceClient())
             {
-                var orders = service.GetRawMaterialSheetAll(skip, take, SearchLot, SearchComposition);
+                var orders = service.GetRawMaterialSheet(skip, take, SearchLot, SearchComposition);
                 RawMaterialSheets.Clear();
                 orders.ToList().ForEach(o => RawMaterialSheets.Add(o));
             }
@@ -129,6 +137,8 @@ namespace PMSClient.ViewModel
         public RelayCommand Add { get; set; }
         public RelayCommand<DcRawMaterialSheet> Edit { get; set; }
         public RelayCommand<DcRawMaterialSheet> Duplicate { get; set; }
+        public RelayCommand<DcRawMaterialSheet> Select { get; set; }
+
         #endregion
 
     }

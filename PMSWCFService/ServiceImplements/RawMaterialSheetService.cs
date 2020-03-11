@@ -37,26 +37,23 @@ namespace PMSWCFService
             try
             {
                 XS.Run();
-                Mapper.Initialize(config =>
-                {
-                    config.CreateMap<List<RawMaterialSheet>, List<DcRawMaterialSheet>>();
-                    config.CreateMap<RawMaterialSheet, DcRawMaterialSheet>();
-                });
                 using (var db = new PMSDbContext())
                 {
                     var query = from m in db.RawMaterialSheets
                                 where m.State == PMSCommon.RawMaterialSheetState.在库.ToString()
                                 && m.Composition.Contains(composition)
                                 && m.Lot.Contains(lot)
+                                orderby m.StoreTime descending 
                                 select m;
+                    Mapper.Initialize(config => config.CreateMap<RawMaterialSheet, DcRawMaterialSheet>());
                     return Mapper.Map<List<RawMaterialSheet>, List<DcRawMaterialSheet>>(query.Skip(s).Take(t).ToList());
                 }
             }
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
+                return new List<DcRawMaterialSheet>();
             }
-            return null;
         }
 
         public List<DcRawMaterialSheet> GetRawMaterialSheetAll(int s, int t, string lot, string composition)
@@ -64,60 +61,27 @@ namespace PMSWCFService
             try
             {
                 XS.Run();
-                try
-                {
-                    XS.Run();
-                    Mapper.Initialize(config =>
-                    {
-                        config.CreateMap<List<RawMaterialSheet>, List<DcRawMaterialSheet>>();
-                        config.CreateMap<RawMaterialSheet, DcRawMaterialSheet>();
-                    });
-                    using (var db = new PMSDbContext())
-                    {
-                        var query = from m in db.RawMaterialSheets
-                                    where m.State != PMSCommon.RawMaterialSheetState.作废.ToString()
-                                    && m.Composition.Contains(composition)
-                                    && m.Lot.Contains(lot)
-                                    select m;
-                        return Mapper.Map<List<RawMaterialSheet>, List<DcRawMaterialSheet>>(query.Skip(s).Take(t).ToList());
-                    }
-                }
-                catch (Exception ex)
-                {
-                    XS.Current.Error(ex);
-                }
-                return null;
-            }
-            catch (Exception ex)
-            {
-                XS.Current.Error(ex);
-            }
-            return null;
-        }
-
-        public int GetRawMaterialSheetAllCount(string lot, string composition)
-        {
-            try
-            {
-                XS.Run();
                 using (var db = new PMSDbContext())
                 {
                     var query = from m in db.RawMaterialSheets
-                                where m.State == PMSCommon.RawMaterialSheetState.在库.ToString()
+                                where m.State != PMSCommon.RawMaterialSheetState.作废.ToString()
                                 && m.Composition.Contains(composition)
                                 && m.Lot.Contains(lot)
+                                orderby m.StoreTime descending
                                 select m;
-                    return query.Count();
+                    Mapper.Initialize(config => config.CreateMap<RawMaterialSheet, DcRawMaterialSheet>());
+                    return Mapper.Map<List<RawMaterialSheet>, List<DcRawMaterialSheet>>(query.Skip(s).Take(t).ToList());
                 }
             }
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
+                return new List<DcRawMaterialSheet>();
             }
-            return 0;
+
         }
 
-        public int GetRawMaterialSheetCount(string lot, string composition)
+        public int GetRawMaterialSheetAllCount(string lot, string composition)
         {
             try
             {
@@ -135,8 +99,32 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
+                return 0;
+
             }
-            return 0;
+        }
+
+        public int GetRawMaterialSheetCount(string lot, string composition)
+        {
+            try
+            {
+                XS.Run();
+                using (var db = new PMSDbContext())
+                {
+                    var query = from m in db.RawMaterialSheets
+                                where m.State == PMSCommon.RawMaterialSheetState.在库.ToString()
+                                && m.Composition.Contains(composition)
+                                && m.Lot.Contains(lot)
+                                select m;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                return 0;
+
+            }
         }
 
         public void UpdateRawMaterialSheet(DcRawMaterialSheet model)

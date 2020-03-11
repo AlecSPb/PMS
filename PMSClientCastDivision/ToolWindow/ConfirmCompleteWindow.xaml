@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        WindowStyle="ToolWindow"
-        Title="确定完成该项目吗？" Height="400" Width="550">
+        Title="确定完成该项目吗？" Height="400" Width="700">
     <Grid Margin="5" Background="{StaticResource BGBrushWindow}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -41,10 +40,11 @@
         <TextBlock Grid.Row="5" Grid.Column="0" Text="熔点信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBox Name="txtMeltingPoint" Grid.Row="5" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
         
-        <TextBlock Grid.Row="6" Grid.Column="0" Text="组分信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
-        <TextBox Name="TxtMaterialSource" Grid.Row="6" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="原料批号" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox Name="TxtMaterialSource" Grid.Row="6" Grid.Column="1" Text="" 
+                 Style="{StaticResource StyleTextBoxCommon}"/>
         <Button Style="{StaticResource StyleButtonCommon}" Grid.Row="6" Grid.Column="2"
-                Content="辅助" Name="BtnMaterialSource" Click="BtnMaterialSource_Click"/>
+                Content="基础原料" Name="BtnMaterialSource" Click="BtnMaterialSource_Click"/>
 
 
         <TextBlock Grid.Row="7" Grid.Column="0" Text="备注信息" Style="{StaticResource StyleDGTextBlockCommon}"/>

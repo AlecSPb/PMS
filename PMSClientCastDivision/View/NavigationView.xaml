@@ -72,7 +72,7 @@
                 <Button Content="{StaticResource PageCompound}" Grid.Row="2" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}" 
                         Command="{Binding GoToCompound}"/>
 
-                <Button Content="{StaticResource PageRawMaterialSheet}" Grid.Row="2" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}" 
+                <Button Content="{StaticResource PageRawMaterialSheet}" Grid.Row="2" Grid.Column="3" Style="{DynamicResource StyleButtonNavigation}" 
                         Command="{Binding GoToRawMaterialSheet}"/>
 
                 <Button Content="{StaticResource PageAdmin}" Grid.Row="3" Grid.Column="0" Grid.RowSpan="1"

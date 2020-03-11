@@ -46,7 +46,7 @@ namespace PMSClient
                 var titleName = (App.Current as App).FindResource("AppNameDesktop").ToString();
                 //var versonName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 //Title = $"{titleName}-{versonName}";
-                Title = $"{titleName} 版本1.3.0.0";
+                Title = $"{titleName} 版本1.5.0.0";
             }
             catch (Exception)
             {
@@ -74,7 +74,7 @@ namespace PMSClient
             _timerMain.Start();
             #endregion
             #region 托盘部分
-            InitializeTray();
+            //InitializeTray();
             #endregion
             //首次检测心跳
             HeartBeatCheck();
@@ -91,7 +91,7 @@ namespace PMSClient
         {
             if (HeartBeatCheck())
             {
-                NoticeCheck();
+                //NoticeCheck();
             }
         }
 
@@ -230,7 +230,7 @@ namespace PMSClient
                     NavigateTo(_views.RawMaterialSheet);
                     break;
                 case PMSViews.RawMaterialSheetEdit:
-                    NavigateTo(_views.RawMaterialSheet);
+                    NavigateTo(_views.RawMaterialSheetEdit);
                     break;
                 default:
                     break;
