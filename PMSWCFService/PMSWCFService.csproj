@@ -75,6 +75,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="RawMaterialSheetService.svc" />
     <Content Include="BasicDataService.svc" />
     <Content Include="Documents\数据说明.txt" />
     <Content Include="OutsideProcessService.svc" />
@@ -229,6 +230,7 @@
     <Compile Include="ServiceImplements\PMICounterService.cs" />
     <Compile Include="ServiceImplements\PMSIndexService.cs" />
     <Compile Include="ServiceImplements\ProductService.cs" />
+    <Compile Include="ServiceImplements\RawMaterialSheetService.cs" />
     <Compile Include="ServiceImplements\RecordBondingService.cs" />
     <Compile Include="ServiceImplements\DeliveryService.cs" />
     <Compile Include="ServiceImplements\MissonService.cs" />

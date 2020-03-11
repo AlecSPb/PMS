@@ -16,6 +16,11 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetSampleCount(string productid, string composition);
 
+        [OperationContract]
+        List<DcSample> GetSampleAll(int s, int t, string productid, string composition);
+
+        [OperationContract]
+        int GetSampleAllCount(string productid, string composition);
 
         [OperationContract]
         void AddSample(DcSample model);

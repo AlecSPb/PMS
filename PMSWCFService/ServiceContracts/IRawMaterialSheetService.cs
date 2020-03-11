@@ -11,6 +11,12 @@ namespace PMSWCFService.ServiceContracts
     public interface IRawMaterialSheetService
     {
         [OperationContract]
+        List<DcRawMaterialSheet> GetRawMaterialSheetAll(int s, int t, string lot, string composition);
+
+        [OperationContract]
+        int GetRawMaterialSheetAllCount(string lot, string composition);
+
+        [OperationContract]
         List<DcRawMaterialSheet> GetRawMaterialSheet(int s, int t, string lot, string composition);
 
         [OperationContract]

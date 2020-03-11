@@ -25,8 +25,9 @@ namespace PMSWCFService
 
         /// <summary>
         /// 核心函数
+        /// 执行授权检查和日志记录
         /// </summary>
-        /// <param name="caller"></param>
+        /// <param name="caller">调用函数</param>
         public static void Run([CallerMemberName] string caller = "")
         {
             try
@@ -36,9 +37,9 @@ namespace PMSWCFService
                 //记录日志
                 log.Information(caller);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                throw ex;
             }
         }
     }
