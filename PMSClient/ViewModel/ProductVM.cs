@@ -82,10 +82,10 @@ namespace PMSClient.ViewModel
         private void ActionScanAdd()
         {
             var tool = new DataProcess.ScanInput.ScanInput();
-            tool.TxtNumber.Visibility = System.Windows.Visibility.Collapsed;
-            tool.CboNumber.Visibility = System.Windows.Visibility.Collapsed;
-            tool.TxtPlate.Visibility = System.Windows.Visibility.Collapsed;
-            tool.CboPlate.Visibility = System.Windows.Visibility.Collapsed;
+            tool.TxtValue.Visibility = System.Windows.Visibility.Collapsed;
+            tool.CboValue.Visibility = System.Windows.Visibility.Collapsed;
+            tool.TxtText.Visibility = System.Windows.Visibility.Collapsed;
+            tool.CboText.Visibility = System.Windows.Visibility.Collapsed;
 
 
             var context = new DataProcess.ScanInput.ScanInputProductVM();

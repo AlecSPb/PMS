@@ -42,13 +42,13 @@
                  Text="{Binding InputText}" Background="LightYellow"/>
         </Grid>
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
-            <TextBlock Name="TxtNumber" Text="批次" Style="{StaticResource StyleDGTextBlockCommon}"/>
-            <ComboBox Name="CboNumber" Style="{StaticResource StyleComboBoxEditable}"
-                      ItemsSource="{Binding Numbers}" Text="{Binding CurrentNumber}"/>
+            <TextBlock Name="TxtValue" Text="批次" Style="{StaticResource StyleDGTextBlockCommon}"/>
+            <ComboBox Name="CboValue" Style="{StaticResource StyleComboBoxEditable}"
+                      ItemsSource="{Binding Values}" Text="{Binding CurrentValue}"/>
             
-            <TextBlock Name="TxtPlate" Text="背板" Style="{StaticResource StyleDGTextBlockCommon}"/>
-            <ComboBox Name="CboPlate" Style="{StaticResource StyleComboBoxEditable}"
-                      ItemsSource="{Binding Plates}" Text="{Binding CurrentPlate}"/>
+            <TextBlock Name="TxtText" Text="背板" Style="{StaticResource StyleDGTextBlockCommon}"/>
+            <ComboBox Name="CboText" Style="{StaticResource StyleComboBoxEditable}"
+                      ItemsSource="{Binding Texts}" Text="{Binding CurrentText}"/>
             <Button Content="模拟录入" Style="{StaticResource StyleButtonCommon}" Command="{Binding Check}">
                 <Button.ToolTip>
                     <TextBlock Text="模拟录入的意思，假装录入看看这些编号OK不OK，实际不会录入"/>

@@ -23,8 +23,10 @@
                     Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Save}" IsDefault="True"/>
-            <Button Content="{StaticResource ButtonSelect}" Style="{StaticResource StyleButtonSpecial}"
-                    Command="{Binding Select}"/>
+            <Button Content="{StaticResource ButtonSelectVHPPlan}" Style="{StaticResource StyleButtonSpecial}"
+                    Command="{Binding SelectVHPPlan}"/>
+            <Button Content="{StaticResource ButtonSelectTest}" Style="{StaticResource StyleButtonSpecial}"
+                    Command="{Binding SelectTest}"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipOutSourceEdit}"/>
         </StackPanel>
@@ -59,7 +61,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
-                           Text="如果同一个靶材多次送到不同的委托方外协加工，请复用生成多个外协加工记录，分别设置不同的委托方"
+                           Text="如果同一靶材前后多次送到不同的委托方，添加同一ID的多个外协加工记录即可，分别设置不同的委托方"
                            Style="{StaticResource StyleDGTextBlockSpecialGreenReverse}"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource OPProcessor}"

@@ -144,10 +144,10 @@ namespace PMSClient.ViewModel
         private void AcitonScanAdd(DcDelivery obj)
         {
             var tool = new DataProcess.ScanInput.ScanInput();
-            tool.TxtNumber.Text = "箱号";
+            tool.TxtValue.Text = "箱号";
 
-            tool.TxtPlate.Visibility = System.Windows.Visibility.Collapsed;
-            tool.CboPlate.Visibility = System.Windows.Visibility.Collapsed;
+            tool.TxtText.Visibility = System.Windows.Visibility.Collapsed;
+            tool.CboText.Visibility = System.Windows.Visibility.Collapsed;
 
             //传入delivery到vm中
             var context = new DataProcess.ScanInput.ScanInputDeliveryVM(obj);

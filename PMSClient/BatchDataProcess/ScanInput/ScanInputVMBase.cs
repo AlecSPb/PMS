@@ -17,18 +17,20 @@ namespace PMSClient.DataProcess.ScanInput
             progressValue = 0;
             sourceTarget = "无";
 
-            Numbers = new List<int>();
+           //默认数字
+            Values = new List<int>();
             for (int i = 1; i < 100; i++)
             {
-                Numbers.Add(i);
+                Values.Add(i);
             }
-            CurrentNumber = 1;
+            CurrentValue = 1;
 
-            Plates = new List<string>();
-            Plates.Clear();
-            PMSBasicDataService.SetListDS(PMSCommon.CustomData.PlateTypes, Plates);
+            //默认背板类型
+            Texts = new List<string>();
+            Texts.Clear();
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.PlateTypes, Texts);
 
-            CurrentPlate = Plates[0];
+            CurrentText = Texts[0];
 
         }
         public ObservableCollection<LotModel> Lots { get; set; }
@@ -79,13 +81,13 @@ namespace PMSClient.DataProcess.ScanInput
         protected bool canClick=true;
 
 
-        public List<int> Numbers { get; set; }
+        public List<int> Values { get; set; }
 
-        public List<string> Plates { get; set; }
+        public List<string> Texts { get; set; }
 
 
         private int currentNumber;
-        public int CurrentNumber
+        public int CurrentValue
         {
             get
             {
@@ -94,12 +96,12 @@ namespace PMSClient.DataProcess.ScanInput
             set
             {
                 currentNumber = value;
-                RaisePropertyChanged(nameof(CurrentNumber));
+                RaisePropertyChanged(nameof(CurrentValue));
             }
         }
 
         private string currentPlate;
-        public string CurrentPlate
+        public string CurrentText
         {
             get
             {
@@ -108,7 +110,7 @@ namespace PMSClient.DataProcess.ScanInput
             set
             {
                 currentPlate = value;
-                RaisePropertyChanged(nameof(CurrentPlate));
+                RaisePropertyChanged(nameof(CurrentText));
             }
         }
 

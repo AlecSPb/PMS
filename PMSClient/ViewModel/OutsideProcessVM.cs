@@ -43,13 +43,20 @@ namespace PMSClient.ViewModel
         private void ActionScanAdd()
         {
             var tool = new DataProcess.ScanInput.ScanInput();
-            tool.TxtNumber.Visibility = System.Windows.Visibility.Collapsed;
-            tool.CboNumber.Visibility = System.Windows.Visibility.Collapsed;
-            tool.TxtPlate.Visibility = System.Windows.Visibility.Collapsed;
-            tool.CboPlate.Visibility = System.Windows.Visibility.Collapsed;
+            tool.TxtValue.Visibility = System.Windows.Visibility.Collapsed;
+            tool.CboValue.Visibility = System.Windows.Visibility.Collapsed;
 
+            tool.TxtText.Visibility = System.Windows.Visibility.Visible;
+            tool.CboText.Visibility = System.Windows.Visibility.Visible;
+            tool.CboText.Text = "外协商";
 
             var context = new DataProcess.ScanInput.ScanInputOutsideProcessVM();
+            var processors = new List<string>();
+            PMSMethods.SetListDS<PMSCommon.OutsideProcessor>(processors);
+            context.Texts.Clear();
+            processors.ForEach(i => context.Texts.Add(i));
+            
+            context.CurrentText = PMSCommon.OutsideProcessor.成都炬科光学.ToString();
             tool.DataContext = context;
             tool.Show();
         }

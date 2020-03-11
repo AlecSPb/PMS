@@ -28,7 +28,15 @@ namespace PMSClient.ViewModel
         {
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
-            Select = new RelayCommand(ActionSelect);
+            SelectVHPPlan = new RelayCommand(ActionSelectVHPPlan);
+            SelectTest = new RelayCommand(ActionSelectTest);
+        }
+
+        private void ActionSelectTest()
+        {
+            PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.OutsideProcessEdit);
+            PMSHelper.ViewModels.RecordTestSelect.RefreshData();
+            NavigationService.GoTo(PMSViews.RecordTestSelect);
         }
 
         /// <summary>
@@ -44,13 +52,27 @@ namespace PMSClient.ViewModel
         }
 
 
-        private void ActionSelect()
+        private void ActionSelectVHPPlan()
         {
             PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.OutsideProcessEdit);
             PMSHelper.ViewModels.PlanSelect.RefreshData();
             NavigationService.GoTo(PMSViews.PlanSelect);
         }
-        public void SetBySelect(DcPlanWithMisson model)
+        public void SetBySelect2(DcRecordTest model)
+        {
+            if (model != null)
+            {
+                CurrentOutsideProcess.ProductID = model.ProductID;
+                CurrentOutsideProcess.Composition = model.Composition;
+                CurrentOutsideProcess.Customer = model.Customer;
+                CurrentOutsideProcess.Dimension = model.Dimension;
+                CurrentOutsideProcess.PMINumber = model.PMINumber;
+                CurrentOutsideProcess.PONumber = model.PO;
+
+                //RaisePropertyChanged(nameof(CurrentRecordTest));
+            }
+        }
+        public void SetBySelect1(DcPlanWithMisson model)
         {
             if (model != null)
             {
@@ -183,6 +205,7 @@ namespace PMSClient.ViewModel
         }
 
 
-        public RelayCommand Select { get; set; }
+        public RelayCommand SelectVHPPlan { get; set; }
+        public RelayCommand SelectTest { get; set; }
     }
 }

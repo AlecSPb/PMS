@@ -62,6 +62,8 @@ namespace PMSClient.ViewModel
                     case PMSViews.RecordBonding:
                         BatchSaveRecordBondings();
                         break;
+                    case PMSViews.OutsideProcessEdit:
+                        break;
                     default:
                         break;
                 }
@@ -169,6 +171,9 @@ namespace PMSClient.ViewModel
                         break;
                     case PMSViews.DeliveryItemEdit:
                         PMSHelper.ViewModels.DeliveryItemEdit.SetBySelect(model.RecordTest);
+                        break;
+                    case PMSViews.OutsideProcessEdit:
+                        PMSHelper.ViewModels.OutsideProcessEdit.SetBySelect2(model.RecordTest);
                         break;
                     default:
                         break;

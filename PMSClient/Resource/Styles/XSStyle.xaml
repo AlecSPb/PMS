@@ -428,8 +428,8 @@
     </Style>
     
     <Style x:Key="StyleDGTextBlockSpecialGreenReverse" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="Background" Value="Green"/>
+        <Setter Property="Foreground" Value="Blue"/>
+        <Setter Property="Background" Value="LightGreen"/>
     </Style>
     
     <Style x:Key="StyleDGTextBlockSpecial2" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">

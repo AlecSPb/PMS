@@ -18,7 +18,7 @@ namespace PMSClient.DataProcess.ScanInput
 
         }
 
-
+        public string OutisideProcosser { get; set; } = PMSCommon.OutsideProcessor.成都炬科光学.ToString();
         public override void Check(Action<double> DoSomething)
         {
             try

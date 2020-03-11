@@ -140,7 +140,7 @@ namespace PMSClient.ViewModel
         private void ActionScanAdd()
         {
             var tool = new DataProcess.ScanInput.ScanInput();
-            tool.TxtNumber.Text = "绑定批次";
+            tool.TxtValue.Text = "绑定批次";
 
             var context = new DataProcess.ScanInput.ScanInputRecordBondingVM();
             tool.DataContext = context;

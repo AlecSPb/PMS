@@ -228,7 +228,7 @@ namespace PMSClient.ViewModel
                         PMSHelper.ViewModels.RemainInventoryEdit.SetBySelect(plan.PlanMisson);
                         break;
                     case PMSViews.OutsideProcessEdit:
-                        PMSHelper.ViewModels.OutsideProcessEdit.SetBySelect(plan.PlanMisson);
+                        PMSHelper.ViewModels.OutsideProcessEdit.SetBySelect1(plan.PlanMisson);
                         break;
                     default:
                         break;
