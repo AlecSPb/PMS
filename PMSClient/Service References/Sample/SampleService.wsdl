@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SampleService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.16.254:8002/SampleService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/SampleService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/SampleService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISampleService_GetSampleAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSampleAll" />
+  </wsdl:message>
+  <wsdl:message name="ISampleService_GetSampleAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSampleAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISampleService_GetSampleAllCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSampleAllCount" />
+  </wsdl:message>
+  <wsdl:message name="ISampleService_GetSampleAllCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSampleAllCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISampleService_AddSample_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSample" />
+  </wsdl:message>
+  <wsdl:message name="ISampleService_AddSample_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSampleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISampleService_UpdateSample_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSample" />
+  </wsdl:message>
+  <wsdl:message name="ISampleService_UpdateSample_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSampleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISampleService">
+    <wsdl:operation name="GetSampleAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISampleService/GetSampleAll" message="tns:ISampleService_GetSampleAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISampleService/GetSampleAllResponse" message="tns:ISampleService_GetSampleAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSampleAllCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISampleService/GetSampleAllCount" message="tns:ISampleService_GetSampleAllCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISampleService/GetSampleAllCountResponse" message="tns:ISampleService_GetSampleAllCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSample">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISampleService/AddSample" message="tns:ISampleService_AddSample_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISampleService/AddSampleResponse" message="tns:ISampleService_AddSample_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSample">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISampleService/UpdateSample" message="tns:ISampleService_UpdateSample_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISampleService/UpdateSampleResponse" message="tns:ISampleService_UpdateSample_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISampleService" type="tns:ISampleService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSampleAll">
+      <soap:operation soapAction="http://tempuri.org/ISampleService/GetSampleAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSampleAllCount">
+      <soap:operation soapAction="http://tempuri.org/ISampleService/GetSampleAllCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSample">
+      <soap:operation soapAction="http://tempuri.org/ISampleService/AddSample" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSample">
+      <soap:operation soapAction="http://tempuri.org/ISampleService/UpdateSample" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SampleService">
+    <wsdl:port name="BasicHttpBinding_ISampleService" binding="tns:BasicHttpBinding_ISampleService">
+      <soap:address location="http://192.168.16.254:8002/SampleService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

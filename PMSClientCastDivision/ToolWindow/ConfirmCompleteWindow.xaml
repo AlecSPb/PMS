@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="确定完成该项目吗？" Height="400" Width="700">
+        Title="确定完成该项目吗？" Height="400" Width="550">
     <Grid Margin="5" Background="{StaticResource BGBrushWindow}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -28,28 +28,39 @@
         <TextBlock Grid.Row="0" Grid.Column="0" Text="材料编号"  Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBlock Name="txtMaterialLot" Grid.Row="0" Grid.Column="1" Text=""  Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBlock Grid.Row="1" Grid.Column="0" Text="材料成分" Style="{StaticResource StyleDGTextBlockCommon}"/>
-        <TextBlock Name="txtComposition" Grid.Row="1" Grid.Column="1" Text=""  Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBlock Name="txtComposition" Grid.Row="1" Grid.Column="1" Text=""  Style="{StaticResource StyleDGTextBlockCommon}" FontSize="20" Foreground="Blue"/>
         <TextBlock Grid.Row="2" Grid.Column="0" Text="内部编号" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBlock Name="txtPMINumber" Grid.Row="2" Grid.Column="1" Text=""  Style="{StaticResource StyleDGTextBlockCommon}"/>
 
         <TextBlock Grid.Row="3" Grid.Column="0" Text="目标重量(kg)"  Style="{StaticResource StyleDGTextBlockCommon}"/>
-        <TextBlock Name="txtWeight" Grid.Row="3" Grid.Column="1" Text=""  Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBlock Name="txtWeight" Grid.Row="3" Grid.Column="1" Text=""  Style="{StaticResource StyleDGTextBlockCommon}" Foreground="Blue"/>
         <TextBlock Grid.Row="4" Grid.Column="0" Text="此次重量(kg)"  Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBox Name="txtActualWeight" Grid.Row="4" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxLeft}"
                  FontSize="20" FontWeight="Bold"/>
         <TextBlock Grid.Row="5" Grid.Column="0" Text="熔点信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBox Name="txtMeltingPoint" Grid.Row="5" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
-        
-        <TextBlock Grid.Row="6" Grid.Column="0" Text="原料批号" Style="{StaticResource StyleDGTextBlockCommon}"/>
+
+        <Button Style="{StaticResource StyleButtonCommon}" Grid.Row="6" Grid.Column="0"
+                Content="原料批号" Name="BtnMaterialSource" Click="BtnMaterialSource_Click"/>
         <TextBox Name="TxtMaterialSource" Grid.Row="6" Grid.Column="1" Text="" 
                  Style="{StaticResource StyleTextBoxCommon}"/>
-        <Button Style="{StaticResource StyleButtonCommon}" Grid.Row="6" Grid.Column="2"
-                Content="基础原料" Name="BtnMaterialSource" Click="BtnMaterialSource_Click"/>
 
 
         <TextBlock Grid.Row="7" Grid.Column="0" Text="备注信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBox Name="txtRemark" Grid.Row="7" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
-        <StackPanel Grid.Row="8" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Right">
+
+        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"
+                    Orientation="Horizontal" ButtonBase.Click="StackPanel_Click">
+            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="辅助输入内容"/>
+            <Button Name="Btn1" Content="中间产品" Style="{StaticResource StyleButtonNarrow}"/>
+            <Button Name="Btn2" Content="富As" Style="{StaticResource StyleButtonNarrow}"/>
+            <Button Name="Btn3" Content="富Se" Style="{StaticResource StyleButtonNarrow}"/>
+            <Button Name="Btn4" Content="容易氧化" Style="{StaticResource StyleButtonNarrow}"/>
+            <Button Name="Btn5" Content="容易自燃" Style="{StaticResource StyleButtonNarrow}"/>
+            <Button Name="Btn6" Content="注意毒性" Style="{StaticResource StyleButtonNarrow}"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="9" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="btnCancel" Style="{StaticResource StyleButtonNavigationFixed}" Content="取消" Click="btnCancel_Click"/>
             <Button Name="btnSurePart" Style="{StaticResource StyleButtonNavigationFixed}" Content="交付部分(不完成)" Click="btnSurePart_Click"/>
             <Button Name="btnSureAll" Style="{StaticResource StyleButtonNavigationFixed}" Content="最终完成" Click="btnSureAll_Click" FontWeight="Bold"/>

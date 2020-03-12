@@ -25,7 +25,14 @@ namespace PMSClient
                 control.Focus();
             }
         }
-
+        public static void SetTextBoxInsert(TextBox control, string text)
+        {
+            if (control != null)
+            {
+                control.Text = text + control.Text;
+                control.Focus();
+            }
+        }
         /// <summary>
         /// 传入的T必须是Enum
         /// </summary>
@@ -33,7 +40,7 @@ namespace PMSClient
         /// <param name="ds">必须提前new</param>
         public static void SetListDS<T>(List<string> ds)
         {
-            if (ds!=null)
+            if (ds != null)
             {
                 ds.Clear();
                 Enum.GetNames(typeof(T)).ToList().ForEach(i => ds.Add(i));

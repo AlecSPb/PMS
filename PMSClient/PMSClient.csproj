@@ -414,6 +414,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\Sample\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SF\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1799,6 +1804,19 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\Sample\PMSClient.Sample.DcSample.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Sample\SampleService.wsdl" />
+    <None Include="Service References\Sample\SampleService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Sample\SampleService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Sample\SampleService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ToolService\PMSClient.ToolService.DcToolSieve.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1806,6 +1824,13 @@
     <None Include="Service References\ToolService\configuration91.svcinfo" />
     <None Include="Service References\ToolService\configuration.svcinfo" />
     <None Include="Service References\ToolService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Sample\SampleService.disco" />
+    <None Include="Service References\Sample\configuration91.svcinfo" />
+    <None Include="Service References\Sample\configuration.svcinfo" />
+    <None Include="Service References\Sample\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -2424,6 +2449,7 @@
     <WCFMetadataStorage Include="Service References\OutsideProcessService\" />
     <WCFMetadataStorage Include="Service References\PMSIndexService\" />
     <WCFMetadataStorage Include="Service References\RemoteHeartBeatService\" />
+    <WCFMetadataStorage Include="Service References\Sample\" />
     <WCFMetadataStorage Include="Service References\SF\" />
     <WCFMetadataStorage Include="Service References\StatisticService\" />
     <WCFMetadataStorage Include="Service References\ToolService\" />

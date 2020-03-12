@@ -6,7 +6,7 @@
       xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
       xmlns:local="clr-namespace:PMSClient.View"
       Title="请选择基础原料-只显示[在库]原料"
-      WindowStartupLocation="CenterScreen"
+      WindowStartupLocation="Manual"
       mc:Ignorable="d" 
       Height="600" Width="500" DataContext="{Binding Source={StaticResource Locator},Path=RawMaterialSheetWindow}">
     <Grid Background="{StaticResource BGBrushWindow}">

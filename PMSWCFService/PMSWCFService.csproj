@@ -75,6 +75,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SampleService.svc" />
     <Content Include="RawMaterialSheetService.svc" />
     <Content Include="BasicDataService.svc" />
     <Content Include="Documents\数据说明.txt" />
@@ -256,6 +257,7 @@
     <Compile Include="ServiceContracts\IVHPProcessService.cs" />
     <Compile Include="ServiceImplements\RecordVHPService.cs" />
     <Compile Include="ServiceImplements\RemainInventoryService.cs" />
+    <Compile Include="ServiceImplements\SampleService.cs" />
     <Compile Include="ServiceImplements\SanjieService.cs" />
     <Compile Include="ServiceImplements\StatisticService.cs" />
     <Compile Include="ServiceImplements\ToolInventoryService.cs" />

@@ -10,11 +10,11 @@ namespace PMSWCFService.ServiceContracts
     [ServiceContract]
     public interface ISampleService
     {
-        [OperationContract]
-        List<DcSample> GetSample(int s, int t, string productid, string composition);
+        //[OperationContract]
+        //List<DcSample> GetSample(int s, int t, string productid, string composition);
 
-        [OperationContract]
-        int GetSampleCount(string productid, string composition);
+        //[OperationContract]
+        //int GetSampleCount(string productid, string composition);
 
         [OperationContract]
         List<DcSample> GetSampleAll(int s, int t, string productid, string composition);

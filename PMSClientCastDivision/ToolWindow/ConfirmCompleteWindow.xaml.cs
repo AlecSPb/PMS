@@ -94,15 +94,32 @@ namespace PMSClient.ToolWindow
             //}
 
             var win = new View.RawMaterialSheetWindow();
+            double x = this.Left + this.Width;
+            double y = this.Top;
+            win.Left = x;
+            win.Top = y;
+
+
             var vm = win.DataContext as ViewModel.RawMaterialSheetWindowVM;
             vm.FillData += Vm_FillData;
 
             win.ShowDialog();
+
+
         }
 
         private void Vm_FillData(object sender, string e)
         {
-            PMSMethods.SetTextBoxAppend(TxtMaterialSource, e);
+            PMSMethods.SetTextBoxInsert(TxtMaterialSource, e);
+        }
+
+        private void StackPanel_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = e.OriginalSource as Button;
+            if (btn != null)
+            {
+                PMSMethods.SetTextBoxInsert(txtRemark, btn.Content.ToString()+";");
+            }
         }
     }
 }
