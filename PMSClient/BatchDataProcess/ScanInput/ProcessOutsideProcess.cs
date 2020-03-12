@@ -69,7 +69,7 @@ namespace PMSClient.DataProcess.ScanInput
                         using (var ss = new RecordTestServiceClient())
                         {
                             var record_test = ss.GetRecordTestByProductID(item.Lot).FirstOrDefault();
-                            model = ModelHelper.GetOutsideProcess(record_test);
+                            model = ModelHelper.GetOutsideProcess(record_test, OutisideProcosser);
                         }
 
                         //TODO:以后考虑如果测试记录找不到，就直接从热压记录中获取

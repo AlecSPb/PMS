@@ -11,7 +11,7 @@ namespace PMSClient.DataProcess.ScanInput
     public static class ModelHelper
     {
 
-        public static DcOutsideProcess GetOutsideProcess(DcRecordTest ss)
+        public static DcOutsideProcess GetOutsideProcess(DcRecordTest ss,string provider)
         {
             if (ss == null) return null;
             var model = new DcOutsideProcess();
@@ -24,7 +24,7 @@ namespace PMSClient.DataProcess.ScanInput
             model.Dimension = ss.Dimension;
             model.PMINumber = ss.PMINumber;
             model.PONumber = ss.PO;
-            model.Processor = PMSCommon.OutsideProcessor.成都炬科光学.ToString();
+            model.Processor = provider;
             model.State = PMSCommon.OutsideProcessState.待发出.ToString();
             model.ProgressBar = "";
             model.Remark = "";
