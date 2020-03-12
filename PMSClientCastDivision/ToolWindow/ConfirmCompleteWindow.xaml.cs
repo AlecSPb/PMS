@@ -105,6 +105,7 @@ namespace PMSClient.ToolWindow
 
             win.ShowDialog();
 
+            vm.FillData -= Vm_FillData;
 
         }
 
@@ -118,7 +119,7 @@ namespace PMSClient.ToolWindow
             Button btn = e.OriginalSource as Button;
             if (btn != null)
             {
-                PMSMethods.SetTextBoxInsert(txtRemark, btn.Content.ToString()+";");
+                PMSMethods.SetTextBoxInsert(txtRemark, btn.Content.ToString() + ";");
             }
         }
     }
