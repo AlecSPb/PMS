@@ -119,23 +119,6 @@
                 <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
                     <TextBox x:Name="txtCalculationDensity"  Text="{Binding CalculationDensity,UpdateSourceTrigger=LostFocus}"
                          Style="{StaticResource StyleTextBoxCommon}" />
-                    <ComboBox x:Name="cboCompounds"  
-                        ItemsSource="{Binding DataContext.Compounds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                        SelectionChanged="CboCompounds_SelectionChanged"
-                        Style="{StaticResource StyleComboBoxCommon}">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition Width="auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="{Binding MaterialName,StringFormat=[{0}]}"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding Density,StringFormat=->{0:F2}}" Foreground="Blue"/>
-                                </Grid>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
                     <Button Name="txtCompound" Click="TxtCompound_Click" Content="{StaticResource ButtonCompoundLib}" Style="{StaticResource StyleButtonSpecial}"/>
                 </StackPanel>
                 <TextBlock Grid.Row="6" Grid.Column="2" Text="#单位：g/cm3可以选择材料密度，或者直接输入均可，必须是数字" Style="{StaticResource StyleTextBlockTip}"/>

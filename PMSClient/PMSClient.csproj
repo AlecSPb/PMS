@@ -536,6 +536,9 @@
     <Compile Include="ToolWindow\ReOrderReason.xaml.cs">
       <DependentUpon>ReOrderReason.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\SingleValueDialog.xaml.cs">
+      <DependentUpon>SingleValueDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolWindow\SymbolWindow.xaml.cs">
       <DependentUpon>SymbolWindow.xaml</DependentUpon>
     </Compile>
@@ -653,12 +656,14 @@
     <Compile Include="ViewModel\PlanStatisticVM.cs" />
     <Compile Include="ViewModel\ProductUnCompletedVM.cs" />
     <Compile Include="Helpers\RecordTestDuplicateHelper.cs" />
+    <Compile Include="ViewModel\VMHelper\MissonVMHelper.cs" />
     <Compile Include="ViewModel\VMHelper\NewModelCollection.cs" />
     <Compile Include="ViewModel\PlateVM.cs" />
     <Compile Include="ViewModel\PlateSelectVM.cs" />
     <Compile Include="ViewModel\PlateEditVM.cs" />
     <Compile Include="ViewModel\RecordBondingSelectVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldSelectVM.cs" />
+    <Compile Include="ViewModel\VMHelper\OrderVMHelper.cs" />
     <Compile Include="ViewModel\VMHelper\PMSBatchHelper.cs" />
     <Compile Include="View\CompoundEditView.xaml.cs">
       <DependentUpon>CompoundEditView.xaml</DependentUpon>
@@ -689,6 +694,9 @@
     </Compile>
     <Compile Include="View\CheckListEditView.xaml.cs">
       <DependentUpon>CheckListEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MissonSelectWindow.xaml.cs">
+      <DependentUpon>MissonSelectWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SampleEditView.xaml.cs">
       <DependentUpon>SampleEditView.xaml</DependentUpon>
@@ -1246,6 +1254,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ToolWindow\SingleValueDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ToolWindow\SymbolWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1351,6 +1363,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CheckListEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MissonSelectWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

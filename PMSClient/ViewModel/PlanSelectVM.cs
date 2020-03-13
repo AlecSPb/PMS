@@ -36,6 +36,12 @@ namespace PMSClient.ViewModel
             requestView = request;
         }
 
+        public void SetSearchItem(string searchlot,string composition,string pminumber)
+        {
+            SearchComposition = composition;
+            SearchVHPDate = searchlot;
+            searchPMINumber = pminumber;
+        }
         private void IntitializeProperties()
         {
             PlanWithMissonExtras = new ObservableCollection<PlanWithMissonExtra>();
@@ -87,7 +93,9 @@ namespace PMSClient.ViewModel
 
                 case PMSViews.OutsideProcessEdit:
                     break;
+                case PMSViews.Sample:
                 case PMSViews.SampleEdit:
+
                     break;
                 default:
                     break;
@@ -232,8 +240,10 @@ namespace PMSClient.ViewModel
                     case PMSViews.OutsideProcessEdit:
                         PMSHelper.ViewModels.OutsideProcessEdit.SetBySelect1(plan.PlanMisson);
                         break;
+                    case PMSViews.Sample:
+                        PMSHelper.ViewModels.Sample.SetBySelect(plan.PlanMisson);
+                        break;
                     case PMSViews.SampleEdit:
-                        PMSHelper.ViewModels.SampleEdit.SetBySelect(plan.PlanMisson);
                         break;
                     default:
                         break;

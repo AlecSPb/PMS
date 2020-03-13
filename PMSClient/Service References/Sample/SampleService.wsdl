@@ -19,6 +19,12 @@
   <wsdl:message name="ISampleService_GetSampleAllCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSampleAllCountResponse" />
   </wsdl:message>
+  <wsdl:message name="ISampleService_GetSampleByPMINumberCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSampleByPMINumberCount" />
+  </wsdl:message>
+  <wsdl:message name="ISampleService_GetSampleByPMINumberCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSampleByPMINumberCountResponse" />
+  </wsdl:message>
   <wsdl:message name="ISampleService_AddSample_InputMessage">
     <wsdl:part name="parameters" element="tns:AddSample" />
   </wsdl:message>
@@ -39,6 +45,10 @@
     <wsdl:operation name="GetSampleAllCount">
       <wsdl:input wsaw:Action="http://tempuri.org/ISampleService/GetSampleAllCount" message="tns:ISampleService_GetSampleAllCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISampleService/GetSampleAllCountResponse" message="tns:ISampleService_GetSampleAllCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSampleByPMINumberCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISampleService/GetSampleByPMINumberCount" message="tns:ISampleService_GetSampleByPMINumberCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISampleService/GetSampleByPMINumberCountResponse" message="tns:ISampleService_GetSampleByPMINumberCount_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddSample">
       <wsdl:input wsaw:Action="http://tempuri.org/ISampleService/AddSample" message="tns:ISampleService_AddSample_InputMessage" />
@@ -62,6 +72,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetSampleAllCount">
       <soap:operation soapAction="http://tempuri.org/ISampleService/GetSampleAllCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSampleByPMINumberCount">
+      <soap:operation soapAction="http://tempuri.org/ISampleService/GetSampleByPMINumberCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

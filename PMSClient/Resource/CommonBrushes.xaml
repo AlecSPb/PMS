@@ -24,4 +24,8 @@
 
     <SolidColorBrush x:Key="ReadOnlyTextBoxBrush" Color="LightSteelBlue"/>
     
+    <SolidColorBrush x:Key="UnPreparedBrush" Color="LightGreen"/>
+    <SolidColorBrush x:Key="UnCheckBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="UnSentBrush" Color="LightPink"/>
+    
 </ResourceDictionary>

@@ -35,6 +35,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetSampleByPMINumberCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSampleByPMINumberCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetSampleByPMINumberCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddSample">
     <xs:complexType>
       <xs:sequence>

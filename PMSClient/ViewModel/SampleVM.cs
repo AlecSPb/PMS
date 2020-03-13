@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSClient.Sample;
+using PMSClient.MainService;
 
 namespace PMSClient.ViewModel
 {
@@ -33,15 +34,53 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             Duplicate = new RelayCommand<DcSample>(ActionDuplicate, CanDuplicate);
-            Prepared = new RelayCommand<DcSample>(ActionPrepared, CanEdit);
-            Checked = new RelayCommand<DcSample>(ActionChecked, CanEdit);
-            Sent = new RelayCommand<DcSample>(ActionSent, CanEdit);
+
+            Prepared = new RelayCommand<DcSample>(ActionPrepared, CanQuickEdit);
+            Checked = new RelayCommand<DcSample>(ActionChecked, CanQuickEdit);
+            Sent = new RelayCommand<DcSample>(ActionSent, CanQuickEdit);
             Print = new RelayCommand(ActionPrint, CanPrint);
+            Label = new RelayCommand<DcSample>(ActionLabel);
+        }
+
+        public bool CanQuickEdit(DcSample obj)
+        {
+            return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.Sample);
+        }
+
+        private void ActionLabel(DcSample model)
+        {
+            if (model != null)
+            {
+                if (string.IsNullOrEmpty(model.ProductID) || model.ProductID.Contains("无"))
+                {
+                    PMSDialogService.Show("请先准备样品并输入样品ID，再打印标签");
+                    return;
+                }
+
+                //显示提示框给标签打印者
+                StringBuilder lb = new StringBuilder();
+
+                lb.AppendLine("=====  一般标签↑，样品标签↓  =====");
+                lb.AppendLine();
+                lb.AppendLine(model.Composition);
+                lb.AppendLine("Weight      g");
+                lb.AppendLine(model.ProductID);
+
+                lb.AppendLine("=====  简成分样品标签↓  =====");
+                lb.AppendLine(Helpers.CompositionHelper.RemoveNumbers(model.Composition));
+                lb.AppendLine("Weight      g");
+                lb.AppendLine(model.ProductID);
+                lb.AppendLine();
+                PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.Plan, "批量",
+                        null, null, lb.ToString(), null);
+                var win = new Tool.LabelOutPutWindow();
+                win.Show();
+            }
         }
 
         private bool CanPrint()
         {
-            return CanEdit(null);
+            return true;
         }
 
         private void ActionPrint()
@@ -62,18 +101,47 @@ namespace PMSClient.ViewModel
 
         private void ActionPrepared(DcSample obj)
         {
-            AddProcess(obj, "已准备");
+            if (!PMSDialogService.ShowYesNo("请问", $"确定要准备该[{obj.Composition}-{obj.PMINumber}]样品吗？继续点是"))
+            {
+                return;
+            }
+
+            sample = obj;
+            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.Sample);
+            PMSHelper.ViewModels.PlanSelect.SetSearchItem(composition: obj.Composition, searchlot: "", pminumber: "");
+            PMSHelper.ViewModels.PlanSelect.RefreshData();
+
+            NavigationService.GoTo(PMSViews.PlanSelect);
         }
 
-        private void AddProcess(DcSample obj, string type = "")
+        private DcSample sample;
+        public void SetBySelect(DcPlanWithMisson plan)
         {
-            if (!PMSDialogService.ShowYesNo("请问", $"确定要为[{obj.ProductID}]追加[{type}]记录吗？"))
+
+            if (plan != null)
+            {
+                sample.ProductID = plan.Plan.SearchCode + "-1";
+                if (PMSDialogService.ShowYesNo("请问", $"确定要填入[{sample.ProductID}-{plan.Misson.CompositionStandard}]" +
+                    $"到样品准备[{sample.Composition}-{sample.PMINumber}]吗？"))
+                {
+                    if (!(string.IsNullOrEmpty(sample.ProductID) || sample.ProductID.Contains("无")))
+                    {
+                        AddProcess(sample, "已准备");
+                    }
+                }
+                //取消临时变量
+                sample = null;
+            }
+        }
+        private void AddProcess(DcSample obj, string type_name = "")
+        {
+            if (!PMSDialogService.ShowYesNo("请问", $"确定要为[{obj.ProductID}]追加[{type_name}]记录吗？"))
                 return;
 
             if (obj == null) return;
             //分析要改变的类型
             PMSCommon.SampleType sampleType = PMSCommon.SampleType.未取样;
-            switch (type)
+            switch (type_name)
             {
                 case "已准备":
                     sampleType = PMSCommon.SampleType.未核验;
@@ -93,7 +161,7 @@ namespace PMSClient.ViewModel
                 using (var s = new SampleServiceClient())
                 {
                     obj.SampleType = sampleType.ToString();
-                    obj.TraceInformation += $"{DateTime.Now.ToString("yyyy-MM-dd")}{sampleType.ToString()};";
+                    obj.TraceInformation += $"{DateTime.Now.ToString("yyyy-MM-dd")}{type_name};";
                     s.UpdateSample(obj);
                 }
                 SetPageParametersWhenConditionChange();
@@ -119,7 +187,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDuplicate(DcSample arg)
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.Sample);
+            return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.SampleEdit);
         }
 
         private void ActionAll()
@@ -135,12 +203,12 @@ namespace PMSClient.ViewModel
 
         private bool CanEdit(DcSample arg)
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.Sample);
+            return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.SampleEdit);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.Sample);
+            return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.SampleEdit);
         }
 
         private void ActionEdit(DcSample model)
@@ -211,6 +279,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcSample> Prepared { get; set; }
         public RelayCommand<DcSample> Checked { get; set; }
         public RelayCommand<DcSample> Sent { get; set; }
+        public RelayCommand<DcSample> Label { get; set; }
         public RelayCommand Print { get; set; }
 
         #endregion

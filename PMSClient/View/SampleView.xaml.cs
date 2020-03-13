@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMSClient.Sample;
 
 namespace PMSClient.View
 {
@@ -23,6 +24,25 @@ namespace PMSClient.View
         public SampleView()
         {
             InitializeComponent();
+        }
+
+        private void dg_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            DcSample sample = e.Row.DataContext as DcSample;
+            switch (sample.SampleType)
+            {
+                case "未取样":
+                    e.Row.Background = this.FindResource("UnPreparedBrush") as SolidColorBrush;
+                    break;
+                case "未核验":
+                    e.Row.Background = this.FindResource("UnCheckBrush") as SolidColorBrush;
+                    break;
+                case "已核验":
+                    e.Row.Background = this.FindResource("UnSentBrush") as SolidColorBrush;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

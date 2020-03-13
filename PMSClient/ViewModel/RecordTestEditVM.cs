@@ -132,7 +132,7 @@ namespace PMSClient.ViewModel
                 CurrentRecordTest.ProductID = "请手动输入";
                 CurrentRecordTest.Customer = order.CustomerName;
                 CurrentRecordTest.Dimension = order.Dimension;
-                CurrentRecordTest.DimensionActual = order.Dimension.Replace("thick","").Replace("thickness", "").Trim();
+                CurrentRecordTest.DimensionActual = order.Dimension.Replace("thick", "").Replace("thickness", "").Trim();
                 CurrentRecordTest.OrderDate = order.CreateTime;
             }
         }
@@ -165,6 +165,14 @@ namespace PMSClient.ViewModel
                 CurrentRecordTest.DimensionActual = plan.Misson.Dimension;
                 CurrentRecordTest.OrderDate = plan.Misson.CreateTime;
                 //RaisePropertyChanged(nameof(CurrentRecordTest));
+
+
+                //警告转单
+                if (plan.Plan.SpecialRequirement.Contains("CD"))
+                {
+                    PMSDialogService.ShowWarning($"该计划已经转单到{plan.Plan.SpecialRequirement},请注意修正客户信息");
+                }
+
             }
         }
 

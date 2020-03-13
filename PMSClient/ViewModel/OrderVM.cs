@@ -12,6 +12,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.IO;
 using PMSClient.ToolWindow;
+using PMSClient.Sample;
 
 namespace PMSClient.ViewModel
 {
@@ -75,6 +76,8 @@ namespace PMSClient.ViewModel
 
             Duplicate = new RelayCommand<DcOrder>(ActionDuplicate, CanDuplicate);
             Check = new RelayCommand<DcOrder>(ActionCheck, CanCheck);
+            Sample = new RelayCommand<DcOrder>(ActionSample, CanSample);
+
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
 
@@ -82,7 +85,15 @@ namespace PMSClient.ViewModel
 
             SampleSheet = new RelayCommand(ActionSampleSheet);
         }
+        private bool CanSample(DcOrder arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditOrderCheck);
+        }
 
+        private void ActionSample(DcOrder obj)
+        {
+            VMHelper.OrderVMHelper.AddSampleFromOrder(obj);
+        }
         private void ActionSampleSheet()
         {
             if (!PMSDialogService.ShowYesNo("请问", "即将输出 未完成订单中 包含样品需求的订单，继续？"))
@@ -383,6 +394,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcOrder> Edit { get; private set; }
         public RelayCommand<DcOrder> Duplicate { get; private set; }
         public RelayCommand<DcOrder> Check { get; private set; }
+        public RelayCommand<DcOrder> Sample { get; private set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
         public RelayCommand OnlyUnCompleted { get; set; }
 

@@ -1,0 +1,20 @@
+﻿<Window x:Class="PMSClient.ToolWindow.SingleValueDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
+        Title="请输入要转到的订单的PMINumber" Height="130" Width="250">
+    <Grid Background="LightYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox Style="{StaticResource StyleTextBoxCommon}" Name="TxtValue"/>
+        <Button Grid.Row="1" Style="{StaticResource StyleButtonStrench}" Content="确定" Height="50"
+                Click="Button_Click"/>
+    </Grid>
+</Window>

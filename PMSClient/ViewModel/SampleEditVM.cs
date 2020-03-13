@@ -33,31 +33,31 @@ namespace PMSClient.ViewModel
 
         private void ActionSelect()
         {
-            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.SampleEdit);
-            PMSHelper.ViewModels.PlanSelect.RefreshData();
-            NavigationService.GoTo(PMSViews.PlanSelect);
+            PMSHelper.ViewModels.MissonSelect.SetRequestView(PMSViews.SampleEdit);
+            PMSHelper.ViewModels.MissonSelect.RefreshData();
+            NavigationService.GoTo(PMSViews.MissonSelect);
         }
-        public void SetBySelect(DcPlanWithMisson plan)
+        public void SetBySelect(DcOrder order)
         {
-            if (plan != null)
+            if (order != null)
             {
-                CurrentSample.ProductID = UsefulPackage.PMSTranslate.PlanLot(plan);
-                CurrentSample.Composition = plan.Misson.CompositionStandard;
-                CurrentSample.PMINumber = plan.Misson.PMINumber;
-                CurrentSample.Customer = plan.Misson.CustomerName;
+                CurrentSample.ProductID = "无";
+                CurrentSample.Composition = order.CompositionStandard;
+                CurrentSample.PMINumber = order.PMINumber;
+                CurrentSample.Customer = order.CustomerName;
                 CurrentSample.SampleType = PMSCommon.SampleType.未取样.ToString();
 
-                bool need_need = Helpers.OrderHelper.NeedSample(plan.Misson.SampleNeed);
-                bool need_anlysis = Helpers.OrderHelper.NeedSample(plan.Misson.SampleForAnlysis);
+                bool need_need = Helpers.OrderHelper.NeedSample(order.SampleNeed);
+                bool need_anlysis = Helpers.OrderHelper.NeedSample(order.SampleForAnlysis);
                 string sample_str = "";
                 if (need_need)
                 {
-                    sample_str += $"客户样品:{plan.Misson.SampleNeed};";
+                    sample_str += $"客户样品:{order.SampleNeed};";
                 }
 
                 if (need_anlysis)
                 {
-                    sample_str += $"自分析样品:{plan.Misson.SampleForAnlysis};";
+                    sample_str += $"自分析样品:{order.SampleForAnlysis};";
                 }
                 CurrentSample.OriginalRequirement = sample_str;
                 //RaisePropertyChanged(nameof(CurrentRecordTest));

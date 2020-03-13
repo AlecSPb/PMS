@@ -306,6 +306,12 @@ namespace PMSClient.Sample {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAllCount", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllCountResponse")]
         System.Threading.Tasks.Task<int> GetSampleAllCountAsync(string productid, string composition, string sampletype);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleByPMINumberCount", ReplyAction="http://tempuri.org/ISampleService/GetSampleByPMINumberCountResponse")]
+        int GetSampleByPMINumberCount(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleByPMINumberCount", ReplyAction="http://tempuri.org/ISampleService/GetSampleByPMINumberCountResponse")]
+        System.Threading.Tasks.Task<int> GetSampleByPMINumberCountAsync(string pminumber);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/AddSample", ReplyAction="http://tempuri.org/ISampleService/AddSampleResponse")]
         void AddSample(PMSClient.Sample.DcSample model);
         
@@ -360,6 +366,14 @@ namespace PMSClient.Sample {
         
         public System.Threading.Tasks.Task<int> GetSampleAllCountAsync(string productid, string composition, string sampletype) {
             return base.Channel.GetSampleAllCountAsync(productid, composition, sampletype);
+        }
+        
+        public int GetSampleByPMINumberCount(string pminumber) {
+            return base.Channel.GetSampleByPMINumberCount(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetSampleByPMINumberCountAsync(string pminumber) {
+            return base.Channel.GetSampleByPMINumberCountAsync(pminumber);
         }
         
         public void AddSample(PMSClient.Sample.DcSample model) {

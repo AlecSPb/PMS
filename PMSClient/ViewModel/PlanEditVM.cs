@@ -159,7 +159,7 @@ namespace PMSClient.ViewModel
 
             Compounds = new List<DcBDCompound>();
             Compounds.Clear();
-            PMSBasicDataService.Compounds.ToList().ForEach(c => Compounds.Add(c));
+            //PMSBasicDataService.Compounds.ToList().ForEach(c => Compounds.Add(c));
 
             Quantities = new List<int>();
             PMSBasicDataService.SetListDS(Quantities, 10);

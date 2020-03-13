@@ -388,6 +388,9 @@
                                 <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.DuplicatePlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonChangeOrder}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.ChangeOrder,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

@@ -18,7 +18,7 @@
 
     <sys:Double x:Key="FontSM">12</sys:Double>
     <sys:Double x:Key="FontMD">14</sys:Double>
-    <sys:Double x:Key="FontLG">18</sys:Double>
+    <sys:Double x:Key="FontLG">16</sys:Double>
     <sys:Double x:Key="TabletFontLG">14</sys:Double>
     <sys:Double x:Key="TabletFontTouch">20</sys:Double>
 
@@ -178,6 +178,7 @@
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
         <Setter Property="Height" Value="45"/>
+        <Setter Property="FontWeight" Value="Bold"/>
     </Style>
     <Style x:Key="StyleButtonNavigationFixed" TargetType="Button"  BasedOn="{StaticResource StyleButtonNavigation}">
         <Setter Property="HorizontalAlignment" Value="Center"/>

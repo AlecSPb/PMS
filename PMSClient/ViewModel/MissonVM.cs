@@ -63,13 +63,23 @@ namespace PMSClient.ViewModel
             Finish = new RelayCommand<DcOrder>(ActionFinish, CanFinish);
             EditPlan = new RelayCommand<DcPlanVHP>(ActionEditPlan, CanEditPlan);
             DuplicatePlan = new RelayCommand<DcPlanVHP>(ActionDuplicatePlan, CanDuplicatePlan);
-
+            ChangeOrder = new RelayCommand<DcPlanVHP>(ActionChangeOrder, CanChangeOrder);
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             Refresh = new RelayCommand(ActionRefresh);
             OnlyUnFinished = new RelayCommand(ActionOnlyUnFinished, CanOnlyUnFinished);
             FindMaterial = new RelayCommand<DcOrder>(ActionFindMaterial, CanFindMaterial);
 
             SampleSheet = new RelayCommand(ActionSampleSheet);
+        }
+
+        private void ActionChangeOrder(DcPlanVHP obj)
+        {
+            VMHelper.MissonVMHelper.UpdateSpecialRequirement(obj);
+        }
+
+        private bool CanChangeOrder(DcPlanVHP arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan);
         }
 
         private void ActionSampleSheet()
@@ -395,6 +405,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcOrder> Finish { get; set; }
         public RelayCommand<DcPlanVHP> EditPlan { get; set; }
         public RelayCommand<DcPlanVHP> DuplicatePlan { get; set; }
+        public RelayCommand<DcPlanVHP> ChangeOrder { get; set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
         public RelayCommand OnlyUnFinished { get; set; }
         public RelayCommand<DcOrder> FindMaterial { get; set; }

@@ -16,6 +16,14 @@ namespace PMSClient
             }
 
         }
+        public static string[] SampleEdit
+        {
+            get
+            {
+                return new string[] { "管理员", "统筹组" };
+            }
+
+        }
         public static string[] ViewOutsideProcess
         {
             get

@@ -55,7 +55,7 @@ namespace PMSClient.ViewModel
             model.Cost = 0;
             model.Remark = "";
             model.PaidState = PMSCommon.OutSourcePaidState.未付款.ToString();
-            model.FinishTime = DateTime.Now;
+            model.FinishTime = DateTime.Now.AddDays(30);
 
             #endregion
             CurrentOutSource = model;
@@ -79,7 +79,7 @@ namespace PMSClient.ViewModel
                 CurrentOutSource.QuantityUnit = model.QuantityUnit;
                 CurrentOutSource.Cost = model.Cost;
                 CurrentOutSource.Remark = model.Remark;
-                CurrentOutSource.FinishTime = model.FinishTime;
+                CurrentOutSource.FinishTime = CurrentOutSource.CreateTime.AddDays(30);
                 CurrentOutSource.PaidState = model.PaidState;
             }
         }

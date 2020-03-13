@@ -23,6 +23,9 @@ namespace PMSWCFService.ServiceContracts
         int GetSampleAllCount(string productid, string composition, string sampletype);
 
         [OperationContract]
+        int GetSampleByPMINumberCount(string pminumber);
+
+        [OperationContract]
         void AddSample(DcSample model);
         [OperationContract]
         void UpdateSample(DcSample model);

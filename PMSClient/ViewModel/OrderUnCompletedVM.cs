@@ -11,6 +11,7 @@ using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using System.Windows;
 using PMSClient.ToolWindow;
+using PMSClient.Sample;
 
 namespace PMSClient.ViewModel
 {
@@ -57,14 +58,25 @@ namespace PMSClient.ViewModel
             }, CanEdit);
 
             Duplicate = new RelayCommand<DcOrder>(ActionDuplicate, CanDuplicate);
+            Sample = new RelayCommand<DcOrder>(ActionSample, CanSample);
             Check = new RelayCommand<DcOrder>(ActionCheck, CanCheck);
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.Order));
         }
 
+        private bool CanSample(DcOrder arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditOrderCheck);
+        }
+
+        private void ActionSample(DcOrder obj)
+        {
+            VMHelper.OrderVMHelper.AddSampleFromOrder(obj);
+        }
+
         private void ActionSelectionChanged(DcOrder model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 CurrentOrder = model;
             }
@@ -237,7 +249,7 @@ namespace PMSClient.ViewModel
         public DcOrder CurrentOrder
         {
             get { return currentOrder; }
-            set { currentOrder = value;RaisePropertyChanged(nameof(CurrentOrder)); }
+            set { currentOrder = value; RaisePropertyChanged(nameof(CurrentOrder)); }
         }
 
 
@@ -258,6 +270,8 @@ namespace PMSClient.ViewModel
 
         public RelayCommand<DcOrder> Duplicate { get; private set; }
         public RelayCommand<DcOrder> Check { get; private set; }
+        public RelayCommand<DcOrder> Sample { get; private set; }
+
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
         public RelayCommand GiveUp { get; set; }
         #endregion

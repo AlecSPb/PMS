@@ -211,12 +211,14 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                     <DataGridTextColumn Header="{StaticResource PlanVaccum}" Binding="{Binding Plan.Vaccum,StringFormat={}{0:#.##E00}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                    <DataGridTextColumn Header="{StaticResource OrderDimension}" Binding="{Binding Misson.Dimension,StringFormat={}{0:#.##E00}}"
+                    <DataGridTextColumn Header="{StaticResource OrderDimension}" Binding="{Binding Misson.Dimension}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                    <DataGridTextColumn Header="{StaticResource OrderDimensionDetails}" Binding="{Binding Misson.DimensionDetails,StringFormat={}{0:#.##E00}}"
+                    <DataGridTextColumn Header="{StaticResource OrderDimensionDetails}" Binding="{Binding Misson.DimensionDetails}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                    <DataGridTextColumn Header="{StaticResource OrderSpecialRequirement}" Binding="{Binding Misson.SpecialRequirement,StringFormat={}{0:#.##E00}}"
+                    <DataGridTextColumn Header="{StaticResource OrderSpecialRequirement}" Binding="{Binding Misson.SpecialRequirement}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanSpecialRequirement}" Binding="{Binding Plan.SpecialRequirement}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource PlanCreateTime}" Binding="{Binding Plan.CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource PlanCreator}" Binding="{Binding Plan.Creator}"

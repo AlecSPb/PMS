@@ -27,13 +27,13 @@ namespace PMSClient.View
             InitializeComponent();
         }
 
-        private void CboCompounds_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (cboCompounds.SelectedItem is DcBDCompound selectedCompound)
-            {
-                PMSMethods.SetTextBox(txtCalculationDensity, selectedCompound.Density.ToString());
-            }
-        }
+        //private void CboCompounds_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    if (cboCompounds.SelectedItem is DcBDCompound selectedCompound)
+        //    {
+        //        PMSMethods.SetTextBox(txtCalculationDensity, selectedCompound.Density.ToString());
+        //    }
+        //}
 
 
         private void BtnCalculate_Click(object sender, RoutedEventArgs e)

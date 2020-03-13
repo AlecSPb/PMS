@@ -42,7 +42,7 @@
     <sys:String x:Key="PageNaivgationWorkFlow">工作流</sys:String>
 
 
-    <sys:String x:Key="PageSales">销售</sys:String>
+    <sys:String x:Key="PageSales">订单</sys:String>
     <sys:String x:Key="PageMaterial">原料</sys:String>
     <sys:String x:Key="PageProduction">生产</sys:String>
     <sys:String x:Key="PageRecord">记录</sys:String>
@@ -82,7 +82,7 @@
     <sys:String x:Key="PagePlanSearch">生产计划[搜索]</sys:String>
     <sys:String x:Key="PagePlan">生产计划</sys:String>
     <sys:String x:Key="PagePlanWindow">生产计划-窗口模式</sys:String>
-    <sys:String x:Key="PagePlanWindowTrace">生产计划-只显示会被加工和发货的热压计划</sys:String>
+    <sys:String x:Key="PagePlanWindowTrace">生产计划-只显示会成为产品的计划</sys:String>
     <sys:String x:Key="PagePlanEdit">计划编辑</sys:String>
     <sys:String x:Key="PagePlanConclusion">生产总结</sys:String>
     <sys:String x:Key="PagePlanConclusionEdit">生产总结编辑</sys:String>
@@ -212,6 +212,7 @@
     <sys:String x:Key="ButtonQuickChange">快速更改</sys:String>
     <sys:String x:Key="ButtonEdit">编辑</sys:String>
     <sys:String x:Key="ButtonDuplicate">复用</sys:String>
+    <sys:String x:Key="ButtonChangeOrder">转单</sys:String>
     <sys:String x:Key="ButtonBatchDuplicate">复用</sys:String>
     <sys:String x:Key="ButtonDelete">作废</sys:String>
     <sys:String x:Key="ButtonAddItem">安排</sys:String>

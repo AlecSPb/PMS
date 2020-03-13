@@ -42,7 +42,7 @@
     <sys:String x:Key="PageNaivgationWorkFlow">WorkFlow</sys:String>
 
 
-    <sys:String x:Key="PageSales">Sales</sys:String>
+    <sys:String x:Key="PageSales">Orders</sys:String>
     <sys:String x:Key="PageMaterial">Material</sys:String>
     <sys:String x:Key="PageProduction">Production</sys:String>
     <sys:String x:Key="PageRecord">Record</sys:String>
@@ -87,8 +87,8 @@
     <sys:String x:Key="PagePlanEdit">Plan Edit</sys:String>
     <sys:String x:Key="PagePlanConclusion">Plan Conclusion</sys:String>
     <sys:String x:Key="PagePlanConclusionEdit">Plan Conclusion Edit</sys:String>
-    <sys:String x:Key="PageMaterialNeed">Material Need</sys:String>
-    <sys:String x:Key="PageMaterialNeedEdit">Material Need Edit</sys:String>
+    <sys:String x:Key="PageMaterialNeed">Material Requirement</sys:String>
+    <sys:String x:Key="PageMaterialNeedEdit">Material Requirement Edit</sys:String>
     <sys:String x:Key="PageMaterialOrder">Material Order</sys:String>
     <sys:String x:Key="PageMaterialOrderEdit">Material Order Edit</sys:String>
     <sys:String x:Key="PageMaterialOrderItemEdit">Material Order Item Edit</sys:String>
@@ -126,17 +126,17 @@
     <sys:String x:Key="PageProductUnCompleted">Product[Stored]</sys:String>
     <sys:String x:Key="PageProductEdit">Product Edit</sys:String>
 
-    <sys:String x:Key="PagePlate">Back Plate</sys:String>
-    <sys:String x:Key="PagePlateUnCompleted">Back Plate[Stored]</sys:String>
-    <sys:String x:Key="PagePlateEdit">Back Plate Edit</sys:String>
+    <sys:String x:Key="PagePlate">Backing Plate</sys:String>
+    <sys:String x:Key="PagePlateUnCompleted">Backing Plate[Stored]</sys:String>
+    <sys:String x:Key="PagePlateEdit">Backing Plate Edit</sys:String>
 
 
     <sys:String x:Key="PageDelivery">Shipment</sys:String>
     <sys:String x:Key="PageDeliveryEdit">Shipment Edit</sys:String>
     <sys:String x:Key="PageDeliveryItemEdit">Shipment Item Edit</sys:String>
-    <sys:String x:Key="PageDeliveryItemList">Shipment Item List</sys:String>
-    <sys:String x:Key="PageRemainInventory">Remain Inventory</sys:String>
-    <sys:String x:Key="PageRemainInventoryEdit">Remain Inventory Edit</sys:String>
+    <sys:String x:Key="PageDeliveryItemList">Shipment List</sys:String>
+    <sys:String x:Key="PageRemainInventory">Remainder</sys:String>
+    <sys:String x:Key="PageRemainInventoryEdit">Remainder Edit</sys:String>
     
     <sys:String x:Key="PageStatisticPMSIndex">PMS Index</sys:String>
     <sys:String x:Key="PageStatisticOrder">Statistic Order</sys:String>
@@ -209,6 +209,7 @@
     <sys:String x:Key="ButtonEdit">Edit</sys:String>
     <sys:String x:Key="ButtonDuplicate">Dup</sys:String>
     <sys:String x:Key="ButtonBatchDuplicate">Dup</sys:String>
+    <sys:String x:Key="ButtonChangeOrder">Change Order</sys:String>
     <sys:String x:Key="ButtonDelete">Delete</sys:String>
     <sys:String x:Key="ButtonAddItem">Item</sys:String>
     <sys:String x:Key="ButtonAddChild">Child</sys:String>

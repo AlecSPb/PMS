@@ -83,6 +83,10 @@
                                         Command="{Binding DataContext.Check,
                                             RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                    <Button Content="{StaticResource ButtonSingleSample}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.Sample,
+                                            RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

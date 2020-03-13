@@ -34,9 +34,14 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonPrint}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Print}"/>
+            <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBlock Text="{StaticResource ButtonSinglePrepared}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnPreparedBrush}"/>
+
+            <TextBlock Text="{StaticResource ButtonSingleCheck}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckBrush}"/>
+            <TextBlock Text="{StaticResource ButtonSingleSend}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnSentBrush}"/>
         </StackPanel>
         <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Samples}"
-                  >
+                  LoadingRow="dg_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
@@ -48,15 +53,19 @@
                                 <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonSingleLabel}" Style="{StaticResource StyleDGButtonSingleLetter}"
+                                    Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}" ToolTip="{StaticResource ButtonSample}"/>
+                                
                                 <Button Content="{StaticResource ButtonSinglePrepared}" Style="{StaticResource StyleDGButtonSingleLetter}"
                                     Command="{Binding DataContext.Prepared,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}" ToolTip="已准备"/>
+                                        CommandParameter="{Binding}" ToolTip="{StaticResource ButtonSinglePrepared}"/>
                                 <Button Content="{StaticResource ButtonSingleCheck}" Style="{StaticResource StyleDGButtonSingleLetter}"
                                     Command="{Binding DataContext.Checked,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}" ToolTip="已检查"/>
+                                        CommandParameter="{Binding}" ToolTip="{StaticResource ButtonCheck}"/>
                                 <Button Content="{StaticResource ButtonSingleSend}" Style="{StaticResource StyleDGButtonSingleLetter}"
                                     Command="{Binding DataContext.Sent,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}" ToolTip="已发送"/>
+                                        CommandParameter="{Binding}" ToolTip="{StaticResource ButtonSend}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

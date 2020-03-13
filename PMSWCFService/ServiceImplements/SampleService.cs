@@ -78,6 +78,27 @@ namespace PMSWCFService
             }
         }
 
+        public int GetSampleByPMINumberCount(string pminumber)
+        {
+            try
+            {
+                XS.Run();
+                using (var db = new PMSDbContext())
+                {
+                    var query = from m in db.Samples
+                                where m.State != PMSCommon.SimpleState.作废.ToString()
+                                && m.PMINumber.Contains(pminumber)
+                                select m;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                return 0;
+            }
+        }
+
         public void UpdateSample(DcSample model)
         {
             try
