@@ -29,7 +29,7 @@
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <StackPanel Style="{StaticResource StyleStackPanelCommon}">
                 <TextBlock Text="库存警告&lt;" Background="{StaticResource InventoryWarningBrush}"
-                           Style="{StaticResource StyleTextBlockWarning}"/>
+                           Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Name="TxtAlarmValue" Style="{StaticResource StyleTextBoxCommon}" Text="5"
                          TextAlignment="Center" MinWidth="30"
                          Background="White"/>

@@ -56,11 +56,11 @@
                                 <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <Button Content="S" Style="{StaticResource StyleDGButtonSingleLetter}"
+                                <Button Content="{StaticResource ButtonSingleSend}" Style="{StaticResource StyleDGButtonSingleLetter}"
                                     Command="{Binding DataContext.Send,
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}" ToolTip="发出Send"/>
-                                <Button Content="R" Style="{StaticResource StyleDGButtonSingleLetter}"
+                                <Button Content="{StaticResource ButtonSingleReceive}" Style="{StaticResource StyleDGButtonSingleLetter}"
                                     Command="{Binding DataContext.Receive,
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}" ToolTip="取回Receive"/>

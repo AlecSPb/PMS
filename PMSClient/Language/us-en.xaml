@@ -333,6 +333,16 @@
     <sys:String x:Key="ButtonGetBack">GetBack</sys:String>
     <sys:String x:Key="ButtonFail">Fail</sys:String>
     <sys:String x:Key="ButtonReMachine">ReMachine</sys:String>
+
+    <!--单字按钮-->
+    <sys:String x:Key="ButtonSingleSend">S</sys:String>
+    <sys:String x:Key="ButtonSingleReceive">R</sys:String>
+    <sys:String x:Key="ButtonSingleDoc">DC</sys:String>
+    <sys:String x:Key="ButtonSingleCompare">CP</sys:String>
+    <sys:String x:Key="ButtonSingleCheck">CK</sys:String>
+    <sys:String x:Key="ButtonSingleLabel">LB</sys:String>
+    <sys:String x:Key="ButtonSingleSample">SP</sys:String>
+    <sys:String x:Key="ButtonSinglePrepared">PP</sys:String>
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">Color Indicator=></sys:String>
     <sys:String x:Key="IndicatorYesterday">Yesterday</sys:String>

@@ -48,13 +48,13 @@
                                 <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <Button Content="P" Style="{StaticResource StyleDGButtonSingleLetter}"
+                                <Button Content="{StaticResource ButtonSinglePrepared}" Style="{StaticResource StyleDGButtonSingleLetter}"
                                     Command="{Binding DataContext.Prepared,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}" ToolTip="已准备"/>
-                                <Button Content="C" Style="{StaticResource StyleDGButtonSingleLetter}"
+                                <Button Content="{StaticResource ButtonSingleCheck}" Style="{StaticResource StyleDGButtonSingleLetter}"
                                     Command="{Binding DataContext.Checked,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}" ToolTip="已检查"/>
-                                <Button Content="S" Style="{StaticResource StyleDGButtonSingleLetter}"
+                                <Button Content="{StaticResource ButtonSingleSend}" Style="{StaticResource StyleDGButtonSingleLetter}"
                                     Command="{Binding DataContext.Sent,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}" ToolTip="已发送"/>
                             </StackPanel>

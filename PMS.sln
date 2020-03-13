@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PMS", "PMS", "{496D2D18-34C4-4621-AECC-5FE6AE212DC6}"
+	ProjectSection(SolutionItems) = preProject
+		DevelopNote.txt = DevelopNote.txt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSLargeScreen", "PMSLargeScreen\PMSLargeScreen.csproj", "{FDE2BDA6-E7B8-4EFD-8B64-57787F9F9524}"
 	ProjectSection(ProjectDependencies) = postProject

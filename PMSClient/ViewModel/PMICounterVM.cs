@@ -103,9 +103,11 @@ namespace PMSClient.ViewModel
 
                 obj.ItemCount -= dialog.Counter;
                 obj.ItemHistory = AddItemHistory(obj.ItemHistory, "-", dialog.Counter);
-                //排序计数+1
-                obj.RowOrder += 1;
+
             }
+            //排序计数+1
+            obj.RowOrder += 1;
+
             using (var service = new PMICounterServiceClient())
             {
                 service.UpdatePMICounter(obj);
