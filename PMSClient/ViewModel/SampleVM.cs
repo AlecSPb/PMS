@@ -36,6 +36,17 @@ namespace PMSClient.ViewModel
             Prepared = new RelayCommand<DcSample>(ActionPrepared, CanEdit);
             Checked = new RelayCommand<DcSample>(ActionChecked, CanEdit);
             Sent = new RelayCommand<DcSample>(ActionSent, CanEdit);
+            Print = new RelayCommand(ActionPrint, CanPrint);
+        }
+
+        private bool CanPrint()
+        {
+            return CanEdit(null);
+        }
+
+        private void ActionPrint()
+        {
+            //弹出打印对话框
 
         }
 
@@ -200,6 +211,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcSample> Prepared { get; set; }
         public RelayCommand<DcSample> Checked { get; set; }
         public RelayCommand<DcSample> Sent { get; set; }
+        public RelayCommand Print { get; set; }
 
         #endregion
 

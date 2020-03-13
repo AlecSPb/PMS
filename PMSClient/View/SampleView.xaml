@@ -33,6 +33,7 @@
                       SelectedItem="{Binding SearchSampleType,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonPrint}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Print}"/>
         </StackPanel>
         <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Samples}"
                   >

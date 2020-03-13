@@ -94,18 +94,18 @@
                                         <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                        <Button Content="{StaticResource ButtonDoc}" Style="{StaticResource StyleDGButton}"
+                                        <Button Content="DC" Style="{StaticResource StyleDGButtonSingleLetter}"
                                     Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
-                                        <Button Content="{StaticResource ButtonCompare}" Style="{StaticResource StyleDGButton}"
+                                        CommandParameter="{Binding}" ToolTip="{StaticResource ButtonDoc}"/>
+                                        <Button Content="CP" Style="{StaticResource StyleDGButtonSingleLetter}"
                                     Command="{Binding DataContext.Compare,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
-                                        <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
+                                        CommandParameter="{Binding}" ToolTip="{StaticResource ButtonCompare}"/>
+                                        <Button Content="LB" Style="{StaticResource StyleDGButtonSingleLetter}"
                                     Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
-                                        <Button Content="{StaticResource ButtonCheck}" Style="{StaticResource StyleDGButton}"
+                                        CommandParameter="{Binding}" ToolTip="{StaticResource ButtonLabel}"/>
+                                        <Button Content="CK" Style="{StaticResource StyleDGButtonSingleLetter}"
                                     Command="{Binding DataContext.Check,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
+                                        CommandParameter="{Binding}" ToolTip="{StaticResource ButtonCheck}"/>
                                         <!--<Button Content="{StaticResource ButtonCScan}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.EnterCSCAN,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>-->
