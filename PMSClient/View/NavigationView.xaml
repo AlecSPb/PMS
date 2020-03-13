@@ -125,10 +125,12 @@
                         <Button Content="{StaticResource PageOutsideProcess}" Grid.Row="2" Grid.Column="3"
                         Command="{Binding GoToOutsideProcess}" Style="{StaticResource StyleButtonNavigation}"/>
 
-                        <Button Content="{StaticResource PageCompound}" Grid.Row="2" Grid.Column="4"
+                        <Button Content="{StaticResource PageSample}" Grid.Row="2" Grid.Column="4"
+                        Command="{Binding GoToSample}" Style="{StaticResource StyleButtonNavigation}"/>
+
+                        <Button Content="{StaticResource PageCompound}" Grid.Row="2" Grid.Column="5"
                         Command="{Binding GoToBDCompound}" Style="{StaticResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PageFailure}" Grid.Row="2" Grid.Column="5"
-                                Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToFailure}"/>
+
 
                         <Button Content="{StaticResource PagePlanConclusion}" Grid.Row="2" Grid.Column="6"
                         Command="{Binding GoToPlanConclusion}" Style="{StaticResource StyleButtonNavigation}"/>
@@ -187,7 +189,10 @@
 
                         <Button Content="{StaticResource PageOutput}" Style="{StaticResource StyleButtonNavigation}"
                                 Command="{Binding GoToOutput}" Grid.Row="6" Grid.Column="4"/>
-
+                        
+                        <Button Content="{StaticResource PageFailure}" Grid.Row="6" Grid.Column="5"
+                                Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToFailure}"/>
+                        
                         <Button Content="{StaticResource PageAdmin}" Grid.Row="7" Grid.Column="0" 
                         Style="{StaticResource StyleButtonNavigationTitle}" />
                         <Button Content="{StaticResource PageDebug}" Grid.Row="7" Grid.Column="1"

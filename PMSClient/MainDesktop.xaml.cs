@@ -537,6 +537,12 @@ namespace PMSClient
                 case PMSViews.OutsideProcessEdit:
                     NavigateTo(_views.OutsideProcessEdit);
                     break;
+                case PMSViews.Sample:
+                    NavigateTo(_views.Sample);
+                    break;
+                case PMSViews.SampleEdit:
+                    NavigateTo(_views.SampleEdit);
+                    break;
                 default:
                     break;
             }

@@ -165,8 +165,20 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<OutsideProcessVM>();
             SimpleIoc.Default.Register<OutsideProcessEditVM>();
 
+            SimpleIoc.Default.Register<SampleVM>();
+            SimpleIoc.Default.Register<SampleEditVM>();
         }
         #region Properties
+
+        public SampleVM Sample
+        {
+            get { return SimpleIoc.Default.GetInstance<SampleVM>(); }
+        }
+        public SampleEditVM SampleEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<SampleEditVM>(); }
+        }
+
         public OutsideProcessVM OutsideProcess
         {
             get { return SimpleIoc.Default.GetInstance<OutsideProcessVM>(); }

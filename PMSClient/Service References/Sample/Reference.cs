@@ -32,13 +32,10 @@ namespace PMSClient.Sample {
         private string MoreTestResultField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OrginalRequirmentField;
+        private string OriginalRequirementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PMINumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProcessField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProductIDField;
@@ -51,6 +48,9 @@ namespace PMSClient.Sample {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TestResultField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TraceInformationField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Composition {
@@ -105,14 +105,14 @@ namespace PMSClient.Sample {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string OrginalRequirment {
+        public string OriginalRequirement {
             get {
-                return this.OrginalRequirmentField;
+                return this.OriginalRequirementField;
             }
             set {
-                if ((object.ReferenceEquals(this.OrginalRequirmentField, value) != true)) {
-                    this.OrginalRequirmentField = value;
-                    this.RaisePropertyChanged("OrginalRequirment");
+                if ((object.ReferenceEquals(this.OriginalRequirementField, value) != true)) {
+                    this.OriginalRequirementField = value;
+                    this.RaisePropertyChanged("OriginalRequirement");
                 }
             }
         }
@@ -126,19 +126,6 @@ namespace PMSClient.Sample {
                 if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
                     this.PMINumberField = value;
                     this.RaisePropertyChanged("PMINumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Process {
-            get {
-                return this.ProcessField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProcessField, value) != true)) {
-                    this.ProcessField = value;
-                    this.RaisePropertyChanged("Process");
                 }
             }
         }
@@ -191,6 +178,19 @@ namespace PMSClient.Sample {
                 if ((object.ReferenceEquals(this.TestResultField, value) != true)) {
                     this.TestResultField = value;
                     this.RaisePropertyChanged("TestResult");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TraceInformation {
+            get {
+                return this.TraceInformationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TraceInformationField, value) != true)) {
+                    this.TraceInformationField = value;
+                    this.RaisePropertyChanged("TraceInformation");
                 }
             }
         }
@@ -295,16 +295,16 @@ namespace PMSClient.Sample {
     public interface ISampleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAll", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllResponse")]
-        PMSClient.Sample.DcSample[] GetSampleAll(int s, int t, string productid, string composition);
+        PMSClient.Sample.DcSample[] GetSampleAll(int s, int t, string productid, string composition, string sampletype);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAll", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllResponse")]
-        System.Threading.Tasks.Task<PMSClient.Sample.DcSample[]> GetSampleAllAsync(int s, int t, string productid, string composition);
+        System.Threading.Tasks.Task<PMSClient.Sample.DcSample[]> GetSampleAllAsync(int s, int t, string productid, string composition, string sampletype);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAllCount", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllCountResponse")]
-        int GetSampleAllCount(string productid, string composition);
+        int GetSampleAllCount(string productid, string composition, string sampletype);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAllCount", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllCountResponse")]
-        System.Threading.Tasks.Task<int> GetSampleAllCountAsync(string productid, string composition);
+        System.Threading.Tasks.Task<int> GetSampleAllCountAsync(string productid, string composition, string sampletype);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/AddSample", ReplyAction="http://tempuri.org/ISampleService/AddSampleResponse")]
         void AddSample(PMSClient.Sample.DcSample model);
@@ -346,20 +346,20 @@ namespace PMSClient.Sample {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.Sample.DcSample[] GetSampleAll(int s, int t, string productid, string composition) {
-            return base.Channel.GetSampleAll(s, t, productid, composition);
+        public PMSClient.Sample.DcSample[] GetSampleAll(int s, int t, string productid, string composition, string sampletype) {
+            return base.Channel.GetSampleAll(s, t, productid, composition, sampletype);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.Sample.DcSample[]> GetSampleAllAsync(int s, int t, string productid, string composition) {
-            return base.Channel.GetSampleAllAsync(s, t, productid, composition);
+        public System.Threading.Tasks.Task<PMSClient.Sample.DcSample[]> GetSampleAllAsync(int s, int t, string productid, string composition, string sampletype) {
+            return base.Channel.GetSampleAllAsync(s, t, productid, composition, sampletype);
         }
         
-        public int GetSampleAllCount(string productid, string composition) {
-            return base.Channel.GetSampleAllCount(productid, composition);
+        public int GetSampleAllCount(string productid, string composition, string sampletype) {
+            return base.Channel.GetSampleAllCount(productid, composition, sampletype);
         }
         
-        public System.Threading.Tasks.Task<int> GetSampleAllCountAsync(string productid, string composition) {
-            return base.Channel.GetSampleAllCountAsync(productid, composition);
+        public System.Threading.Tasks.Task<int> GetSampleAllCountAsync(string productid, string composition, string sampletype) {
+            return base.Channel.GetSampleAllCountAsync(productid, composition, sampletype);
         }
         
         public void AddSample(PMSClient.Sample.DcSample model) {

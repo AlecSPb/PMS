@@ -26,9 +26,9 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Customer { get; set; }
         [DataMember]
-        public string OrginalRequirment { get; set; }
+        public string OriginalRequirement { get; set; }
         [DataMember]
-        public string Process { get; set; }//准备，检查，包装，发出
+        public string TraceInformation { get; set; }//准备，检查，包装，发出
         [DataMember]
         public string TestResult{ get; set; }//如果有测试报告就在这里填写
         [DataMember]

@@ -8,8 +8,9 @@ namespace PMSCommon
 {
     public enum SampleType
     {
-        客户,
-        自分析,
-        其他
+        未取样,
+        未核验,
+        已核验,
+        已发出
     }
 }

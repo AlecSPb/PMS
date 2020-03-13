@@ -180,6 +180,11 @@ namespace PMSClient.ViewModel
               {
                   NavigationService.GoTo(PMSViews.OutsideProcess);
               }, () => _session.IsOKInGroup(AccessGrant.ViewOutsideProcess));
+
+            GoToSample = new RelayCommand(() =>
+              {
+                  NavigationService.GoTo(PMSViews.Sample);
+              }, () => _session.IsOKInGroup(AccessGrant.Sample));
             #endregion
         }
 
@@ -340,6 +345,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand GoToRemainInventory { get; set; }
         public RelayCommand GoToOutsideProcess { get; set; }
+        public RelayCommand GoToSample { get; set; }
 
         private void InitializeData()
         {

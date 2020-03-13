@@ -148,9 +148,28 @@ namespace PMSClient.View
 
             SimpleIoc.Default.Register<OutsideProcessView>();
             SimpleIoc.Default.Register<OutsideProcessEditView>();
+
+            SimpleIoc.Default.Register<SampleView>();
+            SimpleIoc.Default.Register<SampleEditView>();
         }
 
         #region NavigationProperties
+
+        public SampleView Sample
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<SampleView>();
+            }
+        }
+        public SampleEditView SampleEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<SampleEditView>();
+            }
+        }
+
         public OutsideProcessView OutsideProcess
         {
             get

@@ -1003,6 +1003,28 @@
     <sys:String x:Key="TSStartTime">开始时间</sys:String>
     <sys:String x:Key="TSStopTime">停止时间</sys:String>
 
+    <!--Sample-->
+    <sys:String x:Key="PageSample">样品管理</sys:String>
+    <sys:String x:Key="PageSampleEdit">样品管理编辑</sys:String>
+    <sys:String x:Key="SID">ID</sys:String>
+    <sys:String x:Key="SState">状态</sys:String>
+    <sys:String x:Key="SCreator">创建者</sys:String>
+    <sys:String x:Key="SCreateTime">创建时间</sys:String>
+    <sys:String x:Key="SSampleType">当前环节</sys:String>
+    <sys:String x:Key="SProductID">产品ID</sys:String>
+    <sys:String x:Key="SComposition">成分</sys:String>
+    <sys:String x:Key="SPMINumber">内部号</sys:String>
+    <sys:String x:Key="SMoreInformation">更多信息</sys:String>
+    <sys:String x:Key="SCustomer">客户</sys:String>
+    <sys:String x:Key="SOriginalRequirement">原始需求</sys:String>
+    <sys:String x:Key="SProcess">过程</sys:String>
+    <sys:String x:Key="STestResult">测试结果</sys:String>
+    <sys:String x:Key="SMoreTestResult">其他测试结果</sys:String>
+    <sys:String x:Key="SRemark">备注</sys:String>
+
+
+
+
 
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">公共</sys:String>

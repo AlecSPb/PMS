@@ -996,7 +996,25 @@
     <sys:String x:Key="TSRemark">Remark</sys:String>
     <sys:String x:Key="TSStartTime">Start Time</sys:String>
     <sys:String x:Key="TSStopTime">Stop Time</sys:String>
-    
+
+    <!--Sample-->
+    <sys:String x:Key="PageSample">Sample</sys:String>
+    <sys:String x:Key="PageSampleEdit">Sample Edit</sys:String>
+    <sys:String x:Key="SID">ID</sys:String>
+    <sys:String x:Key="SState">State</sys:String>
+    <sys:String x:Key="SCreator">Creator</sys:String>
+    <sys:String x:Key="SCreateTime">CreateTime</sys:String>
+    <sys:String x:Key="SSampleType">SampleType</sys:String>
+    <sys:String x:Key="SProductID">ProductID</sys:String>
+    <sys:String x:Key="SComposition">Composition</sys:String>
+    <sys:String x:Key="SPMINumber">PMINumber</sys:String>
+    <sys:String x:Key="SMoreInformation">MoreInformation</sys:String>
+    <sys:String x:Key="SCustomer">Customer</sys:String>
+    <sys:String x:Key="SOriginalRequirement">OriginalRequirement</sys:String>
+    <sys:String x:Key="SProcess">Process</sys:String>
+    <sys:String x:Key="STestResult">TestResult</sys:String>
+    <sys:String x:Key="SMoreTestResult">MoreTestResult</sys:String>
+    <sys:String x:Key="SRemark">Remark</sys:String>
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">Public</sys:String>
     <sys:String x:Key="BottomBarPlan">Plan</sys:String>

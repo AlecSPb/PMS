@@ -118,5 +118,7 @@ namespace PMSClient
         RemainInventoryEdit,
         OutsideProcessEdit,
         OutsideProcess,
+        Sample,
+        SampleEdit,
     }
 }

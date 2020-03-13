@@ -15,13 +15,13 @@
           <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="MoreInformation" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="MoreTestResult" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="OrginalRequirment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OriginalRequirement" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Process" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SampleType" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="TestResult" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TraceInformation" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

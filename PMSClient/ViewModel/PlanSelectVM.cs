@@ -87,6 +87,8 @@ namespace PMSClient.ViewModel
 
                 case PMSViews.OutsideProcessEdit:
                     break;
+                case PMSViews.SampleEdit:
+                    break;
                 default:
                     break;
             }
@@ -229,6 +231,9 @@ namespace PMSClient.ViewModel
                         break;
                     case PMSViews.OutsideProcessEdit:
                         PMSHelper.ViewModels.OutsideProcessEdit.SetBySelect1(plan.PlanMisson);
+                        break;
+                    case PMSViews.SampleEdit:
+                        PMSHelper.ViewModels.SampleEdit.SetBySelect(plan.PlanMisson);
                         break;
                     default:
                         break;
