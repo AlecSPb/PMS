@@ -44,6 +44,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TxtLogo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.TxtFixedWeldingRate = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -111,7 +114,7 @@
             this.CKWeldingRation.AutoSize = true;
             this.CKWeldingRation.Checked = true;
             this.CKWeldingRation.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CKWeldingRation.Location = new System.Drawing.Point(207, 52);
+            this.CKWeldingRation.Location = new System.Drawing.Point(201, 52);
             this.CKWeldingRation.Name = "CKWeldingRation";
             this.CKWeldingRation.Size = new System.Drawing.Size(150, 19);
             this.CKWeldingRation.TabIndex = 4;
@@ -145,7 +148,7 @@
             this.chkOpenOutput.AutoSize = true;
             this.chkOpenOutput.Checked = true;
             this.chkOpenOutput.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkOpenOutput.Location = new System.Drawing.Point(713, 85);
+            this.chkOpenOutput.Location = new System.Drawing.Point(487, 50);
             this.chkOpenOutput.Name = "chkOpenOutput";
             this.chkOpenOutput.Size = new System.Drawing.Size(179, 19);
             this.chkOpenOutput.TabIndex = 8;
@@ -164,7 +167,7 @@
             // 
             // TxtFontSize
             // 
-            this.TxtFontSize.Location = new System.Drawing.Point(430, 49);
+            this.TxtFontSize.Location = new System.Drawing.Point(422, 81);
             this.TxtFontSize.Name = "TxtFontSize";
             this.TxtFontSize.Size = new System.Drawing.Size(47, 25);
             this.TxtFontSize.TabIndex = 9;
@@ -175,7 +178,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(357, 54);
+            this.label3.Location = new System.Drawing.Point(349, 86);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 15);
             this.label3.TabIndex = 10;
@@ -183,7 +186,7 @@
             // 
             // TxtLogo
             // 
-            this.TxtLogo.Location = new System.Drawing.Point(537, 50);
+            this.TxtLogo.Location = new System.Drawing.Point(529, 81);
             this.TxtLogo.Name = "TxtLogo";
             this.TxtLogo.Size = new System.Drawing.Size(152, 25);
             this.TxtLogo.TabIndex = 9;
@@ -193,19 +196,48 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(492, 55);
+            this.label4.Location = new System.Drawing.Point(484, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 15);
             this.label4.TabIndex = 10;
             this.label4.Text = "LOGO";
+            // 
+            // TxtFixedWeldingRate
+            // 
+            this.TxtFixedWeldingRate.Location = new System.Drawing.Point(100, 81);
+            this.TxtFixedWeldingRate.Name = "TxtFixedWeldingRate";
+            this.TxtFixedWeldingRate.Size = new System.Drawing.Size(62, 25);
+            this.TxtFixedWeldingRate.TabIndex = 9;
+            this.TxtFixedWeldingRate.TextChanged += new System.EventHandler(this.TxtFixedWeldingRate_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 15);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "固定焊合率";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(168, 86);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(137, 15);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "% 空则使用PMS数据";
             // 
             // CscanMarker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 598);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.TxtFixedWeldingRate);
             this.Controls.Add(this.TxtLogo);
             this.Controls.Add(this.TxtFontSize);
             this.Controls.Add(this.chkOpenOutput);
@@ -248,5 +280,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtLogo;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox TxtFixedWeldingRate;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

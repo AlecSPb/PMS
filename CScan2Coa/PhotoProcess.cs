@@ -424,20 +424,29 @@ namespace ImportTargetPhotoIntoReport
                 //左上角绘制焊合率
                 if (PhotoMarkerControl.HasWeldingRation)
                 {
-                    DcRecordBonding bonding = null;
-
-                    using (var service = new RecordBondingServiceClient())
+                    if (!string.IsNullOrEmpty(PhotoMarkerControl.FixedWeldingRate))
                     {
-                        bonding = service.GetRecordBondingByProductID(product_id).FirstOrDefault();
+                        string str = PhotoMarkerControl.FixedWeldingRate + "%";
+                        y += interval;
+                        g.DrawString(str, font, Brushes.Orange, x, y);
                     }
-
-                    if (bonding != null)
+                    else
                     {
-                        if (PhotoMarkerControl.HasWeldingRation)
+                        DcRecordBonding bonding = null;
+
+                        using (var service = new RecordBondingServiceClient())
                         {
-                            string composition = bonding.WeldingRate.ToString("F2") + "%";
-                            y += interval;
-                            g.DrawString(composition, font, Brushes.Orange, x, y);
+                            bonding = service.GetRecordBondingByProductID(product_id).FirstOrDefault();
+                        }
+
+                        if (bonding != null)
+                        {
+                            if (PhotoMarkerControl.HasWeldingRation)
+                            {
+                                string str = bonding.WeldingRate.ToString("F2") + "%";
+                                y += interval;
+                                g.DrawString(str, font, Brushes.Orange, x, y);
+                            }
                         }
                     }
                 }

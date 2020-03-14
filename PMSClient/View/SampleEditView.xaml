@@ -124,16 +124,20 @@
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
                 
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource STestResult}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2"
+                <!--<TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource STestResult}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>-->
+                <Button Name="BtnTestResult" Grid.Column="0" Grid.Row="10" Content="{StaticResource STestResult}"
+                        Style="{StaticResource StyleButtonStrench}" Click="BtnTestResult_Click"/>
+                <TextBox Name="TxtTestResult" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2"
                          Text="{Binding TestResult}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
-
-                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource SMoreTestResult}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2"
+                
+                <Button Name="BtnMoreTestResult" Grid.Column="0" Grid.Row="11" Content="{StaticResource SMoreTestResult}"
+                        Style="{StaticResource StyleButtonStrench}" Click="BtnMoreTestResult_Click"/>
+                <!--<TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource SMoreTestResult}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>-->
+                <TextBox Name="TxtMoreTestResult" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2"
                          Text="{Binding MoreTestResult}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>

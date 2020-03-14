@@ -111,5 +111,10 @@ namespace ImportTargetPhotoIntoReport
         {
             process.PhotoMarkerControl.Logo = TxtLogo.Text.Trim();
         }
+
+        private void TxtFixedWeldingRate_TextChanged(object sender, EventArgs e)
+        {
+            process.PhotoMarkerControl.FixedWeldingRate = TxtFixedWeldingRate.Text;
+        }
     }
 }

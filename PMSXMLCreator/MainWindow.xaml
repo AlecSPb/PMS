@@ -347,28 +347,33 @@
                        Text="Target Dimension"   Background="{StaticResource MaterialParameterInfo}"/>
                     <TextBox Grid.Row="29" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
                      Text="{Binding TargetDimension}" Grid.ColumnSpan="2"/>
-                    <TextBlock Grid.Row="29" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text=""/>
 
-                    <TextBlock Grid.Row="30" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="More Spec"   Background="{StaticResource MaterialParameterInfo}" VerticalAlignment="Stretch"/>
-                    <TextBox Grid.Row="30" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" TextWrapping="Wrap"
-                             Height="40"
-                     Text="{Binding PlateSpec}" Grid.ColumnSpan="2"/>
+                    <Button Name="BtnMoreSpec" Grid.Row="30" Grid.Column="0" Style="{StaticResource StyleButtonStrench}"
+                            Content="More Specification" Margin="0" Click="BtnMoreSpec_Click"/>
+                    <!--<TextBlock Name="TxtMoreSpec" Grid.Row="30" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
+                       Text="More Spec"   Background="{StaticResource MaterialParameterInfo}" VerticalAlignment="Stretch"/>-->
+                    <TextBox Name="TxtMoreSpec" Grid.Row="30" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
+                             Text="{Binding PlateSpec}" Grid.ColumnSpan="2"/>
 
                     <TextBlock Grid.Row="31" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="Composition"   Background="{StaticResource MaterialParameterInfo}"/>
-                    <TextBox Grid.Row="31" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
+                    <Button Name="BtnXRF" Grid.Row="31" Grid.Column="0" Style="{StaticResource StyleButtonStrench}"
+                            Content="XRF" Margin="0" Click="BtnXRF_Click"/>
+                    <TextBox Name="TxtXRF" Grid.Row="31" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
                      Text="{Binding XRF}" Grid.ColumnSpan="2"/>
 
-                    <TextBlock Grid.Row="32" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="GDMS"   Background="{StaticResource MaterialParameterInfo}"/>
-                    <TextBox Grid.Row="32" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
+                    <!--<TextBlock Grid.Row="32" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
+                       Text="GDMS"   Background="{StaticResource MaterialParameterInfo}"/>-->
+                    <Button Name="BtnGDMS" Grid.Row="32" Grid.Column="0" Style="{StaticResource StyleButtonStrench}"
+                            Content="GDMS" Margin="0" Click="BtnGDMS_Click"/>
+                    <TextBox Name="TxtGDMS" Grid.Row="32" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
                      Text="{Binding GDMS}"  Grid.ColumnSpan="2"/>
 
-                    <TextBlock Grid.Row="33" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text="VPI"   Background="{StaticResource MaterialParameterInfo}"/>
-                    <TextBox Grid.Row="33" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
+                    <!--<TextBlock Grid.Row="33" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
+                       Text="VPI"   Background="{StaticResource MaterialParameterInfo}"/>-->
+                    <Button Name="BtnVPI" Grid.Row="33" Grid.Column="0" Style="{StaticResource StyleButtonStrench}"
+                            Content="VPI" Margin="0" Click="BtnVPI_Click"/>
+                    <TextBox Name="TxtVPI" Grid.Row="33" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
                      Text="{Binding VPI}"  Grid.ColumnSpan="2"/>
                 </Grid>
             </ScrollViewer>

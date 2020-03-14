@@ -45,5 +45,26 @@ namespace PMSClient.View
             PMSMethods.SetTextBoxAppend(TxtProcess, $"{DateTime.Now.ToString("yyyy-MM-dd")}已发出;");
         }
 
+        private void BtnMoreTestResult_Click(object sender, RoutedEventArgs e)
+        {
+            SetKeyValue(TxtMoreTestResult);
+
+        }
+
+        private void BtnTestResult_Click(object sender, RoutedEventArgs e)
+        {
+            SetKeyValue(TxtTestResult);
+        }
+        private void SetKeyValue(TextBox textBox)
+        {
+            if (textBox == null) return;
+            var dialog = new WPFControls.KeyValueTestResult();
+            dialog.KeyStrings = textBox.Text.Trim();
+            dialog.ShowDialog();
+            if (dialog.DialogResult == true)
+            {
+                PMSMethods.SetTextBox(textBox, dialog.KeyStrings);
+            }
+        }
     }
 }

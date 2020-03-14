@@ -337,6 +337,7 @@
     <Compile Include="Helpers\NavigationService.cs" />
     <Compile Include="Helpers\VToken.cs" />
     <Compile Include="ReportsHelperNew\ReportBase.cs" />
+    <Compile Include="ReportsHelperNew\ReportSample.cs" />
     <Compile Include="ReportsHelperNew\ReportBondingTargetDefects.cs" />
     <Compile Include="ReportsHelperNew\ReportDeliveryQRCode.cs" />
     <Compile Include="ReportsHelperNew\ReportDeliveryBarCode.cs" />
@@ -665,6 +666,7 @@
     <Compile Include="ViewModel\RecordDeMoldSelectVM.cs" />
     <Compile Include="ViewModel\VMHelper\OrderVMHelper.cs" />
     <Compile Include="ViewModel\VMHelper\PMSBatchHelper.cs" />
+    <Compile Include="ViewModel\VMHelper\SampleVMHelper.cs" />
     <Compile Include="View\CompoundEditView.xaml.cs">
       <DependentUpon>CompoundEditView.xaml</DependentUpon>
     </Compile>
@@ -1827,6 +1829,9 @@
     <Content Include="Resource\DocTemplate\Reports\DeliverySheetQRCode.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resource\DocTemplate\Reports\Samples.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Service References\EditLockService\EditLockService.disco" />
     <None Include="Service References\EditLockService\configuration91.svcinfo" />
     <None Include="Service References\EditLockService\configuration.svcinfo" />
@@ -2501,9 +2506,9 @@
       <Project>{32a0b9c1-7441-4ebe-a1bf-21854bd2a57a}</Project>
       <Name>TargetCutterSimulator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WpfControls\WpfControls.csproj">
+    <ProjectReference Include="..\WpfControls\PMSWpfControls.csproj">
       <Project>{b34d1e0a-02b9-4512-a07f-0603ad29ad3a}</Project>
-      <Name>WpfControls</Name>
+      <Name>PMSWpfControls</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

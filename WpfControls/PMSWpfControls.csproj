@@ -52,6 +52,11 @@
     <Compile Include="AutoCompleteTextBox.xaml.cs">
       <DependentUpon>AutoCompleteTextBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KeyValue.cs" />
+    <Compile Include="KeyValueHelper.cs" />
+    <Compile Include="KeyValueTestResult.xaml.cs">
+      <DependentUpon>KeyValueTestResult.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StandardViewFrame.xaml.cs">
       <DependentUpon>StandardViewFrame.xaml</DependentUpon>
     </Compile>
@@ -60,6 +65,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BindableCSVTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KeyValueTestResult.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

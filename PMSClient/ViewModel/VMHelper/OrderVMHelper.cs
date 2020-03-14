@@ -51,9 +51,9 @@ namespace PMSClient.ViewModel.VMHelper
                 model.State = PMSCommon.SimpleState.正常.ToString();
                 model.ProductID = "无";
                 model.TraceInformation = "";
-                model.TestResult = "";
+                model.TestResult = VMHelper.SampleVMHelper.GDMS;
                 model.MoreInformation = "无";
-                model.MoreTestResult = "";
+                model.MoreTestResult = VMHelper.SampleVMHelper.VPI;
                 model.Remark = "无";
                 model.Composition = obj.CompositionStandard;
                 model.PMINumber = obj.PMINumber;

@@ -84,9 +84,9 @@ namespace PMSClient.ViewModel
             model.SampleType = SampleTypes[0];
             model.Customer = "无";
             model.TraceInformation = "";
-            model.TestResult = "";
+            model.TestResult = VMHelper.SampleVMHelper.GDMS;
             model.MoreInformation = "无";
-            model.MoreTestResult = "";
+            model.MoreTestResult = VMHelper.SampleVMHelper.VPI;
             model.Remark = "无";
 
             #endregion

@@ -1,0 +1,30 @@
+﻿<Window x:Class="WPFControls.KeyValueTestResult"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFControls"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="键值结果编辑器" Height="600" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="2" Background="Wheat">
+            <Button Name="BtnSave" Content="保存" Width="80" Margin="2" Click="BtnSave_Click"/>
+            <TextBlock Text="双击编辑,Delete键删除行" Foreground="Blue" 
+                       Style="{StaticResource StyleTextBlockCommon}"/>
+        </StackPanel>
+        <DataGrid Grid.Row="1" Name="DgKeyValues" AutoGenerateColumns="False"
+                  CanUserAddRows="True"
+                  Background="LightYellow" GridLinesVisibility="Horizontal" 
+                  HorizontalGridLinesBrush="Gray">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Key}" Header="Key"/>
+                <DataGridTextColumn Binding="{Binding Value}" Header="Value"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

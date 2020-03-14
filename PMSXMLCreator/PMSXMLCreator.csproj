@@ -110,6 +110,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Model\ECOA.cs" />
+    <Compile Include="Service\PMSMethods.cs" />
     <Compile Include="Service\XmlHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -283,6 +284,10 @@
     <ProjectReference Include="..\CommonHelper\CommonHelper.csproj">
       <Project>{53952cc1-3e2e-4e39-8b20-6621502dbd45}</Project>
       <Name>CommonHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfControls\PMSWpfControls.csproj">
+      <Project>{b34d1e0a-02b9-4512-a07f-0603ad29ad3a}</Project>
+      <Name>PMSWpfControls</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

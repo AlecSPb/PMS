@@ -26,7 +26,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSClient", "PMSClient\PMSC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WTF", "AuthorizationChecker\WTF.csproj", "{CB6AB81C-1226-468A-9F10-58F7F9637CFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControls", "WpfControls\WpfControls.csproj", "{B34D1E0A-02B9-4512-A07F-0603AD29AD3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSWpfControls", "WpfControls\PMSWpfControls.csproj", "{B34D1E0A-02B9-4512-A07F-0603AD29AD3A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSLargeScreenBonding", "PMSLargeScreenBonding\PMSLargeScreenBonding.csproj", "{6433D8C6-C536-4E03-BE9E-6AFDA0DE0801}"
 EndProject

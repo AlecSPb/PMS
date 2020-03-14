@@ -86,7 +86,11 @@ namespace PMSClient.ViewModel
         private void ActionPrint()
         {
             //弹出打印对话框
-
+            if (!PMSDialogService.ShowYesNo("请问", "确定要打印[未取样]的样品清单吗？"))
+                return;
+            var printer = new ReportsHelperNew.ReportSample();
+            printer.Intialize("未准备的样品清单");
+            printer.Output();
         }
 
         private void ActionSent(DcSample obj)
