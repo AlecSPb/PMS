@@ -16,6 +16,7 @@ namespace PMSClient.ReportsHelperNew
     /// </summary>
     public class ReportSample : ReportBase
     {
+        public string SelectedSampleType { get; set; } = "";
         public override void Output()
         {
             ResetParameters();
@@ -28,6 +29,9 @@ namespace PMSClient.ReportsHelperNew
                 #region 字段
                 string createDate = DateTime.Today.ToShortDateString();
                 doc.ReplaceText("[CreateDate]", createDate ?? "");
+                string postfix = SelectedSampleType == "" ? "全部" : SelectedSampleType;
+
+                doc.ReplaceText("[SampleType]", postfix ?? "");
 
                 Table table = doc.Tables[0];
                 using (var service = new SampleServiceClient())
@@ -40,7 +44,7 @@ namespace PMSClient.ReportsHelperNew
                     {
                         s = pageIndex * pageSize;
                         t = pageSize;
-                        var pageData = service.GetSampleAll(s, t, empty, empty, "未取样");
+                        var pageData = service.GetSampleAll(s, t, empty, empty, SelectedSampleType);
                         var ordered = pageData;
                         int row_index = 0;
                         foreach (var item in ordered)
@@ -52,7 +56,7 @@ namespace PMSClient.ReportsHelperNew
                                 = Alignment.center;
                             row.Cells[0].VerticalAlignment = VerticalAlignment.Center;
 
-                            row.Cells[1].Paragraphs[0].Append(item.PMINumber?? "");
+                            row.Cells[1].Paragraphs[0].Append(item.PMINumber ?? "");
                             row.Cells[1].VerticalAlignment = VerticalAlignment.Center;
 
                             row.Cells[2].Paragraphs[0].Append(item.Composition ?? "");
@@ -64,7 +68,7 @@ namespace PMSClient.ReportsHelperNew
                             row.Cells[4].Paragraphs[0].Append(item.OriginalRequirement ?? "");
                             row.Cells[4].VerticalAlignment = VerticalAlignment.Center;
 
-                            row.Cells[5].Paragraphs[0].Append("Y").Alignment=Alignment.center;
+                            row.Cells[5].Paragraphs[0].Append(item.SampleType ?? "").Alignment = Alignment.center;
                             row.Cells[5].VerticalAlignment = VerticalAlignment.Center;
                         }
 

@@ -86,11 +86,22 @@ namespace PMSClient.ViewModel
         private void ActionPrint()
         {
             //弹出打印对话框
-            if (!PMSDialogService.ShowYesNo("请问", "确定要打印[未取样]的样品清单吗？"))
-                return;
-            var printer = new ReportsHelperNew.ReportSample();
-            printer.Intialize("未准备的样品清单");
-            printer.Output();
+            var dialog = new ToolWindow.SingleCombBoxDialog();
+            dialog.TxtCaption.Text = "请选择要打印类型，空为全部打印";
+            List<string> ds = new List<string>();
+            PMSMethods.SetListDS<PMSCommon.SampleType>(ds);
+            ds.Add("");
+            dialog.SetCboDatasource(ds);
+            dialog.ShowDialog();
+
+            if (dialog.DialogResult == true)
+            {
+                var printer = new ReportsHelperNew.ReportSample();
+                printer.SelectedSampleType = dialog.CurrentSeletedString;
+                string postfix = dialog.CurrentSeletedString == "" ? "全部" : dialog.CurrentSeletedString;
+                printer.Intialize($"样品清单-{postfix}");
+                printer.Output();
+            }
         }
 
         private void ActionSent(DcSample obj)

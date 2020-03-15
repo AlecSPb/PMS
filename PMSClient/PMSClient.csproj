@@ -180,12 +180,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AccessGrant.cs" />
-    <Compile Include="BarCodeService\BarCodeHelper.cs" />
-    <Compile Include="BarCodeService\Helper.cs" />
-    <Compile Include="BarCodeService\IBarCodeHelper.cs" />
-    <Compile Include="BarCodeService\QRCodeHelper.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\ProcessOutsideProcess.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\ScanInputOutsideProcessVM.cs" />
+    <Compile Include="Components\BarCodeService\BarCodeHelper.cs" />
+    <Compile Include="Components\BarCodeService\Helper.cs" />
+    <Compile Include="Components\BarCodeService\IBarCodeHelper.cs" />
+    <Compile Include="Components\BarCodeService\QRCodeHelper.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\ProcessOutsideProcess.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\ScanInputOutsideProcessVM.cs" />
     <Compile Include="CheckLogic\CheckMessage.cs" />
     <Compile Include="CheckLogic\Density.cs" />
     <Compile Include="CheckLogic\OrderCheckLogic.cs" />
@@ -193,21 +193,21 @@
       <DependentUpon>RecordTestCheckDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="CheckLogic\RecordTestCheckLogic.cs" />
-    <Compile Include="CsvOutputHelper\CsvOutputBase.cs" />
-    <Compile Include="CsvOutputHelper\CsvOutputFeedback.cs" />
-    <Compile Include="CsvOutputHelper\CsvOutputOutSource.cs" />
-    <Compile Include="CsvOutputHelper\CsvOutputDeliveryItem.cs" />
-    <Compile Include="CsvOutputHelper\CsvOutputMaterialOut.cs" />
-    <Compile Include="CsvOutputHelper\CsvOutputMaterialIn.cs" />
-    <Compile Include="CsvOutputHelper\CsvOutputMaterialOrderItem.cs" />
-    <Compile Include="CsvOutputHelper\CsvOutputOrder.cs" />
-    <Compile Include="CsvOutputHelper\CsvOutputRecordBonding.cs" />
-    <Compile Include="CsvOutputHelper\CsvOutputRecordTest.cs" />
-    <Compile Include="CsvOutputHelper\CsvOutputRecordMachine.cs" />
-    <Compile Include="CsvOutputHelper\CsvOutputRecordDeMold.cs" />
-    <Compile Include="CsvOutputHelper\CsvOutputRecordVHP.cs" />
-    <Compile Include="CsvOutputHelper\ICsvOutput.cs" />
-    <Compile Include="CsvOutputHelper\CsvOutputRecordMilling.cs" />
+    <Compile Include="Components\CsvOutputHelper\CsvOutputBase.cs" />
+    <Compile Include="Components\CsvOutputHelper\CsvOutputFeedback.cs" />
+    <Compile Include="Components\CsvOutputHelper\CsvOutputOutSource.cs" />
+    <Compile Include="Components\CsvOutputHelper\CsvOutputDeliveryItem.cs" />
+    <Compile Include="Components\CsvOutputHelper\CsvOutputMaterialOut.cs" />
+    <Compile Include="Components\CsvOutputHelper\CsvOutputMaterialIn.cs" />
+    <Compile Include="Components\CsvOutputHelper\CsvOutputMaterialOrderItem.cs" />
+    <Compile Include="Components\CsvOutputHelper\CsvOutputOrder.cs" />
+    <Compile Include="Components\CsvOutputHelper\CsvOutputRecordBonding.cs" />
+    <Compile Include="Components\CsvOutputHelper\CsvOutputRecordTest.cs" />
+    <Compile Include="Components\CsvOutputHelper\CsvOutputRecordMachine.cs" />
+    <Compile Include="Components\CsvOutputHelper\CsvOutputRecordDeMold.cs" />
+    <Compile Include="Components\CsvOutputHelper\CsvOutputRecordVHP.cs" />
+    <Compile Include="Components\CsvOutputHelper\ICsvOutput.cs" />
+    <Compile Include="Components\CsvOutputHelper\CsvOutputRecordMilling.cs" />
     <Compile Include="CustomControls\BatchDuplicateDialog.xaml.cs">
       <DependentUpon>BatchDuplicateDialog.xaml</DependentUpon>
     </Compile>
@@ -229,55 +229,55 @@
     <Compile Include="CustomControls\ProgressIndicator.xaml.cs">
       <DependentUpon>ProgressIndicator.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BatchDataProcess\BatchLabel\BatchLabelGenerator.xaml.cs">
+    <Compile Include="Components\BatchDataProcess\BatchLabel\BatchLabelGenerator.xaml.cs">
       <DependentUpon>BatchLabelGenerator.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BatchDataProcess\QuickReport\ProcessReport.cs" />
-    <Compile Include="BatchDataProcess\QuickReport\QuickReport.xaml.cs">
+    <Compile Include="Components\BatchDataProcess\QuickReport\ProcessReport.cs" />
+    <Compile Include="Components\BatchDataProcess\QuickReport\QuickReport.xaml.cs">
       <DependentUpon>QuickReport.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BatchDataProcess\QuickReport\QuickReportVM.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\ModelHelper.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\ProcessBase.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\ProcessDelivery.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\ProcessProduct.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\ProcessRecordBondingExcelOutput.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\ScanInputDeliveryVM.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\ScanInputProductVM.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\ScanInputRecordBondingExcelOutputVM.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\ScanInputVMBase.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\ProcessRecordBonding.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\SourceTarget.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\TableSource.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\ProcessScanInput.cs" />
-    <Compile Include="ExcelOutputHelper\ExcelOutputBase.cs" />
-    <Compile Include="ExcelOutputHelper\ExcelOutputDeliveryItemList.cs" />
-    <Compile Include="ExcelOutputHelper\ExcelOutputMaterialIn.cs" />
-    <Compile Include="ExcelOutputHelper\ExcelOutputMaterialOrderItemList.cs" />
-    <Compile Include="ExcelOutputHelper\ExcelOutputMaterialOut.cs" />
-    <Compile Include="ExcelOutputHelper\ExcelOutputOrder.cs" />
-    <Compile Include="ExcelOutputHelper\ExcelOutputPlan.cs" />
-    <Compile Include="ExcelOutputHelper\ExcelOutputRecordBonding.cs" />
-    <Compile Include="ExcelOutputHelper\ExcelOutputRecordMilling.cs" />
-    <Compile Include="ExcelOutputHelper\ExcelOutputRecordTest.cs" />
-    <Compile Include="ExcelOutputHelper\ExcelOutputSpecialFor230.cs" />
-    <Compile Include="ExcelOutputHelper\Libs\SpecialFor230.cs" />
-    <Compile Include="ExcelOutputHelper\NPOIHelper.cs" />
-    <Compile Include="Express\CheckHelper\ErrorMessage.cs" />
-    <Compile Include="Express\KDBird.cs" />
-    <Compile Include="Express\ID.cs" />
-    <Compile Include="Express\Useless\KD100.cs" />
-    <Compile Include="Express\Useless\KDRequest.cs" />
-    <Compile Include="Express\Useless\KDResponse.cs" />
-    <Compile Include="Express\Request.cs" />
-    <Compile Include="Express\Response.cs" />
-    <Compile Include="Express\SF.cs" />
-    <Compile Include="Express\Url.cs" />
-    <Compile Include="Express\Shipper.cs" />
-    <Compile Include="Express\Helper.cs" />
-    <Compile Include="Express\Operation.cs" />
-    <Compile Include="Express\SystemParameter.cs" />
-    <Compile Include="Express\Trace.cs" />
+    <Compile Include="Components\BatchDataProcess\QuickReport\QuickReportVM.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\ModelHelper.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\ProcessBase.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\ProcessDelivery.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\ProcessProduct.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\ProcessRecordBondingExcelOutput.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\ScanInputDeliveryVM.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\ScanInputProductVM.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\ScanInputRecordBondingExcelOutputVM.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\ScanInputVMBase.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\ProcessRecordBonding.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\SourceTarget.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\TableSource.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\ProcessScanInput.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputBase.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputDeliveryItemList.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputMaterialIn.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputMaterialOrderItemList.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputMaterialOut.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputOrder.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputPlan.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputRecordBonding.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputRecordMilling.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputRecordTest.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputSpecialFor230.cs" />
+    <Compile Include="Components\ExcelOutputHelper\Libs\SpecialFor230.cs" />
+    <Compile Include="Components\ExcelOutputHelper\NPOIHelper.cs" />
+    <Compile Include="Components\Express\CheckHelper\ErrorMessage.cs" />
+    <Compile Include="Components\Express\KDBird.cs" />
+    <Compile Include="Components\Express\ID.cs" />
+    <Compile Include="Components\Express\Useless\KD100.cs" />
+    <Compile Include="Components\Express\Useless\KDRequest.cs" />
+    <Compile Include="Components\Express\Useless\KDResponse.cs" />
+    <Compile Include="Components\Express\Request.cs" />
+    <Compile Include="Components\Express\Response.cs" />
+    <Compile Include="Components\Express\SF.cs" />
+    <Compile Include="Components\Express\Url.cs" />
+    <Compile Include="Components\Express\Shipper.cs" />
+    <Compile Include="Components\Express\Helper.cs" />
+    <Compile Include="Components\Express\Operation.cs" />
+    <Compile Include="Components\Express\SystemParameter.cs" />
+    <Compile Include="Components\Express\Trace.cs" />
     <Compile Include="Helpers\AccessHelper.cs" />
     <Compile Include="Helpers\CompositionHelper.cs" />
     <Compile Include="Helpers\CompositionModel.cs" />
@@ -294,7 +294,7 @@
     <Compile Include="Helpers\DeliveryHelper.cs" />
     <Compile Include="Helpers\EditLockHelper.cs" />
     <Compile Include="Helpers\ExitHelper.cs" />
-    <Compile Include="Express\CheckHelper\ExpressHelper.cs" />
+    <Compile Include="Components\Express\CheckHelper\ExpressHelper.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\Converter\IsLockedConverter.cs" />
     <Compile Include="Helpers\IntegratedSearchService.cs" />
@@ -323,8 +323,8 @@
     </Compile>
     <Compile Include="Helpers\VHPHelper.cs" />
     <Compile Include="Helpers\XRFCompositionAnalysis.cs" />
-    <Compile Include="IntegratedSearch\DataResultModel.cs" />
-    <Compile Include="IntegratedSearch\IntegratedSearchService.cs" />
+    <Compile Include="Components\IntegratedSearch\DataResultModel.cs" />
+    <Compile Include="Components\IntegratedSearch\IntegratedSearchService.cs" />
     <Compile Include="Navbar.xaml.cs">
       <DependentUpon>Navbar.xaml</DependentUpon>
     </Compile>
@@ -441,11 +441,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Simulator\InputModel.cs" />
-    <Compile Include="Simulator\InputValue.cs" />
-    <Compile Include="Simulator\CompositionSimulatorService.cs" />
-    <Compile Include="Simulator\OutputValue.cs" />
-    <Compile Include="Simulator\OutputModel.cs" />
+    <Compile Include="Components\Simulator\InputModel.cs" />
+    <Compile Include="Components\Simulator\InputValue.cs" />
+    <Compile Include="Components\Simulator\CompositionSimulatorService.cs" />
+    <Compile Include="Components\Simulator\OutputValue.cs" />
+    <Compile Include="Components\Simulator\OutputModel.cs" />
     <Compile Include="ToolDialog\EnterCSCAN.xaml.cs">
       <DependentUpon>EnterCSCAN.xaml</DependentUpon>
     </Compile>
@@ -499,7 +499,7 @@
     <Compile Include="ToolWindow\InformationWindow.xaml.cs">
       <DependentUpon>InformationWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IntegratedSearch\IntegratedSearch.xaml.cs">
+    <Compile Include="Components\IntegratedSearch\IntegratedSearch.xaml.cs">
       <DependentUpon>IntegratedSearch.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolWindow\LabelItemSelect.xaml.cs">
@@ -509,6 +509,9 @@
       <DependentUpon>MaterialPriceTool.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolWindow\MaterialPriceToolArgs.cs" />
+    <Compile Include="ToolWindow\SingleCombBoxDialog.xaml.cs">
+      <DependentUpon>SingleCombBoxDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolWindow\SingleElement.cs" />
     <Compile Include="ToolWindow\OrderCheckDialog.xaml.cs">
       <DependentUpon>OrderCheckDialog.xaml</DependentUpon>
@@ -529,11 +532,11 @@
     <Compile Include="ToolWindow\RecordStateConfirm.xaml.cs">
       <DependentUpon>RecordStateConfirm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BatchDataProcess\ScanInput\ScanInput.xaml.cs">
+    <Compile Include="Components\BatchDataProcess\ScanInput\ScanInput.xaml.cs">
       <DependentUpon>ScanInput.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BatchDataProcess\ScanInput\LotModel.cs" />
-    <Compile Include="BatchDataProcess\ScanInput\ScanInputRecordBondingVM.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\LotModel.cs" />
+    <Compile Include="Components\BatchDataProcess\ScanInput\ScanInputRecordBondingVM.cs" />
     <Compile Include="ToolWindow\ReOrderReason.xaml.cs">
       <DependentUpon>ReOrderReason.xaml</DependentUpon>
     </Compile>
@@ -1096,11 +1099,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BatchDataProcess\BatchLabel\BatchLabelGenerator.xaml">
+    <Page Include="Components\BatchDataProcess\BatchLabel\BatchLabelGenerator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BatchDataProcess\QuickReport\QuickReport.xaml">
+    <Page Include="Components\BatchDataProcess\QuickReport\QuickReport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1212,7 +1215,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="IntegratedSearch\IntegratedSearch.xaml">
+    <Page Include="Components\IntegratedSearch\IntegratedSearch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1248,11 +1251,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BatchDataProcess\ScanInput\ScanInput.xaml">
+    <Page Include="Components\BatchDataProcess\ScanInput\ScanInput.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolWindow\ReOrderReason.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\SingleCombBoxDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1875,8 +1882,8 @@
     <Content Include="StandardDocs\成都先锋材料有限公司靶材检验标准.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Express\express-info.txt" />
-    <Resource Include="Express\SF.xml" />
+    <Resource Include="Components\Express\express-info.txt" />
+    <Resource Include="Components\Express\SF.xml" />
     <Resource Include="Documents\超级视角.txt" />
     <Resource Include="Documents\重大工艺变化记录.txt" />
     <Content Include="Resource\DocTemplate\Reports\OutsideProcessSheet.docx">
@@ -1950,7 +1957,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="Documents\设备维护.txt" />
-    <Resource Include="CsvOutputHelper\目录介绍.txt" />
+    <Resource Include="Components\CsvOutputHelper\目录介绍.txt" />
     <Resource Include="Note\综合查询思路.txt" />
     <Resource Include="Note\新料查询.txt" />
     <Resource Include="ReportsHelper\这个地方以后要重构.txt" />
@@ -2617,7 +2624,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Components\" />
     <Folder Include="ToolWindow\Model\" />
     <Folder Include="View\ToolView\" />
   </ItemGroup>

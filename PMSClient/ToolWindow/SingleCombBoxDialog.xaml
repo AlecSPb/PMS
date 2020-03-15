@@ -1,0 +1,22 @@
+﻿<Window x:Class="PMSClient.ToolWindow.SingleCombBoxDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Title="项目选择对话框" Height="150" Width="250">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="TxtCaption" Grid.Row="0" Text="请选择需要的项目" Style="{StaticResource StyleTextBlockCommon}"/>
+        <ComboBox Grid.Row="1" Name="CboItem" Style="{StaticResource StyleComboBoxCommon}"></ComboBox>
+        <Button Grid.Row="2" Name="BtnOK" Content="确定" Style="{StaticResource StyleButtonStrench}"
+                Height="30" Click="BtnOK_Click"/>
+    </Grid>
+</Window>
