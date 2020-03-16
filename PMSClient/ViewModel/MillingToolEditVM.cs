@@ -82,6 +82,15 @@ namespace PMSClient.ViewModel
                 {
                     if (IsNew)
                     {
+                        //检查是否存在通过S号
+                        int check_count = service.CheckToolSieveExist(CurrentToolSieve.SearchID);
+                        if (check_count > 0)
+                        {
+                            PMSDialogService.ShowWarning($"同索引号的工具已经有{check_count}个了，请换一个");
+                            return;
+                        }
+
+
                         service.AddToolSieve(CurrentToolSieve);
                     }
                     else

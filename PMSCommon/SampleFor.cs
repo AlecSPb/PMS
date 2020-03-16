@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace PMSCommon
 {
-    public enum SampleType
+    public enum SampleFor
     {
-        块状,
-        粉末
+        XRD,
+        EGA,
+        Customer,
+        多余,
+        重庆斯坦德,
+        Leon
     }
 }

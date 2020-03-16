@@ -12,5 +12,13 @@ namespace PMSWCFService.ServiceContracts
     {
         [OperationContract]
         string Beat();
+
+        [OperationContract]
+        int GetOperationCallTimes();
+        [OperationContract]
+        int GetOperationCallTimesToday();
+
+        [OperationContract]
+        int GetOperationCallTimesYesterday();
     }
 }

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace PMSCommon
 {
-    public enum SampleType
+    public enum SampleTrackingStage
     {
-        块状,
-        粉末
+        未取样,
+        未核验,
+        已核验,
+        已发出
     }
 }

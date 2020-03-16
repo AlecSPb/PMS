@@ -16,7 +16,7 @@ namespace PMSClient.ReportsHelperNew
     /// </summary>
     public class ReportSample : ReportBase
     {
-        public string SelectedSampleType { get; set; } = "";
+        public string SelectedTrackingStage { get; set; } = "";
         public override void Output()
         {
             ResetParameters();
@@ -29,7 +29,7 @@ namespace PMSClient.ReportsHelperNew
                 #region 字段
                 string createDate = DateTime.Today.ToShortDateString();
                 doc.ReplaceText("[CreateDate]", createDate ?? "");
-                string postfix = SelectedSampleType == "" ? "全部" : SelectedSampleType;
+                string postfix = SelectedTrackingStage == "" ? "全部" : SelectedTrackingStage;
 
                 doc.ReplaceText("[SampleType]", postfix ?? "");
 
@@ -44,7 +44,7 @@ namespace PMSClient.ReportsHelperNew
                     {
                         s = pageIndex * pageSize;
                         t = pageSize;
-                        var pageData = service.GetSampleAll(s, t, empty, empty, SelectedSampleType);
+                        var pageData = service.GetSampleAll(s, t, empty, empty, SelectedTrackingStage);
                         var ordered = pageData;
                         int row_index = 0;
                         foreach (var item in ordered)

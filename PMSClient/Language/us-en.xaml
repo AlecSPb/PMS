@@ -334,6 +334,7 @@
     <sys:String x:Key="ButtonGetBack">GetBack</sys:String>
     <sys:String x:Key="ButtonFail">Fail</sys:String>
     <sys:String x:Key="ButtonReMachine">ReMachine</sys:String>
+    <sys:String x:Key="ButtonExcel">Excel</sys:String>
 
     <!--单字按钮-->
     <sys:String x:Key="ButtonSingleSend">S</sys:String>
@@ -1015,17 +1016,32 @@
     <sys:String x:Key="SState">State</sys:String>
     <sys:String x:Key="SCreator">Creator</sys:String>
     <sys:String x:Key="SCreateTime">CreateTime</sys:String>
-    <sys:String x:Key="SSampleType">SampleType</sys:String>
+    <sys:String x:Key="STrackingStage">TrackingStage</sys:String>
     <sys:String x:Key="SProductID">ProductID</sys:String>
+    <sys:String x:Key="SSampleID">SampleID</sys:String>
     <sys:String x:Key="SComposition">Composition</sys:String>
     <sys:String x:Key="SPMINumber">PMINumber</sys:String>
     <sys:String x:Key="SMoreInformation">MoreInformation</sys:String>
     <sys:String x:Key="SCustomer">Customer</sys:String>
     <sys:String x:Key="SOriginalRequirement">OriginalRequirement</sys:String>
-    <sys:String x:Key="SProcess">Process</sys:String>
-    <sys:String x:Key="STestResult">TestResult</sys:String>
-    <sys:String x:Key="SMoreTestResult">MoreTestResult</sys:String>
+    <sys:String x:Key="STraceInformation">TraceInformation</sys:String>
+
+    <sys:String x:Key="SICPOES">ICPOES</sys:String>
+    <sys:String x:Key="SGDMS">GDMS</sys:String>
+    <sys:String x:Key="SIGA">IGA</sys:String>
+    <sys:String x:Key="SThermal">Thermal</sys:String>
+    <sys:String x:Key="SPermittivity">Permittivity</sys:String>
+    <sys:String x:Key="SOtherTestResult">OtherTestResult</sys:String>
     <sys:String x:Key="SRemark">Remark</sys:String>
+
+    <sys:String x:Key="SPO">PO</sys:String>
+    <sys:String x:Key="SQuantity">Quantity</sys:String>
+    <sys:String x:Key="SWeight">Weight</sys:String>
+    <sys:String x:Key="SSampleType">SampleType</sys:String>
+    <sys:String x:Key="SSampleFor">SampleFor</sys:String>
+
+
+
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">Public</sys:String>
     <sys:String x:Key="BottomBarPlan">Plan</sys:String>

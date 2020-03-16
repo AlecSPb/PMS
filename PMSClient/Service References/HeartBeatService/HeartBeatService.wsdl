@@ -12,16 +12,73 @@
   <wsdl:message name="IHeartBeatSerive_Beat_OutputMessage">
     <wsdl:part name="parameters" element="tns:BeatResponse" />
   </wsdl:message>
+  <wsdl:message name="IHeartBeatSerive_GetOperationCallTimes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationCallTimes" />
+  </wsdl:message>
+  <wsdl:message name="IHeartBeatSerive_GetOperationCallTimes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationCallTimesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHeartBeatSerive_GetOperationCallTimesToday_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationCallTimesToday" />
+  </wsdl:message>
+  <wsdl:message name="IHeartBeatSerive_GetOperationCallTimesToday_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationCallTimesTodayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHeartBeatSerive_GetOperationCallTimesYesterday_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationCallTimesYesterday" />
+  </wsdl:message>
+  <wsdl:message name="IHeartBeatSerive_GetOperationCallTimesYesterday_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationCallTimesYesterdayResponse" />
+  </wsdl:message>
   <wsdl:portType name="IHeartBeatSerive">
     <wsdl:operation name="Beat">
       <wsdl:input wsaw:Action="http://tempuri.org/IHeartBeatSerive/Beat" message="tns:IHeartBeatSerive_Beat_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHeartBeatSerive/BeatResponse" message="tns:IHeartBeatSerive_Beat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationCallTimes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimes" message="tns:IHeartBeatSerive_GetOperationCallTimes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesResponse" message="tns:IHeartBeatSerive_GetOperationCallTimes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationCallTimesToday">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesToday" message="tns:IHeartBeatSerive_GetOperationCallTimesToday_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesTodayResponse" message="tns:IHeartBeatSerive_GetOperationCallTimesToday_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationCallTimesYesterday">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesYesterday" message="tns:IHeartBeatSerive_GetOperationCallTimesYesterday_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesYesterdayResponse" message="tns:IHeartBeatSerive_GetOperationCallTimesYesterday_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="heartbeat" type="tns:IHeartBeatSerive">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Beat">
       <soap:operation soapAction="http://tempuri.org/IHeartBeatSerive/Beat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationCallTimes">
+      <soap:operation soapAction="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationCallTimesToday">
+      <soap:operation soapAction="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesToday" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationCallTimesYesterday">
+      <soap:operation soapAction="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesYesterday" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

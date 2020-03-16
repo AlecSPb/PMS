@@ -43,6 +43,12 @@
   <wsdl:message name="IToolSieveService_UpdateToolSieve_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateToolSieveResponse" />
   </wsdl:message>
+  <wsdl:message name="IToolSieveService_CheckToolSieveExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckToolSieveExist" />
+  </wsdl:message>
+  <wsdl:message name="IToolSieveService_CheckToolSieveExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckToolSieveExistResponse" />
+  </wsdl:message>
   <wsdl:portType name="IToolSieveService">
     <wsdl:operation name="GetToolSieve">
       <wsdl:input wsaw:Action="http://tempuri.org/IToolSieveService/GetToolSieve" message="tns:IToolSieveService_GetToolSieve_InputMessage" />
@@ -67,6 +73,10 @@
     <wsdl:operation name="UpdateToolSieve">
       <wsdl:input wsaw:Action="http://tempuri.org/IToolSieveService/UpdateToolSieve" message="tns:IToolSieveService_UpdateToolSieve_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IToolSieveService/UpdateToolSieveResponse" message="tns:IToolSieveService_UpdateToolSieve_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckToolSieveExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolSieveService/CheckToolSieveExist" message="tns:IToolSieveService_CheckToolSieveExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolSieveService/CheckToolSieveExistResponse" message="tns:IToolSieveService_CheckToolSieveExist_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="sieve" type="tns:IToolSieveService">
@@ -118,6 +128,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateToolSieve">
       <soap:operation soapAction="http://tempuri.org/IToolSieveService/UpdateToolSieve" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckToolSieveExist">
+      <soap:operation soapAction="http://tempuri.org/IToolSieveService/CheckToolSieveExist" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

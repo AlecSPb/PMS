@@ -36,7 +36,7 @@ namespace PMSClient.ViewModel
             requestView = request;
         }
 
-        public void SetSearchItem(string searchlot,string composition,string pminumber)
+        public void SetSearchItem(string searchlot, string composition, string pminumber)
         {
             SearchComposition = composition;
             SearchVHPDate = searchlot;
@@ -244,6 +244,7 @@ namespace PMSClient.ViewModel
                         PMSHelper.ViewModels.Sample.SetBySelect(plan.PlanMisson);
                         break;
                     case PMSViews.SampleEdit:
+                        PMSHelper.ViewModels.SampleEdit.SetBySelectPlan(plan.PlanMisson);
                         break;
                     default:
                         break;

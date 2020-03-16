@@ -208,6 +208,7 @@
     <Compile Include="Components\CsvOutputHelper\CsvOutputRecordVHP.cs" />
     <Compile Include="Components\CsvOutputHelper\ICsvOutput.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputRecordMilling.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelSample.cs" />
     <Compile Include="CustomControls\BatchDuplicateDialog.xaml.cs">
       <DependentUpon>BatchDuplicateDialog.xaml</DependentUpon>
     </Compile>
@@ -1879,6 +1880,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Resource Include="StandardDocs\TextFile1.txt" />
     <Content Include="StandardDocs\成都先锋材料有限公司靶材检验标准.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

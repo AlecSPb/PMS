@@ -29,31 +29,31 @@ namespace PMSClient.View
 
         private void BtnPrepared_Click(object sender, RoutedEventArgs e)
         {
-            CboSampleTypes.SelectedItem = PMSCommon.SampleType.未核验.ToString();
+            CboSampleTrackingStages.SelectedItem = PMSCommon.SampleTrackingStage.未核验.ToString();
             PMSMethods.SetTextBoxAppend(TxtProcess, $"{DateTime.Now.ToString("yyyy-MM-dd")}已准备;");
         }
 
         private void BtnChecked_Click(object sender, RoutedEventArgs e)
         {
-            CboSampleTypes.SelectedItem = PMSCommon.SampleType.已核验.ToString();
+            CboSampleTrackingStages.SelectedItem = PMSCommon.SampleTrackingStage.已核验.ToString();
             PMSMethods.SetTextBoxAppend(TxtProcess, $"{DateTime.Now.ToString("yyyy-MM-dd")}已核验;");
         }
 
         private void BtnSent_Click(object sender, RoutedEventArgs e)
         {
-            CboSampleTypes.SelectedItem = PMSCommon.SampleType.已发出.ToString();
+            CboSampleTrackingStages.SelectedItem = PMSCommon.SampleTrackingStage.已发出.ToString();
             PMSMethods.SetTextBoxAppend(TxtProcess, $"{DateTime.Now.ToString("yyyy-MM-dd")}已发出;");
         }
 
-        private void BtnMoreTestResult_Click(object sender, RoutedEventArgs e)
+        private void BtnGDMS_Click(object sender, RoutedEventArgs e)
         {
-            SetKeyValue(TxtMoreTestResult);
+            SetKeyValue(TxtGDMS);
 
         }
 
-        private void BtnTestResult_Click(object sender, RoutedEventArgs e)
+        private void BtnICPOES_Click(object sender, RoutedEventArgs e)
         {
-            SetKeyValue(TxtTestResult);
+            SetKeyValue(TxtICPOES);
         }
         private void SetKeyValue(TextBox textBox)
         {
@@ -65,6 +65,26 @@ namespace PMSClient.View
             {
                 PMSMethods.SetTextBox(textBox, dialog.KeyStrings);
             }
+        }
+
+        private void BtnIGA_Click(object sender, RoutedEventArgs e)
+        {
+            SetKeyValue(TxtIGA);
+        }
+
+        private void BtnOtherTestResult_Click(object sender, RoutedEventArgs e)
+        {
+            SetKeyValue(TxtOtherTestResult);
+        }
+
+        private void BtnPermittivity_Click(object sender, RoutedEventArgs e)
+        {
+            SetKeyValue(TxtPermittivity);
+        }
+
+        private void BtnThermal_Click(object sender, RoutedEventArgs e)
+        {
+            SetKeyValue(TxtThermal);
         }
     }
 }

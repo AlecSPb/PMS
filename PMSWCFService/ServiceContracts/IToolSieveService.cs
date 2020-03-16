@@ -27,5 +27,8 @@ namespace PMSWCFService.ServiceContracts
         void AddToolSieve(DcToolSieve model);
         [OperationContract]
         void UpdateToolSieve(DcToolSieve model);
+
+        [OperationContract]
+        int CheckToolSieveExist(string searchid);
     }
 }

@@ -14,9 +14,11 @@ namespace PMSWCFService.DataContracts
     public class DcSample : DcModelBase
     {
         [DataMember]
-        public string SampleType { get; set; }//客户，自分析，其他
+        public string TrackingStage { get; set; }
         [DataMember]
         public string ProductID { get; set; }
+        [DataMember]
+        public string SampleID { get; set; }
         [DataMember]
         public string Composition { get; set; }
         [DataMember]
@@ -30,11 +32,31 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string TraceInformation { get; set; }//准备，检查，包装，发出
         [DataMember]
-        public string TestResult{ get; set; }//如果有测试报告就在这里填写
+        public string ICPOES { get; set; }//如果有测试报告就在这里填写
         [DataMember]
-        public string MoreTestResult { get; set; }
+        public string GDMS { get; set; }//如果有测试报告就在这里填写
+        [DataMember]
+        public string IGA { get; set; }
+        [DataMember]
+        public string Thermal { get; set; }
+        [DataMember]
+        public string Permittivity { get; set; }
+        [DataMember]
+        public string OtherTestResult { get; set; }
         [DataMember]
         public string Remark { get; set; }
+
+        //2020-3-16补充
+        [DataMember]
+        public string PO { get; set; }
+        [DataMember]
+        public int Quantity { get; set; }
+        [DataMember]
+        public string Weight { get; set; }
+        [DataMember]
+        public string SampleType { get; set; }
+        [DataMember]
+        public string SampleFor { get; set; }
 
         //State 作废，正常
 

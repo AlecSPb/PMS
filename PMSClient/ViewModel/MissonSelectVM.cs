@@ -54,7 +54,7 @@ namespace PMSClient.ViewModel
                         PMSHelper.ViewModels.RecordTestEdit.SetBySelectMisson(order);
                         break;
                     case PMSViews.SampleEdit:
-                        PMSHelper.ViewModels.SampleEdit.SetBySelect(order);
+                        PMSHelper.ViewModels.SampleEdit.SetBySelectMisson(order);
                         break;
                     default:
                         break;

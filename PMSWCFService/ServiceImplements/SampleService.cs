@@ -30,7 +30,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcSample> GetSampleAll(int s, int t, string productid, string composition, string sampletype)
+        public List<DcSample> GetSampleAll(int s, int t, string productid, string composition, string trackingstage)
         {
             try
             {
@@ -42,7 +42,7 @@ namespace PMSWCFService
                                 where m.State != PMSCommon.SimpleState.作废.ToString()
                                 && m.ProductID.Contains(productid)
                                 && m.Composition.Contains(composition)
-                                && m.SampleType.Contains(sampletype)
+                                && m.TrackingStage.Contains(trackingstage)
                                 orderby m.CreateTime descending
                                 select m;
                     return Mapper.Map<List<Sample>, List<DcSample>>(query.Skip(s).Take(t).ToList());
@@ -55,7 +55,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetSampleAllCount(string productid, string composition, string sampletype)
+        public int GetSampleAllCount(string productid, string composition, string trackingstage)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace PMSWCFService
                                 where m.State != PMSCommon.SimpleState.作废.ToString()
                                 && m.ProductID.Contains(productid)
                                 && m.Composition.Contains(composition)
-                                && m.SampleType.Contains(sampletype)
+                                && m.TrackingStage.Contains(trackingstage)
                                 select m;
                     return query.Count();
                 }

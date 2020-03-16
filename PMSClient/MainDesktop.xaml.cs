@@ -146,13 +146,22 @@ namespace PMSClient
             {
                 System.Diagnostics.Debug.WriteLine("内网心跳检测正常");
 
-                using (var heartbeat = new PMSClient.HeartBeatService.HeartBeatSeriveClient())
+                using (var lan_heartbeat = new PMSClient.HeartBeatService.HeartBeatSeriveClient())
                 {
-                    if (heartbeat.Beat() == "ok")
+                    //读取日志信息
+                    int count_all = lan_heartbeat.GetOperationCallTimes();
+                    int count_yesterday = lan_heartbeat.GetOperationCallTimesYesterday();
+                    int count_today = lan_heartbeat.GetOperationCallTimesToday();
+
+                    if (lan_heartbeat.Beat() == "ok")
                     {
                         this.Dispatcher.Invoke(() =>
                         {
                             txtHeartBeat.Text = "内网服务器通信正常";
+                            if (PMSHelper.CurrentSession?.CurrentUserRole?.GroupName == "管理员")
+                            {
+                                TxtInformationLog.Text = $"访问信息 昨日:{count_yesterday}次 今日:{count_today}次 共{(count_all / 1000)}k次";
+                            }
                         });
                         //txtHeartBeat.Text = "服务器通信正常";
                     }
@@ -164,6 +173,7 @@ namespace PMSClient
                 this.Dispatcher.Invoke(() =>
                 {
                     txtHeartBeat.Text = "内网心跳检测出错";
+                    TxtInformationLog.Text = "Error";
                 });
                 PMSHelper.CurrentLog.Error(ex);
                 return false;

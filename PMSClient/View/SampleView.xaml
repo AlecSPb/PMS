@@ -29,11 +29,12 @@
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource SSampleType}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <ComboBox Style="{StaticResource StyleComboBoxCommon}"
-                      ItemsSource="{Binding SampleTypes}" 
+                      ItemsSource="{Binding TrackingStages}" 
                       SelectedItem="{Binding SearchSampleType,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonPrint}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Print}"/>
+            <Button Content="{StaticResource ButtonExcel}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Excel}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource ButtonSinglePrepared}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnPreparedBrush}"/>
 
@@ -72,10 +73,14 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource SCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
+                <DataGridTextColumn Header="{StaticResource STrackingStage}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding TrackingStage}"/>
                 <DataGridTextColumn Header="{StaticResource SSampleType}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding SampleType}"/>
                 <DataGridTextColumn Header="{StaticResource SProductID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding ProductID}"/>
+                <DataGridTextColumn Header="{StaticResource SSampleID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding SampleID}"/>
                 <DataGridTextColumn Header="{StaticResource SComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="{StaticResource SPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
@@ -88,13 +93,21 @@
                 <DataGridTextColumn Header="{StaticResource SMoreInformation}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MoreInformation}"/>
                 
-                <DataGridTextColumn Header="{StaticResource SProcess}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource STraceInformation}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding TraceInformation}"/>
                 
-                <DataGridTextColumn Header="{StaticResource STestResult}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding TestResult}"/>
-                <DataGridTextColumn Header="{StaticResource SMoreTestResult}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding MoreTestResult}"/>
+                <DataGridTextColumn Header="{StaticResource SICPOES}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding ICPOES}"/>
+                <DataGridTextColumn Header="{StaticResource SGDMS}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding GDMS}"/>
+                <DataGridTextColumn Header="{StaticResource SIGA}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding IGA}"/>
+                <DataGridTextColumn Header="{StaticResource SThermal}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Thermal}"/>
+                <DataGridTextColumn Header="{StaticResource SPermittivity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Permittivity}"/>
+                <DataGridTextColumn Header="{StaticResource SOtherTestResult}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding OtherTestResult}"/>
 
                 <DataGridTextColumn Header="{StaticResource SRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>

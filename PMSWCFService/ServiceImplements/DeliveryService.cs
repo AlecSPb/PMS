@@ -171,7 +171,7 @@ namespace PMSWCFService
                 {
                     var query = from d in dc.Deliverys
                                 where d.State != PMSCommon.DeliveryState.作废.ToString()
-                                &&d.DeliveryName.Contains(deliveryName)
+                                && d.DeliveryName.Contains(deliveryName)
                                 orderby d.CreateTime descending
                                 select d;
                     Mapper.Initialize(cfg =>
@@ -244,7 +244,7 @@ namespace PMSWCFService
 
                     var result = dc.DeliveryItems
                         .Where(i => i.DeliveryID == id && i.State != PMSCommon.SimpleState.作废.ToString())
-                        .OrderByDescending(i=>i.CreateTime)
+                        .OrderByDescending(i => i.CreateTime)
                         .ToList();
                     return Mapper.Map<List<DeliveryItem>, List<DcDeliveryItem>>(result);
                 }
@@ -257,7 +257,7 @@ namespace PMSWCFService
 
         }
 
-        public List<DcDeliveryItemExtra> GetDeliveryItemExtra(int skip, int take, string productid, string composition,string customer)
+        public List<DcDeliveryItemExtra> GetDeliveryItemExtra(int skip, int take, string productid, string composition, string customer)
         {
             try
             {
@@ -265,19 +265,19 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from d in dc.DeliveryItems
-                                 join dd in dc.Deliverys
-                                 on d.DeliveryID equals dd.ID
-                                 where d.State != PMSCommon.SimpleState.作废.ToString()
-                                 && dd.State!=PMSCommon.DeliveryState.作废.ToString()
-                                 && d.ProductID.Contains(productid)
-                                 && d.Composition.Contains(composition)
-                                 && d.Customer.Contains(customer)
-                                orderby  dd.CreateTime descending,d.CreateTime descending
-                                 select new PMSDeliveryItemExtra()
-                                 {
-                                     Delivery = dd,
-                                     DeliveryItem=d
-                                 };
+                                join dd in dc.Deliverys
+                                on d.DeliveryID equals dd.ID
+                                where d.State != PMSCommon.SimpleState.作废.ToString()
+                                && dd.State != PMSCommon.DeliveryState.作废.ToString()
+                                && d.ProductID.Contains(productid)
+                                && d.Composition.Contains(composition)
+                                && d.Customer.Contains(customer)
+                                orderby dd.CreateTime descending, d.CreateTime descending
+                                select new PMSDeliveryItemExtra()
+                                {
+                                    Delivery = dd,
+                                    DeliveryItem = d
+                                };
 
                     Mapper.Initialize(cfg =>
                     {
@@ -298,7 +298,7 @@ namespace PMSWCFService
         }
 
 
-        public int GetDeliveryItemExtraCount(string productid, string composition,string customer)
+        public int GetDeliveryItemExtraCount(string productid, string composition, string customer)
         {
             try
             {
@@ -312,7 +312,7 @@ namespace PMSWCFService
                                 && dd.State != PMSCommon.DeliveryState.作废.ToString()
                                 && d.ProductID.Contains(productid)
                                 && d.Composition.Contains(composition)
-                                &&d.Customer.Contains(customer)
+                                && d.Customer.Contains(customer)
                                 select new PMSDeliveryItemExtra()
                                 {
                                     Delivery = dd,
@@ -329,12 +329,12 @@ namespace PMSWCFService
         }
         public List<DcDeliveryItemExtra> GetDeliveryItemExtraByYear(int skip, int take, int year)
         {
-                XS.Run();
+            XS.Run();
             throw new NotImplementedException();
         }
         public int GetDeliveryItemExtraCountByYear(string productid, int year)
         {
-                XS.Run();
+            XS.Run();
             throw new NotImplementedException();
         }
 
@@ -377,7 +377,7 @@ namespace PMSWCFService
                     var query = from d in dc.DeliveryItems
                                 where d.State != PMSCommon.SimpleState.作废.ToString()
                                 && d.ProductID.Contains(productid)
-                                &&d.Composition.Contains(composition)
+                                && d.Composition.Contains(composition)
                                 select d;
                     return query.Count();
                 }
@@ -498,7 +498,7 @@ namespace PMSWCFService
                 XS.Run();
                 using (var dc = new PMSDbContext())
                 {
-                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcDeliveryItem,DeliveryItemHistory>());
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcDeliveryItem, DeliveryItemHistory>());
                     var mapper = config.CreateMapper();
                     var history = mapper.Map<DeliveryItemHistory>(model);
                     history.OperateTime = DateTime.Now;
@@ -523,7 +523,7 @@ namespace PMSWCFService
                 {
                     var query = from d in dc.DeliveryItems
                                 where d.State != PMSCommon.SimpleState.作废.ToString()
-                                && d.ProductID==productid
+                                && d.ProductID == productid
                                 orderby d.CreateTime descending
                                 select d;
                     Mapper.Initialize(cfg =>

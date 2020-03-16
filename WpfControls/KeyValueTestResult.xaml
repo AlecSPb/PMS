@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFControls"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
-        Title="键值结果编辑器" Height="600" Width="300">
+        Title="键值结果编辑器" Height="600" Width="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>

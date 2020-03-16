@@ -106,7 +106,7 @@
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="状态"/>
+                           Text="状态,当设置为停止使用的时候，选择界面将不会出现该记录，避免干扰"/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource FTCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

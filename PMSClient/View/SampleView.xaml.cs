@@ -29,7 +29,7 @@ namespace PMSClient.View
         private void dg_LoadingRow(object sender, DataGridRowEventArgs e)
         {
             DcSample sample = e.Row.DataContext as DcSample;
-            switch (sample.SampleType)
+            switch (sample.TrackingStage)
             {
                 case "未取样":
                     e.Row.Background = this.FindResource("UnPreparedBrush") as SolidColorBrush;

@@ -17,8 +17,11 @@
             <TextBox Style="{StaticResource StyleTextBoxCommon}" Width="200" Name="TxtProductID" Text="191120-CB-1" Background="White"/>
             <Button Content="检索" Style="{StaticResource StyleButtonCommon}" Name="BtnSearch" Click="BtnSearch_Click"/>
             <Button Content="保存查询结果" Style="{StaticResource StyleButtonCommon}" Name="BtnSave" Click="BtnSave_Click"/>
+            <TextBlock Text="按Ctrl+F可以在页面内查找定位" Style="{StaticResource StyleDGTextBlockSpecial2}"/>
         </StackPanel>
-        <FlowDocumentScrollViewer Grid.Row="1" Margin="5" >
+        <FlowDocumentScrollViewer Grid.Row="1" Margin="5" IsToolBarVisible="True"
+                                  IsInactiveSelectionHighlightEnabled="True"
+                                  IsSelectionEnabled="True">
             <FlowDocument Background="LightYellow" Name="MainDoc">
                 <Paragraph Name="P_SearchItem"  FontFamily="微软雅黑">输入完成的产品ID号，然后点击查询</Paragraph>
                 <Paragraph Style="{StaticResource ParaHeader}" FontFamily="微软雅黑">综合查询结果</Paragraph>

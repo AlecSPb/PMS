@@ -244,7 +244,7 @@
     <sys:String x:Key="ButtonMaterialWindow">原料窗口</sys:String>
     <sys:String x:Key="ButtonMaterialNeed">原料需求</sys:String>
     <sys:String x:Key="ButtonMaterialOrder">原料订单</sys:String>
-    
+
     <sys:String x:Key="ButtonSearchPlan">搜索计划</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryIn">材料入库</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryOut">材料出库</sys:String>
@@ -329,7 +329,7 @@
 
     <sys:String x:Key="ButtonSample">样品准备</sys:String>
     <sys:String x:Key="ButtonExpressTrack">物流追踪</sys:String>
-    
+
     <sys:String x:Key="ButtonLock">锁定</sys:String>
     <sys:String x:Key="ButtonUnLock">解锁</sys:String>
 
@@ -343,6 +343,8 @@
     <sys:String x:Key="ButtonGetBack">取回</sys:String>
     <sys:String x:Key="ButtonFail">失败</sys:String>
     <sys:String x:Key="ButtonReMachine">再次加工</sys:String>
+    <sys:String x:Key="ButtonExcel">Excel</sys:String>
+    
     <!--单字按钮-->
     <sys:String x:Key="ButtonSingleSend">发</sys:String>
     <sys:String x:Key="ButtonSingleReceive">返</sys:String>
@@ -354,7 +356,7 @@
     <sys:String x:Key="ButtonSinglePrepared">备</sys:String>
 
     <!--Indicator-->
-    <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>
+    <sys:String x:Key="IndicatorColorMeaning">颜色=></sys:String>
     <sys:String x:Key="IndicatorYesterday">昨天</sys:String>
     <sys:String x:Key="IndicatorToday">今天</sys:String>
     <sys:String x:Key="IndicatorTomorrow">明天</sys:String>
@@ -473,7 +475,7 @@
     <sys:String x:Key="PlanRemark">备注信息</sys:String>
     <sys:String x:Key="PlanGrade">得分</sys:String>
     <sys:String x:Key="PlanConclusion">计划总结</sys:String>
-    
+
     <!--MaterialNeed-->
     <sys:String x:Key="MNState">需求状态</sys:String>
     <sys:String x:Key="MNCreator">创建者</sys:String>
@@ -512,7 +514,7 @@
     <sys:String x:Key="MOIPurity">纯度</sys:String>
     <sys:String x:Key="MOIDescription">订单描述</sys:String>
     <sys:String x:Key="MOIProvideRawMaterial">提供的单质</sys:String>
-    <sys:String x:Key="MOIMaterialPrice">单质总价值</sys:String>   
+    <sys:String x:Key="MOIMaterialPrice">单质总价值</sys:String>
     <sys:String x:Key="MOIDeliveryDate">交付日期</sys:String>
     <sys:String x:Key="MOILastDay">剩余天数</sys:String>
     <sys:String x:Key="MOIUnitPrice">单价</sys:String>
@@ -928,7 +930,7 @@
     <!--MillingTool-->
     <sys:String x:Key="PageMillingTool">筛网索引</sys:String>
     <sys:String x:Key="PageMillingToolEdit">筛网索引-编辑</sys:String>
-    
+
     <sys:String x:Key="MTCreateTime">创建时间</sys:String>
     <sys:String x:Key="MTCreator">创建者</sys:String>
     <sys:String x:Key="MTState">状态</sys:String>
@@ -956,7 +958,7 @@
     <sys:String x:Key="FRemark">备注信息</sys:String>
 
 
-    
+
     <!--PMICounter-->
     <sys:String x:Key="PagePMICounter">PMI计数器</sys:String>
     <sys:String x:Key="PagePMICounterEdit">PMI计数器编辑</sys:String>
@@ -1020,18 +1022,29 @@
     <sys:String x:Key="SState">状态</sys:String>
     <sys:String x:Key="SCreator">创建者</sys:String>
     <sys:String x:Key="SCreateTime">创建时间</sys:String>
-    <sys:String x:Key="SSampleType">当前环节</sys:String>
+    <sys:String x:Key="STrackingStage">追踪阶段</sys:String>
     <sys:String x:Key="SProductID">产品ID</sys:String>
+    <sys:String x:Key="SSampleID">样品ID</sys:String>
     <sys:String x:Key="SComposition">成分</sys:String>
     <sys:String x:Key="SPMINumber">内部号</sys:String>
-    <sys:String x:Key="SMoreInformation">更多信息</sys:String>
+    <sys:String x:Key="SMoreInformation">其他信息</sys:String>
     <sys:String x:Key="SCustomer">客户</sys:String>
     <sys:String x:Key="SOriginalRequirement">原始需求</sys:String>
-    <sys:String x:Key="SProcess">过程</sys:String>
-    <sys:String x:Key="STestResult">测试结果</sys:String>
-    <sys:String x:Key="SMoreTestResult">其他测试结果</sys:String>
+    <sys:String x:Key="STraceInformation">追踪信息</sys:String>
+
+    <sys:String x:Key="SICPOES">ICPOES</sys:String>
+    <sys:String x:Key="SGDMS">GDMS</sys:String>
+    <sys:String x:Key="SIGA">IGA</sys:String>
+    <sys:String x:Key="SThermal">热学性质</sys:String>
+    <sys:String x:Key="SPermittivity">电学性质</sys:String>
+    <sys:String x:Key="SOtherTestResult">其他测试结果</sys:String>
     <sys:String x:Key="SRemark">备注</sys:String>
 
+    <sys:String x:Key="SPO">PO</sys:String>
+    <sys:String x:Key="SQuantity">数量</sys:String>
+    <sys:String x:Key="SWeight">重量</sys:String>
+    <sys:String x:Key="SSampleType">样品类型</sys:String>
+    <sys:String x:Key="SSampleFor">备样目的</sys:String>
 
 
 
@@ -1040,7 +1053,7 @@
     <sys:String x:Key="BottomBarPublic">公共</sys:String>
     <sys:String x:Key="BottomBarPlan">计划</sys:String>
 
-    
+
     <sys:String x:Key="BottomBarTool">工具</sys:String>
     <sys:String x:Key="BottomBarFillCalculator">装料</sys:String>
     <sys:String x:Key="BottomBarPressure">压力</sys:String>

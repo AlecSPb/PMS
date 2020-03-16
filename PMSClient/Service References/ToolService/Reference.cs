@@ -257,6 +257,12 @@ namespace PMSClient.ToolService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/UpdateToolSieve", ReplyAction="http://tempuri.org/IToolSieveService/UpdateToolSieveResponse")]
         System.Threading.Tasks.Task UpdateToolSieveAsync(PMSClient.ToolService.DcToolSieve model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/CheckToolSieveExist", ReplyAction="http://tempuri.org/IToolSieveService/CheckToolSieveExistResponse")]
+        int CheckToolSieveExist(string searchid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/CheckToolSieveExist", ReplyAction="http://tempuri.org/IToolSieveService/CheckToolSieveExistResponse")]
+        System.Threading.Tasks.Task<int> CheckToolSieveExistAsync(string searchid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -332,6 +338,14 @@ namespace PMSClient.ToolService {
         
         public System.Threading.Tasks.Task UpdateToolSieveAsync(PMSClient.ToolService.DcToolSieve model) {
             return base.Channel.UpdateToolSieveAsync(model);
+        }
+        
+        public int CheckToolSieveExist(string searchid) {
+            return base.Channel.CheckToolSieveExist(searchid);
+        }
+        
+        public System.Threading.Tasks.Task<int> CheckToolSieveExistAsync(string searchid) {
+            return base.Channel.CheckToolSieveExistAsync(searchid);
         }
     }
 }

@@ -19,13 +19,13 @@ namespace PMSClient.ViewModel
 
             InitializeCommands();
 
-            SampleTypes = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.SampleType>(SampleTypes);
-            SampleTypes.Add("");
+            TrackingStages = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.SampleTrackingStage>(TrackingStages);
+            TrackingStages.Add("");
 
             SetPageParametersWhenConditionChange();
         }
-        public List<string> SampleTypes { get; set; }
+        public List<string> TrackingStages { get; set; }
         private void InitializeCommands()
         {
             Add = new RelayCommand(ActionAdd, CanAdd);
@@ -40,6 +40,34 @@ namespace PMSClient.ViewModel
             Sent = new RelayCommand<DcSample>(ActionSent, CanQuickEdit);
             Print = new RelayCommand(ActionPrint, CanPrint);
             Label = new RelayCommand<DcSample>(ActionLabel);
+            Excel = new RelayCommand(ActionExcel, CanExcel);
+        }
+
+        private void ActionExcel()
+        {
+
+            if (!PMSDialogService.ShowYesNo("请问", "确定要导出全部数据吗？"))
+            {
+                return;
+            }
+            PMSDialogService.Show("导出数据时间会比较长，请耐性等待完成消息出现,不要重复点击");
+
+
+            try
+            {
+                var excel = new ExcelOutputHelper.ExcelSample();
+                excel.Intialize("样品记录导出记录", "样品记录");
+                excel.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+        }
+
+        private bool CanExcel()
+        {
+            return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.SampleEdit);
         }
 
         public bool CanQuickEdit(DcSample obj)
@@ -64,12 +92,12 @@ namespace PMSClient.ViewModel
                 lb.AppendLine();
                 lb.AppendLine(model.Composition);
                 lb.AppendLine("Weight      g");
-                lb.AppendLine(model.ProductID);
+                lb.AppendLine(model.SampleID);
 
                 lb.AppendLine("=====  简成分样品标签↓  =====");
                 lb.AppendLine(Helpers.CompositionHelper.RemoveNumbers(model.Composition));
                 lb.AppendLine("Weight      g");
-                lb.AppendLine(model.ProductID);
+                lb.AppendLine(model.SampleID);
                 lb.AppendLine();
                 PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.Plan, "批量",
                         null, null, lb.ToString(), null);
@@ -89,7 +117,7 @@ namespace PMSClient.ViewModel
             var dialog = new ToolWindow.SingleCombBoxDialog();
             dialog.TxtCaption.Text = "请选择要打印类型，空为全部打印";
             List<string> ds = new List<string>();
-            PMSMethods.SetListDS<PMSCommon.SampleType>(ds);
+            PMSMethods.SetListDS<PMSCommon.SampleTrackingStage>(ds);
             ds.Add("");
             dialog.SetCboDatasource(ds);
             dialog.ShowDialog();
@@ -97,7 +125,7 @@ namespace PMSClient.ViewModel
             if (dialog.DialogResult == true)
             {
                 var printer = new ReportsHelperNew.ReportSample();
-                printer.SelectedSampleType = dialog.CurrentSeletedString;
+                printer.SelectedTrackingStage = dialog.CurrentSeletedString;
                 string postfix = dialog.CurrentSeletedString == "" ? "全部" : dialog.CurrentSeletedString;
                 printer.Intialize($"样品清单-{postfix}");
                 printer.Output();
@@ -136,6 +164,7 @@ namespace PMSClient.ViewModel
             if (plan != null)
             {
                 sample.ProductID = plan.Plan.SearchCode + "-1";
+                sample.SampleID = plan.Plan.SearchCode + "-1";
                 if (PMSDialogService.ShowYesNo("请问", $"确定要填入[{sample.ProductID}-{plan.Misson.CompositionStandard}]" +
                     $"到样品准备[{sample.Composition}-{sample.PMINumber}]吗？"))
                 {
@@ -155,17 +184,17 @@ namespace PMSClient.ViewModel
 
             if (obj == null) return;
             //分析要改变的类型
-            PMSCommon.SampleType sampleType = PMSCommon.SampleType.未取样;
+            PMSCommon.SampleTrackingStage sampleType = PMSCommon.SampleTrackingStage.未取样;
             switch (type_name)
             {
                 case "已准备":
-                    sampleType = PMSCommon.SampleType.未核验;
+                    sampleType = PMSCommon.SampleTrackingStage.未核验;
                     break;
                 case "已核验":
-                    sampleType = PMSCommon.SampleType.已核验;
+                    sampleType = PMSCommon.SampleTrackingStage.已核验;
                     break;
                 case "已发出":
-                    sampleType = PMSCommon.SampleType.已发出;
+                    sampleType = PMSCommon.SampleTrackingStage.已发出;
                     break;
                 default:
                     break;
@@ -175,7 +204,7 @@ namespace PMSClient.ViewModel
             {
                 using (var s = new SampleServiceClient())
                 {
-                    obj.SampleType = sampleType.ToString();
+                    obj.TrackingStage = sampleType.ToString();
                     obj.TraceInformation += $"{DateTime.Now.ToString("yyyy-MM-dd")}{type_name};";
                     s.UpdateSample(obj);
                 }
@@ -296,6 +325,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcSample> Sent { get; set; }
         public RelayCommand<DcSample> Label { get; set; }
         public RelayCommand Print { get; set; }
+        public RelayCommand Excel { get; set; }
 
         #endregion
 

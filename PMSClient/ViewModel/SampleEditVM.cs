@@ -17,6 +17,12 @@ namespace PMSClient.ViewModel
             States = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.SimpleState>(States);
 
+            SampleTrackingStages = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.SampleTrackingStage>(SampleTrackingStages);
+
+            SampleFors = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.SampleFor>(SampleFors);
+
             SampleTypes = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.SampleType>(SampleTypes);
 
@@ -28,24 +34,48 @@ namespace PMSClient.ViewModel
         {
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
-            Select = new RelayCommand(ActionSelect);
+            SelectMisson = new RelayCommand(ActionSelectMisson);
+            SelectPlan = new RelayCommand(ActionSelectPlan);
         }
 
-        private void ActionSelect()
+        private void ActionSelectPlan()
+        {
+            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.SampleEdit);
+            PMSHelper.ViewModels.PlanSelect.SetSearchItem(composition: CurrentSample.Composition, searchlot: "", pminumber: "");
+            PMSHelper.ViewModels.PlanSelect.RefreshData();
+            NavigationService.GoTo(PMSViews.PlanSelect);
+        }
+
+        private void ActionSelectMisson()
         {
             PMSHelper.ViewModels.MissonSelect.SetRequestView(PMSViews.SampleEdit);
             PMSHelper.ViewModels.MissonSelect.RefreshData();
             NavigationService.GoTo(PMSViews.MissonSelect);
         }
-        public void SetBySelect(DcOrder order)
+
+        public void SetBySelectPlan(DcPlanWithMisson plan)
+        {
+            if (plan != null)
+            {
+                CurrentSample.ProductID = plan.Plan.SearchCode + "-1";
+                CurrentSample.SampleID = CurrentSample.ProductID;
+                CurrentSample.TrackingStage = PMSCommon.SampleTrackingStage.未核验.ToString();
+            }
+        }
+
+        public void SetBySelectMisson(DcOrder order)
         {
             if (order != null)
             {
                 CurrentSample.ProductID = "无";
+                CurrentSample.SampleID = "无";
                 CurrentSample.Composition = order.CompositionStandard;
                 CurrentSample.PMINumber = order.PMINumber;
+                CurrentSample.PO = order.PO;
                 CurrentSample.Customer = order.CustomerName;
-                CurrentSample.SampleType = PMSCommon.SampleType.未取样.ToString();
+                CurrentSample.SampleType = PMSCommon.SampleType.块状.ToString();
+                CurrentSample.TrackingStage = PMSCommon.SampleTrackingStage.未取样.ToString();
+                CurrentSample.SampleFor = PMSCommon.SampleFor.Customer.ToString();
 
                 bool need_need = Helpers.OrderHelper.NeedSample(order.SampleNeed);
                 bool need_anlysis = Helpers.OrderHelper.NeedSample(order.SampleForAnlysis);
@@ -78,15 +108,25 @@ namespace PMSClient.ViewModel
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.ProductID = "无";
-            model.OriginalRequirement = "";
+            model.SampleID = "无";
+            model.OriginalRequirement = "无";
             model.Composition = "无";
             model.PMINumber = "无";
-            model.SampleType = SampleTypes[0];
+            model.PO = "无";
+            model.TrackingStage = SampleTrackingStages[0];
             model.Customer = "无";
             model.TraceInformation = "";
-            model.TestResult = VMHelper.SampleVMHelper.GDMS;
+            model.ICPOES = VMHelper.SampleVMHelper.ICPOES;
+            model.GDMS = VMHelper.SampleVMHelper.GDMS;
+            model.IGA = VMHelper.SampleVMHelper.IGA;
+            model.Thermal = VMHelper.SampleVMHelper.Thermal;
+            model.Permittivity = VMHelper.SampleVMHelper.Permittivity;
+            model.OtherTestResult = "";
+            model.SampleType = PMSCommon.SampleType.块状.ToString();
+            model.SampleFor = PMSCommon.SampleFor.Customer.ToString();
+            model.Quantity = 1;
+            model.Weight = "无";
             model.MoreInformation = "无";
-            model.MoreTestResult = VMHelper.SampleVMHelper.VPI;
             model.Remark = "无";
 
             #endregion
@@ -106,12 +146,22 @@ namespace PMSClient.ViewModel
                 CurrentSample.Composition = model.Composition;
                 CurrentSample.SampleType = model.SampleType;
                 CurrentSample.PMINumber = model.PMINumber;
+                CurrentSample.PO = model.PO;
                 CurrentSample.Customer = model.Customer;
                 CurrentSample.OriginalRequirement = model.OriginalRequirement;
                 CurrentSample.MoreInformation = model.MoreInformation;
-                CurrentSample.TestResult = model.TestResult;
-                CurrentSample.MoreTestResult = model.MoreTestResult;
+                CurrentSample.TrackingStage = PMSCommon.SampleTrackingStage.未取样.ToString();
                 CurrentSample.TraceInformation = model.TraceInformation;
+                CurrentSample.Weight = model.Weight;
+                CurrentSample.Quantity = model.Quantity;
+                CurrentSample.SampleFor = model.SampleFor;
+
+                CurrentSample.ICPOES = model.ICPOES;
+                CurrentSample.GDMS = model.GDMS;
+                CurrentSample.IGA = model.IGA;
+                CurrentSample.OtherTestResult = model.OtherTestResult;
+
+
                 CurrentSample.Remark = model.Remark;
             }
         }
@@ -163,6 +213,8 @@ namespace PMSClient.ViewModel
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
+        public List<string> SampleTrackingStages { get; set; }
+        public List<string> SampleFors { get; set; }
         public List<string> SampleTypes { get; set; }
         public List<string> States { get; set; }
 
@@ -177,7 +229,9 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public RelayCommand Select { get; set; }
+        public RelayCommand SelectMisson { get; set; }
+
+        public RelayCommand SelectPlan { get; set; }
 
     }
 }

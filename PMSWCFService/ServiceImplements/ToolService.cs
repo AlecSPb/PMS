@@ -31,6 +31,28 @@ namespace PMSWCFService
             }
         }
 
+        public int CheckToolSieveExist(string searchid)
+        {
+            try
+            {
+                XS.Run();
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.ToolSieves
+                                where (i.State == PMSCommon.ToolState.正常.ToString()
+                                || i.State == PMSCommon.ToolState.停止使用.ToString())
+                                && i.SearchID == searchid
+                                select i;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcToolSieve> GetToolSieve(string searchid, string materialGroup, int s, int t)
         {
             try
@@ -41,7 +63,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<ToolSieve, DcToolSieve>());
                     var query = from i in dc.ToolSieves
                                 where (i.State == PMSCommon.ToolState.正常.ToString()
-                                ||i.State==PMSCommon.ToolState.停止使用.ToString())
+                                || i.State == PMSCommon.ToolState.停止使用.ToString())
                                 && i.SearchID.Contains(searchid)
                                 && i.MaterialGroup.Contains(materialGroup)
                                 orderby i.CreateTime descending

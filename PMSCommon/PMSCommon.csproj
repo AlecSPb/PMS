@@ -87,6 +87,8 @@
     <Compile Include="ProductType.cs" />
     <Compile Include="QuickVHPMessege.cs" />
     <Compile Include="RawMaterialSheetState.cs" />
+    <Compile Include="SampleFor.cs" />
+    <Compile Include="SampleTrackingStage.cs" />
     <Compile Include="SampleType.cs" />
     <Compile Include="SimpleState.cs" />
     <Compile Include="OrderPolicyType.cs" />
