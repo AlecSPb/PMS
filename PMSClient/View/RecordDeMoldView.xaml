@@ -119,7 +119,7 @@
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
             </Grid>
             <Expander Grid.Column="1" Header="" IsExpanded="False" ExpandDirection="Left">
-                <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+                <ScrollViewer  VerticalScrollBarVisibility="Auto" >
                     <Grid  DataContext="{Binding CurrentRecordDeMold}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>

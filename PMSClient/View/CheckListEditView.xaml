@@ -26,7 +26,7 @@
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipProductEdit}"/>
         </StackPanel>
-        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" >
             <Grid  DataContext="{Binding CurrentFeedBack}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>

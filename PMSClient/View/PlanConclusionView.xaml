@@ -145,7 +145,7 @@
                               TextWrapping="Wrap" VerticalAlignment="Stretch"  Background="LightGreen"/>
 
                 </Grid>
-                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" >
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>

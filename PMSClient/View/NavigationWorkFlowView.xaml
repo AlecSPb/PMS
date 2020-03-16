@@ -32,7 +32,7 @@
                 <Button Content="注销" Style="{StaticResource StyleButtonCommon}" Command="{Binding LogOut}" />
             </StackPanel>
         </Grid>
-        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Visible">
+        <ScrollViewer Grid.Row="2"   VerticalScrollBarVisibility="Visible">
             <Canvas>
                 <Canvas.Background>
                     <ImageBrush ImageSource="../Resource/HelpImages/workflow2.png"   Stretch="None" AlignmentX="Left" AlignmentY="Top"/>

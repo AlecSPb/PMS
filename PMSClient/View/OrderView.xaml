@@ -258,7 +258,7 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Expander Grid.Column="1" Header="" IsExpanded="False" ExpandDirection="Left">
-                <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+                <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" >
                     <Grid  DataContext="{Binding CurrentOrder}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>

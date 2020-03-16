@@ -30,7 +30,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
-            <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+            <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" >
                 <Grid  DataContext="{Binding CurrentMaterialOrder}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>

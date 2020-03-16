@@ -94,7 +94,7 @@
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>-->
                 </DataGrid.Columns>
             </DataGrid>
-            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" >
                 <Grid  DataContext="{Binding CurrentToDoItem}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>

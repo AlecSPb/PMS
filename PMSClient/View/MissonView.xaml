@@ -261,7 +261,7 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Expander Grid.Column="1" Header="" IsExpanded="True" ExpandDirection="Left">
-                <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+                <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" >
                     <Grid  DataContext="{Binding CurrentSelectItem}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>

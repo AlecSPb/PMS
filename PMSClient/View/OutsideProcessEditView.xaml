@@ -30,7 +30,7 @@
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipOutSourceEdit}"/>
         </StackPanel>
-        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" >
             <Grid  DataContext="{Binding CurrentOutsideProcess}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="80"/>

@@ -120,7 +120,7 @@
                     <Border x:Name="border" BorderBrush="{StaticResource ControlBorderBrush}"
                             Background="{TemplateBinding Background}" SnapsToDevicePixels="True" BorderThickness="1">
                         <ScrollViewer x:Name="PART_ContentHost" Focusable="false" 
-                                      HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                      HorizontalScrollBarVisibility="Hidden " VerticalScrollBarVisibility="Hidden"/>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">

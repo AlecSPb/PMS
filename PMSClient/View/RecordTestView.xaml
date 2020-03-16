@@ -277,7 +277,7 @@
                                     />
 
                     </StackPanel>
-                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden" Grid.Row="1">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto"  Grid.Row="1">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto"/>

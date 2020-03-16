@@ -18,7 +18,7 @@
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Save}"/>
         </StackPanel>
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" >
             <Grid  DataContext="{Binding CurrentProduct}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>

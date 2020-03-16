@@ -186,7 +186,7 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
                 <Grid  DataContext="{Binding CurrentDeliveryItemExtra}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
