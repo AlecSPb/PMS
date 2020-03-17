@@ -209,6 +209,7 @@
     <Compile Include="Components\CsvOutputHelper\ICsvOutput.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputRecordMilling.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelSample.cs" />
+    <Compile Include="Components\NewFeatureDocShow\NewFeatureShowService.cs" />
     <Compile Include="CustomControls\BatchDuplicateDialog.xaml.cs">
       <DependentUpon>BatchDuplicateDialog.xaml</DependentUpon>
     </Compile>
@@ -1841,7 +1842,7 @@
     <Content Include="Resource\DocTemplate\Reports\Samples.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="HelperDocs\样品管理功能使用介绍.docx">
+    <Content Include="HelpDocs\样品管理功能使用介绍1.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Service References\EditLockService\EditLockService.disco" />

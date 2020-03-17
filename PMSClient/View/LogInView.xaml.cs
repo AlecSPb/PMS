@@ -75,7 +75,8 @@ namespace PMSClient.View
                     {
                         new Express.Operation().TraceUnCompleted();
                     }
-
+                    //检查是否需要显示新文档
+                    new Components.NewFeatureDocShow.NewFeatureShowService().Show("样品管理功能使用介绍1.docx", 2);
                 }
                 else
                 {

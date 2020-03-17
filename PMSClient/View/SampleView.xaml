@@ -27,10 +27,10 @@
             <TextBlock Text="{StaticResource SComposition}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
-            <TextBlock Text="{StaticResource SSampleType}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBlock Text="{StaticResource STrackingStage}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <ComboBox Style="{StaticResource StyleComboBoxCommon}"
                       ItemsSource="{Binding TrackingStages}" 
-                      SelectedItem="{Binding SearchSampleType,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
+                      SelectedItem="{Binding SearchTrackingStage,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonPrint}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Print}"/>

@@ -14,7 +14,7 @@ namespace PMSClient.ViewModel
     {
         public SampleVM()
         {
-            searchComposition = searchProductID = searchSampleType = "";
+            searchComposition = searchProductID = searchTrackingStage = "";
             Samples = new ObservableCollection<DcSample>();
 
             InitializeCommands();
@@ -285,11 +285,11 @@ namespace PMSClient.ViewModel
             set { searchComposition = value; RaisePropertyChanged(nameof(SearchComposition)); }
         }
 
-        private string searchSampleType;
-        public string SearchSampleType
+        private string searchTrackingStage;
+        public string SearchTrackingStage
         {
-            get { return searchSampleType; }
-            set { searchSampleType = value; RaisePropertyChanged(nameof(SearchSampleType)); }
+            get { return searchTrackingStage; }
+            set { searchTrackingStage = value; RaisePropertyChanged(nameof(SearchTrackingStage)); }
         }
         private void SetPageParametersWhenConditionChange()
         {
@@ -297,7 +297,7 @@ namespace PMSClient.ViewModel
             PageSize = 30;
             using (var service = new SampleServiceClient())
             {
-                RecordCount = service.GetSampleAllCount(SearchProductID, SearchComposition, SearchSampleType);
+                RecordCount = service.GetSampleAllCount(SearchProductID, SearchComposition, SearchTrackingStage);
             }
             ActionPaging();
         }
@@ -309,7 +309,7 @@ namespace PMSClient.ViewModel
             using (var service = new SampleServiceClient())
             {
                 var orders = service.GetSampleAll(skip, take,
-                    SearchProductID, SearchComposition, SearchSampleType);
+                    SearchProductID, SearchComposition, SearchTrackingStage);
                 Samples.Clear();
                 orders.ToList().ForEach(o => Samples.Add(o));
             }

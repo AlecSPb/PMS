@@ -116,10 +116,9 @@
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MIISupplierPO}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding SupplierPO}" Style="{StaticResource StyleTextBoxCommon}"
-                            IsReadOnly="True"/>
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding SupplierPO}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="供应商填写,此处只读"/>
+                           Text="一般由供应商填写"/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource MIIQuickRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

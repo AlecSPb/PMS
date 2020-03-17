@@ -142,5 +142,17 @@ namespace PMSClient.Properties {
                 this["Version"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int ShowHelpDocSilenceCode {
+            get {
+                return ((int)(this["ShowHelpDocSilenceCode"]));
+            }
+            set {
+                this["ShowHelpDocSilenceCode"] = value;
+            }
+        }
     }
 }
