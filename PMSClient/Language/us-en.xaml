@@ -713,6 +713,7 @@
     <sys:String x:Key="MIIRemark">Remark</sys:String>
     <sys:String x:Key="MIIQuickRemark">QuickRemark</sys:String>
     <sys:String x:Key="MIIMaterialSource">Material Source</sys:String>
+    <sys:String x:Key="MIISupplierPO">Supplier PO</sys:String>
 
     <!--材料出库-->
     <sys:String x:Key="MIOState">State</sys:String>

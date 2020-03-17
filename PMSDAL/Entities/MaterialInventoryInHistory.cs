@@ -23,6 +23,7 @@ namespace PMSDAL
         public string Remark { get; set; }
         public string QuickRemark { get; set; }
         public string MaterialSource { get; set; }
+        public string SupplierPO { get; set; }
 
         //操作者和操作时间
         [Key]

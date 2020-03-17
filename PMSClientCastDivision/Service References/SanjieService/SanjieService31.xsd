@@ -381,4 +381,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetMaterialInventoryInTemporary">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialInventoryInTemporaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialInventoryInTemporaryResult" nillable="true" type="q17:ArrayOfDcMaterialInventoryIn" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

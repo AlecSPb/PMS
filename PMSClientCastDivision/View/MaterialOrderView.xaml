@@ -143,7 +143,7 @@
         <DataGrid Grid.Row="4" Style="{StaticResource StyleDataGridCommon}"
                           ItemsSource="{Binding MaterialOrderItems}" LoadingRow="DataGrid_LoadingRow_1">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                <!--<DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -153,7 +153,7 @@
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
                 <DataGridTextColumn Header="{StaticResource MOIState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding State}"/>
                 <DataGridTextColumn Header="{StaticResource MOIPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

@@ -158,6 +158,7 @@ namespace PMSClient
                         this.Dispatcher.Invoke(() =>
                         {
                             txtHeartBeat.Text = "内网服务器通信正常";
+
                             if (PMSHelper.CurrentSession?.CurrentUserRole?.GroupName == "管理员")
                             {
                                 TxtInformationLog.Text = $"访问信息 昨日:{count_yesterday}次 今日:{count_today}次 共{(count_all / 1000)}k次";

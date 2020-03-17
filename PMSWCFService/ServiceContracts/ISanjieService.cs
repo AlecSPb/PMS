@@ -79,5 +79,14 @@ namespace PMSWCFService.ServiceContracts
         List<DcMaterialInventoryOut> GetMaterialInventoryOutsByYear(int skip, int take, int year);
         [OperationContract]
         int GetMaterialInventoryOutCountByYear(int year);
+
+        /// <summary>
+        /// 获取暂入库项目
+        /// </summary>
+        /// <returns></returns>
+        [OperationContract]
+        List<DcMaterialInventoryIn> GetMaterialInventoryInTemporary();
+
+
     }
 }

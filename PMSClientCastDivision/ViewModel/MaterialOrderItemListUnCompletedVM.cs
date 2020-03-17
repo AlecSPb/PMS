@@ -124,7 +124,7 @@ namespace PMSClient.ViewModel
                     tips, template, mainContent, helpimage);
                 //NavigationService.GoTo(PMSViews.LabelOutPut);
                 var win = new Tool.LabelOutPutWindow();
-                win.ShowDialog();
+                win.Show();
             }
         }
 
@@ -175,25 +175,27 @@ namespace PMSClient.ViewModel
                         //保存材料入库信息
                         DcMaterialInventoryIn materialInModel = new DcMaterialInventoryIn();
                         materialInModel.Id = Guid.NewGuid();
-                        materialInModel.Composition = m.Composition;
+                        materialInModel.Composition = m.Composition??"";
                         materialInModel.Weight = m.ActualWeight;
-                        materialInModel.MaterialLot = m.MaterialItemLot;
-                        materialInModel.PMINumber = m.PMINumber;
+                        materialInModel.MaterialLot = m.MaterialItemLot??"";
+                        materialInModel.PMINumber = m.PMINumber??"";
                         materialInModel.Supplier = PMSCommon.MaterialSupplier.三杰.ToString();
                         materialInModel.Purity = model.Item.MaterialOrderItem.Purity;
                         materialInModel.CreateTime = DateTime.Now;
                         materialInModel.Creator = uid;
                         materialInModel.State = PMSCommon.InventoryState.暂入库.ToString();
-                        materialInModel.Remark = preFix + " " + m.Remark;
-                        materialInModel.MaterialSource = m.MaterialSource;
+                        materialInModel.Remark = preFix + " " + m.Remark??"";
+
+                        materialInModel.MaterialSource = m.MaterialSource ?? "";
+                        materialInModel.SupplierPO = m.SupplierPO ?? "";
 
                         service.AddToMaterialIn(materialInModel, uid);
 
                         //保存原料熔点信息
                         DcBDCompound compound = new DcBDCompound();
                         compound.ID = Guid.NewGuid();
-                        compound.MaterialName = model.Item.MaterialOrderItem.Composition;
-                        compound.MeltingPoint = m.MeltingPoint;
+                        compound.MaterialName = model.Item.MaterialOrderItem.Composition??"";
+                        compound.MeltingPoint = m.MeltingPoint??"";
                         compound.InformationSource = PMSCommon.CustomData.InformationSources[1];
                         compound.Density = 0;
                         compound.BoilingPoint = "";
@@ -208,7 +210,7 @@ namespace PMSClient.ViewModel
 
 
                     SetPageParametersWhenConditionChange();
-                    PMSDialogService.ShowYes("项目已完成，并暂入库，如有操作失误，联系先锋材料进行修正");
+                    PMSDialogService.ShowYes("项目已完成，并暂入库，如有操作失误，联系[先锋材料]进行修正");
                     NavigationService.Status("保存完毕");
                 }
                 catch (Exception ex)

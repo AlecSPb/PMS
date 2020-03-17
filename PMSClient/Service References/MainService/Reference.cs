@@ -3379,6 +3379,9 @@ namespace PMSClient.MainService {
         private string SupplierField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupplierPOField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double WeightField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -3543,6 +3546,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.SupplierField, value) != true)) {
                     this.SupplierField = value;
                     this.RaisePropertyChanged("Supplier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SupplierPO {
+            get {
+                return this.SupplierPOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupplierPOField, value) != true)) {
+                    this.SupplierPOField = value;
+                    this.RaisePropertyChanged("SupplierPO");
                 }
             }
         }
@@ -6438,6 +6454,9 @@ namespace PMSClient.MainService {
         private string ExtraRequirementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HasPreparedSampleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -6584,6 +6603,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.ExtraRequirementField, value) != true)) {
                     this.ExtraRequirementField = value;
                     this.RaisePropertyChanged("ExtraRequirement");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HasPreparedSample {
+            get {
+                return this.HasPreparedSampleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HasPreparedSampleField, value) != true)) {
+                    this.HasPreparedSampleField = value;
+                    this.RaisePropertyChanged("HasPreparedSample");
                 }
             }
         }

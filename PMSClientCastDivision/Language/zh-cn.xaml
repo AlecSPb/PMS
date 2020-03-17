@@ -85,8 +85,8 @@
     <sys:String x:Key="PageMaterialOrder">订单</sys:String>
     <sys:String x:Key="PageMaterialOrderEdit">原料订单编辑</sys:String>
     <sys:String x:Key="PageMaterialOrderItemEdit">原料订单项编辑</sys:String>
-    <sys:String x:Key="PageMaterialOrderItemList">订单流水</sys:String>
-    <sys:String x:Key="PageMaterialOrderItemListUnCompleted">订单流水[未完成]</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemList">全部订单</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemListUnCompleted">未完成订单</sys:String>
 
     <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
     <sys:String x:Key="PageMaterialInventoryIn">入库-SJ到PM</sys:String>
@@ -190,7 +190,7 @@
     <sys:String x:Key="ButtonSend">发出</sys:String>
     <sys:String x:Key="ButtonChart">曲线图</sys:String>
     <sys:String x:Key="ButtonLabel">标签</sys:String>
-    <sys:String x:Key="ButtonDeliverySheet">清单</sys:String>
+    <sys:String x:Key="ButtonDeliverySheet">交付清单</sys:String>
     <sys:String x:Key="ButtonMisson">生产任务</sys:String>
     <sys:String x:Key="ButtonSearchMisson">任务</sys:String>
     <sys:String x:Key="ButtonPlan">计划安排</sys:String>
@@ -566,6 +566,7 @@
     <sys:String x:Key="MIIWeight">重量</sys:String>
     <sys:String x:Key="MIIRemark">备注</sys:String>
     <sys:String x:Key="MIIMaterialSource">组分来源</sys:String>
+    <sys:String x:Key="MIISupplierPO">供应商PO</sys:String>
     <!--材料出库-->
     <sys:String x:Key="MIOState">状态</sys:String>
     <sys:String x:Key="MIOCreator">创建者</sys:String>

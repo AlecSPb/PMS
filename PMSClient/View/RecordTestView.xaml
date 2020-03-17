@@ -310,6 +310,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                             <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding RecordTest.ProductID}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
+
                             <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RTComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                             <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding RecordTest.Composition}" Style="{StaticResource StyleTextBoxReadOnly}"  />

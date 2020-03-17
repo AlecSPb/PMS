@@ -29,7 +29,7 @@
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
-            <Button Content="{StaticResource ButtonDeliverySheet}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Doc}"/>
+            <!--<Button Content="{StaticResource ButtonDeliverySheet}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Doc}"/>-->
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
             <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
@@ -39,14 +39,14 @@
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"  ItemsSource="{Binding MaterialOrderItemExtraSelects}" LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="选择">
+                <!--<DataGridTemplateColumn Header="选择">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <CheckBox  Style="{StaticResource StyleDGCheckBoxCommon}"
                                       IsChecked="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -54,12 +54,12 @@
                                 <Button Content="{StaticResource ButtonLocation}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.Location,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
+                                <!--<Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.Finish,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
+                                        CommandParameter="{Binding}"/>-->
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

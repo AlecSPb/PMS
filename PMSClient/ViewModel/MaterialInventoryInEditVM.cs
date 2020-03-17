@@ -37,7 +37,7 @@ namespace PMSClient.ViewModel
             empty.Purity = "4.5N";
             empty.Remark = "无";
             empty.QuickRemark = "";
-            
+            empty.SupplierPO = "";
             #endregion
 
             IsNew = true;

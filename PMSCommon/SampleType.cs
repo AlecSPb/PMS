@@ -9,6 +9,12 @@ namespace PMSCommon
     public enum SampleType
     {
         块状,
-        粉末
+        粉末,
+        粒状,
+        丝状,
+        条状,
+        薄片,
+        液体,
+        其他
     }
 }

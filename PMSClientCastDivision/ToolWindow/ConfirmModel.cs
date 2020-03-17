@@ -15,6 +15,7 @@ namespace PMSClient.ToolWindow
             PMINumber = "";
             Weight = ActualWeight = 0;
             MaterialSource=MeltingPoint = Remark = "";
+            SupplierPO = "";
         }
         public string MaterialItemLot { get; set; }
         public string Composition { get; set; }
@@ -23,6 +24,7 @@ namespace PMSClient.ToolWindow
         public double ActualWeight { get; set; }
 
         public string MaterialSource { get; set; }
+        public string SupplierPO { get; set; }
         public string MeltingPoint { get; set; }
         public string Remark { get; set; }
 

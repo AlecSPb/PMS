@@ -41,7 +41,8 @@ namespace PMSClient.ViewModel
             SearchMisson = new RelayCommand<DcPlanWithMisson>(ActionSearchMisson);
             SelectionChanged = new RelayCommand<DcPlanWithMisson>(ActionSelectionChanged);
 
-            Edit = new RelayCommand<DcPlanWithMisson>(ActionEdit, arg => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlanConclusion));
+            Edit = new RelayCommand<DcPlanWithMisson>(ActionEdit, 
+                arg => PMSHelper.CurrentSession.IsOKInGroup(new string[] { "管理员", "生产经理", "热压组" }));
         }
 
         private void ActionEdit(DcPlanWithMisson model)
@@ -56,7 +57,7 @@ namespace PMSClient.ViewModel
 
         private bool CanGoToMisson()
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMisson);
+            return PMSHelper.CurrentSession.IsOKInGroup(new string[] { "管理员", "生产经理", "热压组" });
         }
 
         private bool CanSearch()

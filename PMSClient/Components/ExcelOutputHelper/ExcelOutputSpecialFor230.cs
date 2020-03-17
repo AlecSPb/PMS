@@ -193,10 +193,7 @@ namespace PMSClient.ExcelOutputHelper
                 helper.Save(excelFileName);
                 PMSDialogService.Show($"{excelFileName}创建到桌面完毕,确定后自动打开");
 
-                if (File.Exists(excelFileName))
-                {
-                    System.Diagnostics.Process.Start(excelFileName);
-                }
+                CheckOpenAfterCreate();
             }
         }
 

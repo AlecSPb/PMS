@@ -485,13 +485,13 @@ namespace PMSWCFService
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
-                                where  m.State == PMSCommon.MaterialOrderItemState.未完成.ToString()
+                                where m.State == PMSCommon.MaterialOrderItemState.未完成.ToString()
                                 && mm.State == PMSCommon.MaterialOrderState.已核验.ToString()
                                 && mm.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
                                 && m.OrderItemNumber.Contains(orderitemnumber)
-                                orderby m.Priority,m.CreateTime
+                                orderby m.Priority, m.CreateTime
                                 select new PMSMaterialOrderItemExtra
                                 {
                                     MaterialOrder = mm,
@@ -688,7 +688,7 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-        
+
 
         private void SaveHistory(DcMaterialInventoryIn model, string uid)
         {
@@ -766,7 +766,30 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcMaterialInventoryIn> GetMaterialInventoryInTemporary()
+        {
+            try
+            {
+                XS.Run();
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryIn, DcMaterialInventoryIn>());
 
+                    var query = from o in dc.MaterialInventoryIns
+                                where o.State == PMSCommon.InventoryState.暂入库.ToString()
+                                && o.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
+                                orderby o.CreateTime descending
+                                select o;
+                    return Mapper.Map<List<MaterialInventoryIn>, List<DcMaterialInventoryIn>>(query.ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+
+        }
 
     }
 }

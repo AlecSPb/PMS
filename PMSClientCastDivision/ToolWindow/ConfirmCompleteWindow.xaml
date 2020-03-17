@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="确定完成该项目吗？" Height="400" Width="550">
+        
+        Title="确定完成该项目吗？" Height="500" Width="550">
     <Grid Margin="5" Background="{StaticResource BGBrushWindow}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -23,7 +24,9 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="0*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0" Text="材料编号"  Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBlock Name="txtMaterialLot" Grid.Row="0" Grid.Column="1" Text=""  Style="{StaticResource StyleDGTextBlockCommon}"/>
@@ -45,11 +48,13 @@
         <TextBox Name="TxtMaterialSource" Grid.Row="6" Grid.Column="1" Text="" 
                  Style="{StaticResource StyleTextBoxCommon}"/>
 
+        <TextBlock Grid.Row="7" Grid.Column="0" Text="供应商PO" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox Name="txtSupplierPO" Grid.Row="7" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
 
-        <TextBlock Grid.Row="7" Grid.Column="0" Text="备注信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
-        <TextBox Name="txtRemark" Grid.Row="7" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+        <TextBlock Grid.Row="8" Grid.Column="0" Text="备注信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox Name="txtRemark" Grid.Row="8" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
 
-        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"
+        <StackPanel Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2"
                     Orientation="Horizontal" ButtonBase.Click="StackPanel_Click">
             <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="辅助输入内容"/>
             <Button Name="Btn1" Content="中间产品" Style="{StaticResource StyleButtonNarrow}"/>
@@ -58,9 +63,13 @@
             <Button Name="Btn4" Content="容易氧化" Style="{StaticResource StyleButtonNarrow}"/>
             <Button Name="Btn5" Content="容易自燃" Style="{StaticResource StyleButtonNarrow}"/>
             <Button Name="Btn6" Content="注意毒性" Style="{StaticResource StyleButtonNarrow}"/>
+            <Button Name="Btn7" Content="臭味" Style="{StaticResource StyleButtonNarrow}"/>
         </StackPanel>
-        
-        <StackPanel Grid.Row="9" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+        <TextBlock Grid.Row="10" Grid.ColumnSpan="2" Text="如果需要发货清单,请到入库界面中点击[发货清单]按钮获取"
+                   Background="LightGreen" Foreground="blue" HorizontalAlignment="Stretch"
+                   Margin="0 5" Padding="5"/>
+
+        <StackPanel Grid.Row="11" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="btnCancel" Style="{StaticResource StyleButtonNavigationFixed}" Content="取消" Click="btnCancel_Click"/>
             <Button Name="btnSurePart" Style="{StaticResource StyleButtonNavigationFixed}" Content="交付部分(不完成)" Click="btnSurePart_Click"/>
             <Button Name="btnSureAll" Style="{StaticResource StyleButtonNavigationFixed}" Content="最终完成" Click="btnSureAll_Click" FontWeight="Bold"/>

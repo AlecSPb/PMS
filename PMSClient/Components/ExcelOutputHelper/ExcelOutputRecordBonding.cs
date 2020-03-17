@@ -70,6 +70,7 @@ namespace PMSClient.ExcelOutputHelper
 
                 PMSDialogService.Show($"{excelFileName}创建完毕,请到桌面查看");
 
+                CheckOpenAfterCreate();
 
 
 

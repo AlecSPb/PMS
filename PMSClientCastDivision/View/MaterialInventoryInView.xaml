@@ -25,10 +25,10 @@
                      Style="{StaticResource  StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource MIIPMINumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" 
-                     Style="{StaticResource  StyleTextBoxSearch}"/>
+                     Style="{StaticResource  StyleTextBoxSearch}" FontWeight="Bold"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
-            <Button Content="{StaticResource ButtonMaterialInventoryOut}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMaterialInventoryOut}"/>
+            <Button Content="{StaticResource ButtonDeliverySheet}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Doc}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="Orange"/>
 
@@ -61,6 +61,8 @@
                                     Binding="{Binding Purity}"/>
                 <DataGridTextColumn Header="{StaticResource MIISupplier}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Supplier}"/>
+                <DataGridTextColumn Header="{StaticResource MIISupplierPO}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding SupplierPO}"/>
                 <DataGridTemplateColumn Header="{StaticResource MIIWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

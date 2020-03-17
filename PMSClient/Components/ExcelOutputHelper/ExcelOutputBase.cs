@@ -19,6 +19,8 @@ namespace PMSClient.ExcelOutputHelper
         //检索空字符
         protected string empty = "";
 
+
+        protected bool openAfterCreate = true;
         /// <summary>
         /// 构造函数
         /// </summary>
@@ -34,7 +36,7 @@ namespace PMSClient.ExcelOutputHelper
         /// <param name="excel2007FileName"></param>
         /// <param name="sheetName"></param>
         /// <param name="pageSize"></param>
-        public void Intialize(string excel2007FileName, string sheetName = "Default", int pageSize = 50)
+        public void Intialize(string excel2007FileName, string sheetName = "Default", int pageSize = 50, bool openAfterCreate = true)
         {
             this.sheetName = sheetName;
             string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -45,6 +47,8 @@ namespace PMSClient.ExcelOutputHelper
             }
             this.excelFileName = Path.Combine(folder, excel2007FileName + ".xlsx");
             this.pageSize = pageSize;
+            this.openAfterCreate = openAfterCreate;
+
             ResetParameters();
         }
         /// <summary>
@@ -71,7 +75,23 @@ namespace PMSClient.ExcelOutputHelper
 
         }
 
-
+        /// <summary>
+        /// 判断是否在创建后打开文件
+        /// </summary>
+        protected void CheckOpenAfterCreate()
+        {
+            try
+            {
+                if (openAfterCreate)
+                {
+                    System.Diagnostics.Process.Start(excelFileName);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
 
     }

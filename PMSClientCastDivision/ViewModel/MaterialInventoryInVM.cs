@@ -9,6 +9,7 @@ using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
 using PMSClient.SanjieService;
 using System.Collections.ObjectModel;
+using PMSClient.ReportsHelper;
 
 namespace PMSClient.ViewModel
 {
@@ -39,7 +40,25 @@ namespace PMSClient.ViewModel
 
             GoToMaterialInventoryOut = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut),
                 () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryOut));
+           
+            Doc = new RelayCommand(ActionDoc);
+        }
 
+        private void ActionDoc()
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定以[暂入库]橙色项目创建发货单吗？"))
+            {
+                return;
+            }
+            try
+            {
+                var report = new WordMaterialDeliverySheetNew();
+                report.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private bool CanSearch()
@@ -125,6 +144,8 @@ namespace PMSClient.ViewModel
         #region Commands
 
         public RelayCommand GoToMaterialInventoryOut { get; set; }
+
+        public RelayCommand Doc { get; set; }
         #endregion
 
 

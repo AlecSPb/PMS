@@ -302,6 +302,7 @@
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Supplier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierPO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
@@ -587,6 +588,7 @@
       <xs:element minOccurs="0" name="Diameter2" type="xs:double" />
       <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ExtraRequirement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasPreparedSample" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />

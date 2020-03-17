@@ -318,6 +318,9 @@ namespace PMSClient.SanjieService {
         private string PurityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SJIngredientField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -522,6 +525,19 @@ namespace PMSClient.SanjieService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string SJIngredient {
             get {
                 return this.SJIngredientField;
@@ -690,6 +706,9 @@ namespace PMSClient.SanjieService {
         private string SupplierField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupplierPOField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double WeightField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -854,6 +873,19 @@ namespace PMSClient.SanjieService {
                 if ((object.ReferenceEquals(this.SupplierField, value) != true)) {
                     this.SupplierField = value;
                     this.RaisePropertyChanged("Supplier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SupplierPO {
+            get {
+                return this.SupplierPOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupplierPOField, value) != true)) {
+                    this.SupplierPOField = value;
+                    this.RaisePropertyChanged("SupplierPO");
                 }
             }
         }
@@ -1693,6 +1725,12 @@ namespace PMSClient.SanjieService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialInventoryOutCountByYear", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialInventoryOutCountByYearResponse")]
         System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountByYearAsync(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialInventoryInTemporary", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialInventoryInTemporaryResponse")]
+        PMSClient.SanjieService.DcMaterialInventoryIn[] GetMaterialInventoryInTemporary();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialInventoryInTemporary", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialInventoryInTemporaryResponse")]
+        System.Threading.Tasks.Task<PMSClient.SanjieService.DcMaterialInventoryIn[]> GetMaterialInventoryInTemporaryAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1912,6 +1950,14 @@ namespace PMSClient.SanjieService {
         
         public System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountByYearAsync(int year) {
             return base.Channel.GetMaterialInventoryOutCountByYearAsync(year);
+        }
+        
+        public PMSClient.SanjieService.DcMaterialInventoryIn[] GetMaterialInventoryInTemporary() {
+            return base.Channel.GetMaterialInventoryInTemporary();
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.SanjieService.DcMaterialInventoryIn[]> GetMaterialInventoryInTemporaryAsync() {
+            return base.Channel.GetMaterialInventoryInTemporaryAsync();
         }
     }
 }
