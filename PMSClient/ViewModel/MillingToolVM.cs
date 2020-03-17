@@ -78,7 +78,7 @@ namespace PMSClient.ViewModel
 
         private bool CanEdit(DcToolSieve arg)
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(new string[] { "管理员", "制粉组", "生产经理" });
+            return PMSHelper.CurrentSession.IsInGroup(new string[] { "管理员", "制粉组", "生产经理" });
         }
 
         private void ActionEdit(DcToolSieve model)
@@ -89,7 +89,7 @@ namespace PMSClient.ViewModel
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(new string[] { "管理员", "制粉组", "生产经理" });
+            return PMSHelper.CurrentSession.IsInGroup(new string[] { "管理员", "制粉组", "生产经理" });
         }
 
         private void ActionAdd()

@@ -42,7 +42,7 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcPlanWithMisson>(ActionSelectionChanged);
 
             Edit = new RelayCommand<DcPlanWithMisson>(ActionEdit, 
-                arg => PMSHelper.CurrentSession.IsOKInGroup(new string[] { "管理员", "生产经理", "热压组" }));
+                arg => PMSHelper.CurrentSession.IsInGroup(new string[] { "管理员", "生产经理", "热压组" }));
         }
 
         private void ActionEdit(DcPlanWithMisson model)
@@ -57,7 +57,7 @@ namespace PMSClient.ViewModel
 
         private bool CanGoToMisson()
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(new string[] { "管理员", "生产经理", "热压组" });
+            return PMSHelper.CurrentSession.IsInGroup(new string[] { "管理员", "生产经理", "热压组" });
         }
 
         private bool CanSearch()

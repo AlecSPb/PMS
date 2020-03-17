@@ -136,7 +136,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDuplicate(DcPMICounter arg)
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(groupnames);
+            return PMSHelper.CurrentSession.IsInGroup(groupnames);
         }
 
         private void ActionAll()
@@ -153,12 +153,12 @@ namespace PMSClient.ViewModel
         private string[] groupnames = { "管理员", "测试组", "质量组", "统筹组" };
         private bool CanEdit(DcPMICounter arg)
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(groupnames);
+            return PMSHelper.CurrentSession.IsInGroup(groupnames);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(groupnames);
+            return PMSHelper.CurrentSession.IsInGroup(groupnames);
         }
 
         private void ActionEdit(DcPMICounter model)

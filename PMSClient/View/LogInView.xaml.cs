@@ -70,13 +70,15 @@ namespace PMSClient.View
                     //加载快递追踪情况
                     //DEBUG下不运行
 
-                    if (PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.ViewExpressTrackAtLogin)
+                    if (PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewExpressTrackAtLogin)
                         && Properties.Settings.Default.CheckExpressAtStartup)
                     {
                         new Express.Operation().TraceUnCompleted();
                     }
                     //检查是否需要显示新文档
-                    new Components.NewFeatureDocShow.NewFeatureShowService().Show("样品管理功能使用介绍1.docx", 2);
+                    string[] users = new string[] { "管理员", "统筹组", "测试组" };
+                    var featureCheck = new Components.NewFeatureDocShow.NewFeatureShowService();
+                    featureCheck.Show("样品管理功能使用介绍1.docx", 2);
                 }
                 else
                 {

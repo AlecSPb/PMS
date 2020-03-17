@@ -111,7 +111,7 @@ namespace PMSClient.ViewModel
 
         private bool CanScanAdd()
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.EditOutsideProcess);
+            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.EditOutsideProcess);
         }
 
         private void ActionPrint2()
@@ -150,12 +150,12 @@ namespace PMSClient.ViewModel
 
         private bool CanPrint1()
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.ViewOutsideProcess);
+            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewOutsideProcess);
         }
 
         private bool CanDuplicate(DcOutsideProcess arg)
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.EditOutsideProcess);
+            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.EditOutsideProcess);
         }
 
         private void ActionDuplicate(DcOutsideProcess model)
@@ -170,13 +170,13 @@ namespace PMSClient.ViewModel
 
         private bool CanEdit(DcOutsideProcess arg)
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.EditOutsideProcess);
+            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.EditOutsideProcess);
 
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(AccessGrant.EditOutsideProcess);
+            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.EditOutsideProcess);
         }
 
 

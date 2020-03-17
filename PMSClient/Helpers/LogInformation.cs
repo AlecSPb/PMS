@@ -68,7 +68,7 @@ namespace PMSClient.Helper
             return CurrentAccesses.Where(i => i.AccessCode == accessCode).Count() > 0;
         }
 
-        public bool IsOKInGroup(string[] groups)
+        public bool IsInGroup(string[] groups)
         {
             if (groups.Length == 0) return true;
             if (CurrentUserRole!=null)

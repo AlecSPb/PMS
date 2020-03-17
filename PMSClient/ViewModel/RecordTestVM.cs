@@ -106,7 +106,7 @@ namespace PMSClient.ViewModel
 
         private bool CanSaveJson(RecordTestExtra arg)
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(new string[] { "统筹组", "测试组", "管理员" });
+            return PMSHelper.CurrentSession.IsInGroup(new string[] { "统筹组", "测试组", "管理员" });
         }
 
         private void ActionDeepSearch(RecordTestExtra obj)
@@ -120,7 +120,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDeepSearch(RecordTestExtra arg)
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(new string[] { "统筹组", "测试组", "管理员" });
+            return PMSHelper.CurrentSession.IsInGroup(new string[] { "统筹组", "测试组", "管理员" });
         }
 
         private void ActonOneKeyCheck()
@@ -131,7 +131,7 @@ namespace PMSClient.ViewModel
 
         private bool CanEnterCscan(RecordTestExtra arg)
         {
-            return PMSHelper.CurrentSession.IsOKInGroup(new string[] { "测试组", "热压组", "管理员" });
+            return PMSHelper.CurrentSession.IsInGroup(new string[] { "测试组", "热压组", "管理员" });
         }
 
         private void ActionEnterCscan(RecordTestExtra obj)
