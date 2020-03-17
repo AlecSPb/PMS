@@ -78,7 +78,7 @@ namespace PMSClient.View
                     //检查是否需要显示新文档
                     string[] users = new string[] { "管理员", "统筹组", "测试组" };
                     var featureCheck = new Components.NewFeatureDocShow.NewFeatureShowService();
-                    featureCheck.Show("样品管理功能使用介绍1.docx", 2);
+                    featureCheck.Show("样品管理功能使用介绍1.docx", users, 2);
                 }
                 else
                 {
