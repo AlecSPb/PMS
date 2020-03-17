@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Drawing.Design;
 using BarcodeLib;
 using System.IO;
+using System.Windows.Media.Imaging;
 
 namespace PMSClient.BarCodeService
 {
@@ -35,6 +36,25 @@ namespace PMSClient.BarCodeService
             image.Save(fs, System.Drawing.Imaging.ImageFormat.Png);
             fs.Close();
             return filename;
+        }
+
+        public BitmapImage CreateBarCodeBmp(string s,int height=80)
+        {
+            var barcode = new Barcode();
+            barcode.Height = height;
+            barcode.StandardizeLabel = true;
+            //barcode.IncludeLabel = true;
+            //barcode.LabelPosition = LabelPositions.BOTTOMLEFT;
+            //barcode.RotateFlipType = RotateFlipType.RotateNoneFlipNone;
+            barcode.Alignment = AlignmentPositions.CENTER;
+            Image image = barcode.Encode(TYPE.CODE128, s);
+            MemoryStream ms = new MemoryStream();
+            image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            BitmapImage bmp = new BitmapImage();
+            bmp.BeginInit();
+            bmp.StreamSource = ms;
+            bmp.EndInit();
+            return bmp;
         }
 
     }

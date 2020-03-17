@@ -11,4 +11,5 @@
     <local:PlateUseNumberConverter x:Key="PlateUseNumberConverter"/>
     <local:RatioDensityConverter x:Key="RatioDensityCT"/>
     <local:CurrentVHPDateConverter x:Key="CurrentVHPDateCT"/>
+    <local:IDToBarCodeConverter x:Key="IDToBarCode"/>
 </ResourceDictionary>
