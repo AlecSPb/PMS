@@ -64,12 +64,12 @@ namespace PMSClient.ExcelOutputHelper
                     t = pageSize;
                     var pageData = service.GetSampleAll(s, t, empty, empty, empty);
 
-                  
+
                     foreach (var item in pageData)
                     {
                         int column_index = 0;
                         helper.CreateRow(rowIndex);
-                        helper.CreateAndSetCell(column_index, item.SampleID ?? "");
+                        helper.CreateAndSetCell(column_index++, item.SampleID ?? "");
                         helper.CreateAndSetCell(column_index++, item.ProductID ?? "");
                         helper.CreateAndSetCell(column_index++, item.Composition ?? "");
                         helper.CreateAndSetCell(column_index++, item.Customer ?? "");

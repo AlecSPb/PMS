@@ -47,26 +47,27 @@ namespace PMSClient.ReportsHelper
                         var mainTable = doc.Tables[1];
                         if (mainTable != null)
                         {
+                            int row_index = 0;
                             foreach (var item in ds)
                             {
-                                int i = 0;
                                 Paragraph p;
-                                p = mainTable.Rows[i + 1].Cells[0].Paragraphs[0];
+                                p = mainTable.Rows[row_index + 1].Cells[0].Paragraphs[0];
                                 p.Append(item.MaterialLot ?? "").FontSize(8);
-                                p = mainTable.Rows[i + 1].Cells[1].Paragraphs[0];
+                                p = mainTable.Rows[row_index + 1].Cells[1].Paragraphs[0];
                                 p.Append(item.Composition ?? "").FontSize(8).Bold();
-                                p = mainTable.Rows[i + 1].Cells[2].Paragraphs[0];
+                                p = mainTable.Rows[row_index + 1].Cells[2].Paragraphs[0];
                                 p.Append(item.Purity ?? "").FontSize(8).Alignment = Alignment.center;
-                                p = mainTable.Rows[i + 1].Cells[3].Paragraphs[0];
+                                p = mainTable.Rows[row_index + 1].Cells[3].Paragraphs[0];
                                 p.Append(item.Weight.ToString("F3")).FontSize(8).Bold().Alignment = Alignment.right;
-                                p = mainTable.Rows[i + 1].Cells[4].Paragraphs[0];
+                                p = mainTable.Rows[row_index + 1].Cells[4].Paragraphs[0];
                                 p.Append(item.PMINumber ?? "").FontSize(8).Bold();
 
-                                p = mainTable.Rows[i + 1].Cells[5].Paragraphs[0];
+                                p = mainTable.Rows[row_index + 1].Cells[5].Paragraphs[0];
                                 p.Append(item.Remark ?? "").FontSize(8);
 
-                                p = mainTable.Rows[i + 1].Cells[6].Paragraphs[0];
+                                p = mainTable.Rows[row_index + 1].Cells[6].Paragraphs[0];
                                 p.Append(item.SupplierPO??"").FontSize(8);
+                                row_index++;
                             }
                         }
 

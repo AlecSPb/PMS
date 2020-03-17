@@ -1841,6 +1841,9 @@
     <Content Include="Resource\DocTemplate\Reports\Samples.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="HelperDocs\样品管理功能使用介绍.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Service References\EditLockService\EditLockService.disco" />
     <None Include="Service References\EditLockService\configuration91.svcinfo" />
     <None Include="Service References\EditLockService\configuration.svcinfo" />
