@@ -144,7 +144,7 @@ namespace PMSClient.Simulator
             }
 
             //生成平均值
-            output.Average.RowNo = "Avgrage";
+            output.Average.RowNo = "Average";
             double sum_avg_row = 0;
             for (int i = 0; i < input.Elements.Count; i++)
             {
