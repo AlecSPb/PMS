@@ -27,6 +27,7 @@
         <StackPanel Grid.Row="4" Orientation="Horizontal" Button.Click="StackPanel_Click">
             <Button Content="总空腔率=%" Style="{StaticResource StyleButtonCommon}"/>
             <Button Content="最大空腔直径=mm" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Content="深度=" Style="{StaticResource StyleButtonCommon}"/>
             <Button Content="总空腔个数=" Style="{StaticResource StyleButtonCommon}"/>
             <!--<Button Content="小空腔" Style="{StaticResource StyleButtonCommon}"/>
             <Button Content="大空腔" Style="{StaticResource StyleButtonCommon}"/>-->

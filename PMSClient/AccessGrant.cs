@@ -12,7 +12,7 @@ namespace PMSClient
         {
             get
             {
-                return new string[] { "管理员", "统筹组", "生产经理", "热压组", "制粉组", "加工组", "主管" };
+                return new string[] { "管理员", "统筹组", "生产经理", "热压组", "制粉组", "加工组", "主管", "测试组" };
             }
 
         }
@@ -20,7 +20,7 @@ namespace PMSClient
         {
             get
             {
-                return new string[] { "管理员", "统筹组" };
+                return new string[] { "管理员", "统筹组", "测试组" };
             }
 
         }
@@ -28,7 +28,7 @@ namespace PMSClient
         {
             get
             {
-                return new string[] { "管理员", "统筹组", "生产经理", "热压组", "主管" };
+                return new string[] { "管理员", "统筹组", "生产经理", "热压组", "主管", "测试组" };
             }
 
         }
@@ -36,7 +36,7 @@ namespace PMSClient
         {
             get
             {
-                return new string[] { "管理员", "统筹组", "生产经理", "测试组","热压组" };
+                return new string[] { "管理员", "统筹组", "生产经理", "测试组", "热压组" };
             }
         }
         public static string[] ViewExpressTrackAtLogin
