@@ -25,6 +25,7 @@
       <xs:element minOccurs="0" name="MinimumAcceptDefect" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PolicyType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
@@ -37,6 +38,8 @@
       <xs:element minOccurs="0" name="Reviewer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SampleForAnlysis" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SampleNeed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondMachineDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondMachineDimension" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ShipTo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SpecialRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
@@ -72,6 +75,7 @@
       <xs:element minOccurs="0" name="Operator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PolicyType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
@@ -84,6 +88,8 @@
       <xs:element minOccurs="0" name="Reviewer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SampleForAnlysis" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SampleNeed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondMachineDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecondMachineDimension" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ShipTo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SpecialRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
@@ -521,6 +527,7 @@
       <xs:element minOccurs="0" name="DimensionActual" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FollowUps" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="LastUpdateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />

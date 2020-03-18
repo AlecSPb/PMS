@@ -231,6 +231,8 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="{StaticResource RTLastUpdateTime}" Binding="{Binding LastUpdateTime}"
+                                            ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     </DataGrid.Columns>
                 </DataGrid>
                 <control:SimplePager Grid.Row="1" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
@@ -300,6 +302,8 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
@@ -387,6 +391,18 @@
                             <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                             <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding RecordTest.Remark}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+
+                            <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RTCreator}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding RecordTest.Creator}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+
+                            <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource RTCreateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding RecordTest.CreateTime}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+
+                            <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource RTLastUpdateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding RecordTest.LastUpdateTime}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
                         </Grid>
                     </ScrollViewer>

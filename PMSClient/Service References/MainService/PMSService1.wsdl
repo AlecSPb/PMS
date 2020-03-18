@@ -1070,6 +1070,12 @@
   <wsdl:message name="IRecordTestService_GetUnCheckedRecordTest_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUnCheckedRecordTestResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetLastUpdateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastUpdateTime" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetLastUpdateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastUpdateTimeResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordVHPService_GetRecordVHP_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordVHP" />
   </wsdl:message>
@@ -2150,6 +2156,10 @@
     <wsdl:operation name="GetUnCheckedRecordTest">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTest" message="tns:IRecordTestService_GetUnCheckedRecordTest_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTestResponse" message="tns:IRecordTestService_GetUnCheckedRecordTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastUpdateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetLastUpdateTime" message="tns:IRecordTestService_GetLastUpdateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetLastUpdateTimeResponse" message="tns:IRecordTestService_GetLastUpdateTime_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordVHPService">
@@ -4015,6 +4025,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetUnCheckedRecordTest">
       <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastUpdateTime">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetLastUpdateTime" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -181,16 +181,23 @@
                            Text="测试结果均采用 键值 的方式存储，方便后期处理，格式为 Key=Value 键值不能包含等号和分号;  等号和分号必须是英文输入，项目和值。可以手动编辑，但推荐使用专用编辑工具，即点击项目最左边的按钮" 
                            Background="LightGreen" FontWeight="Normal"
                            />
-
-                <Button Name="BtnICPOES" Grid.Column="0" Grid.Row="17" Content="{StaticResource SICPOES}"
+                <Button Name="BtnICPOES1" Content="{StaticResource SICPOES}" Grid.Row="17" Grid.Column="0"
                         Style="{StaticResource StyleButtonStrench}" Click="BtnICPOES_Click"/>
                 <TextBox Name="TxtICPOES" Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="2"
                          Text="{Binding ICPOES}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-                <Button Name="BtnGDMS" Grid.Column="0" Grid.Row="18" Content="{StaticResource SGDMS}"
-                        Style="{StaticResource StyleButtonStrench}" Click="BtnGDMS_Click"/>
+                <Grid Grid.Row="18" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Name="BtnGDMS1" Grid.Column="0"  Content="{StaticResource SGDMS}"
+                        Style="{StaticResource StyleButtonStrench}" Click="BtnGDMS1_Click" MinWidth="10"/>
+                    <Button Name="BtnGDMS2" Grid.Column="1"  Content="导入"
+                        Style="{StaticResource StyleButtonStrench}" Click="BtnGDMS2_Click" MinWidth="10"/>
+                </Grid>
                 <TextBox Name="TxtGDMS" Grid.Row="18" Grid.Column="1" Grid.ColumnSpan="2"
                          Text="{Binding GDMS}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="18" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"

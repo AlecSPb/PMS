@@ -101,5 +101,13 @@ namespace PMSWCFService.DataContracts
         public string Operator { get; set; }
         [DataMember]
         public DateTime OperateTime { get; set; }
+
+        [DataMember]
+        public string PartNumber { get; set; }
+        [DataMember]
+        public string SecondMachineDimension { get; set; }
+        [DataMember]
+        public string SecondMachineDetails { get; set; }
+
     }
 }

@@ -210,6 +210,11 @@
     <Compile Include="Components\CsvOutputHelper\CsvOutputRecordMilling.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelSample.cs" />
     <Compile Include="Components\Express\ExpressConfigService.cs" />
+    <Compile Include="Components\GDMSHelper\GDMSAnlysis.cs" />
+    <Compile Include="Components\GDMSHelper\GDMSHelper.xaml.cs">
+      <DependentUpon>GDMSHelper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\GDMSHelper\GDMSPair.cs" />
     <Compile Include="Components\NewFeatureDocShow\NewFeatureShowService.cs" />
     <Compile Include="CustomControls\BatchDuplicateDialog.xaml.cs">
       <DependentUpon>BatchDuplicateDialog.xaml</DependentUpon>
@@ -681,6 +686,7 @@
     <Compile Include="ViewModel\RecordDeMoldSelectVM.cs" />
     <Compile Include="ViewModel\VMHelper\OrderVMHelper.cs" />
     <Compile Include="ViewModel\VMHelper\PMSBatchHelper.cs" />
+    <Compile Include="ViewModel\VMHelper\RecordTestVMHelper.cs" />
     <Compile Include="ViewModel\VMHelper\SampleVMHelper.cs" />
     <Compile Include="View\CompoundEditView.xaml.cs">
       <DependentUpon>CompoundEditView.xaml</DependentUpon>
@@ -1080,6 +1086,10 @@
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="CheckLogic\RecordTestCheckDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\GDMSHelper\GDMSHelper.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

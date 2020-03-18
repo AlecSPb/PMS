@@ -86,5 +86,12 @@ namespace PMSWCFService.DataContracts
         public string PolicyType { get; set; }
         [DataMember]
         public DateTime FinishTime { get; set; }
+
+        [DataMember]
+        public string PartNumber { get; set; }
+        [DataMember]
+        public string SecondMachineDimension { get; set; }
+        [DataMember]
+        public string SecondMachineDetails { get; set; }
     }
 }

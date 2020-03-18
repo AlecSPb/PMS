@@ -65,6 +65,8 @@ namespace PMSWCFService.DataContracts
         public string BackingPlateLot { get; set; }
         [DataMember]
         public string CScan { get; set; }
+        [DataMember]
+        public DateTime LastUpdateTime { get; set; }
 
     }
 }

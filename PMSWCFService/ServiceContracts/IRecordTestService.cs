@@ -49,5 +49,9 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         List<DcRecordTest> GetUnCheckedRecordTest();
+
+
+        [OperationContract]
+        DateTime GetLastUpdateTime(Guid id);
     }
 }

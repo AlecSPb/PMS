@@ -44,5 +44,7 @@ namespace PMSDAL
         public string Roughness { get; set; }
         [DefaultValue("无")]
         public string CScan { get; set; }
+
+        public DateTime LastUpdateTime { get; set; }
     }
 }

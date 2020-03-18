@@ -352,6 +352,9 @@ namespace PMSClient.ViewModel
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
+                //刷新最后更新时间
+                CurrentRecordTest.LastUpdateTime = DateTime.Now;
+
                 var service = new RecordTestServiceClient();
                 if (IsNew)
                 {

@@ -71,6 +71,9 @@ namespace PMSClient.MainService {
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PolicyTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -105,6 +108,12 @@ namespace PMSClient.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SampleNeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SecondMachineDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SecondMachineDimensionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ShipToField;
@@ -340,6 +349,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartNumber {
+            get {
+                return this.PartNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartNumberField, value) != true)) {
+                    this.PartNumberField = value;
+                    this.RaisePropertyChanged("PartNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string PolicyType {
             get {
                 return this.PolicyTypeField;
@@ -496,6 +518,32 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SecondMachineDetails {
+            get {
+                return this.SecondMachineDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SecondMachineDetailsField, value) != true)) {
+                    this.SecondMachineDetailsField = value;
+                    this.RaisePropertyChanged("SecondMachineDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SecondMachineDimension {
+            get {
+                return this.SecondMachineDimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SecondMachineDimensionField, value) != true)) {
+                    this.SecondMachineDimensionField = value;
+                    this.RaisePropertyChanged("SecondMachineDimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string ShipTo {
             get {
                 return this.ShipToField;
@@ -637,6 +685,9 @@ namespace PMSClient.MainService {
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PolicyTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -671,6 +722,12 @@ namespace PMSClient.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SampleNeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SecondMachineDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SecondMachineDimensionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ShipToField;
@@ -945,6 +1002,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartNumber {
+            get {
+                return this.PartNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartNumberField, value) != true)) {
+                    this.PartNumberField = value;
+                    this.RaisePropertyChanged("PartNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string PolicyType {
             get {
                 return this.PolicyTypeField;
@@ -1096,6 +1166,32 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.SampleNeedField, value) != true)) {
                     this.SampleNeedField = value;
                     this.RaisePropertyChanged("SampleNeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SecondMachineDetails {
+            get {
+                return this.SecondMachineDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SecondMachineDetailsField, value) != true)) {
+                    this.SecondMachineDetailsField = value;
+                    this.RaisePropertyChanged("SecondMachineDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SecondMachineDimension {
+            get {
+                return this.SecondMachineDimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SecondMachineDimensionField, value) != true)) {
+                    this.SecondMachineDimensionField = value;
+                    this.RaisePropertyChanged("SecondMachineDimension");
                 }
             }
         }
@@ -5707,6 +5803,9 @@ namespace PMSClient.MainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastUpdateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime OrderDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5933,6 +6032,19 @@ namespace PMSClient.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastUpdateTime {
+            get {
+                return this.LastUpdateTimeField;
+            }
+            set {
+                if ((this.LastUpdateTimeField.Equals(value) != true)) {
+                    this.LastUpdateTimeField = value;
+                    this.RaisePropertyChanged("LastUpdateTime");
                 }
             }
         }
@@ -11311,6 +11423,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTestResponse")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcRecordTest[]> GetUnCheckedRecordTestAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetLastUpdateTime", ReplyAction="http://tempuri.org/IRecordTestService/GetLastUpdateTimeResponse")]
+        System.DateTime GetLastUpdateTime(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetLastUpdateTime", ReplyAction="http://tempuri.org/IRecordTestService/GetLastUpdateTimeResponse")]
+        System.Threading.Tasks.Task<System.DateTime> GetLastUpdateTimeAsync(System.Guid id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11450,6 +11568,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordTest[]> GetUnCheckedRecordTestAsync() {
             return base.Channel.GetUnCheckedRecordTestAsync();
+        }
+        
+        public System.DateTime GetLastUpdateTime(System.Guid id) {
+            return base.Channel.GetLastUpdateTime(id);
+        }
+        
+        public System.Threading.Tasks.Task<System.DateTime> GetLastUpdateTimeAsync(System.Guid id) {
+            return base.Channel.GetLastUpdateTimeAsync(id);
         }
     }
     

@@ -438,6 +438,9 @@
     <sys:String x:Key="OrderSpecialRequirement">特殊要求</sys:String>
     <sys:String x:Key="OrderSampleForAnlysis">自分析样品</sys:String>
     <sys:String x:Key="OrderWithBackingPlate">配有背板</sys:String>
+    <sys:String x:Key="OrderPartNumber">Part Number</sys:String>
+    <sys:String x:Key="OrderSecondMachineDimension">二次加工尺寸</sys:String>
+    <sys:String x:Key="OrderSecondMachineDetail">二次加工细节</sys:String>
 
     <!--Plan-->
     <sys:String x:Key="PlanState">计划状态</sys:String>
@@ -660,6 +663,8 @@
     <sys:String x:Key="RTQC">QC</sys:String>
     <sys:String x:Key="RTBP">附带背板</sys:String>
     <sys:String x:Key="RTCSCAN">超声情况</sys:String>
+    <sys:String x:Key="RTLastUpdateTime">最后更新时间</sys:String>
+
     <!--Delivery-->
     <sys:String x:Key="RDCreator">创建者</sys:String>
     <sys:String x:Key="RDCreateTime">创建时间</sys:String>

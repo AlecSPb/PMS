@@ -20,6 +20,24 @@ namespace PMSClient.RemoteHeartBeatService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHeartBeatSerive/Beat", ReplyAction="http://tempuri.org/IHeartBeatSerive/BeatResponse")]
         System.Threading.Tasks.Task<string> BeatAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimes", ReplyAction="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesResponse")]
+        int GetOperationCallTimes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimes", ReplyAction="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesResponse")]
+        System.Threading.Tasks.Task<int> GetOperationCallTimesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesToday", ReplyAction="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesTodayResponse")]
+        int GetOperationCallTimesToday();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesToday", ReplyAction="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesTodayResponse")]
+        System.Threading.Tasks.Task<int> GetOperationCallTimesTodayAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesYesterday", ReplyAction="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesYesterdayResponse")]
+        int GetOperationCallTimesYesterday();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesYesterday", ReplyAction="http://tempuri.org/IHeartBeatSerive/GetOperationCallTimesYesterdayResponse")]
+        System.Threading.Tasks.Task<int> GetOperationCallTimesYesterdayAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +73,30 @@ namespace PMSClient.RemoteHeartBeatService {
         
         public System.Threading.Tasks.Task<string> BeatAsync() {
             return base.Channel.BeatAsync();
+        }
+        
+        public int GetOperationCallTimes() {
+            return base.Channel.GetOperationCallTimes();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetOperationCallTimesAsync() {
+            return base.Channel.GetOperationCallTimesAsync();
+        }
+        
+        public int GetOperationCallTimesToday() {
+            return base.Channel.GetOperationCallTimesToday();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetOperationCallTimesTodayAsync() {
+            return base.Channel.GetOperationCallTimesTodayAsync();
+        }
+        
+        public int GetOperationCallTimesYesterday() {
+            return base.Channel.GetOperationCallTimesYesterday();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetOperationCallTimesYesterdayAsync() {
+            return base.Channel.GetOperationCallTimesYesterdayAsync();
         }
     }
 }

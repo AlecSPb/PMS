@@ -92,6 +92,11 @@ namespace PMSClient.ViewModel
             order.SampleForAnlysis = "无需样品";
             order.ShipTo = "未定";
             order.SpecialRequirement = "无";
+
+            //2020-3-18 添加
+            order.PartNumber = "无";
+            order.SecondMachineDetails = "无";
+            order.SecondMachineDimension = "无";
             #endregion
             CurrentOrder = order;
         }

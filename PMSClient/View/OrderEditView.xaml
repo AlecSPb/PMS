@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PMSClient.View"
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=OrderEdit}">
+             d:DesignHeight="1200" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=OrderEdit}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -54,10 +54,13 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="0*"/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource OrderCustomer}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
@@ -226,7 +229,7 @@
                          Style="{StaticResource StyleTextBoxCommon}" />
                 <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="是否配套背板，如果需要，写明背板要求"/>
-                
+
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource OrderSpecialRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding SpecialRequirement}"
@@ -246,7 +249,7 @@
                            Text="如有特殊要求，如添加剂,对热压模具的要求，绑定的要求，可以写在这里，生产会看到"/>
                 </StackPanel>
 
-                
+
                 <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource OrderDeadLine}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <DatePicker Grid.Row="19" Grid.Column="1" SelectedDate="{Binding DeadLine,Mode=TwoWay}"
@@ -264,20 +267,37 @@
                            Text="发货到什么地方"/>
                 </StackPanel>
 
-
-                <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource OrderRemark}"
+                <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource OrderPartNumber}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding PartNumber}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="21" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
-                           Text="*备注信息只有你自己看得到"/>
+                           Text="生产无法看到"/>
 
-                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource OrderCreateTime}"
+                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource OrderSecondMachineDimension}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBlock Grid.Row="22" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding SecondMachineDimension}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
+                           Text="生产无法看到"/>
 
-                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource OrderCreator}"
+                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource OrderSecondMachineDetail}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBlock Grid.Row="23" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding SecondMachineDetails}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="23" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
+                           Text="生产无法看到"/>
+
+                <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource OrderRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="24" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
+                           Text="生产无法看到"/>
+
+                <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource OrderCreateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Grid.Row="25" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource OrderCreator}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Grid.Row="26" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
             </Grid>
         </ScrollViewer>
     </Grid>

@@ -428,6 +428,10 @@
     <sys:String x:Key="OrderSampleForAnlysis">Sample For Anlysis</sys:String>
     <sys:String x:Key="OrderWithBackingPlate">With Plate</sys:String>
 
+    <sys:String x:Key="OrderPartNumber">Part Number</sys:String>
+    <sys:String x:Key="OrderSecondMachineDimension">2rd Machine Dimension</sys:String>
+    <sys:String x:Key="OrderSecondMachineDetail">2rd Machine Detail</sys:String>
+
     <!--Plan-->
     <sys:String x:Key="PlanState">State</sys:String>
     <sys:String x:Key="PlanCreator">Creator</sys:String>
@@ -652,6 +656,8 @@
     <sys:String x:Key="RTBP">BP</sys:String>
     <sys:String x:Key="RTQC">QC</sys:String>
     <sys:String x:Key="RTCSCAN">CSCAN</sys:String>
+    <sys:String x:Key="RTLastUpdateTime">LastUpdateTime</sys:String>
+
     <!--Delivery-->
     <sys:String x:Key="RDCreator">Creator</sys:String>
     <sys:String x:Key="RDCreateTime">Create Time</sys:String>

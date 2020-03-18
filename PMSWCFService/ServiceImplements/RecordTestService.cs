@@ -370,7 +370,22 @@ namespace PMSWCFService
             }
         }
 
-
-
+        public DateTime GetLastUpdateTime(Guid id)
+        {
+            try
+            {
+                XS.Run();
+                using (var db = new PMSDbContext())
+                {
+                    var r = db.RecordTests.Find(id);
+                    return r.LastUpdateTime;
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                return DateTime.Now;
+            }
+        }
     }
 }

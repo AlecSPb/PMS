@@ -45,16 +45,30 @@ namespace PMSClient.View
             PMSMethods.SetTextBoxAppend(TxtProcess, $"{DateTime.Now.ToString("yyyy-MM-dd")}已发出;");
         }
 
-        private void BtnGDMS_Click(object sender, RoutedEventArgs e)
+        private void BtnGDMS1_Click(object sender, RoutedEventArgs e)
         {
             SetKeyValue(TxtGDMS);
 
+        }
+
+        private void BtnGDMS2_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new PMSClient.Components.GDMSHelper.GDMSHelper();
+            if (dialog.ShowDialog() == true)
+            {
+                string s = dialog.GDMS;
+                if (!string.IsNullOrEmpty(s))
+                {
+                    PMSMethods.SetTextBox(TxtGDMS, s);
+                }
+            }
         }
 
         private void BtnICPOES_Click(object sender, RoutedEventArgs e)
         {
             SetKeyValue(TxtICPOES);
         }
+
         private void SetKeyValue(TextBox textBox)
         {
             if (textBox == null) return;

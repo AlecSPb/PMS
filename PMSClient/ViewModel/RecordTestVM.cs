@@ -139,6 +139,46 @@ namespace PMSClient.ViewModel
 
             if (obj != null)
             {
+                //最后一次更新时间检查
+                try
+                {
+                    using (var s = new RecordTestServiceClient())
+                    {
+                        DateTime lastUpdateTime = s.GetLastUpdateTime(obj.RecordTest.ID);
+                        if (lastUpdateTime > obj.RecordTest.LastUpdateTime)
+                        {
+                            PMSDialogService.ShowWarning("服务器端数据已更新,确定后自动刷新，然后再试");
+                            SetPageParametersWhenConditionChange();
+                            return;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+
+                //编辑锁定检查，如果有锁定提示，没有锁定继续
+                //三个地方解锁，保存后解锁，取消后解锁，管理全局解锁，自我全局解锁
+
+                try
+                {
+                    //检查编辑锁定  这里只检查锁定，不锁定
+                    string lockinfo = Helpers.EditLockHelper.CheckLock(obj.RecordTest.ID);
+                    if (lockinfo != null)
+                    {
+                        PMSDialogService.Show(lockinfo.ToString());
+                        return;
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                }
+
+
+
                 var dialog = new ToolDialog.EnterCSCAN();
                 dialog.ProductInformation = obj.RecordTest.ProductID + "+" + obj.RecordTest.Composition;
                 dialog.CSCAN = obj.RecordTest.CScan;
@@ -150,6 +190,8 @@ namespace PMSClient.ViewModel
 
                     using (var service = new RecordTestServiceClient())
                     {
+                        //刷新最后更新时间
+                        obj.RecordTest.LastUpdateTime = DateTime.Now;
                         service.UpdateRecordTestByUID(obj.RecordTest, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
                 }
@@ -197,6 +239,12 @@ namespace PMSClient.ViewModel
                         sb.AppendLine(result.SpecialRequirement);
                         sb.Append("【交付日期】:");
                         sb.AppendLine(result.DeadLine.ToLongDateString());
+                        sb.Append("【PartNumber】:");
+                        sb.AppendLine(result.PartNumber);
+                        sb.Append("【二次加工尺寸】:");
+                        sb.AppendLine(result.SecondMachineDimension);
+                        sb.Append("【二次加工细节】:");
+                        sb.AppendLine(result.SecondMachineDetails);
                         #endregion
 
                         if (result.DimensionDetails.Contains("FR="))
@@ -329,10 +377,6 @@ namespace PMSClient.ViewModel
                         }
 
                         #endregion
-
-
-
-
 
                         service.UpdateRecordTestByUID(model, uid);
                     }
@@ -638,12 +682,25 @@ namespace PMSClient.ViewModel
         private void ActionEdit(RecordTestExtra model)
         {
             if (model == null) return;
-
-            if (PMSDialogService.ShowYesNo("请问", "多人同时编辑需刷新为最新数据，以免更新冲突，\r\n 【是】刷新；【否】不刷新？"))
+            try
             {
-                SetPageParametersWhenConditionChange();
-                return;
+                using (var s = new RecordTestServiceClient())
+                {
+                    DateTime lastUpdateTime = s.GetLastUpdateTime(model.RecordTest.ID);
+                    if (lastUpdateTime > model.RecordTest.LastUpdateTime)
+                    {
+                        PMSDialogService.ShowWarning("服务器端数据已更新,确定后自动刷新，然后再试");
+                        SetPageParametersWhenConditionChange();
+                        return;
+                    }
+                }
             }
+            catch (Exception)
+            {
+
+            }
+
+
             //编辑锁定检查，如果有锁定提示，没有锁定继续
             //三个地方解锁，保存后解锁，取消后解锁，管理全局解锁，自我全局解锁
 

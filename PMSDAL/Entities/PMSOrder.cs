@@ -68,6 +68,11 @@ namespace PMSDAL
         public DateTime FinishTime { get; set; }
 
         public virtual List<PMSPlanVHP> PlanVHPs { get; set; }
-         
+
+
+        public string PartNumber { get; set; }
+        public string SecondMachineDimension { get; set; }
+        public string SecondMachineDetails { get; set; }
+
     }
 }
