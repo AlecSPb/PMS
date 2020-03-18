@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSClient.ExtraService;
+using PMSClient.PMSSettings;
 
-namespace PMSClient.Components.Express
+namespace PMSClient.Express
 {
 
     public class ExpressConfigService
@@ -14,9 +14,9 @@ namespace PMSClient.Components.Express
         {
 			try
 			{
-				using (var s=new )
+				using (var s=new PMSSettingServiceClient())
 				{
-
+					return s.GetValueByKey(key);
 				}
 			}
 			catch (Exception)

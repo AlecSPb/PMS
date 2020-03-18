@@ -75,6 +75,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PMSSettingService.svc" />
     <Content Include="SampleService.svc" />
     <Content Include="RawMaterialSheetService.svc" />
     <Content Include="BasicDataService.svc" />
@@ -170,6 +171,7 @@
     <Compile Include="DataContracts\DcToolMilling.cs" />
     <Compile Include="DataContracts\DcRawMaterialSheet.cs" />
     <Compile Include="DataContracts\DcSample.cs" />
+    <Compile Include="DataContracts\DcPMSSetting.cs" />
     <Compile Include="Helper\XS.cs" />
     <Compile Include="Helper\LogService.cs" />
     <Compile Include="DataContracts\DcOutSource.cs" />
@@ -186,6 +188,7 @@
     <Compile Include="ServiceContracts\IOutSourceService.cs" />
     <Compile Include="ServiceContracts\IPMICounterService.cs" />
     <Compile Include="ServiceContracts\IPMSIndexService.cs" />
+    <Compile Include="ServiceContracts\IPMSSettingService.cs" />
     <Compile Include="ServiceContracts\IRawMaterialSheetService.cs" />
     <Compile Include="ServiceContracts\IRemainInventoryService.cs" />
     <Compile Include="ServiceContracts\ISampleService.cs" />
@@ -230,6 +233,7 @@
     <Compile Include="ServiceImplements\PlateService.cs" />
     <Compile Include="ServiceImplements\PMICounterService.cs" />
     <Compile Include="ServiceImplements\PMSIndexService.cs" />
+    <Compile Include="ServiceImplements\PMSSettingService.cs" />
     <Compile Include="ServiceImplements\ProductService.cs" />
     <Compile Include="ServiceImplements\RawMaterialSheetService.cs" />
     <Compile Include="ServiceImplements\RecordBondingService.cs" />

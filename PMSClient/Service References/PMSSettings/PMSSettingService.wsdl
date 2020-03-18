@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PMSSettingService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.16.254:8002/PMSSettingService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/PMSSettingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPMSSettingService_GetValueByKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetValueByKey" />
+  </wsdl:message>
+  <wsdl:message name="IPMSSettingService_GetValueByKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetValueByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPMSSettingService_AddSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSettings" />
+  </wsdl:message>
+  <wsdl:message name="IPMSSettingService_AddSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPMSSettingService_UpdateSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSettings" />
+  </wsdl:message>
+  <wsdl:message name="IPMSSettingService_UpdateSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSettingsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPMSSettingService">
+    <wsdl:operation name="GetValueByKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMSSettingService/GetValueByKey" message="tns:IPMSSettingService_GetValueByKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMSSettingService/GetValueByKeyResponse" message="tns:IPMSSettingService_GetValueByKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMSSettingService/AddSettings" message="tns:IPMSSettingService_AddSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMSSettingService/AddSettingsResponse" message="tns:IPMSSettingService_AddSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMSSettingService/UpdateSettings" message="tns:IPMSSettingService_UpdateSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMSSettingService/UpdateSettingsResponse" message="tns:IPMSSettingService_UpdateSettings_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="config" type="tns:IPMSSettingService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetValueByKey">
+      <soap:operation soapAction="http://tempuri.org/IPMSSettingService/GetValueByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSettings">
+      <soap:operation soapAction="http://tempuri.org/IPMSSettingService/AddSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSettings">
+      <soap:operation soapAction="http://tempuri.org/IPMSSettingService/UpdateSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PMSSettingService">
+    <wsdl:port name="config" binding="tns:config">
+      <soap:address location="http://192.168.16.254:8002/PMSSettingService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
