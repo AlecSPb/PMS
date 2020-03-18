@@ -345,6 +345,7 @@
     <Compile Include="Helpers\MsgObject.cs" />
     <Compile Include="Helpers\NavigationService.cs" />
     <Compile Include="Helpers\VToken.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="ReportsHelperNew\ReportBase.cs" />
     <Compile Include="ReportsHelperNew\ReportSample.cs" />
     <Compile Include="ReportsHelperNew\ReportBondingTargetDefects.cs" />
@@ -2669,6 +2670,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Express\" />
     <Folder Include="ToolWindow\Model\" />
     <Folder Include="View\ToolView\" />
   </ItemGroup>
