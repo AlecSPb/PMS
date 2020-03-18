@@ -52,12 +52,17 @@ namespace PMSClient.Components.GDMSHelper
             StringBuilder sb = new StringBuilder();
             foreach (var item in dict)
             {
-                sb.Append(item.Key);
+                sb.Append(RemoveSpecial(item.Key));
                 sb.Append("=");
-                sb.Append(item.Value);
+                sb.Append(RemoveSpecial(item.Value));
                 sb.Append(";");
             }
             return RemoveNextLine(sb.ToString());
+        }
+
+        private string RemoveSpecial(string s)
+        {
+            return s.Replace(";", "").Replace("=", "");
         }
 
         private string RemoveNextLine(string s)

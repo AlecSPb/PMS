@@ -1064,6 +1064,7 @@
     <sys:String x:Key="BottomBarInformation">Info</sys:String>
     <sys:String x:Key="BottomBarHelp">Help</sys:String>
     <sys:String x:Key="BottomBarUpdate">Updates</sys:String>
+    <sys:String x:Key="BottomBarNewFeature">New Feature</sys:String>
 
     <sys:String x:Key="BottomBarRule">Rule</sys:String>
     <sys:String x:Key="BottomBarCodeRule">Code</sys:String>

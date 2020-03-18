@@ -1071,6 +1071,7 @@
     <sys:String x:Key="BottomBarInformation">信息</sys:String>
     <sys:String x:Key="BottomBarHelp">帮助</sys:String>
     <sys:String x:Key="BottomBarUpdate">更新</sys:String>
+    <sys:String x:Key="BottomBarNewFeature">新功能</sys:String>
 
     <sys:String x:Key="BottomBarRule">规则</sys:String>
     <sys:String x:Key="BottomBarCodeRule">编号</sys:String>

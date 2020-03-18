@@ -35,12 +35,59 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Duplicate = new RelayCommand<DcSample>(ActionDuplicate, CanDuplicate);
 
+            SelectionChanged = new RelayCommand<DcSample>(ActionSelectionChanged);
+
             Prepared = new RelayCommand<DcSample>(ActionPrepared, CanQuickEdit);
             Checked = new RelayCommand<DcSample>(ActionChecked, CanQuickEdit);
             Sent = new RelayCommand<DcSample>(ActionSent, CanQuickEdit);
             Print = new RelayCommand(ActionPrint, CanPrint);
             Label = new RelayCommand<DcSample>(ActionLabel);
             Excel = new RelayCommand(ActionExcel, CanExcel);
+            ShowTestResult = new RelayCommand<string>(ActionShowTestResult);
+        }
+
+        private void ActionShowTestResult(string parameter)
+        {
+            switch (parameter)
+            {
+                case "ICPOES":
+                    SetKeyValue(CurrentSample.ICPOES);
+                    break;
+                case "GDMS":
+                    SetKeyValue(CurrentSample.GDMS);
+                    break;
+                case "IGA":
+                    SetKeyValue(CurrentSample.IGA);
+                    break;
+                case "Thermal":
+                    SetKeyValue(CurrentSample.Thermal);
+                    break;
+                case "Permittivity":
+                    SetKeyValue(CurrentSample.Permittivity);
+                    break;
+                case "OtherTestResult":
+                    SetKeyValue(CurrentSample.OtherTestResult);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void SetKeyValue(string testResult)
+        {
+            if (string.IsNullOrEmpty(testResult)) return;
+            var dialog = new WPFControls.KeyValueTestResultReadOnly();
+            dialog.KeyStrings = testResult;
+            dialog.ShowDialog();
+
+        }
+
+        private void ActionSelectionChanged(DcSample obj)
+        {
+            if (obj != null)
+            {
+                CurrentSample = obj;
+            }
         }
 
         private void ActionExcel()
@@ -291,6 +338,14 @@ namespace PMSClient.ViewModel
             get { return searchTrackingStage; }
             set { searchTrackingStage = value; RaisePropertyChanged(nameof(SearchTrackingStage)); }
         }
+
+        private DcSample currentSample;
+        public DcSample CurrentSample
+        {
+            get { return currentSample; }
+            set { currentSample = value; RaisePropertyChanged(nameof(CurrentSample)); }
+        }
+
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
@@ -312,10 +367,14 @@ namespace PMSClient.ViewModel
                     SearchProductID, SearchComposition, SearchTrackingStage);
                 Samples.Clear();
                 orders.ToList().ForEach(o => Samples.Add(o));
+
+                CurrentSample = Samples.FirstOrDefault();
             }
         }
         #region Commands
         public ObservableCollection<DcSample> Samples { get; set; }
+
+        public RelayCommand<DcSample> SelectionChanged { get; set; }
 
         public RelayCommand Add { get; set; }
         public RelayCommand<DcSample> Edit { get; set; }
@@ -327,6 +386,7 @@ namespace PMSClient.ViewModel
         public RelayCommand Print { get; set; }
         public RelayCommand Excel { get; set; }
 
+        public RelayCommand<String> ShowTestResult { get; set; }
         #endregion
 
     }

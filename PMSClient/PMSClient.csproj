@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>106</ApplicationRevision>
+    <ApplicationRevision>108</ApplicationRevision>
     <ApplicationVersion>4.8.125.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -215,6 +215,7 @@
       <DependentUpon>GDMSHelper.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\GDMSHelper\GDMSPair.cs" />
+    <Compile Include="Components\NewFeatureDocShow\NewFeatureShowConfig.cs" />
     <Compile Include="Components\NewFeatureDocShow\NewFeatureShowService.cs" />
     <Compile Include="CustomControls\BatchDuplicateDialog.xaml.cs">
       <DependentUpon>BatchDuplicateDialog.xaml</DependentUpon>
@@ -1866,7 +1867,7 @@
     <Content Include="Resource\DocTemplate\Reports\Samples.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="HelpDocs\样品管理功能使用介绍1.docx">
+    <Content Include="HelpDocs\新功能使用介绍.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Service References\EditLockService\EditLockService.disco" />

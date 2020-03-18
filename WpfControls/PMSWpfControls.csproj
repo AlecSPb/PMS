@@ -54,6 +54,9 @@
     </Compile>
     <Compile Include="KeyValue.cs" />
     <Compile Include="KeyValueHelper.cs" />
+    <Compile Include="KeyValueTestResultReadOnly.xaml.cs">
+      <DependentUpon>KeyValueTestResultReadOnly.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KeyValueTestResult.xaml.cs">
       <DependentUpon>KeyValueTestResult.xaml</DependentUpon>
     </Compile>
@@ -67,6 +70,10 @@
     <Page Include="BindableCSVTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KeyValueTestResultReadOnly.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="KeyValueTestResult.xaml">
       <SubType>Designer</SubType>

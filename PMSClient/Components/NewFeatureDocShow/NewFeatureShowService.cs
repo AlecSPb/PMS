@@ -16,8 +16,26 @@ namespace PMSClient.Components.NewFeatureDocShow
         public NewFeatureShowService()
         {
             baseFolder = Path.Combine(Environment.CurrentDirectory, "HelpDocs");
+            config = new NewFeatureShowConfig();
         }
-        public void Show(string filename, string[] groups, int silenceCode = 0)
+
+        private NewFeatureShowConfig config;
+        public void Run()
+        {
+            string[] users = config.HelpGroupNames;
+            Show(config.HelpFileName, users, config.HelpFileEdition);
+        }
+
+        public void ShowAnyWay()
+        {
+            string filepath = Path.Combine(baseFolder, config.HelpFileName);
+            if (File.Exists(filepath))
+            {
+                System.Diagnostics.Process.Start(filepath);
+            }
+        }
+
+        private void Show(string filename, string[] groups, int silenceCode = 0)
         {
             try
             {

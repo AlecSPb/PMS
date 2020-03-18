@@ -212,6 +212,11 @@ namespace PMSClient
 
                   OpenFileOrProgram(helpFile);
               });
+
+            NewFeature = new RelayCommand(() =>
+              {
+                  new PMSClient.Components.NewFeatureDocShow.NewFeatureShowService().ShowAnyWay();
+              });
             #endregion
         }
 
@@ -256,6 +261,6 @@ namespace PMSClient
         public RelayCommand OpenPlan { get; set; }
         public RelayCommand PeriodicTable { get; set; }
 
-
+        public RelayCommand NewFeature { get; set; }
     }
 }
