@@ -69,6 +69,7 @@
     <Compile Include="Entities\ModelBase.cs" />
     <Compile Include="Entities\OutsideProcess.cs" />
     <Compile Include="Entities\PMICounter.cs" />
+    <Compile Include="Entities\PMSSetting.cs" />
     <Compile Include="Entities\RawMaterialSheet.cs" />
     <Compile Include="Entities\RemainInventory.cs" />
     <Compile Include="Entities\Sample.cs" />
@@ -731,6 +732,10 @@
     <Compile Include="Migrations\202003161451089_change96.Designer.cs">
       <DependentUpon>202003161451089_change96.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003180346020_change97.cs" />
+    <Compile Include="Migrations\202003180346020_change97.Designer.cs">
+      <DependentUpon>202003180346020_change97.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -1230,6 +1235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003161451089_change96.resx">
       <DependentUpon>202003161451089_change96.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003180346020_change97.resx">
+      <DependentUpon>202003180346020_change97.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

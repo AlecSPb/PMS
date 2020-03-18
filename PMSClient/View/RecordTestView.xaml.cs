@@ -70,5 +70,14 @@ namespace PMSClient.View
 
         }
 
+        private void ImageBarCode_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Image image = e.OriginalSource as Image;
+            var image_window = new ToolWindow.ImageShow();
+            image_window.MainImage.Source = image.Source;
+            image_window.Topmost = true;
+            image_window.Show();
+
+        }
     }
 }

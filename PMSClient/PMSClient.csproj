@@ -209,6 +209,7 @@
     <Compile Include="Components\CsvOutputHelper\ICsvOutput.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputRecordMilling.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelSample.cs" />
+    <Compile Include="Components\Express\ExpressConfigService.cs" />
     <Compile Include="Components\NewFeatureDocShow\NewFeatureShowService.cs" />
     <Compile Include="CustomControls\BatchDuplicateDialog.xaml.cs">
       <DependentUpon>BatchDuplicateDialog.xaml</DependentUpon>
@@ -415,6 +416,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\PMSSettings\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\RemoteHeartBeatService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -499,6 +505,9 @@
     </Compile>
     <Compile Include="ToolWindow\ExpressSetting.xaml.cs">
       <DependentUpon>ExpressSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindow\ImageShow.xaml.cs">
+      <DependentUpon>ImageShow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolWindow\InformationWindow.xaml.cs">
       <DependentUpon>InformationWindow.xaml</DependentUpon>
@@ -1215,6 +1224,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ToolWindow\ImageShow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ToolWindow\InformationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1856,6 +1869,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\PMSSettings\PMSSettingService.wsdl" />
+    <None Include="Service References\PMSSettings\PMSSettingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PMSSettings\PMSSettingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\Sample\PMSClient.Sample.DcSample.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1887,6 +1907,13 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Resource Include="StandardDocs\TextFile1.txt" />
+    <None Include="Service References\PMSSettings\PMSSettingService.disco" />
+    <None Include="Service References\PMSSettings\configuration91.svcinfo" />
+    <None Include="Service References\PMSSettings\configuration.svcinfo" />
+    <None Include="Service References\PMSSettings\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="StandardDocs\成都先锋材料有限公司靶材检验标准.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2501,6 +2528,7 @@
     <WCFMetadataStorage Include="Service References\OutputService\" />
     <WCFMetadataStorage Include="Service References\OutsideProcessService\" />
     <WCFMetadataStorage Include="Service References\PMSIndexService\" />
+    <WCFMetadataStorage Include="Service References\PMSSettings\" />
     <WCFMetadataStorage Include="Service References\RemoteHeartBeatService\" />
     <WCFMetadataStorage Include="Service References\Sample\" />
     <WCFMetadataStorage Include="Service References\SF\" />

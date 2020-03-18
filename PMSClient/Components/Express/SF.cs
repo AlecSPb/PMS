@@ -24,8 +24,8 @@ namespace PMSClient.Express
     {
         public SF()
         {
-            Sender = Properties.Settings.Default.ExpressSender;
-            SenderPhone = Properties.Settings.Default.ExpressSenderPhone;
+            Sender =ExpressConfigService.ReadKey("sf_sender");
+            SenderPhone = Sender = ExpressConfigService.ReadKey("sf_sender_phone");
         }
         public string Sender { get; set; } = "秦雪梅";
         public string SenderPhone { get; set; } = "13808071935";

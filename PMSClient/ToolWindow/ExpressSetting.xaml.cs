@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PMSClient.Express;
+using PMSClient.PMSSettings;
 
 namespace PMSClient.ToolWindow
 {
@@ -23,18 +25,29 @@ namespace PMSClient.ToolWindow
         {
             InitializeComponent();
 
-            string sender = Properties.Settings.Default.ExpressSender;
-            string senderphone = Properties.Settings.Default.ExpressSenderPhone;
+            string sender = ExpressConfigService.ReadKey("sf_sender");
+            string senderphone = ExpressConfigService.ReadKey("sf_sender_phone");
             TxtSender.Text = sender;
             TxtSenderPhone.Text = senderphone;
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            Properties.Settings.Default.ExpressSender = TxtSender.Text.Trim();
-            Properties.Settings.Default.ExpressSenderPhone = TxtSenderPhone.Text.Trim();
-            Properties.Settings.Default.Save();
+            //Properties.Settings.Default.ExpressSender = TxtSender.Text.Trim();
+            //Properties.Settings.Default.ExpressSenderPhone = TxtSenderPhone.Text.Trim();
+            //Properties.Settings.Default.Save();
+            try
+            {
+                using (var s = new PMSSettingServiceClient())
+                {
+                    s.UpdateSettings("sf_sender", TxtSender.Text.Trim());
+                    s.UpdateSettings("sf_sender_phone", TxtSenderPhone.Text.Trim());
+                }
+            }
+            catch (Exception)
+            {
 
+            }
             this.Close();
         }
     }

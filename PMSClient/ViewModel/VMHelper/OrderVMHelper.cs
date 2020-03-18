@@ -16,8 +16,10 @@ namespace PMSClient.ViewModel.VMHelper
 
             if (!(Helpers.OrderHelper.NeedSample(obj.SampleNeed) || Helpers.OrderHelper.NeedSample(obj.SampleForAnlysis)))
             {
-                PMSDialogService.ShowWarning("貌似这个订单不需要样品？");
-                return;
+                if (!PMSDialogService.ShowYesNo("提醒", "貌似这个订单不需要样品？N=取消,Y=继续添加"))
+                {
+                    return;
+                }
             }
 
             if (PMSDialogService.ShowYesNo("请问", $"确定要添加[{obj.PMINumber}-{obj.CompositionStandard}]的样品需求到样品管理吗？"))
@@ -52,7 +54,7 @@ namespace PMSClient.ViewModel.VMHelper
                 model.ProductID = "无";
                 model.SampleID = "无";
                 model.TrackingStage = PMSCommon.SampleTrackingStage.未取样.ToString();
-                model.TraceInformation = "无";
+                model.TraceInformation = "";
                 model.ICPOES = VMHelper.SampleVMHelper.ICPOES;
                 model.GDMS = VMHelper.SampleVMHelper.GDMS;
                 model.IGA = VMHelper.SampleVMHelper.IGA;
@@ -84,6 +86,7 @@ namespace PMSClient.ViewModel.VMHelper
                 {
                     sample_str += $"自分析样品:{ obj.SampleForAnlysis};";
                 }
+
                 model.OriginalRequirement = sample_str;
                 try
                 {
@@ -91,7 +94,7 @@ namespace PMSClient.ViewModel.VMHelper
                     {
                         s.AddSample(model);
                     }
-                    PMSDialogService.Show("成功添加样品到样品管理");
+                    PMSDialogService.Show("已成功添加样品到样品管理");
                 }
                 catch (Exception)
                 {

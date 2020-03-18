@@ -149,5 +149,7 @@ namespace PMSDAL
 
 
         public DbSet<DeliveryChase> DeliveryChases { get; set; }
+
+        public DbSet<PMSSetting> PMSSettings { get; set; }
     }
 }

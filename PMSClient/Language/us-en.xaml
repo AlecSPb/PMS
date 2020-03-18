@@ -1029,7 +1029,7 @@
 
     <sys:String x:Key="SICPOES">ICPOES</sys:String>
     <sys:String x:Key="SGDMS">GDMS</sys:String>
-    <sys:String x:Key="SIGA">IGA</sys:String>
+    <sys:String x:Key="SIGA">LECO</sys:String>
     <sys:String x:Key="SThermal">Thermal</sys:String>
     <sys:String x:Key="SPermittivity">Permittivity</sys:String>
     <sys:String x:Key="SOtherTestResult">OtherTestResult</sys:String>
