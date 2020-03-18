@@ -89,10 +89,10 @@
                                     Binding="{Binding TrackingStage}"/>
                     <DataGridTextColumn Header="{StaticResource SSampleType}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding SampleType}"/>
-                    <DataGridTextColumn Header="{StaticResource SProductID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding ProductID}"/>
                     <DataGridTextColumn Header="{StaticResource SSampleID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding SampleID}"/>
+                    <DataGridTextColumn Header="{StaticResource SProductID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding ProductID}"/>
                     <DataGridTextColumn Header="{StaticResource SComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
                     <DataGridTextColumn Header="{StaticResource SPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
@@ -167,9 +167,9 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SampleID}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                        <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource SSampleID}"
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource SProductID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SampleID}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
                         <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource SComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

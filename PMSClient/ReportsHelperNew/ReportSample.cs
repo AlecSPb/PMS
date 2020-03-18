@@ -68,7 +68,7 @@ namespace PMSClient.ReportsHelperNew
                             row.Cells[4].Paragraphs[0].Append(item.OriginalRequirement ?? "");
                             row.Cells[4].VerticalAlignment = VerticalAlignment.Center;
 
-                            row.Cells[5].Paragraphs[0].Append(item.SampleType ?? "").Alignment = Alignment.center;
+                            row.Cells[5].Paragraphs[0].Append(item.TrackingStage ?? "").Alignment = Alignment.center;
                             row.Cells[5].VerticalAlignment = VerticalAlignment.Center;
                         }
 
