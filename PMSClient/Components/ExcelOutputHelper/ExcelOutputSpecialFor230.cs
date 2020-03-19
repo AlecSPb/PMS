@@ -129,6 +129,7 @@ namespace PMSClient.ExcelOutputHelper
                             int col_index = 0;
                             const int start_col_index = 15;
 
+                            //插入平均值
                             col_index = start_col_index;
                             if (result.Average.Count > 0)
                             {
@@ -138,6 +139,7 @@ namespace PMSClient.ExcelOutputHelper
                                     col_index++;
                                 }
                             }
+                            //插入最大值
 
                             col_index = start_col_index + 4;
                             if (result.Max.Count > 0)
@@ -148,6 +150,7 @@ namespace PMSClient.ExcelOutputHelper
                                     col_index++;
                                 }
                             }
+                            //插入最小值
                             col_index = start_col_index + 8;
                             if (result.Min.Count > 0)
                             {
@@ -177,7 +180,12 @@ namespace PMSClient.ExcelOutputHelper
                                 }
                             }
                         }
-
+                        else
+                        {
+                            System.Diagnostics.Debug.Print(item.Test.ProductID);
+                            System.Diagnostics.Debug.Print(item.Test.Composition);
+                            System.Diagnostics.Debug.Print(item.Test.CompositionXRF);
+                        }
 
 
                         #endregion

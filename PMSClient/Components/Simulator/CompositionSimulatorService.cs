@@ -91,7 +91,7 @@ namespace PMSClient.Simulator
         {
             OutputModel output = new OutputModel();
             StringBuilder title = new StringBuilder();
-            title.Append("No,");
+            title.Append("No.,");
             //循环生成标题
             for (int i = 0; i < input.Elements.Count(); i++)
             {
