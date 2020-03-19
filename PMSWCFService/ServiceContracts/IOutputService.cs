@@ -16,5 +16,11 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         int GetAll230DataCount();
+
+        [OperationContract]
+        List<PMS230DataModel> GetAll230DataByYearMonth(int s, int t,int year,int month);
+
+        [OperationContract]
+        int GetAll230DataByYearMonthCount(int year, int month);
     }
 }

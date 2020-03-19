@@ -26,7 +26,7 @@ namespace PMSClient.ToolWindow
 
         private void BtnChaozhou_Click(object sender, RoutedEventArgs e)
         {
-            if (!PMSDialogService.ShowYesNo("请问", $"确定要导出【{BtnChaozhou.Content}】数据吗？\r\n 请耐心等待一段时间直到提示重新出现"))
+            if (!PMSDialogService.ShowYesNo("请问", $"确定要导出【{BtnChaozhou.Content}】数据吗？\r\n 时间也许比较长，耐心等待"))
             {
                 return;
             }
@@ -34,7 +34,7 @@ namespace PMSClient.ToolWindow
             {
                 var excel = new ExcelOutputHelper.ExcelOutputSpecialFor230();
 
-                excel.Intialize("瑞典潮州 230靶材 发货+测试+绑定数据", "Data");//注意传输设置防止出错
+                excel.Intialize("瑞典潮州_230靶材_发货+测试+绑定数据", "Data", 10);//注意传输设置防止出错
                 excel.Output();
             }
             catch (Exception ex)

@@ -208,6 +208,9 @@
     <Compile Include="Components\CsvOutputHelper\CsvOutputRecordVHP.cs" />
     <Compile Include="Components\CsvOutputHelper\ICsvOutput.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputRecordMilling.cs" />
+    <Compile Include="Components\ExcelOutputHelper\Dialogs\YearDateDailog.xaml.cs">
+      <DependentUpon>YearDateDailog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\ExcelOutputHelper\ExcelSample.cs" />
     <Compile Include="Components\Express\ExpressConfigService.cs" />
     <Compile Include="Components\GDMSHelper\GDMSAnlysis.cs" />
@@ -1089,6 +1092,10 @@
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="CheckLogic\RecordTestCheckDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\ExcelOutputHelper\Dialogs\YearDateDailog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

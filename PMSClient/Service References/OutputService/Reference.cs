@@ -2112,6 +2112,18 @@ namespace PMSClient.OutputService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetAll230DataCount", ReplyAction="http://tempuri.org/IOutputService/GetAll230DataCountResponse")]
         System.Threading.Tasks.Task<int> GetAll230DataCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetAll230DataByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetAll230DataByYearMonthResponse")]
+        PMSClient.OutputService.PMS230DataModel[] GetAll230DataByYearMonth(int s, int t, int year, int month);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetAll230DataByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetAll230DataByYearMonthResponse")]
+        System.Threading.Tasks.Task<PMSClient.OutputService.PMS230DataModel[]> GetAll230DataByYearMonthAsync(int s, int t, int year, int month);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetAll230DataByYearMonthCount", ReplyAction="http://tempuri.org/IOutputService/GetAll230DataByYearMonthCountResponse")]
+        int GetAll230DataByYearMonthCount(int year, int month);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetAll230DataByYearMonthCount", ReplyAction="http://tempuri.org/IOutputService/GetAll230DataByYearMonthCountResponse")]
+        System.Threading.Tasks.Task<int> GetAll230DataByYearMonthCountAsync(int year, int month);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2155,6 +2167,22 @@ namespace PMSClient.OutputService {
         
         public System.Threading.Tasks.Task<int> GetAll230DataCountAsync() {
             return base.Channel.GetAll230DataCountAsync();
+        }
+        
+        public PMSClient.OutputService.PMS230DataModel[] GetAll230DataByYearMonth(int s, int t, int year, int month) {
+            return base.Channel.GetAll230DataByYearMonth(s, t, year, month);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.OutputService.PMS230DataModel[]> GetAll230DataByYearMonthAsync(int s, int t, int year, int month) {
+            return base.Channel.GetAll230DataByYearMonthAsync(s, t, year, month);
+        }
+        
+        public int GetAll230DataByYearMonthCount(int year, int month) {
+            return base.Channel.GetAll230DataByYearMonthCount(year, month);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetAll230DataByYearMonthCountAsync(int year, int month) {
+            return base.Channel.GetAll230DataByYearMonthCountAsync(year, month);
         }
     }
 }

@@ -19,6 +19,18 @@
   <wsdl:message name="IOutputService_GetAll230DataCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAll230DataCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IOutputService_GetAll230DataByYearMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAll230DataByYearMonth" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetAll230DataByYearMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAll230DataByYearMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetAll230DataByYearMonthCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAll230DataByYearMonthCount" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetAll230DataByYearMonthCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAll230DataByYearMonthCountResponse" />
+  </wsdl:message>
   <wsdl:portType name="IOutputService">
     <wsdl:operation name="GetAll230Data">
       <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetAll230Data" message="tns:IOutputService_GetAll230Data_InputMessage" />
@@ -27,6 +39,14 @@
     <wsdl:operation name="GetAll230DataCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetAll230DataCount" message="tns:IOutputService_GetAll230DataCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetAll230DataCountResponse" message="tns:IOutputService_GetAll230DataCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAll230DataByYearMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetAll230DataByYearMonth" message="tns:IOutputService_GetAll230DataByYearMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetAll230DataByYearMonthResponse" message="tns:IOutputService_GetAll230DataByYearMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAll230DataByYearMonthCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetAll230DataByYearMonthCount" message="tns:IOutputService_GetAll230DataByYearMonthCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetAll230DataByYearMonthCountResponse" message="tns:IOutputService_GetAll230DataByYearMonthCount_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="output" type="tns:IOutputService">
@@ -42,6 +62,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetAll230DataCount">
       <soap:operation soapAction="http://tempuri.org/IOutputService/GetAll230DataCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAll230DataByYearMonth">
+      <soap:operation soapAction="http://tempuri.org/IOutputService/GetAll230DataByYearMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAll230DataByYearMonthCount">
+      <soap:operation soapAction="http://tempuri.org/IOutputService/GetAll230DataByYearMonthCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

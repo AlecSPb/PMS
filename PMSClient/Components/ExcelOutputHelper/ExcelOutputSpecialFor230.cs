@@ -21,11 +21,24 @@ namespace PMSClient.ExcelOutputHelper
 
         public override void Output()
         {
-            ResetParameters();
 
+            int year = 0, month = 0;
+
+            var dialog = new PMSClient.Components.ExcelOutputHelper.Dialogs.YearDateDailog();
+            if (dialog.ShowDialog() == false)
+            {
+                return;
+            }
+            year = dialog.Year;
+            month = dialog.Month;
+
+            excelFileName = excelFileName.Replace(".xlsx", $"{year}_{month}.xlsx");
+
+
+            ResetParameters();
             using (var service = new OutputServiceClient())
             {
-                recordCount = service.GetAll230DataCount();
+                recordCount = service.GetAll230DataByYearMonthCount(year, month);
                 pageCount = GetPageCount();
 
                 NPOIHelper helper = new NPOIHelper();
@@ -91,8 +104,8 @@ namespace PMSClient.ExcelOutputHelper
                     System.Diagnostics.Debug.WriteLine($"{pageIndex} ");
                     s = pageIndex * pageSize;
                     t = pageSize;
-                    
-                    var pageData = service.GetAll230Data(s, t);
+
+                    var pageData = service.GetAll230DataByYearMonth(s, t, year, month);
                     foreach (var item in pageData)
                     {
                         helper.CreateRow(rowIndex);
@@ -204,8 +217,6 @@ namespace PMSClient.ExcelOutputHelper
                 CheckOpenAfterCreate();
             }
         }
-
-
 
 
     }
