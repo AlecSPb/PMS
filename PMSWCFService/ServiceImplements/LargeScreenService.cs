@@ -8,6 +8,7 @@ using PMSWCFService.ServiceContracts;
 using AutoMapper;
 using PMSCommon;
 using System.Data.Entity;
+using System.Data.Entity.SqlServer;
 
 namespace PMSWCFService
 {
@@ -81,6 +82,9 @@ namespace PMSWCFService
             try
             {
                 //XS.Run();
+                //通过大屏幕程序锁定当前没有锁定的计划
+                //LockAllTodaysPlan();
+
                 using (var dc = new PMSDbContext())
                 {
                     var dateStart = planDate.Date;
@@ -113,6 +117,38 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        /// <summary>
+        /// 锁定所有计划
+        /// </summary>
+        private void LockAllTodaysPlan()
+        {
+            if (DateTime.Now > DateTime.Today.AddHours(17).AddMinutes(0))
+            {
+                using (var db = new PMSDbContext())
+                {
+                    var today_unlocked_plans = from p in db.VHPPlans
+                                               where DbFunctions.DiffDays(p.PlanDate.Date, DateTime.Today) == 0
+                                               && p.State == "已核验"
+                                               && p.IsLocked == false
+                                               select p;
+                    //如果存在没有锁定的计划
+                    if (today_unlocked_plans.Count() > 0)
+                    {
+                        foreach (var p in today_unlocked_plans)
+                        {
+                            p.IsLocked = true;
+                            db.Entry(p).State = EntityState.Modified;
+                        }
+                        db.SaveChanges();
+                        XS.Current.Debug("成功触发LockAllTodaysPlan锁定事件");
+                    }
+
+                }
+            }
+            XS.Current.Debug("成功触发LockAllTodaysPlan");
+        }
+
 
         public List<DcPlanExtra> GetPlanByDateDeviceCode(int planlot, DateTime planDate, string deviceCode)
         {
@@ -159,6 +195,9 @@ namespace PMSWCFService
             try
             {
                 //XS.Run();
+                //锁定所有没有锁定的计划
+                LockAllTodaysPlan();
+
                 using (var dc = new PMSDbContext())
                 {
                     List<DcStatistic> result = new List<DcStatistic>();

@@ -95,6 +95,8 @@ namespace PMSDAL
         //Log
         public DbSet<LogError> LogErrors { get; set; }
         public DbSet<LogInformation> LogInformations { get; set; }
+        public DbSet<DebugInformation> DebugInformations { get; set; }
+
 
         //Operate
         public DbSet<CheckList> CheckLists { get; set; }

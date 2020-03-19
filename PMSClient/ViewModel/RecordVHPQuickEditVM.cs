@@ -70,26 +70,8 @@ namespace PMSClient.ViewModel
         {
             if (!PMSDialogService.ShowYesNo("请问", "确定要一键锁定今天所有的计划吗？"))
                 return;
-            try
-            {
+            VMHelper.RecordVHPVMHelper.LockAll();
 
-                var plandate = DateTime.Today.ToString("yyMMdd");
-                var misson_service = new MissonServiceClient();
-                var today_plans = misson_service.GetPlanExtra(0, 100, plandate, string.Empty);
-                var plan_service = new PlanVHPServiceClient();
-                foreach (var item in today_plans)
-                {
-                    var plan = item.Plan;
-                    plan.IsLocked = true;
-                    plan_service.UpdateVHPPlan(plan);
-                }
-                plan_service.Close();
-                misson_service.Close();
-            }
-            catch (Exception ex)
-            {
-                PMSDialogService.ShowWarning(ex.Message);
-            }
             SetPageParametersWhenConditionChange();
         }
 

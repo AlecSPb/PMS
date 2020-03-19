@@ -9,12 +9,33 @@ namespace PMSWCFService
 {
     public class Log
     {
-        
+
         public Log()
         {
 
         }
 
+        public void Debug(string information)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var entity = new DebugInformation()
+                    {
+                        ID = Guid.NewGuid(),
+                        CreateTime = DateTime.Now,
+                        Information = information
+                    };
+                    dc.DebugInformations.Add(entity);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
 
         public void Information(string information)
         {
@@ -43,9 +64,9 @@ namespace PMSWCFService
         {
             try
             {
-                if (ex!=null)
+                if (ex != null)
                 {
-                    using (var dc=new PMSDbContext())
+                    using (var dc = new PMSDbContext())
                     {
                         var entity = new LogError()
                         {
