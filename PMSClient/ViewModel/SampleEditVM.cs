@@ -60,6 +60,7 @@ namespace PMSClient.ViewModel
                 CurrentSample.ProductID = plan.Plan.SearchCode + "-1";
                 CurrentSample.SampleID = CurrentSample.ProductID;
                 CurrentSample.TrackingStage = PMSCommon.SampleTrackingStage.未核验.ToString();
+                CurrentSample.TraceInformation = $"{DateTime.Now.ToString("yyyy-MM-dd")}已准备;";
             }
         }
 

@@ -20,7 +20,7 @@ namespace PMSClient.BarCodeService
             helper = new Helper();
             
         }
-        public string CreateBarCodeImage(string s)
+        public string CreateQRCodeImage(string s)
         {
             filename = helper.GetTempFile($"temp{Guid.NewGuid().ToString()}.png");
             var barcode = new Barcode();

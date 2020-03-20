@@ -26,7 +26,7 @@ namespace PMSClient.ToolWindow
 
         private void BtnChaozhou_Click(object sender, RoutedEventArgs e)
         {
-            if (!PMSDialogService.ShowYesNo("请问", $"确定要导出【{BtnChaozhou.Content}】数据吗？\r\n 时间也许比较长，耐心等待"))
+            if (!PMSDialogService.ShowYesNo("请问", $"确定要导出【{BtnChaozhou.Content}】数据吗？"))
             {
                 return;
             }

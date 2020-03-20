@@ -311,7 +311,7 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="0*"/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Text="仅CCD条码枪可扫屏幕,激光类型无法扫出,单击是独立窗口"
+                            <TextBlock Grid.Row="0" Text="仅CCD枪可扫屏幕,激光型无法扫出,单击是独立置顶窗口"
                                        Style="{StaticResource StyleTextBlockWarning2}" Background="LightGreen"
                                        HorizontalAlignment="Stretch" Grid.ColumnSpan="2"/>
                             <Border Grid.Row="1" BorderBrush="LightBlue" BorderThickness="1" Grid.ColumnSpan="2"

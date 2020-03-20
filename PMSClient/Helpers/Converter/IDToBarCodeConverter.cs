@@ -16,8 +16,8 @@ namespace PMSClient.Helpers.Converter
             string productid = value.ToString();
             if (productid != null)
             {
-                BarCodeHelper helper = new BarCodeHelper();
-                return helper.CreateBarCodeBmp(productid);
+                var helper = new QRCodeHelper();
+                return helper.CreateQRCodeBmp(productid);
             }
             return null;
         }

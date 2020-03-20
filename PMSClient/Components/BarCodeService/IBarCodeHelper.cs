@@ -8,6 +8,6 @@ namespace PMSClient.BarCodeService
 {
     public interface IBarCodeHelper
     {
-        string CreateBarCodeImage(string s);
+        string CreateQRCodeImage(string s);
     }
 }

@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         WindowStartupLocation="CenterScreen"
+        WindowStyle="ToolWindow"
         mc:Ignorable="d"
-        Title="BarCode" Height="120" Width="400">
-    <Grid>
+        Title="QRCode" Height="150" Width="150">
+    <Grid Background="Blue">
         <Border Margin="10">
             <Image Name="MainImage" />
         </Border>

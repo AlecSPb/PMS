@@ -93,5 +93,9 @@ namespace PMSWCFService.DataContracts
         public string SecondMachineDimension { get; set; }
         [DataMember]
         public string SecondMachineDetails { get; set; }
+
+        [DataMember]
+        public DateTime LastUpdateTime { get; set; }
+
     }
 }

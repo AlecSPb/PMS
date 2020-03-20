@@ -52,7 +52,7 @@ namespace PMSClient.ReportsHelperNew
 
         private void InsertBarcodeSection(DocX doc, string s)
         {
-            string im = helper.CreateBarCodeImage(s);
+            string im = helper.CreateQRCodeImage(s);
             Image image = doc.AddImage(im);
             Picture pic = image.CreatePicture();
             var p = doc.InsertParagraph();

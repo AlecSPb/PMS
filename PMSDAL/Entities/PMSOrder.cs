@@ -74,5 +74,7 @@ namespace PMSDAL
         public string SecondMachineDimension { get; set; }
         public string SecondMachineDetails { get; set; }
 
+        public DateTime LastUpdateTime { get; set; }
+
     }
 }

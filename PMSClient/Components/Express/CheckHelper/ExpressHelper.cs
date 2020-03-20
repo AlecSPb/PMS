@@ -14,14 +14,22 @@ namespace PMSClient.Express.CheckHelper
             ErrorMessage message = new ErrorMessage();
             message.Item = number;
 
-            if (number.Length != 15)
-            {
-                message.Errors.Add("顺丰新单号长度为15位");
-            }
+
             if (!number.StartsWith("SF"))
             {
-                message.Errors.Add("顺丰新单号要以SF开头");
+                if (number.Length != 12)
+                {
+                    message.Errors.Add("顺丰不以SF开头的长度单号应该为12位");
+                }
             }
+            else
+            {
+                if (number.Length != 15)
+                {
+                    message.Errors.Add("顺丰以SF开头的单号长度应该为15位");
+                }
+            }
+
             return message;
         }
 

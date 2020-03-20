@@ -27,7 +27,9 @@ namespace PMSClient.ReportsHelperNew
             using (var doc = DocX.Load(temp))
             {
                 #region 字段
+                string creator = PMSHelper.CurrentSession?.CurrentUser?.UserName ?? "Unknown";
                 string createDate = DateTime.Today.ToShortDateString();
+                doc.ReplaceText("[Creator]", creator ?? "");
                 doc.ReplaceText("[CreateDate]", createDate ?? "");
                 string postfix = SelectedTrackingStage == "" ? "全部" : SelectedTrackingStage;
 
@@ -47,29 +49,46 @@ namespace PMSClient.ReportsHelperNew
                         var pageData = service.GetSampleAll(s, t, empty, empty, SelectedTrackingStage);
                         var ordered = pageData;
                         int row_index = 0;
+
+                        double fontSize = 8;
                         foreach (var item in ordered)
                         {
                             row_index++;
                             Row row = table.InsertRow();
                             row.Height = 35;
-                            row.Cells[0].Paragraphs[0].Append(row_index.ToString()).Alignment
-                                = Alignment.center;
+                            row.Cells[0].Paragraphs[0].Append(row_index.ToString());
+                            row.Cells[0].Paragraphs[0].FontSize(fontSize);
+                            row.Cells[0].Paragraphs[0].Alignment = Alignment.center;
                             row.Cells[0].VerticalAlignment = VerticalAlignment.Center;
 
                             row.Cells[1].Paragraphs[0].Append(item.PMINumber ?? "");
+                            row.Cells[1].Paragraphs[0].FontSize(fontSize);
                             row.Cells[1].VerticalAlignment = VerticalAlignment.Center;
 
                             row.Cells[2].Paragraphs[0].Append(item.Composition ?? "");
+                            row.Cells[2].Paragraphs[0].FontSize(fontSize);
                             row.Cells[2].VerticalAlignment = VerticalAlignment.Center;
 
                             row.Cells[3].Paragraphs[0].Append(item.Customer ?? "");
+                            row.Cells[3].Paragraphs[0].FontSize(fontSize);
                             row.Cells[3].VerticalAlignment = VerticalAlignment.Center;
 
                             row.Cells[4].Paragraphs[0].Append(item.OriginalRequirement ?? "");
+                            row.Cells[4].Paragraphs[0].FontSize(fontSize);
                             row.Cells[4].VerticalAlignment = VerticalAlignment.Center;
 
-                            row.Cells[5].Paragraphs[0].Append(item.TrackingStage ?? "").Alignment = Alignment.center;
+                            row.Cells[5].Paragraphs[0].Append(item.SampleID ?? "");
+                            row.Cells[5].Paragraphs[0].FontSize(fontSize);
                             row.Cells[5].VerticalAlignment = VerticalAlignment.Center;
+
+                            row.Cells[6].Paragraphs[0].Append(item.SampleType ?? "");
+                            row.Cells[6].Paragraphs[0].FontSize(fontSize);
+                            row.Cells[6].Paragraphs[0].Alignment = Alignment.center;
+                            row.Cells[6].VerticalAlignment = VerticalAlignment.Center;
+
+                            row.Cells[7].Paragraphs[0].Append(item.TrackingStage ?? "").Alignment = Alignment.center;
+                            row.Cells[7].Paragraphs[0].FontSize(fontSize);
+                            row.Cells[7].VerticalAlignment = VerticalAlignment.Center;
                         }
 
                         pageIndex++;
