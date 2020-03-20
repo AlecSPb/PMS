@@ -1,4 +1,4 @@
-﻿using PMSClient.MainService;
+﻿using PMSClient.NewService;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,10 +45,13 @@ namespace PMSClient.ToolWindow
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public void SetCurrentOrder(DcOrder order)
+        public void SetCurrentOrder(Guid id)
         {
-            CurrentOrder = order;
-            RaisePropertyChanged(nameof(DcOrder));
+            using (var s = new NewServiceClient())
+            {
+                CurrentOrder = s.GetOrderByID(id);
+                RaisePropertyChanged(nameof(DcOrder));
+            }
         }
         public DcOrder CurrentOrder { get; set; }
         public List<string> PolicyTypes { get; set; }
@@ -71,9 +74,9 @@ namespace PMSClient.ToolWindow
             string user = PMSHelper.CurrentSession.CurrentUser.UserName;
             CurrentOrder.Reviewer = user;
             CurrentOrder.ReviewTime = DateTime.Now;
-            using (var service = new OrderServiceClient())
+            using (var service = new NewServiceClient())
             {
-                service.UpdateOrderByUID(CurrentOrder, user);
+                service.UpdateOrder(CurrentOrder, user);
             }
             this.Close();
         }

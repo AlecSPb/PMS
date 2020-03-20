@@ -164,7 +164,7 @@ namespace PMSWCFService
         /// <returns></returns>
         public List<DcOrder> GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd)
         {
-           XS.RunLog();
+            XS.RunLog();
             try
             {
                 using (var dc = new PMSDbContext())
@@ -200,7 +200,7 @@ namespace PMSWCFService
         /// <returns></returns>
         public int GetOrderCountBySearch(string customer, string compositionstd)
         {
-           XS.RunLog();
+            XS.RunLog();
             try
             {
                 using (var dc = new PMSDbContext())
@@ -221,7 +221,7 @@ namespace PMSWCFService
 
         public List<DcOrder> GetOrderUnCompleted(int skip, int take, string customer, string compositionstd)
         {
-           XS.RunLog();
+            XS.RunLog();
             try
             {
                 using (var dc = new PMSDbContext())
@@ -254,7 +254,7 @@ namespace PMSWCFService
 
         public int GetOrderCountUnCompleted(string customer, string compositionstd)
         {
-           XS.RunLog();
+            XS.RunLog();
             try
             {
                 using (var dc = new PMSDbContext())
@@ -345,7 +345,7 @@ namespace PMSWCFService
 
         public List<DcOrder> GetOrderUnCompleted2(int skip, int take, string customer, string compositionstd, string pminumber)
         {
-           XS.RunLog();
+            XS.RunLog();
             try
             {
                 using (var dc = new PMSDbContext())
@@ -379,7 +379,7 @@ namespace PMSWCFService
 
         public int GetOrderCountUnCompleted2(string customer, string compositionstd, string pminumber)
         {
-           XS.RunLog();
+            XS.RunLog();
             try
             {
                 using (var dc = new PMSDbContext())
@@ -403,7 +403,7 @@ namespace PMSWCFService
         {
             try
             {
-           XS.RunLog();
+                XS.RunLog();
                 var date = new DateTime(year, 1, 1);
                 using (var dc = new PMSDbContext())
                 {
@@ -425,7 +425,7 @@ namespace PMSWCFService
         {
             try
             {
-           XS.RunLog();
+                XS.RunLog();
                 var date = new DateTime(year, 1, 1);
                 using (var dc = new PMSDbContext())
                 {
@@ -461,7 +461,7 @@ namespace PMSWCFService
         {
             try
             {
-           XS.RunLog();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -488,7 +488,7 @@ namespace PMSWCFService
         {
             try
             {
-           XS.RunLog();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -515,7 +515,7 @@ namespace PMSWCFService
         {
             try
             {
-           XS.RunLog();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg =>
@@ -541,13 +541,13 @@ namespace PMSWCFService
         //2017-8-31补充API
         public List<DcOrderHistory> GetOrderHistoryTop10(string pmiNumber)
         {
-           XS.RunLog();
+            XS.RunLog();
             throw new NotImplementedException();
         }
 
         public string GetOrderStatus()
         {
-           XS.RunLog();
+            XS.RunLog();
             throw new NotImplementedException();
         }
 
@@ -555,7 +555,7 @@ namespace PMSWCFService
         {
             try
             {
-           XS.RunLog();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
@@ -575,7 +575,7 @@ namespace PMSWCFService
         {
             try
             {
-           XS.RunLog();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
@@ -596,7 +596,7 @@ namespace PMSWCFService
         {
             try
             {
-           XS.RunLog();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg =>
@@ -605,7 +605,7 @@ namespace PMSWCFService
                     });
                     var mapper = config.CreateMapper();
                     var result = mapper.Map<PMSOrder, DcOrder>(
-                        dc.Orders.Where(i=>i.PMINumber==pminumber).FirstOrDefault());
+                        dc.Orders.Where(i => i.PMINumber == pminumber).FirstOrDefault());
                     return result;
                 }
             }

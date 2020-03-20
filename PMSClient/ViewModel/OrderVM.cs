@@ -65,14 +65,7 @@ namespace PMSClient.ViewModel
 
             Add = new RelayCommand(ActionAdd, CanAdd);
 
-            Edit = new RelayCommand<DcOrder>(order =>
-            {
-                //修改提示
-                if (!PMSDialogService.ShowYesNo("请问", "确定要【修改】这个订单吗？"))
-                    return;
-                PMSHelper.ViewModels.OrderEdit.SetEdit(order);
-                NavigationService.GoTo(PMSViews.OrderEdit);
-            }, CanEdit);
+            Edit = new RelayCommand<DcOrder>(ActionEdit, CanEdit);
 
             Duplicate = new RelayCommand<DcOrder>(ActionDuplicate, CanDuplicate);
             Check = new RelayCommand<DcOrder>(ActionCheck, CanCheck);
@@ -85,6 +78,16 @@ namespace PMSClient.ViewModel
 
             SampleSheet = new RelayCommand(ActionSampleSheet);
         }
+
+        private void ActionEdit(DcOrder obj)
+        {
+            //修改提示
+            if (!PMSDialogService.ShowYesNo("请问", "确定要【修改】这个订单吗？"))
+                return;
+            PMSHelper.ViewModels.OrderEdit.SetEdit(obj);
+            NavigationService.GoTo(PMSViews.OrderEdit);
+        }
+
         private bool CanSample(DcOrder arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditOrderCheck);
@@ -193,9 +196,17 @@ namespace PMSClient.ViewModel
                 //PMSHelper.ViewModels.OrderCheckEdit.SetEdit(order);
                 //NavigationService.GoTo(PMSViews.OrderCheckEdit);
                 //使用窗口的方式进行核验
-                OrderCheckDialog dg = new OrderCheckDialog();
-                dg.CurrentOrder = order;
-                dg.ShowDialog();
+                try
+                {
+                    OrderCheckDialog dg = new OrderCheckDialog();
+                    dg.SetCurrentOrder(order.ID);
+                    dg.ShowDialog();
+                    SetPageParametersWhenConditionChange();
+                }
+                catch (Exception ex)
+                {
+                    PMSHelper.CurrentLog.Error(ex);
+                }
             }
         }
         #region 权限控制代码=编辑订单

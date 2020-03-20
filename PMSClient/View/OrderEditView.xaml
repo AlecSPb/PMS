@@ -269,25 +269,33 @@
 
                 <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource OrderPartNumber}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding PartNumber}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding PartNumber}" Style="{StaticResource StyleTextBoxCommon}"
+                         Background="LightCyan"/>
                 <TextBlock Grid.Row="21" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
                            Text="生产无法看到"/>
 
                 <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource OrderSecondMachineDimension}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding SecondMachineDimension}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
+                <TextBox Name="TxtSecondDimension" Grid.Row="22" Grid.Column="1" Text="{Binding SecondMachineDimension}" Style="{StaticResource StyleTextBoxCommon}"
+                         Background="LightCyan"/>
+                <StackPanel Grid.Row="22" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnSecondDimension" Content="填入首次加工尺寸" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnSecondDimension_Click"/>
+                    <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
                            Text="生产无法看到"/>
+                </StackPanel>
+
 
                 <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource OrderSecondMachineDetail}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding SecondMachineDetails}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding SecondMachineDetails}" Style="{StaticResource StyleTextBoxCommon}"
+                         Background="LightCyan"/>
                 <TextBlock Grid.Row="23" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
                            Text="生产无法看到"/>
 
                 <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource OrderRemark}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
+                         Background="LightCyan"/>
                 <TextBlock Grid.Row="24" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
                            Text="生产无法看到"/>
 

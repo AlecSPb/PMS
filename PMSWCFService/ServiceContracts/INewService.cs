@@ -23,6 +23,13 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         DateTime GetOrderLastUpdateTime(Guid id);
+
+        [OperationContract]
+        DcOrder GetOrderByID(Guid id);
+
+        [OperationContract]
+        void UpdateOrder(DcOrder model,string user);
+
         #endregion
 
         #region 任务
@@ -33,11 +40,18 @@ namespace PMSWCFService.ServiceContracts
 
         #endregion
 
-        #region 测试
+        #region 原料
+
+        #endregion
+
+        #region 记录
         [OperationContract]
         DateTime GetRecordTestLastUpdateTime(Guid id);
         #endregion
 
 
+        #region 发货
+
+        #endregion
     }
 }

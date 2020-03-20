@@ -22,8 +22,11 @@ namespace PMSClient.Components.NewFeatureDocShow
         private NewFeatureShowConfig config;
         public void Run()
         {
-            string[] users = config.HelpGroupNames;
-            Show(config.HelpFileName, users, config.HelpFileEdition);
+            if (Properties.Settings.Default.ShowHelpDoc)
+            {
+                string[] users = config.HelpGroupNames;
+                Show(config.HelpFileName, users, config.HelpFileEdition);
+            }
         }
 
         public void ShowAnyWay()

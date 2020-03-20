@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>112</ApplicationRevision>
+    <ApplicationRevision>113</ApplicationRevision>
     <ApplicationVersion>4.9.125.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -414,6 +414,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\MainService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NewService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -1909,6 +1914,19 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\NewService\NewService.wsdl" />
+    <None Include="Service References\NewService\NewService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NewService\NewService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NewService\NewService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NewService\PMSClient.NewService.DcOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PMSSettings\PMSSettingService.wsdl" />
     <None Include="Service References\PMSSettings\PMSSettingService.xsd">
       <SubType>Designer</SubType>
@@ -1958,6 +1976,13 @@
     <None Include="Service References\DrawingService\configuration91.svcinfo" />
     <None Include="Service References\DrawingService\configuration.svcinfo" />
     <None Include="Service References\DrawingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\NewService\NewService.disco" />
+    <None Include="Service References\NewService\configuration91.svcinfo" />
+    <None Include="Service References\NewService\configuration.svcinfo" />
+    <None Include="Service References\NewService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -2573,6 +2598,7 @@
     <WCFMetadataStorage Include="Service References\FailureService\" />
     <WCFMetadataStorage Include="Service References\HeartBeatService\" />
     <WCFMetadataStorage Include="Service References\MainService\" />
+    <WCFMetadataStorage Include="Service References\NewService\" />
     <WCFMetadataStorage Include="Service References\OutputService\" />
     <WCFMetadataStorage Include="Service References\OutsideProcessService\" />
     <WCFMetadataStorage Include="Service References\PMSIndexService\" />

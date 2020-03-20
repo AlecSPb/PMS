@@ -1,0 +1,3 @@
+﻿List<DcModel> GetModels(int s,int t,string search,guid key);
+void AddModel(DcModel model);
+void UpdateModel(DcModel model);

@@ -154,5 +154,17 @@ namespace PMSClient.Properties {
                 this["ShowHelpDocSilenceCode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowHelpDoc {
+            get {
+                return ((bool)(this["ShowHelpDoc"]));
+            }
+            set {
+                this["ShowHelpDoc"] = value;
+            }
+        }
     }
 }

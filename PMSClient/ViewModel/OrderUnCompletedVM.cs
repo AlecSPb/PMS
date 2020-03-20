@@ -100,7 +100,7 @@ namespace PMSClient.ViewModel
                 //NavigationService.GoTo(PMSViews.OrderCheckEdit);
                 //使用窗口的方式进行核验
                 OrderCheckDialog dg = new OrderCheckDialog();
-                dg.CurrentOrder = order;
+                dg.SetCurrentOrder(order.ID);
                 dg.ShowDialog();
             }
         }
@@ -126,8 +126,6 @@ namespace PMSClient.ViewModel
             return PMSHelper.CurrentSession.IsAuthorized("编辑订单");
         }
         #endregion
-
-
         private void ActionDuplicate(DcOrder order)
         {
             if (PMSDialogService.ShowYesNo("请问", "确定复用这条记录？"))

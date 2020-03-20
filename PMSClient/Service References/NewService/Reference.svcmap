@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e7e06157-6df1-4ba1-9614-b8b8ae68826b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.16.254:8002/NewService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NewService.wsdl" MetadataType="Wsdl" ID="96adbb9c-52c5-4dec-bd4b-75063d6d5b7b" SourceId="1" SourceUrl="http://192.168.16.254:8002/NewService.svc?wsdl" />
+    <MetadataFile FileName="NewService.xsd" MetadataType="Schema" ID="8f5f046f-286a-484a-9672-a745b09547df" SourceId="1" SourceUrl="http://192.168.16.254:8002/NewService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NewService1.xsd" MetadataType="Schema" ID="e543baa9-3eec-4bca-902a-7d0a781d54d7" SourceId="1" SourceUrl="http://192.168.16.254:8002/NewService.svc?xsd=xsd0" />
+    <MetadataFile FileName="NewService2.xsd" MetadataType="Schema" ID="356a6d2d-ed6e-4739-a0ab-4f9ebb12653d" SourceId="1" SourceUrl="http://192.168.16.254:8002/NewService.svc?xsd=xsd2" />
+    <MetadataFile FileName="NewService.disco" MetadataType="Disco" ID="5f92d6d6-5acd-4811-84b7-a40f748a1c06" SourceId="1" SourceUrl="http://192.168.16.254:8002/NewService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

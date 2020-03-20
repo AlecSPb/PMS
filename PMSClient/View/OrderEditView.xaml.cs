@@ -194,5 +194,10 @@ namespace PMSClient.View
             PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "成都绑定;");
 
         }
+
+        private void BtnSecondDimension_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtSecondDimension, TxtDimension.Text);
+        }
     }
 }
