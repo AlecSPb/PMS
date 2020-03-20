@@ -20,5 +20,6 @@ namespace PMSDAL
         public string Remark { get; set; }
 
         public string FileName { get; set; }
+        public Guid DrawID { get; set; }
     }
 }

@@ -23,6 +23,9 @@ namespace PMSClient.DrawingService {
         private string CustomerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid DrawIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DrawingNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -49,6 +52,19 @@ namespace PMSClient.DrawingService {
                 if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
                     this.CustomerField = value;
                     this.RaisePropertyChanged("Customer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid DrawID {
+            get {
+                return this.DrawIDField;
+            }
+            set {
+                if ((this.DrawIDField.Equals(value) != true)) {
+                    this.DrawIDField = value;
+                    this.RaisePropertyChanged("DrawID");
                 }
             }
         }

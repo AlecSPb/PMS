@@ -12,6 +12,7 @@
       <xs:extension base="tns:DcModelBase">
         <xs:sequence>
           <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DrawID" type="ser:guid" />
           <xs:element minOccurs="0" name="DrawingName" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="DrawingType" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ExtraDimension" nillable="true" type="xs:string" />
