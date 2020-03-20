@@ -231,7 +231,7 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="{StaticResource RTLastUpdateTime}" Binding="{Binding LastUpdateTime}"
+                        <DataGridTextColumn Header="{StaticResource RTLastUpdateTime}" Binding="{Binding RecordTest.LastUpdateTime}"
                                             ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     </DataGrid.Columns>
                 </DataGrid>
