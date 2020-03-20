@@ -15,7 +15,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc=new PMSDbContext())
                 {
                     int result = 0;
@@ -37,7 +37,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -59,7 +59,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 throw new NotImplementedException();
             }
             catch (Exception ex)
@@ -74,7 +74,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 throw new NotImplementedException();
             }
             catch (Exception ex)
@@ -89,7 +89,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 throw new NotImplementedException();
             }
             catch (Exception ex)
@@ -104,7 +104,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 throw new NotImplementedException();
             }
             catch (Exception ex)
@@ -119,7 +119,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db=new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<MaintenanceRecord, DcMaintenanceRecord>());
@@ -143,7 +143,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var query = from m in db.MaintenanceRecords
@@ -165,7 +165,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -187,7 +187,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;

@@ -22,7 +22,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 Mapper.Initialize(cfg => cfg.CreateMap<DcFailure, Failure>());
                 var entity = Mapper.Map<Failure>(model);
                 int result = 0;
@@ -44,7 +44,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 Mapper.Initialize(cfg => cfg.CreateMap<Failure, DcFailure>());
                 using (var db = new PMSDbContext())
                 {
@@ -68,7 +68,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 Mapper.Initialize(cfg => cfg.CreateMap<Failure, DcFailure>());
                 using (var db = new PMSDbContext())
                 {
@@ -96,7 +96,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var query = from m in db.Failures
@@ -118,7 +118,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var query = from m in db.Failures
@@ -140,7 +140,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 Mapper.Initialize(cfg => cfg.CreateMap<DcFailure, Failure>());
                 var entity = Mapper.Map<Failure>(model);
                 int result = 0;

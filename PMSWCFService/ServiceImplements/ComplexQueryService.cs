@@ -15,7 +15,7 @@ namespace PMSWCFService
             DcComplexQueryResult result = new DcComplexQueryResult();
             try
             {
-                XS.Run();
+                XS.RunLog();
 
             }
             catch (Exception ex)
@@ -30,7 +30,7 @@ namespace PMSWCFService
             DcComplexQueryResult result = new DcComplexQueryResult();
             try
             {
-                XS.Run();
+                XS.RunLog();
 
             }
             catch (Exception ex)
@@ -42,7 +42,7 @@ namespace PMSWCFService
 
         public Dictionary<string, bool> GetCurrentOrderStatus(string pmiNumber,string p)
         {
-                XS.Run();
+                XS.RunLog();
             Dictionary<string, bool> dict = new Dictionary<string, bool>();
             if (pmiNumber.Length != 8)
                 return dict;

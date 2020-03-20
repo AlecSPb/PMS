@@ -17,7 +17,7 @@ namespace PMSWCFService
             {
                 try
                 {
-                    XS.Run();
+                    XS.RunLog();
 
                     Mapper.Initialize(config =>
                     {
@@ -44,7 +44,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
 
                 Mapper.Initialize(config =>
                 {
@@ -68,7 +68,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
 
                 using (var db = new PMSDbContext())
                 {
@@ -91,7 +91,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
 
                 using (var db = new PMSDbContext())
                 {
@@ -110,7 +110,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
 
                 using (var db = new PMSDbContext())
                 {

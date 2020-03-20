@@ -15,7 +15,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -38,7 +38,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 SaveHistory(model, uid);
                 return AddRecordMachine(model);
             }
@@ -53,7 +53,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     int result=0;
@@ -75,7 +75,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     return dc.RecordMachines.Where(r => r.State != PMSCommon.SimpleState.作废.ToString()).Count();
@@ -93,7 +93,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from r in dc.RecordMachines
@@ -113,7 +113,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var result = dc.RecordMachines.Where(r => r.State != PMSCommon.SimpleState.作废.ToString())
@@ -135,7 +135,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var result = dc.RecordMachines.Where(r => r.State != PMSCommon.SimpleState.作废.ToString()
@@ -157,7 +157,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMachine, DcRecordMachine>());
@@ -179,7 +179,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -202,7 +202,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 SaveHistory(model, uid);
                 return UpdateRecordMachine(model);
             }
@@ -216,7 +216,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<DcRecordMachine, RecordMachineHistory>());

@@ -15,7 +15,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.DeliveryItems
@@ -38,7 +38,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.DeliveryItems
@@ -61,7 +61,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.DeliveryItems
@@ -84,7 +84,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.DeliveryItems
@@ -107,7 +107,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.DeliveryItems
@@ -129,7 +129,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     List<DcStatistic> result = new List<DcStatistic>();
@@ -165,7 +165,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.Orders
@@ -188,7 +188,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.Orders
@@ -210,7 +210,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.Orders
@@ -232,7 +232,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.Orders
@@ -254,7 +254,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.VHPPlans
@@ -277,7 +277,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.VHPPlans
@@ -300,7 +300,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.VHPPlans
@@ -323,7 +323,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.VHPPlans
@@ -345,7 +345,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.Products
@@ -367,7 +367,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.Products
@@ -390,7 +390,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.Products
@@ -413,7 +413,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.Products

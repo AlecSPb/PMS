@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DrawingService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.16.254:8002/DrawingService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/DrawingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/DrawingService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDrawingService_GetDrawing_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDrawing" />
+  </wsdl:message>
+  <wsdl:message name="IDrawingService_GetDrawing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDrawingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDrawingService_GetDrawingCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDrawingCount" />
+  </wsdl:message>
+  <wsdl:message name="IDrawingService_GetDrawingCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDrawingCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDrawingService_AddDrawing_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDrawing" />
+  </wsdl:message>
+  <wsdl:message name="IDrawingService_AddDrawing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDrawingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDrawingService_UpdateDrawing_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDrawing" />
+  </wsdl:message>
+  <wsdl:message name="IDrawingService_UpdateDrawing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDrawingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDrawingService">
+    <wsdl:operation name="GetDrawing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDrawingService/GetDrawing" message="tns:IDrawingService_GetDrawing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDrawingService/GetDrawingResponse" message="tns:IDrawingService_GetDrawing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDrawingCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDrawingService/GetDrawingCount" message="tns:IDrawingService_GetDrawingCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDrawingService/GetDrawingCountResponse" message="tns:IDrawingService_GetDrawingCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDrawing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDrawingService/AddDrawing" message="tns:IDrawingService_AddDrawing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDrawingService/AddDrawingResponse" message="tns:IDrawingService_AddDrawing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDrawing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDrawingService/UpdateDrawing" message="tns:IDrawingService_UpdateDrawing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDrawingService/UpdateDrawingResponse" message="tns:IDrawingService_UpdateDrawing_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDrawingService" type="tns:IDrawingService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDrawing">
+      <soap:operation soapAction="http://tempuri.org/IDrawingService/GetDrawing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDrawingCount">
+      <soap:operation soapAction="http://tempuri.org/IDrawingService/GetDrawingCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDrawing">
+      <soap:operation soapAction="http://tempuri.org/IDrawingService/AddDrawing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDrawing">
+      <soap:operation soapAction="http://tempuri.org/IDrawingService/UpdateDrawing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DrawingService">
+    <wsdl:port name="BasicHttpBinding_IDrawingService" binding="tns:BasicHttpBinding_IDrawingService">
+      <soap:address location="http://192.168.16.254:8002/DrawingService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

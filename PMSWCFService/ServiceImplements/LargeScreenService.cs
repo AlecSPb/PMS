@@ -123,12 +123,13 @@ namespace PMSWCFService
         /// </summary>
         private void LockAllTodaysPlan()
         {
-            if (DateTime.Now > DateTime.Today.AddHours(17).AddMinutes(0))
+            if (DateTime.Now > DateTime.Today.AddHours(16).AddMinutes(0))
             {
                 using (var db = new PMSDbContext())
                 {
+                    var today = DateTime.Today;
                     var today_unlocked_plans = from p in db.VHPPlans
-                                               where DbFunctions.DiffDays(p.PlanDate.Date, DateTime.Today) == 0
+                                               where DbFunctions.TruncateTime(p.PlanDate) == today
                                                && p.State == "已核验"
                                                && p.IsLocked == false
                                                select p;
@@ -143,10 +144,9 @@ namespace PMSWCFService
                         db.SaveChanges();
                         XS.Current.Debug("成功触发LockAllTodaysPlan锁定事件");
                     }
-
                 }
             }
-            XS.Current.Debug("成功触发LockAllTodaysPlan");
+
         }
 
 

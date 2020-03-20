@@ -385,6 +385,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\DrawingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\EditLockService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1878,6 +1883,19 @@
     <Content Include="HelpDocs\新功能使用介绍.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\DrawingService\DrawingService.wsdl" />
+    <None Include="Service References\DrawingService\DrawingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DrawingService\DrawingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DrawingService\DrawingService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DrawingService\PMSClient.DrawingService.DcDrawing.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\EditLockService\EditLockService.disco" />
     <None Include="Service References\EditLockService\configuration91.svcinfo" />
     <None Include="Service References\EditLockService\configuration.svcinfo" />
@@ -1930,6 +1948,13 @@
     <None Include="Service References\PMSSettings\configuration91.svcinfo" />
     <None Include="Service References\PMSSettings\configuration.svcinfo" />
     <None Include="Service References\PMSSettings\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DrawingService\DrawingService.disco" />
+    <None Include="Service References\DrawingService\configuration91.svcinfo" />
+    <None Include="Service References\DrawingService\configuration.svcinfo" />
+    <None Include="Service References\DrawingService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -2539,6 +2564,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\BasicService\" />
+    <WCFMetadataStorage Include="Service References\DrawingService\" />
     <WCFMetadataStorage Include="Service References\EditLockService\" />
     <WCFMetadataStorage Include="Service References\ExtraService\" />
     <WCFMetadataStorage Include="Service References\FailureService\" />

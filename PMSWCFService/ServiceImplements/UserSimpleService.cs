@@ -15,7 +15,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var role = dc.Roles.Where(i => i.ID == roleId).FirstOrDefault();
@@ -41,7 +41,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var role = dc.Roles.Where(i => i.ID == roleId).FirstOrDefault();
@@ -60,7 +60,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<User, DcUser>());

@@ -15,7 +15,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -38,7 +38,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 SaveHistory(model, uid);
                 return AddRecordVHP(model);
             }
@@ -53,7 +53,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -76,7 +76,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var result = dc.RecordVHPs.Where(p => p.PlanVHPID == planVHPId&&p.State!=PMSCommon.SimpleState.作废.ToString())
@@ -102,7 +102,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var result = dc.RecordVHPs.Count();
@@ -121,7 +121,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -144,7 +144,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 SaveHistory(model, uid);
                 return UpdateReocrdVHP(model);
             }
@@ -159,7 +159,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<DcRecordVHP, RecordVHPHistory>());

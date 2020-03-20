@@ -16,7 +16,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 int result = 0;
                 Mapper.Initialize(cfg => cfg.CreateMap<DcToolFilling, ToolFilling>());
                 using (var db = new PMSDbContext())
@@ -38,7 +38,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 int result = 0;
                 Mapper.Initialize(cfg => cfg.CreateMap<DcToolMilling, ToolMilling>());
                 using (var db = new PMSDbContext())
@@ -60,7 +60,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 int result = 0;
                 using (var db = new PMSDbContext())
                 {
@@ -81,7 +81,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 int result = 0;
                 using (var db = new PMSDbContext())
                 {
@@ -103,7 +103,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var service = new PMSDbContext())
                 {
                     var query = from tt in service.ToolFillings
@@ -127,7 +127,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var service = new PMSDbContext())
                 {
                     return service.ToolFillings.Count();
@@ -144,7 +144,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var service = new PMSDbContext())
                 {
                     var query = from tt in service.ToolMillings
@@ -168,7 +168,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var service = new PMSDbContext())
                 {
                     return service.ToolMillings.Count();
@@ -185,7 +185,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 int result = 0;
                 Mapper.Initialize(cfg => cfg.CreateMap<DcToolFilling, ToolFilling>());
                 using (var db = new PMSDbContext())
@@ -207,7 +207,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 int result = 0;
                 Mapper.Initialize(cfg => cfg.CreateMap<DcToolMilling, ToolMilling>());
                 using (var db = new PMSDbContext())

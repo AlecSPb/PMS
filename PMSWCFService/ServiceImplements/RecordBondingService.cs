@@ -17,7 +17,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -39,7 +39,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 SaveHistory(model, uid);
                 return AddRecordBongding(model);
             }
@@ -54,7 +54,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -79,7 +79,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.RecordBondings
@@ -105,7 +105,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     return dc.RecordBondings.Where(p => p.TargetProductID.Contains(productid) && p.TargetComposition.Contains(composition)
@@ -123,7 +123,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.RecordBondings
@@ -149,7 +149,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     return dc.RecordBondings.Where(p => p.TargetProductID.Contains(productid)
@@ -169,7 +169,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.RecordBondings
@@ -197,7 +197,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var result = dc.RecordBondings.Where(p => p.State == BondingState.未完成.ToString())
@@ -218,7 +218,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -240,7 +240,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 SaveHistory(model, uid);
                 return UpdateRecordBongding(model);
             }
@@ -255,7 +255,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<DcRecordBonding, RecordBondingHistory>());
@@ -278,7 +278,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.RecordBondings
@@ -306,7 +306,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.RecordBondings
@@ -328,7 +328,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.RecordBondings
@@ -354,7 +354,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var query = from p in dc.RecordBondings

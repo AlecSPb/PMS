@@ -15,7 +15,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<DcSample, Sample>());
@@ -34,7 +34,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<Sample, DcSample>());
@@ -59,7 +59,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var query = from m in db.Samples
@@ -82,7 +82,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var query = from m in db.Samples
@@ -103,7 +103,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<DcSample, Sample>());

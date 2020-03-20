@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b8cdf5f-c70d-4088-9b4f-ed2d181bc4b2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.16.254:8002/DrawingService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DrawingService.xsd" MetadataType="Schema" ID="661caa06-b4fd-4302-af7d-105798b69db8" SourceId="1" SourceUrl="http://192.168.16.254:8002/DrawingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DrawingService1.xsd" MetadataType="Schema" ID="aba107fb-fec0-4440-a11f-65efeac66f58" SourceId="1" SourceUrl="http://192.168.16.254:8002/DrawingService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DrawingService.wsdl" MetadataType="Wsdl" ID="70c1b7e3-cd5d-4492-ac1f-b7d98491b854" SourceId="1" SourceUrl="http://192.168.16.254:8002/DrawingService.svc?wsdl" />
+    <MetadataFile FileName="DrawingService2.xsd" MetadataType="Schema" ID="cacbf5f1-b0e8-40b0-8192-503a94e778ce" SourceId="1" SourceUrl="http://192.168.16.254:8002/DrawingService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DrawingService.disco" MetadataType="Disco" ID="a5df8f4f-84e9-4a19-b40a-68a518e86ace" SourceId="1" SourceUrl="http://192.168.16.254:8002/DrawingService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

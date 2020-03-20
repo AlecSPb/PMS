@@ -23,7 +23,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var query = from dd in db.DeliveryItems
@@ -68,7 +68,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     DateTime startTime = new DateTime(year, month, 1);
@@ -116,7 +116,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     DateTime startTime = new DateTime(year, month, 1);
@@ -153,7 +153,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var query = from d in db.DeliveryItems

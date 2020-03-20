@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PMSSettingService.svc" />
+    <Content Include="DrawingService.svc" />
     <Content Include="SampleService.svc" />
     <Content Include="RawMaterialSheetService.svc" />
     <Content Include="BasicDataService.svc" />
@@ -153,6 +154,7 @@
     <Compile Include="DataContracts\DcItemDebit.cs" />
     <Compile Include="DataContracts\DcEnvironmentInfo.cs" />
     <Compile Include="DataContracts\DcDeliveryChase.cs" />
+    <Compile Include="DataContracts\DcDrawing.cs" />
     <Compile Include="DataContracts\Model\PMS230DataModel.cs" />
     <Compile Include="DataContracts\Model\PMSDeliveryItemExtra.cs" />
     <Compile Include="DataContracts\Model\PMSMaterialOrderItemExtra.cs" />
@@ -198,6 +200,7 @@
     <Compile Include="ServiceContracts\IToolInventoryService.cs" />
     <Compile Include="ServiceContracts\IToolSieveService.cs" />
     <Compile Include="ServiceImplements\ComplexQueryService.cs" />
+    <Compile Include="ServiceImplements\DrawingService.cs" />
     <Compile Include="ServiceImplements\EditLockService.cs" />
     <Compile Include="ServiceImplements\ExtraService.cs" />
     <Compile Include="ServiceContracts\ICheckListService.cs" />
@@ -220,6 +223,7 @@
     <Compile Include="ServiceImplements\FailureService.cs" />
     <Compile Include="ServiceImplements\HeartBeatService.cs" />
     <Compile Include="ServiceImplements\HistoryService.cs" />
+    <Compile Include="ServiceContracts\IDrawingService.cs" />
     <Compile Include="ServiceImplements\LargeScreenService.cs" />
     <Compile Include="ServiceImplements\MachineFixService.cs" />
     <Compile Include="ServiceImplements\MainStatisticService.cs" />

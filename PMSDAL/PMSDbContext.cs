@@ -153,5 +153,7 @@ namespace PMSDAL
         public DbSet<DeliveryChase> DeliveryChases { get; set; }
 
         public DbSet<PMSSetting> PMSSettings { get; set; }
+
+        public DbSet<Drawing> Drawings { get; set; }
     }
 }

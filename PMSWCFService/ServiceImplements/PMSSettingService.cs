@@ -15,7 +15,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     db.PMSSettings.Add(new PMSSetting() { Key = key, Value = value });
@@ -32,7 +32,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var query = from s in db.PMSSettings
@@ -53,7 +53,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var entity = db.PMSSettings.Where(i => i.Key == key).FirstOrDefault();

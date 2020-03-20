@@ -28,7 +28,7 @@ namespace PMSWCFService
         /// 执行授权检查和日志记录
         /// </summary>
         /// <param name="caller">调用函数</param>
-        public static void Run([CallerMemberName] string caller = "")
+        public static void RunLog([CallerMemberName] string caller = "")
         {
             try
             {

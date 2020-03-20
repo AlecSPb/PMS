@@ -15,7 +15,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 Mapper.Initialize(config => config.CreateMap<DcRawMaterialSheet, RawMaterialSheet>());
 
                 using (var db = new PMSDbContext())
@@ -36,7 +36,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var query = from m in db.RawMaterialSheets
@@ -60,7 +60,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var query = from m in db.RawMaterialSheets
@@ -85,7 +85,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var query = from m in db.RawMaterialSheets
@@ -108,7 +108,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var query = from m in db.RawMaterialSheets
@@ -131,7 +131,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.Run();
+                XS.RunLog();
                 Mapper.Initialize(config => config.CreateMap<DcRawMaterialSheet, RawMaterialSheet>());
 
                 using (var db = new PMSDbContext())
