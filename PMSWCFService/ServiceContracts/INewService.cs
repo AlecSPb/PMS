@@ -11,6 +11,7 @@ namespace PMSWCFService.ServiceContracts
     /// 这个是尝试新功能的新服务
     /// 旧的服务接口不再变动，保持兼容
     /// 新服务另起炉灶
+    /// 慎重变动
     /// </summary>
     [ServiceContract]
     public interface INewService
@@ -28,7 +29,9 @@ namespace PMSWCFService.ServiceContracts
         DcOrder GetOrderByID(Guid id);
 
         [OperationContract]
-        void UpdateOrder(DcOrder model,string user);
+        void AddOrder(DcOrder model, string user);
+        [OperationContract]
+        void UpdateOrder(DcOrder model, string user);
 
         #endregion
 
@@ -38,6 +41,15 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetMissonCount(string composition, string pminumber, string state);
 
+        [OperationContract]
+        List<DcPlanExtra> GetPlan(int s, int t, string composition, string pminumber);
+        [OperationContract]
+        int GetPlanCount(string composition, string pminumber);
+
+        [OperationContract]
+        void AddPlan(DcPlanVHP model, string user);
+        [OperationContract]
+        void UpdatePlan(DcPlanVHP model, string user);
         #endregion
 
         #region 原料
@@ -45,6 +57,12 @@ namespace PMSWCFService.ServiceContracts
         #endregion
 
         #region 记录
+
+        [OperationContract]
+        List<DcRecordTest> GetRecordTest(int s, int t, string composition, string customer, string pminumber);
+        [OperationContract]
+        int GetRecordTestCount(string composition, string customer, string pminumber);
+
         [OperationContract]
         DateTime GetRecordTestLastUpdateTime(Guid id);
         #endregion

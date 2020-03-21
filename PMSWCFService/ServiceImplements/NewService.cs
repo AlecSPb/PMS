@@ -14,6 +14,33 @@ namespace PMSWCFService
     /// </summary>
     public class NewService : INewService
     {
+        public void AddOrder(DcOrder model, string user)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var db = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcOrder, PMSOrder>());
+                    var entity = Mapper.Map<PMSOrder>(model);
+                    entity.LastUpdateTime = DateTime.Now;
+                    db.Orders.Add(entity);
+                    db.SaveChanges();
+                    SaveOrderHistory(model, user);
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public void AddPlan(DcPlanVHP model, string user)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<DcOrder> GetMisson(int s, int t, string composition, string pminumber, string state)
         {
             throw new NotImplementedException();
@@ -58,6 +85,26 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
+        public List<DcPlanExtra> GetPlan(int s, int t, string composition, string pminumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetPlanCount(string composition, string pminumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<DcRecordTest> GetRecordTest(int s, int t, string composition, string customer, string pminumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetRecordTestCount(string composition, string customer, string pminumber)
+        {
+            throw new NotImplementedException();
+        }
+
         public DateTime GetRecordTestLastUpdateTime(Guid id)
         {
             throw new NotImplementedException();
@@ -83,6 +130,11 @@ namespace PMSWCFService
                 XS.Current.Error(ex);
                 throw ex;
             }
+        }
+
+        public void UpdatePlan(DcPlanVHP model, string user)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>

@@ -20,9 +20,12 @@ namespace PMSClient.ViewModel.VMHelper
                 var plan_service = new PlanVHPServiceClient();
                 foreach (var item in today_plans)
                 {
-                    var plan = item.Plan;
-                    plan.IsLocked = true;
-                    plan_service.UpdateVHPPlan(plan);
+                    if (!item.Plan.IsLocked)
+                    {
+                        var plan = item.Plan;
+                        plan.IsLocked = true;
+                        plan_service.UpdateVHPPlan(plan);
+                    }
                 }
                 plan_service.Close();
                 misson_service.Close();

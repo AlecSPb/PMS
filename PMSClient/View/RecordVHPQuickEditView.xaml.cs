@@ -44,11 +44,6 @@ namespace PMSClient.View
                 this.Dispatcher.Invoke(() =>
                 {
                     txtCurrentTime.Text = $"现在时间:{DateTime.Now.ToString("yyyy-MM-dd dddd HH:mm:ss")}";
-                    //如果当前时间超过当天的17点，自动锁定所有的当天计划，解决遗忘锁定的问题
-                    if (DateTime.Now > DateTime.Today.AddHours(17))
-                    {
-                        PMSClient.ViewModel.VMHelper.RecordVHPVMHelper.LockAll();
-                    }
                 });
             }
             catch (Exception)
