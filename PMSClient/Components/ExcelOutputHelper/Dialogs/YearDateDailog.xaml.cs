@@ -28,7 +28,7 @@ namespace PMSClient.Components.ExcelOutputHelper.Dialogs
         public void LoadDefaultValues()
         {
             List<int> years = new List<int>();
-            for (int i = 2017; i < 2100; i++)
+            for (int i = 2017; i <= 2100; i++)
             {
                 years.Add(i);
             }
@@ -36,7 +36,7 @@ namespace PMSClient.Components.ExcelOutputHelper.Dialogs
             CboYear.SelectedItem = DateTime.Now.Year;
 
             List<int> months = new List<int>();
-            for (int i = 1; i < 12; i++)
+            for (int i = 1; i <= 12; i++)
             {
                 months.Add(i);
             }
