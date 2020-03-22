@@ -6,6 +6,7 @@ using AutoMapper;
 using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
 using PMSDAL;
+using System.Data.Entity;
 
 namespace PMSWCFService
 {
@@ -108,6 +109,33 @@ namespace PMSWCFService
         public DateTime GetRecordTestLastUpdateTime(Guid id)
         {
             throw new NotImplementedException();
+        }
+
+        public void LockTodayPlans()
+        {
+            if (DateTime.Now > DateTime.Today.AddHours(16).AddMinutes(0))
+            {
+                using (var db = new PMSDbContext())
+                {
+                    var today = DateTime.Today;
+                    var today_unlocked_plans = from p in db.VHPPlans
+                                               where DbFunctions.TruncateTime(p.PlanDate) == today
+                                               && p.State == "已核验"
+                                               && p.IsLocked == false
+                                               select p;
+                    //如果存在没有锁定的计划
+                    if (today_unlocked_plans.Count() > 0)
+                    {
+                        foreach (var p in today_unlocked_plans)
+                        {
+                            p.IsLocked = true;
+                            db.Entry(p).State = EntityState.Modified;
+                        }
+                        db.SaveChanges();
+                        XS.Current.Debug("成功触发LockAllTodaysPlan锁定事件");
+                    }
+                }
+            }
         }
 
         public void UpdateOrder(DcOrder model, string user)

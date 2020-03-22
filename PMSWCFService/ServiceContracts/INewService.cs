@@ -50,6 +50,9 @@ namespace PMSWCFService.ServiceContracts
         void AddPlan(DcPlanVHP model, string user);
         [OperationContract]
         void UpdatePlan(DcPlanVHP model, string user);
+
+        [OperationContract]
+        void LockTodayPlans();
         #endregion
 
         #region 原料
