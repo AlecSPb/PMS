@@ -32,7 +32,7 @@ namespace PMSClient
     {
         private ViewLocator _views;
         private ToolViewLocator _toolviews;
-        private DispatcherTimer _timerMain;
+        private Timer _timerMain;
         private fm.NotifyIcon _notifyIcon;
         public MainDesktop()
         {
@@ -85,9 +85,9 @@ namespace PMSClient
 
             #region 设置主定时器
             //设置主定时器
-            _timerMain = new DispatcherTimer();
-            _timerMain.Interval = new TimeSpan(0, 0, 30);
-            _timerMain.Tick += _timerMain_Tick; ;
+            _timerMain = new Timer();
+            _timerMain.Interval = 30000;
+            _timerMain.Elapsed += _timerMain_Tick;
             _timerMain.Start();
             #endregion
 
@@ -116,11 +116,17 @@ namespace PMSClient
 
         private bool HeartBeatCheck()
         {
+            var is_lan_ok = HeartBeatLAN();
+            var is_www_ok = HeartBeatWWW();
+            return is_www_ok || is_lan_ok;
+        }
 
-            if (PMSHelper.CurrentSession?.CurrentUserRole?.GroupName == "管理员")
+        private bool HeartBeatWWW()
+        {
+            System.Diagnostics.Debug.WriteLine("外网心跳检测");
+            try
             {
-                System.Diagnostics.Debug.WriteLine("外网心跳检测正常");
-                try
+                if (PMSHelper.CurrentSession?.CurrentUserRole?.GroupName == "管理员")
                 {
                     using (var remote_heartbeat = new PMSClient.RemoteHeartBeatService.HeartBeatSeriveClient())
                     {
@@ -133,19 +139,25 @@ namespace PMSClient
                         }
                     }
                 }
-                catch (Exception ex)
+                return true;
+            }
+            catch (Exception ex)
+            {
+                this.Dispatcher.Invoke(() =>
                 {
-                    this.Dispatcher.Invoke(() =>
-                    {
-                        TxtRemoteHeartBeat.Text = "外网心跳检测出错";
-                    });
-                    PMSHelper.CurrentLog.Error(ex);
-                }
+                    TxtRemoteHeartBeat.Text = "外网心跳检测出错";
+                });
+                PMSHelper.CurrentLog.Error(ex);
+                return false;
             }
 
+        }
+
+        private bool HeartBeatLAN()
+        {
             try
             {
-                System.Diagnostics.Debug.WriteLine("内网心跳检测正常");
+                System.Diagnostics.Debug.WriteLine("内网心跳检测");
 
                 using (var lan_heartbeat = new PMSClient.HeartBeatService.HeartBeatSeriveClient())
                 {
@@ -180,7 +192,6 @@ namespace PMSClient
                 PMSHelper.CurrentLog.Error(ex);
                 return false;
             }
-
         }
 
         public int noticeCount = 0;
