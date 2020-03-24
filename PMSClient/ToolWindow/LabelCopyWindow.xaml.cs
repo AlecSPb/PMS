@@ -23,13 +23,15 @@ namespace PMSClient.ToolWindow
         public LabelCopyWindow()
         {
             InitializeComponent();
-            LabelInformation = "无";
-            BasicInformation = "无";
-            this.DataContext = this;
         }
 
-        public string LabelInformation { get; set; }
-        public string BasicInformation { get; set; }
+        public string LabelInformation
+        {
+            set
+            {
+                TxtLabel.Text = value;
+            }
+        }
 
         private void btnOpenBarTender_Click(object sender, RoutedEventArgs e)
         {

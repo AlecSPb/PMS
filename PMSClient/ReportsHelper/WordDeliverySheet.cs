@@ -13,8 +13,8 @@ namespace PMSClient.ReportsHelper
         public WordDeliverySheet()
         {
             var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
-            sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "DeliverySheet.docx");
-            tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "DeliverySheet_Temp.docx");
+            sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "DeliverySheet200324.docx");
+            tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "DeliverySheet200324_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
         public WordDeliverySheet(string deliverySheetType)
@@ -22,13 +22,13 @@ namespace PMSClient.ReportsHelper
             var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
             if (deliverySheetType == "English")
             {
-                sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "DeliverySheet.docx");
-                tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "DeliverySheet_Temp.docx");
+                sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "DeliverySheet200324.docx");
+                tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "DeliverySheet200324_Temp.docx");
             }
             else
             {
-                sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "DeliverySheet_zh_cn.docx");
-                tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "DeliverySheet_zh_cn_Temp.docx");
+                sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "DeliverySheet200324_zh_cn.docx");
+                tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "DeliverySheet200324_zh_cn_Temp.docx");
             }
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
             sheetType = deliverySheetType;
@@ -63,7 +63,7 @@ namespace PMSClient.ReportsHelper
                     document.ReplaceText("[ShipTime]", model.ShipTime.ToString("yyyy-MM-dd"));
                     document.ReplaceText("[Country]", model.Country ?? "");
                     document.ReplaceText("[DeliveryName]", model.DeliveryName ?? "");
-                    document.ReplaceText("[DeliveryNumber]", model.DeliveryNumber ?? "");
+                    document.ReplaceText("[DeliveryNumber]", model.DeliveryExpress ?? "" + model.DeliveryNumber ?? "");
                     document.ReplaceText("[InvoiceNumber]", model.InvoiceNumber ?? "");
 
                     if (document.Tables[0] != null)

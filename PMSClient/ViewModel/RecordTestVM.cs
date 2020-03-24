@@ -246,7 +246,6 @@ namespace PMSClient.ViewModel
                         sb.Append("【二次加工细节】:");
                         sb.AppendLine(result.SecondMachineDetails);
                         #endregion
-
                         if (result.DimensionDetails.Contains("FR="))
                         {
                             window.WindowWarning = "此靶材有倒角要求";
@@ -267,27 +266,13 @@ namespace PMSClient.ViewModel
             using (var service = new RecordTestServiceClient())
             {
                 StringBuilder sb = new StringBuilder();
-                var result = service.GetUnFinishedRecordTest();
-
-                if (result.Count() == 0)
-                {
-                    PMSDialogService.ShowWarning("无[未录完-红色]的测试记录");
-                    return;
-                }
-
-
+                var result = service.GetRecordTestBySearch(1,30,"","","");
                 foreach (var item in result)
                 {
-                    sb.AppendLine(item.ProductID);
-                    sb.AppendLine(item.Composition);
-                    sb.AppendLine(item.Dimension);
-                    sb.AppendLine(item.PO);
-                    sb.AppendLine(item.Customer);
-                    sb.AppendLine("--------------------");
+                    sb.AppendLine(VMHelper.RecordTestVMHelper.CreateLabel(item));
                 }
                 var win = new LabelCopyWindow();
                 win.LabelInformation = sb.ToString();
-                win.BasicInformation = "仔细核对，认真检查，防止出错";
                 win.Show();
             }
         }
@@ -556,60 +541,9 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-
-                var sb = new StringBuilder();
-                sb.AppendLine(model.RecordTest.ProductID);
-                sb.AppendLine(model.RecordTest.Composition);
-                sb.AppendLine(model.RecordTest.Dimension);
-                sb.AppendLine(model.RecordTest.Customer);
-                sb.AppendLine(model.RecordTest.PO);
-                sb.AppendLine("=====  空行产品标签↓  =====");
-                sb.AppendLine(model.RecordTest.ProductID);
-                sb.AppendLine();
-                sb.AppendLine(model.RecordTest.Composition);
-                sb.AppendLine();
-                sb.AppendLine(model.RecordTest.Dimension);
-                sb.AppendLine("=====  二维码标签↓  =====");
-                sb.AppendLine(model.RecordTest.ProductID);
-                sb.AppendLine(model.RecordTest.Composition);
-                sb.AppendLine(Helpers.CompositionHelper.ConvertToAtmDescend(model.RecordTest.Composition));
-                sb.AppendLine(model.RecordTest.Customer);
-                //sb.AppendLine();
-                //sb.AppendLine(model.RecordTest.Customer);
-                //sb.AppendLine();
-                //sb.AppendLine(model.RecordTest.PO);
-                sb.AppendLine("=====  简成分样品标签↓  =====");
-                sb.AppendLine(Helpers.CompositionHelper.RemoveNumbers(model.RecordTest.Composition));
-                sb.AppendLine("Weight      g");
-                sb.AppendLine(model.RecordTest.ProductID);
-                sb.AppendLine();
-                sb.AppendLine("=====  全成分样品标签↓  =====");
-                sb.AppendLine(model.RecordTest.Composition);
-                sb.AppendLine("Weight      g");
-                sb.AppendLine(model.RecordTest.ProductID);
-                sb.AppendLine();
-                var mainContent = sb.ToString();
-
-
-                //var pageTitle = "产品标签打印输出";
-                //var tips = @"点击打开模板按钮，粘贴不同内容到模板合适位置，热压编号是自动生成的，可能不正确，请再自行修改，然后打印标签";
-                //var template = "产品标签";
-                //var helpimage = "productionlabel.png";
-                //PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.RecordTest, pageTitle,
-                //    tips, template, mainContent, helpimage);
-                //NavigationService.GoTo(PMSViews.LabelOutPut);
-
-                //2017-12-18
-                string extrainfo = string.Empty;
-                if (model.RecordTest.Customer.Contains("Chaozhou"))
-                {
-                    extrainfo = "此标签成分是潮州的，所以成分需要缩写，例如CIGS-Ga6.5的格式";
-                }
-                PMSClient.ToolWindow.LabelCopyWindow lcw = new ToolWindow.LabelCopyWindow
-                {
-                    LabelInformation = mainContent,
-                    BasicInformation = extrainfo
-                };
+                var s = VMHelper.RecordTestVMHelper.CreateLabel(model.RecordTest);
+                var lcw = new ToolWindow.LabelCopyWindow();
+                lcw.LabelInformation = s;
                 lcw.Show();
             }
         }

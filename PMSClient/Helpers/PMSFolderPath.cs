@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace PMSClient
         {
             get
             {
-                return System.IO.Path.Combine(Environment.CurrentDirectory, "Documents");
+                return Path.Combine(Environment.CurrentDirectory, "Documents");
             }
         }
         public static string Roots
@@ -22,5 +23,14 @@ namespace PMSClient
                 return Environment.CurrentDirectory;
             }
         }
+
+        public static string DocxReportTemplate
+        {
+            get
+            {
+                return Path.Combine(Environment.CurrentDirectory, "Resource", "DocTemplate", "Reports");
+            }
+        }
+
     }
 }

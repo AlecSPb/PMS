@@ -73,48 +73,16 @@ namespace PMSClient.ViewModel
                 {
                     var pageData = service.GetPlanExtra2(0, 100, searchCode, "", "");
                     var ordered = pageData.OrderBy(i => i.Plan.PlanLot).ThenBy(i => i.Plan.SearchCode);
+
                     StringBuilder lb = new StringBuilder();
                     foreach (var item in ordered)
                     {
-                        lb.AppendLine($"共{item.Plan.Quantity}片");
-                        lb.AppendLine();
-
-                        lb.Append(UsefulPackage.PMSTranslate.PlanLot(item));
-                        lb.Append(" ");
-                        lb.Append(item.Plan.PlanType);
-                        lb.Append(" ");
-                        lb.AppendLine(item.Plan.ProcessCode);
-
-                        lb.AppendLine(item.Misson.CompositionStandard);
-                        if (item.Plan.PlanType.Contains("回收"))
-                        {
-                            lb.Append("模具:");
-                            lb.AppendLine(item.Plan.MoldDiameter.ToString() + "mm OD x " +item.Plan.Thickness + "mm");
-                        }
-                        lb.Append("订单:");
-                        lb.AppendLine(item.Misson.PMINumber);
-                        if (!item.Plan.PlanType.Contains("回收"))
-                        {
-                            lb.Append("产品:");
-                            lb.AppendLine(item.Misson.Dimension);
-                            lb.AppendLine(item.Misson.DimensionDetails);
-                        }
-                        lb.AppendLine("=====  一般标签↑，样品标签↓  =====");
-                        lb.AppendLine(item.Misson.CompositionStandard);
-                        lb.AppendLine("样品      g");
-                        lb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(item));
-                        lb.AppendLine();
-
-                        lb.AppendLine("################下一块靶材######################");
-                        lb.AppendLine();
-
+                        lb.AppendLine(VMHelper.PlanVMHelper.CreateLabel(item));
                     }
-                    PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.Plan, "批量",
-                        null, null, lb.ToString(), null);
-
+                    var win = new ToolWindow.LabelCopyWindow();
+                    win.LabelInformation = lb.ToString();
+                    win.Show();
                 }
-                var win = new Tool.LabelOutPutWindow();
-                win.Show();
             }
             catch (Exception ex)
             {
@@ -238,79 +206,9 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                if (model.Plan.PlanDate.Date >= DateTime.Now.Date)
-                {
-                    PMSDialogService.ShowWarning("选择的计划还没有热压，请确认你选择的【计划日期】是否正确？");
-                }
-                //显示提示框给标签打印者
-                StringBuilder basic = new StringBuilder();
-                basic.Append("共");
-                basic.Append(model.Plan.Quantity);
-                basic.Append("片");
-                basic.AppendLine();
-                basic.Append("制粉:");
-                basic.Append(model.Plan.MillingRequirement);
-                basic.AppendLine();
-                basic.Append("装模:");
-                basic.Append(model.Plan.FillingRequirement);
-                basic.AppendLine();
-                basic.AppendLine();
-
-                //如果是50mm的靶材且类型为加工，弹出打印多张的警告窗口
-                if (model.Plan.PlanType.Contains("加工")
-                    && model.Misson.Dimension.Contains("50"))
-                {
-                    basic.Append("可能会切割多块，需要多个产品标签+样品标签");
-                }
-
-                if (model.Plan.ProcessCode == "W2"
-                    && model.Plan.MoldDiameter == 450)
-                {
-                    basic.Append("450产品需要打印编号标签，取模记录单上也要标注");
-                }
-
-
-                var lb = new StringBuilder();
-                lb.Append(UsefulPackage.PMSTranslate.PlanLot(model));
-                lb.Append(" ");
-                lb.Append(model.Plan.PlanType);
-                lb.Append(" ");
-                lb.AppendLine(model.Plan.ProcessCode);
-
-                lb.AppendLine(model.Misson.CompositionStandard);
-
-                if (model.Plan.PlanType.Contains("回收"))
-                {
-                    lb.Append("模具:");
-                    lb.AppendLine(model.Plan.MoldDiameter.ToString() + "mm OD x " + model.Plan.Thickness + "mm");
-                }
-
-                lb.Append("订单:");
-                lb.AppendLine(model.Misson.PMINumber);
-                if (!model.Plan.PlanType.Contains("回收"))
-                {
-                    lb.Append("产品:");
-                    lb.AppendLine(model.Misson.Dimension);
-                    lb.AppendLine(model.Misson.DimensionDetails);
-                }
-                lb.AppendLine();
-                lb.AppendLine("=====  一般标签↑，样品标签↓  =====");
-                lb.AppendLine();
-                lb.AppendLine(model.Misson.CompositionStandard);
-                lb.AppendLine("Weight      g");
-                lb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
-
-                lb.AppendLine("=====  简成分样品标签↓  =====");
-                lb.AppendLine(Helpers.CompositionHelper.RemoveNumbers(model.Misson.CompositionStandard));
-                lb.AppendLine("Weight      g");
-                lb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
-                lb.AppendLine();
-
                 var lcw = new ToolWindow.LabelCopyWindow();
-                lcw.LabelInformation = lb.ToString();
-                lcw.BasicInformation = basic.ToString();
+                lcw.LabelInformation = VMHelper.PlanVMHelper.CreateLabel(model);
                 lcw.Show();
-
             }
         }
         private void ActionAll()

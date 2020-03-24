@@ -109,6 +109,7 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="{StaticResource RDMCalculationDensity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"  Binding="{Binding CalculationDensity,StringFormat={}{0:F2}}"/>
                         <DataGridTextColumn Header="{StaticResource RDMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Binding="{Binding Remark}"/>
                         <DataGridTextColumn Header="{StaticResource RDMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Binding="{Binding Creator}"/>
                         <DataGridTextColumn Header="{StaticResource RDMCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"  Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>

@@ -703,6 +703,7 @@
     <Compile Include="ViewModel\RecordBondingSelectVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldSelectVM.cs" />
     <Compile Include="ViewModel\VMHelper\OrderVMHelper.cs" />
+    <Compile Include="ViewModel\VMHelper\PlanVMHelper.cs" />
     <Compile Include="ViewModel\VMHelper\PMSBatchHelper.cs" />
     <Compile Include="ViewModel\VMHelper\RecordTestVMHelper.cs" />
     <Compile Include="ViewModel\VMHelper\RecordVHPVMHelper.cs" />
@@ -1889,7 +1890,16 @@
     <Content Include="Resource\DocTemplate\Reports\Samples.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="HelpDocs\新功能使用介绍.docx">
+    <Content Include="HelpDocs\新功能使用介绍200316.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\DocTemplate\Reports\DeliverySheet200324.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\DocTemplate\Reports\DeliverySheet200324_zh_cn.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HelpDocs\新功能使用介绍200324.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Service References\DrawingService\DrawingService.wsdl" />
@@ -2579,12 +2589,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

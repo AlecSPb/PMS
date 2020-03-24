@@ -80,9 +80,21 @@ namespace PMSClient.ReportsHelperNew
                                             ||item.Plan.PlanType.Contains("外协")))
                                 {
                                     string remark = GetBigNumber(item.Plan.VHPRequirement);
-                                    row.Cells[13].Paragraphs[0].Append(remark);
-                                    row.Cells[13].VerticalAlignment = VerticalAlignment.Center;
+                                    row.Cells[12].Paragraphs[0].Append(remark);
+                                    row.Cells[12].VerticalAlignment = VerticalAlignment.Center;
                                 }
+
+                                //添加是否有样品记录
+                                string sample_indicator = "";
+                                if (!item.Plan.PlanType.Contains("回收"))
+                                {
+                                    bool needSample = Helpers.OrderHelper.NeedSample(item.Misson.SampleNeed) ||
+                                    Helpers.OrderHelper.NeedSample(item.Misson.SampleForAnlysis);
+                                    sample_indicator = needSample ? "[样]" : "";
+                                }
+                                row.Cells[13].Paragraphs[0].Append(sample_indicator).Alignment=Alignment.center;
+                                row.Cells[13].VerticalAlignment = VerticalAlignment.Center;
+
 
                                 //隔行着色
                                 if (row_index % 2 == 0)
