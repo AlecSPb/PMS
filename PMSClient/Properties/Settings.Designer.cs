@@ -85,7 +85,7 @@ namespace PMSClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("王亚梅")]
+        [global::System.Configuration.DefaultSettingValueAttribute("秦雪梅")]
         public string ExpressSender {
             get {
                 return ((string)(this["ExpressSender"]));
@@ -97,7 +97,7 @@ namespace PMSClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("15223459638")]
+        [global::System.Configuration.DefaultSettingValueAttribute("13808071935")]
         public string ExpressSenderPhone {
             get {
                 return ((string)(this["ExpressSenderPhone"]));
@@ -133,7 +133,7 @@ namespace PMSClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4.9.181.55")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4.9.182.55")]
         public string Version {
             get {
                 return ((string)(this["Version"]));

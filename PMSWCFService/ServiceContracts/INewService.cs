@@ -74,5 +74,17 @@ namespace PMSWCFService.ServiceContracts
         #region 发货
 
         #endregion
+
+        #region 外协加工
+        [OperationContract]
+        List<DcOutsideProcess> GetOutsideProcess(int s, int t, string productid, string composition, string provider);
+        [OperationContract]
+        int GetOutsideProcessCount(string productid, string composition, string provider);
+
+        [OperationContract]
+        int AddOutsideProcess(DcOutsideProcess model);
+        [OperationContract]
+        int UpdateOutsideProcess(DcOutsideProcess model);
+        #endregion
     }
 }

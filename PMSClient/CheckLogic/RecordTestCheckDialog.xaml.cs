@@ -114,6 +114,13 @@ namespace PMSClient.CheckLogic
             {
                 key = "CIGS";
             }
+            if (abbr.Contains("Cu")
+                && !abbr.Contains("In")
+                && abbr.Contains("Ga")
+                && abbr.Contains("Se"))
+            {
+                key = "CuGaSe";
+            }
             else if (abbr.Contains("Se")
                 && abbr.Contains("As")
                 && abbr.Contains("Ge"))

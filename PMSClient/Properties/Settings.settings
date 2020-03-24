@@ -18,10 +18,10 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="ExpressSender" Type="System.String" Scope="User">
-      <Value Profile="(Default)">王亚梅</Value>
+      <Value Profile="(Default)">秦雪梅</Value>
     </Setting>
     <Setting Name="ExpressSenderPhone" Type="System.String" Scope="User">
-      <Value Profile="(Default)">15223459638</Value>
+      <Value Profile="(Default)">13808071935</Value>
     </Setting>
     <Setting Name="DevStatus" Type="System.String" Scope="User">
       <Value Profile="(Default)">测试</Value>
@@ -30,7 +30,7 @@
       <Value Profile="(Default)">0.2</Value>
     </Setting>
     <Setting Name="Version" Type="System.String" Scope="User">
-      <Value Profile="(Default)">4.9.181.55</Value>
+      <Value Profile="(Default)">4.9.182.55</Value>
     </Setting>
     <Setting Name="ShowHelpDocSilenceCode" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>

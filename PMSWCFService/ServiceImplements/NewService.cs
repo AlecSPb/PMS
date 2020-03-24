@@ -15,6 +15,11 @@ namespace PMSWCFService
     /// </summary>
     public class NewService : INewService
     {
+        public int AddOutsideProcess(DcOutsideProcess model)
+        {
+            throw new NotImplementedException();
+        }
+
         public void AddOrder(DcOrder model, string user)
         {
             try
@@ -86,6 +91,16 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
+        public List<DcOutsideProcess> GetOutsideProcess(int s, int t, string productid, string composition, string provider)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetOutsideProcessCount(string productid, string composition, string provider)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<DcPlanExtra> GetPlan(int s, int t, string composition, string pminumber)
         {
             throw new NotImplementedException();
@@ -136,6 +151,11 @@ namespace PMSWCFService
                     }
                 }
             }
+        }
+
+        public int UpdateOutsideProcess(DcOutsideProcess model)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateOrder(DcOrder model, string user)

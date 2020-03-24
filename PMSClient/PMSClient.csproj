@@ -1873,6 +1873,7 @@
     <Resource Include="Documents\样品管理思路.txt" />
     <Resource Include="Documents\初级原来追踪思路.txt" />
     <Resource Include="Documents\发出产品最总思路.txt" />
+    <Resource Include="Documents\编辑冲突处理.txt" />
     <Content Include="Resource\DocTemplate\Reports\BondingSheet_BK.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

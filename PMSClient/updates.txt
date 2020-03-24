@@ -2,6 +2,9 @@
 Updates Briefs
 本次更新
 Updates==
+2020-4-30 
+密度检查增加CuGaSe
+
 2020-3-23 
 修复导出Bug
 添加按月导出功能
