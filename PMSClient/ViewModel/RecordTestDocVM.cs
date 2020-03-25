@@ -49,6 +49,12 @@ namespace PMSClient.ViewModel
                     case "Defect":
                         CreateDefects();
                         break;
+                    case "CoA200324":
+                        CreateCoA200324();
+                        break;
+                    case "CoA200324BL":
+                        CreateCoA200324BL();
+                        break;
                     default:
                         break;
                 }
@@ -61,6 +67,31 @@ namespace PMSClient.ViewModel
             }
         }
 
+        private void CreateCoA200324BL()
+        {
+
+        }
+
+        private void CreateCoA200324()
+        {
+            //if (!PMSDialogService.ShowYesNo("请问", "确定生成记录单吗？"))
+            //{
+            //    return;
+            //}
+            try
+            {
+                var fileName = $"PMI_COA_{StringUtil.RemoveSlash(CurrentRecordTest.Customer)}_{StringUtil.RemoveSlash(CurrentRecordTest.CompositionAbbr)}_{CurrentRecordTest.ProductID}.docx".Replace('-', '_');
+
+                var word = new ReportsHelperNew.ReportCOA(CurrentRecordTest);
+                word.Intialize(fileName);
+                word.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                PMSDialogService.ShowWarning(ex.Message);
+            }
+        }
 
         private void ShowMessageAfterCreateDoc(string reportName)
         {

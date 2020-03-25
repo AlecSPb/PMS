@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              Title="测试记录报告-导出"
              WindowStartupLocation="CenterScreen"
-             Height="400" Width="300" DataContext="{Binding Source={StaticResource Locator},Path=RecordTestDoc}">
+             Height="500" Width="300" DataContext="{Binding Source={StaticResource Locator},Path=RecordTestDoc}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -52,7 +52,11 @@
                                 Command="{Binding CreateDoc}" CommandParameter="TCB"/>
                         <Button Content="{StaticResource ButtonDocDefect}" Style="{StaticResource  StyleButtonCommon}"  HorizontalAlignment="Stretch"
                                 Command="{Binding CreateDoc}" CommandParameter="Defect" IsEnabled="False"/>
-
+                        
+                        <Button Content="{StaticResource ButtonDocNewCoA}" Style="{StaticResource  StyleButtonCommon}"  HorizontalAlignment="Stretch"
+                                Command="{Binding CreateDoc}" CommandParameter="CoA200324"/>
+                        <Button Content="{StaticResource ButtonDocNewCoABL}" Style="{StaticResource  StyleButtonCommon}"  HorizontalAlignment="Stretch"
+                                Command="{Binding CreateDoc}" CommandParameter="CoA200324BL"/>
                     </StackPanel>
                 </Grid>
             </Border>

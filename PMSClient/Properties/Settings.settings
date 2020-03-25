@@ -38,5 +38,14 @@
     <Setting Name="ShowHelpDoc" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="FtpImage1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Bondings</Value>
+    </Setting>
+    <Setting Name="FtpImage2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Target</Value>
+    </Setting>
+    <Setting Name="FtpImage3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Target440</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

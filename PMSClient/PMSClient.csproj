@@ -216,6 +216,7 @@
     </Compile>
     <Compile Include="Components\ExcelOutputHelper\ExcelSample.cs" />
     <Compile Include="Components\Express\ExpressConfigService.cs" />
+    <Compile Include="Components\FTPDownloader\FTPService.cs" />
     <Compile Include="Components\GDMSHelper\GDMSAnlysis.cs" />
     <Compile Include="Components\GDMSHelper\GDMSHelper.xaml.cs">
       <DependentUpon>GDMSHelper.xaml</DependentUpon>
@@ -353,6 +354,8 @@
     <Compile Include="Helpers\NavigationService.cs" />
     <Compile Include="Helpers\VToken.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ReportsHelperNew\COAHelper.cs" />
+    <Compile Include="ReportsHelperNew\Element.cs" />
     <Compile Include="ReportsHelperNew\ReportBase.cs" />
     <Compile Include="ReportsHelperNew\ReportCOA.cs" />
     <Compile Include="ReportsHelperNew\ReportSample.cs" />

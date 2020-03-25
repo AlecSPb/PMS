@@ -166,5 +166,41 @@ namespace PMSClient.Properties {
                 this["ShowHelpDoc"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Bondings")]
+        public string FtpImage1 {
+            get {
+                return ((string)(this["FtpImage1"]));
+            }
+            set {
+                this["FtpImage1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Target")]
+        public string FtpImage2 {
+            get {
+                return ((string)(this["FtpImage2"]));
+            }
+            set {
+                this["FtpImage2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Target440")]
+        public string FtpImage3 {
+            get {
+                return ((string)(this["FtpImage3"]));
+            }
+            set {
+                this["FtpImage3"] = value;
+            }
+        }
     }
 }
