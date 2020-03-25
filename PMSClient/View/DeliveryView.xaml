@@ -30,8 +30,7 @@
             <Button Content="{StaticResource ButtonExpressTrack}" 
                     Style="{StaticResource StyleButtonSpecial}"
                     Command="{Binding ExpressTrack}"/>
-            <Button Content="设置" 
-                    Style="{StaticResource StyleButtonCommon}" Name="BtnSetting" Click="BtnSetting_Click"/>
+            <Button Content="设置" Style="{StaticResource StyleButtonCommon}" Command="{Binding ExpressSetting}"/>
             <Button Content="{StaticResource ButtonDeliveryItemList}" Style="{StaticResource StyleButtonSpecial}"
                     Command="{Binding GoToDeliveryItemList}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
@@ -69,6 +68,9 @@
                                 <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
                                                 Command="{Binding Path=DataContext.Label,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}"
                                         CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
+                                                Command="{Binding Path=DataContext.Finish,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}"
+                                        CommandParameter="{Binding}"/>
                                 <!--<Button Content="{StaticResource ButtonBarCode}" Style="{StaticResource StyleDGButton}"
                                                 Command="{Binding Path=DataContext.BarCode,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}"
                                         CommandParameter="{Binding}"/>-->
@@ -87,7 +89,8 @@
                 <DataGridTemplateColumn Header="{StaticResource RDDeliveryName}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding DeliveryName}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding DeliveryName}" Style="{StaticResource StyleDGTextBlockLeft}"
+                                       FontWeight="Bold" Foreground="Blue"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

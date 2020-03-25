@@ -64,6 +64,14 @@ namespace PMSClient.ViewModel
             QuickSave = new RelayCommand<DcDeliveryItem>(ActionQuickSave, CanQuickSave);
             SaveAllItems = new RelayCommand(ActionSaveAllItems, CanSaveAllItems);
             ExpressTrack = new RelayCommand(ActionExpressTrack, CanExpressTrack);
+
+            ExpressSetting = new RelayCommand(ActionExpressSetting, CanExpressTrack);
+        }
+
+        private void ActionExpressSetting()
+        {
+            var win = new ToolWindow.ExpressSetting();
+            win.ShowDialog();
         }
 
         private void ActionBarCode(DcDelivery obj)
@@ -162,14 +170,8 @@ namespace PMSClient.ViewModel
 
         private bool CanFinish(DcDelivery arg)
         {
-            if (arg != null)
-            {
-                return (PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet)) && CheckDeliveryState(arg.State);
-            }
-            else
-            {
-                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet);
-            }
+            return PMSHelper.CurrentSession.IsInGroup(new string[] { "管理员", "统筹组" })
+                && arg?.State != PMSCommon.DeliveryState.完成.ToString();
         }
         private bool CheckDeliveryState(string state)
         {
@@ -179,7 +181,7 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                if (!PMSDialogService.ShowYesNo("请问", "确定完成发货吗?"))
+                if (!PMSDialogService.ShowYesNo("请问", "确定完成发货,并停止快递追踪吗?"))
                 {
                     return;
                 }
@@ -591,6 +593,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcDeliveryItem> QuickSave { get; set; }
         public RelayCommand SaveAllItems { get; set; }
         public RelayCommand ExpressTrack { get; set; }
+        public RelayCommand ExpressSetting { get; set; }
+
         #endregion
 
 

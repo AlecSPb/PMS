@@ -58,11 +58,6 @@ namespace PMSClient.View
 
         }
 
-        private void BtnSetting_Click(object sender, RoutedEventArgs e)
-        {
-            var win = new ToolWindow.ExpressSetting();
-            win.ShowDialog();
-        }
     }
 
 

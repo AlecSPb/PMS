@@ -59,7 +59,7 @@ namespace PMSClient.ReportsHelper
                 using (DocX document = DocX.Load(tempFile))
                 {
                     #region 基本字段
-                    document.ReplaceText("[CreateTime]", DateTime.Now.ToString("yyyy-MM-dd"));
+                    document.ReplaceText("[CreateTime]", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     document.ReplaceText("[ShipTime]", model.ShipTime.ToString("yyyy-MM-dd"));
                     document.ReplaceText("[Country]", model.Country ?? "");
                     document.ReplaceText("[DeliveryName]", model.DeliveryName ?? "");
@@ -91,6 +91,7 @@ namespace PMSClient.ReportsHelper
                                 mainTable.Rows[rownumber].Cells[7].Paragraphs[0].Append(item.PackNumber.ToString())
                                     .FontSize(10).Alignment = Alignment.center;
 
+                                //判定是否要查找靶材的额外信息
 
                                 if (item.ProductType != "背板")
                                 {
@@ -149,8 +150,6 @@ namespace PMSClient.ReportsHelper
                                     itemType = item.ProductType;
                                 }
                                 mainTable.Rows[rownumber].Cells[2].Paragraphs[0].Append(itemType).FontSize(10);
-
-
 
                                 mainTable.InsertRow();
                                 datanumber++;

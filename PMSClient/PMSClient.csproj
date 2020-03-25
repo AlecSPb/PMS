@@ -354,6 +354,7 @@
     <Compile Include="Helpers\VToken.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ReportsHelperNew\ReportBase.cs" />
+    <Compile Include="ReportsHelperNew\ReportCOA.cs" />
     <Compile Include="ReportsHelperNew\ReportSample.cs" />
     <Compile Include="ReportsHelperNew\ReportBondingTargetDefects.cs" />
     <Compile Include="ReportsHelperNew\ReportDeliveryQRCode.cs" />
@@ -1875,6 +1876,7 @@
     <Resource Include="Documents\初级原来追踪思路.txt" />
     <Resource Include="Documents\发出产品最总思路.txt" />
     <Resource Include="Documents\编辑冲突处理.txt" />
+    <Resource Include="ReportsHelperNew\NewCoAPlan.txt" />
     <Content Include="Resource\DocTemplate\Reports\BondingSheet_BK.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1900,6 +1902,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="HelpDocs\新功能使用介绍200324.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\DocTemplate\Reports\COA200324.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Service References\DrawingService\DrawingService.wsdl" />
@@ -2589,12 +2594,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

@@ -16,8 +16,8 @@ namespace PMSClient.ToolWindow
     {
         public DensityChartVM()
         {
-            YMin = 5.4;
-            YMax = 5.8;
+            YMin = 3;
+            YMax = 7;
             ReferenceDensity = 5.65;
             XAxisTitle = "Target";
             YAxisTitle = "Density";

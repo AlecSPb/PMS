@@ -607,7 +607,6 @@ namespace PMSClient.ViewModel
                     var modelhelper = new Helpers.RecordTestDuplicateHelper();
                     modelhelper.Run(CurrentSelectItem.RecordTest, dialog.Quantity);
                 }
-                PMSDialogService.Show("复用完毕");
                 SetPageParametersWhenConditionChange();
             }
 
