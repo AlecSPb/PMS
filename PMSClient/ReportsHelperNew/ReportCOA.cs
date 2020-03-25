@@ -103,10 +103,7 @@ namespace PMSClient.ReportsHelperNew
                 if (doc.Tables[0] != null)
                 {
                     Table mainTable = doc.Tables[0];
-                    Paragraph p = mainTable.Rows[18].Cells[0].Paragraphs[0];
-                    //填充成分
-                    InsertCompositionXRFTable(doc, p, Model.CompositionXRF, "No Composition Test Results");
-
+                    Paragraph p = mainTable.Rows[17].Cells[0].Paragraphs[0];
 
                     //填充标称的成分
                     if (!string.IsNullOrEmpty(Model.Composition))
@@ -122,6 +119,10 @@ namespace PMSClient.ReportsHelperNew
                         }
 
                     }
+
+                    //填充成分
+                    InsertCompositionXRFTable(doc, p, Model.CompositionXRF, "No Composition Test Results");
+
                 }
                 #endregion
 

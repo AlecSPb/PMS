@@ -23,6 +23,8 @@ namespace PMSClient.DataProcess.QuickReport
             ReportTypes.Add("TEST");
             ReportTypes.Add("COA");
             ReportTypes.Add("COA-BL");
+            ReportTypes.Add("COA200324");
+            ReportTypes.Add("COA200324-BL");
             CurrentReportType = ReportTypes[0];
 
             Process = new RelayCommand(ActionProcess,CanCheck);

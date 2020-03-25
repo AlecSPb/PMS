@@ -216,6 +216,9 @@
     </Compile>
     <Compile Include="Components\ExcelOutputHelper\ExcelSample.cs" />
     <Compile Include="Components\Express\ExpressConfigService.cs" />
+    <Compile Include="Components\FTPDownloader\FTPImageShow.xaml.cs">
+      <DependentUpon>FTPImageShow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\FTPDownloader\FTPService.cs" />
     <Compile Include="Components\GDMSHelper\GDMSAnlysis.cs" />
     <Compile Include="Components\GDMSHelper\GDMSHelper.xaml.cs">
@@ -1114,6 +1117,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Components\ExcelOutputHelper\Dialogs\YearDateDailog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\FTPDownloader\FTPImageShow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

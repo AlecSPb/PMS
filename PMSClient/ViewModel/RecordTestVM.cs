@@ -85,6 +85,14 @@ namespace PMSClient.ViewModel
 
             DeepSearch = new RelayCommand<RecordTestExtra>(ActionDeepSearch, CanDeepSearch);
             SaveJson = new RelayCommand<RecordTestExtra>(ActionSaveJson, CanSaveJson);
+            ViewImage = new RelayCommand<RecordTestExtra>(ActionViewImage, CanDeepSearch);
+
+        }
+
+        private void ActionViewImage(RecordTestExtra obj)
+        {
+            var ftp = new Components.FTPDownloader.FTPService();
+            ftp.ShowFTPImage(obj.RecordTest.ProductID);
         }
 
         private void ActionSaveJson(RecordTestExtra obj)
@@ -789,6 +797,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<RecordTestExtra> EnterCSCAN { get; set; }
         public RelayCommand<RecordTestExtra> DeepSearch { get; set; }
         public RelayCommand<RecordTestExtra> SaveJson { get; set; }
+        public RelayCommand<RecordTestExtra> ViewImage { get; set; }
 
         public RelayCommand OneKeyCheck { get; set; }
         #endregion

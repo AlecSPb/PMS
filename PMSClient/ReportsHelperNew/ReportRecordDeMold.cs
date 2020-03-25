@@ -127,13 +127,13 @@ namespace PMSClient.ReportsHelperNew
         /// <summary>
         /// 从备注字符串中获取#165格式的编号
         /// </summary>
-        /// <param name="millling"></param>
+        /// <param name="vhprequirement"></param>
         /// <returns></returns>
-        private string GetBigNumber(string millling)
+        private string GetBigNumber(string vhprequirement)
         {
-            if (string.IsNullOrEmpty(millling))
+            if (string.IsNullOrEmpty(vhprequirement))
                 return "";
-            return System.Text.RegularExpressions.Regex.Match(millling, @"#\d*").Value;
+            return System.Text.RegularExpressions.Regex.Match(vhprequirement, @"#\d*").Value;
         }
 
 

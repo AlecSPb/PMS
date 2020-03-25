@@ -117,16 +117,17 @@ namespace PMSClient.ViewModel
         private bool IsBigTargetLot(DcPlanWithMisson item)
         {
 
-            return item.Plan.FillingRequirement.Contains("#")
+            return item.Plan.VHPRequirement.Contains("#")
                                     && (item.Plan.PlanType.Contains("其他") ||
-                                            item.Plan.PlanType.Contains("加工"));
+                                            item.Plan.PlanType.Contains("加工") ||
+                                            item.Plan.PlanType.Contains("外协"));
         }
 
-        private string GetBigNumber(string millling)
+        private string GetBigNumber(string vhprequirement)
         {
-            if (string.IsNullOrEmpty(millling))
+            if (string.IsNullOrEmpty(vhprequirement))
                 return "";
-            return System.Text.RegularExpressions.Regex.Match(millling, @"#\d*").Value;
+            return System.Text.RegularExpressions.Regex.Match(vhprequirement, @"#\d*").Value;
         }
         #endregion
 
@@ -138,7 +139,7 @@ namespace PMSClient.ViewModel
                 //如果是要加工的440大靶，则给lot号后面添加上它的序列编号
                 if (IsBigTargetLot(plan))
                 {
-                    CurrentRecordDeMold.VHPPlanLot += GetBigNumber(plan.Plan.MillingRequirement);
+                    CurrentRecordDeMold.VHPPlanLot += GetBigNumber(plan.Plan.VHPRequirement);
                 }
 
                 CurrentRecordDeMold.Composition = plan.Misson.CompositionStandard;

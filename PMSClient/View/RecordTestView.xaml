@@ -37,8 +37,8 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommonNarrow}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommonNarrow}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource    StyleButtonCommonNarrow}" Command="{Binding Output}"/>
-            <Button Content="{StaticResource ButtonBatchDoc}" Style="{StaticResource    StyleButtonCommonNarrow}"
-                    Command="{Binding BatchDoc}"/>
+            <!--<Button Content="{StaticResource ButtonBatchDoc}" Style="{StaticResource    StyleButtonCommonNarrow}"
+                    Command="{Binding BatchDoc}"/>-->
             <Button Content="{StaticResource ButtonQuickDoc}" Style="{StaticResource    StyleButtonCommonNarrow}"
                     Command="{Binding QuickDoc}"/>
             <Button Content="{StaticResource ButtonQuickChart}" Style="{StaticResource    StyleButtonCommonNarrow}"
@@ -76,14 +76,14 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                     <DataGrid.Columns>
-                        <DataGridTemplateColumn Header="选择">
+                        <!--<DataGridTemplateColumn Header="选择">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <CheckBox    Style="{StaticResource StyleDGCheckBoxCommon}"
                                       IsChecked="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
+                        </DataGridTemplateColumn>-->
                         <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate >
@@ -242,43 +242,62 @@
                 <Grid Width="350" DataContext="{Binding  CurrentSelectItem}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Orientation="Horizontal">
-                        <Button Content="{StaticResource ButtonMisson}"
-                                    Style="{StaticResource StyleButtonCommonNarrow}" HorizontalAlignment="Stretch"
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="{StaticResource ButtonMisson}" Grid.Column="0" Grid.Row="0"
+                                    Style="{StaticResource StyleButtonStrench}" HorizontalAlignment="Stretch"
                                     Command="{Binding DataContext.ShowOrderInformation,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                     CommandParameter="{Binding}"
                                     />
-                        <Button Content="{StaticResource ButtonCScan}"
-                                    Style="{StaticResource StyleButtonCommonNarrow}" HorizontalAlignment="Stretch"
+                        <Button Content="{StaticResource ButtonCScan}" Grid.Column="1" Grid.Row="0"
+                                    Style="{StaticResource StyleButtonStrench}" HorizontalAlignment="Stretch"
                                     Command="{Binding DataContext.EnterCSCAN,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                     CommandParameter="{Binding}"
                                     />
-                        <Button Content="{StaticResource ButtonCheck}"
-                                    Style="{StaticResource StyleButtonCommonNarrow}" HorizontalAlignment="Stretch"
+                        <Button Content="{StaticResource ButtonCheck}" Grid.Column="2" Grid.Row="0"
+                                    Style="{StaticResource StyleButtonStrench}" HorizontalAlignment="Stretch"
                                     Command="{Binding DataContext.Check,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                     CommandParameter="{Binding}"
                                     />
-                        <Button Content="{StaticResource ButtonDoc}"
-                                    Style="{StaticResource StyleButtonCommonNarrow}" HorizontalAlignment="Stretch"
-                                    Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                    CommandParameter="{Binding}"
-                                    />
 
-                        <Button Content="{StaticResource ButtonIntegratedSearch}"
-                                    Style="{StaticResource StyleButtonCommonNarrow}" HorizontalAlignment="Stretch"
+                        <Button Content="{StaticResource ButtonIntegratedSearch}" Grid.Column="3" Grid.Row="0"
+                                    Style="{StaticResource StyleButtonStrench}" HorizontalAlignment="Stretch"
                                     Command="{Binding DataContext.DeepSearch,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                     CommandParameter="{Binding}"
                                     />
-                        <Button Content="{StaticResource ButtonJson}" 
-                                Style="{StaticResource StyleButtonCommonNarrow}" HorizontalAlignment="Stretch"
+                        <Button Content="{StaticResource ButtonImage}"  Grid.Column="0" Grid.Row="1"
+                                Style="{StaticResource StyleButtonStrench}" HorizontalAlignment="Stretch"
+                                    Command="{Binding DataContext.ViewImage,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"
+                                    />
+                        <Button Content="{StaticResource ButtonJson}" Grid.Column="1" Grid.Row="1"
+                                Style="{StaticResource StyleButtonStrench}" HorizontalAlignment="Stretch"
                                     Command="{Binding DataContext.SaveJson,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                     CommandParameter="{Binding}"
                                     />
-
-                    </StackPanel>
+                        <Button Content="{StaticResource ButtonDoc}" Grid.Column="2" Grid.Row="1"
+                                    Style="{StaticResource StyleButtonStrench}" HorizontalAlignment="Stretch"
+                                    Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"
+                                    />
+                        <Button Content="{StaticResource ButtonCompare}" Grid.Column="3" Grid.Row="1"
+                                    Style="{StaticResource StyleButtonStrench}" HorizontalAlignment="Stretch"
+                                    Command="{Binding DataContext.Compare,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"
+                                    />
+                    </Grid>
                     <ScrollViewer VerticalScrollBarVisibility="Auto"  Grid.Row="1">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -313,7 +332,7 @@
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Text="仅CCD枪可扫屏幕,激光型无法扫出,单击是独立置顶窗口"
                                        Style="{StaticResource StyleTextBlockWarning2}" Background="LightGreen"
-                                       HorizontalAlignment="Stretch" Grid.ColumnSpan="2"/>
+                                       HorizontalAlignment="Stretch" Grid.ColumnSpan="2" FontSize="10"/>
                             <Border Grid.Row="1" BorderBrush="LightBlue" BorderThickness="1" Grid.ColumnSpan="2"
                                     Margin="2">
                                 <Image Source="{Binding RecordTest.ProductID,Converter={StaticResource IDToBarCode}}" Name="ImageBarCode" MouseDown="ImageBarCode_MouseDown"/>

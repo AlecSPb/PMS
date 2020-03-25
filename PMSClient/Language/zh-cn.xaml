@@ -290,6 +290,7 @@
     <sys:String x:Key="ButtonDocNewCoA">CoA测试报告[200324]-普通</sys:String>
     <sys:String x:Key="ButtonDocNewCoABL">CoA测试报告[200324]-BridgeLine</sys:String>
 
+    <sys:String x:Key="ButtonImage">图像</sys:String>
 
 
 

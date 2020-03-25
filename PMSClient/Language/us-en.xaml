@@ -284,7 +284,9 @@
 
     <sys:String x:Key="ButtonDocNewCoA">CoAReport[200324]-Normal</sys:String>
     <sys:String x:Key="ButtonDocNewCoABL">CoAReport[200324]-BridgeLine</sys:String>
-    
+
+    <sys:String x:Key="ButtonImage">Image</sys:String>
+
     <sys:String x:Key="ButtonSelectMisson">Select Task</sys:String>
     <sys:String x:Key="ButtonSelectMaterialNeed">Select Material Need</sys:String>
     <sys:String x:Key="ButtonSelectVHPPlan">Select VHP Plan</sys:String>

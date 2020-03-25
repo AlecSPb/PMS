@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PMSClient.DataProcess.ScanInput;
 using PMSClient.MainService;
 using PMSClient.ReportsHelper;
+using PMSClient.ReportsHelperNew;
 
 namespace PMSClient.DataProcess.QuickReport
 {
@@ -69,28 +70,37 @@ namespace PMSClient.DataProcess.QuickReport
                         {
                             #region 生成报告
 
-                            if (CurrentReportType == "COA")
+                            switch (CurrentReportType)
                             {
-                                WordCOANew report = new WordCOANew();
-                                report.SetModel(model);
-                                report.Output();
+                                case "COA":
+                                    WordCOANew report1 = new WordCOANew();
+                                    report1.SetModel(model);
+                                    report1.Output();
+                                    break;
+                                case "COA-BL":
+                                    WordCOABridgeLineNew report2 = new WordCOABridgeLineNew();
+                                    report2.SetModel(model);
+                                    report2.Output();
+                                    break;
+                                case "TEST":
+                                    WordRecordTest report3 = new WordRecordTest();
+                                    report3.SetModel(model);
+                                    report3.Output();
+                                    break;
+                                case "COA200324":
+                                    var fileName = $"PMI_COA_{StringUtil.RemoveSlash(model.Customer)}_{StringUtil.RemoveSlash(model.CompositionAbbr)}" +
+                                        $"_{model.ProductID}.docx".Replace('-', '_');
+                                    var report4 = new ReportCOA(model);
+                                    report4.Intialize(fileName);
+                                    report4.Output();
+                                    break;
+                                case "COA200324-BL":
 
+                                    break;
+                                default:
+                                    break;
                             }
-                            else if (CurrentReportType == "COA-BL")
-                            {
-                                WordCOABridgeLineNew report = new WordCOABridgeLineNew();
-                                report.SetModel(model);
-                                report.Output();
 
-                            }
-
-                            else if (CurrentReportType == "TEST")
-                            {
-                                WordRecordTest report = new WordRecordTest();
-                                report.SetModel(model);
-                                report.Output();
-
-                            }
                             item.HasProcessed = true;
                             #endregion
                         }
