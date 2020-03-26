@@ -68,6 +68,20 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         DateTime GetRecordTestLastUpdateTime(Guid id);
+
+
+
+
+
+
+
+        //绑定
+        [OperationContract]
+        List<DcPlateUsedStatistic> GetPlateUsedStatistics();
+
+        [OperationContract]
+        int GetPlateUsedTimesByPlateID(string plateid);
+
         #endregion
 
 

@@ -49,4 +49,136 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcOrder" nillable="true" type="tns:DcOrder" />
+  <xs:complexType name="ArrayOfDcPlanExtra">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcPlanExtra" nillable="true" type="tns:DcPlanExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcPlanExtra" nillable="true" type="tns:ArrayOfDcPlanExtra" />
+  <xs:complexType name="DcPlanExtra">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Misson" nillable="true" type="tns:DcOrder" />
+      <xs:element minOccurs="0" name="Plan" nillable="true" type="tns:DcPlanVHP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcPlanExtra" nillable="true" type="tns:DcPlanExtra" />
+  <xs:complexType name="DcPlanVHP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllWeight" type="xs:double" />
+      <xs:element minOccurs="0" name="CalculationDensity" type="xs:double" />
+      <xs:element minOccurs="0" name="Conclusion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FillingRequirement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Grade" type="xs:int" />
+      <xs:element minOccurs="0" name="GrainSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsLocked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KeepTempTime" type="xs:double" />
+      <xs:element minOccurs="0" name="MachineRequirement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MillingRequirement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MoldDiameter" type="xs:double" />
+      <xs:element minOccurs="0" name="MoldType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlanDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PlanLot" type="xs:int" />
+      <xs:element minOccurs="0" name="PlanType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrePressure" type="xs:double" />
+      <xs:element minOccurs="0" name="PreTemperature" type="xs:double" />
+      <xs:element minOccurs="0" name="Pressure" type="xs:double" />
+      <xs:element minOccurs="0" name="ProcessCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomHumidity" type="xs:double" />
+      <xs:element minOccurs="0" name="RoomTemperature" type="xs:double" />
+      <xs:element minOccurs="0" name="SearchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SingleWeight" type="xs:double" />
+      <xs:element minOccurs="0" name="SpecialRequirement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Temperature" type="xs:double" />
+      <xs:element minOccurs="0" name="Thickness" type="xs:double" />
+      <xs:element minOccurs="0" name="UpdateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Updator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VHPDeviceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VHPRequirement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vaccum" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcPlanVHP" nillable="true" type="tns:DcPlanVHP" />
+  <xs:complexType name="ArrayOfDcRecordTest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordTest" nillable="true" type="tns:DcRecordTest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcRecordTest" nillable="true" type="tns:ArrayOfDcRecordTest" />
+  <xs:complexType name="DcRecordTest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BackingPlateLot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CScan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompositionAbbr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompositionXRF" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Defects" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Density" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DimensionActual" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FollowUps" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="LastUpdateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Resistance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Roughness" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sample" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TestType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warping" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcRecordTest" nillable="true" type="tns:DcRecordTest" />
+  <xs:complexType name="ArrayOfDcPlateUsedStatistic">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcPlateUsedStatistic" nillable="true" type="tns:DcPlateUsedStatistic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcPlateUsedStatistic" nillable="true" type="tns:ArrayOfDcPlateUsedStatistic" />
+  <xs:complexType name="DcPlateUsedStatistic">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateLot" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcPlateUsedStatistic" nillable="true" type="tns:DcPlateUsedStatistic" />
+  <xs:complexType name="ArrayOfDcOutsideProcess">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcOutsideProcess" nillable="true" type="tns:DcOutsideProcess" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcOutsideProcess" nillable="true" type="tns:ArrayOfDcOutsideProcess" />
+  <xs:complexType name="DcOutsideProcess">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PONumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Processor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProgressBar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcOutsideProcess" nillable="true" type="tns:DcOutsideProcess" />
 </xs:schema>

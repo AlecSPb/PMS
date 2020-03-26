@@ -22,12 +22,14 @@ namespace PMSClient.Components.FTPDownloader
     {
         private string host;
         private NetworkCredential credential;
+
+        private string cacheFolder;
         public FTPService()
         {
             host = "192.168.16.254";
             credential = new NetworkCredential("photoadmin", "cdpmiadmin");
         }
-        public FTPService(string hostStr, string uid, string pwd)
+        public FTPService(string hostStr, string uid, string pwd) : this()
         {
             host = hostStr;
             credential = new NetworkCredential(uid, pwd);
@@ -113,6 +115,96 @@ namespace PMSClient.Components.FTPDownloader
                 return null;
             }
         }
+
+        private void CheckCacheFolder()
+        {
+            string imageFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            cacheFolder = Path.Combine(imageFolder, "Y_CSCAN_PMS");
+            if (!Directory.Exists(cacheFolder))
+            {
+                Directory.CreateDirectory(cacheFolder);
+            }
+        }
+
+
+        /// <summary>
+        /// 从本地缓存文件夹查找
+        /// 先查找Bondings
+        /// 再查找Targets
+        /// </summary>
+        /// <param name="productid"></param>
+        /// <returns></returns>
+        public string GetImagePathFromCache(string productid)
+        {
+            CheckCacheFolder();
+
+            string imagePath = Directory.GetFiles(cacheFolder, "*.jpg")
+                 .Where(i => Path.GetFileNameWithoutExtension(i) == productid)
+                 .FirstOrDefault();
+
+            return imagePath;
+        }
+
+        /// <summary>
+        /// 从服务器下载文件
+        /// </summary>
+        /// <param name="productid"></param>
+        public async Task<string> GetImageFromServer(string productid)
+        {
+            CheckCacheFolder();
+            string fileName_bondings = $"/Y_CSCAN_PMS/Bondings/{productid}.jpg";
+            string fileName_targets = $"/Y_CSCAN_PMS/Targets/{productid}.jpg";
+
+            string fileName_local = Path.Combine(cacheFolder, $"{productid}".jpg);
+
+            var ftp = new FtpClient(host, credential);
+            ftp.Encoding = Encoding.Default;
+            bool is_downloaded = false;
+
+            try
+            {
+                ftp.Connect();
+                //先查找bondings文件夹
+                bool is_exist_bondings = await ftp.FileExistsAsync(fileName_bondings);
+                if (is_exist_bondings)
+                {
+                    await ftp.DownloadFileAsync(fileName_local, fileName_bondings);
+                    is_downloaded = true;
+                }
+                else
+                {
+                    //在考虑targets文件夹
+                    bool is_exist_targets = await ftp.FileExistsAsync(fileName_targets);
+                    if (is_exist_targets)
+                    {
+                        await ftp.DownloadFileAsync(fileName_local, fileName_targets);
+                        is_downloaded = true;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                PMSDialogService.ShowWarning(ex.Message);
+                return null;
+            }
+            finally
+            {
+                ftp.Disconnect();
+            }
+
+            if (is_downloaded)
+            {
+                return ms;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+
 
     }
 }

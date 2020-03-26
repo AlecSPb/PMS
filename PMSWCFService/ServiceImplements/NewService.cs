@@ -168,7 +168,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<DcOrder, PMSOrder>());
                     var entity = Mapper.Map<PMSOrder>(model);
                     entity.LastUpdateTime = DateTime.Now;
-                    db.Entry(entity).State=System.Data.Entity.EntityState.Modified;
+                    db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                     SaveOrderHistory(model, user);
                 }
@@ -212,7 +212,49 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcPlateUsedStatistic> GetPlateUsedStatistics()
+        {
+            try
+            {
+                XS.RunLog();
+                using (var db = new PMSDbContext())
+                {
+                    var query = from p in db.RecordBondings
+                                where p.State != PMSCommon.BondingState.作废.ToString()
+                                group p by p.PlateLot.Replace("A", "") into g
+                                orderby g.Count() descending
+                                select new DcPlateUsedStatistic { PlateLot = g.Key, Count = g.Count() };
 
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
 
+        public int GetPlateUsedTimesByPlateID(string plateid)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var db = new PMSDbContext())
+                {
+                    var query = from p in db.RecordBondings
+                                where p.State != PMSCommon.BondingState.作废.ToString()
+                                && p.PlateLot.Replace("A", "") == plateid
+                                select p;
+
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

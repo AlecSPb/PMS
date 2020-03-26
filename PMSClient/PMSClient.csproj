@@ -1879,6 +1879,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Components\FTPDownloader\缓存思路.txt" />
     <Content Include="densitychecklist.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1951,6 +1952,18 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\NewService\PMSClient.NewService.DcOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NewService\PMSClient.NewService.DcOutsideProcess.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NewService\PMSClient.NewService.DcPlanExtra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NewService\PMSClient.NewService.DcPlateUsedStatistic.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NewService\PMSClient.NewService.DcRecordTest.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSSettings\PMSSettingService.wsdl" />

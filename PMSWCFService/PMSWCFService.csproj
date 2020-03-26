@@ -121,6 +121,7 @@
     <Compile Include="DataContracts\DcOutsideProcess.cs" />
     <Compile Include="DataContracts\DcPlanWithMisson.cs" />
     <Compile Include="DataContracts\DcPlanExtra.cs" />
+    <Compile Include="DataContracts\DcPlateUsedStatistic.cs" />
     <Compile Include="DataContracts\DcPMICounter.cs" />
     <Compile Include="DataContracts\DcRecordBonding.cs" />
     <Compile Include="DataContracts\DcRemainInventory.cs" />
