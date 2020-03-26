@@ -21,6 +21,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -35,21 +36,25 @@
         <TextBlock Grid.Row="2" Grid.Column="0"  Style="{StaticResource StyleTextBlockCommon}"
                    Text="靶材成分"/>
         <TextBox Name="txtProductComposition"  Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="暂无"  FontSize="20" IsReadOnly="True" Background="LightBlue"/>
-        
+
         <TextBlock Grid.Row="3" Grid.Column="0"  Style="{StaticResource StyleTextBlockCommon}"
                    Text="盖板编号"/>
         <TextBox Name="txtCoverPlateNumber"  Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="无"  FontSize="20" Width="100" HorizontalAlignment="Left" Background="LightGreen"/>
 
-        <TextBlock Grid.Row="4" Grid.Column="0"  Style="{StaticResource StyleTextBlockCommon}"
-                   Text="背板"/>
-        <TextBox Name="txtPlateNumber"  Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="无" FontSize="20" Background="LightGreen"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"  Style="{StaticResource StyleTextBlockCommon}"
+                   Text="注意:背板编号只需输入代表唯一性的编号，无需输入尾部的后缀A" Foreground="Blue"
+                   HorizontalAlignment="Stretch"/>
 
         <TextBlock Grid.Row="5" Grid.Column="0"  Style="{StaticResource StyleTextBlockCommon}"
+                   Text="背板"/>
+        <TextBox Name="txtPlateNumber"  Grid.Row="5" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="无" FontSize="20" Background="LightGreen"/>
+
+        <TextBlock Grid.Row="6" Grid.Column="0"  Style="{StaticResource StyleTextBlockCommon}"
                    Text="备注"/>
-        <TextBox  Grid.Row="5" Grid.Column="1" Name="txtDefects" Style="{StaticResource StyleTextBoxCommon}" 
+        <TextBox  Grid.Row="6" Grid.Column="1" Name="txtDefects" Style="{StaticResource StyleTextBoxCommon}" 
                   Text="无" Background="Yellow" FontSize="20"/>
 
-        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
             <Button Name="btnCrackInner" Style="{StaticResource StyleButtonCommon}" Content="裂-内"
                   Click="btnDefects_Click" MinWidth="40"/>
             <Button Name="btnCrackOutside" Style="{StaticResource StyleButtonCommon}" Content="裂-外"
@@ -66,13 +71,13 @@
                   Click="btnDefects_Click" MinWidth="40"/>
         </StackPanel>
 
-        <TextBlock Grid.Row="7" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
-                   Text="焊合"/>
-        <TextBox Name="txtWeldingRate" Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="0" FontSize="20"  Background="Yellow"/>
-
         <TextBlock Grid.Row="8" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
+                   Text="焊合"/>
+        <TextBox Name="txtWeldingRate" Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="0" FontSize="20"  Background="Yellow"/>
+
+        <TextBlock Grid.Row="9" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="状态"/>
-        <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
             <ComboBox Name="cboState"  Style="{StaticResource StyleComboBoxCommon}" FontSize="20"/>
             <Button Name="BtnFinish" Style="{StaticResource StyleButtonCommon}" Content="完成"
                   Click="BtnFinish_Click" MinWidth="40" VerticalAlignment="Stretch"/>
@@ -80,7 +85,7 @@
                         Text="&lt;-此项超声检查人员无需设置，由最终审核人员设置为完成"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="btnCancel" Content="取消" Style="{StaticResource StyleButtonCommon}" Click="btnCancel_Click"/>
             <Button Name="btnYes" Content="确定" Style="{StaticResource StyleButtonCommon}" Click="btnYes_Click" Width="120" Height="50" FontSize="20"
                     Foreground="Blue"

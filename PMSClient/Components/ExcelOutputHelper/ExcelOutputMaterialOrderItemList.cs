@@ -15,7 +15,7 @@ namespace PMSClient.ExcelOutputHelper
         }
         public override void Output()
         {
-            ResetParameters();
+            //ResetParameters();
             using (var service = new MaterialOrderServiceClient())
             {
                 recordCount = service.GetMaterialOrderItemExtrasCount(empty, empty, empty, empty);

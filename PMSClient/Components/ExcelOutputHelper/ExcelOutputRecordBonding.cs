@@ -16,7 +16,7 @@ namespace PMSClient.ExcelOutputHelper
 
         public override void Output()
         {
-            ResetParameters();
+            //ResetParameters();
             using (var service = new RecordBondingServiceClient())
             {
                 recordCount = service.GetRecordBondingCount(empty, empty);

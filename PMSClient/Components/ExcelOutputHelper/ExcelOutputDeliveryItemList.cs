@@ -15,7 +15,7 @@ namespace PMSClient.ExcelOutputHelper
         }
         public override void Output()
         {
-            ResetParameters();
+            //ResetParameters();
             using (var service = new DeliveryServiceClient())
             {
                 recordCount = service.GetDeliveryItemExtraCount(empty, empty, empty);

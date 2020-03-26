@@ -4,11 +4,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PMSClient.NewService;
+
 
 namespace PMSClient.Helpers
 {
     public static class DeliveryHelper
     {
+        public static string RemovePostFixA(string platelot)
+        {
+            return platelot.Replace("A", "");
+        }
+        /// <summary>
+        /// 依照platelot来查找背板编号
+        /// </summary>
+        /// <param name="platelot"></param>
+        /// <returns></returns>
+        public static int GetPlateUsedTimeFromPlateLot(string platelot)
+        {
+            try
+            {
+                using (var s_recordTest = new NewServiceClient())
+                {
+                    int count = s_recordTest.GetPlateUsedTimesByPlateID(platelot);
+                    return count;
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+            return 0;
+        }
+
         /// <summary>
         /// 按照产品ID从测试记录中获取背板编号
         /// </summary>

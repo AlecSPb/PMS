@@ -100,16 +100,17 @@ namespace PMSClient.ReportsHelper
                                     {
 
                                         string bp_lot = Helpers.DeliveryHelper.GetBPLotFromBonding(item.ProductID);
+                                        string new_plate_lot = Helpers.DeliveryHelper.RemovePostFixA(bp_lot);
                                         mainTable.Rows[rownumber].Cells[8].Paragraphs[0]
-                                            .Append(bp_lot)
+                                            .Append(new_plate_lot)
                                             .FontSize(10).Alignment = Alignment.left;
 
-                                        if (bp_lot.EndsWith("A"))
-                                        {
-                                            mainTable.Rows[rownumber].Cells[9].Paragraphs[0]
-                                                .Append("old")
-                                                .FontSize(10).Alignment = Alignment.left;
-                                        }
+                                        //显示背板使用次数
+                                        int count_used = Helpers.DeliveryHelper.GetPlateUsedTimeFromPlateLot(bp_lot);
+                                        mainTable.Rows[rownumber].Cells[9].Paragraphs[0]
+                                                .Append(count_used.ToString())
+                                                .FontSize(10).Alignment = Alignment.center;
+
 
                                     }
                                     else//在[测试记录]中查找非绑定靶材的背板记录

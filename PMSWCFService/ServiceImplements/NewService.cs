@@ -261,12 +261,13 @@ namespace PMSWCFService
         {
             try
             {
+                string new_plateid = plateid.Replace("A", "");
                 XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var query = from p in db.RecordBondings
                                 where p.State != PMSCommon.BondingState.作废.ToString()
-                                && p.PlateLot.Replace("A", "") == plateid
+                                && p.PlateLot.Replace("A", "") == new_plateid
                                 select p;
 
                     return query.Count();
