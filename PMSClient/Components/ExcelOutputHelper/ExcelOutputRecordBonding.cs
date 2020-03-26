@@ -7,7 +7,7 @@ using PMSClient.MainService;
 
 namespace PMSClient.ExcelOutputHelper
 {
-    public class ExcelOutputRecordBonding : ExcelOutputBase
+    public class ExcelOutputRecordBonding : ExcelOutputBasePage
     {
         public ExcelOutputRecordBonding()
         {

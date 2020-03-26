@@ -10,7 +10,7 @@ namespace PMSClient.ExcelOutputHelper
     /// <summary>
     /// 用来导出样品记录
     /// </summary>
-    public class ExcelSample : ExcelOutputBase
+    public class ExcelSample : ExcelOutputBasePage
     {
         public ExcelSample()
         {

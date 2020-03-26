@@ -44,6 +44,8 @@
                     Command="{Binding OneKeyTempFinish}"/>
             <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Output}"/>
+            <Button Content="{StaticResource ButtonPlate}" Style="{StaticResource StyleButtonCommon}"
+                    Command="{Binding Plate}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
             <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>

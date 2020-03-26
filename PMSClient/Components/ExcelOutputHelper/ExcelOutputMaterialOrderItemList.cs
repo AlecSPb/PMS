@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ExcelOutputHelper
 {
-    public class ExcelOutputMaterialOrderItemList : ExcelOutputBase
+    public class ExcelOutputMaterialOrderItemList : ExcelOutputBasePage
     {
         public ExcelOutputMaterialOrderItemList()
         {

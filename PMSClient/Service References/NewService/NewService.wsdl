@@ -109,6 +109,12 @@
   <wsdl:message name="INewService_GetPlateUsedStatistics_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPlateUsedStatisticsResponse" />
   </wsdl:message>
+  <wsdl:message name="INewService_GetPlateUsedStatisticsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateUsedStatisticsCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlateUsedStatisticsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateUsedStatisticsCountResponse" />
+  </wsdl:message>
   <wsdl:message name="INewService_GetPlateUsedTimesByPlateID_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPlateUsedTimesByPlateID" />
   </wsdl:message>
@@ -207,6 +213,10 @@
     <wsdl:operation name="GetPlateUsedStatistics">
       <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlateUsedStatistics" message="tns:INewService_GetPlateUsedStatistics_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlateUsedStatisticsResponse" message="tns:INewService_GetPlateUsedStatistics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateUsedStatisticsCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlateUsedStatisticsCount" message="tns:INewService_GetPlateUsedStatisticsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlateUsedStatisticsCountResponse" message="tns:INewService_GetPlateUsedStatisticsCount_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetPlateUsedTimesByPlateID">
       <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlateUsedTimesByPlateID" message="tns:INewService_GetPlateUsedTimesByPlateID_InputMessage" />
@@ -377,6 +387,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetPlateUsedStatistics">
       <soap:operation soapAction="http://tempuri.org/INewService/GetPlateUsedStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateUsedStatisticsCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetPlateUsedStatisticsCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

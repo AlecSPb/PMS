@@ -11,7 +11,7 @@ using System.IO;
 
 namespace PMSClient.ExcelOutputHelper
 {
-    public class ExcelOutputSpecialFor230 : ExcelOutputBase
+    public class ExcelOutputSpecialFor230 : ExcelOutputBasePage
     {
 
         public ExcelOutputSpecialFor230()

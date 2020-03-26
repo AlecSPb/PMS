@@ -77,7 +77,9 @@ namespace PMSWCFService.ServiceContracts
 
         //绑定
         [OperationContract]
-        List<DcPlateUsedStatistic> GetPlateUsedStatistics();
+        List<DcPlateUsedStatistic> GetPlateUsedStatistics(int s, int t);
+        [OperationContract]
+        int GetPlateUsedStatisticsCount();
 
         [OperationContract]
         int GetPlateUsedTimesByPlateID(string plateid);

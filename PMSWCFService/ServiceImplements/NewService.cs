@@ -212,7 +212,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcPlateUsedStatistic> GetPlateUsedStatistics()
+        public List<DcPlateUsedStatistic> GetPlateUsedStatistics(int s, int t)
         {
             try
             {
@@ -225,7 +225,29 @@ namespace PMSWCFService
                                 orderby g.Count() descending
                                 select new DcPlateUsedStatistic { PlateLot = g.Key, Count = g.Count() };
 
-                    return query.ToList();
+                    return query.Skip(s).Take(t).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetPlateUsedStatisticsCount()
+        {
+            try
+            {
+                XS.RunLog();
+                using (var db = new PMSDbContext())
+                {
+                    var query = from p in db.RecordBondings
+                                where p.State != PMSCommon.BondingState.作废.ToString()
+                                group p by p.PlateLot.Replace("A", "") into g
+                                select new DcPlateUsedStatistic { PlateLot = g.Key, Count = g.Count() };
+
+                    return query.Count();
                 }
             }
             catch (Exception ex)

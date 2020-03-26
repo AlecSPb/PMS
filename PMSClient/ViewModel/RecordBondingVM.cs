@@ -48,6 +48,19 @@ namespace PMSClient.ViewModel
             ScanAdd = new RelayCommand(ActionScanAdd, CanScanAdd);
             Output = new RelayCommand(ActionOutput);
             OneKeyTempFinish = new RelayCommand(ActionOneKeyTempFinish);
+
+            Plate = new RelayCommand(ActionPlate);
+        }
+
+        private void ActionPlate()
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定要生成所有背板的使用次数记录吗?"))
+            {
+                return;
+            }
+            var excel = new ExcelOutputHelper.ExcelPlateStatistic();
+            excel.Intialize($"背板导出记录{DateTime.Now.ToString("yyMMdd")}");
+            excel.Output();
         }
 
         private void ActionOneKeyTempFinish()
@@ -351,5 +364,6 @@ namespace PMSClient.ViewModel
 
         public RelayCommand Output { get; set; }
         public RelayCommand OneKeyTempFinish { get; set; }
+        public RelayCommand Plate { get; set; }
     }
 }

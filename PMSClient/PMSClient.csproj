@@ -214,6 +214,8 @@
     <Compile Include="Components\ExcelOutputHelper\Dialogs\YearDateDailog.xaml.cs">
       <DependentUpon>YearDateDailog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputBaseSimple.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelPlateStatistic.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelSample.cs" />
     <Compile Include="Components\Express\ExpressConfigService.cs" />
     <Compile Include="Components\FTPDownloader\FTPImageShow.xaml.cs">
@@ -269,7 +271,7 @@
     <Compile Include="Components\BatchDataProcess\ScanInput\SourceTarget.cs" />
     <Compile Include="Components\BatchDataProcess\ScanInput\TableSource.cs" />
     <Compile Include="Components\BatchDataProcess\ScanInput\ProcessScanInput.cs" />
-    <Compile Include="Components\ExcelOutputHelper\ExcelOutputBase.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputBasePage.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelOutputDeliveryItemList.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelOutputMaterialIn.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelOutputMaterialOrderItemList.cs" />

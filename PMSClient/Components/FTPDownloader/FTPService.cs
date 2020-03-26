@@ -149,13 +149,13 @@ namespace PMSClient.Components.FTPDownloader
         /// 从服务器下载文件
         /// </summary>
         /// <param name="productid"></param>
-        public async Task<string> GetImageFromServer(string productid)
+        public async Task<bool> GetImageFromServer(string productid)
         {
             CheckCacheFolder();
             string fileName_bondings = $"/Y_CSCAN_PMS/Bondings/{productid}.jpg";
             string fileName_targets = $"/Y_CSCAN_PMS/Targets/{productid}.jpg";
 
-            string fileName_local = Path.Combine(cacheFolder, $"{productid}".jpg);
+            string fileName_local = Path.Combine(cacheFolder, $"{productid}.jpg");
 
             var ftp = new FtpClient(host, credential);
             ftp.Encoding = Encoding.Default;
@@ -186,21 +186,13 @@ namespace PMSClient.Components.FTPDownloader
             catch (Exception ex)
             {
                 PMSDialogService.ShowWarning(ex.Message);
-                return null;
             }
             finally
             {
                 ftp.Disconnect();
             }
+            return is_downloaded;
 
-            if (is_downloaded)
-            {
-                return ms;
-            }
-            else
-            {
-                return null;
-            }
         }
 
 

@@ -44,6 +44,11 @@ namespace PMSClient.ExcelOutputHelper
             currentCell = currentRow.CreateCell(cellIndex);
             currentCell.SetCellValue(value);
         }
+        public void CreateAndSetCell(int cellIndex, double value)
+        {
+            currentCell = currentRow.CreateCell(cellIndex);
+            currentCell.SetCellValue(value);
+        }
         /// <summary>
         /// 插入标题行
         /// </summary>

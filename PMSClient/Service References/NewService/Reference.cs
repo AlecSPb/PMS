@@ -2208,10 +2208,16 @@ namespace PMSClient.NewService {
         System.Threading.Tasks.Task<System.DateTime> GetRecordTestLastUpdateTimeAsync(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlateUsedStatistics", ReplyAction="http://tempuri.org/INewService/GetPlateUsedStatisticsResponse")]
-        PMSClient.NewService.DcPlateUsedStatistic[] GetPlateUsedStatistics();
+        PMSClient.NewService.DcPlateUsedStatistic[] GetPlateUsedStatistics(int s, int t);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlateUsedStatistics", ReplyAction="http://tempuri.org/INewService/GetPlateUsedStatisticsResponse")]
-        System.Threading.Tasks.Task<PMSClient.NewService.DcPlateUsedStatistic[]> GetPlateUsedStatisticsAsync();
+        System.Threading.Tasks.Task<PMSClient.NewService.DcPlateUsedStatistic[]> GetPlateUsedStatisticsAsync(int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlateUsedStatisticsCount", ReplyAction="http://tempuri.org/INewService/GetPlateUsedStatisticsCountResponse")]
+        int GetPlateUsedStatisticsCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlateUsedStatisticsCount", ReplyAction="http://tempuri.org/INewService/GetPlateUsedStatisticsCountResponse")]
+        System.Threading.Tasks.Task<int> GetPlateUsedStatisticsCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlateUsedTimesByPlateID", ReplyAction="http://tempuri.org/INewService/GetPlateUsedTimesByPlateIDResponse")]
         int GetPlateUsedTimesByPlateID(string plateid);
@@ -2399,12 +2405,20 @@ namespace PMSClient.NewService {
             return base.Channel.GetRecordTestLastUpdateTimeAsync(id);
         }
         
-        public PMSClient.NewService.DcPlateUsedStatistic[] GetPlateUsedStatistics() {
-            return base.Channel.GetPlateUsedStatistics();
+        public PMSClient.NewService.DcPlateUsedStatistic[] GetPlateUsedStatistics(int s, int t) {
+            return base.Channel.GetPlateUsedStatistics(s, t);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.NewService.DcPlateUsedStatistic[]> GetPlateUsedStatisticsAsync() {
-            return base.Channel.GetPlateUsedStatisticsAsync();
+        public System.Threading.Tasks.Task<PMSClient.NewService.DcPlateUsedStatistic[]> GetPlateUsedStatisticsAsync(int s, int t) {
+            return base.Channel.GetPlateUsedStatisticsAsync(s, t);
+        }
+        
+        public int GetPlateUsedStatisticsCount() {
+            return base.Channel.GetPlateUsedStatisticsCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlateUsedStatisticsCountAsync() {
+            return base.Channel.GetPlateUsedStatisticsCountAsync();
         }
         
         public int GetPlateUsedTimesByPlateID(string plateid) {

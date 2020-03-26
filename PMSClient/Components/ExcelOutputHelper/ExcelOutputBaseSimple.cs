@@ -1,24 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NPOI.XSSF;
-using System.IO;
 
 namespace PMSClient.ExcelOutputHelper
 {
-    public class ExcelOutputBase
+    public class ExcelOutputBaseSimple
     {
         // 输出文件名
         protected string excelFileName = String.Empty;
         protected string sheetName = String.Empty;
-        //分页参数
-        protected int pageSize, recordCount, pageCount, pageIndex;
 
         //检索空字符
         protected string empty = "";
-
 
         protected bool openAfterCreate = true;
         /// <summary>
@@ -26,7 +22,7 @@ namespace PMSClient.ExcelOutputHelper
         /// </summary>
         /// <param name="excel2007FileName">不包含扩展名的文件名</param>
         /// <param name="pageSize">分页大小</param>
-        public ExcelOutputBase()
+        public ExcelOutputBaseSimple()
         {
 
         }
@@ -36,7 +32,7 @@ namespace PMSClient.ExcelOutputHelper
         /// <param name="excel2007FileName"></param>
         /// <param name="sheetName"></param>
         /// <param name="pageSize"></param>
-        public void Intialize(string excel2007FileName, string sheetName = "Default", int pageSize = 50, bool openAfterCreate = true)
+        public void Intialize(string excel2007FileName, string sheetName = "Default", bool openAfterCreate = true)
         {
             this.sheetName = sheetName;
             string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
@@ -46,25 +42,8 @@ namespace PMSClient.ExcelOutputHelper
                 Directory.CreateDirectory(folder);
             }
             this.excelFileName = Path.Combine(folder, excel2007FileName + ".xlsx");
-            this.pageSize = pageSize;
             this.openAfterCreate = openAfterCreate;
 
-            ResetParameters();
-        }
-        /// <summary>
-        /// 获取分页页数
-        /// </summary>
-        /// <returns></returns>
-        protected int GetPageCount()
-        {
-            return recordCount / pageSize + (recordCount % pageSize == 0 ? 0 : 1);
-        }
-
-        protected void ResetParameters()
-        {
-            recordCount = 0;
-            pageCount = 0;
-            pageIndex = 0;
         }
 
         /// <summary>
@@ -92,7 +71,6 @@ namespace PMSClient.ExcelOutputHelper
                 throw ex;
             }
         }
-
 
     }
 }

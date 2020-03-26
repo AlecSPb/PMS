@@ -10,7 +10,7 @@ namespace PMSClient.ExcelOutputHelper
     /// <summary>
     /// 输出Material In
     /// </summary>
-    public class ExcelOutputMaterialIn : ExcelOutputBase
+    public class ExcelOutputMaterialIn : ExcelOutputBasePage
     {
         public ExcelOutputMaterialIn() 
         {
