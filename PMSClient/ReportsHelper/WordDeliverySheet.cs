@@ -165,7 +165,7 @@ namespace PMSClient.ReportsHelper
                 #endregion
                 //复制到临时文件
                 ReportHelper.FileCopy(tempFile, targetFile);
-                PMSDialogService.Show("原材料报告创建成功，即将打开");
+                PMSDialogService.Show("发货清单创建成功，即将打开");
                 System.Diagnostics.Process.Start(targetFile);
             }
             catch (Exception ex)

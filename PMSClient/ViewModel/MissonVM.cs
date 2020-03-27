@@ -21,6 +21,7 @@ namespace PMSClient.ViewModel
         public void SetSearch(string pminumber)
         {
             SearchPMINumber = pminumber;
+            SearchOrderState = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -45,7 +46,6 @@ namespace PMSClient.ViewModel
             EmergencyMisson = 0;
             UnVHPTargetCount = 0;
             SearchCompositionStandard = SearchPMINumber = "";
-            SearchOrderState = "";
 
             SearchOrderStates = new List<string>();
             SearchOrderStates.Add(PMSCommon.OrderState.未完成.ToString());
@@ -53,6 +53,8 @@ namespace PMSClient.ViewModel
             SearchOrderStates.Add(PMSCommon.OrderState.完成.ToString());
             SearchOrderStates.Add(PMSCommon.OrderState.暂停.ToString());
             SearchOrderStates.Add("");
+
+            SearchOrderState = PMSCommon.OrderState.未完成.ToString();
 
             Missons = new ObservableCollection<DcOrder>();
             PlanVHPs = new ObservableCollection<DcPlanVHP>();

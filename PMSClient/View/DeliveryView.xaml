@@ -79,6 +79,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RDState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding State}"/>
                 <DataGridTemplateColumn Header="{StaticResource RDShipTime}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -157,8 +159,6 @@
                                     Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
                 <DataGridTextColumn Header="{StaticResource RDCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
-                <DataGridTextColumn Header="{StaticResource RDState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding State}"/>
                 
             </DataGrid.Columns>
         </DataGrid>

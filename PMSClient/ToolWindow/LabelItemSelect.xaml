@@ -30,6 +30,8 @@
                       IsChecked="True"/>
             <CheckBox Name="ChkPlateLot" Content="背板批号(仅限绑定靶材)" Style="{StaticResource StyleCheckBoxCommon}"
                       IsChecked="False"/>
+            <CheckBox Name="ChkPlateDrawing" Content="背板图纸号" Style="{StaticResource StyleCheckBoxCommon}"
+                      IsChecked="False"/>
         </StackPanel>
         <Button Name="BtnOK" Grid.Row="1" Content="确定" Style="{StaticResource StyleButtonCommon}" 
                 HorizontalAlignment="Stretch" Margin="5" Padding="10" FontSize="18"

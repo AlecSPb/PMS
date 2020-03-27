@@ -78,9 +78,9 @@ namespace PMSWCFService
                     var result = from o in dc.Orders
                                  where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
                                  && o.State.Contains(state)
-                                 && o.State!=PMSCommon.OrderState.作废.ToString()
-                                 && o.State!=PMSCommon.OrderState.未核验.ToString()
-                                 && o.State!=PMSCommon.OrderState.取消.ToString()
+                                 && o.State != PMSCommon.OrderState.作废.ToString()
+                                 && o.State != PMSCommon.OrderState.未核验.ToString()
+                                 && o.State != PMSCommon.OrderState.取消.ToString()
                                  && o.CompositionStandard.Contains(composition)
                                  && o.PMINumber.Contains(pminumber)
                                  orderby o.CreateTime descending

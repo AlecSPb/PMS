@@ -465,6 +465,36 @@ namespace PMSClient.ViewModel
                         }
 
                     }
+
+                    if (dialog_result.HasPlateDrawing)
+                    {
+                        try
+                        {
+                            using (var s_test=new RecordTestServiceClient())
+                            {
+                                var test = s_test.GetRecordTestByProductID(item.ProductID.Trim()).FirstOrDefault();
+                                if (test != null)
+                                {
+                                    using (var s_order = new PMSClient.NewService.NewServiceClient())
+                                    {
+                                        var order = s_order.GetOrderByPMINumber(test.PMINumber.Trim());
+                                        if (order != null)
+                                        {
+                                            sb.Append("BP-Drawing:");
+                                            sb.AppendLine(order.PlateDrawing ?? "None");
+                                        }
+                                    }
+                                }
+
+                            }
+
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
+
                     if (dialog_result.HasProductID)
                     {
                         sb.AppendLine(item.ProductID.Trim());

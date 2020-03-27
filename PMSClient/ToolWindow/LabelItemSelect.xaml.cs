@@ -27,6 +27,7 @@ namespace PMSClient.ToolWindow
         public bool HasPO { get; set; } = true;
         public bool HasPlateLot { get; set; } = true;
 
+        public bool HasPlateDrawing { get; set; } = true;
     }
     /// <summary>
     /// LabelItemSelect.xaml 的交互逻辑
@@ -49,6 +50,7 @@ namespace PMSClient.ToolWindow
             result.HasPO = (bool)ChkPO.IsChecked;
             result.HasPlateLot = (bool)ChkPlateLot.IsChecked;
             result.HasSeperator = (bool)ChkSeperator.IsChecked;
+            result.HasPlateDrawing = (bool)ChkPlateDrawing.IsChecked;
             this.DialogResult = true;
         }
 
