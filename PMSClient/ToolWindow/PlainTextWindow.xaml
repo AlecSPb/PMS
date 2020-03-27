@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
-        Title="PlainTextWindow" Height="600" Width="600">
+        Title="长文本显示窗口" Height="300" Width="400">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -14,7 +14,7 @@
         <StackPanel Orientation="Horizontal">
             <Button Name="BtnClose" Click="BtnClose_Click" Content="退出" Style="{StaticResource StyleButtonCommon}"/>
         </StackPanel>
-        <TextBox Name="RtxtContent" Grid.Row="1" IsReadOnly="True" AcceptsReturn="True"
+        <TextBox Name="RtxtContent" Grid.Row="1" IsReadOnly="True" TextWrapping="Wrap"
                  VerticalScrollBarVisibility="Visible" FontSize="18"></TextBox>
     </Grid>
 </Window>

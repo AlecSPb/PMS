@@ -82,5 +82,12 @@ namespace PMSClient.View
 
             }
         }
+
+        private void BtnSpecialRequirement_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new ToolWindow.PlainTextWindow();
+            dialog.ContentText = TxtSpecialRequirement.Text;
+            dialog.ShowDialog();
+        }
     }
 }

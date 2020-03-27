@@ -351,18 +351,19 @@
                            Style="{StaticResource StyleTextBlockCommon}" />
                         <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding MinimumAcceptDefect}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                        <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource OrderDrawing}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
-                        <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding Drawing}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <Button Grid.Row="13" Grid.Column="0" Content="{StaticResource OrderSpecialRequirement}" Style="{StaticResource StyleButtonStrench}"
+                                Name="BtnSpecialRequirement" Click="BtnSpecialRequirement_Click"/>
+                        <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding SpecialRequirement}" Style="{StaticResource StyleTextBoxReadOnly}"
+                                 Background="Yellow" Name="TxtSpecialRequirement"/>
 
-                        <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource OrderSpecialRequirement}"
+                        <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource OrderDrawing}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                        <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding SpecialRequirement}" Style="{StaticResource StyleTextBoxReadOnly}"
-                                 Background="Yellow"/>
+                        <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Drawing}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
                         <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource OrderCustomer}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding CustomerName}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding CustomerName}" Style="{StaticResource StyleTextBoxReadOnly}"
+                                 Foreground="LightGray"/>
 
                     </Grid>
                 </ScrollViewer>

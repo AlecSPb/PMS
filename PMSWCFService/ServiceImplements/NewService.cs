@@ -142,6 +142,7 @@ namespace PMSWCFService
                                 && o.CompositionStandard.Contains(composition)
                                 && o.PMINumber.Contains(pminumber)
                                 && o.State.Contains(state)
+                                && o.State!=PMSCommon.OrderState.作废.ToString()
                                 orderby o.CreateTime descending
                                 select o;
 
@@ -183,10 +184,15 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.Orders.Where(o => o.CustomerName.Contains(customer)
-                    && o.CompositionStandard.Contains(composition)
-                    && o.PMINumber.Contains(pminumber)
-                    && o.State.Contains(state)).Count();
+                    var query = from o in dc.Orders
+                                where o.CustomerName.Contains(customer)
+                                && o.CompositionStandard.Contains(composition)
+                                && o.PMINumber.Contains(pminumber)
+                                && o.State.Contains(state)
+                                && o.State != PMSCommon.OrderState.作废.ToString()
+                                select o;
+
+                    return query.Count();
                 }
             }
             catch (Exception ex)

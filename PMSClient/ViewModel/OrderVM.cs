@@ -58,7 +58,6 @@ namespace PMSClient.ViewModel
             SearchOrderStates.Add(PMSCommon.OrderState.未完成.ToString());
             SearchOrderStates.Add(PMSCommon.OrderState.生产完成.ToString());
             SearchOrderStates.Add(PMSCommon.OrderState.完成.ToString());
-            SearchOrderStates.Add(PMSCommon.OrderState.作废.ToString());
             SearchOrderStates.Add(PMSCommon.OrderState.暂停.ToString());
             SearchOrderStates.Add(PMSCommon.OrderState.取消.ToString());
             SearchOrderStates.Add("");
@@ -81,6 +80,30 @@ namespace PMSClient.ViewModel
             Output = new RelayCommand(ActionOutput);
 
             SampleSheet = new RelayCommand(ActionSampleSheet);
+
+            ShowDetails = new RelayCommand<string>(ActionShowDetails);
+        }
+
+        private void ActionShowDetails(string parameter)
+        {
+            if (!string.IsNullOrEmpty(parameter))
+            {
+                string s = "";
+                switch (parameter)
+                {
+                    case "SpecialRequirement":
+                        s = CurrentOrder?.SpecialRequirement;
+                        break;
+                    default:
+                        break;
+                }
+                if (s != "")
+                {
+                    var dialog = new ToolWindow.PlainTextWindow();
+                    dialog.ContentText = s;
+                    dialog.ShowDialog();
+                }
+            }
         }
 
         private void ActionEdit(DcOrder obj)
@@ -381,6 +404,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
         public RelayCommand Output { get; set; }
         public RelayCommand SampleSheet { get; set; }
+        public RelayCommand<string> ShowDetails { get; private set; }
+
         #endregion
     }
 }

@@ -88,9 +88,9 @@
                 </StackPanel>
                 <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="*确保是CD191228-A的格式"  Background="Yellow"/>
+                           Text="*确保严格是CD191228-A的格式"  Background="Yellow"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="自动生成的工作号不一定唯一和合适，请自行修改 CD开头"  Background="LightGreen"/>
+                           Text="自动生成的工作号后请自行修改，以CD开头，共10位"  Background="LightGreen"/>
                 </StackPanel>
 
 
@@ -280,7 +280,7 @@
                 <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding PartNumber}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightCyan"/>
                 <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
-                           Text="生产无法看到"/>
+                           Text="生产无法看到，测试可以看到"/>
 
                 <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource OrderSecondMachineDimension}"
                            Style="{StaticResource StyleTextBlockCommon}" />
@@ -289,7 +289,7 @@
                 <StackPanel Grid.Row="23" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnSecondDimension" Content="填入首次加工尺寸" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnSecondDimension_Click"/>
                     <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
-                           Text="生产无法看到"/>
+                           Text="生产无法看到，但测试可以看到"/>
                 </StackPanel>
 
 
@@ -298,14 +298,14 @@
                 <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding SecondMachineDetails}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightCyan"/>
                 <TextBlock Grid.Row="24" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
-                           Text="生产无法看到"/>
+                           Text="生产无法看到，但测试可以看到"/>
 
                 <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource OrderRemark}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="25" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightCyan"/>
                 <TextBlock Grid.Row="25" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
-                           Text="生产无法看到"/>
+                           Text="仅自己可见"/>
 
                 <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource OrderCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}" />
