@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSClient.NewService;
+using PMSClient.MainService;
 
 namespace PMSClient.ExcelOutputHelper
 {
@@ -19,9 +19,8 @@ namespace PMSClient.ExcelOutputHelper
 
         public override void Output()
         {
-            using (var service = new NewServiceClient())
+            using (var service = new RecordBondingServiceClient())
             {
-
                 recordCount = service.GetPlateUsedStatisticsCount();
                 pageCount = GetPageCount();
 

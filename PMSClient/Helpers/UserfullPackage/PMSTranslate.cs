@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSClient.MainService;
+using PMSClient.NewService;
 
 namespace UsefulPackage
 {
@@ -52,7 +52,7 @@ namespace UsefulPackage
         /// <param name="plan"></param>
         /// <param name="suffix"></param>
         /// <returns></returns>
-        public static string PlanLot(DcPlanWithMisson plan, string suffix)
+        public static string PlanLot(DcPlanExtra plan, string suffix)
         {
             if (plan == null)
             {
@@ -67,11 +67,11 @@ namespace UsefulPackage
         /// </summary>
         /// <param name="plan"></param>
         /// <returns></returns>
-        public static string PlanLot(DcPlanWithMisson plan)
+        public static string PlanLot(DcPlanExtra plan)
         {
             return PlanLot(plan.Plan.PlanDate, plan.Plan.VHPDeviceCode, "1");
         }
-        //public static string PlanLot(DcPlanWithMisson plan)
+        //public static string PlanLot(DcPlanExtra plan)
         //{
         //    if (plan == null)
         //    {
@@ -107,7 +107,7 @@ namespace UsefulPackage
         /// <param name="suffix"></param>
         /// <param name="DeviceCodeTransfer"></param>
         /// <returns></returns>
-        public static string PlanLot(DcPlanWithMisson plan, string suffix, Func<string, string> DeviceCodeTransfer)
+        public static string PlanLot(DcPlanExtra plan, string suffix, Func<string, string> DeviceCodeTransfer)
         {
             if (plan == null)
             {
@@ -155,7 +155,7 @@ namespace UsefulPackage
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public static string Dimension(DcRecordDeMold model)
+        public static string Dimension(PMSClient.MainService.DcRecordDeMold model)
         {
             double diameter = Average(model.Diameter1, model.Diameter2);
             double thickness = Average(model.Thickness1, model.Thickness2, model.Thickness3, model.Thickness4);
@@ -166,7 +166,7 @@ namespace UsefulPackage
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public static string Dimension(DcRecordMachine model)
+        public static string Dimension(PMSClient.MainService.DcRecordMachine model)
         {
             double diameter = Average(model.Diameter1, model.Diameter2);
             double thickness = Average(model.Thickness1, model.Thickness2, model.Thickness3, model.Thickness4);

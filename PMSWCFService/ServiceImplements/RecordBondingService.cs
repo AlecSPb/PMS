@@ -375,5 +375,90 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+
+
+        /// <summary>
+        /// 获取背板使用次数统计-数据
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public List<DcPlateUsedStatistic> GetPlateUsedStatistics(int s, int t)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var db = new PMSDbContext())
+                {
+                    var query = from p in db.RecordBondings
+                                where p.State != PMSCommon.BondingState.作废.ToString()
+                                group p by p.PlateLot.Replace("A", "") into g
+                                orderby g.Count() descending
+                                select new DcPlateUsedStatistic { PlateLot = g.Key, Count = g.Count() };
+
+                    return query.Skip(s).Take(t).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// 获取背板使用次数统计-分页
+        /// </summary>
+        /// <returns></returns>
+        public int GetPlateUsedStatisticsCount()
+        {
+            try
+            {
+                XS.RunLog();
+                using (var db = new PMSDbContext())
+                {
+                    var query = from p in db.RecordBondings
+                                where p.State != PMSCommon.BondingState.作废.ToString()
+                                group p by p.PlateLot.Replace("A", "") into g
+                                select new DcPlateUsedStatistic { PlateLot = g.Key, Count = g.Count() };
+
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// 按背板编号获取背板使用次数，用于发货清单
+        /// </summary>
+        /// <param name="plateid"></param>
+        /// <returns></returns>
+        public int GetPlateUsedTimesByPlateID(string plateid)
+        {
+            try
+            {
+                string new_plateid = plateid.Replace("A", "");
+                XS.RunLog();
+                using (var db = new PMSDbContext())
+                {
+                    var query = from p in db.RecordBondings
+                                where p.State != PMSCommon.BondingState.作废.ToString()
+                                && p.PlateLot.Replace("A", "") == new_plateid
+                                select p;
+
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

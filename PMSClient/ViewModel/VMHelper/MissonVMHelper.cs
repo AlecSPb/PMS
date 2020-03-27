@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSClient.MainService;
+using PMSClient.NewService;
 
 namespace PMSClient.ViewModel.VMHelper
 {
@@ -23,9 +23,9 @@ namespace PMSClient.ViewModel.VMHelper
                     obj.SpecialRequirement = dialog.Value;
                     try
                     {
-                        using (var s = new PlanVHPServiceClient())
+                        using (var s = new NewServiceClient())
                         {
-                            s.UpdateVHPPlanByUID(obj, PMSHelper.CurrentSession.CurrentUser.UserName);
+                            s.UpdatePlan(obj, PMSHelper.CurrentSession.CurrentUser.UserName);
                         }
                         PMSDialogService.Show("转单成功");
                     }

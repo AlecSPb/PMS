@@ -31,7 +31,6 @@ namespace PMSClient.View
 
             SimpleIoc.Default.Register<MissonSelectView>();
             SimpleIoc.Default.Register<MissonView>(true);
-            SimpleIoc.Default.Register<MissonUnCompletedView>();
 
             SimpleIoc.Default.Register<PlanView>(true);
             SimpleIoc.Default.Register<PlanSearchView>();
@@ -352,10 +351,6 @@ namespace PMSClient.View
         public MissonView Misson
         {
             get { return SimpleIoc.Default.GetInstance<MissonView>(); }
-        }
-        public MissonUnCompletedView MissonUnCompleted
-        {
-            get { return SimpleIoc.Default.GetInstance<MissonUnCompletedView>(); }
         }
         public PlanView Plan
         {

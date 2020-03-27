@@ -8586,6 +8586,67 @@ namespace PMSClient.MainService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcPlateUsedStatistic", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcPlateUsedStatistic : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateLotField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Count {
+            get {
+                return this.CountField;
+            }
+            set {
+                if ((this.CountField.Equals(value) != true)) {
+                    this.CountField = value;
+                    this.RaisePropertyChanged("Count");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateLot {
+            get {
+                return this.PlateLotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateLotField, value) != true)) {
+                    this.PlateLotField = value;
+                    this.RaisePropertyChanged("PlateLot");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DcOutSource", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
     public partial class DcOutSource : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -12500,6 +12561,24 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTime", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTimeResponse")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingsByDateTimeAsync(System.DateTime start, System.DateTime end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetPlateUsedStatistics", ReplyAction="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsResponse")]
+        PMSClient.MainService.DcPlateUsedStatistic[] GetPlateUsedStatistics(int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetPlateUsedStatistics", ReplyAction="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcPlateUsedStatistic[]> GetPlateUsedStatisticsAsync(int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsCount", ReplyAction="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsCountResponse")]
+        int GetPlateUsedStatisticsCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsCount", ReplyAction="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsCountResponse")]
+        System.Threading.Tasks.Task<int> GetPlateUsedStatisticsCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetPlateUsedTimesByPlateID", ReplyAction="http://tempuri.org/IRecordBondingService/GetPlateUsedTimesByPlateIDResponse")]
+        int GetPlateUsedTimesByPlateID(string plateid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetPlateUsedTimesByPlateID", ReplyAction="http://tempuri.org/IRecordBondingService/GetPlateUsedTimesByPlateIDResponse")]
+        System.Threading.Tasks.Task<int> GetPlateUsedTimesByPlateIDAsync(string plateid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -12647,6 +12726,30 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingsByDateTimeAsync(System.DateTime start, System.DateTime end) {
             return base.Channel.GetRecordBondingsByDateTimeAsync(start, end);
+        }
+        
+        public PMSClient.MainService.DcPlateUsedStatistic[] GetPlateUsedStatistics(int s, int t) {
+            return base.Channel.GetPlateUsedStatistics(s, t);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlateUsedStatistic[]> GetPlateUsedStatisticsAsync(int s, int t) {
+            return base.Channel.GetPlateUsedStatisticsAsync(s, t);
+        }
+        
+        public int GetPlateUsedStatisticsCount() {
+            return base.Channel.GetPlateUsedStatisticsCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlateUsedStatisticsCountAsync() {
+            return base.Channel.GetPlateUsedStatisticsCountAsync();
+        }
+        
+        public int GetPlateUsedTimesByPlateID(string plateid) {
+            return base.Channel.GetPlateUsedTimesByPlateID(plateid);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlateUsedTimesByPlateIDAsync(string plateid) {
+            return base.Channel.GetPlateUsedTimesByPlateIDAsync(plateid);
         }
     }
     

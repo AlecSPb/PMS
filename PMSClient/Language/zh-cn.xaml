@@ -432,7 +432,7 @@
     <sys:String x:Key="OrderMIniummAcceptDefect">最低要求</sys:String>
     <sys:String x:Key="OrderRemark">备注</sys:String>
     <sys:String x:Key="OrderPriority">优先级</sys:String>
-    <sys:String x:Key="OrderState">订单状态</sys:String>
+    <sys:String x:Key="OrderState">状态</sys:String>
     <sys:String x:Key="OrderChecker">核验者</sys:String>
     <sys:String x:Key="OrderCheckContent">核验内容</sys:String>
     <sys:String x:Key="OrderCheckDate">核验日期</sys:String>

@@ -652,67 +652,6 @@ namespace PMSClient.NewService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DcPlanExtra", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
-    [System.SerializableAttribute()]
-    public partial class DcPlanExtra : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PMSClient.NewService.DcOrder MissonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PMSClient.NewService.DcPlanVHP PlanField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PMSClient.NewService.DcOrder Misson {
-            get {
-                return this.MissonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MissonField, value) != true)) {
-                    this.MissonField = value;
-                    this.RaisePropertyChanged("Misson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PMSClient.NewService.DcPlanVHP Plan {
-            get {
-                return this.PlanField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlanField, value) != true)) {
-                    this.PlanField = value;
-                    this.RaisePropertyChanged("Plan");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DcPlanVHP", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
     public partial class DcPlanVHP : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1350,96 +1289,18 @@ namespace PMSClient.NewService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DcRecordTest", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcPlanExtra", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
-    public partial class DcRecordTest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class DcPlanExtra : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BackingPlateLotField;
+        private PMSClient.NewService.DcOrder MissonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CScanField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompositionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompositionAbbrField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompositionXRFField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreateTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DefectsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DensityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DimensionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DimensionActualField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FollowUpsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime LastUpdateTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime OrderDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PMINumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string POField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProductIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string QCField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RemarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ResistanceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RoughnessField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SampleField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TestTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WarpingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WeightField;
+        private PMSClient.NewService.DcPlanVHP PlanField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1452,663 +1313,27 @@ namespace PMSClient.NewService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BackingPlateLot {
+        public PMSClient.NewService.DcOrder Misson {
             get {
-                return this.BackingPlateLotField;
+                return this.MissonField;
             }
             set {
-                if ((object.ReferenceEquals(this.BackingPlateLotField, value) != true)) {
-                    this.BackingPlateLotField = value;
-                    this.RaisePropertyChanged("BackingPlateLot");
+                if ((object.ReferenceEquals(this.MissonField, value) != true)) {
+                    this.MissonField = value;
+                    this.RaisePropertyChanged("Misson");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CScan {
+        public PMSClient.NewService.DcPlanVHP Plan {
             get {
-                return this.CScanField;
+                return this.PlanField;
             }
             set {
-                if ((object.ReferenceEquals(this.CScanField, value) != true)) {
-                    this.CScanField = value;
-                    this.RaisePropertyChanged("CScan");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Composition {
-            get {
-                return this.CompositionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
-                    this.CompositionField = value;
-                    this.RaisePropertyChanged("Composition");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CompositionAbbr {
-            get {
-                return this.CompositionAbbrField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CompositionAbbrField, value) != true)) {
-                    this.CompositionAbbrField = value;
-                    this.RaisePropertyChanged("CompositionAbbr");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CompositionXRF {
-            get {
-                return this.CompositionXRFField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CompositionXRFField, value) != true)) {
-                    this.CompositionXRFField = value;
-                    this.RaisePropertyChanged("CompositionXRF");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreateTime {
-            get {
-                return this.CreateTimeField;
-            }
-            set {
-                if ((this.CreateTimeField.Equals(value) != true)) {
-                    this.CreateTimeField = value;
-                    this.RaisePropertyChanged("CreateTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Creator {
-            get {
-                return this.CreatorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
-                    this.CreatorField = value;
-                    this.RaisePropertyChanged("Creator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Customer {
-            get {
-                return this.CustomerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
-                    this.CustomerField = value;
-                    this.RaisePropertyChanged("Customer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Defects {
-            get {
-                return this.DefectsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DefectsField, value) != true)) {
-                    this.DefectsField = value;
-                    this.RaisePropertyChanged("Defects");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Density {
-            get {
-                return this.DensityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DensityField, value) != true)) {
-                    this.DensityField = value;
-                    this.RaisePropertyChanged("Density");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Dimension {
-            get {
-                return this.DimensionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
-                    this.DimensionField = value;
-                    this.RaisePropertyChanged("Dimension");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DimensionActual {
-            get {
-                return this.DimensionActualField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DimensionActualField, value) != true)) {
-                    this.DimensionActualField = value;
-                    this.RaisePropertyChanged("DimensionActual");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FollowUps {
-            get {
-                return this.FollowUpsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FollowUpsField, value) != true)) {
-                    this.FollowUpsField = value;
-                    this.RaisePropertyChanged("FollowUps");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime LastUpdateTime {
-            get {
-                return this.LastUpdateTimeField;
-            }
-            set {
-                if ((this.LastUpdateTimeField.Equals(value) != true)) {
-                    this.LastUpdateTimeField = value;
-                    this.RaisePropertyChanged("LastUpdateTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime OrderDate {
-            get {
-                return this.OrderDateField;
-            }
-            set {
-                if ((this.OrderDateField.Equals(value) != true)) {
-                    this.OrderDateField = value;
-                    this.RaisePropertyChanged("OrderDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PMINumber {
-            get {
-                return this.PMINumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
-                    this.PMINumberField = value;
-                    this.RaisePropertyChanged("PMINumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PO {
-            get {
-                return this.POField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.POField, value) != true)) {
-                    this.POField = value;
-                    this.RaisePropertyChanged("PO");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProductID {
-            get {
-                return this.ProductIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
-                    this.ProductIDField = value;
-                    this.RaisePropertyChanged("ProductID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string QC {
-            get {
-                return this.QCField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.QCField, value) != true)) {
-                    this.QCField = value;
-                    this.RaisePropertyChanged("QC");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Remark {
-            get {
-                return this.RemarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
-                    this.RemarkField = value;
-                    this.RaisePropertyChanged("Remark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Resistance {
-            get {
-                return this.ResistanceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ResistanceField, value) != true)) {
-                    this.ResistanceField = value;
-                    this.RaisePropertyChanged("Resistance");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Roughness {
-            get {
-                return this.RoughnessField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RoughnessField, value) != true)) {
-                    this.RoughnessField = value;
-                    this.RaisePropertyChanged("Roughness");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Sample {
-            get {
-                return this.SampleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SampleField, value) != true)) {
-                    this.SampleField = value;
-                    this.RaisePropertyChanged("Sample");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string State {
-            get {
-                return this.StateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateField, value) != true)) {
-                    this.StateField = value;
-                    this.RaisePropertyChanged("State");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TestType {
-            get {
-                return this.TestTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TestTypeField, value) != true)) {
-                    this.TestTypeField = value;
-                    this.RaisePropertyChanged("TestType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Warping {
-            get {
-                return this.WarpingField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WarpingField, value) != true)) {
-                    this.WarpingField = value;
-                    this.RaisePropertyChanged("Warping");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Weight {
-            get {
-                return this.WeightField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WeightField, value) != true)) {
-                    this.WeightField = value;
-                    this.RaisePropertyChanged("Weight");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DcPlateUsedStatistic", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
-    [System.SerializableAttribute()]
-    public partial class DcPlateUsedStatistic : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateLotField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Count {
-            get {
-                return this.CountField;
-            }
-            set {
-                if ((this.CountField.Equals(value) != true)) {
-                    this.CountField = value;
-                    this.RaisePropertyChanged("Count");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateLot {
-            get {
-                return this.PlateLotField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateLotField, value) != true)) {
-                    this.PlateLotField = value;
-                    this.RaisePropertyChanged("PlateLot");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DcOutsideProcess", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
-    [System.SerializableAttribute()]
-    public partial class DcOutsideProcess : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompositionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreateTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DimensionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PMINumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PONumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProcessorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProductIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProgressBarField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RemarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StateField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Composition {
-            get {
-                return this.CompositionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
-                    this.CompositionField = value;
-                    this.RaisePropertyChanged("Composition");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreateTime {
-            get {
-                return this.CreateTimeField;
-            }
-            set {
-                if ((this.CreateTimeField.Equals(value) != true)) {
-                    this.CreateTimeField = value;
-                    this.RaisePropertyChanged("CreateTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Creator {
-            get {
-                return this.CreatorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
-                    this.CreatorField = value;
-                    this.RaisePropertyChanged("Creator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Customer {
-            get {
-                return this.CustomerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
-                    this.CustomerField = value;
-                    this.RaisePropertyChanged("Customer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Dimension {
-            get {
-                return this.DimensionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
-                    this.DimensionField = value;
-                    this.RaisePropertyChanged("Dimension");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PMINumber {
-            get {
-                return this.PMINumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
-                    this.PMINumberField = value;
-                    this.RaisePropertyChanged("PMINumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PONumber {
-            get {
-                return this.PONumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PONumberField, value) != true)) {
-                    this.PONumberField = value;
-                    this.RaisePropertyChanged("PONumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Processor {
-            get {
-                return this.ProcessorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProcessorField, value) != true)) {
-                    this.ProcessorField = value;
-                    this.RaisePropertyChanged("Processor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProductID {
-            get {
-                return this.ProductIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
-                    this.ProductIDField = value;
-                    this.RaisePropertyChanged("ProductID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProgressBar {
-            get {
-                return this.ProgressBarField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProgressBarField, value) != true)) {
-                    this.ProgressBarField = value;
-                    this.RaisePropertyChanged("ProgressBar");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Remark {
-            get {
-                return this.RemarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
-                    this.RemarkField = value;
-                    this.RaisePropertyChanged("Remark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string State {
-            get {
-                return this.StateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateField, value) != true)) {
-                    this.StateField = value;
-                    this.RaisePropertyChanged("State");
+                if ((object.ReferenceEquals(this.PlanField, value) != true)) {
+                    this.PlanField = value;
+                    this.RaisePropertyChanged("Plan");
                 }
             }
         }
@@ -2176,10 +1401,10 @@ namespace PMSClient.NewService {
         System.Threading.Tasks.Task<int> GetOrderUnFinishedCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOrderUnFinishedTargetCount", ReplyAction="http://tempuri.org/INewService/GetOrderUnFinishedTargetCountResponse")]
-        double GetOrderUnFinishedTargetCount();
+        int GetOrderUnFinishedTargetCount();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOrderUnFinishedTargetCount", ReplyAction="http://tempuri.org/INewService/GetOrderUnFinishedTargetCountResponse")]
-        System.Threading.Tasks.Task<double> GetOrderUnFinishedTargetCountAsync();
+        System.Threading.Tasks.Task<int> GetOrderUnFinishedTargetCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOrderByPMINumber", ReplyAction="http://tempuri.org/INewService/GetOrderByPMINumberResponse")]
         PMSClient.NewService.DcOrder GetOrderByPMINumber(string pminumber);
@@ -2199,17 +1424,53 @@ namespace PMSClient.NewService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetMissonCount", ReplyAction="http://tempuri.org/INewService/GetMissonCountResponse")]
         System.Threading.Tasks.Task<int> GetMissonCountAsync(string composition, string pminumber, string state);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlan", ReplyAction="http://tempuri.org/INewService/GetPlanResponse")]
-        PMSClient.NewService.DcPlanExtra[] GetPlan(int s, int t, string composition, string pminumber);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetMissonUnCompletedCount", ReplyAction="http://tempuri.org/INewService/GetMissonUnCompletedCountResponse")]
+        int GetMissonUnCompletedCount();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlan", ReplyAction="http://tempuri.org/INewService/GetPlanResponse")]
-        System.Threading.Tasks.Task<PMSClient.NewService.DcPlanExtra[]> GetPlanAsync(int s, int t, string composition, string pminumber);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetMissonUnCompletedCount", ReplyAction="http://tempuri.org/INewService/GetMissonUnCompletedCountResponse")]
+        System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlanCount", ReplyAction="http://tempuri.org/INewService/GetPlanCountResponse")]
-        int GetPlanCount(string composition, string pminumber);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetMissonUnVHPTargetCount", ReplyAction="http://tempuri.org/INewService/GetMissonUnVHPTargetCountResponse")]
+        int GetMissonUnVHPTargetCount();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlanCount", ReplyAction="http://tempuri.org/INewService/GetPlanCountResponse")]
-        System.Threading.Tasks.Task<int> GetPlanCountAsync(string composition, string pminumber);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetMissonUnVHPTargetCount", ReplyAction="http://tempuri.org/INewService/GetMissonUnVHPTargetCountResponse")]
+        System.Threading.Tasks.Task<int> GetMissonUnVHPTargetCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetEmergencyOrderCount", ReplyAction="http://tempuri.org/INewService/GetEmergencyOrderCountResponse")]
+        int GetEmergencyOrderCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetEmergencyOrderCount", ReplyAction="http://tempuri.org/INewService/GetEmergencyOrderCountResponse")]
+        System.Threading.Tasks.Task<int> GetEmergencyOrderCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlansByOrderID", ReplyAction="http://tempuri.org/INewService/GetPlansByOrderIDResponse")]
+        PMSClient.NewService.DcPlanVHP[] GetPlansByOrderID(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlansByOrderID", ReplyAction="http://tempuri.org/INewService/GetPlansByOrderIDResponse")]
+        System.Threading.Tasks.Task<PMSClient.NewService.DcPlanVHP[]> GetPlansByOrderIDAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlanExtra", ReplyAction="http://tempuri.org/INewService/GetPlanExtraResponse")]
+        PMSClient.NewService.DcPlanExtra[] GetPlanExtra(int s, int t, string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlanExtra", ReplyAction="http://tempuri.org/INewService/GetPlanExtraResponse")]
+        System.Threading.Tasks.Task<PMSClient.NewService.DcPlanExtra[]> GetPlanExtraAsync(int s, int t, string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlanExtraCount", ReplyAction="http://tempuri.org/INewService/GetPlanExtraCountResponse")]
+        int GetPlanExtraCount(string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlanExtraCount", ReplyAction="http://tempuri.org/INewService/GetPlanExtraCountResponse")]
+        System.Threading.Tasks.Task<int> GetPlanExtraCountAsync(string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlanExtraForProduct", ReplyAction="http://tempuri.org/INewService/GetPlanExtraForProductResponse")]
+        PMSClient.NewService.DcPlanExtra[] GetPlanExtraForProduct(int skip, int take, string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlanExtraForProduct", ReplyAction="http://tempuri.org/INewService/GetPlanExtraForProductResponse")]
+        System.Threading.Tasks.Task<PMSClient.NewService.DcPlanExtra[]> GetPlanExtraForProductAsync(int skip, int take, string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlanExtraForProductCount", ReplyAction="http://tempuri.org/INewService/GetPlanExtraForProductCountResponse")]
+        int GetPlanExtraForProductCount(string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlanExtraForProductCount", ReplyAction="http://tempuri.org/INewService/GetPlanExtraForProductCountResponse")]
+        System.Threading.Tasks.Task<int> GetPlanExtraForProductCountAsync(string searchCode, string composition, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/AddPlan", ReplyAction="http://tempuri.org/INewService/AddPlanResponse")]
         void AddPlan(PMSClient.NewService.DcPlanVHP model, string user);
@@ -2228,66 +1489,6 @@ namespace PMSClient.NewService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/LockTodayPlans", ReplyAction="http://tempuri.org/INewService/LockTodayPlansResponse")]
         System.Threading.Tasks.Task LockTodayPlansAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetRecordTest", ReplyAction="http://tempuri.org/INewService/GetRecordTestResponse")]
-        PMSClient.NewService.DcRecordTest[] GetRecordTest(int s, int t, string composition, string customer, string pminumber);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetRecordTest", ReplyAction="http://tempuri.org/INewService/GetRecordTestResponse")]
-        System.Threading.Tasks.Task<PMSClient.NewService.DcRecordTest[]> GetRecordTestAsync(int s, int t, string composition, string customer, string pminumber);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetRecordTestCount", ReplyAction="http://tempuri.org/INewService/GetRecordTestCountResponse")]
-        int GetRecordTestCount(string composition, string customer, string pminumber);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetRecordTestCount", ReplyAction="http://tempuri.org/INewService/GetRecordTestCountResponse")]
-        System.Threading.Tasks.Task<int> GetRecordTestCountAsync(string composition, string customer, string pminumber);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetRecordTestLastUpdateTime", ReplyAction="http://tempuri.org/INewService/GetRecordTestLastUpdateTimeResponse")]
-        System.DateTime GetRecordTestLastUpdateTime(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetRecordTestLastUpdateTime", ReplyAction="http://tempuri.org/INewService/GetRecordTestLastUpdateTimeResponse")]
-        System.Threading.Tasks.Task<System.DateTime> GetRecordTestLastUpdateTimeAsync(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlateUsedStatistics", ReplyAction="http://tempuri.org/INewService/GetPlateUsedStatisticsResponse")]
-        PMSClient.NewService.DcPlateUsedStatistic[] GetPlateUsedStatistics(int s, int t);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlateUsedStatistics", ReplyAction="http://tempuri.org/INewService/GetPlateUsedStatisticsResponse")]
-        System.Threading.Tasks.Task<PMSClient.NewService.DcPlateUsedStatistic[]> GetPlateUsedStatisticsAsync(int s, int t);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlateUsedStatisticsCount", ReplyAction="http://tempuri.org/INewService/GetPlateUsedStatisticsCountResponse")]
-        int GetPlateUsedStatisticsCount();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlateUsedStatisticsCount", ReplyAction="http://tempuri.org/INewService/GetPlateUsedStatisticsCountResponse")]
-        System.Threading.Tasks.Task<int> GetPlateUsedStatisticsCountAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlateUsedTimesByPlateID", ReplyAction="http://tempuri.org/INewService/GetPlateUsedTimesByPlateIDResponse")]
-        int GetPlateUsedTimesByPlateID(string plateid);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlateUsedTimesByPlateID", ReplyAction="http://tempuri.org/INewService/GetPlateUsedTimesByPlateIDResponse")]
-        System.Threading.Tasks.Task<int> GetPlateUsedTimesByPlateIDAsync(string plateid);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOutsideProcess", ReplyAction="http://tempuri.org/INewService/GetOutsideProcessResponse")]
-        PMSClient.NewService.DcOutsideProcess[] GetOutsideProcess(int s, int t, string productid, string composition, string provider, string state);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOutsideProcess", ReplyAction="http://tempuri.org/INewService/GetOutsideProcessResponse")]
-        System.Threading.Tasks.Task<PMSClient.NewService.DcOutsideProcess[]> GetOutsideProcessAsync(int s, int t, string productid, string composition, string provider, string state);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOutsideProcessCount", ReplyAction="http://tempuri.org/INewService/GetOutsideProcessCountResponse")]
-        int GetOutsideProcessCount(string productid, string composition, string provider, string state);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOutsideProcessCount", ReplyAction="http://tempuri.org/INewService/GetOutsideProcessCountResponse")]
-        System.Threading.Tasks.Task<int> GetOutsideProcessCountAsync(string productid, string composition, string provider, string state);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/AddOutsideProcess", ReplyAction="http://tempuri.org/INewService/AddOutsideProcessResponse")]
-        int AddOutsideProcess(PMSClient.NewService.DcOutsideProcess model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/AddOutsideProcess", ReplyAction="http://tempuri.org/INewService/AddOutsideProcessResponse")]
-        System.Threading.Tasks.Task<int> AddOutsideProcessAsync(PMSClient.NewService.DcOutsideProcess model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/UpdateOutsideProcess", ReplyAction="http://tempuri.org/INewService/UpdateOutsideProcessResponse")]
-        int UpdateOutsideProcess(PMSClient.NewService.DcOutsideProcess model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/UpdateOutsideProcess", ReplyAction="http://tempuri.org/INewService/UpdateOutsideProcessResponse")]
-        System.Threading.Tasks.Task<int> UpdateOutsideProcessAsync(PMSClient.NewService.DcOutsideProcess model);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2381,11 +1582,11 @@ namespace PMSClient.NewService {
             return base.Channel.GetOrderUnFinishedCountAsync();
         }
         
-        public double GetOrderUnFinishedTargetCount() {
+        public int GetOrderUnFinishedTargetCount() {
             return base.Channel.GetOrderUnFinishedTargetCount();
         }
         
-        public System.Threading.Tasks.Task<double> GetOrderUnFinishedTargetCountAsync() {
+        public System.Threading.Tasks.Task<int> GetOrderUnFinishedTargetCountAsync() {
             return base.Channel.GetOrderUnFinishedTargetCountAsync();
         }
         
@@ -2413,20 +1614,68 @@ namespace PMSClient.NewService {
             return base.Channel.GetMissonCountAsync(composition, pminumber, state);
         }
         
-        public PMSClient.NewService.DcPlanExtra[] GetPlan(int s, int t, string composition, string pminumber) {
-            return base.Channel.GetPlan(s, t, composition, pminumber);
+        public int GetMissonUnCompletedCount() {
+            return base.Channel.GetMissonUnCompletedCount();
         }
         
-        public System.Threading.Tasks.Task<PMSClient.NewService.DcPlanExtra[]> GetPlanAsync(int s, int t, string composition, string pminumber) {
-            return base.Channel.GetPlanAsync(s, t, composition, pminumber);
+        public System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync() {
+            return base.Channel.GetMissonUnCompletedCountAsync();
         }
         
-        public int GetPlanCount(string composition, string pminumber) {
-            return base.Channel.GetPlanCount(composition, pminumber);
+        public int GetMissonUnVHPTargetCount() {
+            return base.Channel.GetMissonUnVHPTargetCount();
         }
         
-        public System.Threading.Tasks.Task<int> GetPlanCountAsync(string composition, string pminumber) {
-            return base.Channel.GetPlanCountAsync(composition, pminumber);
+        public System.Threading.Tasks.Task<int> GetMissonUnVHPTargetCountAsync() {
+            return base.Channel.GetMissonUnVHPTargetCountAsync();
+        }
+        
+        public int GetEmergencyOrderCount() {
+            return base.Channel.GetEmergencyOrderCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetEmergencyOrderCountAsync() {
+            return base.Channel.GetEmergencyOrderCountAsync();
+        }
+        
+        public PMSClient.NewService.DcPlanVHP[] GetPlansByOrderID(System.Guid id) {
+            return base.Channel.GetPlansByOrderID(id);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.NewService.DcPlanVHP[]> GetPlansByOrderIDAsync(System.Guid id) {
+            return base.Channel.GetPlansByOrderIDAsync(id);
+        }
+        
+        public PMSClient.NewService.DcPlanExtra[] GetPlanExtra(int s, int t, string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtra(s, t, searchCode, composition, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.NewService.DcPlanExtra[]> GetPlanExtraAsync(int s, int t, string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtraAsync(s, t, searchCode, composition, pminumber);
+        }
+        
+        public int GetPlanExtraCount(string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtraCount(searchCode, composition, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlanExtraCountAsync(string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtraCountAsync(searchCode, composition, pminumber);
+        }
+        
+        public PMSClient.NewService.DcPlanExtra[] GetPlanExtraForProduct(int skip, int take, string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtraForProduct(skip, take, searchCode, composition, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.NewService.DcPlanExtra[]> GetPlanExtraForProductAsync(int skip, int take, string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtraForProductAsync(skip, take, searchCode, composition, pminumber);
+        }
+        
+        public int GetPlanExtraForProductCount(string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtraForProductCount(searchCode, composition, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlanExtraForProductCountAsync(string searchCode, string composition, string pminumber) {
+            return base.Channel.GetPlanExtraForProductCountAsync(searchCode, composition, pminumber);
         }
         
         public void AddPlan(PMSClient.NewService.DcPlanVHP model, string user) {
@@ -2451,86 +1700,6 @@ namespace PMSClient.NewService {
         
         public System.Threading.Tasks.Task LockTodayPlansAsync() {
             return base.Channel.LockTodayPlansAsync();
-        }
-        
-        public PMSClient.NewService.DcRecordTest[] GetRecordTest(int s, int t, string composition, string customer, string pminumber) {
-            return base.Channel.GetRecordTest(s, t, composition, customer, pminumber);
-        }
-        
-        public System.Threading.Tasks.Task<PMSClient.NewService.DcRecordTest[]> GetRecordTestAsync(int s, int t, string composition, string customer, string pminumber) {
-            return base.Channel.GetRecordTestAsync(s, t, composition, customer, pminumber);
-        }
-        
-        public int GetRecordTestCount(string composition, string customer, string pminumber) {
-            return base.Channel.GetRecordTestCount(composition, customer, pminumber);
-        }
-        
-        public System.Threading.Tasks.Task<int> GetRecordTestCountAsync(string composition, string customer, string pminumber) {
-            return base.Channel.GetRecordTestCountAsync(composition, customer, pminumber);
-        }
-        
-        public System.DateTime GetRecordTestLastUpdateTime(System.Guid id) {
-            return base.Channel.GetRecordTestLastUpdateTime(id);
-        }
-        
-        public System.Threading.Tasks.Task<System.DateTime> GetRecordTestLastUpdateTimeAsync(System.Guid id) {
-            return base.Channel.GetRecordTestLastUpdateTimeAsync(id);
-        }
-        
-        public PMSClient.NewService.DcPlateUsedStatistic[] GetPlateUsedStatistics(int s, int t) {
-            return base.Channel.GetPlateUsedStatistics(s, t);
-        }
-        
-        public System.Threading.Tasks.Task<PMSClient.NewService.DcPlateUsedStatistic[]> GetPlateUsedStatisticsAsync(int s, int t) {
-            return base.Channel.GetPlateUsedStatisticsAsync(s, t);
-        }
-        
-        public int GetPlateUsedStatisticsCount() {
-            return base.Channel.GetPlateUsedStatisticsCount();
-        }
-        
-        public System.Threading.Tasks.Task<int> GetPlateUsedStatisticsCountAsync() {
-            return base.Channel.GetPlateUsedStatisticsCountAsync();
-        }
-        
-        public int GetPlateUsedTimesByPlateID(string plateid) {
-            return base.Channel.GetPlateUsedTimesByPlateID(plateid);
-        }
-        
-        public System.Threading.Tasks.Task<int> GetPlateUsedTimesByPlateIDAsync(string plateid) {
-            return base.Channel.GetPlateUsedTimesByPlateIDAsync(plateid);
-        }
-        
-        public PMSClient.NewService.DcOutsideProcess[] GetOutsideProcess(int s, int t, string productid, string composition, string provider, string state) {
-            return base.Channel.GetOutsideProcess(s, t, productid, composition, provider, state);
-        }
-        
-        public System.Threading.Tasks.Task<PMSClient.NewService.DcOutsideProcess[]> GetOutsideProcessAsync(int s, int t, string productid, string composition, string provider, string state) {
-            return base.Channel.GetOutsideProcessAsync(s, t, productid, composition, provider, state);
-        }
-        
-        public int GetOutsideProcessCount(string productid, string composition, string provider, string state) {
-            return base.Channel.GetOutsideProcessCount(productid, composition, provider, state);
-        }
-        
-        public System.Threading.Tasks.Task<int> GetOutsideProcessCountAsync(string productid, string composition, string provider, string state) {
-            return base.Channel.GetOutsideProcessCountAsync(productid, composition, provider, state);
-        }
-        
-        public int AddOutsideProcess(PMSClient.NewService.DcOutsideProcess model) {
-            return base.Channel.AddOutsideProcess(model);
-        }
-        
-        public System.Threading.Tasks.Task<int> AddOutsideProcessAsync(PMSClient.NewService.DcOutsideProcess model) {
-            return base.Channel.AddOutsideProcessAsync(model);
-        }
-        
-        public int UpdateOutsideProcess(PMSClient.NewService.DcOutsideProcess model) {
-            return base.Channel.UpdateOutsideProcess(model);
-        }
-        
-        public System.Threading.Tasks.Task<int> UpdateOutsideProcessAsync(PMSClient.NewService.DcOutsideProcess model) {
-            return base.Channel.UpdateOutsideProcessAsync(model);
         }
     }
 }

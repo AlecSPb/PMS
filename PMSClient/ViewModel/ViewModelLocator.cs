@@ -44,11 +44,9 @@ namespace PMSClient.ViewModel
 
 
             SimpleIoc.Default.Register<MissonVM>(true);
-            SimpleIoc.Default.Register<MissonUnCompletedVM>();
             SimpleIoc.Default.Register<MissonSelectVM>();
 
             SimpleIoc.Default.Register<PlanVM>(true);
-            SimpleIoc.Default.Register<PlanSearchVM>();
             SimpleIoc.Default.Register<PlanEditVM>();
             SimpleIoc.Default.Register<PlanSelectVM>();
             SimpleIoc.Default.Register<PlanConclusionVM>();
@@ -309,10 +307,6 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<MissonVM>(); }
         }
-        public MissonUnCompletedVM MissonUnCompleted
-        {
-            get { return SimpleIoc.Default.GetInstance<MissonUnCompletedVM>(); }
-        }
         public MissonSelectVM MissonSelect
         {
             get { return SimpleIoc.Default.GetInstance<MissonSelectVM>(); }
@@ -321,10 +315,7 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<PlanVM>(); }
         }
-        public PlanSearchVM PlanSearch
-        {
-            get { return SimpleIoc.Default.GetInstance<PlanSearchVM>(); }
-        }
+
         public PlanEditVM PlanEdit
         {
             get { return SimpleIoc.Default.GetInstance<PlanEditVM>(); }

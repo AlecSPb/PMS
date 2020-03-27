@@ -53,7 +53,7 @@ namespace PMSClient.ViewModel
             NavigationService.GoTo(PMSViews.MissonSelect);
         }
 
-        public void SetBySelectPlan(DcPlanWithMisson plan)
+        public void SetBySelectPlan(PMSClient.NewService.DcPlanExtra plan)
         {
             if (plan != null)
             {

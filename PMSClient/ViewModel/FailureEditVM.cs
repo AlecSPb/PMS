@@ -37,7 +37,7 @@ namespace PMSClient.ViewModel
             PMSHelper.ViewModels.PlanSelect.RefreshData();
             NavigationService.GoTo(PMSViews.PlanSelect);
         }
-        public void SetBySelect(DcPlanWithMisson plan)
+        public void SetBySelect(PMSClient.NewService.DcPlanExtra plan)
         {
             if (plan != null)
             {

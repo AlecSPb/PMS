@@ -55,5 +55,16 @@ namespace PMSWCFService.ServiceContracts
         //用于时间范围搜索功能
         [OperationContract]
         List<DcRecordBonding> GetRecordBondingsByDateTime(DateTime start, DateTime end);
+
+
+        //绑定
+        [OperationContract]
+        List<DcPlateUsedStatistic> GetPlateUsedStatistics(int s, int t);
+        [OperationContract]
+        int GetPlateUsedStatisticsCount();
+
+        [OperationContract]
+        int GetPlateUsedTimesByPlateID(string plateid);
+
     }
 }

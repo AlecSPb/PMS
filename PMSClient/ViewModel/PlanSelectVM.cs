@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSClient.MainService;
+using PMSClient.NewService;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
@@ -106,7 +106,7 @@ namespace PMSClient.ViewModel
         #region BatchSaveArea
         private void BatchSaveMillingRecords()
         {
-            using (var service = new RecordMillingServiceClient())
+            using (var service = new PMSClient.MainService.RecordMillingServiceClient())
             {
                 foreach (var item in PlanWithMissonExtras)
                 {
@@ -128,7 +128,7 @@ namespace PMSClient.ViewModel
         }
         private void BatchSaveDeMoldRecords()
         {
-            using (var service = new RecordDeMoldServiceClient())
+            using (var service = new PMSClient.MainService.RecordDeMoldServiceClient())
             {
                 foreach (var item in PlanWithMissonExtras)
                 {
@@ -151,7 +151,7 @@ namespace PMSClient.ViewModel
         }
         private void BatchSaveMachineRecords()
         {
-            using (var service = new RecordMachineServiceClient())
+            using (var service = new PMSClient.MainService.RecordMachineServiceClient())
             {
                 foreach (var item in PlanWithMissonExtras)
                 {
@@ -172,7 +172,7 @@ namespace PMSClient.ViewModel
         }
         private void BatchSaveTestRecords()
         {
-            using (var service = new RecordTestServiceClient())
+            using (var service = new PMSClient.MainService.RecordTestServiceClient())
             {
                 foreach (var item in PlanWithMissonExtras)
                 {
@@ -238,7 +238,7 @@ namespace PMSClient.ViewModel
                         PMSHelper.ViewModels.RemainInventoryEdit.SetBySelect(plan.PlanMisson);
                         break;
                     case PMSViews.OutsideProcessEdit:
-                        PMSHelper.ViewModels.OutsideProcessEdit.SetBySelect1(plan.PlanMisson);
+                        PMSHelper.ViewModels.OutsideProcessEdit.SetBySelect(plan.PlanMisson);
                         break;
                     case PMSViews.Sample:
                         PMSHelper.ViewModels.Sample.SetBySelect(plan.PlanMisson);
@@ -274,9 +274,9 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 30;
-            using (var service = new MissonServiceClient())
+            using (var service = new NewServiceClient())
             {
-                RecordCount = service.GetPlanExtraCount2(SearchVHPDate, SearchComposition, SearchPMINumber);
+                RecordCount = service.GetPlanExtraCount(SearchVHPDate, SearchComposition, SearchPMINumber);
             }
             ActionPaging();
         }
@@ -289,9 +289,9 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             //只显示Checked过的计划
-            using (var service = new MissonServiceClient())
+            using (var service = new NewServiceClient())
             {
-                var orders = service.GetPlanExtra2(skip, take, SearchVHPDate, SearchComposition, SearchPMINumber);
+                var orders = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition, SearchPMINumber);
                 PlanWithMissonExtras.Clear();
                 orders.ToList().ForEach(o => PlanWithMissonExtras.Add(new PlanWithMissonExtra { IsSelected = false, PlanMisson = o }));
             }

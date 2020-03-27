@@ -141,9 +141,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
-                <DataGridTextColumn Header="{StaticResource RDLastCheckIDCollection}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding LastCheckIDCollection}" MaxWidth="300"/>
                 <DataGridCheckBoxColumn Header="{StaticResource RDIsCustomerSigned}" ElementStyle="{StaticResource StyleDGCheckBoxCommonReadOnly}"
                                     Binding="{Binding IsCustomerSigned}"/>
                 <DataGridTextColumn Header="{StaticResource RDCustomerSignedDate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -151,6 +148,9 @@
                 <DataGridTextColumn Header="{StaticResource RDCustomerSignedDetails}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CustomerSignedDetails}"/>
 
+                <DataGridTextColumn Header="{StaticResource RDLastCheckIDCollection}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding LastCheckIDCollection}" MaxWidth="300"/>
+                
                 <DataGridTextColumn Header="{StaticResource RDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
                 <DataGridTextColumn Header="{StaticResource RDFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

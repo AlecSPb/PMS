@@ -79,17 +79,53 @@
   <wsdl:message name="INewService_GetMissonCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonCountResponse" />
   </wsdl:message>
-  <wsdl:message name="INewService_GetPlan_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPlan" />
+  <wsdl:message name="INewService_GetMissonUnCompletedCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnCompletedCount" />
   </wsdl:message>
-  <wsdl:message name="INewService_GetPlan_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPlanResponse" />
+  <wsdl:message name="INewService_GetMissonUnCompletedCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnCompletedCountResponse" />
   </wsdl:message>
-  <wsdl:message name="INewService_GetPlanCount_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPlanCount" />
+  <wsdl:message name="INewService_GetMissonUnVHPTargetCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnVHPTargetCount" />
   </wsdl:message>
-  <wsdl:message name="INewService_GetPlanCount_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPlanCountResponse" />
+  <wsdl:message name="INewService_GetMissonUnVHPTargetCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnVHPTargetCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetEmergencyOrderCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmergencyOrderCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetEmergencyOrderCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmergencyOrderCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlansByOrderID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlansByOrderID" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlansByOrderID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlansByOrderIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtra_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtra" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtraCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtraCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtraForProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraForProduct" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtraForProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraForProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtraForProductCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraForProductCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtraForProductCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraForProductCountResponse" />
   </wsdl:message>
   <wsdl:message name="INewService_AddPlan_InputMessage">
     <wsdl:part name="parameters" element="tns:AddPlan" />
@@ -108,66 +144,6 @@
   </wsdl:message>
   <wsdl:message name="INewService_LockTodayPlans_OutputMessage">
     <wsdl:part name="parameters" element="tns:LockTodayPlansResponse" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetRecordTest_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRecordTest" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetRecordTest_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRecordTestResponse" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetRecordTestCount_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRecordTestCount" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetRecordTestCount_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRecordTestCountResponse" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetRecordTestLastUpdateTime_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRecordTestLastUpdateTime" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetRecordTestLastUpdateTime_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRecordTestLastUpdateTimeResponse" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetPlateUsedStatistics_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPlateUsedStatistics" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetPlateUsedStatistics_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPlateUsedStatisticsResponse" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetPlateUsedStatisticsCount_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPlateUsedStatisticsCount" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetPlateUsedStatisticsCount_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPlateUsedStatisticsCountResponse" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetPlateUsedTimesByPlateID_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPlateUsedTimesByPlateID" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetPlateUsedTimesByPlateID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPlateUsedTimesByPlateIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetOutsideProcess_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetOutsideProcess" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetOutsideProcess_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetOutsideProcessResponse" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetOutsideProcessCount_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetOutsideProcessCount" />
-  </wsdl:message>
-  <wsdl:message name="INewService_GetOutsideProcessCount_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetOutsideProcessCountResponse" />
-  </wsdl:message>
-  <wsdl:message name="INewService_AddOutsideProcess_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddOutsideProcess" />
-  </wsdl:message>
-  <wsdl:message name="INewService_AddOutsideProcess_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddOutsideProcessResponse" />
-  </wsdl:message>
-  <wsdl:message name="INewService_UpdateOutsideProcess_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateOutsideProcess" />
-  </wsdl:message>
-  <wsdl:message name="INewService_UpdateOutsideProcess_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateOutsideProcessResponse" />
   </wsdl:message>
   <wsdl:portType name="INewService">
     <wsdl:operation name="GetOrder">
@@ -218,13 +194,37 @@
       <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetMissonCount" message="tns:INewService_GetMissonCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetMissonCountResponse" message="tns:INewService_GetMissonCount_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetPlan">
-      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlan" message="tns:INewService_GetPlan_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlanResponse" message="tns:INewService_GetPlan_OutputMessage" />
+    <wsdl:operation name="GetMissonUnCompletedCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetMissonUnCompletedCount" message="tns:INewService_GetMissonUnCompletedCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetMissonUnCompletedCountResponse" message="tns:INewService_GetMissonUnCompletedCount_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetPlanCount">
-      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlanCount" message="tns:INewService_GetPlanCount_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlanCountResponse" message="tns:INewService_GetPlanCount_OutputMessage" />
+    <wsdl:operation name="GetMissonUnVHPTargetCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetMissonUnVHPTargetCount" message="tns:INewService_GetMissonUnVHPTargetCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetMissonUnVHPTargetCountResponse" message="tns:INewService_GetMissonUnVHPTargetCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmergencyOrderCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetEmergencyOrderCount" message="tns:INewService_GetEmergencyOrderCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetEmergencyOrderCountResponse" message="tns:INewService_GetEmergencyOrderCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlansByOrderID">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlansByOrderID" message="tns:INewService_GetPlansByOrderID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlansByOrderIDResponse" message="tns:INewService_GetPlansByOrderID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtra">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlanExtra" message="tns:INewService_GetPlanExtra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlanExtraResponse" message="tns:INewService_GetPlanExtra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlanExtraCount" message="tns:INewService_GetPlanExtraCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlanExtraCountResponse" message="tns:INewService_GetPlanExtraCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraForProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlanExtraForProduct" message="tns:INewService_GetPlanExtraForProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlanExtraForProductResponse" message="tns:INewService_GetPlanExtraForProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraForProductCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlanExtraForProductCount" message="tns:INewService_GetPlanExtraForProductCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlanExtraForProductCountResponse" message="tns:INewService_GetPlanExtraForProductCount_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddPlan">
       <wsdl:input wsaw:Action="http://tempuri.org/INewService/AddPlan" message="tns:INewService_AddPlan_InputMessage" />
@@ -237,46 +237,6 @@
     <wsdl:operation name="LockTodayPlans">
       <wsdl:input wsaw:Action="http://tempuri.org/INewService/LockTodayPlans" message="tns:INewService_LockTodayPlans_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/INewService/LockTodayPlansResponse" message="tns:INewService_LockTodayPlans_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRecordTest">
-      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetRecordTest" message="tns:INewService_GetRecordTest_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetRecordTestResponse" message="tns:INewService_GetRecordTest_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRecordTestCount">
-      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetRecordTestCount" message="tns:INewService_GetRecordTestCount_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetRecordTestCountResponse" message="tns:INewService_GetRecordTestCount_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRecordTestLastUpdateTime">
-      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetRecordTestLastUpdateTime" message="tns:INewService_GetRecordTestLastUpdateTime_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetRecordTestLastUpdateTimeResponse" message="tns:INewService_GetRecordTestLastUpdateTime_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetPlateUsedStatistics">
-      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlateUsedStatistics" message="tns:INewService_GetPlateUsedStatistics_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlateUsedStatisticsResponse" message="tns:INewService_GetPlateUsedStatistics_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetPlateUsedStatisticsCount">
-      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlateUsedStatisticsCount" message="tns:INewService_GetPlateUsedStatisticsCount_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlateUsedStatisticsCountResponse" message="tns:INewService_GetPlateUsedStatisticsCount_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetPlateUsedTimesByPlateID">
-      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlateUsedTimesByPlateID" message="tns:INewService_GetPlateUsedTimesByPlateID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlateUsedTimesByPlateIDResponse" message="tns:INewService_GetPlateUsedTimesByPlateID_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetOutsideProcess">
-      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetOutsideProcess" message="tns:INewService_GetOutsideProcess_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetOutsideProcessResponse" message="tns:INewService_GetOutsideProcess_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetOutsideProcessCount">
-      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetOutsideProcessCount" message="tns:INewService_GetOutsideProcessCount_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetOutsideProcessCountResponse" message="tns:INewService_GetOutsideProcessCount_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="AddOutsideProcess">
-      <wsdl:input wsaw:Action="http://tempuri.org/INewService/AddOutsideProcess" message="tns:INewService_AddOutsideProcess_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/INewService/AddOutsideProcessResponse" message="tns:INewService_AddOutsideProcess_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateOutsideProcess">
-      <wsdl:input wsaw:Action="http://tempuri.org/INewService/UpdateOutsideProcess" message="tns:INewService_UpdateOutsideProcess_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/INewService/UpdateOutsideProcessResponse" message="tns:INewService_UpdateOutsideProcess_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_INewService" type="tns:INewService">
@@ -389,8 +349,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetPlan">
-      <soap:operation soapAction="http://tempuri.org/INewService/GetPlan" style="document" />
+    <wsdl:operation name="GetMissonUnCompletedCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetMissonUnCompletedCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -398,8 +358,62 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetPlanCount">
-      <soap:operation soapAction="http://tempuri.org/INewService/GetPlanCount" style="document" />
+    <wsdl:operation name="GetMissonUnVHPTargetCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetMissonUnVHPTargetCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmergencyOrderCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetEmergencyOrderCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlansByOrderID">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetPlansByOrderID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtra">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetPlanExtra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetPlanExtraCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraForProduct">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetPlanExtraForProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraForProductCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetPlanExtraForProductCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -427,96 +441,6 @@
     </wsdl:operation>
     <wsdl:operation name="LockTodayPlans">
       <soap:operation soapAction="http://tempuri.org/INewService/LockTodayPlans" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRecordTest">
-      <soap:operation soapAction="http://tempuri.org/INewService/GetRecordTest" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRecordTestCount">
-      <soap:operation soapAction="http://tempuri.org/INewService/GetRecordTestCount" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRecordTestLastUpdateTime">
-      <soap:operation soapAction="http://tempuri.org/INewService/GetRecordTestLastUpdateTime" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetPlateUsedStatistics">
-      <soap:operation soapAction="http://tempuri.org/INewService/GetPlateUsedStatistics" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetPlateUsedStatisticsCount">
-      <soap:operation soapAction="http://tempuri.org/INewService/GetPlateUsedStatisticsCount" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetPlateUsedTimesByPlateID">
-      <soap:operation soapAction="http://tempuri.org/INewService/GetPlateUsedTimesByPlateID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetOutsideProcess">
-      <soap:operation soapAction="http://tempuri.org/INewService/GetOutsideProcess" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetOutsideProcessCount">
-      <soap:operation soapAction="http://tempuri.org/INewService/GetOutsideProcessCount" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AddOutsideProcess">
-      <soap:operation soapAction="http://tempuri.org/INewService/AddOutsideProcess" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateOutsideProcess">
-      <soap:operation soapAction="http://tempuri.org/INewService/UpdateOutsideProcess" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

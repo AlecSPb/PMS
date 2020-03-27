@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using GalaSoft.MvvmLight.Messaging;
-using PMSCommon;
-using PMSClient.MainService;
+using PMSClient.NewService;
 using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace PMSClient.ViewModel
 {
@@ -21,6 +16,7 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
+        public List<string> SearchOrderStates { get; set; }
 
         public void SetSearch(string pminumber)
         {
@@ -49,6 +45,16 @@ namespace PMSClient.ViewModel
             EmergencyMisson = 0;
             UnVHPTargetCount = 0;
             SearchCompositionStandard = SearchPMINumber = "";
+            SearchOrderState = "";
+
+            SearchOrderStates = new List<string>();
+            SearchOrderStates.Add(PMSCommon.OrderState.未完成.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.生产完成.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.完成.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.取消.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.暂停.ToString());
+            SearchOrderStates.Add("");
+
             Missons = new ObservableCollection<DcOrder>();
             PlanVHPs = new ObservableCollection<DcPlanVHP>();
         }
@@ -66,7 +72,6 @@ namespace PMSClient.ViewModel
             ChangeOrder = new RelayCommand<DcPlanVHP>(ActionChangeOrder, CanChangeOrder);
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             Refresh = new RelayCommand(ActionRefresh);
-            OnlyUnFinished = new RelayCommand(ActionOnlyUnFinished, CanOnlyUnFinished);
             FindMaterial = new RelayCommand<DcOrder>(ActionFindMaterial, CanFindMaterial);
 
             SampleSheet = new RelayCommand(ActionSampleSheet);
@@ -162,9 +167,9 @@ namespace PMSClient.ViewModel
             {
                 model.FinishTime = DateTime.Now;
                 model.State = PMSCommon.OrderState.生产完成.ToString();
-                using (var service = new OrderServiceClient())
+                using (var service = new NewServiceClient())
                 {
-                    service.UpdateOrderByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    service.UpdateOrder(model, PMSHelper.CurrentSession.CurrentUser.UserName);
                 }
                 SetPageParametersWhenConditionChange();
             }
@@ -174,16 +179,6 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private bool CanOnlyUnFinished()
-        {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadPlan);
-        }
-
-        private void ActionOnlyUnFinished()
-        {
-            NavigationService.GoTo(PMSViews.MissonUnCompleted);
-        }
-
         private bool CanGoToPlan()
         {
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadPlan);
@@ -191,8 +186,7 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(String.IsNullOrEmpty(SearchPMINumber) &&
-                string.IsNullOrEmpty(SearchCompositionStandard));
+            return true;
         }
 
         private void ActionSearch()
@@ -245,9 +239,9 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                using (var service = new PlanVHPServiceClient())
+                using (var service = new NewServiceClient())
                 {
-                    var result = service.GetVHPPlansByOrderID(model.ID);
+                    var result = service.GetPlansByOrderID(model.ID);
                     PlanVHPs.Clear();
                     result.ToList().ForEach(i => PlanVHPs.Add(i));
                 }
@@ -302,15 +296,14 @@ namespace PMSClient.ViewModel
             {
                 PageIndex = 1;
                 PageSize = 30;
-                var service = new MissonServiceClient();
-                RecordCount = service.GetMissonsCountBySearch(SearchCompositionStandard, SearchPMINumber);
+                using (var service=new NewServiceClient())
+                {
+                    RecordCount = service.GetMissonCount(SearchCompositionStandard, SearchPMINumber,SearchOrderState);
 
-                MissonTarget = service.GetMissonUnCompletedCount();
-
-                UnVHPTargetCount = (int)service.GetUnVHPTargetCount();
-                EmergencyMisson = service.GetEmergencyOrderCount();
-
-                service.Close();
+                    MissonTarget = service.GetMissonUnCompletedCount();
+                    UnVHPTargetCount = service.GetMissonUnVHPTargetCount();
+                    EmergencyMisson = service.GetEmergencyOrderCount();
+                }
                 ActionPaging();
             }
             catch (Exception ex)
@@ -326,13 +319,13 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var service = new MissonServiceClient();
-            var orders = service.GetMissonsBySearch(skip, take, SearchCompositionStandard, SearchPMINumber);
-            service.Close();
-            Missons.Clear();
-            orders.ToList().ForEach(o => Missons.Add(o));
-
-            CurrentSelectItem = orders.FirstOrDefault();
+            using (var service=new NewServiceClient())
+            {
+                var orders = service.GetMisson(skip, take, SearchCompositionStandard, SearchPMINumber,SearchOrderState);
+                Missons.Clear();
+                orders.ToList().ForEach(o => Missons.Add(o));
+                CurrentSelectItem = orders.FirstOrDefault();
+            }
             ActionSelectionChanged(CurrentSelectItem);
         }
 
@@ -363,6 +356,20 @@ namespace PMSClient.ViewModel
             get { return searchPMINumber; }
             set { searchPMINumber = value; RaisePropertyChanged((SearchPMINumber)); }
         }
+
+        private string searchOrderState;
+        public string SearchOrderState
+        {
+            get { return searchOrderState; }
+            set
+            {
+                if (searchOrderState == value)
+                    return;
+                searchOrderState = value;
+                RaisePropertyChanged(() => SearchOrderState);
+            }
+        }
+
         private int missonTarget;
 
         public int MissonTarget
@@ -407,7 +414,6 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPlanVHP> DuplicatePlan { get; set; }
         public RelayCommand<DcPlanVHP> ChangeOrder { get; set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
-        public RelayCommand OnlyUnFinished { get; set; }
         public RelayCommand<DcOrder> FindMaterial { get; set; }
 
         public RelayCommand SampleSheet { get; set; }

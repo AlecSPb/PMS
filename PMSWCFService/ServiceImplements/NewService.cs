@@ -8,6 +8,7 @@ using PMSWCFService.ServiceContracts;
 using PMSDAL;
 using System.Data.Entity;
 using PMSCommon;
+using AuthorizationChecker;
 
 namespace PMSWCFService
 {
@@ -16,27 +17,6 @@ namespace PMSWCFService
     /// </summary>
     public class NewService : INewService
     {
-        public int AddOutsideProcess(DcOutsideProcess model)
-        {
-            try
-            {
-                XS.RunLog();
-                using (var dc = new PMSDbContext())
-                {
-                    Mapper.Initialize(cfg => cfg.CreateMap<DcOutsideProcess, OutsideProcess>());
-                    var entity = Mapper.Map<OutsideProcess>(model);
-                    dc.OutsideProcesses.Add(entity);
-                    dc.SaveChanges();
-                    return dc.SaveChanges();
-                }
-            }
-            catch (Exception ex)
-            {
-                XS.Current.Error(ex);
-                throw;
-            }
-        }
-
         public void AddOrder(DcOrder model, string user)
         {
             try
@@ -61,17 +41,87 @@ namespace PMSWCFService
 
         public void AddPlan(DcPlanVHP model, string user)
         {
-            throw new NotImplementedException();
+            try
+            {   //自动生成搜索号
+                XS.RunLog();
+                model.SearchCode = $"{model.PlanDate.ToString("yyMMdd")}-{model.VHPDeviceCode}";
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcPlanVHP, PMSPlanVHP>());
+                    var mapper = config.CreateMapper();
+                    var plan = mapper.Map<PMSPlanVHP>(model);
+                    dc.VHPPlans.Add(plan);
+                    dc.SaveChanges();
+                    SavePlanHistory(model, user);
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcOrder> GetMisson(int s, int t, string composition, string pminumber, string state)
         {
-            throw new NotImplementedException();
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                        cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                    });
+
+                    var result = from o in dc.Orders
+                                 where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
+                                 && o.State.Contains(state)
+                                 && o.State!=PMSCommon.OrderState.作废.ToString()
+                                 && o.State!=PMSCommon.OrderState.未核验.ToString()
+                                 && o.State!=PMSCommon.OrderState.取消.ToString()
+                                 && o.CompositionStandard.Contains(composition)
+                                 && o.PMINumber.Contains(pminumber)
+                                 orderby o.CreateTime descending
+                                 select o;
+
+                    var missons = Mapper.Map<List<PMSOrder>, List<DcOrder>>(result.Skip(s).Take(t).ToList());
+
+                    return missons;
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
         }
 
         public int GetMissonCount(string composition, string pminumber, string state)
         {
-            throw new NotImplementedException();
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from o in dc.Orders
+                                where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
+                                 && o.CompositionStandard.Contains(composition)
+                                 && o.State.Contains(state)
+                                 && o.State != PMSCommon.OrderState.作废.ToString()
+                                 && o.State != PMSCommon.OrderState.未核验.ToString()
+                                 && o.State != PMSCommon.OrderState.取消.ToString()
+                                 && o.PMINumber.Contains(pminumber)
+                                select o;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcOrder> GetOrder(int s, int t, string customer, string composition, string pminumber, string state)
@@ -166,41 +216,63 @@ namespace PMSWCFService
 
 
 
-        public List<DcPlanExtra> GetPlan(int s, int t, string composition, string pminumber)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetPlanCount(string composition, string pminumber)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<DcRecordTest> GetRecordTest(int s, int t, string composition, string customer, string pminumber)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetRecordTestCount(string composition, string customer, string pminumber)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DateTime GetRecordTestLastUpdateTime(Guid id)
+        public List<DcPlanExtra> GetPlanExtra(int s, int t, string searchCode, string composition, string pminumber)
         {
             try
             {
                 XS.RunLog();
-                using (var db = new PMSDbContext())
+                using (var dc = new PMSDAL.PMSDbContext())
                 {
-                    var r = db.RecordTests.Find(id);
-                    return r.LastUpdateTime;
+                    var query = from p in dc.VHPPlans
+                                join o in dc.Orders on p.OrderID equals o.ID
+                                where p.State == PMSCommon.CommonState.已核验.ToString()
+                                     && p.SearchCode.Contains(searchCode)
+                                     && o.CompositionStandard.Contains(composition)
+                                     && o.PMINumber.Contains(pminumber)
+                                orderby DbFunctions.TruncateTime(p.PlanDate) descending, p.PlanLot descending, p.VHPDeviceCode descending, DbFunctions.TruncateTime(p.CreateTime) descending
+                                select new PMSPlanExtraModel() { Plan = p, Misson = o };
+
+                    var final = query.Skip(s).Take(t).ToList();
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<PMSPlanExtraModel, DcPlanExtra>();
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                        cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                    });
+
+                    var result = Mapper.Map<List<PMSPlanExtraModel>, List<DcPlanExtra>>(final);
+
+                    return result;
                 }
             }
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                return DateTime.Now;
+                throw ex;
+            }
+        }
+
+        public int GetPlanExtraCount(string searchCode, string composition, string pminumber)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    var query = from p in dc.VHPPlans
+                                join o in dc.Orders on p.OrderID equals o.ID
+                                where p.State == PMSCommon.CommonState.已核验.ToString()
+                                     && p.SearchCode.Contains(searchCode)
+                                     && o.CompositionStandard.Contains(composition)
+                                     && o.PMINumber.Contains(pminumber)
+                                select new PMSPlanExtraModel() { Plan = p, Misson = o };
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
             }
         }
 
@@ -231,16 +303,15 @@ namespace PMSWCFService
             }
         }
 
-        public int UpdateOutsideProcess(DcOutsideProcess model)
-        {
-            throw new NotImplementedException();
-        }
 
         public void UpdateOrder(DcOrder model, string user)
         {
             try
             {
                 XS.RunLog();
+
+                model.LastUpdateTime = DateTime.Now;
+
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg =>
@@ -264,7 +335,31 @@ namespace PMSWCFService
 
         public void UpdatePlan(DcPlanVHP model, string user)
         {
-            throw new NotImplementedException();
+            try
+            {
+                XS.RunLog();
+                //自动生成搜索号
+                model.SearchCode = $"{model.PlanDate.ToString("yyMMdd")}-{model.VHPDeviceCode}";
+                model.UpdateTime = DateTime.Now;
+
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcPlanVHP, PMSPlanVHP>());
+                    var mapper = config.CreateMapper();
+                    var plan = mapper.Map<PMSPlanVHP>(model);
+                    dc.Entry(plan).State = System.Data.Entity.EntityState.Modified;
+                    result = dc.SaveChanges();
+
+                    SavePlanHistory(model, user);
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+
         }
 
         /// <summary>
@@ -294,71 +389,26 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcPlateUsedStatistic> GetPlateUsedStatistics(int s, int t)
+        private void SavePlanHistory(DcPlanVHP model, string uid)
         {
             try
             {
                 XS.RunLog();
-                using (var db = new PMSDbContext())
+                using (var dc = new PMSDbContext())
                 {
-                    var query = from p in db.RecordBondings
-                                where p.State != PMSCommon.BondingState.作废.ToString()
-                                group p by p.PlateLot.Replace("A", "") into g
-                                orderby g.Count() descending
-                                select new DcPlateUsedStatistic { PlateLot = g.Key, Count = g.Count() };
-
-                    return query.Skip(s).Take(t).ToList();
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcPlanVHP, PMSPlanVHPHistory>());
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<PMSPlanVHPHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.VHPPlanHistorys.Add(history);
+                    dc.SaveChanges();
                 }
             }
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
-            }
-        }
-
-        public int GetPlateUsedStatisticsCount()
-        {
-            try
-            {
-                XS.RunLog();
-                using (var db = new PMSDbContext())
-                {
-                    var query = from p in db.RecordBondings
-                                where p.State != PMSCommon.BondingState.作废.ToString()
-                                group p by p.PlateLot.Replace("A", "") into g
-                                select new DcPlateUsedStatistic { PlateLot = g.Key, Count = g.Count() };
-
-                    return query.Count();
-                }
-            }
-            catch (Exception ex)
-            {
-                XS.Current.Error(ex);
-                throw ex;
-            }
-        }
-
-        public int GetPlateUsedTimesByPlateID(string plateid)
-        {
-            try
-            {
-                string new_plateid = plateid.Replace("A", "");
-                XS.RunLog();
-                using (var db = new PMSDbContext())
-                {
-                    var query = from p in db.RecordBondings
-                                where p.State != PMSCommon.BondingState.作废.ToString()
-                                && p.PlateLot.Replace("A", "") == new_plateid
-                                select p;
-
-                    return query.Count();
-                }
-            }
-            catch (Exception ex)
-            {
-                XS.Current.Error(ex);
-                throw ex;
             }
         }
 
@@ -402,7 +452,7 @@ namespace PMSWCFService
             }
         }
 
-        public double GetOrderUnFinishedTargetCount()
+        public int GetOrderUnFinishedTargetCount()
         {
             try
             {
@@ -413,7 +463,8 @@ namespace PMSWCFService
                                 where o.ProductType == "靶材" && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.未核验.ToString())
                                 select o;
-                    return query.Sum(i => i.Quantity);
+                    double quantity = query.Sum(i => i.Quantity);
+                    return (int)quantity;
                 }
             }
             catch (Exception ex)
@@ -447,49 +498,152 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcOutsideProcess> GetOutsideProcess(int s, int t, string productid, string composition, string provider, string state)
+        public int GetMissonUnCompletedCount()
         {
             try
             {
                 XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
-                    Mapper.Initialize(cfg => cfg.CreateMap<OutsideProcess, DcOutsideProcess>());
-                    var query = from i in dc.OutsideProcesses
-                                where i.State.Contains(state)
-                                && i.ProductID.Contains(productid)
-                                && i.Composition.Contains(composition)
-                                orderby i.CreateTime descending, i.ProductID descending
-                                select i;
-                    return Mapper.Map<List<OutsideProcess>, List<DcOutsideProcess>>(query.Skip(s).Take(t).ToList());
-                }
-            }
-            catch (Exception ex)
-            {
-                XS.Current.Error(ex);
-                throw;
-            }
-        }
-
-        public int GetOutsideProcessCount(string productid, string composition, string provider, string state)
-        {
-            try
-            {
-                XS.RunLog();
-                using (var dc = new PMSDbContext())
-                {
-                    var query = from i in dc.OutsideProcesses
-                                where i.State.Contains(state)
-                                && i.ProductID.Contains(productid)
-                                && i.Composition.Contains(composition)
-                                select i;
+                    var query = from o in dc.Orders
+                                where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
+                                 && o.State == OrderState.未完成.ToString()
+                                select o;
                     return query.Count();
                 }
             }
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw;
+                throw ex;
+            }
+        }
+
+        public int GetMissonUnVHPTargetCount()
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from o in dc.Orders
+                                where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
+                                 && o.State == OrderState.未完成.ToString()
+                                 && o.ProductType == "靶材"
+                                select o;
+                    return (int)query.Sum(i => i.Quantity);
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetEmergencyOrderCount()
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    return dc.Orders.Where(o => o.Priority.Contains("紧急")
+                    && o.State == OrderState.未完成.ToString()).Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcPlanVHP> GetPlansByOrderID(Guid id)
+        {
+            Checker.CheckIfCanRun();
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<PMSPlanVHP, DcPlanVHP>());
+                    var result = from p in dc.VHPPlans
+                                 where p.OrderID == id && p.State != VHPPlanState.作废.ToString()
+                                 orderby p.PlanDate descending, p.PlanLot, p.VHPDeviceCode
+                                 select p;
+                    var plans = Mapper.Map<List<PMSPlanVHP>, List<DcPlanVHP>>(result.ToList());
+                    return plans;
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcPlanExtra> GetPlanExtraForProduct(int skip, int take, string searchCode, string composition, string pminumber)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    var query = from p in dc.VHPPlans
+                                join o in dc.Orders on p.OrderID equals o.ID
+                                where p.State == PMSCommon.CommonState.已核验.ToString()
+                                && (p.PlanType == "加工" || p.PlanType == "其他"
+                                        || p.PlanType == "外协" || p.PlanType == "代工" || p.PlanType == "发货")
+                                     && p.SearchCode.Contains(searchCode)
+                                     && o.CompositionStandard.Contains(composition)
+                                     && o.PMINumber.Contains(pminumber)
+                                orderby DbFunctions.TruncateTime(p.PlanDate) descending, p.PlanLot descending, p.VHPDeviceCode descending, DbFunctions.TruncateTime(p.CreateTime) descending
+                                select new PMSPlanExtraModel() { Plan = p, Misson = o };
+
+                    var final = query.Skip(skip).Take(take).ToList();
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<PMSPlanExtraModel, DcPlanExtra>();
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                        cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                    });
+
+                    var result = Mapper.Map<List<PMSPlanExtraModel>, List<DcPlanExtra>>(final);
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetPlanExtraForProductCount(string searchCode, string composition, string pminumber)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    var query = from p in dc.VHPPlans
+                                join o in dc.Orders on p.OrderID equals o.ID
+                                where p.State == PMSCommon.CommonState.已核验.ToString()
+                                & (p.PlanType == "加工" || p.PlanType == "其他"
+                                || p.PlanType == "外协" || p.PlanType == "代工" || p.PlanType == "发货")
+                                     && p.SearchCode.Contains(searchCode)
+                                     && o.CompositionStandard.Contains(composition)
+                                     && o.PMINumber.Contains(pminumber)
+                                select new PMSPlanExtraModel() { Plan = p, Misson = o };
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
             }
         }
     }

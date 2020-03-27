@@ -126,7 +126,7 @@
   <xs:element name="GetOrderUnFinishedTargetCountResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetOrderUnFinishedTargetCountResult" type="xs:double" />
+        <xs:element minOccurs="0" name="GetOrderUnFinishedTargetCountResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -178,42 +178,128 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetPlan">
+  <xs:element name="GetMissonUnCompletedCount">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMissonUnCompletedCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMissonUnCompletedCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMissonUnVHPTargetCount">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMissonUnVHPTargetCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMissonUnVHPTargetCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmergencyOrderCount">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmergencyOrderCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetEmergencyOrderCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlansByOrderID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q9:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlansByOrderIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlansByOrderIDResult" nillable="true" type="q10:ArrayOfDcPlanVHP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlanExtra">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="s" type="xs:int" />
         <xs:element minOccurs="0" name="t" type="xs:int" />
+        <xs:element minOccurs="0" name="searchCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetPlanResponse">
+  <xs:element name="GetPlanExtraResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlanResult" nillable="true" type="q9:ArrayOfDcPlanExtra" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlanExtraResult" nillable="true" type="q11:ArrayOfDcPlanExtra" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetPlanCount">
+  <xs:element name="GetPlanExtraCount">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="searchCode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetPlanCountResponse">
+  <xs:element name="GetPlanExtraCountResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetPlanCountResult" type="xs:int" />
+        <xs:element minOccurs="0" name="GetPlanExtraCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlanExtraForProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="skip" type="xs:int" />
+        <xs:element minOccurs="0" name="take" type="xs:int" />
+        <xs:element minOccurs="0" name="searchCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlanExtraForProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlanExtraForProductResult" nillable="true" type="q12:ArrayOfDcPlanExtra" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlanExtraForProductCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlanExtraForProductCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPlanExtraForProductCountResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddPlan">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q10:DcPlanVHP" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q13:DcPlanVHP" />
         <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -226,7 +312,7 @@
   <xs:element name="UpdatePlan">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q11:DcPlanVHP" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q14:DcPlanVHP" />
         <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -244,159 +330,6 @@
   <xs:element name="LockTodayPlansResponse">
     <xs:complexType>
       <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetRecordTest">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="s" type="xs:int" />
-        <xs:element minOccurs="0" name="t" type="xs:int" />
-        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="customer" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetRecordTestResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetRecordTestResult" nillable="true" type="q12:ArrayOfDcRecordTest" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetRecordTestCount">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="customer" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetRecordTestCountResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetRecordTestCountResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetRecordTestLastUpdateTime">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q13:guid" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetRecordTestLastUpdateTimeResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetRecordTestLastUpdateTimeResult" type="xs:dateTime" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetPlateUsedStatistics">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="s" type="xs:int" />
-        <xs:element minOccurs="0" name="t" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetPlateUsedStatisticsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlateUsedStatisticsResult" nillable="true" type="q14:ArrayOfDcPlateUsedStatistic" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetPlateUsedStatisticsCount">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetPlateUsedStatisticsCountResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetPlateUsedStatisticsCountResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetPlateUsedTimesByPlateID">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="plateid" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetPlateUsedTimesByPlateIDResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetPlateUsedTimesByPlateIDResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetOutsideProcess">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="s" type="xs:int" />
-        <xs:element minOccurs="0" name="t" type="xs:int" />
-        <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="state" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetOutsideProcessResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetOutsideProcessResult" nillable="true" type="q15:ArrayOfDcOutsideProcess" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetOutsideProcessCount">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="provider" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="state" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetOutsideProcessCountResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetOutsideProcessCountResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddOutsideProcess">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q16:DcOutsideProcess" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="AddOutsideProcessResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="AddOutsideProcessResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="UpdateOutsideProcess">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q17:DcOutsideProcess" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="UpdateOutsideProcessResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="UpdateOutsideProcessResult" type="xs:int" />
-      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

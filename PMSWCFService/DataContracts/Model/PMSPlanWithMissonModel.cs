@@ -9,6 +9,7 @@ namespace PMSWCFService.DataContracts
     /// <summary>
     /// 辅助类
     /// </summary>
+    [Obsolete("请使用PMSPlanExtraModel类代替")]
     public class PMSPlanWithMissonModel
     {
         public PMSPlanVHP Plan { get; set; }

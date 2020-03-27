@@ -10,7 +10,7 @@ namespace PMSClient
 {
     public static class PMSDialogService
     {
-        public static void ShowUnImplementYet()
+        public static void UnImplementyet()
         {
             MessageBox.Show("这个功能还没有实现");
         }

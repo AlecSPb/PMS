@@ -72,7 +72,7 @@ namespace PMSClient.ViewModel
                 //RaisePropertyChanged(nameof(CurrentRecordTest));
             }
         }
-        public void SetBySelect1(DcPlanWithMisson model)
+        public void SetBySelect(PMSClient.NewService.DcPlanExtra model)
         {
             if (model != null)
             {

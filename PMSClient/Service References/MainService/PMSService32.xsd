@@ -734,6 +734,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcRecordBonding" nillable="true" type="tns:DcRecordBonding" />
+  <xs:complexType name="ArrayOfDcPlateUsedStatistic">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcPlateUsedStatistic" nillable="true" type="tns:DcPlateUsedStatistic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcPlateUsedStatistic" nillable="true" type="tns:ArrayOfDcPlateUsedStatistic" />
+  <xs:complexType name="DcPlateUsedStatistic">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateLot" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcPlateUsedStatistic" nillable="true" type="tns:DcPlateUsedStatistic" />
   <xs:complexType name="ArrayOfDcOutSource">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="DcOutSource" nillable="true" type="tns:DcOutSource" />

@@ -3445,6 +3445,47 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetPlateUsedStatistics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" type="xs:int" />
+        <xs:element minOccurs="0" name="t" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlateUsedStatisticsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlateUsedStatisticsResult" nillable="true" type="q169:ArrayOfDcPlateUsedStatistic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlateUsedStatisticsCount">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlateUsedStatisticsCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPlateUsedStatisticsCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlateUsedTimesByPlateID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="plateid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlateUsedTimesByPlateIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPlateUsedTimesByPlateIDResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetOutSources">
     <xs:complexType>
       <xs:sequence>
@@ -3459,7 +3500,7 @@
   <xs:element name="GetOutSourcesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetOutSourcesResult" nillable="true" type="q169:ArrayOfDcOutSource" />
+        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetOutSourcesResult" nillable="true" type="q170:ArrayOfDcOutSource" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3482,7 +3523,7 @@
   <xs:element name="AddOutSource">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q170:DcOutSource" />
+        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q171:DcOutSource" />
         <xs:element minOccurs="0" name="uid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -3497,7 +3538,7 @@
   <xs:element name="UpdateOutSource">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q171:DcOutSource" />
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q172:DcOutSource" />
         <xs:element minOccurs="0" name="uid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -3512,7 +3553,7 @@
   <xs:element name="DeleteOutSource">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q172="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q172:guid" />
+        <xs:element xmlns:q173="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q173:guid" />
         <xs:element minOccurs="0" name="uid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>

@@ -118,7 +118,7 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
-            PMSDialogService.ShowUnImplementYet();
+            PMSDialogService.UnImplementyet();
             PMSDialogService.Show("数据导出完成到桌面，请右键-打开方式-Excel打开文件");
         }
 
@@ -233,7 +233,7 @@ namespace PMSClient.ViewModel
                     //获得未完成的订单数
                     UnFinishedOrderCount = service.GetOrderUnFinishedCount();
 
-                    UnFinishedTargetCount = (int)service.GetOrderUnFinishedTargetCount();
+                    UnFinishedTargetCount = service.GetOrderUnFinishedTargetCount();
                     service.Close();
                 }
                 ActionPaging();

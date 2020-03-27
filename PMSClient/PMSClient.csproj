@@ -682,7 +682,6 @@
     <Compile Include="ViewModel\MaterialOrderItemListUnCompletedVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemListVM.cs" />
     <Compile Include="ViewModel\FeedBackEditVM.cs" />
-    <Compile Include="ViewModel\MissonUnCompletedVM.cs" />
     <Compile Include="ViewModel\Model\PlanWithMissonExtra.cs" />
     <Compile Include="ViewModel\OutputVM.cs" />
     <Compile Include="ViewModel\OutSourceEditVM.cs" />
@@ -838,9 +837,6 @@
     </Compile>
     <Compile Include="View\MaterialOrderItemListUnCompletedView.xaml.cs">
       <DependentUpon>MaterialOrderItemListUnCompletedView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MissonUnCompletedView.xaml.cs">
-      <DependentUpon>MissonUnCompletedView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RecordBondingSimpleEditView.xaml.cs">
       <DependentUpon>RecordBondingSimpleEditView.xaml</DependentUpon>
@@ -1082,7 +1078,6 @@
     <Compile Include="ViewModel\BaseViewModelPage.cs" />
     <Compile Include="ViewModel\PlanEditVM.cs" />
     <Compile Include="ViewModel\PlanSelectVM.cs" />
-    <Compile Include="ViewModel\PlanSearchVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />
     <Compile Include="ViewModel\DeliveryEditVM.cs" />
     <Compile Include="ViewModel\DeliveryItemEditVM.cs" />
@@ -1554,10 +1549,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MissonUnCompletedView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\RecordBondingSimpleEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1927,6 +1918,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcPlateUsedStatistic.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\NewService\NewService.wsdl" />
     <None Include="Service References\NewService\NewService.xsd">
       <SubType>Designer</SubType>
@@ -1940,16 +1934,10 @@
     <None Include="Service References\NewService\PMSClient.NewService.DcOrder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\NewService\PMSClient.NewService.DcOutsideProcess.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\NewService\PMSClient.NewService.DcPlanExtra.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\NewService\PMSClient.NewService.DcPlateUsedStatistic.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\NewService\PMSClient.NewService.DcRecordTest.datasource">
+    <None Include="Service References\NewService\PMSClient.NewService.DcPlanVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSSettings\PMSSettingService.wsdl" />

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSClient.MainService;
+using PMSClient.NewService;
 
 namespace PMSClient.ViewModel.VMHelper
 {
@@ -14,7 +14,7 @@ namespace PMSClient.ViewModel.VMHelper
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public static string CreateLabel(DcPlanWithMisson model)
+        public static string CreateLabel(DcPlanExtra model)
         {
             if (model == null)
                 return "";

@@ -114,7 +114,7 @@ namespace PMSClient.ViewModel
         }
 
         #region 处理大靶编号
-        private bool IsBigTargetLot(DcPlanWithMisson item)
+        private bool IsBigTargetLot(PMSClient.NewService.DcPlanExtra item)
         {
 
             return item.Plan.VHPRequirement.Contains("#")
@@ -131,7 +131,7 @@ namespace PMSClient.ViewModel
         }
         #endregion
 
-        public void SetBySelect(DcPlanWithMisson plan)
+        public void SetBySelect(PMSClient.NewService.DcPlanExtra plan)
         {
             if (plan != null)
             {

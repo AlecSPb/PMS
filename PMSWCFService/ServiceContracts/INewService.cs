@@ -12,13 +12,17 @@ namespace PMSWCFService.ServiceContracts
     /// 旧的服务接口不再变动，保持兼容
     /// 新服务另起炉灶
     /// 慎重变动
-    /// 
     /// 每个接口都是用GetOrder AddOrder UpdateOrder
     /// Get
     /// Add
     /// Update
     /// Lock
     /// Check
+    /// 
+    /// 实现的服务
+    /// Order
+    /// VHPPlan
+    /// Misson
     /// </summary>
     [ServiceContract]
     public interface INewService
@@ -46,7 +50,7 @@ namespace PMSWCFService.ServiceContracts
         int GetOrderUnFinishedCount();
 
         [OperationContract]
-        double GetOrderUnFinishedTargetCount();
+        int GetOrderUnFinishedTargetCount();
 
 
         [OperationContract]
@@ -60,9 +64,27 @@ namespace PMSWCFService.ServiceContracts
         int GetMissonCount(string composition, string pminumber, string state);
 
         [OperationContract]
-        List<DcPlanExtra> GetPlan(int s, int t, string composition, string pminumber);
+        int GetMissonUnCompletedCount();
         [OperationContract]
-        int GetPlanCount(string composition, string pminumber);
+        int GetMissonUnVHPTargetCount();
+        [OperationContract]
+        int GetEmergencyOrderCount();
+
+
+        [OperationContract]
+        List<DcPlanVHP> GetPlansByOrderID(Guid id);
+
+
+        [OperationContract]
+        List<DcPlanExtra> GetPlanExtra(int s, int t, string searchCode, string composition, string pminumber);
+        [OperationContract]
+        int GetPlanExtraCount(string searchCode, string composition, string pminumber);
+
+        //用于统筹追踪
+        [OperationContract]
+        List<DcPlanExtra> GetPlanExtraForProduct(int skip, int take, string searchCode, string composition, string pminumber);
+        [OperationContract]
+        int GetPlanExtraForProductCount(string searchCode, string composition, string pminumber);
 
         [OperationContract]
         void AddPlan(DcPlanVHP model, string user);
@@ -73,60 +95,5 @@ namespace PMSWCFService.ServiceContracts
         void LockTodayPlans();
         #endregion
 
-        #region 外协
-
-        #endregion
-
-        #region 原料
-
-        #endregion
-
-        #region 原料入库
-
-        #endregion
-
-        #region 测试记录
-
-        [OperationContract]
-        List<DcRecordTest> GetRecordTest(int s, int t, string composition, string customer, string pminumber);
-        [OperationContract]
-        int GetRecordTestCount(string composition, string customer, string pminumber);
-
-        [OperationContract]
-        DateTime GetRecordTestLastUpdateTime(Guid id);
-
-
-
-
-
-
-
-        //绑定
-        [OperationContract]
-        List<DcPlateUsedStatistic> GetPlateUsedStatistics(int s, int t);
-        [OperationContract]
-        int GetPlateUsedStatisticsCount();
-
-        [OperationContract]
-        int GetPlateUsedTimesByPlateID(string plateid);
-
-        #endregion
-
-
-        #region 发货
-
-        #endregion
-
-        #region 外协加工
-        [OperationContract]
-        List<DcOutsideProcess> GetOutsideProcess(int s, int t, string productid, string composition, string provider, string state);
-        [OperationContract]
-        int GetOutsideProcessCount(string productid, string composition, string provider, string state);
-
-        [OperationContract]
-        int AddOutsideProcess(DcOutsideProcess model);
-        [OperationContract]
-        int UpdateOutsideProcess(DcOutsideProcess model);
-        #endregion
     }
 }

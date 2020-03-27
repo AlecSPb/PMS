@@ -122,7 +122,7 @@ namespace PMSClient.ViewModel
                 CurrentRecordMilling = model;
             }
         }
-        public void SetBySelect(DcPlanWithMisson plan)
+        public void SetBySelect(PMSClient.NewService.DcPlanExtra plan)
         {
             if (plan != null)
             {

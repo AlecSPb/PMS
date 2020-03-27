@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSClient.MainService;
+using PMSClient.NewService;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
@@ -35,7 +35,7 @@ namespace PMSClient.ViewModel
         private void IntitializeProperties()
         {
             SearchComposition = SearchVHPDate = SearchPMINumber = "";
-            PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
+            PlanWithMissons = new ObservableCollection<DcPlanExtra>();
         }
 
         private void IntitializeCommands()
@@ -45,16 +45,16 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             GoToSearchPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.PlanSearch));
-            Label = new RelayCommand<DcPlanWithMisson>(ActionLabel);
-            SearchMisson = new RelayCommand<DcPlanWithMisson>(ActionSearchMisson);
-            SelectionChanged = new RelayCommand<DcPlanWithMisson>(ActionSelectionChanged);
-            Output = new RelayCommand<MainService.DcPlanWithMisson>(ActionOutput);
+            Label = new RelayCommand<DcPlanExtra>(ActionLabel);
+            SearchMisson = new RelayCommand<DcPlanExtra>(ActionSearchMisson);
+            SelectionChanged = new RelayCommand<DcPlanExtra>(ActionSelectionChanged);
+            Output = new RelayCommand<DcPlanExtra>(ActionOutput);
             RecordSheet = new RelayCommand(ActionRecordSheet);
             BatchLabel = new RelayCommand(ActionBatchLabel);
-            Compare = new RelayCommand<DcPlanWithMisson>(ActionCompare);
+            Compare = new RelayCommand<DcPlanExtra>(ActionCompare);
         }
 
-        private void ActionCompare(DcPlanWithMisson obj)
+        private void ActionCompare(DcPlanExtra obj)
         {
             SearchComposition = obj.Misson.CompositionStandard.Trim();
             SetPageParametersWhenConditionChange();
@@ -69,9 +69,9 @@ namespace PMSClient.ViewModel
                     return;
                 DateTime selectedDate = tool.SelectedDate;
                 string searchCode = selectedDate.ToString("yyMMdd");
-                using (var service = new MissonServiceClient())
+                using (var service = new NewServiceClient())
                 {
-                    var pageData = service.GetPlanExtra2(0, 100, searchCode, "", "");
+                    var pageData = service.GetPlanExtra(0, 100, searchCode, "", "");
                     var ordered = pageData.OrderBy(i => i.Plan.PlanLot).ThenBy(i => i.Plan.SearchCode);
 
                     StringBuilder lb = new StringBuilder();
@@ -114,56 +114,14 @@ namespace PMSClient.ViewModel
         /// 导出计划数据
         /// </summary>
         /// <param name="model"></param>
-        private void ActionOutput(DcPlanWithMisson model)
+        private void ActionOutput(DcPlanExtra model)
         {
             if (!PMSDialogService.ShowYesNo("询问", "数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作。\r\n确定明白请点确定开始"))
             {
                 return;
             }
 
-            int pageIndex = 1;
-            int pageSize = 20;
-            int recordCount = 0;
-            using (var service = new MissonServiceClient())
-            {
-                recordCount = service.GetPlanExtraCount2(SearchVHPDate, SearchComposition, SearchPMINumber);
-            }
-
-            int pageCount = recordCount / PageSize + (recordCount % PageSize == 0 ? 0 : 1);
-
-            int skip = 0, take = 0;
-            take = pageSize;
-            skip = (pageIndex - 1) * pageSize;
-
-            string outputfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
-                , "导出数据-计划" + DateTime.Now.ToString("yyyyMMddmmhhss") + ".csv");
-            StreamWriter sw = new StreamWriter(new FileStream(outputfile, FileMode.Append), System.Text.Encoding.GetEncoding("GB2312"));
-            string titleString = "计划日期,批次,设备,计划类型,标准成分,内部编号,模具类型,内径,厚度,数量,密度,粉末粒径,单片,全部,湿度,室温,预压温度,预压压力,温度,压力,真空度,保温时间,工艺代码,制粉要求,装料要求,加工要求,转单,创建者,创建时间";
-            sw.WriteLine(titleString);
-            using (var service = new MissonServiceClient())
-            {
-                try
-                {
-                    string outputString = "";
-                    while (pageIndex <= pageCount)
-                    {
-                        var models = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
-
-                        outputString = PMSOuputHelper.GetPlanOutput(models);
-
-                        sw.Write(outputString.ToString());
-                        sw.Flush();
-
-                        pageIndex++;
-                        skip = (pageIndex - 1) * pageSize;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    PMSHelper.CurrentLog.Error(ex);
-                }
-            }
-            sw.Close();
+            PMSDialogService.UnImplementyet();
 
             PMSDialogService.Show("数据导出完成到桌面，请右键-打开方式-Excel打开文件");
 
@@ -185,7 +143,7 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionSelectionChanged(DcPlanWithMisson model)
+        private void ActionSelectionChanged(DcPlanExtra model)
         {
             if (model != null)
             {
@@ -193,7 +151,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private void ActionSearchMisson(DcPlanWithMisson model)
+        private void ActionSearchMisson(DcPlanExtra model)
         {
             if (model != null)
             {
@@ -202,7 +160,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private void ActionLabel(DcPlanWithMisson model)
+        private void ActionLabel(DcPlanExtra model)
         {
             if (model != null)
             {
@@ -222,9 +180,9 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 30;
-            using (var service = new MissonServiceClient())
+            using (var service = new NewServiceClient())
             {
-                RecordCount = service.GetPlanExtraCount2(SearchVHPDate, SearchComposition, SearchPMINumber);
+                RecordCount = service.GetPlanExtraCount(SearchVHPDate, SearchComposition, SearchPMINumber);
             }
             ActionPaging();
         }
@@ -237,18 +195,18 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             //只显示Checked过的计划
-            using (var service = new MissonServiceClient())
+            using (var service = new NewServiceClient())
             {
-                var models = service.GetPlanExtra2(skip, take, SearchVHPDate, SearchComposition, SearchPMINumber);
+                var models = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition, SearchPMINumber);
                 PlanWithMissons.Clear();
                 models.ToList().ForEach(o => PlanWithMissons.Add(o));
             }
             CurrentPlanWithMisson = PlanWithMissons.FirstOrDefault();
         }
 
-        private DcPlanWithMisson currentPlanWithMisson;
+        private DcPlanExtra currentPlanWithMisson;
 
-        public DcPlanWithMisson CurrentPlanWithMisson
+        public DcPlanExtra CurrentPlanWithMisson
         {
             get { return currentPlanWithMisson; }
             set { currentPlanWithMisson = value; RaisePropertyChanged(nameof(CurrentPlanWithMisson)); }
@@ -275,17 +233,17 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand GoToMisson { get; set; }
         public RelayCommand GoToSearchPlan { get; set; }
-        public RelayCommand<DcPlanWithMisson> Label { get; set; }
-        public RelayCommand<DcPlanWithMisson> SearchMisson { get; set; }
-        public RelayCommand<DcPlanWithMisson> SelectionChanged { get; set; }
-        public RelayCommand<DcPlanWithMisson> Output { get; set; }
-        public RelayCommand<DcPlanWithMisson> Compare { get; set; }
+        public RelayCommand<DcPlanExtra> Label { get; set; }
+        public RelayCommand<DcPlanExtra> SearchMisson { get; set; }
+        public RelayCommand<DcPlanExtra> SelectionChanged { get; set; }
+        public RelayCommand<DcPlanExtra> Output { get; set; }
+        public RelayCommand<DcPlanExtra> Compare { get; set; }
         public RelayCommand RecordSheet { get; set; }
         public RelayCommand BatchLabel { get; set; }
         #endregion
 
         #region Properties
-        public ObservableCollection<DcPlanWithMisson> PlanWithMissons { get; set; }
+        public ObservableCollection<DcPlanExtra> PlanWithMissons { get; set; }
         #endregion
 
     }

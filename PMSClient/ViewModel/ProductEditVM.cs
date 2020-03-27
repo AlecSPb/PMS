@@ -125,7 +125,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public void SetBySelect(DcPlanWithMisson model)
+        public void SetBySelect(PMSClient.NewService.DcPlanExtra model)
         {
             if (model != null)
             {

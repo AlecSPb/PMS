@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSClient.MainService;
+using PMSClient.NewService;
 
 namespace PMSClient.ViewModel.Model
 {
@@ -15,6 +15,6 @@ namespace PMSClient.ViewModel.Model
         }
         public bool IsSelected { get; set; }
 
-        public DcPlanWithMisson PlanMisson { get; set; }
+        public DcPlanExtra PlanMisson { get; set; }
     }
 }
