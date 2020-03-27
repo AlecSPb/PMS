@@ -650,6 +650,7 @@
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
+    <Compile Include="ViewModel\RecordBondingEditVM.cs" />
     <Compile Include="ViewModel\SampleEditVM.cs" />
     <Compile Include="ViewModel\SampleVM.cs" />
     <Compile Include="ViewModel\MillingToolEditVM.cs" />
@@ -690,7 +691,6 @@
     <Compile Include="ViewModel\OutSourceVM.cs" />
     <Compile Include="ViewModel\PlanConclusionVM.cs" />
     <Compile Include="ViewModel\PlanConclusionEditVM.cs" />
-    <Compile Include="ViewModel\PlateUnCompletedVM.cs" />
     <Compile Include="ViewModel\ProductStatisticVM.cs" />
     <Compile Include="ViewModel\Model\MaterialNeedExtra.cs" />
     <Compile Include="ViewModel\Model\PlateExtra.cs" />
@@ -868,9 +868,6 @@
     <Compile Include="View\PlanWindow.xaml.cs">
       <DependentUpon>PlanWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PlateUnCompletedView.xaml.cs">
-      <DependentUpon>PlateUnCompletedView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\ProductStatisticView.xaml.cs">
       <DependentUpon>ProductStatisticView.xaml</DependentUpon>
     </Compile>
@@ -982,9 +979,6 @@
     <Compile Include="View\PlanSelectView.xaml.cs">
       <DependentUpon>PlanSelectView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PlanSearchView.xaml.cs">
-      <DependentUpon>PlanSearchView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\DeliveryItemListView.xaml.cs">
       <DependentUpon>DeliveryItemListView.xaml</DependentUpon>
     </Compile>
@@ -1011,9 +1005,6 @@
     </Compile>
     <Compile Include="View\PlanView.xaml.cs">
       <DependentUpon>PlanView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordBondingEditView.xaml.cs">
-      <DependentUpon>RecordBondingEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RecordBondingView.xaml.cs">
       <DependentUpon>RecordBondingView.xaml</DependentUpon>
@@ -1085,7 +1076,6 @@
     <Compile Include="ViewModel\ProductEditVM.cs" />
     <Compile Include="ViewModel\ProductSelectVM.cs" />
     <Compile Include="ViewModel\ProductVM.cs" />
-    <Compile Include="ViewModel\RecordBondingEditVM.cs" />
     <Compile Include="ViewModel\RecordBondingVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldEditVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldVM.cs" />
@@ -1589,10 +1579,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\PlateUnCompletedView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\ProductStatisticView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1741,10 +1727,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\PlanSearchView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\DeliveryItemListView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1778,10 +1760,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PlanView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordBondingEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

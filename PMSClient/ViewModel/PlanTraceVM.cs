@@ -46,7 +46,7 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
-            GoToSearchPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.PlanSearch));
+
             Label = new RelayCommand<DcPlanExtra>(ActionLabel);
             SearchMisson = new RelayCommand<DcPlanExtra>(ActionSearchMisson);
             SelectionChanged = new RelayCommand<DcPlanExtra>(ActionSelectionChanged);
@@ -194,7 +194,6 @@ namespace PMSClient.ViewModel
         }
         #region Commands
         public RelayCommand GoToMisson { get; set; }
-        public RelayCommand GoToSearchPlan { get; set; }
         public RelayCommand<DcPlanExtra> Label { get; set; }
         public RelayCommand<DcPlanExtra> SearchMisson { get; set; }
         public RelayCommand<DcPlanExtra> SelectionChanged { get; set; }

@@ -76,13 +76,13 @@
                 <DataGridTextColumn Header="{StaticResource BDPlateLot}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding RecordBonding.PlateLot}"/>
                 <DataGridTextColumn Header="{StaticResource BDPlateType}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
-                                    Binding="{Binding PlateType}"/>
+                                    Binding="{Binding RecordBonding.PlateType}"/>
                 <DataGridTextColumn Header="{StaticResource BDRemark}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding RecordBonding.Remark}"/>
                 <DataGridTextColumn Header="{StaticResource BDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                                    Binding="{Binding RecordBonding.CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource BDCreator}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Binding="{Binding Creator}"/>
+                                    Binding="{Binding RecordBonding.Creator}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}" LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>

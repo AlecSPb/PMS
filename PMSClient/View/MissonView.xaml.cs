@@ -1,5 +1,5 @@
 ﻿using PMSCommon;
-using PMSClient.MainService;
+using PMSClient.NewService;
 using System;
 using System.Collections.Generic;
 using System.Linq;

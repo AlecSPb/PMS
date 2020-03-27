@@ -410,9 +410,6 @@ namespace PMSClient
                 case PMSViews.RecordBonding:
                     NavigateTo(_views.RecordBonding);
                     break;
-                case PMSViews.RecordBondingEdit:
-                    NavigateTo(_views.RecordBondingEdit);
-                    break;
                 case PMSViews.RecordBondingSimpleEdit:
                     NavigateTo(_views.RecordBondingSimpleEdit);
                     break;
@@ -451,9 +448,6 @@ namespace PMSClient
                     break;
                 case PMSViews.PlateSelect:
                     NavigateTo(_views.PlateSelect);
-                    break;
-                case PMSViews.PlateUnCompleted:
-                    NavigateTo(_views.PlateUnCompleted);
                     break;
                 case PMSViews.MaterialNeedCalcuationTool:
                     NavigateTo(_toolviews.MaterialNeedCalculation);

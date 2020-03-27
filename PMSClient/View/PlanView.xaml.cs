@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PMSClient.MainService;
+using PMSClient.NewService;
 
 namespace PMSClient.View
 {
@@ -30,7 +30,7 @@ namespace PMSClient.View
         {
             try
             {
-                var row = e.Row.DataContext as DcPlanWithMisson;
+                var row = e.Row.DataContext as DcPlanExtra;
                 if (row != null)
                 {
                     var today = DateTime.Now.Date;

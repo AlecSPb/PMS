@@ -58,7 +58,6 @@ namespace PMSClient.ViewModel
                         BatchSaveProducts();
                         break;
                     case PMSViews.RecordBondingSimpleEdit:
-                    case PMSViews.RecordBondingEdit:
                     case PMSViews.RecordBonding:
                         BatchSaveRecordBondings();
                         break;
@@ -163,7 +162,6 @@ namespace PMSClient.ViewModel
                 switch (requestView)
                 {
                     case PMSViews.RecordBondingSimpleEdit:
-                    case PMSViews.RecordBondingEdit:
                         PMSHelper.ViewModels.RecordBondingEdit.SetBySelect(model.RecordTest);
                         break;
                     case PMSViews.ProductEdit:

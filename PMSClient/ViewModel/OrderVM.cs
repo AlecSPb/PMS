@@ -54,7 +54,13 @@ namespace PMSClient.ViewModel
             UnFinishedTargetCount = 0;
 
             SearchOrderStates = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.OrderState>(SearchOrderStates);
+            SearchOrderStates.Add(PMSCommon.OrderState.未核验.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.未完成.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.生产完成.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.完成.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.作废.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.暂停.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.取消.ToString());
             SearchOrderStates.Add("");
         }
         private void InitializeCommands()
@@ -213,6 +219,7 @@ namespace PMSClient.ViewModel
             SearchCustomer = "";
             SearchCompositionStandard = "";
             SearchPMINumber = "";
+            SearchOrderState = "";
             SetPageParametersWhenConditionChange();
         }
 

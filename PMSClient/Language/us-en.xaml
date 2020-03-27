@@ -755,10 +755,7 @@
     <sys:String x:Key="BDRemark">Remark</sys:String>
     <sys:String x:Key="BDCoverPlateCode">CoverPlateNumber</sys:String>
     <sys:String x:Key="BDPlateType">Plate Type</sys:String>
-
-
     <sys:String x:Key="BDPlanBatchNumber">Batch</sys:String>
-
     <sys:String x:Key="BDTargetProductID">Product ID</sys:String>
     <sys:String x:Key="BDTargetComposition">Composition</sys:String>
     <sys:String x:Key="BDTargetAbbr">Abbr</sys:String>
@@ -771,82 +768,8 @@
     <sys:String x:Key="BDTargetDImensionActual">Dimensiona Actual</sys:String>
     <sys:String x:Key="BDTargetDefects">Defects</sys:String>
     <sys:String x:Key="BDTargetDetailRecord">Details</sys:String>
-    <sys:String x:Key="BDTargetApperance">Appearance</sys:String>
-    <sys:String x:Key="BDTargetWarpageCheck">Warpage Check</sys:String>
-    <sys:String x:Key="BDTargetThicknessCheck">Thickness Check</sys:String>
-    <sys:String x:Key="BDTargetDiameterCheck">Diameter Check x </sys:String>
-    <sys:String x:Key="BDTargetPerson">Checker</sys:String>
-    <sys:String x:Key="BDTargetCheckTime">Check Time</sys:String>
-
-
-
     <sys:String x:Key="BDPlateLot">Plate Lot</sys:String>
-    <sys:String x:Key="BDPlateLotTimes">LotNumbers</sys:String>
     <sys:String x:Key="BDWeldingRate">WeldingRate</sys:String>
-    <sys:String x:Key="BDPlateMaterial">Plate Material</sys:String>
-    <sys:String x:Key="BDPlateBelong">Plate Belong</sys:String>
-    <sys:String x:Key="BDPlateDimension">Dimension</sys:String>
-    <sys:String x:Key="BDPlateUseCount">Use Count</sys:String>
-    <sys:String x:Key="BDPlateHardness">HardNess</sys:String>
-    <sys:String x:Key="BDPlateSupplier">Supplier</sys:String>
-    <sys:String x:Key="BDPlateLastWeldMaterial">Last Weld Material</sys:String>
-    <sys:String x:Key="BDPlateOtherRecord">Other Record</sys:String>
-    <sys:String x:Key="BDPlateAppearance">Appereance</sys:String>
-    <sys:String x:Key="BDPlatePerson">Checker</sys:String>
-    <sys:String x:Key="BDPlateCheckTime">Check Time</sys:String>
-
-
-
-    <sys:String x:Key="BDTargetPreProcessRecord">PreProcess</sys:String>
-    <sys:String x:Key="BDTargetPreProcessPerson">Checker</sys:String>
-    <sys:String x:Key="BDTargetPreProcessCheckTime">Check Time</sys:String>
-
-
-    <sys:String x:Key="BDPlatePreProcessRecord">PreProcess</sys:String>
-    <sys:String x:Key="BDPlatePreProcessPerson">Checker</sys:String>
-    <sys:String x:Key="BDPlatePreProcessCheckTime">Check Time</sys:String>
-
-
-
-    <sys:String x:Key="BDWeldMaterial">WeldMaterial</sys:String>
-    <sys:String x:Key="BDWeldCuStringDiameter">Cu String Diameter</sys:String>
-    <sys:String x:Key="BDWeldHold">Weld Hold</sys:String>
-    <sys:String x:Key="BDWeldPerson">Checker</sys:String>
-    <sys:String x:Key="BDWeldCheckTime">Check Time</sys:String>
-
-
-    <sys:String x:Key="BDWarpageFix">WarpageFix</sys:String>
-    <sys:String x:Key="BDWarpagePerson">Checker</sys:String>
-    <sys:String x:Key="BDWarpageCheckTime">Check Time</sys:String>
-
-
-    <sys:String x:Key="BDDimensionCheck">Dimension Check</sys:String>
-    <sys:String x:Key="BDDimensionWarpageCheck">Dimension Warpage Check</sys:String>
-    <sys:String x:Key="BDDimensionPerson">Chekcer</sys:String>
-    <sys:String x:Key="BDDimensionCheckTime">Check Time</sys:String>
-
-
-    <sys:String x:Key="BDBindingCheck">Bond Check</sys:String>
-    <sys:String x:Key="BDBindingPerson">Checker</sys:String>
-    <sys:String x:Key="BDBindingCheckTime">Check Time</sys:String>
-
-
-    <sys:String x:Key="BDSprayCheck">Spray Check</sys:String>
-    <sys:String x:Key="BDSprayPerson">Checker</sys:String>
-    <sys:String x:Key="BDSprayCheckTime">Check Time</sys:String>
-
-    <sys:String x:Key="BDCleanCheck">Clean Check</sys:String>
-    <sys:String x:Key="BDCleanPerson">Checker</sys:String>
-    <sys:String x:Key="BDCleanCheckTime">Check Time</sys:String>
-
-
-    <sys:String x:Key="BDApperanceCheck">Apperance Check</sys:String>
-    <sys:String x:Key="BDApperancePerson">Checker</sys:String>
-    <sys:String x:Key="BDApperanceCheckTime">Check Time</sys:String>
-
-    <sys:String x:Key="BDPackCheck">Pack Check</sys:String>
-    <sys:String x:Key="BDPackPerson">Checker</sys:String>
-    <sys:String x:Key="BDPackCheckTime">Check Time</sys:String>
 
     <!--Customer-->
     <sys:String x:Key="CustomerState">State</sys:String>

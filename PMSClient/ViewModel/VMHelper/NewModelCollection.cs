@@ -155,7 +155,6 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.BondingState.未完成.ToString();
-            model.InstructionCode = "无";
             model.TargetProductID = UsefulPackage.PMSTranslate.PlanLot();
             model.TargetComposition = "靶材成分";
             model.TargetDimension = "靶材尺寸";
@@ -172,75 +171,9 @@ namespace PMSClient.ViewModel
             model.TargetDimensionActual = "尚未确定";
             model.TargetDefects = "尚未确定";
             model.TargetDetailRecord = "尚未确定";
-            //暂时用不到
-            //1.0
-            model.TargetAppearance = "正常";
-            model.TargetWarpageCheck = "正常";
-            model.TargetThicknessCheck = "正常";
-            model.TargetDiameterCheck = "正常";
-            model.TargetPerson = "无";
-            model.TargetCheckTime = DateTime.Now;
-
-            //2.0
+      
             model.PlateLot = "暂无";
-            model.PlateMaterial = "CuCr";
-            model.PlateDimension = "237mm  ODx 11 mm";
-            model.PlateUseCount = "0";
-            model.PlateHardness = "未知";
-            model.PlateSuplier = "广汉";
-            model.PlateLastWeldMaterial = "无";
-            model.PlateAppearance = "正常";
-            model.PlatePerson = "无";
-            model.PlateCheckTime = DateTime.Now;
-
-            //3.0
-            model.TargetPreProcessRecord = "正常";
-            model.TargetPreProcessPerson = "无";
-            model.TargetPreProcessCheckTime = DateTime.Now;
-
-            //4.0
-            model.PlatePreProcessRecord = "正常";
-            model.PlatePreProcessPerson = "无";
-            model.PlatePreProcessCheckTime = DateTime.Now;
-
-            //5.0
-            model.WeldMaterial = "铟";
-            model.WeldCuStringDiameter = "3.0";
-            model.WeldHold = "4个";
-            model.WeldPerson = "无";
-            model.WeldCheckTime = DateTime.Now;
-            //6.0
-            model.WarpageFix = "正常";
-            model.WarpagePerson = "无";
-            model.WarpageCheckTime = DateTime.Now;
-            //7.0
-            model.DimensionCheck = "正常";
-            model.DimensionWarpageCheck = "无";
-            model.DimensionPerson = "无";
-            model.DimensionCheckTime = DateTime.Now;
-            //
-            model.BindingCheck = "正常";
-            model.BindingPerson = "无";
-            model.BindingCheckTime = DateTime.Now;
-            //
-            model.SprayCheck = "正常";
-            model.SprayPerson = "无";
-            model.SprayCheckTime = DateTime.Now;
-            //
-            model.CleanCheck = "正常";
-            model.CleanPerson = "无";
-            model.CleanCheckTime = DateTime.Now;
-            //
-            model.ApperanceCheck = "正常";
-            model.ApperancePerson = "无";
-            model.ApperanceCheckTime = DateTime.Now;
-            //
-            model.PackCheck = "正常";
-            model.PackPerson = "无";
-            model.PackCheckTime = DateTime.Now;
-
             model.Remark = "无";
-
 
             #endregion
             return model;

@@ -7413,33 +7413,6 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ApperanceCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ApperanceCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ApperancePersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BindingCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime BindingCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BindingPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CleanCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CleanCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CleanPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CoverPlateNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -7449,106 +7422,25 @@ namespace PMSClient.MainService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DimensionCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DimensionCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DimensionPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DimensionWarpageCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InstructionCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PackCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime PackCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PackPersonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PlanBatchNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateAppearanceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateBelongField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime PlateCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateDimensionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateHardnessField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateLastWeldMaterialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlateLotField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateMaterialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateOtherRecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlatePersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime PlatePreProcessCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlatePreProcessPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlatePreProcessRecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateSuplierField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlateTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateUseCountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SprayCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime SprayCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SprayPersonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetAbbrField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetAppearanceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime TargetCheckTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetCompositionField;
@@ -7563,9 +7455,6 @@ namespace PMSClient.MainService {
         private string TargetDetailRecordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetDiameterCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetDimensionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -7578,52 +7467,10 @@ namespace PMSClient.MainService {
         private string TargetPOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime TargetPreProcessCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetPreProcessPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetPreProcessRecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetProductIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetThicknessCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetWarpageCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetWeightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime WarpageCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WarpageFixField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WarpagePersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime WeldCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WeldCuStringDiameterField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WeldHoldField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WeldMaterialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WeldPersonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double WeldingRateField;
@@ -7635,123 +7482,6 @@ namespace PMSClient.MainService {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ApperanceCheck {
-            get {
-                return this.ApperanceCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ApperanceCheckField, value) != true)) {
-                    this.ApperanceCheckField = value;
-                    this.RaisePropertyChanged("ApperanceCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ApperanceCheckTime {
-            get {
-                return this.ApperanceCheckTimeField;
-            }
-            set {
-                if ((this.ApperanceCheckTimeField.Equals(value) != true)) {
-                    this.ApperanceCheckTimeField = value;
-                    this.RaisePropertyChanged("ApperanceCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ApperancePerson {
-            get {
-                return this.ApperancePersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ApperancePersonField, value) != true)) {
-                    this.ApperancePersonField = value;
-                    this.RaisePropertyChanged("ApperancePerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BindingCheck {
-            get {
-                return this.BindingCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BindingCheckField, value) != true)) {
-                    this.BindingCheckField = value;
-                    this.RaisePropertyChanged("BindingCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime BindingCheckTime {
-            get {
-                return this.BindingCheckTimeField;
-            }
-            set {
-                if ((this.BindingCheckTimeField.Equals(value) != true)) {
-                    this.BindingCheckTimeField = value;
-                    this.RaisePropertyChanged("BindingCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BindingPerson {
-            get {
-                return this.BindingPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BindingPersonField, value) != true)) {
-                    this.BindingPersonField = value;
-                    this.RaisePropertyChanged("BindingPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CleanCheck {
-            get {
-                return this.CleanCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CleanCheckField, value) != true)) {
-                    this.CleanCheckField = value;
-                    this.RaisePropertyChanged("CleanCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CleanCheckTime {
-            get {
-                return this.CleanCheckTimeField;
-            }
-            set {
-                if ((this.CleanCheckTimeField.Equals(value) != true)) {
-                    this.CleanCheckTimeField = value;
-                    this.RaisePropertyChanged("CleanCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CleanPerson {
-            get {
-                return this.CleanPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CleanPersonField, value) != true)) {
-                    this.CleanPersonField = value;
-                    this.RaisePropertyChanged("CleanPerson");
-                }
             }
         }
         
@@ -7795,58 +7525,6 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DimensionCheck {
-            get {
-                return this.DimensionCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DimensionCheckField, value) != true)) {
-                    this.DimensionCheckField = value;
-                    this.RaisePropertyChanged("DimensionCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DimensionCheckTime {
-            get {
-                return this.DimensionCheckTimeField;
-            }
-            set {
-                if ((this.DimensionCheckTimeField.Equals(value) != true)) {
-                    this.DimensionCheckTimeField = value;
-                    this.RaisePropertyChanged("DimensionCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DimensionPerson {
-            get {
-                return this.DimensionPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DimensionPersonField, value) != true)) {
-                    this.DimensionPersonField = value;
-                    this.RaisePropertyChanged("DimensionPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DimensionWarpageCheck {
-            get {
-                return this.DimensionWarpageCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DimensionWarpageCheckField, value) != true)) {
-                    this.DimensionWarpageCheckField = value;
-                    this.RaisePropertyChanged("DimensionWarpageCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid ID {
             get {
                 return this.IDField;
@@ -7855,58 +7533,6 @@ namespace PMSClient.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string InstructionCode {
-            get {
-                return this.InstructionCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InstructionCodeField, value) != true)) {
-                    this.InstructionCodeField = value;
-                    this.RaisePropertyChanged("InstructionCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PackCheck {
-            get {
-                return this.PackCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PackCheckField, value) != true)) {
-                    this.PackCheckField = value;
-                    this.RaisePropertyChanged("PackCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime PackCheckTime {
-            get {
-                return this.PackCheckTimeField;
-            }
-            set {
-                if ((this.PackCheckTimeField.Equals(value) != true)) {
-                    this.PackCheckTimeField = value;
-                    this.RaisePropertyChanged("PackCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PackPerson {
-            get {
-                return this.PackPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PackPersonField, value) != true)) {
-                    this.PackPersonField = value;
-                    this.RaisePropertyChanged("PackPerson");
                 }
             }
         }
@@ -7925,84 +7551,6 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateAppearance {
-            get {
-                return this.PlateAppearanceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateAppearanceField, value) != true)) {
-                    this.PlateAppearanceField = value;
-                    this.RaisePropertyChanged("PlateAppearance");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateBelong {
-            get {
-                return this.PlateBelongField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateBelongField, value) != true)) {
-                    this.PlateBelongField = value;
-                    this.RaisePropertyChanged("PlateBelong");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime PlateCheckTime {
-            get {
-                return this.PlateCheckTimeField;
-            }
-            set {
-                if ((this.PlateCheckTimeField.Equals(value) != true)) {
-                    this.PlateCheckTimeField = value;
-                    this.RaisePropertyChanged("PlateCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateDimension {
-            get {
-                return this.PlateDimensionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateDimensionField, value) != true)) {
-                    this.PlateDimensionField = value;
-                    this.RaisePropertyChanged("PlateDimension");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateHardness {
-            get {
-                return this.PlateHardnessField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateHardnessField, value) != true)) {
-                    this.PlateHardnessField = value;
-                    this.RaisePropertyChanged("PlateHardness");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateLastWeldMaterial {
-            get {
-                return this.PlateLastWeldMaterialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateLastWeldMaterialField, value) != true)) {
-                    this.PlateLastWeldMaterialField = value;
-                    this.RaisePropertyChanged("PlateLastWeldMaterial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string PlateLot {
             get {
                 return this.PlateLotField;
@@ -8011,97 +7559,6 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PlateLotField, value) != true)) {
                     this.PlateLotField = value;
                     this.RaisePropertyChanged("PlateLot");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateMaterial {
-            get {
-                return this.PlateMaterialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateMaterialField, value) != true)) {
-                    this.PlateMaterialField = value;
-                    this.RaisePropertyChanged("PlateMaterial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateOtherRecord {
-            get {
-                return this.PlateOtherRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateOtherRecordField, value) != true)) {
-                    this.PlateOtherRecordField = value;
-                    this.RaisePropertyChanged("PlateOtherRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlatePerson {
-            get {
-                return this.PlatePersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlatePersonField, value) != true)) {
-                    this.PlatePersonField = value;
-                    this.RaisePropertyChanged("PlatePerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime PlatePreProcessCheckTime {
-            get {
-                return this.PlatePreProcessCheckTimeField;
-            }
-            set {
-                if ((this.PlatePreProcessCheckTimeField.Equals(value) != true)) {
-                    this.PlatePreProcessCheckTimeField = value;
-                    this.RaisePropertyChanged("PlatePreProcessCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlatePreProcessPerson {
-            get {
-                return this.PlatePreProcessPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlatePreProcessPersonField, value) != true)) {
-                    this.PlatePreProcessPersonField = value;
-                    this.RaisePropertyChanged("PlatePreProcessPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlatePreProcessRecord {
-            get {
-                return this.PlatePreProcessRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlatePreProcessRecordField, value) != true)) {
-                    this.PlatePreProcessRecordField = value;
-                    this.RaisePropertyChanged("PlatePreProcessRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateSuplier {
-            get {
-                return this.PlateSuplierField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateSuplierField, value) != true)) {
-                    this.PlateSuplierField = value;
-                    this.RaisePropertyChanged("PlateSuplier");
                 }
             }
         }
@@ -8120,19 +7577,6 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateUseCount {
-            get {
-                return this.PlateUseCountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateUseCountField, value) != true)) {
-                    this.PlateUseCountField = value;
-                    this.RaisePropertyChanged("PlateUseCount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Remark {
             get {
                 return this.RemarkField;
@@ -8141,45 +7585,6 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
                     this.RemarkField = value;
                     this.RaisePropertyChanged("Remark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SprayCheck {
-            get {
-                return this.SprayCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SprayCheckField, value) != true)) {
-                    this.SprayCheckField = value;
-                    this.RaisePropertyChanged("SprayCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime SprayCheckTime {
-            get {
-                return this.SprayCheckTimeField;
-            }
-            set {
-                if ((this.SprayCheckTimeField.Equals(value) != true)) {
-                    this.SprayCheckTimeField = value;
-                    this.RaisePropertyChanged("SprayCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SprayPerson {
-            get {
-                return this.SprayPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SprayPersonField, value) != true)) {
-                    this.SprayPersonField = value;
-                    this.RaisePropertyChanged("SprayPerson");
                 }
             }
         }
@@ -8206,32 +7611,6 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.TargetAbbrField, value) != true)) {
                     this.TargetAbbrField = value;
                     this.RaisePropertyChanged("TargetAbbr");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetAppearance {
-            get {
-                return this.TargetAppearanceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetAppearanceField, value) != true)) {
-                    this.TargetAppearanceField = value;
-                    this.RaisePropertyChanged("TargetAppearance");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime TargetCheckTime {
-            get {
-                return this.TargetCheckTimeField;
-            }
-            set {
-                if ((this.TargetCheckTimeField.Equals(value) != true)) {
-                    this.TargetCheckTimeField = value;
-                    this.RaisePropertyChanged("TargetCheckTime");
                 }
             }
         }
@@ -8289,19 +7668,6 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetDiameterCheck {
-            get {
-                return this.TargetDiameterCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetDiameterCheckField, value) != true)) {
-                    this.TargetDiameterCheckField = value;
-                    this.RaisePropertyChanged("TargetDiameterCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TargetDimension {
             get {
                 return this.TargetDimensionField;
@@ -8354,58 +7720,6 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetPerson {
-            get {
-                return this.TargetPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetPersonField, value) != true)) {
-                    this.TargetPersonField = value;
-                    this.RaisePropertyChanged("TargetPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime TargetPreProcessCheckTime {
-            get {
-                return this.TargetPreProcessCheckTimeField;
-            }
-            set {
-                if ((this.TargetPreProcessCheckTimeField.Equals(value) != true)) {
-                    this.TargetPreProcessCheckTimeField = value;
-                    this.RaisePropertyChanged("TargetPreProcessCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetPreProcessPerson {
-            get {
-                return this.TargetPreProcessPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetPreProcessPersonField, value) != true)) {
-                    this.TargetPreProcessPersonField = value;
-                    this.RaisePropertyChanged("TargetPreProcessPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetPreProcessRecord {
-            get {
-                return this.TargetPreProcessRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetPreProcessRecordField, value) != true)) {
-                    this.TargetPreProcessRecordField = value;
-                    this.RaisePropertyChanged("TargetPreProcessRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TargetProductID {
             get {
                 return this.TargetProductIDField;
@@ -8419,32 +7733,6 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetThicknessCheck {
-            get {
-                return this.TargetThicknessCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetThicknessCheckField, value) != true)) {
-                    this.TargetThicknessCheckField = value;
-                    this.RaisePropertyChanged("TargetThicknessCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetWarpageCheck {
-            get {
-                return this.TargetWarpageCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetWarpageCheckField, value) != true)) {
-                    this.TargetWarpageCheckField = value;
-                    this.RaisePropertyChanged("TargetWarpageCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TargetWeight {
             get {
                 return this.TargetWeightField;
@@ -8453,110 +7741,6 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.TargetWeightField, value) != true)) {
                     this.TargetWeightField = value;
                     this.RaisePropertyChanged("TargetWeight");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime WarpageCheckTime {
-            get {
-                return this.WarpageCheckTimeField;
-            }
-            set {
-                if ((this.WarpageCheckTimeField.Equals(value) != true)) {
-                    this.WarpageCheckTimeField = value;
-                    this.RaisePropertyChanged("WarpageCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WarpageFix {
-            get {
-                return this.WarpageFixField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WarpageFixField, value) != true)) {
-                    this.WarpageFixField = value;
-                    this.RaisePropertyChanged("WarpageFix");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WarpagePerson {
-            get {
-                return this.WarpagePersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WarpagePersonField, value) != true)) {
-                    this.WarpagePersonField = value;
-                    this.RaisePropertyChanged("WarpagePerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime WeldCheckTime {
-            get {
-                return this.WeldCheckTimeField;
-            }
-            set {
-                if ((this.WeldCheckTimeField.Equals(value) != true)) {
-                    this.WeldCheckTimeField = value;
-                    this.RaisePropertyChanged("WeldCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WeldCuStringDiameter {
-            get {
-                return this.WeldCuStringDiameterField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WeldCuStringDiameterField, value) != true)) {
-                    this.WeldCuStringDiameterField = value;
-                    this.RaisePropertyChanged("WeldCuStringDiameter");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WeldHold {
-            get {
-                return this.WeldHoldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WeldHoldField, value) != true)) {
-                    this.WeldHoldField = value;
-                    this.RaisePropertyChanged("WeldHold");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WeldMaterial {
-            get {
-                return this.WeldMaterialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WeldMaterialField, value) != true)) {
-                    this.WeldMaterialField = value;
-                    this.RaisePropertyChanged("WeldMaterial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WeldPerson {
-            get {
-                return this.WeldPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WeldPersonField, value) != true)) {
-                    this.WeldPersonField = value;
-                    this.RaisePropertyChanged("WeldPerson");
                 }
             }
         }

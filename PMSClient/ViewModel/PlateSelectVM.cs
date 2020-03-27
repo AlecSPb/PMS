@@ -129,7 +129,7 @@ namespace PMSClient.ViewModel
                     case PMSViews.DeliveryItemEdit:
                         PMSHelper.ViewModels.DeliveryItemEdit.SetBySelect(model.Plate);
                         break;
-                    case PMSViews.RecordBondingEdit:
+                    case PMSViews.RecordBondingSimpleEdit:
                         PMSHelper.ViewModels.RecordBondingEdit.SetBySelect(model.Plate);
                         break;
                     default:

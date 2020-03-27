@@ -35,13 +35,9 @@ namespace PMSClient.ViewModel
             Duplicate = new RelayCommand<DcPlate>(ActionDuplicate, CanDuplicate);
 
             SelectAndSend = new RelayCommand<DcPlate>(ActionSelectAndSend, CanSelect);
-            OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
+
         }
 
-        private void ActionOnlyUnCompleted()
-        {
-            NavigationService.GoTo(PMSViews.PlateUnCompleted);
-        }
 
         private bool CanSelect(DcPlate arg)
         {
@@ -154,7 +150,6 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPlate> Edit { get; set; }
         public RelayCommand<DcPlate> SelectAndSend { get; set; }
         public RelayCommand<DcPlate> Duplicate { get; set; }
-        public RelayCommand OnlyUnCompleted { get; set; }
 
         private string searchPlateLot;
         public string SearchPlateLot

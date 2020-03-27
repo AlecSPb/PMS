@@ -51,7 +51,6 @@ namespace PMSClient.ViewModel
             SearchOrderStates.Add(PMSCommon.OrderState.未完成.ToString());
             SearchOrderStates.Add(PMSCommon.OrderState.生产完成.ToString());
             SearchOrderStates.Add(PMSCommon.OrderState.完成.ToString());
-            SearchOrderStates.Add(PMSCommon.OrderState.取消.ToString());
             SearchOrderStates.Add(PMSCommon.OrderState.暂停.ToString());
             SearchOrderStates.Add("");
 
@@ -196,7 +195,8 @@ namespace PMSClient.ViewModel
 
         private bool CanDuplicatePlan(DcPlanVHP arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan) && MissonStateConverter(CurrentSelectItem.State);
+            if (arg == null) return false;
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan) && MissonStateConverter(CurrentSelectItem?.State);
         }
 
         private bool CanEditPlan(DcPlanVHP arg)
@@ -231,7 +231,7 @@ namespace PMSClient.ViewModel
 
         private void ActionRefresh()
         {
-            SearchPMINumber = SearchCompositionStandard = "";
+            SearchPMINumber = SearchCompositionStandard = SearchOrderState = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -296,9 +296,9 @@ namespace PMSClient.ViewModel
             {
                 PageIndex = 1;
                 PageSize = 30;
-                using (var service=new NewServiceClient())
+                using (var service = new NewServiceClient())
                 {
-                    RecordCount = service.GetMissonCount(SearchCompositionStandard, SearchPMINumber,SearchOrderState);
+                    RecordCount = service.GetMissonCount(SearchCompositionStandard, SearchPMINumber, SearchOrderState);
 
                     MissonTarget = service.GetMissonUnCompletedCount();
                     UnVHPTargetCount = service.GetMissonUnVHPTargetCount();
@@ -319,9 +319,9 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            using (var service=new NewServiceClient())
+            using (var service = new NewServiceClient())
             {
-                var orders = service.GetMisson(skip, take, SearchCompositionStandard, SearchPMINumber,SearchOrderState);
+                var orders = service.GetMisson(skip, take, SearchCompositionStandard, SearchPMINumber, SearchOrderState);
                 Missons.Clear();
                 orders.ToList().ForEach(o => Missons.Add(o));
                 CurrentSelectItem = orders.FirstOrDefault();

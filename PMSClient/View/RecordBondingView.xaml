@@ -96,10 +96,6 @@
 
                 <DataGridTextColumn Header="{StaticResource BDPlateLot}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding PlateLot}"/>
-                <DataGridTextColumn Header="{StaticResource BDPlateLotTimes}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockCenter}"
-                                    Binding="{Binding PlateLot,
-                                    Converter={StaticResource PlateUseNumberConverter}}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetCoverPlateNumber}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     Binding="{Binding CoverPlateNumber}"/>
                 <DataGridTextColumn Header="{StaticResource BDWeldingRate}" ElementStyle="{StaticResource StyleDGTextBlockRightBlue}" 

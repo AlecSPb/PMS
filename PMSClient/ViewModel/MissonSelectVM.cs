@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSClient.MainService;
+using PMSClient.NewService;
 using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
@@ -103,9 +103,10 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 30;
-            var service = new MissonServiceClient();
-            RecordCount = service.GetMissonsCountBySearch(SearchCompositionStandard, SearchPMINumber);
-            service.Close();
+            using (var service = new NewServiceClient())
+            {
+                RecordCount = service.GetMissonCount(SearchCompositionStandard, SearchPMINumber, "");
+            }
             ActionPaging();
         }
         /// <summary>
@@ -117,11 +118,13 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var service = new MissonServiceClient();
-            var orders = service.GetMissonsBySearch(skip, take, SearchCompositionStandard, SearchPMINumber);
-            service.Close();
-            MainOrders.Clear();
-            orders.ToList().ForEach(o => MainOrders.Add(o));
+            using (var service = new NewServiceClient())
+            {
+                var orders = service.GetMisson(skip, take, SearchCompositionStandard, SearchPMINumber, "");
+                MainOrders.Clear();
+                orders.ToList().ForEach(o => MainOrders.Add(o));
+            }
+
         }
 
         #region Proeperties

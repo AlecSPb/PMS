@@ -72,9 +72,9 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource PlatePrintNumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding PrintNumber}"/>
+                                    Binding="{Binding Plate.PrintNumber}"/>
                 <DataGridTextColumn Header="{StaticResource PlateMaterial}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding PlateMaterial}"/>
+                                    Binding="{Binding Plate.PlateMaterial}"/>
                 <DataGridTemplateColumn Header="{StaticResource PlateDimension}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

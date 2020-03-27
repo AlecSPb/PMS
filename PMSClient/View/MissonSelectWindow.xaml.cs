@@ -1,4 +1,4 @@
-﻿using PMSClient.MainService;
+﻿using PMSClient.NewService;
 using PMSClient.ViewModel;
 using PMSCommon;
 using System;

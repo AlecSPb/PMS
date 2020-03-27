@@ -775,82 +775,10 @@
     <sys:String x:Key="BDTargetDImensionActual">靶材实际尺寸</sys:String>
     <sys:String x:Key="BDTargetDefects">靶材缺陷</sys:String>
     <sys:String x:Key="BDTargetDetailRecord">靶材细节记录</sys:String>
-    <sys:String x:Key="BDTargetApperance">靶材外观</sys:String>
-    <sys:String x:Key="BDTargetWarpageCheck">靶材翘曲检查</sys:String>
-    <sys:String x:Key="BDTargetThicknessCheck">靶材厚度检查</sys:String>
-    <sys:String x:Key="BDTargetDiameterCheck">靶材直径检查</sys:String>
-    <sys:String x:Key="BDTargetPerson">检查人</sys:String>
-    <sys:String x:Key="BDTargetCheckTime">检查时间</sys:String>
-
-
 
     <sys:String x:Key="BDPlateLot">背板批号</sys:String>
-    <sys:String x:Key="BDPlateLotTimes">已使用次数</sys:String>
     <sys:String x:Key="BDWeldingRate">焊合率</sys:String>
-    <sys:String x:Key="BDPlateMaterial">背板材料</sys:String>
-    <sys:String x:Key="BDPlateBelong">背板归属</sys:String>
-    <sys:String x:Key="BDPlateDimension">背板直径</sys:String>
-    <sys:String x:Key="BDPlateUseCount">背板使用次数</sys:String>
-    <sys:String x:Key="BDPlateHardness">背板硬度</sys:String>
-    <sys:String x:Key="BDPlateSupplier">背板供应商</sys:String>
-    <sys:String x:Key="BDPlateLastWeldMaterial">上次焊接材料</sys:String>
-    <sys:String x:Key="BDPlateOtherRecord">背板其他记录</sys:String>
-    <sys:String x:Key="BDPlateAppearance">背板外观</sys:String>
-    <sys:String x:Key="BDPlatePerson">背板检查人</sys:String>
-    <sys:String x:Key="BDPlateCheckTime">背板检查时间</sys:String>
 
-
-
-    <sys:String x:Key="BDTargetPreProcessRecord">预处理记录</sys:String>
-    <sys:String x:Key="BDTargetPreProcessPerson">记录人</sys:String>
-    <sys:String x:Key="BDTargetPreProcessCheckTime">记录检查时间</sys:String>
-
-
-    <sys:String x:Key="BDPlatePreProcessRecord">预处理记录</sys:String>
-    <sys:String x:Key="BDPlatePreProcessPerson">背板预处理人</sys:String>
-    <sys:String x:Key="BDPlatePreProcessCheckTime">背板预处理时间</sys:String>
-
-
-
-    <sys:String x:Key="BDWeldMaterial">焊接材料</sys:String>
-    <sys:String x:Key="BDWeldCuStringDiameter">Cu丝直径</sys:String>
-    <sys:String x:Key="BDWeldHold">焊接重物</sys:String>
-    <sys:String x:Key="BDWeldPerson">焊接检查人</sys:String>
-    <sys:String x:Key="BDWeldCheckTime">焊接检查时间</sys:String>
-
-
-    <sys:String x:Key="BDWarpageFix">翘曲修正</sys:String>
-    <sys:String x:Key="BDWarpagePerson">翘曲检查人</sys:String>
-    <sys:String x:Key="BDWarpageCheckTime">翘曲检查时间</sys:String>
-
-
-    <sys:String x:Key="BDDimensionCheck">尺寸检查</sys:String>
-    <sys:String x:Key="BDDimensionWarpageCheck">尺寸翘曲检查</sys:String>
-    <sys:String x:Key="BDDimensionPerson">尺寸检查人</sys:String>
-    <sys:String x:Key="BDDimensionCheckTime">尺寸检查时间</sys:String>
-
-
-    <sys:String x:Key="BDBindingCheck">结合检查</sys:String>
-    <sys:String x:Key="BDBindingPerson">结合检查人</sys:String>
-    <sys:String x:Key="BDBindingCheckTime">结合检查时间</sys:String>
-
-
-    <sys:String x:Key="BDSprayCheck">喷砂检查</sys:String>
-    <sys:String x:Key="BDSprayPerson">喷砂检查人</sys:String>
-    <sys:String x:Key="BDSprayCheckTime">喷砂检查时间</sys:String>
-
-    <sys:String x:Key="BDCleanCheck">清洁检查</sys:String>
-    <sys:String x:Key="BDCleanPerson">清洁检查人</sys:String>
-    <sys:String x:Key="BDCleanCheckTime">清洁检查时间</sys:String>
-
-
-    <sys:String x:Key="BDApperanceCheck">外观检查</sys:String>
-    <sys:String x:Key="BDApperancePerson">外观检查人</sys:String>
-    <sys:String x:Key="BDApperanceCheckTime">外观检查时间</sys:String>
-
-    <sys:String x:Key="BDPackCheck">包装检查</sys:String>
-    <sys:String x:Key="BDPackPerson">包装检查人</sys:String>
-    <sys:String x:Key="BDPackCheckTime">包装检查时间</sys:String>
 
     <!--Customer-->
     <sys:String x:Key="CustomerState">状态</sys:String>

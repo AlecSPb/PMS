@@ -61,7 +61,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public void SetBySelect(DcOrder order)
+        public void SetBySelect(PMSClient.NewService.DcOrder order)
         {
             if (order != null)
             {

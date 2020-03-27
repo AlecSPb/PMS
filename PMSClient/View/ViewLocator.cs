@@ -33,7 +33,6 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<MissonView>(true);
 
             SimpleIoc.Default.Register<PlanView>(true);
-            SimpleIoc.Default.Register<PlanSearchView>();
             SimpleIoc.Default.Register<PlanSelectView>();
             SimpleIoc.Default.Register<PlanEditView>();
 
@@ -68,7 +67,6 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<RecordTestDocView>();
 
             SimpleIoc.Default.Register<RecordBondingView>();
-            SimpleIoc.Default.Register<RecordBondingEditView>();
             SimpleIoc.Default.Register<RecordBondingSimpleEditView>();
             SimpleIoc.Default.Register<RecordBondingSelectView>();
 
@@ -81,7 +79,6 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<PlateView>();
             SimpleIoc.Default.Register<PlateEditView>();
             SimpleIoc.Default.Register<PlateSelectView>();
-            SimpleIoc.Default.Register<PlateUnCompletedView>();
 
             SimpleIoc.Default.Register<DeliveryView>();
             SimpleIoc.Default.Register<DeliveryEditView>();
@@ -356,10 +353,6 @@ namespace PMSClient.View
         {
             get { return SimpleIoc.Default.GetInstance<PlanView>(); }
         }
-        public PlanSearchView PlanSearch
-        {
-            get { return SimpleIoc.Default.GetInstance<PlanSearchView>(); }
-        }
         public PlanEditView PlanEdit
         {
             get { return SimpleIoc.Default.GetInstance<PlanEditView>(); }
@@ -531,10 +524,6 @@ namespace PMSClient.View
         {
             get { return SimpleIoc.Default.GetInstance<RecordBondingView>(); }
         }
-        public RecordBondingEditView RecordBondingEdit
-        {
-            get { return SimpleIoc.Default.GetInstance<RecordBondingEditView>(); }
-        }
         public RecordBondingSimpleEditView RecordBondingSimpleEdit
         {
             get { return SimpleIoc.Default.GetInstance<RecordBondingSimpleEditView>(); }
@@ -574,11 +563,6 @@ namespace PMSClient.View
         {
             get { return SimpleIoc.Default.GetInstance<PlateSelectView>(); }
         }
-        public PlateUnCompletedView PlateUnCompleted
-        {
-            get { return SimpleIoc.Default.GetInstance<PlateUnCompletedView>(); }
-        }
-
 
         public DeliveryView Delivery
         {

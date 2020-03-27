@@ -659,77 +659,26 @@
   <xs:element name="ArrayOfDcRecordBonding" nillable="true" type="tns:ArrayOfDcRecordBonding" />
   <xs:complexType name="DcRecordBonding">
     <xs:sequence>
-      <xs:element minOccurs="0" name="ApperanceCheck" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ApperanceCheckTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="ApperancePerson" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="BindingCheck" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="BindingCheckTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="BindingPerson" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CleanCheck" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CleanCheckTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="CleanPerson" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CoverPlateNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DimensionCheck" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DimensionCheckTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="DimensionPerson" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DimensionWarpageCheck" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
-      <xs:element minOccurs="0" name="InstructionCode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PackCheck" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PackCheckTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="PackPerson" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlanBatchNumber" type="xs:int" />
-      <xs:element minOccurs="0" name="PlateAppearance" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlateBelong" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlateCheckTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="PlateDimension" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlateHardness" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlateLastWeldMaterial" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlateLot" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlateMaterial" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlateOtherRecord" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlatePerson" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlatePreProcessCheckTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="PlatePreProcessPerson" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlatePreProcessRecord" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlateSuplier" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlateType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlateUseCount" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SprayCheck" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SprayCheckTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="SprayPerson" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetAbbr" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TargetAppearance" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TargetCheckTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="TargetComposition" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetCustomer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetDefects" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetDetailRecord" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TargetDiameterCheck" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetDimension" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetDimensionActual" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetPMINumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetPO" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TargetPerson" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TargetPreProcessCheckTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="TargetPreProcessPerson" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TargetPreProcessRecord" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetProductID" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TargetThicknessCheck" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TargetWarpageCheck" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetWeight" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WarpageCheckTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="WarpageFix" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WarpagePerson" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WeldCheckTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="WeldCuStringDiameter" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WeldHold" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WeldMaterial" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WeldPerson" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WeldingRate" type="xs:double" />
     </xs:sequence>
   </xs:complexType>

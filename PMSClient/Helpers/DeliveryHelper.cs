@@ -24,7 +24,7 @@ namespace PMSClient.Helpers
         {
             try
             {
-                using (var s_recordTest = new NewServiceClient())
+                using (var s_recordTest = new RecordBondingServiceClient())
                 {
                     int count = s_recordTest.GetPlateUsedTimesByPlateID(platelot);
                     return count;

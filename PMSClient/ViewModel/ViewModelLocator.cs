@@ -89,7 +89,6 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<PlateVM>();
             SimpleIoc.Default.Register<PlateEditVM>();
             SimpleIoc.Default.Register<PlateSelectVM>();
-            SimpleIoc.Default.Register<PlateUnCompletedVM>();
 
 
             SimpleIoc.Default.Register<DeliveryVM>();
@@ -540,10 +539,6 @@ namespace PMSClient.ViewModel
         public PlateSelectVM PlateSelect
         {
             get { return SimpleIoc.Default.GetInstance<PlateSelectVM>(); }
-        }
-        public PlateUnCompletedVM PlateUnCompleted
-        {
-            get { return SimpleIoc.Default.GetInstance<PlateUnCompletedVM>(); }
         }
 
         public DeliveryVM Delivery
