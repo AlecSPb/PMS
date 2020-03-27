@@ -77,6 +77,9 @@ namespace PMSClient.MainService {
         private string PartNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateDrawingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PolicyTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -373,6 +376,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PartNumberField, value) != true)) {
                     this.PartNumberField = value;
                     this.RaisePropertyChanged("PartNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateDrawing {
+            get {
+                return this.PlateDrawingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateDrawingField, value) != true)) {
+                    this.PlateDrawingField = value;
+                    this.RaisePropertyChanged("PlateDrawing");
                 }
             }
         }
@@ -705,6 +721,9 @@ namespace PMSClient.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PartNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateDrawingField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PolicyTypeField;
@@ -1042,6 +1061,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PartNumberField, value) != true)) {
                     this.PartNumberField = value;
                     this.RaisePropertyChanged("PartNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateDrawing {
+            get {
+                return this.PlateDrawingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateDrawingField, value) != true)) {
+                    this.PlateDrawingField = value;
+                    this.RaisePropertyChanged("PlateDrawing");
                 }
             }
         }
@@ -4556,6 +4588,12 @@ namespace PMSClient.MainService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CustomerSignedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerSignedDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DeliveryExpressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4574,10 +4612,19 @@ namespace PMSClient.MainService {
         private string InvoiceNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsCustomerSignedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastCheckIDCollectionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PackageInformationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PackageTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PackageWeightField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
@@ -4646,6 +4693,32 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CustomerSignedDate {
+            get {
+                return this.CustomerSignedDateField;
+            }
+            set {
+                if ((this.CustomerSignedDateField.Equals(value) != true)) {
+                    this.CustomerSignedDateField = value;
+                    this.RaisePropertyChanged("CustomerSignedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerSignedDetails {
+            get {
+                return this.CustomerSignedDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerSignedDetailsField, value) != true)) {
+                    this.CustomerSignedDetailsField = value;
+                    this.RaisePropertyChanged("CustomerSignedDetails");
                 }
             }
         }
@@ -4729,6 +4802,32 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsCustomerSigned {
+            get {
+                return this.IsCustomerSignedField;
+            }
+            set {
+                if ((this.IsCustomerSignedField.Equals(value) != true)) {
+                    this.IsCustomerSignedField = value;
+                    this.RaisePropertyChanged("IsCustomerSigned");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastCheckIDCollection {
+            get {
+                return this.LastCheckIDCollectionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastCheckIDCollectionField, value) != true)) {
+                    this.LastCheckIDCollectionField = value;
+                    this.RaisePropertyChanged("LastCheckIDCollection");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string PackageInformation {
             get {
                 return this.PackageInformationField;
@@ -4750,6 +4849,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PackageTypeField, value) != true)) {
                     this.PackageTypeField = value;
                     this.RaisePropertyChanged("PackageType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double PackageWeight {
+            get {
+                return this.PackageWeightField;
+            }
+            set {
+                if ((this.PackageWeightField.Equals(value) != true)) {
+                    this.PackageWeightField = value;
+                    this.RaisePropertyChanged("PackageWeight");
                 }
             }
         }

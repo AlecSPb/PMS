@@ -77,6 +77,9 @@ namespace PMSClient.NewService {
         private string PartNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateDrawingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PolicyTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -373,6 +376,19 @@ namespace PMSClient.NewService {
                 if ((object.ReferenceEquals(this.PartNumberField, value) != true)) {
                     this.PartNumberField = value;
                     this.RaisePropertyChanged("PartNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateDrawing {
+            get {
+                return this.PlateDrawingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateDrawingField, value) != true)) {
+                    this.PlateDrawingField = value;
+                    this.RaisePropertyChanged("PlateDrawing");
                 }
             }
         }
@@ -2147,6 +2163,30 @@ namespace PMSClient.NewService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/UpdateOrder", ReplyAction="http://tempuri.org/INewService/UpdateOrderResponse")]
         System.Threading.Tasks.Task UpdateOrderAsync(PMSClient.NewService.DcOrder model, string user);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/CheckOrderPMINumberExist", ReplyAction="http://tempuri.org/INewService/CheckOrderPMINumberExistResponse")]
+        bool CheckOrderPMINumberExist(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/CheckOrderPMINumberExist", ReplyAction="http://tempuri.org/INewService/CheckOrderPMINumberExistResponse")]
+        System.Threading.Tasks.Task<bool> CheckOrderPMINumberExistAsync(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOrderUnFinishedCount", ReplyAction="http://tempuri.org/INewService/GetOrderUnFinishedCountResponse")]
+        int GetOrderUnFinishedCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOrderUnFinishedCount", ReplyAction="http://tempuri.org/INewService/GetOrderUnFinishedCountResponse")]
+        System.Threading.Tasks.Task<int> GetOrderUnFinishedCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOrderUnFinishedTargetCount", ReplyAction="http://tempuri.org/INewService/GetOrderUnFinishedTargetCountResponse")]
+        double GetOrderUnFinishedTargetCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOrderUnFinishedTargetCount", ReplyAction="http://tempuri.org/INewService/GetOrderUnFinishedTargetCountResponse")]
+        System.Threading.Tasks.Task<double> GetOrderUnFinishedTargetCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOrderByPMINumber", ReplyAction="http://tempuri.org/INewService/GetOrderByPMINumberResponse")]
+        PMSClient.NewService.DcOrder GetOrderByPMINumber(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOrderByPMINumber", ReplyAction="http://tempuri.org/INewService/GetOrderByPMINumberResponse")]
+        System.Threading.Tasks.Task<PMSClient.NewService.DcOrder> GetOrderByPMINumberAsync(string pminumber);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetMisson", ReplyAction="http://tempuri.org/INewService/GetMissonResponse")]
         PMSClient.NewService.DcOrder[] GetMisson(int s, int t, string composition, string pminumber, string state);
         
@@ -2226,16 +2266,16 @@ namespace PMSClient.NewService {
         System.Threading.Tasks.Task<int> GetPlateUsedTimesByPlateIDAsync(string plateid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOutsideProcess", ReplyAction="http://tempuri.org/INewService/GetOutsideProcessResponse")]
-        PMSClient.NewService.DcOutsideProcess[] GetOutsideProcess(int s, int t, string productid, string composition, string provider);
+        PMSClient.NewService.DcOutsideProcess[] GetOutsideProcess(int s, int t, string productid, string composition, string provider, string state);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOutsideProcess", ReplyAction="http://tempuri.org/INewService/GetOutsideProcessResponse")]
-        System.Threading.Tasks.Task<PMSClient.NewService.DcOutsideProcess[]> GetOutsideProcessAsync(int s, int t, string productid, string composition, string provider);
+        System.Threading.Tasks.Task<PMSClient.NewService.DcOutsideProcess[]> GetOutsideProcessAsync(int s, int t, string productid, string composition, string provider, string state);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOutsideProcessCount", ReplyAction="http://tempuri.org/INewService/GetOutsideProcessCountResponse")]
-        int GetOutsideProcessCount(string productid, string composition, string provider);
+        int GetOutsideProcessCount(string productid, string composition, string provider, string state);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetOutsideProcessCount", ReplyAction="http://tempuri.org/INewService/GetOutsideProcessCountResponse")]
-        System.Threading.Tasks.Task<int> GetOutsideProcessCountAsync(string productid, string composition, string provider);
+        System.Threading.Tasks.Task<int> GetOutsideProcessCountAsync(string productid, string composition, string provider, string state);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/AddOutsideProcess", ReplyAction="http://tempuri.org/INewService/AddOutsideProcessResponse")]
         int AddOutsideProcess(PMSClient.NewService.DcOutsideProcess model);
@@ -2323,6 +2363,38 @@ namespace PMSClient.NewService {
         
         public System.Threading.Tasks.Task UpdateOrderAsync(PMSClient.NewService.DcOrder model, string user) {
             return base.Channel.UpdateOrderAsync(model, user);
+        }
+        
+        public bool CheckOrderPMINumberExist(string pminumber) {
+            return base.Channel.CheckOrderPMINumberExist(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CheckOrderPMINumberExistAsync(string pminumber) {
+            return base.Channel.CheckOrderPMINumberExistAsync(pminumber);
+        }
+        
+        public int GetOrderUnFinishedCount() {
+            return base.Channel.GetOrderUnFinishedCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetOrderUnFinishedCountAsync() {
+            return base.Channel.GetOrderUnFinishedCountAsync();
+        }
+        
+        public double GetOrderUnFinishedTargetCount() {
+            return base.Channel.GetOrderUnFinishedTargetCount();
+        }
+        
+        public System.Threading.Tasks.Task<double> GetOrderUnFinishedTargetCountAsync() {
+            return base.Channel.GetOrderUnFinishedTargetCountAsync();
+        }
+        
+        public PMSClient.NewService.DcOrder GetOrderByPMINumber(string pminumber) {
+            return base.Channel.GetOrderByPMINumber(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.NewService.DcOrder> GetOrderByPMINumberAsync(string pminumber) {
+            return base.Channel.GetOrderByPMINumberAsync(pminumber);
         }
         
         public PMSClient.NewService.DcOrder[] GetMisson(int s, int t, string composition, string pminumber, string state) {
@@ -2429,20 +2501,20 @@ namespace PMSClient.NewService {
             return base.Channel.GetPlateUsedTimesByPlateIDAsync(plateid);
         }
         
-        public PMSClient.NewService.DcOutsideProcess[] GetOutsideProcess(int s, int t, string productid, string composition, string provider) {
-            return base.Channel.GetOutsideProcess(s, t, productid, composition, provider);
+        public PMSClient.NewService.DcOutsideProcess[] GetOutsideProcess(int s, int t, string productid, string composition, string provider, string state) {
+            return base.Channel.GetOutsideProcess(s, t, productid, composition, provider, state);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.NewService.DcOutsideProcess[]> GetOutsideProcessAsync(int s, int t, string productid, string composition, string provider) {
-            return base.Channel.GetOutsideProcessAsync(s, t, productid, composition, provider);
+        public System.Threading.Tasks.Task<PMSClient.NewService.DcOutsideProcess[]> GetOutsideProcessAsync(int s, int t, string productid, string composition, string provider, string state) {
+            return base.Channel.GetOutsideProcessAsync(s, t, productid, composition, provider, state);
         }
         
-        public int GetOutsideProcessCount(string productid, string composition, string provider) {
-            return base.Channel.GetOutsideProcessCount(productid, composition, provider);
+        public int GetOutsideProcessCount(string productid, string composition, string provider, string state) {
+            return base.Channel.GetOutsideProcessCount(productid, composition, provider, state);
         }
         
-        public System.Threading.Tasks.Task<int> GetOutsideProcessCountAsync(string productid, string composition, string provider) {
-            return base.Channel.GetOutsideProcessCountAsync(productid, composition, provider);
+        public System.Threading.Tasks.Task<int> GetOutsideProcessCountAsync(string productid, string composition, string provider, string state) {
+            return base.Channel.GetOutsideProcessCountAsync(productid, composition, provider, state);
         }
         
         public int AddOutsideProcess(PMSClient.NewService.DcOutsideProcess model) {

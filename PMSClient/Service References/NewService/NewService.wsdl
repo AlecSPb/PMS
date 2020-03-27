@@ -43,6 +43,30 @@
   <wsdl:message name="INewService_UpdateOrder_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateOrderResponse" />
   </wsdl:message>
+  <wsdl:message name="INewService_CheckOrderPMINumberExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOrderPMINumberExist" />
+  </wsdl:message>
+  <wsdl:message name="INewService_CheckOrderPMINumberExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOrderPMINumberExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderUnFinishedCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderUnFinishedCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderUnFinishedCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderUnFinishedCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderUnFinishedTargetCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderUnFinishedTargetCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderUnFinishedTargetCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderUnFinishedTargetCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderByPMINumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByPMINumber" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderByPMINumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByPMINumberResponse" />
+  </wsdl:message>
   <wsdl:message name="INewService_GetMisson_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMisson" />
   </wsdl:message>
@@ -170,6 +194,22 @@
       <wsdl:input wsaw:Action="http://tempuri.org/INewService/UpdateOrder" message="tns:INewService_UpdateOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/INewService/UpdateOrderResponse" message="tns:INewService_UpdateOrder_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CheckOrderPMINumberExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/CheckOrderPMINumberExist" message="tns:INewService_CheckOrderPMINumberExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/CheckOrderPMINumberExistResponse" message="tns:INewService_CheckOrderPMINumberExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderUnFinishedCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetOrderUnFinishedCount" message="tns:INewService_GetOrderUnFinishedCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetOrderUnFinishedCountResponse" message="tns:INewService_GetOrderUnFinishedCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderUnFinishedTargetCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetOrderUnFinishedTargetCount" message="tns:INewService_GetOrderUnFinishedTargetCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetOrderUnFinishedTargetCountResponse" message="tns:INewService_GetOrderUnFinishedTargetCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByPMINumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetOrderByPMINumber" message="tns:INewService_GetOrderByPMINumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetOrderByPMINumberResponse" message="tns:INewService_GetOrderByPMINumber_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetMisson">
       <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetMisson" message="tns:INewService_GetMisson_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetMissonResponse" message="tns:INewService_GetMisson_OutputMessage" />
@@ -288,6 +328,42 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateOrder">
       <soap:operation soapAction="http://tempuri.org/INewService/UpdateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOrderPMINumberExist">
+      <soap:operation soapAction="http://tempuri.org/INewService/CheckOrderPMINumberExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderUnFinishedCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetOrderUnFinishedCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderUnFinishedTargetCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetOrderUnFinishedTargetCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByPMINumber">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetOrderByPMINumber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using GalaSoft.MvvmLight.Messaging;
-using PMSCommon;
-using PMSClient.MainService;
 using System.Collections.ObjectModel;
-using System.Windows;
 using System.IO;
 using PMSClient.ToolWindow;
-using PMSClient.Sample;
+using PMSClient.NewService;
+
 
 namespace PMSClient.ViewModel
 {
@@ -34,10 +28,11 @@ namespace PMSClient.ViewModel
             SearchCustomer = "";
             SearchCompositionStandard = "";
             SearchPMINumber = pminumber;
+            SearchOrderState = "";
             SetPageParametersWhenConditionChange();
         }
 
-
+        public List<string> SearchOrderStates { get; set; }
 
         /// <summary>
         /// 用于编辑后刷新订单调用
@@ -53,9 +48,14 @@ namespace PMSClient.ViewModel
             searchCustomer = "";
             searchCompositionStandard = "";
             searchPMINumber = "";
+            searchOrderState = "";
             MainOrders = new ObservableCollection<DcOrder>();
             UnFinishedOrderCount = 0;
             UnFinishedTargetCount = 0;
+
+            SearchOrderStates = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.OrderState>(SearchOrderStates);
+            SearchOrderStates.Add("");
         }
         private void InitializeCommands()
         {
@@ -72,8 +72,6 @@ namespace PMSClient.ViewModel
             Sample = new RelayCommand<DcOrder>(ActionSample, CanSample);
 
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
-            OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
-
             Output = new RelayCommand(ActionOutput);
 
             SampleSheet = new RelayCommand(ActionSampleSheet);
@@ -120,55 +118,8 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
-
-            int pageIndex = 1;
-            int pageSize = 20;
-            int recordCount = 0;
-            using (var service = new OrderServiceClient())
-            {
-                recordCount = service.GetOrderCount(SearchCustomer, SearchCompositionStandard, SearchPMINumber);
-            }
-
-            int pageCount = recordCount / PageSize + (recordCount % PageSize == 0 ? 0 : 1);
-
-            int skip = 0, take = 0;
-            take = pageSize;
-            skip = (pageIndex - 1) * pageSize;
-
-            string outputfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
-                , "导出数据-订单" + DateTime.Now.ToString("yyyyMMddmmhhss") + ".csv");
-            StreamWriter sw = new StreamWriter(new FileStream(outputfile, FileMode.Append), System.Text.Encoding.GetEncoding("GB2312"));
-            string titleString = "订单状态,优先级,创建时间,交付日期,策略,内部编号,客户,标准成分,缩写,纯度,PO,产品类型,数量,单位,加工尺寸,加工要求,样品要求,可接受缺陷,完成日期";
-            sw.WriteLine(titleString);
-            using (var service = new OrderServiceClient())
-            {
-                try
-                {
-                    string outputString = "";
-                    while (pageIndex <= pageCount)
-                    {
-                        var models = service.GetOrders(skip, take, SearchCustomer, SearchCompositionStandard, SearchPMINumber);
-                        outputString = PMSOuputHelper.GetOrderOupput(models);
-                        sw.Write(outputString.ToString());
-                        sw.Flush();
-
-                        pageIndex++;
-                        skip = (pageIndex - 1) * pageSize;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    PMSHelper.CurrentLog.Error(ex);
-                }
-            }
-            sw.Close();
-
+            PMSDialogService.ShowUnImplementYet();
             PMSDialogService.Show("数据导出完成到桌面，请右键-打开方式-Excel打开文件");
-        }
-
-        private void ActionOnlyUnCompleted()
-        {
-            NavigationService.GoTo(PMSViews.OrderUnCompleted);
         }
 
         private void ActionSelectionChanged(DcOrder model)
@@ -254,7 +205,7 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchCustomer) && string.IsNullOrEmpty(SearchCompositionStandard) && string.IsNullOrEmpty(SearchPMINumber));
+            return true;
         }
 
         private void ActionAll()
@@ -276,13 +227,13 @@ namespace PMSClient.ViewModel
             {
                 PageIndex = 1;
                 PageSize = 30;
-                using (var service = new OrderServiceClient())
+                using (var service = new NewServiceClient())
                 {
-                    RecordCount = service.GetOrderCount(SearchCustomer, SearchCompositionStandard, SearchPMINumber);
+                    RecordCount = service.GetOrderCount(SearchCustomer, SearchCompositionStandard, SearchPMINumber, SearchOrderState);
                     //获得未完成的订单数
                     UnFinishedOrderCount = service.GetOrderUnFinishedCount();
 
-                    UnFinishedTargetCount = (int)service.GetUnFinishedTargetCount();
+                    UnFinishedTargetCount = (int)service.GetOrderUnFinishedTargetCount();
                     service.Close();
                 }
                 ActionPaging();
@@ -302,12 +253,13 @@ namespace PMSClient.ViewModel
                 int skip, take = 0;
                 skip = (PageIndex - 1) * PageSize;
                 take = PageSize;
-                var service = new OrderServiceClient();
-                var orders = service.GetOrders(skip, take, SearchCustomer, SearchCompositionStandard, SearchPMINumber);
-                service.Close();
-                MainOrders.Clear();
-                orders.ToList().ForEach(o => MainOrders.Add(o));
-                CurrentOrder = MainOrders.FirstOrDefault();
+                using (var service = new NewServiceClient())
+                {
+                    var orders = service.GetOrder(skip, take, SearchCustomer, SearchCompositionStandard, SearchPMINumber, SearchOrderState);
+                    MainOrders.Clear();
+                    orders.ToList().ForEach(o => MainOrders.Add(o));
+                    CurrentOrder = MainOrders.FirstOrDefault();
+                }
             }
             catch (Exception ex)
             {
@@ -340,6 +292,19 @@ namespace PMSClient.ViewModel
             {
                 unFinishedTargetCount = value;
                 RaisePropertyChanged(nameof(UnFinishedTargetCount));
+            }
+        }
+
+        private string searchOrderState;
+        public string SearchOrderState
+        {
+            get { return searchOrderState; }
+            set
+            {
+                if (searchOrderState == value)
+                    return;
+                searchOrderState = value;
+                RaisePropertyChanged(() => SearchOrderState);
             }
         }
 
@@ -407,10 +372,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcOrder> Check { get; private set; }
         public RelayCommand<DcOrder> Sample { get; private set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
-        public RelayCommand OnlyUnCompleted { get; set; }
-
         public RelayCommand Output { get; set; }
-
         public RelayCommand SampleSheet { get; set; }
         #endregion
     }

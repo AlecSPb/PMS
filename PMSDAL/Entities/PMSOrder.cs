@@ -40,7 +40,8 @@ namespace PMSDAL
         public string Drawing { get; set; }//图纸
         public string SampleForAnlysis { get; set; }//PMI是否需要取样分析
         public string ShipTo { get; set; }//发货目的地
-        public string WithBackingPlate { get; set; }//是否配对应背板
+        public string WithBackingPlate { get; set; }//是否配对应背板，填写背板尺寸或者名称
+        public string PlateDrawing { get; set; }//背板图纸
         public string SpecialRequirement { get; set; }
 
         public DateTime DeadLine { get; set; }

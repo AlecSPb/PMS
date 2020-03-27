@@ -55,6 +55,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string WithBackingPlate { get; set; }//是否配对应背板
         [DataMember]
+        public string PlateDrawing { get; set; }//背板图纸
+        [DataMember]
         public string SpecialRequirement { get; set; }
 
         //状态部分

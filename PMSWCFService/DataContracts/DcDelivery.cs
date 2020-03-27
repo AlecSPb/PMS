@@ -41,6 +41,16 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string PackageInformation { get; set; }//包装重量等细节信息
         [DataMember]
+        public string LastCheckIDCollection { get; set; }//最后一次检查录入的ID信息
+        [DataMember]
+        public double PackageWeight { get; set; }//包装重量
+        [DataMember]
+        public bool IsCustomerSigned { get; set; }
+        [DataMember]
+        public DateTime CustomerSignedDate { get; set; }//签收时间
+        [DataMember]
+        public string CustomerSignedDetails { get; set; }//签收细节
+        [DataMember]
         public string State { get; set; }//取消，未审核，审核通过，已发货
 
     }

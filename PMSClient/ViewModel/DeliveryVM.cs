@@ -181,7 +181,7 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                if (!PMSDialogService.ShowYesNo("请问", "确定完成发货,并停止快递追踪吗?"))
+                if (!PMSDialogService.ShowYesNo("请问", "确定完成发货吗?,\r\nY=停止快递追踪,标记已签收,记录今天为签收时间 \r\nN=取消操作"))
                 {
                     return;
                 }
@@ -191,6 +191,9 @@ namespace PMSClient.ViewModel
                     {
                         model.State = PMSCommon.DeliveryState.完成.ToString();
                         model.FinishTime = DateTime.Now;
+                        //记录签收信息
+                        model.IsCustomerSigned = true;
+                        model.CustomerSignedDate = DateTime.Today;
                         service.UpdateDeliveryByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
 

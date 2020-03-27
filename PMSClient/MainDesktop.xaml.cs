@@ -290,9 +290,6 @@ namespace PMSClient
                 case PMSViews.OrderEdit:
                     NavigateTo(_views.OrderEdit);
                     break;
-                case PMSViews.OrderUnCompleted:
-                    NavigateTo(_views.OrderUnCompleted);
-                    break;
                 case PMSViews.OutSource:
                     NavigateTo(_views.OutSource);
                     break;
@@ -304,9 +301,6 @@ namespace PMSClient
                     break;
                 case PMSViews.MissonSelect:
                     NavigateTo(_views.MissonSelect);
-                    break;
-                case PMSViews.OrderCheckEdit:
-                    NavigateTo(_views.OrderCheckEdit);
                     break;
                 case PMSViews.MaterialNeed:
                     NavigateTo(_views.MaterialNeed);

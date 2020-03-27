@@ -12,11 +12,18 @@ namespace PMSWCFService.ServiceContracts
     /// 旧的服务接口不再变动，保持兼容
     /// 新服务另起炉灶
     /// 慎重变动
+    /// 
+    /// 每个接口都是用GetOrder AddOrder UpdateOrder
+    /// Get
+    /// Add
+    /// Update
+    /// Lock
+    /// Check
     /// </summary>
     [ServiceContract]
     public interface INewService
     {
-        #region 订单
+        #region 订单接口
         [OperationContract]
         List<DcOrder> GetOrder(int s, int t, string customer, string composition, string pminumber, string state);
         [OperationContract]
@@ -32,10 +39,21 @@ namespace PMSWCFService.ServiceContracts
         void AddOrder(DcOrder model, string user);
         [OperationContract]
         void UpdateOrder(DcOrder model, string user);
+        [OperationContract]
+        bool CheckOrderPMINumberExist(string pminumber);
 
+        [OperationContract]
+        int GetOrderUnFinishedCount();
+
+        [OperationContract]
+        double GetOrderUnFinishedTargetCount();
+
+
+        [OperationContract]
+        DcOrder GetOrderByPMINumber(string pminumber);
         #endregion
 
-        #region 任务
+        #region 任务计划接口
         [OperationContract]
         List<DcOrder> GetMisson(int s, int t, string composition, string pminumber, string state);
         [OperationContract]
@@ -55,11 +73,19 @@ namespace PMSWCFService.ServiceContracts
         void LockTodayPlans();
         #endregion
 
+        #region 外协
+
+        #endregion
+
         #region 原料
 
         #endregion
 
-        #region 记录
+        #region 原料入库
+
+        #endregion
+
+        #region 测试记录
 
         [OperationContract]
         List<DcRecordTest> GetRecordTest(int s, int t, string composition, string customer, string pminumber);
@@ -93,9 +119,9 @@ namespace PMSWCFService.ServiceContracts
 
         #region 外协加工
         [OperationContract]
-        List<DcOutsideProcess> GetOutsideProcess(int s, int t, string productid, string composition, string provider);
+        List<DcOutsideProcess> GetOutsideProcess(int s, int t, string productid, string composition, string provider, string state);
         [OperationContract]
-        int GetOutsideProcessCount(string productid, string composition, string provider);
+        int GetOutsideProcessCount(string productid, string composition, string provider, string state);
 
         [OperationContract]
         int AddOutsideProcess(DcOutsideProcess model);

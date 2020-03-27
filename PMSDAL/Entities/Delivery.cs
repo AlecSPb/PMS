@@ -31,5 +31,12 @@ namespace PMSDAL
         public string PackageInformation { get; set; }//包装重量等细节信息
 
 
+        public string LastCheckIDCollection { get; set; }//最后一次检查录入的ID信息
+        public double PackageWeight { get; set; }
+        public bool IsCustomerSigned { get; set; }
+        public DateTime CustomerSignedDate { get; set; }
+        public string CustomerSignedDetails { get; set; }
+
+
     }
 }

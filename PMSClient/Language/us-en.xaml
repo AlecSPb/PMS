@@ -432,8 +432,8 @@
     <sys:String x:Key="OrderDrawing">Drawing</sys:String>
     <sys:String x:Key="OrderSpecialRequirement">Special Req.</sys:String>
     <sys:String x:Key="OrderSampleForAnlysis">Sample For Anlysis</sys:String>
-    <sys:String x:Key="OrderWithBackingPlate">With Plate</sys:String>
-
+    <sys:String x:Key="OrderWithBackingPlate">PlateInfo</sys:String>
+    <sys:String x:Key="OrderPlateDrawing">PlateDrawing</sys:String>
     <sys:String x:Key="OrderPartNumber">Part Number</sys:String>
     <sys:String x:Key="OrderSecondMachineDimension">2rd Machine Dimension</sys:String>
     <sys:String x:Key="OrderSecondMachineDetail">2rd Machine Detail</sys:String>
@@ -679,7 +679,14 @@
     <sys:String x:Key="RDRemark">Remark</sys:String>
     <sys:String x:Key="RDPackageType">Package Type</sys:String>
     <sys:String x:Key="RDPackageInformation">Package Information</sys:String>
-
+    
+    <sys:String x:Key="RDPackageWeight">Package Weight</sys:String>
+    <sys:String x:Key="RDLastCheckIDCollection">CheckIDCollection</sys:String>
+    <sys:String x:Key="RDIsCustomerSigned">IsSigned</sys:String>
+    <sys:String x:Key="RDCustomerSignedDate">CustomerSignedDate</sys:String>
+    <sys:String x:Key="RDCustomerSignedDetails">CustomerSignedDetails</sys:String>
+    
+    
     <sys:String x:Key="RDProductType">Product Type</sys:String>
     <sys:String x:Key="RDProductID">Product ID</sys:String>
     <sys:String x:Key="RDComposition">Composition</sys:String>

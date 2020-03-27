@@ -1,15 +1,9 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.CommandWpf;
+using PMSClient.CheckLogic;
+using PMSClient.NewService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.CommandWpf;
-using GalaSoft.MvvmLight.Messaging;
-using PMSClient.MainService;
-using System.Collections.ObjectModel;
-using PMSClient.BasicService;
-using PMSClient.CheckLogic;
 
 namespace PMSClient.ViewModel
 {
@@ -32,9 +26,9 @@ namespace PMSClient.ViewModel
         {
             if (CurrentOrder != null)
             {
-                using (var service = new OrderServiceClient())
+                using (var service = new NewServiceClient())
                 {
-                    CanUseThisPMINumber = service.CheckPMINumberExisit(CurrentOrder.PMINumber) ? "被占用" : "可以用";
+                    CanUseThisPMINumber = service.CheckOrderPMINumberExist(CurrentOrder.PMINumber) ? "被占用" : "可以用";
                 }
             }
         }
@@ -88,6 +82,7 @@ namespace PMSClient.ViewModel
             order.ProductionIndex = 0;
             order.MaterialIndex = 0;
             order.WithBackingPlate = "无";
+            order.PlateDrawing = "无";//200327添加
             order.Drawing = "默认";
             order.SampleForAnlysis = "无需样品";
             order.ShipTo = "未定";
@@ -147,7 +142,7 @@ namespace PMSClient.ViewModel
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
-                var service = new OrderServiceClient();
+                var service = new NewServiceClient();
                 if (IsNew)
                 {
                     if (CurrentOrder != null)
@@ -159,7 +154,7 @@ namespace PMSClient.ViewModel
                             return;
                         }
                         //检查PMINumber是否被占用
-                        if (service.CheckPMINumberExisit(CurrentOrder.PMINumber))
+                        if (service.CheckOrderPMINumberExist(CurrentOrder.PMINumber))
                         {
                             PMSDialogService.ShowWarning($"PMI Number【{CurrentOrder.PMINumber}】" +
                                 $"已经被占用,无法保存");
@@ -168,7 +163,7 @@ namespace PMSClient.ViewModel
 
 
                     }
-                    service.AddOrderByUID(CurrentOrder, uid);
+                    service.AddOrder(CurrentOrder, uid);
                 }
                 else
                 {
@@ -177,7 +172,7 @@ namespace PMSClient.ViewModel
                         CurrentOrder.FinishTime = DateTime.Now;
                     }
 
-                    service.UpdateOrderByUID(CurrentOrder, uid);
+                    service.UpdateOrder(CurrentOrder, uid);
                 }
                 service.Close();
                 //PMSHelper.ViewModels.Order.RefreshData();

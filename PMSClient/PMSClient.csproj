@@ -684,7 +684,6 @@
     <Compile Include="ViewModel\FeedBackEditVM.cs" />
     <Compile Include="ViewModel\MissonUnCompletedVM.cs" />
     <Compile Include="ViewModel\Model\PlanWithMissonExtra.cs" />
-    <Compile Include="ViewModel\OrderUnCompletedVM.cs" />
     <Compile Include="ViewModel\OutputVM.cs" />
     <Compile Include="ViewModel\OutSourceEditVM.cs" />
     <Compile Include="ViewModel\FeedBackVM.cs" />
@@ -843,9 +842,6 @@
     <Compile Include="View\MissonUnCompletedView.xaml.cs">
       <DependentUpon>MissonUnCompletedView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\OrderUnCompletedView.xaml.cs">
-      <DependentUpon>OrderUnCompletedView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\RecordBondingSimpleEditView.xaml.cs">
       <DependentUpon>RecordBondingSimpleEditView.xaml</DependentUpon>
     </Compile>
@@ -975,9 +971,6 @@
     <Compile Include="View\NavigationView.xaml.cs">
       <DependentUpon>NavigationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\OrderCheckEditView.xaml.cs">
-      <DependentUpon>OrderCheckEditView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\OrderEditView.xaml.cs">
       <DependentUpon>OrderEditView.xaml</DependentUpon>
     </Compile>
@@ -1083,7 +1076,6 @@
     <Compile Include="ViewModel\MaterialOrderVM.cs" />
     <Compile Include="ViewModel\MissonVM.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
-    <Compile Include="ViewModel\OrderCheckEditVM.cs" />
     <Compile Include="ViewModel\OrderEditVM.cs" />
     <Compile Include="ViewModel\MissonSelectVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
@@ -1566,10 +1558,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\OrderUnCompletedView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\RecordBondingSimpleEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1739,10 +1727,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\NavigationView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\OrderCheckEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

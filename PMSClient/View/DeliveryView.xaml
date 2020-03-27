@@ -41,7 +41,7 @@
         </StackPanel>
         <DataGrid x:Name="mainDg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" LoadingRow="DataGrid_LoadingRow"
                       SelectedIndex="{Binding CurrentSelectIndex}"
-                      ItemsSource="{Binding Deliveries}">
+                      ItemsSource="{Binding Deliveries}" FrozenColumnCount="1">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
                     <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
@@ -125,6 +125,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RDPackageWeight}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PackageWeight,StringFormat={}{0:F2}}"/>
                 <DataGridTemplateColumn Header="{StaticResource RDInvoiceNumber}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -139,24 +141,25 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource RDCreateTime}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource RDCreator}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Creator}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+
+                <DataGridTextColumn Header="{StaticResource RDLastCheckIDCollection}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding LastCheckIDCollection}" MaxWidth="300"/>
+                <DataGridCheckBoxColumn Header="{StaticResource RDIsCustomerSigned}" ElementStyle="{StaticResource StyleDGCheckBoxCommonReadOnly}"
+                                    Binding="{Binding IsCustomerSigned}"/>
+                <DataGridTextColumn Header="{StaticResource RDCustomerSignedDate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CustomerSignedDate,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource RDCustomerSignedDetails}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CustomerSignedDetails}"/>
+
+                <DataGridTextColumn Header="{StaticResource RDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
                 <DataGridTextColumn Header="{StaticResource RDFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
+                <DataGridTextColumn Header="{StaticResource RDCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Creator}"/>
                 <DataGridTextColumn Header="{StaticResource RDState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding State}"/>
+                
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"

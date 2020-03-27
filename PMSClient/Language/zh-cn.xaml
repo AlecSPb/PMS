@@ -445,7 +445,8 @@
     <sys:String x:Key="OrderDrawing">加工图纸</sys:String>
     <sys:String x:Key="OrderSpecialRequirement">特殊要求</sys:String>
     <sys:String x:Key="OrderSampleForAnlysis">自分析样品</sys:String>
-    <sys:String x:Key="OrderWithBackingPlate">配有背板</sys:String>
+    <sys:String x:Key="OrderWithBackingPlate">背板概述</sys:String>
+    <sys:String x:Key="OrderPlateDrawing">背板图纸</sys:String>
     <sys:String x:Key="OrderPartNumber">Part Number</sys:String>
     <sys:String x:Key="OrderSecondMachineDimension">二次加工尺寸</sys:String>
     <sys:String x:Key="OrderSecondMachineDetail">二次加工细节</sys:String>
@@ -688,6 +689,11 @@
     <sys:String x:Key="RDRemark">备注</sys:String>
     <sys:String x:Key="RDPackageType">包装类型</sys:String>
     <sys:String x:Key="RDPackageInformation">包装信息</sys:String>
+    <sys:String x:Key="RDPackageWeight">包装重量</sys:String>
+    <sys:String x:Key="RDLastCheckIDCollection">装箱核对</sys:String>
+    <sys:String x:Key="RDIsCustomerSigned">是否签收</sys:String>
+    <sys:String x:Key="RDCustomerSignedDate">签收日期</sys:String>
+    <sys:String x:Key="RDCustomerSignedDetails">签收备注</sys:String>
 
     <sys:String x:Key="RDProductType">产品类型</sys:String>
     <sys:String x:Key="RDProductID">产品ID</sys:String>

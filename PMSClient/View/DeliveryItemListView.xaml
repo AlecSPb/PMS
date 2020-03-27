@@ -170,6 +170,11 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+
+                    <DataGridCheckBoxColumn Header="{StaticResource RDIsCustomerSigned}" ElementStyle="{StaticResource StyleDGCheckBoxCommonReadOnly}"
+                                            Binding="{Binding Delivery.IsCustomerSigned}"/>
+                    <DataGridTextColumn Header="{StaticResource RDCustomerSignedDate}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                        Binding="{Binding Delivery.CustomerSignedDate,StringFormat={}{0:yyyy-MM-dd}}"/>
                     <DataGridTemplateColumn Header="{StaticResource RDCreateTime}">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -204,6 +209,8 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
@@ -264,18 +271,25 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding DeliveryItem.Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-
-                    <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RDState}"
+                    <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RDIsCustomerSigned}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding DeliveryItem.State}" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                    <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RDCreateTime}"
+                    <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Delivery.IsCustomerSigned}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                    
+                    <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RDCustomerSignedDate}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="13" Grid.Column="1" Text="{Binding DeliveryItem.CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                    <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RDCreator}"
+                    <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding Delivery.CustomerSignedDate}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                    
+                    <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RDState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="14" Grid.Column="1" Text="{Binding DeliveryItem.Creator}" Style="{StaticResource StyleTextBlockCommon}" />
+                    <TextBlock Grid.Row="14" Grid.Column="1" Text="{Binding DeliveryItem.State}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                    <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RDCreateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBlock Grid.Row="15" Grid.Column="1" Text="{Binding DeliveryItem.CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                    <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RDCreator}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBlock Grid.Row="16" Grid.Column="1" Text="{Binding DeliveryItem.Creator}" Style="{StaticResource StyleTextBlockCommon}" />
                 </Grid>
             </ScrollViewer>
         </Grid>

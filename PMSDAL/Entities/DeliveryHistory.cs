@@ -28,6 +28,12 @@ namespace PMSDAL
         public string PackageType { get; set; }//木箱 纸箱 塑料箱
         public string PackageInformation { get; set; }//包装重量等细节信息
 
+        public string LastCheckIDCollection { get; set; }//最后一次检查录入的ID信息
+        public double PackageWeight { get; set; }
+        public bool IsCustomerSigned { get; set; }
+        public DateTime CustomerSignedDate { get; set; }
+        public string CustomerSignedDetails { get; set; }
+
         //操作者和操作时间
         [Key]
         public Guid HistoryID { get; set; }

@@ -23,8 +23,6 @@ namespace PMSClient.View
 
             SimpleIoc.Default.Register<OrderView>(true);
             SimpleIoc.Default.Register<OrderEditView>();
-            SimpleIoc.Default.Register<OrderUnCompletedView>();
-            SimpleIoc.Default.Register<OrderCheckEditView>();
             SimpleIoc.Default.Register<OrderSelectView>();
 
             SimpleIoc.Default.Register<OutSourceView>();
@@ -307,13 +305,6 @@ namespace PMSClient.View
                 return SimpleIoc.Default.GetInstance<OrderView>();
             }
         }
-        public OrderUnCompletedView OrderUnCompleted
-        {
-            get
-            {
-                return SimpleIoc.Default.GetInstance<OrderUnCompletedView>();
-            }
-        }
         public OrderEditView OrderEdit
         {
             get
@@ -327,10 +318,6 @@ namespace PMSClient.View
             {
                 return SimpleIoc.Default.GetInstance<OrderSelectView>();
             }
-        }
-        public OrderCheckEditView OrderCheckEdit
-        {
-            get { return SimpleIoc.Default.GetInstance<OrderCheckEditView>(); }
         }
 
         public OutSourceView OutSource
