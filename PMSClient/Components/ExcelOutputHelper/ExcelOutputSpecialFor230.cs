@@ -22,23 +22,26 @@ namespace PMSClient.ExcelOutputHelper
         public override void Output()
         {
 
-            int year = 0, month = 0;
+            int year_start = 0, month_start = 0, year_end = 0, month_end = 0;
 
+            //年月选择对话框
             var dialog = new PMSClient.Components.ExcelOutputHelper.Dialogs.YearDateDailog();
             if (dialog.ShowDialog() == false)
             {
                 return;
             }
-            year = dialog.Year;
-            month = dialog.Month;
+            year_start = dialog.YearStart;
+            month_start = dialog.MonthStart;
+            year_end = dialog.YearEnd;
+            month_end = dialog.MonthEnd;
 
-            excelFileName = excelFileName.Replace(".xlsx", $"{year}_{month}.xlsx");
+            excelFileName = excelFileName.Replace(".xlsx", $"{year_start}_{month_start}to{year_end}_{month_end}.xlsx");
 
 
             ResetParameters();
             using (var service = new OutputServiceClient())
             {
-                recordCount = service.GetAll230DataByYearMonthCount(year, month);
+                recordCount = service.GetAll230DataByYearMonthCount(year_start, month_start, year_end, month_end);
                 pageCount = GetPageCount();
 
                 NPOIHelper helper = new NPOIHelper();
@@ -105,7 +108,7 @@ namespace PMSClient.ExcelOutputHelper
                     s = pageIndex * pageSize;
                     t = pageSize;
 
-                    var pageData = service.GetAll230DataByYearMonth(s, t, year, month);
+                    var pageData = service.GetAll230DataByYearMonth(s, t, year_start, month_start,year_end,month_end);
                     foreach (var item in pageData)
                     {
                         helper.CreateRow(rowIndex);

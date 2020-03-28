@@ -12,15 +12,18 @@ namespace PMSWCFService.ServiceContracts
     public interface IOutputService
     {
         [OperationContract]
+        [Obsolete]
         List<PMS230DataModel> GetAll230Data(int s,int t);
 
         [OperationContract]
+        [Obsolete]
         int GetAll230DataCount();
 
-        [OperationContract]
-        List<PMS230DataModel> GetAll230DataByYearMonth(int s, int t,int year,int month);
 
         [OperationContract]
-        int GetAll230DataByYearMonthCount(int year, int month);
+        List<PMS230DataModel> GetAll230DataByYearMonth(int s, int t,int year_start,int month_start,int year_end,int month_end);
+
+        [OperationContract]
+        int GetAll230DataByYearMonthCount(int year_start, int month_start, int year_end, int month_end);
     }
 }

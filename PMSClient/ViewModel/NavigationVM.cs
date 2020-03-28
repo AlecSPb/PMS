@@ -149,7 +149,7 @@ namespace PMSClient.ViewModel
             GoToFillingTool = new RelayCommand(() => NavigationService.GoTo(PMSViews.FillingTool));
             GoToMillingTool = new RelayCommand(() => NavigationService.GoTo(PMSViews.MillingTool));
 
-
+            //数据导出
             GoToOutput = new RelayCommand(() =>
               {
                   var window = new ToolWindow.DataOutputWindow();

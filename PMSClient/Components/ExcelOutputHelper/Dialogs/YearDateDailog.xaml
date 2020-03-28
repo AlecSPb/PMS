@@ -6,20 +6,29 @@
         xmlns:local="clr-namespace:PMSClient.Components.ExcelOutputHelper.Dialogs"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
-        Title="发货年月-每次导出一月的数据" Height="150" Width="400">
+        Title="发货年月-每次导出固定范围数据" Height="180" Width="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="选择年月，然后确定" Style="{StaticResource StyleTextBlockCommon}"/>
+        <TextBlock Text="选择年月范围-开始小于结束，然后确定" Style="{StaticResource StyleTextBlockCommon}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <TextBlock Text="年" Style="{StaticResource StyleTextBlockCommon}"/>
-            <ComboBox Name="CboYear" Style="{StaticResource StyleComboBoxCommon}"/>
+            <TextBlock Text="开始-年" Style="{StaticResource StyleTextBlockCommon}"/>
+            <ComboBox Name="CboYearStart" Style="{StaticResource StyleComboBoxCommon}"/>
             <TextBlock Text="月" Style="{StaticResource StyleTextBlockCommon}"/>
-            <ComboBox Name="CboMonth" Style="{StaticResource StyleComboBoxCommon}"/>
-            <Button Name="BtnFill" Content="确定" Style="{StaticResource StyleButtonCommon}" Click="BtnFill_Click"/>
+            <ComboBox Name="CboMonthStart" Style="{StaticResource StyleComboBoxCommon}"/>
         </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Text="结束-年" Style="{StaticResource StyleTextBlockCommon}"/>
+            <ComboBox Name="CboYearEnd" Style="{StaticResource StyleComboBoxCommon}"/>
+            <TextBlock Text="月" Style="{StaticResource StyleTextBlockCommon}"/>
+            <ComboBox Name="CboMonthEnd" Style="{StaticResource StyleComboBoxCommon}"/>
+        </StackPanel>
+        <Button Name="BtnFill" Grid.Row="3" Content="确定" Style="{StaticResource StyleButtonCommon}" Click="BtnFill_Click"
+                HorizontalAlignment="Stretch" Height="30"/>
     </Grid>
 </Window>

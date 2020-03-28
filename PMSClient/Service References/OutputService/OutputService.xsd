@@ -33,8 +33,10 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="s" type="xs:int" />
         <xs:element minOccurs="0" name="t" type="xs:int" />
-        <xs:element minOccurs="0" name="year" type="xs:int" />
-        <xs:element minOccurs="0" name="month" type="xs:int" />
+        <xs:element minOccurs="0" name="year_start" type="xs:int" />
+        <xs:element minOccurs="0" name="month_start" type="xs:int" />
+        <xs:element minOccurs="0" name="year_end" type="xs:int" />
+        <xs:element minOccurs="0" name="month_end" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -48,8 +50,10 @@
   <xs:element name="GetAll230DataByYearMonthCount">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="year" type="xs:int" />
-        <xs:element minOccurs="0" name="month" type="xs:int" />
+        <xs:element minOccurs="0" name="year_start" type="xs:int" />
+        <xs:element minOccurs="0" name="month_start" type="xs:int" />
+        <xs:element minOccurs="0" name="year_end" type="xs:int" />
+        <xs:element minOccurs="0" name="month_end" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

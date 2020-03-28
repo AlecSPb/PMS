@@ -175,7 +175,7 @@
                                             Binding="{Binding Delivery.IsCustomerSigned}"/>
                     <DataGridTextColumn Header="{StaticResource RDCustomerSignedDate}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                         Binding="{Binding Delivery.CustomerSignedDate,StringFormat={}{0:yyyy-MM-dd}}"/>
-                    <DataGridCheckBoxColumn Header="{StaticResource RDCustomerSignedDetails}" ElementStyle="{StaticResource StyleDGCheckBoxCommonReadOnly}"
+                    <DataGridTextColumn Header="{StaticResource RDCustomerSignedDetails}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                             Binding="{Binding Delivery.CustomerSignedDetails}"/>
 
                     <DataGridTemplateColumn Header="{StaticResource RDCreateTime}">

@@ -27,31 +27,61 @@ namespace PMSClient.Components.ExcelOutputHelper.Dialogs
 
         public void LoadDefaultValues()
         {
-            List<int> years = new List<int>();
+            DateTime defaultStart = DateTime.Today.AddMonths(-3);
+            DateTime defaultEnd = DateTime.Today;
+
+            List<int> yearsstart = new List<int>();
             for (int i = 2017; i <= 2100; i++)
             {
-                years.Add(i);
+                yearsstart.Add(i);
             }
-            CboYear.ItemsSource = years;
-            CboYear.SelectedItem = DateTime.Now.Year;
+            CboYearStart.ItemsSource = yearsstart;
+            CboYearStart.SelectedItem = defaultStart.Year;
 
-            List<int> months = new List<int>();
+            List<int> monthsstart = new List<int>();
             for (int i = 1; i <= 12; i++)
             {
-                months.Add(i);
+                monthsstart.Add(i);
             }
-            CboMonth.ItemsSource = months;
-            CboMonth.SelectedItem = DateTime.Now.Month;
+            CboMonthStart.ItemsSource = monthsstart;
+            CboMonthStart.SelectedItem = defaultStart.Month;
 
+
+            List<int> yearsend = new List<int>();
+            for (int i = 2017; i <= 2100; i++)
+            {
+                yearsend.Add(i);
+            }
+            CboYearEnd.ItemsSource = yearsend;
+            CboYearEnd.SelectedItem = defaultEnd.Year;
+
+            List<int> monthsend = new List<int>();
+            for (int i = 1; i <= 12; i++)
+            {
+                monthsend.Add(i);
+            }
+            CboMonthEnd.ItemsSource = monthsend;
+            CboMonthEnd.SelectedItem = defaultEnd.Month;
 
         }
 
-        public int Year { get; set; } = DateTime.Now.Year;
-        public int Month { get; set; } = DateTime.Now.Month;
+        public int YearStart { get; set; } = DateTime.Now.Year;
+        public int MonthStart { get; set; } = DateTime.Now.Month;
+        public int YearEnd { get; set; } = DateTime.Now.Year;
+        public int MonthEnd { get; set; } = DateTime.Now.Month;
         private void BtnFill_Click(object sender, RoutedEventArgs e)
         {
-            Year = (int)CboYear.SelectedItem;
-            Month = (int)CboMonth.SelectedItem;
+
+            YearStart = (int)CboYearStart.SelectedItem;
+            MonthStart = (int)CboMonthStart.SelectedItem;
+            YearEnd = (int)CboYearEnd.SelectedItem;
+            MonthEnd = (int)CboMonthEnd.SelectedItem;
+
+            if(new DateTime(YearStart,MonthStart,1)>=new DateTime(YearEnd, MonthEnd, 1))
+            {
+                PMSDialogService.ShowWarning("开始年月必须小于结束年月");
+                return;
+            }
             DialogResult = true;
             this.Close();
         }

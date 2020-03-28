@@ -64,15 +64,16 @@ namespace PMSWCFService
 
         }
 
-        public List<PMS230DataModel> GetAll230DataByYearMonth(int s, int t, int year, int month)
+        public List<PMS230DataModel> GetAll230DataByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end)
         {
             try
             {
                 XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
-                    DateTime startTime = new DateTime(year, month, 1);
-                    DateTime endtime = startTime.AddMonths(1).AddDays(-1);
+                    DateTime startTime = new DateTime(year_start, month_start, 1);
+                    DateTime endtime = new DateTime(year_end, month_end, 1).AddMonths(1).AddDays(-1);
+
                     var query = from dd in db.DeliveryItems
                                 join tt in db.RecordTests on dd.ProductID equals tt.ProductID into bb
                                 from bbdata in bb.DefaultIfEmpty()
@@ -112,15 +113,16 @@ namespace PMSWCFService
             }
         }
 
-        public int GetAll230DataByYearMonthCount(int year, int month)
+        public int GetAll230DataByYearMonthCount(int year_start, int month_start, int year_end, int month_end)
         {
             try
             {
                 XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
-                    DateTime startTime = new DateTime(year, month, 1);
-                    DateTime endtime = startTime.AddMonths(1).AddDays(-1);
+                    DateTime startTime = new DateTime(year_start, month_start, 1);
+                    DateTime endtime = new DateTime(year_end, month_end, 1).AddMonths(1).AddDays(-1);
+
                     var query = from dd in db.DeliveryItems
                                 join t in db.RecordTests on dd.ProductID equals t.ProductID into bb
                                 from bbdata in bb.DefaultIfEmpty()
