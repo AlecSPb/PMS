@@ -47,7 +47,7 @@ namespace PMSClient.View
                         case "失败":
                             e.Row.Background = this.FindResource("FailedBrush") as SolidColorBrush;
                             break;
-                        case "完成":
+                        case "最终完成":
                             e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
                             break;
                         default:

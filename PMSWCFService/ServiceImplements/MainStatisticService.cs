@@ -146,7 +146,7 @@ namespace PMSWCFService
                     result.Add(new DataContracts.DcStatistic { Key = "UnCompleted", Value = query2.Count() });
 
                     var query3 = from i in dc.Orders
-                                 where i.State == PMSCommon.OrderState.完成.ToString()
+                                 where i.State == PMSCommon.OrderState.最终完成.ToString()
                                  && i.PolicyType.Contains("VHP")
                                  select i;
                     result.Add(new DataContracts.DcStatistic { Key = "Completed", Value = query3.Count() });

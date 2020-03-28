@@ -710,6 +710,12 @@
   <wsdl:message name="IMissonService_GetPlanExtraForProductCount2_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPlanExtraForProductCount2Response" />
   </wsdl:message>
+  <wsdl:message name="IMissonService_GetEmergencyOrderCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmergencyOrderCount" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetEmergencyOrderCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmergencyOrderCountResponse" />
+  </wsdl:message>
   <wsdl:message name="IDeliveryService_GetDelivery_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDelivery" />
   </wsdl:message>
@@ -992,6 +998,18 @@
   <wsdl:message name="IRecordTestService_GetRecordTestCountBySearchInPage_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordTestCountBySearchInPageResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetRecordTestBySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestBySearch" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetRecordTestBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestBySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetRecordTestCountBySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestCountBySearch" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetRecordTestCountBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestCountBySearchResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordTestService_GetRecordTestChecked_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordTestChecked" />
   </wsdl:message>
@@ -1045,6 +1063,18 @@
   </wsdl:message>
   <wsdl:message name="IRecordTestService_GetUnFinishedRecordTest_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUnFinishedRecordTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetUnCheckedRecordTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnCheckedRecordTest" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetUnCheckedRecordTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnCheckedRecordTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetLastUpdateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastUpdateTime" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetLastUpdateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastUpdateTimeResponse" />
   </wsdl:message>
   <wsdl:message name="IRecordVHPService_GetRecordVHP_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordVHP" />
@@ -1154,6 +1184,12 @@
   <wsdl:message name="IRecordMillingService_GetAllPowderWeight_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllPowderWeightResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordMillingService_GetRecordMillingsByPMINumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMillingsByPMINumber" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMillingService_GetRecordMillingsByPMINumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMillingsByPMINumberResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordMachineService_GetRecordMachines_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordMachines" />
   </wsdl:message>
@@ -1208,6 +1244,12 @@
   <wsdl:message name="IRecordMachineService_DeleteRecordMachine_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordMachineResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordMachineService_GetRecordMachinesByPMINumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMachinesByPMINumber" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMachineService_GetRecordMachinesByPMINumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMachinesByPMINumberResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordDeMoldService_GetRecordDeMolds_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordDeMolds" />
   </wsdl:message>
@@ -1261,6 +1303,12 @@
   </wsdl:message>
   <wsdl:message name="IRecordDeMoldService_DeleteRecordDeMold_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordDeMoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeMoldService_GetRecordDeMoldsByPMINumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordDeMoldsByPMINumber" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeMoldService_GetRecordDeMoldsByPMINumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordDeMoldsByPMINumberResponse" />
   </wsdl:message>
   <wsdl:message name="IRecordBondingService_GetRecordBondings_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordBondings" />
@@ -1333,6 +1381,42 @@
   </wsdl:message>
   <wsdl:message name="IRecordBondingService_SetAllUnFinsihToTempFinish_OutputMessage">
     <wsdl:part name="parameters" element="tns:SetAllUnFinsihToTempFinishResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_CheckPlateUsedTimes_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPlateUsedTimes" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_CheckPlateUsedTimes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPlateUsedTimesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetRecordBondingsByPMINumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordBondingsByPMINumber" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetRecordBondingsByPMINumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordBondingsByPMINumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetRecordBondingsByDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordBondingsByDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetRecordBondingsByDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordBondingsByDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetPlateUsedStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateUsedStatistics" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetPlateUsedStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateUsedStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetPlateUsedStatisticsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateUsedStatisticsCount" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetPlateUsedStatisticsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateUsedStatisticsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetPlateUsedTimesByPlateID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateUsedTimesByPlateID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetPlateUsedTimesByPlateID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateUsedTimesByPlateIDResponse" />
   </wsdl:message>
   <wsdl:message name="IOutSourceService_GetOutSources_InputMessage">
     <wsdl:part name="parameters" element="tns:GetOutSources" />
@@ -1843,6 +1927,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlanExtraForProductCount2" message="tns:IMissonService_GetPlanExtraForProductCount2_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetPlanExtraForProductCount2Response" message="tns:IMissonService_GetPlanExtraForProductCount2_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetEmergencyOrderCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetEmergencyOrderCount" message="tns:IMissonService_GetEmergencyOrderCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetEmergencyOrderCountResponse" message="tns:IMissonService_GetEmergencyOrderCount_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IDeliveryService">
     <wsdl:operation name="GetDelivery">
@@ -2039,6 +2127,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPage" message="tns:IRecordTestService_GetRecordTestCountBySearchInPage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPageResponse" message="tns:IRecordTestService_GetRecordTestCountBySearchInPage_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetRecordTestBySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestBySearch" message="tns:IRecordTestService_GetRecordTestBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestBySearchResponse" message="tns:IRecordTestService_GetRecordTestBySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordTestCountBySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearch" message="tns:IRecordTestService_GetRecordTestCountBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchResponse" message="tns:IRecordTestService_GetRecordTestCountBySearch_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetRecordTestChecked">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestChecked" message="tns:IRecordTestService_GetRecordTestChecked_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestCheckedResponse" message="tns:IRecordTestService_GetRecordTestChecked_OutputMessage" />
@@ -2074,6 +2170,14 @@
     <wsdl:operation name="GetUnFinishedRecordTest">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTest" message="tns:IRecordTestService_GetUnFinishedRecordTest_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTestResponse" message="tns:IRecordTestService_GetUnFinishedRecordTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnCheckedRecordTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTest" message="tns:IRecordTestService_GetUnCheckedRecordTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTestResponse" message="tns:IRecordTestService_GetUnCheckedRecordTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastUpdateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetLastUpdateTime" message="tns:IRecordTestService_GetLastUpdateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetLastUpdateTimeResponse" message="tns:IRecordTestService_GetLastUpdateTime_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordVHPService">
@@ -2151,6 +2255,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/GetAllPowderWeight" message="tns:IRecordMillingService_GetAllPowderWeight_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordMillingService/GetAllPowderWeightResponse" message="tns:IRecordMillingService_GetAllPowderWeight_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetRecordMillingsByPMINumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByPMINumber" message="tns:IRecordMillingService_GetRecordMillingsByPMINumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByPMINumberResponse" message="tns:IRecordMillingService_GetRecordMillingsByPMINumber_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordMachineService">
     <wsdl:operation name="GetRecordMachines">
@@ -2189,6 +2297,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordMachineService/DeleteRecordMachine" message="tns:IRecordMachineService_DeleteRecordMachine_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordMachineService/DeleteRecordMachineResponse" message="tns:IRecordMachineService_DeleteRecordMachine_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetRecordMachinesByPMINumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordMachineService/GetRecordMachinesByPMINumber" message="tns:IRecordMachineService_GetRecordMachinesByPMINumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordMachineService/GetRecordMachinesByPMINumberResponse" message="tns:IRecordMachineService_GetRecordMachinesByPMINumber_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordDeMoldService">
     <wsdl:operation name="GetRecordDeMolds">
@@ -2226,6 +2338,10 @@
     <wsdl:operation name="DeleteRecordDeMold">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMold" message="tns:IRecordDeMoldService_DeleteRecordDeMold_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMoldResponse" message="tns:IRecordDeMoldService_DeleteRecordDeMold_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordDeMoldsByPMINumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByPMINumber" message="tns:IRecordDeMoldService_GetRecordDeMoldsByPMINumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByPMINumberResponse" message="tns:IRecordDeMoldService_GetRecordDeMoldsByPMINumber_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordBondingService">
@@ -2276,6 +2392,30 @@
     <wsdl:operation name="SetAllUnFinsihToTempFinish">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinish" message="tns:IRecordBondingService_SetAllUnFinsihToTempFinish_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinishResponse" message="tns:IRecordBondingService_SetAllUnFinsihToTempFinish_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateUsedTimes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimes" message="tns:IRecordBondingService_CheckPlateUsedTimes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimesResponse" message="tns:IRecordBondingService_CheckPlateUsedTimes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordBondingsByPMINumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumber" message="tns:IRecordBondingService_GetRecordBondingsByPMINumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumberResponse" message="tns:IRecordBondingService_GetRecordBondingsByPMINumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordBondingsByDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTime" message="tns:IRecordBondingService_GetRecordBondingsByDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTimeResponse" message="tns:IRecordBondingService_GetRecordBondingsByDateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateUsedStatistics">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/GetPlateUsedStatistics" message="tns:IRecordBondingService_GetPlateUsedStatistics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsResponse" message="tns:IRecordBondingService_GetPlateUsedStatistics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateUsedStatisticsCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsCount" message="tns:IRecordBondingService_GetPlateUsedStatisticsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsCountResponse" message="tns:IRecordBondingService_GetPlateUsedStatisticsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateUsedTimesByPlateID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/GetPlateUsedTimesByPlateID" message="tns:IRecordBondingService_GetPlateUsedTimesByPlateID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/GetPlateUsedTimesByPlateIDResponse" message="tns:IRecordBondingService_GetPlateUsedTimesByPlateID_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IOutSourceService">
@@ -3370,6 +3510,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetEmergencyOrderCount">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetEmergencyOrderCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="delivery" type="tns:IDeliveryService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -3805,6 +3954,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetRecordTestBySearch">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetRecordTestBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordTestCountBySearch">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetRecordTestChecked">
       <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetRecordTestChecked" style="document" />
       <wsdl:input>
@@ -3879,6 +4046,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetUnFinishedRecordTest">
       <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnCheckedRecordTest">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastUpdateTime">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetLastUpdateTime" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4054,6 +4239,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetRecordMillingsByPMINumber">
+      <soap:operation soapAction="http://tempuri.org/IRecordMillingService/GetRecordMillingsByPMINumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="recordmachine" type="tns:IRecordMachineService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -4138,6 +4332,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetRecordMachinesByPMINumber">
+      <soap:operation soapAction="http://tempuri.org/IRecordMachineService/GetRecordMachinesByPMINumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="recorddemold" type="tns:IRecordDeMoldService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -4215,6 +4418,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteRecordDeMold">
       <soap:operation soapAction="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordDeMoldsByPMINumber">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByPMINumber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4326,6 +4538,60 @@
     </wsdl:operation>
     <wsdl:operation name="SetAllUnFinsihToTempFinish">
       <soap:operation soapAction="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateUsedTimes">
+      <soap:operation soapAction="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordBondingsByPMINumber">
+      <soap:operation soapAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordBondingsByDateTime">
+      <soap:operation soapAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateUsedStatistics">
+      <soap:operation soapAction="http://tempuri.org/IRecordBondingService/GetPlateUsedStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateUsedStatisticsCount">
+      <soap:operation soapAction="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateUsedTimesByPlateID">
+      <soap:operation soapAction="http://tempuri.org/IRecordBondingService/GetPlateUsedTimesByPlateID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

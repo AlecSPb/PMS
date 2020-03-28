@@ -1256,6 +1256,384 @@ namespace PMSLargeScreen.ExtraService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcRemainInventory", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcRemainInventory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Details {
+            get {
+                return this.DetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
+                    this.DetailsField = value;
+                    this.RaisePropertyChanged("Details");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dimension {
+            get {
+                return this.DimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
+                    this.DimensionField = value;
+                    this.RaisePropertyChanged("Dimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcPMICounter", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcPMICounter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ItemCountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ItemDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ItemGroupField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ItemHistoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ItemNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ItemSpecificationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RowOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UnitField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double ItemCount {
+            get {
+                return this.ItemCountField;
+            }
+            set {
+                if ((this.ItemCountField.Equals(value) != true)) {
+                    this.ItemCountField = value;
+                    this.RaisePropertyChanged("ItemCount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemDetails {
+            get {
+                return this.ItemDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemDetailsField, value) != true)) {
+                    this.ItemDetailsField = value;
+                    this.RaisePropertyChanged("ItemDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemGroup {
+            get {
+                return this.ItemGroupField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemGroupField, value) != true)) {
+                    this.ItemGroupField = value;
+                    this.RaisePropertyChanged("ItemGroup");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemHistory {
+            get {
+                return this.ItemHistoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemHistoryField, value) != true)) {
+                    this.ItemHistoryField = value;
+                    this.RaisePropertyChanged("ItemHistory");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemName {
+            get {
+                return this.ItemNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemNameField, value) != true)) {
+                    this.ItemNameField = value;
+                    this.RaisePropertyChanged("ItemName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemSpecification {
+            get {
+                return this.ItemSpecificationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemSpecificationField, value) != true)) {
+                    this.ItemSpecificationField = value;
+                    this.RaisePropertyChanged("ItemSpecification");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RowOrder {
+            get {
+                return this.RowOrderField;
+            }
+            set {
+                if ((this.RowOrderField.Equals(value) != true)) {
+                    this.RowOrderField = value;
+                    this.RaisePropertyChanged("RowOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Unit {
+            get {
+                return this.UnitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UnitField, value) != true)) {
+                    this.UnitField = value;
+                    this.RaisePropertyChanged("Unit");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ExtraService.IItemDebitService")]
     public interface IItemDebitService {
@@ -1899,6 +2277,198 @@ namespace PMSLargeScreen.ExtraService {
         
         public System.Threading.Tasks.Task<int> DeleteToolMillingAsync(System.Guid id) {
             return base.Channel.DeleteToolMillingAsync(id);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ExtraService.IRemainInventoryService")]
+    public interface IRemainInventoryService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRemainInventoryService/GetRemainInventories", ReplyAction="http://tempuri.org/IRemainInventoryService/GetRemainInventoriesResponse")]
+        PMSLargeScreen.ExtraService.DcRemainInventory[] GetRemainInventories(string productid, string composition, int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRemainInventoryService/GetRemainInventories", ReplyAction="http://tempuri.org/IRemainInventoryService/GetRemainInventoriesResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcRemainInventory[]> GetRemainInventoriesAsync(string productid, string composition, int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRemainInventoryService/GetRemainInventoryCounter", ReplyAction="http://tempuri.org/IRemainInventoryService/GetRemainInventoryCounterResponse")]
+        int GetRemainInventoryCounter(string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRemainInventoryService/GetRemainInventoryCounter", ReplyAction="http://tempuri.org/IRemainInventoryService/GetRemainInventoryCounterResponse")]
+        System.Threading.Tasks.Task<int> GetRemainInventoryCounterAsync(string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRemainInventoryService/AddRemainInventory", ReplyAction="http://tempuri.org/IRemainInventoryService/AddRemainInventoryResponse")]
+        int AddRemainInventory(PMSLargeScreen.ExtraService.DcRemainInventory model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRemainInventoryService/AddRemainInventory", ReplyAction="http://tempuri.org/IRemainInventoryService/AddRemainInventoryResponse")]
+        System.Threading.Tasks.Task<int> AddRemainInventoryAsync(PMSLargeScreen.ExtraService.DcRemainInventory model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRemainInventoryService/UpdateRemainInventory", ReplyAction="http://tempuri.org/IRemainInventoryService/UpdateRemainInventoryResponse")]
+        int UpdateRemainInventory(PMSLargeScreen.ExtraService.DcRemainInventory model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRemainInventoryService/UpdateRemainInventory", ReplyAction="http://tempuri.org/IRemainInventoryService/UpdateRemainInventoryResponse")]
+        System.Threading.Tasks.Task<int> UpdateRemainInventoryAsync(PMSLargeScreen.ExtraService.DcRemainInventory model);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IRemainInventoryServiceChannel : PMSLargeScreen.ExtraService.IRemainInventoryService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class RemainInventoryServiceClient : System.ServiceModel.ClientBase<PMSLargeScreen.ExtraService.IRemainInventoryService>, PMSLargeScreen.ExtraService.IRemainInventoryService {
+        
+        public RemainInventoryServiceClient() {
+        }
+        
+        public RemainInventoryServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public RemainInventoryServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RemainInventoryServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RemainInventoryServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public PMSLargeScreen.ExtraService.DcRemainInventory[] GetRemainInventories(string productid, string composition, int s, int t) {
+            return base.Channel.GetRemainInventories(productid, composition, s, t);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcRemainInventory[]> GetRemainInventoriesAsync(string productid, string composition, int s, int t) {
+            return base.Channel.GetRemainInventoriesAsync(productid, composition, s, t);
+        }
+        
+        public int GetRemainInventoryCounter(string productid, string composition) {
+            return base.Channel.GetRemainInventoryCounter(productid, composition);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRemainInventoryCounterAsync(string productid, string composition) {
+            return base.Channel.GetRemainInventoryCounterAsync(productid, composition);
+        }
+        
+        public int AddRemainInventory(PMSLargeScreen.ExtraService.DcRemainInventory model) {
+            return base.Channel.AddRemainInventory(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddRemainInventoryAsync(PMSLargeScreen.ExtraService.DcRemainInventory model) {
+            return base.Channel.AddRemainInventoryAsync(model);
+        }
+        
+        public int UpdateRemainInventory(PMSLargeScreen.ExtraService.DcRemainInventory model) {
+            return base.Channel.UpdateRemainInventory(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateRemainInventoryAsync(PMSLargeScreen.ExtraService.DcRemainInventory model) {
+            return base.Channel.UpdateRemainInventoryAsync(model);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ExtraService.IPMICounterService")]
+    public interface IPMICounterService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMICounterService/GetPMICounter", ReplyAction="http://tempuri.org/IPMICounterService/GetPMICounterResponse")]
+        PMSLargeScreen.ExtraService.DcPMICounter[] GetPMICounter(string itemGroup, string itemName, int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMICounterService/GetPMICounter", ReplyAction="http://tempuri.org/IPMICounterService/GetPMICounterResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcPMICounter[]> GetPMICounterAsync(string itemGroup, string itemName, int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMICounterService/GetPMICounterCount", ReplyAction="http://tempuri.org/IPMICounterService/GetPMICounterCountResponse")]
+        int GetPMICounterCount(string itemGroup, string itemName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMICounterService/GetPMICounterCount", ReplyAction="http://tempuri.org/IPMICounterService/GetPMICounterCountResponse")]
+        System.Threading.Tasks.Task<int> GetPMICounterCountAsync(string itemGroup, string itemName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMICounterService/AddPMICounter", ReplyAction="http://tempuri.org/IPMICounterService/AddPMICounterResponse")]
+        int AddPMICounter(PMSLargeScreen.ExtraService.DcPMICounter model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMICounterService/AddPMICounter", ReplyAction="http://tempuri.org/IPMICounterService/AddPMICounterResponse")]
+        System.Threading.Tasks.Task<int> AddPMICounterAsync(PMSLargeScreen.ExtraService.DcPMICounter model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMICounterService/UpdatePMICounter", ReplyAction="http://tempuri.org/IPMICounterService/UpdatePMICounterResponse")]
+        int UpdatePMICounter(PMSLargeScreen.ExtraService.DcPMICounter model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMICounterService/UpdatePMICounter", ReplyAction="http://tempuri.org/IPMICounterService/UpdatePMICounterResponse")]
+        System.Threading.Tasks.Task<int> UpdatePMICounterAsync(PMSLargeScreen.ExtraService.DcPMICounter model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMICounterService/DeletePMICounter", ReplyAction="http://tempuri.org/IPMICounterService/DeletePMICounterResponse")]
+        int DeletePMICounter(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPMICounterService/DeletePMICounter", ReplyAction="http://tempuri.org/IPMICounterService/DeletePMICounterResponse")]
+        System.Threading.Tasks.Task<int> DeletePMICounterAsync(System.Guid id);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IPMICounterServiceChannel : PMSLargeScreen.ExtraService.IPMICounterService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class PMICounterServiceClient : System.ServiceModel.ClientBase<PMSLargeScreen.ExtraService.IPMICounterService>, PMSLargeScreen.ExtraService.IPMICounterService {
+        
+        public PMICounterServiceClient() {
+        }
+        
+        public PMICounterServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public PMICounterServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public PMICounterServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public PMICounterServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public PMSLargeScreen.ExtraService.DcPMICounter[] GetPMICounter(string itemGroup, string itemName, int s, int t) {
+            return base.Channel.GetPMICounter(itemGroup, itemName, s, t);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcPMICounter[]> GetPMICounterAsync(string itemGroup, string itemName, int s, int t) {
+            return base.Channel.GetPMICounterAsync(itemGroup, itemName, s, t);
+        }
+        
+        public int GetPMICounterCount(string itemGroup, string itemName) {
+            return base.Channel.GetPMICounterCount(itemGroup, itemName);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPMICounterCountAsync(string itemGroup, string itemName) {
+            return base.Channel.GetPMICounterCountAsync(itemGroup, itemName);
+        }
+        
+        public int AddPMICounter(PMSLargeScreen.ExtraService.DcPMICounter model) {
+            return base.Channel.AddPMICounter(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddPMICounterAsync(PMSLargeScreen.ExtraService.DcPMICounter model) {
+            return base.Channel.AddPMICounterAsync(model);
+        }
+        
+        public int UpdatePMICounter(PMSLargeScreen.ExtraService.DcPMICounter model) {
+            return base.Channel.UpdatePMICounter(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdatePMICounterAsync(PMSLargeScreen.ExtraService.DcPMICounter model) {
+            return base.Channel.UpdatePMICounterAsync(model);
+        }
+        
+        public int DeletePMICounter(System.Guid id) {
+            return base.Channel.DeletePMICounter(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeletePMICounterAsync(System.Guid id) {
+            return base.Channel.DeletePMICounterAsync(id);
         }
     }
 }

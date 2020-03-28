@@ -1441,10 +1441,16 @@ namespace PMSLargeScreen.ExtraService {
         private string ItemGroupField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ItemHistoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ItemNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ItemSpecificationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RowOrderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
@@ -1541,6 +1547,19 @@ namespace PMSLargeScreen.ExtraService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemHistory {
+            get {
+                return this.ItemHistoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemHistoryField, value) != true)) {
+                    this.ItemHistoryField = value;
+                    this.RaisePropertyChanged("ItemHistory");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string ItemName {
             get {
                 return this.ItemNameField;
@@ -1562,6 +1581,19 @@ namespace PMSLargeScreen.ExtraService {
                 if ((object.ReferenceEquals(this.ItemSpecificationField, value) != true)) {
                     this.ItemSpecificationField = value;
                     this.RaisePropertyChanged("ItemSpecification");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RowOrder {
+            get {
+                return this.RowOrderField;
+            }
+            set {
+                if ((this.RowOrderField.Equals(value) != true)) {
+                    this.RowOrderField = value;
+                    this.RaisePropertyChanged("RowOrder");
                 }
             }
         }

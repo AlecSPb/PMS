@@ -170,6 +170,12 @@
     <None Include="Service References\ExtraService\PMSLargeScreen.ExtraService.DcItemDebit.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ExtraService\PMSLargeScreen.ExtraService.DcPMICounter.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExtraService\PMSLargeScreen.ExtraService.DcRemainInventory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ExtraService\PMSLargeScreen.ExtraService.DcToDo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -213,6 +219,9 @@
     <None Include="Service References\LargeScreenService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\LargeScreenService\PMSLargeScreen.LargeScreenService.DcPlanWithMisson.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\LargeScreenService\PMSLargeScreen.LargeScreenService.DcRecordBonding.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

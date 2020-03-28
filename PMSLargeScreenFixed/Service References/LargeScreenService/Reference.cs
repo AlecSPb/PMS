@@ -120,6 +120,9 @@ namespace PMSLargeScreen.LargeScreenService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastUpdateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double MaterialIndexField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -130,6 +133,12 @@ namespace PMSLargeScreen.LargeScreenService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string POField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateDrawingField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PolicyTypeField;
@@ -166,6 +175,12 @@ namespace PMSLargeScreen.LargeScreenService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SampleNeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SecondMachineDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SecondMachineDimensionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ShipToField;
@@ -349,6 +364,19 @@ namespace PMSLargeScreen.LargeScreenService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastUpdateTime {
+            get {
+                return this.LastUpdateTimeField;
+            }
+            set {
+                if ((this.LastUpdateTimeField.Equals(value) != true)) {
+                    this.LastUpdateTimeField = value;
+                    this.RaisePropertyChanged("LastUpdateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public double MaterialIndex {
             get {
                 return this.MaterialIndexField;
@@ -396,6 +424,32 @@ namespace PMSLargeScreen.LargeScreenService {
                 if ((object.ReferenceEquals(this.POField, value) != true)) {
                     this.POField = value;
                     this.RaisePropertyChanged("PO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartNumber {
+            get {
+                return this.PartNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartNumberField, value) != true)) {
+                    this.PartNumberField = value;
+                    this.RaisePropertyChanged("PartNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateDrawing {
+            get {
+                return this.PlateDrawingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateDrawingField, value) != true)) {
+                    this.PlateDrawingField = value;
+                    this.RaisePropertyChanged("PlateDrawing");
                 }
             }
         }
@@ -552,6 +606,32 @@ namespace PMSLargeScreen.LargeScreenService {
                 if ((object.ReferenceEquals(this.SampleNeedField, value) != true)) {
                     this.SampleNeedField = value;
                     this.RaisePropertyChanged("SampleNeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SecondMachineDetails {
+            get {
+                return this.SecondMachineDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SecondMachineDetailsField, value) != true)) {
+                    this.SecondMachineDetailsField = value;
+                    this.RaisePropertyChanged("SecondMachineDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SecondMachineDimension {
+            get {
+                return this.SecondMachineDimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SecondMachineDimensionField, value) != true)) {
+                    this.SecondMachineDimensionField = value;
+                    this.RaisePropertyChanged("SecondMachineDimension");
                 }
             }
         }
@@ -1339,33 +1419,6 @@ namespace PMSLargeScreen.LargeScreenService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ApperanceCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ApperanceCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ApperancePersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BindingCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime BindingCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BindingPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CleanCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CleanCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CleanPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CoverPlateNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1375,106 +1428,25 @@ namespace PMSLargeScreen.LargeScreenService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DimensionCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DimensionCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DimensionPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DimensionWarpageCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InstructionCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PackCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime PackCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PackPersonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PlanBatchNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateAppearanceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateBelongField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime PlateCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateDimensionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateHardnessField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateLastWeldMaterialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlateLotField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateMaterialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateOtherRecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlatePersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime PlatePreProcessCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlatePreProcessPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlatePreProcessRecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateSuplierField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlateTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateUseCountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SprayCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime SprayCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SprayPersonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetAbbrField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetAppearanceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime TargetCheckTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetCompositionField;
@@ -1489,9 +1461,6 @@ namespace PMSLargeScreen.LargeScreenService {
         private string TargetDetailRecordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetDiameterCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetDimensionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1504,52 +1473,10 @@ namespace PMSLargeScreen.LargeScreenService {
         private string TargetPOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime TargetPreProcessCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetPreProcessPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetPreProcessRecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetProductIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetThicknessCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetWarpageCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetWeightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime WarpageCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WarpageFixField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WarpagePersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime WeldCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WeldCuStringDiameterField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WeldHoldField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WeldMaterialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WeldPersonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double WeldingRateField;
@@ -1561,123 +1488,6 @@ namespace PMSLargeScreen.LargeScreenService {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ApperanceCheck {
-            get {
-                return this.ApperanceCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ApperanceCheckField, value) != true)) {
-                    this.ApperanceCheckField = value;
-                    this.RaisePropertyChanged("ApperanceCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ApperanceCheckTime {
-            get {
-                return this.ApperanceCheckTimeField;
-            }
-            set {
-                if ((this.ApperanceCheckTimeField.Equals(value) != true)) {
-                    this.ApperanceCheckTimeField = value;
-                    this.RaisePropertyChanged("ApperanceCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ApperancePerson {
-            get {
-                return this.ApperancePersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ApperancePersonField, value) != true)) {
-                    this.ApperancePersonField = value;
-                    this.RaisePropertyChanged("ApperancePerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BindingCheck {
-            get {
-                return this.BindingCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BindingCheckField, value) != true)) {
-                    this.BindingCheckField = value;
-                    this.RaisePropertyChanged("BindingCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime BindingCheckTime {
-            get {
-                return this.BindingCheckTimeField;
-            }
-            set {
-                if ((this.BindingCheckTimeField.Equals(value) != true)) {
-                    this.BindingCheckTimeField = value;
-                    this.RaisePropertyChanged("BindingCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BindingPerson {
-            get {
-                return this.BindingPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BindingPersonField, value) != true)) {
-                    this.BindingPersonField = value;
-                    this.RaisePropertyChanged("BindingPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CleanCheck {
-            get {
-                return this.CleanCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CleanCheckField, value) != true)) {
-                    this.CleanCheckField = value;
-                    this.RaisePropertyChanged("CleanCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CleanCheckTime {
-            get {
-                return this.CleanCheckTimeField;
-            }
-            set {
-                if ((this.CleanCheckTimeField.Equals(value) != true)) {
-                    this.CleanCheckTimeField = value;
-                    this.RaisePropertyChanged("CleanCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CleanPerson {
-            get {
-                return this.CleanPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CleanPersonField, value) != true)) {
-                    this.CleanPersonField = value;
-                    this.RaisePropertyChanged("CleanPerson");
-                }
             }
         }
         
@@ -1721,58 +1531,6 @@ namespace PMSLargeScreen.LargeScreenService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DimensionCheck {
-            get {
-                return this.DimensionCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DimensionCheckField, value) != true)) {
-                    this.DimensionCheckField = value;
-                    this.RaisePropertyChanged("DimensionCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DimensionCheckTime {
-            get {
-                return this.DimensionCheckTimeField;
-            }
-            set {
-                if ((this.DimensionCheckTimeField.Equals(value) != true)) {
-                    this.DimensionCheckTimeField = value;
-                    this.RaisePropertyChanged("DimensionCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DimensionPerson {
-            get {
-                return this.DimensionPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DimensionPersonField, value) != true)) {
-                    this.DimensionPersonField = value;
-                    this.RaisePropertyChanged("DimensionPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DimensionWarpageCheck {
-            get {
-                return this.DimensionWarpageCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DimensionWarpageCheckField, value) != true)) {
-                    this.DimensionWarpageCheckField = value;
-                    this.RaisePropertyChanged("DimensionWarpageCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid ID {
             get {
                 return this.IDField;
@@ -1781,58 +1539,6 @@ namespace PMSLargeScreen.LargeScreenService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string InstructionCode {
-            get {
-                return this.InstructionCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InstructionCodeField, value) != true)) {
-                    this.InstructionCodeField = value;
-                    this.RaisePropertyChanged("InstructionCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PackCheck {
-            get {
-                return this.PackCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PackCheckField, value) != true)) {
-                    this.PackCheckField = value;
-                    this.RaisePropertyChanged("PackCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime PackCheckTime {
-            get {
-                return this.PackCheckTimeField;
-            }
-            set {
-                if ((this.PackCheckTimeField.Equals(value) != true)) {
-                    this.PackCheckTimeField = value;
-                    this.RaisePropertyChanged("PackCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PackPerson {
-            get {
-                return this.PackPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PackPersonField, value) != true)) {
-                    this.PackPersonField = value;
-                    this.RaisePropertyChanged("PackPerson");
                 }
             }
         }
@@ -1851,84 +1557,6 @@ namespace PMSLargeScreen.LargeScreenService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateAppearance {
-            get {
-                return this.PlateAppearanceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateAppearanceField, value) != true)) {
-                    this.PlateAppearanceField = value;
-                    this.RaisePropertyChanged("PlateAppearance");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateBelong {
-            get {
-                return this.PlateBelongField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateBelongField, value) != true)) {
-                    this.PlateBelongField = value;
-                    this.RaisePropertyChanged("PlateBelong");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime PlateCheckTime {
-            get {
-                return this.PlateCheckTimeField;
-            }
-            set {
-                if ((this.PlateCheckTimeField.Equals(value) != true)) {
-                    this.PlateCheckTimeField = value;
-                    this.RaisePropertyChanged("PlateCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateDimension {
-            get {
-                return this.PlateDimensionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateDimensionField, value) != true)) {
-                    this.PlateDimensionField = value;
-                    this.RaisePropertyChanged("PlateDimension");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateHardness {
-            get {
-                return this.PlateHardnessField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateHardnessField, value) != true)) {
-                    this.PlateHardnessField = value;
-                    this.RaisePropertyChanged("PlateHardness");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateLastWeldMaterial {
-            get {
-                return this.PlateLastWeldMaterialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateLastWeldMaterialField, value) != true)) {
-                    this.PlateLastWeldMaterialField = value;
-                    this.RaisePropertyChanged("PlateLastWeldMaterial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string PlateLot {
             get {
                 return this.PlateLotField;
@@ -1937,97 +1565,6 @@ namespace PMSLargeScreen.LargeScreenService {
                 if ((object.ReferenceEquals(this.PlateLotField, value) != true)) {
                     this.PlateLotField = value;
                     this.RaisePropertyChanged("PlateLot");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateMaterial {
-            get {
-                return this.PlateMaterialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateMaterialField, value) != true)) {
-                    this.PlateMaterialField = value;
-                    this.RaisePropertyChanged("PlateMaterial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateOtherRecord {
-            get {
-                return this.PlateOtherRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateOtherRecordField, value) != true)) {
-                    this.PlateOtherRecordField = value;
-                    this.RaisePropertyChanged("PlateOtherRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlatePerson {
-            get {
-                return this.PlatePersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlatePersonField, value) != true)) {
-                    this.PlatePersonField = value;
-                    this.RaisePropertyChanged("PlatePerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime PlatePreProcessCheckTime {
-            get {
-                return this.PlatePreProcessCheckTimeField;
-            }
-            set {
-                if ((this.PlatePreProcessCheckTimeField.Equals(value) != true)) {
-                    this.PlatePreProcessCheckTimeField = value;
-                    this.RaisePropertyChanged("PlatePreProcessCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlatePreProcessPerson {
-            get {
-                return this.PlatePreProcessPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlatePreProcessPersonField, value) != true)) {
-                    this.PlatePreProcessPersonField = value;
-                    this.RaisePropertyChanged("PlatePreProcessPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlatePreProcessRecord {
-            get {
-                return this.PlatePreProcessRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlatePreProcessRecordField, value) != true)) {
-                    this.PlatePreProcessRecordField = value;
-                    this.RaisePropertyChanged("PlatePreProcessRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateSuplier {
-            get {
-                return this.PlateSuplierField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateSuplierField, value) != true)) {
-                    this.PlateSuplierField = value;
-                    this.RaisePropertyChanged("PlateSuplier");
                 }
             }
         }
@@ -2046,19 +1583,6 @@ namespace PMSLargeScreen.LargeScreenService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateUseCount {
-            get {
-                return this.PlateUseCountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateUseCountField, value) != true)) {
-                    this.PlateUseCountField = value;
-                    this.RaisePropertyChanged("PlateUseCount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Remark {
             get {
                 return this.RemarkField;
@@ -2067,45 +1591,6 @@ namespace PMSLargeScreen.LargeScreenService {
                 if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
                     this.RemarkField = value;
                     this.RaisePropertyChanged("Remark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SprayCheck {
-            get {
-                return this.SprayCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SprayCheckField, value) != true)) {
-                    this.SprayCheckField = value;
-                    this.RaisePropertyChanged("SprayCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime SprayCheckTime {
-            get {
-                return this.SprayCheckTimeField;
-            }
-            set {
-                if ((this.SprayCheckTimeField.Equals(value) != true)) {
-                    this.SprayCheckTimeField = value;
-                    this.RaisePropertyChanged("SprayCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SprayPerson {
-            get {
-                return this.SprayPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SprayPersonField, value) != true)) {
-                    this.SprayPersonField = value;
-                    this.RaisePropertyChanged("SprayPerson");
                 }
             }
         }
@@ -2132,32 +1617,6 @@ namespace PMSLargeScreen.LargeScreenService {
                 if ((object.ReferenceEquals(this.TargetAbbrField, value) != true)) {
                     this.TargetAbbrField = value;
                     this.RaisePropertyChanged("TargetAbbr");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetAppearance {
-            get {
-                return this.TargetAppearanceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetAppearanceField, value) != true)) {
-                    this.TargetAppearanceField = value;
-                    this.RaisePropertyChanged("TargetAppearance");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime TargetCheckTime {
-            get {
-                return this.TargetCheckTimeField;
-            }
-            set {
-                if ((this.TargetCheckTimeField.Equals(value) != true)) {
-                    this.TargetCheckTimeField = value;
-                    this.RaisePropertyChanged("TargetCheckTime");
                 }
             }
         }
@@ -2215,19 +1674,6 @@ namespace PMSLargeScreen.LargeScreenService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetDiameterCheck {
-            get {
-                return this.TargetDiameterCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetDiameterCheckField, value) != true)) {
-                    this.TargetDiameterCheckField = value;
-                    this.RaisePropertyChanged("TargetDiameterCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TargetDimension {
             get {
                 return this.TargetDimensionField;
@@ -2280,58 +1726,6 @@ namespace PMSLargeScreen.LargeScreenService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetPerson {
-            get {
-                return this.TargetPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetPersonField, value) != true)) {
-                    this.TargetPersonField = value;
-                    this.RaisePropertyChanged("TargetPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime TargetPreProcessCheckTime {
-            get {
-                return this.TargetPreProcessCheckTimeField;
-            }
-            set {
-                if ((this.TargetPreProcessCheckTimeField.Equals(value) != true)) {
-                    this.TargetPreProcessCheckTimeField = value;
-                    this.RaisePropertyChanged("TargetPreProcessCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetPreProcessPerson {
-            get {
-                return this.TargetPreProcessPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetPreProcessPersonField, value) != true)) {
-                    this.TargetPreProcessPersonField = value;
-                    this.RaisePropertyChanged("TargetPreProcessPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetPreProcessRecord {
-            get {
-                return this.TargetPreProcessRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetPreProcessRecordField, value) != true)) {
-                    this.TargetPreProcessRecordField = value;
-                    this.RaisePropertyChanged("TargetPreProcessRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TargetProductID {
             get {
                 return this.TargetProductIDField;
@@ -2345,32 +1739,6 @@ namespace PMSLargeScreen.LargeScreenService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetThicknessCheck {
-            get {
-                return this.TargetThicknessCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetThicknessCheckField, value) != true)) {
-                    this.TargetThicknessCheckField = value;
-                    this.RaisePropertyChanged("TargetThicknessCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetWarpageCheck {
-            get {
-                return this.TargetWarpageCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetWarpageCheckField, value) != true)) {
-                    this.TargetWarpageCheckField = value;
-                    this.RaisePropertyChanged("TargetWarpageCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TargetWeight {
             get {
                 return this.TargetWeightField;
@@ -2379,110 +1747,6 @@ namespace PMSLargeScreen.LargeScreenService {
                 if ((object.ReferenceEquals(this.TargetWeightField, value) != true)) {
                     this.TargetWeightField = value;
                     this.RaisePropertyChanged("TargetWeight");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime WarpageCheckTime {
-            get {
-                return this.WarpageCheckTimeField;
-            }
-            set {
-                if ((this.WarpageCheckTimeField.Equals(value) != true)) {
-                    this.WarpageCheckTimeField = value;
-                    this.RaisePropertyChanged("WarpageCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WarpageFix {
-            get {
-                return this.WarpageFixField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WarpageFixField, value) != true)) {
-                    this.WarpageFixField = value;
-                    this.RaisePropertyChanged("WarpageFix");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WarpagePerson {
-            get {
-                return this.WarpagePersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WarpagePersonField, value) != true)) {
-                    this.WarpagePersonField = value;
-                    this.RaisePropertyChanged("WarpagePerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime WeldCheckTime {
-            get {
-                return this.WeldCheckTimeField;
-            }
-            set {
-                if ((this.WeldCheckTimeField.Equals(value) != true)) {
-                    this.WeldCheckTimeField = value;
-                    this.RaisePropertyChanged("WeldCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WeldCuStringDiameter {
-            get {
-                return this.WeldCuStringDiameterField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WeldCuStringDiameterField, value) != true)) {
-                    this.WeldCuStringDiameterField = value;
-                    this.RaisePropertyChanged("WeldCuStringDiameter");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WeldHold {
-            get {
-                return this.WeldHoldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WeldHoldField, value) != true)) {
-                    this.WeldHoldField = value;
-                    this.RaisePropertyChanged("WeldHold");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WeldMaterial {
-            get {
-                return this.WeldMaterialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WeldMaterialField, value) != true)) {
-                    this.WeldMaterialField = value;
-                    this.RaisePropertyChanged("WeldMaterial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WeldPerson {
-            get {
-                return this.WeldPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WeldPersonField, value) != true)) {
-                    this.WeldPersonField = value;
-                    this.RaisePropertyChanged("WeldPerson");
                 }
             }
         }
@@ -2529,6 +1793,9 @@ namespace PMSLargeScreen.LargeScreenService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string GasProtectionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2565,6 +1832,9 @@ namespace PMSLargeScreen.LargeScreenService {
         private double RatioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecycleIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2572,6 +1842,9 @@ namespace PMSLargeScreen.LargeScreenService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double RoomTemperatureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SieveDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
@@ -2636,6 +1909,19 @@ namespace PMSLargeScreen.LargeScreenService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Details {
+            get {
+                return this.DetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
+                    this.DetailsField = value;
+                    this.RaisePropertyChanged("Details");
                 }
             }
         }
@@ -2797,6 +2083,19 @@ namespace PMSLargeScreen.LargeScreenService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecycleID {
+            get {
+                return this.RecycleIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecycleIDField, value) != true)) {
+                    this.RecycleIDField = value;
+                    this.RaisePropertyChanged("RecycleID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Remark {
             get {
                 return this.RemarkField;
@@ -2831,6 +2130,19 @@ namespace PMSLargeScreen.LargeScreenService {
                 if ((this.RoomTemperatureField.Equals(value) != true)) {
                     this.RoomTemperatureField = value;
                     this.RaisePropertyChanged("RoomTemperature");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SieveDescription {
+            get {
+                return this.SieveDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SieveDescriptionField, value) != true)) {
+                    this.SieveDescriptionField = value;
+                    this.RaisePropertyChanged("SieveDescription");
                 }
             }
         }
@@ -2923,6 +2235,67 @@ namespace PMSLargeScreen.LargeScreenService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcPlanWithMisson", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcPlanWithMisson : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSLargeScreen.LargeScreenService.DcOrder MissonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSLargeScreen.LargeScreenService.DcPlanVHP PlanField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSLargeScreen.LargeScreenService.DcOrder Misson {
+            get {
+                return this.MissonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MissonField, value) != true)) {
+                    this.MissonField = value;
+                    this.RaisePropertyChanged("Misson");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSLargeScreen.LargeScreenService.DcPlanVHP Plan {
+            get {
+                return this.PlanField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlanField, value) != true)) {
+                    this.PlanField = value;
+                    this.RaisePropertyChanged("Plan");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LargeScreenService.ILargeScreenService")]
     public interface ILargeScreenService {
@@ -2968,6 +2341,12 @@ namespace PMSLargeScreen.LargeScreenService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetRecordMillings", ReplyAction="http://tempuri.org/ILargeScreenService/GetRecordMillingsResponse")]
         System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcRecordMilling[]> GetRecordMillingsAsync(System.DateTime planDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetPlanOfMachine", ReplyAction="http://tempuri.org/ILargeScreenService/GetPlanOfMachineResponse")]
+        PMSLargeScreen.LargeScreenService.DcPlanWithMisson[] GetPlanOfMachine();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetPlanOfMachine", ReplyAction="http://tempuri.org/ILargeScreenService/GetPlanOfMachineResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcPlanWithMisson[]> GetPlanOfMachineAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3051,6 +2430,14 @@ namespace PMSLargeScreen.LargeScreenService {
         
         public System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcRecordMilling[]> GetRecordMillingsAsync(System.DateTime planDate) {
             return base.Channel.GetRecordMillingsAsync(planDate);
+        }
+        
+        public PMSLargeScreen.LargeScreenService.DcPlanWithMisson[] GetPlanOfMachine() {
+            return base.Channel.GetPlanOfMachine();
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcPlanWithMisson[]> GetPlanOfMachineAsync() {
+            return base.Channel.GetPlanOfMachineAsync();
         }
     }
 }

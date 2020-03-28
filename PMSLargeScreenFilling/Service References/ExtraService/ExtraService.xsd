@@ -485,4 +485,138 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetRemainInventories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="s" type="xs:int" />
+        <xs:element minOccurs="0" name="t" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRemainInventoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetRemainInventoriesResult" nillable="true" type="q27:ArrayOfDcRemainInventory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRemainInventoryCounter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRemainInventoryCounterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRemainInventoryCounterResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRemainInventory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q28:DcRemainInventory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRemainInventoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddRemainInventoryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRemainInventory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q29:DcRemainInventory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRemainInventoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateRemainInventoryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPMICounter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="itemGroup" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="itemName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="s" type="xs:int" />
+        <xs:element minOccurs="0" name="t" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPMICounterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPMICounterResult" nillable="true" type="q30:ArrayOfDcPMICounter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPMICounterCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="itemGroup" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="itemName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPMICounterCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPMICounterCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPMICounter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q31:DcPMICounter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPMICounterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddPMICounterResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePMICounter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q32:DcPMICounter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePMICounterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePMICounterResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePMICounter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q33:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePMICounterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePMICounterResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

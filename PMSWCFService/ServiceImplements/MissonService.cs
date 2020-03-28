@@ -33,7 +33,7 @@ namespace PMSWCFService
                                  where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
                                  && (o.State == OrderState.未完成.ToString() || o.State == OrderState.取消.ToString()
                                  || o.State == OrderState.暂停.ToString()
-                                 || o.State == OrderState.完成.ToString())
+                                 || o.State == OrderState.最终完成.ToString())
                                  orderby o.CreateTime descending
                                  select o;
 
@@ -61,7 +61,7 @@ namespace PMSWCFService
                                  && (o.State == OrderState.未完成.ToString() || o.State == OrderState.取消.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.生产完成.ToString()
-                                 || o.State == OrderState.完成.ToString())
+                                 || o.State == OrderState.最终完成.ToString())
                                 select o;
                     return query.Count();
                 }
@@ -91,7 +91,7 @@ namespace PMSWCFService
                                  && (o.State == OrderState.未完成.ToString() || o.State == OrderState.取消.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.生产完成.ToString()
-                                 || o.State == OrderState.完成.ToString())
+                                 || o.State == OrderState.最终完成.ToString())
                                  && o.CompositionStandard.Contains(composition)
                                  && o.PMINumber.Contains(pminumber)
                                  orderby o.CreateTime descending
@@ -123,7 +123,7 @@ namespace PMSWCFService
                                  && (o.State == OrderState.未完成.ToString() || o.State == OrderState.取消.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.生产完成.ToString()
-                                 || o.State == OrderState.完成.ToString())
+                                 || o.State == OrderState.最终完成.ToString())
                                 select o;
                     return query.Count();
                 }

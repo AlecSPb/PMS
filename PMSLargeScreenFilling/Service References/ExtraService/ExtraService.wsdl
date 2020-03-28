@@ -199,6 +199,60 @@
   <wsdl:message name="IToolInventoryService_DeleteToolMilling_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteToolMillingResponse" />
   </wsdl:message>
+  <wsdl:message name="IRemainInventoryService_GetRemainInventories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemainInventories" />
+  </wsdl:message>
+  <wsdl:message name="IRemainInventoryService_GetRemainInventories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemainInventoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRemainInventoryService_GetRemainInventoryCounter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemainInventoryCounter" />
+  </wsdl:message>
+  <wsdl:message name="IRemainInventoryService_GetRemainInventoryCounter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemainInventoryCounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRemainInventoryService_AddRemainInventory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRemainInventory" />
+  </wsdl:message>
+  <wsdl:message name="IRemainInventoryService_AddRemainInventory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRemainInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRemainInventoryService_UpdateRemainInventory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRemainInventory" />
+  </wsdl:message>
+  <wsdl:message name="IRemainInventoryService_UpdateRemainInventory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRemainInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPMICounterService_GetPMICounter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPMICounter" />
+  </wsdl:message>
+  <wsdl:message name="IPMICounterService_GetPMICounter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPMICounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPMICounterService_GetPMICounterCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPMICounterCount" />
+  </wsdl:message>
+  <wsdl:message name="IPMICounterService_GetPMICounterCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPMICounterCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPMICounterService_AddPMICounter_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPMICounter" />
+  </wsdl:message>
+  <wsdl:message name="IPMICounterService_AddPMICounter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPMICounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPMICounterService_UpdatePMICounter_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePMICounter" />
+  </wsdl:message>
+  <wsdl:message name="IPMICounterService_UpdatePMICounter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePMICounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPMICounterService_DeletePMICounter_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePMICounter" />
+  </wsdl:message>
+  <wsdl:message name="IPMICounterService_DeletePMICounter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePMICounterResponse" />
+  </wsdl:message>
   <wsdl:portType name="IItemDebitService">
     <wsdl:operation name="GetItemDebit">
       <wsdl:input wsaw:Action="http://tempuri.org/IItemDebitService/GetItemDebit" message="tns:IItemDebitService_GetItemDebit_InputMessage" />
@@ -337,6 +391,46 @@
     <wsdl:operation name="DeleteToolMilling">
       <wsdl:input wsaw:Action="http://tempuri.org/IToolInventoryService/DeleteToolMilling" message="tns:IToolInventoryService_DeleteToolMilling_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IToolInventoryService/DeleteToolMillingResponse" message="tns:IToolInventoryService_DeleteToolMilling_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IRemainInventoryService">
+    <wsdl:operation name="GetRemainInventories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRemainInventoryService/GetRemainInventories" message="tns:IRemainInventoryService_GetRemainInventories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRemainInventoryService/GetRemainInventoriesResponse" message="tns:IRemainInventoryService_GetRemainInventories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemainInventoryCounter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRemainInventoryService/GetRemainInventoryCounter" message="tns:IRemainInventoryService_GetRemainInventoryCounter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRemainInventoryService/GetRemainInventoryCounterResponse" message="tns:IRemainInventoryService_GetRemainInventoryCounter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRemainInventory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRemainInventoryService/AddRemainInventory" message="tns:IRemainInventoryService_AddRemainInventory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRemainInventoryService/AddRemainInventoryResponse" message="tns:IRemainInventoryService_AddRemainInventory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRemainInventory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRemainInventoryService/UpdateRemainInventory" message="tns:IRemainInventoryService_UpdateRemainInventory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRemainInventoryService/UpdateRemainInventoryResponse" message="tns:IRemainInventoryService_UpdateRemainInventory_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPMICounterService">
+    <wsdl:operation name="GetPMICounter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMICounterService/GetPMICounter" message="tns:IPMICounterService_GetPMICounter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMICounterService/GetPMICounterResponse" message="tns:IPMICounterService_GetPMICounter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPMICounterCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMICounterService/GetPMICounterCount" message="tns:IPMICounterService_GetPMICounterCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMICounterService/GetPMICounterCountResponse" message="tns:IPMICounterService_GetPMICounterCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPMICounter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMICounterService/AddPMICounter" message="tns:IPMICounterService_AddPMICounter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMICounterService/AddPMICounterResponse" message="tns:IPMICounterService_AddPMICounter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePMICounter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMICounterService/UpdatePMICounter" message="tns:IPMICounterService_UpdatePMICounter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMICounterService/UpdatePMICounterResponse" message="tns:IPMICounterService_UpdatePMICounter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePMICounter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPMICounterService/DeletePMICounter" message="tns:IPMICounterService_DeletePMICounter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPMICounterService/DeletePMICounterResponse" message="tns:IPMICounterService_DeletePMICounter_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="itemdebit" type="tns:IItemDebitService">
@@ -645,6 +739,93 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="remaininventory" type="tns:IRemainInventoryService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRemainInventories">
+      <soap:operation soapAction="http://tempuri.org/IRemainInventoryService/GetRemainInventories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemainInventoryCounter">
+      <soap:operation soapAction="http://tempuri.org/IRemainInventoryService/GetRemainInventoryCounter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRemainInventory">
+      <soap:operation soapAction="http://tempuri.org/IRemainInventoryService/AddRemainInventory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRemainInventory">
+      <soap:operation soapAction="http://tempuri.org/IRemainInventoryService/UpdateRemainInventory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="pmicounter" type="tns:IPMICounterService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPMICounter">
+      <soap:operation soapAction="http://tempuri.org/IPMICounterService/GetPMICounter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPMICounterCount">
+      <soap:operation soapAction="http://tempuri.org/IPMICounterService/GetPMICounterCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPMICounter">
+      <soap:operation soapAction="http://tempuri.org/IPMICounterService/AddPMICounter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePMICounter">
+      <soap:operation soapAction="http://tempuri.org/IPMICounterService/UpdatePMICounter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePMICounter">
+      <soap:operation soapAction="http://tempuri.org/IPMICounterService/DeletePMICounter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="ExtraService">
     <wsdl:port name="itemdebit" binding="tns:itemdebit">
       <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
@@ -662,6 +843,12 @@
       <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
     </wsdl:port>
     <wsdl:port name="toolinventory" binding="tns:toolinventory">
+      <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
+    </wsdl:port>
+    <wsdl:port name="remaininventory" binding="tns:remaininventory">
+      <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
+    </wsdl:port>
+    <wsdl:port name="pmicounter" binding="tns:pmicounter">
       <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
     </wsdl:port>
   </wsdl:service>

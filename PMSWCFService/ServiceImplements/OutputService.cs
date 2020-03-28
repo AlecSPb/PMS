@@ -31,7 +31,9 @@ namespace PMSWCFService
                                 from bbdata in bb.DefaultIfEmpty()
                                 join b in db.RecordBondings on dd.ProductID equals b.TargetProductID into cc
                                 from ccdata in cc.DefaultIfEmpty()
-                                where dd.State == "正常" && bbdata.State == "已核验" && ccdata.State == "完成"
+                                where dd.State == PMSCommon.SimpleState.正常.ToString()
+                                && bbdata.State == PMSCommon.CommonState.已核验.ToString()
+                                && ccdata.State == PMSCommon.BondingState.最终完成.ToString()
                                 && (dd.Customer == "Midsummer" || dd.Customer == "Chaozhou")
                                 && dd.Dimension.Contains("230")
                                 orderby dd.ProductID descending
@@ -79,7 +81,9 @@ namespace PMSWCFService
                                 from bbdata in bb.DefaultIfEmpty()
                                 join b in db.RecordBondings on dd.ProductID equals b.TargetProductID into cc
                                 from ccdata in cc.DefaultIfEmpty()
-                                where dd.State == "正常" && bbdata.State == "已核验" && ccdata.State == "完成"
+                                where dd.State == PMSCommon.SimpleState.正常.ToString()
+                                && bbdata.State == PMSCommon.CommonState.已核验.ToString()
+                                && ccdata.State == PMSCommon.BondingState.最终完成.ToString()
                                 && (dd.Customer == "Midsummer" || dd.Customer == "Chaozhou")
                                 && dd.Dimension.Contains("230")
                                 && dd.CreateTime >= startTime
@@ -128,7 +132,9 @@ namespace PMSWCFService
                                 from bbdata in bb.DefaultIfEmpty()
                                 join b in db.RecordBondings on dd.ProductID equals b.TargetProductID into cc
                                 from ccdata in cc.DefaultIfEmpty()
-                                where dd.State == "正常" && bbdata.State == "已核验" && ccdata.State == "完成"
+                                where dd.State == PMSCommon.SimpleState.正常.ToString()
+                                && bbdata.State == PMSCommon.CommonState.已核验.ToString()
+                                && ccdata.State == PMSCommon.BondingState.最终完成.ToString()
                                 && (dd.Customer == "Midsummer" || dd.Customer == "Chaozhou")
                                 && dd.Dimension.Contains("230")
                                 && dd.CreateTime >= startTime
@@ -163,7 +169,9 @@ namespace PMSWCFService
                                 from bbdata in bb.DefaultIfEmpty()
                                 join b in db.RecordBondings on d.ProductID equals b.TargetProductID into cc
                                 from ccdata in cc.DefaultIfEmpty()
-                                where d.State == "正常" && bbdata.State == "已核验" && ccdata.State == "完成"
+                                where d.State == PMSCommon.SimpleState.正常.ToString()
+                                && bbdata.State == PMSCommon.CommonState.已核验.ToString()
+                                && ccdata.State == PMSCommon.BondingState.最终完成.ToString()
                                 && (d.Customer == "Midsummer" || d.Customer == "Chaozhou")
                                 && d.Dimension.Contains("230")
                                 select new

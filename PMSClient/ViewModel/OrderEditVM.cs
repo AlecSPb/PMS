@@ -167,7 +167,7 @@ namespace PMSClient.ViewModel
                 }
                 else
                 {
-                    if (CurrentOrder.State == PMSCommon.OrderState.完成.ToString())
+                    if (CurrentOrder.State == PMSCommon.OrderState.最终完成.ToString())
                     {
                         CurrentOrder.FinishTime = DateTime.Now;
                     }

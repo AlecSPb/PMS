@@ -137,4 +137,46 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcToolMilling" nillable="true" type="tns:DcToolMilling" />
+  <xs:complexType name="ArrayOfDcRemainInventory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRemainInventory" nillable="true" type="tns:DcRemainInventory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcRemainInventory" nillable="true" type="tns:ArrayOfDcRemainInventory" />
+  <xs:complexType name="DcRemainInventory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcRemainInventory" nillable="true" type="tns:DcRemainInventory" />
+  <xs:complexType name="ArrayOfDcPMICounter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcPMICounter" nillable="true" type="tns:DcPMICounter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcPMICounter" nillable="true" type="tns:ArrayOfDcPMICounter" />
+  <xs:complexType name="DcPMICounter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="ItemCount" type="xs:double" />
+      <xs:element minOccurs="0" name="ItemDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemHistory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemSpecification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RowOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcPMICounter" nillable="true" type="tns:DcPMICounter" />
 </xs:schema>

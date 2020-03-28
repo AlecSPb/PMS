@@ -580,7 +580,7 @@ namespace PMSWCFService
                     AddMaterialInventoryIn(materialIn);
 
                     #endregion
-                    item.State = PMSCommon.MaterialOrderItemState.完成.ToString();
+                    item.State = PMSCommon.MaterialOrderItemState.最终完成.ToString();
                     dc.Entry(item).State = EntityState.Modified;
                     SaveHistory(item, uid);
                     return dc.SaveChanges();

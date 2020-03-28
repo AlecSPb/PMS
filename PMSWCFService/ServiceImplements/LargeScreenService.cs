@@ -63,7 +63,7 @@ namespace PMSWCFService
                 var result = new List<DcStatistic>();
                 var dc = new PMSDbContext();
                 var query = from i in dc.RecordBondings
-                            where i.State == PMSCommon.BondingState.完成.ToString()
+                            where i.State == PMSCommon.BondingState.最终完成.ToString()
                             orderby i.CreateTime descending
                             select i;
                 result.Add(new DcStatistic { Key = "CompletedRecordBondingCount", Value = query.Count() });

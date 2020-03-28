@@ -81,7 +81,7 @@ namespace PMSClient.CustomControls
 
         private void BtnFinish_Click(object sender, RoutedEventArgs e)
         {
-            cboState.SelectedItem = PMSCommon.BondingState.完成.ToString();
+            cboState.SelectedItem = PMSCommon.BondingState.最终完成.ToString();
         }
     }
 }

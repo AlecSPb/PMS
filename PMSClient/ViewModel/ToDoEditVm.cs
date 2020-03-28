@@ -91,7 +91,7 @@ namespace PMSClient.ViewModel
 
                 if (CurrentToDo.Progress == 100)
                 {
-                    CurrentToDo.Status = PMSCommon.ToDoStatus.完成.ToString();
+                    CurrentToDo.Status = PMSCommon.ToDoStatus.最终完成.ToString();
                     CurrentToDo.FinishTime = DateTime.Now;
                 }
 

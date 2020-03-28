@@ -59,6 +59,9 @@ namespace PMSXMLCreator.MainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastUpdateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double MaterialIndexField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -69,6 +72,12 @@ namespace PMSXMLCreator.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string POField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateDrawingField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PolicyTypeField;
@@ -105,6 +114,12 @@ namespace PMSXMLCreator.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SampleNeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SecondMachineDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SecondMachineDimensionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ShipToField;
@@ -288,6 +303,19 @@ namespace PMSXMLCreator.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastUpdateTime {
+            get {
+                return this.LastUpdateTimeField;
+            }
+            set {
+                if ((this.LastUpdateTimeField.Equals(value) != true)) {
+                    this.LastUpdateTimeField = value;
+                    this.RaisePropertyChanged("LastUpdateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public double MaterialIndex {
             get {
                 return this.MaterialIndexField;
@@ -335,6 +363,32 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.POField, value) != true)) {
                     this.POField = value;
                     this.RaisePropertyChanged("PO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartNumber {
+            get {
+                return this.PartNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartNumberField, value) != true)) {
+                    this.PartNumberField = value;
+                    this.RaisePropertyChanged("PartNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateDrawing {
+            get {
+                return this.PlateDrawingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateDrawingField, value) != true)) {
+                    this.PlateDrawingField = value;
+                    this.RaisePropertyChanged("PlateDrawing");
                 }
             }
         }
@@ -496,6 +550,32 @@ namespace PMSXMLCreator.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SecondMachineDetails {
+            get {
+                return this.SecondMachineDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SecondMachineDetailsField, value) != true)) {
+                    this.SecondMachineDetailsField = value;
+                    this.RaisePropertyChanged("SecondMachineDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SecondMachineDimension {
+            get {
+                return this.SecondMachineDimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SecondMachineDimensionField, value) != true)) {
+                    this.SecondMachineDimensionField = value;
+                    this.RaisePropertyChanged("SecondMachineDimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string ShipTo {
             get {
                 return this.ShipToField;
@@ -619,6 +699,9 @@ namespace PMSXMLCreator.MainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastUpdateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double MaterialIndexField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -635,6 +718,12 @@ namespace PMSXMLCreator.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string POField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PartNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateDrawingField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PolicyTypeField;
@@ -671,6 +760,12 @@ namespace PMSXMLCreator.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SampleNeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SecondMachineDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SecondMachineDimensionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ShipToField;
@@ -867,6 +962,19 @@ namespace PMSXMLCreator.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastUpdateTime {
+            get {
+                return this.LastUpdateTimeField;
+            }
+            set {
+                if ((this.LastUpdateTimeField.Equals(value) != true)) {
+                    this.LastUpdateTimeField = value;
+                    this.RaisePropertyChanged("LastUpdateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public double MaterialIndex {
             get {
                 return this.MaterialIndexField;
@@ -940,6 +1048,32 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.POField, value) != true)) {
                     this.POField = value;
                     this.RaisePropertyChanged("PO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PartNumber {
+            get {
+                return this.PartNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PartNumberField, value) != true)) {
+                    this.PartNumberField = value;
+                    this.RaisePropertyChanged("PartNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateDrawing {
+            get {
+                return this.PlateDrawingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateDrawingField, value) != true)) {
+                    this.PlateDrawingField = value;
+                    this.RaisePropertyChanged("PlateDrawing");
                 }
             }
         }
@@ -1096,6 +1230,32 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.SampleNeedField, value) != true)) {
                     this.SampleNeedField = value;
                     this.RaisePropertyChanged("SampleNeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SecondMachineDetails {
+            get {
+                return this.SecondMachineDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SecondMachineDetailsField, value) != true)) {
+                    this.SecondMachineDetailsField = value;
+                    this.RaisePropertyChanged("SecondMachineDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SecondMachineDimension {
+            get {
+                return this.SecondMachineDimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SecondMachineDimensionField, value) != true)) {
+                    this.SecondMachineDimensionField = value;
+                    this.RaisePropertyChanged("SecondMachineDimension");
                 }
             }
         }
@@ -3379,6 +3539,9 @@ namespace PMSXMLCreator.MainService {
         private string SupplierField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupplierPOField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double WeightField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -3543,6 +3706,19 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.SupplierField, value) != true)) {
                     this.SupplierField = value;
                     this.RaisePropertyChanged("Supplier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SupplierPO {
+            get {
+                return this.SupplierPOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupplierPOField, value) != true)) {
+                    this.SupplierPOField = value;
+                    this.RaisePropertyChanged("SupplierPO");
                 }
             }
         }
@@ -3938,6 +4114,9 @@ namespace PMSXMLCreator.MainService {
         private double RoomTemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SieveDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4226,6 +4405,19 @@ namespace PMSXMLCreator.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SieveDescription {
+            get {
+                return this.SieveDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SieveDescriptionField, value) != true)) {
+                    this.SieveDescriptionField = value;
+                    this.RaisePropertyChanged("SieveDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string State {
             get {
                 return this.StateField;
@@ -4396,6 +4588,12 @@ namespace PMSXMLCreator.MainService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CustomerSignedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerSignedDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DeliveryExpressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4414,10 +4612,19 @@ namespace PMSXMLCreator.MainService {
         private string InvoiceNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsCustomerSignedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastCheckIDCollectionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PackageInformationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PackageTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PackageWeightField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
@@ -4486,6 +4693,32 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CustomerSignedDate {
+            get {
+                return this.CustomerSignedDateField;
+            }
+            set {
+                if ((this.CustomerSignedDateField.Equals(value) != true)) {
+                    this.CustomerSignedDateField = value;
+                    this.RaisePropertyChanged("CustomerSignedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerSignedDetails {
+            get {
+                return this.CustomerSignedDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerSignedDetailsField, value) != true)) {
+                    this.CustomerSignedDetailsField = value;
+                    this.RaisePropertyChanged("CustomerSignedDetails");
                 }
             }
         }
@@ -4569,6 +4802,32 @@ namespace PMSXMLCreator.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsCustomerSigned {
+            get {
+                return this.IsCustomerSignedField;
+            }
+            set {
+                if ((this.IsCustomerSignedField.Equals(value) != true)) {
+                    this.IsCustomerSignedField = value;
+                    this.RaisePropertyChanged("IsCustomerSigned");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastCheckIDCollection {
+            get {
+                return this.LastCheckIDCollectionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastCheckIDCollectionField, value) != true)) {
+                    this.LastCheckIDCollectionField = value;
+                    this.RaisePropertyChanged("LastCheckIDCollection");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string PackageInformation {
             get {
                 return this.PackageInformationField;
@@ -4590,6 +4849,19 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.PackageTypeField, value) != true)) {
                     this.PackageTypeField = value;
                     this.RaisePropertyChanged("PackageType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PackageWeight {
+            get {
+                return this.PackageWeightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PackageWeightField, value) != true)) {
+                    this.PackageWeightField = value;
+                    this.RaisePropertyChanged("PackageWeight");
                 }
             }
         }
@@ -5636,6 +5908,9 @@ namespace PMSXMLCreator.MainService {
         private string BackingPlateLotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CScanField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5670,6 +5945,9 @@ namespace PMSXMLCreator.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastUpdateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime OrderDateField;
@@ -5729,6 +6007,19 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.BackingPlateLotField, value) != true)) {
                     this.BackingPlateLotField = value;
                     this.RaisePropertyChanged("BackingPlateLot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CScan {
+            get {
+                return this.CScanField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CScanField, value) != true)) {
+                    this.CScanField = value;
+                    this.RaisePropertyChanged("CScan");
                 }
             }
         }
@@ -5885,6 +6176,19 @@ namespace PMSXMLCreator.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastUpdateTime {
+            get {
+                return this.LastUpdateTimeField;
+            }
+            set {
+                if ((this.LastUpdateTimeField.Equals(value) != true)) {
+                    this.LastUpdateTimeField = value;
+                    this.RaisePropertyChanged("LastUpdateTime");
                 }
             }
         }
@@ -6406,6 +6710,9 @@ namespace PMSXMLCreator.MainService {
         private string ExtraRequirementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HasPreparedSampleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -6552,6 +6859,19 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.ExtraRequirementField, value) != true)) {
                     this.ExtraRequirementField = value;
                     this.RaisePropertyChanged("ExtraRequirement");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HasPreparedSample {
+            get {
+                return this.HasPreparedSampleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HasPreparedSampleField, value) != true)) {
+                    this.HasPreparedSampleField = value;
+                    this.RaisePropertyChanged("HasPreparedSample");
                 }
             }
         }
@@ -7093,33 +7413,6 @@ namespace PMSXMLCreator.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ApperanceCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ApperanceCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ApperancePersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BindingCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime BindingCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BindingPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CleanCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CleanCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CleanPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CoverPlateNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -7129,106 +7422,25 @@ namespace PMSXMLCreator.MainService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DimensionCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DimensionCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DimensionPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DimensionWarpageCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InstructionCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PackCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime PackCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PackPersonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PlanBatchNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateAppearanceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateBelongField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime PlateCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateDimensionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateHardnessField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateLastWeldMaterialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlateLotField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateMaterialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateOtherRecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlatePersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime PlatePreProcessCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlatePreProcessPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlatePreProcessRecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateSuplierField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlateTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PlateUseCountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SprayCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime SprayCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SprayPersonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetAbbrField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetAppearanceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime TargetCheckTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetCompositionField;
@@ -7243,9 +7455,6 @@ namespace PMSXMLCreator.MainService {
         private string TargetDetailRecordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetDiameterCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetDimensionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -7258,52 +7467,10 @@ namespace PMSXMLCreator.MainService {
         private string TargetPOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime TargetPreProcessCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetPreProcessPersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetPreProcessRecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetProductIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetThicknessCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TargetWarpageCheckField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetWeightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime WarpageCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WarpageFixField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WarpagePersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime WeldCheckTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WeldCuStringDiameterField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WeldHoldField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WeldMaterialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WeldPersonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double WeldingRateField;
@@ -7315,123 +7482,6 @@ namespace PMSXMLCreator.MainService {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ApperanceCheck {
-            get {
-                return this.ApperanceCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ApperanceCheckField, value) != true)) {
-                    this.ApperanceCheckField = value;
-                    this.RaisePropertyChanged("ApperanceCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ApperanceCheckTime {
-            get {
-                return this.ApperanceCheckTimeField;
-            }
-            set {
-                if ((this.ApperanceCheckTimeField.Equals(value) != true)) {
-                    this.ApperanceCheckTimeField = value;
-                    this.RaisePropertyChanged("ApperanceCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ApperancePerson {
-            get {
-                return this.ApperancePersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ApperancePersonField, value) != true)) {
-                    this.ApperancePersonField = value;
-                    this.RaisePropertyChanged("ApperancePerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BindingCheck {
-            get {
-                return this.BindingCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BindingCheckField, value) != true)) {
-                    this.BindingCheckField = value;
-                    this.RaisePropertyChanged("BindingCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime BindingCheckTime {
-            get {
-                return this.BindingCheckTimeField;
-            }
-            set {
-                if ((this.BindingCheckTimeField.Equals(value) != true)) {
-                    this.BindingCheckTimeField = value;
-                    this.RaisePropertyChanged("BindingCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BindingPerson {
-            get {
-                return this.BindingPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BindingPersonField, value) != true)) {
-                    this.BindingPersonField = value;
-                    this.RaisePropertyChanged("BindingPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CleanCheck {
-            get {
-                return this.CleanCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CleanCheckField, value) != true)) {
-                    this.CleanCheckField = value;
-                    this.RaisePropertyChanged("CleanCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CleanCheckTime {
-            get {
-                return this.CleanCheckTimeField;
-            }
-            set {
-                if ((this.CleanCheckTimeField.Equals(value) != true)) {
-                    this.CleanCheckTimeField = value;
-                    this.RaisePropertyChanged("CleanCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CleanPerson {
-            get {
-                return this.CleanPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CleanPersonField, value) != true)) {
-                    this.CleanPersonField = value;
-                    this.RaisePropertyChanged("CleanPerson");
-                }
             }
         }
         
@@ -7475,58 +7525,6 @@ namespace PMSXMLCreator.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DimensionCheck {
-            get {
-                return this.DimensionCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DimensionCheckField, value) != true)) {
-                    this.DimensionCheckField = value;
-                    this.RaisePropertyChanged("DimensionCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DimensionCheckTime {
-            get {
-                return this.DimensionCheckTimeField;
-            }
-            set {
-                if ((this.DimensionCheckTimeField.Equals(value) != true)) {
-                    this.DimensionCheckTimeField = value;
-                    this.RaisePropertyChanged("DimensionCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DimensionPerson {
-            get {
-                return this.DimensionPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DimensionPersonField, value) != true)) {
-                    this.DimensionPersonField = value;
-                    this.RaisePropertyChanged("DimensionPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DimensionWarpageCheck {
-            get {
-                return this.DimensionWarpageCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DimensionWarpageCheckField, value) != true)) {
-                    this.DimensionWarpageCheckField = value;
-                    this.RaisePropertyChanged("DimensionWarpageCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid ID {
             get {
                 return this.IDField;
@@ -7535,58 +7533,6 @@ namespace PMSXMLCreator.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string InstructionCode {
-            get {
-                return this.InstructionCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InstructionCodeField, value) != true)) {
-                    this.InstructionCodeField = value;
-                    this.RaisePropertyChanged("InstructionCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PackCheck {
-            get {
-                return this.PackCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PackCheckField, value) != true)) {
-                    this.PackCheckField = value;
-                    this.RaisePropertyChanged("PackCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime PackCheckTime {
-            get {
-                return this.PackCheckTimeField;
-            }
-            set {
-                if ((this.PackCheckTimeField.Equals(value) != true)) {
-                    this.PackCheckTimeField = value;
-                    this.RaisePropertyChanged("PackCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PackPerson {
-            get {
-                return this.PackPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PackPersonField, value) != true)) {
-                    this.PackPersonField = value;
-                    this.RaisePropertyChanged("PackPerson");
                 }
             }
         }
@@ -7605,84 +7551,6 @@ namespace PMSXMLCreator.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateAppearance {
-            get {
-                return this.PlateAppearanceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateAppearanceField, value) != true)) {
-                    this.PlateAppearanceField = value;
-                    this.RaisePropertyChanged("PlateAppearance");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateBelong {
-            get {
-                return this.PlateBelongField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateBelongField, value) != true)) {
-                    this.PlateBelongField = value;
-                    this.RaisePropertyChanged("PlateBelong");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime PlateCheckTime {
-            get {
-                return this.PlateCheckTimeField;
-            }
-            set {
-                if ((this.PlateCheckTimeField.Equals(value) != true)) {
-                    this.PlateCheckTimeField = value;
-                    this.RaisePropertyChanged("PlateCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateDimension {
-            get {
-                return this.PlateDimensionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateDimensionField, value) != true)) {
-                    this.PlateDimensionField = value;
-                    this.RaisePropertyChanged("PlateDimension");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateHardness {
-            get {
-                return this.PlateHardnessField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateHardnessField, value) != true)) {
-                    this.PlateHardnessField = value;
-                    this.RaisePropertyChanged("PlateHardness");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateLastWeldMaterial {
-            get {
-                return this.PlateLastWeldMaterialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateLastWeldMaterialField, value) != true)) {
-                    this.PlateLastWeldMaterialField = value;
-                    this.RaisePropertyChanged("PlateLastWeldMaterial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string PlateLot {
             get {
                 return this.PlateLotField;
@@ -7691,97 +7559,6 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.PlateLotField, value) != true)) {
                     this.PlateLotField = value;
                     this.RaisePropertyChanged("PlateLot");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateMaterial {
-            get {
-                return this.PlateMaterialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateMaterialField, value) != true)) {
-                    this.PlateMaterialField = value;
-                    this.RaisePropertyChanged("PlateMaterial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateOtherRecord {
-            get {
-                return this.PlateOtherRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateOtherRecordField, value) != true)) {
-                    this.PlateOtherRecordField = value;
-                    this.RaisePropertyChanged("PlateOtherRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlatePerson {
-            get {
-                return this.PlatePersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlatePersonField, value) != true)) {
-                    this.PlatePersonField = value;
-                    this.RaisePropertyChanged("PlatePerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime PlatePreProcessCheckTime {
-            get {
-                return this.PlatePreProcessCheckTimeField;
-            }
-            set {
-                if ((this.PlatePreProcessCheckTimeField.Equals(value) != true)) {
-                    this.PlatePreProcessCheckTimeField = value;
-                    this.RaisePropertyChanged("PlatePreProcessCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlatePreProcessPerson {
-            get {
-                return this.PlatePreProcessPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlatePreProcessPersonField, value) != true)) {
-                    this.PlatePreProcessPersonField = value;
-                    this.RaisePropertyChanged("PlatePreProcessPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlatePreProcessRecord {
-            get {
-                return this.PlatePreProcessRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlatePreProcessRecordField, value) != true)) {
-                    this.PlatePreProcessRecordField = value;
-                    this.RaisePropertyChanged("PlatePreProcessRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateSuplier {
-            get {
-                return this.PlateSuplierField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateSuplierField, value) != true)) {
-                    this.PlateSuplierField = value;
-                    this.RaisePropertyChanged("PlateSuplier");
                 }
             }
         }
@@ -7800,19 +7577,6 @@ namespace PMSXMLCreator.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PlateUseCount {
-            get {
-                return this.PlateUseCountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlateUseCountField, value) != true)) {
-                    this.PlateUseCountField = value;
-                    this.RaisePropertyChanged("PlateUseCount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Remark {
             get {
                 return this.RemarkField;
@@ -7821,45 +7585,6 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
                     this.RemarkField = value;
                     this.RaisePropertyChanged("Remark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SprayCheck {
-            get {
-                return this.SprayCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SprayCheckField, value) != true)) {
-                    this.SprayCheckField = value;
-                    this.RaisePropertyChanged("SprayCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime SprayCheckTime {
-            get {
-                return this.SprayCheckTimeField;
-            }
-            set {
-                if ((this.SprayCheckTimeField.Equals(value) != true)) {
-                    this.SprayCheckTimeField = value;
-                    this.RaisePropertyChanged("SprayCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SprayPerson {
-            get {
-                return this.SprayPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SprayPersonField, value) != true)) {
-                    this.SprayPersonField = value;
-                    this.RaisePropertyChanged("SprayPerson");
                 }
             }
         }
@@ -7886,32 +7611,6 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.TargetAbbrField, value) != true)) {
                     this.TargetAbbrField = value;
                     this.RaisePropertyChanged("TargetAbbr");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetAppearance {
-            get {
-                return this.TargetAppearanceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetAppearanceField, value) != true)) {
-                    this.TargetAppearanceField = value;
-                    this.RaisePropertyChanged("TargetAppearance");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime TargetCheckTime {
-            get {
-                return this.TargetCheckTimeField;
-            }
-            set {
-                if ((this.TargetCheckTimeField.Equals(value) != true)) {
-                    this.TargetCheckTimeField = value;
-                    this.RaisePropertyChanged("TargetCheckTime");
                 }
             }
         }
@@ -7969,19 +7668,6 @@ namespace PMSXMLCreator.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetDiameterCheck {
-            get {
-                return this.TargetDiameterCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetDiameterCheckField, value) != true)) {
-                    this.TargetDiameterCheckField = value;
-                    this.RaisePropertyChanged("TargetDiameterCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TargetDimension {
             get {
                 return this.TargetDimensionField;
@@ -8034,58 +7720,6 @@ namespace PMSXMLCreator.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetPerson {
-            get {
-                return this.TargetPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetPersonField, value) != true)) {
-                    this.TargetPersonField = value;
-                    this.RaisePropertyChanged("TargetPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime TargetPreProcessCheckTime {
-            get {
-                return this.TargetPreProcessCheckTimeField;
-            }
-            set {
-                if ((this.TargetPreProcessCheckTimeField.Equals(value) != true)) {
-                    this.TargetPreProcessCheckTimeField = value;
-                    this.RaisePropertyChanged("TargetPreProcessCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetPreProcessPerson {
-            get {
-                return this.TargetPreProcessPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetPreProcessPersonField, value) != true)) {
-                    this.TargetPreProcessPersonField = value;
-                    this.RaisePropertyChanged("TargetPreProcessPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetPreProcessRecord {
-            get {
-                return this.TargetPreProcessRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetPreProcessRecordField, value) != true)) {
-                    this.TargetPreProcessRecordField = value;
-                    this.RaisePropertyChanged("TargetPreProcessRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TargetProductID {
             get {
                 return this.TargetProductIDField;
@@ -8094,32 +7728,6 @@ namespace PMSXMLCreator.MainService {
                 if ((object.ReferenceEquals(this.TargetProductIDField, value) != true)) {
                     this.TargetProductIDField = value;
                     this.RaisePropertyChanged("TargetProductID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetThicknessCheck {
-            get {
-                return this.TargetThicknessCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetThicknessCheckField, value) != true)) {
-                    this.TargetThicknessCheckField = value;
-                    this.RaisePropertyChanged("TargetThicknessCheck");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TargetWarpageCheck {
-            get {
-                return this.TargetWarpageCheckField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TargetWarpageCheckField, value) != true)) {
-                    this.TargetWarpageCheckField = value;
-                    this.RaisePropertyChanged("TargetWarpageCheck");
                 }
             }
         }
@@ -8138,110 +7746,6 @@ namespace PMSXMLCreator.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime WarpageCheckTime {
-            get {
-                return this.WarpageCheckTimeField;
-            }
-            set {
-                if ((this.WarpageCheckTimeField.Equals(value) != true)) {
-                    this.WarpageCheckTimeField = value;
-                    this.RaisePropertyChanged("WarpageCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WarpageFix {
-            get {
-                return this.WarpageFixField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WarpageFixField, value) != true)) {
-                    this.WarpageFixField = value;
-                    this.RaisePropertyChanged("WarpageFix");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WarpagePerson {
-            get {
-                return this.WarpagePersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WarpagePersonField, value) != true)) {
-                    this.WarpagePersonField = value;
-                    this.RaisePropertyChanged("WarpagePerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime WeldCheckTime {
-            get {
-                return this.WeldCheckTimeField;
-            }
-            set {
-                if ((this.WeldCheckTimeField.Equals(value) != true)) {
-                    this.WeldCheckTimeField = value;
-                    this.RaisePropertyChanged("WeldCheckTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WeldCuStringDiameter {
-            get {
-                return this.WeldCuStringDiameterField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WeldCuStringDiameterField, value) != true)) {
-                    this.WeldCuStringDiameterField = value;
-                    this.RaisePropertyChanged("WeldCuStringDiameter");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WeldHold {
-            get {
-                return this.WeldHoldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WeldHoldField, value) != true)) {
-                    this.WeldHoldField = value;
-                    this.RaisePropertyChanged("WeldHold");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WeldMaterial {
-            get {
-                return this.WeldMaterialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WeldMaterialField, value) != true)) {
-                    this.WeldMaterialField = value;
-                    this.RaisePropertyChanged("WeldMaterial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WeldPerson {
-            get {
-                return this.WeldPersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WeldPersonField, value) != true)) {
-                    this.WeldPersonField = value;
-                    this.RaisePropertyChanged("WeldPerson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public double WeldingRate {
             get {
                 return this.WeldingRateField;
@@ -8250,6 +7754,67 @@ namespace PMSXMLCreator.MainService {
                 if ((this.WeldingRateField.Equals(value) != true)) {
                     this.WeldingRateField = value;
                     this.RaisePropertyChanged("WeldingRate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcPlateUsedStatistic", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcPlateUsedStatistic : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateLotField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Count {
+            get {
+                return this.CountField;
+            }
+            set {
+                if ((this.CountField.Equals(value) != true)) {
+                    this.CountField = value;
+                    this.RaisePropertyChanged("Count");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateLot {
+            get {
+                return this.PlateLotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateLotField, value) != true)) {
+                    this.PlateLotField = value;
+                    this.RaisePropertyChanged("PlateLot");
                 }
             }
         }
@@ -10179,6 +9744,12 @@ namespace PMSXMLCreator.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraForProductCount2", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraForProductCount2Response")]
         System.Threading.Tasks.Task<int> GetPlanExtraForProductCount2Async(string searchCode, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetEmergencyOrderCount", ReplyAction="http://tempuri.org/IMissonService/GetEmergencyOrderCountResponse")]
+        int GetEmergencyOrderCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetEmergencyOrderCount", ReplyAction="http://tempuri.org/IMissonService/GetEmergencyOrderCountResponse")]
+        System.Threading.Tasks.Task<int> GetEmergencyOrderCountAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10414,6 +9985,14 @@ namespace PMSXMLCreator.MainService {
         
         public System.Threading.Tasks.Task<int> GetPlanExtraForProductCount2Async(string searchCode, string composition, string pminumber) {
             return base.Channel.GetPlanExtraForProductCount2Async(searchCode, composition, pminumber);
+        }
+        
+        public int GetEmergencyOrderCount() {
+            return base.Channel.GetEmergencyOrderCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetEmergencyOrderCountAsync() {
+            return base.Channel.GetEmergencyOrderCountAsync();
         }
     }
     
@@ -11162,6 +10741,18 @@ namespace PMSXMLCreator.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPage", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPageResponse")]
         System.Threading.Tasks.Task<int> GetRecordTestCountBySearchInPageAsync(string productId, string compositionStd);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestBySearch", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestBySearchResponse")]
+        PMSXMLCreator.MainService.DcRecordTest[] GetRecordTestBySearch(int skip, int take, string productId, string compositionStd, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestBySearch", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestBySearchResponse")]
+        System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordTest[]> GetRecordTestBySearchAsync(int skip, int take, string productId, string compositionStd, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearch", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchResponse")]
+        int GetRecordTestCountBySearch(string productId, string compositionStd, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearch", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchResponse")]
+        System.Threading.Tasks.Task<int> GetRecordTestCountBySearchAsync(string productId, string compositionStd, string pminumber);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestChecked", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCheckedResponse")]
         PMSXMLCreator.MainService.DcRecordTest[] GetRecordTestChecked(int skip, int take, string productId, string compositionStd);
         
@@ -11215,6 +10806,18 @@ namespace PMSXMLCreator.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/GetUnFinishedRecordTestResponse")]
         System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordTest[]> GetUnFinishedRecordTestAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTestResponse")]
+        PMSXMLCreator.MainService.DcRecordTest[] GetUnCheckedRecordTest();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/GetUnCheckedRecordTestResponse")]
+        System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordTest[]> GetUnCheckedRecordTestAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetLastUpdateTime", ReplyAction="http://tempuri.org/IRecordTestService/GetLastUpdateTimeResponse")]
+        System.DateTime GetLastUpdateTime(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetLastUpdateTime", ReplyAction="http://tempuri.org/IRecordTestService/GetLastUpdateTimeResponse")]
+        System.Threading.Tasks.Task<System.DateTime> GetLastUpdateTimeAsync(System.Guid id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11258,6 +10861,22 @@ namespace PMSXMLCreator.MainService {
         
         public System.Threading.Tasks.Task<int> GetRecordTestCountBySearchInPageAsync(string productId, string compositionStd) {
             return base.Channel.GetRecordTestCountBySearchInPageAsync(productId, compositionStd);
+        }
+        
+        public PMSXMLCreator.MainService.DcRecordTest[] GetRecordTestBySearch(int skip, int take, string productId, string compositionStd, string pminumber) {
+            return base.Channel.GetRecordTestBySearch(skip, take, productId, compositionStd, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordTest[]> GetRecordTestBySearchAsync(int skip, int take, string productId, string compositionStd, string pminumber) {
+            return base.Channel.GetRecordTestBySearchAsync(skip, take, productId, compositionStd, pminumber);
+        }
+        
+        public int GetRecordTestCountBySearch(string productId, string compositionStd, string pminumber) {
+            return base.Channel.GetRecordTestCountBySearch(productId, compositionStd, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRecordTestCountBySearchAsync(string productId, string compositionStd, string pminumber) {
+            return base.Channel.GetRecordTestCountBySearchAsync(productId, compositionStd, pminumber);
         }
         
         public PMSXMLCreator.MainService.DcRecordTest[] GetRecordTestChecked(int skip, int take, string productId, string compositionStd) {
@@ -11330,6 +10949,22 @@ namespace PMSXMLCreator.MainService {
         
         public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordTest[]> GetUnFinishedRecordTestAsync() {
             return base.Channel.GetUnFinishedRecordTestAsync();
+        }
+        
+        public PMSXMLCreator.MainService.DcRecordTest[] GetUnCheckedRecordTest() {
+            return base.Channel.GetUnCheckedRecordTest();
+        }
+        
+        public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordTest[]> GetUnCheckedRecordTestAsync() {
+            return base.Channel.GetUnCheckedRecordTestAsync();
+        }
+        
+        public System.DateTime GetLastUpdateTime(System.Guid id) {
+            return base.Channel.GetLastUpdateTime(id);
+        }
+        
+        public System.Threading.Tasks.Task<System.DateTime> GetLastUpdateTimeAsync(System.Guid id) {
+            return base.Channel.GetLastUpdateTimeAsync(id);
         }
     }
     
@@ -11535,6 +11170,12 @@ namespace PMSXMLCreator.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetAllPowderWeight", ReplyAction="http://tempuri.org/IRecordMillingService/GetAllPowderWeightResponse")]
         System.Threading.Tasks.Task<double> GetAllPowderWeightAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByPMINumber", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingsByPMINumberResponse")]
+        PMSXMLCreator.MainService.DcRecordMilling[] GetRecordMillingsByPMINumber(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByPMINumber", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingsByPMINumberResponse")]
+        System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordMilling[]> GetRecordMillingsByPMINumberAsync(string pminumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11651,6 +11292,14 @@ namespace PMSXMLCreator.MainService {
         public System.Threading.Tasks.Task<double> GetAllPowderWeightAsync() {
             return base.Channel.GetAllPowderWeightAsync();
         }
+        
+        public PMSXMLCreator.MainService.DcRecordMilling[] GetRecordMillingsByPMINumber(string pminumber) {
+            return base.Channel.GetRecordMillingsByPMINumber(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordMilling[]> GetRecordMillingsByPMINumberAsync(string pminumber) {
+            return base.Channel.GetRecordMillingsByPMINumberAsync(pminumber);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11712,6 +11361,12 @@ namespace PMSXMLCreator.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/DeleteRecordMachine", ReplyAction="http://tempuri.org/IRecordMachineService/DeleteRecordMachineResponse")]
         System.Threading.Tasks.Task<int> DeleteRecordMachineAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/GetRecordMachinesByPMINumber", ReplyAction="http://tempuri.org/IRecordMachineService/GetRecordMachinesByPMINumberResponse")]
+        PMSXMLCreator.MainService.DcRecordMachine[] GetRecordMachinesByPMINumber(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/GetRecordMachinesByPMINumber", ReplyAction="http://tempuri.org/IRecordMachineService/GetRecordMachinesByPMINumberResponse")]
+        System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordMachine[]> GetRecordMachinesByPMINumberAsync(string pminumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11812,6 +11467,14 @@ namespace PMSXMLCreator.MainService {
         public System.Threading.Tasks.Task<int> DeleteRecordMachineAsync(System.Guid id) {
             return base.Channel.DeleteRecordMachineAsync(id);
         }
+        
+        public PMSXMLCreator.MainService.DcRecordMachine[] GetRecordMachinesByPMINumber(string pminumber) {
+            return base.Channel.GetRecordMachinesByPMINumber(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordMachine[]> GetRecordMachinesByPMINumberAsync(string pminumber) {
+            return base.Channel.GetRecordMachinesByPMINumberAsync(pminumber);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11873,6 +11536,12 @@ namespace PMSXMLCreator.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMold", ReplyAction="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMoldResponse")]
         System.Threading.Tasks.Task<int> DeleteRecordDeMoldAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByPMINumber", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByPMINumberResponse")]
+        PMSXMLCreator.MainService.DcRecordDeMold[] GetRecordDeMoldsByPMINumber(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByPMINumber", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByPMINumberResponse")]
+        System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordDeMold[]> GetRecordDeMoldsByPMINumberAsync(string pminumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11973,6 +11642,14 @@ namespace PMSXMLCreator.MainService {
         public System.Threading.Tasks.Task<int> DeleteRecordDeMoldAsync(System.Guid id) {
             return base.Channel.DeleteRecordDeMoldAsync(id);
         }
+        
+        public PMSXMLCreator.MainService.DcRecordDeMold[] GetRecordDeMoldsByPMINumber(string pminumber) {
+            return base.Channel.GetRecordDeMoldsByPMINumber(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordDeMold[]> GetRecordDeMoldsByPMINumberAsync(string pminumber) {
+            return base.Channel.GetRecordDeMoldsByPMINumberAsync(pminumber);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -12050,6 +11727,42 @@ namespace PMSXMLCreator.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinish", ReplyAction="http://tempuri.org/IRecordBondingService/SetAllUnFinsihToTempFinishResponse")]
         System.Threading.Tasks.Task<int> SetAllUnFinsihToTempFinishAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimes", ReplyAction="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimesResponse")]
+        int CheckPlateUsedTimes(string platelot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimes", ReplyAction="http://tempuri.org/IRecordBondingService/CheckPlateUsedTimesResponse")]
+        System.Threading.Tasks.Task<int> CheckPlateUsedTimesAsync(string platelot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumber", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumberResponse")]
+        PMSXMLCreator.MainService.DcRecordBonding[] GetRecordBondingsByPMINumber(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumber", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByPMINumberResponse")]
+        System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordBonding[]> GetRecordBondingsByPMINumberAsync(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTime", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTimeResponse")]
+        PMSXMLCreator.MainService.DcRecordBonding[] GetRecordBondingsByDateTime(System.DateTime start, System.DateTime end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTime", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsByDateTimeResponse")]
+        System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordBonding[]> GetRecordBondingsByDateTimeAsync(System.DateTime start, System.DateTime end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetPlateUsedStatistics", ReplyAction="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsResponse")]
+        PMSXMLCreator.MainService.DcPlateUsedStatistic[] GetPlateUsedStatistics(int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetPlateUsedStatistics", ReplyAction="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsResponse")]
+        System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcPlateUsedStatistic[]> GetPlateUsedStatisticsAsync(int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsCount", ReplyAction="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsCountResponse")]
+        int GetPlateUsedStatisticsCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsCount", ReplyAction="http://tempuri.org/IRecordBondingService/GetPlateUsedStatisticsCountResponse")]
+        System.Threading.Tasks.Task<int> GetPlateUsedStatisticsCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetPlateUsedTimesByPlateID", ReplyAction="http://tempuri.org/IRecordBondingService/GetPlateUsedTimesByPlateIDResponse")]
+        int GetPlateUsedTimesByPlateID(string plateid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetPlateUsedTimesByPlateID", ReplyAction="http://tempuri.org/IRecordBondingService/GetPlateUsedTimesByPlateIDResponse")]
+        System.Threading.Tasks.Task<int> GetPlateUsedTimesByPlateIDAsync(string plateid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -12173,6 +11886,54 @@ namespace PMSXMLCreator.MainService {
         
         public System.Threading.Tasks.Task<int> SetAllUnFinsihToTempFinishAsync() {
             return base.Channel.SetAllUnFinsihToTempFinishAsync();
+        }
+        
+        public int CheckPlateUsedTimes(string platelot) {
+            return base.Channel.CheckPlateUsedTimes(platelot);
+        }
+        
+        public System.Threading.Tasks.Task<int> CheckPlateUsedTimesAsync(string platelot) {
+            return base.Channel.CheckPlateUsedTimesAsync(platelot);
+        }
+        
+        public PMSXMLCreator.MainService.DcRecordBonding[] GetRecordBondingsByPMINumber(string pminumber) {
+            return base.Channel.GetRecordBondingsByPMINumber(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordBonding[]> GetRecordBondingsByPMINumberAsync(string pminumber) {
+            return base.Channel.GetRecordBondingsByPMINumberAsync(pminumber);
+        }
+        
+        public PMSXMLCreator.MainService.DcRecordBonding[] GetRecordBondingsByDateTime(System.DateTime start, System.DateTime end) {
+            return base.Channel.GetRecordBondingsByDateTime(start, end);
+        }
+        
+        public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcRecordBonding[]> GetRecordBondingsByDateTimeAsync(System.DateTime start, System.DateTime end) {
+            return base.Channel.GetRecordBondingsByDateTimeAsync(start, end);
+        }
+        
+        public PMSXMLCreator.MainService.DcPlateUsedStatistic[] GetPlateUsedStatistics(int s, int t) {
+            return base.Channel.GetPlateUsedStatistics(s, t);
+        }
+        
+        public System.Threading.Tasks.Task<PMSXMLCreator.MainService.DcPlateUsedStatistic[]> GetPlateUsedStatisticsAsync(int s, int t) {
+            return base.Channel.GetPlateUsedStatisticsAsync(s, t);
+        }
+        
+        public int GetPlateUsedStatisticsCount() {
+            return base.Channel.GetPlateUsedStatisticsCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlateUsedStatisticsCountAsync() {
+            return base.Channel.GetPlateUsedStatisticsCountAsync();
+        }
+        
+        public int GetPlateUsedTimesByPlateID(string plateid) {
+            return base.Channel.GetPlateUsedTimesByPlateID(plateid);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlateUsedTimesByPlateIDAsync(string plateid) {
+            return base.Channel.GetPlateUsedTimesByPlateIDAsync(plateid);
         }
     }
     

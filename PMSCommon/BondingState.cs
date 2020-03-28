@@ -12,7 +12,7 @@ namespace PMSCommon
         暂停,
         未完成,
         未录完,
-        完成,
+        最终完成,
         失败
     }
 }

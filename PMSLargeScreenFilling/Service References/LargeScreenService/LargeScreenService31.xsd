@@ -96,4 +96,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetPlanOfMachine">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlanOfMachineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlanOfMachineResult" nillable="true" type="q7:ArrayOfDcPlanWithMisson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

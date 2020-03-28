@@ -11,6 +11,6 @@ namespace PMSCommon
         作废,
         未核验,
         未完成,
-        完成
+        最终完成
     }
 }

@@ -140,6 +140,9 @@
     <None Include="Service References\LargeScreenService\PMSLargeScreenBonding.LargeScreenService.DcPlanExtra.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\LargeScreenService\PMSLargeScreenBonding.LargeScreenService.DcPlanWithMisson.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\LargeScreenService\PMSLargeScreenBonding.LargeScreenService.DcRecordBonding.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

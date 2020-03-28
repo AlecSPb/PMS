@@ -170,8 +170,10 @@
       <xs:element minOccurs="0" name="ItemCount" type="xs:double" />
       <xs:element minOccurs="0" name="ItemDetails" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ItemGroup" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemHistory" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ItemSpecification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RowOrder" type="xs:int" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:string" />
     </xs:sequence>

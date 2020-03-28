@@ -206,6 +206,9 @@
     <None Include="Connected Services\MainService\PMSXMLCreator.MainService.DcPlate.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\MainService\PMSXMLCreator.MainService.DcPlateUsedStatistic.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\MainService\PMSXMLCreator.MainService.DcProduct.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

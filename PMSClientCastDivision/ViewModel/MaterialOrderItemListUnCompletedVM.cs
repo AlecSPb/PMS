@@ -162,7 +162,7 @@ namespace PMSClient.ViewModel
                         if (dialog.SureType == "All")
                         {
                             preFix = "全部交付";
-                            model.Item.MaterialOrderItem.State = PMSCommon.MaterialOrderItemState.完成.ToString();
+                            model.Item.MaterialOrderItem.State = PMSCommon.MaterialOrderItemState.最终完成.ToString();
                             service.UpdateMaterialOrderItem(model.Item.MaterialOrderItem, uid);
                         }
                         else

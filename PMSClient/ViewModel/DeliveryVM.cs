@@ -171,7 +171,7 @@ namespace PMSClient.ViewModel
         private bool CanFinish(DcDelivery arg)
         {
             return PMSHelper.CurrentSession.IsInGroup(new string[] { "管理员", "统筹组" })
-                && arg?.State != PMSCommon.DeliveryState.完成.ToString();
+                && arg?.State != PMSCommon.DeliveryState.最终完成.ToString();
         }
         private bool CheckDeliveryState(string state)
         {
@@ -189,7 +189,7 @@ namespace PMSClient.ViewModel
                 {
                     using (var service = new DeliveryServiceClient())
                     {
-                        model.State = PMSCommon.DeliveryState.完成.ToString();
+                        model.State = PMSCommon.DeliveryState.最终完成.ToString();
                         model.FinishTime = DateTime.Now;
                         //记录签收信息
                         model.IsCustomerSigned = true;
