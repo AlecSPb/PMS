@@ -74,17 +74,16 @@
                                           Text="{Binding PlateType}"/>
             <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="选择背板类型"/>
 
-            <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource BDTargetCoverPlateNumber}" Style="{StaticResource StyleTextBlockCommon}"/>
-            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding CoverPlateNumber}" Style="{StaticResource StyleTextBoxBig}" Background="Yellow"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource BDPlateLot}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding PlateLot}" Style="{StaticResource StyleTextBoxBig}"/>
             <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-
-            <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource BDPlateLot}" Style="{StaticResource StyleTextBlockCommon}"/>
-            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding PlateLot}" Style="{StaticResource StyleTextBoxBig}" Background="Yellow"/>
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource BDTargetCoverPlateNumber}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding CoverPlateNumber}" Style="{StaticResource StyleTextBoxBig}"/>
             <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
             <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource BDWeldingRate}" Style="{StaticResource StyleTextBlockCommon}"/>
-            <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding WeldingRate}" Style="{StaticResource StyleTextBoxBig}" Background="Yellow"/>
+            <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding WeldingRate}" Style="{StaticResource StyleTextBoxBig}"/>
             <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
             <TextBlock Grid.Row="9" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="备注信息"/>

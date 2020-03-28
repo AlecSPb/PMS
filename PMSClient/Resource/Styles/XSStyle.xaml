@@ -441,6 +441,12 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="50"/>
     </Style>
+    <Style x:Key="StyleDGButtonOriginal" TargetType="Button">
+        <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="MinWidth" Value="50"/>
+    </Style>
     <Style x:Key="StyleDGButtonSingleLetter" TargetType="Button" BasedOn="{StaticResource btnBase}">
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>

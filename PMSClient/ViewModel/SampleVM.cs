@@ -14,7 +14,7 @@ namespace PMSClient.ViewModel
     {
         public SampleVM()
         {
-            searchComposition = searchProductID = searchTrackingStage = "";
+            searchComposition = searchProductID = searchTrackingStage = searchPMINumber = "";
             Samples = new ObservableCollection<DcSample>();
 
             InitializeCommands();
@@ -283,7 +283,8 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            SearchProductID = "";
+            SearchProductID = SearchPMINumber = SearchComposition = "";
+            SearchTrackingStage = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -339,6 +340,13 @@ namespace PMSClient.ViewModel
             set { searchTrackingStage = value; RaisePropertyChanged(nameof(SearchTrackingStage)); }
         }
 
+        private string searchPMINumber;
+        public string SearchPMINumber
+        {
+            get { return searchPMINumber; }
+            set { searchPMINumber = value; RaisePropertyChanged(nameof(SearchPMINumber)); }
+        }
+
         private DcSample currentSample;
         public DcSample CurrentSample
         {
@@ -352,7 +360,7 @@ namespace PMSClient.ViewModel
             PageSize = 30;
             using (var service = new SampleServiceClient())
             {
-                RecordCount = service.GetSampleAllCount(SearchProductID, SearchComposition, SearchTrackingStage);
+                RecordCount = service.GetSampleAllCount(SearchPMINumber, SearchProductID, SearchComposition, SearchTrackingStage);
             }
             ActionPaging();
         }
@@ -363,7 +371,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new SampleServiceClient())
             {
-                var orders = service.GetSampleAll(skip, take,
+                var orders = service.GetSampleAll(skip, take, SearchPMINumber,
                     SearchProductID, SearchComposition, SearchTrackingStage);
                 Samples.Clear();
                 orders.ToList().ForEach(o => Samples.Add(o));

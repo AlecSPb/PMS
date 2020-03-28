@@ -67,11 +67,14 @@
                 <DataGridTextColumn Header="{StaticResource CItemDetails}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding ItemDetails}"/>
                 <DataGridTextColumn Header="{StaticResource CCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Binding="{Binding Creator}"/>
-                <DataGridTemplateColumn Header="{StaticResource CItemHistory}" Width="400">
+                <DataGridTemplateColumn Header="{StaticResource CItemHistory}" Width="200">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding ItemHistory}" VerticalAlignment="Center"
-                                     IsReadOnly="True" Style="{StaticResource StyleDGTextBoxStrench}"/>
+                            <Button  Content="{Binding ItemHistory,Converter={StaticResource StringCutCT}}" VerticalAlignment="Center"
+                                    Style="{StaticResource StyleDGButtonOriginal}" HorizontalAlignment="Stretch"
+                                     HorizontalContentAlignment="Left"
+                                     Command="{Binding DataContext.ShowItemHistory,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                     CommandParameter="{Binding}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

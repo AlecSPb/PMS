@@ -43,7 +43,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string LastCheckIDCollection { get; set; }//最后一次检查录入的ID信息
         [DataMember]
-        public double PackageWeight { get; set; }//包装重量
+        public string PackageWeight { get; set; }//包装重量
         [DataMember]
         public bool IsCustomerSigned { get; set; }
         [DataMember]

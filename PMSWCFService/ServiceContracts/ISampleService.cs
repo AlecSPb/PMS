@@ -17,10 +17,10 @@ namespace PMSWCFService.ServiceContracts
         //int GetSampleCount(string productid, string composition);
 
         [OperationContract]
-        List<DcSample> GetSampleAll(int s, int t, string productid, string composition, string trackingstage);
+        List<DcSample> GetSampleAll(int s, int t, string pminumber, string productid, string composition, string trackingstage);
 
         [OperationContract]
-        int GetSampleAllCount(string productid, string composition, string trackingstage);
+        int GetSampleAllCount(string pminumber, string productid, string composition, string trackingstage);
 
         [OperationContract]
         int GetSampleByPMINumberCount(string pminumber);

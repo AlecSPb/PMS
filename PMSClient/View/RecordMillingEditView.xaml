@@ -162,16 +162,13 @@
 
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RMSieveDescription}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="11" Grid.Column="1" 
-                          ItemsSource="{Binding DataContext.Sieves,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          Text="{Binding SieveDescription}"
-                          Style="{StaticResource StyleComboBoxEditable}"  FontSize="{StaticResource TabletFontLG}"/>
+                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding SieveDescription}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                 <StackPanel Grid.Row="11" Grid.Column="2" Orientation="Horizontal">
 
                     <Button Name="BtnToolSieve" Style="{StaticResource StyleButtonCommon}" Content="筛网索引"
                             Click="BtnToolSieve_Click"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="筛网S开头ID编号,需要对每个筛网进行规范管理" Background="Green" Foreground="White"/>
+                           Text="筛网S开头ID编号,需要对每个筛网进行规范管理,只可以选择" Background="Green" Foreground="White"/>
                 </StackPanel>
 
 

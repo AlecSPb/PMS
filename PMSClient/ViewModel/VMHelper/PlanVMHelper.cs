@@ -59,11 +59,13 @@ namespace PMSClient.ViewModel.VMHelper
             }
 
             lb.AppendLine("===== 样品标签↓  =====");
+            lb.AppendLine(model.Misson.PMINumber);
             lb.AppendLine(model.Misson.CompositionStandard);
             lb.AppendLine("Weight      g");
             lb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
 
             lb.AppendLine("=====  简成分样品标签↓  =====");
+            lb.AppendLine(model.Misson.PMINumber);
             lb.AppendLine(Helpers.CompositionHelper.RemoveNumbers(model.Misson.CompositionStandard));
             lb.AppendLine("Weight      g");
             lb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));

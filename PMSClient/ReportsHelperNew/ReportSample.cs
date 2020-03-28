@@ -38,7 +38,7 @@ namespace PMSClient.ReportsHelperNew
                 Table table = doc.Tables[0];
                 using (var service = new SampleServiceClient())
                 {
-                    recordCount = service.GetSampleAllCount(empty, empty, empty);
+                    recordCount = service.GetSampleAllCount(empty,empty, empty, empty);
                     pageCount = GetPageCount();
 
                     int s = 0, t = 0;
@@ -46,7 +46,7 @@ namespace PMSClient.ReportsHelperNew
                     {
                         s = pageIndex * pageSize;
                         t = pageSize;
-                        var pageData = service.GetSampleAll(s, t, empty, empty, SelectedTrackingStage);
+                        var pageData = service.GetSampleAll(s, t,empty, empty, empty, SelectedTrackingStage);
                         var ordered = pageData;
                         int row_index = 0;
 

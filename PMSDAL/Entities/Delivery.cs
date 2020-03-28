@@ -32,7 +32,7 @@ namespace PMSDAL
 
 
         public string LastCheckIDCollection { get; set; }//最后一次检查录入的ID信息
-        public double PackageWeight { get; set; }
+        public string PackageWeight { get; set; }
         public bool IsCustomerSigned { get; set; }
         public DateTime CustomerSignedDate { get; set; }
         public string CustomerSignedDetails { get; set; }

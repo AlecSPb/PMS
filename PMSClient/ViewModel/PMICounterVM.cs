@@ -31,7 +31,17 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Duplicate = new RelayCommand<DcPMICounter>(ActionDuplicate, CanDuplicate);
             QuickChange = new RelayCommand<DcPMICounter>(ActionQuickChange, CanQuickChange);
+            ShowItemHistory = new RelayCommand<DcPMICounter>(ActionShowItemHistory);
+        }
 
+        private void ActionShowItemHistory(DcPMICounter obj)
+        {
+            if (obj != null)
+            {
+                var dialog =new WPFControls.NormalizedDataViewer();
+                dialog.SetMainStrings(obj.ItemHistory);
+                dialog.ShowDialog();
+            }
         }
 
         private bool CanQuickChange(DcPMICounter arg)
@@ -222,6 +232,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPMICounter> QuickChange { get; set; }
         public RelayCommand<DcPMICounter> Edit { get; set; }
         public RelayCommand<DcPMICounter> Duplicate { get; set; }
+        public RelayCommand<DcPMICounter> ShowItemHistory { get; set; }
         #endregion
 
     }

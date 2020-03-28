@@ -121,9 +121,6 @@ namespace PMSClient.ViewModel
             }
 
             PMSDialogService.UnImplementyet();
-
-            PMSDialogService.Show("数据导出完成到桌面，请右键-打开方式-Excel打开文件");
-
         }
 
         private bool CanGoToMisson()

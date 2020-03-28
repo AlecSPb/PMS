@@ -60,6 +60,10 @@
     <Compile Include="KeyValueTestResult.xaml.cs">
       <DependentUpon>KeyValueTestResult.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NormalizedDataHelper.cs" />
+    <Compile Include="NormalizedDataViewer.xaml.cs">
+      <DependentUpon>NormalizedDataViewer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StandardViewFrame.xaml.cs">
       <DependentUpon>StandardViewFrame.xaml</DependentUpon>
     </Compile>
@@ -76,6 +80,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="KeyValueTestResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NormalizedDataViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

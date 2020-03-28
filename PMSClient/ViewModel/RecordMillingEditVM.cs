@@ -50,11 +50,6 @@ namespace PMSClient.ViewModel
 
             GrainSizes = new List<string>();
             PMSBasicDataService.SetListDS(PMSCommon.CustomData.GrainSize, GrainSizes);
-            Sieves = new List<string>();
-            for (int i = 1; i < 100; i++)
-            {
-                Sieves.Add($"S{i}");
-            }
         }
         private void ActionCalculator()
         {
@@ -199,7 +194,6 @@ namespace PMSClient.ViewModel
         public List<string> MillingTools { get; set; }
         public List<string> GasProtections { get; set; }
         public List<string> GrainSizes { get; set; }
-        public List<string> Sieves { get; set; }
 
         public RelayCommand Select { get; set; }
         public RelayCommand Calculator { get; set; }

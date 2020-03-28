@@ -409,7 +409,7 @@
       <xs:element minOccurs="0" name="LastCheckIDCollection" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PackageInformation" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PackageType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PackageWeight" type="xs:double" />
+      <xs:element minOccurs="0" name="PackageWeight" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ShipTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />

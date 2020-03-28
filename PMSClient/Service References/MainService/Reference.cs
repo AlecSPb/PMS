@@ -4624,7 +4624,7 @@ namespace PMSClient.MainService {
         private string PackageTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double PackageWeightField;
+        private string PackageWeightField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
@@ -4854,12 +4854,12 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double PackageWeight {
+        public string PackageWeight {
             get {
                 return this.PackageWeightField;
             }
             set {
-                if ((this.PackageWeightField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.PackageWeightField, value) != true)) {
                     this.PackageWeightField = value;
                     this.RaisePropertyChanged("PackageWeight");
                 }

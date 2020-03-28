@@ -455,16 +455,16 @@ namespace PMSClient.Sample {
     public interface ISampleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAll", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllResponse")]
-        PMSClient.Sample.DcSample[] GetSampleAll(int s, int t, string productid, string composition, string trackingstage);
+        PMSClient.Sample.DcSample[] GetSampleAll(int s, int t, string pminumber, string productid, string composition, string trackingstage);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAll", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllResponse")]
-        System.Threading.Tasks.Task<PMSClient.Sample.DcSample[]> GetSampleAllAsync(int s, int t, string productid, string composition, string trackingstage);
+        System.Threading.Tasks.Task<PMSClient.Sample.DcSample[]> GetSampleAllAsync(int s, int t, string pminumber, string productid, string composition, string trackingstage);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAllCount", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllCountResponse")]
-        int GetSampleAllCount(string productid, string composition, string trackingstage);
+        int GetSampleAllCount(string pminumber, string productid, string composition, string trackingstage);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAllCount", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllCountResponse")]
-        System.Threading.Tasks.Task<int> GetSampleAllCountAsync(string productid, string composition, string trackingstage);
+        System.Threading.Tasks.Task<int> GetSampleAllCountAsync(string pminumber, string productid, string composition, string trackingstage);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleByPMINumberCount", ReplyAction="http://tempuri.org/ISampleService/GetSampleByPMINumberCountResponse")]
         int GetSampleByPMINumberCount(string pminumber);
@@ -512,20 +512,20 @@ namespace PMSClient.Sample {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.Sample.DcSample[] GetSampleAll(int s, int t, string productid, string composition, string trackingstage) {
-            return base.Channel.GetSampleAll(s, t, productid, composition, trackingstage);
+        public PMSClient.Sample.DcSample[] GetSampleAll(int s, int t, string pminumber, string productid, string composition, string trackingstage) {
+            return base.Channel.GetSampleAll(s, t, pminumber, productid, composition, trackingstage);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.Sample.DcSample[]> GetSampleAllAsync(int s, int t, string productid, string composition, string trackingstage) {
-            return base.Channel.GetSampleAllAsync(s, t, productid, composition, trackingstage);
+        public System.Threading.Tasks.Task<PMSClient.Sample.DcSample[]> GetSampleAllAsync(int s, int t, string pminumber, string productid, string composition, string trackingstage) {
+            return base.Channel.GetSampleAllAsync(s, t, pminumber, productid, composition, trackingstage);
         }
         
-        public int GetSampleAllCount(string productid, string composition, string trackingstage) {
-            return base.Channel.GetSampleAllCount(productid, composition, trackingstage);
+        public int GetSampleAllCount(string pminumber, string productid, string composition, string trackingstage) {
+            return base.Channel.GetSampleAllCount(pminumber, productid, composition, trackingstage);
         }
         
-        public System.Threading.Tasks.Task<int> GetSampleAllCountAsync(string productid, string composition, string trackingstage) {
-            return base.Channel.GetSampleAllCountAsync(productid, composition, trackingstage);
+        public System.Threading.Tasks.Task<int> GetSampleAllCountAsync(string pminumber, string productid, string composition, string trackingstage) {
+            return base.Channel.GetSampleAllCountAsync(pminumber, productid, composition, trackingstage);
         }
         
         public int GetSampleByPMINumberCount(string pminumber) {

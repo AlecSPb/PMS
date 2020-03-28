@@ -6,6 +6,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="s" type="xs:int" />
         <xs:element minOccurs="0" name="t" type="xs:int" />
+        <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="trackingstage" nillable="true" type="xs:string" />
@@ -22,6 +23,7 @@
   <xs:element name="GetSampleAllCount">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="trackingstage" nillable="true" type="xs:string" />

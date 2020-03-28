@@ -128,7 +128,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource RDPackageWeight}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding PackageWeight,StringFormat={}{0:F2}}"/>
+                                    Binding="{Binding PackageWeight}"/>
                 <DataGridTemplateColumn Header="{StaticResource RDInvoiceNumber}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -152,14 +152,14 @@
 
                 <DataGridTextColumn Header="{StaticResource RDLastCheckIDCollection}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding LastCheckIDCollection}" MaxWidth="300"/>
-                
+
                 <DataGridTextColumn Header="{StaticResource RDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
                 <DataGridTextColumn Header="{StaticResource RDFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
                 <DataGridTextColumn Header="{StaticResource RDCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
-                
+
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"

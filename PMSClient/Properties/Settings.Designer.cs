@@ -157,49 +157,25 @@ namespace PMSClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool ShowHelpDoc {
+        [global::System.Configuration.DefaultSettingValueAttribute("Targets")]
+        public string FtpImageTarget {
             get {
-                return ((bool)(this["ShowHelpDoc"]));
+                return ((string)(this["FtpImageTarget"]));
             }
             set {
-                this["ShowHelpDoc"] = value;
+                this["FtpImageTarget"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Bondings")]
-        public string FtpImage1 {
+        public string FtpImageBonding {
             get {
-                return ((string)(this["FtpImage1"]));
+                return ((string)(this["FtpImageBonding"]));
             }
             set {
-                this["FtpImage1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Target")]
-        public string FtpImage2 {
-            get {
-                return ((string)(this["FtpImage2"]));
-            }
-            set {
-                this["FtpImage2"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Target440")]
-        public string FtpImage3 {
-            get {
-                return ((string)(this["FtpImage3"]));
-            }
-            set {
-                this["FtpImage3"] = value;
+                this["FtpImageBonding"] = value;
             }
         }
     }

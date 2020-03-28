@@ -39,7 +39,7 @@ namespace PMSClient.ViewModel
             model.Address = "无";
             model.FinishTime = DateTime.Now;
             model.Country = PMSCommon.CountryRegion.美国.ToString();
-            model.PackageWeight = 0;
+            model.PackageWeight = "";
             model.LastCheckIDCollection = "";
             model.IsCustomerSigned = false;
             model.CustomerSignedDate = DateTime.Today;

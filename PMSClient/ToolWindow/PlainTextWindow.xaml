@@ -8,13 +8,9 @@
         Title="长文本显示窗口" Height="300" Width="400">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            <Button Name="BtnClose" Click="BtnClose_Click" Content="退出" Style="{StaticResource StyleButtonCommon}"/>
-        </StackPanel>
-        <TextBox Name="RtxtContent" Grid.Row="1" IsReadOnly="True" TextWrapping="Wrap"
+        <TextBox Name="RtxtContent" Grid.Row="0" IsReadOnly="True" TextWrapping="Wrap"
                  VerticalScrollBarVisibility="Visible" FontSize="18"></TextBox>
     </Grid>
 </Window>

@@ -30,7 +30,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcSample> GetSampleAll(int s, int t, string productid, string composition, string trackingstage)
+        public List<DcSample> GetSampleAll(int s, int t, string pminumber, string productid, string composition, string trackingstage)
         {
             try
             {
@@ -40,6 +40,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<Sample, DcSample>());
                     var query = from m in db.Samples
                                 where m.State != PMSCommon.SimpleState.作废.ToString()
+                                && m.PMINumber.Contains(pminumber)
                                 && m.ProductID.Contains(productid)
                                 && m.Composition.Contains(composition)
                                 && m.TrackingStage.Contains(trackingstage)
@@ -55,7 +56,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetSampleAllCount(string productid, string composition, string trackingstage)
+        public int GetSampleAllCount(string pminumber, string productid, string composition, string trackingstage)
         {
             try
             {
@@ -64,6 +65,7 @@ namespace PMSWCFService
                 {
                     var query = from m in db.Samples
                                 where m.State != PMSCommon.SimpleState.作废.ToString()
+                                && m.PMINumber.Contains(pminumber)
                                 && m.ProductID.Contains(productid)
                                 && m.Composition.Contains(composition)
                                 && m.TrackingStage.Contains(trackingstage)

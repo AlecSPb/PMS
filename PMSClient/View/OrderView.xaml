@@ -389,7 +389,8 @@
                         <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource OrderSpecialRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                         <!--<TextBox Grid.Row="20" Grid.Column="1" Text="{Binding SpecialRequirement}" Style="{StaticResource StyleTextBoxReadOnly}"/>-->
-                        <Button Grid.Row="20" Grid.Column="1" Content="{Binding SpecialRequirement}"
+                        <Button Grid.Row="20" Grid.Column="1" Content="{Binding SpecialRequirement,
+                            Converter={StaticResource StringCutCT}}"
                                 Style="{StaticResource StyleButtonStrench}"
                                 Command="{Binding DataContext.ShowDetails,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
                                 CommandParameter="SpecialRequirement"/>
