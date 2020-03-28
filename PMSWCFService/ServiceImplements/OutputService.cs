@@ -19,6 +19,7 @@ namespace PMSWCFService
 
     public class OutputService : IOutputService
     {
+        [Obsolete]
         public List<PMS230DataModel> GetAll230Data(int s, int t)
         {
             try
@@ -66,7 +67,7 @@ namespace PMSWCFService
 
         }
 
-        public List<PMS230DataModel> GetAll230DataByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end)
+        public List<DcOutputSpecialFor230Model> GetAll230DataByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end)
         {
             try
             {
@@ -89,25 +90,38 @@ namespace PMSWCFService
                                 && dd.CreateTime >= startTime
                                 && dd.CreateTime <= endtime
                                 orderby dd.ProductID descending
-                                select new EFModel
+                                select new DcOutputSpecialFor230Model
                                 {
-                                    Delivery = dd,
-                                    Test = bbdata,
-                                    Bond = ccdata
+                                    ProductID=dd.ProductID,
+                                    Customer=dd.Customer,
+                                    Composition=dd.Composition,
+                                    CompositionAbbr=bbdata.CompositionAbbr,
+                                    Dimension=dd.Dimension,
+                                    DimensionActual=dd.DimensionActual,
+                                    Weight=dd.Weight,
+                                    Density=bbdata.Density,
+                                    Resistance=bbdata.Resistance,
+                                    PlateLot=ccdata.PlateLot,
+                                    PlateType=ccdata.PlateType,
+                                    BondCreateTime=ccdata.CreateTime,
+                                    WeldingRate=ccdata.WeldingRate,
+                                    DeliveryCreateTime=dd.CreateTime,
+                                    Position=dd.Position,
+                                    CompositionXRF=bbdata.CompositionXRF
                                 };
 
-                    Mapper.Initialize(cfg =>
-                    {
-                        cfg.CreateMap<EFModel, PMS230DataModel>();
-                        cfg.CreateMap<DeliveryItem, DcDeliveryItem>();
-                        cfg.CreateMap<RecordTest, DcRecordTest>();
-                        cfg.CreateMap<RecordBonding, DcRecordBonding>();
-                    });
+                    //Mapper.Initialize(cfg =>
+                    //{
+                    //    cfg.CreateMap<EFModel, PMS230DataModel>();
+                    //    cfg.CreateMap<DeliveryItem, DcDeliveryItem>();
+                    //    cfg.CreateMap<RecordTest, DcRecordTest>();
+                    //    cfg.CreateMap<RecordBonding, DcRecordBonding>();
+                    //});
 
                     var new_models = query.Skip(s).Take(t).ToList();
 
-                    var models = Mapper.Map<List<EFModel>, List<PMS230DataModel>>(new_models);
-                    return models;
+                    //var models = Mapper.Map<List<EFModel>, List<PMS230DataModel>>(new_models);
+                    return new_models;
                 }
             }
             catch (Exception ex)
@@ -139,12 +153,7 @@ namespace PMSWCFService
                                 && dd.Dimension.Contains("230")
                                 && dd.CreateTime >= startTime
                                 && dd.CreateTime <= endtime
-                                select new
-                                {
-                                    Delivery = dd,
-                                    Test = bbdata,
-                                    Bond = ccdata
-                                };
+                                select dd;
 
 
                     return query.Count();
@@ -156,7 +165,7 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-
+        [Obsolete]
         public int GetAll230DataCount()
         {
             try

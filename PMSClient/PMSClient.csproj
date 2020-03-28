@@ -1919,6 +1919,9 @@
     <None Include="Service References\NewService\PMSClient.NewService.DcPlanVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\OutputService\PMSClient.OutputService.DcOutputSpecialFor230Model.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PMSSettings\PMSSettingService.wsdl" />
     <None Include="Service References\PMSSettings\PMSSettingService.xsd">
       <SubType>Designer</SubType>

@@ -32,15 +32,47 @@ namespace PMSClient.ToolWindow
             }
             try
             {
-                var excel = new ExcelOutputHelper.ExcelOutputSpecialFor230();
 
-                excel.Intialize("瑞典潮州_230靶材_发货+测试+绑定数据", "Data", 10);//注意传输设置防止出错
-                excel.Output();
+                //年月选择对话框
+                var dialog = new PMSClient.Components.ExcelOutputHelper.Dialogs.YearDateDailog();
+                if (dialog.ShowDialog() == false)
+                {
+                    return;
+                }
+                int year_start = dialog.YearStart;
+                int month_start = dialog.MonthStart;
+                int year_end = dialog.YearEnd;
+                int month_end = dialog.MonthEnd;
+
+
+                var excel = new ExcelOutputHelper.ExcelOutputSpecialFor230();
+                excel.Intialize("瑞典潮州_230靶材_发货+测试+绑定数据", "Data", 50);
+                excel.SetParameter(year_start, month_start, year_end, month_end);
+                excel.UpdateProgress += Excel_UpdateProgress;
+
+                var task = new Task(excel.Output);
+                task.Start();
+                BtnChaozhou.IsEnabled = false;
             }
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
                 PMSDialogService.Show(ex.Message);
+            }
+            finally
+            {
+                BtnChaozhou.IsEnabled = true;
+            }
+        }
+
+        private void Excel_UpdateProgress(object sender, double e)
+        {
+            if (e >= 0 && e <= 100)
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    Pg.Value = e;
+                });
             }
         }
     }

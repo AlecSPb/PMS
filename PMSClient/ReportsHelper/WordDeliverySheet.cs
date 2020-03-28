@@ -100,7 +100,7 @@ namespace PMSClient.ReportsHelper
                                     {
 
                                         string bp_lot = Helpers.DeliveryHelper.GetBPLotFromBonding(item.ProductID);
-                                        string new_plate_lot = Helpers.DeliveryHelper.RemovePostFixA(bp_lot);
+                                        string new_plate_lot = bp_lot;
                                         mainTable.Rows[rownumber].Cells[8].Paragraphs[0]
                                             .Append(new_plate_lot)
                                             .FontSize(10).Alignment = Alignment.left;

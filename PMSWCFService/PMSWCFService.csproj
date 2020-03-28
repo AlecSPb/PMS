@@ -177,6 +177,7 @@
     <Compile Include="DataContracts\DcRawMaterialSheet.cs" />
     <Compile Include="DataContracts\DcSample.cs" />
     <Compile Include="DataContracts\DcPMSSetting.cs" />
+    <Compile Include="DataContracts\DcOutputSpecialFor230Model.cs" />
     <Compile Include="Helper\XS.cs" />
     <Compile Include="Helper\LogService.cs" />
     <Compile Include="DataContracts\DcOutSource.cs" />

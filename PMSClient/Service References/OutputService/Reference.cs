@@ -1281,6 +1281,291 @@ namespace PMSClient.OutputService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcOutputSpecialFor230Model", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcOutputSpecialFor230Model : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime BondCreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionAbbrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionXRFField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DeliveryCreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DensityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionActualField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateLotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ResistanceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double WeldingRateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime BondCreateTime {
+            get {
+                return this.BondCreateTimeField;
+            }
+            set {
+                if ((this.BondCreateTimeField.Equals(value) != true)) {
+                    this.BondCreateTimeField = value;
+                    this.RaisePropertyChanged("BondCreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CompositionAbbr {
+            get {
+                return this.CompositionAbbrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionAbbrField, value) != true)) {
+                    this.CompositionAbbrField = value;
+                    this.RaisePropertyChanged("CompositionAbbr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CompositionXRF {
+            get {
+                return this.CompositionXRFField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionXRFField, value) != true)) {
+                    this.CompositionXRFField = value;
+                    this.RaisePropertyChanged("CompositionXRF");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Customer {
+            get {
+                return this.CustomerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
+                    this.CustomerField = value;
+                    this.RaisePropertyChanged("Customer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DeliveryCreateTime {
+            get {
+                return this.DeliveryCreateTimeField;
+            }
+            set {
+                if ((this.DeliveryCreateTimeField.Equals(value) != true)) {
+                    this.DeliveryCreateTimeField = value;
+                    this.RaisePropertyChanged("DeliveryCreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Density {
+            get {
+                return this.DensityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DensityField, value) != true)) {
+                    this.DensityField = value;
+                    this.RaisePropertyChanged("Density");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dimension {
+            get {
+                return this.DimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
+                    this.DimensionField = value;
+                    this.RaisePropertyChanged("Dimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DimensionActual {
+            get {
+                return this.DimensionActualField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionActualField, value) != true)) {
+                    this.DimensionActualField = value;
+                    this.RaisePropertyChanged("DimensionActual");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateLot {
+            get {
+                return this.PlateLotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateLotField, value) != true)) {
+                    this.PlateLotField = value;
+                    this.RaisePropertyChanged("PlateLot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateType {
+            get {
+                return this.PlateTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateTypeField, value) != true)) {
+                    this.PlateTypeField = value;
+                    this.RaisePropertyChanged("PlateType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Position {
+            get {
+                return this.PositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PositionField, value) != true)) {
+                    this.PositionField = value;
+                    this.RaisePropertyChanged("Position");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Resistance {
+            get {
+                return this.ResistanceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ResistanceField, value) != true)) {
+                    this.ResistanceField = value;
+                    this.RaisePropertyChanged("Resistance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WeightField, value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double WeldingRate {
+            get {
+                return this.WeldingRateField;
+            }
+            set {
+                if ((this.WeldingRateField.Equals(value) != true)) {
+                    this.WeldingRateField = value;
+                    this.RaisePropertyChanged("WeldingRate");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="OutputService.IOutputService")]
     public interface IOutputService {
@@ -1298,10 +1583,10 @@ namespace PMSClient.OutputService {
         System.Threading.Tasks.Task<int> GetAll230DataCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetAll230DataByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetAll230DataByYearMonthResponse")]
-        PMSClient.OutputService.PMS230DataModel[] GetAll230DataByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        PMSClient.OutputService.DcOutputSpecialFor230Model[] GetAll230DataByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetAll230DataByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetAll230DataByYearMonthResponse")]
-        System.Threading.Tasks.Task<PMSClient.OutputService.PMS230DataModel[]> GetAll230DataByYearMonthAsync(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        System.Threading.Tasks.Task<PMSClient.OutputService.DcOutputSpecialFor230Model[]> GetAll230DataByYearMonthAsync(int s, int t, int year_start, int month_start, int year_end, int month_end);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetAll230DataByYearMonthCount", ReplyAction="http://tempuri.org/IOutputService/GetAll230DataByYearMonthCountResponse")]
         int GetAll230DataByYearMonthCount(int year_start, int month_start, int year_end, int month_end);
@@ -1353,11 +1638,11 @@ namespace PMSClient.OutputService {
             return base.Channel.GetAll230DataCountAsync();
         }
         
-        public PMSClient.OutputService.PMS230DataModel[] GetAll230DataByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end) {
+        public PMSClient.OutputService.DcOutputSpecialFor230Model[] GetAll230DataByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end) {
             return base.Channel.GetAll230DataByYearMonth(s, t, year_start, month_start, year_end, month_end);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.OutputService.PMS230DataModel[]> GetAll230DataByYearMonthAsync(int s, int t, int year_start, int month_start, int year_end, int month_end) {
+        public System.Threading.Tasks.Task<PMSClient.OutputService.DcOutputSpecialFor230Model[]> GetAll230DataByYearMonthAsync(int s, int t, int year_start, int month_start, int year_end, int month_end) {
             return base.Channel.GetAll230DataByYearMonthAsync(s, t, year_start, month_start, year_end, month_end);
         }
         

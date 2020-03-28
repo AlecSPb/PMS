@@ -85,7 +85,8 @@ namespace PMSClient.ViewModel
 
             DeepSearch = new RelayCommand<RecordTestExtra>(ActionDeepSearch, CanDeepSearch);
             SaveJson = new RelayCommand<RecordTestExtra>(ActionSaveJson, CanSaveJson);
-            ViewImage = new RelayCommand<RecordTestExtra>(ActionViewImage, CanDeepSearch);
+
+            ViewImage = new RelayCommand<RecordTestExtra>(ActionViewImage, obj => false);
 
         }
 
@@ -274,7 +275,7 @@ namespace PMSClient.ViewModel
             using (var service = new RecordTestServiceClient())
             {
                 StringBuilder sb = new StringBuilder();
-                var result = service.GetRecordTestBySearch(1,30,"","","");
+                var result = service.GetRecordTestBySearch(1, 30, "", "", "");
                 foreach (var item in result)
                 {
                     sb.AppendLine(VMHelper.RecordTestVMHelper.CreateLabel(item));

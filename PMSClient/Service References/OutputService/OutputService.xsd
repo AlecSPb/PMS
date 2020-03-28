@@ -43,7 +43,7 @@
   <xs:element name="GetAll230DataByYearMonthResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetAll230DataByYearMonthResult" nillable="true" type="q2:ArrayOfPMS230DataModel" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetAll230DataByYearMonthResult" nillable="true" type="q2:ArrayOfDcOutputSpecialFor230Model" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

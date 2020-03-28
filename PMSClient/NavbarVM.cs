@@ -133,6 +133,8 @@ namespace PMSClient
                   if (System.IO.File.Exists(updateFile))
                   {
                       var win = new ToolWindow.PlainTextWindow();
+                      win.Height = 400;
+                      win.Width = 600;
                       win.Title = "更新";
                       win.ContentText = System.IO.File.ReadAllText(updateFile);
                       win.ShowDialog();
