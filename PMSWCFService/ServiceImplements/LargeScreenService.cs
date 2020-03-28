@@ -82,8 +82,6 @@ namespace PMSWCFService
             try
             {
                 //XS.Run();
-                //通过大屏幕程序锁定当前没有锁定的计划
-                //LockAllTodaysPlan();
 
                 using (var dc = new PMSDbContext())
                 {
@@ -116,37 +114,6 @@ namespace PMSWCFService
                 XS.Current.Error(ex);
                 throw ex;
             }
-        }
-
-        /// <summary>
-        /// 锁定所有计划
-        /// </summary>
-        private void LockAllTodaysPlan()
-        {
-            if (DateTime.Now > DateTime.Today.AddHours(16).AddMinutes(0))
-            {
-                using (var db = new PMSDbContext())
-                {
-                    var today = DateTime.Today;
-                    var today_unlocked_plans = from p in db.VHPPlans
-                                               where DbFunctions.TruncateTime(p.PlanDate) == today
-                                               && p.State == "已核验"
-                                               && p.IsLocked == false
-                                               select p;
-                    //如果存在没有锁定的计划
-                    if (today_unlocked_plans.Count() > 0)
-                    {
-                        foreach (var p in today_unlocked_plans)
-                        {
-                            p.IsLocked = true;
-                            db.Entry(p).State = EntityState.Modified;
-                        }
-                        db.SaveChanges();
-                        XS.Current.Debug("成功触发LockAllTodaysPlan锁定事件");
-                    }
-                }
-            }
-
         }
 
 
@@ -190,13 +157,18 @@ namespace PMSWCFService
             }
         }
 
+        private Helper.PlanLocker planLocker = new Helper.PlanLocker();
+        /// <summary>
+        /// 获取
+        /// </summary>
+        /// <returns></returns>
         public List<DcStatistic> GetPlanStatistic()
         {
             try
             {
                 //XS.Run();
                 //锁定所有没有锁定的计划
-                LockAllTodaysPlan();
+                planLocker.LockAllTodaysPlan();
 
                 using (var dc = new PMSDbContext())
                 {
