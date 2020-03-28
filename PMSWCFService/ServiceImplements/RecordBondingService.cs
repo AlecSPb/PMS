@@ -419,8 +419,10 @@ namespace PMSWCFService
                 using (var db = new PMSDbContext())
                 {
                     var query = from p in db.RecordBondings
-                                where p.State != PMSCommon.BondingState.作废.ToString()
-                                group p by p.PlateLot.Replace("A", "") into g
+                                where 
+                                p.State != PMSCommon.BondingState.作废.ToString()
+                                && p.State != PMSCommon.BondingState.失败.ToString()
+                                group p by p.PlateLot into g
                                 select new DcPlateUsedStatistic { PlateLot = g.Key, Count = g.Count() };
 
                     return query.Count();
@@ -442,13 +444,15 @@ namespace PMSWCFService
         {
             try
             {
-                string new_plateid = plateid.Replace("A", "");
+                string new_plateid = plateid;
                 XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
                     var query = from p in db.RecordBondings
-                                where p.State != PMSCommon.BondingState.作废.ToString()
-                                && p.PlateLot.Replace("A", "") == new_plateid
+                                where 
+                                p.State != PMSCommon.BondingState.作废.ToString()
+                                && p.State != PMSCommon.BondingState.失败.ToString()
+                                && p.PlateLot == new_plateid
                                 select p;
 
                     return query.Count();

@@ -51,7 +51,7 @@ namespace PMSClient.Components.NewFeatureDocShow
                 //每次同样的文件不再查看，确保只查看一次
                 if (Properties.Settings.Default.ShowHelpDocSilenceCode != silenceCode)
                 {
-                    if (PMSDialogService.ShowYesNo("请问", "要查看本次新功能说明文件吗？Yes=查看 No=此次跳过"))
+                    if (PMSDialogService.ShowYesNo("请问", "要查看新功能说明文件吗？\r\nYes=立即查看 No=此次跳过不再显示"))
                     {
                         string filepath = Path.Combine(baseFolder, filename);
                         if (File.Exists(filepath))

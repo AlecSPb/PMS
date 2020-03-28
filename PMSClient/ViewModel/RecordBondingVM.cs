@@ -54,7 +54,7 @@ namespace PMSClient.ViewModel
 
         private void ActionPlate()
         {
-            if (!PMSDialogService.ShowYesNo("请问", "确定要生成所有背板的使用次数记录吗?"))
+            if (!PMSDialogService.ShowYesNo("请问", "确定要生成所有背板的使用次数记录[作废和失败的忽略不计]吗?"))
             {
                 return;
             }
