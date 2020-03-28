@@ -209,20 +209,31 @@
 
                 <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource OrderSampleNeed}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <ComboBox Grid.Row="15" Grid.Column="1" 
-                      Text="{Binding SampleNeed}" 
-                      Style="{StaticResource StyleComboBoxEditable}"
-                      ItemsSource="{Binding DataContext.SampleNeeds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+                <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding SampleNeed}"
+                         Style="{StaticResource StyleTextBoxCommon}" Name="TxtSampleNeed"/>
+                <StackPanel Grid.Row="15" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnSampleNeed" Content="默认内容" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnSampleNeed_Click"/>
+                    <Button Name="BtnNoSample1" Content="无需样品" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnNoSample1_Click"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="客户样品需求 格式注明_类型_重量_份数,不需要则选择【无需样品】"/>
+                </StackPanel>
 
-                <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="客户是否需要样品以及样品的要求可以填写在这里,不需要则选择【无需样品】"/>
 
                 <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource OrderSampleForAnlysis}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding SampleForAnlysis}"
-                         Style="{StaticResource StyleTextBoxCommon}" />
-                <TextBlock Grid.Row="16" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="是否保留自分析样品，不需要写【无需样品】"/>
+                         Style="{StaticResource StyleTextBoxCommon}"  Name="TxtSampleForAnlysis"/>
+                <StackPanel Grid.Row="16" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnSampleForAnlysis" Content="默认内容" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnSampleForAnlysis_Click"/>
+                    <Button Name="BtnNoSample2" Content="无需样品" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnNoSample2_Click"/>
+                    <TextBlock Style="{StaticResource StyleTextBlockTip}"
+                           Text="自分析样品，格式注明_类型_重量_份数. 不需要选【无需样品】"/>
+                </StackPanel>
+
 
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource OrderWithBackingPlate}"
                            Style="{StaticResource StyleTextBlockCommon}" />

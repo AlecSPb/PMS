@@ -199,5 +199,23 @@ namespace PMSClient.View
         {
             PMSMethods.SetTextBox(TxtSecondDimension, TxtDimension.Text);
         }
+
+        private void BtnSampleNeed_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtSampleNeed, "块15gx1份 粉15gx1份");
+        }
+
+        private void BtnNoSample1_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtSampleNeed, "无需样品");
+        }
+        private void BtnNoSample2_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtSampleForAnlysis, "无需样品");
+        }
+        private void BtnSampleForAnlysis_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtSampleForAnlysis, "块15gx1份 粉15gx1份");
+        }
     }
 }
