@@ -16,8 +16,11 @@ namespace PMSClient.DataProcess.QuickReport
         public ProcessReport()
         {
             CurrentReportType = "TEST";
+            CurrentCSCANType = ImageType.Bonding;
         }
         public string CurrentReportType { get; set; }
+        public ImageType CurrentCSCANType { get; set; }
+
 
         public override void Check(Action<double> DoSomething)
         {
@@ -74,31 +77,24 @@ namespace PMSClient.DataProcess.QuickReport
                             switch (CurrentReportType)
                             {
                                 case "COA":
-                                    WordCOANew report1 = new WordCOANew();
+                                    var report1 = new WordCOANew();
                                     report1.SetModel(model);
                                     report1.Output();
                                     break;
                                 case "COA-BL":
-                                    WordCOABridgeLineNew report2 = new WordCOABridgeLineNew();
+                                    var report2 = new WordCOABridgeLineNew();
                                     report2.SetModel(model);
                                     report2.Output();
                                     break;
                                 case "TEST":
-                                    WordRecordTest report3 = new WordRecordTest();
+                                    var report3 = new WordRecordTest();
                                     report3.SetModel(model);
                                     report3.Output();
                                     break;
                                 case "COA200324":
-                                    var fileName = $"PMI_COA_{StringUtil.RemoveSlash(model.Customer)}_{StringUtil.RemoveSlash(model.CompositionAbbr)}" +
-                                        $"_{model.ProductID}.docx".Replace('-', '_');
+                                    var fileName = ReportsHelperNew.COAHelper.GetCOAFileName(model);
                                     var report4 = new ReportCOA();
-                                    var dialog = new ImageTypeSelectionDialog();
-                                    dialog.ShowDialog();
-                                    if (dialog.DialogResult == false)
-                                    {
-                                        return;
-                                    }
-                                    report4.SetParameters(model, dialog.SelectedImageType);
+                                    report4.SetParameters(model, CurrentCSCANType,false);
                                     report4.Intialize(fileName);
                                     report4.Output();
                                     break;

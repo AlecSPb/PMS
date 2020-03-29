@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PMSClient.MainService;
+using PMSClient.ReportsHelper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,7 +36,12 @@ namespace PMSClient.ReportsHelperNew
             return lines;
         }
 
-       
+        public static string GetCOAFileName(DcRecordTest model)
+        {
+            var fileName = $"PMI_COA_{StringUtil.RemoveSlash(model.Customer)}_{StringUtil.RemoveSlash(model.CompositionAbbr)}"
+                + $"_{model.ProductID}.docx".Replace('-', '_');
+            return fileName;
+        }
 
     }
 }

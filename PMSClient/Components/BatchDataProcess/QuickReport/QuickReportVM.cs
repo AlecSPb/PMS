@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using PMSClient.Components.FTPDownloader;
 using PMSClient.DataProcess.ScanInput;
 
 namespace PMSClient.DataProcess.QuickReport
@@ -27,8 +28,12 @@ namespace PMSClient.DataProcess.QuickReport
             ReportTypes.Add("COA200324-BL");
             CurrentReportType = ReportTypes[0];
 
-            Process = new RelayCommand(ActionProcess,CanCheck);
-            Check = new RelayCommand(ActionCheck,CanCheck);
+            CSCANTypes = new List<string>();
+            PMSMethods.SetListDS<ImageType>(CSCANTypes);
+            CurrentCSCANType = CSCANTypes[0];
+
+            Process = new RelayCommand(ActionProcess, CanCheck);
+            Check = new RelayCommand(ActionCheck, CanCheck);
             Lots = new ObservableCollection<LotModel>();
 
         }
@@ -73,6 +78,7 @@ namespace PMSClient.DataProcess.QuickReport
                 canClick = false;
                 process.Intialize(InputText);
                 process.CurrentReportType = CurrentReportType;
+                process.CurrentCSCANType = (ImageType)Enum.Parse(typeof(ImageType), CurrentCSCANType);
 
                 process.Process(i =>
                 {
@@ -106,7 +112,7 @@ namespace PMSClient.DataProcess.QuickReport
         }
 
         public List<string> ReportTypes { get; set; }
-
+        public List<string> CSCANTypes { get; set; }
 
         public ObservableCollection<LotModel> Lots { get; set; }
 
@@ -122,6 +128,19 @@ namespace PMSClient.DataProcess.QuickReport
             {
                 currentReportType = value;
                 RaisePropertyChanged(nameof(CurrentReportType));
+            }
+        }
+        private string currentCSCANType;
+        public string CurrentCSCANType
+        {
+            get
+            {
+                return currentCSCANType;
+            }
+            set
+            {
+                currentCSCANType = value;
+                RaisePropertyChanged(nameof(CurrentCSCANType));
             }
         }
         private string inputText;

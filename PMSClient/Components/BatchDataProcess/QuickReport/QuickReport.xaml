@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Topmost="False"
         WindowStartupLocation="CenterScreen"
-        Title="快速报告工具" Height="700" Width="500">
+        Title="快速报告工具" Height="700" Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -44,7 +44,11 @@
             <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="报告类型"/>
             <ComboBox Style="{StaticResource StyleComboBoxCommon}" ItemsSource="{Binding ReportTypes}"
                       SelectedItem="{Binding CurrentReportType}"
-                      Width="150"/>
+                      Width="100"/>
+            <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="超声图片类型"/>
+            <ComboBox Style="{StaticResource StyleComboBoxCommon}" ItemsSource="{Binding CSCANTypes}"
+                      SelectedItem="{Binding CurrentCSCANType}"
+                      Width="100"/>
             <Button Content="模拟生成" Style="{StaticResource StyleButtonCommon}" Command="{Binding Check}"/>
             <Button Content="实际生成" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Process}"/>
         </StackPanel>

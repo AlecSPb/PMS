@@ -22,13 +22,16 @@ namespace PMSClient.ReportsHelperNew
         {
             model = null;
             imageType = ImageType.Target;
+            IsOpenAfterCreated = true;
         }
-        public void SetParameters(DcRecordTest model, ImageType imageType)
+        public void SetParameters(DcRecordTest model, ImageType imageType,bool isopen=true)
         {
             this.model = model;
             this.imageType = imageType;
+            IsOpenAfterCreated = isopen;
         }
         private ImageType imageType;
+        private bool IsOpenAfterCreated;
 
         public override void Output()
         {
@@ -157,7 +160,10 @@ namespace PMSClient.ReportsHelperNew
             }
             File.Copy(temp, wordFileName, true);
             //PMSDialogService.Show("生成成功，即将打开");
-            System.Diagnostics.Process.Start(wordFileName);
+            if (IsOpenAfterCreated)
+            {
+                System.Diagnostics.Process.Start(wordFileName);
+            }
 
         }
 
