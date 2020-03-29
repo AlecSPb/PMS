@@ -6,12 +6,24 @@ using System.Threading.Tasks;
 using PMSClient.ReportsHelperNew;
 using PMSClient.Express;
 using System.IO;
+using PMSClient.Components.FTPDownloader;
 
 namespace ConsoleTest
 {
 
     public class Test
     {
+        public void TestFTPImage()
+        {
+            var service = new ImageService();
+            ImageFoundResult result = service.FindBondingImage("200321-AA-2");
+            Console.WriteLine(result.IsFound);
+            Console.WriteLine(result.ImagePath);
+            Console.WriteLine(result.InfoMessage);
+        }
+
+
+
         public void TestCompositionHelper_Desend()
         {
             string composition = "Cu23.72In19.76Ga8.32Se48.20";

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PMSClient.Components.FTPDownloader;
 using PMSClient.DataProcess.ScanInput;
 using PMSClient.MainService;
 using PMSClient.ReportsHelper;
@@ -90,7 +91,14 @@ namespace PMSClient.DataProcess.QuickReport
                                 case "COA200324":
                                     var fileName = $"PMI_COA_{StringUtil.RemoveSlash(model.Customer)}_{StringUtil.RemoveSlash(model.CompositionAbbr)}" +
                                         $"_{model.ProductID}.docx".Replace('-', '_');
-                                    var report4 = new ReportCOA(model);
+                                    var report4 = new ReportCOA();
+                                    var dialog = new ImageTypeSelectionDialog();
+                                    dialog.ShowDialog();
+                                    if (dialog.DialogResult == false)
+                                    {
+                                        return;
+                                    }
+                                    report4.SetParameters(model, dialog.SelectedImageType);
                                     report4.Intialize(fileName);
                                     report4.Output();
                                     break;

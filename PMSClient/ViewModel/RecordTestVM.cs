@@ -86,14 +86,17 @@ namespace PMSClient.ViewModel
             DeepSearch = new RelayCommand<RecordTestExtra>(ActionDeepSearch, CanDeepSearch);
             SaveJson = new RelayCommand<RecordTestExtra>(ActionSaveJson, CanSaveJson);
 
-            ViewImage = new RelayCommand<RecordTestExtra>(ActionViewImage, obj => false);
+            ViewImage = new RelayCommand<RecordTestExtra>(ActionViewImage, obj => true);
 
         }
 
         private void ActionViewImage(RecordTestExtra obj)
         {
-            var ftp = new Components.FTPDownloader.FTPService();
-            ftp.ShowFTPImage(obj.RecordTest.ProductID);
+            if (obj != null)
+            {
+                var dialog = new Components.FTPDownloader.ImageManager();
+                dialog.ViewImageInWindow(obj.RecordTest.ProductID);
+            }
         }
 
         private void ActionSaveJson(RecordTestExtra obj)

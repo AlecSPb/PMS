@@ -9,6 +9,7 @@ using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using PMSClient.ReportsHelper;
 using System.IO;
+using PMSClient.Components.FTPDownloader;
 
 namespace PMSClient.ViewModel
 {
@@ -82,7 +83,16 @@ namespace PMSClient.ViewModel
             {
                 var fileName = $"PMI_COA_{StringUtil.RemoveSlash(CurrentRecordTest.Customer)}_{StringUtil.RemoveSlash(CurrentRecordTest.CompositionAbbr)}_{CurrentRecordTest.ProductID}.docx".Replace('-', '_');
 
-                var word = new ReportsHelperNew.ReportCOA(CurrentRecordTest);
+                var dialog = new ImageTypeSelectionDialog();
+                dialog.ShowDialog();
+                if (dialog.DialogResult == false)
+                {
+                    return;
+                }
+
+
+                var word = new ReportsHelperNew.ReportCOA();
+                word.SetParameters(CurrentRecordTest, dialog.SelectedImageType);
                 word.Intialize(fileName);
                 word.Output();
             }

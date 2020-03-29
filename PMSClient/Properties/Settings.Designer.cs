@@ -157,25 +157,49 @@ namespace PMSClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Targets")]
-        public string FtpImageTarget {
+        [global::System.Configuration.DefaultSettingValueAttribute("photoadmin")]
+        public string FtpImageServerUID {
             get {
-                return ((string)(this["FtpImageTarget"]));
+                return ((string)(this["FtpImageServerUID"]));
             }
             set {
-                this["FtpImageTarget"] = value;
+                this["FtpImageServerUID"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Bondings")]
-        public string FtpImageBonding {
+        [global::System.Configuration.DefaultSettingValueAttribute("cdpmiadmin")]
+        public string FtpImageServerPwd {
             get {
-                return ((string)(this["FtpImageBonding"]));
+                return ((string)(this["FtpImageServerPwd"]));
             }
             set {
-                this["FtpImageBonding"] = value;
+                this["FtpImageServerPwd"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("192.168.16.254")]
+        public string FtpImageServerIp {
+            get {
+                return ((string)(this["FtpImageServerIp"]));
+            }
+            set {
+                this["FtpImageServerIp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("PMI_IMAGE_CACHE")]
+        public string FtpImageCache {
+            get {
+                return ((string)(this["FtpImageCache"]));
+            }
+            set {
+                this["FtpImageCache"] = value;
             }
         }
     }

@@ -8,6 +8,7 @@ using PMSClient.MainService;
 using Novacode;
 using System.Drawing;
 using System.Text.RegularExpressions;
+using PMSClient.Components.FTPDownloader;
 
 namespace PMSClient.ReportsHelperNew
 {
@@ -16,11 +17,18 @@ namespace PMSClient.ReportsHelperNew
     /// </summary>
     public class ReportCOA : ReportBase
     {
-        public DcRecordTest Model { get; set; }
-        public ReportCOA(DcRecordTest model)
+        public DcRecordTest model;
+        public ReportCOA()
         {
-            Model = model;
+            model = null;
+            imageType = ImageType.Target;
         }
+        public void SetParameters(DcRecordTest model, ImageType imageType)
+        {
+            this.model = model;
+            this.imageType = imageType;
+        }
+        private ImageType imageType;
 
         public override void Output()
         {
@@ -36,17 +44,17 @@ namespace PMSClient.ReportsHelperNew
                 doc.ReplaceText("[PrintTime]", printTime ?? "");
                 Table table = doc.Tables[0];
                 #region 基本字段
-                doc.ReplaceText("[Customer]", Model.Customer ?? "");
-                string productid = (Model.CompositionAbbr ?? "") + "-" + (Model.ProductID ?? "");
+                doc.ReplaceText("[Customer]", model.Customer ?? "");
+                string productid = (model.CompositionAbbr ?? "") + "-" + (model.ProductID ?? "");
                 doc.ReplaceText("[ProductID]", productid ?? "");
 
-                doc.ReplaceText("[LotNumber]", Model.ProductID);
-                doc.ReplaceText("[PO]", Model.PO ?? "");
+                doc.ReplaceText("[LotNumber]", model.ProductID);
+                doc.ReplaceText("[PO]", model.PO ?? "");
 
                 string purity = "99.995%默认";
                 using (var orderService = new OrderServiceClient())
                 {
-                    var order = orderService.GetOrderByPMINumber(Model.PMINumber);
+                    var order = orderService.GetOrderByPMINumber(model.PMINumber);
                     if (order != null)
                     {
                         purity = order.Purity;
@@ -55,20 +63,20 @@ namespace PMSClient.ReportsHelperNew
                 doc.ReplaceText("[Purity]", purity);
 
                 doc.ReplaceText("[COADate]", DateTime.Now.ToString("MM/dd/yyyy"));
-                doc.ReplaceText("[Composition]", Model.Composition ?? "");
-                doc.ReplaceText("[Dimension]", COAHelper.StandardizeDimension(Model.Dimension) ?? "");
-                doc.ReplaceText("[Weight]", Model.Weight ?? "");
-                doc.ReplaceText("[Density]", Model.Density ?? "");
-                doc.ReplaceText("[Resistance]", Model.Resistance ?? "");
-                doc.ReplaceText("[DimensionActual]", COAHelper.StandardizeDimension(Model.DimensionActual) ?? "");
+                doc.ReplaceText("[Composition]", model.Composition ?? "");
+                doc.ReplaceText("[Dimension]", COAHelper.StandardizeDimension(model.Dimension) ?? "");
+                doc.ReplaceText("[Weight]", model.Weight ?? "");
+                doc.ReplaceText("[Density]", model.Density ?? "");
+                doc.ReplaceText("[Resistance]", model.Resistance ?? "");
+                doc.ReplaceText("[DimensionActual]", COAHelper.StandardizeDimension(model.DimensionActual) ?? "");
 
-                doc.ReplaceText("[OrderDate]", COAHelper.GetCreateDateFromPMINumber(Model.PMINumber));
+                doc.ReplaceText("[OrderDate]", COAHelper.GetCreateDateFromPMINumber(model.PMINumber));
                 doc.ReplaceText("[CreateDate]", DateTime.Now.ToString("MM/dd/yyyy"));
 
                 //粗糙度值
-                if (Model.ProductID.Contains("#"))
+                if (model.ProductID.Contains("#"))
                 {
-                    doc.ReplaceText("[Roughness]", Model.Roughness);
+                    doc.ReplaceText("[Roughness]", model.Roughness);
                 }
                 else
                 {
@@ -77,11 +85,11 @@ namespace PMSClient.ReportsHelperNew
 
 
                 //如果是是230mm的靶材，查找背板编号填入
-                if (Model.Dimension.Contains("230"))
+                if (model.Dimension.Contains("230"))
                 {
                     using (var service = new RecordBondingServiceClient())
                     {
-                        var record = service.GetRecordBondingByProductID(Model.ProductID.Trim()).FirstOrDefault();
+                        var record = service.GetRecordBondingByProductID(model.ProductID.Trim()).FirstOrDefault();
                         if (record != null)
                         {
                             string plateid = record.PlateLot;
@@ -106,11 +114,11 @@ namespace PMSClient.ReportsHelperNew
                     Paragraph p = mainTable.Rows[17].Cells[0].Paragraphs[0];
 
                     //填充标称的成分
-                    if (!string.IsNullOrEmpty(Model.Composition))
+                    if (!string.IsNullOrEmpty(model.Composition))
                     {
                         Row specRow = mainTable.Rows[14];
                         int cell_index = 0;
-                        foreach (var item in GetCompositionNameAndValues(Model.Composition))
+                        foreach (var item in GetCompositionNameAndValues(model.Composition))
                         {
                             specRow.Cells[cell_index].Paragraphs[0].Append($"{item.Name}={item.Value}Atm%")
                                 .Font(new System.Drawing.FontFamily("等线"))
@@ -121,8 +129,26 @@ namespace PMSClient.ReportsHelperNew
                     }
 
                     //填充成分
-                    InsertCompositionXRFTable(doc, p, Model.CompositionXRF, "No Composition Test Results");
+                    InsertCompositionXRFTable(doc, p, model.CompositionXRF, "No Composition Test Results");
 
+
+                    //填充图像
+                    var manager = new Components.FTPDownloader.ImageManager();
+                    var result = manager.GetImage(model.ProductID, imageType);
+                    Paragraph image_p = mainTable.Rows[17].Cells[1].Paragraphs[0];
+                    if (result.IsFound)
+                    {
+                        Novacode.Image img = doc.AddImage(result.ImagePath);
+                        var pic = img.CreatePicture();
+                        int fix_size = 130;
+                        pic.Width = fix_size;
+                        pic.Height = fix_size;
+                        image_p.AppendPicture(pic);
+                    }
+                    else
+                    {
+                        image_p.AppendLine("NO IMAGE FOUND");
+                    }
                 }
                 #endregion
 

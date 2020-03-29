@@ -35,11 +35,17 @@
     <Setting Name="ShowHelpDocSilenceCode" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="FtpImageTarget" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Targets</Value>
+    <Setting Name="FtpImageServerUID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">photoadmin</Value>
     </Setting>
-    <Setting Name="FtpImageBonding" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Bondings</Value>
+    <Setting Name="FtpImageServerPwd" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cdpmiadmin</Value>
+    </Setting>
+    <Setting Name="FtpImageServerIp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192.168.16.254</Value>
+    </Setting>
+    <Setting Name="FtpImageCache" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PMI_IMAGE_CACHE</Value>
     </Setting>
   </Settings>
 </SettingsFile>
