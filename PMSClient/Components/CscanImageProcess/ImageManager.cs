@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace PMSClient.Components.FTPDownloader
+namespace PMSClient.Components.CscanImageProcess
 {
     public class ImageManager
     {

@@ -9,7 +9,7 @@ using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using PMSClient.ReportsHelper;
 using System.IO;
-using PMSClient.Components.FTPDownloader;
+using PMSClient.Components.CscanImageProcess;
 
 namespace PMSClient.ViewModel
 {

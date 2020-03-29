@@ -94,7 +94,7 @@ namespace PMSClient.ViewModel
         {
             if (obj != null)
             {
-                var dialog = new Components.FTPDownloader.ImageManager();
+                var dialog = new Components.CscanImageProcess.ImageManager();
                 dialog.ViewImageInWindow(obj.RecordTest.ProductID);
             }
         }

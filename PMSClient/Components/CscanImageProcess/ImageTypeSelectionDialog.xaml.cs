@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace PMSClient.Components.FTPDownloader
+namespace PMSClient.Components.CscanImageProcess
 {
     /// <summary>
     /// ImageTypeSelectionDialog.xaml 的交互逻辑

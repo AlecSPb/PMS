@@ -218,17 +218,17 @@
     <Compile Include="Components\ExcelOutputHelper\ExcelPlateStatistic.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelSample.cs" />
     <Compile Include="Components\Express\ExpressConfigService.cs" />
-    <Compile Include="Components\FTPDownloader\FTPImageShow.xaml.cs">
+    <Compile Include="Components\CscanImageProcess\FTPImageShow.xaml.cs">
       <DependentUpon>FTPImageShow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Components\FTPDownloader\ImageService.cs" />
-    <Compile Include="Components\FTPDownloader\ImageCacheShow.xaml.cs">
+    <Compile Include="Components\CscanImageProcess\ImageService.cs" />
+    <Compile Include="Components\CscanImageProcess\ImageCacheShow.xaml.cs">
       <DependentUpon>ImageCacheShow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Components\FTPDownloader\ImageFoundResult.cs" />
-    <Compile Include="Components\FTPDownloader\ImageManager.cs" />
-    <Compile Include="Components\FTPDownloader\ImageType.cs" />
-    <Compile Include="Components\FTPDownloader\ImageTypeSelectionDialog.xaml.cs">
+    <Compile Include="Components\CscanImageProcess\ImageFoundResult.cs" />
+    <Compile Include="Components\CscanImageProcess\ImageManager.cs" />
+    <Compile Include="Components\CscanImageProcess\ImageType.cs" />
+    <Compile Include="Components\CscanImageProcess\ImageTypeSelectionDialog.xaml.cs">
       <DependentUpon>ImageTypeSelectionDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\GDMSHelper\GDMSAnlysis.cs" />
@@ -1109,15 +1109,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Components\FTPDownloader\FTPImageShow.xaml">
+    <Page Include="Components\CscanImageProcess\FTPImageShow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Components\FTPDownloader\ImageCacheShow.xaml">
+    <Page Include="Components\CscanImageProcess\ImageCacheShow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Components\FTPDownloader\ImageTypeSelectionDialog.xaml">
+    <Page Include="Components\CscanImageProcess\ImageTypeSelectionDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1852,7 +1852,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Resource Include="Components\FTPDownloader\缓存思路.txt" />
+    <Resource Include="Components\CscanImageProcess\缓存思路.txt" />
     <Content Include="densitychecklist.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

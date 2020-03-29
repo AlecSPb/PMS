@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSClient.Components.FTPDownloader;
+using PMSClient.Components.CscanImageProcess;
 using PMSClient.DataProcess.ScanInput;
 
 namespace PMSClient.DataProcess.QuickReport

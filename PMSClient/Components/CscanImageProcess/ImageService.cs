@@ -10,7 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Drawing;
 
-namespace PMSClient.Components.FTPDownloader
+namespace PMSClient.Components.CscanImageProcess
 {
     /// <summary>
     /// 主要用于从FTP服务器获取文件目的
