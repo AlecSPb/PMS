@@ -13,18 +13,18 @@ using PMSClient.Components.CscanImageProcess;
 namespace PMSClient.ReportsHelperNew
 {
     /// <summary>
-    /// 配合COA200324使用
+    /// 配合COABridgeLine200324使用
     /// </summary>
-    public class ReportCOA : ReportBase
+    public class ReportCOABridgeLine : ReportBase
     {
         public DcRecordTest model;
-        public ReportCOA()
+        public ReportCOABridgeLine()
         {
             model = null;
             imageType = ImageType.Target;
             IsOpenAfterCreated = true;
         }
-        public void SetParameters(DcRecordTest model, ImageType imageType,bool isopen=true)
+        public void SetParameters(DcRecordTest model, ImageType imageType, bool isopen = true)
         {
             this.model = model;
             this.imageType = imageType;
@@ -37,8 +37,8 @@ namespace PMSClient.ReportsHelperNew
         {
             //ResetParameters();
 
-            string source = Path.Combine(reportsFolder, "COA200324.docx");
-            string temp = Path.Combine(reportsFolder, "Temp", "COA200324.docx");
+            string source = Path.Combine(reportsFolder, "COABridgeLine200324.docx");
+            string temp = Path.Combine(reportsFolder, "Temp", "COABridgeLine200324.docx");
             File.Copy(source, temp, true);
 
             using (var doc = DocX.Load(temp))
@@ -76,6 +76,11 @@ namespace PMSClient.ReportsHelperNew
                 doc.ReplaceText("[OrderDate]", COAHelper.GetCreateDateFromPMINumber(model.PMINumber));
                 doc.ReplaceText("[CreateDate]", DateTime.Now.ToString("MM/dd/yyyy"));
 
+                //写入CSCAN Flaw Data
+                string flawarea = model.CScan == null ? "None" : model.CScan;
+
+                doc.ReplaceText("[FlawArea]", flawarea);
+
                 //粗糙度值
                 if (model.ProductID.Contains("#"))
                 {
@@ -86,31 +91,7 @@ namespace PMSClient.ReportsHelperNew
                     doc.ReplaceText("[Roughness]", "-");
                 }
 
-
-                //如果是是230mm的靶材，查找背板编号填入
-                if (model.Dimension.Contains("230"))
-                {
-                    using (var service = new RecordBondingServiceClient())
-                    {
-                        var record = service.GetRecordBondingByProductID(model.ProductID.Trim()).FirstOrDefault();
-                        if (record != null)
-                        {
-                            string plateid = record.PlateLot;
-                            doc.ReplaceText("[PlateID]", plateid);
-                        }
-                        else
-                        {
-                            doc.ReplaceText("[PlateID]", "No Bonding");
-                        }
-                    }
-                }
-                else
-                {
-                    doc.ReplaceText("[PlateID]", "None");
-                }
-
-
-                int currentRowIndex = 14;
+                int currentRowIndex = 16;
 
                 #region 填充表格
                 //填充XRF表格
@@ -134,10 +115,17 @@ namespace PMSClient.ReportsHelperNew
                     }
 
                     currentRowIndex += 3;
-
                     Paragraph p = mainTable.Rows[currentRowIndex].Cells[0].Paragraphs[0];
-                    //填充成分
-                    InsertCompositionXRFTable(doc, p, model.CompositionXRF, "No Composition Test Results");
+                    string xrfWithStdDev = model.CompositionXRF;
+                    //如果是bridgeline的数据，计算并追加标准差
+
+                    int lineCount = COAHelper.SplitXRF(model.CompositionXRF).Count();
+                    if (lineCount >= 7)
+                    {
+                        var stddev = new ReportDataProcessHelper();
+                        xrfWithStdDev = stddev.AppendStdDev(model.CompositionXRF);
+                    }
+                    InsertCompositionXRFTable(doc, p, xrfWithStdDev, "No Composition Test Results");
 
 
                     //填充图像
@@ -172,18 +160,12 @@ namespace PMSClient.ReportsHelperNew
 
         }
 
-        /// <summary>
-        /// 填充XRF成分
-        /// </summary>
-        /// <param name="document"></param>
-        /// <param name="p"></param>
-        /// <param name="xrfComposition"></param>
-        /// <param name="noCompositionMessage"></param>
-        private void InsertCompositionXRFTable(DocX document, Paragraph p, string xrfComposition, string noCompositionMessage)
+        private static void InsertCompositionXRFTable(DocX document, Paragraph p, string xrfComposition, string noCompositionMessage)
         {
             if (!string.IsNullOrEmpty(xrfComposition))
             {
                 string[] lines = xrfComposition.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                //根据csv数据确定xrf表格
                 int rowCount = lines.Count();
                 int columnCount = lines[0].Split(',').Count();
 
@@ -198,19 +180,48 @@ namespace PMSClient.ReportsHelperNew
                     xrfTable.Alignment = Alignment.center;
                     xrfTable.AutoFit = AutoFit.Contents;
 
+
+
                     for (int i = 0; i < lines.Count(); i++)
                     {
                         string[] items = lines[i].Split(',');
                         for (int j = 0; j < items.Count(); j++)
                         {
                             Cell cell = xrfTable.Rows[i].Cells[j];
-                            cell.Width = 60;
-                            cell.Paragraphs[0].Append(items[j])
-                                .FontSize(8)
-                                .Font(new System.Drawing.FontFamily("等线"));
+                            cell.Width = 80;
+                            cell.Paragraphs[0].Append(items[j]).FontSize(9)
+                                .Font(new FontFamily("等线")).Bold();
+                            if (j == 0)
+                            {
+                                continue;
+                            }
                         }
                     }
                     p.InsertTableBeforeSelf(xrfTable);
+
+
+                    ////添加平均成分到表格中
+
+                    //StringBuilder sb1 = new StringBuilder();//收集数字
+                    //StringBuilder sb2 = new StringBuilder();//收集单位
+                    ////获取倒数第二行
+                    //string average_line = lines[lines.Count() - 2];
+
+                    //string[] items2 = average_line.Split(',');
+                    //for (int j = 1; j < items2.Count(); j++)
+                    //{
+                    //    sb1.Append(items2[j] + "\r");
+                    //    sb2.Append("Atm%" + "\r");
+                    //}
+
+
+                    //Table mainTable = document.Tables[0];
+                    //Paragraph average = mainTable.Rows[7].Cells[3].Paragraphs[0];
+                    //Paragraph units = mainTable.Rows[7].Cells[4].Paragraphs[0];
+                    //average.Append(sb1.ToString()).FontSize(9)
+                    //    .Font(new System.Drawing.FontFamily("等线")).Bold();
+                    //units.Append(sb2.ToString()).FontSize(9)
+                    //    .Font(new System.Drawing.FontFamily("等线")).Bold();
                 }
 
             }
@@ -219,6 +230,7 @@ namespace PMSClient.ReportsHelperNew
                 p.InsertText(noCompositionMessage);
             }
         }
+
 
         /// <summary>
         /// 返回成分名称和值

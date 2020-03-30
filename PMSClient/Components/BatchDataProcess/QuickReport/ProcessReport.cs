@@ -92,14 +92,18 @@ namespace PMSClient.DataProcess.QuickReport
                                     report3.Output();
                                     break;
                                 case "COA200324":
-                                    var fileName = ReportsHelperNew.COAHelper.GetCOAFileName(model);
+                                    var fileName4 = ReportsHelperNew.COAHelper.GetCOAFileName(model);
                                     var report4 = new ReportCOA();
                                     report4.SetParameters(model, CurrentCSCANType,false);
-                                    report4.Intialize(fileName);
+                                    report4.Intialize(fileName4);
                                     report4.Output();
                                     break;
                                 case "COA200324-BL":
-
+                                    var fileName5 = ReportsHelperNew.COAHelper.GetCOAFileName(model);
+                                    var report5 = new ReportCOABridgeLine();
+                                    report5.SetParameters(model, CurrentCSCANType, false);
+                                    report5.Intialize(fileName5);
+                                    report5.Output();
                                     break;
                                 default:
                                     break;

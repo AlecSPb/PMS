@@ -70,7 +70,28 @@ namespace PMSClient.ViewModel
 
         private void CreateCoA200324BL()
         {
+            try
+            {
+                var fileName = $"BL_COA_{StringUtil.RemoveSlash(CurrentRecordTest.Customer)}_{StringUtil.RemoveSlash(CurrentRecordTest.CompositionAbbr)}_{CurrentRecordTest.ProductID}.docx".Replace('-', '_');
 
+                var dialog = new ImageTypeSelectionDialog();
+                dialog.ShowDialog();
+                if (dialog.DialogResult == false)
+                {
+                    return;
+                }
+
+
+                var word = new ReportsHelperNew.ReportCOABridgeLine();
+                word.SetParameters(CurrentRecordTest, dialog.SelectedImageType);
+                word.Intialize(fileName);
+                word.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                PMSDialogService.ShowWarning(ex.Message);
+            }
         }
 
         private void CreateCoA200324()

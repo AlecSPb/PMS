@@ -372,6 +372,7 @@
     <Compile Include="ReportsHelperNew\COAHelper.cs" />
     <Compile Include="ReportsHelperNew\Element.cs" />
     <Compile Include="ReportsHelperNew\ReportBase.cs" />
+    <Compile Include="ReportsHelperNew\ReportCOABridgeLine.cs" />
     <Compile Include="ReportsHelperNew\ReportCOA.cs" />
     <Compile Include="ReportsHelperNew\ReportSample.cs" />
     <Compile Include="ReportsHelperNew\ReportBondingTargetDefects.cs" />
@@ -1889,6 +1890,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\DocTemplate\Reports\COA200324.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HelpDocs\新功能使用介绍200402.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\DocTemplate\Reports\COABridgeline200324.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Service References\DrawingService\DrawingService.wsdl" />
