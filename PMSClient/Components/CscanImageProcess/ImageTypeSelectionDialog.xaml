@@ -6,15 +6,22 @@
         xmlns:local="clr-namespace:PMSClient.Components.CscanImageProcess"
         mc:Ignorable="d"
         WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
-        Title="图片类型选择" Height="100" Width="400">
+        Title="图片类型选择" Height="130" Width="400">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource StyleTextBlockCommon}"
+                   Text="*一般230是绑定，其他尺寸是靶材" HorizontalAlignment="Stretch" Background="LightGreen"/>
         <Button Name="BtnBonding" Click="BtnBonding_Click" 
-                Grid.Column="0" Style="{StaticResource StyleButtonNavigation}" Content="Bonding"/>
+                Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleButtonNavigation}" Content="绑定"/>
         <Button Name="BtnTarget" Click="BtnTarget_Click"
-                Grid.Column="1" Style="{StaticResource StyleButtonNavigation}" Content="Target"/>
+                Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleButtonNavigation}" Content="靶材"/>
     </Grid>
 </Window>

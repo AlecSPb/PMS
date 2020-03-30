@@ -137,11 +137,13 @@ namespace PMSClient.ViewModel
 
                 lb.AppendLine("=====  一般标签↑，样品标签↓  =====");
                 lb.AppendLine();
+                lb.AppendLine(model.PMINumber);
                 lb.AppendLine(model.Composition);
                 lb.AppendLine("Weight      g");
                 lb.AppendLine(model.SampleID);
 
                 lb.AppendLine("=====  简成分样品标签↓  =====");
+                lb.AppendLine(model.PMINumber);
                 lb.AppendLine(Helpers.CompositionHelper.RemoveNumbers(model.Composition));
                 lb.AppendLine("Weight      g");
                 lb.AppendLine(model.SampleID);

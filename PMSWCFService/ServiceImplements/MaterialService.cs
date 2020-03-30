@@ -909,13 +909,70 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtra(int skip, int take, string composition, string pminumber, string orderitemnumber, string supplier, string state)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<PMSMaterialOrderItemExtra, DcMaterialOrderItemExtra>();
+                        cfg.CreateMap<MaterialOrder, DcMaterialOrder>();
+                        cfg.CreateMap<MaterialOrderItem, DcMaterialOrderItem>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var query = from m in dc.MaterialOrderItems
+                                join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
+                                where m.State.Contains(state)
+                                && m.State!=PMSCommon.MaterialOrderItemState.作废.ToString()
+                                && mm.State != PMSCommon.MaterialOrderState.作废.ToString()
+                                && m.Composition.Contains(composition)
+                                && m.PMINumber.Contains(pminumber)
+                                && m.OrderItemNumber.Contains(orderitemnumber)
+                                && mm.Supplier.Contains(supplier)
+                                orderby m.CreateTime descending
+                                select new PMSMaterialOrderItemExtra
+                                {
+                                    MaterialOrder = mm,
+                                    MaterialOrderItem = m
+                                };
+                    return mapper.Map<List<PMSMaterialOrderItemExtra>, List<DcMaterialOrderItemExtra>>(query.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
 
-
-
-
-
-
-
-
+        public int GetMaterialOrderItemExtraCount(string composition, string pminumber, string orderitemnumber, string supplier, string state)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from m in dc.MaterialOrderItems
+                                join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
+                                where m.State.Contains(state)
+                                && m.State!=PMSCommon.MaterialOrderItemState.作废.ToString()
+                                && mm.State != PMSCommon.MaterialOrderState.作废.ToString()
+                                && m.Composition.Contains(composition)
+                                && m.PMINumber.Contains(pminumber)
+                                && m.OrderItemNumber.Contains(orderitemnumber)
+                                && mm.Supplier.Contains(supplier)
+                                select m;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

@@ -30,7 +30,8 @@ namespace PMSClient.Components.CscanImageProcess
                 bmp.UriSource = new Uri(result.ImagePath);
                 bmp.EndInit();
                 win.MainImage.Source = bmp;
-                win.MainInfo.Text = $"{result.InfoMessage}-本地地址{result.ImagePath}";
+                win.MainInfo.Content = $"{result.InfoMessage}-本地地址{result.ImagePath}";
+                win.CurrentFile = result.ImagePath;
                 win.ShowDialog();
             }
             else

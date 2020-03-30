@@ -94,7 +94,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Name="CboSampleTypes" Grid.Row="3" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.SampleTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                           SelectedItem="{Binding SampleType}"
+                           SelectedItem="{Binding SampleType,UpdateSourceTrigger=PropertyChanged}"
                           Style="{StaticResource StyleComboBoxEditable}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
@@ -173,7 +173,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Name="CboSampleFors" Grid.Row="14" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.SampleFors,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                           SelectedItem="{Binding SampleFor}"
+                           SelectedItem="{Binding SampleFor,UpdateSourceTrigger=PropertyChanged}"
                           Style="{StaticResource StyleComboBoxEditable}"/>
                 <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="有就选，没有就输入"/>

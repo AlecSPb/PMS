@@ -36,6 +36,7 @@ namespace PMSClient.ViewModel
             SearchSupplier = "";
             SearchComposition = "";
             SearchOrderItemNumber = "";
+            SearchItemState = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -55,8 +56,17 @@ namespace PMSClient.ViewModel
             searchSupplier = "";
             searchComposition = "";
             searchOrderItemNumber = "";
+            searchItemState = "";
+            SearchItemStates = new List<string>();
+            PMSMethods.SetListDS<PMSCommon.MaterialOrderItemState>(SearchItemStates);
+            SearchItemStates.Remove(PMSCommon.MaterialOrderItemState.作废.ToString());
+            SearchItemStates.Add("");
+
             MaterialOrderItemExtras = new ObservableCollection<DcMaterialOrderItemExtra>();
         }
+
+        public List<string> SearchItemStates { get; set; }
+
         private void InitializeCommands()
         {
             PageChanged = new RelayCommand(ActionPaging);
@@ -141,8 +151,7 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchPMINumber) && string.IsNullOrEmpty(SearchSupplier)
-                && string.IsNullOrEmpty(SearchComposition) && string.IsNullOrEmpty(SearchOrderItemNumber));
+            return true;
         }
 
         private void ActionAll()
@@ -164,8 +173,8 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 30;
             var service = new MaterialOrderServiceClient();
-            RecordCount = service.GetMaterialOrderItemExtrasCount(SearchComposition, SearchPMINumber,
-                SearchOrderItemNumber, SearchSupplier);
+            RecordCount = service.GetMaterialOrderItemExtraCount(SearchComposition, SearchPMINumber,
+                SearchOrderItemNumber, SearchSupplier, SearchItemState);
             service.Close();
             ActionPaging();
         }
@@ -179,8 +188,8 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new MaterialOrderServiceClient();
-            var orders = service.GetMaterialOrderItemExtras(skip, take, SearchComposition, SearchPMINumber,
-                SearchOrderItemNumber, SearchSupplier);
+            var orders = service.GetMaterialOrderItemExtra(skip, take, SearchComposition, SearchPMINumber,
+                SearchOrderItemNumber, SearchSupplier, SearchItemState);
             service.Close();
             MaterialOrderItemExtras.Clear();
             orders.ToList().ForEach(o => MaterialOrderItemExtras.Add(o));
@@ -191,6 +200,17 @@ namespace PMSClient.ViewModel
 
 
         #region Proeperties
+        private string searchItemState;
+
+        public string SearchItemState
+        {
+            get { return searchItemState; }
+            set
+            {
+                searchItemState = value;
+                RaisePropertyChanged(nameof(SearchItemState));
+            }
+        }
         private string searchOrderItemNumber;
 
         public string SearchOrderItemNumber

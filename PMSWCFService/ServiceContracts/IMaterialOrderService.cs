@@ -87,5 +87,11 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         bool CheckMaterialOrderUnChecked();
+
+
+        [OperationContract]
+        List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtra(int skip, int take, string composition, string pminumber, string orderitemnumber, string supplier,string state);
+        [OperationContract]
+        int GetMaterialOrderItemExtraCount(string composition, string pminumber, string orderitemnumber, string supplier,string state);
     }
 }

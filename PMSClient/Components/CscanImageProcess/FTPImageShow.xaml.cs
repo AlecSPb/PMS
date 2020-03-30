@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace PMSClient.Components.CscanImageProcess
 {
@@ -22,6 +23,19 @@ namespace PMSClient.Components.CscanImageProcess
         public FTPImageShow()
         {
             InitializeComponent();
+        }
+
+        public string CurrentFile { get; set; }
+        private void MainInfo_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(System.IO.Path.GetDirectoryName(CurrentFile));
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

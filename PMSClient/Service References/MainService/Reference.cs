@@ -8884,6 +8884,18 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/CheckMaterialOrderUnChecked", ReplyAction="http://tempuri.org/IMaterialOrderService/CheckMaterialOrderUnCheckedResponse")]
         System.Threading.Tasks.Task<bool> CheckMaterialOrderUnCheckedAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtra", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraResponse")]
+        PMSClient.MainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtra(int skip, int take, string composition, string pminumber, string orderitemnumber, string supplier, string state);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtra", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtraAsync(int skip, int take, string composition, string pminumber, string orderitemnumber, string supplier, string state);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraCountResponse")]
+        int GetMaterialOrderItemExtraCount(string composition, string pminumber, string orderitemnumber, string supplier, string state);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraCountResponse")]
+        System.Threading.Tasks.Task<int> GetMaterialOrderItemExtraCountAsync(string composition, string pminumber, string orderitemnumber, string supplier, string state);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -9135,6 +9147,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<bool> CheckMaterialOrderUnCheckedAsync() {
             return base.Channel.CheckMaterialOrderUnCheckedAsync();
+        }
+        
+        public PMSClient.MainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtra(int skip, int take, string composition, string pminumber, string orderitemnumber, string supplier, string state) {
+            return base.Channel.GetMaterialOrderItemExtra(skip, take, composition, pminumber, orderitemnumber, supplier, state);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtraAsync(int skip, int take, string composition, string pminumber, string orderitemnumber, string supplier, string state) {
+            return base.Channel.GetMaterialOrderItemExtraAsync(skip, take, composition, pminumber, orderitemnumber, supplier, state);
+        }
+        
+        public int GetMaterialOrderItemExtraCount(string composition, string pminumber, string orderitemnumber, string supplier, string state) {
+            return base.Channel.GetMaterialOrderItemExtraCount(composition, pminumber, orderitemnumber, supplier, state);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialOrderItemExtraCountAsync(string composition, string pminumber, string orderitemnumber, string supplier, string state) {
+            return base.Channel.GetMaterialOrderItemExtraCountAsync(composition, pminumber, orderitemnumber, supplier, state);
         }
     }
     
