@@ -36,9 +36,9 @@ namespace PMSClient.ReportsHelperNew
             return lines;
         }
 
-        public static string GetCOAFileName(DcRecordTest model)
+        public static string GetCOAFileName(DcRecordTest model,string prefix="PMI")
         {
-            var fileName = $"PMI_COA_{StringUtil.RemoveSlash(model.Customer)}_{StringUtil.RemoveSlash(model.CompositionAbbr)}"
+            var fileName = $"{prefix}_COA_{StringUtil.RemoveSlash(model.Customer)}_{StringUtil.RemoveSlash(model.CompositionAbbr)}"
                 + $"_{model.ProductID}.docx".Replace('-', '_');
             return fileName;
         }

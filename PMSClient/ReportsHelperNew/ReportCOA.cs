@@ -148,7 +148,7 @@ namespace PMSClient.ReportsHelperNew
                     {
                         Novacode.Image img = doc.AddImage(result.ImagePath);
                         var pic = img.CreatePicture();
-                        int fix_size = 130;
+                        int fix_size = 140;
                         pic.Width = fix_size;
                         pic.Height = fix_size;
                         image_p.AppendPicture(pic);

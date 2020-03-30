@@ -136,7 +136,7 @@ namespace PMSClient.ReportsHelperNew
                     {
                         Novacode.Image img = doc.AddImage(result.ImagePath);
                         var pic = img.CreatePicture();
-                        int fix_size = 130;
+                        int fix_size = 140;
                         pic.Width = fix_size;
                         pic.Height = fix_size;
                         image_p.AppendPicture(pic);
@@ -189,8 +189,8 @@ namespace PMSClient.ReportsHelperNew
                         {
                             Cell cell = xrfTable.Rows[i].Cells[j];
                             cell.Width = 80;
-                            cell.Paragraphs[0].Append(items[j]).FontSize(9)
-                                .Font(new FontFamily("等线")).Bold();
+                            cell.Paragraphs[0].Append(items[j]).FontSize(8)
+                                .Font(new FontFamily("等线"));
                             if (j == 0)
                             {
                                 continue;
