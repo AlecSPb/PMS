@@ -9,7 +9,7 @@ namespace PMSCommon
     public enum SampleFor
     {
         XRD,
-        EGA,
+        EAG,
         Customer,
         多余,
         重庆斯坦德,

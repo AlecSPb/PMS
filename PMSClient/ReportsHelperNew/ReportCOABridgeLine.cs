@@ -77,8 +77,20 @@ namespace PMSClient.ReportsHelperNew
                 doc.ReplaceText("[CreateDate]", DateTime.Now.ToString("MM/dd/yyyy"));
 
                 //写入CSCAN Flaw Data
-                string flawarea = model.CScan == null ? "None" : model.CScan;
-
+                string flawarea = "";
+                if (model.CScan == null || model.CScan == "" || model.CScan.Contains("无"))
+                {
+                    flawarea = "";
+                }
+                else
+                {
+                    var dict = new Dictionary<string, string>();
+                    dict.Add("总空腔率", "Void Rate");
+                    dict.Add("最大空腔直径", "Max Void Dia.");
+                    dict.Add("深度", "Depth");
+                    dict.Add("总空腔个数", "Void Count");
+                   flawarea = COAHelper.ReplaceChineseCharacter(model.CScan, dict);
+                }
                 doc.ReplaceText("[FlawArea]", flawarea);
 
                 //粗糙度值

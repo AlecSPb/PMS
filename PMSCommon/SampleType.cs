@@ -10,6 +10,7 @@ namespace PMSCommon
     {
         块状,
         粉末,
+        块状_粉末,
         粒状,
         丝状,
         条状,

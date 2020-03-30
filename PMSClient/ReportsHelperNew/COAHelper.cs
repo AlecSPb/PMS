@@ -10,6 +10,14 @@ namespace PMSClient.ReportsHelperNew
 {
     public static class COAHelper
     {
+        public static string ReplaceChineseCharacter(string s, Dictionary<string, string> dict)
+        {
+            foreach (var key in dict.Keys)
+            {
+                s = s.Replace(key, dict[key]);
+            }
+            return s;
+        }
         public static string StandardizeDimension(string dimension)
         {
             if (dimension.Contains("thick"))
@@ -36,7 +44,7 @@ namespace PMSClient.ReportsHelperNew
             return lines;
         }
 
-        public static string GetCOAFileName(DcRecordTest model,string prefix="PMI")
+        public static string GetCOAFileName(DcRecordTest model, string prefix = "PMI")
         {
             var fileName = $"{prefix}_COA_{StringUtil.RemoveSlash(model.Customer)}_{StringUtil.RemoveSlash(model.CompositionAbbr)}"
                 + $"_{model.ProductID}.docx".Replace('-', '_');
