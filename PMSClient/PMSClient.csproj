@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>118</ApplicationRevision>
+    <ApplicationRevision>120</ApplicationRevision>
     <ApplicationVersion>4.10.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -187,6 +187,11 @@
     <Compile Include="Components\BarCodeService\Helper.cs" />
     <Compile Include="Components\BarCodeService\IBarCodeHelper.cs" />
     <Compile Include="Components\BarCodeService\QRCodeHelper.cs" />
+    <Compile Include="Components\BatchDataProcess\QuickCheck\ProcessQuickCheck.cs" />
+    <Compile Include="Components\BatchDataProcess\QuickCheck\QuickCheck.xaml.cs">
+      <DependentUpon>QuickCheck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\BatchDataProcess\QuickCheck\QuickCheckVM.cs" />
     <Compile Include="Components\BatchDataProcess\ScanInput\ProcessOutsideProcess.cs" />
     <Compile Include="Components\BatchDataProcess\ScanInput\ScanInputOutsideProcessVM.cs" />
     <Compile Include="CheckLogic\CheckMessage.cs" />
@@ -713,6 +718,8 @@
     <Compile Include="ViewModel\PlanStatisticVM.cs" />
     <Compile Include="ViewModel\ProductUnCompletedVM.cs" />
     <Compile Include="Helpers\RecordTestDuplicateHelper.cs" />
+    <Compile Include="ViewModel\VMHelper\ErrorMessage.cs" />
+    <Compile Include="ViewModel\VMHelper\MaterialOrderVMHelper.cs" />
     <Compile Include="ViewModel\VMHelper\MissonVMHelper.cs" />
     <Compile Include="ViewModel\VMHelper\NewModelCollection.cs" />
     <Compile Include="ViewModel\PlateVM.cs" />
@@ -1105,6 +1112,10 @@
     <Page Include="CheckLogic\RecordTestCheckDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\BatchDataProcess\QuickCheck\QuickCheck.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Components\ExcelOutputHelper\Dialogs\YearDateDailog.xaml">
       <SubType>Designer</SubType>

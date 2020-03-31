@@ -866,6 +866,12 @@
   <wsdl:message name="IDeliveryService_GetDeliveryUnFinished_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDeliveryUnFinishedResponse" />
   </wsdl:message>
+  <wsdl:message name="IDeliveryService_CheckDeliveryItemExistByProductID_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDeliveryItemExistByProductID" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_CheckDeliveryItemExistByProductID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDeliveryItemExistByProductIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IPlateService_GetPlates_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPlates" />
   </wsdl:message>
@@ -2044,6 +2050,10 @@
     <wsdl:operation name="GetDeliveryUnFinished">
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryUnFinished" message="tns:IDeliveryService_GetDeliveryUnFinished_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryUnFinishedResponse" message="tns:IDeliveryService_GetDeliveryUnFinished_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDeliveryItemExistByProductID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/CheckDeliveryItemExistByProductID" message="tns:IDeliveryService_CheckDeliveryItemExistByProductID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/CheckDeliveryItemExistByProductIDResponse" message="tns:IDeliveryService_CheckDeliveryItemExistByProductID_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IPlateService">
@@ -3760,6 +3770,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetDeliveryUnFinished">
       <soap:operation soapAction="http://tempuri.org/IDeliveryService/GetDeliveryUnFinished" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDeliveryItemExistByProductID">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/CheckDeliveryItemExistByProductID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

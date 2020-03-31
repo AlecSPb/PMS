@@ -568,5 +568,27 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public bool CheckDeliveryItemExistByProductID(Guid id, string productid)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from d in dc.DeliveryItems
+                                where d.State == PMSCommon.SimpleState.正常.ToString()
+                                && d.DeliveryID == id
+                                && d.ProductID == productid
+                                select d;
+                    return query.Count() > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

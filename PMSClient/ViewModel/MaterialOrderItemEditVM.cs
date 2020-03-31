@@ -160,6 +160,15 @@ namespace PMSClient.ViewModel
                 };
             }
 
+            var check_result = VMHelper.MaterialOrderVMHelper.CheckTheComposition(CurrentMaterialOrderItem.Composition);
+            if (!check_result.IsOK)
+            {
+                if (!PMSDialogService.ShowYesNo("请注意", check_result.Message))
+                {
+                    return;
+                };
+            }
+
             if (!PMSDialogService.ShowYesNo("请问", "确定保存这条记录？"))
             {
                 return;

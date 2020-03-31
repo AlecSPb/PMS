@@ -50,6 +50,16 @@ namespace PMSClient.ViewModel
             OneKeyTempFinish = new RelayCommand(ActionOneKeyTempFinish);
 
             Plate = new RelayCommand(ActionPlate);
+            Image = new RelayCommand<DcRecordBonding>(ActionImage);
+        }
+
+        private void ActionImage(DcRecordBonding obj)
+        {
+            if (obj != null)
+            {
+                var dialog = new Components.CscanImageProcess.ImageManager();
+                dialog.ViewImageInWindow(obj.TargetProductID);
+            }
         }
 
         private void ActionPlate()
@@ -357,6 +367,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcRecordBonding> Edit { get; set; }
         public RelayCommand<DcRecordBonding> Finish { get; set; }
         public RelayCommand<DcRecordBonding> TempFinish { get; set; }
+        public RelayCommand<DcRecordBonding> Image { get; set; }
 
         public RelayCommand RecordSheet { get; set; }
 

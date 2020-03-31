@@ -50,6 +50,8 @@ namespace PMSClient.ViewModel
             Edit = new RelayCommand<DcDelivery>(ActionEdit, CanEdit);
             Label = new RelayCommand<DcDelivery>(ActionLabel, CanLabel);
             Finish = new RelayCommand<DcDelivery>(ActionFinish, CanFinish);
+            Check = new RelayCommand<DcDelivery>(ActionCheck, CanLabel);
+
             AddItem = new RelayCommand<DcDelivery>(ActionAddItem, CanAddItem);
             EditItem = new RelayCommand<DcDeliveryItem>(ActionEditItem, CanEditItem);
             SearchRecordTest = new RelayCommand<DcDeliveryItem>(ActionRecordTest, CanRecordTest);
@@ -66,6 +68,19 @@ namespace PMSClient.ViewModel
             ExpressTrack = new RelayCommand(ActionExpressTrack, CanExpressTrack);
 
             ExpressSetting = new RelayCommand(ActionExpressSetting, CanExpressTrack);
+        }
+
+        private void ActionCheck(DcDelivery obj)
+        {
+            if (obj != null)
+            {
+                var tool = new DataProcess.QuickCheck.QuickCheck();
+
+                //传入delivery到vm中
+                var context = new DataProcess.QuickCheck.QuickCheckVM(obj);
+                tool.DataContext = context;
+                tool.Show();
+            }
         }
 
         private void ActionExpressSetting()
@@ -470,7 +485,7 @@ namespace PMSClient.ViewModel
                     {
                         try
                         {
-                            using (var s_test=new RecordTestServiceClient())
+                            using (var s_test = new RecordTestServiceClient())
                             {
                                 var test = s_test.GetRecordTestByProductID(item.ProductID.Trim()).FirstOrDefault();
                                 if (test != null)
@@ -612,6 +627,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcDelivery> Edit { get; set; }
         public RelayCommand<DcDelivery> Label { get; set; }
         public RelayCommand<DcDelivery> Finish { get; set; }
+        public RelayCommand<DcDelivery> Check { get; set; }
         public RelayCommand<DcDelivery> DeliverySheet { get; set; }
         public RelayCommand<DcDelivery> BarCode { get; set; }
         public RelayCommand<DcDelivery> AddItem { get; set; }

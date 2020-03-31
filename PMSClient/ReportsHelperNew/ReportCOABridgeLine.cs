@@ -200,7 +200,7 @@ namespace PMSClient.ReportsHelperNew
                         for (int j = 0; j < items.Count(); j++)
                         {
                             Cell cell = xrfTable.Rows[i].Cells[j];
-                            cell.Width = 80;
+                            cell.Width = 60;
                             cell.Paragraphs[0].Append(items[j]).FontSize(8)
                                 .Font(new FontFamily("等线"));
                             if (j == 0)

@@ -10165,6 +10165,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryUnFinished", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryUnFinishedResponse")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcDelivery[]> GetDeliveryUnFinishedAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/CheckDeliveryItemExistByProductID", ReplyAction="http://tempuri.org/IDeliveryService/CheckDeliveryItemExistByProductIDResponse")]
+        bool CheckDeliveryItemExistByProductID(System.Guid id, string productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/CheckDeliveryItemExistByProductID", ReplyAction="http://tempuri.org/IDeliveryService/CheckDeliveryItemExistByProductIDResponse")]
+        System.Threading.Tasks.Task<bool> CheckDeliveryItemExistByProductIDAsync(System.Guid id, string productid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10376,6 +10382,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<PMSClient.MainService.DcDelivery[]> GetDeliveryUnFinishedAsync() {
             return base.Channel.GetDeliveryUnFinishedAsync();
+        }
+        
+        public bool CheckDeliveryItemExistByProductID(System.Guid id, string productid) {
+            return base.Channel.CheckDeliveryItemExistByProductID(id, productid);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CheckDeliveryItemExistByProductIDAsync(System.Guid id, string productid) {
+            return base.Channel.CheckDeliveryItemExistByProductIDAsync(id, productid);
         }
     }
     

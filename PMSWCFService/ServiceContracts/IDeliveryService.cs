@@ -72,5 +72,9 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcDelivery> GetDeliveryUnFinished();
 
+
+        [OperationContract]
+        bool CheckDeliveryItemExistByProductID(Guid id, string productid);
+
     }
 }
