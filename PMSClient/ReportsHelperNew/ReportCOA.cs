@@ -143,6 +143,14 @@ namespace PMSClient.ReportsHelperNew
                     //填充图像
                     var manager = new Components.CscanImageProcess.ImageManager();
                     var result = manager.GetImage(model.ProductID, imageType);
+                    if (imageType == ImageType.Bonding)
+                    {
+                        doc.ReplaceText("[CSCAN]", "C-SCAN");
+                    }
+                    else
+                    {
+                        doc.ReplaceText("[CSCAN]", "A-SCAN");
+                    }
                     Paragraph image_p = mainTable.Rows[currentRowIndex].Cells[1].Paragraphs[0];
                     if (result.IsFound)
                     {

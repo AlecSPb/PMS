@@ -74,6 +74,9 @@
                                     <Button Content="{StaticResource ButtonTrace}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Trace,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                    <Button Content="{StaticResource ButtonFailure}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Fail,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

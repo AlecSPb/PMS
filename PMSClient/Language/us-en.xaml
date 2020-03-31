@@ -341,6 +341,7 @@
     <sys:String x:Key="ButtonFail">Fail</sys:String>
     <sys:String x:Key="ButtonReMachine">ReMachine</sys:String>
     <sys:String x:Key="ButtonExcel">Excel</sys:String>
+    <sys:String x:Key="ButtonFailure">Failure</sys:String>
 
     <!--单字按钮-->
     <sys:String x:Key="ButtonSingleSend">S</sys:String>

@@ -54,6 +54,49 @@ namespace PMSClient.ViewModel
             Output = new RelayCommand(ActionOutput);
             Trace = new RelayCommand<DcRecordMilling>(ActionTrace);
             Sieve = new RelayCommand(ActionSieve);
+            Fail = new RelayCommand<DcRecordMilling>(ActionFail, CanEdit);
+        }
+
+        private void ActionFail(DcRecordMilling obj)
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定要添加此记录到报废记录中吗？"))
+            {
+                return;
+            }
+            if (obj != null)
+            {
+                try
+                {
+                    using (var service = new FailureService.FailureServiceClient())
+                    {
+                        int check_exist_count = service.GetFailuresCountByProductID(obj.VHPPlanLot);
+
+                        if (check_exist_count == 0)
+                        {
+                            var model = VMHelper.FailureVMHelper.GetNewFailure();
+                            model.ProductID = obj.VHPPlanLot;
+                            model.Stage = "制粉";
+                            model.Composition = obj.Composition;
+                            model.Details = obj.PMINumber;
+                            model.Remark= obj.Details;
+                            model.Problem = "制粉不成功";
+                            model.Process = "无";
+
+                            service.AddFailure(model);
+                            PMSDialogService.Show("添加成功");
+
+                        }
+                        else
+                        {
+                            PMSDialogService.ShowWarning("报废库已存在");
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+            }
         }
 
         private void ActionSieve()
@@ -248,6 +291,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand<DcRecordMilling> Label { get; set; }
         public RelayCommand<DcRecordMilling> Trace { get; set; }
+        public RelayCommand<DcRecordMilling> Fail { get; set; }
 
         public RelayCommand QuickAdd { get; set; }
 

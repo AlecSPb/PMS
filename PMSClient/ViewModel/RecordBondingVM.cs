@@ -51,6 +51,49 @@ namespace PMSClient.ViewModel
 
             Plate = new RelayCommand(ActionPlate);
             Image = new RelayCommand<DcRecordBonding>(ActionImage);
+            Fail = new RelayCommand<DcRecordBonding>(ActionFail, CanEdit);
+        }
+
+        private void ActionFail(DcRecordBonding obj)
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定要添加此记录到报废记录中吗？"))
+            {
+                return;
+            }
+            if (obj != null)
+            {
+                try
+                {
+                    using (var service = new FailureService.FailureServiceClient())
+                    {
+                        int check_exist_count = service.GetFailuresCountByProductID(obj.TargetProductID);
+
+                        if (check_exist_count == 0)
+                        {
+                            var model = VMHelper.FailureVMHelper.GetNewFailure();
+                            model.ProductID = obj.TargetProductID;
+                            model.Stage = "绑定";
+                            model.Composition = obj.TargetComposition;
+                            model.Details = obj.TargetPMINumber;
+                            model.Remark = obj.Remark;
+                            model.Problem = "绑定不成功";
+                            model.Process = "无";
+
+                            service.AddFailure(model);
+                            PMSDialogService.Show("添加成功");
+
+                        }
+                        else
+                        {
+                            PMSDialogService.ShowWarning("报废库已存在");
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+            }
         }
 
         private void ActionImage(DcRecordBonding obj)
@@ -368,6 +411,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcRecordBonding> Finish { get; set; }
         public RelayCommand<DcRecordBonding> TempFinish { get; set; }
         public RelayCommand<DcRecordBonding> Image { get; set; }
+        public RelayCommand<DcRecordBonding> Fail { get; set; }
 
         public RelayCommand RecordSheet { get; set; }
 
