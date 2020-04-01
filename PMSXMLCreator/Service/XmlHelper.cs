@@ -28,7 +28,7 @@ namespace PMSXMLCreator.Service
             #endregion
 
 
-            string folder = XSHelper.FileHelper.GetDesktopPath();
+            string folder = XSHelper.FileHelper.GetCurrentFolderPath("OutputFile");
             if (!Directory.Exists(folder))
             {
                 Directory.CreateDirectory(folder);
@@ -94,7 +94,7 @@ namespace PMSXMLCreator.Service
             writer.WriteStartElement("ProductDescription");
             writer.WriteElementString("productName", model.ProductName);
             writer.WriteElementString("manufacturerPartNumber", model.ManufacturerPartNumber);//35个字符
-            writer.WriteElementString("manufacturerOrderNumber", model.ManufacturerOrderNumber);
+            //writer.WriteElementString("manufacturerOrderNumber", model.ManufacturerOrderNumber);
 
             writer.WriteElementString("partNumber", model.PartNumber);
             writer.WriteElementString("partRevisionNumber", model.PartRevisionNumber);
@@ -109,9 +109,9 @@ namespace PMSXMLCreator.Service
 
             writer.WriteStartElement("Shipment");
             writer.WriteElementString("deliverTo", model.DeliverTo);
-            writer.WriteElementString("shipmentnumber", model.ShipmentNumber);
-            //writer.WriteElementString("scheduledshipdate", model.ScheduledShipDate.ToShortDateString());
-            //writer.WriteElementString("actualshipdate", model.ActualShipDate.ToShortDateString());
+            //writer.WriteElementString("shipmentnumber", model.ShipmentNumber);
+            writer.WriteElementString("scheduledshipdate", model.ScheduledShipDate.ToShortDateString());
+            writer.WriteElementString("actualshipdate", model.ActualShipDate.ToShortDateString());
             writer.WriteStartElement("containers");
             writer.WriteElementString("containernumber", model.ContainerNumber);
             writer.WriteEndElement();
@@ -172,27 +172,30 @@ namespace PMSXMLCreator.Service
         {
             writer.WriteStartElement("MaterialParameter");
 
+            writer.WriteElementString("rawLotID", "");
+            writer.WriteElementString("rawMaterialType", "");
+
             writer.WriteElementString("SourceComponent", p.SourceComponent);
             writer.WriteElementString("Characteristic", p.Characteristic);
             writer.WriteElementString("ShortName", p.ShortName);
             writer.WriteElementString("UnitOfMeasure", p.UnitOfMeasure);
-            writer.WriteElementString("measurementQualifier", p.MeasurementQualifier);
-            writer.WriteElementString("measurementType", p.MeasurementType);
-            writer.WriteElementString("measurementValue", p.MeasurementValue);
+            //writer.WriteElementString("measurementQualifier", p.MeasurementQualifier);
+            //writer.WriteElementString("measurementType", p.MeasurementType);
+            //writer.WriteElementString("measurementValue", p.MeasurementValue);
 
-            //writer.WriteStartElement("Measurements");
-            //foreach (var item in p.Measurements)
-            //{
-            //    writer.WriteStartElement("Measurement");
-            //    writer.WriteElementString("MeasurementType", item.MeasurementType);
-            //    writer.WriteElementString("MeasurementValue", item.MeasurementValue);
-            //    writer.WriteElementString("UCL", item.UCL);
-            //    writer.WriteElementString("LCL", item.LCL);
-            //    writer.WriteElementString("MDL", item.MDL);
-            //    writer.WriteElementString("CLCalc", item.CLCalc);
-            //    writer.WriteEndElement();
-            //}
-            //writer.WriteEndElement();
+            writer.WriteStartElement("Measurements");
+            foreach (var item in p.Measurements)
+            {
+                writer.WriteStartElement("Measurement");
+                writer.WriteElementString("MeasurementType", item.MeasurementType);
+                writer.WriteElementString("MeasurementValue", item.MeasurementValue);
+                writer.WriteElementString("UCL", item.UCL);
+                writer.WriteElementString("LCL", item.LCL);
+                writer.WriteElementString("MDL", item.MDL);
+                writer.WriteElementString("CLCalc", item.CLCalc);
+                writer.WriteEndElement();
+            }
+            writer.WriteEndElement();
 
             writer.WriteEndElement();
         }

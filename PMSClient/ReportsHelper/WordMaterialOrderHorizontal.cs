@@ -70,36 +70,48 @@ namespace PMSClient.ReportsHelper
                     double elementValue = 0;
                     if (mainTable != null)
                     {
+                        double fontSize = 8;
+
                         for (int i = 0; i < OrderItems.Count; i++)
                         {
-                            //最多不超过13个记录
-                            if (i > 13)
-                            {
-                                break;
-                            }
+                            //插入新行
+                            mainTable.InsertRow();
+
                             var item = OrderItems[i];
                             Paragraph p;
                             p = mainTable.Rows[i + 1].Cells[0].Paragraphs[0];
-                            p.Append(item.OrderItemNumber).FontSize(8);
+                            p.Append(item.OrderItemNumber).FontSize(7)
+                                .Font(new System.Drawing.FontFamily("等线"));
+                            p.Alignment = Alignment.center;
 
                             p = mainTable.Rows[i + 1].Cells[1].Paragraphs[0];
-                            p.Append(item.Weight.ToString("N2")).FontSize(8).Bold();
+                            p.Append(item.Weight.ToString("N2")).FontSize(fontSize)
+                                .Font(new System.Drawing.FontFamily("等线"));
+                            p.Alignment = Alignment.center;
 
                             p = mainTable.Rows[i + 1].Cells[2].Paragraphs[0];
                             if (item.HowManyTargets != null)
                             {
-                                p.Append($"[{item.Purity}] {item.Composition}({item.HowManyTargets})").FontSize(8).Bold();
+                                p.Append($"{item.Purity}-{item.Composition}-{item.HowManyTargets}").FontSize(7)
+                                    .Font(new System.Drawing.FontFamily("等线"));
                             }
                             else
                             {
-                                p.Append($"[{item.Purity}] {item.Composition}").FontSize(8).Bold();
+                                p.Append($"[{item.Purity}] {item.Composition}").FontSize(7)
+                                    .Font(new System.Drawing.FontFamily("等线"));
                             }
+                            p.Alignment = Alignment.left;
+
 
                             p = mainTable.Rows[i + 1].Cells[3].Paragraphs[0];
-                            p.Append(item.PMINumber).FontSize(8);
+                            p.Append(item.PMINumber).FontSize(fontSize)
+                                .Font(new System.Drawing.FontFamily("等线"));
+                            p.Alignment = Alignment.center;
 
                             p = mainTable.Rows[i + 1].Cells[4].Paragraphs[0];
-                            p.Append(item.DeliveryDate.ToString("yyMMdd")).FontSize(8);
+                            p.Append(item.DeliveryDate.ToString("yyMMdd")).FontSize(fontSize)
+                                .Font(new System.Drawing.FontFamily("等线"));
+                            p.Alignment = Alignment.left;
 
 
                             p = mainTable.Rows[i + 1].Cells[5].Paragraphs[0];
@@ -109,34 +121,46 @@ namespace PMSClient.ReportsHelper
                                 descriptionMesseage = $"{ item.ProvideRawMaterial}；{item.Description}";
                             }
 
-                            p.Append(descriptionMesseage).FontSize(8);
+                            p.Append(descriptionMesseage).FontSize(7)
+                                .Font(new System.Drawing.FontFamily("等线"));
+                            p.Alignment = Alignment.left;
 
                             p = mainTable.Rows[i + 1].Cells[6].Paragraphs[0];
-                            p.Append(item.MaterialPrice.ToString("N2")).FontSize(8);
+                            p.Append($"￥{item.MaterialPrice.ToString("N2")}").FontSize(fontSize)
+                                .Font(new System.Drawing.FontFamily("等线"));
+                            p.Alignment = Alignment.right;
 
                             p = mainTable.Rows[i + 1].Cells[7].Paragraphs[0];
-                            p.Append(item.UnitPrice.ToString("N2")).FontSize(8);
+                            p.Append($"￥{item.UnitPrice.ToString("N2")}").FontSize(fontSize)
+                                .Font(new System.Drawing.FontFamily("等线"));
+                            p.Alignment = Alignment.right;
 
                             p = mainTable.Rows[i + 1].Cells[8].Paragraphs[0];
                             double total = item.UnitPrice * item.Weight;
-                            p.Append(total.ToString("N2")).FontSize(8);
-                            subTotalMoney += total;
+                            p.Append($"￥{total.ToString("N2")}").FontSize(fontSize)
+                                .Font(new System.Drawing.FontFamily("等线"));
+                            p.Alignment = Alignment.right;
 
+
+
+                            subTotalMoney += total;
                             elementValue += item.MaterialPrice;
                         }
                     }
+
+
                     var remark = model.Remark ?? "";
                     if (remark != "")
                     {
                         remark = $"PMI to provide:{remark}";
                     }
                     doc.ReplaceText("[Remark]", remark);
-                    doc.ReplaceText("[SubTotalMoney]", subTotalMoney.ToString("N2"));
-                    doc.ReplaceText("[ElementValue]", elementValue.ToString("N2"));
+                    doc.ReplaceText("[SubTotalMoney]", $"￥{subTotalMoney.ToString("N2")}");
+                    doc.ReplaceText("[ElementValue]", $"￥{elementValue.ToString("N2")}");
 
-                    doc.ReplaceText("[ShipFee]", model.ShipFee.ToString("N2"));
+                    doc.ReplaceText("[ShipFee]", $"￥{model.ShipFee.ToString("N2")}");
                     double totalMoney = subTotalMoney + model.ShipFee + elementValue;
-                    doc.ReplaceText("[TotalMoney]", totalMoney.ToString("N2"));
+                    doc.ReplaceText("[TotalMoney]", $"￥{totalMoney.ToString("N2")}");
 
                     doc.Save();
                 }

@@ -1910,6 +1910,7 @@
     <Content Include="Resource\DocTemplate\Reports\COABridgeline200324.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resource\DocTemplate\Reports\MaterialOrderHorizontalOld.docx" />
     <None Include="Service References\DrawingService\DrawingService.wsdl" />
     <None Include="Service References\DrawingService\DrawingService.xsd">
       <SubType>Designer</SubType>

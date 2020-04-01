@@ -14,12 +14,6 @@ namespace PMSClient.Express
         /// </summary>
         public void TraceUnCompleted()
         {
-
-            if (!PMSDialogService.ShowYesNo("请问", "确定要查看[快递追踪]信息吗？Y=查看，N=跳过"))
-            {
-                return;
-            }
-
             try
             {
                 using (var service = new DeliveryServiceClient())
@@ -28,6 +22,10 @@ namespace PMSClient.Express
 
                     if (result.Length > 0)
                     {
+                        if (!PMSDialogService.ShowYesNo("请问", "确定要查看[快递追踪]信息吗？Y=查看，N=跳过"))
+                        {
+                            return;
+                        }
                         Trace(result);
                     }
                 }

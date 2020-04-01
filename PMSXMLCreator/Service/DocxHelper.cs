@@ -28,7 +28,7 @@ namespace PMSXMLCreator
             #endregion
 
 
-            string folder = XSHelper.FileHelper.GetDesktopPath();
+            string folder = XSHelper.FileHelper.GetCurrentFolderPath("OutputFile");
             if (!Directory.Exists(folder))
             {
                 Directory.CreateDirectory(folder);
