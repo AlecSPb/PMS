@@ -40,7 +40,20 @@ namespace PMSXMLCreator
             LoadFromFile = new RelayCommand(ActionLoadFromFile);
             LoadFromPMSFile = new RelayCommand(ActionLoadFromPMSFile);
             Save = new RelayCommand(ActionSave);
+            OutputDirectory = new RelayCommand(ActionOutputDirectory);
             ClosingCommand = new RelayCommand(ActionClosing);
+        }
+
+        private void ActionOutputDirectory()
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(XSHelper.FileHelper.GetCurrentFolderPath("OutputFile"));
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void ActionClosing()
@@ -306,6 +319,8 @@ namespace PMSXMLCreator
         public RelayCommand ClosingCommand { get; set; }
 
         public RelayCommand<DcRecordTest> Select { get; set; }
+
+        public RelayCommand OutputDirectory { get; set; }
 
     }
 }

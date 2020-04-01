@@ -88,6 +88,8 @@
                         Command="{Binding CreateXML}"/>
                 <Button Content="Create Docx" Style="{StaticResource StyleButtonCommon}"
                         Command="{Binding CreateDocx}"/>
+                <Button Content="Output Directory" Style="{StaticResource StyleButtonCommon}"
+                        Command="{Binding OutputDirectory}"/>
             </StackPanel>
         </Grid>
         <Border Grid.Row="3" Margin="2" BorderBrush="Blue" BorderThickness="1">
