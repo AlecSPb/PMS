@@ -63,7 +63,7 @@ namespace PMSClient.ReportsHelper
                     document.ReplaceText("[ShipTime]", model.ShipTime.ToString("yyyy-MM-dd"));
                     document.ReplaceText("[Country]", model.Country ?? "");
                     document.ReplaceText("[DeliveryName]", model.DeliveryName ?? "");
-                    document.ReplaceText("[DeliveryNumber]", model.DeliveryExpress ?? "" + model.DeliveryNumber ?? "");
+                    document.ReplaceText("[DeliveryNumber]", (model.DeliveryExpress ?? "") +" "+(model.DeliveryNumber ?? ""));
                     document.ReplaceText("[InvoiceNumber]", model.InvoiceNumber ?? "");
 
                     if (document.Tables[0] != null)

@@ -78,6 +78,17 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource CItemRemark}" Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  Content="{Binding Remark,Converter={StaticResource StringCutCT}}" VerticalAlignment="Center"
+                                    Style="{StaticResource StyleDGButtonOriginal}" HorizontalAlignment="Stretch"
+                                     HorizontalContentAlignment="Left"
+                                     Command="{Binding DataContext.ShowItemRemark,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                     CommandParameter="{Binding}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Row Order" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Binding="{Binding RowOrder}"/>
                 <DataGridTextColumn Header="{StaticResource CCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
             </DataGrid.Columns>

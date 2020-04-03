@@ -62,12 +62,12 @@ namespace PMSClient.ViewModel
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialInventoryIn);
+            return PMSHelper.CurrentSession.IsInGroup(new string[] { "管理员", "生产经理", "测试组" });
         }
 
         private bool CanEdit(DcBDCompound arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialInventoryIn);
+            return PMSHelper.CurrentSession.IsInGroup(new string[] { "管理员", "生产经理", "测试组" });
         }
 
         private void ActionEdit(DcBDCompound model)

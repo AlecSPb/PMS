@@ -78,7 +78,7 @@ namespace PMSClient.CheckLogic
             if (dimension.Trim().StartsWith("230"))
             {
                 return DateTime.Now.AddDays(-2).ToString("yyMMdd")
-                    .CompareTo(productid.Substring(0, 6))>=0;
+                    .CompareTo(productid.Substring(0, 6)) >= 0;
             }
             else
             {
@@ -87,7 +87,7 @@ namespace PMSClient.CheckLogic
             }
         }
 
-        public static bool IsBridgeLineCompositionOK(string customerName,string composition)
+        public static bool IsBridgeLineCompositionOK(string customerName, string composition)
         {
             if (customerName.ToLower().Contains("bridgeline"))
             {
@@ -96,6 +96,18 @@ namespace PMSClient.CheckLogic
             }
             return true;
         }
+
+        public static bool IsSeAsGeNotConductive(string composition, string resistance)
+        {
+
+            if (composition.Contains("Se") && composition.Contains("As") && composition.Contains("Ge"))
+            {
+                return resistance.Contains("Out Of Range");
+            }
+            return true;
+        }
+
+
     }
 
 

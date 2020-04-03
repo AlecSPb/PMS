@@ -924,6 +924,7 @@
     <sys:String x:Key="CUnit">单位</sys:String>
     <sys:String x:Key="CState">状态</sys:String>
     <sys:String x:Key="CItemHistory">历史</sys:String>
+    <sys:String x:Key="CItemRemark">备注</sys:String>
 
     <!--RemainInventory-->
     <sys:String x:Key="RIID">ID</sys:String>

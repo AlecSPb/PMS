@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolDialog"
         mc:Ignorable="d"
-        Title="PMI计数器快速编辑对话框-【此对话框操作会产生历史记录】" Height="100" Width="400"
+        Title="PMI计数器快速编辑对话框-【此对话框操作会产生历史记录】" Height="200" Width="400"
         WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow">
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -19,6 +20,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="变动数量"/>
@@ -35,5 +37,7 @@
         <Button Grid.Row="0" Grid.Column="4"
                 Style="{StaticResource StyleButtonCommon}"
                 Content="取消" Name="BtnCancel" Click="BtnCancel_Click"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Text="备注:" Style="{StaticResource StyleTextBlockCommon}"/>
+        <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" Text="" Margin="5" Name="TxtRemark"/>
     </Grid>
 </Window>

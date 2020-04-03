@@ -42,6 +42,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -103,6 +104,12 @@
                            Text=""/>
                 </StackPanel>
 
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource CItemRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Remark}"
+                          Style="{StaticResource StyleTextBoxCommon}"/>
+
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource CItemHistory}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding ItemHistory}" 
@@ -112,34 +119,36 @@
                            Text="此处更改建议通过【快改】进行；非要手改，请遵守格式" VerticalAlignment="Top"/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="Row Order"
+
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="Row Order"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="7" Grid.Column="1" Text="{Binding RowOrder}" 
+                <TextBox  Grid.Row="8" Grid.Column="1" Text="{Binding RowOrder}" 
                           Style="{StaticResource StyleTextBoxCommon}"/>
-                <StackPanel Grid.Row="7" Grid.Column="2" Orientation="Horizontal">
+                <StackPanel Grid.Row="8" Grid.Column="2" Orientation="Horizontal">
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
                            Text="排列顺序，数字越大，越靠前" VerticalAlignment="Top"/>
                 </StackPanel>
-                
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource CState}"
+
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource CState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="9" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="状态"/>
 
 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource FCreateTime}"
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource FCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建时间"/>
 
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource FCreator}"
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource FCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建者"/>
             </Grid>
         </ScrollViewer>

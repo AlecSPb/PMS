@@ -629,6 +629,13 @@ namespace PMSClient.ViewModel
             if (model == null) return;
             try
             {
+                if (model.RecordTest.State == PMSCommon.CommonState.已核验.ToString())
+                {
+                    if (!PMSDialogService.ShowYesNo("警告", "本条记录已是已核验状态，请慎重修改"))
+                    {
+                        return;
+                    }
+                }
                 using (var s = new RecordTestServiceClient())
                 {
                     DateTime lastUpdateTime = s.GetLastUpdateTime(model.RecordTest.ID);

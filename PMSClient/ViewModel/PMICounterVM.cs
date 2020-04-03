@@ -32,13 +32,24 @@ namespace PMSClient.ViewModel
             Duplicate = new RelayCommand<DcPMICounter>(ActionDuplicate, CanDuplicate);
             QuickChange = new RelayCommand<DcPMICounter>(ActionQuickChange, CanQuickChange);
             ShowItemHistory = new RelayCommand<DcPMICounter>(ActionShowItemHistory);
+            ShowItemRemark = new RelayCommand<DcPMICounter>(ActionShowItemRemark);
+        }
+
+        private void ActionShowItemRemark(DcPMICounter obj)
+        {
+            if (obj != null)
+            {
+                var dialog = new WPFControls.NormalizedDataViewer();
+                dialog.SetMainStrings(obj.Remark);
+                dialog.ShowDialog();
+            }
         }
 
         private void ActionShowItemHistory(DcPMICounter obj)
         {
             if (obj != null)
             {
-                var dialog =new WPFControls.NormalizedDataViewer();
+                var dialog = new WPFControls.NormalizedDataViewer();
                 dialog.SetMainStrings(obj.ItemHistory);
                 dialog.ShowDialog();
             }
@@ -51,10 +62,14 @@ namespace PMSClient.ViewModel
 
         private void ActionQuickChange(DcPMICounter obj)
         {
+            if (obj == null) return;
             var dialog = new ToolDialog.PMICounterQuickEditDialog();
+            dialog.Remark = obj.Remark;
             dialog.ShowDialog();
+
+            obj.Remark = dialog.Remark;
             if (dialog.EditType == ToolDialog.PMICounterEditType.IsCancel)
-                return;
+            { return; }
             else if (dialog.EditType == ToolDialog.PMICounterEditType.IsAdd)
             {
                 obj.ItemCount += dialog.Counter;
@@ -88,7 +103,6 @@ namespace PMSClient.ViewModel
                         model.Dimension = obj.ItemSpecification;
 
                         #endregion
-
                         int number = dialog.Counter;
                         string prefix = model.PlateLot.Substring(0, 10);
                         string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
@@ -233,6 +247,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPMICounter> Edit { get; set; }
         public RelayCommand<DcPMICounter> Duplicate { get; set; }
         public RelayCommand<DcPMICounter> ShowItemHistory { get; set; }
+        public RelayCommand<DcPMICounter> ShowItemRemark { get; set; }
         #endregion
 
     }

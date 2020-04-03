@@ -94,12 +94,12 @@ namespace PMSClient.DataProcess.QuickReport
                                 case "COA200324":
                                     var fileName4 = ReportsHelperNew.COAHelper.GetCOAFileName(model);
                                     var report4 = new ReportCOA();
-                                    report4.SetParameters(model, CurrentCSCANType,false);
+                                    report4.SetParameters(model, CurrentCSCANType, false);
                                     report4.Intialize(fileName4);
                                     report4.Output();
                                     break;
                                 case "COA200324-BL":
-                                    var fileName5 = ReportsHelperNew.COAHelper.GetCOAFileName(model,"BL");
+                                    var fileName5 = ReportsHelperNew.COAHelper.GetCOAFileName(model, "BL");
                                     var report5 = new ReportCOABridgeLine();
                                     report5.SetParameters(model, CurrentCSCANType, false);
                                     report5.Intialize(fileName5);
@@ -138,12 +138,22 @@ namespace PMSClient.DataProcess.QuickReport
                 using (var service = new RecordTestServiceClient())
                 {
                     //这里增加一个服务？
-                    int count = service.GetRecordTestByProductID(item.Lot).Count();
-                    if (count == 0)
+                    var test = service.GetRecordTestByProductID(item.Lot);
+                    if (test != null)
                     {
-                        item.IsValid = false;
-                        item.AppendMessage("[测试]记录中不存在");
+                        int count = test.Count();
+                        if (count == 0)
+                        {
+                            item.IsValid = false;
+                            item.AppendMessage("[测试]记录中不存在");
+                        }
+                        if (test.FirstOrDefault().State != PMSCommon.CommonState.已核验.ToString())
+                        {
+                            item.IsValid = false;
+                            item.AppendMessage("此[测试]记录中尚未核验");
+                        }
                     }
+
                 }
             }
         }

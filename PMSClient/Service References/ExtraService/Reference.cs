@@ -1450,6 +1450,9 @@ namespace PMSClient.ExtraService {
         private string ItemSpecificationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int RowOrderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1581,6 +1584,19 @@ namespace PMSClient.ExtraService {
                 if ((object.ReferenceEquals(this.ItemSpecificationField, value) != true)) {
                     this.ItemSpecificationField = value;
                     this.RaisePropertyChanged("ItemSpecification");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
                 }
             }
         }

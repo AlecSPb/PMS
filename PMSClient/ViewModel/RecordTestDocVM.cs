@@ -70,6 +70,10 @@ namespace PMSClient.ViewModel
 
         private void CreateCoA200324BL()
         {
+            if (CurrentRecordTest.State != PMSCommon.CommonState.已核验.ToString())
+            {
+                PMSDialogService.ShowWarning($"[{CurrentRecordTest.ProductID}]还没有核验，请慎重使用当前数据");
+            }
             try
             {
                 var fileName = $"BL_COA_{StringUtil.RemoveSlash(CurrentRecordTest.Customer)}_{StringUtil.RemoveSlash(CurrentRecordTest.CompositionAbbr)}_{CurrentRecordTest.ProductID}.docx".Replace('-', '_');
@@ -96,10 +100,10 @@ namespace PMSClient.ViewModel
 
         private void CreateCoA200324()
         {
-            //if (!PMSDialogService.ShowYesNo("请问", "确定生成记录单吗？"))
-            //{
-            //    return;
-            //}
+            if (CurrentRecordTest.State != PMSCommon.CommonState.已核验.ToString())
+            {
+                PMSDialogService.ShowWarning($"[{CurrentRecordTest.ProductID}]还没有核验，请慎重使用当前数据");
+            }
             try
             {
                 var fileName = $"PMI_COA_{StringUtil.RemoveSlash(CurrentRecordTest.Customer)}_{StringUtil.RemoveSlash(CurrentRecordTest.CompositionAbbr)}_{CurrentRecordTest.ProductID}.docx".Replace('-', '_');

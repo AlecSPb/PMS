@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>														
+<ns1:QualityCertificateFile xmlns:ns1="x-schema:../Schema/UltQualityCertificateSchema2016Dec.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">														
+	<ns1:FileCreationInfo>													
+		<ns1:responsiblePartyEmail>Supplier e-mail address</ns1:responsiblePartyEmail>												
+		<!-- e-mail address of person to be informed if the file can not be processed -->												
+	</ns1:FileCreationInfo>													
+	<ns1:BusinessSites>													
+		<ns1:BusinessSiteDescription>												
+			<ns1:manufacturerNumber>######</ns1:manufacturerNumber>
+			<!-- Replace with supplier's six digit SPEED AML Mfg# -->
+			<ns1:manufacturerName>Supplier Company name</ns1:manufacturerName>											
+			<ns1:manufacturingPlantCode>######</ns1:manufacturingPlantCode>
+			<!-- MQCS Site code typcially Company code, DUNS or DUNS+4 -->			
+			<ns1:incomingFaxNumber></ns1:incomingFaxNumber>											
+			<ns1:QualityCertificates>											
+				<ns1:QualityCertificate certificateType="SingleCertificate">										
+					<ns1:thisDocumentGenerationDateTime>eCOFA-DATE-e.g.YYYY-MM-DDT16:03:00</ns1:thisDocumentGenerationDateTime>
+					<!-- Date and time this eCofA was created, must be after lotCreatedDate below -->
+					<ns1:releaseType></ns1:releaseType>									
+					<ns1:ProductDescription>									
+						<ns1:productName></ns1:productName>								
+						<ns1:manufacturerPartNumber></ns1:manufacturerPartNumber>								
+						<ns1:manufacturerOrderNumber>Optional</ns1:manufacturerOrderNumber>								
+						<ns1:partNumber>9 digit Intel Part Number</ns1:partNumber>								
+						<ns1:partRevisionNumber>IPN Rev</ns1:partRevisionNumber>
+					<!-- Note that this field name has changed - was "revisionNumber" -->
+									<ns1:lotCreatedDate>Date of manufacture - e.g. YYYY-MM-DD, used as shelf life start date</ns1:lotCreatedDate>								
+						<ns1:lotNumber></ns1:lotNumber>								
+					</ns1:ProductDescription>									
+					<ns1:Shipment>									
+						<ns1:deliverTo>Optional Intel Fab ID</ns1:deliverTo>								
+						<ns1:scheduledshipdate></ns1:scheduledshipdate>								
+						<ns1:actualshipdate></ns1:actualshipdate>								
+						<ns1:containers>
+							<ns1:containernumber>Unit level IDs, such as serial, cylinder or tote numbers 1</ns1:containernumber>
+							<ns1:containernumber>Unit level IDs, such as serial, cylinder or tote numbers 2</ns1:containernumber>
+						</ns1:containers>								
+					</ns1:Shipment>									
+					<ns1:Comments>									
+						<ns1:comment>Optional</ns1:comment>								
+					</ns1:Comments>									
+					<ns1:MaterialParameters>									
+						<ns1:MaterialParameter>	
+						<!-- This is an example of how to report measurements on incoming Raw Materials (if required on SPEED specification) -->						
+							<ns1:rawlotid></ns1:rawlotid>							
+							<ns1:rawmaterialtype>Name e.g. KOH</ns1:rawmaterialtype>							
+							<ns1:shortName>XML code for parameter</ns1:shortName>
+							<!-- The shortName for each parameter being measured needs to match the XML ID in the IPN SPEED drawing-->
+							<ns1:sourcecomponent></ns1:sourcecomponent>							
+							<ns1:characteristic></ns1:characteristic>							
+							<ns1:unitOfMeasure></ns1:unitOfMeasure>
+							<!-- The unitOfMeasure also needs to match the XML ID in the IPN SPEED drawing -->
+							<ns1:measurements>							
+								<ns1:measurement>						
+									<ns1:measurementType></ns1:measurementType>					
+									<ns1:measurementValue></ns1:measurementValue>
+									<!-- Each of the four following fields are REQUIRED for each measurement; UCL may be 100, LCL for contaminants may be 0, MDL "value" is instrument lowest detection or accuracy -->
+									<!-- CLCalc is one of these seven menu choices: Eng, Temp, Short-run, Analytical, Mean-sigma, Percentile or Curve-fitted -->
+									<ns1:UCL></ns1:UCL>					
+									<ns1:LCL></ns1:LCL>					
+									<ns1:MDL></ns1:MDL>					
+									<ns1:CLCalc></ns1:CLCalc>					
+								</ns1:measurement>						
+							</ns1:measurements>
+						</ns1:MaterialParameter>
+						<ns1:MaterialParameter>
+						<!-- This is an example of how to report QA measurements on your final product - note there are no Raw Lot modifiers -->					
+							<ns1:shortName></ns1:shortName>
+							<!-- The shortName for each parameter being measured needs to match the XML ID in the IPN SPEED drawing-->
+							<ns1:sourcecomponent></ns1:sourcecomponent>							
+							<ns1:characteristic></ns1:characteristic>							
+							<ns1:unitOfMeasure></ns1:unitOfMeasure>
+							<!-- The unitOfMeasure also needs to match the XML ID in the IPN SPEED drawing -->
+							<ns1:measurements>							
+								<ns1:measurement>						
+									<ns1:measurementType></ns1:measurementType>					
+									<ns1:measurementValue></ns1:measurementValue>
+									<!-- Each of the four following fields are REQUIRED for each measurement; UCL may be 100, LCL for contaminants may be 0, MDL "value" is instrument lowest detection or accuracy -->
+									<!-- CLCalc is one of these seven menu choices: Eng, Temp, Short-run, Analytical, Mean-sigma, Percentile or Curve-fitted -->
+									<ns1:UCL></ns1:UCL>					
+									<ns1:LCL></ns1:LCL>					
+									<ns1:MDL></ns1:MDL>					
+									<ns1:CLCalc></ns1:CLCalc>					
+								</ns1:measurement>						
+							</ns1:measurements>	
+						</ns1:MaterialParameter>
+					</ns1:MaterialParameters>									
+				</ns1:QualityCertificate>										
+			</ns1:QualityCertificates>											
+		</ns1:BusinessSiteDescription>												
+	</ns1:BusinessSites>													
+</ns1:QualityCertificateFile>														

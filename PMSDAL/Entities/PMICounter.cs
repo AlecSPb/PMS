@@ -20,5 +20,7 @@ namespace PMSDAL
         public string ItemHistory { get; set; }
 
         public int RowOrder { get; set; }
+
+        public string Remark { get; set; }
     }
 }

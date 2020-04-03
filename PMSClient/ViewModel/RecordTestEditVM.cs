@@ -312,6 +312,12 @@ namespace PMSClient.ViewModel
                 }
             }
 
+            //SeAsGe电阻率超限警告
+            if (!RecordTestCheckLogic.IsSeAsGeNotConductive(CurrentRecordTest.Composition, CurrentRecordTest.Resistance))
+            {
+                RecordTestCheckLogic.ShowWarningDialog("SeAsGe类按经验是不导电的");
+            }
+
             //报废记录添加
             if (CurrentRecordTest.FollowUps.Contains("报废"))
             {

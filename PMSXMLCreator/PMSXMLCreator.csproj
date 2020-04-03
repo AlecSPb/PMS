@@ -92,6 +92,7 @@
     <Compile Include="Service\Log.cs" />
     <Compile Include="Service\ParameterDict.cs" />
     <Compile Include="Service\ParameterUnit.cs" />
+    <Compile Include="Service\XmlVerificator.cs" />
     <Page Include="CommonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,6 +137,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Schema\2019-04-22_ULT_XML_EXAMPLE-范例Schema_FILE.XML">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="OutputFile\此文件夹不要删除.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

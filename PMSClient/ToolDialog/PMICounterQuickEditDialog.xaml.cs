@@ -32,6 +32,15 @@ namespace PMSClient.ToolDialog
             }
         }
 
+        public string Remark
+        {
+            get { return TxtRemark.Text; }
+            set
+            {
+                TxtRemark.Text = value;
+            }
+        }
+
         public PMICounterEditType EditType { get; set; } = PMICounterEditType.IsCancel;
 
         private void Btn_Click(object sender, RoutedEventArgs e)
