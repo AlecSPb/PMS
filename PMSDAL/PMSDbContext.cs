@@ -91,6 +91,7 @@ namespace PMSDAL
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> Roles { get; set; }
         public DbSet<UserAccess> Accesses { get; set; }
+        public DbSet<UserAccessGrant> AccessGrants { get; set; }
 
         //Log
         public DbSet<LogError> LogErrors { get; set; }

@@ -70,8 +70,9 @@ namespace PMSClient.Helper
 
         public bool IsInGroup(string[] groups)
         {
-            if (groups.Length == 0) return true;
-            if (CurrentUserRole!=null)
+            if (groups == null) return false;
+            if (groups.Length == 0) return false;
+            if (CurrentUserRole != null)
             {
                 foreach (var item in groups)
                 {
@@ -82,6 +83,42 @@ namespace PMSClient.Helper
                 }
             }
             return false;
+        }
+
+        /// <summary>
+        /// 从数据库里根据控制名来查询组字符串
+        /// </summary>
+        /// <param name="controlname"></param>
+        /// <returns></returns>
+        public string[] GetRoleGroupByControlName(string controlname)
+        {
+            try
+            {
+                using (var userRole = new UserSimpleServiceClient())
+                {
+                    string roleStr = userRole.GetAccessGrantByControl(controlname);
+                    return GetRoles(roleStr);
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                return null;
+            }
+        }
+        /// <summary>
+        /// 将数据库里+连接的用户组名转换为数组
+        /// </summary>
+        /// <param name="roleStr"></param>
+        /// <returns></returns>
+        private string[] GetRoles(string roleStr)
+        {
+            if (string.IsNullOrEmpty(roleStr))
+            {
+                return null;
+            }
+            string[] roles = roleStr.Split(new string[] { "+" }, StringSplitOptions.RemoveEmptyEntries);
+            return roles;
         }
 
         public bool IsLogIn()

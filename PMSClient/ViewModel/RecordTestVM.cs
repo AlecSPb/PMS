@@ -143,7 +143,7 @@ namespace PMSClient.ViewModel
 
         private bool CanEnterCscan(RecordTestExtra arg)
         {
-            return PMSHelper.CurrentSession.IsInGroup(new string[] { "测试组", "热压组", "管理员" });
+            return PMSHelper.CurrentSession.IsInGroup(new string[] { "测试组", "热压组", "管理员", "超声组" });
         }
 
         private void ActionEnterCscan(RecordTestExtra obj)
@@ -151,6 +151,14 @@ namespace PMSClient.ViewModel
 
             if (obj != null)
             {
+                if (obj.RecordTest.State == PMSCommon.CommonState.已核验.ToString())
+                {
+                    if (!PMSDialogService.ShowYesNo("确定", "已核验状态修改需要慎重"))
+                    {
+                        return;
+                    }
+                }
+
                 //最后一次更新时间检查
                 try
                 {

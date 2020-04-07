@@ -38,6 +38,7 @@
                 Style="{StaticResource StyleButtonCommon}"
                 Content="取消" Name="BtnCancel" Click="BtnCancel_Click"/>
         <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Text="备注:" Style="{StaticResource StyleTextBlockCommon}"/>
-        <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" Text="" Margin="5" Name="TxtRemark"/>
+        <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" Text="" Margin="5" Name="TxtRemark" VerticalScrollBarVisibility="Visible"
+                 TextWrapping="Wrap"/>
     </Grid>
 </Window>

@@ -149,7 +149,8 @@ namespace PMSClient.ViewModel
             {
                 return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding);
             }
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding) && RecordBondingStateTransfer2(arg);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding) 
+                && RecordBondingStateTransfer2(arg);
         }
 
         private bool RecordBondingStateTransfer2(DcRecordBonding arg)
@@ -255,9 +256,9 @@ namespace PMSClient.ViewModel
         {
             if (arg == null)
             {
-                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding);
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding) || PMSHelper.CurrentSession.IsInGroup(new string[] { "超声组" });
             }
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding) && RecordBondingStateTransfer(arg);
+            return (PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding) || PMSHelper.CurrentSession.IsInGroup(new string[] { "超声组" })) && RecordBondingStateTransfer(arg);
         }
 
         private bool RecordBondingStateTransfer(DcRecordBonding arg)

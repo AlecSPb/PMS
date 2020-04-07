@@ -37,6 +37,31 @@ namespace PMSWCFService
             }
         }
 
+        public string GetAccessGrantByControl(string controlName)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var item = dc.AccessGrants.Where(i => i.ControlName == controlName).FirstOrDefault();
+                    if (item != null)
+                    {
+                        return item.RoleGroupString;
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
         public DcUserRole GetRole(Guid roleId)
         {
             try

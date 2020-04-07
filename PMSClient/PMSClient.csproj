@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>121</ApplicationRevision>
+    <ApplicationRevision>122</ApplicationRevision>
     <ApplicationVersion>4.10.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -396,6 +396,7 @@
     <Compile Include="ReportsHelper\WordBondingSheet.cs" />
     <Compile Include="ReportsHelper\WordCOABridgeLine.cs" />
     <Compile Include="ReportsHelper\WordCOANew.cs" />
+    <Compile Include="ReportsHelper\WordDeliverySheetTCB.cs" />
     <Compile Include="ReportsHelper\WordDeliverySheet.cs" />
     <Compile Include="ReportsHelper\WordMaterialOrderHorizontal.cs" />
     <Compile Include="ReportsHelper\WordOpticraft440.cs" />
@@ -1908,6 +1909,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\DocTemplate\Reports\COABridgeline200324.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\DocTemplate\Reports\DeliverySheet200324_tcb.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resource\DocTemplate\Reports\MaterialOrderHorizontalOld.docx" />

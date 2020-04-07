@@ -45,5 +45,12 @@ namespace PMSClient.ToolWindow
             this.DialogResult = false;
             this.Close();
         }
+
+        private void BtnTCB_Click(object sender, RoutedEventArgs e)
+        {
+            DeliverySheetType = "TCB";
+            this.DialogResult = true;
+            Close();
+        }
     }
 }

@@ -20,5 +20,8 @@ namespace PMSWCFService.ServiceContracts
         DcUserRole GetRole(Guid roleId);
         [OperationContract]
         List<DcUserAccess> GetAccesses(Guid roleId);
+
+        [OperationContract]
+        string GetAccessGrantByControl(string controlName);
     }
 }

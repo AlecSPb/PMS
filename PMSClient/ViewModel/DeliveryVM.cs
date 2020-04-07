@@ -55,7 +55,7 @@ namespace PMSClient.ViewModel
             AddItem = new RelayCommand<DcDelivery>(ActionAddItem, CanAddItem);
             EditItem = new RelayCommand<DcDeliveryItem>(ActionEditItem, CanEditItem);
             SearchRecordTest = new RelayCommand<DcDeliveryItem>(ActionRecordTest, CanRecordTest);
-            DeliverySheet = new RelayCommand<MainService.DcDelivery>(ActionDeliverySheet, CanDeliverySheet);
+            DeliverySheet = new RelayCommand<DcDelivery>(ActionDeliverySheet, CanDeliverySheet);
             BarCode = new RelayCommand<DcDelivery>(ActionBarCode, CanDeliverySheet);
 
             SelectionChanged = new RelayCommand<DcDelivery>(ActionSelectionChanged);
@@ -100,7 +100,7 @@ namespace PMSClient.ViewModel
 
         private bool CanExpressTrack()
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private void ActionExpressTrack()
@@ -137,7 +137,7 @@ namespace PMSClient.ViewModel
 
         private bool CanSaveAllItems()
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private void ActionQuickSave(DcDeliveryItem obj)
@@ -161,7 +161,7 @@ namespace PMSClient.ViewModel
 
         private bool CanQuickSave(DcDeliveryItem arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private void AcitonScanAdd(DcDelivery obj)
@@ -180,12 +180,12 @@ namespace PMSClient.ViewModel
 
         private bool CanScanAdd(DcDelivery obj)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private bool CanFinish(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsInGroup(new string[] { "管理员", "统筹组" })
+            return PMSHelper.CurrentSession.IsInGroup(new string[] { "管理员", "统筹组", "发货组" })
                 && arg?.State != PMSCommon.DeliveryState.最终完成.ToString();
         }
         private bool CheckDeliveryState(string state)
@@ -231,7 +231,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDeliverySheet(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private void ActionDeliverySheet(DcDelivery model)
@@ -243,9 +243,18 @@ namespace PMSClient.ViewModel
             {
                 try
                 {
-                    WordDeliverySheet report = new WordDeliverySheet(dialog.DeliverySheetType);
-                    report.SetModel(model);
-                    report.Output();
+                    if (dialog.DeliverySheetType != "TCB")
+                    {
+                        WordDeliverySheet report = new WordDeliverySheet(dialog.DeliverySheetType);
+                        report.SetModel(model);
+                        report.Output();
+                    }
+                    else
+                    {
+                        var report_tcb = new WordDeliverySheetTCB();
+                        report_tcb.SetModel(model);
+                        report_tcb.Output();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -256,7 +265,7 @@ namespace PMSClient.ViewModel
 
         private bool CanRecordTest(DcDeliveryItem arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadRecordTest);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadRecordTest) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private void ActionRecordTest(DcDeliveryItem model)
@@ -285,12 +294,12 @@ namespace PMSClient.ViewModel
 
         private bool CanEditItem(DcDeliveryItem arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private bool CanAddItem(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
         /// <summary>
         /// 权限代码=编辑发货记录
@@ -298,12 +307,12 @@ namespace PMSClient.ViewModel
         /// <returns></returns>
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private bool CanEdit(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private void ActionAll()

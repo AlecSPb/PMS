@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicDictionary.cs" />
+    <Compile Include="Entities\UserAccessGrant.cs" />
     <Compile Include="Entities\BDElement.cs" />
     <Compile Include="Entities\BDElementGroup.cs" />
     <Compile Include="Entities\BDElementGroupItem.cs" />
@@ -786,6 +787,10 @@
     <Compile Include="Migrations\202004031518444_change109.Designer.cs">
       <DependentUpon>202004031518444_change109.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004070421551_change110.cs" />
+    <Compile Include="Migrations\202004070421551_change110.Designer.cs">
+      <DependentUpon>202004070421551_change110.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -1324,6 +1329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004031518444_change109.resx">
       <DependentUpon>202004031518444_change109.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004070421551_change110.resx">
+      <DependentUpon>202004070421551_change110.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

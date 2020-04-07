@@ -8,6 +8,14 @@ namespace PMSClient
 {
     public static class AccessGrant
     {
+        public static string[] ViewAllModule
+        {
+            get
+            {
+                return new string[] { "管理员", "统筹组", "主管", "测试组", "财务组", "超声组", "发货组" };
+            }
+        }
+
         public static string[] Sample
         {
             get
@@ -28,7 +36,7 @@ namespace PMSClient
         {
             get
             {
-                return new string[] { "管理员", "统筹组", "生产经理", "热压组", "主管", "测试组", "财务组" };
+                return new string[] { "管理员", "统筹组", "生产经理", "热压组", "主管", "测试组", "财务组", "超声组", "发货组" };
             }
 
         }

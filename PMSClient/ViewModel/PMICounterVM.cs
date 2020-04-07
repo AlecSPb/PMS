@@ -39,8 +39,8 @@ namespace PMSClient.ViewModel
         {
             if (obj != null)
             {
-                var dialog = new WPFControls.NormalizedDataViewer();
-                dialog.SetMainStrings(obj.Remark);
+                var dialog = new ToolWindow.PlainTextWindow();
+                dialog.ContentText = obj.Remark;
                 dialog.ShowDialog();
             }
         }

@@ -425,6 +425,12 @@ namespace PMSClient.UserSimpleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserSimpleService/GetAccesses", ReplyAction="http://tempuri.org/IUserSimpleService/GetAccessesResponse")]
         System.Threading.Tasks.Task<PMSClient.UserSimpleService.DcUserAccess[]> GetAccessesAsync(System.Guid roleId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserSimpleService/GetAccessGrantByControl", ReplyAction="http://tempuri.org/IUserSimpleService/GetAccessGrantByControlResponse")]
+        string GetAccessGrantByControl(string controlName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserSimpleService/GetAccessGrantByControl", ReplyAction="http://tempuri.org/IUserSimpleService/GetAccessGrantByControlResponse")]
+        System.Threading.Tasks.Task<string> GetAccessGrantByControlAsync(string controlName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -476,6 +482,14 @@ namespace PMSClient.UserSimpleService {
         
         public System.Threading.Tasks.Task<PMSClient.UserSimpleService.DcUserAccess[]> GetAccessesAsync(System.Guid roleId) {
             return base.Channel.GetAccessesAsync(roleId);
+        }
+        
+        public string GetAccessGrantByControl(string controlName) {
+            return base.Channel.GetAccessGrantByControl(controlName);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetAccessGrantByControlAsync(string controlName) {
+            return base.Channel.GetAccessGrantByControlAsync(controlName);
         }
     }
 }
