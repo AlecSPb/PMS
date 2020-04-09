@@ -26,6 +26,7 @@ namespace PMSClient.DataProcess.QuickReport
         {
             try
             {
+                ReSet();
                 double progressValue = 0;
                 double count = 0;
                 foreach (var item in Lots)
@@ -52,6 +53,7 @@ namespace PMSClient.DataProcess.QuickReport
         {
             try
             {
+                ReSet();
                 double progressValue = 0;
                 double count = 0;
                 foreach (var item in Lots)

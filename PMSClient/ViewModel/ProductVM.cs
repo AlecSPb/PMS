@@ -65,7 +65,7 @@ namespace PMSClient.ViewModel
 
         private bool CanSend(DcProduct arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private void ActionOutSourceAdd()
@@ -76,7 +76,7 @@ namespace PMSClient.ViewModel
 
         private bool CanScanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private void ActionScanAdd()
@@ -95,7 +95,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDuplicate(DcProduct arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private void ActionDuplicate(DcProduct model)
@@ -113,7 +113,7 @@ namespace PMSClient.ViewModel
 
         private bool CanSelect(DcProduct arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct)|| PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private void ActionSelectAndSend(DcProduct model)
@@ -136,7 +136,7 @@ namespace PMSClient.ViewModel
 
         private bool CanRecordTest(DcProduct arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadRecordTest);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadRecordTest) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private void ActionRecordTest(DcProduct model)
@@ -149,17 +149,17 @@ namespace PMSClient.ViewModel
         }
         private bool CanDoc(DcProduct arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private bool CanEdit(DcProduct arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
 

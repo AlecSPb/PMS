@@ -45,6 +45,13 @@ namespace PMSClient.Helpers
                     return;
                 }
             }
+            else if (productid.Contains("OS"))
+            {
+                for (int i = 0; i < quantity; i++)
+                {
+                    SaveNew(model, productid.Substring(0, 9) + "-" + (i + 2));
+                }
+            }
             else
             {
                 for (int i = 0; i < quantity; i++)

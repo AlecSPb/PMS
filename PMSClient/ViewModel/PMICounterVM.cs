@@ -79,7 +79,7 @@ namespace PMSClient.ViewModel
             {
                 if (obj.ItemGroup == "背板")
                 {
-                    //TODO:添加自动添加背板库存记录功能
+                    //添加自动添加背板库存记录功能
                     if (PMSDialogService.ShowYesNo("请问", "需要添加对应数量的此背板到背板库存里面？"))
                     {
                         var model = new DcPlate();

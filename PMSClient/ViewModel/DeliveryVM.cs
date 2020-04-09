@@ -289,7 +289,7 @@ namespace PMSClient.ViewModel
 
         private bool CanLabel(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
         }
 
         private bool CanEditItem(DcDeliveryItem arg)

@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ExcelOutputHelper
 {
-    class ExcelOutputPlan
+    public class ExcelOutputPlan:ExcelOutputBasePage
     {
+        public ExcelOutputPlan()
+        {
+
+        }
+        public override void Output()
+        {
+            base.Output();
+        }
+
     }
 }

@@ -18,7 +18,13 @@ namespace PMSClient.DataProcess.ScanInput
             Lots = new List<LotModel>();
 
         }
-
+        protected void ReSet()
+        {
+            foreach (var item in Lots)
+            {
+                item.HasProcessed = false;
+            }
+        }
         protected string uid;
 
         public List<LotModel> Lots;

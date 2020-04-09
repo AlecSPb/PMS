@@ -22,10 +22,12 @@ namespace PMSClient.DataProcess.QuickCheck
         {
             this.delivery = delivery;
         }
+
         public override void Check(Action<double> DoSomething)
         {
             try
             {
+                ReSet();
                 double progressValue = 0;
                 double count = 0;
                 foreach (var item in Lots)
@@ -39,7 +41,7 @@ namespace PMSClient.DataProcess.QuickCheck
                     if (DoSomething != null)
                     {
                         DoSomething(progressValue);
-                        System.Threading.Thread.Sleep(50);
+                        //System.Threading.Thread.Sleep(50);
                     }
                     item.HasProcessed = true;
                 }
@@ -55,6 +57,7 @@ namespace PMSClient.DataProcess.QuickCheck
         {
             try
             {
+                ReSet();
                 double progressValue = 0;
                 double count = 0;
                 foreach (var item in Lots)
@@ -68,7 +71,7 @@ namespace PMSClient.DataProcess.QuickCheck
                     if (DoSomething != null)
                     {
                         DoSomething(progressValue);
-                        System.Threading.Thread.Sleep(50);
+                        //System.Threading.Thread.Sleep(50);
                     }
                     item.HasProcessed = true;
                 }
