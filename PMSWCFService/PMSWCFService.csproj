@@ -199,6 +199,7 @@
     <Compile Include="ServiceContracts\IPMSIndexService.cs" />
     <Compile Include="ServiceContracts\IPMSSettingService.cs" />
     <Compile Include="ServiceContracts\IRawMaterialSheetService.cs" />
+    <Compile Include="ServiceContracts\IRecordSearchService.cs" />
     <Compile Include="ServiceContracts\IRemainInventoryService.cs" />
     <Compile Include="ServiceContracts\ISampleService.cs" />
     <Compile Include="ServiceContracts\IStatisticManager.cs" />
@@ -254,6 +255,7 @@
     <Compile Include="ServiceImplements\RecordDeMoldService.cs" />
     <Compile Include="ServiceImplements\RecordMachineService.cs" />
     <Compile Include="ServiceImplements\RecordMillingService.cs" />
+    <Compile Include="ServiceImplements\RecordSearchService.cs" />
     <Compile Include="ServiceImplements\RecordTestService.cs" />
     <Compile Include="ServiceContracts\IMissonService.cs" />
     <Compile Include="ServiceContracts\IRecordBondingService.cs" />

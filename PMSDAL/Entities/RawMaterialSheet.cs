@@ -17,6 +17,10 @@ namespace PMSDAL
         public double Weight { get; set; }//kg
         public string Remark { get; set; }
         public DateTime StoreTime { get; set; }
+        public bool IsSampleTaking { get; set; }
+        public DateTime SampleTakingTime { get; set; }
+        public string  GDMS { get; set; }
+        public string ICPOES { get; set; }
         //State 作废 [在库] 耗尽 取消
     }
 }

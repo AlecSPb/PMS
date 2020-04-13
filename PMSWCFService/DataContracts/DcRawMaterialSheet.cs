@@ -26,5 +26,14 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public DateTime StoreTime { get; set; }
         //State 作废 [在库] 耗尽 取消
+
+        [DataMember]
+        public bool IsSampleTaking { get; set; }
+        [DataMember]
+        public DateTime SampleTakingTime { get; set; }
+        [DataMember]
+        public string GDMS { get; set; }
+        [DataMember]
+        public string ICPOES { get; set; }
     }
 }

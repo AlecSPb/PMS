@@ -215,7 +215,7 @@ namespace PMSClient.ViewModel
             GoToSample = new RelayCommand(() =>
               {
                   NavigationService.GoTo(PMSViews.Sample);
-              }, () => _session.IsInGroup(AccessGrant.ViewAllModule));
+              }, () => _session.IsInGroup(AccessGrant.ViewAllModule) || _session.IsInGroup(AccessGrant.Sample));
             #endregion
         }
 

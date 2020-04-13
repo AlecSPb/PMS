@@ -6,6 +6,8 @@ using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
 using PMSDAL;
 using AutoMapper;
+using PMSCommon;
+using System.Data.Entity;
 
 namespace PMSWCFService
 {
@@ -201,6 +203,120 @@ namespace PMSWCFService
             }
 
 
+        }
+
+        public List<DcOrder> GetOrderByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end)
+        {
+            throw new NotImplementedException();
+            XS.RunLog();
+            //try
+            //{
+            //    using (var dc = new PMSDbContext())
+            //    {
+            //        var config = new MapperConfiguration(cfg =>
+            //        {
+            //            cfg.CreateMap<PMSOrder, DcOrder>();
+            //        });
+            //        var mapper = config.CreateMapper();
+            //        var query = from o in dc.Orders
+            //                    where o.CustomerName.Contains(customer)
+            //                    && o.CompositionStandard.Contains(compositionstd)
+            //                    && o.State != OrderState.作废.ToString()
+            //                    orderby o.CreateTime descending
+            //                    select o;
+
+            //        var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(query.Skip(skip).Take(take).ToList());
+            //        return result;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    XS.Current.Error(ex);
+            //    throw ex;
+            //}
+        }
+
+        public int GetOrderByYearMonthCount(int year_start, int month_start, int year_end, int month_end)
+        {
+            XS.RunLog();
+            //try
+            //{
+            //    using (var dc = new PMSDbContext())
+            //    {
+            //        return dc.Orders.Where(o => o.CustomerName.Contains(customer)
+            //        && o.CompositionStandard.Contains(compositionstd)
+            //        && o.State != OrderState.作废.ToString()).Count();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    XS.Current.Error(ex);
+            //    throw ex;
+            //}
+            throw new NotImplementedException();
+
+        }
+
+        public List<DcPlanExtra> GetPlanByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end)
+        {
+            //try
+            //{
+            //    XS.RunLog();
+            //    using (var dc = new PMSDAL.PMSDbContext())
+            //    {
+            //        var query = from p in dc.VHPPlans
+            //                    join o in dc.Orders on p.OrderID equals o.ID
+            //                    where p.State == PMSCommon.CommonState.已核验.ToString()
+            //                         && p.SearchCode.Contains(searchCode)
+            //                         && o.CompositionStandard.Contains(composition)
+            //                         && o.PMINumber.Contains(pminumber)
+            //                    orderby DbFunctions.TruncateTime(p.PlanDate) descending, p.PlanLot descending, p.VHPDeviceCode descending, DbFunctions.TruncateTime(p.CreateTime) descending
+            //                    select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
+
+            //        var final = query.Skip(skip).Take(take).ToList();
+            //        Mapper.Initialize(cfg =>
+            //        {
+            //            cfg.CreateMap<PMSPlanWithMissonModel, DcPlanWithMisson>();
+            //            cfg.CreateMap<PMSOrder, DcOrder>();
+            //            cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+            //        });
+
+            //        var result = Mapper.Map<List<PMSPlanWithMissonModel>, List<DcPlanWithMisson>>(final);
+
+            //        return result;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    XS.Current.Error(ex);
+            //    throw ex;
+            //}
+            throw new NotImplementedException();
+        }
+
+        public int GetPlanByYearMonthCount(int year_start, int month_start, int year_end, int month_end)
+        {
+            //try
+            //{
+            //    XS.RunLog();
+            //    using (var dc = new PMSDAL.PMSDbContext())
+            //    {
+            //        var query = from p in dc.VHPPlans
+            //                    join o in dc.Orders on p.OrderID equals o.ID
+            //                    where p.State == PMSCommon.CommonState.已核验.ToString()
+            //                         && p.SearchCode.Contains(searchCode)
+            //                         && o.CompositionStandard.Contains(composition)
+            //                         && o.PMINumber.Contains(pminumber)
+            //                    select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
+            //        return query.Count();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    XS.Current.Error(ex);
+            //    throw ex;
+            //}
+            throw new NotImplementedException();
         }
     }
 }

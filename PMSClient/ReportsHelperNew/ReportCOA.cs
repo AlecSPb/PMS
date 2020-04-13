@@ -24,7 +24,7 @@ namespace PMSClient.ReportsHelperNew
             imageType = ImageType.Target;
             IsOpenAfterCreated = true;
         }
-        public void SetParameters(DcRecordTest model, ImageType imageType,bool isopen=true)
+        public void SetParameters(DcRecordTest model, ImageType imageType, bool isopen = true)
         {
             this.model = model;
             this.imageType = imageType;
@@ -213,9 +213,18 @@ namespace PMSClient.ReportsHelperNew
                         {
                             Cell cell = xrfTable.Rows[i].Cells[j];
                             cell.Width = 60;
-                            cell.Paragraphs[0].Append(items[j])
+                            string s = items[j];
+                            if (j > 0 && i > 0)
+                            {
+                                if (double.TryParse(s, out double val_temp))
+                                {
+                                    s = val_temp.ToString("F2");
+                                }
+                            }
+
+                            cell.Paragraphs[0].Append(s)
                                 .FontSize(8)
-                                .Font(new System.Drawing.FontFamily("等线"));
+                                .Font(new System.Drawing.FontFamily("等线")).Alignment = Alignment.right;
                         }
                     }
                     p.InsertTableBeforeSelf(xrfTable);

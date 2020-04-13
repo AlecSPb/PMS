@@ -213,7 +213,8 @@ namespace PMSClient.Simulator
                 sb.Append(",");
                 for (int j = 0; j < output.RowValues[i].Values.Count; j++)
                 {
-                    sb.Append(Math.Round(output.RowValues[i].Values[j], 2, MidpointRounding.AwayFromZero));
+                    double at_temp = Math.Round(output.RowValues[i].Values[j], 2, MidpointRounding.AwayFromZero);
+                    sb.Append(at_temp.ToString("F2"));
                     if (j < output.RowValues[i].Values.Count - 1)
                     {
                         sb.Append(",");
@@ -226,7 +227,8 @@ namespace PMSClient.Simulator
             sb.Append(",");
             for (int i = 0; i < output.Average.Values.Count; i++)
             {
-                sb.Append(Math.Round(output.Average.Values[i], 2, MidpointRounding.AwayFromZero));
+                double avg_temp = Math.Round(output.Average.Values[i], 2, MidpointRounding.AwayFromZero);
+                sb.Append(avg_temp.ToString("F2"));
                 if (i < output.Average.Values.Count - 1)
                 {
                     sb.Append(",");

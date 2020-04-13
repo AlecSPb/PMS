@@ -25,5 +25,8 @@ namespace PMSDAL
         public string MaterialSource { get; set; }
         public string SupplierPO { get; set; }//
 
+        public string GDMS { get; set; }
+        public string ICPOES { get; set; }
+
     }
 }

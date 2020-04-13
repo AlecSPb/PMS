@@ -211,12 +211,20 @@ namespace PMSClient.ReportsHelperNew
                         {
                             Cell cell = xrfTable.Rows[i].Cells[j];
                             cell.Width = 60;
-                            cell.Paragraphs[0].Append(items[j]).FontSize(8)
-                                .Font(new FontFamily("等线"));
-                            if (j == 0)
+                            string s = items[j];
+                            if (j > 0 && i > 0)
                             {
-                                continue;
+                                if (double.TryParse(s, out double val_temp))
+                                {
+                                    s = val_temp.ToString("F2");
+                                }
                             }
+                            cell.Paragraphs[0].Append(s).FontSize(8)
+                                .Font(new FontFamily("等线")).Alignment=Alignment.right;
+                            //if (j == 0)
+                            //{
+                            //    continue;
+                            //}
                         }
                     }
                     p.InsertTableBeforeSelf(xrfTable);

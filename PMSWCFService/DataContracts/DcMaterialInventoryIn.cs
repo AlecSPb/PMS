@@ -38,5 +38,10 @@ namespace PMSWCFService.DataContracts
         public string QuickRemark { get; set; }
         [DataMember]
         public string SupplierPO { get; set; }
+
+        [DataMember]
+        public string GDMS { get; set; }
+        [DataMember]
+        public string ICPOES { get; set; }
     }
 }
