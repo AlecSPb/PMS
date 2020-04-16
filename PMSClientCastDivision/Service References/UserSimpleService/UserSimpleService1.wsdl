@@ -25,6 +25,12 @@
   <wsdl:message name="IUserSimpleService_GetAccesses_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAccessesResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserSimpleService_GetAccessGrantByControl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessGrantByControl" />
+  </wsdl:message>
+  <wsdl:message name="IUserSimpleService_GetAccessGrantByControl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessGrantByControlResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUserSimpleService">
     <wsdl:operation name="GetUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserSimpleService/GetUser" message="tns:IUserSimpleService_GetUser_InputMessage" />
@@ -37,6 +43,10 @@
     <wsdl:operation name="GetAccesses">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserSimpleService/GetAccesses" message="tns:IUserSimpleService_GetAccesses_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserSimpleService/GetAccessesResponse" message="tns:IUserSimpleService_GetAccesses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessGrantByControl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserSimpleService/GetAccessGrantByControl" message="tns:IUserSimpleService_GetAccessGrantByControl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserSimpleService/GetAccessGrantByControlResponse" message="tns:IUserSimpleService_GetAccessGrantByControl_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="usersimple" type="tns:IUserSimpleService">
@@ -61,6 +71,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAccesses">
       <soap:operation soapAction="http://tempuri.org/IUserSimpleService/GetAccesses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessGrantByControl">
+      <soap:operation soapAction="http://tempuri.org/IUserSimpleService/GetAccessGrantByControl" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -32,8 +32,11 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public DateTime SampleTakingTime { get; set; }
         [DataMember]
+        public string SampleRemark { get; set; }
+        [DataMember]
         public string GDMS { get; set; }
         [DataMember]
         public string ICPOES { get; set; }
+
     }
 }

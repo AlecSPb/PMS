@@ -679,6 +679,12 @@ namespace PMSClient.SanjieService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GDMSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ICPOESField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -756,6 +762,32 @@ namespace PMSClient.SanjieService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GDMS {
+            get {
+                return this.GDMSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GDMSField, value) != true)) {
+                    this.GDMSField = value;
+                    this.RaisePropertyChanged("GDMS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ICPOES {
+            get {
+                return this.ICPOESField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ICPOESField, value) != true)) {
+                    this.ICPOESField = value;
+                    this.RaisePropertyChanged("ICPOES");
                 }
             }
         }

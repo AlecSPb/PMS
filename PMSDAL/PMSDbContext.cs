@@ -156,5 +156,7 @@ namespace PMSDAL
         public DbSet<PMSSetting> PMSSettings { get; set; }
 
         public DbSet<Drawing> Drawings { get; set; }
+        public DbSet<Consumable> Consumables { get; set; }
+
     }
 }

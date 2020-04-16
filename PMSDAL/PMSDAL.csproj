@@ -797,6 +797,14 @@
     <Compile Include="Migrations\202004130427205_change111.Designer.cs">
       <DependentUpon>202004130427205_change111.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004150209175_change112.cs" />
+    <Compile Include="Migrations\202004150209175_change112.Designer.cs">
+      <DependentUpon>202004150209175_change112.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004150622514_change113.cs" />
+    <Compile Include="Migrations\202004150622514_change113.Designer.cs">
+      <DependentUpon>202004150622514_change113.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -1341,6 +1349,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004130427205_change111.resx">
       <DependentUpon>202004130427205_change111.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004150209175_change112.resx">
+      <DependentUpon>202004150209175_change112.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004150622514_change113.resx">
+      <DependentUpon>202004150622514_change113.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

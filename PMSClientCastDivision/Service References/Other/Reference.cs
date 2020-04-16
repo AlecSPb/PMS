@@ -23,10 +23,25 @@ namespace PMSClient.Other {
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GDMSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ICPOESField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsSampleTakingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SampleRemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime SampleTakingTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime StoreTimeField;
@@ -46,6 +61,45 @@ namespace PMSClient.Other {
                 if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
                     this.CompositionField = value;
                     this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GDMS {
+            get {
+                return this.GDMSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GDMSField, value) != true)) {
+                    this.GDMSField = value;
+                    this.RaisePropertyChanged("GDMS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ICPOES {
+            get {
+                return this.ICPOESField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ICPOESField, value) != true)) {
+                    this.ICPOESField = value;
+                    this.RaisePropertyChanged("ICPOES");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsSampleTaking {
+            get {
+                return this.IsSampleTakingField;
+            }
+            set {
+                if ((this.IsSampleTakingField.Equals(value) != true)) {
+                    this.IsSampleTakingField = value;
+                    this.RaisePropertyChanged("IsSampleTaking");
                 }
             }
         }
@@ -72,6 +126,32 @@ namespace PMSClient.Other {
                 if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
                     this.RemarkField = value;
                     this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SampleRemark {
+            get {
+                return this.SampleRemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SampleRemarkField, value) != true)) {
+                    this.SampleRemarkField = value;
+                    this.RaisePropertyChanged("SampleRemark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime SampleTakingTime {
+            get {
+                return this.SampleTakingTimeField;
+            }
+            set {
+                if ((this.SampleTakingTimeField.Equals(value) != true)) {
+                    this.SampleTakingTimeField = value;
+                    this.RaisePropertyChanged("SampleTakingTime");
                 }
             }
         }

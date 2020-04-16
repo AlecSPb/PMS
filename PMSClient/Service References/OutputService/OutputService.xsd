@@ -64,4 +64,76 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetOrderByYearMonth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" type="xs:int" />
+        <xs:element minOccurs="0" name="t" type="xs:int" />
+        <xs:element minOccurs="0" name="year_start" type="xs:int" />
+        <xs:element minOccurs="0" name="month_start" type="xs:int" />
+        <xs:element minOccurs="0" name="year_end" type="xs:int" />
+        <xs:element minOccurs="0" name="month_end" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderByYearMonthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetOrderByYearMonthResult" nillable="true" type="q3:ArrayOfDcOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderByYearMonthCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year_start" type="xs:int" />
+        <xs:element minOccurs="0" name="month_start" type="xs:int" />
+        <xs:element minOccurs="0" name="year_end" type="xs:int" />
+        <xs:element minOccurs="0" name="month_end" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrderByYearMonthCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOrderByYearMonthCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlanByYearMonth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" type="xs:int" />
+        <xs:element minOccurs="0" name="t" type="xs:int" />
+        <xs:element minOccurs="0" name="year_start" type="xs:int" />
+        <xs:element minOccurs="0" name="month_start" type="xs:int" />
+        <xs:element minOccurs="0" name="year_end" type="xs:int" />
+        <xs:element minOccurs="0" name="month_end" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlanByYearMonthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlanByYearMonthResult" nillable="true" type="q4:ArrayOfDcPlanExtra" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlanByYearMonthCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year_start" type="xs:int" />
+        <xs:element minOccurs="0" name="month_start" type="xs:int" />
+        <xs:element minOccurs="0" name="year_end" type="xs:int" />
+        <xs:element minOccurs="0" name="month_end" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlanByYearMonthCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPlanByYearMonthCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

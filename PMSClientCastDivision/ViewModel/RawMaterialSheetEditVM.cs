@@ -48,6 +48,10 @@ namespace PMSClient.ViewModel
             model.Weight = 0;
             model.StoreTime = DateTime.Now;
             model.Remark = "无";
+            model.IsSampleTaking = true;
+            model.SampleTakingTime = DateTime.Now;
+            model.GDMS = "";
+            model.ICPOES = "";
 
             #endregion
             CurrentRawMaterialSheet = model;
@@ -68,6 +72,10 @@ namespace PMSClient.ViewModel
                 CurrentRawMaterialSheet.Weight = model.Weight;
                 CurrentRawMaterialSheet.StoreTime = DateTime.Now;
                 CurrentRawMaterialSheet.Remark = model.Remark;
+                CurrentRawMaterialSheet.IsSampleTaking = false;
+                CurrentRawMaterialSheet.SampleTakingTime = DateTime.Now;
+                CurrentRawMaterialSheet.GDMS = "";
+                CurrentRawMaterialSheet.ICPOES = "";
             }
         }
         public void SetEdit(DcRawMaterialSheet model)

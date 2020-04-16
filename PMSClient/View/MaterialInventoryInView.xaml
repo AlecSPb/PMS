@@ -91,6 +91,10 @@
                                     Binding="{Binding SupplierPO}"/>
                 <DataGridTextColumn Header="{StaticResource MIIMaterialSource}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialSource}" MaxWidth="500"/>
+                <DataGridTextColumn Header="{StaticResource MIIICPOES}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding ICPOES}" MaxWidth="300"/>
+                <DataGridTextColumn Header="{StaticResource MIIGDMS}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding GDMS}" MaxWidth="300"/>
                 <DataGridTextColumn Header="{StaticResource MIICreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>
