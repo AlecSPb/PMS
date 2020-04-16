@@ -216,6 +216,11 @@ namespace PMSClient.ViewModel
               {
                   NavigationService.GoTo(PMSViews.Sample);
               }, () => _session.IsInGroup(AccessGrant.ViewAllModule) || _session.IsInGroup(AccessGrant.Sample));
+
+            GoToRawMaterialSheet = new RelayCommand(() =>
+            {
+                NavigationService.GoTo(PMSViews.RawMaterialSheet);
+            }, () => _session.IsInGroup(AccessGrant.ViewAllModule));
             #endregion
         }
 
@@ -377,6 +382,7 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToRemainInventory { get; set; }
         public RelayCommand GoToOutsideProcess { get; set; }
         public RelayCommand GoToSample { get; set; }
+        public RelayCommand GoToRawMaterialSheet { get; set; }
 
         private void InitializeData()
         {

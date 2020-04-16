@@ -156,13 +156,22 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="XSHelper">
+      <HintPath>..\..\..\dotnet\XS\XSHelper\bin\Debug\XSHelper.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Components\GDMSHelper\GDMSAnlysis.cs" />
+    <Compile Include="Components\GDMSHelper\GDMSHelper.xaml.cs">
+      <DependentUpon>GDMSHelper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\GDMSHelper\GDMSPair.cs" />
     <Compile Include="Helpers\CompositionHelper.cs" />
+    <Compile Include="Helpers\Converter\StringCutConverter.cs" />
     <Compile Include="MainDesktop.xaml.cs">
       <DependentUpon>MainDesktop.xaml</DependentUpon>
     </Compile>
@@ -237,6 +246,7 @@
     <Compile Include="ViewModel\NavigationVM.cs" />
     <Compile Include="ViewModel\OutputVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\VMHelper\SampleVMHelper.cs" />
     <Compile Include="View\CompoundView.xaml.cs">
       <DependentUpon>CompoundView.xaml</DependentUpon>
     </Compile>
@@ -277,6 +287,10 @@
       <DependentUpon>OutputView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ViewLocator.cs" />
+    <Page Include="Components\GDMSHelper\GDMSHelper.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="CustomControls\BatchDuplicateDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -298,6 +312,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="CustomControls\ProgressIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Helpers\Converter\PMSConverter.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -701,7 +719,6 @@
     <Folder Include="Resource\Bondings\" />
     <Folder Include="Resource\DocTemplate\Doc\" />
     <Folder Include="Resource\Files\" />
-    <Folder Include="ViewModel\VMHelper\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

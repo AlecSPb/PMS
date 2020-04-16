@@ -145,10 +145,21 @@ namespace PMSClient.View
 
             SimpleIoc.Default.Register<SampleView>();
             SimpleIoc.Default.Register<SampleEditView>();
+
+            SimpleIoc.Default.Register<RawMaterialSheetView>();
+            SimpleIoc.Default.Register<RawMaterialSheetEditView>();
         }
 
         #region NavigationProperties
+        public RawMaterialSheetView RawMaterialSheet
+        {
+            get { return SimpleIoc.Default.GetInstance<RawMaterialSheetView>(); }
+        }
 
+        public RawMaterialSheetEditView RawMaterialSheetEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RawMaterialSheetEditView>(); }
+        }
         public SampleView Sample
         {
             get

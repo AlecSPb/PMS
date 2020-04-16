@@ -449,6 +449,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\Other\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\OutputService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -667,6 +672,8 @@
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
+    <Compile Include="ViewModel\RawMaterialSheetEditVM.cs" />
+    <Compile Include="ViewModel\RawMaterialSheetVM.cs" />
     <Compile Include="ViewModel\RecordBondingEditVM.cs" />
     <Compile Include="ViewModel\SampleEditVM.cs" />
     <Compile Include="ViewModel\SampleVM.cs" />
@@ -767,6 +774,12 @@
     </Compile>
     <Compile Include="View\MissonSelectWindow.xaml.cs">
       <DependentUpon>MissonSelectWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RawMaterialSheetEditView.xaml.cs">
+      <DependentUpon>RawMaterialSheetEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RawMaterialSheetView.xaml.cs">
+      <DependentUpon>RawMaterialSheetView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SampleEditView.xaml.cs">
       <DependentUpon>SampleEditView.xaml</DependentUpon>
@@ -1451,6 +1464,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\RawMaterialSheetEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RawMaterialSheetView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\SampleEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1960,6 +1981,19 @@
     <None Include="Service References\NewService\PMSClient.NewService.DcPlanVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\Other\PMSClient.Other.DcRawMaterialSheet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Other\RawMaterialSheetService.wsdl" />
+    <None Include="Service References\Other\RawMaterialSheetService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Other\RawMaterialSheetService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Other\RawMaterialSheetService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\OutputService\PMSClient.OutputService.DcOrder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -2025,6 +2059,13 @@
     <None Include="Service References\NewService\configuration91.svcinfo" />
     <None Include="Service References\NewService\configuration.svcinfo" />
     <None Include="Service References\NewService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Other\RawMaterialSheetService.disco" />
+    <None Include="Service References\Other\configuration91.svcinfo" />
+    <None Include="Service References\Other\configuration.svcinfo" />
+    <None Include="Service References\Other\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -2641,6 +2682,7 @@
     <WCFMetadataStorage Include="Service References\HeartBeatService\" />
     <WCFMetadataStorage Include="Service References\MainService\" />
     <WCFMetadataStorage Include="Service References\NewService\" />
+    <WCFMetadataStorage Include="Service References\Other\" />
     <WCFMetadataStorage Include="Service References\OutputService\" />
     <WCFMetadataStorage Include="Service References\OutsideProcessService\" />
     <WCFMetadataStorage Include="Service References\PMSIndexService\" />

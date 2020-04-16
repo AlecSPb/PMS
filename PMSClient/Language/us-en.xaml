@@ -1024,11 +1024,12 @@
     <sys:String x:Key="BottomBarDrawingRule">Drawing</sys:String>
 
     <!--原料库-->
-    <sys:String x:Key="PageRawMaterialSheet">Simple Element Lib</sys:String>
-    <sys:String x:Key="PageRawMaterialSheetEdit">Simple Element Lib-Edit</sys:String>
+    <sys:String x:Key="PageRawMaterialSheet">Simple Element</sys:String>
+    <sys:String x:Key="PageRawMaterialSheetEdit">Simple Element-Edit</sys:String>
 
     <sys:String x:Key="RMSID">ID</sys:String>
     <sys:String x:Key="RMSState">State</sys:String>
+    <sys:String x:Key="RMSStoreTime">StoreTime</sys:String>
     <sys:String x:Key="RMSCreateTime">CreateTime</sys:String>
     <sys:String x:Key="RMSCreator">Creator</sys:String>
     <sys:String x:Key="RMSLot">Lot</sys:String>

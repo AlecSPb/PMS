@@ -113,5 +113,7 @@ namespace PMSClient
         OutsideProcess,
         Sample,
         SampleEdit,
+        RawMaterialSheet,
+        RawMaterialSheetEdit
     }
 }

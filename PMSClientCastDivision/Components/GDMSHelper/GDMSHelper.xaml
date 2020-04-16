@@ -1,0 +1,47 @@
+﻿<Window x:Class="PMSClient.Components.GDMSHelper.GDMSHelper"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.Components.GDMSHelper"
+        mc:Ignorable="d"
+        Title="GDMS数据辅助输入工具" 
+        Height="600" Width="800" WindowStartupLocation="CenterScreen" 
+        Closing="Window_Closing">
+    <Grid Background="LightYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="*输入内容规范格式要求：1.每条记录一行 2.每行Key和Value之间必须空格(Value内容有误空格无所谓) 3 不得包含等号分号"  Style="{StaticResource StyleTextBlockCommon}" Background="LightGreen"
+                   HorizontalAlignment="Stretch"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0">
+                <Button Name="BtnAnlysis" Style="{StaticResource StyleButtonCommon}"  Content="解析" Click="BtnAnlysis_Click"/>
+                <TextBlock  Text="输入内容[会自动保存]" Style="{StaticResource StyleTextBlockCommon}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0">
+                <Button Name="BtnOK" Style="{StaticResource StyleButtonCommon}"  
+                    Content="填入" 
+                    Click="BtnOK_Click"/>
+                <TextBlock  Text="输出内容" Style="{StaticResource StyleTextBlockCommon}"/>
+            </StackPanel>
+            <TextBox Name="TxtInput" Grid.Column="0" Grid.Row="1" Margin="2" AcceptsReturn="True" 
+                 HorizontalScrollBarVisibility="Visible"
+                 VerticalScrollBarVisibility="Visible"  TextWrapping="Wrap"/>
+            <TextBox Name="TxtOutput" Grid.Column="1" Grid.Row="1" Margin="2" AcceptsReturn="True" 
+                 HorizontalScrollBarVisibility="Visible"
+                 VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"/>
+        </Grid>
+
+    </Grid>
+</Window>

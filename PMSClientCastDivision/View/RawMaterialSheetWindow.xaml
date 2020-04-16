@@ -60,6 +60,12 @@
                 <DataGridTextColumn Header="{StaticResource RMSCreateTime}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockSpecial}" 
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
+                <DataGridCheckBoxColumn Header="{StaticResource RMSIsSampleTaking}" ElementStyle="{StaticResource StyleDGCheckBoxCommonReadOnly}" 
+                                    Binding="{Binding IsSampleTaking}"/>
+                <DataGridTextColumn Header="{StaticResource RMSSampleTakingTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding SampleTakingTime}"/>
+                <DataGridTextColumn Header="{StaticResource RMSSampleRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding SampleRemark}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="2" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"

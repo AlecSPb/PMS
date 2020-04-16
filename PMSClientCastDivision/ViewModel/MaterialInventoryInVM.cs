@@ -42,6 +42,33 @@ namespace PMSClient.ViewModel
                 () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryOut));
            
             Doc = new RelayCommand(ActionDoc);
+            ShowGDMS = new RelayCommand<DcMaterialInventoryIn>(ActionShowGDMS);
+            ShowICPOES = new RelayCommand<DcMaterialInventoryIn>(ActionShowICPOES);
+        }
+
+        private void ActionShowICPOES(DcMaterialInventoryIn obj)
+        {
+            if (obj != null)
+            {
+                SetKeyValue(obj.ICPOES);
+            }
+        }
+
+        private void ActionShowGDMS(DcMaterialInventoryIn obj)
+        {
+            if (obj != null)
+            {
+                SetKeyValue(obj.GDMS);
+            }
+        }
+
+        private void SetKeyValue(string testResult)
+        {
+            if (string.IsNullOrEmpty(testResult)) return;
+            var dialog = new WPFControls.KeyValueTestResultReadOnly();
+            dialog.KeyStrings = testResult;
+            dialog.ShowDialog();
+
         }
 
         private void ActionDoc()
@@ -146,6 +173,8 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToMaterialInventoryOut { get; set; }
 
         public RelayCommand Doc { get; set; }
+        public RelayCommand<DcMaterialInventoryIn> ShowGDMS { get; set; }
+        public RelayCommand<DcMaterialInventoryIn> ShowICPOES { get; set; }
         #endregion
 
 

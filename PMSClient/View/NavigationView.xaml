@@ -123,8 +123,8 @@
                         <Button Content="{StaticResource PageMaterialInventoryOut}" Grid.Row="1" Grid.Column="5"
                         Command="{Binding GoToMaterialInventoryOut}" Style="{StaticResource StyleButtonNavigation}"/>
                         
-                        <Button Content="{StaticResource PageMaterialInventoryOut}" Grid.Row="1" Grid.Column="6"
-                        Command="{Binding GoToMaterialInventoryOut}" Style="{StaticResource StyleButtonNavigation}"/>
+                        <Button Content="{StaticResource PageRawMaterialSheet}" Grid.Row="1" Grid.Column="6"
+                        Command="{Binding GoToRawMaterialSheet}" Style="{StaticResource StyleButtonNavigation}"/>
 
                         <Button Content="{StaticResource PageProduction}" Grid.Row="2" Grid.Column="0"
                         Style="{StaticResource StyleButtonNavigationTitle}" />

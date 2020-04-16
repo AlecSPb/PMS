@@ -1000,11 +1000,12 @@
     <sys:String x:Key="SSampleFor">备样目的</sys:String>
 
     <!--原料库-->
-    <sys:String x:Key="PageRawMaterialSheet">基础原料库</sys:String>
-    <sys:String x:Key="PageRawMaterialSheetEdit">基础原料库-编辑</sys:String>
+    <sys:String x:Key="PageRawMaterialSheet">基础原料</sys:String>
+    <sys:String x:Key="PageRawMaterialSheetEdit">基础原料-编辑</sys:String>
 
     <sys:String x:Key="RMSID">ID</sys:String>
     <sys:String x:Key="RMSState">状态</sys:String>
+    <sys:String x:Key="RMSStoreTime">存储时间</sys:String>
     <sys:String x:Key="RMSCreateTime">创建时间</sys:String>
     <sys:String x:Key="RMSCreator">创建者</sys:String>
     <sys:String x:Key="RMSLot">Lot</sys:String>
@@ -1013,7 +1014,7 @@
     <sys:String x:Key="RMSWeight">重量</sys:String>
     <sys:String x:Key="RMSRemark">备注</sys:String>
     <sys:String x:Key="RMSIsSampleTaking">是否取样</sys:String>
-    <sys:String x:Key="RMSSampleTaking">取样时间</sys:String>
+    <sys:String x:Key="RMSSampleTakingTime">取样时间</sys:String>
     <sys:String x:Key="RMSSampleRemark">样品备注</sys:String>
     <sys:String x:Key="RMSGDMS">GDMS</sys:String>
     <sys:String x:Key="RMSICPOES">ICPOES</sys:String>
