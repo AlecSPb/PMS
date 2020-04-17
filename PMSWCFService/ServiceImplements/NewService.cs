@@ -9,6 +9,7 @@ using PMSDAL;
 using System.Data.Entity;
 using PMSCommon;
 using AuthorizationChecker;
+using PMSWCFService.ServiceImplements.Helpers;
 
 namespace PMSWCFService
 {
@@ -67,6 +68,8 @@ namespace PMSWCFService
             try
             {
                 XS.RunLog();
+                var searchItem = CompositionHelper.GetSearchItems(composition);
+
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg =>
@@ -81,7 +84,10 @@ namespace PMSWCFService
                                  && o.State != PMSCommon.OrderState.作废.ToString()
                                  && o.State != PMSCommon.OrderState.未核验.ToString()
                                  && o.State != PMSCommon.OrderState.取消.ToString()
-                                 && o.CompositionStandard.Contains(composition)
+                                 && o.CompositionStandard.Contains(searchItem.Item1)
+                                 && o.CompositionStandard.Contains(searchItem.Item2)
+                                 && o.CompositionStandard.Contains(searchItem.Item3)
+                                 && o.CompositionStandard.Contains(searchItem.Item4)
                                  && o.PMINumber.Contains(pminumber)
                                  orderby o.CreateTime descending
                                  select o;
@@ -103,11 +109,15 @@ namespace PMSWCFService
             try
             {
                 XS.RunLog();
+                var searchItem = CompositionHelper.GetSearchItems(composition);
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
                                 where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
-                                 && o.CompositionStandard.Contains(composition)
+                                 && o.CompositionStandard.Contains(searchItem.Item1)
+                                 && o.CompositionStandard.Contains(searchItem.Item2)
+                                 && o.CompositionStandard.Contains(searchItem.Item3)
+                                 && o.CompositionStandard.Contains(searchItem.Item4)
                                  && o.State.Contains(state)
                                  && o.State != PMSCommon.OrderState.作废.ToString()
                                  && o.State != PMSCommon.OrderState.未核验.ToString()
@@ -130,6 +140,7 @@ namespace PMSWCFService
 
             try
             {
+                var searchItem = CompositionHelper.GetSearchItems(composition);
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg =>
@@ -139,15 +150,48 @@ namespace PMSWCFService
                     var mapper = config.CreateMapper();
                     var query = from o in dc.Orders
                                 where o.CustomerName.Contains(customer)
-                                && o.CompositionStandard.Contains(composition)
+                                && o.CompositionStandard.Contains(searchItem.Item1)
+                                && o.CompositionStandard.Contains(searchItem.Item2)
+                                && o.CompositionStandard.Contains(searchItem.Item3)
+                                && o.CompositionStandard.Contains(searchItem.Item4)
                                 && o.PMINumber.Contains(pminumber)
                                 && o.State.Contains(state)
-                                && o.State!=PMSCommon.OrderState.作废.ToString()
+                                && o.State != PMSCommon.OrderState.作废.ToString()
                                 orderby o.CreateTime descending
                                 select o;
 
                     var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(query.Skip(s).Take(t).ToList());
                     return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetOrderCount(string customer, string composition, string pminumber, string state)
+        {
+            XS.RunLog();
+
+            try
+            {
+                var searchItem = CompositionHelper.GetSearchItems(composition);
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from o in dc.Orders
+                                where o.CustomerName.Contains(customer)
+                                && o.CompositionStandard.Contains(searchItem.Item1)
+                                && o.CompositionStandard.Contains(searchItem.Item2)
+                                && o.CompositionStandard.Contains(searchItem.Item3)
+                                && o.CompositionStandard.Contains(searchItem.Item4)
+                                && o.PMINumber.Contains(pminumber)
+                                && o.State.Contains(state)
+                                && o.State != PMSCommon.OrderState.作废.ToString()
+                                select o;
+
+                    return query.Count();
                 }
             }
             catch (Exception ex)
@@ -176,31 +220,6 @@ namespace PMSWCFService
             }
         }
 
-        public int GetOrderCount(string customer, string composition, string pminumber, string state)
-        {
-            XS.RunLog();
-
-            try
-            {
-                using (var dc = new PMSDbContext())
-                {
-                    var query = from o in dc.Orders
-                                where o.CustomerName.Contains(customer)
-                                && o.CompositionStandard.Contains(composition)
-                                && o.PMINumber.Contains(pminumber)
-                                && o.State.Contains(state)
-                                && o.State != PMSCommon.OrderState.作废.ToString()
-                                select o;
-
-                    return query.Count();
-                }
-            }
-            catch (Exception ex)
-            {
-                XS.Current.Error(ex);
-                throw ex;
-            }
-        }
 
         public DateTime GetOrderLastUpdateTime(Guid id)
         {
@@ -227,13 +246,17 @@ namespace PMSWCFService
             try
             {
                 XS.RunLog();
+                var searchItem = CompositionHelper.GetSearchItems(composition);
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var query = from p in dc.VHPPlans
                                 join o in dc.Orders on p.OrderID equals o.ID
                                 where p.State == PMSCommon.CommonState.已核验.ToString()
                                      && p.SearchCode.Contains(searchCode)
-                                     && o.CompositionStandard.Contains(composition)
+                                     && o.CompositionStandard.Contains(searchItem.Item1)
+                                     && o.CompositionStandard.Contains(searchItem.Item2)
+                                     && o.CompositionStandard.Contains(searchItem.Item3)
+                                     && o.CompositionStandard.Contains(searchItem.Item4)
                                      && o.PMINumber.Contains(pminumber)
                                 orderby DbFunctions.TruncateTime(p.PlanDate) descending, p.PlanLot descending, p.VHPDeviceCode descending, DbFunctions.TruncateTime(p.CreateTime) descending
                                 select new PMSPlanExtraModel() { Plan = p, Misson = o };
@@ -263,13 +286,17 @@ namespace PMSWCFService
             try
             {
                 XS.RunLog();
+                var searchItem = CompositionHelper.GetSearchItems(composition);
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var query = from p in dc.VHPPlans
                                 join o in dc.Orders on p.OrderID equals o.ID
                                 where p.State == PMSCommon.CommonState.已核验.ToString()
                                      && p.SearchCode.Contains(searchCode)
-                                     && o.CompositionStandard.Contains(composition)
+                                     && o.CompositionStandard.Contains(searchItem.Item1)
+                                     && o.CompositionStandard.Contains(searchItem.Item2)
+                                     && o.CompositionStandard.Contains(searchItem.Item3)
+                                     && o.CompositionStandard.Contains(searchItem.Item4)
                                      && o.PMINumber.Contains(pminumber)
                                 select new PMSPlanExtraModel() { Plan = p, Misson = o };
                     return query.Count();

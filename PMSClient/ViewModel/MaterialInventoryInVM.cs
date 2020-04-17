@@ -59,6 +59,33 @@ namespace PMSClient.ViewModel
             FindMisson = new RelayCommand<MainService.DcMaterialInventoryIn>(ActionFindMisson);
             Output = new RelayCommand(ActionOutput);
             QuickRemark = new RelayCommand<DcMaterialInventoryIn>(ActionQuickRemark, CanQuickRemark);
+            ShowGDMS = new RelayCommand<DcMaterialInventoryIn>(ActionShowGDMS);
+            ShowICPOES = new RelayCommand<DcMaterialInventoryIn>(ActionShowICPOES);
+        }
+
+        private void ActionShowICPOES(DcMaterialInventoryIn obj)
+        {
+            if (obj != null)
+            {
+                SetKeyValue(obj.ICPOES);
+            }
+        }
+
+        private void ActionShowGDMS(DcMaterialInventoryIn obj)
+        {
+            if (obj != null)
+            {
+                SetKeyValue(obj.GDMS);
+            }
+        }
+
+        private void SetKeyValue(string testResult)
+        {
+            if (string.IsNullOrEmpty(testResult)) return;
+            var dialog = new WPFControls.KeyValueTestResultReadOnly();
+            dialog.KeyStrings = testResult;
+            dialog.ShowDialog();
+
         }
 
         private void ActionQuickRemark(DcMaterialInventoryIn obj)
@@ -243,6 +270,8 @@ namespace PMSClient.ViewModel
         public RelayCommand Output { get; set; }
         public RelayCommand<DcMaterialInventoryIn> QuickRemark { get; set; }
 
+        public RelayCommand<DcMaterialInventoryIn> ShowGDMS { get; set; }
+        public RelayCommand<DcMaterialInventoryIn> ShowICPOES { get; set; }
         #endregion
 
 

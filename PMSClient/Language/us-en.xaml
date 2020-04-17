@@ -986,6 +986,25 @@
     <sys:String x:Key="SSampleType">SampleType</sys:String>
     <sys:String x:Key="SSampleFor">SampleFor</sys:String>
 
+    <!--原料库-->
+    <sys:String x:Key="PageRawMaterialSheet">Simple Material</sys:String>
+    <sys:String x:Key="PageRawMaterialSheetEdit">Simple Material-Edit</sys:String>
+
+    <sys:String x:Key="RMSID">ID</sys:String>
+    <sys:String x:Key="RMSState">State</sys:String>
+    <sys:String x:Key="RMSStoreTime">StoreTime</sys:String>
+    <sys:String x:Key="RMSCreateTime">CreateTime</sys:String>
+    <sys:String x:Key="RMSCreator">Creator</sys:String>
+    <sys:String x:Key="RMSLot">Lot</sys:String>
+    <sys:String x:Key="RMSComposition">Composition</sys:String>
+    <sys:String x:Key="RMSSupplier">Supplier</sys:String>
+    <sys:String x:Key="RMSWeight">Weight</sys:String>
+    <sys:String x:Key="RMSRemark">Remark</sys:String>
+    <sys:String x:Key="RMSIsSampleTaking">Sample</sys:String>
+    <sys:String x:Key="RMSSampleTakingTime">SampleTime</sys:String>
+    <sys:String x:Key="RMSSampleRemark">SampleRemark</sys:String>
+    <sys:String x:Key="RMSGDMS">GDMS</sys:String>
+    <sys:String x:Key="RMSICPOES">ICPOES</sys:String>
 
 
     <!--底部工具栏-->

@@ -48,7 +48,7 @@ namespace PMSClient.ViewModel
             model.Weight = 0;
             model.StoreTime = DateTime.Now;
             model.Remark = "无";
-            model.IsSampleTaking = true;
+            model.IsSampleTaking = false;
             model.SampleTakingTime = DateTime.Now;
             model.GDMS = VMHelper.SampleVMHelper.GDMS;
             model.ICPOES = VMHelper.SampleVMHelper.ICPOES;
@@ -78,6 +78,7 @@ namespace PMSClient.ViewModel
                 CurrentRawMaterialSheet.ICPOES = VMHelper.SampleVMHelper.ICPOES;
             }
         }
+
         public void SetEdit(DcRawMaterialSheet model)
         {
             if (model != null)

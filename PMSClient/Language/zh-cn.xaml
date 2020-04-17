@@ -1013,7 +1013,7 @@
     <sys:String x:Key="RMSSupplier">厂商</sys:String>
     <sys:String x:Key="RMSWeight">重量</sys:String>
     <sys:String x:Key="RMSRemark">备注</sys:String>
-    <sys:String x:Key="RMSIsSampleTaking">是否取样</sys:String>
+    <sys:String x:Key="RMSIsSampleTaking">取样</sys:String>
     <sys:String x:Key="RMSSampleTakingTime">取样时间</sys:String>
     <sys:String x:Key="RMSSampleRemark">样品备注</sys:String>
     <sys:String x:Key="RMSGDMS">GDMS</sys:String>

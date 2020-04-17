@@ -47,6 +47,8 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -140,23 +142,42 @@
                            Text="这是为供应商提供的选项，填写每个单质成分的来源信息，格式为 元素=来源;分号隔开" Background="LightGreen"/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource MIIState}"
+                <Grid Grid.Row="10" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Name="BtnGDMS1" Grid.Column="0"  Content="GDMS"
+                        Style="{StaticResource StyleButtonStrench}" Click="BtnGDMS1_Click" MinWidth="10"/>
+                    <Button Name="BtnGDMS2" Grid.Column="1"  Content="导入"
+                        Style="{StaticResource StyleButtonStrench}" Click="BtnGDMS2_Click" MinWidth="10"/>
+                </Grid>
+                <TextBox Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Name="TxtGDMS"
+                         Text="{Binding GDMS}" Style="{StaticResource StyleTextBoxCommon}"/>
+
+                <Button Name="BtnICPOES1" Content="ICPOES" Grid.Row="11" Grid.Column="0"
+                        Style="{StaticResource StyleButtonStrench}" Click="BtnICPOES1_Click"/>
+                <TextBox Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Name="TxtICPOES"
+                         Text="{Binding ICPOES}" Style="{StaticResource StyleTextBoxCommon}"/>
+
+
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource MIIState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="10" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="12" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="订单状态"/>
 
 
 
-                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource MIICreator}"
+                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource MIICreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
+                <TextBlock Grid.Row="13" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
                             />
-                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource MIICreateTime}"
+                <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource MIICreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
+                <TextBlock Grid.Row="14" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
                             />
 
 

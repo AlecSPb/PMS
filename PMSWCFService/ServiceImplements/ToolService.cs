@@ -6,6 +6,7 @@ using PMSDAL;
 using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
 using AutoMapper;
+using PMSWCFService.ServiceImplements.Helpers;
 
 namespace PMSWCFService
 {
@@ -57,7 +58,9 @@ namespace PMSWCFService
         {
             try
             {
+
                 XS.RunLog();
+                var searchItem = CompositionHelper.GetSearchItems(materialGroup);
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<ToolSieve, DcToolSieve>());
@@ -65,7 +68,10 @@ namespace PMSWCFService
                                 where (i.State == PMSCommon.ToolState.正常.ToString()
                                 || i.State == PMSCommon.ToolState.停止使用.ToString())
                                 && i.SearchID.Contains(searchid)
-                                && i.MaterialGroup.Contains(materialGroup)
+                                && i.MaterialGroup.Contains(searchItem.Item1)
+                                && i.MaterialGroup.Contains(searchItem.Item2)
+                                && i.MaterialGroup.Contains(searchItem.Item3)
+                                && i.MaterialGroup.Contains(searchItem.Item4)
                                 orderby i.CreateTime descending
                                 select i;
                     return Mapper.Map<List<ToolSieve>, List<DcToolSieve>>(query.Skip(s).Take(t).ToList());
@@ -83,13 +89,17 @@ namespace PMSWCFService
             try
             {
                 XS.RunLog();
+                var searchItem = CompositionHelper.GetSearchItems(materialGroup);
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.ToolSieves
                                 where (i.State == PMSCommon.ToolState.正常.ToString()
                                 || i.State == PMSCommon.ToolState.停止使用.ToString())
                                 && i.SearchID.Contains(searchid)
-                                && i.MaterialGroup.Contains(materialGroup)
+                                && i.MaterialGroup.Contains(searchItem.Item1)
+                                && i.MaterialGroup.Contains(searchItem.Item2)
+                                && i.MaterialGroup.Contains(searchItem.Item3)
+                                && i.MaterialGroup.Contains(searchItem.Item4)
                                 orderby i.CreateTime descending
                                 select i;
                     return query.Count();
@@ -107,13 +117,17 @@ namespace PMSWCFService
             try
             {
                 XS.RunLog();
+                var searchItem = CompositionHelper.GetSearchItems(materialGroup);
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<ToolSieve, DcToolSieve>());
                     var query = from i in dc.ToolSieves
                                 where i.State == PMSCommon.ToolState.正常.ToString()
                                 && i.SearchID.Contains(searchid)
-                                && i.MaterialGroup.Contains(materialGroup)
+                                && i.MaterialGroup.Contains(searchItem.Item1)
+                                && i.MaterialGroup.Contains(searchItem.Item2)
+                                && i.MaterialGroup.Contains(searchItem.Item3)
+                                && i.MaterialGroup.Contains(searchItem.Item4)
                                 orderby i.CreateTime descending
                                 select i;
                     return Mapper.Map<List<ToolSieve>, List<DcToolSieve>>(query.Skip(s).Take(t).ToList());
@@ -131,12 +145,16 @@ namespace PMSWCFService
             try
             {
                 XS.RunLog();
+                var searchItem = CompositionHelper.GetSearchItems(materialGroup);
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.ToolSieves
                                 where i.State == PMSCommon.ToolState.正常.ToString()
                                 && i.SearchID.Contains(searchid)
-                                && i.MaterialGroup.Contains(materialGroup)
+                                && i.MaterialGroup.Contains(searchItem.Item1)
+                                && i.MaterialGroup.Contains(searchItem.Item2)
+                                && i.MaterialGroup.Contains(searchItem.Item3)
+                                && i.MaterialGroup.Contains(searchItem.Item4)
                                 orderby i.CreateTime descending
                                 select i;
                     return query.Count();

@@ -208,7 +208,7 @@ namespace PMSWCFService
         public List<DcOrder> GetOrderByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end)
         {
             throw new NotImplementedException();
-            XS.RunLog();
+            //XS.RunLog();
             //try
             //{
             //    using (var dc = new PMSDbContext())

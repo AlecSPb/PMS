@@ -38,6 +38,10 @@ namespace PMSClient.ViewModel
             empty.Remark = "无";
             empty.QuickRemark = "";
             empty.SupplierPO = "";
+            empty.GDMS = VMHelper.SampleVMHelper.GDMS;
+            empty.ICPOES = VMHelper.SampleVMHelper.ICPOES;
+
+
             #endregion
 
             IsNew = true;
@@ -62,6 +66,8 @@ namespace PMSClient.ViewModel
                 CurrentMaterialInventoryIn.PMINumber = item.PMINumber;
                 CurrentMaterialInventoryIn.Weight = item.Weight;
                 CurrentMaterialInventoryIn.Purity = item.Purity;
+                CurrentMaterialInventoryIn.GDMS = VMHelper.SampleVMHelper.GDMS;
+                CurrentMaterialInventoryIn.ICPOES = VMHelper.SampleVMHelper.ICPOES;
                 //RaisePropertyChanged(nameof(CurrentMaterialInventoryIn));
             }
         }
