@@ -34,7 +34,8 @@ namespace PMSClient.ToolWindow
             {
 
                 //年月选择对话框
-                var dialog = new PMSClient.Components.ExcelOutputHelper.Dialogs.YearDateDailog();
+                //年月选择对话框
+                var dialog = new WPFControls.YearDateDailog(-3);
                 if (dialog.ShowDialog() == false)
                 {
                     return;

@@ -47,6 +47,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="XSHelper">
+      <HintPath>..\..\..\dotnet\XS\XSHelper\bin\Debug\XSHelper.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoCompleteTextBox.xaml.cs">
@@ -66,6 +69,9 @@
     </Compile>
     <Compile Include="StandardViewFrame.xaml.cs">
       <DependentUpon>StandardViewFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="YearDateDailog.xaml.cs">
+      <DependentUpon>YearDateDailog.xaml</DependentUpon>
     </Compile>
     <Page Include="AutoCompleteTextBox.xaml">
       <SubType>Designer</SubType>
@@ -101,6 +107,10 @@
     <Page Include="StandardViewFrame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="YearDateDailog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

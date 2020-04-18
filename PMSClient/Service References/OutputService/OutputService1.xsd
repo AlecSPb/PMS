@@ -231,4 +231,33 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcPlanVHP" nillable="true" type="tns:DcPlanVHP" />
+  <xs:complexType name="ArrayOfDcPlanTrace">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcPlanTrace" nillable="true" type="tns:DcPlanTrace" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcPlanTrace" nillable="true" type="tns:ArrayOfDcPlanTrace" />
+  <xs:complexType name="DcPlanTrace">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompositionStd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="MoldDiameter" type="xs:double" />
+      <xs:element minOccurs="0" name="OrderQuantity" type="xs:double" />
+      <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PlanType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="RecordBonding" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordDeMold" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordDelivery" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordFailure" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordMachine" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordTest" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SearchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VHPDeviceCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcPlanTrace" nillable="true" type="tns:DcPlanTrace" />
 </xs:schema>

@@ -40,5 +40,11 @@ namespace PMSWCFService.ServiceContracts
         List<DcPlanExtra> GetPlanByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end);
         [OperationContract]
         int GetPlanByYearMonthCount(int year_start, int month_start, int year_end, int month_end);
+
+
+        [OperationContract]
+        List<DcPlanTrace> GetPlanTrace(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        [OperationContract]
+        int GetPlanTraceCount(int year_start, int month_start, int year_end, int month_end);
     }
 }

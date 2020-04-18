@@ -129,7 +129,7 @@ namespace PMSClient.ViewModel
             try
             {
                 var word = new ReportsHelperNew.ReportRecordDeMold();
-                word.Intialize("取模记录单",50);
+                word.Intialize("取模记录单", 50);
                 word.Output();
             }
             catch (Exception ex)
@@ -144,13 +144,37 @@ namespace PMSClient.ViewModel
         /// <param name="model"></param>
         private void ActionOutput(DcPlanTrace model)
         {
-            if (!PMSDialogService.ShowYesNo("询问", "数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作。\r\n确定明白请点确定开始"))
+            if (!PMSDialogService.ShowYesNo("请问", "确定要导出计划追踪数据吗？"))
             {
                 return;
             }
-            PMSDialogService.UnImplementyet();
+            try
+            {
 
-            PMSDialogService.Show("数据导出完成到桌面，请右键-打开方式-Excel打开文件");
+                //年月选择对话框
+                var dialog = new WPFControls.YearDateDailog(-1);
+
+                if (dialog.ShowDialog() == false)
+                {
+                    return;
+                }
+
+                int year_start = dialog.YearStart;
+                int month_start = dialog.MonthStart;
+                int year_end = dialog.YearEnd;
+                int month_end = dialog.MonthEnd;
+
+
+                var excel = new ExcelOutputHelper.ExcelOutputPlanTrace();
+                excel.Intialize("计划追踪数据", "Data", 30);
+                excel.SetParameter(year_start, month_start, year_end, month_end);
+                excel.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                PMSDialogService.Show(ex.Message);
+            }
 
         }
 
@@ -220,7 +244,7 @@ namespace PMSClient.ViewModel
             //只显示Checked过的计划
             using (var service = new AnlysisServiceClient())
             {
-                var models = service.GetPlanTrace(skip, take, SearchVHPDate, SearchComposition,SearchPMINumber);
+                var models = service.GetPlanTrace(skip, take, SearchVHPDate, SearchComposition, SearchPMINumber);
                 PlanTraces.Clear();
                 models.ToList().ForEach(o => PlanTraces.Add(o));
             }

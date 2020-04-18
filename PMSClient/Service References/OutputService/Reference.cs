@@ -2901,6 +2901,323 @@ namespace PMSClient.OutputService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcPlanTrace", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcPlanTrace : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionStdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MoldDiameterField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double OrderQuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PMINumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime PlanDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlanTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecordBondingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecordDeMoldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecordDeliveryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecordFailureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecordMachineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecordTestField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SearchCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VHPDeviceCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CompositionStd {
+            get {
+                return this.CompositionStdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionStdField, value) != true)) {
+                    this.CompositionStdField = value;
+                    this.RaisePropertyChanged("CompositionStd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Customer {
+            get {
+                return this.CustomerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
+                    this.CustomerField = value;
+                    this.RaisePropertyChanged("Customer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dimension {
+            get {
+                return this.DimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
+                    this.DimensionField = value;
+                    this.RaisePropertyChanged("Dimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double MoldDiameter {
+            get {
+                return this.MoldDiameterField;
+            }
+            set {
+                if ((this.MoldDiameterField.Equals(value) != true)) {
+                    this.MoldDiameterField = value;
+                    this.RaisePropertyChanged("MoldDiameter");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double OrderQuantity {
+            get {
+                return this.OrderQuantityField;
+            }
+            set {
+                if ((this.OrderQuantityField.Equals(value) != true)) {
+                    this.OrderQuantityField = value;
+                    this.RaisePropertyChanged("OrderQuantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PMINumber {
+            get {
+                return this.PMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime PlanDate {
+            get {
+                return this.PlanDateField;
+            }
+            set {
+                if ((this.PlanDateField.Equals(value) != true)) {
+                    this.PlanDateField = value;
+                    this.RaisePropertyChanged("PlanDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlanType {
+            get {
+                return this.PlanTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlanTypeField, value) != true)) {
+                    this.PlanTypeField = value;
+                    this.RaisePropertyChanged("PlanType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecordBonding {
+            get {
+                return this.RecordBondingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordBondingField, value) != true)) {
+                    this.RecordBondingField = value;
+                    this.RaisePropertyChanged("RecordBonding");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecordDeMold {
+            get {
+                return this.RecordDeMoldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordDeMoldField, value) != true)) {
+                    this.RecordDeMoldField = value;
+                    this.RaisePropertyChanged("RecordDeMold");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecordDelivery {
+            get {
+                return this.RecordDeliveryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordDeliveryField, value) != true)) {
+                    this.RecordDeliveryField = value;
+                    this.RaisePropertyChanged("RecordDelivery");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecordFailure {
+            get {
+                return this.RecordFailureField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordFailureField, value) != true)) {
+                    this.RecordFailureField = value;
+                    this.RaisePropertyChanged("RecordFailure");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecordMachine {
+            get {
+                return this.RecordMachineField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordMachineField, value) != true)) {
+                    this.RecordMachineField = value;
+                    this.RaisePropertyChanged("RecordMachine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecordTest {
+            get {
+                return this.RecordTestField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordTestField, value) != true)) {
+                    this.RecordTestField = value;
+                    this.RaisePropertyChanged("RecordTest");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SearchCode {
+            get {
+                return this.SearchCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SearchCodeField, value) != true)) {
+                    this.SearchCodeField = value;
+                    this.RaisePropertyChanged("SearchCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VHPDeviceCode {
+            get {
+                return this.VHPDeviceCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VHPDeviceCodeField, value) != true)) {
+                    this.VHPDeviceCodeField = value;
+                    this.RaisePropertyChanged("VHPDeviceCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="OutputService.IOutputService")]
     public interface IOutputService {
@@ -2952,6 +3269,18 @@ namespace PMSClient.OutputService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetPlanByYearMonthCount", ReplyAction="http://tempuri.org/IOutputService/GetPlanByYearMonthCountResponse")]
         System.Threading.Tasks.Task<int> GetPlanByYearMonthCountAsync(int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetPlanTrace", ReplyAction="http://tempuri.org/IOutputService/GetPlanTraceResponse")]
+        PMSClient.OutputService.DcPlanTrace[] GetPlanTrace(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetPlanTrace", ReplyAction="http://tempuri.org/IOutputService/GetPlanTraceResponse")]
+        System.Threading.Tasks.Task<PMSClient.OutputService.DcPlanTrace[]> GetPlanTraceAsync(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetPlanTraceCount", ReplyAction="http://tempuri.org/IOutputService/GetPlanTraceCountResponse")]
+        int GetPlanTraceCount(int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetPlanTraceCount", ReplyAction="http://tempuri.org/IOutputService/GetPlanTraceCountResponse")]
+        System.Threading.Tasks.Task<int> GetPlanTraceCountAsync(int year_start, int month_start, int year_end, int month_end);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3043,6 +3372,22 @@ namespace PMSClient.OutputService {
         
         public System.Threading.Tasks.Task<int> GetPlanByYearMonthCountAsync(int year_start, int month_start, int year_end, int month_end) {
             return base.Channel.GetPlanByYearMonthCountAsync(year_start, month_start, year_end, month_end);
+        }
+        
+        public PMSClient.OutputService.DcPlanTrace[] GetPlanTrace(int s, int t, int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetPlanTrace(s, t, year_start, month_start, year_end, month_end);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.OutputService.DcPlanTrace[]> GetPlanTraceAsync(int s, int t, int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetPlanTraceAsync(s, t, year_start, month_start, year_end, month_end);
+        }
+        
+        public int GetPlanTraceCount(int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetPlanTraceCount(year_start, month_start, year_end, month_end);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlanTraceCountAsync(int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetPlanTraceCountAsync(year_start, month_start, year_end, month_end);
         }
     }
 }

@@ -221,6 +221,7 @@
     </Compile>
     <Compile Include="Components\ExcelOutputHelper\ExcelOutputBasePageByDate.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelOutputBaseSimple.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputPlanTrace.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelPlateStatistic.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelSample.cs" />
     <Compile Include="Components\Express\ExpressConfigService.cs" />
@@ -2020,6 +2021,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\OutputService\PMSClient.OutputService.DcPlanExtra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OutputService\PMSClient.OutputService.DcPlanTrace.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSSettings\PMSSettingService.wsdl" />

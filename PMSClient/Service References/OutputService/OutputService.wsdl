@@ -55,6 +55,18 @@
   <wsdl:message name="IOutputService_GetPlanByYearMonthCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPlanByYearMonthCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IOutputService_GetPlanTrace_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanTrace" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetPlanTrace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanTraceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetPlanTraceCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanTraceCount" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetPlanTraceCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanTraceCountResponse" />
+  </wsdl:message>
   <wsdl:portType name="IOutputService">
     <wsdl:operation name="GetAll230Data">
       <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetAll230Data" message="tns:IOutputService_GetAll230Data_InputMessage" />
@@ -87,6 +99,14 @@
     <wsdl:operation name="GetPlanByYearMonthCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetPlanByYearMonthCount" message="tns:IOutputService_GetPlanByYearMonthCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetPlanByYearMonthCountResponse" message="tns:IOutputService_GetPlanByYearMonthCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanTrace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetPlanTrace" message="tns:IOutputService_GetPlanTrace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetPlanTraceResponse" message="tns:IOutputService_GetPlanTrace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanTraceCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetPlanTraceCount" message="tns:IOutputService_GetPlanTraceCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetPlanTraceCountResponse" message="tns:IOutputService_GetPlanTraceCount_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="output" type="tns:IOutputService">
@@ -156,6 +176,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetPlanByYearMonthCount">
       <soap:operation soapAction="http://tempuri.org/IOutputService/GetPlanByYearMonthCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanTrace">
+      <soap:operation soapAction="http://tempuri.org/IOutputService/GetPlanTrace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanTraceCount">
+      <soap:operation soapAction="http://tempuri.org/IOutputService/GetPlanTraceCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

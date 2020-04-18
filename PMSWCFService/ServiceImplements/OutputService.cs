@@ -312,5 +312,90 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public List<DcPlanTrace> GetPlanTrace(int s, int t, int year_start, int month_start, int year_end, int month_end)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    DateTime startTime = new DateTime(year_start, month_start, 1);
+                    DateTime endTime = new DateTime(year_end, month_end, 1).AddMonths(1).AddDays(-1);
+                    var query = from p in dc.VHPPlans
+                                join o in dc.Orders on p.OrderID equals o.ID
+                                where p.State == PMSCommon.CommonState.已核验.ToString()
+                                && (p.PlanType == "加工" || p.PlanType == "其他" || p.PlanType == "外协" || p.PlanType == "代工" || p.PlanType == "发货")
+                                && p.PlanDate >= startTime
+                                && p.PlanDate <= endTime
+                                orderby p.PlanDate descending, p.PlanLot descending, p.VHPDeviceCode descending, p.CreateTime descending
+                                select new DcPlanTrace
+                                {
+                                    ID = p.ID,
+                                    SearchCode = p.SearchCode,
+                                    PlanDate = p.PlanDate,
+                                    PlanType = p.PlanType,
+                                    VHPDeviceCode = p.VHPDeviceCode,
+                                    CompositionStd = o.CompositionStandard,
+                                    MoldDiameter = p.MoldDiameter,
+                                    Quantity = p.Quantity,
+                                    Customer = o.CustomerName,
+                                    PMINumber = o.PMINumber,
+                                    Dimension = o.Dimension,
+                                    OrderQuantity = o.Quantity
+                                };
+
+                    var result = query.Skip(s).Take(t).ToList();
+
+                    //查询每个进度情况
+                    foreach (var item in result)
+                    {
+                        item.RecordDeMold = AnlysisHelper.CheckRecordDemold(item.SearchCode);
+                        item.RecordMachine = AnlysisHelper.CheckRecordMachine(item.SearchCode);
+                        item.RecordTest = AnlysisHelper.CheckRecordTest(item.SearchCode);
+                        item.RecordBonding = AnlysisHelper.CheckRecordBonding(item.SearchCode);
+                        item.RecordDelivery = AnlysisHelper.CheckDelivery(item.SearchCode);
+                        item.RecordFailure = AnlysisHelper.CheckFailure(item.SearchCode);
+                    }
+
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetPlanTraceCount(int year_start, int month_start, int year_end, int month_end)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    DateTime startTime = new DateTime(year_start, month_start, 1);
+                    DateTime endTime = new DateTime(year_end, month_end, 1).AddMonths(1).AddDays(-1);
+                    var query = from p in dc.VHPPlans
+                                join o in dc.Orders on p.OrderID equals o.ID
+                                where p.State == PMSCommon.CommonState.已核验.ToString()
+                                && (p.PlanType == "加工" || p.PlanType == "其他" || p.PlanType == "外协" || p.PlanType == "代工" || p.PlanType == "发货")
+                                && p.PlanDate >= startTime
+                                && p.PlanDate <= endTime
+                                select new DcPlanTrace
+                                {
+                                    ID = p.ID,
+                                };
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

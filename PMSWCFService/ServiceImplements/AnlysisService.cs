@@ -92,7 +92,6 @@ namespace PMSWCFService
                                 && o.CompositionStandard.Contains(searchItem.Item3)
                                 && o.CompositionStandard.Contains(searchItem.Item4)
                                 && o.PMINumber.Contains(pminumber)
-                                orderby p.PlanDate descending, p.PlanLot descending, p.VHPDeviceCode descending, p.CreateTime descending
                                 select new DcPlanTrace
                                 {
                                     ID = p.ID,
