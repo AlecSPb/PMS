@@ -1,0 +1,178 @@
+﻿<UserControl x:Class="PMSClient.View.PlanTraceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSClient.View"
+              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:vm="clr-namespace:PMSClient.ViewModel"
+             Language="zh-cn"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000"
+            DataContext="{Binding Source={StaticResource Locator},Path=PlanTrace}">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{StaticResource PagePlanWindowTrace}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}"
+                    Command="{Binding GoToNavigation}"/>
+            <TextBlock Text="{StaticResource SearchVHPDate}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchVHPDate,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch }" />
+            <TextBlock Text="{StaticResource SearchComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch }" />
+            <TextBlock Text="{StaticResource SearchPMINumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch }" />
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding All}" />
+            <!--<Button Content="{StaticResource ButtonHistory}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMisson}"/>-->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+                <TextBlock Text="{StaticResource IndicatorYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Text="{StaticResource IndicatorToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Text="{StaticResource IndicatorTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
+            </StackPanel>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <DataGrid Name="dg" Grid.Column="0" Style="{StaticResource StyleDataGridCommon}" LoadingRow="DataGrid_LoadingRow" FrozenColumnCount="1"
+                  ItemsSource="{Binding PlanTraces}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                           CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{StaticResource PlanPlanDate}"
+                                        Binding="{Binding  PlanDate,StringFormat={}{0:yyMMdd}}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockSpecialBlue}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding VHPDeviceCode}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanPlanType}" Binding="{Binding PlanType}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding CompositionStd}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanMoldDiameter}" Binding="{Binding MoldDiameter}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanQuantity}" Binding="{Binding Quantity}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+
+                    <DataGridTemplateColumn Header="=>">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="=>" Style="{StaticResource StyleDGTextBlockCenter}" FontWeight="Bold"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Header="{StaticResource OrderCustomer}" Binding="{Binding Customer}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderPMINumber}" Binding="{Binding PMINumber}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockSpecial}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderDimension}" Binding="{Binding Dimension}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderQuantity}" Binding="{Binding OrderQuantity}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+
+                    <DataGridTemplateColumn Header="=>">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="=>" Style="{StaticResource StyleDGTextBlockCenter}" FontWeight="Bold"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{StaticResource PageRecordDeMold}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Style="{StaticResource StyleDGButtonOriginal}"
+                                        Content="{Binding RecordDeMold,Converter={StaticResource StringCutCT}}"
+                                        Command="{Binding DataContext.ShowDeMold,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"
+                                        HorizontalAlignment="Stretch"
+                                        HorizontalContentAlignment="Left" Width="150"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{StaticResource PageRecordMachine}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Style="{StaticResource StyleDGButtonOriginal}"
+                                        Content="{Binding RecordMachine,Converter={StaticResource StringCutCT}}"
+                                        Command="{Binding DataContext.ShowMachine,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"
+                                        HorizontalAlignment="Stretch"
+                                        HorizontalContentAlignment="Left" Width="150"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{StaticResource PageRecordTest}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Style="{StaticResource StyleDGButtonOriginal}"
+                                        Content="{Binding RecordTest,Converter={StaticResource StringCutCT}}"
+                                        Command="{Binding DataContext.ShowTest,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"
+                                        HorizontalAlignment="Stretch"
+                                        HorizontalContentAlignment="Left" Width="150"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{StaticResource PageRecordBonding}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Style="{StaticResource StyleDGButtonOriginal}"
+                                        Content="{Binding RecordBonding,Converter={StaticResource StringCutCT}}"
+                                        Command="{Binding DataContext.ShowBonding,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"
+                                        HorizontalAlignment="Stretch"
+                                        HorizontalContentAlignment="Left" Width="150"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{StaticResource PageDelivery}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Style="{StaticResource StyleDGButtonOriginal}"
+                                        Content="{Binding RecordDelivery,Converter={StaticResource StringCutCT}}"
+                                        Command="{Binding DataContext.ShowDelivery,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"
+                                        HorizontalAlignment="Stretch"
+                                        HorizontalContentAlignment="Left" Width="150"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{StaticResource PageFailure}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Style="{StaticResource StyleDGButtonOriginal}"
+                                        Content="{Binding RecordFailure,Converter={StaticResource StringCutCT}}"
+                                        Command="{Binding DataContext.ShowFailure,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"
+                                        HorizontalAlignment="Stretch"
+                                        HorizontalContentAlignment="Left" Width="150"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"
+                             LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
+                             LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
+    </Grid>
+</UserControl>

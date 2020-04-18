@@ -93,6 +93,7 @@
     <Content Include="FailureService.svc" />
     <Content Include="EditLockService.svc" />
     <Content Include="ServiceContracts\API设计.txt" />
+    <Content Include="AnlysisService.svc" />
     <Content Include="ToolService.svc" />
     <Content Include="StatisticService.svc" />
     <Content Include="SanjieService.svc" />
@@ -209,6 +210,7 @@
     <Compile Include="ServiceContracts\IToDoService.cs" />
     <Compile Include="ServiceContracts\IToolInventoryService.cs" />
     <Compile Include="ServiceContracts\IToolSieveService.cs" />
+    <Compile Include="ServiceImplements\AnlysisHelper.cs" />
     <Compile Include="ServiceImplements\AnlysisService.cs" />
     <Compile Include="ServiceImplements\ComplexQueryService.cs" />
     <Compile Include="ServiceImplements\DrawingService.cs" />

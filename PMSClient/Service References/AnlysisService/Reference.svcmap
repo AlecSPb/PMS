@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="995b4563-a7b3-4976-8f72-8b1ad3d9bfc5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.16.254:8002/AnlysisService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AnlysisService.wsdl" MetadataType="Wsdl" ID="edb85e52-899d-4375-8d72-10070cb97d8e" SourceId="1" SourceUrl="http://192.168.16.254:8002/AnlysisService.svc?wsdl" />
+    <MetadataFile FileName="AnlysisService.xsd" MetadataType="Schema" ID="b56115a6-5d6f-4e30-bbd4-e08bb07c08ed" SourceId="1" SourceUrl="http://192.168.16.254:8002/AnlysisService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AnlysisService1.xsd" MetadataType="Schema" ID="4a2acd81-3971-4eff-a511-0e90128335a8" SourceId="1" SourceUrl="http://192.168.16.254:8002/AnlysisService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AnlysisService.disco" MetadataType="Disco" ID="8050907f-d1b4-46e3-9c34-e2343e5f8d50" SourceId="1" SourceUrl="http://192.168.16.254:8002/AnlysisService.svc?disco" />
+    <MetadataFile FileName="AnlysisService2.xsd" MetadataType="Schema" ID="f7ae5969-2cb2-42d5-87ec-5d3be053c5a7" SourceId="1" SourceUrl="http://192.168.16.254:8002/AnlysisService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

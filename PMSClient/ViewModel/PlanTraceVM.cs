@@ -9,6 +9,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using System.Collections.ObjectModel;
+using PMSClient.AnlysisService;
 
 namespace PMSClient.ViewModel
 {
@@ -37,7 +38,7 @@ namespace PMSClient.ViewModel
             SearchComposition = SearchVHPDate = SearchPMINumber = "";
 
 
-            PlanWithMissons = new ObservableCollection<DcPlanExtra>();
+            PlanTraces = new ObservableCollection<DcPlanTrace>();
         }
 
         private void IntitializeCommands()
@@ -47,11 +48,75 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
 
-            Label = new RelayCommand<DcPlanExtra>(ActionLabel);
-            SearchMisson = new RelayCommand<DcPlanExtra>(ActionSearchMisson);
-            SelectionChanged = new RelayCommand<DcPlanExtra>(ActionSelectionChanged);
-            Output = new RelayCommand<DcPlanExtra>(ActionOutput);
+            Label = new RelayCommand<DcPlanTrace>(ActionLabel);
+            SearchMisson = new RelayCommand<DcPlanTrace>(ActionSearchMisson);
+            SelectionChanged = new RelayCommand<DcPlanTrace>(ActionSelectionChanged);
+            Output = new RelayCommand<DcPlanTrace>(ActionOutput);
             RecordSheet = new RelayCommand(ActionRecordSheet);
+            ShowDeMold = new RelayCommand<DcPlanTrace>(ActionDeMold);
+            ShowMachine = new RelayCommand<DcPlanTrace>(ActionShowMachine);
+            ShowTest = new RelayCommand<DcPlanTrace>(ActionShowTest);
+            ShowBonding = new RelayCommand<DcPlanTrace>(ActionShowBonding);
+            ShowDelivery = new RelayCommand<DcPlanTrace>(ActionShowDelivery);
+            ShowFailure = new RelayCommand<DcPlanTrace>(ActionShowFailure);
+        }
+
+        private void ActionShowDelivery(DcPlanTrace obj)
+        {
+            if (obj != null)
+            {
+                ShowDetails(obj.RecordDelivery);
+            }
+        }
+
+        private void ActionShowFailure(DcPlanTrace obj)
+        {
+            if (obj != null)
+            {
+                ShowDetails(obj.RecordFailure);
+            }
+        }
+
+        private void ActionShowBonding(DcPlanTrace obj)
+        {
+            if (obj != null)
+            {
+                ShowDetails(obj.RecordBonding);
+            }
+        }
+
+        private void ActionShowTest(DcPlanTrace obj)
+        {
+            if (obj != null)
+            {
+                ShowDetails(obj.RecordTest);
+            }
+        }
+
+        private void ActionShowMachine(DcPlanTrace obj)
+        {
+            if (obj != null)
+            {
+                ShowDetails(obj.RecordMachine);
+            }
+        }
+
+        private void ActionDeMold(DcPlanTrace obj)
+        {
+            if (obj != null)
+            {
+                ShowDetails(obj.RecordDeMold);
+            }
+        }
+
+        private void ShowDetails(string s)
+        {
+            if (!string.IsNullOrEmpty(s))
+            {
+                var dialog = new WPFControls.NormalizedDataViewer();
+                dialog.SetMainStrings(s);
+                dialog.ShowDialog();
+            }
         }
 
         private void ActionRecordSheet()
@@ -77,7 +142,7 @@ namespace PMSClient.ViewModel
         /// 导出计划数据
         /// </summary>
         /// <param name="model"></param>
-        private void ActionOutput(DcPlanExtra model)
+        private void ActionOutput(DcPlanTrace model)
         {
             if (!PMSDialogService.ShowYesNo("询问", "数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作。\r\n确定明白请点确定开始"))
             {
@@ -104,7 +169,7 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionSelectionChanged(DcPlanExtra model)
+        private void ActionSelectionChanged(DcPlanTrace model)
         {
             if (model != null)
             {
@@ -112,22 +177,18 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private void ActionSearchMisson(DcPlanExtra model)
+        private void ActionSearchMisson(DcPlanTrace model)
         {
             if (model != null)
             {
-                PMSHelper.ViewModels.Misson.SetSearchCondition("", model.Misson.PMINumber);
-                NavigationService.GoTo(PMSViews.Misson);
+
             }
         }
 
-        private void ActionLabel(DcPlanExtra model)
+        private void ActionLabel(DcPlanTrace model)
         {
             if (model != null)
             {
-                var lcw = new ToolWindow.LabelCopyWindow();
-                lcw.LabelInformation = VMHelper.PlanVMHelper.CreateLabel(model);
-                lcw.Show();
 
             }
         }
@@ -142,9 +203,9 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 30;
-            using (var service = new NewServiceClient())
+            using (var service = new AnlysisServiceClient())
             {
-                RecordCount = service.GetPlanExtraForProductCount(SearchVHPDate, SearchComposition, SearchPMINumber);
+                RecordCount = service.GetPlanTraceCount(SearchVHPDate, SearchComposition, SearchPMINumber);
             }
             ActionPaging();
         }
@@ -157,18 +218,18 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             //只显示Checked过的计划
-            using (var service = new NewServiceClient())
+            using (var service = new AnlysisServiceClient())
             {
-                var models = service.GetPlanExtraForProduct(skip, take, SearchVHPDate, SearchComposition,SearchPMINumber);
-                PlanWithMissons.Clear();
-                models.ToList().ForEach(o => PlanWithMissons.Add(o));
+                var models = service.GetPlanTrace(skip, take, SearchVHPDate, SearchComposition,SearchPMINumber);
+                PlanTraces.Clear();
+                models.ToList().ForEach(o => PlanTraces.Add(o));
             }
-            CurrentPlanWithMisson = PlanWithMissons.FirstOrDefault();
+            CurrentPlanWithMisson = PlanTraces.FirstOrDefault();
         }
 
-        private DcPlanExtra currentPlanWithMisson;
+        private DcPlanTrace currentPlanWithMisson;
 
-        public DcPlanExtra CurrentPlanWithMisson
+        public DcPlanTrace CurrentPlanWithMisson
         {
             get { return currentPlanWithMisson; }
             set { currentPlanWithMisson = value; RaisePropertyChanged(nameof(CurrentPlanWithMisson)); }
@@ -194,15 +255,24 @@ namespace PMSClient.ViewModel
         }
         #region Commands
         public RelayCommand GoToMisson { get; set; }
-        public RelayCommand<DcPlanExtra> Label { get; set; }
-        public RelayCommand<DcPlanExtra> SearchMisson { get; set; }
-        public RelayCommand<DcPlanExtra> SelectionChanged { get; set; }
-        public RelayCommand<DcPlanExtra> Output { get; set; }
+        public RelayCommand<DcPlanTrace> Label { get; set; }
+        public RelayCommand<DcPlanTrace> SearchMisson { get; set; }
+        public RelayCommand<DcPlanTrace> SelectionChanged { get; set; }
+        public RelayCommand<DcPlanTrace> Output { get; set; }
         public RelayCommand RecordSheet { get; set; }
         #endregion
 
         #region Properties
-        public ObservableCollection<DcPlanExtra> PlanWithMissons { get; set; }
+        public ObservableCollection<DcPlanTrace> PlanTraces { get; set; }
+
+        //显示追踪细节信息
+        public RelayCommand<DcPlanTrace> ShowDeMold { get; set; }
+        public RelayCommand<DcPlanTrace> ShowMachine { get; set; }
+        public RelayCommand<DcPlanTrace> ShowTest { get; set; }
+        public RelayCommand<DcPlanTrace> ShowBonding { get; set; }
+        public RelayCommand<DcPlanTrace> ShowDelivery { get; set; }
+        public RelayCommand<DcPlanTrace> ShowFailure { get; set; }
+
         #endregion
 
     }

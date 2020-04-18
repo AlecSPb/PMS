@@ -12,9 +12,9 @@ namespace PMSWCFService.ServiceContracts
     public interface IAnlysisService
     {
         [OperationContract]
-        List<DcPlanTrace> GetPlanTrace(int s, int t, string plan, string composition, string pminumber);
+        List<DcPlanTrace> GetPlanTrace(int s, int t, string searchCode, string composition, string pminumber);
         [OperationContract]
-        int GetPlanTraceCount(string plan, string composition, string pminumber);
+        int GetPlanTraceCount(string searchCode, string composition, string pminumber);
 
     }
 }

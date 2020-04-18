@@ -353,6 +353,9 @@ namespace PMSClient
                 case PMSViews.Plan:
                     NavigateTo(_views.Plan);
                     break;
+                case PMSViews.PlanTrace:
+                    NavigateTo(_views.PlanTrace);
+                    break;
                 case PMSViews.PlanEdit:
                     NavigateTo(_views.PlanEdit);
                     break;

@@ -191,8 +191,7 @@ namespace PMSClient.ViewModel
             GoToFailure = new RelayCommand(() => NavigationService.GoTo(PMSViews.Failure));
             GoToPlanForProduct = new RelayCommand(() =>
               {
-                  var window = new View.PlanTraceWindow();
-                  window.Show();
+                  NavigationService.GoTo(PMSViews.PlanTrace);
               }, () => _session.IsInGroup(AccessGrant.ViewAllModule));
 
             //PMI计数模块

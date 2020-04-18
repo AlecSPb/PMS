@@ -33,6 +33,7 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<MissonView>(true);
 
             SimpleIoc.Default.Register<PlanView>(true);
+            SimpleIoc.Default.Register<PlanTraceView>();
             SimpleIoc.Default.Register<PlanSelectView>();
             SimpleIoc.Default.Register<PlanEditView>();
 
@@ -363,6 +364,10 @@ namespace PMSClient.View
         public PlanView Plan
         {
             get { return SimpleIoc.Default.GetInstance<PlanView>(); }
+        }
+        public PlanTraceView PlanTrace
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanTraceView>(); }
         }
         public PlanEditView PlanEdit
         {

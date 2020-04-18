@@ -37,6 +37,7 @@ namespace PMSClient
         Misson,
         MissonSelect,
         Plan,
+        PlanTrace,
         PlanSelect,
         PlanEdit,
         PlanConclusion,

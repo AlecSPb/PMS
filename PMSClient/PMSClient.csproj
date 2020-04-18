@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>126</ApplicationRevision>
+    <ApplicationRevision>127</ApplicationRevision>
     <ApplicationVersion>4.10.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -410,6 +410,11 @@
     <Compile Include="ReportsHelper\WordVHP.cs" />
     <Compile Include="Helpers\Converter\VisibilityConverter.cs" />
     <Compile Include="ReportsHelper\ExcelOrder.cs" />
+    <Compile Include="Service References\AnlysisService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\BasicService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -776,6 +781,9 @@
     <Compile Include="View\MissonSelectWindow.xaml.cs">
       <DependentUpon>MissonSelectWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PlanTraceView.xaml.cs">
+      <DependentUpon>PlanTraceView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\RawMaterialSheetEditView.xaml.cs">
       <DependentUpon>RawMaterialSheetEditView.xaml</DependentUpon>
     </Compile>
@@ -838,9 +846,6 @@
     </Compile>
     <Compile Include="View\OrderSelectView.xaml.cs">
       <DependentUpon>OrderSelectView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PlanTraceWindow.xaml.cs">
-      <DependentUpon>PlanTraceWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RecordHistoryComparation.xaml.cs">
       <DependentUpon>RecordHistoryComparation.xaml</DependentUpon>
@@ -1465,6 +1470,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\PlanTraceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\RawMaterialSheetEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1546,10 +1555,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\OrderSelectView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\PlanTraceWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1937,6 +1942,19 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resource\DocTemplate\Reports\MaterialOrderHorizontalOld.docx" />
+    <None Include="Service References\AnlysisService\AnlysisService.wsdl" />
+    <None Include="Service References\AnlysisService\AnlysisService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AnlysisService\AnlysisService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AnlysisService\AnlysisService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AnlysisService\PMSClient.AnlysisService.DcPlanTrace.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\DrawingService\DrawingService.wsdl" />
     <None Include="Service References\DrawingService\DrawingService.xsd">
       <SubType>Designer</SubType>
@@ -2067,6 +2085,13 @@
     <None Include="Service References\Other\configuration91.svcinfo" />
     <None Include="Service References\Other\configuration.svcinfo" />
     <None Include="Service References\Other\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AnlysisService\AnlysisService.disco" />
+    <None Include="Service References\AnlysisService\configuration91.svcinfo" />
+    <None Include="Service References\AnlysisService\configuration.svcinfo" />
+    <None Include="Service References\AnlysisService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -2675,6 +2700,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AnlysisService\" />
     <WCFMetadataStorage Include="Service References\BasicService\" />
     <WCFMetadataStorage Include="Service References\DrawingService\" />
     <WCFMetadataStorage Include="Service References\EditLockService\" />
