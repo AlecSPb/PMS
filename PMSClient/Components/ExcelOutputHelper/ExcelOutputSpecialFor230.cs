@@ -11,7 +11,7 @@ using System.IO;
 
 namespace PMSClient.ExcelOutputHelper
 {
-    public class ExcelOutputSpecialFor230 : ExcelOutputBasePage
+    public class ExcelOutputSpecialFor230 : ExcelOutputBasePageByDate
     {
 
         public ExcelOutputSpecialFor230()
@@ -19,26 +19,6 @@ namespace PMSClient.ExcelOutputHelper
 
         }
         //进度事件
-        public event EventHandler<double> UpdateProgress;
-
-        private void OnUpdateProgress(double progressValue)
-        {
-            UpdateProgress?.Invoke(this, progressValue);
-        }
-
-        private int year_start = 0; 
-        private int month_start = 0; 
-        private int year_end = 0; 
-        private int month_end = 0;
-
-        public void SetParameter(int y_s,int m_s,int y_e,int m_e)
-        {
-            year_start = y_s;
-            month_start = m_s;
-            year_end = y_e;
-            month_end = m_e;
-        }
-
         public override void Output()
         {
 

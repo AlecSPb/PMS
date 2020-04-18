@@ -98,7 +98,7 @@ namespace PMSClient.ToolWindow
 
             var win = new View.RawMaterialSheetWindow();
             double x = this.Left + this.Width;
-            double y = this.Top;
+            double y = this.Top - (win.Height - this.Height) / 2;
             win.Left = x;
             win.Top = y;
 

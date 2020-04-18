@@ -219,6 +219,7 @@
     <Compile Include="Components\ExcelOutputHelper\Dialogs\YearDateDailog.xaml.cs">
       <DependentUpon>YearDateDailog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\ExcelOutputHelper\ExcelOutputBasePageByDate.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelOutputBaseSimple.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelPlateStatistic.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelSample.cs" />

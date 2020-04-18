@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ExcelOutputHelper
 {
-    public class ExcelOutputPlan:ExcelOutputBasePage
+    public class ExcelOutputPlan: ExcelOutputBasePageByDate
     {
         public ExcelOutputPlan()
         {

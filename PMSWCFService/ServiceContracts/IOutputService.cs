@@ -29,10 +29,12 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetAll230DataByYearMonthCount(int year_start, int month_start, int year_end, int month_end);
 
+
         [OperationContract]
         List<DcOrder> GetOrderByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end);
         [OperationContract]
         int GetOrderByYearMonthCount(int year_start, int month_start, int year_end, int month_end);
+
 
         [OperationContract]
         List<DcPlanExtra> GetPlanByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end);

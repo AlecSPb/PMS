@@ -102,16 +102,29 @@ namespace PMSWCFService
             }
         }
 
+        /// <summary>
+        /// 最新使用的API
+        /// </summary>
+        /// <param name="skip"></param>
+        /// <param name="take"></param>
+        /// <param name="productId"></param>
+        /// <param name="compositionStd"></param>
+        /// <param name="pminumber"></param>
+        /// <returns></returns>
         public List<DcRecordTest> GetRecordTestBySearch(int skip, int take, string productId, string compositionStd, string pminumber)
         {
             try
             {
                 XS.RunLog();
+                var searchItem = PMSWCFService.ServiceImplements.Helpers.CompositionHelper.GetSearchItems(compositionStd);
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
                                 where t.ProductID.Contains(productId)
-                                && t.Composition.Contains(compositionStd)
+                                 && t.Composition.Contains(searchItem.Item1)
+                                 && t.Composition.Contains(searchItem.Item2)
+                                 && t.Composition.Contains(searchItem.Item3)
+                                 && t.Composition.Contains(searchItem.Item4)
                                 && t.PMINumber.Contains(pminumber)
                                 && t.State != CommonState.作废.ToString()
                                 orderby t.CreateTime descending
@@ -127,17 +140,27 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// 最新使用的API
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <param name="compositionStd"></param>
+        /// <param name="pminumber"></param>
+        /// <returns></returns>
         public int GetRecordTestCountBySearch(string productId, string compositionStd, string pminumber)
         {
             try
             {
                 XS.RunLog();
+                var searchItem = PMSWCFService.ServiceImplements.Helpers.CompositionHelper.GetSearchItems(compositionStd);
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
                                 where t.ProductID.Contains(productId)
-                                && t.Composition.Contains(compositionStd)
+                                 && t.Composition.Contains(searchItem.Item1)
+                                 && t.Composition.Contains(searchItem.Item2)
+                                 && t.Composition.Contains(searchItem.Item3)
+                                 && t.Composition.Contains(searchItem.Item4)
                                 && t.PMINumber.Contains(pminumber)
                                 && t.State != CommonState.作废.ToString()
                                 select t;
@@ -152,16 +175,28 @@ namespace PMSWCFService
 
         }
 
+        /// <summary>
+        /// 最新使用的API
+        /// </summary>
+        /// <param name="skip"></param>
+        /// <param name="take"></param>
+        /// <param name="productId"></param>
+        /// <param name="compositionStd"></param>
+        /// <returns></returns>
         public List<DcRecordTest> GetRecordTestBySearchInPage(int skip, int take, string productId, string compositionStd)
         {
             try
             {
                 XS.RunLog();
+                var searchItem = PMSWCFService.ServiceImplements.Helpers.CompositionHelper.GetSearchItems(compositionStd);
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
                                 where t.ProductID.Contains(productId)
-                                && t.Composition.Contains(compositionStd)
+                                 && t.Composition.Contains(searchItem.Item1)
+                                 && t.Composition.Contains(searchItem.Item2)
+                                 && t.Composition.Contains(searchItem.Item3)
+                                 && t.Composition.Contains(searchItem.Item4)
                                 && t.State != CommonState.作废.ToString()
                                 orderby t.CreateTime descending
                                 select t;
@@ -203,17 +238,26 @@ namespace PMSWCFService
             }
         }
 
-
+        /// <summary>
+        /// 最新使用的API
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <param name="compositionStd"></param>
+        /// <returns></returns>
         public int GetRecordTestCountBySearchInPage(string productId, string compositionStd)
         {
             try
             {
                 XS.RunLog();
+                var searchItem = PMSWCFService.ServiceImplements.Helpers.CompositionHelper.GetSearchItems(compositionStd);
                 using (var dc = new PMSDbContext())
                 {
                     var query = from t in dc.RecordTests
                                 where t.ProductID.Contains(productId)
-                                && t.Composition.Contains(compositionStd)
+                                && t.Composition.Contains(searchItem.Item1)
+                                && t.Composition.Contains(searchItem.Item2)
+                                && t.Composition.Contains(searchItem.Item3)
+                                && t.Composition.Contains(searchItem.Item4)
                                 && t.State != CommonState.作废.ToString()
                                 select t;
                     return query.Count();

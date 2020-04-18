@@ -8,7 +8,7 @@
       Title="请选择基础原料-只显示[在库]原料"
       WindowStartupLocation="Manual"
       mc:Ignorable="d" 
-      Height="500" Width="600" DataContext="{Binding Source={StaticResource Locator},Path=RawMaterialSheetWindow}">
+      Height="800" Width="600" DataContext="{Binding Source={StaticResource Locator},Path=RawMaterialSheetWindow}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
