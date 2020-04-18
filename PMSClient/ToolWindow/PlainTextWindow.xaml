@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
-        Title="长文本显示窗口" Height="300" Width="400">
+        Title="长文本显示窗口" Height="400" Width="600">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition/>

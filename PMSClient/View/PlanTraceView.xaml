@@ -34,13 +34,7 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding All}" />
             <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Output}"/>
-            <!--<Button Content="{StaticResource ButtonHistory}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMisson}"/>-->
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-                <TextBlock Text="{StaticResource IndicatorYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Text="{StaticResource IndicatorToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Text="{StaticResource IndicatorTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
-            </StackPanel>
+            <Button Content="{StaticResource ButtonAnlysis}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Anlysis}"/>
         </StackPanel>
         <Grid Grid.Row="2">
             <DataGrid Name="dg" Grid.Column="0" Style="{StaticResource StyleDataGridCommon}" LoadingRow="DataGrid_LoadingRow" FrozenColumnCount="1"

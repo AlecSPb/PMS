@@ -76,8 +76,8 @@ namespace PMSWCFService
                 XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
-                    DateTime startTime = new DateTime(year_start, month_start, 1);
-                    DateTime endtime = new DateTime(year_end, month_end, 1).AddMonths(1).AddDays(-1);
+                    DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                    DateTime endtime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
 
                     var query = from dd in db.DeliveryItems
                                 join tt in db.RecordTests on dd.ProductID equals tt.ProductID into bb
@@ -131,8 +131,8 @@ namespace PMSWCFService
                 XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
-                    DateTime startTime = new DateTime(year_start, month_start, 1);
-                    DateTime endTime = new DateTime(year_end, month_end, 1).AddMonths(1).AddDays(-1);
+                    DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                    DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
 
                     var query = from dd in db.DeliveryItems
                                 join t in db.RecordTests on dd.ProductID equals t.ProductID into bb
@@ -201,8 +201,8 @@ namespace PMSWCFService
                 XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
-                    DateTime startTime = new DateTime(year_start, month_start, 1);
-                    DateTime endTime = new DateTime(year_end, month_end, 1).AddMonths(1).AddDays(-1);
+                    DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                    DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
 
                     var config = new MapperConfiguration(cfg =>
                     {
@@ -234,8 +234,8 @@ namespace PMSWCFService
                 XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
-                    DateTime startTime = new DateTime(year_start, month_start, 1);
-                    DateTime endTime = new DateTime(year_end, month_end, 1).AddMonths(1).AddDays(-1);
+                    DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                    DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
                     return dc.Orders.Where(o => o.CreateTime >= startTime
                     && o.CreateTime <= endTime
                     && o.State != OrderState.作废.ToString()).Count();
@@ -256,8 +256,8 @@ namespace PMSWCFService
                 XS.RunLog();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
-                    DateTime startTime = new DateTime(year_start, month_start, 1);
-                    DateTime endTime = new DateTime(year_end, month_end, 1).AddMonths(1).AddDays(-1);
+                    DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                    DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
 
                     var query = from p in dc.VHPPlans
                                 join o in dc.Orders on p.OrderID equals o.ID
@@ -294,8 +294,8 @@ namespace PMSWCFService
                 XS.RunLog();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
-                    DateTime startTime = new DateTime(year_start, month_start, 1);
-                    DateTime endTime = new DateTime(year_end, month_end, 1).AddMonths(1).AddDays(-1);
+                    DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                    DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
 
                     var query = from p in dc.VHPPlans
                                 join o in dc.Orders on p.OrderID equals o.ID
@@ -320,8 +320,8 @@ namespace PMSWCFService
                 XS.RunLog();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
-                    DateTime startTime = new DateTime(year_start, month_start, 1);
-                    DateTime endTime = new DateTime(year_end, month_end, 1).AddMonths(1).AddDays(-1);
+                    DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                    DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
                     var query = from p in dc.VHPPlans
                                 join o in dc.Orders on p.OrderID equals o.ID
                                 where p.State == PMSCommon.CommonState.已核验.ToString()
@@ -376,8 +376,8 @@ namespace PMSWCFService
                 XS.RunLog();
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
-                    DateTime startTime = new DateTime(year_start, month_start, 1);
-                    DateTime endTime = new DateTime(year_end, month_end, 1).AddMonths(1).AddDays(-1);
+                    DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                    DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
                     var query = from p in dc.VHPPlans
                                 join o in dc.Orders on p.OrderID equals o.ID
                                 where p.State == PMSCommon.CommonState.已核验.ToString()

@@ -186,7 +186,7 @@ namespace PMSClient.ViewModel
               {
                   var window = new ToolWindow.DataOutputWindow();
                   window.Show();
-              });
+              }, () => _session.IsInGroup(AccessGrant.ViewAllModule));
 
             GoToFailure = new RelayCommand(() => NavigationService.GoTo(PMSViews.Failure));
             GoToPlanForProduct = new RelayCommand(() =>

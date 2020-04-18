@@ -59,6 +59,54 @@ namespace PMSClient.ViewModel
             ShowBonding = new RelayCommand<DcPlanTrace>(ActionShowBonding);
             ShowDelivery = new RelayCommand<DcPlanTrace>(ActionShowDelivery);
             ShowFailure = new RelayCommand<DcPlanTrace>(ActionShowFailure);
+            Anlysis = new RelayCommand(ActionAnlysis);
+        }
+
+        private void ActionAnlysis()
+        {
+            try
+            {
+                //年月选择对话框
+                var dialog = new WPFControls.YearDateDailog(0);
+
+                if (dialog.ShowDialog() == false)
+                {
+                    return;
+                }
+
+                int year_start = dialog.YearStart;
+                int month_start = dialog.MonthStart;
+                int year_end = dialog.YearEnd;
+                int month_end = dialog.MonthEnd;
+
+                DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
+
+
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine($"时间范围:{startTime.ToShortDateString()}到{endTime.ToShortDateString()}");
+                sb.AppendLine($"天数:{(endTime - startTime).TotalDays}");
+
+                sb.AppendLine("***总发货靶材数包括一片毛坯切多片靶材的情况");
+
+                using (var db = new AnlysisServiceClient())
+                {
+                    var result = db.GetStatistic(year_start, month_start, year_end, month_end);
+                    foreach (var item in result)
+                    {
+                        sb.Append(item.Key);
+                        sb.Append("=");
+                        sb.AppendLine(item.Value.ToString());
+                    }
+                }
+                var win = new ToolWindow.PlainTextWindow();
+                win.ContentText = sb.ToString();
+                win.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                PMSDialogService.ShowWarning(ex.Message);
+            }
         }
 
         private void ActionShowDelivery(DcPlanTrace obj)
@@ -121,21 +169,7 @@ namespace PMSClient.ViewModel
 
         private void ActionRecordSheet()
         {
-            //生成取模记录单
-            if (!PMSDialogService.ShowYesNo("请问", "确定生成记录单吗？"))
-            {
-                return;
-            }
-            try
-            {
-                var word = new ReportsHelperNew.ReportRecordDeMold();
-                word.Intialize("取模记录单", 50);
-                word.Output();
-            }
-            catch (Exception ex)
-            {
-                PMSHelper.CurrentLog.Error(ex);
-            }
+
         }
 
         /// <summary>
@@ -152,7 +186,7 @@ namespace PMSClient.ViewModel
             {
 
                 //年月选择对话框
-                var dialog = new WPFControls.YearDateDailog(-1);
+                var dialog = new WPFControls.YearDateDailog(0);
 
                 if (dialog.ShowDialog() == false)
                 {
@@ -284,6 +318,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPlanTrace> SelectionChanged { get; set; }
         public RelayCommand<DcPlanTrace> Output { get; set; }
         public RelayCommand RecordSheet { get; set; }
+        public RelayCommand Anlysis { get; set; }
         #endregion
 
         #region Properties

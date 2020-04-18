@@ -82,7 +82,7 @@ namespace WPFControls
             YearEnd = (int)CboYearEnd.SelectedItem;
             MonthEnd = (int)CboMonthEnd.SelectedItem;
 
-            if (new DateTime(YearStart, MonthStart, 1) >= new DateTime(YearEnd, MonthEnd, 1))
+            if (new DateTime(YearStart, MonthStart, 1) > new DateTime(YearEnd, MonthEnd, 1))
             {
                 XSHelper.XS.MessageBox.ShowWarning("开始年月必须小于结束年月");
                 return;

@@ -1956,6 +1956,9 @@
     <None Include="Service References\AnlysisService\PMSClient.AnlysisService.DcPlanTrace.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\AnlysisService\PMSClient.AnlysisService.DcStatistic.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\DrawingService\DrawingService.wsdl" />
     <None Include="Service References\DrawingService\DrawingService.xsd">
       <SubType>Designer</SubType>

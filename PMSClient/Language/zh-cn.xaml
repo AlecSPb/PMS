@@ -42,7 +42,7 @@
     <sys:String x:Key="PageNaivgationWorkFlow">工作流</sys:String>
 
 
-    <sys:String x:Key="PageSales">订单</sys:String>
+    <sys:String x:Key="PageSales">统筹</sys:String>
     <sys:String x:Key="PageMaterial">原料</sys:String>
     <sys:String x:Key="PageProduction">生产</sys:String>
     <sys:String x:Key="PageRecord">记录</sys:String>
@@ -354,6 +354,7 @@
     <sys:String x:Key="ButtonExcel">Excel</sys:String>
 
     <sys:String x:Key="ButtonFailure">报废</sys:String>
+    <sys:String x:Key="ButtonAnlysis">分析</sys:String>
 
     <!--单字按钮-->
     <sys:String x:Key="ButtonSingleSend">发</sys:String>

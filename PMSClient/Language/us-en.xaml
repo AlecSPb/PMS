@@ -42,7 +42,7 @@
     <sys:String x:Key="PageNaivgationWorkFlow">WorkFlow</sys:String>
 
 
-    <sys:String x:Key="PageSales">Orders</sys:String>
+    <sys:String x:Key="PageSales">Overall Planning</sys:String>
     <sys:String x:Key="PageMaterial">Material</sys:String>
     <sys:String x:Key="PageProduction">Production</sys:String>
     <sys:String x:Key="PageRecord">Record</sys:String>
@@ -342,6 +342,7 @@
     <sys:String x:Key="ButtonReMachine">ReMachine</sys:String>
     <sys:String x:Key="ButtonExcel">Excel</sys:String>
     <sys:String x:Key="ButtonFailure">Failure</sys:String>
+    <sys:String x:Key="ButtonAnlysis">Anlysis</sys:String>
 
     <!--单字按钮-->
     <sys:String x:Key="ButtonSingleSend">S</sys:String>

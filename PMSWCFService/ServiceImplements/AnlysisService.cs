@@ -47,7 +47,7 @@ namespace PMSWCFService
                                     Customer = o.CustomerName,
                                     PMINumber = o.PMINumber,
                                     Dimension = o.Dimension,
-                                    OrderQuantity=o.Quantity
+                                    OrderQuantity = o.Quantity
                                 };
 
                     var result = query.Skip(s).Take(t).ToList();
@@ -106,9 +106,120 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcStatistic> GetStatistic(int year_start, int month_start, int year_end, int month_end)
+        {
+            List<DcStatistic> dcStatistics = new List<DcStatistic>();
+            try
+            {
+                DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
+
+                int vhp_count = 0, vhp_product_count = 0, delivery_target_count = 0, vhp_target_count = 0;
+
+                //总天数
+                double date_total = (endTime - startTime).TotalDays;
+
+                using (var db = new PMSDbContext())
+                {
+                    var query_vhp = from i in db.VHPPlans
+                                    where i.State != PMSCommon.CommonState.作废.ToString()
+                                    && i.CreateTime >= startTime
+                                    && i.CreateTime <= endTime
+                                    select i;
+                    //获取热压计划数
+                    vhp_count = query_vhp.Count();
 
 
+                    var query_vhp_product = from i in db.VHPPlans
+                                            where i.State != PMSCommon.CommonState.作废.ToString()
+                                            && i.PlanType != PMSCommon.VHPPlanType.回收.ToString()
+                                            && i.PlanType != PMSCommon.VHPPlanType.烤料.ToString()
+                                            && i.PlanType != PMSCommon.VHPPlanType.试机.ToString()
+                                            && i.CreateTime >= startTime
+                                            && i.CreateTime <= endTime
+                                            select i;
 
+                    //获取产品热压计划数
+                    vhp_product_count = query_vhp_product.Count();
+                    //获取计划产品靶材数
+                    vhp_target_count = query_vhp_product.Sum(i => i.Quantity);
 
+                    var query_delivery = from i in db.DeliveryItems
+                                         where i.State != PMSCommon.CommonState.作废.ToString()
+                                         && i.ProductType == PMSCommon.ProductType.靶材.ToString()
+                                         && i.CreateTime >= startTime
+                                         && i.CreateTime <= endTime
+                                         select i;
+                    //获取所有发货产品靶材数
+                    delivery_target_count = query_delivery.Count();
+
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "热压机次",
+                        Value = vhp_count
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "产品热压机次",
+                        Value = vhp_product_count
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "产品热压机次/总热压机次",
+                        Value = (double)vhp_product_count / (double)vhp_count
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "日均热压机次",
+                        Value = (double)vhp_count / date_total
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "日均产品热压机次",
+                        Value = (double)vhp_product_count / date_total
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "总热压毛坯片数",
+                        Value = vhp_target_count
+                    });
+
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "总发货靶材片数",
+                        Value = delivery_target_count
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "日均热压毛坯片数",
+                        Value = (double)vhp_target_count / date_total
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "日均发货靶材片数",
+                        Value = (double)delivery_target_count / date_total
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "总发货靶材片数/总热压计划产品毛坯数目",
+                        Value = (double)vhp_target_count / (double)delivery_target_count
+                    });
+
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "总发货靶材片数/总产品热压机次",
+                        Value = (double)vhp_target_count / (double)vhp_product_count
+                    });
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+            return dcStatistics;
+        }
     }
 }

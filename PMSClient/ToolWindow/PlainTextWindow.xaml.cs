@@ -24,6 +24,9 @@ namespace PMSClient.ToolWindow
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 内容设置
+        /// </summary>
         public string ContentText
         {
             set
