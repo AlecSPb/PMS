@@ -119,6 +119,7 @@
     <Compile Include="DataContracts\DcModelBase.cs" />
     <Compile Include="DataContracts\DcNotice.cs" />
     <Compile Include="DataContracts\DcOutsideProcess.cs" />
+    <Compile Include="DataContracts\DcPlanTrace.cs" />
     <Compile Include="DataContracts\DcPlanWithMisson.cs" />
     <Compile Include="DataContracts\DcPlanExtra.cs" />
     <Compile Include="DataContracts\DcPlateUsedStatistic.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Helper\LogService.cs" />
     <Compile Include="DataContracts\DcOutSource.cs" />
     <Compile Include="DataContracts\DcOrderHistory.cs" />
+    <Compile Include="ServiceContracts\IAnlysisService.cs" />
     <Compile Include="ServiceContracts\IComplexQuery.cs" />
     <Compile Include="ServiceContracts\IDeliveryChaseService.cs" />
     <Compile Include="ServiceContracts\IEditLockService.cs" />
@@ -207,6 +209,7 @@
     <Compile Include="ServiceContracts\IToDoService.cs" />
     <Compile Include="ServiceContracts\IToolInventoryService.cs" />
     <Compile Include="ServiceContracts\IToolSieveService.cs" />
+    <Compile Include="ServiceImplements\AnlysisService.cs" />
     <Compile Include="ServiceImplements\ComplexQueryService.cs" />
     <Compile Include="ServiceImplements\DrawingService.cs" />
     <Compile Include="ServiceImplements\EditLockService.cs" />

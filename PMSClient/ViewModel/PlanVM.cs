@@ -115,12 +115,36 @@ namespace PMSClient.ViewModel
         /// <param name="model"></param>
         private void ActionOutput(DcPlanExtra model)
         {
-            if (!PMSDialogService.ShowYesNo("询问", "数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作。\r\n确定明白请点确定开始"))
+            if (!PMSDialogService.ShowYesNo("请问", "确定要导出计划数据吗？"))
             {
                 return;
             }
+            try
+            {
 
-            PMSDialogService.UnImplementyet();
+                //年月选择对话框
+                var dialog = new PMSClient.Components.ExcelOutputHelper.Dialogs.YearDateDailog();
+                if (dialog.ShowDialog() == false)
+                {
+                    return;
+                }
+
+                int year_start = dialog.YearStart;
+                int month_start = dialog.MonthStart;
+                int year_end = dialog.YearEnd;
+                int month_end = dialog.MonthEnd;
+
+
+                var excel = new ExcelOutputHelper.ExcelOutputPlan();
+                excel.Intialize("计划数据", "Data", 50);
+                excel.SetParameter(year_start, month_start, year_end, month_end);
+                excel.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                PMSDialogService.Show(ex.Message);
+            }
         }
 
         private bool CanGoToMisson()

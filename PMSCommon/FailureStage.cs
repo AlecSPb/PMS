@@ -14,6 +14,7 @@ namespace PMSCommon
         热压,
         取模,
         加工,
+        外协,
         测试,
         绑定,
         库存,

@@ -123,8 +123,6 @@
                                     Binding="{Binding Water}"/>
                     <DataGridTextColumn Header="{StaticResource RMMeltingPoint}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MeltingPoint}"/>
-                    <DataGridTextColumn Header="{StaticResource RMMeltingPoint}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding MeltingPoint}"/>
                     <DataGridTextColumn Header="{StaticResource RMSieveDescription}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding SieveDescription}"/>
                     <DataGridTextColumn Header="{StaticResource RMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
