@@ -150,7 +150,7 @@ namespace PMSClient.ViewModel
             try
             {
                 //年月选择对话框
-                var dialog = new WPFControls.YearDateDailog(-1);
+                var dialog = new WPFControls.YearDateDailog(0);
 
                 if (dialog.ShowDialog() == false)
                 {

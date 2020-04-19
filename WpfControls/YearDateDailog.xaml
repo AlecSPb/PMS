@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFControls"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
-        Title="发货年月-每次导出固定范围数据" Height="180" Width="300">
+        Title="发货年月-每次导出固定范围数据" Height="180" Width="320">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -21,12 +21,14 @@
             <ComboBox Name="CboYearStart" Style="{StaticResource StyleComboBoxCommon}"/>
             <TextBlock Text="月" Style="{StaticResource StyleTextBlockCommon}"/>
             <ComboBox Name="CboMonthStart" Style="{StaticResource StyleComboBoxCommon}"/>
+            <TextBlock Text="月初" Style="{StaticResource StyleTextBlockCommon}"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <TextBlock Text="结束-年" Style="{StaticResource StyleTextBlockCommon}"/>
             <ComboBox Name="CboYearEnd" Style="{StaticResource StyleComboBoxCommon}"/>
             <TextBlock Text="月" Style="{StaticResource StyleTextBlockCommon}"/>
             <ComboBox Name="CboMonthEnd" Style="{StaticResource StyleComboBoxCommon}"/>
+            <TextBlock Text="月末" Style="{StaticResource StyleTextBlockCommon}"/>
         </StackPanel>
         <Button Name="BtnFill" Grid.Row="3" Content="确定" Style="{StaticResource StyleButtonCommon}" Click="BtnFill_Click"
                 HorizontalAlignment="Stretch" Height="30"/>

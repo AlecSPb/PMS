@@ -100,6 +100,8 @@ namespace PMSClient.ViewModel
                     }
                 }
                 var win = new ToolWindow.PlainTextWindow();
+                win.Width = 900;
+                win.Height = 600;
                 win.ContentText = sb.ToString();
                 win.ShowDialog();
             }

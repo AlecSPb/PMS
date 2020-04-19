@@ -85,80 +85,80 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Header="{StaticResource PageRecordDeMold}">
+                    <DataGridTemplateColumn Header="{StaticResource PageRecordDeMold}"  Width="150">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Style="{StaticResource StyleDGButtonOriginal}"
-                                        Content="{Binding RecordDeMold,Converter={StaticResource StringCutCT}}"
+                                        Content="{Binding RecordDeMold}"
                                         Command="{Binding DataContext.ShowDeMold,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"
                                         HorizontalAlignment="Stretch"
-                                        HorizontalContentAlignment="Left" Width="150"/>
+                                        HorizontalContentAlignment="Left"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Header="{StaticResource PageRecordMachine}">
+                    <DataGridTemplateColumn Header="{StaticResource PageRecordMachine}"  Width="150">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Style="{StaticResource StyleDGButtonOriginal}"
-                                        Content="{Binding RecordMachine,Converter={StaticResource StringCutCT}}"
+                                        Content="{Binding RecordMachine}"
                                         Command="{Binding DataContext.ShowMachine,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"
                                         HorizontalAlignment="Stretch"
-                                        HorizontalContentAlignment="Left" Width="150"/>
+                                        HorizontalContentAlignment="Left"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Header="{StaticResource PageRecordTest}">
+                    <DataGridTemplateColumn Header="{StaticResource PageRecordTest}"  Width="150">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Style="{StaticResource StyleDGButtonOriginal}"
-                                        Content="{Binding RecordTest,Converter={StaticResource StringCutCT}}"
+                                        Content="{Binding RecordTest}"
                                         Command="{Binding DataContext.ShowTest,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"
                                         HorizontalAlignment="Stretch"
-                                        HorizontalContentAlignment="Left" Width="150"/>
+                                        HorizontalContentAlignment="Left"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Header="{StaticResource PageRecordBonding}">
+                    <DataGridTemplateColumn Header="{StaticResource PageRecordBonding}"  Width="150">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Style="{StaticResource StyleDGButtonOriginal}"
-                                        Content="{Binding RecordBonding,Converter={StaticResource StringCutCT}}"
+                                        Content="{Binding RecordBonding}"
                                         Command="{Binding DataContext.ShowBonding,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"
                                         HorizontalAlignment="Stretch"
-                                        HorizontalContentAlignment="Left" Width="150"/>
+                                        HorizontalContentAlignment="Left"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Header="{StaticResource PageDelivery}">
+                    <DataGridTemplateColumn Header="{StaticResource PageDelivery}"  Width="150">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Style="{StaticResource StyleDGButtonOriginal}"
-                                        Content="{Binding RecordDelivery,Converter={StaticResource StringCutCT}}"
+                                        Content="{Binding RecordDelivery}"
                                         Command="{Binding DataContext.ShowDelivery,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"
                                         HorizontalAlignment="Stretch"
-                                        HorizontalContentAlignment="Left" Width="150"/>
+                                        HorizontalContentAlignment="Left"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Header="{StaticResource PageFailure}">
+                    <DataGridTemplateColumn Header="{StaticResource PageFailure}" Width="150">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Style="{StaticResource StyleDGButtonOriginal}"
-                                        Content="{Binding RecordFailure,Converter={StaticResource StringCutCT}}"
+                                        Content="{Binding RecordFailure}"
                                         Command="{Binding DataContext.ShowFailure,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"
                                         HorizontalAlignment="Stretch"
-                                        HorizontalContentAlignment="Left" Width="150"/>
+                                        HorizontalContentAlignment="Left"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

@@ -111,13 +111,17 @@ namespace PMSWCFService
             List<DcStatistic> dcStatistics = new List<DcStatistic>();
             try
             {
+                XS.RunLog();
                 DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
                 DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
 
-                int vhp_count = 0, vhp_product_count = 0, delivery_target_count = 0, vhp_target_count = 0;
+                int vhp_count = 0, vhp_product_count = 0, delivery_target_count = 0, vhp_blank_count = 0;
+
+                double total_material_order, total_material_in, total_powder_in = 0, total_powder_out = 0;
+                int count_test = 0, count_bonding = 0, count_machine = 0;
 
                 //总天数
-                double date_total = (endTime - startTime).TotalDays;
+                double days_total = (endTime - startTime).TotalDays;
 
                 using (var db = new PMSDbContext())
                 {
@@ -142,7 +146,7 @@ namespace PMSWCFService
                     //获取产品热压计划数
                     vhp_product_count = query_vhp_product.Count();
                     //获取计划产品靶材数
-                    vhp_target_count = query_vhp_product.Sum(i => i.Quantity);
+                    vhp_blank_count = query_vhp_product.Sum(i => i.Quantity);
 
                     var query_delivery = from i in db.DeliveryItems
                                          where i.State != PMSCommon.CommonState.作废.ToString()
@@ -153,10 +157,133 @@ namespace PMSWCFService
                     //获取所有发货产品靶材数
                     delivery_target_count = query_delivery.Count();
 
+                    var query_materialorder = from i in db.MaterialOrderItems
+                                              where i.State != PMSCommon.CommonState.作废.ToString()
+                                              && i.CreateTime >= startTime
+                                              && i.CreateTime <= endTime
+                                              select i;
+                    //获取原料订单总数
+                    total_material_order = query_materialorder.Sum(i => i.Weight);
+
+                    var query_materialin = from i in db.MaterialInventoryIns
+                                           where i.State != PMSCommon.CommonState.作废.ToString()
+                                           && i.CreateTime >= startTime
+                                           && i.CreateTime <= endTime
+                                           select i;
+                    //获取原料入库总数
+                    total_material_in = query_materialin.Sum(i => i.Weight);
+
+
+                    var query_milling = from i in db.RecordMillings
+                                        where i.State != PMSCommon.CommonState.作废.ToString()
+                                        && i.CreateTime >= startTime
+                                        && i.CreateTime <= endTime
+                                        select i;
+                    //获取制粉总数
+                    total_powder_in = query_milling.Sum(i => i.WeightIn);
+                    total_powder_out = query_milling.Sum(i => i.WeightOut);
+
+                    var query_machine = from i in db.RecordMachines
+                                        where i.State != PMSCommon.CommonState.作废.ToString()
+                                        && i.CreateTime >= startTime
+                                        && i.CreateTime <= endTime
+                                        select i;
+                    //获取加工总数
+                    count_machine = query_machine.Count();
+
+                    var query_test = from i in db.RecordTests
+                                     where i.State != PMSCommon.CommonState.作废.ToString()
+                                     && i.FollowUps != PMSCommon.TestFollowUps.报废.ToString()
+                                     && i.FollowUps != PMSCommon.TestFollowUps.试验.ToString()
+                                     && i.FollowUps != PMSCommon.TestFollowUps.返工.ToString()
+                                     && i.CreateTime >= startTime
+                                     && i.CreateTime <= endTime
+                                     select i;
+                    //获取检测总数
+                    count_test = query_test.Count();
+
+
+                    var query_bonding = from i in db.RecordBondings
+                                        where i.State == PMSCommon.BondingState.最终完成.ToString()
+                                        && i.CreateTime >= startTime
+                                        && i.CreateTime <= endTime
+                                        select i;
+                    //获取绑定数目
+                    count_bonding = query_bonding.Count();
+
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "订购原料kg",
+                        Value = total_material_order
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "入库原料kg",
+                        Value = total_material_in
+                    });
+
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "制粉投入kg",
+                        Value = total_powder_in / 1000
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "日均制粉投入",
+                        Value = total_powder_in / days_total / 1000
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "制粉产出kg",
+                        Value = total_powder_out / 1000
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "日均制粉产出",
+                        Value = total_powder_out / days_total / 1000
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "加工片数",
+                        Value = count_machine
+                    });
+
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "日均加工片数",
+                        Value = (double)count_machine / days_total
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "测试片数",
+                        Value = count_test
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "日均测试片数",
+                        Value = (double)count_test / days_total
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "绑定片数",
+                        Value = count_bonding
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "日均绑定片数",
+                        Value = (double)count_bonding / days_total
+                    });
+
+
                     dcStatistics.Add(new DcStatistic
                     {
                         Key = "热压机次",
                         Value = vhp_count
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
+                        Key = "日均热压机次",
+                        Value = (double)vhp_count / days_total
                     });
                     dcStatistics.Add(new DcStatistic
                     {
@@ -165,25 +292,24 @@ namespace PMSWCFService
                     });
                     dcStatistics.Add(new DcStatistic
                     {
+                        Key = "日均产品热压机次",
+                        Value = (double)vhp_product_count / days_total
+                    });
+                    dcStatistics.Add(new DcStatistic
+                    {
                         Key = "产品热压机次/总热压机次",
                         Value = (double)vhp_product_count / (double)vhp_count
                     });
                     dcStatistics.Add(new DcStatistic
                     {
-                        Key = "日均热压机次",
-                        Value = (double)vhp_count / date_total
+                        Key = "总热压计划产品毛坯数目",
+                        Value = vhp_blank_count
                     });
                     dcStatistics.Add(new DcStatistic
                     {
-                        Key = "日均产品热压机次",
-                        Value = (double)vhp_product_count / date_total
+                        Key = "日均热压计划产品毛坯数目",
+                        Value = (double)vhp_blank_count / days_total
                     });
-                    dcStatistics.Add(new DcStatistic
-                    {
-                        Key = "总热压毛坯片数",
-                        Value = vhp_target_count
-                    });
-
                     dcStatistics.Add(new DcStatistic
                     {
                         Key = "总发货靶材片数",
@@ -191,24 +317,19 @@ namespace PMSWCFService
                     });
                     dcStatistics.Add(new DcStatistic
                     {
-                        Key = "日均热压毛坯片数",
-                        Value = (double)vhp_target_count / date_total
-                    });
-                    dcStatistics.Add(new DcStatistic
-                    {
                         Key = "日均发货靶材片数",
-                        Value = (double)delivery_target_count / date_total
+                        Value = (double)delivery_target_count / days_total
                     });
                     dcStatistics.Add(new DcStatistic
                     {
                         Key = "总发货靶材片数/总热压计划产品毛坯数目",
-                        Value = (double)vhp_target_count / (double)delivery_target_count
+                        Value = (double)vhp_blank_count / (double)delivery_target_count
                     });
 
                     dcStatistics.Add(new DcStatistic
                     {
                         Key = "总发货靶材片数/总产品热压机次",
-                        Value = (double)vhp_target_count / (double)vhp_product_count
+                        Value = (double)vhp_blank_count / (double)vhp_product_count
                     });
 
                 }
