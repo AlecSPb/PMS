@@ -332,18 +332,24 @@ namespace PMSClient.AnlysisService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DcStatistic", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcAnlysis", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
-    public partial class DcStatistic : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class DcAnlysis : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GroupField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string KeyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double ValueField;
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ValueField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -352,6 +358,19 @@ namespace PMSClient.AnlysisService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Group {
+            get {
+                return this.GroupField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GroupField, value) != true)) {
+                    this.GroupField = value;
+                    this.RaisePropertyChanged("Group");
+                }
             }
         }
         
@@ -369,12 +388,25 @@ namespace PMSClient.AnlysisService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Value {
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Value {
             get {
                 return this.ValueField;
             }
             set {
-                if ((this.ValueField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
                     this.ValueField = value;
                     this.RaisePropertyChanged("Value");
                 }
@@ -408,10 +440,10 @@ namespace PMSClient.AnlysisService {
         System.Threading.Tasks.Task<int> GetPlanTraceCountAsync(string searchCode, string composition, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnlysisService/GetStatistic", ReplyAction="http://tempuri.org/IAnlysisService/GetStatisticResponse")]
-        PMSClient.AnlysisService.DcStatistic[] GetStatistic(int year_start, int month_start, int year_end, int month_end);
+        PMSClient.AnlysisService.DcAnlysis[] GetStatistic(int year_start, int month_start, int year_end, int month_end);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnlysisService/GetStatistic", ReplyAction="http://tempuri.org/IAnlysisService/GetStatisticResponse")]
-        System.Threading.Tasks.Task<PMSClient.AnlysisService.DcStatistic[]> GetStatisticAsync(int year_start, int month_start, int year_end, int month_end);
+        System.Threading.Tasks.Task<PMSClient.AnlysisService.DcAnlysis[]> GetStatisticAsync(int year_start, int month_start, int year_end, int month_end);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -457,11 +489,11 @@ namespace PMSClient.AnlysisService {
             return base.Channel.GetPlanTraceCountAsync(searchCode, composition, pminumber);
         }
         
-        public PMSClient.AnlysisService.DcStatistic[] GetStatistic(int year_start, int month_start, int year_end, int month_end) {
+        public PMSClient.AnlysisService.DcAnlysis[] GetStatistic(int year_start, int month_start, int year_end, int month_end) {
             return base.Channel.GetStatistic(year_start, month_start, year_end, month_end);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.AnlysisService.DcStatistic[]> GetStatisticAsync(int year_start, int month_start, int year_end, int month_end) {
+        public System.Threading.Tasks.Task<PMSClient.AnlysisService.DcAnlysis[]> GetStatisticAsync(int year_start, int month_start, int year_end, int month_end) {
             return base.Channel.GetStatisticAsync(year_start, month_start, year_end, month_end);
         }
     }

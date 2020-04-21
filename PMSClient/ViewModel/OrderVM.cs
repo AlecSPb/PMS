@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using PMSClient.ToolWindow;
 using PMSClient.NewService;
-
+using System.Windows.Media.Imaging;
 
 namespace PMSClient.ViewModel
 {
@@ -82,6 +82,16 @@ namespace PMSClient.ViewModel
             SampleSheet = new RelayCommand(ActionSampleSheet);
 
             ShowDetails = new RelayCommand<string>(ActionShowDetails);
+            SpecialSituation = new RelayCommand(ActionSpecialSituation);
+        }
+
+        private void ActionSpecialSituation()
+        {
+            var win = new ImageWindow();
+            string imagePath = Path.Combine(Environment.CurrentDirectory, "HelpDocs", "specialsituation_order.jpg");
+            BitmapImage imgSource = new BitmapImage(new Uri(imagePath, UriKind.Absolute));
+            win.MainImage.Source = imgSource;
+            win.ShowDialog();
         }
 
         private void ActionShowDetails(string parameter)
@@ -430,6 +440,8 @@ namespace PMSClient.ViewModel
         public RelayCommand Output { get; set; }
         public RelayCommand SampleSheet { get; set; }
         public RelayCommand<string> ShowDetails { get; private set; }
+
+        public RelayCommand SpecialSituation { get; set; }
 
         #endregion
     }

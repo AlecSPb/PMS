@@ -341,8 +341,11 @@
     <sys:String x:Key="ButtonFail">Fail</sys:String>
     <sys:String x:Key="ButtonReMachine">ReMachine</sys:String>
     <sys:String x:Key="ButtonExcel">Excel</sys:String>
+    <sys:String x:Key="ButtonWord">Word</sys:String>
+
     <sys:String x:Key="ButtonFailure">Failure</sys:String>
     <sys:String x:Key="ButtonAnlysis">Anlysis</sys:String>
+    <sys:String x:Key="ButtonSpecialSituation">Special Situation</sys:String>
 
     <!--单字按钮-->
     <sys:String x:Key="ButtonSingleSend">S</sys:String>
@@ -520,7 +523,7 @@
     <sys:String x:Key="MOIMaterialPrice">All Elements Fee</sys:String>
     <sys:String x:Key="MOIDeliveryDate">Shipment Date</sys:String>
     <sys:String x:Key="MOILastDay">Last Day</sys:String>
-    <sys:String x:Key="MOIUnitPrice">Unit Price</sys:String>
+    <sys:String x:Key="MOIUnitPrice">Process Unit Price</sys:String>
     <sys:String x:Key="MOIWeight">Weight</sys:String>
     <sys:String x:Key="MOIPriority">Priority</sys:String>
     <sys:String x:Key="MOSJIngredient">Remark</sys:String>
@@ -1043,26 +1046,6 @@
     <sys:String x:Key="BottomBarPhotoStd">Photo Std</sys:String>
     <sys:String x:Key="BottomBarDrawingRule">Drawing</sys:String>
 
-    <!--原料库-->
-    <sys:String x:Key="PageRawMaterialSheet">Simple Element</sys:String>
-    <sys:String x:Key="PageRawMaterialSheetEdit">Simple Element-Edit</sys:String>
-
-    <sys:String x:Key="RMSID">ID</sys:String>
-    <sys:String x:Key="RMSState">State</sys:String>
-    <sys:String x:Key="RMSStoreTime">StoreTime</sys:String>
-    <sys:String x:Key="RMSCreateTime">CreateTime</sys:String>
-    <sys:String x:Key="RMSCreator">Creator</sys:String>
-    <sys:String x:Key="RMSLot">Lot</sys:String>
-    <sys:String x:Key="RMSComposition">Composition</sys:String>
-    <sys:String x:Key="RMSSupplier">Supplier</sys:String>
-    <sys:String x:Key="RMSWeight">Weight</sys:String>
-    <sys:String x:Key="RMSRemark">Remark</sys:String>
-    <sys:String x:Key="RMSIsSampleTaking">IsSampleTaken</sys:String>
-    <sys:String x:Key="RMSSampleTaking">SampleTakenTime</sys:String>
-    <sys:String x:Key="RMSSampleRemark">SampleRemark</sys:String>
-    <sys:String x:Key="RMSGDMS">GDMS</sys:String>
-    <sys:String x:Key="RMSICPOES">ICPOES</sys:String>
-    
     <!--每个页面最前面的提示信息-->
     <sys:String x:Key="HelpTipOrderEdit">
         注意：请仔细输入每一项，能选择就选择，没有选项手动输入的时候一定要规范

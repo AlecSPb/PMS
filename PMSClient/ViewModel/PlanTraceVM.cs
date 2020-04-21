@@ -85,19 +85,28 @@ namespace PMSClient.ViewModel
 
                 StringBuilder sb = new StringBuilder();
                 sb.AppendLine($"时间范围:{startTime.ToShortDateString()}到{endTime.ToShortDateString()}");
-                sb.AppendLine($"天数:{(endTime - startTime).TotalDays}");
-
-                sb.AppendLine("***总发货靶材数包括一片毛坯切多片靶材的情况");
-
+                sb.AppendLine($"天数:{(endTime - startTime).TotalDays.ToString("F2")}");
                 using (var db = new AnlysisServiceClient())
                 {
                     var result = db.GetStatistic(year_start, month_start, year_end, month_end);
-                    foreach (var item in result)
+
+                    var groups = result.GroupBy(i => i.Group).OrderBy(i => i.Key);
+                    foreach (var group in groups)
                     {
-                        sb.Append(item.Key);
-                        sb.Append("=");
-                        sb.AppendLine(item.Value.ToString());
+                        sb.AppendLine($"[**{group.Key}**]");
+                        foreach (var item in group)
+                        {
+                            sb.Append(item.Key);
+                            sb.Append("=");
+                            sb.Append(item.Value);
+                            if (!string.IsNullOrEmpty(item.Remark))
+                            {
+                                sb.Append($" [{item.Remark}]");
+                            }
+                            sb.AppendLine();
+                        }
                     }
+
                 }
                 var win = new ToolWindow.PlainTextWindow();
                 win.Width = 900;

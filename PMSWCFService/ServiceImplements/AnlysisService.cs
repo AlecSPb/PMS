@@ -106,9 +106,9 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcStatistic> GetStatistic(int year_start, int month_start, int year_end, int month_end)
+        public List<DcAnlysis> GetStatistic(int year_start, int month_start, int year_end, int month_end)
         {
-            List<DcStatistic> dcStatistics = new List<DcStatistic>();
+            List<DcAnlysis> dcStatistics = new List<DcAnlysis>();
             try
             {
                 XS.RunLog();
@@ -125,6 +125,20 @@ namespace PMSWCFService
 
                 using (var db = new PMSDbContext())
                 {
+                    var query_order = from i in db.Orders
+                                      where i.State != PMSCommon.OrderState.作废.ToString()
+                                      && i.State != PMSCommon.OrderState.取消.ToString()
+                                      && i.CreateTime >= startTime
+                                      && i.CreateTime <= endTime
+                                      select i;
+                    var query_order_group_customer = from i in db.Orders
+                                                     where i.State != PMSCommon.OrderState.作废.ToString()
+                                                     && i.State != PMSCommon.OrderState.取消.ToString()
+                                                     && i.CreateTime >= startTime
+                                                     && i.CreateTime <= endTime
+                                                     group i by i.CustomerName into g
+                                                     select new { Key = g.Key, Value = g };
+
                     var query_vhp = from i in db.VHPPlans
                                     where i.State != PMSCommon.CommonState.作废.ToString()
                                     && i.CreateTime >= startTime
@@ -208,129 +222,264 @@ namespace PMSWCFService
                                         && i.CreateTime >= startTime
                                         && i.CreateTime <= endTime
                                         select i;
+
                     //获取绑定数目
                     count_bonding = query_bonding.Count();
 
-                    dcStatistics.Add(new DcStatistic
+
+                    //获取机器使用分组
+                    var query_vhp_machine_used = from i in db.VHPPlans
+                                                 where i.State != PMSCommon.CommonState.作废.ToString()
+                                                 && i.CreateTime >= startTime
+                                                 && i.CreateTime <= endTime
+                                                 group i by i.VHPDeviceCode into g
+                                                 select new { g.Key, UsedCount = g.Count() };
+                    //获取报废信息
+                    var query_fail = from i in db.Failures
+                                     where i.State != PMSCommon.SimpleState.作废.ToString()
+                                     && i.CreateTime >= startTime
+                                     && i.CreateTime <= endTime
+                                     select i;
+
+
+
+                    #region 添加统计数字到结果集
+                    dcStatistics.Add(new DcAnlysis
                     {
-                        Key = "订购原料kg",
-                        Value = total_material_order
+                        Group = "订单",
+                        Key = "订单总数",
+                        Value = query_order.Count().ToString(),
+                        Remark = "个"
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
-                        Key = "入库原料kg",
-                        Value = total_material_in
+                        Group = "订单",
+                        Key = "订单靶材总数",
+                        Value = query_order.Sum(i => i.Quantity).ToString(),
+                        Remark = "片"
+                    });
+                    foreach (var item in query_order_group_customer)
+                    {
+                        dcStatistics.Add(new DcAnlysis
+                        {
+                            Group = "订单",
+                            Key = $"{item.Key}订单的靶材数目",
+                            Value = item.Value.Sum(i => i.Quantity).ToString(),
+                            Remark = ""
+                        });
+                    }
+
+                    dcStatistics.Add(new DcAnlysis
+                    {
+                        Group = "原料",
+                        Key = "订购原料",
+                        Value = total_material_order.ToString(),
+                        Remark = "kg"
+                    });
+                    dcStatistics.Add(new DcAnlysis
+                    {
+                        Group = "原料",
+                        Key = "订购原料",
+                        Value = total_material_order.ToString(),
+                        Remark = "kg"
+                    });
+                    dcStatistics.Add(new DcAnlysis
+                    {
+                        Group = "原料",
+                        Key = "订购原料-加工费",
+                        Value = query_materialorder.Sum(i => i.Weight * i.UnitPrice).ToString("F2"),
+                        Remark = "RMB"
+                    });
+                    dcStatistics.Add(new DcAnlysis
+                    {
+                        Group = "原料",
+                        Key = "订购原料-材料费",
+                        Value = query_materialorder.Sum(i => i.MaterialPrice).ToString("F2"),
+                        Remark = "RMB"
+                    });
+                    dcStatistics.Add(new DcAnlysis
+                    {
+                        Group = "原料",
+                        Key = "订购原料-总费",
+                        Value = query_materialorder.Sum(i => i.MaterialPrice + i.Weight * i.UnitPrice).ToString("F2"),
+                        Remark = "RMB"
+                    });
+                    dcStatistics.Add(new DcAnlysis
+                    {
+                        Group = "原料",
+                        Key = "入库原料",
+                        Value = total_material_in.ToString(),
+                        Remark = "kg"
                     });
 
-                    dcStatistics.Add(new DcStatistic
+
+                    dcStatistics.Add(new DcAnlysis
                     {
-                        Key = "制粉投入kg",
-                        Value = total_powder_in / 1000
+                        Group = "制粉",
+                        Key = "制粉投入",
+                        Value = (total_powder_in / 1000).ToString("F2"),
+                        Remark = "kg"
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "制粉",
                         Key = "日均制粉投入",
-                        Value = total_powder_in / days_total / 1000
+                        Value = (total_powder_in / days_total / 1000).ToString("F2"),
+                        Remark = "kg"
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
-                        Key = "制粉产出kg",
-                        Value = total_powder_out / 1000
+                        Group = "制粉",
+                        Key = "制粉产出",
+                        Value = (total_powder_out / 1000).ToString("F2"),
+                        Remark = "kg"
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "制粉",
                         Key = "日均制粉产出",
-                        Value = total_powder_out / days_total / 1000
+                        Value = (total_powder_out / days_total / 1000).ToString("F2"),
+                        Remark = "kg"
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "加工",
                         Key = "加工片数",
-                        Value = count_machine
+                        Value = count_machine.ToString()
                     });
 
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "加工",
                         Key = "日均加工片数",
-                        Value = (double)count_machine / days_total
+                        Value = ((double)count_machine / days_total).ToString("F2")
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "测试",
                         Key = "测试片数",
-                        Value = count_test
+                        Value = count_test.ToString()
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "测试",
                         Key = "日均测试片数",
-                        Value = (double)count_test / days_total
+                        Value = ((double)count_test / days_total).ToString("F2")
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "绑定",
                         Key = "绑定片数",
-                        Value = count_bonding
+                        Value = count_bonding.ToString()
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "绑定",
                         Key = "日均绑定片数",
-                        Value = (double)count_bonding / days_total
+                        Value = ((double)count_bonding / days_total).ToString("F2")
                     });
 
-
-                    dcStatistics.Add(new DcStatistic
+                    //热压机次统计
+                    foreach (var item in query_vhp_machine_used)
                     {
+                        dcStatistics.Add(new DcAnlysis
+                        {
+                            Group = "热压",
+                            Key = $"{item.Key}-机使用次数",
+                            Value = item.UsedCount.ToString()
+                        });
+                    }
+
+
+                    dcStatistics.Add(new DcAnlysis
+                    {
+                        Group = "热压",
                         Key = "热压机次",
-                        Value = vhp_count
+                        Value = vhp_count.ToString()
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "热压",
                         Key = "日均热压机次",
-                        Value = (double)vhp_count / days_total
+                        Value = ((double)vhp_count / days_total).ToString("F2")
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "热压",
                         Key = "产品热压机次",
-                        Value = vhp_product_count
+                        Value = vhp_product_count.ToString()
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "热压",
                         Key = "日均产品热压机次",
-                        Value = (double)vhp_product_count / days_total
+                        Value = ((double)vhp_product_count / days_total).ToString("F2")
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "热压",
                         Key = "产品热压机次/总热压机次",
-                        Value = (double)vhp_product_count / (double)vhp_count
+                        Value = ((double)vhp_product_count / (double)vhp_count).ToString("F2")
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "热压",
                         Key = "总热压计划产品毛坯数目",
-                        Value = vhp_blank_count
+                        Value = vhp_blank_count.ToString(),
+                        Remark = "存在一次计划1毛坯1产品或4毛坯4产品或1毛坯3产品情况"
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "热压",
                         Key = "日均热压计划产品毛坯数目",
-                        Value = (double)vhp_blank_count / days_total
+                        Value = ((double)vhp_blank_count / days_total).ToString("F2")
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "发货",
                         Key = "总发货靶材片数",
-                        Value = delivery_target_count
+                        Value = delivery_target_count.ToString(),
+                        Remark = ""
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "发货",
                         Key = "日均发货靶材片数",
-                        Value = (double)delivery_target_count / days_total
+                        Value = ((double)delivery_target_count / days_total).ToString("F2"),
+                        Remark = "包含外包靶材"
                     });
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "发货",
                         Key = "总发货靶材片数/总热压计划产品毛坯数目",
-                        Value = (double)vhp_blank_count / (double)delivery_target_count
+                        Value = ((double)vhp_blank_count / (double)delivery_target_count).ToString("F2"),
+                        Remark = ""
                     });
 
-                    dcStatistics.Add(new DcStatistic
+                    dcStatistics.Add(new DcAnlysis
                     {
+                        Group = "发货",
                         Key = "总发货靶材片数/总产品热压机次",
-                        Value = (double)vhp_blank_count / (double)vhp_product_count
+                        Value = ((double)vhp_blank_count / (double)vhp_product_count).ToString("F2")
                     });
+
+
+                    dcStatistics.Add(new DcAnlysis
+                    {
+                        Group = "报废",
+                        Key = "报废总数",
+                        Value = query_fail.Count().ToString(),
+                        Remark = "仅统计报废记录填写的"
+                    });
+
+                    dcStatistics.Add(new DcAnlysis
+                    {
+                        Group = "报废",
+                        Key = "报废率",
+                        Value = ((double)query_fail.Count() / query_vhp_product.Sum(i => i.Quantity)).ToString("F2"),
+                        Remark = "报废总数/计划产品毛坯数，仅统计报废记录填写的"
+                    });
+                    #endregion
 
                 }
 

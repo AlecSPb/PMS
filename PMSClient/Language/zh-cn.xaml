@@ -335,7 +335,7 @@
 
     <sys:String x:Key="ButtonCompare">对比</sys:String>
 
-    <sys:String x:Key="ButtonSample">样品准备</sys:String>
+    <sys:String x:Key="ButtonSample">样品</sys:String>
     <sys:String x:Key="ButtonExpressTrack">物流追踪</sys:String>
 
     <sys:String x:Key="ButtonLock">锁定</sys:String>
@@ -352,9 +352,12 @@
     <sys:String x:Key="ButtonFail">失败</sys:String>
     <sys:String x:Key="ButtonReMachine">再次加工</sys:String>
     <sys:String x:Key="ButtonExcel">Excel</sys:String>
+    <sys:String x:Key="ButtonWord">Word</sys:String>
 
     <sys:String x:Key="ButtonFailure">报废</sys:String>
     <sys:String x:Key="ButtonAnlysis">分析</sys:String>
+    <sys:String x:Key="ButtonSpecialSituation">特例</sys:String>
+
 
     <!--单字按钮-->
     <sys:String x:Key="ButtonSingleSend">发</sys:String>
@@ -532,7 +535,7 @@
     <sys:String x:Key="MOIMaterialPrice">单质总价值</sys:String>
     <sys:String x:Key="MOIDeliveryDate">交付日期</sys:String>
     <sys:String x:Key="MOILastDay">剩余天数</sys:String>
-    <sys:String x:Key="MOIUnitPrice">单价</sys:String>
+    <sys:String x:Key="MOIUnitPrice">加工单价</sys:String>
     <sys:String x:Key="MOIWeight">重量(kg)</sys:String>
     <sys:String x:Key="MOIPriority">优先级</sys:String>
     <sys:String x:Key="MOIHowManyTargets">靶材数目</sys:String>

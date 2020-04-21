@@ -48,6 +48,7 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Doc = new RelayCommand<DcMaterialOrder>(ActionGenerateDoc);
+            Excel = new RelayCommand<DcMaterialOrder>(ActionGenerateExcel);
 
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcMaterialOrder>(ActionEdit, CanEdit);
@@ -59,6 +60,20 @@ namespace PMSClient.ViewModel
 
             GoToMaterialOrderItemList = new RelayCommand(ActionGoToMaterialOrderItemList);
             GoToMaterialOrderItemListUnCompleted = new RelayCommand(ActionGoToMaterialOrderItemListFlag);
+        }
+
+        private void ActionGenerateExcel(DcMaterialOrder obj)
+        {
+            if (obj != null)
+            {
+                if (!XSHelper.XS.MessageBox.ShowYesNo("请问要创建该订单的excel文档吗？"))
+                {
+                    return;
+                }
+                var excel = new ExcelOutputHelper.ExcelOutputMaterialOrder(obj.ID);
+                excel.Intialize($"原料订单{obj.OrderPO}", "Data");
+                excel.Output();
+            }
         }
 
         private void ActionGoToMaterialOrderItemListFlag()
@@ -85,7 +100,7 @@ namespace PMSClient.ViewModel
 
         private bool CanAddItem(DcMaterialOrder arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder) ;
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);
         }
 
 
@@ -169,9 +184,7 @@ namespace PMSClient.ViewModel
         /// <param name="order"></param>
         private void ActionGenerateDoc(DcMaterialOrder order)
         {
-            if (MessageBox.Show("你确定要在桌面上创建文档吗?", "请问",
-                MessageBoxButton.YesNo, MessageBoxImage.Information)
-                == MessageBoxResult.No)
+            if (!XSHelper.XS.MessageBox.ShowYesNo("请问要创建该订单的word文档吗？"))
             {
                 return;
             }
@@ -298,6 +311,7 @@ namespace PMSClient.ViewModel
         public RelayCommand Add { get; private set; }
         public RelayCommand<DcMaterialOrder> Edit { get; set; }
         public RelayCommand<DcMaterialOrder> Doc { get; private set; }
+        public RelayCommand<DcMaterialOrder> Excel { get; private set; }
         public RelayCommand<DcMaterialOrder> Refresh { get; set; }
         public RelayCommand<DcMaterialOrder> SelectionChanged { get; set; }
         public RelayCommand GoToMaterialOrderItemList { get; set; }

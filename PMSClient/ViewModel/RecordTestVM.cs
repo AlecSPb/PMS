@@ -105,13 +105,13 @@ namespace PMSClient.ViewModel
             {
                 var json_obj = obj.RecordTest;
                 string json = JsonConvert.SerializeObject(json_obj);
-                string initialPath = XSHelper.FileHelper.GetDesktopPath();
+                string initialPath = XSHelper.XS.File.GetDesktopPath();
                 string filename = $"{StringUtil.RemoveSlash(json_obj.Composition)}-{json_obj.ProductID}";
-                XSDialogResult parameter = XSHelper.DialogHelper.ShowSaveDialog(initialPath, "Data|*.json", filename);
+                var parameter = XSHelper.XS.Dialog.ShowSaveDialog(initialPath, "Data|*.json", filename);
                 if (parameter.HasSelected)
                 {
-                    XSHelper.FileHelper.SaveText(parameter.SelectPath, json);
-                    XSHelper.MessageHelper.ShowInfo("保存成功");
+                    XSHelper.XS.File.SaveText(parameter.SelectPath, json);
+                    XSHelper.XS.MessageBox.ShowInfo("保存成功");
                 }
             }
         }

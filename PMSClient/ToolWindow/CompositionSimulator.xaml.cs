@@ -173,11 +173,11 @@ namespace PMSClient.ToolWindow
 
         private void BtnOneFile_Click(object sender, RoutedEventArgs e)
         {
-            XSDialogResult result = XSHelper.DialogHelper.ShowSaveDialog(XSHelper.FileHelper.GetDesktopPath(),
+            var result = XSHelper.XS.Dialog.ShowSaveDialog(XSHelper.XS.File.GetDesktopPath(),
                   "(*.csv)|*.csv", "成分.csv");
             if (result.HasSelected)
             {
-                XSHelper.FileHelper.SaveText(result.SelectPath, txtCsv.Text);
+                XSHelper.XS.File.SaveText(result.SelectPath, txtCsv.Text);
             }
         }
     }

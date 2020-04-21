@@ -52,8 +52,10 @@
                                 <Button Content="{StaticResource ButtonAddChild}" Style="{StaticResource StyleDGButton}" 
                                             Command="{Binding DataContext.AddItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource ButtonDoc}" Style="{StaticResource StyleDGButton}"
+                                <Button Content="{StaticResource ButtonWord}" Style="{StaticResource StyleDGButton}"
                                                 Command="{Binding Path=DataContext.Doc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonExcel}" Style="{StaticResource StyleDGButton}"
+                                                Command="{Binding Path=DataContext.Excel,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

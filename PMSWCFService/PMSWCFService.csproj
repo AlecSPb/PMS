@@ -127,6 +127,7 @@
     <Compile Include="DataContracts\DcPMICounter.cs" />
     <Compile Include="DataContracts\DcRecordBonding.cs" />
     <Compile Include="DataContracts\DcRemainInventory.cs" />
+    <Compile Include="DataContracts\DcAnlysis.cs" />
     <Compile Include="DataContracts\DcStatistic.cs" />
     <Compile Include="DataContracts\DcStatisticProduct.cs" />
     <Compile Include="DataContracts\DcStatisticDelivery.cs" />

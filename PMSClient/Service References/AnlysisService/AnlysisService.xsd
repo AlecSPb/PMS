@@ -48,7 +48,7 @@
   <xs:element name="GetStatisticResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetStatisticResult" nillable="true" type="q2:ArrayOfDcStatistic" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetStatisticResult" nillable="true" type="q2:ArrayOfDcAnlysis" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

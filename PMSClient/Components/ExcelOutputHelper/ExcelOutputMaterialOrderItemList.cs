@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ExcelOutputHelper
 {
+    /// <summary>
+    /// 用来输出原料订单项目
+    /// </summary>
     public class ExcelOutputMaterialOrderItemList : ExcelOutputBasePage
     {
         public ExcelOutputMaterialOrderItemList()
@@ -49,12 +52,12 @@ namespace PMSClient.ExcelOutputHelper
                         helper.CreateAndSetCell(5, item.MaterialOrderItem.Composition);
                         helper.CreateAndSetCell(6, item.MaterialOrderItem.PMINumber);
                         helper.CreateAndSetCell(7, item.MaterialOrderItem.Purity);
-                        helper.CreateAndSetCell(8, item.MaterialOrderItem.Weight.ToString());
+                        helper.CreateAndSetCell(8, item.MaterialOrderItem.Weight);
                         helper.CreateAndSetCell(9, item.MaterialOrder.Supplier);
                         helper.CreateAndSetCell(10, item.MaterialOrder.OrderPO);
                         helper.CreateAndSetCell(11, item.MaterialOrderItem.DeliveryDate.ToString());
                         helper.CreateAndSetCell(12, item.MaterialOrderItem.SJIngredient);
-                        helper.CreateAndSetCell(13, item.MaterialOrderItem.UnitPrice.ToString());
+                        helper.CreateAndSetCell(13, item.MaterialOrderItem.UnitPrice);
                         helper.CreateAndSetCell(14, item.MaterialOrderItem.Description);
                         helper.CreateAndSetCell(15, item.MaterialOrderItem.ProvideRawMaterial);
 

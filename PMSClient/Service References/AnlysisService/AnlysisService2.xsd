@@ -30,17 +30,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcPlanTrace" nillable="true" type="tns:DcPlanTrace" />
-  <xs:complexType name="ArrayOfDcStatistic">
+  <xs:complexType name="ArrayOfDcAnlysis">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcStatistic" nillable="true" type="tns:DcStatistic" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcAnlysis" nillable="true" type="tns:DcAnlysis" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfDcStatistic" nillable="true" type="tns:ArrayOfDcStatistic" />
-  <xs:complexType name="DcStatistic">
+  <xs:element name="ArrayOfDcAnlysis" nillable="true" type="tns:ArrayOfDcAnlysis" />
+  <xs:complexType name="DcAnlysis">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Value" type="xs:double" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="DcStatistic" nillable="true" type="tns:DcStatistic" />
+  <xs:element name="DcAnlysis" nillable="true" type="tns:DcAnlysis" />
 </xs:schema>

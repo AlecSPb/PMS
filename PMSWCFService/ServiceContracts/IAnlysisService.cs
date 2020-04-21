@@ -18,7 +18,7 @@ namespace PMSWCFService.ServiceContracts
 
 
         [OperationContract]
-        List<DcStatistic> GetStatistic(int year_start, int month_start, int year_end, int month_end);
+        List<DcAnlysis> GetStatistic(int year_start, int month_start, int year_end, int month_end);
 
     }
 }
