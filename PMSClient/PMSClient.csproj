@@ -248,6 +248,14 @@
       <DependentUpon>GDMSHelper.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\GDMSHelper\GDMSPair.cs" />
+    <Compile Include="Components\MaterialOrder\SimpleMaterialResultReadOnly.xaml.cs">
+      <DependentUpon>SimpleMaterialResultReadOnly.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\MaterialOrder\SimpleMaterialResult.xaml.cs">
+      <DependentUpon>SimpleMaterialResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\MaterialOrder\SimpleMaterialHelper.cs" />
+    <Compile Include="Components\MaterialOrder\SimpleMaterial.cs" />
     <Compile Include="Components\NewFeatureDocShow\NewFeatureShowConfig.cs" />
     <Compile Include="Components\NewFeatureDocShow\NewFeatureShowService.cs" />
     <Compile Include="CustomControls\BatchDuplicateDialog.xaml.cs">
@@ -1166,6 +1174,14 @@
     <Page Include="Components\GDMSHelper\GDMSHelper.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\MaterialOrder\SimpleMaterialResultReadOnly.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\MaterialOrder\SimpleMaterialResult.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="CustomControls\BatchDuplicateDialog.xaml">
       <SubType>Designer</SubType>

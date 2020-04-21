@@ -66,7 +66,7 @@
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource MOSupplier}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-                        <TextBox x:Name="txtSupplier"  Text="{Binding Supplier}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox x:Name="txtSupplier"  Text="{Binding Supplier}" Style="{StaticResource StyleTextBoxCommon}"/>
                         <ComboBox x:Name="cboSuppliers" Grid.Row="1" Grid.Column="2" 
                           ItemsSource="{Binding DataContext.Suppliers,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           DisplayMemberPath="SupplierName"
@@ -80,7 +80,7 @@
 
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource MOSupplierAbbr}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox  x:Name="txtAbbr" Grid.Row="2" Grid.Column="1" Text="{Binding SupplierAbbr}" Style="{StaticResource StyleTextBoxReadOnly}"
+                    <TextBox  x:Name="txtAbbr" Grid.Row="2" Grid.Column="1" Text="{Binding SupplierAbbr}" Style="{StaticResource StyleTextBoxCommon}"
                          />
                     <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
                            Text="供应商缩写"/>
@@ -110,8 +110,13 @@
                            Style="{StaticResource StyleTextBlockCommon}" Background="LightGreen"/>
                     <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightGreen"/>
-                    <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                    <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal">
+                        <Button Name="BtnCollectAllMaterial" Content="汇总所有提供材料" Style="{StaticResource StyleButtonCommon}"
+                                Command="{Binding DataContext.CollectAllMaterial,
+                                RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+                        <TextBlock Style="{StaticResource StyleTextBlockTip}"
                            Text="备注信息，总共提供多少原料，不需要PMI to provide前缀"/>
+                    </StackPanel>
 
                     <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MOShipFee}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

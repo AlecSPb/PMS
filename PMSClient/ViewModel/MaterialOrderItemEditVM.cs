@@ -45,7 +45,7 @@ namespace PMSClient.ViewModel
                 item.PMINumber = Helpers.DefaultHelper.DefaultPMINumber();
                 item.Purity = "5N";
                 item.Description = "";
-                item.ProvideRawMaterial = "";
+                item.ProvideRawMaterial = "A+0+0;B+0+0;";
                 item.UnitPrice = 0;
                 item.Weight = 0;
                 item.DeliveryDate = DateTime.Now.AddDays(7);

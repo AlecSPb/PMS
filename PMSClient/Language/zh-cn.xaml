@@ -535,7 +535,7 @@
     <sys:String x:Key="MOIMaterialPrice">单质总价值</sys:String>
     <sys:String x:Key="MOIDeliveryDate">交付日期</sys:String>
     <sys:String x:Key="MOILastDay">剩余天数</sys:String>
-    <sys:String x:Key="MOIUnitPrice">加工单价</sys:String>
+    <sys:String x:Key="MOIUnitPrice">加工费单价</sys:String>
     <sys:String x:Key="MOIWeight">重量(kg)</sys:String>
     <sys:String x:Key="MOIPriority">优先级</sys:String>
     <sys:String x:Key="MOIHowManyTargets">靶材数目</sys:String>

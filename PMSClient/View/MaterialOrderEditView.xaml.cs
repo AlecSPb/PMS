@@ -41,5 +41,10 @@ namespace PMSClient.View
                 PMSMethods.SetTextBox(txtOrderPO, $"{DateTime.Now.ToString("yyMMdd")}{selectSupplier.Abbr}");
             }
         }
+
+        private void BtnCollectAllMaterial_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -25,13 +25,6 @@ namespace PMSClient.View
             InitializeComponent();
         }
 
-        private void BtnAsist_Click(object sender, RoutedEventArgs e)
-        {
-            var tool = new ToolWindow.MaterialPriceTool();
-            tool.Fill += Tool_Fill;
-            tool.Show();
-        }
-
         private void Tool_Fill(object sender, ToolWindow.MaterialPriceToolArgs e)
         {
             try
@@ -63,6 +56,37 @@ namespace PMSClient.View
             if (!string.IsNullOrEmpty(tool.WindowContent))
             {
                 PMSMethods.SetTextBoxAppend(TxtRemark, tool.WindowContent);
+            }
+        }
+
+        private void BtnProvideRawMaterial_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtProvideMaterial == null) return;
+            var dialog = new Components.MaterialOrder.SimpleMaterialResult();
+            dialog.KeyStrings = TxtProvideMaterial.Text.Trim();
+            dialog.ShowDialog();
+            if (dialog.DialogResult == true)
+            {
+                PMSMethods.SetTextBox(TxtProvideMaterial, dialog.KeyStrings);
+            }
+        }
+
+        private void BtnMaterialPrice_Click(object sender, RoutedEventArgs e)
+        {
+            double cost = Components.MaterialOrder.SimpleMaterialHelper.GetAllMaterialPrice(TxtProvideMaterial.Text.Trim());
+            if (cost != 0)
+            {
+                PMSMethods.SetTextBox(TxtMaterialPrice, cost.ToString("F2"));
+            }
+        }
+
+        private void BtnGetElementFromComposition_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(TxtComposition.Text)) return;
+            string s = Components.MaterialOrder.SimpleMaterialHelper.GetMaterialStrFromComposition(TxtComposition.Text);
+            if (!string.IsNullOrEmpty(s))
+            {
+                PMSMethods.SetTextBox(TxtProvideMaterial, s);
             }
         }
     }

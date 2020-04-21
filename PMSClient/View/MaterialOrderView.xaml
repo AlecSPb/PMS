@@ -226,7 +226,11 @@
                 <DataGridTemplateColumn Header="{StaticResource MOIProvideRawMaterial}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding ProvideRawMaterial}" Style="{StaticResource StyleDGTextBoxStrench}" IsReadOnly="True"/>
+                            <Button Content="{Binding ProvideRawMaterial}" Style="{StaticResource StyleDGButtonOriginal}"
+                                    HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
+                                    Command="{Binding DataContext.ShowRawMaterial,
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

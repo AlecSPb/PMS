@@ -115,11 +115,12 @@ namespace PMSClient.ReportsHelper
 
 
                             p = mainTable.Rows[i + 1].Cells[5].Paragraphs[0];
-                            var descriptionMesseage = "";
-                            if (!string.IsNullOrEmpty(item.ProvideRawMaterial.Trim()))
-                            {
-                                descriptionMesseage = $"{ item.ProvideRawMaterial}；{item.Description}";
-                            }
+                            var descriptionMesseage = "See Details In Excel Attachment";
+                            p.Alignment = Alignment.left;
+                            //if (!string.IsNullOrEmpty(item.ProvideRawMaterial.Trim()))
+                            //{
+                            //    descriptionMesseage = $"{ item.ProvideRawMaterial}；{item.Description}";
+                            //}
 
                             p.Append(descriptionMesseage).FontSize(7)
                                 .Font(new System.Drawing.FontFamily("等线"));

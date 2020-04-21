@@ -87,6 +87,10 @@
                                     Binding="{Binding MaterialOrderItem.DeliveryDate,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource MOSJIngredient}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.SJIngredient}"/>
+                <DataGridTextColumn Header="{StaticResource MOIProvideRawMaterial}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrderItem.ProvideRawMaterial}"/>
+                <DataGridTextColumn Header="{StaticResource MOIMaterialPrice}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding MaterialOrderItem.MaterialPrice}"/>
                 <DataGridTextColumn Header="{StaticResource MOIRemark}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     Binding="{Binding MaterialOrderItem.Remark}"/>
             </DataGrid.Columns>

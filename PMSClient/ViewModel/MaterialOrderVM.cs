@@ -60,6 +60,18 @@ namespace PMSClient.ViewModel
 
             GoToMaterialOrderItemList = new RelayCommand(ActionGoToMaterialOrderItemList);
             GoToMaterialOrderItemListUnCompleted = new RelayCommand(ActionGoToMaterialOrderItemListFlag);
+
+            ShowRawMaterial = new RelayCommand<DcMaterialOrderItem>(ActionShowRawMaterial);
+        }
+
+        private void ActionShowRawMaterial(DcMaterialOrderItem obj)
+        {
+            if (obj != null)
+            {
+                var dialog = new Components.MaterialOrder.SimpleMaterialResultReadOnly();
+                dialog.KeyStrings = obj.ProvideRawMaterial;
+                dialog.ShowDialog();
+            }
         }
 
         private void ActionGenerateExcel(DcMaterialOrder obj)
@@ -318,6 +330,8 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToMaterialOrderItemListUnCompleted { get; set; }
         public RelayCommand<DcMaterialOrder> AddItem { get; private set; }
         public RelayCommand<DcMaterialOrderItem> EditItem { get; private set; }
+
+        public RelayCommand<DcMaterialOrderItem> ShowRawMaterial { get; set; }
         #endregion
     }
 }

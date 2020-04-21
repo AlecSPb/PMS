@@ -33,7 +33,6 @@
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
             <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" >
                 <Grid  DataContext="{Binding CurrentMaterialOrderItem}">
@@ -49,10 +48,11 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="Auto"/>
@@ -85,7 +85,7 @@
 
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource MOIComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
+                    <TextBox Name="TxtComposition" Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
                              Background="Yellow" Height="27" />
                     <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="可以选择原料需求的成分，可以自行更改"/>
@@ -123,20 +123,27 @@
                     <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="需订购原料重量，单位kg"/>
 
-                    <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MOIDescription}"
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MOIUnitPrice}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding UnitPrice}" Style="{StaticResource StyleTextBoxCommon}" Height="27"
+                             Background="LightGreen"/>
+                    <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="kg/RMB"/>
+
+                    <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MOIDescription}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Name="TxtDescription" Grid.Row="6" Grid.Column="1" Text="{Binding Description}" Style="{StaticResource StyleTextBoxCommon}" Height="27" Margin="2,1.8,1,2.4"/>
-                    <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal">
+                    <TextBox Name="TxtDescription" Grid.Row="7" Grid.Column="1" Text="{Binding Description}" Style="{StaticResource StyleTextBoxCommon}" Height="27" Margin="2,1.8,1,2.4"/>
+                    <StackPanel Grid.Row="7" Grid.Column="2" Orientation="Horizontal">
 
                     </StackPanel>
 
 
-                    <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MOIRemark}"
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource MOIRemark}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Remark}" 
+                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Remark}" 
                              Style="{StaticResource StyleTextBoxCommon}"  Background="LightPink"
                              Name="TxtRemark" />
-                    <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal" Grid.RowSpan="3">
+                    <StackPanel Grid.Row="7" Grid.Column="2" Orientation="Horizontal" Grid.RowSpan="3">
                         <Button Name="BtnDefaultMemo" Style="{StaticResource StyleButtonCommonNarrow}" Content="补料"
                                 Click="BtnDefaultMemo_Click"/>
                         <Button Content="补料原因" Name="BtnReOrderReason" Click="BtnReOrderReason_Click"
@@ -145,73 +152,71 @@
                            Text="内部备注，供应商那边看不到" Background="LightBlue"/>
                     </StackPanel>
 
-                    <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource MOIProvideRawMaterial}"
-                           Style="{StaticResource StyleTextBlockCommon}" Background="LightGreen"/>
-                    <TextBox Name="TxtProvideMaterial" Grid.Row="8" Grid.Column="1" Text="{Binding ProvideRawMaterial}" Style="{StaticResource StyleTextBoxCommon}"
-                              Background="LightGreen" Height="27" />
-
-                    <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource MOIMaterialPrice}"
-                           Style="{StaticResource StyleTextBlockCommon}" Background="LightGreen" />
-                    <TextBox Name="TxtMaterialPrice" Grid.Row="9" Grid.Column="1" Text="{Binding MaterialPrice,StringFormat={}{0:F2}}"
-                             Style="{StaticResource StyleTextBoxCommon}"
-                              Background="LightGreen"/>
-                    <StackPanel Grid.Row="9" Grid.Column="2" Orientation="Horizontal" >
-                        <Button Content="辅助" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnAsist" Click="BtnAsist_Click"/>
-                        <TextBlock Style="{StaticResource StyleTextBlockTip}"
-                           Text="RMB"/>
+                    <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
+                        <Button Name="BtnGetElementFromComposition" Content="从成分获取[提供单质]" Style="{StaticResource StyleButtonCommon}"
+                                Click="BtnGetElementFromComposition_Click"/>
                     </StackPanel>
 
-                    <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource MOIDeliveryDate}"
+                    <Button Grid.Column="0" Grid.Row="10" Content="{StaticResource MOIProvideRawMaterial}"
+                            Style="{StaticResource StyleButtonStrench}" Name="BtnProvideRawMaterial" Click="BtnProvideRawMaterial_Click"/>
+                    <TextBox Name="TxtProvideMaterial" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2"
+                             Text="{Binding ProvideRawMaterial}" Style="{StaticResource StyleTextBoxCommon}"
+                              Background="LightGreen" Height="27" />
+
+                    <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource MOIMaterialPrice}"
+                           Style="{StaticResource StyleTextBlockCommon}" Background="LightGreen" />
+                    <TextBox Name="TxtMaterialPrice" Grid.Row="11" Grid.Column="1" Text="{Binding MaterialPrice,StringFormat={}{0:F2}}"
+                             Style="{StaticResource StyleTextBoxCommon}"
+                              Background="LightGreen"/>
+                    <StackPanel Grid.Row="11" Grid.Column="2" Orientation="Horizontal" >
+                        <Button Content="计算" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnMaterialPrice" Click="BtnMaterialPrice_Click"/>
+                        <TextBlock Style="{StaticResource StyleTextBlockTip}" Text="RMB"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource MOIDeliveryDate}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                    <DatePicker Grid.Row="10" Grid.Column="1" SelectedDate="{Binding DeliveryDate,Mode=TwoWay}"
+                    <DatePicker Grid.Row="12" Grid.Column="1" SelectedDate="{Binding DeliveryDate,Mode=TwoWay}"
                             Style="{StaticResource StyleDatePickerCommon}" />
-                    <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                    <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="设定交付日期，默认一周时间"/>
 
-                    <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource MOIUnitPrice}"
+                    <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource MOSJIngredient}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                    <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding UnitPrice}" Style="{StaticResource StyleTextBoxCommon}" Height="27" Margin="2,2.4,1,1.8"  />
-                    <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="kg/RMB"/>
-
-                    <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource MOSJIngredient}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
-                    <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding SJIngredient}" 
+                    <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding SJIngredient}" 
                              Style="{StaticResource StyleTextBoxCommon}"  />
-                    <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                    <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="备注信息" />
 
 
-                    <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource MOIState}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
-                    <ComboBox Grid.Row="13" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
-                          ItemsSource="{Binding DataContext.OrderStates,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding State}"/>
-                    <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="订单状态" />
-
-                    <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource MOIPriority}"
+                    <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource MOIState}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                     <ComboBox Grid.Row="14" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                          ItemsSource="{Binding DataContext.OrderStates,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding State}"/>
+                    <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="订单状态" />
+
+                    <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource MOIPriority}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                    <ComboBox Grid.Row="15" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.Priorities,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding Priority}"/>
-                    <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                    <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="优先级" Height="25"  Width="45"/>
 
-                    <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource MOICreator}"
+                    <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource MOICreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="15" Grid.Column="1" Text="{Binding Creator}" 
+                    <TextBlock Grid.Row="16" Grid.Column="1" Text="{Binding Creator}" 
                                Style="{StaticResource StyleTextBlockCommon}" />
-                    <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource MOICreateTime}"
+                    <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource MOICreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="16" Grid.Column="1" Text="{Binding CreateTime}" 
+                    <TextBlock Grid.Row="17" Grid.Column="1" Text="{Binding CreateTime}" 
                                Style="{StaticResource StyleTextBlockCommon}"/>
 
 
 
                 </Grid>
             </ScrollViewer>
-            <Image Grid.Column="1" Source="../Resource/HelpImages/materialorder.png" Stretch="Uniform" Margin="10"/>
         </Grid>
 
     </Grid>

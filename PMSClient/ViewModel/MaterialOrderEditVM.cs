@@ -9,6 +9,7 @@ using PMSClient.BasicService;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
+using PMSClient.Components.MaterialOrder;
 
 namespace PMSClient.ViewModel
 {
@@ -69,6 +70,48 @@ namespace PMSClient.ViewModel
         {
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
+            CollectAllMaterial = new RelayCommand(ActionCollectAllMaterial);
+        }
+
+        private void ActionCollectAllMaterial()
+        {
+            if (CurrentMaterialOrder == null) return;
+            try
+            {
+                using (var service = new MaterialOrderServiceClient())
+                {
+                    var orderItems = service.GetMaterialOrderItembyMaterialID(CurrentMaterialOrder.ID);
+
+                    List<SimpleMaterial> collections = new List<SimpleMaterial>();
+                    foreach (var item in orderItems)
+                    {
+                        var material = SimpleMaterialHelper.StrToSimpleMaterial(item.ProvideRawMaterial);
+                        if (material != null && material.Count != 0)
+                        {
+                            collections.AddRange(material);
+                        }
+                    }
+
+                    var query = from i in collections
+                                group i by i.Element into g
+                                select new { Key = g.Key, Weight = g.Sum(i => i.Weight) };
+
+                    StringBuilder sb = new StringBuilder();
+                    foreach (var item in query)
+                    {
+                        sb.Append(item.Key);
+                        sb.Append("+");
+                        sb.Append(item.Weight);
+                        sb.Append(";");
+                    }
+
+                    CurrentMaterialOrder.Remark = sb.ToString();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void GoBack()
@@ -131,5 +174,8 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(nameof(CurrentMaterialOrder));
             }
         }
+
+
+        public RelayCommand CollectAllMaterial { get; set; }
     }
 }
