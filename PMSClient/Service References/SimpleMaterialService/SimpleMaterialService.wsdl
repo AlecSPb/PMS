@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SimpleMaterialService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.16.254:8002/SimpleMaterialService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/SimpleMaterialService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/SimpleMaterialService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISimpleMaterialService_GetSimpleMaterial_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSimpleMaterial" />
+  </wsdl:message>
+  <wsdl:message name="ISimpleMaterialService_GetSimpleMaterial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSimpleMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISimpleMaterialService_GetSimpleMaterialCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSimpleMaterialCount" />
+  </wsdl:message>
+  <wsdl:message name="ISimpleMaterialService_GetSimpleMaterialCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSimpleMaterialCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISimpleMaterialService_GetSimpleMaterialByComposition_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSimpleMaterialByComposition" />
+  </wsdl:message>
+  <wsdl:message name="ISimpleMaterialService_GetSimpleMaterialByComposition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSimpleMaterialByCompositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISimpleMaterialService_AddSimpleMaterial_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSimpleMaterial" />
+  </wsdl:message>
+  <wsdl:message name="ISimpleMaterialService_AddSimpleMaterial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSimpleMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISimpleMaterialService_UpdateSimpleMaterial_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSimpleMaterial" />
+  </wsdl:message>
+  <wsdl:message name="ISimpleMaterialService_UpdateSimpleMaterial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSimpleMaterialResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISimpleMaterialService">
+    <wsdl:operation name="GetSimpleMaterial">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISimpleMaterialService/GetSimpleMaterial" message="tns:ISimpleMaterialService_GetSimpleMaterial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISimpleMaterialService/GetSimpleMaterialResponse" message="tns:ISimpleMaterialService_GetSimpleMaterial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSimpleMaterialCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISimpleMaterialService/GetSimpleMaterialCount" message="tns:ISimpleMaterialService_GetSimpleMaterialCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISimpleMaterialService/GetSimpleMaterialCountResponse" message="tns:ISimpleMaterialService_GetSimpleMaterialCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSimpleMaterialByComposition">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISimpleMaterialService/GetSimpleMaterialByComposition" message="tns:ISimpleMaterialService_GetSimpleMaterialByComposition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISimpleMaterialService/GetSimpleMaterialByCompositionResponse" message="tns:ISimpleMaterialService_GetSimpleMaterialByComposition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSimpleMaterial">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISimpleMaterialService/AddSimpleMaterial" message="tns:ISimpleMaterialService_AddSimpleMaterial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISimpleMaterialService/AddSimpleMaterialResponse" message="tns:ISimpleMaterialService_AddSimpleMaterial_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSimpleMaterial">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISimpleMaterialService/UpdateSimpleMaterial" message="tns:ISimpleMaterialService_UpdateSimpleMaterial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISimpleMaterialService/UpdateSimpleMaterialResponse" message="tns:ISimpleMaterialService_UpdateSimpleMaterial_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISimpleMaterialService" type="tns:ISimpleMaterialService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSimpleMaterial">
+      <soap:operation soapAction="http://tempuri.org/ISimpleMaterialService/GetSimpleMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSimpleMaterialCount">
+      <soap:operation soapAction="http://tempuri.org/ISimpleMaterialService/GetSimpleMaterialCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSimpleMaterialByComposition">
+      <soap:operation soapAction="http://tempuri.org/ISimpleMaterialService/GetSimpleMaterialByComposition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSimpleMaterial">
+      <soap:operation soapAction="http://tempuri.org/ISimpleMaterialService/AddSimpleMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSimpleMaterial">
+      <soap:operation soapAction="http://tempuri.org/ISimpleMaterialService/UpdateSimpleMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SimpleMaterialService">
+    <wsdl:port name="BasicHttpBinding_ISimpleMaterialService" binding="tns:BasicHttpBinding_ISimpleMaterialService">
+      <soap:address location="http://192.168.16.254:8002/SimpleMaterialService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

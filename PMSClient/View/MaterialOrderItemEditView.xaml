@@ -152,9 +152,11 @@
                            Text="内部备注，供应商那边看不到" Background="LightBlue"/>
                     </StackPanel>
 
-                    <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
+                    <StackPanel Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
                         <Button Name="BtnGetElementFromComposition" Content="从成分获取[提供单质]" Style="{StaticResource StyleButtonCommon}"
                                 Click="BtnGetElementFromComposition_Click"/>
+                        <CheckBox Name="ChkUseCurrentPriceDB" IsChecked="True" Style="{StaticResource StyleCheckBoxCommon}"
+                                  Content="从数据库里获取当前单质价格"/>
                     </StackPanel>
 
                     <Button Grid.Column="0" Grid.Row="10" Content="{StaticResource MOIProvideRawMaterial}"

@@ -30,7 +30,7 @@
       <Value Profile="(Default)">0.2</Value>
     </Setting>
     <Setting Name="Version" Type="System.String" Scope="User">
-      <Value Profile="(Default)">4.10.5.16</Value>
+      <Value Profile="(Default)">4.10.6.18</Value>
     </Setting>
     <Setting Name="ShowHelpDocSilenceCode" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>

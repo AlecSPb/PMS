@@ -509,6 +509,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\SimpleMaterialService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\StatisticService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -695,6 +700,8 @@
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
+    <Compile Include="ViewModel\SimpleMaterialEditVM.cs" />
+    <Compile Include="ViewModel\SimpleMaterialVM.cs" />
     <Compile Include="ViewModel\RawMaterialSheetEditVM.cs" />
     <Compile Include="ViewModel\RawMaterialSheetVM.cs" />
     <Compile Include="ViewModel\RecordBondingEditVM.cs" />
@@ -794,6 +801,12 @@
     </Compile>
     <Compile Include="View\CheckListEditView.xaml.cs">
       <DependentUpon>CheckListEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SimpleMaterialEditView.xaml.cs">
+      <DependentUpon>SimpleMaterialEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SimpleMaterialView.xaml.cs">
+      <DependentUpon>SimpleMaterialView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MissonSelectWindow.xaml.cs">
       <DependentUpon>MissonSelectWindow.xaml</DependentUpon>
@@ -1495,6 +1508,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\SimpleMaterialEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SimpleMaterialView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\MissonSelectWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -2082,6 +2103,19 @@
     <None Include="Service References\Sample\SampleService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\SimpleMaterialService\PMSClient.SimpleMaterialService.DcSimpleMaterial.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SimpleMaterialService\SimpleMaterialService.wsdl" />
+    <None Include="Service References\SimpleMaterialService\SimpleMaterialService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SimpleMaterialService\SimpleMaterialService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SimpleMaterialService\SimpleMaterialService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ToolService\PMSClient.ToolService.DcToolSieve.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -2132,6 +2166,13 @@
     <None Include="Service References\AnlysisService\configuration91.svcinfo" />
     <None Include="Service References\AnlysisService\configuration.svcinfo" />
     <None Include="Service References\AnlysisService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SimpleMaterialService\SimpleMaterialService.disco" />
+    <None Include="Service References\SimpleMaterialService\configuration91.svcinfo" />
+    <None Include="Service References\SimpleMaterialService\configuration.svcinfo" />
+    <None Include="Service References\SimpleMaterialService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -2757,6 +2798,7 @@
     <WCFMetadataStorage Include="Service References\RemoteHeartBeatService\" />
     <WCFMetadataStorage Include="Service References\Sample\" />
     <WCFMetadataStorage Include="Service References\SF\" />
+    <WCFMetadataStorage Include="Service References\SimpleMaterialService\" />
     <WCFMetadataStorage Include="Service References\StatisticService\" />
     <WCFMetadataStorage Include="Service References\ToolService\" />
     <WCFMetadataStorage Include="Service References\UserSimpleService\" />

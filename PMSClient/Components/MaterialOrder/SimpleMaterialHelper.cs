@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using PMSClient.SimpleMaterialService;
 
 namespace PMSClient.Components.MaterialOrder
 {
@@ -13,7 +14,7 @@ namespace PMSClient.Components.MaterialOrder
     public class SimpleMaterialHelper
     {
 
-        public static string GetMaterialStrFromComposition(string composition)
+        public static string GetMaterialStrFromComposition(string composition, bool useDB = true)
         {
             string s = "";
             try
@@ -25,7 +26,13 @@ namespace PMSClient.Components.MaterialOrder
                 foreach (Match item in matches)
                 {
                     string element_name = item.Groups[1].Value;
-                    simpleMaterials.Add(new SimpleMaterial { Element = element_name, UnitPrice = 0, Weight = 0 });
+                    var sm = new SimpleMaterial { ElementName = element_name, UnitPrice = 0, Weight = 0 };
+                    if (useDB)
+                    {
+                        double unit_price = GetUnitPrice(sm.ElementName);
+                        sm.UnitPrice = unit_price;
+                    }
+                    simpleMaterials.Add(sm);
                 }
 
                 s = SimpleMaterialToStr(simpleMaterials);
@@ -35,6 +42,34 @@ namespace PMSClient.Components.MaterialOrder
 
             }
             return s;
+        }
+
+        /// <summary>
+        /// 从单质价格数据库里获取该元素当前价格
+        /// </summary>
+        /// <param name="element_name"></param>
+        /// <returns></returns>
+        private static double GetUnitPrice(string element_name)
+        {
+            double unit_price = 0;
+            if (string.IsNullOrEmpty(element_name)) return unit_price;
+            try
+            {
+                using (var s = new SimpleMaterialServiceClient())
+                {
+                    var result = s.GetSimpleMaterialByComposition(element_name);
+                    if (result != null)
+                    {
+                        unit_price = result.UnitPrice;
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            return unit_price;
         }
 
         public static double GetAllMaterialPrice(string str)
@@ -62,7 +97,7 @@ namespace PMSClient.Components.MaterialOrder
                     if (pair.Length >= 3)
                     {
                         SimpleMaterial sm = new SimpleMaterial();
-                        sm.Element = pair[0];
+                        sm.ElementName = pair[0];
                         sm.UnitPrice = double.Parse(pair[1]);
                         sm.Weight = double.Parse(pair[2]);
                         simpleMaterials.Add(sm);
@@ -85,9 +120,9 @@ namespace PMSClient.Components.MaterialOrder
             {
                 foreach (var item in simpleMaterials)
                 {
-                    if (!string.IsNullOrEmpty(item.Element))
+                    if (!string.IsNullOrEmpty(item.ElementName))
                     {
-                        sb.Append(item.Element);
+                        sb.Append(item.ElementName);
                         sb.Append("+");
                         sb.Append(item.UnitPrice);
                         sb.Append("+");

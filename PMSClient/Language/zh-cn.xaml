@@ -121,13 +121,13 @@
 
 
     <sys:String x:Key="PageProductTitle">成品</sys:String>
-    <sys:String x:Key="PageProduct">成品库存</sys:String>
+    <sys:String x:Key="PageProduct">成品管理</sys:String>
     <sys:String x:Key="PageProductUnCompleted">成品库存[库存]-这个视图只显示成品库存</sys:String>
-    <sys:String x:Key="PageProductEdit">成品库编辑</sys:String>
+    <sys:String x:Key="PageProductEdit">成品管理编辑</sys:String>
 
-    <sys:String x:Key="PagePlate">背板库存</sys:String>
+    <sys:String x:Key="PagePlate">背板管理</sys:String>
     <sys:String x:Key="PagePlateUnCompleted">背板库存[库存]-这个视图只显示背板库存</sys:String>
-    <sys:String x:Key="PagePlateEdit">背板库存编辑</sys:String>
+    <sys:String x:Key="PagePlateEdit">背板管理编辑</sys:String>
 
 
     <sys:String x:Key="PageDelivery">发货管理</sys:String>
@@ -135,8 +135,8 @@
     <sys:String x:Key="PageDeliveryItemEdit">发货项记录编辑</sys:String>
     <sys:String x:Key="PageDeliveryItemList">发货流水</sys:String>
 
-    <sys:String x:Key="PageRemainInventory">储备库存</sys:String>
-    <sys:String x:Key="PageRemainInventoryEdit">储备库存编辑</sys:String>
+    <sys:String x:Key="PageRemainInventory">储备管理</sys:String>
+    <sys:String x:Key="PageRemainInventoryEdit">储备管理编辑</sys:String>
 
 
     <sys:String x:Key="PageStatisticPMSIndex">PMS 指数</sys:String>
@@ -182,7 +182,7 @@
     <sys:String x:Key="PageToDoEdit">项目目标编辑</sys:String>
 
     <sys:String x:Key="PageConsumable">耗材统计</sys:String>
-    <sys:String x:Key="PageCounter">PMI计数</sys:String>
+    <sys:String x:Key="PageCounter">计数</sys:String>
     <sys:String x:Key="PagePlanForProduct">生产追踪</sys:String>
 
 
@@ -1023,7 +1023,22 @@
     <sys:String x:Key="RMSGDMS">GDMS</sys:String>
     <sys:String x:Key="RMSICPOES">ICPOES</sys:String>
 
+    <!--简单原料价格库-->
+    <sys:String x:Key="PageSimpleMaterial">单质管理</sys:String>
+    <sys:String x:Key="PageSimpleMaterialEdit">单质管理-编辑</sys:String>
 
+    <sys:String x:Key="SM">ID</sys:String>
+    <sys:String x:Key="SMState">状态</sys:String>
+    <sys:String x:Key="SMCreateTime">创建时间</sys:String>
+    <sys:String x:Key="SMCreator">创建者</sys:String>
+    <sys:String x:Key="SMElementName">成分</sys:String>
+    <sys:String x:Key="SMUnitPrice">当前单价</sys:String>
+    <sys:String x:Key="SMRemark">备注</sys:String>
+
+    
+    
+    
+    
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">公共</sys:String>
     <sys:String x:Key="BottomBarPlan">计划</sys:String>

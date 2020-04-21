@@ -161,10 +161,23 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<SampleVM>();
             SimpleIoc.Default.Register<SampleEditVM>();
+
             SimpleIoc.Default.Register<RawMaterialSheetVM>();
             SimpleIoc.Default.Register<RawMaterialSheetEditVM>();
+
+            SimpleIoc.Default.Register<SimpleMaterialVM>();
+            SimpleIoc.Default.Register<SimpleMaterialEditVM>();
         }
         #region Properties
+        public SimpleMaterialVM SimpleMaterial
+        {
+            get { return SimpleIoc.Default.GetInstance<SimpleMaterialVM>(); }
+        }
+        public SimpleMaterialEditVM SimpleMaterialEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<SimpleMaterialEditVM>(); }
+        }
+
         public RawMaterialSheetVM RawMaterialSheet
         {
             get { return SimpleIoc.Default.GetInstance<RawMaterialSheetVM>(); }

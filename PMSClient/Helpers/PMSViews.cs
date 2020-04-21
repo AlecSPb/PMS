@@ -115,6 +115,8 @@ namespace PMSClient
         Sample,
         SampleEdit,
         RawMaterialSheet,
-        RawMaterialSheetEdit
+        RawMaterialSheetEdit,
+        SimpleMaterial,
+        SimpleMaterialEdit
     }
 }

@@ -93,7 +93,7 @@ namespace PMSClient.ViewModel
                     }
 
                     var query = from i in collections
-                                group i by i.Element into g
+                                group i by i.ElementName into g
                                 select new { Key = g.Key, Weight = g.Sum(i => i.Weight) };
 
                     StringBuilder sb = new StringBuilder();

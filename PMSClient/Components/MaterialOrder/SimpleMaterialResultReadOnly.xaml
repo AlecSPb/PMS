@@ -17,9 +17,9 @@
                   CanUserAddRows="False"
                   CanUserDeleteRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Element}" Header="Element"/>
-                <DataGridTextColumn Binding="{Binding UnitPrice}" Header="Unit Price"/>
-                <DataGridTextColumn Binding="{Binding Weight}" Header="Weight"/>
+                <DataGridTextColumn Binding="{Binding ElementName}" Header="Element"/>
+                <DataGridTextColumn Binding="{Binding UnitPrice}" Header="Unit Price"  ElementStyle="{StaticResource StyleDGTextBlockThinkRight}"/>
+                <DataGridTextColumn Binding="{Binding Weight}" Header="Weight"  ElementStyle="{StaticResource StyleDGTextBlockThinkRight}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

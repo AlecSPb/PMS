@@ -1010,7 +1010,18 @@
     <sys:String x:Key="RMSGDMS">GDMS</sys:String>
     <sys:String x:Key="RMSICPOES">ICPOES</sys:String>
 
+    <!--简单原料价格库-->
+    <sys:String x:Key="PageSimpleMaterial">Simple Material Price</sys:String>
+    <sys:String x:Key="PageSimpleMaterialEdit">Simple Material Price-Edit</sys:String>
 
+    <sys:String x:Key="SM">ID</sys:String>
+    <sys:String x:Key="SMState">State</sys:String>
+    <sys:String x:Key="SMCreateTime">CreateTime</sys:String>
+    <sys:String x:Key="SMCreator">Creator</sys:String>
+    <sys:String x:Key="SMElementName">Composition</sys:String>
+    <sys:String x:Key="SMUnitPrice">UnitPrice</sys:String>
+    <sys:String x:Key="SMRemark">Remark</sys:String>
+    
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">Public</sys:String>
     <sys:String x:Key="BottomBarPlan">Plan</sys:String>

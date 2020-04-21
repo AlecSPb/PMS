@@ -69,48 +69,66 @@ namespace PMSClient.ViewModel
             GoToNavigation = new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
             GoToNavigationWorkFlow = new RelayCommand(() => NavigationService.GoTo(PMSViews.NavigationWorkFlow));
 
-            GoToOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.Order), () => _session.IsAuthorized(PMSAccess.ReadOrder)
+            GoToOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.Order),
+                () => _session.IsAuthorized(PMSAccess.ReadOrder)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToOutSource = new RelayCommand(() => NavigationService.GoTo(PMSViews.OutSource), () => _session.IsAuthorized(PMSAccess.ReadOutSource)
-            || _session.IsInGroup(AccessGrant.ViewAllModule));
-
-            GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed), () => _session.IsAuthorized(PMSAccess.ReadMaterialNeed)
-            || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder), () => _session.IsAuthorized(PMSAccess.ReadMaterialOrder)
-            || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToMaterialOrderItemList = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrderItemList), () => _session.IsAuthorized(PMSAccess.ReadMaterialOrder)
-            || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToMaterialInventory = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryIn), () => _session.IsAuthorized(PMSAccess.ReadMaterialInventoryIn)
-            || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToMaterialInventoryOut = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut), () => _session.IsAuthorized(PMSAccess.ReadMaterialInventoryOut)
+            GoToOutSource = new RelayCommand(() => NavigationService.GoTo(PMSViews.OutSource),
+                () => _session.IsAuthorized(PMSAccess.ReadOutSource)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
 
-            GoToPlate = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plate), () => _session.IsAuthorized(PMSAccess.ReadProduct)
+            GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed),
+                () => _session.IsAuthorized(PMSAccess.ReadMaterialNeed)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
 
-            GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson), () => _session.IsAuthorized(PMSAccess.ReadMisson)
+            GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder),
+                () => _session.IsInGroup(AccessGrant.ViewMaterialOrder));
+            GoToMaterialOrderItemList = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrderItemList),
+                () => _session.IsInGroup(AccessGrant.ViewMaterialOrder));
+
+            GoToMaterialInventory = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryIn),
+                () => _session.IsAuthorized(PMSAccess.ReadMaterialInventoryIn)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan), () => _session.IsAuthorized(PMSAccess.ReadPlan)
-            || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToPlanConclusion = new RelayCommand(() => NavigationService.GoTo(PMSViews.PlanConclusion), () => _session.IsAuthorized(PMSAccess.ReadPlan)
+            GoToMaterialInventoryOut = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut),
+                () => _session.IsAuthorized(PMSAccess.ReadMaterialInventoryOut)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
 
+            GoToPlate = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plate),
+                () => _session.IsAuthorized(PMSAccess.ReadProduct)
+            || _session.IsInGroup(AccessGrant.ViewAllModule));
 
-            GoToRecordMilling = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordMilling), () => _session.IsAuthorized(PMSAccess.ReadRecordMilling)
+            GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson),
+                () => _session.IsAuthorized(PMSAccess.ReadMisson)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToRecordVHP = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordVHP), () => _session.IsAuthorized(PMSAccess.ReadRecordVHP)
+            GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan),
+                () => _session.IsAuthorized(PMSAccess.ReadPlan)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToRecordDeMold = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordDeMold), () => _session.IsAuthorized(PMSAccess.ReadRecordDeMold)
-            || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToRecordMachine = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordMachine), () => _session.IsAuthorized(PMSAccess.ReadRecordMachine)
-            || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToRecordTest = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordTest), () => _session.IsAuthorized(PMSAccess.ReadRecordTest)
-            || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToRecordBonding = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordBonding), () => _session.IsAuthorized(PMSAccess.ReadRecordBonding)
+            GoToPlanConclusion = new RelayCommand(() => NavigationService.GoTo(PMSViews.PlanConclusion),
+                () => _session.IsAuthorized(PMSAccess.ReadPlan)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
 
 
-            GoToProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.Product), () => _session.IsAuthorized(PMSAccess.ReadProduct)
+            GoToRecordMilling = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordMilling),
+                () => _session.IsAuthorized(PMSAccess.ReadRecordMilling)
+            || _session.IsInGroup(AccessGrant.ViewAllModule));
+            GoToRecordVHP = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordVHP),
+                () => _session.IsAuthorized(PMSAccess.ReadRecordVHP)
+            || _session.IsInGroup(AccessGrant.ViewAllModule));
+            GoToRecordDeMold = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordDeMold),
+                () => _session.IsAuthorized(PMSAccess.ReadRecordDeMold)
+            || _session.IsInGroup(AccessGrant.ViewAllModule));
+            GoToRecordMachine = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordMachine),
+                () => _session.IsAuthorized(PMSAccess.ReadRecordMachine)
+            || _session.IsInGroup(AccessGrant.ViewAllModule));
+            GoToRecordTest = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordTest),
+                () => _session.IsAuthorized(PMSAccess.ReadRecordTest)
+            || _session.IsInGroup(AccessGrant.ViewAllModule));
+            GoToRecordBonding = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordBonding),
+                () => _session.IsAuthorized(PMSAccess.ReadRecordBonding)
+            || _session.IsInGroup(AccessGrant.ViewAllModule));
+
+
+            GoToProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.Product),
+                () => _session.IsAuthorized(PMSAccess.ReadProduct)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
             GoToDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.Delivery),
                 () => _session.IsInGroup(AccessGrant.ViewDeliveryItemList)
@@ -119,7 +137,8 @@ namespace PMSClient.ViewModel
                 () => _session.IsInGroup(AccessGrant.ViewDeliveryItemList)
                 || _session.IsInGroup(AccessGrant.ViewAllModule));
 
-            GoToBDCustomer = new RelayCommand(() => NavigationService.GoTo(PMSViews.Customer), () => _session.IsAuthorized(PMSAccess.ReadCustomer)
+            GoToBDCustomer = new RelayCommand(() => NavigationService.GoTo(PMSViews.Customer),
+                () => _session.IsAuthorized(PMSAccess.ReadCustomer)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
             #region 临时
             //GoToBDCompound = new RelayCommand(() => NavigationService.GoTo(PMSViews.BDCompound), () => _session.IsAuthorized("浏览化合物信息"));
@@ -132,25 +151,32 @@ namespace PMSClient.ViewModel
             //GoToAdminRole = new RelayCommand(() => NavigationService.GoTo(PMSViews.AdminRole), () => _session.IsAuthorized("浏览角色信息"));
             //GoToAdminAccess = new RelayCommand(() => NavigationService.GoTo(PMSViews.AdminAccess), () => _session.IsAuthorized("浏览权限信息"));
             #endregion
-            GoToStatisticOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticOrder), () => _session.IsAuthorized(PMSAccess.ReadStatisticOrder)
+            GoToStatisticOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticOrder),
+                () => _session.IsAuthorized(PMSAccess.ReadStatisticOrder)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToStatisticPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticPlan), () => _session.IsAuthorized(PMSAccess.ReadStatisticPlan)
+            GoToStatisticPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticPlan),
+                () => _session.IsAuthorized(PMSAccess.ReadStatisticPlan)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToStatisticDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticDelivery), () => _session.IsAuthorized(PMSAccess.ReadStatisticDelivery)
+            GoToStatisticDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticDelivery),
+                () => _session.IsAuthorized(PMSAccess.ReadStatisticDelivery)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToStatisticProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticProduct), () => _session.IsAuthorized(PMSAccess.ReadStatisticProduct)
+            GoToStatisticProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticProduct),
+                () => _session.IsAuthorized(PMSAccess.ReadStatisticProduct)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
 
-            GoToFeedBack = new RelayCommand(() => NavigationService.GoTo(PMSViews.FeedBack), () => _session.IsAuthorized(PMSAccess.ReadFeedback)
+            GoToFeedBack = new RelayCommand(() => NavigationService.GoTo(PMSViews.FeedBack),
+                () => _session.IsAuthorized(PMSAccess.ReadFeedback)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
             GoToTool = new RelayCommand(() => NavigationService.GoTo(PMSViews.Tool));
 
-            GoToDebug = new RelayCommand(() => NavigationService.GoTo(PMSViews.Debug), () => _session.IsAuthorized(PMSAccess.CanDebug)
+            GoToDebug = new RelayCommand(() => NavigationService.GoTo(PMSViews.Debug),
+                () => _session.IsAuthorized(PMSAccess.CanDebug)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
 
             CodeRule = new RelayCommand(ActionCodeRule);
 
-            GoToHistory = new RelayCommand(() => NavigationService.GoTo(PMSViews.History), () => _session.IsAuthorized(PMSAccess.CanHistory)
+            GoToHistory = new RelayCommand(() => NavigationService.GoTo(PMSViews.History),
+                () => _session.IsAuthorized(PMSAccess.CanHistory)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
 
             GoToBDCompound = new RelayCommand(() => NavigationService.GoTo(PMSViews.BDCompound));
@@ -209,17 +235,22 @@ namespace PMSClient.ViewModel
             GoToOutsideProcess = new RelayCommand(() =>
               {
                   NavigationService.GoTo(PMSViews.OutsideProcess);
-              }, () => _session.IsInGroup(AccessGrant.ViewOutsideProcess));
+              }, () => _session.IsInGroup(AccessGrant.ViewAllModule) || _session.IsInGroup(AccessGrant.ViewSample));
 
             GoToSample = new RelayCommand(() =>
               {
                   NavigationService.GoTo(PMSViews.Sample);
-              }, () => _session.IsInGroup(AccessGrant.ViewAllModule) || _session.IsInGroup(AccessGrant.Sample));
+              }, () => _session.IsInGroup(AccessGrant.ViewAllModule) || _session.IsInGroup(AccessGrant.ViewSample));
 
             GoToRawMaterialSheet = new RelayCommand(() =>
             {
                 NavigationService.GoTo(PMSViews.RawMaterialSheet);
             }, () => _session.IsInGroup(AccessGrant.ViewAllModule));
+
+            GoToSimpleMaterial = new RelayCommand(() =>
+             {
+                 NavigationService.GoTo(PMSViews.SimpleMaterial);
+             }, () => _session.IsInGroup(AccessGrant.ViewMaterialOrder));
             #endregion
         }
 
@@ -382,6 +413,7 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToOutsideProcess { get; set; }
         public RelayCommand GoToSample { get; set; }
         public RelayCommand GoToRawMaterialSheet { get; set; }
+        public RelayCommand GoToSimpleMaterial { get; set; }
 
         private void InitializeData()
         {

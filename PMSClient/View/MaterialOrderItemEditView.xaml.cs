@@ -83,7 +83,8 @@ namespace PMSClient.View
         private void BtnGetElementFromComposition_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(TxtComposition.Text)) return;
-            string s = Components.MaterialOrder.SimpleMaterialHelper.GetMaterialStrFromComposition(TxtComposition.Text);
+            bool useDB = (bool)ChkUseCurrentPriceDB.IsChecked;
+            string s = Components.MaterialOrder.SimpleMaterialHelper.GetMaterialStrFromComposition(TxtComposition.Text, useDB);
             if (!string.IsNullOrEmpty(s))
             {
                 PMSMethods.SetTextBox(TxtProvideMaterial, s);

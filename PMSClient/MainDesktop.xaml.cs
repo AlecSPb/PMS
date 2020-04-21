@@ -557,6 +557,12 @@ namespace PMSClient
                 case PMSViews.RawMaterialSheetEdit:
                     NavigateTo(_views.RawMaterialSheetEdit);
                     break;
+                case PMSViews.SimpleMaterial:
+                    NavigateTo(_views.SimpleMaterial);
+                    break;
+                case PMSViews.SimpleMaterialEdit:
+                    NavigateTo(_views.SimpleMaterialEdit);
+                    break;
                 default:
                     break;
             }

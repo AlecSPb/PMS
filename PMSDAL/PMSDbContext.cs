@@ -157,6 +157,10 @@ namespace PMSDAL
 
         public DbSet<Drawing> Drawings { get; set; }
         public DbSet<Consumable> Consumables { get; set; }
+        public DbSet<ConsumableInventory> ConsumableInventories { get; set; }
+
+        public DbSet<SimpleMaterial> SimpleMaterials { get; set; }
+
 
     }
 }

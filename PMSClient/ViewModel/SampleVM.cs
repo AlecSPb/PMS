@@ -114,12 +114,12 @@ namespace PMSClient.ViewModel
 
         private bool CanExcel()
         {
-            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.SampleEdit);
+            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewSampleEdit);
         }
 
         public bool CanQuickEdit(DcSample obj)
         {
-            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.Sample);
+            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewSample);
         }
 
         private void ActionLabel(DcSample model)
@@ -280,7 +280,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDuplicate(DcSample arg)
         {
-            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.SampleEdit);
+            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewSampleEdit);
         }
 
         private void ActionAll()
@@ -297,12 +297,12 @@ namespace PMSClient.ViewModel
 
         private bool CanEdit(DcSample arg)
         {
-            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.SampleEdit);
+            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewSampleEdit);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.SampleEdit);
+            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewSampleEdit);
         }
 
         private void ActionEdit(DcSample model)

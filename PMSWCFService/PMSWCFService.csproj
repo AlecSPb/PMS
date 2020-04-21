@@ -75,6 +75,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SimpleMaterialService.svc" />
     <Content Include="NewService.svc" />
     <Content Include="PMSSettingService.svc" />
     <Content Include="DrawingService.svc" />
@@ -128,6 +129,7 @@
     <Compile Include="DataContracts\DcRecordBonding.cs" />
     <Compile Include="DataContracts\DcRemainInventory.cs" />
     <Compile Include="DataContracts\DcAnlysis.cs" />
+    <Compile Include="DataContracts\DcSimpleMaterial.cs" />
     <Compile Include="DataContracts\DcStatistic.cs" />
     <Compile Include="DataContracts\DcStatisticProduct.cs" />
     <Compile Include="DataContracts\DcStatisticDelivery.cs" />
@@ -206,6 +208,7 @@
     <Compile Include="ServiceContracts\IRecordSearchService.cs" />
     <Compile Include="ServiceContracts\IRemainInventoryService.cs" />
     <Compile Include="ServiceContracts\ISampleService.cs" />
+    <Compile Include="ServiceContracts\ISimpleMaterialService.cs" />
     <Compile Include="ServiceContracts\IStatisticManager.cs" />
     <Compile Include="ServiceContracts\ITaskPlanService.cs" />
     <Compile Include="ServiceContracts\IToDoService.cs" />
@@ -285,6 +288,7 @@
     <Compile Include="ServiceImplements\RemainInventoryService.cs" />
     <Compile Include="ServiceImplements\SampleService.cs" />
     <Compile Include="ServiceImplements\SanjieService.cs" />
+    <Compile Include="ServiceImplements\SimpleMaterialService.cs" />
     <Compile Include="ServiceImplements\StatisticService.cs" />
     <Compile Include="ServiceImplements\ToolInventoryService.cs" />
     <Compile Include="ServiceImplements\ToolService.cs" />

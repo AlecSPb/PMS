@@ -8,15 +8,25 @@ namespace PMSClient
 {
     public static class AccessGrant
     {
+        public static string[] ViewMaterialOrder
+        {
+            get
+            {
+                return new string[] { "管理员", "统筹组", "主管", "测试组", "财务组", "只读帐户" };
+            }
+        }
+
+
         public static string[] ViewAllModule
         {
             get
             {
-                return new string[] { "管理员", "统筹组", "主管", "测试组", "财务组", "超声组", "发货组"};
+                return new string[] { "管理员", "统筹组", "主管", "测试组", "财务组", "超声组", "发货组", "只读帐户" };
             }
         }
 
-        public static string[] Sample
+
+        public static string[] ViewSample
         {
             get
             {
@@ -24,7 +34,7 @@ namespace PMSClient
             }
 
         }
-        public static string[] SampleEdit
+        public static string[] ViewSampleEdit
         {
             get
             {

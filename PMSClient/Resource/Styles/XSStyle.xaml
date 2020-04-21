@@ -397,11 +397,18 @@
     <Style x:Key="StyleDataGridNotReadOnly" TargetType="DataGrid" BasedOn="{StaticResource StyleDataGridCommon}">
         <Setter Property="IsReadOnly" Value="False"/>
     </Style>
+    <Style x:Key="StyleDGTextBlockThinkRight" TargetType="TextBlock">
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+    </Style>
+    
     <Style x:Key="StyleDGTextBlockCommon" TargetType="TextBlock">
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
+    
     <Style x:Key="StyleDGTextBlockLeft" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
@@ -496,4 +503,7 @@
         <Setter Property="Orientation" Value="Horizontal"/>
         <Setter Property="Background" Value="{StaticResource BGNavigationBar}"/>
     </Style>
+    
+    
+    
 </ResourceDictionary>
