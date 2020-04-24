@@ -38,7 +38,7 @@ namespace PMSClient.ViewModel
         {
             searchOrderPO = "";
             searchSupplier = "";
-            totalCost = 0;
+            totalCost = totalMaterialCost = totalProcessCost = 0;
             MaterialOrders = new ObservableCollection<DcMaterialOrder>();
             MaterialOrderItems = new ObservableCollection<DcMaterialOrderItem>();
         }
@@ -83,7 +83,7 @@ namespace PMSClient.ViewModel
                     return;
                 }
                 var excel = new ExcelOutputHelper.ExcelOutputMaterialOrder(obj.ID);
-                excel.Intialize($"原料订单{obj.OrderPO}", "Data");
+                excel.Intialize($"Material Order PO_{obj.OrderPO}", "Data");
                 excel.Output();
             }
         }
@@ -144,13 +144,17 @@ namespace PMSClient.ViewModel
 
         private void CalculateTotalCost()
         {
-            double sumCost = 0;
+            double total = 0, total_material = 0, total_process = 0;
             foreach (var item in MaterialOrderItems)
             {
-                var singleCost = item.UnitPrice * item.Weight;
-                sumCost += singleCost;
+                total += item.UnitPrice * item.Weight + item.MaterialPrice;
+                total_material += item.MaterialPrice;
+                total_process += item.UnitPrice * item.Weight;
             }
-            TotalCost = sumCost;
+
+            TotalCost = total;
+            TotalMaterialCost = total_material;
+            TotalProcessCost = total_process;
         }
 
         private void ActionEditItem(DcMaterialOrderItem item)
@@ -298,6 +302,20 @@ namespace PMSClient.ViewModel
         {
             get { return totalCost; }
             set { totalCost = value; RaisePropertyChanged(nameof(TotalCost)); }
+        }
+
+        private double totalProcessCost;
+        public double TotalProcessCost
+        {
+            get { return totalProcessCost; }
+            set { totalProcessCost = value; RaisePropertyChanged(nameof(TotalProcessCost)); }
+        }
+
+        private double totalMaterialCost;
+        public double TotalMaterialCost
+        {
+            get { return totalMaterialCost; }
+            set { totalMaterialCost = value; RaisePropertyChanged(nameof(TotalMaterialCost)); }
         }
 
         public ObservableCollection<DcMaterialOrder> MaterialOrders { get; set; }

@@ -90,7 +90,7 @@
                 <DataGridTextColumn Header="{StaticResource MOIProvideRawMaterial}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.ProvideRawMaterial}"/>
                 <DataGridTextColumn Header="{StaticResource MOIMaterialPrice}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
-                                    Binding="{Binding MaterialOrderItem.MaterialPrice}"/>
+                                    Binding="{Binding MaterialOrderItem.MaterialPrice,StringFormat=￥{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource MOIRemark}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     Binding="{Binding MaterialOrderItem.Remark}"/>
             </DataGrid.Columns>

@@ -260,4 +260,60 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcPlanTrace" nillable="true" type="tns:DcPlanTrace" />
+  <xs:complexType name="ArrayOfDcMaterialOrderItemExtra">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcMaterialOrderItemExtra" nillable="true" type="tns:DcMaterialOrderItemExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcMaterialOrderItemExtra" nillable="true" type="tns:ArrayOfDcMaterialOrderItemExtra" />
+  <xs:complexType name="DcMaterialOrderItemExtra">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MaterialOrder" nillable="true" type="tns:DcMaterialOrder" />
+      <xs:element minOccurs="0" name="MaterialOrderItem" nillable="true" type="tns:DcMaterialOrderItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcMaterialOrderItemExtra" nillable="true" type="tns:DcMaterialOrderItemExtra" />
+  <xs:complexType name="DcMaterialOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinishTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="OrderPO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShipFee" type="xs:double" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierAbbr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierReceiver" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcMaterialOrder" nillable="true" type="tns:DcMaterialOrder" />
+  <xs:complexType name="DcMaterialOrderItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HowManyTargets" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="MaterialOrderID" type="ser:guid" />
+      <xs:element minOccurs="0" name="MaterialPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="OrderItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvideRawMaterial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SJIngredient" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:double" />
+      <xs:element minOccurs="0" name="Weight" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcMaterialOrderItem" nillable="true" type="tns:DcMaterialOrderItem" />
 </xs:schema>

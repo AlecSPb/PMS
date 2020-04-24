@@ -115,7 +115,7 @@
                     <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource MOIWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
-                        <TextBox  Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource StyleTextBoxCommon}"
+                        <TextBox  Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource StyleTextBoxCommon}" Background="LightGreen"
                             />
                         <Button Grid.Row="3" Grid.Column="2" Content="原料需求计算器" Command="{Binding DataContext.Calculator,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                             Style="{StaticResource StyleButtonCommon}" />

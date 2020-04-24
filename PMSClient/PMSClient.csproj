@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>127</ApplicationRevision>
+    <ApplicationRevision>129</ApplicationRevision>
     <ApplicationVersion>4.10.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -2070,6 +2070,9 @@
     </None>
     <None Include="Service References\Other\RawMaterialSheetService2.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OutputService\PMSClient.OutputService.DcMaterialOrderItemExtra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\OutputService\PMSClient.OutputService.DcOrder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>

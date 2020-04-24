@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:PMSClient.View"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=MaterialOrder}">
+             d:DesignHeight="600" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=MaterialOrder}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -205,7 +205,7 @@
                 <DataGridTemplateColumn Header="{StaticResource MOIUnitPrice}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding UnitPrice}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                            <TextBlock Text="{Binding UnitPrice,StringFormat=￥{0:F2}}" Style="{StaticResource StyleDGTextBlockRight}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -235,7 +235,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource MOIMaterialPrice}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
-                                    Binding="{Binding MaterialPrice,StringFormat={}{0:F2}}"/>
+                                    Binding="{Binding MaterialPrice,StringFormat=￥{0:F2}}"/>
                 <DataGridTemplateColumn Header="{StaticResource MOIDescription}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -255,8 +255,15 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="5" Orientation="Horizontal">
-            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="{Binding TotalCost,StringFormat=总材料费用（不含运费）:{0:F2}RMB}" 
-                       Foreground="Blue" FontWeight="Bold"/>
+            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="{Binding TotalMaterialCost,
+                StringFormat=材料费:￥{0:F2}}" 
+                       Foreground="Blue" FontWeight="Bold" FontSize="18"/>
+            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="{Binding TotalProcessCost,
+                StringFormat=加工费:￥{0:F2}}" 
+                       Foreground="Blue" FontWeight="Bold" FontSize="18"/>
+            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="{Binding TotalCost,
+                StringFormat=总费用(不含运费):￥{0:F2}}" 
+                       Foreground="Blue" FontWeight="Bold" FontSize="18"/>
         </StackPanel>
     </Grid>
 </UserControl>

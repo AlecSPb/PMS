@@ -67,6 +67,8 @@
                 <DataGridTextColumn Header="{StaticResource CItemDetails}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding ItemDetails}"/>
                 <DataGridTextColumn Header="{StaticResource CCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Binding="{Binding Creator}"/>
+                <DataGridTextColumn Header="{StaticResource CItemRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}" 
+                                    Binding="{Binding Remark}"/>
                 <DataGridTemplateColumn Header="{StaticResource CItemHistory}" Width="200">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -78,7 +80,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource CItemRemark}" Width="200">
+                <!--<DataGridTemplateColumn Header="{StaticResource CItemRemark}" Width="200">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button  Content="{Binding Remark,Converter={StaticResource StringCutCT}}" VerticalAlignment="Center"
@@ -88,7 +90,7 @@
                                      CommandParameter="{Binding}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
                 <DataGridTextColumn Header="Row Order" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Binding="{Binding RowOrder}"/>
                 <DataGridTextColumn Header="{StaticResource CCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
             </DataGrid.Columns>

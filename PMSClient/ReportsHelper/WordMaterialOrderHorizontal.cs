@@ -14,7 +14,7 @@ namespace PMSClient.ReportsHelper
     /// </summary>
     public class WordMaterialOrderHorizontal : ReportBase
     {
-        private string prefix = "原料订单横版";
+        private string prefix = "Material Order ";
         public WordMaterialOrderHorizontal()
         {
             var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
@@ -31,7 +31,7 @@ namespace PMSClient.ReportsHelper
             {
                 model = order;
                 CreateFolderOnDesktop();
-                var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
+                var targetName = $"{prefix}PO_{order.OrderPO}.docx";
                 targetFile = Path.Combine(targetDir, targetName);
             }
         }

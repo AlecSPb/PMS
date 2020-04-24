@@ -87,13 +87,29 @@ namespace PMSClient.ViewModel
             }
             try
             {
+                //年月选择对话框
+                var dialog = new WPFControls.YearDateDailog(0);
+
+                if (dialog.ShowDialog() == false)
+                {
+                    return;
+                }
+
+                int year_start = dialog.YearStart;
+                int month_start = dialog.MonthStart;
+                int year_end = dialog.YearEnd;
+                int month_end = dialog.MonthEnd;
+
+
                 var excel = new ExcelOutputHelper.ExcelOutputMaterialOrderItemList();
-                excel.Intialize("原料订单流水导出记录", "原料订单流水");
+                excel.Intialize($"Material Order List{year_start}_{month_start} to {year_end}_{month_end}", "Data", 50);
+                excel.SetParameter(year_start, month_start, year_end, month_end);
                 excel.Output();
             }
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
+                PMSDialogService.Show(ex.Message);
             }
         }
 

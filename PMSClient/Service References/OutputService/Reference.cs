@@ -3218,6 +3218,653 @@ namespace PMSClient.OutputService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcMaterialOrderItemExtra", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcMaterialOrderItemExtra : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSClient.OutputService.DcMaterialOrder MaterialOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSClient.OutputService.DcMaterialOrderItem MaterialOrderItemField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSClient.OutputService.DcMaterialOrder MaterialOrder {
+            get {
+                return this.MaterialOrderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialOrderField, value) != true)) {
+                    this.MaterialOrderField = value;
+                    this.RaisePropertyChanged("MaterialOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSClient.OutputService.DcMaterialOrderItem MaterialOrderItem {
+            get {
+                return this.MaterialOrderItemField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialOrderItemField, value) != true)) {
+                    this.MaterialOrderItemField = value;
+                    this.RaisePropertyChanged("MaterialOrderItem");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcMaterialOrder", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcMaterialOrder : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FinishTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderPOField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PriorityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ShipFeeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupplierField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupplierAbbrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupplierAddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupplierEmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupplierReceiverField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime FinishTime {
+            get {
+                return this.FinishTimeField;
+            }
+            set {
+                if ((this.FinishTimeField.Equals(value) != true)) {
+                    this.FinishTimeField = value;
+                    this.RaisePropertyChanged("FinishTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderPO {
+            get {
+                return this.OrderPOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderPOField, value) != true)) {
+                    this.OrderPOField = value;
+                    this.RaisePropertyChanged("OrderPO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Priority {
+            get {
+                return this.PriorityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PriorityField, value) != true)) {
+                    this.PriorityField = value;
+                    this.RaisePropertyChanged("Priority");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double ShipFee {
+            get {
+                return this.ShipFeeField;
+            }
+            set {
+                if ((this.ShipFeeField.Equals(value) != true)) {
+                    this.ShipFeeField = value;
+                    this.RaisePropertyChanged("ShipFee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Supplier {
+            get {
+                return this.SupplierField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupplierField, value) != true)) {
+                    this.SupplierField = value;
+                    this.RaisePropertyChanged("Supplier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SupplierAbbr {
+            get {
+                return this.SupplierAbbrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupplierAbbrField, value) != true)) {
+                    this.SupplierAbbrField = value;
+                    this.RaisePropertyChanged("SupplierAbbr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SupplierAddress {
+            get {
+                return this.SupplierAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupplierAddressField, value) != true)) {
+                    this.SupplierAddressField = value;
+                    this.RaisePropertyChanged("SupplierAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SupplierEmail {
+            get {
+                return this.SupplierEmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupplierEmailField, value) != true)) {
+                    this.SupplierEmailField = value;
+                    this.RaisePropertyChanged("SupplierEmail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SupplierReceiver {
+            get {
+                return this.SupplierReceiverField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupplierReceiverField, value) != true)) {
+                    this.SupplierReceiverField = value;
+                    this.RaisePropertyChanged("SupplierReceiver");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcMaterialOrderItem", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcMaterialOrderItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DeliveryDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HowManyTargetsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid MaterialOrderIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MaterialPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderItemNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PMINumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PriorityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProvideRawMaterialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PurityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SJIngredientField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double UnitPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double WeightField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DeliveryDate {
+            get {
+                return this.DeliveryDateField;
+            }
+            set {
+                if ((this.DeliveryDateField.Equals(value) != true)) {
+                    this.DeliveryDateField = value;
+                    this.RaisePropertyChanged("DeliveryDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HowManyTargets {
+            get {
+                return this.HowManyTargetsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HowManyTargetsField, value) != true)) {
+                    this.HowManyTargetsField = value;
+                    this.RaisePropertyChanged("HowManyTargets");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid MaterialOrderID {
+            get {
+                return this.MaterialOrderIDField;
+            }
+            set {
+                if ((this.MaterialOrderIDField.Equals(value) != true)) {
+                    this.MaterialOrderIDField = value;
+                    this.RaisePropertyChanged("MaterialOrderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double MaterialPrice {
+            get {
+                return this.MaterialPriceField;
+            }
+            set {
+                if ((this.MaterialPriceField.Equals(value) != true)) {
+                    this.MaterialPriceField = value;
+                    this.RaisePropertyChanged("MaterialPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderItemNumber {
+            get {
+                return this.OrderItemNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderItemNumberField, value) != true)) {
+                    this.OrderItemNumberField = value;
+                    this.RaisePropertyChanged("OrderItemNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PMINumber {
+            get {
+                return this.PMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Priority {
+            get {
+                return this.PriorityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PriorityField, value) != true)) {
+                    this.PriorityField = value;
+                    this.RaisePropertyChanged("Priority");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProvideRawMaterial {
+            get {
+                return this.ProvideRawMaterialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProvideRawMaterialField, value) != true)) {
+                    this.ProvideRawMaterialField = value;
+                    this.RaisePropertyChanged("ProvideRawMaterial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Purity {
+            get {
+                return this.PurityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PurityField, value) != true)) {
+                    this.PurityField = value;
+                    this.RaisePropertyChanged("Purity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SJIngredient {
+            get {
+                return this.SJIngredientField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SJIngredientField, value) != true)) {
+                    this.SJIngredientField = value;
+                    this.RaisePropertyChanged("SJIngredient");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double UnitPrice {
+            get {
+                return this.UnitPriceField;
+            }
+            set {
+                if ((this.UnitPriceField.Equals(value) != true)) {
+                    this.UnitPriceField = value;
+                    this.RaisePropertyChanged("UnitPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((this.WeightField.Equals(value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="OutputService.IOutputService")]
     public interface IOutputService {
@@ -3281,6 +3928,18 @@ namespace PMSClient.OutputService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetPlanTraceCount", ReplyAction="http://tempuri.org/IOutputService/GetPlanTraceCountResponse")]
         System.Threading.Tasks.Task<int> GetPlanTraceCountAsync(int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetMaterialOrderItemsByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetMaterialOrderItemsByYearMonthResponse")]
+        PMSClient.OutputService.DcMaterialOrderItemExtra[] GetMaterialOrderItemsByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetMaterialOrderItemsByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetMaterialOrderItemsByYearMonthResponse")]
+        System.Threading.Tasks.Task<PMSClient.OutputService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemsByYearMonthAsync(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetMaterialOrderItemsByYearMonthCount", ReplyAction="http://tempuri.org/IOutputService/GetMaterialOrderItemsByYearMonthCountResponse")]
+        int GetMaterialOrderItemsByYearMonthCount(int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetMaterialOrderItemsByYearMonthCount", ReplyAction="http://tempuri.org/IOutputService/GetMaterialOrderItemsByYearMonthCountResponse")]
+        System.Threading.Tasks.Task<int> GetMaterialOrderItemsByYearMonthCountAsync(int year_start, int month_start, int year_end, int month_end);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3388,6 +4047,22 @@ namespace PMSClient.OutputService {
         
         public System.Threading.Tasks.Task<int> GetPlanTraceCountAsync(int year_start, int month_start, int year_end, int month_end) {
             return base.Channel.GetPlanTraceCountAsync(year_start, month_start, year_end, month_end);
+        }
+        
+        public PMSClient.OutputService.DcMaterialOrderItemExtra[] GetMaterialOrderItemsByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetMaterialOrderItemsByYearMonth(s, t, year_start, month_start, year_end, month_end);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.OutputService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemsByYearMonthAsync(int s, int t, int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetMaterialOrderItemsByYearMonthAsync(s, t, year_start, month_start, year_end, month_end);
+        }
+        
+        public int GetMaterialOrderItemsByYearMonthCount(int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetMaterialOrderItemsByYearMonthCount(year_start, month_start, year_end, month_end);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialOrderItemsByYearMonthCountAsync(int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetMaterialOrderItemsByYearMonthCountAsync(year_start, month_start, year_end, month_end);
         }
     }
 }
