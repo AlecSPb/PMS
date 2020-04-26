@@ -52,12 +52,12 @@ namespace PMSClient.ExcelOutputHelper
                     helper.CreateAndSetCell(columnIndex++, item.PMINumber);
                     helper.CreateAndSetCell(columnIndex++, item.Purity);
                     helper.CreateAndSetCell(columnIndex++, item.Weight);
-                    helper.CreateAndSetCell(columnIndex++, item.UnitPrice);
-                    helper.CreateAndSetCell(columnIndex++, item.UnitPrice * item.Weight);
+                    helper.CreateAndSetCell(columnIndex++, item.UnitPrice, "¥#,##0");
+                    helper.CreateAndSetCell(columnIndex++, item.UnitPrice * item.Weight, "¥#,##0");
                     helper.CreateAndSetCell(columnIndex++, item.Description);
                     helper.CreateAndSetCell(columnIndex++, item.ProvideRawMaterial);
-                    helper.CreateAndSetCell(columnIndex++, item.MaterialPrice);
-                    helper.CreateAndSetCell(columnIndex++, item.UnitPrice * item.Weight + item.MaterialPrice);
+                    helper.CreateAndSetCell(columnIndex++, item.MaterialPrice, "¥#,##0");
+                    helper.CreateAndSetCell(columnIndex++, item.UnitPrice * item.Weight + item.MaterialPrice, "¥#,##0");
                     helper.CreateAndSetCell(columnIndex++, item.DeliveryDate.ToString());
                     helper.CreateAndSetCell(columnIndex++, item.SJIngredient);
 

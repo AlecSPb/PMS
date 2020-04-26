@@ -59,12 +59,13 @@ namespace PMSClient.ExcelOutputHelper
                         helper.CreateAndSetCell(columnIndex++, item.MaterialOrder.OrderPO);
                         helper.CreateAndSetCell(columnIndex++, item.MaterialOrderItem.DeliveryDate.ToString("yyyy-MM-dd"));
                         helper.CreateAndSetCell(columnIndex++, item.MaterialOrderItem.Weight);
-                        helper.CreateAndSetCell(columnIndex++, item.MaterialOrderItem.UnitPrice);
-                        helper.CreateAndSetCell(columnIndex++, item.MaterialOrderItem.UnitPrice * item.MaterialOrderItem.Weight);
+                        helper.CreateAndSetCell(columnIndex++, item.MaterialOrderItem.UnitPrice, "¥#,##0");
+                        helper.CreateAndSetCell(columnIndex++, item.MaterialOrderItem.UnitPrice * item.MaterialOrderItem.Weight, "¥#,##0");
                         helper.CreateAndSetCell(columnIndex++, item.MaterialOrderItem.Description);
                         helper.CreateAndSetCell(columnIndex++, item.MaterialOrderItem.ProvideRawMaterial);
-                        helper.CreateAndSetCell(columnIndex++, item.MaterialOrderItem.MaterialPrice);
-                        helper.CreateAndSetCell(columnIndex++, item.MaterialOrderItem.UnitPrice * item.MaterialOrderItem.Weight + item.MaterialOrderItem.MaterialPrice);
+                        helper.CreateAndSetCell(columnIndex++, item.MaterialOrderItem.MaterialPrice, "¥#,##0");
+                        helper.CreateAndSetCell(columnIndex++, item.MaterialOrderItem.UnitPrice * item.MaterialOrderItem.Weight + 
+                            item.MaterialOrderItem.MaterialPrice, "¥#,##0");
                         helper.CreateAndSetCell(columnIndex++, item.MaterialOrderItem.SJIngredient);
                         rowIndex++;
                     }

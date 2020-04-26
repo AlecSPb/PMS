@@ -102,7 +102,7 @@ namespace PMSClient.ViewModel
 
 
                 var excel = new ExcelOutputHelper.ExcelOutputMaterialOrderItemList();
-                excel.Intialize($"Material Order List{year_start}_{month_start} to {year_end}_{month_end}", "Data", 50);
+                excel.Intialize($"All Material Order Items {year_start}_{month_start} to {year_end}_{month_end}", "Data", 50);
                 excel.SetParameter(year_start, month_start, year_end, month_end);
                 excel.Output();
             }

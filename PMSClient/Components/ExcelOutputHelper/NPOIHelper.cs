@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 
@@ -17,6 +18,8 @@ namespace PMSClient.ExcelOutputHelper
         private IRow currentRow;
         private ICell currentCell;
 
+        private ICellStyle cellStyle;
+        private IDataFormat format;
         /// <summary>
         /// 初始化一个workbook2007
         /// </summary>
@@ -49,6 +52,18 @@ namespace PMSClient.ExcelOutputHelper
             currentCell = currentRow.CreateCell(cellIndex);
             currentCell.SetCellValue(value);
         }
+
+        public void CreateAndSetCell(int cellIndex, double value, string formatString)
+        {
+            currentCell = currentRow.CreateCell(cellIndex);
+            currentCell.SetCellValue(value);
+
+            ICellStyle cellStyle = workbook2007.CreateCellStyle();
+            IDataFormat format = workbook2007.CreateDataFormat();
+            cellStyle.DataFormat = format.GetFormat(formatString);
+            currentCell.CellStyle = cellStyle;
+        }
+
         /// <summary>
         /// 插入标题行
         /// </summary>

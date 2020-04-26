@@ -99,8 +99,10 @@ namespace PMSXMLCreator.Service
         {
             var p = new Parameter();
             //获取元素完整名称
-            p.Characteristic = dict_element.GetFullName(shortname);
-            p.ShortName = shortname;
+            string fullname = dict_element.GetFullName(shortname);
+            p.Characteristic = fullname;
+            //获取缩写名称
+            p.ShortName = dict_parameter.GetShortName(fullname);
             p.UnitOfMeasure = unit;
 
             p.MeasurementQualifier = qualifier;

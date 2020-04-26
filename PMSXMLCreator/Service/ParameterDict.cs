@@ -22,13 +22,8 @@ namespace PMSXMLCreator.Service
             parameters.Add("Germanium", "ZGE");
             parameters.Add("Silicon", "ZSI");
             parameters.Add("Target Blank OD", "TAR_BOD");
-            parameters.Add("Target Blank Thickness", "TAR_BTH");
-            parameters.Add("Density", "DEN");
-            parameters.Add("Weight", "Weight");
-            parameters.Add("Target Blank Flatness", "TAR_BFLA");
+            parameters.Add("Target Blank Thickness", "TAR_BTHK");
             parameters.Add("Target Blank 2mm Top Rad", "TAR_BTOP");
-            parameters.Add("Target Blank Parallism", "TAR_BPAR");
-            parameters.Add("Target Blank Surface Roughness", "TAR_BSUR");
             parameters.Add("BP Diameter", "BP_DIA");
             parameters.Add("BP Flange Thickness", "BP_FTHK");
             parameters.Add("BP Sidewall Height", "BP_SH");
@@ -37,8 +32,15 @@ namespace PMSXMLCreator.Service
             parameters.Add("BP Side Wall Dia", "BP_SDIA");
             parameters.Add("BP Pocket Dia", "BP_PDIA");
             parameters.Add("BP Bonded Surface Flatness", "BP_BSF");
+            parameters.Add("Density", "DEN");
+            parameters.Add("Weight", "Weight");
+            parameters.Add("Target Blank Flatness", "TAR_BFLA");
+            parameters.Add("Target Blank Parallism", "TAR_BPAR");
+            parameters.Add("Target Blank Surface Roughness", "TAR_BSUR");
+
             parameters.Add("BP Backside Flatness", "BP_BF");
             parameters.Add("BP Overall Height", "BP_OH");
+
             parameters.Add("Aluminum", "ZAL");
             parameters.Add("Bismuth", "ZBI");
             parameters.Add("Chromium", "ZCR");
