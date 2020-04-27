@@ -8,6 +8,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
+using PMSClient.Components.MaterialOrder;
 
 namespace PMSClient.ViewModel
 {
@@ -24,12 +25,148 @@ namespace PMSClient.ViewModel
             InitialCommmands();
         }
 
+
+        private void CheckProvideMaterialItem()
+        {
+            if (currentMaterialOrderID == null) return;
+            try
+            {
+                using (var service = new MaterialOrderServiceClient())
+                {
+                    //获取所有的项目
+                    var orderItems = service.GetMaterialOrderItembyMaterialID(currentMaterialOrderID);
+
+                    List<SimpleMaterialCheckResult> collections = new List<SimpleMaterialCheckResult>();
+                    foreach (var item in orderItems)
+                    {
+                        var result = new SimpleMaterialCheckResult();
+                        result.ItemCode = $"{item.OrderItemNumber} 提供原料 ";
+
+                        var material = SimpleMaterialHelper.StrToSimpleMaterial(item.ProvideRawMaterial);
+                        if (material != null && material.Count != 0)
+                        {
+                            foreach (var ii in material)
+                            {
+                                if (ii.UnitPrice <= 0)
+                                {
+                                    result.CheckResult = $"{ii.ElementName}单价为0?";
+                                }
+                                if (ii.Weight <= 0)
+                                {
+                                    result.CheckResult += $" {ii.ElementName}重量为0?";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            result.CheckResult = "无需提供原料?";
+                        }
+                        collections.Add(result);
+                    }
+
+
+                    StringBuilder sb = new StringBuilder();
+
+                    foreach (var item in collections)
+                    {
+                        if (!string.IsNullOrEmpty(item.CheckResult))
+                        {
+                            sb.Append(item.ItemCode);
+                            sb.Append("=");
+                            sb.AppendLine(item.CheckResult);
+                        }
+                    }
+
+                    if (!string.IsNullOrEmpty(sb.ToString()))
+                    {
+                        var dialog = new ToolWindow.PlainTextWindow();
+                        dialog.ContentText = sb.ToString();
+                        dialog.Show();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                XSHelper.XS.MessageBox.ShowError(ex.Message);
+            }
+        }
+
+
+        /// <summary>
+        /// 更新主订单的Remark
+        /// </summary>
+        private void RefreshMaterialOrderRemark()
+        {
+            if (currentMaterialOrderID == null) return;
+            try
+            {
+                using (var service = new MaterialOrderServiceClient())
+                {
+                    //获取所有的项目
+                    var orderItems = service.GetMaterialOrderItembyMaterialID(currentMaterialOrderID);
+
+                    List<SimpleMaterial> collections = new List<SimpleMaterial>();
+                    foreach (var item in orderItems)
+                    {
+                        var material = SimpleMaterialHelper.StrToSimpleMaterial(item.ProvideRawMaterial);
+                        if (material != null && material.Count != 0)
+                        {
+                            collections.AddRange(material);
+                        }
+                    }
+
+                    var query = from i in collections
+                                group i by i.ElementName into g
+                                select new { Key = g.Key, Weight = g.Sum(i => i.Weight) };
+
+                    StringBuilder sb = new StringBuilder();
+                    foreach (var item in query)
+                    {
+                        sb.Append(item.Key);
+                        sb.Append("+");
+                        sb.Append(item.Weight);
+                        sb.Append(";");
+                    }
+
+                    var currentMaterialOrder = service.GetMaterialOrderByID(currentMaterialOrderID);
+                    if (currentMaterialOrder != null)
+                    {
+                        currentMaterialOrder.Remark = sb.ToString();
+                        service.UpdateMaterialOrderByUID(currentMaterialOrder, PMSHelper.CurrentSession.CurrentUser.UserName);
+                        XSHelper.XS.MessageBox.ShowInfo("主订单备注原材料信息已经更新,请点击[全部]刷新");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                XSHelper.XS.MessageBox.ShowError(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// 计算原材料价格
+        /// </summary>
+        private void CalculateMaterialPrice()
+        {
+            if (CurrentMaterialOrderItem != null)
+            {
+                double cost = SimpleMaterialHelper.GetAllMaterialPrice(CurrentMaterialOrderItem.ProvideRawMaterial);
+                CurrentMaterialOrderItem.MaterialPrice = cost;
+            }
+        }
+
+        /// <summary>
+        /// 保存对应材料订单ID
+        /// </summary>
+        private Guid currentMaterialOrderID;
+
         public DcMaterialOrder CurrentMaterialOrder { get; set; }
         public void SetNew(DcMaterialOrder order)
         {
             if (order != null)
             {
                 CurrentMaterialOrder = order;
+                currentMaterialOrderID = order.ID;
                 IsNew = true;
 
                 var item = new DcMaterialOrderItem();
@@ -78,6 +215,8 @@ namespace PMSClient.ViewModel
                 IsNew = false;
                 CurrentMaterialOrderItem = item;
                 CheckResult = "";
+
+                currentMaterialOrderID = CurrentMaterialOrderItem.MaterialOrderID;
             }
         }
 
@@ -173,13 +312,21 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
+
+            bool isCheck = XSHelper.XS.MessageBox.ShowYesNo("要自动进行\r\n[当前提供材料价值计算]\r\n[汇总所有提供材料]\r\n[检查提供材料价格和重量]吗?");
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 var service = new MaterialOrderServiceClient();
-                CurrentMaterialOrderItem.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                if (isCheck)
+                {
+                    //计算材料价值
+                    CalculateMaterialPrice();
+                }
+
                 if (IsNew)
                 {
+                    CurrentMaterialOrderItem.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                     service.AddMaterialOrderItemByUID(CurrentMaterialOrderItem, uid);
                 }
                 else
@@ -187,6 +334,14 @@ namespace PMSClient.ViewModel
                     service.UpdateMaterialOrderItemByUID(CurrentMaterialOrderItem, uid);
                 }
                 service.Close();
+
+                if (isCheck)
+                {
+                    //自动汇总原材料和汇总
+                    RefreshMaterialOrderRemark();
+                    //自动检查原料项目
+                    CheckProvideMaterialItem();
+                }
                 PMSHelper.ViewModels.MaterialOrder.RefreshDataItem();
                 GoBack();
             }

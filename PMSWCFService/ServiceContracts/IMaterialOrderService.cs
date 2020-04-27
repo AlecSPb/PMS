@@ -13,6 +13,10 @@ namespace PMSWCFService.ServiceContracts
         //后面作废
         [OperationContract]
         List<DcMaterialOrder> GetMaterialOrderBySearchInPage(int skip, int take, string orderPo, string supplier);
+
+
+
+
         [OperationContract]
         List<DcMaterialOrder> GetMaterialOrderBySearch(int skip, int take, string orderPo, string supplier);
         [OperationContract]
@@ -23,6 +27,9 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetMaterialOrderCountForSanjie(string orderPo);
 
+
+        [OperationContract]
+        DcMaterialOrder GetMaterialOrderByID(Guid id);
 
         [OperationContract]
         int AddMaterialOrder(DcMaterialOrder model);

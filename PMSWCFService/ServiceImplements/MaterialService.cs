@@ -690,7 +690,7 @@ namespace PMSWCFService
         public int UpdateMaterialNeed(DcMaterialNeed model)
         {
 
-                XS.RunLog();
+            XS.RunLog();
             using (var dc = new PMSDbContext())
             {
                 try
@@ -926,7 +926,7 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State.Contains(state)
-                                && m.State!=PMSCommon.MaterialOrderItemState.作废.ToString()
+                                && m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
                                 && mm.State != PMSCommon.MaterialOrderState.作废.ToString()
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
@@ -958,7 +958,7 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State.Contains(state)
-                                && m.State!=PMSCommon.MaterialOrderItemState.作废.ToString()
+                                && m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
                                 && mm.State != PMSCommon.MaterialOrderState.作废.ToString()
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
@@ -966,6 +966,32 @@ namespace PMSWCFService
                                 && mm.Supplier.Contains(supplier)
                                 select m;
                     return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public DcMaterialOrder GetMaterialOrderByID(Guid id)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<MaterialOrder, DcMaterialOrder>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var query = from m in dc.MaterialOrders
+                                where m.State != MaterialOrderState.作废.ToString() && m.ID == id
+                                select m;
+                    return mapper.Map<DcMaterialOrder>(query.FirstOrDefault());
+
                 }
             }
             catch (Exception ex)

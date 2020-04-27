@@ -248,6 +248,7 @@
       <DependentUpon>GDMSHelper.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\GDMSHelper\GDMSPair.cs" />
+    <Compile Include="Components\MaterialOrder\SimpleMaterialCheckResult.cs" />
     <Compile Include="Components\MaterialOrder\SimpleMaterialResultReadOnly.xaml.cs">
       <DependentUpon>SimpleMaterialResultReadOnly.xaml</DependentUpon>
     </Compile>

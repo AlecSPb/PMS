@@ -158,8 +158,8 @@ namespace PMSXMLCreator.Service
 
             if (XSHelper.MessageHelper.ShowYesNo("创建完毕,要打开吗？"))
             {
+                System.Diagnostics.Process.Start(folder);
                 System.Diagnostics.Process.Start(filePath);
-
             }
         }
 

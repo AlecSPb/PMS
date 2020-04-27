@@ -72,6 +72,7 @@ namespace PMSClient.ViewModel
             Save = new RelayCommand(ActionSave);
             CollectAllMaterial = new RelayCommand(ActionCollectAllMaterial);
         }
+       
 
         private void ActionCollectAllMaterial()
         {

@@ -8767,6 +8767,12 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountForSanjie", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountForSanjieResponse")]
         System.Threading.Tasks.Task<int> GetMaterialOrderCountForSanjieAsync(string orderPo);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderByID", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderByIDResponse")]
+        PMSClient.MainService.DcMaterialOrder GetMaterialOrderByID(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderByID", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderByIDResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrder> GetMaterialOrderByIDAsync(System.Guid id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrder", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderResponse")]
         int AddMaterialOrder(PMSClient.MainService.DcMaterialOrder model);
         
@@ -8995,6 +9001,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetMaterialOrderCountForSanjieAsync(string orderPo) {
             return base.Channel.GetMaterialOrderCountForSanjieAsync(orderPo);
+        }
+        
+        public PMSClient.MainService.DcMaterialOrder GetMaterialOrderByID(System.Guid id) {
+            return base.Channel.GetMaterialOrderByID(id);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrder> GetMaterialOrderByIDAsync(System.Guid id) {
+            return base.Channel.GetMaterialOrderByIDAsync(id);
         }
         
         public int AddMaterialOrder(PMSClient.MainService.DcMaterialOrder model) {

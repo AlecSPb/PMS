@@ -254,6 +254,12 @@
   <wsdl:message name="IMaterialOrderService_GetMaterialOrderCountForSanjie_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialOrderCountForSanjieResponse" />
   </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderByID" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderByIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IMaterialOrderService_AddMaterialOrder_InputMessage">
     <wsdl:part name="parameters" element="tns:AddMaterialOrder" />
   </wsdl:message>
@@ -1637,6 +1643,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountForSanjie" message="tns:IMaterialOrderService_GetMaterialOrderCountForSanjie_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountForSanjieResponse" message="tns:IMaterialOrderService_GetMaterialOrderCountForSanjie_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderByID" message="tns:IMaterialOrderService_GetMaterialOrderByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderByIDResponse" message="tns:IMaterialOrderService_GetMaterialOrderByID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddMaterialOrder">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrder" message="tns:IMaterialOrderService_AddMaterialOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderResponse" message="tns:IMaterialOrderService_AddMaterialOrder_OutputMessage" />
@@ -2843,6 +2853,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetMaterialOrderCountForSanjie">
       <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountForSanjie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderByID">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderByID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
