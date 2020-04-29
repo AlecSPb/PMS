@@ -904,8 +904,8 @@
     <sys:String x:Key="FRemark">Remark</sys:String>
     
     <!--PMICounter-->
-    <sys:String x:Key="PagePMICounter">PMI Counter</sys:String>
-    <sys:String x:Key="PagePMICounterEdit">PMI Counter Edit</sys:String>
+    <sys:String x:Key="PagePMICounter">PLate Counter</sys:String>
+    <sys:String x:Key="PagePMICounterEdit">Plate Counter Edit</sys:String>
     <sys:String x:Key="CID">ID</sys:String>
     <sys:String x:Key="CCreator">Creator</sys:String>
     <sys:String x:Key="CCreateTime">Create Time</sys:String>

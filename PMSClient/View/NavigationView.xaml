@@ -191,7 +191,7 @@
                         <Button Content="{StaticResource PageStatisticDelivery}" Grid.Row="5" Grid.Column="4"
                         Command="{Binding GoToStatisticDelivery}" Style="{StaticResource StyleButtonNavigation}"/>
 
-                        <Button Content="{StaticResource PageCounter}" Grid.Row="5" Grid.Column="5"
+                        <Button Content="{StaticResource PagePMICounter}" Grid.Row="5" Grid.Column="5"
                         Command="{Binding GoToCounter}" Style="{StaticResource StyleButtonNavigation}"/>
 
                         <Button Content="{StaticResource PageOther}" Grid.Row="6" Grid.Column="0"

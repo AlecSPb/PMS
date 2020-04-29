@@ -75,6 +75,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ConsumableService.svc" />
     <Content Include="SimpleMaterialService.svc" />
     <Content Include="NewService.svc" />
     <Content Include="PMSSettingService.svc" />
@@ -114,6 +115,8 @@
     <Compile Include="DataContracts\DcBDCompound.cs" />
     <Compile Include="DataContracts\DcBDSupplier.cs" />
     <Compile Include="DataContracts\DcComplexQueryResult.cs" />
+    <Compile Include="DataContracts\DcConsumablePurchase.cs" />
+    <Compile Include="DataContracts\DcConsumableInventory.cs" />
     <Compile Include="DataContracts\DcEditLock.cs" />
     <Compile Include="DataContracts\DcFailure.cs" />
     <Compile Include="DataContracts\DcMachineFix.cs" />
@@ -191,6 +194,7 @@
     <Compile Include="DataContracts\DcOrderHistory.cs" />
     <Compile Include="ServiceContracts\IAnlysisService.cs" />
     <Compile Include="ServiceContracts\IComplexQuery.cs" />
+    <Compile Include="ServiceContracts\IConsumableService.cs" />
     <Compile Include="ServiceContracts\IDeliveryChaseService.cs" />
     <Compile Include="ServiceContracts\IEditLockService.cs" />
     <Compile Include="ServiceContracts\IFailureService.cs" />
@@ -217,6 +221,7 @@
     <Compile Include="ServiceImplements\AnlysisHelper.cs" />
     <Compile Include="ServiceImplements\AnlysisService.cs" />
     <Compile Include="ServiceImplements\ComplexQueryService.cs" />
+    <Compile Include="ServiceImplements\ConsumableService.cs" />
     <Compile Include="ServiceImplements\DrawingService.cs" />
     <Compile Include="ServiceImplements\EditLockService.cs" />
     <Compile Include="ServiceImplements\ExtraService.cs" />

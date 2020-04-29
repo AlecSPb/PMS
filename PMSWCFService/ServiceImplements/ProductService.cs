@@ -109,7 +109,6 @@ namespace PMSWCFService
                                 where p.ProductID.Contains(productid)
                                 && p.Composition.Contains(composition)
                                 && p.State != InventoryState.作废.ToString()
-                                orderby p.CreateTime descending
                                 select p;
                     return query.Count();
                 }

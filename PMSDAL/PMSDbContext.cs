@@ -156,8 +156,8 @@ namespace PMSDAL
         public DbSet<PMSSetting> PMSSettings { get; set; }
 
         public DbSet<Drawing> Drawings { get; set; }
-        public DbSet<Consumable> Consumables { get; set; }
-        public DbSet<ConsumableInventory> ConsumableInventories { get; set; }
+        public DbSet<ConsumablePurchase> ConsumablePurchases { get; set; }//消耗品购买管理
+        public DbSet<ConsumableInventory> ConsumableInventories { get; set; }//消耗品库存管理
 
         public DbSet<SimpleMaterial> SimpleMaterials { get; set; }
 

@@ -435,6 +435,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ConsumableService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\DrawingService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1954,6 +1959,7 @@
     <Resource Include="Documents\编辑冲突处理.txt" />
     <Resource Include="ReportsHelperNew\NewCoAPlan.txt" />
     <Resource Include="Documents\订单异常情况.txt" />
+    <Resource Include="Documents\消耗品库存.txt" />
     <Content Include="HelpDocs\specialsituation_order.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2012,6 +2018,22 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\AnlysisService\PMSClient.AnlysisService.DcPlanTrace.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ConsumableService\ConsumableService.wsdl" />
+    <None Include="Service References\ConsumableService\ConsumableService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ConsumableService\ConsumableService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ConsumableService\ConsumableService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ConsumableService\PMSClient.ConsumableService.DcConsumableInventory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ConsumableService\PMSClient.ConsumableService.DcConsumablePurchase.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\DrawingService\DrawingService.wsdl" />
@@ -2177,6 +2199,13 @@
     <None Include="Service References\SimpleMaterialService\configuration91.svcinfo" />
     <None Include="Service References\SimpleMaterialService\configuration.svcinfo" />
     <None Include="Service References\SimpleMaterialService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ConsumableService\ConsumableService.disco" />
+    <None Include="Service References\ConsumableService\configuration91.svcinfo" />
+    <None Include="Service References\ConsumableService\configuration.svcinfo" />
+    <None Include="Service References\ConsumableService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -2787,6 +2816,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\AnlysisService\" />
     <WCFMetadataStorage Include="Service References\BasicService\" />
+    <WCFMetadataStorage Include="Service References\ConsumableService\" />
     <WCFMetadataStorage Include="Service References\DrawingService\" />
     <WCFMetadataStorage Include="Service References\EditLockService\" />
     <WCFMetadataStorage Include="Service References\ExtraService\" />

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ConsumableService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.16.254:8002/ConsumableService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/ConsumableService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/ConsumableService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IConsumableService_AddConsumablePurchase_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddConsumablePurchase" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_AddConsumablePurchase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddConsumablePurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_UpdateConsumablePurchase_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateConsumablePurchase" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_UpdateConsumablePurchase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateConsumablePurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_GetConsumablePurchase_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumablePurchase" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_GetConsumablePurchase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumablePurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_GetConsumablePurchaseCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumablePurchaseCount" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_GetConsumablePurchaseCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumablePurchaseCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_AddConsumableInventory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddConsumableInventory" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_AddConsumableInventory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddConsumableInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_UpdateConsumableInventory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateConsumableInventory" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_UpdateConsumableInventory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateConsumableInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_GetConsumableInventory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumableInventory" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_GetConsumableInventory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumableInventoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_GetConsumableInventoryCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumableInventoryCount" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_GetConsumableInventoryCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumableInventoryCountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IConsumableService">
+    <wsdl:operation name="AddConsumablePurchase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumableService/AddConsumablePurchase" message="tns:IConsumableService_AddConsumablePurchase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumableService/AddConsumablePurchaseResponse" message="tns:IConsumableService_AddConsumablePurchase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateConsumablePurchase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumableService/UpdateConsumablePurchase" message="tns:IConsumableService_UpdateConsumablePurchase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumableService/UpdateConsumablePurchaseResponse" message="tns:IConsumableService_UpdateConsumablePurchase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumablePurchase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumableService/GetConsumablePurchase" message="tns:IConsumableService_GetConsumablePurchase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumableService/GetConsumablePurchaseResponse" message="tns:IConsumableService_GetConsumablePurchase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumablePurchaseCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumableService/GetConsumablePurchaseCount" message="tns:IConsumableService_GetConsumablePurchaseCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumableService/GetConsumablePurchaseCountResponse" message="tns:IConsumableService_GetConsumablePurchaseCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddConsumableInventory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumableService/AddConsumableInventory" message="tns:IConsumableService_AddConsumableInventory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumableService/AddConsumableInventoryResponse" message="tns:IConsumableService_AddConsumableInventory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateConsumableInventory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumableService/UpdateConsumableInventory" message="tns:IConsumableService_UpdateConsumableInventory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumableService/UpdateConsumableInventoryResponse" message="tns:IConsumableService_UpdateConsumableInventory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumableInventory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumableService/GetConsumableInventory" message="tns:IConsumableService_GetConsumableInventory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumableService/GetConsumableInventoryResponse" message="tns:IConsumableService_GetConsumableInventory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumableInventoryCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumableService/GetConsumableInventoryCount" message="tns:IConsumableService_GetConsumableInventoryCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumableService/GetConsumableInventoryCountResponse" message="tns:IConsumableService_GetConsumableInventoryCount_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IConsumableService" type="tns:IConsumableService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddConsumablePurchase">
+      <soap:operation soapAction="http://tempuri.org/IConsumableService/AddConsumablePurchase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateConsumablePurchase">
+      <soap:operation soapAction="http://tempuri.org/IConsumableService/UpdateConsumablePurchase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumablePurchase">
+      <soap:operation soapAction="http://tempuri.org/IConsumableService/GetConsumablePurchase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumablePurchaseCount">
+      <soap:operation soapAction="http://tempuri.org/IConsumableService/GetConsumablePurchaseCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddConsumableInventory">
+      <soap:operation soapAction="http://tempuri.org/IConsumableService/AddConsumableInventory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateConsumableInventory">
+      <soap:operation soapAction="http://tempuri.org/IConsumableService/UpdateConsumableInventory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumableInventory">
+      <soap:operation soapAction="http://tempuri.org/IConsumableService/GetConsumableInventory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumableInventoryCount">
+      <soap:operation soapAction="http://tempuri.org/IConsumableService/GetConsumableInventoryCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsumableService">
+    <wsdl:port name="BasicHttpBinding_IConsumableService" binding="tns:BasicHttpBinding_IConsumableService">
+      <soap:address location="http://192.168.16.254:8002/ConsumableService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -917,8 +917,8 @@
 
 
     <!--PMICounter-->
-    <sys:String x:Key="PagePMICounter">PMI计数器</sys:String>
-    <sys:String x:Key="PagePMICounterEdit">PMI计数器编辑</sys:String>
+    <sys:String x:Key="PagePMICounter">背板计数</sys:String>
+    <sys:String x:Key="PagePMICounterEdit">背板计数编辑</sys:String>
 
     <sys:String x:Key="CID">ID</sys:String>
     <sys:String x:Key="CCreator">创建者</sys:String>

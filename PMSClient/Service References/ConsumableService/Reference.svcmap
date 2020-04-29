@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8ea6efc7-7024-4331-b337-73bd8f004e73" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.16.254:8002/ConsumableService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ConsumableService.disco" MetadataType="Disco" ID="2b934ff8-999d-4322-be2f-54b877b84cdb" SourceId="1" SourceUrl="http://192.168.16.254:8002/ConsumableService.svc?disco" />
+    <MetadataFile FileName="ConsumableService.xsd" MetadataType="Schema" ID="42f35d02-f992-45a9-a842-10a841710c50" SourceId="1" SourceUrl="http://192.168.16.254:8002/ConsumableService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ConsumableService1.xsd" MetadataType="Schema" ID="c108cb56-b6cc-4daa-98fc-fc800f69823f" SourceId="1" SourceUrl="http://192.168.16.254:8002/ConsumableService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ConsumableService.wsdl" MetadataType="Wsdl" ID="2425efad-98e0-4bcd-82ab-4051daf48331" SourceId="1" SourceUrl="http://192.168.16.254:8002/ConsumableService.svc?wsdl" />
+    <MetadataFile FileName="ConsumableService2.xsd" MetadataType="Schema" ID="7125f031-85e7-491d-af8c-77f64b8b634a" SourceId="1" SourceUrl="http://192.168.16.254:8002/ConsumableService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
