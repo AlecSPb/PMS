@@ -11,13 +11,13 @@ namespace PMSClient.DataProcess.ScanInput
     public static class ModelHelper
     {
 
-        public static DcOutsideProcess GetOutsideProcess(DcRecordTest ss,string provider)
+        public static DcOutsideProcess GetOutsideProcess(DcRecordTest ss, string provider)
         {
             if (ss == null) return null;
             var model = new DcOutsideProcess();
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
-            model.Creator= PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.ProductID = ss.ProductID;
             model.Composition = ss.Composition;
             model.Customer = ss.Customer;
@@ -90,7 +90,7 @@ namespace PMSClient.DataProcess.ScanInput
         }
 
 
-        public static DcDeliveryItem GetDeliveryItem(DcPlate ss, int boxNumber)
+        public static DcDeliveryItem GetDeliveryItem(DcPlate ss, int boxNumber = 1, string deliverytype = "最终发货")
         {
             if (ss == null)
                 return null;
@@ -114,6 +114,7 @@ namespace PMSClient.DataProcess.ScanInput
             model.Defects = ss.Defects;
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.OrderNumber = 0;
+            model.DeliveryType = deliverytype;
 
             model.Remark = "无";
             #endregion
@@ -121,7 +122,7 @@ namespace PMSClient.DataProcess.ScanInput
             return model;
         }
 
-        public static DcDeliveryItem GetDeliveryItem(DcProduct ss, int boxNumber = 1)
+        public static DcDeliveryItem GetDeliveryItem(DcProduct ss, int boxNumber = 1, string deliverytype = "最终发货")
         {
             if (ss == null)
                 return null;

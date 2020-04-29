@@ -50,7 +50,8 @@ namespace PMSWCFService.DataContracts
         public string Position { get; set; }
         [DataMember]
         public int OrderNumber { get; set; }
-
+        [DataMember]
+        public string DeliveryType { get; set; }
         [DataMember]
         public string Remark { get; set; }
         [DataMember]

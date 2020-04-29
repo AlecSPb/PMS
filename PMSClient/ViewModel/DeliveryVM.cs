@@ -168,12 +168,19 @@ namespace PMSClient.ViewModel
         {
             var tool = new DataProcess.ScanInput.ScanInput();
             tool.TxtValue.Text = "箱号";
-
-            tool.TxtText.Visibility = System.Windows.Visibility.Collapsed;
-            tool.CboText.Visibility = System.Windows.Visibility.Collapsed;
-
+            tool.TxtText.Text = "发货类型";
+            tool.ChkCurrentCheck.Visibility = System.Windows.Visibility.Visible;
+            tool.ChkCurrentCheck.Content = "重复检查";
             //传入delivery到vm中
             var context = new DataProcess.ScanInput.ScanInputDeliveryVM(obj);
+            var list = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.DeliveryType>(list);
+            context.Texts.Clear();
+            context.Texts.AddRange(list);
+            context.CurrentText = context.Texts[0];
+
+            context.CurrentCheck = true;
+
             tool.DataContext = context;
             tool.Show();
         }

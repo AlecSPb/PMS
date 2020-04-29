@@ -32,6 +32,7 @@ namespace PMSDAL
         public int PackNumber { get; set; }//箱子号
         public string Position { get; set; }//入库库房编号，位置编号，unknown，成品库房 产品架A
         public int OrderNumber { get; set; }
+        public string DeliveryType { get; set; }
 
         public string Remark { get; set; }
 

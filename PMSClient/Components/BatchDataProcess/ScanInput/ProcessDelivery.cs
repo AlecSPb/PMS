@@ -16,6 +16,9 @@ namespace PMSClient.DataProcess.ScanInput
 
         private DcDelivery currentDelivery;
         public int Number { get; set; } = 1;
+        public string DeliveryType { get; set; } = PMSCommon.DeliveryType.最终发货.ToString();
+
+        public bool CheckExist { get; set; } = true;
 
         public override void Check(Action<double> DoSomething)
         {
@@ -36,7 +39,11 @@ namespace PMSClient.DataProcess.ScanInput
                     {
                         CheckInProduct(item);
                     }
-                    CheckInDeliveryItem(item);
+                    //检查是否已存在
+                    if (CheckExist)
+                    {
+                        CheckInDeliveryItem(item);
+                    }
 
                     count++;
                     progressValue = count * 100 / Lots.Count;
@@ -72,7 +79,11 @@ namespace PMSClient.DataProcess.ScanInput
                     {
                         CheckInProduct(item);
                     }
-                    CheckInDeliveryItem(item);
+                    //检查是否已存在
+                    if (CheckExist)
+                    {
+                        CheckInDeliveryItem(item);
+                    }
 
                     //有效继续
                     if (item.IsValid)
@@ -93,7 +104,7 @@ namespace PMSClient.DataProcess.ScanInput
                                     record.State = PMSCommon.InventoryState.发货.ToString();
                                     ss.UpdatePlateByUID(record, uid);
                                 }
-                                model = ModelHelper.GetDeliveryItem(record, Number);
+                                model = ModelHelper.GetDeliveryItem(record, Number, DeliveryType);
                             }
                         }
                         else
@@ -111,7 +122,7 @@ namespace PMSClient.DataProcess.ScanInput
                                     ss.UpdateProductByUID(record, uid);
                                 }
 
-                                model = ModelHelper.GetDeliveryItem(record, Number);
+                                model = ModelHelper.GetDeliveryItem(record, Number, DeliveryType);
                             }
                         }
 

@@ -97,6 +97,7 @@ namespace PMSWCFService
             {
                 var query = from m in db.DeliveryItems
                             where m.State != PMSCommon.CommonState.作废.ToString()
+                            && m.DeliveryType == PMSCommon.DeliveryType.最终发货.ToString()
                             && m.ProductType == PMSCommon.ProductType.靶材.ToString()
                             && m.ProductID.Contains(searchCode)
                             && !m.ProductID.Contains("BP")

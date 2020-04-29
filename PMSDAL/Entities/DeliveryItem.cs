@@ -36,6 +36,7 @@ namespace PMSDAL
         public int OrderNumber { get; set; }
 
         public string Remark { get; set; }
+        public string DeliveryType { get; set; }
 
         public string State { get; set; }
 

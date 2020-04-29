@@ -28,6 +28,9 @@ namespace PMSClient.ViewModel
             ProductTypes = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.ProductType>(ProductTypes);
 
+            DeliveryTypes = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.DeliveryType>(DeliveryTypes);
+
             GoodPositions = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.GoodPosition>(GoodPositions);
 
@@ -63,6 +66,7 @@ namespace PMSClient.ViewModel
             model.Defects = "无";
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.OrderNumber = 0;
+            model.DeliveryType = PMSCommon.DeliveryType.最终发货.ToString();
             #endregion
             CurrentDeliveryItem = model;
         }
@@ -236,6 +240,7 @@ namespace PMSClient.ViewModel
         }
         public List<string> States { get; set; }
         public List<string> ProductTypes { get; set; }
+        public List<string> DeliveryTypes { get; set; }
         public List<string> GoodPositions { get; set; }
         public List<int> PackNumbers { get; set; }
         public List<string> CustomerNames { get; set; }

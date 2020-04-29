@@ -691,8 +691,9 @@
     <sys:String x:Key="RDIsCustomerSigned">IsSigned</sys:String>
     <sys:String x:Key="RDCustomerSignedDate">CustomerSignedDate</sys:String>
     <sys:String x:Key="RDCustomerSignedDetails">CustomerSignedDetails</sys:String>
-    
-    
+    <sys:String x:Key="RDDeliveryType">Delivery Type</sys:String>
+
+
     <sys:String x:Key="RDProductType">Product Type</sys:String>
     <sys:String x:Key="RDProductID">Product ID</sys:String>
     <sys:String x:Key="RDComposition">Composition</sys:String>

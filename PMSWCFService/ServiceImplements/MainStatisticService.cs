@@ -20,6 +20,7 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.DeliveryItems
                                 where i.State != PMSCommon.CommonState.作废.ToString()
+                                && i.DeliveryType == PMSCommon.DeliveryType.最终发货.ToString()
                                 && i.CreateTime.Year == year
                                 group i by i.Customer into g
                                 orderby g.Count() descending
@@ -43,6 +44,7 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.DeliveryItems
                                 where i.State != PMSCommon.CommonState.作废.ToString()
+                                && i.DeliveryType == PMSCommon.DeliveryType.最终发货.ToString()
                                 && i.CreateTime.Year == year
                                 group i by i.CreateTime.Month into g
                                 orderby g.Key
@@ -66,6 +68,7 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.DeliveryItems
                                 where i.State != PMSCommon.CommonState.作废.ToString()
+                                && i.DeliveryType == PMSCommon.DeliveryType.最终发货.ToString()
                                 && i.CreateTime.Year == year
                                 group i by ((i.CreateTime.Month - 1) / 3 + 1) into g
                                 orderby g.Key
@@ -88,7 +91,8 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.DeliveryItems
-                                where i.State != PMSCommon.CommonState.作废.ToString()
+                                where i.State != PMSCommon.CommonState.作废.ToString() 
+                                && i.DeliveryType == PMSCommon.DeliveryType.最终发货.ToString()
                                 && i.CreateTime.Year == year
                                 group i by i.ProductType into g
                                 orderby g.Key
@@ -112,6 +116,7 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.DeliveryItems
                                 where i.State != PMSCommon.CommonState.作废.ToString()
+                                && i.DeliveryType == PMSCommon.DeliveryType.最终发货.ToString()
                                 group i by i.CreateTime.Year into g
                                 orderby g.Key
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };

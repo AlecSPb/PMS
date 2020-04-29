@@ -433,6 +433,7 @@
       <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Defects" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DeliveryID" type="ser:guid" />
+      <xs:element minOccurs="0" name="DeliveryType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DetailRecord" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DimensionActual" nillable="true" type="xs:string" />

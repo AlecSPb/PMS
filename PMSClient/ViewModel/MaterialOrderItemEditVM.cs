@@ -81,7 +81,7 @@ namespace PMSClient.ViewModel
                     {
                         var dialog = new ToolWindow.PlainTextWindow();
                         dialog.ContentText = sb.ToString();
-                        dialog.Show();
+                        dialog.ShowDialog();
                     }
                 }
             }
@@ -313,7 +313,7 @@ namespace PMSClient.ViewModel
                 return;
             }
 
-            bool isCheck = XSHelper.XS.MessageBox.ShowYesNo("要自动进行\r\n[当前提供材料价值计算]\r\n[汇总所有提供材料]\r\n[检查提供材料价格和重量]吗?");
+            bool isCheck = XSHelper.XS.MessageBox.ShowYesNo("要自动进行\r\n[提供单质总价值计算-仅本项]\r\n[检查提供单质价格和重量-所有项]\r\n[汇总所有提供材料到备注]\r\n吗?");
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
@@ -337,10 +337,10 @@ namespace PMSClient.ViewModel
 
                 if (isCheck)
                 {
-                    //自动汇总原材料和汇总
-                    RefreshMaterialOrderRemark();
                     //自动检查原料项目
                     CheckProvideMaterialItem();
+                    //自动汇总原材料和汇总
+                    RefreshMaterialOrderRemark();
                 }
                 PMSHelper.ViewModels.MaterialOrder.RefreshDataItem();
                 GoBack();

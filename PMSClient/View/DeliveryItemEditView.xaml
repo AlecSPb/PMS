@@ -39,6 +39,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -62,122 +63,132 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RDProductType}"
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RDDeliveryType}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="0" Grid.Column="1" 
+                          ItemsSource="{Binding DataContext.DeliveryTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding DeliveryType}"
+                          Style="{StaticResource StyleComboBoxCommon}"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="发货类型- 最终发货和中间发货"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RDProductType}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="1" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.ProductTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding ProductType}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
-                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="产品类型"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RDProductID}"
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RDProductID}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
-                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxCommon}"
                          />
-                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="产品ID，唯一"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RDComposition}"
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RDComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
                          />
-                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
                            Text="成分"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RDAbbr}"
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RDAbbr}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Abbr}" Style="{StaticResource StyleTextBoxCommon}"  />
-                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
+                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Abbr}" Style="{StaticResource StyleTextBoxCommon}"  />
+                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
                            Text="成分Abbr"/>
 
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RDCustomer}"
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RDCustomer}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="4" Grid.Column="1" Name="cboCustomerNames"
+                <ComboBox Grid.Row="5" Grid.Column="1" Name="cboCustomerNames"
                       Style="{StaticResource StyleComboBoxCommon}" HorizontalAlignment="Stretch"
                       ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                       SelectedItem="{Binding Customer}"/>
-                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="#选择客户名称，如果没有该客户信息，请先添加客户信息"/>
 
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RDPO}"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RDPO}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="PO"/>
 
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RDDimension}"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RDDimension}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="尺寸"/>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RDWeight}"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="货物重量,建议格式为 1=50kg 2=34kg 代表第一箱和第二箱的重量"/>
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDPackNumber}"
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RDPackNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox  Grid.Row="8" Grid.Column="1" 
+                <ComboBox  Grid.Row="9" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.PackNumbers,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding PackNumber}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
-                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="装箱号码，同一个号码装入同一个箱子,默认是1，即此批货只有一个箱子，这是第一项"/>
 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RDPosition}"
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RDPosition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="9" Grid.Column="1"  
+                <ComboBox Grid.Row="10" Grid.Column="1"  
                           ItemsSource="{Binding DataContext.GoodPositions,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding Position}"
                           Style="{StaticResource StyleComboBoxEditable}"/>
-                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="货物存放位置,A1表示A架子第一层（从下往上）,也可以输入其他位置"/>
 
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RDDetailRecord}"
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RDDetailRecord}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding DetailRecord}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
-                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="记录细节"/>
-                
-                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RDRemark}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding DetailRecord}" Style="{StaticResource StyleTextBoxCommon}"
                          />
                 <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="备注信息"/>
-                
-                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RDOrderNumber}"
+                           Text="记录细节"/>
+
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RDRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding OrderNumber}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
                          />
                 <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="备注信息"/>
+
+                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RDOrderNumber}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding OrderNumber}" Style="{StaticResource StyleTextBoxCommon}"
+                         />
+                <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="自定义次序，从小到大"/>
 
-                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RDState}"
+                <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RDState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="13" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="14" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="状态"/>
 
-                <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RDCreateTime}"
+                <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RDCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="14" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"
-                         />
-                <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="创建时间"/>
-
-                <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RDCreator}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="15" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
+                <TextBlock Grid.Row="15" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"
                          />
                 <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="创建时间"/>
+
+                <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RDCreator}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="16" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
+                         />
+                <TextBlock Grid.Row="16" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建者"/>
             </Grid>
         </ScrollViewer>

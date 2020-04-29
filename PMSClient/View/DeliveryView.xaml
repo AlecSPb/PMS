@@ -215,6 +215,8 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
+                <DataGridTextColumn Header="{StaticResource RDDeliveryType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding DeliveryType}"/>
                 <DataGridTemplateColumn Header="{StaticResource RDProductID}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

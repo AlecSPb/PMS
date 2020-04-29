@@ -4978,6 +4978,9 @@ namespace PMSClient.MainService {
         private System.Guid DeliveryIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeliveryTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DetailRecordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5113,6 +5116,19 @@ namespace PMSClient.MainService {
                 if ((this.DeliveryIDField.Equals(value) != true)) {
                     this.DeliveryIDField = value;
                     this.RaisePropertyChanged("DeliveryID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeliveryType {
+            get {
+                return this.DeliveryTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryTypeField, value) != true)) {
+                    this.DeliveryTypeField = value;
+                    this.RaisePropertyChanged("DeliveryType");
                 }
             }
         }
