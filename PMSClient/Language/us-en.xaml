@@ -1022,7 +1022,51 @@
     <sys:String x:Key="SMElementName">Composition</sys:String>
     <sys:String x:Key="SMUnitPrice">UnitPrice</sys:String>
     <sys:String x:Key="SMRemark">Remark</sys:String>
-    
+
+    <!--消耗品库存-->
+    <sys:String x:Key="PageConsumableInventory">Consumable Inventory</sys:String>
+    <sys:String x:Key="PageConsumableInventoryEdit">Consumable Inventory-Edit</sys:String>
+
+    <sys:String x:Key="CIID">ID</sys:String>
+    <sys:String x:Key="CIState">State</sys:String>
+    <sys:String x:Key="CICreateTime">Create Time</sys:String>
+    <sys:String x:Key="CICreator">Creator</sys:String>
+    <sys:String x:Key="CICategory">Category</sys:String>
+    <sys:String x:Key="CIItemName">ItemName</sys:String>
+    <sys:String x:Key="CISpecification">Specification</sys:String>
+    <sys:String x:Key="CIDetails">Details</sys:String>
+    <sys:String x:Key="CIQuantity">Quantity</sys:String>
+    <sys:String x:Key="CIQuantityUnit">Unit</sys:String>
+    <sys:String x:Key="CIGrade">Grade</sys:String>
+    <sys:String x:Key="CIStorePosition">Store Position</sys:String>
+    <sys:String x:Key="CIPersonInCharge">Person In Charge</sys:String>
+    <sys:String x:Key="CIMinWarningQuantity">Minimum Warning Quantity</sys:String>
+    <sys:String x:Key="CIHistory">History</sys:String>
+    <sys:String x:Key="CIRemark">Remark</sys:String>
+    <sys:String x:Key="CILastUpdateTime">Last Update Time</sys:String>
+
+    <!--消耗品购买-->
+    <sys:String x:Key="PageConsumablePurchase">Consumable Purchase</sys:String>
+    <sys:String x:Key="PageConsumablePurchaseEdit">Consumable Purchase-Edit</sys:String>
+
+    <sys:String x:Key="CPID">ID</sys:String>
+    <sys:String x:Key="CPState">State</sys:String>
+    <sys:String x:Key="CPCreateTime">CreateTime</sys:String>
+    <sys:String x:Key="CPCreator">Creator</sys:String>
+    <sys:String x:Key="CPCategory">Category</sys:String>
+    <sys:String x:Key="CPItemName">ItemName</sys:String>
+    <sys:String x:Key="CPSpecification">Specification</sys:String>
+    <sys:String x:Key="CPDetails">Details</sys:String>
+    <sys:String x:Key="CPQuantity">Quantity</sys:String>
+    <sys:String x:Key="CPQuantityUnit">Unit</sys:String>
+    <sys:String x:Key="CPGrade">Grade</sys:String>
+    <sys:String x:Key="CPRemark">Remark</sys:String>
+
+    <sys:String x:Key="CPSupplier">Supplier</sys:String>
+    <sys:String x:Key="CPTotalCost">Total Cost</sys:String>
+    <sys:String x:Key="CPProcessHistory">History</sys:String>
+    <sys:String x:Key="CPLastUpdateTime">Last Update Time</sys:String>
+
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">Public</sys:String>
     <sys:String x:Key="BottomBarPlan">Plan</sys:String>

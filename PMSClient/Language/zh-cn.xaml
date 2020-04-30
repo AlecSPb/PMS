@@ -1036,10 +1036,52 @@
     <sys:String x:Key="SMUnitPrice">当前单价</sys:String>
     <sys:String x:Key="SMRemark">备注</sys:String>
 
-    
-    
-    
-    
+
+    <!--消耗品库存-->
+    <sys:String x:Key="PageConsumableInventory">耗材管理</sys:String>
+    <sys:String x:Key="PageConsumableInventoryEdit">耗材管理-编辑</sys:String>
+
+    <sys:String x:Key="CIID">ID</sys:String>
+    <sys:String x:Key="CIState">状态</sys:String>
+    <sys:String x:Key="CICreateTime">创建时间</sys:String>
+    <sys:String x:Key="CICreator">创建者</sys:String>
+    <sys:String x:Key="CICategory">类别</sys:String>
+    <sys:String x:Key="CIItemName">名称</sys:String>
+    <sys:String x:Key="CISpecification">规格</sys:String>
+    <sys:String x:Key="CIDetails">细节</sys:String>
+    <sys:String x:Key="CIQuantity">数量</sys:String>
+    <sys:String x:Key="CIQuantityUnit">单位</sys:String>
+    <sys:String x:Key="CIGrade">级别</sys:String>
+    <sys:String x:Key="CIStorePosition">存储位置</sys:String>
+    <sys:String x:Key="CIPersonInCharge">负责人</sys:String>
+    <sys:String x:Key="CIMinWarningQuantity">最小警告量</sys:String>
+    <sys:String x:Key="CIHistory">历史</sys:String>
+    <sys:String x:Key="CIRemark">备注</sys:String>
+    <sys:String x:Key="CILastUpdateTime">最后更新时间</sys:String>
+
+    <!--消耗品购买-->
+    <sys:String x:Key="PageConsumablePurchase">耗材购买</sys:String>
+    <sys:String x:Key="PageConsumablePurchaseEdit">耗材购买-编辑</sys:String>
+
+    <sys:String x:Key="CPID">ID</sys:String>
+    <sys:String x:Key="CPState">状态</sys:String>
+    <sys:String x:Key="CPCreateTime">创建时间</sys:String>
+    <sys:String x:Key="CPCreator">创建者</sys:String>
+    <sys:String x:Key="CPCategory">类别</sys:String>
+    <sys:String x:Key="CPItemName">名称</sys:String>
+    <sys:String x:Key="CPSpecification">规格</sys:String>
+    <sys:String x:Key="CPDetails">细节</sys:String>
+    <sys:String x:Key="CPQuantity">数量</sys:String>
+    <sys:String x:Key="CPQuantityUnit">单位</sys:String>
+    <sys:String x:Key="CPGrade">级别</sys:String>
+    <sys:String x:Key="CPRemark">备注</sys:String>
+
+    <sys:String x:Key="CPSupplier">供应商</sys:String>
+    <sys:String x:Key="CPTotalCost">总花费</sys:String>
+    <sys:String x:Key="CPProcessHistory">购买进度</sys:String>
+    <sys:String x:Key="CPLastUpdateTime">备注</sys:String>
+
+
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">公共</sys:String>
     <sys:String x:Key="BottomBarPlan">计划</sys:String>
