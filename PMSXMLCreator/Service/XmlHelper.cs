@@ -12,7 +12,7 @@ namespace PMSXMLCreator.Service
     /// <summary>
     /// 生成XML文件
     /// </summary>
-    public class XmlHelper
+    public class XmlHelper: IXmlHelper
     {
 
         private Analysis analysis = new Analysis();

@@ -203,7 +203,7 @@ namespace PMSXMLCreator
             return true;
         }
 
-        private XmlHelper helper_xml = new XmlHelper();
+        private IXmlHelper helper_xml = new XmlHelper_ns2();
         private DocxHelper helper_docx = new DocxHelper();
         /// <summary>
         /// 创建xml文件
