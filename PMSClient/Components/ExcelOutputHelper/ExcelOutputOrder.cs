@@ -36,6 +36,7 @@ namespace PMSClient.ExcelOutputHelper
                                     "尺寸",
                                     "尺寸细节",
                                     "客户样品",
+                                    "客户样品备注",
                                     "最后期限",
                                     "最低要求",
                                     "备注",
@@ -48,6 +49,7 @@ namespace PMSClient.ExcelOutputHelper
                                     "成分缩写",
                                     "图纸",
                                     "自分析样品",
+                                    "自分析样品备注",
                                     "运到",
                                     "背板",
                                     "特殊要求",
@@ -84,6 +86,7 @@ namespace PMSClient.ExcelOutputHelper
                         helper.CreateAndSetCell(column_index++, item.Dimension ?? "");
                         helper.CreateAndSetCell(column_index++, item.DimensionDetails ?? "");
                         helper.CreateAndSetCell(column_index++, item.SampleNeed ?? "");
+                        helper.CreateAndSetCell(column_index++, item.SampleNeedRemark ?? "");
                         helper.CreateAndSetCell(column_index++, item.DeadLine.ToShortDateString());
                         helper.CreateAndSetCell(column_index++, item.MinimumAcceptDefect ?? "");
                         helper.CreateAndSetCell(column_index++, item.Remark ?? "");
@@ -96,6 +99,7 @@ namespace PMSClient.ExcelOutputHelper
                         helper.CreateAndSetCell(column_index++, item.CompositionAbbr ?? "");
                         helper.CreateAndSetCell(column_index++, item.Drawing ?? "");
                         helper.CreateAndSetCell(column_index++, item.SampleForAnlysis ?? "");
+                        helper.CreateAndSetCell(column_index++, item.SampleForAnlysisRemark ?? "");
                         helper.CreateAndSetCell(column_index++, item.ShipTo ?? "");
                         helper.CreateAndSetCell(column_index++, item.WithBackingPlate ?? "");
                         helper.CreateAndSetCell(column_index++, item.SpecialRequirement ?? "");

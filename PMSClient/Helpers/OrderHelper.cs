@@ -12,5 +12,9 @@ namespace PMSClient.Helpers
         {
             return !(string.IsNullOrEmpty(sample) || sample.Contains("无需样品"));
         }
+        public static bool HasSampleRemark(string sampleRemark)
+        {
+            return !(string.IsNullOrEmpty(sampleRemark) || sampleRemark.Contains("无"));
+        }
     }
 }

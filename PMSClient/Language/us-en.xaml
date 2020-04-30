@@ -442,7 +442,9 @@
     <sys:String x:Key="OrderPartNumber">Part Number</sys:String>
     <sys:String x:Key="OrderSecondMachineDimension">2rd Machine Dimension</sys:String>
     <sys:String x:Key="OrderSecondMachineDetail">2rd Machine Detail</sys:String>
-
+    <sys:String x:Key="OrderSampleNeedRemark">Customer Sample Anlysis Remark</sys:String>
+    <sys:String x:Key="OrderSampleForAnlysisRemark">Sample For Anlysis Remark</sys:String>
+    
     <!--Plan-->
     <sys:String x:Key="PlanState">State</sys:String>
     <sys:String x:Key="PlanCreator">Creator</sys:String>

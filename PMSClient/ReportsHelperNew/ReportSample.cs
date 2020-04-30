@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PMSClient.MainService;
 using System.Drawing;
-using PMSClient.Sample;
+using PMSClient.SampleService;
 
 namespace PMSClient.ReportsHelperNew
 {

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PMSClient.Sample;
+using PMSClient.SampleService;
 
 namespace PMSClient.View
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSClient.NewService;
-using PMSClient.Sample;
+using PMSClient.SampleService;
 
 namespace PMSClient.ViewModel.VMHelper
 {
@@ -77,17 +77,34 @@ namespace PMSClient.ViewModel.VMHelper
                 bool need_need = Helpers.OrderHelper.NeedSample(obj.SampleNeed);
                 bool need_anlysis = Helpers.OrderHelper.NeedSample(obj.SampleForAnlysis);
                 string sample_str = "";
+
+                bool need_need_remark = Helpers.OrderHelper.HasSampleRemark(obj.SampleNeedRemark);
+                bool need_anlysis_remark = Helpers.OrderHelper.HasSampleRemark(obj.SampleForAnlysisRemark);
+                string sample_remark_str = "";
+
                 if (need_need)
                 {
-                    sample_str += $"客户样品:{ obj.SampleNeed};";
+                    sample_str += $"客户样品:{obj.SampleNeed};";
                 }
 
                 if (need_anlysis)
                 {
-                    sample_str += $"自分析样品:{ obj.SampleForAnlysis};";
+                    sample_str += $"自分析样品:{obj.SampleForAnlysis};";
+                }
+                model.OriginalRequirement = sample_str;
+
+                if (need_need_remark)
+                {
+                    sample_remark_str += $"客户样品:{obj.SampleNeedRemark};";
                 }
 
-                model.OriginalRequirement = sample_str;
+                if (need_anlysis_remark)
+                {
+                    sample_remark_str += $"自分析样品:{obj.SampleForAnlysisRemark};";
+                }
+                model.OriginalRequirementRemark = sample_remark_str;
+
+
                 try
                 {
                     using (var s = new SampleServiceClient())

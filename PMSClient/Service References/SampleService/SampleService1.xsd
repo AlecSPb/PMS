@@ -18,6 +18,7 @@
           <xs:element minOccurs="0" name="IGA" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="MoreInformation" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OriginalRequirement" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OriginalRequirementRemark" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="OtherTestResult" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />

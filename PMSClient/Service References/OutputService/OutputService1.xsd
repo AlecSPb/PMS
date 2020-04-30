@@ -165,7 +165,9 @@
       <xs:element minOccurs="0" name="ReviewTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Reviewer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SampleForAnlysis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SampleForAnlysisRemark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SampleNeed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SampleNeedRemark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SecondMachineDetails" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SecondMachineDimension" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ShipTo" nillable="true" type="xs:string" />

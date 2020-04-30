@@ -220,6 +220,7 @@
     <Compile Include="Components\CsvOutputHelper\CsvOutputRecordVHP.cs" />
     <Compile Include="Components\CsvOutputHelper\ICsvOutput.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputRecordMilling.cs" />
+    <Compile Include="Components\DeliveryItemSampleCheck\DeliveryItemSampleCheckService.cs" />
     <Compile Include="Components\ExcelOutputHelper\Dialogs\YearDateDailog.xaml.cs">
       <DependentUpon>YearDateDailog.xaml</DependentUpon>
     </Compile>
@@ -505,7 +506,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\Sample\Reference.cs">
+    <Compile Include="Service References\SampleService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -2116,20 +2117,20 @@
     <None Include="Service References\PMSSettings\PMSSettingService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Sample\PMSClient.Sample.DcDeliveryItemSampleCheckModel.datasource">
+    <None Include="Service References\SampleService\PMSClient.SampleService.DcDeliveryItemSampleCheckModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sample\PMSClient.Sample.DcSample.datasource">
+    <None Include="Service References\SampleService\PMSClient.SampleService.DcSample.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\Sample\SampleService.wsdl" />
-    <None Include="Service References\Sample\SampleService.xsd">
+    <None Include="Service References\SampleService\SampleService.wsdl" />
+    <None Include="Service References\SampleService\SampleService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Sample\SampleService1.xsd">
+    <None Include="Service References\SampleService\SampleService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\Sample\SampleService2.xsd">
+    <None Include="Service References\SampleService\SampleService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\SimpleMaterialService\PMSClient.SimpleMaterialService.DcSimpleMaterial.datasource">
@@ -2155,10 +2156,10 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\Sample\SampleService.disco" />
-    <None Include="Service References\Sample\configuration91.svcinfo" />
-    <None Include="Service References\Sample\configuration.svcinfo" />
-    <None Include="Service References\Sample\Reference.svcmap">
+    <None Include="Service References\SampleService\SampleService.disco" />
+    <None Include="Service References\SampleService\configuration91.svcinfo" />
+    <None Include="Service References\SampleService\configuration.svcinfo" />
+    <None Include="Service References\SampleService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -2833,7 +2834,7 @@
     <WCFMetadataStorage Include="Service References\PMSIndexService\" />
     <WCFMetadataStorage Include="Service References\PMSSettings\" />
     <WCFMetadataStorage Include="Service References\RemoteHeartBeatService\" />
-    <WCFMetadataStorage Include="Service References\Sample\" />
+    <WCFMetadataStorage Include="Service References\SampleService\" />
     <WCFMetadataStorage Include="Service References\SF\" />
     <WCFMetadataStorage Include="Service References\SimpleMaterialService\" />
     <WCFMetadataStorage Include="Service References\StatisticService\" />

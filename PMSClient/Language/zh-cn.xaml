@@ -456,6 +456,8 @@
     <sys:String x:Key="OrderPartNumber">Part Number</sys:String>
     <sys:String x:Key="OrderSecondMachineDimension">二次加工尺寸</sys:String>
     <sys:String x:Key="OrderSecondMachineDetail">二次加工细节</sys:String>
+    <sys:String x:Key="OrderSampleNeedRemark">客户样品备注</sys:String>
+    <sys:String x:Key="OrderSampleForAnlysisRemark">自分析样品备注</sys:String>
 
     <!--Plan-->
     <sys:String x:Key="PlanState">计划状态</sys:String>
@@ -988,6 +990,7 @@
     <sys:String x:Key="SMoreInformation">其他信息</sys:String>
     <sys:String x:Key="SCustomer">客户</sys:String>
     <sys:String x:Key="SOriginalRequirement">原始需求</sys:String>
+    <sys:String x:Key="SOriginalRequirementRemark">原始需求备注</sys:String>
     <sys:String x:Key="STraceInformation">追踪信息</sys:String>
 
     <sys:String x:Key="SICPOES">ICPOES</sys:String>

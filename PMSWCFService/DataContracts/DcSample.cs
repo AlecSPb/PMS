@@ -30,6 +30,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string OriginalRequirement { get; set; }
         [DataMember]
+        public string OriginalRequirementRemark { get; set; }
+        [DataMember]
         public string TraceInformation { get; set; }//准备，检查，包装，发出
         [DataMember]
         public string ICPOES { get; set; }//如果有测试报告就在这里填写

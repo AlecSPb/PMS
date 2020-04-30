@@ -70,7 +70,8 @@ namespace PMSClient.ViewModel
             order.QuantityUnit = PMSCommon.OrderUnit.片.ToString();
             order.Dimension = "230mm OD x  4mm";
             order.DimensionDetails = "无";
-            order.SampleNeed = PMSCommon.CustomData.OrderSampleNeeds[0];
+            order.SampleNeed = "无需样品";
+            order.SampleNeedRemark = "无";
             order.MinimumAcceptDefect = "通常";
             order.DeadLine = DateTime.Now.AddDays(30);
             order.PolicyType = PMSCommon.OrderPolicyType.VHP.ToString();
@@ -85,6 +86,7 @@ namespace PMSClient.ViewModel
             order.PlateDrawing = "无";//200327添加
             order.Drawing = "默认";
             order.SampleForAnlysis = "无需样品";
+            order.SampleForAnlysisRemark = "无";
             order.ShipTo = "未定";
             order.SpecialRequirement = "无";
 

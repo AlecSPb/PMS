@@ -42,6 +42,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -112,85 +113,92 @@
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource SMoreInformation}"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource SOriginalRequirementRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtProblem"  Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"
+                <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding OriginalRequirementRemark}" Grid.ColumnSpan="2"
+                          Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+                
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource SMoreInformation}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="TxtProblem"  Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"
                          Text="{Binding MoreInformation}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal">
-                    <TextBlock  Style="{StaticResource StyleTextBlockTip}" Text=""/>
-                </StackPanel>
-
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource STraceInformation}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtProcess" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"
-                         Text="{Binding TraceInformation}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <StackPanel Grid.Row="7" Grid.Column="2" Orientation="Horizontal">
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}" Text=""/>
                 </StackPanel>
 
-                <StackPanel Grid.Row="8" Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2">
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource STraceInformation}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="TxtProcess" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2"
+                         Text="{Binding TraceInformation}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="8" Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="9" Orientation="Horizontal" Grid.Column="1" Grid.ColumnSpan="2">
                     <Button Name="BtnPrepared" Click="BtnPrepared_Click" Content="已取样" Style="{StaticResource StyleButtonCommonNarrow}"/>
                     <Button Name="BtnChecked" Click="BtnChecked_Click" Content="已核验" Style="{StaticResource StyleButtonCommonNarrow}"/>
                     <Button Name="BtnSent" Click="BtnSent_Click" Content="已发出" Style="{StaticResource StyleButtonCommonNarrow}"/>
                 </StackPanel>
 
-                <TextBlock  Grid.Row="9"  Grid.Column="0" Text="{StaticResource STrackingStage}"
+                <TextBlock  Grid.Row="10"  Grid.Column="0" Text="{StaticResource STrackingStage}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Name="CboSampleTrackingStages" Grid.Row="9" Grid.Column="1" 
+                <ComboBox Name="CboSampleTrackingStages" Grid.Row="10" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.SampleTrackingStages,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                            SelectedItem="{Binding TrackingStage}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
-                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-                <Button Grid.Row="10" Grid.Column="0" Content="{StaticResource SSampleID}" Style="{StaticResource StyleButtonCommon}"          
+                <Button Grid.Row="11" Grid.Column="0" Content="{StaticResource SSampleID}" Style="{StaticResource StyleButtonCommon}"          
                         Command="{Binding DataContext.SelectPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
-                <TextBox  Grid.Row="10" Grid.Column="1" Text="{Binding SampleID}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox  Grid.Row="11" Grid.Column="1" Text="{Binding SampleID}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="样品ID，一般和靶材ID相同,可以点击最左边按钮从生产计划中选择   准备样品的时候再确定和输入"/>
 
-                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource SProductID}"
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource SProductID}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
-                <TextBox  Grid.Row="11" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox  Grid.Row="12" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="对应靶材ID"/>
 
-                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource SQuantity}"
+                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource SQuantity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="12" Grid.Column="1" Text="{Binding Quantity}"
-                          Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="样品数量"/>
-
-                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource SWeight}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="13" Grid.Column="1" Text="{Binding Weight}"
+                <TextBox  Grid.Row="13" Grid.Column="1" Text="{Binding Quantity}"
                           Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="样品数量"/>
+
+                <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource SWeight}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="14" Grid.Column="1" Text="{Binding Weight}"
+                          Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="样品重量，如果有多个，用加号隔开，单位默认g"/>
 
-                <TextBlock  Grid.Row="14"  Grid.Column="0" Text="{StaticResource SSampleFor}"
+                <TextBlock  Grid.Row="15"  Grid.Column="0" Text="{StaticResource SSampleFor}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Name="CboSampleFors" Grid.Row="14" Grid.Column="1" 
+                <ComboBox Name="CboSampleFors" Grid.Row="15" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.SampleFors,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                            SelectedItem="{Binding SampleFor,UpdateSourceTrigger=PropertyChanged}"
                           Style="{StaticResource StyleComboBoxEditable}"/>
-                <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="有就选，没有就输入"/>
-                
-                <TextBlock Grid.Row="15" Style="{StaticResource StyleDGTextBlockSpecialBlue}" Grid.Column="0" Grid.ColumnSpan="3"
+
+                <TextBlock Grid.Row="16" Style="{StaticResource StyleDGTextBlockSpecialBlue}" Grid.Column="0" Grid.ColumnSpan="3"
                            Text="测试结果均采用 键值 的方式存储，方便后期处理，格式为 Key=Value 键值不能包含等号和分号;  等号和分号必须是英文输入，项目和值。可以手动编辑，但推荐使用专用编辑工具，即点击项目最左边的按钮" 
                            Background="LightGreen" FontWeight="Normal"
                            />
-                
-                <Button Name="BtnICPOES1" Content="{StaticResource SICPOES}" Grid.Row="16" Grid.Column="0"
+
+                <Button Name="BtnICPOES1" Content="{StaticResource SICPOES}" Grid.Row="17" Grid.Column="0"
                         Style="{StaticResource StyleButtonStrench}" Click="BtnICPOES_Click"/>
-                <TextBox Name="TxtICPOES" Grid.Row="16" Grid.Column="1" Grid.ColumnSpan="2"
+                <TextBox Name="TxtICPOES" Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="2"
                          Text="{Binding ICPOES}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="16" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-                <Grid Grid.Row="17" Grid.Column="0">
+                <Grid Grid.Row="18" Grid.Column="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -200,66 +208,66 @@
                     <Button Name="BtnGDMS2" Grid.Column="1"  Content="导入"
                         Style="{StaticResource StyleButtonStrench}" Click="BtnGDMS2_Click" MinWidth="10"/>
                 </Grid>
-                <TextBox Name="TxtGDMS" Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="2"
+                <TextBox Name="TxtGDMS" Grid.Row="18" Grid.Column="1" Grid.ColumnSpan="2"
                          Text="{Binding GDMS}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-
-                <Button Name="BtnIGA" Grid.Column="0" Grid.Row="18" Content="{StaticResource SIGA}"
-                        Style="{StaticResource StyleButtonStrench}" Click="BtnIGA_Click"/>
-                <TextBox Name="TxtIGA" Grid.Row="18" Grid.Column="1" Grid.ColumnSpan="2"
-                         Text="{Binding IGA}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="18" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-                <Button Name="BtnThermal" Grid.Column="0" Grid.Row="19" Content="{StaticResource SThermal}"
-                        Style="{StaticResource StyleButtonStrench}" Click="BtnThermal_Click"/>
-                <TextBox Name="TxtThermal" Grid.Row="19" Grid.Column="1" Grid.ColumnSpan="2"
-                         Text="{Binding Thermal}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <Button Name="BtnIGA" Grid.Column="0" Grid.Row="19" Content="{StaticResource SIGA}"
+                        Style="{StaticResource StyleButtonStrench}" Click="BtnIGA_Click"/>
+                <TextBox Name="TxtIGA" Grid.Row="19" Grid.Column="1" Grid.ColumnSpan="2"
+                         Text="{Binding IGA}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="19" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-                <Button Name="BtnPermittivity" Grid.Column="0" Grid.Row="20" Content="{StaticResource SPermittivity}"
-                        Style="{StaticResource StyleButtonStrench}" Click="BtnPermittivity_Click"/>
-                <TextBox Name="TxtPermittivity" Grid.Row="20" Grid.Column="1" Grid.ColumnSpan="2"
-                         Text="{Binding Permittivity}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <Button Name="BtnThermal" Grid.Column="0" Grid.Row="20" Content="{StaticResource SThermal}"
+                        Style="{StaticResource StyleButtonStrench}" Click="BtnThermal_Click"/>
+                <TextBox Name="TxtThermal" Grid.Row="20" Grid.Column="1" Grid.ColumnSpan="2"
+                         Text="{Binding Thermal}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="20" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-                <Button Name="BtnOtherTestResult" Grid.Column="0" Grid.Row="21" Content="{StaticResource SOtherTestResult}"
-                        Style="{StaticResource StyleButtonStrench}" Click="BtnOtherTestResult_Click"/>
-                <TextBox Name="TxtOtherTestResult" Grid.Row="21" Grid.Column="1" Grid.ColumnSpan="2"
-                         Text="{Binding OtherTestResult}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <Button Name="BtnPermittivity" Grid.Column="0" Grid.Row="21" Content="{StaticResource SPermittivity}"
+                        Style="{StaticResource StyleButtonStrench}" Click="BtnPermittivity_Click"/>
+                <TextBox Name="TxtPermittivity" Grid.Row="21" Grid.Column="1" Grid.ColumnSpan="2"
+                         Text="{Binding Permittivity}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="21" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-
-                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource SRemark}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding Remark}" Grid.ColumnSpan="2"
-                         Style="{StaticResource StyleTextBoxCommon}"/>
+                <Button Name="BtnOtherTestResult" Grid.Column="0" Grid.Row="22" Content="{StaticResource SOtherTestResult}"
+                        Style="{StaticResource StyleButtonStrench}" Click="BtnOtherTestResult_Click"/>
+                <TextBox Name="TxtOtherTestResult" Grid.Row="22" Grid.Column="1" Grid.ColumnSpan="2"
+                         Text="{Binding OtherTestResult}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource FState}"
+
+                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource SRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="23" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding Remark}" Grid.ColumnSpan="2"
+                         Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="23" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource FState}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="24" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="23" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="24" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="状态"/>
 
 
-                <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource FCreateTime}"
+                <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource FCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="24" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="24" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="25" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="25" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建时间"/>
 
-                <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource FCreator}"
+                <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource FCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="25" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="25" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="26" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="26" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建者"/>
             </Grid>
         </ScrollViewer>

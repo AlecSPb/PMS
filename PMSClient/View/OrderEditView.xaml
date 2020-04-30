@@ -53,6 +53,8 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
@@ -220,12 +222,20 @@
                            Text="客户样品需求 格式注明_类型_重量_份数,不需要则选择【无需样品】"/>
                 </StackPanel>
 
-
-                <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource OrderSampleForAnlysis}"
+                <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource OrderSampleNeedRemark}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding SampleForAnlysis}"
-                         Style="{StaticResource StyleTextBoxCommon}"  Name="TxtSampleForAnlysis"/>
+                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding SampleNeedRemark}"
+                         Style="{StaticResource StyleTextBoxCommon}"/>
                 <StackPanel Grid.Row="16" Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="客户样品需求备注，比如寄送位置，测试方式等"/>
+                </StackPanel>
+
+                <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource OrderSampleForAnlysis}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding SampleForAnlysis}"
+                         Style="{StaticResource StyleTextBoxCommon}"  Name="TxtSampleForAnlysis"/>
+                <StackPanel Grid.Row="17" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnSampleForAnlysis" Content="默认内容" Style="{StaticResource StyleButtonCommon}"
                             Click="BtnSampleForAnlysis_Click"/>
                     <Button Name="BtnNoSample2" Content="无需样品" Style="{StaticResource StyleButtonCommon}"
@@ -234,26 +244,34 @@
                            Text="自分析样品，格式注明_类型_重量_份数. 不需要选【无需样品】"/>
                 </StackPanel>
 
-
-                <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource OrderWithBackingPlate}"
+                <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource OrderSampleForAnlysisRemark}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding WithBackingPlate}"
+                <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding SampleForAnlysisRemark}"
+                         Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="18" Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="自分析样品需求备注，比如寄送位置，测试方式等"/>
+                </StackPanel>
+                
+                <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource OrderWithBackingPlate}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding WithBackingPlate}"
                          Style="{StaticResource StyleTextBoxCommon}" />
-                <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="19" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="有配套背板写描述，没有写无"/>
 
-                <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource OrderPlateDrawing}"
+                <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource OrderPlateDrawing}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding PlateDrawing}"
+                <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding PlateDrawing}"
                          Style="{StaticResource StyleTextBoxCommon}" />
-                <TextBlock Grid.Row="18" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="20" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="背板图纸编号"/>
 
-                <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource OrderSpecialRequirement}"
+                <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource OrderSpecialRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding SpecialRequirement}"
+                <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding SpecialRequirement}"
                          Style="{StaticResource StyleTextBoxCommon}" Background="LightPink" Name="TxtSpecialRequirement"/>
-                <StackPanel Grid.Row="19" Grid.Column="2" Orientation="Horizontal">
+                <StackPanel Grid.Row="21" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnCurve1" Content="双面标刻" Style="{StaticResource StyleButtonCommonNarrow}" 
                             Click="BtnCurve_Click"/>
                     <Button Name="BtnCurve2" Content="单面标刻" Style="{StaticResource StyleButtonCommonNarrow}" 
@@ -269,62 +287,62 @@
                 </StackPanel>
 
 
-                <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource OrderDeadLine}"
+                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource OrderDeadLine}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <DatePicker Grid.Row="20" Grid.Column="1" SelectedDate="{Binding DeadLine,Mode=TwoWay}"
+                <DatePicker Grid.Row="22" Grid.Column="1" SelectedDate="{Binding DeadLine,Mode=TwoWay}"
                             Style="{StaticResource StyleDatePickerCommon}"/>
-                <TextBlock Grid.Row="20" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="最后交付期限，默认订单日期之后的1个月"/>
 
-                <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource OrderShipTo}"
+                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource OrderShipTo}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Name="TxtShipTo" Grid.Row="21" Grid.Column="1" Text="{Binding ShipTo}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <StackPanel Grid.Row="21" Grid.Column="2" Orientation="Horizontal">
+                <TextBox Name="TxtShipTo" Grid.Row="23" Grid.Column="1" Text="{Binding ShipTo}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="23" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnSendTCB" Content="TCB" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnSendCustomer_Click"/>
                     <Button Name="BtnSendCustomer" Content="客户" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnSendCustomer_Click"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
                            Text="发货到什么地方"/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource OrderPartNumber}"
+                <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource OrderPartNumber}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding PartNumber}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding PartNumber}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightCyan"/>
-                <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
+                <TextBlock Grid.Row="24" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
                            Text="生产无法看到，测试可以看到"/>
 
-                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource OrderSecondMachineDimension}"
+                <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource OrderSecondMachineDimension}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Name="TxtSecondDimension" Grid.Row="23" Grid.Column="1" Text="{Binding SecondMachineDimension}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Name="TxtSecondDimension" Grid.Row="25" Grid.Column="1" Text="{Binding SecondMachineDimension}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightCyan"/>
-                <StackPanel Grid.Row="23" Grid.Column="2" Orientation="Horizontal">
+                <StackPanel Grid.Row="25" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnSecondDimension" Content="填入首次加工尺寸" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnSecondDimension_Click"/>
                     <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
                            Text="生产无法看到，但测试可以看到"/>
                 </StackPanel>
 
 
-                <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource OrderSecondMachineDetail}"
+                <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource OrderSecondMachineDetail}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding SecondMachineDetails}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="26" Grid.Column="1" Text="{Binding SecondMachineDetails}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightCyan"/>
-                <TextBlock Grid.Row="24" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
+                <TextBlock Grid.Row="26" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
                            Text="生产无法看到，但测试可以看到"/>
 
-                <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource OrderRemark}"
+                <TextBlock Grid.Row="27" Grid.Column="0" Text="{StaticResource OrderRemark}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="25" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="27" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightCyan"/>
-                <TextBlock Grid.Row="25" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
+                <TextBlock Grid.Row="27" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
                            Text="仅自己可见"/>
 
-                <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource OrderCreateTime}"
+                <TextBlock Grid.Row="28" Grid.Column="0" Text="{StaticResource OrderCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBlock Grid.Row="26" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="28" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="27" Grid.Column="0" Text="{StaticResource OrderCreator}"
+                <TextBlock Grid.Row="29" Grid.Column="0" Text="{StaticResource OrderCreator}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBlock Grid.Row="27" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="29" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
             </Grid>
         </ScrollViewer>
     </Grid>

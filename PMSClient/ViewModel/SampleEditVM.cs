@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSClient.Sample;
+using PMSClient.SampleService;
 using PMSClient.MainService;
 
 namespace PMSClient.ViewModel
@@ -81,6 +81,11 @@ namespace PMSClient.ViewModel
                 bool need_need = Helpers.OrderHelper.NeedSample(order.SampleNeed);
                 bool need_anlysis = Helpers.OrderHelper.NeedSample(order.SampleForAnlysis);
                 string sample_str = "";
+
+                bool need_need_remark = Helpers.OrderHelper.HasSampleRemark(order.SampleNeedRemark);
+                bool need_anlysis_remark = Helpers.OrderHelper.HasSampleRemark(order.SampleForAnlysisRemark);
+                string sample_remark_str = "";
+
                 if (need_need)
                 {
                     sample_str += $"客户样品:{order.SampleNeed};";
@@ -91,6 +96,19 @@ namespace PMSClient.ViewModel
                     sample_str += $"自分析样品:{order.SampleForAnlysis};";
                 }
                 CurrentSample.OriginalRequirement = sample_str;
+
+                if (need_need_remark)
+                {
+                    sample_remark_str += $"客户样品:{order.SampleNeedRemark};";
+                }
+
+                if (need_anlysis_remark)
+                {
+                    sample_remark_str += $"自分析样品:{order.SampleForAnlysisRemark};";
+                }
+                CurrentSample.OriginalRequirementRemark = sample_remark_str;
+
+
                 //RaisePropertyChanged(nameof(CurrentRecordTest));
             }
         }
@@ -111,6 +129,7 @@ namespace PMSClient.ViewModel
             model.ProductID = "无";
             model.SampleID = "无";
             model.OriginalRequirement = "无";
+            model.OriginalRequirementRemark = "无";
             model.Composition = "无";
             model.PMINumber = "无";
             model.PO = "无";
@@ -150,6 +169,7 @@ namespace PMSClient.ViewModel
                 CurrentSample.PO = model.PO;
                 CurrentSample.Customer = model.Customer;
                 CurrentSample.OriginalRequirement = model.OriginalRequirement;
+                CurrentSample.OriginalRequirementRemark = model.OriginalRequirementRemark;
                 CurrentSample.MoreInformation = model.MoreInformation;
                 CurrentSample.TrackingStage = PMSCommon.SampleTrackingStage.未取样.ToString();
                 CurrentSample.TraceInformation = model.TraceInformation;

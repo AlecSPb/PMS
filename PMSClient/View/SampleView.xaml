@@ -100,16 +100,17 @@
                                     Binding="{Binding SampleType}"/>
                     <DataGridTextColumn Header="{StaticResource SComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
-                    
+
                     <DataGridTextColumn Header="{StaticResource SOriginalRequirement}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding OriginalRequirement}"/>
-
+                    <DataGridTextColumn Header="{StaticResource SOriginalRequirementRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding OriginalRequirementRemark}"/>
                     <DataGridTextColumn Header="{StaticResource SMoreInformation}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MoreInformation}"/>
 
                     <DataGridTextColumn Header="{StaticResource STraceInformation}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding TraceInformation}"/>
-                    
+
                     <DataGridTextColumn Header="{StaticResource SSampleID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding SampleID}"/>
                     <DataGridTextColumn Header="{StaticResource SProductID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
@@ -156,32 +157,33 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
-                            <RowDefinition Height="0*"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition/>
                         </Grid.RowDefinitions>
-                        
+
                         <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource STrackingStage}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TrackingStage}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                        
-                        
+
+
                         <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource SPMINumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxReadOnly}"/>
@@ -198,7 +200,7 @@
                         <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource SSampleType}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SampleType}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                        
+
                         <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource SComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxReadOnly}"/>
@@ -206,81 +208,86 @@
                         <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource SOriginalRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding OriginalRequirement}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+                        <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource SOriginalRequirementRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding OriginalRequirementRemark}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
                         
-                        <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource SMoreInformation}"
+                        <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource SMoreInformation}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding MoreInformation}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding MoreInformation}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                        <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource STraceInformation}"
+                        <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource STraceInformation}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding TraceInformation}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                        
+                        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding TraceInformation}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
 
 
-                        <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource SSampleID}"
+
+                        <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource SSampleID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding SampleID}" Style="{StaticResource StyleTextBoxReadOnly}" Foreground="Blue"
+                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding SampleID}" Style="{StaticResource StyleTextBoxReadOnly}" Foreground="Blue"
                                  FontWeight="Bold"/>
 
-                        <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource SProductID}"
+                        <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource SProductID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
 
 
-                        <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource SQuantity}"
+                        <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource SQuantity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                        <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource SWeight}"
+                        <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource SWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                        <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource SSampleFor}"
+                        <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource SSampleFor}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding SampleFor}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding SampleFor}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                        <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource SICPOES}"
+                        <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource SICPOES}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <Button Grid.Row="14" Grid.Column="1" Content="{StaticResource SICPOES}" 
+                        <Button Grid.Row="15" Grid.Column="1" Content="{StaticResource SICPOES}" 
                                 Command="{Binding DataContext.ShowTestResult,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
                                 CommandParameter="ICPOES" Style="{StaticResource StyleButtonStrench}"/>
-                        
-                        <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource SGDMS}"
+
+                        <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource SGDMS}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <Button Grid.Row="15" Grid.Column="1" Content="{StaticResource SGDMS}" 
+                        <Button Grid.Row="16" Grid.Column="1" Content="{StaticResource SGDMS}" 
                                 Command="{Binding DataContext.ShowTestResult,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
                                 CommandParameter="GDMS" Style="{StaticResource StyleButtonStrench}"/>
 
-                        <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource SIGA}"
+                        <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource SIGA}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <Button Grid.Row="16" Grid.Column="1" Content="{StaticResource SIGA}" 
+                        <Button Grid.Row="17" Grid.Column="1" Content="{StaticResource SIGA}" 
                                 Command="{Binding DataContext.ShowTestResult,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
                                 CommandParameter="IGA" Style="{StaticResource StyleButtonStrench}"/>
 
-                        <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource SThermal}"
+                        <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource SThermal}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <Button Grid.Row="17" Grid.Column="1" Content="{StaticResource SThermal}" 
+                        <Button Grid.Row="18" Grid.Column="1" Content="{StaticResource SThermal}" 
                                 Command="{Binding DataContext.ShowTestResult,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
                                 CommandParameter="Thermal" Style="{StaticResource StyleButtonStrench}"/>
 
-                        <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource SPermittivity}"
+                        <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource SPermittivity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <Button Grid.Row="18" Grid.Column="1" Content="{StaticResource SPermittivity}" 
+                        <Button Grid.Row="19" Grid.Column="1" Content="{StaticResource SPermittivity}" 
                                 Command="{Binding DataContext.ShowTestResult,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
                                 CommandParameter="Permittivity" Style="{StaticResource StyleButtonStrench}"/>
-                        
-                        <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource SOtherTestResult}"
+
+                        <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource SOtherTestResult}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <Button Grid.Row="19" Grid.Column="1" Content="{StaticResource SOtherTestResult}" 
+                        <Button Grid.Row="20" Grid.Column="1" Content="{StaticResource SOtherTestResult}" 
                                 Command="{Binding DataContext.ShowTestResult,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
                                 CommandParameter="OtherTestResult" Style="{StaticResource StyleButtonStrench}"/>
 
-                        <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource SRemark}"
+                        <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource SRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                        
+                        <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
                     </Grid>
                 </ScrollViewer>
             </Expander>

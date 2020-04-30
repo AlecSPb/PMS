@@ -1682,7 +1682,13 @@ namespace PMSClient.OutputService {
         private string SampleForAnlysisField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SampleForAnlysisRemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SampleNeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SampleNeedRemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SecondMachineDetailsField;
@@ -2106,6 +2112,19 @@ namespace PMSClient.OutputService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SampleForAnlysisRemark {
+            get {
+                return this.SampleForAnlysisRemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SampleForAnlysisRemarkField, value) != true)) {
+                    this.SampleForAnlysisRemarkField = value;
+                    this.RaisePropertyChanged("SampleForAnlysisRemark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string SampleNeed {
             get {
                 return this.SampleNeedField;
@@ -2114,6 +2133,19 @@ namespace PMSClient.OutputService {
                 if ((object.ReferenceEquals(this.SampleNeedField, value) != true)) {
                     this.SampleNeedField = value;
                     this.RaisePropertyChanged("SampleNeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SampleNeedRemark {
+            get {
+                return this.SampleNeedRemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SampleNeedRemarkField, value) != true)) {
+                    this.SampleNeedRemarkField = value;
+                    this.RaisePropertyChanged("SampleNeedRemark");
                 }
             }
         }

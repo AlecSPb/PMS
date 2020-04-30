@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PMSClient.Sample {
+namespace PMSClient.SampleService {
     using System.Runtime.Serialization;
     using System;
     
@@ -17,7 +17,7 @@ namespace PMSClient.Sample {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DcSample", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
-    public partial class DcSample : PMSClient.Sample.DcModelBase {
+    public partial class DcSample : PMSClient.SampleService.DcModelBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionField;
@@ -39,6 +39,9 @@ namespace PMSClient.Sample {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OriginalRequirementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OriginalRequirementRemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OtherTestResultField;
@@ -169,6 +172,19 @@ namespace PMSClient.Sample {
                 if ((object.ReferenceEquals(this.OriginalRequirementField, value) != true)) {
                     this.OriginalRequirementField = value;
                     this.RaisePropertyChanged("OriginalRequirement");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OriginalRequirementRemark {
+            get {
+                return this.OriginalRequirementRemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalRequirementRemarkField, value) != true)) {
+                    this.OriginalRequirementRemarkField = value;
+                    this.RaisePropertyChanged("OriginalRequirementRemark");
                 }
             }
         }
@@ -360,7 +376,7 @@ namespace PMSClient.Sample {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DcModelBase", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PMSClient.Sample.DcSample))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PMSClient.SampleService.DcSample))]
     public partial class DcModelBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -592,14 +608,14 @@ namespace PMSClient.Sample {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Sample.ISampleService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SampleService.ISampleService")]
     public interface ISampleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAll", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllResponse")]
-        PMSClient.Sample.DcSample[] GetSampleAll(int s, int t, string pminumber, string productid, string composition, string trackingstage);
+        PMSClient.SampleService.DcSample[] GetSampleAll(int s, int t, string pminumber, string productid, string composition, string trackingstage);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAll", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllResponse")]
-        System.Threading.Tasks.Task<PMSClient.Sample.DcSample[]> GetSampleAllAsync(int s, int t, string pminumber, string productid, string composition, string trackingstage);
+        System.Threading.Tasks.Task<PMSClient.SampleService.DcSample[]> GetSampleAllAsync(int s, int t, string pminumber, string productid, string composition, string trackingstage);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAllCount", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllCountResponse")]
         int GetSampleAllCount(string pminumber, string productid, string composition, string trackingstage);
@@ -614,31 +630,31 @@ namespace PMSClient.Sample {
         System.Threading.Tasks.Task<int> GetSampleByPMINumberCountAsync(string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/AddSample", ReplyAction="http://tempuri.org/ISampleService/AddSampleResponse")]
-        void AddSample(PMSClient.Sample.DcSample model);
+        void AddSample(PMSClient.SampleService.DcSample model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/AddSample", ReplyAction="http://tempuri.org/ISampleService/AddSampleResponse")]
-        System.Threading.Tasks.Task AddSampleAsync(PMSClient.Sample.DcSample model);
+        System.Threading.Tasks.Task AddSampleAsync(PMSClient.SampleService.DcSample model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/UpdateSample", ReplyAction="http://tempuri.org/ISampleService/UpdateSampleResponse")]
-        void UpdateSample(PMSClient.Sample.DcSample model);
+        void UpdateSample(PMSClient.SampleService.DcSample model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/UpdateSample", ReplyAction="http://tempuri.org/ISampleService/UpdateSampleResponse")]
-        System.Threading.Tasks.Task UpdateSampleAsync(PMSClient.Sample.DcSample model);
+        System.Threading.Tasks.Task UpdateSampleAsync(PMSClient.SampleService.DcSample model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/CheckDeliveryItemSampleStatus", ReplyAction="http://tempuri.org/ISampleService/CheckDeliveryItemSampleStatusResponse")]
-        PMSClient.Sample.DcDeliveryItemSampleCheckModel[] CheckDeliveryItemSampleStatus();
+        PMSClient.SampleService.DcDeliveryItemSampleCheckModel[] CheckDeliveryItemSampleStatus();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/CheckDeliveryItemSampleStatus", ReplyAction="http://tempuri.org/ISampleService/CheckDeliveryItemSampleStatusResponse")]
-        System.Threading.Tasks.Task<PMSClient.Sample.DcDeliveryItemSampleCheckModel[]> CheckDeliveryItemSampleStatusAsync();
+        System.Threading.Tasks.Task<PMSClient.SampleService.DcDeliveryItemSampleCheckModel[]> CheckDeliveryItemSampleStatusAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ISampleServiceChannel : PMSClient.Sample.ISampleService, System.ServiceModel.IClientChannel {
+    public interface ISampleServiceChannel : PMSClient.SampleService.ISampleService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SampleServiceClient : System.ServiceModel.ClientBase<PMSClient.Sample.ISampleService>, PMSClient.Sample.ISampleService {
+    public partial class SampleServiceClient : System.ServiceModel.ClientBase<PMSClient.SampleService.ISampleService>, PMSClient.SampleService.ISampleService {
         
         public SampleServiceClient() {
         }
@@ -659,11 +675,11 @@ namespace PMSClient.Sample {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.Sample.DcSample[] GetSampleAll(int s, int t, string pminumber, string productid, string composition, string trackingstage) {
+        public PMSClient.SampleService.DcSample[] GetSampleAll(int s, int t, string pminumber, string productid, string composition, string trackingstage) {
             return base.Channel.GetSampleAll(s, t, pminumber, productid, composition, trackingstage);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.Sample.DcSample[]> GetSampleAllAsync(int s, int t, string pminumber, string productid, string composition, string trackingstage) {
+        public System.Threading.Tasks.Task<PMSClient.SampleService.DcSample[]> GetSampleAllAsync(int s, int t, string pminumber, string productid, string composition, string trackingstage) {
             return base.Channel.GetSampleAllAsync(s, t, pminumber, productid, composition, trackingstage);
         }
         
@@ -683,27 +699,27 @@ namespace PMSClient.Sample {
             return base.Channel.GetSampleByPMINumberCountAsync(pminumber);
         }
         
-        public void AddSample(PMSClient.Sample.DcSample model) {
+        public void AddSample(PMSClient.SampleService.DcSample model) {
             base.Channel.AddSample(model);
         }
         
-        public System.Threading.Tasks.Task AddSampleAsync(PMSClient.Sample.DcSample model) {
+        public System.Threading.Tasks.Task AddSampleAsync(PMSClient.SampleService.DcSample model) {
             return base.Channel.AddSampleAsync(model);
         }
         
-        public void UpdateSample(PMSClient.Sample.DcSample model) {
+        public void UpdateSample(PMSClient.SampleService.DcSample model) {
             base.Channel.UpdateSample(model);
         }
         
-        public System.Threading.Tasks.Task UpdateSampleAsync(PMSClient.Sample.DcSample model) {
+        public System.Threading.Tasks.Task UpdateSampleAsync(PMSClient.SampleService.DcSample model) {
             return base.Channel.UpdateSampleAsync(model);
         }
         
-        public PMSClient.Sample.DcDeliveryItemSampleCheckModel[] CheckDeliveryItemSampleStatus() {
+        public PMSClient.SampleService.DcDeliveryItemSampleCheckModel[] CheckDeliveryItemSampleStatus() {
             return base.Channel.CheckDeliveryItemSampleStatus();
         }
         
-        public System.Threading.Tasks.Task<PMSClient.Sample.DcDeliveryItemSampleCheckModel[]> CheckDeliveryItemSampleStatusAsync() {
+        public System.Threading.Tasks.Task<PMSClient.SampleService.DcDeliveryItemSampleCheckModel[]> CheckDeliveryItemSampleStatusAsync() {
             return base.Channel.CheckDeliveryItemSampleStatusAsync();
         }
     }
