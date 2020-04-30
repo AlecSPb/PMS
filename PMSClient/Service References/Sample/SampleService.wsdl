@@ -37,6 +37,12 @@
   <wsdl:message name="ISampleService_UpdateSample_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateSampleResponse" />
   </wsdl:message>
+  <wsdl:message name="ISampleService_CheckDeliveryItemSampleStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDeliveryItemSampleStatus" />
+  </wsdl:message>
+  <wsdl:message name="ISampleService_CheckDeliveryItemSampleStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckDeliveryItemSampleStatusResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISampleService">
     <wsdl:operation name="GetSampleAll">
       <wsdl:input wsaw:Action="http://tempuri.org/ISampleService/GetSampleAll" message="tns:ISampleService_GetSampleAll_InputMessage" />
@@ -57,6 +63,10 @@
     <wsdl:operation name="UpdateSample">
       <wsdl:input wsaw:Action="http://tempuri.org/ISampleService/UpdateSample" message="tns:ISampleService_UpdateSample_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISampleService/UpdateSampleResponse" message="tns:ISampleService_UpdateSample_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDeliveryItemSampleStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISampleService/CheckDeliveryItemSampleStatus" message="tns:ISampleService_CheckDeliveryItemSampleStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISampleService/CheckDeliveryItemSampleStatusResponse" message="tns:ISampleService_CheckDeliveryItemSampleStatus_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISampleService" type="tns:ISampleService">
@@ -99,6 +109,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateSample">
       <soap:operation soapAction="http://tempuri.org/ISampleService/UpdateSample" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckDeliveryItemSampleStatus">
+      <soap:operation soapAction="http://tempuri.org/ISampleService/CheckDeliveryItemSampleStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

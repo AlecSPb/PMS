@@ -75,4 +75,16 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="CheckDeliveryItemSampleStatus">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDeliveryItemSampleStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="CheckDeliveryItemSampleStatusResult" nillable="true" type="q4:ArrayOfDcDeliveryItemSampleCheckModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

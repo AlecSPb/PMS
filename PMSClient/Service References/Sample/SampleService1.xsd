@@ -46,4 +46,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcModelBase" nillable="true" type="tns:DcModelBase" />
+  <xs:complexType name="ArrayOfDcDeliveryItemSampleCheckModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcDeliveryItemSampleCheckModel" nillable="true" type="tns:DcDeliveryItemSampleCheckModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcDeliveryItemSampleCheckModel" nillable="true" type="tns:ArrayOfDcDeliveryItemSampleCheckModel" />
+  <xs:complexType name="DcDeliveryItemSampleCheckModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SampleDeliveryInformation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SampleInformation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcDeliveryItemSampleCheckModel" nillable="true" type="tns:DcDeliveryItemSampleCheckModel" />
 </xs:schema>

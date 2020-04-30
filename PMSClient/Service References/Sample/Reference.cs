@@ -450,6 +450,147 @@ namespace PMSClient.Sample {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcDeliveryItemSampleCheckModel", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcDeliveryItemSampleCheckModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DeliveryTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PMINumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SampleDeliveryInformationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SampleInformationField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Customer {
+            get {
+                return this.CustomerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
+                    this.CustomerField = value;
+                    this.RaisePropertyChanged("Customer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DeliveryTime {
+            get {
+                return this.DeliveryTimeField;
+            }
+            set {
+                if ((this.DeliveryTimeField.Equals(value) != true)) {
+                    this.DeliveryTimeField = value;
+                    this.RaisePropertyChanged("DeliveryTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PMINumber {
+            get {
+                return this.PMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SampleDeliveryInformation {
+            get {
+                return this.SampleDeliveryInformationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SampleDeliveryInformationField, value) != true)) {
+                    this.SampleDeliveryInformationField = value;
+                    this.RaisePropertyChanged("SampleDeliveryInformation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SampleInformation {
+            get {
+                return this.SampleInformationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SampleInformationField, value) != true)) {
+                    this.SampleInformationField = value;
+                    this.RaisePropertyChanged("SampleInformation");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Sample.ISampleService")]
     public interface ISampleService {
@@ -483,6 +624,12 @@ namespace PMSClient.Sample {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/UpdateSample", ReplyAction="http://tempuri.org/ISampleService/UpdateSampleResponse")]
         System.Threading.Tasks.Task UpdateSampleAsync(PMSClient.Sample.DcSample model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/CheckDeliveryItemSampleStatus", ReplyAction="http://tempuri.org/ISampleService/CheckDeliveryItemSampleStatusResponse")]
+        PMSClient.Sample.DcDeliveryItemSampleCheckModel[] CheckDeliveryItemSampleStatus();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/CheckDeliveryItemSampleStatus", ReplyAction="http://tempuri.org/ISampleService/CheckDeliveryItemSampleStatusResponse")]
+        System.Threading.Tasks.Task<PMSClient.Sample.DcDeliveryItemSampleCheckModel[]> CheckDeliveryItemSampleStatusAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -550,6 +697,14 @@ namespace PMSClient.Sample {
         
         public System.Threading.Tasks.Task UpdateSampleAsync(PMSClient.Sample.DcSample model) {
             return base.Channel.UpdateSampleAsync(model);
+        }
+        
+        public PMSClient.Sample.DcDeliveryItemSampleCheckModel[] CheckDeliveryItemSampleStatus() {
+            return base.Channel.CheckDeliveryItemSampleStatus();
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.Sample.DcDeliveryItemSampleCheckModel[]> CheckDeliveryItemSampleStatusAsync() {
+            return base.Channel.CheckDeliveryItemSampleStatusAsync();
         }
     }
 }

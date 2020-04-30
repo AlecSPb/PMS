@@ -6,6 +6,7 @@ using PMSWCFService.ServiceContracts;
 using PMSWCFService.DataContracts;
 using PMSDAL;
 using AutoMapper;
+using PMSWCFService.ServiceImplements.Helpers;
 
 namespace PMSWCFService
 {
@@ -28,6 +29,63 @@ namespace PMSWCFService
             {
                 XS.Current.Error(ex);
             }
+        }
+
+        public List<DcDeliveryItemSampleCheckModel> CheckDeliveryItemSampleStatus()
+        {
+            try
+            {
+                XS.RunLog();
+                using (var db = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<Sample, DcSample>());
+                    var query = from m in db.DeliveryItems
+                                join mm in db.Deliverys on m.DeliveryID equals mm.ID
+                                where m.ProductType == PMSCommon.ProductType.靶材.ToString()
+                                && m.DeliveryType == PMSCommon.DeliveryType.最终发货.ToString()
+                                && m.State != PMSCommon.SimpleState.正常.ToString()
+                                && mm.State == PMSCommon.DeliveryState.未完成.ToString()
+                                orderby m.CreateTime descending
+                                select m;
+
+                    List<DcDeliveryItemSampleCheckModel> sampleChecks = new List<DcDeliveryItemSampleCheckModel>();
+                    foreach (var item in query.Take(30))
+                    {
+                        var sample = new DcDeliveryItemSampleCheckModel();
+                        sample.ProductID = item.ProductID;
+                        sample.Composition = item.Composition;
+
+                        //获取PMINumber
+                        var test_record = DeliveryItemSampleCheckHelper.GetPMINumber(item.ProductID);
+                        if (string.IsNullOrEmpty(test_record.PMINumber))
+                        {
+                            sample.PMINumber = test_record.PMINumber;
+
+                            //获取样品记录信息
+                            var sample_list = DeliveryItemSampleCheckHelper.CheckSample(sample.PMINumber);
+                            string s_information = "", s_deliveryInformation = "";
+                            foreach (var s in sample_list)
+                            {
+                                s_information += $"[{s.OriginalRequirement}]";
+                                s_deliveryInformation += $"[{s.PMINumber}-{s.TrackingStage}]";
+                            }
+                            sample.SampleInformation = s_information;
+                            sample.SampleDeliveryInformation = s_deliveryInformation;
+                            //查询对应信息
+                            sampleChecks.Add(sample);
+                        }
+
+                    }
+
+                    return sampleChecks;
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                return new List<DcDeliveryItemSampleCheckModel>();
+            }
+
         }
 
         public List<DcSample> GetSampleAll(int s, int t, string pminumber, string productid, string composition, string trackingstage)

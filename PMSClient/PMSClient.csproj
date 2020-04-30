@@ -2116,6 +2116,9 @@
     <None Include="Service References\PMSSettings\PMSSettingService1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\Sample\PMSClient.Sample.DcDeliveryItemSampleCheckModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Sample\PMSClient.Sample.DcSample.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

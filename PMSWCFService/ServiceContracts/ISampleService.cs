@@ -29,5 +29,11 @@ namespace PMSWCFService.ServiceContracts
         void AddSample(DcSample model);
         [OperationContract]
         void UpdateSample(DcSample model);
+
+
+
+        [OperationContract]
+        List<DcDeliveryItemSampleCheckModel> CheckDeliveryItemSampleStatus();
+
     }
 }

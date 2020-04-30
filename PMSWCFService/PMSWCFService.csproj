@@ -132,6 +132,7 @@
     <Compile Include="DataContracts\DcRecordBonding.cs" />
     <Compile Include="DataContracts\DcRemainInventory.cs" />
     <Compile Include="DataContracts\DcAnlysis.cs" />
+    <Compile Include="DataContracts\DcDeliveryItemSampleCheckModel.cs" />
     <Compile Include="DataContracts\DcSimpleMaterial.cs" />
     <Compile Include="DataContracts\DcStatistic.cs" />
     <Compile Include="DataContracts\DcStatisticProduct.cs" />
@@ -245,6 +246,7 @@
     <Compile Include="ServiceImplements\FailureService.cs" />
     <Compile Include="ServiceImplements\HeartBeatService.cs" />
     <Compile Include="ServiceImplements\Helpers\CompositionHelper.cs" />
+    <Compile Include="ServiceImplements\Helpers\DeliveryItemSampleCheckHelper.cs" />
     <Compile Include="ServiceImplements\Helpers\SearchItem.cs" />
     <Compile Include="ServiceImplements\HistoryService.cs" />
     <Compile Include="ServiceContracts\IDrawingService.cs" />
