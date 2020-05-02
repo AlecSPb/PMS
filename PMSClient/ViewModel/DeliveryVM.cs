@@ -68,6 +68,14 @@ namespace PMSClient.ViewModel
             ExpressTrack = new RelayCommand(ActionExpressTrack, CanExpressTrack);
 
             ExpressSetting = new RelayCommand(ActionExpressSetting, CanExpressTrack);
+
+            SampleTrace = new RelayCommand(ActionSampleTrace, CanAdd);
+        }
+
+        private void ActionSampleTrace()
+        {
+            //检查发货靶材的样品发出情况
+            new Components.DeliveryItemSampleCheck.DeliveryItemSampleCheckService().Run();
         }
 
         private void ActionCheck(DcDelivery obj)
@@ -658,6 +666,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcDeliveryItem> QuickSave { get; set; }
         public RelayCommand SaveAllItems { get; set; }
         public RelayCommand ExpressTrack { get; set; }
+        public RelayCommand SampleTrace { get; set; }
         public RelayCommand ExpressSetting { get; set; }
 
         #endregion

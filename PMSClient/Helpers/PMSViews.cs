@@ -117,6 +117,11 @@ namespace PMSClient
         RawMaterialSheet,
         RawMaterialSheetEdit,
         SimpleMaterial,
-        SimpleMaterialEdit
+        SimpleMaterialEdit,
+        ConsumableInventory,
+        ConsumableInventoryEdit,
+        ConsumableInventorySelect,
+        ConsumablePurchase,
+        ConsumablePurchaseEdit
     }
 }

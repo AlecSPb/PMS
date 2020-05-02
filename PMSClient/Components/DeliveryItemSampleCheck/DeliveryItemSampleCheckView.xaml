@@ -1,0 +1,39 @@
+﻿<Window x:Class="PMSClient.Components.DeliveryItemSampleCheck.DeliveryItemSampleCheckView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.Components.DeliveryItemSampleCheck"
+        mc:Ignorable="d"
+        Title="发货流水靶材对应样品发出情况概述" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Orange">
+            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="显示所有处于快递追踪状态的，类型为[最终发货]的[靶材]和[绑定]产品，在样品库中对应的样品状态情况; 颜色标记出来的行是未发出的样品"
+                       HorizontalAlignment="Stretch"
+                       Foreground="Blue"/>
+        </StackPanel>
+        <DataGrid Grid.Row="1" Style="{StaticResource StyleDataGridCommon}" Name="DgMain"
+                  LoadingRow="DgMain_LoadingRow">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Delivery Time" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding DeliveryTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="Product ID" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding ProductID}"/>
+                <DataGridTextColumn Header="Composition" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding Composition}"/>
+                <DataGridTextColumn Header="Customer" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding Customer}"/>
+                <DataGridTextColumn Header="PMINumber" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding PMINumber}"/>
+                <DataGridTextColumn Header="SampleInformation" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding SampleInformation}" Width="200"/>
+                <DataGridTextColumn Header="SampleDeliveryInformation" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding SampleDeliveryInformation}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

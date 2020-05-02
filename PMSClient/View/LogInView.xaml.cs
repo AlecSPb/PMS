@@ -67,16 +67,17 @@ namespace PMSClient.View
                     //PMSHelper.CurrentLog.Log("登录成功");
                     NavigationService.GoTo(PMSViews.Navigation);
 
-                    //加载快递追踪情况
                     //DEBUG下不运行
-
                     if (PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewExpressTrackAtLogin)
                         && Properties.Settings.Default.CheckExpressAtStartup)
                     {
+                        //加载快递追踪情况
                         new Express.Operation().TraceUnCompleted();
+                        //检查发货靶材的样品发出情况
+                        new Components.DeliveryItemSampleCheck.DeliveryItemSampleCheckService().Run();
                     }
                     //检查是否需要显示新文档
-                    new PMSClient.Components.NewFeatureDocShow.NewFeatureShowService().Run();
+                    new Components.NewFeatureDocShow.NewFeatureShowService().Run();
                 }
                 else
                 {

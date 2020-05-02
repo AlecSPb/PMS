@@ -42,7 +42,7 @@
     <sys:String x:Key="PageNaivgationWorkFlow">WorkFlow</sys:String>
 
 
-    <sys:String x:Key="PageSales">Overall Planning</sys:String>
+    <sys:String x:Key="PageSales">Planning</sys:String>
     <sys:String x:Key="PageMaterial">Material</sys:String>
     <sys:String x:Key="PageProduction">Production</sys:String>
     <sys:String x:Key="PageRecord">Record</sys:String>
@@ -182,7 +182,7 @@
     <sys:String x:Key="PageToDoEdit">To Do List Edit</sys:String>
     <sys:String x:Key="PageConsumable">Consumable</sys:String>
     <sys:String x:Key="PageCounter">PMI Counter</sys:String>
-    <sys:String x:Key="PagePlanForProduct">Product Trace</sys:String>
+    <sys:String x:Key="PagePlanForProduct">Production Trace</sys:String>
 
     <!--TXT-->
     <sys:String x:Key="TxtWelcome">Welcome to use Production Management System</sys:String>
@@ -341,6 +341,7 @@
     <sys:String x:Key="ButtonFail">Fail</sys:String>
     <sys:String x:Key="ButtonReMachine">ReMachine</sys:String>
     <sys:String x:Key="ButtonExcel">Excel</sys:String>
+    <sys:String x:Key="ButtonSampleTrace">Sample Trace</sys:String>
     <sys:String x:Key="ButtonWord">Word</sys:String>
 
     <sys:String x:Key="ButtonFailure">Failure</sys:String>

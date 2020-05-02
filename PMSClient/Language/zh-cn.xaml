@@ -352,6 +352,7 @@
     <sys:String x:Key="ButtonFail">失败</sys:String>
     <sys:String x:Key="ButtonReMachine">再次加工</sys:String>
     <sys:String x:Key="ButtonExcel">Excel</sys:String>
+    <sys:String x:Key="ButtonSampleTrace">样品追踪</sys:String>
     <sys:String x:Key="ButtonWord">Word</sys:String>
 
     <sys:String x:Key="ButtonFailure">报废</sys:String>

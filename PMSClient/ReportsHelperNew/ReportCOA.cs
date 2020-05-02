@@ -77,15 +77,7 @@ namespace PMSClient.ReportsHelperNew
                 doc.ReplaceText("[CreateDate]", DateTime.Now.ToString("MM/dd/yyyy"));
 
                 //粗糙度值
-                if (model.ProductID.Contains("#"))
-                {
-                    doc.ReplaceText("[Roughness]", model.Roughness);
-                }
-                else
-                {
-                    doc.ReplaceText("[Roughness]", "-");
-                }
-
+                doc.ReplaceText("[Roughness]", model.Roughness ?? "");
 
                 //如果是是230mm的靶材，查找背板编号填入
                 if (model.Dimension.Contains("230"))

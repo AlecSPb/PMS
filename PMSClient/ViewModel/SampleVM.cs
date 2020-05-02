@@ -44,6 +44,13 @@ namespace PMSClient.ViewModel
             Label = new RelayCommand<DcSample>(ActionLabel);
             Excel = new RelayCommand(ActionExcel, CanExcel);
             ShowTestResult = new RelayCommand<string>(ActionShowTestResult);
+            SampleTrace = new RelayCommand(ActionSampleTrace, CanAdd);
+        }
+
+        private void ActionSampleTrace()
+        {
+            //检查发货靶材的样品发出情况
+            new Components.DeliveryItemSampleCheck.DeliveryItemSampleCheckService().Run();
         }
 
         private void ActionShowTestResult(string parameter)
@@ -395,6 +402,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcSample> Label { get; set; }
         public RelayCommand Print { get; set; }
         public RelayCommand Excel { get; set; }
+        public RelayCommand SampleTrace { get; set; }
 
         public RelayCommand<String> ShowTestResult { get; set; }
         #endregion

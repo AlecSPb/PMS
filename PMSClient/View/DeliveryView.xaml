@@ -30,6 +30,7 @@
             <Button Content="{StaticResource ButtonExpressTrack}" 
                     Style="{StaticResource StyleButtonSpecial}"
                     Command="{Binding ExpressTrack}"/>
+            <Button Content="{StaticResource ButtonSampleTrace}" Style="{StaticResource StyleButtonCommon}" Command="{Binding SampleTrace}"/>
             <Button Content="设置" Style="{StaticResource StyleButtonCommon}" Command="{Binding ExpressSetting}"/>
             <Button Content="{StaticResource ButtonDeliveryItemList}" Style="{StaticResource StyleButtonSpecial}"
                     Command="{Binding GoToDeliveryItemList}"/>

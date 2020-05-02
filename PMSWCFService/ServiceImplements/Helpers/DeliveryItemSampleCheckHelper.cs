@@ -36,14 +36,13 @@ namespace PMSWCFService.ServiceImplements.Helpers
                 {
                     var query = from t in db.Samples
                                 where t.PMINumber == pminumber
-                                && t.TrackingStage != PMSCommon.SampleTrackingStage.已发出.ToString()
                                 select t;
                     return query.ToList();
                 }
             }
             catch (Exception)
             {
-                return null;
+                return new List<Sample>();
             }
         }
 

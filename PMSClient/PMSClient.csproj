@@ -221,6 +221,9 @@
     <Compile Include="Components\CsvOutputHelper\ICsvOutput.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputRecordMilling.cs" />
     <Compile Include="Components\DeliveryItemSampleCheck\DeliveryItemSampleCheckService.cs" />
+    <Compile Include="Components\DeliveryItemSampleCheck\DeliveryItemSampleCheckView.xaml.cs">
+      <DependentUpon>DeliveryItemSampleCheckView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\ExcelOutputHelper\Dialogs\YearDateDailog.xaml.cs">
       <DependentUpon>YearDateDailog.xaml</DependentUpon>
     </Compile>
@@ -1174,6 +1177,10 @@
     <Page Include="Components\BatchDataProcess\QuickCheck\QuickCheck.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\DeliveryItemSampleCheck\DeliveryItemSampleCheckView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Components\ExcelOutputHelper\Dialogs\YearDateDailog.xaml">
       <SubType>Designer</SubType>

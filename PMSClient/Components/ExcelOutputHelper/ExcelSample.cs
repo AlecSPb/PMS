@@ -36,6 +36,7 @@ namespace PMSClient.ExcelOutputHelper
                                     "PMINumber",
                                     "更多信息",
                                     "原始要求",
+                                    "原始要求备注",
                                     "追踪信息",
                                     "追踪状态",
                                     "重量",
@@ -77,6 +78,7 @@ namespace PMSClient.ExcelOutputHelper
                         helper.CreateAndSetCell(column_index++, item.PMINumber ?? "");
                         helper.CreateAndSetCell(column_index++, item.MoreInformation ?? "");
                         helper.CreateAndSetCell(column_index++, item.OriginalRequirement ?? "");
+                        helper.CreateAndSetCell(column_index++, item.OriginalRequirementRemark ?? "");
                         helper.CreateAndSetCell(column_index++, item.TraceInformation ?? "");
                         helper.CreateAndSetCell(column_index++, item.TrackingStage ?? "");
                         helper.CreateAndSetCell(column_index++, item.Weight ?? "");

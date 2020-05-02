@@ -38,41 +38,48 @@ namespace PMSWCFService
                 XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
-                    Mapper.Initialize(cfg => cfg.CreateMap<Sample, DcSample>());
                     var query = from m in db.DeliveryItems
                                 join mm in db.Deliverys on m.DeliveryID equals mm.ID
-                                where m.ProductType == PMSCommon.ProductType.靶材.ToString()
+                                where (m.ProductType == PMSCommon.ProductType.靶材.ToString()
+                                || m.ProductType == PMSCommon.ProductType.绑定.ToString())
                                 && m.DeliveryType == PMSCommon.DeliveryType.最终发货.ToString()
-                                && m.State != PMSCommon.SimpleState.正常.ToString()
+                                && m.State == PMSCommon.SimpleState.正常.ToString()
                                 && mm.State == PMSCommon.DeliveryState.未完成.ToString()
                                 orderby m.CreateTime descending
-                                select m;
+                                select new { DeliveryItem = m, Delivery = mm };
 
                     List<DcDeliveryItemSampleCheckModel> sampleChecks = new List<DcDeliveryItemSampleCheckModel>();
-                    foreach (var item in query.Take(30))
+                    foreach (var item in query.ToList())
                     {
                         var sample = new DcDeliveryItemSampleCheckModel();
-                        sample.ProductID = item.ProductID;
-                        sample.Composition = item.Composition;
+                        sample.DeliveryTime = item.DeliveryItem.CreateTime;
+                        sample.ProductID = item.DeliveryItem.ProductID;
+                        sample.Composition = item.DeliveryItem.Composition;
+                        sample.Customer = item.DeliveryItem.Customer;
 
                         //获取PMINumber
-                        var test_record = DeliveryItemSampleCheckHelper.GetPMINumber(item.ProductID);
-                        if (string.IsNullOrEmpty(test_record.PMINumber))
+                        var test_record = DeliveryItemSampleCheckHelper.GetPMINumber(item.DeliveryItem.ProductID);
+                        if (!string.IsNullOrEmpty(test_record.PMINumber))
                         {
                             sample.PMINumber = test_record.PMINumber;
 
                             //获取样品记录信息
                             var sample_list = DeliveryItemSampleCheckHelper.CheckSample(sample.PMINumber);
-                            string s_information = "", s_deliveryInformation = "";
-                            foreach (var s in sample_list)
+                            //只记录找到样品记录的
+                            if (sample_list.Count > 0)
                             {
-                                s_information += $"[{s.OriginalRequirement}]";
-                                s_deliveryInformation += $"[{s.PMINumber}-{s.TrackingStage}]";
+                                string s_information = "", s_deliveryInformation = "";
+                                foreach (var s in sample_list)
+                                {
+                                    s_information += $"[{s.OriginalRequirement}]";
+                                    s_deliveryInformation += $"[{s.PMINumber}-{s.SampleID}-{s.TrackingStage}]";
+                                }
+                                sample.SampleInformation = s_information;
+                                sample.SampleDeliveryInformation = s_deliveryInformation;
+                                //查询对应信息
+                                sampleChecks.Add(sample);
                             }
-                            sample.SampleInformation = s_information;
-                            sample.SampleDeliveryInformation = s_deliveryInformation;
-                            //查询对应信息
-                            sampleChecks.Add(sample);
+
                         }
 
                     }

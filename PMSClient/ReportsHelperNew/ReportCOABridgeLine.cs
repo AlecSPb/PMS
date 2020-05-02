@@ -89,19 +89,15 @@ namespace PMSClient.ReportsHelperNew
                     dict.Add("最大空腔直径", "Max Void Dia.");
                     dict.Add("深度", "Depth");
                     dict.Add("总空腔个数", "Void Count");
-                   flawarea = COAHelper.ReplaceChineseCharacter(model.CScan, dict);
+                    flawarea = COAHelper.ReplaceChineseCharacter(model.CScan, dict);
                 }
                 doc.ReplaceText("[FlawArea]", flawarea);
 
                 //粗糙度值
-                if (model.ProductID.Contains("#"))
-                {
-                    doc.ReplaceText("[Roughness]", model.Roughness);
-                }
-                else
-                {
-                    doc.ReplaceText("[Roughness]", "-");
-                }
+
+                doc.ReplaceText("[Roughness]", model.Roughness ?? "");
+
+
 
                 int currentRowIndex = 16;
 
@@ -220,7 +216,7 @@ namespace PMSClient.ReportsHelperNew
                                 }
                             }
                             cell.Paragraphs[0].Append(s).FontSize(8)
-                                .Font(new FontFamily("等线")).Alignment=Alignment.right;
+                                .Font(new FontFamily("等线")).Alignment = Alignment.right;
                             //if (j == 0)
                             //{
                             //    continue;

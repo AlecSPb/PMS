@@ -39,6 +39,7 @@
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonPrint}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Print}"/>
             <Button Content="{StaticResource ButtonExcel}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Excel}"/>
+            <Button Content="{StaticResource ButtonSampleTrace}" Style="{StaticResource StyleButtonCommon}" Command="{Binding SampleTrace}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource ButtonSinglePrepared}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnPreparedBrush}"/>
 
