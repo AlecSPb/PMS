@@ -167,8 +167,36 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<SimpleMaterialVM>();
             SimpleIoc.Default.Register<SimpleMaterialEditVM>();
+
+            SimpleIoc.Default.Register<ConsumableInventoryVM>();
+            SimpleIoc.Default.Register<ConsumableInventorySelectVM>();
+            SimpleIoc.Default.Register<ConsumableInventoryEditVM>();
+            SimpleIoc.Default.Register<ConsumablePurchaseVM>();
+            SimpleIoc.Default.Register<ConsumablePurchaseEditVM>();
         }
         #region Properties
+        public ConsumableInventoryVM ConsumableInventory
+        {
+            get { return SimpleIoc.Default.GetInstance<ConsumableInventoryVM>(); }
+        }
+        public ConsumableInventorySelectVM ConsumableInventorySelect
+        {
+            get { return SimpleIoc.Default.GetInstance<ConsumableInventorySelectVM>(); }
+        }
+        public ConsumableInventoryEditVM ConsumableInventoryEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<ConsumableInventoryEditVM>(); }
+        }
+        public ConsumablePurchaseVM ConsumablePurchase
+        {
+            get { return SimpleIoc.Default.GetInstance<ConsumablePurchaseVM>(); }
+        }
+        public ConsumablePurchaseEditVM ConsumablePurchaseEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<ConsumablePurchaseEditVM>(); }
+        }
+
+
         public SimpleMaterialVM SimpleMaterial
         {
             get { return SimpleIoc.Default.GetInstance<SimpleMaterialVM>(); }

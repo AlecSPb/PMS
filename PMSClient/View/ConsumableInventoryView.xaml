@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="PMSClient.View.ConsumableInventoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             xmlns:local="clr-namespace:PMSClient.View"
+             mc:Ignorable="d" 
+            d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=ConsumableInventory}">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{StaticResource PageConsumableInventory}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
+                    Command="{Binding GoToNavigation}"/>
+            <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
+            <TextBlock Text="{StaticResource OSOrderLot}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchOrderLot,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource OSOrderName}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchOrderName,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource OSSupplier}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchSupplier,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
+        </StackPanel>
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding ConsumableInventories}"
+                  LoadingRow="DataGrid_LoadingRow">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource OSOrderLot}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding OrderLot}"/>
+                <DataGridTextColumn Header="{StaticResource OSOrderName}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding OrderName}"/>
+                <DataGridTextColumn Header="{StaticResource OSDimension}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Dimension}"/>
+                <DataGridTextColumn Header="{StaticResource OSSupplier}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Supplier}"/>
+                <DataGridTextColumn Header="{StaticResource OSQuantity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="{StaticResource OSQuantityUnit}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding QuantityUnit}"/>
+                <DataGridTextColumn Header="{StaticResource OSCost}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Cost,StringFormat=￥{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource OSState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding State}"/>
+                <DataGridTextColumn Header="{StaticResource OSPaidState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PaidState}"/>
+                <DataGridTextColumn Header="{StaticResource OSCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Creator}"/>
+                <DataGridTextColumn Header="{StaticResource OSCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource OSFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource OSRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Remark}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
+                             LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
+                      
+    </Grid>
+</UserControl>

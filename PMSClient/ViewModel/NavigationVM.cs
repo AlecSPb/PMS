@@ -251,6 +251,16 @@ namespace PMSClient.ViewModel
              {
                  NavigationService.GoTo(PMSViews.SimpleMaterial);
              }, () => _session.IsInGroup(AccessGrant.ViewMaterialOrder));
+
+
+            GoToConsumableInventory = new RelayCommand(() =>
+              {
+                  NavigationService.GoTo(PMSViews.ConsumableInventory);
+              }, () => _session.IsInGroup("ConsumableInventory"));
+            GoToConsumablePurchase = new RelayCommand(() =>
+            {
+                NavigationService.GoTo(PMSViews.ConsumablePurchase);
+            }, () => _session.IsInGroup("ConsumablePurchase"));
             #endregion
         }
 
@@ -414,6 +424,8 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToSample { get; set; }
         public RelayCommand GoToRawMaterialSheet { get; set; }
         public RelayCommand GoToSimpleMaterial { get; set; }
+        public RelayCommand GoToConsumableInventory { get; set; }
+        public RelayCommand GoToConsumablePurchase { get; set; }
 
         private void InitializeData()
         {

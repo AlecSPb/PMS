@@ -563,6 +563,21 @@ namespace PMSClient
                 case PMSViews.SimpleMaterialEdit:
                     NavigateTo(_views.SimpleMaterialEdit);
                     break;
+                case PMSViews.ConsumableInventory:
+                    NavigateTo(_views.ConsumableInventory);
+                    break;
+                case PMSViews.ConsumableInventorySelect:
+                    NavigateTo(_views.ConsumableInventorySelect);
+                    break;
+                case PMSViews.ConsumableInventoryEdit:
+                    NavigateTo(_views.ConsumableInventoryEdit);
+                    break;
+                case PMSViews.ConsumablePurchase:
+                    NavigateTo(_views.ConsumablePurchase);
+                    break;
+                case PMSViews.ConsumablePurchaseEdit:
+                    NavigateTo(_views.ConsumablePurchaseEdit);
+                    break;
                 default:
                     break;
             }

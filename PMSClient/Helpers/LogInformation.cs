@@ -68,6 +68,11 @@ namespace PMSClient.Helper
             return CurrentAccesses.Where(i => i.AccessCode == accessCode).Count() > 0;
         }
 
+        /// <summary>
+        /// 判断当前用户是否在用户组里
+        /// </summary>
+        /// <param name="groups"></param>
+        /// <returns></returns>
         public bool IsInGroup(string[] groups)
         {
             if (groups == null) return false;
@@ -84,7 +89,16 @@ namespace PMSClient.Helper
             }
             return false;
         }
-
+        /// <summary>
+        /// 判断当前用户是否在用户组里-从数据库里
+        /// </summary>
+        /// <param name="controlName"></param>
+        /// <returns></returns>
+        public bool IsInGroup(string controlName)
+        {
+            if (string.IsNullOrEmpty(controlName)) return false;
+            return IsInGroup(GetAccessArray(controlName));
+        }
         /// <summary>
         /// 从数据库里根据控制名来查询组字符串
         /// </summary>
@@ -125,5 +139,29 @@ namespace PMSClient.Helper
         {
             return CurrentUser != null;
         }
+
+        /// <summary>
+        /// 从数据库里获取对应权限组
+        /// </summary>
+        /// <param name="controlName"></param>
+        /// <returns></returns>
+        public string[] GetAccessArray(string controlName)
+        {
+            try
+            {
+                using (var service = new UserSimpleServiceClient())
+                {
+                    var groupstring = service.GetAccessGrantByControl(controlName);
+                    string[] groups = groupstring.Split(new string[] { "+" }, StringSplitOptions.RemoveEmptyEntries);
+                    return groups;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+        }
+
     }
 }

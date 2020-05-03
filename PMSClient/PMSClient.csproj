@@ -710,6 +710,11 @@
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
+    <Compile Include="ViewModel\ConsumablePurchaseEditVM.cs" />
+    <Compile Include="ViewModel\ConsumableInventoryEditVM.cs" />
+    <Compile Include="ViewModel\ConsumablePurchaseVM.cs" />
+    <Compile Include="ViewModel\ConsumableInventoryVM.cs" />
+    <Compile Include="ViewModel\ConsumableInventorySelectVM.cs" />
     <Compile Include="ViewModel\SimpleMaterialEditVM.cs" />
     <Compile Include="ViewModel\SimpleMaterialVM.cs" />
     <Compile Include="ViewModel\RawMaterialSheetEditVM.cs" />
@@ -797,6 +802,12 @@
     <Compile Include="View\CheckListReadView.xaml.cs">
       <DependentUpon>CheckListReadView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ConsumablePurchaseEditView.xaml.cs">
+      <DependentUpon>ConsumablePurchaseEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConsumablePurchaseView.xaml.cs">
+      <DependentUpon>ConsumablePurchaseView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CustomerEditView.xaml.cs">
       <DependentUpon>CustomerEditView.xaml</DependentUpon>
     </Compile>
@@ -811,6 +822,15 @@
     </Compile>
     <Compile Include="View\CheckListEditView.xaml.cs">
       <DependentUpon>CheckListEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConsumableInventoryEditView.xaml.cs">
+      <DependentUpon>ConsumableInventoryEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConsumableInventoryView.xaml.cs">
+      <DependentUpon>ConsumableInventoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConsumableInventorySelectView.xaml.cs">
+      <DependentUpon>ConsumableInventorySelectView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SimpleMaterialEditView.xaml.cs">
       <DependentUpon>SimpleMaterialEditView.xaml</DependentUpon>
@@ -1502,6 +1522,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\ConsumablePurchaseEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ConsumablePurchaseView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\CustomerEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1519,6 +1547,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CheckListEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ConsumableInventoryEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ConsumableInventoryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ConsumableInventorySelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

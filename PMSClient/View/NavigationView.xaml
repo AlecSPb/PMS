@@ -107,7 +107,7 @@
                         <Button Content="{StaticResource PageSample}" Grid.Row="0" Grid.Column="6"
                         Command="{Binding GoToSample}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageConsumablePurchase}" Grid.Row="0" Grid.Column="7"
-                        Command="{Binding GoToMisson}" Style="{StaticResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToConsumablePurchase}" Style="{StaticResource StyleButtonNavigation}"/>
 
                         <Button Content="{StaticResource PageMaterial}" Grid.Row="1" Grid.Column="0"
                         Style="{StaticResource StyleButtonNavigationTitle}"/>
@@ -149,7 +149,7 @@
                         <Button Content="{StaticResource PageCompound}" Grid.Row="3" Grid.Column="1"
                         Command="{Binding GoToBDCompound}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageConsumableInventory}" Grid.Row="3" Grid.Column="2"
-                        Command="{Binding GoToMisson}" Style="{StaticResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToConsumableInventory}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageOutsideProcess}" Grid.Row="3" Grid.Column="3"
                         Command="{Binding GoToOutsideProcess}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PagePMICounter}" Grid.Row="3" Grid.Column="4"
