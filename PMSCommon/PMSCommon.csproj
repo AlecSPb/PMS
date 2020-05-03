@@ -53,6 +53,9 @@
     <Compile Include="AccessState.cs" />
     <Compile Include="BondingState.cs" />
     <Compile Include="CommonToolState.cs" />
+    <Compile Include="ConsumableCategory.cs" />
+    <Compile Include="ConsumableGrade.cs" />
+    <Compile Include="ConsumableUnit.cs" />
     <Compile Include="DeliveryExpress.cs" />
     <Compile Include="DeliveryState.cs" />
     <Compile Include="DeliveryType.cs" />

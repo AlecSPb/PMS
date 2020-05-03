@@ -47,6 +47,7 @@
           <xs:element minOccurs="0" name="History" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaxWarningQuantity" type="xs:double" />
           <xs:element minOccurs="0" name="MinWarningQuantity" type="xs:double" />
           <xs:element minOccurs="0" name="PersonInCharge" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Quantity" type="xs:double" />

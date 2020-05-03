@@ -29,6 +29,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string PersonInCharge { get; set; }//负责人
         [DataMember]
+        public double MaxWarningQuantity { get; set; }//最大报警量
+        [DataMember]
         public double MinWarningQuantity { get; set; }//最小报警量
 
         [DataMember]

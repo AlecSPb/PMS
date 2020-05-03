@@ -21,6 +21,7 @@ namespace PMSDAL
         public string Grade { get; set; }//ABC级别
         public string StorePosition { get; set; }//存储位置
         public string PersonInCharge { get; set; }//负责人
+        public double MaxWarningQuantity { get; set; }//最大报警量
         public double MinWarningQuantity { get; set; }//最小报警量
 
         public string History { get; set; }//存储历史

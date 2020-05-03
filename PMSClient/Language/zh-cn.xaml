@@ -1059,6 +1059,7 @@
     <sys:String x:Key="CIStorePosition">存储位置</sys:String>
     <sys:String x:Key="CIPersonInCharge">负责人</sys:String>
     <sys:String x:Key="CIMinWarningQuantity">最小警告量</sys:String>
+    <sys:String x:Key="CIMaxWarningQuantity">最大警告量</sys:String>
     <sys:String x:Key="CIHistory">历史</sys:String>
     <sys:String x:Key="CIRemark">备注</sys:String>
     <sys:String x:Key="CILastUpdateTime">最后更新时间</sys:String>

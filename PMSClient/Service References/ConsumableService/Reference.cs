@@ -133,6 +133,9 @@ namespace PMSClient.ConsumableService {
         private string LastUpdateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MaxWarningQuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double MinWarningQuantityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -227,6 +230,19 @@ namespace PMSClient.ConsumableService {
                 if ((object.ReferenceEquals(this.LastUpdateTimeField, value) != true)) {
                     this.LastUpdateTimeField = value;
                     this.RaisePropertyChanged("LastUpdateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double MaxWarningQuantity {
+            get {
+                return this.MaxWarningQuantityField;
+            }
+            set {
+                if ((this.MaxWarningQuantityField.Equals(value) != true)) {
+                    this.MaxWarningQuantityField = value;
+                    this.RaisePropertyChanged("MaxWarningQuantity");
                 }
             }
         }
