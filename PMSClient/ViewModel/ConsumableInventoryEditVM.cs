@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.MainService;
+using PMSClient.ConsumableService;
 
 namespace PMSClient.ViewModel
 {
@@ -14,16 +15,16 @@ namespace PMSClient.ViewModel
         public ConsumableInventoryEditVM()
         {
             States = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.OrderState>(States);
+            PMSBasicDataService.SetListDS<PMSCommon.SimpleState>(States);
 
-            OutSourceTypes = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.OutSourceType>(OutSourceTypes);
+            ConsumableCategories = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.ConsumableCategory>(ConsumableCategories);
 
-            Suppliers = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.OutSourceSupplier>(Suppliers);
+            ConsumableGrades = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.ConsumableGrade>(ConsumableGrades);
 
-            PaidStates = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.OutSourcePaidState>(PaidStates);
+            ConsumableUnits = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.ConsumableUnit>(ConsumableUnits);
 
             InitializeCommands();
         }
@@ -38,63 +39,59 @@ namespace PMSClient.ViewModel
         public void SetNew()
         {
             IsNew = true;
-            var model = new DcOutSource();
+            var model = new DcConsumableInventory();
             #region 初始化
             IsNew = true;
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.State = PMSCommon.OrderState.未完成.ToString();
-            model.OrderType = PMSCommon.OrderProductType.靶材.ToString();
-            model.Dimension = "";
-            model.QuantityUnit = "片";
-            model.Quantity = 1;
-            model.Supplier = "";
-            model.OrderLot = $"WG{DateTime.Now.ToString("yyMMdd")}";
-            model.OrderName = "";
-            model.Cost = 0;
+            model.State = PMSCommon.SimpleState.正常.ToString();
+            model.Category = PMSCommon.ConsumableCategory.劳保用品.ToString();
+            model.ItemName = "";
+            model.Specification = "";
+            model.Details = "";
+            model.Quantity = 0;
+            model.QuantityUnit = PMSCommon.ConsumableUnit.个.ToString();
+            model.Grade = PMSCommon.ConsumableGrade.Grade_B.ToString();
+            model.MaxWarningQuantity = 1000;
+            model.MinWarningQuantity = 100;
+            model.History = "";
+            model.CountHistory = "";
             model.Remark = "";
-            model.PaidState = PMSCommon.OutSourcePaidState.未付款.ToString();
-            model.FinishTime = DateTime.Now.AddDays(30);
-
+            model.LastUpdateTime = DateTime.Now;
             #endregion
-            CurrentOutSource = model;
+            CurrentConsumableInventory = model;
         }
-        public void SetDuplicate(DcOutSource model)
+        public void SetDuplicate(DcConsumableInventory model)
         {
             if (model != null)
             {
                 IsNew = true;
-                CurrentOutSource = model;
-                CurrentOutSource.ID = Guid.NewGuid();
-                CurrentOutSource.CreateTime = DateTime.Now;
-                CurrentOutSource.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                CurrentOutSource.State = PMSCommon.OrderState.未完成.ToString();
-                CurrentOutSource.OrderType = model.OrderType;
-                CurrentOutSource.OrderName = model.OrderName;
-                CurrentOutSource.OrderLot = model.OrderLot;
-                CurrentOutSource.Supplier = model.Supplier;
-                CurrentOutSource.Dimension = model.Dimension;
-                CurrentOutSource.Quantity = model.Quantity;
-                CurrentOutSource.QuantityUnit = model.QuantityUnit;
-                CurrentOutSource.Cost = model.Cost;
-                CurrentOutSource.Remark = model.Remark;
-                CurrentOutSource.FinishTime = CurrentOutSource.CreateTime.AddDays(30);
-                CurrentOutSource.PaidState = model.PaidState;
+                CurrentConsumableInventory = model;
+                CurrentConsumableInventory.ID = Guid.NewGuid();
+                CurrentConsumableInventory.CreateTime = DateTime.Now;
+                CurrentConsumableInventory.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                CurrentConsumableInventory.State = PMSCommon.SimpleState.正常.ToString();
+                CurrentConsumableInventory.LastUpdateTime = DateTime.Now;
+                CurrentConsumableInventory.Quantity = 0;
+                CurrentConsumableInventory.History = "";
+                CurrentConsumableInventory.CountHistory = "";
+                CurrentConsumableInventory.Remark = "";
             }
         }
-        public void SetEdit(DcOutSource model)
+
+        public void SetEdit(DcConsumableInventory model)
         {
             if (model != null)
             {
                 IsNew = false;
-                CurrentOutSource = model;
+                CurrentConsumableInventory = model;
             }
         }
 
-        private  void GoBack()
+        private void GoBack()
         {
-            NavigationService.GoTo(PMSViews.OutSource);
+            NavigationService.GoTo(PMSViews.ConsumableInventory);
         }
 
         private void ActionSave()
@@ -103,7 +100,7 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
-            if (CurrentOutSource.State == "作废")
+            if (CurrentConsumableInventory.State == "作废")
             {
                 if (!PMSDialogService.ShowYesNo("请问", "确定要作废吗？"))
                 {
@@ -113,21 +110,21 @@ namespace PMSClient.ViewModel
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
-                var service = new OutSourceServiceClient();
+                var service = new ConsumableServiceClient();
                 if (IsNew)
                 {
-                    service.AddOutSource(CurrentOutSource, uid);
+                    service.AddConsumableInventory(CurrentConsumableInventory);
                 }
                 else
                 {
-                    if (CurrentOutSource.State==PMSCommon.OrderState.最终完成.ToString())
+                    if (CurrentConsumableInventory.State == PMSCommon.SimpleState.正常.ToString())
                     {
-                        CurrentOutSource.FinishTime = DateTime.Now;
+                        CurrentConsumableInventory.LastUpdateTime = DateTime.Now;
                     }
-                    service.UpdateOutSource(CurrentOutSource, uid);
+                    service.UpdateConsumableInventory(CurrentConsumableInventory);
                 }
                 service.Close();
-                PMSHelper.ViewModels.OutSource.RefreshData();
+                PMSHelper.ViewModels.ConsumableInventory.RefreshData();
                 GoBack();
             }
             catch (Exception ex)
@@ -135,21 +132,20 @@ namespace PMSClient.ViewModel
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
-        public List<string> OutSourceTypes { get; set; }
-        public List<string> PaidStates { get; set; }
+        public List<string> ConsumableCategories { get; set; }
+        public List<string> ConsumableUnits { get; set; }
+        public List<string> ConsumableGrades { get; set; }
         public List<string> States { get; set; }
-        public List<string> Suppliers { get; set; }
 
-        private DcOutSource currentOutSource;
-        public DcOutSource CurrentOutSource
+        private DcConsumableInventory currentConsumableInventory;
+        public DcConsumableInventory CurrentConsumableInventory
         {
-            get { return currentOutSource; }
+            get { return currentConsumableInventory; }
             set
             {
-                currentOutSource = value;
-                RaisePropertyChanged(nameof(CurrentOutSource));
+                currentConsumableInventory = value;
+                RaisePropertyChanged(nameof(CurrentConsumableInventory));
             }
         }
-
     }
 }

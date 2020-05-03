@@ -1046,6 +1046,7 @@
     <sys:String x:Key="CIMinWarningQuantity">Min Warning Quantity</sys:String>
     <sys:String x:Key="CIMaxWarningQuantity">Max Warning Quantity</sys:String>
     <sys:String x:Key="CIHistory">History</sys:String>
+    <sys:String x:Key="CICountHistory">Count History</sys:String>
     <sys:String x:Key="CIRemark">Remark</sys:String>
     <sys:String x:Key="CILastUpdateTime">Last Update Time</sys:String>
 

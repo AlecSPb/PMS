@@ -19,14 +19,8 @@
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
-            <TextBlock Text="{StaticResource OSOrderLot}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchOrderLot,UpdateSourceTrigger=PropertyChanged}" 
-                     Style="{StaticResource StyleTextBoxSearch}"/>
-            <TextBlock Text="{StaticResource OSOrderName}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchOrderName,UpdateSourceTrigger=PropertyChanged}" 
-                     Style="{StaticResource StyleTextBoxSearch}"/>
-            <TextBlock Text="{StaticResource OSSupplier}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchSupplier,UpdateSourceTrigger=PropertyChanged}" 
+            <TextBlock Text="{StaticResource CIItemName}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchItemName,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
@@ -50,32 +44,44 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource OSOrderLot}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding OrderLot}"/>
-                <DataGridTextColumn Header="{StaticResource OSOrderName}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding OrderName}"/>
-                <DataGridTextColumn Header="{StaticResource OSDimension}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Dimension}"/>
-                <DataGridTextColumn Header="{StaticResource OSSupplier}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Supplier}"/>
-                <DataGridTextColumn Header="{StaticResource OSQuantity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource CICategory}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Category}"/>
+                <DataGridTextColumn Header="{StaticResource CIItemName}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding ItemName}"/>
+                <DataGridTextColumn Header="{StaticResource CISpecification}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Specification}"/>
+                <DataGridTextColumn Header="{StaticResource CIDetails}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Details}"/>
+                <DataGridTextColumn Header="{StaticResource CIQuantity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Binding="{Binding Quantity}"/>
-                <DataGridTextColumn Header="{StaticResource OSQuantityUnit}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource CIQuantityUnit}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding QuantityUnit}"/>
-                <DataGridTextColumn Header="{StaticResource OSCost}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
-                                    Binding="{Binding Cost,StringFormat=￥{0:F2}}"/>
-                <DataGridTextColumn Header="{StaticResource OSState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding State}"/>
-                <DataGridTextColumn Header="{StaticResource OSPaidState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding PaidState}"/>
-                <DataGridTextColumn Header="{StaticResource OSCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Creator}"/>
-                <DataGridTextColumn Header="{StaticResource OSCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource OSFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource OSRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource CIGrade}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Grade}"/>
+                <DataGridTextColumn Header="{StaticResource CIStorePosition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding StorePosition}"/>
+                <DataGridTextColumn Header="{StaticResource CIPersonInCharge}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PersonInCharge}"/>
+                <DataGridTextColumn Header="{StaticResource CIMaxWarningQuantity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding MaxWarningQuantity}"/>
+                <DataGridTextColumn Header="{StaticResource CIMinWarningQuantity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding MinWarningQuantity}"/>
+                <DataGridTextColumn Header="{StaticResource CIHistory}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding History}"/>
+                <DataGridTextColumn Header="{StaticResource CICountHistory}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CountHistory}"/>
+                <DataGridTextColumn Header="{StaticResource CIRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
+                <DataGridTextColumn Header="{StaticResource CILastUpdateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding LastUpdateTime}"/>
+                
+                <DataGridTextColumn Header="{StaticResource CIState}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding State}"/>
+                <DataGridTextColumn Header="{StaticResource CICreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CreateTime}"/>
+                <DataGridTextColumn Header="{StaticResource CICreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Creator}"/>
+
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"

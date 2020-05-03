@@ -25,7 +25,8 @@ namespace PMSDAL
         public double MinWarningQuantity { get; set; }//最小报警量
 
         public string History { get; set; }//存储历史
+        public string CountHistory { get; set; }//盘点历史 200503+登记数量+实际数量;
         public string Remark { get; set; }
-        public string LastUpdateTime { get; set; }//最后一次编辑时间
+        public DateTime LastUpdateTime { get; set; }//最后一次编辑时间
     }
 }

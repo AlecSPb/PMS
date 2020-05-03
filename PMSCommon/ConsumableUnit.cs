@@ -14,6 +14,8 @@ namespace PMSCommon
         g,
         kg,
         个,
+        双,
+        桶,
         打,
         副,
         壶,

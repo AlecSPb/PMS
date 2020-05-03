@@ -36,8 +36,10 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string History { get; set; }//存储历史
         [DataMember]
+        public string CountHistory { get; set; }//盘点历史 200503+登记数量+实际数量;
+        [DataMember]
         public string Remark { get; set; }
         [DataMember]
-        public string LastUpdateTime { get; set; }//最后一次编辑时间
+        public DateTime LastUpdateTime { get; set; }//最后一次编辑时间
     }
 }

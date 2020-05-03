@@ -118,6 +118,9 @@ namespace PMSClient.ConsumableService {
         private string CategoryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CountHistoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DetailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -130,7 +133,7 @@ namespace PMSClient.ConsumableService {
         private string ItemNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastUpdateTimeField;
+        private System.DateTime LastUpdateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double MaxWarningQuantityField;
@@ -165,6 +168,19 @@ namespace PMSClient.ConsumableService {
                 if ((object.ReferenceEquals(this.CategoryField, value) != true)) {
                     this.CategoryField = value;
                     this.RaisePropertyChanged("Category");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CountHistory {
+            get {
+                return this.CountHistoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CountHistoryField, value) != true)) {
+                    this.CountHistoryField = value;
+                    this.RaisePropertyChanged("CountHistory");
                 }
             }
         }
@@ -222,12 +238,12 @@ namespace PMSClient.ConsumableService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastUpdateTime {
+        public System.DateTime LastUpdateTime {
             get {
                 return this.LastUpdateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.LastUpdateTimeField, value) != true)) {
+                if ((this.LastUpdateTimeField.Equals(value) != true)) {
                     this.LastUpdateTimeField = value;
                     this.RaisePropertyChanged("LastUpdateTime");
                 }

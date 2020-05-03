@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.MainService;
+using PMSClient.ConsumableService;
 
 namespace PMSClient.ViewModel
 {
@@ -33,6 +34,17 @@ namespace PMSClient.ViewModel
         {
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
+            Select = new RelayCommand(ActionSelect);
+        }
+
+        private void ActionSelect()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetBySelect(DcConsumableInventory model)
+        {
+
         }
 
         public void SetNew()
@@ -151,5 +163,6 @@ namespace PMSClient.ViewModel
             }
         }
 
+        public RelayCommand Select { get; set; }
     }
 }
