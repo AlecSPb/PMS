@@ -39,6 +39,7 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetConsumableInventoryCount(string item);
 
-
+        [OperationContract]
+        List<DcConsumableInventory> GetConsumableInventoryWarning();
     }
 }

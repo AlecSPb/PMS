@@ -75,7 +75,10 @@ namespace PMSClient.View
                         new Express.Operation().TraceUnCompleted();
                         //检查发货靶材的样品发出情况
                         new Components.DeliveryItemSampleCheck.DeliveryItemSampleCheckService().Run();
+                        //检查消耗品库存预警情况
+                        new Components.ConsumableWarning.ConsumableWarningService().Run();
                     }
+
                     //检查是否需要显示新文档
                     new Components.NewFeatureDocShow.NewFeatureShowService().Run();
                 }

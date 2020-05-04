@@ -61,7 +61,7 @@ namespace PMSWCFService
                     var query = from p in dc.ConsumableInventories
                                 where p.ItemName.Contains(itemname)
                                 && p.State != PMSCommon.SimpleState.作废.ToString()
-                                orderby p.Category,p.ItemName
+                                orderby p.Category, p.ItemName
                                 select p;
                     Mapper.Initialize(cfg => cfg.CreateMap<ConsumableInventory, DcConsumableInventory>());
                     var models = Mapper.Map<List<ConsumableInventory>, List<DcConsumableInventory>>(query.Skip(s).Take(t).ToList());
@@ -87,6 +87,30 @@ namespace PMSWCFService
                                 && p.State != PMSCommon.SimpleState.作废.ToString()
                                 select p;
                     return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcConsumableInventory> GetConsumableInventoryWarning()
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.ConsumableInventories
+                                where (p.Quantity < p.MinWarningQuantity || p.Quantity > p.MaxWarningQuantity)
+                                && p.State != PMSCommon.SimpleState.作废.ToString()
+                                orderby p.Category, p.ItemName
+                                select p;
+                    Mapper.Initialize(cfg => cfg.CreateMap<ConsumableInventory, DcConsumableInventory>());
+                    var models = Mapper.Map<List<ConsumableInventory>, List<DcConsumableInventory>>(query.ToList());
+                    return models;
                 }
             }
             catch (Exception ex)

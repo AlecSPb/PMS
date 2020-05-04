@@ -41,7 +41,7 @@ namespace PMSClient.Express
             var express_track = new ToolDialog.ExpressTrack();
             express_track.Tip = "需要自动查询的物流记录请设置状态为【未完成】 绿色，不需要则设置为其他状态；目前只支持UPS和SF";
             express_track.TrackInfo = await GetTraceInformationAsync(models);
-            express_track.ShowDialog();
+            express_track.Show();
         }
 
         /// <summary>

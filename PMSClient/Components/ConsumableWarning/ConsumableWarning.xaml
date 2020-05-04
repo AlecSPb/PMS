@@ -1,0 +1,60 @@
+﻿<Window x:Class="PMSClient.Components.ConsumableWarning.ConsumableWarning"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.Components.ConsumableWarning"
+        mc:Ignorable="d"
+        Title="消耗品库存预警信息" Height="450" Width="1100" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Orange">
+            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="显示所有处于警告状态的消耗品库存信息"
+                       HorizontalAlignment="Stretch"
+                       Foreground="Blue"/>
+            <TextBlock Text="{StaticResource IndicatorInventoryMin}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource InventoryMinWarningBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorInventoryMax}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource InventoryMaxWarningBrush}"/>
+        </StackPanel>
+        <DataGrid x:Name="DgMain" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"
+                  LoadingRow="DataGrid_LoadingRow">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{StaticResource CICategory}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Category}"/>
+                <DataGridTextColumn Header="{StaticResource CIItemName}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding ItemName}"/>
+                <DataGridTextColumn Header="{StaticResource CISpecification}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Specification}"/>
+                <DataGridTextColumn Header="{StaticResource CIDetails}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Details}"/>
+                <DataGridTextColumn Header="{StaticResource CIQuantity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="{StaticResource CIQuantityUnit}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding QuantityUnit}"/>
+                <DataGridTextColumn Header="{StaticResource CIGrade}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Grade}"/>
+                <DataGridTextColumn Header="{StaticResource CIStorePosition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding StorePosition}"/>
+                <DataGridTextColumn Header="{StaticResource CIPersonInCharge}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PersonInCharge}"/>
+                <DataGridTextColumn Header="{StaticResource CIMaxWarningQuantity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding MaxWarningQuantity}"/>
+                <DataGridTextColumn Header="{StaticResource CIMinWarningQuantity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding MinWarningQuantity}"/>
+                <DataGridTextColumn Header="{StaticResource CIRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Remark}"/>
+                <DataGridTextColumn Header="{StaticResource CILastUpdateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding LastUpdateTime}"/>
+
+                <DataGridTextColumn Header="{StaticResource CIState}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding State}"/>
+                <DataGridTextColumn Header="{StaticResource CICreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CreateTime}"/>
+                <DataGridTextColumn Header="{StaticResource CICreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Creator}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

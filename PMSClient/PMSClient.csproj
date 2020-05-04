@@ -205,6 +205,10 @@
       <DependentUpon>RecordTestCheckDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="CheckLogic\RecordTestCheckLogic.cs" />
+    <Compile Include="Components\ConsumableWarning\ConsumableWarning.xaml.cs">
+      <DependentUpon>ConsumableWarning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ConsumableWarning\ConsumableWarningService.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputBase.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputFeedback.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputOutSource.cs" />
@@ -1199,6 +1203,10 @@
     <Page Include="Components\BatchDataProcess\QuickCheck\QuickCheck.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\ConsumableWarning\ConsumableWarning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Components\DeliveryItemSampleCheck\DeliveryItemSampleCheckView.xaml">
       <SubType>Designer</SubType>

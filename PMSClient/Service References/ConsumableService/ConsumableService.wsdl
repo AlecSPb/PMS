@@ -55,6 +55,12 @@
   <wsdl:message name="IConsumableService_GetConsumableInventoryCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetConsumableInventoryCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IConsumableService_GetConsumableInventoryWarning_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumableInventoryWarning" />
+  </wsdl:message>
+  <wsdl:message name="IConsumableService_GetConsumableInventoryWarning_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumableInventoryWarningResponse" />
+  </wsdl:message>
   <wsdl:portType name="IConsumableService">
     <wsdl:operation name="AddConsumablePurchase">
       <wsdl:input wsaw:Action="http://tempuri.org/IConsumableService/AddConsumablePurchase" message="tns:IConsumableService_AddConsumablePurchase_InputMessage" />
@@ -87,6 +93,10 @@
     <wsdl:operation name="GetConsumableInventoryCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IConsumableService/GetConsumableInventoryCount" message="tns:IConsumableService_GetConsumableInventoryCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IConsumableService/GetConsumableInventoryCountResponse" message="tns:IConsumableService_GetConsumableInventoryCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumableInventoryWarning">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsumableService/GetConsumableInventoryWarning" message="tns:IConsumableService_GetConsumableInventoryWarning_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsumableService/GetConsumableInventoryWarningResponse" message="tns:IConsumableService_GetConsumableInventoryWarning_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IConsumableService" type="tns:IConsumableService">
@@ -156,6 +166,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetConsumableInventoryCount">
       <soap:operation soapAction="http://tempuri.org/IConsumableService/GetConsumableInventoryCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumableInventoryWarning">
+      <soap:operation soapAction="http://tempuri.org/IConsumableService/GetConsumableInventoryWarning" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

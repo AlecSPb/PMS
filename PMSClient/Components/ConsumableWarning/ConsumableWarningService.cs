@@ -3,32 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSClient.SampleService;
+using PMSClient.ConsumableService;
 
-namespace PMSClient.Components.DeliveryItemSampleCheck
+namespace PMSClient.Components.ConsumableWarning
 {
-
-    public class DeliveryItemSampleCheckService
+    public class ConsumableWarningService
     {
         public void Run()
         {
-            if (XSHelper.XS.MessageBox.ShowYesNo("请问要查看[发货产品对应样品状态]情况吗？Y=查看 N=跳过"))
+            if (XSHelper.XS.MessageBox.ShowYesNo("请问要查看[消耗品库存预警]情况吗？Y=查看 N=跳过"))
             {
-                CheckDeliveryItemSample();
+                CheckConsumableInventory();
             }
         }
 
-        private async void CheckDeliveryItemSample()
+        private async void CheckConsumableInventory()
         {
             try
             {
-                using (var s = new SampleServiceClient())
+                using (var s = new ConsumableServiceClient())
                 {
                     StringBuilder sb = new StringBuilder();
-                    var result = await s.CheckDeliveryItemSampleStatusAsync();
+                    var result = await s.GetConsumableInventoryWarningAsync();
                     if (result.Count() > 0)
                     {
-                        var win = new DeliveryItemSampleCheckView();
+                        var win = new ConsumableWarning();
                         win.DgMain.ItemsSource = result;
                         win.Show();
                     }
@@ -44,5 +43,6 @@ namespace PMSClient.Components.DeliveryItemSampleCheck
                 throw;
             }
         }
+
     }
 }

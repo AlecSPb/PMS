@@ -605,6 +605,12 @@ namespace PMSClient.ConsumableService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IConsumableService/GetConsumableInventoryCount", ReplyAction="http://tempuri.org/IConsumableService/GetConsumableInventoryCountResponse")]
         System.Threading.Tasks.Task<int> GetConsumableInventoryCountAsync(string item);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IConsumableService/GetConsumableInventoryWarning", ReplyAction="http://tempuri.org/IConsumableService/GetConsumableInventoryWarningResponse")]
+        PMSClient.ConsumableService.DcConsumableInventory[] GetConsumableInventoryWarning();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IConsumableService/GetConsumableInventoryWarning", ReplyAction="http://tempuri.org/IConsumableService/GetConsumableInventoryWarningResponse")]
+        System.Threading.Tasks.Task<PMSClient.ConsumableService.DcConsumableInventory[]> GetConsumableInventoryWarningAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -696,6 +702,14 @@ namespace PMSClient.ConsumableService {
         
         public System.Threading.Tasks.Task<int> GetConsumableInventoryCountAsync(string item) {
             return base.Channel.GetConsumableInventoryCountAsync(item);
+        }
+        
+        public PMSClient.ConsumableService.DcConsumableInventory[] GetConsumableInventoryWarning() {
+            return base.Channel.GetConsumableInventoryWarning();
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.ConsumableService.DcConsumableInventory[]> GetConsumableInventoryWarningAsync() {
+            return base.Channel.GetConsumableInventoryWarningAsync();
         }
     }
 }
