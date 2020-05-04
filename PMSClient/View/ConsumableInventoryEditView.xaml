@@ -70,7 +70,8 @@
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource CIItemName}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
-                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding ItemName}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding ItemName}" Style="{StaticResource StyleTextBoxCommon}"
+                          Background="LightGreen"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="名称"/>
 

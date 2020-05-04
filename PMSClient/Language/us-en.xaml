@@ -1065,12 +1065,12 @@
     <sys:String x:Key="CPQuantity">Quantity</sys:String>
     <sys:String x:Key="CPQuantityUnit">Unit</sys:String>
     <sys:String x:Key="CPGrade">Grade</sys:String>
-    <sys:String x:Key="CPRemark">Remark</sys:String>
 
     <sys:String x:Key="CPSupplier">Supplier</sys:String>
     <sys:String x:Key="CPTotalCost">Total Cost</sys:String>
     <sys:String x:Key="CPProcessHistory">History</sys:String>
     <sys:String x:Key="CPLastUpdateTime">Last Update Time</sys:String>
+    <sys:String x:Key="CPRemark">Remark</sys:String>
 
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">Public</sys:String>

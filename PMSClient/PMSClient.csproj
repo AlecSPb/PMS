@@ -771,6 +771,8 @@
     <Compile Include="ViewModel\PlanStatisticVM.cs" />
     <Compile Include="ViewModel\ProductUnCompletedVM.cs" />
     <Compile Include="Helpers\RecordTestDuplicateHelper.cs" />
+    <Compile Include="ViewModel\VMHelper\CommonVMHelper.cs" />
+    <Compile Include="ViewModel\VMHelper\ComumableHelper.cs" />
     <Compile Include="ViewModel\VMHelper\ErrorMessage.cs" />
     <Compile Include="ViewModel\VMHelper\FailureVMHelper.cs" />
     <Compile Include="ViewModel\VMHelper\MaterialOrderVMHelper.cs" />

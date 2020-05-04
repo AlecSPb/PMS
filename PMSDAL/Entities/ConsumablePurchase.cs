@@ -24,6 +24,6 @@ namespace PMSDAL
         public double TotalCost { get; set; } //总花费
         public string ProcessHistory { get; set; }//已购买，已到货，发货已到
 
-        public string LastUpdateTime { get; set; }//最后一次编辑时间
+        public DateTime LastUpdateTime { get; set; }//最后一次编辑时间
     }
 }

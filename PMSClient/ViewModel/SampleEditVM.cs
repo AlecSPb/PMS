@@ -213,6 +213,9 @@ namespace PMSClient.ViewModel
                     return;
                 }
             }
+            //检查PMINumber是否符合格式规范
+            VMHelper.CommonVMHelper.CheckPMINumber(CurrentSample.PMINumber);
+
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;

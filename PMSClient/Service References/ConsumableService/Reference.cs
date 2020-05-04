@@ -374,7 +374,7 @@ namespace PMSClient.ConsumableService {
         private string ItemNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastUpdateTimeField;
+        private System.DateTime LastUpdateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProcessHistoryField;
@@ -450,12 +450,12 @@ namespace PMSClient.ConsumableService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastUpdateTime {
+        public System.DateTime LastUpdateTime {
             get {
                 return this.LastUpdateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.LastUpdateTimeField, value) != true)) {
+                if ((this.LastUpdateTimeField.Equals(value) != true)) {
                     this.LastUpdateTimeField = value;
                     this.RaisePropertyChanged("LastUpdateTime");
                 }

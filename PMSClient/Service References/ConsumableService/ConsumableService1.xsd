@@ -9,7 +9,7 @@
           <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Grade" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastUpdateTime" type="xs:dateTime" />
           <xs:element minOccurs="0" name="ProcessHistory" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Quantity" type="xs:double" />
           <xs:element minOccurs="0" name="QuantityUnit" nillable="true" type="xs:string" />

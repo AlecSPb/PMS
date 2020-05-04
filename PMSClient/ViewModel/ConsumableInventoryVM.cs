@@ -35,7 +35,19 @@ namespace PMSClient.ViewModel
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcConsumableInventory>(ActionEdit, CanEdit);
             Duplicate = new RelayCommand<DcConsumableInventory>(ActionDuplicate, CanDuplicate);
+            QuickChange = new RelayCommand<DcConsumableInventory>(ActionQuickChange, CanQuickChange);
         }
+
+        private bool CanQuickChange(DcConsumableInventory arg)
+        {
+            return PMSHelper.CurrentSession.IsInGroup("ConsumableInventoryQuickChange");
+        }
+
+        private void ActionQuickChange(DcConsumableInventory obj)
+        {
+   
+        }
+
         private bool CanDuplicate(DcConsumableInventory arg)
         {
             return PMSHelper.CurrentSession.IsInGroup("ConsumableInventoryEdit");
@@ -139,6 +151,7 @@ namespace PMSClient.ViewModel
         public ObservableCollection<DcConsumableInventory> ConsumableInventories { get; set; }
         #endregion
         public RelayCommand<DcConsumableInventory> Duplicate { get; set; }
+        public RelayCommand<DcConsumableInventory> QuickChange { get; set; }
 
     }
 }

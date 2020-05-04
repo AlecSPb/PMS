@@ -47,7 +47,7 @@ namespace PMSClient.ViewModel
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.Category = PMSCommon.ConsumableCategory.劳保用品.ToString();
-            model.ItemName = "";
+            model.ItemName = "品名";
             model.Specification = "";
             model.Details = "";
             model.Quantity = 0;
@@ -73,7 +73,17 @@ namespace PMSClient.ViewModel
                 CurrentConsumableInventory.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 CurrentConsumableInventory.State = PMSCommon.SimpleState.正常.ToString();
                 CurrentConsumableInventory.LastUpdateTime = DateTime.Now;
-                CurrentConsumableInventory.Quantity = 0;
+                CurrentConsumableInventory.Category = model.Category;
+                CurrentConsumableInventory.ItemName = model.ItemName;
+                CurrentConsumableInventory.Specification = model.Specification;
+                CurrentConsumableInventory.Details = model.Details;
+                CurrentConsumableInventory.Quantity = model.Quantity;
+                CurrentConsumableInventory.QuantityUnit = model.QuantityUnit;
+                CurrentConsumableInventory.Grade = model.Grade;
+                CurrentConsumableInventory.StorePosition = model.StorePosition;
+                CurrentConsumableInventory.PersonInCharge = model.PersonInCharge;
+                CurrentConsumableInventory.MaxWarningQuantity = model.MaxWarningQuantity;
+                CurrentConsumableInventory.MinWarningQuantity = model.MinWarningQuantity;
                 CurrentConsumableInventory.History = "";
                 CurrentConsumableInventory.CountHistory = "";
                 CurrentConsumableInventory.Remark = "";
@@ -107,9 +117,14 @@ namespace PMSClient.ViewModel
                     return;
                 }
             }
+
+            if (!VMHelper.ComumableHelper.IsStrEmptyNull(CurrentConsumableInventory.ItemName, "品名不能为空"))
+            {
+                return;
+            }
+
             try
             {
-                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 var service = new ConsumableServiceClient();
                 if (IsNew)
                 {

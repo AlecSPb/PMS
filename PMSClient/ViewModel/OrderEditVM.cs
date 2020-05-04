@@ -150,11 +150,8 @@ namespace PMSClient.ViewModel
                     if (CurrentOrder != null)
                     {
                         //检查PMINumber是否符合格式规范
-                        if (!OrderCheckLogic.CheckPMINumber(CurrentOrder.PMINumber))
-                        {
-                            PMSDialogService.ShowWarning($"PMINumber【{CurrentOrder.PMINumber}】不符合规范要求，\r\n规范要求格式为CD191212-A");
-                            return;
-                        }
+                        VMHelper.CommonVMHelper.CheckPMINumber(CurrentOrder.PMINumber);
+
                         //检查PMINumber是否被占用
                         if (service.CheckOrderPMINumberExist(CurrentOrder.PMINumber))
                         {

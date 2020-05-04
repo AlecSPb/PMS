@@ -116,19 +116,19 @@
                         <Button Content="{StaticResource PageMaterialOrder}" Grid.Row="1" Grid.Column="2"
                         Command="{Binding GoToMaterialOrder}" Style="{StaticResource StyleButtonNavigation}"/>
 
-                        <Button Content="{StaticResource PageSimpleMaterial}" Grid.Row="1" Grid.Column="3"
-                        Command="{Binding GoToSimpleMaterial}" Style="{StaticResource StyleButtonNavigation}"/>
-
-                        <Button Content="{StaticResource PageRawMaterialSheet}" Grid.Row="1" Grid.Column="4"
-                        Command="{Binding GoToRawMaterialSheet}" Style="{StaticResource StyleButtonNavigation}"/>
-
-                        <Button Content="{StaticResource PageMaterialOrderItemList}" Grid.Row="1" Grid.Column="5"
+                        <Button Content="{StaticResource PageMaterialOrderItemList}" Grid.Row="1" Grid.Column="3"
                         Command="{Binding GoToMaterialOrderItemList}" Style="{StaticResource StyleButtonNavigation}"/>
 
-                        <Button Content="{StaticResource PageMaterialInventoryIn}" Grid.Row="1" Grid.Column="6"
+                        <Button Content="{StaticResource PageMaterialInventoryIn}" Grid.Row="1" Grid.Column="4"
                         Command="{Binding GoToMaterialInventory}" Style="{StaticResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PageMaterialInventoryOut}" Grid.Row="1" Grid.Column="7"
+                        <Button Content="{StaticResource PageMaterialInventoryOut}" Grid.Row="1" Grid.Column="5"
                         Command="{Binding GoToMaterialInventoryOut}" Style="{StaticResource StyleButtonNavigation}"/>
+
+                        <Button Content="{StaticResource PageSimpleMaterial}" Grid.Row="1" Grid.Column="6"
+                        Command="{Binding GoToSimpleMaterial}" Style="{StaticResource StyleButtonNavigation}"/>
+
+                        <Button Content="{StaticResource PageRawMaterialSheet}" Grid.Row="1" Grid.Column="7"
+                        Command="{Binding GoToRawMaterialSheet}" Style="{StaticResource StyleButtonNavigation}"/>
 
                         <Button Content="{StaticResource PageProduction}" Grid.Row="2" Grid.Column="0" Grid.RowSpan="2"
                         Style="{StaticResource StyleButtonNavigationTitle}" />
@@ -136,24 +136,22 @@
                         Command="{Binding GoToMisson}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PagePlan}" Grid.Row="2" Grid.Column="2"
                         Command="{Binding GoToPlan}" Style="{StaticResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PageFailure}" Grid.Row="2" Grid.Column="3"
-                                Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToFailure}"/>
 
-                        <Button Content="{StaticResource PageFillingTool}" Grid.Row="2" Grid.Column="4"
+                        <Button Content="{StaticResource PageFillingTool}" Grid.Row="2" Grid.Column="3"
                                 Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToFillingTool}"/>
-                        <Button Content="{StaticResource PageMillingTool}" Grid.Row="2" Grid.Column="5"
+                        <Button Content="{StaticResource PageMillingTool}" Grid.Row="2" Grid.Column="4"
                                 Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToMillingTool}"/>
+                        <Button Content="{StaticResource PageFailure}" Grid.Row="2" Grid.Column="5"
+                                Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToFailure}"/>
                         <Button Content="{StaticResource PagePlanConclusion}" Grid.Row="2" Grid.Column="6"
                         Command="{Binding GoToPlanConclusion}" Style="{StaticResource StyleButtonNavigation}"/>
 
-                        <Button Content="{StaticResource PageCompound}" Grid.Row="3" Grid.Column="1"
-                        Command="{Binding GoToBDCompound}" Style="{StaticResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PageConsumableInventory}" Grid.Row="3" Grid.Column="2"
-                        Command="{Binding GoToConsumableInventory}" Style="{StaticResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PageOutsideProcess}" Grid.Row="3" Grid.Column="3"
+                        <Button Content="{StaticResource PageOutsideProcess}" Grid.Row="3" Grid.Column="1"
                         Command="{Binding GoToOutsideProcess}" Style="{StaticResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PagePMICounter}" Grid.Row="3" Grid.Column="4"
-                        Command="{Binding GoToCounter}" Style="{StaticResource StyleButtonNavigation}"/>
+                        <Button Content="{StaticResource PageCompound}" Grid.Row="3" Grid.Column="2"
+                        Command="{Binding GoToBDCompound}" Style="{StaticResource StyleButtonNavigation}"/>
+                        <Button Content="{StaticResource PageConsumableInventory}" Grid.Row="3" Grid.Column="3"
+                        Command="{Binding GoToConsumableInventory}" Style="{StaticResource StyleButtonNavigation}"/>
                         
                         <Button Content="{StaticResource PageRecord}" Grid.Row="4" Grid.Column="0"  Style="{StaticResource StyleButtonNavigationTitle}" />
                         <Button Content="{StaticResource PageRecordMilling}" Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleButtonNavigation}"
@@ -176,12 +174,14 @@
                         Command="{Binding GoToRemainInventory}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PagePlate}"  Grid.Row="5" Grid.Column="3"
                         Command="{Binding GoToPlate}" Style="{StaticResource StyleButtonNavigation}" />
-                        <Button Content="{StaticResource PageDelivery}" Grid.Row="5" Grid.Column="4"
+                        <Button Content="{StaticResource PagePMICounter}" Grid.Row="5" Grid.Column="4"
+                        Command="{Binding GoToCounter}" Style="{StaticResource StyleButtonNavigation}"/>
+                        <Button Content="{StaticResource PageDelivery}" Grid.Row="5" Grid.Column="5"
                         Command="{Binding GoToDelivery}" Style="{StaticResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PageDeliveryItemList}" Grid.Row="5" Grid.Column="5"
+                        <Button Content="{StaticResource PageDeliveryItemList}" Grid.Row="5" Grid.Column="6"
                         Command="{Binding GoToDeliveryItemList}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageOutput}" Style="{StaticResource StyleButtonNavigation}"
-                                Command="{Binding GoToOutput}" Grid.Row="5" Grid.Column="6"/>
+                                Command="{Binding GoToOutput}" Grid.Row="5" Grid.Column="7"/>
 
                         <Button Content="{StaticResource PageStatistic}" Grid.Row="6" Grid.Column="0"
                                 Style="{StaticResource StyleButtonNavigationTitle}"/>

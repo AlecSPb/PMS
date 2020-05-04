@@ -39,7 +39,7 @@ namespace PMSClient.ViewModel
 
         private void ActionGiveUp()
         {
-            NavigationService.GoTo(RequestView);
+            NavigationService.GoTo(requestView);
         }
 
         private PMSViews requestView;
@@ -52,11 +52,9 @@ namespace PMSClient.ViewModel
             requestView = request;
         }
 
-        public PMSViews RequestView { get; set; }
-
         private void ActionSelect(DcConsumableInventory model)
         {
-            switch (RequestView)
+            switch (requestView)
             {
                 case PMSViews.ConsumablePurchaseEdit:
                     PMSHelper.ViewModels.ConsumablePurchaseEdit.SetBySelect(model);
@@ -85,7 +83,8 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            ConsumableInventorys = new ObservableCollection<DcConsumableInventory>();
+            ConsumableInventories
+                = new ObservableCollection<DcConsumableInventory>();
             searchItemName = "";
 
         }
@@ -107,8 +106,8 @@ namespace PMSClient.ViewModel
             using (var service = new ConsumableServiceClient())
             {
                 var orders = service.GetConsumableInventory(skip, take, SearchItemName);
-                ConsumableInventorys.Clear();
-                orders.ToList().ForEach(o => ConsumableInventorys.Add(o));
+                ConsumableInventories.Clear();
+                orders.ToList().ForEach(o => ConsumableInventories.Add(o));
             }
         }
         #region Commands
@@ -125,7 +124,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public ObservableCollection<DcConsumableInventory> ConsumableInventorys { get; set; }
+        public ObservableCollection<DcConsumableInventory> ConsumableInventories { get; set; }
         #endregion
         public RelayCommand<DcConsumableInventory> Select { get; set; }
     }

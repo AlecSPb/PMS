@@ -220,7 +220,8 @@ namespace PMSClient.ViewModel
                 return;
             }
             #region 核验部分
-
+            //检查PMINumber是否符合格式规范
+            VMHelper.CommonVMHelper.CheckPMINumber(CurrentRecordTest.PMINumber);
             #endregion
 
             //新建的时候检查产品ID是否正确

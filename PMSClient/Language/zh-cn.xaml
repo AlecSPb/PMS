@@ -183,7 +183,7 @@
 
     <sys:String x:Key="PageConsumable">耗材统计</sys:String>
     <sys:String x:Key="PageCounter">计数</sys:String>
-    <sys:String x:Key="PagePlanForProduct">生产追踪</sys:String>
+    <sys:String x:Key="PagePlanForProduct">计划追踪</sys:String>
 
 
     <sys:String x:Key="PressureChangeTool">压力换算</sys:String>
@@ -920,8 +920,8 @@
 
 
     <!--PMICounter-->
-    <sys:String x:Key="PagePMICounter">背板计数</sys:String>
-    <sys:String x:Key="PagePMICounterEdit">背板计数编辑</sys:String>
+    <sys:String x:Key="PagePMICounter">背板数目</sys:String>
+    <sys:String x:Key="PagePMICounterEdit">背板数目编辑</sys:String>
 
     <sys:String x:Key="CID">ID</sys:String>
     <sys:String x:Key="CCreator">创建者</sys:String>
@@ -1060,7 +1060,7 @@
     <sys:String x:Key="CIPersonInCharge">负责人</sys:String>
     <sys:String x:Key="CIMinWarningQuantity">最小警告量</sys:String>
     <sys:String x:Key="CIMaxWarningQuantity">最大警告量</sys:String>
-    <sys:String x:Key="CIHistory">历史</sys:String>
+    <sys:String x:Key="CIHistory">出入历史</sys:String>
     <sys:String x:Key="CICountHistory">盘点历史</sys:String>
     <sys:String x:Key="CIRemark">备注</sys:String>
     <sys:String x:Key="CILastUpdateTime">最后更新时间</sys:String>
@@ -1080,12 +1080,12 @@
     <sys:String x:Key="CPQuantity">数量</sys:String>
     <sys:String x:Key="CPQuantityUnit">单位</sys:String>
     <sys:String x:Key="CPGrade">级别</sys:String>
-    <sys:String x:Key="CPRemark">备注</sys:String>
 
     <sys:String x:Key="CPSupplier">供应商</sys:String>
     <sys:String x:Key="CPTotalCost">总花费</sys:String>
     <sys:String x:Key="CPProcessHistory">购买进度</sys:String>
-    <sys:String x:Key="CPLastUpdateTime">备注</sys:String>
+    <sys:String x:Key="CPLastUpdateTime">最后更新时间</sys:String>
+    <sys:String x:Key="CPRemark">备注</sys:String>
 
 
     <!--底部工具栏-->

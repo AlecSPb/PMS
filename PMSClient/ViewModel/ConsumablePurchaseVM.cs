@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
+using PMSClient.ConsumableService;
 
 namespace PMSClient.ViewModel
 {
@@ -31,43 +32,43 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Add = new RelayCommand(ActionAdd, CanAdd);
-            Edit = new RelayCommand<DcOutSource>(ActionEdit, CanEdit);
-            Duplicate = new RelayCommand<DcOutSource>(ActionDuplicate, CanDuplicate);
+            Edit = new RelayCommand<DcConsumablePurchase>(ActionEdit, CanEdit);
+            Duplicate = new RelayCommand<DcConsumablePurchase>(ActionDuplicate, CanDuplicate);
         }
-        private bool CanDuplicate(DcOutSource arg)
+        private bool CanDuplicate(DcConsumablePurchase arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditOutSource);
+            return PMSHelper.CurrentSession.IsInGroup("ConsumablePurchaseEdit");
         }
 
-        private void ActionDuplicate(DcOutSource model)
+        private void ActionDuplicate(DcConsumablePurchase model)
         {
             if (!PMSDialogService.ShowYesNo("请问", "确定复用这条记录吗？"))
             {
                 return;
             }
-            PMSHelper.ViewModels.OutSourceEdit.SetDuplicate(model);
-            NavigationService.GoTo(PMSViews.OutSourceEdit);
+            PMSHelper.ViewModels.ConsumablePurchaseEdit.SetDuplicate(model);
+            NavigationService.GoTo(PMSViews.ConsumablePurchaseEdit);
         }
 
-        private bool CanEdit(DcOutSource arg)
+        private bool CanEdit(DcConsumablePurchase arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditOutSource);
+            return PMSHelper.CurrentSession.IsInGroup("ConsumablePurchaseEdit");
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditOutSource);
+            return PMSHelper.CurrentSession.IsInGroup("ConsumablePurchaseEdit");
         }
 
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchOrderLot) && string.IsNullOrEmpty(SearchOrderName) && string.IsNullOrEmpty(SearchSupplier));
+            return !(string.IsNullOrEmpty(SearchItemName));
         }
 
         private void ActionAll()
         {
-            searchOrderLot = searchOrderName = searchSupplier = "";
+            searchItemName = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -76,31 +77,31 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionEdit(DcOutSource model)
+        private void ActionEdit(DcConsumablePurchase model)
         {
-            PMSHelper.ViewModels.OutSourceEdit.SetEdit(model);
-            NavigationService.GoTo(PMSViews.OutSourceEdit);
+            PMSHelper.ViewModels.ConsumablePurchaseEdit.SetEdit(model);
+            NavigationService.GoTo(PMSViews.ConsumablePurchaseEdit);
         }
 
         private void ActionAdd()
         {
-            PMSHelper.ViewModels.OutSourceEdit.SetNew();
-            NavigationService.GoTo(PMSViews.OutSourceEdit);
+            PMSHelper.ViewModels.ConsumablePurchaseEdit.SetNew();
+            NavigationService.GoTo(PMSViews.ConsumablePurchaseEdit);
         }
 
         private void InitializeProperties()
         {
-            OutSources = new ObservableCollection<DcOutSource>();
-            searchOrderLot = searchOrderName = searchSupplier = "";
+            ConsumablePurchases = new ObservableCollection<DcConsumablePurchase>();
+            searchItemName  = "";
 
         }
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
             PageSize = 30;
-            using (var service = new OutSourceServiceClient())
+            using (var service = new ConsumableServiceClient())
             {
-                RecordCount = service.GetOutSourcesCount(SearchOrderLot, SearchOrderName, SearchSupplier);
+                RecordCount = service.GetConsumablePurchaseCount(SearchItemName);
             }
             ActionPaging();
         }
@@ -109,58 +110,33 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            using (var service = new OutSourceServiceClient())
+            using (var service = new ConsumableServiceClient())
             {
-                var orders = service.GetOutSources(skip, take, SearchOrderLot, SearchOrderName, SearchSupplier);
-                OutSources.Clear();
-                orders.ToList().ForEach(o => OutSources.Add(o));
+                var orders = service.GetConsumablePurchase(skip, take,SearchItemName);
+                ConsumablePurchases.Clear();
+                orders.ToList().ForEach(o => ConsumablePurchases.Add(o));
             }
         }
         #region Commands
         public RelayCommand Add { get; set; }
-        public RelayCommand<DcOutSource> Edit { get; set; }
+        public RelayCommand<DcConsumablePurchase> Edit { get; set; }
 
-
-        private string searchOrderLot;
-        public string SearchOrderLot
+        private string searchItemName;
+        public string SearchItemName
         {
-            get { return searchOrderLot; }
+            get { return searchItemName; }
             set
             {
-                if (searchOrderLot == value)
+                if (searchItemName == value)
                     return;
-                searchOrderLot = value;
-                RaisePropertyChanged(() => SearchOrderLot);
-            }
-        }
-        private string searchOrderName;
-        public string SearchOrderName
-        {
-            get { return searchOrderName; }
-            set
-            {
-                if (searchOrderName == value)
-                    return;
-                searchOrderName = value;
-                RaisePropertyChanged(() => SearchOrderName);
-            }
-        }
-        private string searchSupplier;
-        public string SearchSupplier
-        {
-            get { return searchSupplier; }
-            set
-            {
-                if (searchSupplier == value)
-                    return;
-                searchSupplier = value;
-                RaisePropertyChanged(() => SearchSupplier);
+                searchItemName = value;
+                RaisePropertyChanged(() => SearchItemName);
             }
         }
 
-        public ObservableCollection<DcOutSource> OutSources { get; set; }
+        public ObservableCollection<DcConsumablePurchase> ConsumablePurchases { get; set; }
         #endregion
-        public RelayCommand<DcOutSource> Duplicate { get; set; }
+        public RelayCommand<DcConsumablePurchase> Duplicate { get; set; }
 
     }
 }
