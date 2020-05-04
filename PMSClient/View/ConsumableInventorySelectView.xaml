@@ -24,7 +24,8 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorInventoryMin}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource InventoryMinWarningBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorInventoryMax}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource InventoryMaxWarningBrush}"/>
         </StackPanel>
         <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding ConsumableInventories}"
                   LoadingRow="DataGrid_LoadingRow">
@@ -63,9 +64,9 @@
                 <DataGridTextColumn Header="{StaticResource CIMinWarningQuantity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Binding="{Binding MinWarningQuantity}"/>
                 <DataGridTextColumn Header="{StaticResource CIHistory}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding History}"/>
+                                    Binding="{Binding History}"  Width="200"/>
                 <DataGridTextColumn Header="{StaticResource CICountHistory}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding CountHistory}"/>
+                                    Binding="{Binding CountHistory}"  Width="200"/>
                 <DataGridTextColumn Header="{StaticResource CIRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource CILastUpdateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -81,6 +82,6 @@
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
-                      
+
     </Grid>
 </UserControl>

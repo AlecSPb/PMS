@@ -72,7 +72,7 @@ namespace PMSWCFService
                                 foreach (var s in sample_list)
                                 {
                                     s_information += $"[{s.OriginalRequirement}]";
-                                    s_deliveryInformation += $"[{s.PMINumber}-{s.SampleID}-{s.TrackingStage}]";
+                                    s_deliveryInformation += $"[{s.PMINumber} {s.SampleID} {s.TrackingStage}]";
                                 }
                                 sample.SampleInformation = s_information;
                                 sample.SampleDeliveryInformation = s_deliveryInformation;

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.Components.DeliveryItemSampleCheck"
         mc:Ignorable="d"
-        Title="发货流水靶材对应样品发出情况概述" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
+        Title="发货流水靶材对应样品发出情况概述" Height="600" Width="1100" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>

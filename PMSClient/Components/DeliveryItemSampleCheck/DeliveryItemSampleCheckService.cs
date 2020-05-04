@@ -12,7 +12,7 @@ namespace PMSClient.Components.DeliveryItemSampleCheck
     {
         public void Run()
         {
-            if (XSHelper.XS.MessageBox.ShowYesNo("请问要查看发货产品对应样品状态情况吗？Y=查看 N=跳过"))
+            if (XSHelper.XS.MessageBox.ShowYesNo("请问要查看[发货产品对应样品状态]情况吗？Y=查看 N=跳过"))
             {
                 CheckDeliveryItemSample();
             }

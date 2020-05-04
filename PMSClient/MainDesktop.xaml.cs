@@ -174,7 +174,7 @@ namespace PMSClient
 
                             if (PMSHelper.CurrentSession?.CurrentUserRole?.GroupName != "")
                             {
-                                TxtInformationLog.Text = $"访问信息 昨日:{count_yesterday}次 今日:{count_today}次 共{(count_all / 1000)}k次";
+                                TxtInformationLog.Text = $"访问信息 昨日:{count_yesterday}次 今日:{count_today}次 共{(count_all / 10000)}w次";
                             }
                         });
                         //txtHeartBeat.Text = "服务器通信正常";

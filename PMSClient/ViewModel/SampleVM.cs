@@ -37,14 +37,31 @@ namespace PMSClient.ViewModel
 
             SelectionChanged = new RelayCommand<DcSample>(ActionSelectionChanged);
 
-            Prepared = new RelayCommand<DcSample>(ActionPrepared, CanQuickEdit);
-            Checked = new RelayCommand<DcSample>(ActionChecked, CanQuickEdit);
-            Sent = new RelayCommand<DcSample>(ActionSent, CanQuickEdit);
+            Prepared = new RelayCommand<DcSample>(ActionPrepared, CanQuickPrepared);
+            Checked = new RelayCommand<DcSample>(ActionChecked, CanQuickChecked);
+            Sent = new RelayCommand<DcSample>(ActionSent, CanQuickSend);
             Print = new RelayCommand(ActionPrint, CanPrint);
             Label = new RelayCommand<DcSample>(ActionLabel);
             Excel = new RelayCommand(ActionExcel, CanExcel);
             ShowTestResult = new RelayCommand<string>(ActionShowTestResult);
             SampleTrace = new RelayCommand(ActionSampleTrace, CanAdd);
+        }
+
+        private bool CanQuickSend(DcSample arg)
+        {
+            return PMSHelper.CurrentSession.IsInGroup("SampleViewEditSend");
+
+        }
+
+        private bool CanQuickChecked(DcSample arg)
+        {
+            return PMSHelper.CurrentSession.IsInGroup("SampleViewEditCheck");
+
+        }
+
+        private bool CanQuickPrepared(DcSample arg)
+        {
+            return PMSHelper.CurrentSession.IsInGroup("SampleViewEditPrepare");
         }
 
         private void ActionSampleTrace()
@@ -122,11 +139,6 @@ namespace PMSClient.ViewModel
         private bool CanExcel()
         {
             return PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewSampleEdit);
-        }
-
-        public bool CanQuickEdit(DcSample obj)
-        {
-            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewSample);
         }
 
         private void ActionLabel(DcSample model)
@@ -287,7 +299,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDuplicate(DcSample arg)
         {
-            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewSampleEdit);
+            return PMSHelper.CurrentSession.IsInGroup("SampleViewEdit");
         }
 
         private void ActionAll()
@@ -304,12 +316,12 @@ namespace PMSClient.ViewModel
 
         private bool CanEdit(DcSample arg)
         {
-            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewSampleEdit);
+            return PMSHelper.CurrentSession.IsInGroup("SampleViewEdit");
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewSampleEdit);
+            return PMSHelper.CurrentSession.IsInGroup("SampleViewEdit");
         }
 
         private void ActionEdit(DcSample model)

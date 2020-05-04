@@ -64,7 +64,7 @@
                                     Command="{Binding DataContext.Receive,
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}" ToolTip="取回Receive"/>
-                                <Button Content="{StaticResource ButtonFail}" Style="{StaticResource StyleDGButton}"
+                                <Button Content="{StaticResource ButtonFailure}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Fail,
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}" ToolTip="报废"/>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMSClient.ConsumableService;
 
 namespace PMSClient.View
 {
@@ -27,7 +28,29 @@ namespace PMSClient.View
 
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
+            try
+            {
+                DcConsumableInventory model = (DcConsumableInventory)e.Row.DataContext;
+                if (model != null)
+                {
+                    if (model.MaxWarningQuantity > model.MinWarningQuantity)
+                    {
+                        if (model.Quantity > model.MaxWarningQuantity)
+                        {
+                            e.Row.Background = this.FindResource("InventoryMaxWarningBrush") as SolidColorBrush;
+                        }
+                        if (model.Quantity < model.MinWarningQuantity)
+                        {
+                            e.Row.Background = this.FindResource("InventoryMinWarningBrush") as SolidColorBrush;
+                        }
+                    }
+                }
 
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
     }
 }

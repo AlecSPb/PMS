@@ -394,6 +394,8 @@
     <sys:String x:Key="IndicatorStored">库存</sys:String>
     <sys:String x:Key="IndicatorDelivered">发货</sys:String>
 
+    <sys:String x:Key="IndicatorInventoryMin">最小</sys:String>
+    <sys:String x:Key="IndicatorInventoryMax">最大</sys:String>
     <!--Paging-->
     <sys:String x:Key="PagingCurrentPageIndex">当前页码</sys:String>
     <sys:String x:Key="PagingPageCount">总页码</sys:String>

@@ -55,6 +55,7 @@
     <Compile Include="CommonToolState.cs" />
     <Compile Include="ConsumableCategory.cs" />
     <Compile Include="ConsumableGrade.cs" />
+    <Compile Include="ConsumableStorePosition.cs" />
     <Compile Include="ConsumableUnit.cs" />
     <Compile Include="DeliveryExpress.cs" />
     <Compile Include="DeliveryState.cs" />

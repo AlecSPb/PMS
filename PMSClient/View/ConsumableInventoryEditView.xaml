@@ -113,15 +113,12 @@
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource CIStorePosition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="7" Grid.Column="1" Text="{Binding StorePosition}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <StackPanel Grid.Row="7" Grid.Column="2" Orientation="Horizontal">
-                    <Button Content="1楼办公室下仓库" Style="{StaticResource StyleButtonCommonNarrow}"/>
-                    <Button Content="1楼楼梯口仓库" Style="{StaticResource StyleButtonCommonNarrow}"/>
-                    <Button Content="1楼大门口角落" Style="{StaticResource StyleButtonCommonNarrow}"/>
-                    <Button Content="2楼绑定间" Style="{StaticResource StyleButtonCommonNarrow}"/>
-                    <Button Content="2楼测试间" Style="{StaticResource StyleButtonCommonNarrow}"/>
-                    <Button Content="2楼包装间" Style="{StaticResource StyleButtonCommonNarrow}"/>
-                </StackPanel>
+                <ComboBox Grid.Row="7" Grid.Column="1"
+                      Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Stretch"
+                      ItemsSource="{Binding DataContext.StorePositions,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                      Text="{Binding StorePosition}"/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="存储位置"/>
 
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource CIPersonInCharge}"
@@ -149,9 +146,11 @@
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource CICountHistory}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding CountHistory}"
+                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding CountHistory}"
                          Style="{StaticResource StyleTextBoxCommon}"/>
-
+                <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="格式 日期=数量; 英文等号和分号"/>
+                
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource CIRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Remark}"

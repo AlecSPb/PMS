@@ -36,6 +36,28 @@ namespace PMSClient.ViewModel
             Edit = new RelayCommand<DcConsumableInventory>(ActionEdit, CanEdit);
             Duplicate = new RelayCommand<DcConsumableInventory>(ActionDuplicate, CanDuplicate);
             QuickChange = new RelayCommand<DcConsumableInventory>(ActionQuickChange, CanQuickChange);
+            ShowHistory = new RelayCommand<DcConsumableInventory>(ActionShowHistory);
+            ShowCountHistory = new RelayCommand<DcConsumableInventory>(ActionShowCountHistory);
+        }
+
+        private void ActionShowCountHistory(DcConsumableInventory obj)
+        {
+            if (obj != null)
+            {
+                var dialog = new WPFControls.NormalizedDataViewer();
+                dialog.SetMainStrings(obj.CountHistory);
+                dialog.ShowDialog();
+            }
+        }
+
+        private void ActionShowHistory(DcConsumableInventory obj)
+        {
+            if (obj != null)
+            {
+                var dialog = new WPFControls.NormalizedDataViewer();
+                dialog.SetMainStrings(obj.History);
+                dialog.ShowDialog();
+            }
         }
 
         private bool CanQuickChange(DcConsumableInventory arg)
@@ -43,9 +65,37 @@ namespace PMSClient.ViewModel
             return PMSHelper.CurrentSession.IsInGroup("ConsumableInventoryQuickChange");
         }
 
+        private string AddHistory(string history, string sign, int count)
+        {
+            return $"{DateTime.Today.ToString("yyMMdd")}{sign}{count};{history}";
+        }
         private void ActionQuickChange(DcConsumableInventory obj)
         {
-   
+            if (obj == null) return;
+            var dialog = new ToolDialog.PMICounterQuickEditDialog();
+            dialog.Remark = obj.Remark;
+            dialog.ShowDialog();
+
+            obj.Remark = dialog.Remark;
+            if (dialog.EditType == ToolDialog.PMICounterEditType.IsCancel)
+            { return; }
+            else if (dialog.EditType == ToolDialog.PMICounterEditType.IsAdd)
+            {
+                obj.Quantity += dialog.Counter;
+                obj.History = AddHistory(obj.History, "+", dialog.Counter);
+            }
+            else
+            {
+                obj.Quantity -= dialog.Counter;
+                obj.History = AddHistory(obj.History, "-", dialog.Counter);
+            }
+
+            using (var service = new ConsumableServiceClient())
+            {
+                service.UpdateConsumableInventory(obj);
+                SetPageParametersWhenConditionChange();
+            }
+
         }
 
         private bool CanDuplicate(DcConsumableInventory arg)
@@ -152,6 +202,9 @@ namespace PMSClient.ViewModel
         #endregion
         public RelayCommand<DcConsumableInventory> Duplicate { get; set; }
         public RelayCommand<DcConsumableInventory> QuickChange { get; set; }
+
+        public RelayCommand<DcConsumableInventory> ShowHistory { get; set; }
+        public RelayCommand<DcConsumableInventory> ShowCountHistory { get; set; }
 
     }
 }

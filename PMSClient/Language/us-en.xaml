@@ -380,6 +380,8 @@
     <sys:String x:Key="IndicatorStored">Stored</sys:String>
     <sys:String x:Key="IndicatorDelivered">Delivered</sys:String>
 
+    <sys:String x:Key="IndicatorInventoryMin">Min</sys:String>
+    <sys:String x:Key="IndicatorInventoryMax">Max</sys:String>
     <!--Paging-->
     <sys:String x:Key="PagingCurrentPageIndex">Current</sys:String>
     <sys:String x:Key="PagingPageCount">Total Count</sys:String>

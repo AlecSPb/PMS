@@ -26,6 +26,8 @@ namespace PMSClient.ViewModel
             ConsumableUnits = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.ConsumableUnit>(ConsumableUnits);
 
+            StorePositions = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.ConsumableStorePosition>(StorePositions);
             InitializeCommands();
         }
 
@@ -151,6 +153,7 @@ namespace PMSClient.ViewModel
         public List<string> ConsumableUnits { get; set; }
         public List<string> ConsumableGrades { get; set; }
         public List<string> States { get; set; }
+        public List<string> StorePositions { get; set; }
 
         private DcConsumableInventory currentConsumableInventory;
         public DcConsumableInventory CurrentConsumableInventory

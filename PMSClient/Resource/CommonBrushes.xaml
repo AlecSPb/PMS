@@ -14,6 +14,8 @@
     <SolidColorBrush x:Key="FailedBrush" Color="LightGray"/>
     <SolidColorBrush x:Key="NoInputBrush" Color="LightSalmon"/>
     <SolidColorBrush x:Key="InventoryWarningBrush" Color="LightGoldenrodYellow"/>
+    <SolidColorBrush x:Key="InventoryMaxWarningBrush" Color="LightGreen"/>
+    <SolidColorBrush x:Key="InventoryMinWarningBrush" Color="LightCoral"/>
 
     <SolidColorBrush x:Key="YesterdayBrush" Color="LightBlue"/>
     <SolidColorBrush x:Key="TodayBrush" Color="LightGreen"/>

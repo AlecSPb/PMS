@@ -41,7 +41,7 @@ namespace PMSWCFService
         {
             try
             {
-                XS.RunLog();
+                //XS.RunLog();
                 using (var dc = new PMSDbContext())
                 {
                     var item = dc.AccessGrants.Where(i => i.ControlName == controlName).FirstOrDefault();
