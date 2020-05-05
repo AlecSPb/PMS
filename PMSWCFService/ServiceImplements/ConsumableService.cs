@@ -130,7 +130,7 @@ namespace PMSWCFService
                     var query = from p in dc.ConsumablePurchases
                                 where p.ItemName.Contains(itemname)
                                 && p.State != PMSCommon.SimpleState.作废.ToString()
-                                orderby p.Category, p.ItemName
+                                orderby p.CreateTime descending
                                 select p;
                     Mapper.Initialize(cfg => cfg.CreateMap<ConsumablePurchase, DcConsumablePurchase>());
                     var models = Mapper.Map<List<ConsumablePurchase>, List<DcConsumablePurchase>>(query.Skip(s).Take(t).ToList());

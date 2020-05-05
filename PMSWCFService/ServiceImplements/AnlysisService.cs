@@ -279,13 +279,6 @@ namespace PMSWCFService
                     dcStatistics.Add(new DcAnlysis
                     {
                         Group = "原料",
-                        Key = "订购原料",
-                        Value = total_material_order.ToString(),
-                        Remark = "kg"
-                    });
-                    dcStatistics.Add(new DcAnlysis
-                    {
-                        Group = "原料",
                         Key = "订购原料-加工费",
                         Value = query_materialorder.Sum(i => i.Weight * i.UnitPrice).ToString("F2"),
                         Remark = "RMB"

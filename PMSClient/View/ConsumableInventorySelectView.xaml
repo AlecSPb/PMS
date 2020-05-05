@@ -49,7 +49,7 @@
                                     Binding="{Binding Specification}"/>
                 <DataGridTextColumn Header="{StaticResource CIDetails}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Binding="{Binding Details}"/>
-                <DataGridTextColumn Header="{StaticResource CIQuantity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                <DataGridTextColumn Header="{StaticResource CIQuantity}" ElementStyle="{StaticResource StyleDGTextBlockRightBlue}"
                                     Binding="{Binding Quantity}"/>
                 <DataGridTextColumn Header="{StaticResource CIQuantityUnit}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding QuantityUnit}"/>
