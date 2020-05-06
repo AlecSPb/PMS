@@ -68,7 +68,7 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
-            model.Category = PMSCommon.ConsumableCategory.劳保用品.ToString();
+            model.Category = PMSCommon.ConsumableCategory.劳动保护.ToString();
             model.ItemName = "品名";
             model.Specification = "";
             model.Details = "";

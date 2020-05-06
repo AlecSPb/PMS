@@ -12,7 +12,8 @@ namespace PMSCommon
     public enum ConsumableCategory
     {
         生产耗材,
-        劳保用品,
+        设备维护,
+        劳动保护,
         包装材料,
         办公用品
     }
