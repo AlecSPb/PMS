@@ -38,6 +38,26 @@ namespace PMSClient.ViewModel
             QuickChange = new RelayCommand<DcConsumableInventory>(ActionQuickChange, CanQuickChange);
             ShowHistory = new RelayCommand<DcConsumableInventory>(ActionShowHistory);
             ShowCountHistory = new RelayCommand<DcConsumableInventory>(ActionShowCountHistory);
+            Excel = new RelayCommand(ActionExcel);
+        }
+
+        private void ActionExcel()
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定要导出全部数据吗？"))
+            {
+                return;
+            }
+            try
+            {
+                var excel = new ExcelOutputHelper.ExcelConsumableInventory();
+                excel.Intialize($"消耗品库存", "Data", 50);
+                excel.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                PMSDialogService.Show(ex.Message);
+            }
         }
 
         private void ActionShowCountHistory(DcConsumableInventory obj)
@@ -205,6 +225,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand<DcConsumableInventory> ShowHistory { get; set; }
         public RelayCommand<DcConsumableInventory> ShowCountHistory { get; set; }
+        public RelayCommand Excel { get; set; }
 
     }
 }

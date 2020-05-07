@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSClient.UserSimpleService;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace PMSClient.Helper
 {
@@ -15,11 +17,14 @@ namespace PMSClient.Helper
         public DcUser CurrentUser { get; set; }
         public DcUserRole CurrentUserRole { get; set; }
         public List<DcUserAccess> CurrentAccesses { get; set; }
+
+        public List<DcAccessGrant> AccessGrants { get; set; }
         public LogInformation()
         {
             CurrentUser = null;
             CurrentUserRole = null;
             CurrentAccesses = new List<DcUserAccess>();
+            AccessGrants = new List<DcAccessGrant>();
         }
         /// <summary>
         /// 注销
@@ -97,7 +102,7 @@ namespace PMSClient.Helper
         public bool IsInGroup(string controlName)
         {
             if (string.IsNullOrEmpty(controlName)) return false;
-            return IsInGroup(GetAccessArray(controlName));
+            return IsInGroup(GetAccessArrayFromLocal(controlName));
         }
         /// <summary>
         /// 从数据库里根据控制名来查询组字符串
@@ -145,7 +150,7 @@ namespace PMSClient.Helper
         /// </summary>
         /// <param name="controlName"></param>
         /// <returns></returns>
-        public string[] GetAccessArray(string controlName)
+        public string[] GetAccessArrayFromDB(string controlName)
         {
             try
             {
@@ -161,6 +166,77 @@ namespace PMSClient.Helper
                 return null;
             }
 
+        }
+        /// <summary>
+        /// 从本地权限表获取权限组
+        /// </summary>
+        /// <param name="controlName"></param>
+        /// <returns></returns>
+        public string[] GetAccessArrayFromLocal(string controlName)
+        {
+            try
+            {
+                var groupstring = AccessGrants.Where(i => i.ControlName == controlName).Select(i=>i.RoleGroupString).FirstOrDefault();
+                string[] groups = groupstring.Split(new string[] { "+" }, StringSplitOptions.RemoveEmptyEntries);
+                return groups;
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+        }
+
+
+        /// <summary>
+        /// 下载权限表到本地
+        /// </summary>
+        public void DownloadAccessSheet()
+        {
+            try
+            {
+                string jsonStr = "";
+                using (var s = new UserSimpleServiceClient())
+                {
+                    var result = s.GetAllAccessGrant();
+                    jsonStr = JsonConvert.SerializeObject(result);
+                }
+                if (!string.IsNullOrEmpty(jsonStr))
+                {
+                    string filename = XSHelper.XS.File.GetCurrentFolderPath("al.json");
+                    XSHelper.XS.File.SaveText(filename, jsonStr);
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+        }
+
+        /// <summary>
+        /// 读取本地权限表
+        /// </summary>
+        public void ReadAccessSheetFromLocal()
+        {
+            try
+            {
+                string filename = XSHelper.XS.File.GetCurrentFolderPath("al.json");
+                string jsonStr = XSHelper.XS.File.ReadText(filename);
+                if (!string.IsNullOrEmpty(jsonStr))
+                {
+                    var models = JsonConvert.DeserializeObject<List<DcAccessGrant>>(jsonStr);
+                    AccessGrants.Clear();
+                    foreach (var item in models)
+                    {
+                        AccessGrants.Add(item);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
     }

@@ -67,6 +67,10 @@ namespace PMSClient.View
                     //PMSHelper.CurrentLog.Log("登录成功");
                     NavigationService.GoTo(PMSViews.Navigation);
 
+
+                    //读取本地权限表-只在登录的时候初始化一次
+                    PMSHelper.CurrentSession.ReadAccessSheetFromLocal();
+
                     //DEBUG下不运行
                     if (PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewExpressTrackAtLogin)
                         && Properties.Settings.Default.CheckExpressAtStartup)

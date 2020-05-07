@@ -62,6 +62,25 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcAccessGrant> GetAllAccessGrant()
+        {
+            try
+            {
+                //XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.AccessGrants
+                                select new DcAccessGrant { ControlName = i.ControlName, RoleGroupString = i.RoleGroupString };
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
         public DcUserRole GetRole(Guid roleId)
         {
             try

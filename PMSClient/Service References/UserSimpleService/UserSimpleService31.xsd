@@ -41,4 +41,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcUserAccess" nillable="true" type="tns:DcUserAccess" />
+  <xs:complexType name="ArrayOfDcAccessGrant">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcAccessGrant" nillable="true" type="tns:DcAccessGrant" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcAccessGrant" nillable="true" type="tns:ArrayOfDcAccessGrant" />
+  <xs:complexType name="DcAccessGrant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ControlName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleGroupString" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcAccessGrant" nillable="true" type="tns:DcAccessGrant" />
 </xs:schema>

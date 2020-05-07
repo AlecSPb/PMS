@@ -52,5 +52,17 @@ namespace PMSWCFService.ServiceContracts
         List<DcMaterialOrderItemExtra> GetMaterialOrderItemsByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end);
         [OperationContract]
         int GetMaterialOrderItemsByYearMonthCount(int year_start, int month_start, int year_end, int month_end);
+
+
+        [OperationContract]
+        List<DcConsumableInventory> GetConsumableInventoryByYearMonth(int s, int t);
+        [OperationContract]
+        int GetConsumableInventoryByYearMonthCount();
+
+        [OperationContract]
+        List<DcConsumablePurchase> GetConsumablePurchaseByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        [OperationContract]
+        int GetConsumablePurchaseByYearMonthCount(int year_start, int month_start, int year_end, int month_end);
+
     }
 }

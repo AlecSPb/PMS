@@ -319,4 +319,70 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcMaterialOrderItem" nillable="true" type="tns:DcMaterialOrderItem" />
+  <xs:complexType name="ArrayOfDcConsumableInventory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcConsumableInventory" nillable="true" type="tns:DcConsumableInventory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcConsumableInventory" nillable="true" type="tns:ArrayOfDcConsumableInventory" />
+  <xs:complexType name="DcConsumableInventory">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DcModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CountHistory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Grade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="History" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastUpdateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MaxWarningQuantity" type="xs:double" />
+          <xs:element minOccurs="0" name="MinWarningQuantity" type="xs:double" />
+          <xs:element minOccurs="0" name="PersonInCharge" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+          <xs:element minOccurs="0" name="QuantityUnit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Specification" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StorePosition" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DcConsumableInventory" nillable="true" type="tns:DcConsumableInventory" />
+  <xs:complexType name="DcModelBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcModelBase" nillable="true" type="tns:DcModelBase" />
+  <xs:complexType name="ArrayOfDcConsumablePurchase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcConsumablePurchase" nillable="true" type="tns:DcConsumablePurchase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcConsumablePurchase" nillable="true" type="tns:ArrayOfDcConsumablePurchase" />
+  <xs:complexType name="DcConsumablePurchase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DcModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Grade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastUpdateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ProcessHistory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+          <xs:element minOccurs="0" name="QuantityUnit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Specification" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Supplier" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalCost" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DcConsumablePurchase" nillable="true" type="tns:DcConsumablePurchase" />
 </xs:schema>

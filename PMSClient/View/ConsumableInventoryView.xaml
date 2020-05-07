@@ -24,6 +24,7 @@
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonExcel}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Excel}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorInventoryMin}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource InventoryMinWarningBrush}"/>
             <TextBlock Text="{StaticResource IndicatorInventoryMax}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource InventoryMaxWarningBrush}"/>
@@ -54,7 +55,7 @@
                                     Binding="{Binding ItemName}"/>
                 <DataGridTextColumn Header="{StaticResource CISpecification}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Specification}"/>
-                <DataGridTextColumn Header="{StaticResource CIDetails}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                <DataGridTextColumn Header="{StaticResource CIDetails}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Details}"/>
                 <DataGridTextColumn Header="{StaticResource CIQuantity}" ElementStyle="{StaticResource StyleDGTextBlockRightBlue}"
                                     Binding="{Binding Quantity}"/>

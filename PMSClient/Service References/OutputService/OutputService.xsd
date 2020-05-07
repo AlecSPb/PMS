@@ -208,4 +208,67 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetConsumableInventoryByYearMonth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" type="xs:int" />
+        <xs:element minOccurs="0" name="t" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumableInventoryByYearMonthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetConsumableInventoryByYearMonthResult" nillable="true" type="q7:ArrayOfDcConsumableInventory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumableInventoryByYearMonthCount">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumableInventoryByYearMonthCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetConsumableInventoryByYearMonthCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumablePurchaseByYearMonth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" type="xs:int" />
+        <xs:element minOccurs="0" name="t" type="xs:int" />
+        <xs:element minOccurs="0" name="year_start" type="xs:int" />
+        <xs:element minOccurs="0" name="month_start" type="xs:int" />
+        <xs:element minOccurs="0" name="year_end" type="xs:int" />
+        <xs:element minOccurs="0" name="month_end" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumablePurchaseByYearMonthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetConsumablePurchaseByYearMonthResult" nillable="true" type="q8:ArrayOfDcConsumablePurchase" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumablePurchaseByYearMonthCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year_start" type="xs:int" />
+        <xs:element minOccurs="0" name="month_start" type="xs:int" />
+        <xs:element minOccurs="0" name="year_end" type="xs:int" />
+        <xs:element minOccurs="0" name="month_end" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetConsumablePurchaseByYearMonthCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetConsumablePurchaseByYearMonthCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

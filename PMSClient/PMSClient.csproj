@@ -231,8 +231,10 @@
     <Compile Include="Components\ExcelOutputHelper\Dialogs\YearDateDailog.xaml.cs">
       <DependentUpon>YearDateDailog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\ExcelOutputHelper\ExcelConsumablePurchase.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelOutputBasePageByDate.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelOutputBaseSimple.cs" />
+    <Compile Include="Components\ExcelOutputHelper\ExcelConsumableInventory.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelOutputMaterialOrderItemList.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelOutputPlanTrace.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelPlateStatistic.cs" />
@@ -2152,6 +2154,12 @@
     <None Include="Service References\Other\RawMaterialSheetService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\OutputService\PMSClient.OutputService.DcConsumableInventory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OutputService\PMSClient.OutputService.DcConsumablePurchase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\OutputService\PMSClient.OutputService.DcMaterialOrderItemExtra.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -2500,6 +2508,9 @@
     </None>
     <None Include="Service References\ToolService\ToolService3.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSimpleService\PMSClient.UserSimpleService.DcAccessGrant.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\UserSimpleService\UserSimpleService1.disco" />
     <None Include="Service References\StatisticService\MainStatisticService1.wsdl" />

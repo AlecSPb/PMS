@@ -23,5 +23,8 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         string GetAccessGrantByControl(string controlName);
+
+        [OperationContract]
+        List<DcAccessGrant> GetAllAccessGrant();
     }
 }

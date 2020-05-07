@@ -106,6 +106,7 @@
     <Content Include="更新说明.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\DcAccessGrant.cs" />
     <Compile Include="DataContracts\DcCheckList.cs" />
     <Compile Include="DataContracts\DcBDElementGroup.cs" />
     <Compile Include="DataContracts\DcBDElementGroupItem.cs" />

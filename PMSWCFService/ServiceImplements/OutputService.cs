@@ -194,6 +194,98 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcConsumableInventory> GetConsumableInventoryByYearMonth(int s, int t)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.ConsumableInventories
+                                where p.State != PMSCommon.SimpleState.作废.ToString()
+                                orderby p.Category, p.ItemName
+                                select p;
+                    Mapper.Initialize(cfg => cfg.CreateMap<ConsumableInventory, DcConsumableInventory>());
+                    var models = Mapper.Map<List<ConsumableInventory>, List<DcConsumableInventory>>(query.Skip(s).Take(t).ToList());
+                    return models;
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetConsumableInventoryByYearMonthCount()
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.ConsumableInventories
+                                where p.State != PMSCommon.SimpleState.作废.ToString()
+                                select p;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcConsumablePurchase> GetConsumablePurchaseByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                    DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
+                    var query = from p in dc.ConsumablePurchases
+                                where p.State != PMSCommon.SimpleState.作废.ToString()
+                                && p.CreateTime >= startTime && p.CreateTime <= endTime
+                                orderby p.CreateTime descending
+                                select p;
+                    Mapper.Initialize(cfg => cfg.CreateMap<ConsumablePurchase, DcConsumablePurchase>());
+                    var models = Mapper.Map<List<ConsumablePurchase>, List<DcConsumablePurchase>>(query.Skip(s).Take(t).ToList());
+                    return models;
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetConsumablePurchaseByYearMonthCount(int year_start, int month_start, int year_end, int month_end)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                    DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
+                    var query = from p in dc.ConsumablePurchases
+                                where p.State != PMSCommon.SimpleState.作废.ToString()
+                                && p.CreateTime >= startTime && p.CreateTime <= endTime
+                                select p;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcMaterialOrderItemExtra> GetMaterialOrderItemsByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end)
         {
             try

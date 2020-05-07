@@ -79,6 +79,30 @@
   <wsdl:message name="IOutputService_GetMaterialOrderItemsByYearMonthCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialOrderItemsByYearMonthCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IOutputService_GetConsumableInventoryByYearMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumableInventoryByYearMonth" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetConsumableInventoryByYearMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumableInventoryByYearMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetConsumableInventoryByYearMonthCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumableInventoryByYearMonthCount" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetConsumableInventoryByYearMonthCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumableInventoryByYearMonthCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetConsumablePurchaseByYearMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumablePurchaseByYearMonth" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetConsumablePurchaseByYearMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumablePurchaseByYearMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetConsumablePurchaseByYearMonthCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumablePurchaseByYearMonthCount" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetConsumablePurchaseByYearMonthCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsumablePurchaseByYearMonthCountResponse" />
+  </wsdl:message>
   <wsdl:portType name="IOutputService">
     <wsdl:operation name="GetAll230Data">
       <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetAll230Data" message="tns:IOutputService_GetAll230Data_InputMessage" />
@@ -127,6 +151,22 @@
     <wsdl:operation name="GetMaterialOrderItemsByYearMonthCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetMaterialOrderItemsByYearMonthCount" message="tns:IOutputService_GetMaterialOrderItemsByYearMonthCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetMaterialOrderItemsByYearMonthCountResponse" message="tns:IOutputService_GetMaterialOrderItemsByYearMonthCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumableInventoryByYearMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetConsumableInventoryByYearMonth" message="tns:IOutputService_GetConsumableInventoryByYearMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetConsumableInventoryByYearMonthResponse" message="tns:IOutputService_GetConsumableInventoryByYearMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumableInventoryByYearMonthCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetConsumableInventoryByYearMonthCount" message="tns:IOutputService_GetConsumableInventoryByYearMonthCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetConsumableInventoryByYearMonthCountResponse" message="tns:IOutputService_GetConsumableInventoryByYearMonthCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumablePurchaseByYearMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonth" message="tns:IOutputService_GetConsumablePurchaseByYearMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonthResponse" message="tns:IOutputService_GetConsumablePurchaseByYearMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumablePurchaseByYearMonthCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonthCount" message="tns:IOutputService_GetConsumablePurchaseByYearMonthCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonthCountResponse" message="tns:IOutputService_GetConsumablePurchaseByYearMonthCount_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="output" type="tns:IOutputService">
@@ -232,6 +272,42 @@
     </wsdl:operation>
     <wsdl:operation name="GetMaterialOrderItemsByYearMonthCount">
       <soap:operation soapAction="http://tempuri.org/IOutputService/GetMaterialOrderItemsByYearMonthCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumableInventoryByYearMonth">
+      <soap:operation soapAction="http://tempuri.org/IOutputService/GetConsumableInventoryByYearMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumableInventoryByYearMonthCount">
+      <soap:operation soapAction="http://tempuri.org/IOutputService/GetConsumableInventoryByYearMonthCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumablePurchaseByYearMonth">
+      <soap:operation soapAction="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsumablePurchaseByYearMonthCount">
+      <soap:operation soapAction="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonthCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

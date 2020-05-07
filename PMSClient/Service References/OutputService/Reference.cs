@@ -3913,6 +3913,547 @@ namespace PMSClient.OutputService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcConsumableInventory", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcConsumableInventory : PMSClient.OutputService.DcModelBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CountHistoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GradeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HistoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ItemNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastUpdateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MaxWarningQuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MinWarningQuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PersonInChargeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string QuantityUnitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SpecificationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StorePositionField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Category {
+            get {
+                return this.CategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryField, value) != true)) {
+                    this.CategoryField = value;
+                    this.RaisePropertyChanged("Category");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CountHistory {
+            get {
+                return this.CountHistoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CountHistoryField, value) != true)) {
+                    this.CountHistoryField = value;
+                    this.RaisePropertyChanged("CountHistory");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Details {
+            get {
+                return this.DetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
+                    this.DetailsField = value;
+                    this.RaisePropertyChanged("Details");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Grade {
+            get {
+                return this.GradeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GradeField, value) != true)) {
+                    this.GradeField = value;
+                    this.RaisePropertyChanged("Grade");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string History {
+            get {
+                return this.HistoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HistoryField, value) != true)) {
+                    this.HistoryField = value;
+                    this.RaisePropertyChanged("History");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemName {
+            get {
+                return this.ItemNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemNameField, value) != true)) {
+                    this.ItemNameField = value;
+                    this.RaisePropertyChanged("ItemName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastUpdateTime {
+            get {
+                return this.LastUpdateTimeField;
+            }
+            set {
+                if ((this.LastUpdateTimeField.Equals(value) != true)) {
+                    this.LastUpdateTimeField = value;
+                    this.RaisePropertyChanged("LastUpdateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double MaxWarningQuantity {
+            get {
+                return this.MaxWarningQuantityField;
+            }
+            set {
+                if ((this.MaxWarningQuantityField.Equals(value) != true)) {
+                    this.MaxWarningQuantityField = value;
+                    this.RaisePropertyChanged("MaxWarningQuantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double MinWarningQuantity {
+            get {
+                return this.MinWarningQuantityField;
+            }
+            set {
+                if ((this.MinWarningQuantityField.Equals(value) != true)) {
+                    this.MinWarningQuantityField = value;
+                    this.RaisePropertyChanged("MinWarningQuantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PersonInCharge {
+            get {
+                return this.PersonInChargeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PersonInChargeField, value) != true)) {
+                    this.PersonInChargeField = value;
+                    this.RaisePropertyChanged("PersonInCharge");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string QuantityUnit {
+            get {
+                return this.QuantityUnitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.QuantityUnitField, value) != true)) {
+                    this.QuantityUnitField = value;
+                    this.RaisePropertyChanged("QuantityUnit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Specification {
+            get {
+                return this.SpecificationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SpecificationField, value) != true)) {
+                    this.SpecificationField = value;
+                    this.RaisePropertyChanged("Specification");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StorePosition {
+            get {
+                return this.StorePositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StorePositionField, value) != true)) {
+                    this.StorePositionField = value;
+                    this.RaisePropertyChanged("StorePosition");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcModelBase", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PMSClient.OutputService.DcConsumablePurchase))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(PMSClient.OutputService.DcConsumableInventory))]
+    public partial class DcModelBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcConsumablePurchase", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcConsumablePurchase : PMSClient.OutputService.DcModelBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GradeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ItemNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastUpdateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProcessHistoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string QuantityUnitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SpecificationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupplierField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double TotalCostField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Category {
+            get {
+                return this.CategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryField, value) != true)) {
+                    this.CategoryField = value;
+                    this.RaisePropertyChanged("Category");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Details {
+            get {
+                return this.DetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
+                    this.DetailsField = value;
+                    this.RaisePropertyChanged("Details");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Grade {
+            get {
+                return this.GradeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GradeField, value) != true)) {
+                    this.GradeField = value;
+                    this.RaisePropertyChanged("Grade");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemName {
+            get {
+                return this.ItemNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemNameField, value) != true)) {
+                    this.ItemNameField = value;
+                    this.RaisePropertyChanged("ItemName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastUpdateTime {
+            get {
+                return this.LastUpdateTimeField;
+            }
+            set {
+                if ((this.LastUpdateTimeField.Equals(value) != true)) {
+                    this.LastUpdateTimeField = value;
+                    this.RaisePropertyChanged("LastUpdateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProcessHistory {
+            get {
+                return this.ProcessHistoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProcessHistoryField, value) != true)) {
+                    this.ProcessHistoryField = value;
+                    this.RaisePropertyChanged("ProcessHistory");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string QuantityUnit {
+            get {
+                return this.QuantityUnitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.QuantityUnitField, value) != true)) {
+                    this.QuantityUnitField = value;
+                    this.RaisePropertyChanged("QuantityUnit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Specification {
+            get {
+                return this.SpecificationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SpecificationField, value) != true)) {
+                    this.SpecificationField = value;
+                    this.RaisePropertyChanged("Specification");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Supplier {
+            get {
+                return this.SupplierField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupplierField, value) != true)) {
+                    this.SupplierField = value;
+                    this.RaisePropertyChanged("Supplier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double TotalCost {
+            get {
+                return this.TotalCostField;
+            }
+            set {
+                if ((this.TotalCostField.Equals(value) != true)) {
+                    this.TotalCostField = value;
+                    this.RaisePropertyChanged("TotalCost");
+                }
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="OutputService.IOutputService")]
     public interface IOutputService {
@@ -3988,6 +4529,30 @@ namespace PMSClient.OutputService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetMaterialOrderItemsByYearMonthCount", ReplyAction="http://tempuri.org/IOutputService/GetMaterialOrderItemsByYearMonthCountResponse")]
         System.Threading.Tasks.Task<int> GetMaterialOrderItemsByYearMonthCountAsync(int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetConsumableInventoryByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetConsumableInventoryByYearMonthResponse")]
+        PMSClient.OutputService.DcConsumableInventory[] GetConsumableInventoryByYearMonth(int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetConsumableInventoryByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetConsumableInventoryByYearMonthResponse")]
+        System.Threading.Tasks.Task<PMSClient.OutputService.DcConsumableInventory[]> GetConsumableInventoryByYearMonthAsync(int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetConsumableInventoryByYearMonthCount", ReplyAction="http://tempuri.org/IOutputService/GetConsumableInventoryByYearMonthCountResponse")]
+        int GetConsumableInventoryByYearMonthCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetConsumableInventoryByYearMonthCount", ReplyAction="http://tempuri.org/IOutputService/GetConsumableInventoryByYearMonthCountResponse")]
+        System.Threading.Tasks.Task<int> GetConsumableInventoryByYearMonthCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonthResponse")]
+        PMSClient.OutputService.DcConsumablePurchase[] GetConsumablePurchaseByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonthResponse")]
+        System.Threading.Tasks.Task<PMSClient.OutputService.DcConsumablePurchase[]> GetConsumablePurchaseByYearMonthAsync(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonthCount", ReplyAction="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonthCountResponse")]
+        int GetConsumablePurchaseByYearMonthCount(int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonthCount", ReplyAction="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonthCountResponse")]
+        System.Threading.Tasks.Task<int> GetConsumablePurchaseByYearMonthCountAsync(int year_start, int month_start, int year_end, int month_end);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4111,6 +4676,38 @@ namespace PMSClient.OutputService {
         
         public System.Threading.Tasks.Task<int> GetMaterialOrderItemsByYearMonthCountAsync(int year_start, int month_start, int year_end, int month_end) {
             return base.Channel.GetMaterialOrderItemsByYearMonthCountAsync(year_start, month_start, year_end, month_end);
+        }
+        
+        public PMSClient.OutputService.DcConsumableInventory[] GetConsumableInventoryByYearMonth(int s, int t) {
+            return base.Channel.GetConsumableInventoryByYearMonth(s, t);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.OutputService.DcConsumableInventory[]> GetConsumableInventoryByYearMonthAsync(int s, int t) {
+            return base.Channel.GetConsumableInventoryByYearMonthAsync(s, t);
+        }
+        
+        public int GetConsumableInventoryByYearMonthCount() {
+            return base.Channel.GetConsumableInventoryByYearMonthCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetConsumableInventoryByYearMonthCountAsync() {
+            return base.Channel.GetConsumableInventoryByYearMonthCountAsync();
+        }
+        
+        public PMSClient.OutputService.DcConsumablePurchase[] GetConsumablePurchaseByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetConsumablePurchaseByYearMonth(s, t, year_start, month_start, year_end, month_end);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.OutputService.DcConsumablePurchase[]> GetConsumablePurchaseByYearMonthAsync(int s, int t, int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetConsumablePurchaseByYearMonthAsync(s, t, year_start, month_start, year_end, month_end);
+        }
+        
+        public int GetConsumablePurchaseByYearMonthCount(int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetConsumablePurchaseByYearMonthCount(year_start, month_start, year_end, month_end);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetConsumablePurchaseByYearMonthCountAsync(int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetConsumablePurchaseByYearMonthCountAsync(year_start, month_start, year_end, month_end);
         }
     }
 }

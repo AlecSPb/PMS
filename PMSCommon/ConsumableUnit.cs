@@ -25,6 +25,7 @@ namespace PMSCommon
         箱,
         卷,
         张,
-        片
+        片,
+        包
     }
 }
