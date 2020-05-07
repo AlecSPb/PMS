@@ -95,13 +95,14 @@ namespace PMSClient.Helper
             return false;
         }
         /// <summary>
-        /// 判断当前用户是否在用户组里-从数据库里
+        /// 判断当前用户是否在用户组里
         /// </summary>
         /// <param name="controlName"></param>
         /// <returns></returns>
         public bool IsInGroup(string controlName)
         {
             if (string.IsNullOrEmpty(controlName)) return false;
+            //从本地权限文件中判定
             return IsInGroup(GetAccessArrayFromLocal(controlName));
         }
         /// <summary>
