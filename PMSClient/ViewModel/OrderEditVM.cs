@@ -20,6 +20,20 @@ namespace PMSClient.ViewModel
             Save = new RelayCommand(ActionSave, CanSave);
             GiveUp = new RelayCommand(GoBack);
             CheckPMINumber = new RelayCommand(ActionCheckPMINumber);
+            Input = new RelayCommand(ActionInput);
+        }
+
+        private void ActionInput()
+        {
+            var result = XSHelper.XS.Dialog.ShowOpenDialog(XSHelper.XS.File.GetDesktopPath(), "json文件(*.json)|*.json");
+            if (result.HasSelected)
+            {
+                string jsonFile = result.SelectPath;
+
+
+
+
+            }
         }
 
         private void ActionCheckPMINumber()
@@ -209,6 +223,7 @@ namespace PMSClient.ViewModel
         }
 
         public RelayCommand CheckPMINumber { get; set; }
+        public RelayCommand Input { get; set; }
 
 
         public List<string> CustomerNames { get; set; }

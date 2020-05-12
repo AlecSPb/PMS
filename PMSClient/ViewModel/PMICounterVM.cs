@@ -103,7 +103,7 @@ namespace PMSClient.ViewModel
                         model.Dimension = obj.ItemSpecification;
 
                         #endregion
-                        int number = dialog.Counter;
+                        double number = dialog.Counter;
                         string prefix = model.PlateLot.Substring(0, 10);
                         string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
 
@@ -140,7 +140,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private string AddItemHistory(string history, string sign, int count)
+        private string AddItemHistory(string history, string sign, double count)
         {
             return $"{DateTime.Today.ToString("yyMMdd")}{sign}{count};{history}";
         }

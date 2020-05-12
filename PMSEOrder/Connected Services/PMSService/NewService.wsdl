@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NewService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.16.254:8002/NewService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/NewService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/NewService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INewService_GetOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrder" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderLastUpdateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderLastUpdateTime" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderLastUpdateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderLastUpdateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByID" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_AddOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrder" />
+  </wsdl:message>
+  <wsdl:message name="INewService_AddOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_UpdateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrder" />
+  </wsdl:message>
+  <wsdl:message name="INewService_UpdateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_CheckOrderPMINumberExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOrderPMINumberExist" />
+  </wsdl:message>
+  <wsdl:message name="INewService_CheckOrderPMINumberExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOrderPMINumberExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderUnFinishedCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderUnFinishedCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderUnFinishedCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderUnFinishedCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderUnFinishedTargetCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderUnFinishedTargetCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderUnFinishedTargetCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderUnFinishedTargetCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderByPMINumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByPMINumber" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetOrderByPMINumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByPMINumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetMisson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMisson" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetMisson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetMissonCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetMissonCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetMissonUnCompletedCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnCompletedCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetMissonUnCompletedCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnCompletedCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetMissonUnVHPTargetCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnVHPTargetCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetMissonUnVHPTargetCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnVHPTargetCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetEmergencyOrderCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmergencyOrderCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetEmergencyOrderCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmergencyOrderCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlansByOrderID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlansByOrderID" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlansByOrderID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlansByOrderIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtra_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtra" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtraCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtraCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtraForProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraForProduct" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtraForProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraForProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtraForProductCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraForProductCount" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetPlanExtraForProductCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanExtraForProductCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_AddPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPlan" />
+  </wsdl:message>
+  <wsdl:message name="INewService_AddPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_UpdatePlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlan" />
+  </wsdl:message>
+  <wsdl:message name="INewService_UpdatePlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewService_LockTodayPlans_InputMessage">
+    <wsdl:part name="parameters" element="tns:LockTodayPlans" />
+  </wsdl:message>
+  <wsdl:message name="INewService_LockTodayPlans_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LockTodayPlansResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INewService">
+    <wsdl:operation name="GetOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetOrder" message="tns:INewService_GetOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetOrderResponse" message="tns:INewService_GetOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetOrderCount" message="tns:INewService_GetOrderCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetOrderCountResponse" message="tns:INewService_GetOrderCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderLastUpdateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetOrderLastUpdateTime" message="tns:INewService_GetOrderLastUpdateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetOrderLastUpdateTimeResponse" message="tns:INewService_GetOrderLastUpdateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetOrderByID" message="tns:INewService_GetOrderByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetOrderByIDResponse" message="tns:INewService_GetOrderByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/AddOrder" message="tns:INewService_AddOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/AddOrderResponse" message="tns:INewService_AddOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/UpdateOrder" message="tns:INewService_UpdateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/UpdateOrderResponse" message="tns:INewService_UpdateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOrderPMINumberExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/CheckOrderPMINumberExist" message="tns:INewService_CheckOrderPMINumberExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/CheckOrderPMINumberExistResponse" message="tns:INewService_CheckOrderPMINumberExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderUnFinishedCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetOrderUnFinishedCount" message="tns:INewService_GetOrderUnFinishedCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetOrderUnFinishedCountResponse" message="tns:INewService_GetOrderUnFinishedCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderUnFinishedTargetCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetOrderUnFinishedTargetCount" message="tns:INewService_GetOrderUnFinishedTargetCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetOrderUnFinishedTargetCountResponse" message="tns:INewService_GetOrderUnFinishedTargetCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByPMINumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetOrderByPMINumber" message="tns:INewService_GetOrderByPMINumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetOrderByPMINumberResponse" message="tns:INewService_GetOrderByPMINumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMisson">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetMisson" message="tns:INewService_GetMisson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetMissonResponse" message="tns:INewService_GetMisson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetMissonCount" message="tns:INewService_GetMissonCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetMissonCountResponse" message="tns:INewService_GetMissonCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonUnCompletedCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetMissonUnCompletedCount" message="tns:INewService_GetMissonUnCompletedCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetMissonUnCompletedCountResponse" message="tns:INewService_GetMissonUnCompletedCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonUnVHPTargetCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetMissonUnVHPTargetCount" message="tns:INewService_GetMissonUnVHPTargetCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetMissonUnVHPTargetCountResponse" message="tns:INewService_GetMissonUnVHPTargetCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmergencyOrderCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetEmergencyOrderCount" message="tns:INewService_GetEmergencyOrderCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetEmergencyOrderCountResponse" message="tns:INewService_GetEmergencyOrderCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlansByOrderID">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlansByOrderID" message="tns:INewService_GetPlansByOrderID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlansByOrderIDResponse" message="tns:INewService_GetPlansByOrderID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtra">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlanExtra" message="tns:INewService_GetPlanExtra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlanExtraResponse" message="tns:INewService_GetPlanExtra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlanExtraCount" message="tns:INewService_GetPlanExtraCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlanExtraCountResponse" message="tns:INewService_GetPlanExtraCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraForProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlanExtraForProduct" message="tns:INewService_GetPlanExtraForProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlanExtraForProductResponse" message="tns:INewService_GetPlanExtraForProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraForProductCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlanExtraForProductCount" message="tns:INewService_GetPlanExtraForProductCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetPlanExtraForProductCountResponse" message="tns:INewService_GetPlanExtraForProductCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/AddPlan" message="tns:INewService_AddPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/AddPlanResponse" message="tns:INewService_AddPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/UpdatePlan" message="tns:INewService_UpdatePlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/UpdatePlanResponse" message="tns:INewService_UpdatePlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LockTodayPlans">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/LockTodayPlans" message="tns:INewService_LockTodayPlans_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/LockTodayPlansResponse" message="tns:INewService_LockTodayPlans_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_INewService" type="tns:INewService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetOrder">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetOrderCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderLastUpdateTime">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetOrderLastUpdateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByID">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetOrderByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <soap:operation soapAction="http://tempuri.org/INewService/AddOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <soap:operation soapAction="http://tempuri.org/INewService/UpdateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOrderPMINumberExist">
+      <soap:operation soapAction="http://tempuri.org/INewService/CheckOrderPMINumberExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderUnFinishedCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetOrderUnFinishedCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderUnFinishedTargetCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetOrderUnFinishedTargetCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByPMINumber">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetOrderByPMINumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMisson">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetMisson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetMissonCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonUnCompletedCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetMissonUnCompletedCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonUnVHPTargetCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetMissonUnVHPTargetCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmergencyOrderCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetEmergencyOrderCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlansByOrderID">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetPlansByOrderID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtra">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetPlanExtra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetPlanExtraCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraForProduct">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetPlanExtraForProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanExtraForProductCount">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetPlanExtraForProductCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlan">
+      <soap:operation soapAction="http://tempuri.org/INewService/AddPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlan">
+      <soap:operation soapAction="http://tempuri.org/INewService/UpdatePlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LockTodayPlans">
+      <soap:operation soapAction="http://tempuri.org/INewService/LockTodayPlans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NewService">
+    <wsdl:port name="BasicHttpBinding_INewService" binding="tns:BasicHttpBinding_INewService">
+      <soap:address location="http://192.168.16.254:8002/NewService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

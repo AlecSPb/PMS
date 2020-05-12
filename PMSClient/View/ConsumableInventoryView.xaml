@@ -71,6 +71,8 @@
                                     Binding="{Binding MaxWarningQuantity}"/>
                 <DataGridTextColumn Header="{StaticResource CIMinWarningQuantity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Binding="{Binding MinWarningQuantity}"/>
+                <DataGridTextColumn Header="{StaticResource CIRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Remark}"/>
                 <DataGridTemplateColumn Header="{StaticResource CIHistory}" Width="200">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -97,8 +99,6 @@
                                     Binding="{Binding History}"/>
                 <DataGridTextColumn Header="{StaticResource CICountHistory}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CountHistory}"/>-->
-                <DataGridTextColumn Header="{StaticResource CIRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource CILastUpdateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding LastUpdateTime}"/>
                 

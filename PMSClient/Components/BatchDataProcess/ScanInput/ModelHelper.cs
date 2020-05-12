@@ -147,6 +147,7 @@ namespace PMSClient.DataProcess.ScanInput
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.OrderNumber = 0;
             model.Remark = "无";
+            model.DeliveryType = deliverytype;
 
             //TODO:背板编号的处理
             if (model.ProductType == PMSCommon.ProductType.靶材.ToString())

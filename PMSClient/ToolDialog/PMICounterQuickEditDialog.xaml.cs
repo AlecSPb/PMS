@@ -24,11 +24,11 @@ namespace PMSClient.ToolDialog
             InitializeComponent();
         }
 
-        public int Counter
+        public double Counter
         {
             get
             {
-                return int.Parse(TxtCount.Text.Trim());
+                return double.Parse(TxtCount.Text.Trim());
             }
         }
 

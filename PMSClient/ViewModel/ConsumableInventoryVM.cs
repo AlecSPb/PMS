@@ -85,7 +85,7 @@ namespace PMSClient.ViewModel
             return PMSHelper.CurrentSession.IsInGroup("ConsumableInventoryQuickChange");
         }
 
-        private string AddHistory(string history, string sign, int count)
+        private string AddHistory(string history, string sign, double count)
         {
             return $"{DateTime.Today.ToString("yyMMdd")}{sign}{count};{history}";
         }
