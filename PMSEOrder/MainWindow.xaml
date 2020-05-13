@@ -5,15 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSEOrder"
         mc:Ignorable="d"
-        Title="PMI E-Order" Height="450" Width="800" WindowState="Maximized">
+        Title="PMI E-Order (local-offline)" Height="450" Width="800" WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Content="New" Style="{StaticResource StyleButtonCommon}"/>
-        </StackPanel>
-        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Button Content="New" Style="{StaticResource StyleButtonCommon}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Backup DB" Style="{StaticResource StyleButtonCommon}"/>
+                <Button Content="Excel" Style="{StaticResource StyleButtonCommon}"/>
+            </StackPanel>
+        </Grid>
+        <DataGrid Grid.Row="1" Style="{StaticResource StyleDataGridCommon}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Operate">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Edit" Style="{StaticResource StyleDGButton}"/>
+                                <Button Content="Copy" Style="{StaticResource StyleDGButton}"/>
+                                <Button Content="Export" Style="{StaticResource StyleDGButton}"/>
+                                <Button Content="StateChange" Style="{StaticResource StyleDGButton}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Customer" Binding="{Binding Customer}"/>
+                <DataGridTextColumn Header="Composition" Binding="{Binding Composition}"/>
+                <DataGridTextColumn Header="CompositionDetail" Binding="{Binding CompositionDetail}"/>
+                
+                
+                
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
