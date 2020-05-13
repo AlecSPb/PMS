@@ -18,7 +18,7 @@ namespace PMSXMLCreator.Service
         private Analysis analysis = new Analysis();
         //设定命名空间参数
         private string ns_prefix = "ns1";
-        private string ns = "x-schema../Schema/UltQualityCertificateSchema2016Dec.xml";
+        private string ns = "x-schema:../Schema/UltQualityCertificateSchema2016Dec.xml";
         public void CreateFile(ECOA model)
         {
             #region 检查逻辑
@@ -53,7 +53,7 @@ namespace PMSXMLCreator.Service
             //true表示standalone
             writer.WriteStartDocument(true);
             writer.WriteStartElement(ns_prefix, "QualityCertificateFile", ns);
-            //writer.WriteAttributeString("xmlns", "ns1", null, "x-schema../Schema/UltQualityCertificateSchema2016Dec.xml");
+            //writer.WriteAttributeString("xmlns", "ns1", null, "x-schema:../Schema/UltQualityCertificateSchema2016Dec.xml");
             writer.WriteAttributeString("xmlns", "xsi", null, "http://www.w3.org/2001/XMLSchema-instance");
             //writer.WriteAttributeString("xsi", "schemaLocation", null,
             //    "http://www.cdpmi.net PMITargetForIntelSchema.xsd");

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSEOrder"
         mc:Ignorable="d"
-        Title="PMI E-Order (local-offline)" Height="450" Width="800" WindowState="Maximized">
-    <Grid>
+        Title="PMI E-Order (local-offline)" Height="450" Width="1200" WindowState="Maximized">
+    <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
@@ -14,37 +14,95 @@
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
-                <Button Content="New" Style="{StaticResource StyleButtonCommon}"/>
+                <Button Content="New" Style="{StaticResource StyleButtonCommon}" Command="{Binding New}"/>
+                <TextBlock Text="Customer" Style="{StaticResource  StyleTextBlockCommon}"/>
+                <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+                <TextBlock Text="Composition" Style="{StaticResource  StyleTextBlockCommon}"/>
+                <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+                <TextBlock Text="PO" Style="{StaticResource  StyleTextBlockCommon}"/>
+                <TextBox Text="{Binding SearchPO,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+                <Button Content="Search" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
+                <!--图例-->
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="UnFinished" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
+                    <TextBlock Text="UnSend" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
+                    <TextBlock Text="Sent" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
+                    <TextBlock Text="Received" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource EmergencyBrush}"/>
+                </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Content="Backup DB" Style="{StaticResource StyleButtonCommon}"/>
-                <Button Content="Excel" Style="{StaticResource StyleButtonCommon}"/>
+                <Button Content="Export" Style="{StaticResource StyleButtonCommon}"  Command="{Binding ExportUnSend}"/>
+                <Button Content="Backup DB" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Backup}"/>
+                <Button Content="Excel" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Excel}"/>
             </StackPanel>
         </Grid>
-        <DataGrid Grid.Row="1" Style="{StaticResource StyleDataGridCommon}">
-            <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Operate">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Button Content="Edit" Style="{StaticResource StyleDGButton}"/>
-                                <Button Content="Copy" Style="{StaticResource StyleDGButton}"/>
-                                <Button Content="Export" Style="{StaticResource StyleDGButton}"/>
-                                <Button Content="StateChange" Style="{StaticResource StyleDGButton}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Customer" Binding="{Binding Customer}"/>
-                <DataGridTextColumn Header="Composition" Binding="{Binding Composition}"/>
-                <DataGridTextColumn Header="CompositionDetail" Binding="{Binding CompositionDetail}"/>
-                
-                
-                
-            </DataGrid.Columns>
-        </DataGrid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid Grid.Column="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Orders}">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Operate">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="Edit" Style="{StaticResource StyleDGButton}"
+                                            Command="{Binding DataContext.Edit, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
+                                    <Button Content="Copy" Style="{StaticResource StyleDGButton}"
+                                            Command="{Binding DataContext.Copy, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
+                                    <Button Content="Export" Style="{StaticResource StyleDGButton}"
+                                            Command="{Binding DataContext.ExportSingle, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
+                                    <Button Content="StateChange" Style="{StaticResource StyleDGButton}"
+                                            Command="{Binding DataContext.StateChange, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="OrderState" Binding="{Binding OrderState}"/>
+
+                    <DataGridTextColumn Header="Customer" Binding="{Binding Customer}"/>
+                    <DataGridTextColumn Header="Composition" Binding="{Binding Composition}"/>
+                    <DataGridTextColumn Header="CompositionDetail" Binding="{Binding CompositionDetail}"/>
+                    <DataGridTextColumn Header="ProductType" Binding="{Binding ProductType}"/>
+                    <DataGridTextColumn Header="Purity" Binding="{Binding Purity}"/>
+                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
+                    <DataGridTextColumn Header="QuantityUnit" Binding="{Binding QuantityUnit}"/>
+                    <DataGridTextColumn Header="Dimension" Binding="{Binding Dimension}"/>
+                    <DataGridTextColumn Header="DimensionDetail" Binding="{Binding DimensionDetails}"/>
+                    <DataGridTextColumn Header="Drawing" Binding="{Binding Drawing}"/>
+                    <DataGridTextColumn Header="SampleNeed" Binding="{Binding SampleNeed}"/>
+                    <DataGridTextColumn Header="SampleNeedRemark" Binding="{Binding SampleNeedRemark}"/>
+                    <DataGridTextColumn Header="SampleForAnlysis" Binding="{Binding SampleForAnlysis}"/>
+                    <DataGridTextColumn Header="SampleForAnlysisRemark" Binding="{Binding SampleForAnlysisRemark}"/>
+                    <DataGridTextColumn Header="DeadLine" Binding="{Binding DeadLine}"/>
+                    <DataGridTextColumn Header="MinimumAcceptDefect" Binding="{Binding MinimumAcceptDefect}"/>
+                    <DataGridTextColumn Header="ShipTo" Binding="{Binding ShipTo}"/>
+                    <DataGridTextColumn Header="WithBackingPlate" Binding="{Binding WithBackingPlate}"/>
+                    <DataGridTextColumn Header="PlateDrawing" Binding="{Binding PlateDrawing}"/>
+                    <DataGridTextColumn Header="SpecialRequirement" Binding="{Binding SpecialRequirement}"/>
+                    <DataGridTextColumn Header="BondingRequirement" Binding="{Binding BondingRequirement}"/>
+                    <DataGridTextColumn Header="PartNumber" Binding="{Binding PartNumber}"/>
+                    <DataGridTextColumn Header="Remark" Binding="{Binding Remark}"/>
+                    <DataGridTextColumn Header="CreateTime" Binding="{Binding CreateTime}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <Expander Grid.Column="1" ExpandDirection="Left" IsExpanded="False">
+                <Viewbox Width="200">
+                    
+                </Viewbox>
+            </Expander>
+        </Grid>
     </Grid>
 </Window>

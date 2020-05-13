@@ -10,7 +10,6 @@ namespace PMSEOrder
     {
         Deleted,
         UnFinished,
-        UnChecked,
         UnSend,
         Sent,
         Received

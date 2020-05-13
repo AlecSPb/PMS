@@ -10,6 +10,7 @@ using CommonHelper;
 namespace PMSXMLCreator.Service
 {
     /// <summary>
+    /// 遵循Intel 2019-04-22_ULT_XML_EXAMPLE_FILE
     /// 生成XML文件
     /// </summary>
     public class XmlHelper_ns2 : IXmlHelper
@@ -18,7 +19,7 @@ namespace PMSXMLCreator.Service
         private Analysis analysis = new Analysis();
         //设定命名空间参数
         private string ns_prefix = "ns1";
-        private string ns = "x-schema../Schema/UltQualityCertificateSchema2016Dec.xml";
+        private string ns = "x-schema:../Schema/UltQualityCertificateSchema2016Dec.xml";
         public void CreateFile(ECOA model)
         {
             #region 检查逻辑
@@ -53,7 +54,7 @@ namespace PMSXMLCreator.Service
             //true表示standalone
             writer.WriteStartDocument(true);
             writer.WriteStartElement(ns_prefix, "QualityCertificateFile", ns);
-            //writer.WriteAttributeString("xmlns", "ns1", null, "x-schema../Schema/UltQualityCertificateSchema2016Dec.xml");
+            //writer.WriteAttributeString("xmlns", "ns1", null, "x-schema:../Schema/UltQualityCertificateSchema2016Dec.xml");
             writer.WriteAttributeString("xmlns", "xsi", null, "http://www.w3.org/2001/XMLSchema-instance");
             //writer.WriteAttributeString("xsi", "schemaLocation", null,
             //    "http://www.cdpmi.net PMITargetForIntelSchema.xsd");
@@ -113,8 +114,8 @@ namespace PMSXMLCreator.Service
             writer.WriteStartElement(ns_prefix, "Shipment", ns);
             writer.WriteElementString(ns_prefix, "deliverTo", ns, model.DeliverTo);
             //writer.WriteElementString(ns_prefix, "shipmentnumber", ns, model.ShipmentNumber);
-            writer.WriteElementString(ns_prefix, "scheduledshipdate", ns, model.ScheduledShipDate.ToShortDateString());
-            writer.WriteElementString(ns_prefix, "actualshipdate", ns, model.ActualShipDate.ToShortDateString());
+            writer.WriteElementString(ns_prefix, "scheduledshipdate", ns, model.ScheduledShipDate.ToString("yyyy-MM-ddTHH:mm:ss"));
+            writer.WriteElementString(ns_prefix, "actualshipdate", ns, model.ActualShipDate.ToString("yyyy-MM-ddTHH:mm:ss"));
             writer.WriteStartElement(ns_prefix, "containers", ns);
             writer.WriteElementString(ns_prefix, "containernumber", ns, model.ContainerNumber);
             writer.WriteEndElement();
