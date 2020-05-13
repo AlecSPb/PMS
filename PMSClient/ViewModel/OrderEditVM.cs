@@ -20,7 +20,6 @@ namespace PMSClient.ViewModel
             Save = new RelayCommand(ActionSave, CanSave);
             GiveUp = new RelayCommand(GoBack);
             CheckPMINumber = new RelayCommand(ActionCheckPMINumber);
-            Input = new RelayCommand(ActionInput);
         }
 
         private void ActionInput()
@@ -223,8 +222,6 @@ namespace PMSClient.ViewModel
         }
 
         public RelayCommand CheckPMINumber { get; set; }
-        public RelayCommand Input { get; set; }
-
 
         public List<string> CustomerNames { get; set; }
         public List<string> ProductTypes { get; set; }

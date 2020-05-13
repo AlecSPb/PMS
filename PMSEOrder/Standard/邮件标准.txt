@@ -1,0 +1,18 @@
+﻿订单接受邮箱：
+所有订单发送到pmiorder@cdpmi.net，
+	可以同时转发给其他人
+
+
+
+邮件标题：
+	New Order:[Customer][PO][OtherInformation]
+
+邮件正文:
+	复制从PMI EOrder生成的订单文本
+邮件附件:
+	附加从PMI EOrder生成的Json文件
+
+所有统筹组负责订单人员都可以接受订单，
+	其中一个人为主，责任是输入PMS(主要导入,少量输入)，
+	其他人为辅助，责任是检查提醒
+
