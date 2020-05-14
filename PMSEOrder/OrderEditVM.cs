@@ -24,7 +24,7 @@ namespace PMSEOrder
 
             CustomerNames = new List<string>();
             CustomerNames.Clear();
-            CustomerNames.AddRange(new DataService().GetCustomer());
+            CustomerNames.AddRange(JsonService.GetCustomers());
 
             ProductTypes = new List<string>();
             ProductTypes.Add("Target");
@@ -37,11 +37,10 @@ namespace PMSEOrder
             QuantityUnits.Add("g");
 
             OrderStates = new List<string>();
-            OrderStates.Add("UnFinish");
+            OrderStates.Add("Deleted");
+            OrderStates.Add("UnFinished");
             OrderStates.Add("UnSend");
             OrderStates.Add("Sent");
-            OrderStates.Add("Received");
-
         }
 
         private void ActionCloseWindow()
@@ -96,7 +95,7 @@ namespace PMSEOrder
             CurrentOrder = model;
             CurrentOrder.GUIDID = Guid.NewGuid();
             CurrentOrder.CreateTime = DateTime.Now;
-            CurrentOrder.OrderState = "UnSend";
+            CurrentOrder.OrderState = OrderState.UnSend.ToString();
         }
 
         private void ActionSave()

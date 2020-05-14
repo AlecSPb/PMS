@@ -8,6 +8,12 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSEOrder.Model;
 using GalaSoft.MvvmLight.Messaging;
+using XSHelper;
+using Newtonsoft.Json;
+using PMSEOrder.Service;
+using System.IO;
+
+
 
 namespace PMSEOrder
 {
@@ -30,7 +36,7 @@ namespace PMSEOrder
             Duplicate = new RelayCommand<Order>(ActionDuplicate);
             ExportSingle = new RelayCommand<Order>(ActionExportSingle);
             ExportUnSend = new RelayCommand(ActionExportUnSend);
-            StateChange = new RelayCommand<Order>(ActionStateChange);
+            Send = new RelayCommand<Order>(ActionSend);
             Search = new RelayCommand(ActionSearch);
             Backup = new RelayCommand(ActionBackup);
             Excel = new RelayCommand(ActionExcel);
@@ -49,21 +55,25 @@ namespace PMSEOrder
 
         private void ActionPMSRefresh()
         {
+            //从PMS获取数据来设置状态
             throw new NotImplementedException();
         }
 
-        private void ActionStateChange(Order obj)
+        private void ActionSend(Order obj)
         {
+            //快速设置为已发送
             throw new NotImplementedException();
         }
 
         private void ActionExcel()
         {
+            //利用NPIO导出所有数据的Excel表格
             throw new NotImplementedException();
         }
 
         private void ActionBackup()
         {
+            //复制数据库到别的地方
             throw new NotImplementedException();
         }
 
@@ -74,12 +84,47 @@ namespace PMSEOrder
 
         private void ActionExportUnSend()
         {
-            throw new NotImplementedException();
+            if (!XS.MessageBox.ShowYesNo("Will get all [UnSend] E-Order files? Y=continue,N=cancel"))
+            {
+                return;
+            }
+            //批量生成未完成项目的json文件，并弹出文本窗口供复制到Email
+            var dialog = XS.Dialog.ShowFolderBrowserDialog("Please select a folder");
+            if (dialog.HasSelected)
+            {
+                var folderPath = dialog.SelectPath;
+
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                var filterOrder = Orders.Where(i => i.OrderState == OrderState.UnSend.ToString());
+                foreach (var item in filterOrder)
+                {
+                    var filedefaultname = JsonService.GetJsonFileName(item);
+                    var filepath = Path.Combine(folderPath, filedefaultname + ".json");
+                    JsonService.SaveJsonToFile(item, filepath);
+                }
+                XS.MessageBox.ShowInfo($"All processed count= {filterOrder.Count()}");
+            }
+
+
+
+
         }
 
         private void ActionExportSingle(Order obj)
         {
-            throw new NotImplementedException();
+            if (obj == null) return;
+            var filedefaultname = JsonService.GetJsonFileName(obj);
+            var result = XS.Dialog.ShowSaveDialog(XS.File.GetDesktopPath(), "json file|*.json", filedefaultname);
+            if (result.HasSelected)
+            {
+                var filepath = result.SelectPath;
+                JsonService.SaveJsonToFile(obj, filepath);
+                XS.MessageBox.ShowInfo("Process Done");
+            }
         }
 
         private void ActionDuplicate(Order obj)
@@ -109,9 +154,9 @@ namespace PMSEOrder
         {
             var s = new Service.DataService();
             var orders = s.GetAllOrder();
-            var filter_orders = orders.Where(i => 
-                                            i.CustomerName.ToLower().Contains(SearchCustomer.ToLower()) 
-                                            && i.Composition.ToLower().Contains(SearchComposition.ToLower()) 
+            var filter_orders = orders.Where(i =>
+                                            i.CustomerName.ToLower().Contains(SearchCustomer.ToLower())
+                                            && i.Composition.ToLower().Contains(SearchComposition.ToLower())
                                             && i.PO.ToLower().Contains(SearchPO.ToLower()))
                                       .OrderByDescending(i => i.CreateTime).ToList();
             Orders.Clear();
@@ -167,7 +212,7 @@ namespace PMSEOrder
         public RelayCommand<Order> Edit { get; set; }
         public RelayCommand<Order> Duplicate { get; set; }
         public RelayCommand<Order> ExportSingle { get; set; }
-        public RelayCommand<Order> StateChange { get; set; }
+        public RelayCommand<Order> Send { get; set; }
 
 
 

@@ -10,8 +10,6 @@ using Dapper.Contrib;
 using PMSEOrder.Model;
 using System.IO;
 using Dapper.Contrib.Extensions;
-using Newtonsoft.Json;
-using XSHelper;
 
 namespace PMSEOrder.Service
 {
@@ -96,18 +94,8 @@ namespace PMSEOrder.Service
             }
         }
 
-        /// <summary>
-        /// 从json文件获取customer
-        /// </summary>
-        public List<string> GetCustomer()
-        {
-            string jsonStr = XS.File.ReadText(XS.File.GetCurrentFolderPath("DB") + "\\customer.json");
-            var customers = JsonConvert.DeserializeObject<List<CustomerInfo>>(jsonStr);
 
-            return customers.Select(i => i.CustomerName)
-                            .OrderBy(i=>i)
-                            .ToList();
-        }
+
 
     }
 }

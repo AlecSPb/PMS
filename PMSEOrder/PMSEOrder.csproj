@@ -128,6 +128,11 @@
     <Compile Include="Model\CustomerInfo.cs" />
     <Compile Include="OrderEditVM.cs" />
     <Compile Include="Service\DataService.cs" />
+    <Compile Include="Service\Excel\ExcelOutputOrder.cs" />
+    <Compile Include="Service\Excel\ExcelOutputBaseSimple.cs" />
+    <Compile Include="Service\Excel\NPOIHelper.cs" />
+    <Compile Include="Service\JsonService.cs" />
+    <Compile Include="Service\StringUtil.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
