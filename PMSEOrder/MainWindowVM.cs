@@ -14,7 +14,7 @@ namespace PMSEOrder
     {
         public MainWindowVM()
         {
-
+            Initialize();
         }
 
         public void Initialize()

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSEOrder"
         mc:Ignorable="d"
+        Icon="email_compose.png"
         Title="PMI E-Order (local-offline)" Height="450" Width="1200" WindowState="Maximized">
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
