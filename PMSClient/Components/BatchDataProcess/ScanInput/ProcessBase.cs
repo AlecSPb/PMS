@@ -103,7 +103,7 @@ namespace PMSClient.DataProcess.ScanInput
         public void Intialize(string lot_string)
         {
             Lots.Clear();
-            SplitLots(lot_string).ToList().ForEach(i =>
+            GetDistinctList(SplitLots(lot_string)).ToList().ForEach(i =>
             {
                 LotModel lot = new LotModel()
                 {
@@ -113,6 +113,15 @@ namespace PMSClient.DataProcess.ScanInput
                 };
                 Lots.Add(lot);
             });
+        }
+
+        /// <summary>
+        /// 获取不重复的列表
+        /// </summary>
+        /// <param name="lot_string"></param>
+        public string[] GetDistinctList(string[] lots)
+        {
+            return lots.ToList().Distinct().ToArray();
         }
 
         public string FromLotsToString()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace PMSEOrder.Model
 {
+    [Table("localorder")]
     public class Order
     {
         //基本信息
-        
-        public Guid ID { get; set; }//丘这里就生成GUID,PMS系统直接录入该ID ，作为唯一核对订单的标识
-        public string CustomerName { get; set; }    
+        [Key]
+        public int ID { get; set; }//丘这里就生成GUID,PMS系统直接录入该ID ，作为唯一核对订单的标识
+        public Guid GUIDID { get; set; }
+        public string CustomerName { get; set; }
         public string PO { get; set; }
         public string Composition { get; set; }
         public string CompositionDetail { get; set; }

@@ -37,10 +37,9 @@ namespace PMSClient.Components.ConsumableWarning
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 

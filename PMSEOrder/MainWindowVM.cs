@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSEOrder.Model;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSEOrder
 {
-    public class MainWindowVM:ViewModelBase
+    public class MainWindowVM : ViewModelBase
     {
         public MainWindowVM()
         {
             Initialize();
+            LoadData();
         }
 
         public void Initialize()
@@ -25,13 +27,29 @@ namespace PMSEOrder
 
             New = new RelayCommand(ActionNew);
             Edit = new RelayCommand<Order>(ActionEdit);
-            Copy = new RelayCommand<Order>(ActionDuplicate);
+            Duplicate = new RelayCommand<Order>(ActionDuplicate);
             ExportSingle = new RelayCommand<Order>(ActionExportSingle);
             ExportUnSend = new RelayCommand(ActionExportUnSend);
             StateChange = new RelayCommand<Order>(ActionStateChange);
             Search = new RelayCommand(ActionSearch);
             Backup = new RelayCommand(ActionBackup);
             Excel = new RelayCommand(ActionExcel);
+            PMSRefresh = new RelayCommand(ActionPMSRefresh);
+
+            Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
+        }
+
+        private void ActionDo(NotificationMessage obj)
+        {
+            if (obj.Notification == "RefreshMainWindow")
+            {
+                LoadData();
+            }
+        }
+
+        private void ActionPMSRefresh()
+        {
+            throw new NotImplementedException();
         }
 
         private void ActionStateChange(Order obj)
@@ -51,7 +69,7 @@ namespace PMSEOrder
 
         private void ActionSearch()
         {
-            throw new NotImplementedException();
+            LoadData();
         }
 
         private void ActionExportUnSend()
@@ -66,18 +84,38 @@ namespace PMSEOrder
 
         private void ActionDuplicate(Order obj)
         {
-            throw new NotImplementedException();
+            if (obj == null) return;
+            var edit = new OrderEditView();
+            ((OrderEditVM)edit.DataContext).SetDuplicate(obj);
+            edit.ShowDialog();
         }
 
         private void ActionEdit(Order obj)
         {
-            throw new NotImplementedException();
+            if (obj == null) return;
+            var edit = new OrderEditView();
+            ((OrderEditVM)edit.DataContext).SetEdit(obj);
+            edit.ShowDialog();
         }
 
         private void ActionNew()
         {
             var edit = new OrderEditView();
+            ((OrderEditVM)edit.DataContext).SetNew();
             edit.ShowDialog();
+        }
+
+        private void LoadData()
+        {
+            var s = new Service.DataService();
+            var orders = s.GetAllOrder();
+            var filter_orders = orders.Where(i => 
+                                            i.CustomerName.ToLower().Contains(SearchCustomer.ToLower()) 
+                                            && i.Composition.ToLower().Contains(SearchComposition.ToLower()) 
+                                            && i.PO.ToLower().Contains(SearchPO.ToLower()))
+                                      .OrderByDescending(i => i.CreateTime).ToList();
+            Orders.Clear();
+            filter_orders.ForEach(i => Orders.Add(i));
         }
 
         private string searchCustomer;
@@ -127,7 +165,7 @@ namespace PMSEOrder
         public ObservableCollection<Order> Orders { get; set; }
         public RelayCommand New { get; set; }
         public RelayCommand<Order> Edit { get; set; }
-        public RelayCommand<Order> Copy { get; set; }
+        public RelayCommand<Order> Duplicate { get; set; }
         public RelayCommand<Order> ExportSingle { get; set; }
         public RelayCommand<Order> StateChange { get; set; }
 
@@ -137,5 +175,6 @@ namespace PMSEOrder
         public RelayCommand Search { get; set; }
         public RelayCommand Backup { get; set; }
         public RelayCommand Excel { get; set; }
+        public RelayCommand PMSRefresh { get; set; }
     }
 }

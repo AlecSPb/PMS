@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSEOrder.Service
+namespace PMSEOrder.Model
 {
-    class DbService
+    public class CustomerInfo
     {
+        public string CustomerName { get; set; }
     }
 }
