@@ -1,0 +1,19 @@
+﻿<Window x:Class="PMSClient.Components.EOrder.TextWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.Components.EOrder"
+        mc:Ignorable="d"
+        Title="Order Text" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="Copy the following order text to Email" Background="Orange"
+                   Foreground="White"
+                   HorizontalAlignment="Stretch"/>
+        <TextBox Grid.Row="1" Margin="5" Name="MainText" FontSize="16" IsReadOnly="True" Foreground="Blue"/>
+    </Grid>
+</Window>

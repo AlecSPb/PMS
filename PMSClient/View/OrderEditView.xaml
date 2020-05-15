@@ -22,6 +22,8 @@
                     Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Save}"/>
+            <Button Content="{StaticResource ButtonInput}" Style="{StaticResource StyleButtonSpecial}"
+                    Command="{Binding Input}"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipOrderEdit}"/>
         </StackPanel>

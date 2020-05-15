@@ -228,6 +228,10 @@
     <Compile Include="Components\DeliveryItemSampleCheck\DeliveryItemSampleCheckView.xaml.cs">
       <DependentUpon>DeliveryItemSampleCheckView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\EOrder\TextService.cs" />
+    <Compile Include="Components\EOrder\TextWindow.xaml.cs">
+      <DependentUpon>TextWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Components\ExcelOutputHelper\Dialogs\YearDateDailog.xaml.cs">
       <DependentUpon>YearDateDailog.xaml</DependentUpon>
     </Compile>
@@ -721,6 +725,7 @@
     <Compile Include="ViewModel\ConsumablePurchaseVM.cs" />
     <Compile Include="ViewModel\ConsumableInventoryVM.cs" />
     <Compile Include="ViewModel\ConsumableInventorySelectVM.cs" />
+    <Compile Include="Components\EOrder\Order.cs" />
     <Compile Include="ViewModel\SimpleMaterialEditVM.cs" />
     <Compile Include="ViewModel\SimpleMaterialVM.cs" />
     <Compile Include="ViewModel\RawMaterialSheetEditVM.cs" />
@@ -1213,6 +1218,10 @@
     <Page Include="Components\DeliveryItemSampleCheck\DeliveryItemSampleCheckView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\EOrder\TextWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Components\ExcelOutputHelper\Dialogs\YearDateDailog.xaml">
       <SubType>Designer</SubType>

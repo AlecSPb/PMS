@@ -127,12 +127,17 @@
     </ApplicationDefinition>
     <Compile Include="Model\CustomerInfo.cs" />
     <Compile Include="OrderEditVM.cs" />
+    <Compile Include="Service\Check\CheckService.cs" />
     <Compile Include="Service\DataService.cs" />
     <Compile Include="Service\Excel\ExcelOutputOrder.cs" />
     <Compile Include="Service\Excel\ExcelOutputBaseSimple.cs" />
     <Compile Include="Service\Excel\NPOIHelper.cs" />
     <Compile Include="Service\JsonService.cs" />
     <Compile Include="Service\StringUtil.cs" />
+    <Compile Include="Service\TextService.cs" />
+    <Compile Include="TextWindow.xaml.cs">
+      <DependentUpon>TextWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -161,6 +166,10 @@
     <Page Include="Resources\XSStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TextWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

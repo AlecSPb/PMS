@@ -39,7 +39,8 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right"  Background="{StaticResource BGNavigationBar}">
-                <Button Content="E-Order" Style="{StaticResource StyleButtonCommon}"  Command="{Binding ExportUnSend}"/>
+                <Button Content="E-Order" Style="{StaticResource StyleButtonCommon}"  Command="{Binding AllEOrder}"/>
+                <Button Content="Text" Style="{StaticResource StyleButtonCommon}"  Command="{Binding AllTxt}"/>
                 <Button Content="Excel" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Excel}"/>
                 <Button Content="PMS" Style="{StaticResource StyleButtonCommon}"  Command="{Binding PMSRefresh}"/>
                 <Button Content="Backup" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Backup}"/>
@@ -68,12 +69,17 @@
                                             Command="{Binding DataContext.Send, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
                                     <Button Content="E-Order" Style="{StaticResource StyleDGButton}"
-                                            Command="{Binding DataContext.ExportSingle, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            Command="{Binding DataContext.EOrder, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
+                                    <Button Content="Text" Style="{StaticResource StyleDGButton}"
+                                            Command="{Binding DataContext.Txt, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="GUID" Binding="{Binding GUIDID}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+
                     <DataGridTextColumn Header="CreateTime" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}" 
                                         ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="OrderState" Binding="{Binding OrderState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>

@@ -4,6 +4,9 @@ using PMSClient.NewService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
+using PMSClient.Components.EOrder;
+using XSHelper;
 
 namespace PMSClient.ViewModel
 {
@@ -20,6 +23,7 @@ namespace PMSClient.ViewModel
             Save = new RelayCommand(ActionSave, CanSave);
             GiveUp = new RelayCommand(GoBack);
             CheckPMINumber = new RelayCommand(ActionCheckPMINumber);
+            Input = new RelayCommand(ActionInput);
         }
 
         private void ActionInput()
@@ -28,9 +32,57 @@ namespace PMSClient.ViewModel
             if (result.HasSelected)
             {
                 string jsonFile = result.SelectPath;
+                string jsonStr = XS.File.ReadText(jsonFile);
+                var order = JsonConvert.DeserializeObject<Order>(jsonStr);
+                #region 赋值
+                CurrentOrder.ID = order.GUIDID;
+                CurrentOrder.CreateTime = order.CreateTime;
+                CurrentOrder.CustomerName = order.CustomerName;
+                CurrentOrder.CompositionOriginal = order.Composition;
+                CurrentOrder.PO = order.PO;
+
+                if (order.ProductType.Contains("Target"))
+                {
+                    CurrentOrder.ProductType = PMSCommon.ProductType.靶材.ToString();
+                }
+                else
+                {
+                    CurrentOrder.QuantityUnit = order.QuantityUnit;
+                }
+
+                CurrentOrder.Purity = order.Purity;
+                CurrentOrder.Quantity = order.Quantity;
+                if (order.ProductType.Contains("pcs"))
+                {
+                    CurrentOrder.QuantityUnit = PMSCommon.OrderUnit.片.ToString();
+                }
+                else
+                {
+                    CurrentOrder.QuantityUnit = order.QuantityUnit;
+                }
 
 
+                #endregion
 
+                CurrentOrder.Dimension = order.Dimension;
+                CurrentOrder.DimensionDetails = order.DimensionDetails;
+                CurrentOrder.Drawing = order.Drawing;
+                CurrentOrder.SampleNeed = order.SampleNeed;
+                CurrentOrder.SampleNeedRemark = order.SampleNeedRemark;
+                CurrentOrder.SampleForAnlysis = order.SampleForAnlysis;
+                CurrentOrder.SampleForAnlysisRemark = order.SampleForAnlysisRemark;
+                CurrentOrder.DeadLine = order.DeadLine;
+                CurrentOrder.ShipTo = order.ShipTo;
+                CurrentOrder.WithBackingPlate = order.WithBackingPlate;
+                CurrentOrder.PlateDrawing = order.PlateDrawing;
+                CurrentOrder.SpecialRequirement = order.SpecialRequirement;
+                CurrentOrder.PartNumber = order.PartNumber;
+
+
+                //产生窗口
+                var win =new TextWindow();
+                win.MainText.Text = TextService.GetOrderText(order);
+                win.Show();
 
             }
         }
@@ -222,6 +274,7 @@ namespace PMSClient.ViewModel
         }
 
         public RelayCommand CheckPMINumber { get; set; }
+        public RelayCommand Input { get; set; }
 
         public List<string> CustomerNames { get; set; }
         public List<string> ProductTypes { get; set; }

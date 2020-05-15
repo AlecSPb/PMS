@@ -23,7 +23,7 @@ namespace PMSEOrder
         public OrderEditView()
         {
             InitializeComponent();
-            this.Height = 800;
+            this.Height = 600;
             var vm = new OrderEditVM();
             this.DataContext = vm;
             Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);

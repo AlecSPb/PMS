@@ -34,8 +34,10 @@ namespace PMSEOrder
             New = new RelayCommand(ActionNew);
             Edit = new RelayCommand<Order>(ActionEdit);
             Duplicate = new RelayCommand<Order>(ActionDuplicate);
-            ExportSingle = new RelayCommand<Order>(ActionExportSingle);
-            ExportUnSend = new RelayCommand(ActionExportUnSend);
+            EOrder = new RelayCommand<Order>(ActionEOrder);
+            Txt = new RelayCommand<Order>(ActionTxt);
+            AllEOrder = new RelayCommand(ActionAllEOrder);
+            AllTxt = new RelayCommand(ActionAllTxt);
             Send = new RelayCommand<Order>(ActionSend);
             Search = new RelayCommand(ActionSearch);
             Backup = new RelayCommand(ActionBackup);
@@ -43,6 +45,36 @@ namespace PMSEOrder
             PMSRefresh = new RelayCommand(ActionPMSRefresh);
 
             Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
+        }
+
+        private void ActionAllTxt()
+        {
+            if (!XS.MessageBox.ShowYesNo("Will get all [UnSend] order text? Y=continue,N=cancel"))
+            {
+                return;
+            }
+            var filterOrder = Orders.Where(i => i.OrderState == OrderState.UnSend.ToString());
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in filterOrder)
+            {
+                sb.AppendLine("-----------------------------------");
+                sb.AppendLine(TextService.GetOrderText(item));
+
+            }
+            var win = new TextWindow();
+            win.MainText.Text = sb.ToString();
+            win.Show();
+        }
+
+        private void ActionTxt(Order obj)
+        {
+            if (obj == null) return;
+            if (XS.MessageBox.ShowYesNo("Will get the order text? Y=continue,N=cancel"))
+            {
+                var win = new TextWindow();
+                win.MainText.Text = TextService.GetOrderText(obj);
+                win.Show();
+            }
         }
 
         private void ActionDo(NotificationMessage obj)
@@ -62,19 +94,28 @@ namespace PMSEOrder
         private void ActionSend(Order obj)
         {
             //快速设置为已发送
-            throw new NotImplementedException();
+            if (XS.MessageBox.ShowYesNo("Do you want to set its [OrderState] to Sent?"))
+            {
+
+            }
         }
 
         private void ActionExcel()
         {
             //利用NPIO导出所有数据的Excel表格
-            throw new NotImplementedException();
+            if (XS.MessageBox.ShowYesNo("Do you want to output all data to excel file?"))
+            {
+
+            }
         }
 
         private void ActionBackup()
         {
             //复制数据库到别的地方
-            throw new NotImplementedException();
+            if (XS.MessageBox.ShowYesNo("Do you want to backup the local data?"))
+            {
+
+            }
         }
 
         private void ActionSearch()
@@ -82,7 +123,7 @@ namespace PMSEOrder
             LoadData();
         }
 
-        private void ActionExportUnSend()
+        private void ActionAllEOrder()
         {
             if (!XS.MessageBox.ShowYesNo("Will get all [UnSend] E-Order files? Y=continue,N=cancel"))
             {
@@ -114,7 +155,7 @@ namespace PMSEOrder
 
         }
 
-        private void ActionExportSingle(Order obj)
+        private void ActionEOrder(Order obj)
         {
             if (obj == null) return;
             var filedefaultname = JsonService.GetJsonFileName(obj);
@@ -211,12 +252,14 @@ namespace PMSEOrder
         public RelayCommand New { get; set; }
         public RelayCommand<Order> Edit { get; set; }
         public RelayCommand<Order> Duplicate { get; set; }
-        public RelayCommand<Order> ExportSingle { get; set; }
+        public RelayCommand<Order> EOrder { get; set; }
+        public RelayCommand<Order> Txt { get; set; }
         public RelayCommand<Order> Send { get; set; }
 
 
 
-        public RelayCommand ExportUnSend { get; set; }
+        public RelayCommand AllEOrder { get; set; }
+        public RelayCommand AllTxt { get; set; }
         public RelayCommand Search { get; set; }
         public RelayCommand Backup { get; set; }
         public RelayCommand Excel { get; set; }
