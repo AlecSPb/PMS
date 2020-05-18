@@ -37,12 +37,12 @@ namespace PMSClient.Tool.Models
                 papers.Add(new GraphitePaper { Diameter = 168, Weight = 19 });
                 papers.Add(new GraphitePaper { Diameter = 206, Weight = 24.9 });
                 papers.Add(new GraphitePaper { Diameter = 233, Weight =33 });
-                papers.Add(new GraphitePaper { Diameter = 255, Weight = 43 });
-                papers.Add(new GraphitePaper { Diameter = 306, Weight = 65.4 });
-                papers.Add(new GraphitePaper { Diameter = 319, Weight = 70.2 });
-                papers.Add(new GraphitePaper { Diameter = 336, Weight = 70.2 });
-                papers.Add(new GraphitePaper { Diameter = 396, Weight = 70.2 });
-                papers.Add(new GraphitePaper { Diameter = 450, Weight = 77 });
+                papers.Add(new GraphitePaper { Diameter = 255, Weight = 38.85 });
+                papers.Add(new GraphitePaper { Diameter = 306, Weight = 55.9 });
+                papers.Add(new GraphitePaper { Diameter = 319, Weight = 60.8 });
+                papers.Add(new GraphitePaper { Diameter = 336, Weight = 67.5});
+                papers.Add(new GraphitePaper { Diameter = 396, Weight = 90.5 });
+                papers.Add(new GraphitePaper { Diameter = 450, Weight = 121 });
                 return papers;
             }
         }

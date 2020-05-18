@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSEOrder"
         mc:Ignorable="d"
-        Title="{Binding NewOrEditIndicator,StringFormat=OrderEdit->[{0}]}" Height="1450" Width="1200" WindowStartupLocation="CenterScreen">
+        Title="{Binding NewOrEditIndicator,StringFormat=OrderEdit->[{0}]}" Height="1450" Width="1300" WindowStartupLocation="CenterScreen">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -68,27 +68,27 @@
                       ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}" 
                       Text="{Binding CustomerName}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="*选择客户名称，如果没有该客户信息，请先添加客户信息" Background="LightGreen"/>
+                           Text="Customer Name" Background="LightGreen"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Composition"
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox  Name="txtCompositionStandard" Grid.Row="2" Grid.Column="1" Text="{Binding Composition}" Background="Yellow"
                           Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="*标准成分，即这种材料一直以来的规范名称，默认At%比例"  Background="LightGreen"/>
+                           Text="Composition Default by At%"  Background="LightGreen"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="CompositionDetail"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox  Name="txtCompositionAbbr"  Grid.Row="3" Grid.Column="1" Text="{Binding CompositionDetail}"  Background="Yellow"
                           Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="*成分的缩写，尽量简洁不包含数字,不包含符号，不包含添加剂成分"  Background="LightGreen"/>
+                           Text="Composition Detail"  Background="LightGreen"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="PO"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="添加的时候注意去掉首部的PO#字样"/>
+                           Text="PO"/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="ProductType"
                            Style="{StaticResource StyleTextBlockCommon}" />
@@ -96,16 +96,21 @@
                           ItemsSource="{Binding DataContext.ProductTypes,RelativeSource={RelativeSource Mode=FindAncestor ,AncestorType=Window}}"
                           SelectedItem="{Binding ProductType}"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="产品类型"/>
+                           Text="Product Type"/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="Purity"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Purity}"
                          Name="TxtPurity" Style="{StaticResource StyleTextBoxCommon}"/>
                 <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal">
-
+                    <Button Name="BtnPurity1" Click="BtnPurity1_Click" Content="99.990" 
+                            Style="{StaticResource StyleButtonCommonNarrow}"/>
+                    <Button Name="BtnPurity2" Click="BtnPurity2_Click" Content="99.995" 
+                            Style="{StaticResource StyleButtonCommonNarrow}"/>
+                    <Button Name="BtnPurity3" Click="BtnPurity3_Click" Content="99.999" 
+                            Style="{StaticResource StyleButtonCommonNarrow}"/>
                     <TextBlock Style="{StaticResource StyleTextBlockTip}"
-                           Text="纯度要求"/>
+                           Text="Purity"/>
                 </StackPanel>
 
 
@@ -113,7 +118,7 @@
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}" Background="Yellow" />
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="数量,必须是纯数字"  Background="LightGreen"/>
+                           Text="Quantity"  Background="LightGreen"/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="QuantityUnit"
                            Style="{StaticResource StyleTextBlockSpecial}" />
@@ -122,20 +127,26 @@
                       Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Left"
                       ItemsSource="{Binding DataContext.QuantityUnits,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"/>
                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="数量单位"/>
+                           Text="Unit"/>
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="Dimension"
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Name="TxtDimension" Grid.Row="9" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}" Background="Yellow"/>
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="*尺寸信息,必须写成230mm OD x4mm的格式"  Background="LightGreen"/>
+                           Text="Dimension like 230mm ODx 4mm"  Background="LightGreen"/>
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="DimensionDetails"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Name="TxtDimensionDetails" Grid.Row="10" Grid.Column="1" Text="{Binding DimensionDetails}" Style="{StaticResource StyleTextBoxCommon}" />
                 <StackPanel Grid.Row="10" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnBasicRequirement1" Click="BtnBasicRequirement1_Click" Content="Tolerance1" 
+                            Style="{StaticResource StyleButtonCommon}" MinWidth="50"/>
+                    <Button Name="BtnBasicRequirement2" Click="BtnBasicRequirement2_Click" Content="Tolerance2" 
+                            Style="{StaticResource StyleButtonCommon}" MinWidth="50"/>
+                    <Button Name="BtnBasicRequirement3" Click="BtnBasicRequirement3_Click" Content="Tolerance3" 
+                            Style="{StaticResource StyleButtonCommon}" MinWidth="50"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="公差直径TD;厚度TH;粗糙度Ra;溅射面圆角FR，无需写单位 除Ra单位um外，其余均为mm"
+                           Text="Diameter TD;Thickness TH;Roughness Ra;Radius FR，Unit Ra=um，Other=mm"
                                 Background="LightGreen"/>
                 </StackPanel>
 
@@ -143,8 +154,10 @@
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Name="TxtAcceptDefects" Grid.Row="11" Grid.Column="1" Text="{Binding MinimumAcceptDefect}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <StackPanel Grid.Row="11" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnAcceptDefects" Click="BtnAcceptDefects_Click" 
+                            Content="Default" Style="{StaticResource StyleButtonCommon}"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="填写客户最低的要求，比如,最低密度，是否接受小缺陷"/>
+                           Text=""/>
                 </StackPanel>
 
 
@@ -154,7 +167,7 @@
                          Style="{StaticResource StyleTextBoxCommon}" Background="Wheat"/>
                 <StackPanel  Grid.Row="12" Grid.Column="2" Orientation="Horizontal">
                     <TextBlock Style="{StaticResource StyleTextBlockTip}"
-                           Text="图纸编号,具体规则，规则参考底部工具栏-图纸，自动生成不一定符合要求，请人工核对"/>
+                           Text=""/>
                 </StackPanel>
 
 
@@ -163,8 +176,12 @@
                 <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding SampleNeed}"
                          Style="{StaticResource StyleTextBoxCommon}" Name="TxtSampleNeed"/>
                 <StackPanel Grid.Row="13" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnSampleNeedDefault" Content="Default" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnSampleNeedDefault_Click"/>
+                    <Button Name="BtnSampleNeedNone" Content="None" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnSampleNeedNone_Click"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="客户样品需求 格式注明_类型_重量_份数,不需要则选择【无需样品】"/>
+                           Text="Sample for customer,none for none"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="14" Grid.Column="0" Text="SampleNeedRemark"
@@ -173,7 +190,7 @@
                          Style="{StaticResource StyleTextBoxCommon}"/>
                 <StackPanel Grid.Row="14" Grid.Column="2" Orientation="Horizontal">
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="客户样品需求备注，比如寄送位置，测试方式等"/>
+                           Text="Other sample requirement"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="15" Grid.Column="0" Text="SampleForAnlysis"
@@ -181,8 +198,12 @@
                 <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding SampleForAnlysis}"
                          Style="{StaticResource StyleTextBoxCommon}"  Name="TxtSampleForAnlysis"/>
                 <StackPanel Grid.Row="15" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnSampleForAnlysisDefault" Content="Default" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnSampleForAnlysisDefault_Click"/>
+                    <Button Name="BtnSampleForAnlysisNone" Content="None" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnSampleForAnlysisNone_Click"/>
                     <TextBlock Style="{StaticResource StyleTextBlockTip}"
-                           Text="自分析样品，格式注明_类型_重量_份数. 不需要选【无需样品】"/>
+                           Text="Sample for anlysis,none for none"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="16" Grid.Column="0" Text="SampleForAnlysisRemark"
@@ -191,7 +212,7 @@
                          Style="{StaticResource StyleTextBoxCommon}"/>
                 <StackPanel Grid.Row="16" Grid.Column="2" Orientation="Horizontal">
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="自分析样品需求备注，比如寄送位置，测试方式等"/>
+                           Text="Other sample requirement"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="WithBackingPlate"
@@ -199,14 +220,14 @@
                 <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding WithBackingPlate}"
                          Style="{StaticResource StyleTextBoxCommon}" />
                 <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="有配套背板写描述，没有写无"/>
+                           Text="Is there any plate"/>
 
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="PlateDrawing"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding PlateDrawing}"
                          Style="{StaticResource StyleTextBoxCommon}" />
                 <TextBlock Grid.Row="18" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="背板图纸编号"/>
+                           Text="Plate Drawing"/>
 
                 <TextBlock Grid.Row="19" Grid.Column="0" Text="SpecialRequirement"
                            Style="{StaticResource StyleTextBlockCommon}" />
@@ -214,7 +235,7 @@
                          Style="{StaticResource StyleTextBoxCommon}" Background="LightPink" Name="TxtSpecialRequirement"/>
                 <StackPanel Grid.Row="19" Grid.Column="2" Orientation="Horizontal">
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="如有特殊要求，如添加剂,对热压模具的要求，绑定的要求，可以写在这里，生产会看到"/>
+                           Text="any other requirement like additive, mold, bonding etc"/>
                 </StackPanel>
 
 
@@ -223,14 +244,17 @@
                 <DatePicker Grid.Row="20" Grid.Column="1" SelectedDate="{Binding DeadLine,Mode=TwoWay}"
                             Style="{StaticResource StyleDatePickerCommon}"/>
                 <TextBlock Grid.Row="20" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="最后交付期限，默认订单日期之后的1个月"/>
+                           Text="After 1 month"/>
 
                 <TextBlock Grid.Row="21" Grid.Column="0" Text="ShipTo"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Name="TxtShipTo" Grid.Row="21" Grid.Column="1" Text="{Binding ShipTo}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <StackPanel Grid.Row="21" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnShipToTCB" Content="TCB" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnShipToTCB_Click"/>
+                    <Button Name="BtnShipToCustomer" Content="Customer" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnShipToCustomer_Click"/>
+                    <Button Name="BtnShipToLeon" Content="Leon" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnShipToLeon_Click"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="发货到什么地方"/>
+                           Text="Where to Ship"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="22" Grid.Column="0" Text="PartNumber"
@@ -238,14 +262,14 @@
                 <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding PartNumber}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightCyan"/>
                 <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
-                           Text="生产无法看到，测试可以看到"/>
+                           Text="PartNumber"/>
 
                 <TextBlock Grid.Row="23" Grid.Column="0" Text="Remark"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightCyan"/>
                 <TextBlock Grid.Row="23" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
-                           Text="仅自己可见"/>
+                           Text="Something Remark"/>
 
                 <TextBlock Grid.Row="24" Grid.Column="0" Text="CreateTime"
                            Style="{StaticResource StyleTextBlockCommon}" />

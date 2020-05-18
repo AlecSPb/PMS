@@ -125,6 +125,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helper\PMSMethods.cs" />
     <Compile Include="Model\CustomerInfo.cs" />
     <Compile Include="OrderEditVM.cs" />
     <Compile Include="Service\Check\CheckService.cs" />

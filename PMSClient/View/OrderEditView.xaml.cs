@@ -202,7 +202,7 @@ namespace PMSClient.View
 
         private void BtnSampleNeed_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBox(TxtSampleNeed, "块15gx1份 粉15gx1份");
+            PMSMethods.SetTextBox(TxtSampleNeed, "块15gx1 粉15gx1");
         }
 
         private void BtnNoSample1_Click(object sender, RoutedEventArgs e)
@@ -215,7 +215,7 @@ namespace PMSClient.View
         }
         private void BtnSampleForAnlysis_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBox(TxtSampleForAnlysis, "块15gx1份 粉15gx1份");
+            PMSMethods.SetTextBox(TxtSampleForAnlysis, "块15gx1 粉15gx1");
         }
     }
 }

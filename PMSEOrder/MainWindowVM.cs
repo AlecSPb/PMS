@@ -12,7 +12,7 @@ using XSHelper;
 using Newtonsoft.Json;
 using PMSEOrder.Service;
 using System.IO;
-
+using PMSEOrder.Service.Excel;
 
 
 namespace PMSEOrder
@@ -117,20 +117,27 @@ namespace PMSEOrder
             //利用NPIO导出所有数据的Excel表格
             if (XS.MessageBox.ShowYesNo("Do you want to output all data to excel file?"))
             {
-
+                try
+                {
+                    var excel = new ExcelOutputOrder();
+                    excel.Intialize("Raw Order", "Data");
+                    excel.Output();
+                }
+                catch (Exception ex)
+                {
+                }
             }
         }
 
         private void ActionBackup()
         {
             //复制数据库到别的地方
-            if (XS.MessageBox.ShowYesNo("Do you want to backup the local data?"))
+            if (XS.MessageBox.ShowYesNo("Do you want to backup the local data?/r/n please copy the db file to somewhere else"))
             {
                 try
                 {
                     string dbpath = XS.File.GetCurrentFolderPath("DB");
                     System.Diagnostics.Process.Start(dbpath);
-                    XS.MessageBox.ShowInfo("please copy the db file to somewhere else");
                 }
                 catch (Exception)
                 {

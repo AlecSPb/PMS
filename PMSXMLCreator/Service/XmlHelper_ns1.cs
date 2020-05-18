@@ -91,7 +91,7 @@ namespace PMSXMLCreator.Service
                 $"{model.ThisDocumentGenerationDateTime.ToString("yyyy-MM-ddTHH:mm:ss")}");//19个字符
 
             //00表示全新，05表示替换
-            writer.WriteElementString(ns_prefix, "ReleaseType", ns, model.ReleaseType);
+            writer.WriteElementString(ns_prefix, "releaseType", ns, model.ReleaseType);
 
             #region ProductDescription
             writer.WriteStartElement(ns_prefix, "ProductDescription", ns);
@@ -178,10 +178,10 @@ namespace PMSXMLCreator.Service
             //writer.WriteElementString(ns_prefix,"rawLotID",ns, "");
             //writer.WriteElementString(ns_prefix,"rawMaterialType",ns, "");
 
-            writer.WriteElementString(ns_prefix, "SourceComponent", ns, p.SourceComponent);
-            writer.WriteElementString(ns_prefix, "Characteristic", ns, p.Characteristic);
-            writer.WriteElementString(ns_prefix, "ShortName", ns, p.ShortName);
-            writer.WriteElementString(ns_prefix, "UnitOfMeasure", ns, p.UnitOfMeasure);
+            writer.WriteElementString(ns_prefix, "sourceComponent", ns, p.SourceComponent);
+            writer.WriteElementString(ns_prefix, "characteristic", ns, p.Characteristic);
+            writer.WriteElementString(ns_prefix, "shortName", ns, p.ShortName);
+            writer.WriteElementString(ns_prefix, "unitOfMeasure", ns, p.UnitOfMeasure);
             writer.WriteElementString(ns_prefix, "measurementQualifier", ns, p.MeasurementQualifier);
             writer.WriteElementString(ns_prefix, "measurementType", ns, p.MeasurementType);
             writer.WriteElementString(ns_prefix, "measurementValue", ns, p.MeasurementValue);

@@ -92,7 +92,7 @@ namespace PMSXMLCreator.Service
                 $"{model.ThisDocumentGenerationDateTime.ToString("yyyy-MM-ddTHH:mm:ss")}");//19个字符
 
             //00表示全新，05表示替换
-            writer.WriteElementString(ns_prefix, "ReleaseType", ns, model.ReleaseType);
+            writer.WriteElementString(ns_prefix, "releaseType", ns, model.ReleaseType);
 
             #region ProductDescription
             writer.WriteStartElement(ns_prefix, "ProductDescription", ns);
@@ -122,7 +122,7 @@ namespace PMSXMLCreator.Service
             writer.WriteEndElement();
 
             writer.WriteStartElement(ns_prefix, "Comments", ns);
-            writer.WriteElementString(ns_prefix, "Comment", ns, $"{model.Comment} {model.BackPlateNumber}");
+            writer.WriteElementString(ns_prefix, "comment", ns, $"{model.Comment} {model.BackPlateNumber}");
             writer.WriteEndElement();
 
             #region MaterialParameters
@@ -176,23 +176,23 @@ namespace PMSXMLCreator.Service
         {
             writer.WriteStartElement(ns_prefix, "MaterialParameter", ns);
 
-            writer.WriteElementString(ns_prefix, "rawLotID", ns, "");
-            writer.WriteElementString(ns_prefix, "rawMaterialType", ns, "");
+            writer.WriteElementString(ns_prefix, "rawlotid", ns, "");
+            writer.WriteElementString(ns_prefix, "rawmaterialtype", ns, "");
 
-            writer.WriteElementString(ns_prefix, "SourceComponent", ns, p.SourceComponent);
-            writer.WriteElementString(ns_prefix, "Characteristic", ns, p.Characteristic);
-            writer.WriteElementString(ns_prefix, "ShortName", ns, p.ShortName);
-            writer.WriteElementString(ns_prefix, "UnitOfMeasure", ns, p.UnitOfMeasure);
+            writer.WriteElementString(ns_prefix, "sourcecomponent", ns, p.SourceComponent);
+            writer.WriteElementString(ns_prefix, "characteristic", ns, p.Characteristic);
+            writer.WriteElementString(ns_prefix, "shortName", ns, p.ShortName);
+            writer.WriteElementString(ns_prefix, "unitOfMeasure", ns, p.UnitOfMeasure);
             //writer.WriteElementString(ns_prefix, "measurementQualifier", ns, p.MeasurementQualifier);
             //writer.WriteElementString(ns_prefix, "measurementType", ns, p.MeasurementType);
             //writer.WriteElementString(ns_prefix, "measurementValue", ns, p.MeasurementValue);
 
-            writer.WriteStartElement(ns_prefix, "Measurements", ns);
+            writer.WriteStartElement(ns_prefix, "measurements", ns);
             foreach (var item in p.Measurements)
             {
-                writer.WriteStartElement(ns_prefix, "Measurement", ns);
-                writer.WriteElementString(ns_prefix, "MeasurementType", ns, item.MeasurementType);
-                writer.WriteElementString(ns_prefix, "MeasurementValue", ns, item.MeasurementValue);
+                writer.WriteStartElement(ns_prefix, "measurement", ns);
+                writer.WriteElementString(ns_prefix, "measurementType", ns, item.MeasurementType);
+                writer.WriteElementString(ns_prefix, "measurementValue", ns, item.MeasurementValue);
                 writer.WriteElementString(ns_prefix, "UCL", ns, item.UCL);
                 writer.WriteElementString(ns_prefix, "LCL", ns, item.LCL);
                 writer.WriteElementString(ns_prefix, "MDL", ns, item.MDL);
