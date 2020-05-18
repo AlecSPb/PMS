@@ -43,8 +43,16 @@ namespace PMSEOrder
             Backup = new RelayCommand(ActionBackup);
             Excel = new RelayCommand(ActionExcel);
             PMSRefresh = new RelayCommand(ActionPMSRefresh);
+            SelectionChanged = new RelayCommand<Order>(ActionSelectionChanged);
 
             Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
+        }
+
+        private void ActionSelectionChanged(Order obj)
+        {
+            if (obj == null) return;
+            CurrentOrder = obj;
+
         }
 
         private void ActionAllTxt()
@@ -93,10 +101,14 @@ namespace PMSEOrder
 
         private void ActionSend(Order obj)
         {
+            if (obj == null) return;
             //快速设置为已发送
             if (XS.MessageBox.ShowYesNo("Do you want to set its [OrderState] to Sent?"))
             {
-
+                obj.OrderState = "Sent";
+                var s = new DataService();
+                s.UpdateOrder(obj);
+                LoadData();
             }
         }
 
@@ -114,7 +126,17 @@ namespace PMSEOrder
             //复制数据库到别的地方
             if (XS.MessageBox.ShowYesNo("Do you want to backup the local data?"))
             {
+                try
+                {
+                    string dbpath = XS.File.GetCurrentFolderPath("DB");
+                    System.Diagnostics.Process.Start(dbpath);
+                    XS.MessageBox.ShowInfo("please copy the db file to somewhere else");
+                }
+                catch (Exception)
+                {
 
+                    throw;
+                }
             }
         }
 
@@ -202,6 +224,7 @@ namespace PMSEOrder
                                       .OrderByDescending(i => i.CreateTime).ToList();
             Orders.Clear();
             filter_orders.ForEach(i => Orders.Add(i));
+            CurrentOrder = orders.FirstOrDefault();
         }
 
         private string searchCustomer;
@@ -246,6 +269,19 @@ namespace PMSEOrder
             }
         }
 
+        private Order currentOrder;
+        public Order CurrentOrder
+        {
+            get
+            {
+                return currentOrder;
+            }
+            set
+            {
+                currentOrder = value;
+                RaisePropertyChanged(nameof(currentOrder));
+            }
+        }
 
 
         public ObservableCollection<Order> Orders { get; set; }
@@ -255,6 +291,8 @@ namespace PMSEOrder
         public RelayCommand<Order> EOrder { get; set; }
         public RelayCommand<Order> Txt { get; set; }
         public RelayCommand<Order> Send { get; set; }
+
+        public RelayCommand<Order> SelectionChanged { get; set; }
 
 
 

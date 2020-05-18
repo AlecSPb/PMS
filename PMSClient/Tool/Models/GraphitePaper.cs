@@ -41,6 +41,7 @@ namespace PMSClient.Tool.Models
                 papers.Add(new GraphitePaper { Diameter = 306, Weight = 65.4 });
                 papers.Add(new GraphitePaper { Diameter = 319, Weight = 70.2 });
                 papers.Add(new GraphitePaper { Diameter = 336, Weight = 70.2 });
+                papers.Add(new GraphitePaper { Diameter = 396, Weight = 70.2 });
                 papers.Add(new GraphitePaper { Diameter = 450, Weight = 77 });
                 return papers;
             }

@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSEOrder"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Icon="email_compose.png"
-        Title="PMI E-Order (local-offline)" Height="450" Width="1400" WindowState="Maximized">
+        Title="PMI E-Order (Offline)" Height="450" Width="1400" WindowState="Maximized">
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -42,7 +43,7 @@
                 <Button Content="E-Order" Style="{StaticResource StyleButtonCommon}"  Command="{Binding AllEOrder}"/>
                 <Button Content="Text" Style="{StaticResource StyleButtonCommon}"  Command="{Binding AllTxt}"/>
                 <Button Content="Excel" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Excel}"/>
-                <Button Content="PMS" Style="{StaticResource StyleButtonCommon}"  Command="{Binding PMSRefresh}"/>
+                <!--<Button Content="PMS" Style="{StaticResource StyleButtonCommon}"  Command="{Binding PMSRefresh}"/>-->
                 <Button Content="Backup" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Backup}"/>
 
             </StackPanel>
@@ -53,7 +54,13 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <DataGrid Grid.Column="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Orders}" FrozenColumnCount="1"
-                      LoadingRow="DataGrid_LoadingRow">
+                      LoadingRow="DataGrid_LoadingRow" Name="dg">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                           CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="Operate">
                         <DataGridTemplateColumn.CellTemplate>
@@ -78,7 +85,7 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="GUID" Binding="{Binding GUIDID}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <!--<DataGridTextColumn Header="GUID" Binding="{Binding GUIDID}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>-->
 
                     <DataGridTextColumn Header="CreateTime" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}" 
                                         ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
@@ -113,9 +120,128 @@
                 </DataGrid.Columns>
             </DataGrid>
             <Expander Grid.Column="1" ExpandDirection="Left" IsExpanded="False">
-                <Viewbox Width="400">
+                <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" >
+                    <Grid  DataContext="{Binding CurrentOrder}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="300"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="0*"/>
+                        </Grid.RowDefinitions>
 
-                </Viewbox>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="CustomerName"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding CustomerName}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Composition"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="CompositionDetail"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CompositionDetail}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="PO"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="ProductType"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding ProductType}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="5" Grid.Column="0" Text="Purity"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="6" Grid.Column="0" Text="Quantity"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="7" Grid.Column="0" Text="QuantityUnit"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding QuantityUnit}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="8" Grid.Column="0" Text="Dimension"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="9" Grid.Column="0" Text="DimensionDetail"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding DimensionDetails}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="10" Grid.Column="0" Text="Drawing"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Drawing}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="11" Grid.Column="0" Text="SampleNeed"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding SampleNeed}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="12" Grid.Column="0" Text="SampleNeedRemark"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding SampleNeedRemark}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="13" Grid.Column="0" Text="SampleForAnlysis"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding SampleForAnlysis}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="14" Grid.Column="0" Text="SampleForAnlysisRemark"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding SampleForAnlysisRemark}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="15" Grid.Column="0" Text="DeadLine"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding DeadLine}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="16" Grid.Column="0" Text="MinimumAcceptDefect"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding MinimumAcceptDefect}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="17" Grid.Column="0" Text="ShipTo"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding ShipTo}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="18" Grid.Column="0" Text="WithBackingPlate"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding WithBackingPlate}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="19" Grid.Column="0" Text="PlateDrawing"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding PlateDrawing}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="20" Grid.Column="0" Text="SpecialRequirement"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding SpecialRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="21" Grid.Column="0" Text="BondingRequirement"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding BondingRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="22" Grid.Column="0" Text="PartNumber"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding PartNumber}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="23" Grid.Column="0" Text="Remark"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="24" Grid.Column="0" Text="CreateTime"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="25" Grid.Column="0" Text="OrderState"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="25" Grid.Column="1" Text="{Binding OrderState}" Style="{StaticResource StyleTextBoxReadOnly}" />
+
+                    </Grid>
+                </ScrollViewer>
             </Expander>
         </Grid>
     </Grid>

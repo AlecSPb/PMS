@@ -56,9 +56,17 @@ namespace PMSEOrder.Service
 
         public List<Order> GetAllOrder()
         {
-            using (IDbConnection connection=new SQLiteConnection(conStr))
+            try
             {
-                return connection.GetAll<Order>().OrderByDescending(i=>i.CreateTime).ToList();
+                using (IDbConnection connection = new SQLiteConnection(conStr))
+                {
+                    return connection.GetAll<Order>().OrderByDescending(i => i.CreateTime).ToList();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 

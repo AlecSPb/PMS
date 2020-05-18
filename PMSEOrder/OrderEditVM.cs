@@ -59,7 +59,7 @@ namespace PMSEOrder
             model.Composition = "none";
             model.CompositionDetail = "none";
             model.ProductType = ProductTypes[0];
-            model.Purity = "none";
+            model.Purity = "99.995%";
             model.Quantity = 1;
             model.QuantityUnit = QuantityUnits[0];
             model.Dimension = "none";
