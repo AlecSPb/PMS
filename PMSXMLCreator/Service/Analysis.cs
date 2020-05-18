@@ -160,7 +160,7 @@ namespace PMSXMLCreator.Service
         /// <param name="unit"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public List<Parameter> GetPlateByKeyStr(string str, string unit = "mm", string type = "value")
+        public List<Parameter> GetPlateByKeyStr(string str, string unit = "mm", string type = "value", string ucl = "100", string lcl = "0")
         {
             List<Parameter> parameters = new List<Parameter>();
             var matches = Regex.Matches(str, @"([a-zA-Z \d]+)=([\w.' ]+);");
@@ -177,7 +177,16 @@ namespace PMSXMLCreator.Service
                 {
                     tempUnit = unit;
                 }
-                parameters.Add(GetOtherParameter(element_name, element_value, tempUnit, type));
+                double ucl_value = 100;
+                //if(double.TryParse(element_value,out ucl_value))
+                //{
+                //    ucl_value =ucl_value + 10;
+                //}
+                //else
+                //{
+                //    ucl_value = 100;
+                //}
+                parameters.Add(GetOtherParameter(element_name, element_value, tempUnit, type, ucl: ucl_value.ToString("F0"), lcl: lcl));
             }
 
             return parameters;

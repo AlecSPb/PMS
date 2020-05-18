@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PMSEOrder.Model;
-
+using PMSEOrder.Service;
 
 namespace PMSEOrder
 {
@@ -25,6 +25,8 @@ namespace PMSEOrder
         public MainWindow()
         {
             InitializeComponent();
+            BackupService.BackUp();
+
             this.DataContext = new MainWindowVM();
         }
 
