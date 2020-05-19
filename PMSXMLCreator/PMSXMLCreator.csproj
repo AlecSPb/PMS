@@ -146,7 +146,7 @@
     <Resource Include="OutputFile\此文件夹不要删除.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Content Include="SavedFile\此文件夹不要删除.txt">
+    <Content Include="SavedFile\AutoSaved\此文件夹不要删除.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="xml2.ico" />

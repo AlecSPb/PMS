@@ -197,6 +197,12 @@ namespace PMSXMLCreator.Service
                 //writer.WriteElementString(ns_prefix, "LCL", ns, item.LCL);
                 //writer.WriteElementString(ns_prefix, "MDL", ns, item.MDL);
                 //writer.WriteElementString(ns_prefix, "CLCalc", ns, item.CLCalc);
+
+                //空标签
+                writer.WriteElementString(ns_prefix, "UCL", ns, "");
+                writer.WriteElementString(ns_prefix, "LCL", ns, "");
+                writer.WriteElementString(ns_prefix, "MDL", ns, "");
+                writer.WriteElementString(ns_prefix, "CLCalc", ns, item.CLCalc);
                 writer.WriteEndElement();
             }
             writer.WriteEndElement();
