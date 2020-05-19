@@ -44,6 +44,7 @@ namespace PMSClient.ViewModel
             model.IsCustomerSigned = false;
             model.CustomerSignedDate = DateTime.Today;
             model.CustomerSignedDetails = "";
+            model.LastUpdateTime = DateTime.Now;
             #endregion
             CurrentDelivery = model;
         }
@@ -99,6 +100,7 @@ namespace PMSClient.ViewModel
             try
             {
                 var service = new DeliveryServiceClient();
+                CurrentDelivery.LastUpdateTime = DateTime.Now;
                 if (IsNew)
                 {
                     service.AddDeliveryByUID(CurrentDelivery, PMSHelper.CurrentSession.CurrentUser.UserName);

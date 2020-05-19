@@ -221,6 +221,7 @@ namespace PMSClient.ViewModel
                     {
                         model.State = PMSCommon.DeliveryState.最终完成.ToString();
                         model.FinishTime = DateTime.Now;
+                        model.LastUpdateTime = DateTime.Now;
                         //记录签收信息
                         model.IsCustomerSigned = true;
                         model.CustomerSignedDate = DateTime.Today;
@@ -579,8 +580,27 @@ namespace PMSClient.ViewModel
 
         private void ActionEdit(DcDelivery model)
         {
-            PMSHelper.ViewModels.DeliveryEdit.SetEdit(model);
-            NavigationService.GoTo(PMSViews.DeliveryEdit);
+            try
+            {
+                using (var s = new DeliveryServiceClient())
+                {
+                    DateTime lastUpdateTime = s.GetDeliveryLastUpdateTime(model.ID);
+                    if (lastUpdateTime > model.LastUpdateTime)
+                    {
+                        PMSDialogService.ShowWarning("服务器端数据已更新,确定后自动刷新，然后再试");
+                        SetPageParametersWhenConditionChange();
+                        return;
+                    }
+                    PMSHelper.ViewModels.DeliveryEdit.SetEdit(model);
+                    NavigationService.GoTo(PMSViews.DeliveryEdit);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
 
         private void SetPageParametersWhenConditionChange()

@@ -76,5 +76,9 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         bool CheckDeliveryItemExistByProductID(Guid id, string productid);
 
+
+        [OperationContract]
+        DateTime GetDeliveryLastUpdateTime(Guid id);
+
     }
 }

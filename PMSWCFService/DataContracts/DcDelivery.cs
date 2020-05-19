@@ -53,5 +53,9 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string State { get; set; }//取消，未审核，审核通过，已发货
 
+        [DataMember]
+        public DateTime LastUpdateTime { get; set; }
+
+
     }
 }

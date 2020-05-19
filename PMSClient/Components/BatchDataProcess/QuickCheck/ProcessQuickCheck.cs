@@ -88,6 +88,7 @@ namespace PMSClient.DataProcess.QuickCheck
                 using (var service = new DeliveryServiceClient())
                 {
                     delivery.LastCheckIDCollection = sb.ToString();
+                    delivery.LastUpdateTime = DateTime.Now;
                     service.UpdateDeliveryByUID(delivery, PMSHelper.CurrentSession.CurrentUser.UserName);
                 }
             }

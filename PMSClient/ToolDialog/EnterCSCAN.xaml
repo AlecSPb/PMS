@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolDialog"
         mc:Ignorable="d"
-        Title="输入超声扫描的结果" Height="300" Width="600" 
+        Title="输入超声扫描的结果" Height="400" Width="800" 
         WindowStartupLocation="CenterScreen" 
         WindowStyle="ToolWindow">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -25,14 +27,21 @@
         <TextBlock Grid.Row="2" Style="{StaticResource StyleDGTextBlockCommon}" Text="输入或者修改该靶材的超声扫描结果"/>
         <TextBox Grid.Row="3" Style="{StaticResource StyleTextBoxCommon}" Name="TxtCscan"/>
         <StackPanel Grid.Row="4" Orientation="Horizontal" Button.Click="StackPanel_Click">
-            <Button Content="总空腔率=%" Style="{StaticResource StyleButtonCommon}"/>
-            <Button Content="最大空腔直径=mm" Style="{StaticResource StyleButtonCommon}"/>
-            <Button Content="深度=" Style="{StaticResource StyleButtonCommon}"/>
-            <Button Content="总空腔个数=" Style="{StaticResource StyleButtonCommon}"/>
-            <!--<Button Content="小空腔" Style="{StaticResource StyleButtonCommon}"/>
-            <Button Content="大空腔" Style="{StaticResource StyleButtonCommon}"/>-->
+            <Button Content="Void Area=%" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void Count=" Style="{StaticResource StyleButtonCommonNarrow}"/>
         </StackPanel>
-        <TextBlock Grid.Row="5" Padding="5" Foreground="Blue">
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Button.Click="StackPanel_Click">
+            <Button Content="Void-D1=" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void-H1=" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void-D2=" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void-H2=" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void-D3=" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void-H3=" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void-D4=" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void-H4=" Style="{StaticResource StyleButtonCommonNarrow}"/>
+        </StackPanel>
+        <TextBlock Grid.Row="6" Style="{StaticResource StyleTextBlockCommon}" Text="空腔定位编号原则:从左到右从上到下" Background="Orange" HorizontalAlignment="Stretch"/>
+        <TextBlock Grid.Row="7" Padding="5" Foreground="Blue">
             附(生效于2019-12-4):<LineBreak/>
             韩国[SEC]对超声结果要求：<LineBreak/>
             1.总空腔面积小于0.05%<LineBreak/>

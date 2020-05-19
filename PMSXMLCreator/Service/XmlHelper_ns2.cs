@@ -180,7 +180,7 @@ namespace PMSXMLCreator.Service
             writer.WriteElementString(ns_prefix, "rawmaterialtype", ns, "");
 
             writer.WriteElementString(ns_prefix, "sourcecomponent", ns, p.SourceComponent);
-            writer.WriteElementString(ns_prefix, "characteristic", ns, p.Characteristic);
+            //writer.WriteElementString(ns_prefix, "characteristic", ns, p.Characteristic);
             writer.WriteElementString(ns_prefix, "shortName", ns, p.ShortName);
             writer.WriteElementString(ns_prefix, "unitOfMeasure", ns, p.UnitOfMeasure);
             //writer.WriteElementString(ns_prefix, "measurementQualifier", ns, p.MeasurementQualifier);
@@ -193,10 +193,10 @@ namespace PMSXMLCreator.Service
                 writer.WriteStartElement(ns_prefix, "measurement", ns);
                 writer.WriteElementString(ns_prefix, "measurementType", ns, item.MeasurementType);
                 writer.WriteElementString(ns_prefix, "measurementValue", ns, item.MeasurementValue);
-                writer.WriteElementString(ns_prefix, "UCL", ns, item.UCL);
-                writer.WriteElementString(ns_prefix, "LCL", ns, item.LCL);
-                writer.WriteElementString(ns_prefix, "MDL", ns, item.MDL);
-                writer.WriteElementString(ns_prefix, "CLCalc", ns, item.CLCalc);
+                //writer.WriteElementString(ns_prefix, "UCL", ns, item.UCL);
+                //writer.WriteElementString(ns_prefix, "LCL", ns, item.LCL);
+                //writer.WriteElementString(ns_prefix, "MDL", ns, item.MDL);
+                //writer.WriteElementString(ns_prefix, "CLCalc", ns, item.CLCalc);
                 writer.WriteEndElement();
             }
             writer.WriteEndElement();

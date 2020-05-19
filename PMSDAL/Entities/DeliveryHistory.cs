@@ -33,6 +33,8 @@ namespace PMSDAL
         public bool IsCustomerSigned { get; set; }
         public DateTime CustomerSignedDate { get; set; }
         public string CustomerSignedDetails { get; set; }
+        public DateTime LastUpdateTime { get; set; }
+
 
         //操作者和操作时间
         [Key]

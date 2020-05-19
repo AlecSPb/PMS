@@ -132,12 +132,12 @@ namespace PMSEOrder
         private void ActionBackup()
         {
             //复制数据库到别的地方
-            if (XS.MessageBox.ShowYesNo("Do you want to backup the local data?/r/n please copy the db file to somewhere else"))
+            if (XS.MessageBox.ShowYesNo("Do you want to backup the local data?"))
             {
                 try
                 {
-                    string dbpath = XS.File.GetCurrentFolderPath("DB");
-                    System.Diagnostics.Process.Start(dbpath);
+                    BackupService.BackUp();
+                    XS.MessageBox.ShowInfo("Backup to AutoBackup Folder");
                 }
                 catch (Exception)
                 {

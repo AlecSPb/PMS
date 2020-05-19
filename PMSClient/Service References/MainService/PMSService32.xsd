@@ -413,6 +413,7 @@
       <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IsCustomerSigned" type="xs:boolean" />
       <xs:element minOccurs="0" name="LastCheckIDCollection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastUpdateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="PackageInformation" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PackageType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PackageWeight" nillable="true" type="xs:string" />

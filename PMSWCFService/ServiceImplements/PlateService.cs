@@ -12,6 +12,10 @@ namespace PMSWCFService
 {
     public partial class PMSService : IPlateService
     {
+        public PMSService()
+        {
+        }
+
         public int AddPlate(DcPlate model)
         {
             try

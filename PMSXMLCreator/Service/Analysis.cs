@@ -27,15 +27,15 @@ namespace PMSXMLCreator.Service
             parameters.AddRange(GetXRFByKeyStr(model.XRF));
 
             parameters.Add(GetOtherParameter("Density", model.Density, ParameterUnit.Density, ucl: "4.4", lcl: "4.3"));
-            parameters.Add(GetOtherParameter("Weight", model.Weight, ParameterUnit.Weight, ucl: "5290", lcl: "5030"));
+            parameters.Add(GetOtherParameter("Weight", model.Weight, ParameterUnit.Density, ucl: "5290", lcl: "5030"));
 
             parameters.AddRange(GetDimension(model.TargetDimension));
 
-            parameters.AddRange(GetPlateByKeyStr(model.PlateSpec, "mm"));
+            parameters.AddRange(GetPlateByKeyStr(model.PlateSpec, ParameterUnit.MM));
 
-            parameters.AddRange(GetElementByKeyStr(model.GDMS, "est_max"));
+            parameters.AddRange(GetElementByKeyStr(model.GDMS, ParameterUnit.PPM));
 
-            parameters.AddRange(GetElementByKeyStr(model.VPI, "est_max"));
+            parameters.AddRange(GetElementByKeyStr(model.VPI, ParameterUnit.PPM));
 
 
             return parameters;
@@ -169,6 +169,7 @@ namespace PMSXMLCreator.Service
                 string element_name = item.Groups[1].Value;
                 string element_value = item.Groups[2].Value;
                 string tempUnit = unit;
+                //粗糙度单位单独设置
                 if (element_name.Contains("Roughness"))
                 {
                     tempUnit = ParameterUnit.UM;
@@ -225,7 +226,14 @@ namespace PMSXMLCreator.Service
             {
                 string short_name = item.Groups[1].Value;
                 string element_value = item.Groups[2].Value;
-                parameters.Add(GetElementParameter(short_name, element_value, unit, type));
+                if (short_name == "W")
+                {
+                    parameters.Add(GetElementParameter(short_name, element_value, ParameterUnit.PPB, type));
+                }
+                else
+                {
+                    parameters.Add(GetElementParameter(short_name, element_value, unit, type));
+                }
             }
 
             return parameters;

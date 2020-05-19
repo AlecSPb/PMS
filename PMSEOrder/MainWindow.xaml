@@ -7,7 +7,8 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Icon="email_compose.png"
-        Title="PMI E-Order (Offline)" Height="450" Width="1400" WindowState="Maximized">
+        Title="PMI E-Order (Offline)" Height="450" Width="1400" WindowState="Maximized"
+        Closing="Window_Closing">
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>

@@ -37,6 +37,9 @@ namespace PMSDAL
         public DateTime CustomerSignedDate { get; set; }
         public string CustomerSignedDetails { get; set; }
 
+        public DateTime LastUpdateTime { get; set; }
+
+
 
     }
 }

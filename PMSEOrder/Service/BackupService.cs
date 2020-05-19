@@ -15,11 +15,12 @@ namespace PMSEOrder.Service
             {
                 string dbFolder = XSHelper.XS.File.GetCurrentFolderPath("DB");
                 string sourceFile = Path.Combine(dbFolder, "pmieorder.db");
-                string targetFile = Path.Combine(dbFolder, "AutoBackUp", "pmieorder.db");
+                string targetFile = Path.Combine(dbFolder, "AutoBackUp", $"pmieorder{DateTime.Now.ToString("yyMMdd")}.db");
                 if (File.Exists(sourceFile))
                 {
                     File.Copy(sourceFile, targetFile, true);
                 }
+
             }
             catch (Exception)
             {

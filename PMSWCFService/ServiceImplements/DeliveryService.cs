@@ -590,5 +590,23 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public DateTime GetDeliveryLastUpdateTime(Guid id)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var db = new PMSDbContext())
+                {
+                    var r = db.Deliverys.Find(id);
+                    return r.LastUpdateTime;
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                return DateTime.Now;
+            }
+        }
     }
 }

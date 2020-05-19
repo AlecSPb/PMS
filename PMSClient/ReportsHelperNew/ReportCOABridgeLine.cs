@@ -84,12 +84,13 @@ namespace PMSClient.ReportsHelperNew
                 }
                 else
                 {
-                    var dict = new Dictionary<string, string>();
-                    dict.Add("总空腔率", "Void Rate");
-                    dict.Add("最大空腔直径", "Max Void Dia.");
-                    dict.Add("深度", "Depth");
-                    dict.Add("总空腔个数", "Void Count");
-                    flawarea = COAHelper.ReplaceChineseCharacter(model.CScan, dict);
+                    //var dict = new Dictionary<string, string>();
+                    //dict.Add("总空腔率", "Void Rate");
+                    //dict.Add("最大空腔直径", "Max Void Dia.");
+                    //dict.Add("深度", "Depth");
+                    //dict.Add("总空腔个数", "Void Count");
+                    //flawarea = COAHelper.ReplaceChineseCharacter(model.CScan, dict);
+                    flawarea = model.CScan;
                 }
                 doc.ReplaceText("[FlawArea]", flawarea);
 

@@ -9,11 +9,13 @@
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="Copy the following order text to Email" Background="Orange"
                    Foreground="White"
                    HorizontalAlignment="Stretch"/>
-        <TextBox Grid.Row="1" Margin="5" Name="MainText" FontSize="16" IsReadOnly="True" Foreground="Blue"/>
+        <Button Content="Copy All" Margin="2" Padding="10" Grid.Row="1" Name="BtnCopy" Click="BtnCopy_Click"/>
+        <TextBox Grid.Row="2" Margin="5" Name="MainText" FontSize="16" IsReadOnly="True" Foreground="Blue"/>
     </Grid>
 </Window>

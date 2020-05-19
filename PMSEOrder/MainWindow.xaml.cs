@@ -25,8 +25,6 @@ namespace PMSEOrder
         public MainWindow()
         {
             InitializeComponent();
-            BackupService.BackUp();
-
             this.DataContext = new MainWindowVM();
         }
 
@@ -56,6 +54,11 @@ namespace PMSEOrder
                         break;
                 }
             }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            BackupService.BackUp();
         }
     }
 }

@@ -4714,6 +4714,9 @@ namespace PMSClient.MainService {
         private string LastCheckIDCollectionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastUpdateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PackageInformationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4919,6 +4922,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.LastCheckIDCollectionField, value) != true)) {
                     this.LastCheckIDCollectionField = value;
                     this.RaisePropertyChanged("LastCheckIDCollection");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastUpdateTime {
+            get {
+                return this.LastUpdateTimeField;
+            }
+            set {
+                if ((this.LastUpdateTimeField.Equals(value) != true)) {
+                    this.LastUpdateTimeField = value;
+                    this.RaisePropertyChanged("LastUpdateTime");
                 }
             }
         }
@@ -10297,6 +10313,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/CheckDeliveryItemExistByProductID", ReplyAction="http://tempuri.org/IDeliveryService/CheckDeliveryItemExistByProductIDResponse")]
         System.Threading.Tasks.Task<bool> CheckDeliveryItemExistByProductIDAsync(System.Guid id, string productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryLastUpdateTime", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryLastUpdateTimeResponse")]
+        System.DateTime GetDeliveryLastUpdateTime(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryLastUpdateTime", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryLastUpdateTimeResponse")]
+        System.Threading.Tasks.Task<System.DateTime> GetDeliveryLastUpdateTimeAsync(System.Guid id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10516,6 +10538,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<bool> CheckDeliveryItemExistByProductIDAsync(System.Guid id, string productid) {
             return base.Channel.CheckDeliveryItemExistByProductIDAsync(id, productid);
+        }
+        
+        public System.DateTime GetDeliveryLastUpdateTime(System.Guid id) {
+            return base.Channel.GetDeliveryLastUpdateTime(id);
+        }
+        
+        public System.Threading.Tasks.Task<System.DateTime> GetDeliveryLastUpdateTimeAsync(System.Guid id) {
+            return base.Channel.GetDeliveryLastUpdateTimeAsync(id);
         }
     }
     
