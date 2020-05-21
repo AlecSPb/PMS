@@ -119,5 +119,22 @@ namespace PMSEOrder
             PMSMethods.SetTextBox(TxtPurity, "99.999%");
 
         }
+
+        private void BtnSpecialRequirement_Click(object sender, RoutedEventArgs e)
+        {
+            SetKeyValue(TxtSpecialRequirement);
+        }
+
+        private void SetKeyValue(TextBox textBox)
+        {
+            if (textBox == null) return;
+            var dialog = new WPFControls.KeyValueTestResultE();
+            dialog.KeyStrings = textBox.Text.Trim();
+            dialog.ShowDialog();
+            if (dialog.DialogResult == true)
+            {
+                PMSMethods.SetTextBox(textBox, dialog.KeyStrings);
+            }
+        }
     }
 }

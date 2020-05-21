@@ -62,7 +62,7 @@ namespace PMSEOrder
             model.Purity = "99.995%";
             model.Quantity = 1;
             model.QuantityUnit = QuantityUnits[0];
-            model.Dimension = "230mm OD x 4mm";
+            model.Dimension = "230mm OD x 4mm Thickness";
             model.DimensionDetails = "None";
             model.Drawing = "None";
             model.SampleNeed = "None";
@@ -74,7 +74,7 @@ namespace PMSEOrder
             model.ShipTo = "TCB";
             model.WithBackingPlate = "No";
             model.PlateDrawing = "None";
-            model.SpecialRequirement = "None";
+            model.SpecialRequirement = "further polishing at Opticraft=no;final thickness to be polished at Opticraft=no;";
             model.BondingRequirement = "None";
             model.PartNumber = "None";
             model.Remark = "None";

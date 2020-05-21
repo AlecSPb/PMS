@@ -21,7 +21,7 @@
             <Grid  DataContext="{Binding CurrentOrder}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition Width="500"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -45,6 +45,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
@@ -60,7 +61,7 @@
                           SelectedItem="{Binding OrderState}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="Order State"/>
-                
+
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="Customer"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
                 <ComboBox Grid.Row="1" Grid.Column="1" Name="cboCustomerNames"
@@ -229,27 +230,34 @@
                 <TextBlock Grid.Row="18" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="Plate Drawing"/>
 
-                <TextBlock Grid.Row="19" Grid.Column="0" Text="SpecialRequirement"
+                <TextBlock Grid.Row="19" Grid.Column="0" Text="BondingRequirement"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding SpecialRequirement}"
-                         Style="{StaticResource StyleTextBoxCommon}" Background="LightPink" Name="TxtSpecialRequirement"/>
+                <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding BondingRequirement}"
+                         Style="{StaticResource StyleTextBoxCommon}" Name="TxtBondingRequirement"/>
                 <StackPanel Grid.Row="19" Grid.Column="2" Orientation="Horizontal">
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
                            Text="any other requirement like additive, mold, bonding etc"/>
                 </StackPanel>
 
+                <Button Grid.Row="20" Grid.Column="0" Content="SpecialRequirement"
+                        Style="{StaticResource StyleButtonStrench}" Name="BtnSpecialRequirement"
+                        Click="BtnSpecialRequirement_Click"/>
+                <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding SpecialRequirement}"
+                         Style="{StaticResource StyleTextBoxCommon}" Name="TxtSpecialRequirement" Grid.ColumnSpan="2"/>
+                <StackPanel Grid.Row="20" Grid.Column="2" Orientation="Horizontal"/>
 
-                <TextBlock Grid.Row="20" Grid.Column="0" Text="DeadLine"
+
+                <TextBlock Grid.Row="21" Grid.Column="0" Text="DeadLine"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <DatePicker Grid.Row="20" Grid.Column="1" SelectedDate="{Binding DeadLine,Mode=TwoWay}"
+                <DatePicker Grid.Row="21" Grid.Column="1" SelectedDate="{Binding DeadLine,Mode=TwoWay}"
                             Style="{StaticResource StyleDatePickerCommon}"/>
-                <TextBlock Grid.Row="20" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="21" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="After 1 month"/>
 
-                <TextBlock Grid.Row="21" Grid.Column="0" Text="ShipTo"
+                <TextBlock Grid.Row="22" Grid.Column="0" Text="ShipTo"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Name="TxtShipTo" Grid.Row="21" Grid.Column="1" Text="{Binding ShipTo}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <StackPanel Grid.Row="21" Grid.Column="2" Orientation="Horizontal">
+                <TextBox Name="TxtShipTo" Grid.Row="22" Grid.Column="1" Text="{Binding ShipTo}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="22" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnShipToTCB" Content="TCB" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnShipToTCB_Click"/>
                     <Button Name="BtnShipToCustomer" Content="Customer" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnShipToCustomer_Click"/>
                     <Button Name="BtnShipToLeon" Content="Leon" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnShipToLeon_Click"/>
@@ -257,23 +265,21 @@
                            Text="Where to Ship"/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="22" Grid.Column="0" Text="PartNumber"
+                <TextBlock Grid.Row="23" Grid.Column="0" Text="PartNumber"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding PartNumber}" Style="{StaticResource StyleTextBoxCommon}"
-                         Background="LightCyan"/>
-                <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
-                           Text="PartNumber"/>
-
-                <TextBlock Grid.Row="23" Grid.Column="0" Text="Remark"
-                           Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding PartNumber}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightCyan"/>
                 <TextBlock Grid.Row="23" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
-                           Text="Something Remark"/>
+                           Text="PartNumber Intel"/>
 
-                <TextBlock Grid.Row="24" Grid.Column="0" Text="CreateTime"
+                <TextBlock Grid.Row="24" Grid.Column="0" Text="Remark"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBlock Grid.Row="24" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
+                         Background="LightCyan" Grid.ColumnSpan="2"/>
+
+                <TextBlock Grid.Row="25" Grid.Column="0" Text="CreateTime"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Grid.Row="25" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
 
             </Grid>
         </ScrollViewer>

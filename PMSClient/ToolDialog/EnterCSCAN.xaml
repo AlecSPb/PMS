@@ -31,16 +31,17 @@
             <Button Content="Void Count=" Style="{StaticResource StyleButtonCommonNarrow}"/>
         </StackPanel>
         <StackPanel Grid.Row="5" Orientation="Horizontal" Button.Click="StackPanel_Click">
-            <Button Content="Void-D1=" Style="{StaticResource StyleButtonCommonNarrow}"/>
-            <Button Content="Void-H1=" Style="{StaticResource StyleButtonCommonNarrow}"/>
-            <Button Content="Void-D2=" Style="{StaticResource StyleButtonCommonNarrow}"/>
-            <Button Content="Void-H2=" Style="{StaticResource StyleButtonCommonNarrow}"/>
-            <Button Content="Void-D3=" Style="{StaticResource StyleButtonCommonNarrow}"/>
-            <Button Content="Void-H3=" Style="{StaticResource StyleButtonCommonNarrow}"/>
-            <Button Content="Void-D4=" Style="{StaticResource StyleButtonCommonNarrow}"/>
-            <Button Content="Void-H4=" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void1-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void2-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void3-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void4-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void5-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void6-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void7-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void8-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
         </StackPanel>
-        <TextBlock Grid.Row="6" Style="{StaticResource StyleTextBlockCommon}" Text="空腔定位编号原则:从左到右从上到下" Background="Orange" HorizontalAlignment="Stretch"/>
+        <TextBlock Grid.Row="6" Style="{StaticResource StyleTextBlockCommon}" Text="Void1-DH=2.56+2.6 代表，第一个空腔直径为2.56深度为2.6" 
+                   Background="Orange" HorizontalAlignment="Stretch"/>
         <TextBlock Grid.Row="7" Padding="5" Foreground="Blue">
             附(生效于2019-12-4):<LineBreak/>
             韩国[SEC]对超声结果要求：<LineBreak/>
