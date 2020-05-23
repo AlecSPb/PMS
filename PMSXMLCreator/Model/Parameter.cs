@@ -16,6 +16,7 @@ namespace PMSXMLCreator
         {
             Measurements = new List<Measurement>();
         }
+        public string Type { get; set; }
         public string LotId { get; set; }
         //TestCode,匹配SPEED
         public string ShortName { get; set; }

@@ -75,7 +75,7 @@ namespace PMSXMLCreator
 
                     #region 填写成分
                     //List<Parameter> compositions = anlysis.GetProductNameComposition(model.ProductName);
-                    List<Parameter> compositions = anlysis.GetXRFByKeyStr(model.XRF);
+                    List<Parameter> compositions = anlysis.SolveXRFByKeyStr(model.XRF);
                     foreach (var item in compositions)
                     {
                         main_table.Rows[start_index].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
@@ -110,7 +110,7 @@ namespace PMSXMLCreator
                     #endregion
 
                     #region 填写纯度
-                    List<Parameter> purities = anlysis.GetElementByKeyStr(model.GDMS);
+                    List<Parameter> purities = anlysis.SolveElementByKeyStr(model.GDMS);
                     foreach (var item in purities)
                     {
 
@@ -127,7 +127,7 @@ namespace PMSXMLCreator
                     #endregion
 
                     #region 填写含氧量
-                    List<Parameter> vpis = anlysis.GetElementByKeyStr(model.VPI);
+                    List<Parameter> vpis = anlysis.SolveElementByKeyStr(model.VPI);
                     foreach (var item in vpis)
                     {
 

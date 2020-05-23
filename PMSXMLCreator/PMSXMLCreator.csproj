@@ -93,8 +93,7 @@
     <Compile Include="Service\Log.cs" />
     <Compile Include="Service\ParameterDict.cs" />
     <Compile Include="Service\ParameterUnit.cs" />
-    <Compile Include="Service\XmlHelper_ns2.cs" />
-    <Compile Include="Service\XmlHelper_ns1.cs" />
+    <Compile Include="Service\XmlHelper.cs" />
     <Compile Include="Service\XmlVerificator.cs" />
     <Page Include="CommonStyle.xaml">
       <SubType>Designer</SubType>
@@ -115,7 +114,6 @@
     </Compile>
     <Compile Include="Model\ECOA.cs" />
     <Compile Include="Service\PMSMethods.cs" />
-    <Compile Include="Service\XmlHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
