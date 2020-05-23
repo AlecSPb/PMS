@@ -350,9 +350,10 @@
     <Compile Include="Helpers\Converter\IDToBarCodeConverter.cs" />
     <Compile Include="Helpers\Converter\LastDayConverter.cs" />
     <Compile Include="Helpers\Converter\LastDayImageConverter.cs" />
+    <Compile Include="Helpers\Converter\MinimumBGConverter2.cs" />
     <Compile Include="Helpers\Converter\MissonStateToBoolConverter.cs" />
     <Compile Include="Helpers\Converter\PlateUseNumberConverter.cs" />
-    <Compile Include="Helpers\Converter\RatioDensityConverter.cs" />
+    <Compile Include="Helpers\Converter\MinimumBGConverter1.cs" />
     <Compile Include="Helpers\Converter\StringCutConverter.cs" />
     <Compile Include="Helpers\Converter\VisibilityConverter4.cs" />
     <Compile Include="Helpers\Converter\VisibilityConverter3.cs" />

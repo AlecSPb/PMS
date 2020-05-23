@@ -30,5 +30,7 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         int CheckToolSieveExist(string searchid);
+        [OperationContract]
+        int CheckToolMillingBoxExist(string boxnumber);
     }
 }

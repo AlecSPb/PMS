@@ -15,7 +15,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock Text="{StaticResource PageMillingToolEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+            <TextBlock Text="{StaticResource PageSieveEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
             <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitleTip}"/>
         </StackPanel>
 
@@ -35,6 +35,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -53,71 +54,78 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource TSSearchID}"
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource TSBoxNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding SearchID}"
-                          Style="{StaticResource StyleTextBoxCommon}" Background="LightGreen"/>
+                <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding BoxNumber}"
+                          Style="{StaticResource StyleTextBoxCommon}" Background="Blue" Foreground="White"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
-                           Text="索引ID，以S开头，唯一不得重复"/>
+                           Text="工具箱编号，以B开头，唯一不得重复"/>
 
-
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource TSMaterialGroup}"
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource TSSearchID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding MaterialGroup}"
-                          Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding SearchID}"
+                          Style="{StaticResource StyleTextBoxCommon}" Background="Red" Foreground="Yellow"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
+                           Text="筛网编号，以S开头，唯一不得重复"/>
+
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource TSMaterialGroup}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding MaterialGroup}"
+                          Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
                            Text="材料组，建议用连字符隔开每个元素"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource TSSpecification}"
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource TSSpecification}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Specification}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Specification}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="规格信息,直径-目数"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource TSManufacture}"
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource TSManufacture}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Manufacture}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Manufacture}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="厂家"/>
 
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource TSStartTime}"
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource TSStartTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <DatePicker Grid.Row="4" Grid.Column="1" SelectedDate="{Binding StartTime}"
-                            Style="{StaticResource StyleDatePickerCommon}"/>
-                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="开始使用时间，用于最终统计使用时间"/>
-
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource TSStopTime}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <DatePicker Grid.Row="5" Grid.Column="1" SelectedDate="{Binding StopTime}"
+                <DatePicker Grid.Row="5" Grid.Column="1" SelectedDate="{Binding StartTime}"
                             Style="{StaticResource StyleDatePickerCommon}"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="开始使用时间，用于最终统计使用时间"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource TSStopTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <DatePicker Grid.Row="6" Grid.Column="1" SelectedDate="{Binding StopTime}"
+                            Style="{StaticResource StyleDatePickerCommon}"/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="开始使用时间"/>
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource TSRemark}"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource TSRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="备注"/>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource FTState}"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource FTState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="状态,当设置为停止使用的时候，选择界面将不会出现该记录，避免干扰"/>
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource FTCreateTime}"
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource FTCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建时间"/>
 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource FTCreator}"
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource FTCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建者"/>
             </Grid>
         </ScrollViewer>

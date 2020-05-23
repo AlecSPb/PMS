@@ -23,6 +23,9 @@ namespace PMSClient.ToolService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BoxNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -62,6 +65,19 @@ namespace PMSClient.ToolService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BoxNumber {
+            get {
+                return this.BoxNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BoxNumberField, value) != true)) {
+                    this.BoxNumberField = value;
+                    this.RaisePropertyChanged("BoxNumber");
+                }
             }
         }
         
@@ -263,6 +279,12 @@ namespace PMSClient.ToolService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/CheckToolSieveExist", ReplyAction="http://tempuri.org/IToolSieveService/CheckToolSieveExistResponse")]
         System.Threading.Tasks.Task<int> CheckToolSieveExistAsync(string searchid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/CheckToolMillingBoxExist", ReplyAction="http://tempuri.org/IToolSieveService/CheckToolMillingBoxExistResponse")]
+        int CheckToolMillingBoxExist(string boxnumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/CheckToolMillingBoxExist", ReplyAction="http://tempuri.org/IToolSieveService/CheckToolMillingBoxExistResponse")]
+        System.Threading.Tasks.Task<int> CheckToolMillingBoxExistAsync(string boxnumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -346,6 +368,14 @@ namespace PMSClient.ToolService {
         
         public System.Threading.Tasks.Task<int> CheckToolSieveExistAsync(string searchid) {
             return base.Channel.CheckToolSieveExistAsync(searchid);
+        }
+        
+        public int CheckToolMillingBoxExist(string boxnumber) {
+            return base.Channel.CheckToolMillingBoxExist(boxnumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> CheckToolMillingBoxExistAsync(string boxnumber) {
+            return base.Channel.CheckToolMillingBoxExistAsync(boxnumber);
         }
     }
 }

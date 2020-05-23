@@ -39,6 +39,7 @@ namespace PMSClient.CustomControls
                 txtPlateNumber.Text = value.PlateLot;
                 txtWeldingRate.Text = value.WeldingRate.ToString();
                 cboState.SelectedItem = value.State;
+                txtWeldingDefect.Text = value.WeldingDefect;
             }
         }
 
@@ -46,6 +47,7 @@ namespace PMSClient.CustomControls
         public string PlateNumber { get { return txtPlateNumber.Text; } }
         public string Defects { get { return txtDefects.Text; } }
         public string WeldingRate { get { return txtWeldingRate.Text; } }
+        public string WeldingDefect { get { return txtWeldingDefect.Text; } }
 
         public string CoverPlateNumber { get { return txtCoverPlateNumber.Text; } }
 
@@ -82,6 +84,14 @@ namespace PMSClient.CustomControls
         private void BtnFinish_Click(object sender, RoutedEventArgs e)
         {
             cboState.SelectedItem = PMSCommon.BondingState.最终完成.ToString();
+        }
+
+        private void StackPanel_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = e.OriginalSource as Button;
+            string csan_str = txtWeldingDefect.Text + " " + btn.Content.ToString() + ";";
+            txtWeldingDefect.Text = csan_str.Replace("无", "").Trim();
+            e.Handled = true;
         }
     }
 }

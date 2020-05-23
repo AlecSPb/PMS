@@ -959,7 +959,8 @@
     <sys:String x:Key="TSID">ID</sys:String>
     <sys:String x:Key="TSCreator">Creator</sys:String>
     <sys:String x:Key="TSCreateTime">Create Time</sys:String>
-    <sys:String x:Key="TSSearchID">Search ID</sys:String>
+    <sys:String x:Key="TSSearchID">Sieve Number</sys:String>
+    <sys:String x:Key="TSBoxNumber">Box Number</sys:String>
     <sys:String x:Key="TSManufacture">Manugfacture</sys:String>
     <sys:String x:Key="TSSpecification">Specification</sys:String>
     <sys:String x:Key="TSMaterialGroup">Material Group</sys:String>

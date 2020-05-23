@@ -65,7 +65,7 @@
                                     Binding="{Binding Supplier}"/>
                 <DataGridTextColumn Header="{StaticResource CPTotalCost}" ElementStyle="{StaticResource StyleDGTextBlockRightBlue}"
                                     Binding="{Binding TotalCost,StringFormat=￥{0:F2}}"/>
-                <DataGridTextColumn Header="{StaticResource CPProcessHistory}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                <DataGridTextColumn Header="{StaticResource CPProcessHistory}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding ProcessHistory}"/>
                 <DataGridTextColumn Header="{StaticResource CPLastUpdateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding LastUpdateTime}"/>

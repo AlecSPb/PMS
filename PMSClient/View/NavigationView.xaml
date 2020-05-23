@@ -139,7 +139,7 @@
 
                         <Button Content="{StaticResource PageFillingTool}" Grid.Row="2" Grid.Column="3"
                                 Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToFillingTool}"/>
-                        <Button Content="{StaticResource PageMillingTool}" Grid.Row="2" Grid.Column="4"
+                        <Button Content="{StaticResource PageSieve}" Grid.Row="2" Grid.Column="4"
                                 Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToMillingTool}"/>
                         <Button Content="{StaticResource PageFailure}" Grid.Row="2" Grid.Column="5"
                                 Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToFailure}"/>

@@ -56,6 +56,8 @@ namespace PMSClient.DataProcess.ScanInput
             model.TargetDefects = ss.Defects;
             model.TargetDetailRecord = "";
             model.PlateLot = "暂无";
+            model.WeldingRate = 0;
+            model.WeldingDefect = "";
 
             model.Remark = "";
             #endregion

@@ -104,8 +104,21 @@
                                     Binding="{Binding PlateLot}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetCoverPlateNumber}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     Binding="{Binding CoverPlateNumber}"/>
-                <DataGridTextColumn Header="{StaticResource BDWeldingRate}" ElementStyle="{StaticResource StyleDGTextBlockRightBlue}" 
-                                    Binding="{Binding WeldingRate,StringFormat={}{0:F2}}"/>
+                <!--<DataGridTextColumn Header="{StaticResource BDWeldingRate}" ElementStyle="{StaticResource StyleDGTextBlockRightBlue}" 
+                                    Binding="{Binding WeldingRate,StringFormat={}{0:F2}}"/>-->
+                <DataGridTemplateColumn Header="{StaticResource BDWeldingRate}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding WeldingRate,StringFormat={}{0:F2}}"
+                                               Style="{StaticResource StyleDGTextBlockRight}"
+                                               HorizontalAlignment="Stretch"
+                                               TextAlignment="Right"
+                                               Foreground="Blue"
+                                               Margin="0 1"
+                                               Background="{Binding WeldingRate,Converter={StaticResource MinimumBGCT2}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource BDWeldingDefect}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding WeldingDefect}"/>
                 <DataGridTextColumn Header="{StaticResource BDRemark}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 

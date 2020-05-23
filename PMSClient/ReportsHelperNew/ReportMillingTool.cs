@@ -47,27 +47,29 @@ namespace PMSClient.ReportsHelperNew
                         {
                             Row row = table.InsertRow();
                             row.Height = 35;
-                            row.Cells[0].Paragraphs[0].Append(item.SearchID.ToString() ?? "").Alignment 
-                                = Alignment.center;
+                            row.Cells[0].Paragraphs[0].Append(item.BoxNumber.ToString()).Alignment= Alignment.center;
                             row.Cells[0].VerticalAlignment = VerticalAlignment.Center;
 
-                            row.Cells[1].Paragraphs[0].Append(item.MaterialGroup ?? "");
+                            row.Cells[1].Paragraphs[0].Append(item.SearchID.ToString()).Alignment= Alignment.center;
                             row.Cells[1].VerticalAlignment = VerticalAlignment.Center;
 
-                            row.Cells[2].Paragraphs[0].Append(item.Specification ?? "");
+                            row.Cells[2].Paragraphs[0].Append(item.MaterialGroup ?? "");
                             row.Cells[2].VerticalAlignment = VerticalAlignment.Center;
 
-                            row.Cells[3].Paragraphs[0].Append(item.Manufacture ?? "");
+                            row.Cells[3].Paragraphs[0].Append(item.Specification ?? "");
                             row.Cells[3].VerticalAlignment = VerticalAlignment.Center;
 
-                            row.Cells[4].Paragraphs[0].Append(item.StartTime.ToShortDateString() ?? "");
+                            row.Cells[4].Paragraphs[0].Append(item.Manufacture ?? "");
                             row.Cells[4].VerticalAlignment = VerticalAlignment.Center;
 
-                            row.Cells[5].Paragraphs[0].Append(item.StopTime.ToShortDateString() ?? "");
+                            row.Cells[5].Paragraphs[0].Append(item.StartTime.ToShortDateString() ?? "");
                             row.Cells[5].VerticalAlignment = VerticalAlignment.Center;
 
-                            row.Cells[6].Paragraphs[0].Append(item.Remark ?? "");
+                            row.Cells[6].Paragraphs[0].Append(item.StopTime.ToShortDateString() ?? "");
                             row.Cells[6].VerticalAlignment = VerticalAlignment.Center;
+
+                            row.Cells[7].Paragraphs[0].Append(item.Remark ?? "");
+                            row.Cells[7].VerticalAlignment = VerticalAlignment.Center;
                         }
 
                         pageIndex++;

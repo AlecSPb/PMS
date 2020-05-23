@@ -9,6 +9,7 @@
   <xs:element name="ArrayOfDcToolSieve" nillable="true" type="tns:ArrayOfDcToolSieve" />
   <xs:complexType name="DcToolSieve">
     <xs:sequence>
+      <xs:element minOccurs="0" name="BoxNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="ser:guid" />

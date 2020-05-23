@@ -343,7 +343,7 @@
 
     <sys:String x:Key="ButtonJson">Json</sys:String>
     <sys:String x:Key="ButtonXML">XML</sys:String>
-    <sys:String x:Key="ButtonSieve">筛网</sys:String>
+    <sys:String x:Key="ButtonSieve">制粉工具</sys:String>
     <sys:String x:Key="ButtonBarCode">条码</sys:String>
 
     <sys:String x:Key="ButtonUnSend">待发出</sys:String>
@@ -881,8 +881,8 @@
     <sys:String x:Key="TDProgress">进度进程</sys:String>
     <sys:String x:Key="TDType">类型</sys:String>
     <!--FillingTool-->
-    <sys:String x:Key="PageFillingTool">装具索引</sys:String>
-    <sys:String x:Key="PageFillingToolEdit">装具索引-编辑</sys:String>
+    <sys:String x:Key="PageFillingTool">装具工具</sys:String>
+    <sys:String x:Key="PageFillingToolEdit">装具工具-编辑</sys:String>
 
     <sys:String x:Key="FTCreateTime">创建时间</sys:String>
     <sys:String x:Key="FTCreator">创建者</sys:String>
@@ -967,12 +967,13 @@
     <sys:String x:Key="OPRemark">备注</sys:String>
 
     <!--ToolSieve-->
-    <sys:String x:Key="PageSieve">筛网库</sys:String>
-    <sys:String x:Key="PageSieveEdit">筛网库编辑</sys:String>
+    <sys:String x:Key="PageSieve">制粉工具</sys:String>
+    <sys:String x:Key="PageSieveEdit">制粉工具-编辑</sys:String>
     <sys:String x:Key="TSID">ID</sys:String>
     <sys:String x:Key="TSCreator">创建者</sys:String>
     <sys:String x:Key="TSCreateTime">创建时间</sys:String>
-    <sys:String x:Key="TSSearchID">索引ID</sys:String>
+    <sys:String x:Key="TSSearchID">筛号</sys:String>
+    <sys:String x:Key="TSBoxNumber">箱号</sys:String>
     <sys:String x:Key="TSManufacture">厂商</sys:String>
     <sys:String x:Key="TSSpecification">规格</sys:String>
     <sys:String x:Key="TSMaterialGroup">材料组</sys:String>

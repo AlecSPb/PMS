@@ -27,12 +27,19 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcToolSieve>(ActionEdit, CanEdit);
+            Duplicate = new RelayCommand<DcToolSieve>(ActionDuplicate, CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             PrintList = new RelayCommand(ActionPrintList);
             SetPageParametersWhenConditionChange();
 
             Select = new RelayCommand<DcToolSieve>(ActionSelect);
+        }
+
+        private void ActionDuplicate(DcToolSieve obj)
+        {
+            PMSHelper.ViewModels.MillingToolEdit.SetDuplicate(obj);
+            NavigationService.GoTo(PMSViews.MillingToolEdit);
         }
 
         private void ActionSelect(DcToolSieve obj)
@@ -153,6 +160,8 @@ namespace PMSClient.ViewModel
         #region 命令
         public RelayCommand Add { get; set; }
         public RelayCommand<DcToolSieve> Edit { get; set; }
+        public RelayCommand<DcToolSieve> Duplicate { get; set; }
+
         public RelayCommand<DcToolSieve> Select { get; set; }
         public RelayCommand PrintList { get; set; }
         #endregion

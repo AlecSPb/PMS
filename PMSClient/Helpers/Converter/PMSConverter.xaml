@@ -9,7 +9,8 @@
     <local:VisibilityConverter4 x:Key="VisibilityConverter4"/>
     <local:IsLockedConverter x:Key="IsLockedCT"/>
     <local:PlateUseNumberConverter x:Key="PlateUseNumberConverter"/>
-    <local:RatioDensityConverter x:Key="RatioDensityCT"/>
+    <local:MinimumBGConverter1 x:Key="MinimumBGCT1"/>
+    <local:MinimumBGConverter2 x:Key="MinimumBGCT2"/>
     <local:CurrentVHPDateConverter x:Key="CurrentVHPDateCT"/>
     <local:IDToBarCodeConverter x:Key="IDToBarCode"/>
     <local:StringCutConverter x:Key="StringCutCT"/>

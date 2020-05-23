@@ -9,12 +9,20 @@ using System.Windows.Media;
 
 namespace PMSClient.Helpers.Converter
 {
-    public class RatioDensityConverter : IValueConverter
+    public class MinimumBGConverter2 : IValueConverter
     {
+        public MinimumBGConverter2()
+        {
+            string weldingRate = PMSClient.Components.PMSSettingHelper.PMSSettingService.ReadKeyFromCache("bonding_ok_rate");
+            double temp = 0;
+            double.TryParse(weldingRate, out temp);
+            MinimumValue = temp;
+        }
+        public double MinimumValue { get; set; } = 100;
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double threshold = (double)value;
-            if (threshold < 0.9)
+            if (threshold < MinimumValue && threshold > 0)
             {
                 return new SolidColorBrush(Colors.LightSalmon);
             }

@@ -858,6 +858,10 @@
     <Compile Include="Migrations\202005231320296_change126.Designer.cs">
       <DependentUpon>202005231320296_change126.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005231429154_change127.cs" />
+    <Compile Include="Migrations\202005231429154_change127.Designer.cs">
+      <DependentUpon>202005231429154_change127.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -1447,6 +1451,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005231320296_change126.resx">
       <DependentUpon>202005231320296_change126.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005231429154_change127.resx">
+      <DependentUpon>202005231429154_change127.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

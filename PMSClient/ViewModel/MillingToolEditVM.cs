@@ -40,6 +40,7 @@ namespace PMSClient.ViewModel
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.Manufacture = "未知";
             model.SearchID = "S";
+            model.BoxNumber = "B";
             model.Specification = "300mm-200mesh";
             model.MaterialGroup = "A-B";
             model.StartTime = DateTime.Now;
@@ -50,6 +51,26 @@ namespace PMSClient.ViewModel
             CurrentToolSieve = model;
         }
 
+        public void SetDuplicate(DcToolSieve obj)
+        {
+            IsNew = true;
+            var model = new DcToolSieve();
+            model.Id = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.State = PMSCommon.SimpleState.正常.ToString();
+            model.Manufacture = obj.Manufacture;
+            model.SearchID = "S";
+            model.BoxNumber = obj.BoxNumber;
+            model.Specification = obj.Specification;
+            model.MaterialGroup = obj.MaterialGroup;
+            model.StartTime = DateTime.Now;
+            model.StopTime = DateTime.Now.AddYears(2);
+            model.State = PMSCommon.SimpleState.正常.ToString();
+            model.Remark = obj.Remark;
+
+            CurrentToolSieve = model;
+        }
         public void SetEdit(DcToolSieve model)
         {
             if (model != null)
@@ -83,13 +104,19 @@ namespace PMSClient.ViewModel
                     if (IsNew)
                     {
                         //检查是否存在通过S号
-                        int check_count = service.CheckToolSieveExist(CurrentToolSieve.SearchID);
-                        if (check_count > 0)
+                        int check_count1 = service.CheckToolSieveExist(CurrentToolSieve.SearchID);
+                        if (check_count1 > 0)
                         {
-                            PMSDialogService.ShowWarning($"同索引号的工具已经有{check_count}个了，请换一个");
+                            PMSDialogService.ShowWarning($"同索引号的筛网已经有{check_count1}个了，请换一个");
                             return;
                         }
 
+                        int check_count2 = service.CheckToolMillingBoxExist(CurrentToolSieve.BoxNumber);
+                        if (check_count2 > 0)
+                        {
+                            PMSDialogService.ShowWarning($"同索引号的工具箱已经有{check_count2}个了，请换一个");
+                            return;
+                        }
 
                         service.AddToolSieve(CurrentToolSieve);
                     }

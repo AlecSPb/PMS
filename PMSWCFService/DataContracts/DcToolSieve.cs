@@ -24,6 +24,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string SearchID { get; set; }//给人看的编号  S-1
         [DataMember]
+        public string BoxNumber { get; set; }//箱子编号
+        [DataMember]
         public string Manufacture { get; set; }//制造商
         [DataMember]
         public string Specification { get; set; }//规格

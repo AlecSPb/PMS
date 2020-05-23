@@ -162,6 +162,7 @@ namespace PMSClient.ViewModel
             model.CoverPlateNumber = "无";
             model.PlanBatchNumber = 1;
             model.WeldingRate = 0;
+            model.WeldingDefect = "";
 
             //暂时用不到
             model.TargetAbbr = "尚未确定";

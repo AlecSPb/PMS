@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolDialog"
         mc:Ignorable="d"
-        Title="输入超声扫描的结果" Height="400" Width="800" 
+        Title="输入超声扫描的结果" Height="400" Width="900" 
         WindowStartupLocation="CenterScreen" 
         WindowStyle="ToolWindow">
     <Grid>

@@ -40,7 +40,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBlock Text="{StaticResource IndicatorToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBlock Text="{StaticResource IndicatorTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Text="计算密度低于90%会特别显示" Style="{StaticResource StyleDGTextBlockBigSpecial}"/>
+                <TextBlock Text="计算密度低于90%会特别显示" Style="{StaticResource StyleTextBlockCommon}"/>
             </StackPanel>
         </StackPanel>
         <Grid Grid.Row="2">
@@ -108,7 +108,7 @@
                                                TextAlignment="Right"
                                                Foreground="Blue"
                                                Margin="0 1"
-                                               Background="{Binding RatioDensity,Converter={StaticResource RatioDensityCT}}"/>
+                                               Background="{Binding RatioDensity,Converter={StaticResource MinimumBGCT1}}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

@@ -53,7 +53,26 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-
+        public int CheckToolMillingBoxExist(string boxnumber)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.ToolSieves
+                                where i.State != PMSCommon.ToolState.作废.ToString()
+                                && i.BoxNumber == boxnumber
+                                select i;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
         public List<DcToolSieve> GetToolSieve(string searchid, string materialGroup, int s, int t)
         {
             try

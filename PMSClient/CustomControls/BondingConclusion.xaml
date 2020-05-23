@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.CustomControls"
         mc:Ignorable="d"
-        Title="绑定结果快速录入工具" Height="500" Width="600" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
+        Title="绑定结果快速录入工具" Height="600" Width="800" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Grid Background="{StaticResource BGBrushWindow}" Margin="2">
         <Grid.ColumnDefinitions>
@@ -13,6 +13,8 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -52,7 +54,7 @@
         <TextBlock Grid.Row="6" Grid.Column="0"  Style="{StaticResource StyleTextBlockCommon}"
                    Text="备注"/>
         <TextBox  Grid.Row="6" Grid.Column="1" Name="txtDefects" Style="{StaticResource StyleTextBoxCommon}" 
-                  Text="无" Background="Yellow" FontSize="20"/>
+                  Text="无" Background="Yellow"/>
 
         <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
             <Button Name="btnCrackInner" Style="{StaticResource StyleButtonCommon}" Content="裂-内"
@@ -72,12 +74,27 @@
         </StackPanel>
 
         <TextBlock Grid.Row="8" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
-                   Text="焊合"/>
-        <TextBox Name="txtWeldingRate" Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="0" FontSize="20"  Background="Yellow"/>
+                   Text="焊合率"/>
+        <TextBox Name="txtWeldingRate" Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="0" FontSize="20" Background="Yellow"/>
 
         <TextBlock Grid.Row="9" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
+                   Text="焊合缺陷"/>
+        <TextBox Name="txtWeldingDefect" Grid.Row="9" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="" Background="Yellow"/>
+
+        <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Horizontal" Button.Click="StackPanel_Click">
+            <Button Content="Void1-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void2-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void3-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void4-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void5-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void6-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void7-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            <Button Content="Void8-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="11" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="状态"/>
-        <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal">
             <ComboBox Name="cboState"  Style="{StaticResource StyleComboBoxCommon}" FontSize="20"/>
             <Button Name="BtnFinish" Style="{StaticResource StyleButtonCommon}" Content="完成"
                   Click="BtnFinish_Click" MinWidth="40" VerticalAlignment="Stretch"/>
@@ -85,7 +102,7 @@
                         Text="&lt;-此项超声检查人员无需设置，由最终审核人员设置为完成"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="btnCancel" Content="取消" Style="{StaticResource StyleButtonCommon}" Click="btnCancel_Click"/>
             <Button Name="btnYes" Content="确定" Style="{StaticResource StyleButtonCommon}" Click="btnYes_Click" Width="120" Height="50" FontSize="20"
                     Foreground="Blue"

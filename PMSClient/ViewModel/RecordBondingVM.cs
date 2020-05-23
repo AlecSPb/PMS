@@ -280,11 +280,10 @@ namespace PMSClient.ViewModel
                     model.PlateLot = dialog.PlateNumber;
                     model.Remark = dialog.Defects;
                     model.CoverPlateNumber = dialog.CoverPlateNumber;
-
                     double welding_rate = 0;
                     double.TryParse(dialog.WeldingRate, out welding_rate);
                     model.WeldingRate = welding_rate;
-
+                    model.WeldingDefect = dialog.WeldingDefect;
                     service.UpdateRecordBongdingByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
                 }
                 SetPageParametersWhenConditionChange();
