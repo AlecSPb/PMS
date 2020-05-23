@@ -102,6 +102,9 @@ namespace PMSClient
 
             //下载最新权限表到本地-只在启动的时候下载一次
             PMSHelper.CurrentSession.DownloadAccessSheet();
+
+            //加载配置
+            PMSClient.Components.PMSSettingHelper.PMSSettingService.CacheSettings();
         }
         #region 定时器设定
         /// <summary>

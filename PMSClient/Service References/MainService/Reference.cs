@@ -7601,6 +7601,9 @@ namespace PMSClient.MainService {
         private string TargetWeightField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WeldingDefectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double WeldingRateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -7869,6 +7872,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.TargetWeightField, value) != true)) {
                     this.TargetWeightField = value;
                     this.RaisePropertyChanged("TargetWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WeldingDefect {
+            get {
+                return this.WeldingDefectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WeldingDefectField, value) != true)) {
+                    this.WeldingDefectField = value;
+                    this.RaisePropertyChanged("WeldingDefect");
                 }
             }
         }

@@ -22,6 +22,8 @@ namespace PMSWCFService.DataContracts
 
 
         [DataMember]
+        public int BoxNumber { get; set; }
+        [DataMember]
         public int ToolNumber { get; set; }
         [DataMember]
         public string CompositionAbbr { get; set; }

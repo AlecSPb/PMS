@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PMSClient.Express;
 using PMSClient.PMSSettings;
+using PMSClient.Components.PMSSettingHelper;
 
 namespace PMSClient.ToolWindow
 {
@@ -25,8 +26,8 @@ namespace PMSClient.ToolWindow
         {
             InitializeComponent();
 
-            string sender = ExpressConfigService.ReadKey("sf_sender");
-            string senderphone = ExpressConfigService.ReadKey("sf_sender_phone");
+            string sender = PMSSettingService.ReadKeyFromCache("sf_sender");
+            string senderphone = PMSSettingService.ReadKeyFromCache("sf_sender_phone");
             TxtSender.Text = sender;
             TxtSenderPhone.Text = senderphone;
         }

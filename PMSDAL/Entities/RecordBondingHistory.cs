@@ -22,6 +22,7 @@ namespace PMSDAL
         public string PlateLot { get; set; }//背板编号
         public int PlanBatchNumber { get; set; }
         public double WeldingRate { get; set; }
+        public string WeldingDefect { get; set; }
 
         public string TargetProductID { get; set; }//显示
         public string TargetComposition { get; set; }//显示

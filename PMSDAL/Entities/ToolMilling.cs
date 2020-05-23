@@ -19,6 +19,7 @@ namespace PMSDAL
 
 
         public int ToolNumber { get; set; }
+        public int BoxNumber { get; set; }
         public string CompositionAbbr { get; set; }
 
         public string Remark { get; set; }

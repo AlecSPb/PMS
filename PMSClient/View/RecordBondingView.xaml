@@ -106,6 +106,8 @@
                                     Binding="{Binding CoverPlateNumber}"/>
                 <DataGridTextColumn Header="{StaticResource BDWeldingRate}" ElementStyle="{StaticResource StyleDGTextBlockRightBlue}" 
                                     Binding="{Binding WeldingRate,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource BDWeldingDefect}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
+                                    Binding="{Binding WeldingDefect}"/>
                 <DataGridTextColumn Header="{StaticResource BDRemark}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource BDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"

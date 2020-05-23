@@ -687,6 +687,7 @@
       <xs:element minOccurs="0" name="TargetPO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetProductID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetWeight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WeldingDefect" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WeldingRate" type="xs:double" />
     </xs:sequence>
   </xs:complexType>

@@ -782,6 +782,7 @@
     <sys:String x:Key="BDTargetDetailRecord">Details</sys:String>
     <sys:String x:Key="BDPlateLot">Plate Lot</sys:String>
     <sys:String x:Key="BDWeldingRate">WeldingRate</sys:String>
+    <sys:String x:Key="BDWeldingDefect">WeldingDefect</sys:String>
 
     <!--Customer-->
     <sys:String x:Key="CustomerState">State</sys:String>
@@ -887,6 +888,7 @@
     <sys:String x:Key="MTCreator">Creator</sys:String>
     <sys:String x:Key="MTState">State</sys:String>
     <sys:String x:Key="MTToolNumber">Tool Number</sys:String>
+    <sys:String x:Key="MTBoxNumber">Box Number</sys:String>
     <sys:String x:Key="MTCompositionAbbr">Composition Abbr</sys:String>
     <sys:String x:Key="MTRemark">Remark</sys:String>
 

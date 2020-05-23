@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 using System.Xml;
+using PMSClient.Components.PMSSettingHelper;
 
 namespace PMSClient.Express
 {
@@ -24,8 +25,8 @@ namespace PMSClient.Express
     {
         public SF()
         {
-            Sender = ExpressConfigService.ReadKey("sf_sender");
-            SenderPhone = ExpressConfigService.ReadKey("sf_sender_phone");
+            Sender = PMSSettingService.ReadKeyFromCache("sf_sender");
+            SenderPhone = PMSSettingService.ReadKeyFromCache("sf_sender_phone");
         }
         public string Sender { get; set; } = "秦雪梅";
         public string SenderPhone { get; set; } = "13808071935";

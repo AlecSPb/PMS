@@ -792,6 +792,7 @@
 
     <sys:String x:Key="BDPlateLot">背板批号</sys:String>
     <sys:String x:Key="BDWeldingRate">焊合率</sys:String>
+    <sys:String x:Key="BDWeldingDefect">焊合缺陷</sys:String>
 
 
     <!--Customer-->
@@ -896,7 +897,8 @@
     <sys:String x:Key="MTCreateTime">创建时间</sys:String>
     <sys:String x:Key="MTCreator">创建者</sys:String>
     <sys:String x:Key="MTState">状态</sys:String>
-    <sys:String x:Key="MTToolNumber">工具序号</sys:String>
+    <sys:String x:Key="MTToolNumber">筛号</sys:String>
+    <sys:String x:Key="MTBoxNumber">箱号</sys:String>
     <sys:String x:Key="MTCompositionAbbr">成分缩写</sys:String>
     <sys:String x:Key="MTRemark">备注</sys:String>
 

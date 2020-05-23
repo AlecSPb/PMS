@@ -27,6 +27,8 @@ namespace PMSWCFService.DataContracts
         public int PlanBatchNumber { get; set; }
         [DataMember]
         public double WeldingRate { get; set; }
+        [DataMember]
+        public string WeldingDefect { get; set; }
 
         [DataMember]
         public string TargetProductID { get; set; }//显示

@@ -243,7 +243,7 @@
     <Compile Include="Components\ExcelOutputHelper\ExcelOutputPlanTrace.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelPlateStatistic.cs" />
     <Compile Include="Components\ExcelOutputHelper\ExcelSample.cs" />
-    <Compile Include="Components\Express\ExpressConfigService.cs" />
+    <Compile Include="Components\PMSSettingHelper\PMSSettingService.cs" />
     <Compile Include="Components\CscanImageProcess\FTPImageShow.xaml.cs">
       <DependentUpon>FTPImageShow.xaml</DependentUpon>
     </Compile>
