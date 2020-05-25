@@ -24,6 +24,12 @@ namespace PMSClient.ViewModel
             }
             CurrentYear = DateTime.Now.Year;
             OutputOrder = new RelayCommand(ActionOutputOrder);
+            OutputBondingCSCAN = new RelayCommand(ActionOutputBondingCSCAN);
+        }
+
+        private void ActionOutputBondingCSCAN()
+        {
+            throw new NotImplementedException();
         }
 
         private void ActionOutputOrder()
@@ -38,6 +44,7 @@ namespace PMSClient.ViewModel
         }
 
         public RelayCommand OutputOrder { get; set; }
+        public RelayCommand OutputBondingCSCAN { get; set; }
 
         private int currentYear;
         public int CurrentYear

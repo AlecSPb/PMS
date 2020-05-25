@@ -555,5 +555,58 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public List<DcRecordBonding> GetRecordBondingByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                    DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
+                    var query = from p in dc.RecordBondings
+                                where p.CreateTime >= startTime
+                                && p.CreateTime <= endTime
+                                && p.State != BondingState.作废.ToString()
+                                orderby p.TargetProductID descending
+                                select p;
+                    var result = query.Skip(s).Take(t).ToList();
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordBonding, DcRecordBonding>());
+                    var products = Mapper.Map<List<RecordBonding>, List<DcRecordBonding>>(result);
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetRecordBondingCountByYearMonth(int year_start, int month_start, int year_end, int month_end)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                    DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
+                    var query = from p in dc.RecordBondings
+                                where p.CreateTime >= startTime
+                                && p.CreateTime <= endTime
+                                && p.State != BondingState.作废.ToString()
+                                orderby p.TargetProductID descending
+                                select p;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

@@ -13,14 +13,18 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition />
 
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="请点击需要的按钮" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <Button Grid.Row="1" Name="BtnChaozhou" Content="瑞典潮州 230发货+测试+绑定" Style="{StaticResource StyleButtonNavigation}"
                     HorizontalAlignment="Stretch" Click="BtnChaozhou_Click"/>
-        <ProgressBar Grid.Row="2" Name="Pg" Maximum="100" Height="10" Margin="2"/>
-        
-        
+        <ProgressBar Grid.Row="2" Name="Pg1" Maximum="100" Height="10" Margin="2"/>
+        <Button Grid.Row="3" Name="BtnCSCAN" Content="230绑定面超声图集" Style="{StaticResource StyleButtonNavigation}"
+                    HorizontalAlignment="Stretch" Click="BtnCSCAN_Click"/>
+        <ProgressBar Grid.Row="4" Name="Pg2" Maximum="100" Height="10" Margin="2"/>
+
     </Grid>
 </Window>

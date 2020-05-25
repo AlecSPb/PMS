@@ -37,6 +37,7 @@
       <xs:element minOccurs="0" name="TargetPO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetProductID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetWeight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WeldingDefect" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WeldingRate" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
@@ -385,4 +386,10 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="DcConsumablePurchase" nillable="true" type="tns:DcConsumablePurchase" />
+  <xs:complexType name="ArrayOfDcRecordBonding">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordBonding" nillable="true" type="tns:DcRecordBonding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcRecordBonding" nillable="true" type="tns:ArrayOfDcRecordBonding" />
 </xs:schema>

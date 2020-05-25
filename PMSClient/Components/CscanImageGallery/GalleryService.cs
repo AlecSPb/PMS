@@ -1,0 +1,144 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Novacode;
+using PMSClient.Components.CscanImageProcess;
+using PMSClient.OutputService;
+using XSHelper;
+using System.IO;
+
+
+namespace PMSClient.Components.CscanImageGallery
+{
+    /// <summary>
+    /// 将超声照片汇集成图集
+    /// </summary>
+    public class GalleryService
+    {
+        public GalleryService()
+        {
+            bondingTargets = new List<DcRecordBonding>();
+        }
+        private List<DcRecordBonding> bondingTargets;
+
+        private int year_start;
+        private int month_start;
+        private int year_end;
+        private int month_end;
+        public void SetParameters(int y1, int m1, int y2, int m2)
+        {
+            year_start = y1;
+            month_start = m1;
+            year_end = y2;
+            month_end = m2;
+        }
+        public void Output()
+        {
+            SetTargetList(year_start, month_start, year_end, month_end);
+            CreateGallery();
+        }
+
+        public event EventHandler<double> UpdateProgress;
+        protected void OnUpdateProgress(double progressValue)
+        {
+            UpdateProgress?.Invoke(this, progressValue);
+        }
+        /// <summary>
+        /// 设置好列表
+        /// </summary>
+        private void SetTargetList(int year_start, int month_start, int year_end, int month_end)
+        {
+            using (var s = new OutputServiceClient())
+            {
+                int count = s.GetRecordBondingCountByYearMonth(year_start, month_start, year_end, month_end);
+                var result = s.GetRecordBondingByYearMonth(0, count, year_start, month_start, year_end, month_end);
+                bondingTargets.Clear();
+                bondingTargets.AddRange(result.ToList());
+            }
+        }
+
+        private ImageManager imageManager = new ImageManager();
+        private void CreateGallery()
+        {
+            var targets = bondingTargets.Where(i => i.TargetDimension.Contains("230"))
+                                       .OrderByDescending(i => i.TargetProductID).ToList();
+
+            #region 创建word文档
+            string filename = $"Cscan Gallery{DateTime.Now.ToString("yyMMdd")}.docx";
+            string outputFolder = XS.File.GetDesktopPath();
+            string filepath = Path.Combine(outputFolder, filename);
+
+            try
+            {
+
+                int row = 0, column = 0;
+
+                DocX doc = DocX.Create(filepath);
+                float margin_lr = 30;
+                float margin_tb = 70;
+                doc.MarginLeft = margin_lr;
+                doc.MarginRight = margin_lr;
+                doc.MarginTop = margin_tb;
+                doc.MarginBottom = margin_tb;
+
+                doc.AddHeaders();
+                doc.DifferentFirstPage = true;
+                Header header = doc.Headers.first;
+                var p0 = header.InsertParagraph();
+                p0.Append($"CDPMI Create@{DateTime.Now.ToString()}; 230 mm Target Bonding Image From {year_start}-{month_start} To {year_end}-{month_end}");
+
+                Table table = doc.AddTable(1, 4);
+                table.AutoFit = AutoFit.Window;
+                int imageSize = 170;
+                for (int i = 0; i < targets.Count(); i++)
+                {
+                    Cell cell = table.Rows[row].Cells[column];
+                    cell.VerticalAlignment = VerticalAlignment.Center;
+                    Paragraph p = cell.Paragraphs[0];
+                    p.Append($"{targets[i].TargetProductID} [{targets[i].WeldingRate}%]");
+                    p.FontSize(8);
+                    p.Alignment = Alignment.center;
+
+                    //下载图片
+                    var imageResult = imageManager.GetImage(targets[i].TargetProductID, ImageType.Bonding);
+                    if (imageResult.IsFound)
+                    {
+                        string imagefile = imageResult.ImagePath;
+                        //p.AppendLine(targets[i].TargetAbbr).FontSize(6);
+                        p.AppendPicture(doc.AddImage(imagefile).CreatePicture(imageSize, imageSize));
+                    }
+                    else
+                    {
+                        cell.FillColor = System.Drawing.Color.Yellow;
+                    }
+
+                    column++;
+                    if (column == 4)
+                    {
+                        row++;
+                        column = 0;
+                        table.InsertRow(row);
+                    }
+
+                    //状态更新
+                    int progressValue = (int)((i + 1) * 100 / targets.Count());
+                    OnUpdateProgress(progressValue);
+                }
+
+                doc.InsertTable(table);
+                doc.Save();
+                doc.Dispose();
+
+                System.Diagnostics.Process.Start(filepath);
+            }
+            catch (Exception)
+            {
+
+            }
+            #endregion
+        }
+
+    }
+}

@@ -209,6 +209,7 @@
       <DependentUpon>ConsumableWarning.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\ConsumableWarning\ConsumableWarningService.cs" />
+    <Compile Include="Components\CscanImageGallery\GalleryService.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputBase.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputFeedback.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputOutSource.cs" />
@@ -2183,6 +2184,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\OutputService\PMSClient.OutputService.DcPlanTrace.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OutputService\PMSClient.OutputService.DcRecordBonding.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSSettings\PMSSettingService.wsdl" />

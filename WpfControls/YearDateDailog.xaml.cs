@@ -22,7 +22,7 @@ namespace WPFControls
         public YearDateDailog()
         {
             InitializeComponent();
-            LoadDefaultValues(-3);
+            LoadDefaultValues(0);
         }
 
         public YearDateDailog(int monthEarly)

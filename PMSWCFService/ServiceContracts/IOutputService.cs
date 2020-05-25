@@ -64,5 +64,11 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetConsumablePurchaseByYearMonthCount(int year_start, int month_start, int year_end, int month_end);
 
+
+        [OperationContract]
+        List<DcRecordBonding> GetRecordBondingByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        [OperationContract]
+        int GetRecordBondingCountByYearMonth(int year_start, int month_start, int year_end, int month_end);
+
     }
 }

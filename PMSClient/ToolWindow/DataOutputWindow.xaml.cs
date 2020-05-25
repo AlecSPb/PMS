@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PMSClient.Components.CscanImageGallery;
 
 namespace PMSClient.ToolWindow
 {
@@ -72,7 +73,58 @@ namespace PMSClient.ToolWindow
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    Pg.Value = e;
+                    Pg1.Value = e;
+                });
+            }
+        }
+
+        private void BtnCSCAN_Click(object sender, RoutedEventArgs e)
+        {
+            if (!PMSDialogService.ShowYesNo("请问", $"确定要导出230mm靶材绑定面图片集合吗？"))
+            {
+                return;
+            }
+            try
+            {
+
+                //年月选择对话框
+                //年月选择对话框
+                var dialog = new WPFControls.YearDateDailog();
+                if (dialog.ShowDialog() == false)
+                {
+                    return;
+                }
+                int year_start = dialog.YearStart;
+                int month_start = dialog.MonthStart;
+                int year_end = dialog.YearEnd;
+                int month_end = dialog.MonthEnd;
+
+                var gs = new GalleryService();
+                gs.SetParameters(year_start, month_start, year_end, month_end);
+                gs.UpdateProgress += Gs_UpdateProgress;
+                var task = new Task(gs.Output);
+                task.Start();
+                BtnCSCAN.IsEnabled = false;
+
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                PMSDialogService.Show(ex.Message);
+            }
+            finally
+            {
+                BtnCSCAN.IsEnabled = true;
+            }
+        }
+
+        private void Gs_UpdateProgress(object sender, double e)
+        {
+            if (e >= 0 && e <= 100)
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    Pg2.Value = e;
                 });
             }
         }

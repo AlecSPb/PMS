@@ -160,6 +160,9 @@ namespace PMSClient.OutputService {
         private string TargetWeightField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WeldingDefectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double WeldingRateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -428,6 +431,19 @@ namespace PMSClient.OutputService {
                 if ((object.ReferenceEquals(this.TargetWeightField, value) != true)) {
                     this.TargetWeightField = value;
                     this.RaisePropertyChanged("TargetWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WeldingDefect {
+            get {
+                return this.WeldingDefectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WeldingDefectField, value) != true)) {
+                    this.WeldingDefectField = value;
+                    this.RaisePropertyChanged("WeldingDefect");
                 }
             }
         }
@@ -4553,6 +4569,18 @@ namespace PMSClient.OutputService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonthCount", ReplyAction="http://tempuri.org/IOutputService/GetConsumablePurchaseByYearMonthCountResponse")]
         System.Threading.Tasks.Task<int> GetConsumablePurchaseByYearMonthCountAsync(int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetRecordBondingByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetRecordBondingByYearMonthResponse")]
+        PMSClient.OutputService.DcRecordBonding[] GetRecordBondingByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetRecordBondingByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetRecordBondingByYearMonthResponse")]
+        System.Threading.Tasks.Task<PMSClient.OutputService.DcRecordBonding[]> GetRecordBondingByYearMonthAsync(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetRecordBondingCountByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetRecordBondingCountByYearMonthResponse")]
+        int GetRecordBondingCountByYearMonth(int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetRecordBondingCountByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetRecordBondingCountByYearMonthResponse")]
+        System.Threading.Tasks.Task<int> GetRecordBondingCountByYearMonthAsync(int year_start, int month_start, int year_end, int month_end);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4708,6 +4736,22 @@ namespace PMSClient.OutputService {
         
         public System.Threading.Tasks.Task<int> GetConsumablePurchaseByYearMonthCountAsync(int year_start, int month_start, int year_end, int month_end) {
             return base.Channel.GetConsumablePurchaseByYearMonthCountAsync(year_start, month_start, year_end, month_end);
+        }
+        
+        public PMSClient.OutputService.DcRecordBonding[] GetRecordBondingByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetRecordBondingByYearMonth(s, t, year_start, month_start, year_end, month_end);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.OutputService.DcRecordBonding[]> GetRecordBondingByYearMonthAsync(int s, int t, int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetRecordBondingByYearMonthAsync(s, t, year_start, month_start, year_end, month_end);
+        }
+        
+        public int GetRecordBondingCountByYearMonth(int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetRecordBondingCountByYearMonth(year_start, month_start, year_end, month_end);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRecordBondingCountByYearMonthAsync(int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetRecordBondingCountByYearMonthAsync(year_start, month_start, year_end, month_end);
         }
     }
 }
