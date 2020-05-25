@@ -66,7 +66,7 @@ namespace PMSClient.Components.CscanImageGallery
                                        .OrderByDescending(i => i.TargetProductID).ToList();
 
             #region 创建word文档
-            string filename = $"Cscan Gallery{DateTime.Now.ToString("yyMMdd")}.docx";
+            string filename = $"Cscan Gallery from {year_start}-{month_start}to {year_end}-{month_end}.docx";
             string outputFolder = XS.File.GetDesktopPath();
             string filepath = Path.Combine(outputFolder, filename);
 

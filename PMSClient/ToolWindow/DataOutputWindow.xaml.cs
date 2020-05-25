@@ -80,7 +80,8 @@ namespace PMSClient.ToolWindow
 
         private void BtnCSCAN_Click(object sender, RoutedEventArgs e)
         {
-            if (!PMSDialogService.ShowYesNo("请问", $"确定要导出230mm靶材绑定面图片集合吗？"))
+            XSHelper.XS.MessageBox.ShowInfo("图片本地有缓存会比较快，没有就会到服务器找，速度会慢一些，耐心等待");
+            if (!PMSDialogService.ShowYesNo("请问", $"确定要导出230mm靶材绑定面图片集合到桌面吗？"))
             {
                 return;
             }
