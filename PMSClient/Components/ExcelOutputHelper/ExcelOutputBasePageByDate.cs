@@ -26,7 +26,11 @@ namespace PMSClient.ExcelOutputHelper
         {
             UpdateProgress?.Invoke(this, progressValue);
         }
-
+        public event EventHandler UpdateButtonEnable;
+        protected void OnUpdateButtonEnable()
+        {
+            UpdateButtonEnable?.Invoke(this, null);
+        }
         protected int year_start = 0;
         protected int month_start = 0;
         protected int year_end = 0;

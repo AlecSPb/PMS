@@ -45,6 +45,12 @@ namespace PMSClient.Components.CscanImageGallery
         {
             UpdateProgress?.Invoke(this, progressValue);
         }
+
+        public event EventHandler UpdateButtonEnable;
+        protected void OnUpdateButtonEnable()
+        {
+            UpdateButtonEnable?.Invoke(this, null);
+        }
         /// <summary>
         /// 设置好列表
         /// </summary>
@@ -132,6 +138,7 @@ namespace PMSClient.Components.CscanImageGallery
                 doc.Dispose();
 
                 System.Diagnostics.Process.Start(filepath);
+                OnUpdateButtonEnable();
             }
             catch (Exception)
             {

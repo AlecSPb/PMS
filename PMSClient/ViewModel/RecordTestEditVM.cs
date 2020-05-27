@@ -190,9 +190,9 @@ namespace PMSClient.ViewModel
 
         private void ActionSelectMisson()
         {
-            PMSHelper.ViewModels.MissonSelect.SetRequestView(PMSViews.RecordTestEdit);
-            PMSHelper.ViewModels.MissonSelect.RefreshData();
-            NavigationService.GoTo(PMSViews.MissonSelect);
+            PMSHelper.ViewModels.OrderSelect.SetRequestView(PMSViews.RecordTestEdit);
+            PMSHelper.ViewModels.OrderSelect.RefreshData();
+            NavigationService.GoTo(PMSViews.OrderSelect);
         }
 
         private void ActionSelect()

@@ -288,6 +288,7 @@
     <sys:String x:Key="ButtonImage">Image</sys:String>
     <sys:String x:Key="ButtonPlate">Plate</sys:String>
 
+    <sys:String x:Key="ButtonSelectOrder">Select Order</sys:String>
     <sys:String x:Key="ButtonSelectMisson">Select Task</sys:String>
     <sys:String x:Key="ButtonSelectMaterialNeed">Select Material Need</sys:String>
     <sys:String x:Key="ButtonSelectVHPPlan">Select VHP Plan</sys:String>

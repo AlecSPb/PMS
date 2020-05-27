@@ -22,7 +22,7 @@
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Save}" IsDefault="True"/>
             <Button Content="{StaticResource ButtonSelectVHPPlan}" Style="{StaticResource  StyleButtonSpecial}" Command="{Binding Select}"/>
-            <Button Content="{StaticResource ButtonSelectMisson}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding SelectMisson}"/>
+            <Button Content="{StaticResource ButtonSelectOrder}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding SelectMisson}"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipRecordTestEdit}"/>
         </StackPanel>

@@ -51,6 +51,7 @@ namespace PMSClient.ToolWindow
                 excel.Intialize("瑞典潮州_230靶材_发货+测试+绑定数据", "Data", 50);
                 excel.SetParameter(year_start, month_start, year_end, month_end);
                 excel.UpdateProgress += Excel_UpdateProgress;
+                excel.UpdateButtonEnable += Excel_UpdateButtonEnable;
 
                 var task = new Task(excel.Output);
                 task.Start();
@@ -63,8 +64,12 @@ namespace PMSClient.ToolWindow
             }
             finally
             {
-                BtnChaozhou.IsEnabled = true;
             }
+        }
+
+        private void Excel_UpdateButtonEnable(object sender, EventArgs e)
+        {
+            this.Dispatcher.Invoke(() => BtnChaozhou.IsEnabled = true);
         }
 
         private void Excel_UpdateProgress(object sender, double e)
@@ -103,6 +108,8 @@ namespace PMSClient.ToolWindow
                 var gs = new GalleryService();
                 gs.SetParameters(year_start, month_start, year_end, month_end);
                 gs.UpdateProgress += Gs_UpdateProgress;
+                gs.UpdateButtonEnable += Gs_UpdateButtonEnable;
+
                 var task = new Task(gs.Output);
                 task.Start();
                 BtnCSCAN.IsEnabled = false;
@@ -115,8 +122,13 @@ namespace PMSClient.ToolWindow
             }
             finally
             {
-                BtnCSCAN.IsEnabled = true;
+
             }
+        }
+
+        private void Gs_UpdateButtonEnable(object sender, EventArgs e)
+        {
+            this.Dispatcher.Invoke(() => BtnCSCAN.IsEnabled = true);
         }
 
         private void Gs_UpdateProgress(object sender, double e)

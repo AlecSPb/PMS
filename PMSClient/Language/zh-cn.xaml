@@ -295,6 +295,7 @@
 
 
 
+    <sys:String x:Key="ButtonSelectOrder">选择订单</sys:String>
     <sys:String x:Key="ButtonSelectMisson">选择任务</sys:String>
     <sys:String x:Key="ButtonSelectMaterialNeed">选择材料需求</sys:String>
     <sys:String x:Key="ButtonSelectVHPPlan">选择计划</sys:String>

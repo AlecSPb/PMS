@@ -122,6 +122,7 @@ namespace PMSClient
         ConsumableInventoryEdit,
         ConsumableInventorySelect,
         ConsumablePurchase,
-        ConsumablePurchaseEdit
+        ConsumablePurchaseEdit,
+        OrderSelect
     }
 }

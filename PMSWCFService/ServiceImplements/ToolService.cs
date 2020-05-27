@@ -91,7 +91,7 @@ namespace PMSWCFService
                                 && i.MaterialGroup.Contains(searchItem.Item2)
                                 && i.MaterialGroup.Contains(searchItem.Item3)
                                 && i.MaterialGroup.Contains(searchItem.Item4)
-                                orderby i.CreateTime descending
+                                orderby i.MaterialGroup.Length descending, i.MaterialGroup, i.CreateTime descending
                                 select i;
                     return Mapper.Map<List<ToolSieve>, List<DcToolSieve>>(query.Skip(s).Take(t).ToList());
                 }
@@ -119,7 +119,6 @@ namespace PMSWCFService
                                 && i.MaterialGroup.Contains(searchItem.Item2)
                                 && i.MaterialGroup.Contains(searchItem.Item3)
                                 && i.MaterialGroup.Contains(searchItem.Item4)
-                                orderby i.CreateTime descending
                                 select i;
                     return query.Count();
                 }

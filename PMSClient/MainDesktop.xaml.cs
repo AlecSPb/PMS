@@ -296,6 +296,9 @@ namespace PMSClient
                 case PMSViews.OrderEdit:
                     NavigateTo(_views.OrderEdit);
                     break;
+                case PMSViews.OrderSelect:
+                    NavigateTo(_views.OrderSelect);
+                    break;
                 case PMSViews.OutSource:
                     NavigateTo(_views.OutSource);
                     break;

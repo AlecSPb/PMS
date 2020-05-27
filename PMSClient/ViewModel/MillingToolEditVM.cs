@@ -99,23 +99,23 @@ namespace PMSClient.ViewModel
             }
             try
             {
+
                 using (var service = new ToolSieveServiceClient())
                 {
+
                     if (IsNew)
                     {
                         //检查是否存在通过S号
-                        int check_count1 = service.CheckToolSieveExist(CurrentToolSieve.SearchID);
-                        if (check_count1 > 0)
+                        int check_count1 = 0, check_count2 = 0;
+                        if (CurrentToolSieve.SearchID != "S")
                         {
-                            PMSDialogService.ShowWarning($"同索引号的筛网已经有{check_count1}个了，请换一个");
-                            return;
+                            check_count1 = service.CheckToolSieveExist(CurrentToolSieve.SearchID);
+                            PMSDialogService.ShowWarning($"同号[筛]已经有{check_count1}个了");
                         }
-
-                        int check_count2 = service.CheckToolMillingBoxExist(CurrentToolSieve.BoxNumber);
-                        if (check_count2 > 0)
+                        if (CurrentToolSieve.BoxNumber != "B")
                         {
-                            PMSDialogService.ShowWarning($"同索引号的工具箱已经有{check_count2}个了，请换一个");
-                            return;
+                            check_count2 = service.CheckToolMillingBoxExist(CurrentToolSieve.BoxNumber);
+                            PMSDialogService.ShowWarning($"同号[箱]已经有{check_count2}个了");
                         }
 
                         service.AddToolSieve(CurrentToolSieve);

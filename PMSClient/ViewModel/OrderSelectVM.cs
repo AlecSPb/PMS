@@ -25,11 +25,14 @@ namespace PMSClient.ViewModel
 
         }
         private PMSViews requestView;
+        public List<string> SearchOrderStates { get; set; }
 
         public void RefreshData()
         {
+            searchCustomer = "";
             searchPMINumber = "";
             searchCompositionStandard = "";
+            searchOrderState = "";
             SetPageParametersWhenConditionChange();
         }
         /// <summary>
@@ -68,9 +71,19 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
+            searchCustomer = "";
             searchPMINumber = "";
             searchCompositionStandard = "";
+            searchOrderState = "";
             MainOrders = new ObservableCollection<DcOrder>();
+            SearchOrderStates = new List<string>();
+            SearchOrderStates.Add(PMSCommon.OrderState.未核验.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.未完成.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.生产完成.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.最终完成.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.暂停.ToString());
+            SearchOrderStates.Add(PMSCommon.OrderState.取消.ToString());
+            SearchOrderStates.Add("");
         }
         private void InitializeCommands()
         {
@@ -99,10 +112,11 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 30;
             using (var service = new NewServiceClient())
             {
-                RecordCount = service.GetMissonCount(SearchCompositionStandard, SearchPMINumber, "");
+                RecordCount = service.GetOrderCount(SearchCustomer, SearchCompositionStandard, SearchPMINumber, SearchOrderState);
+                service.Close();
             }
             ActionPaging();
         }
@@ -117,13 +131,25 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new NewServiceClient())
             {
-                var orders = service.GetMisson(skip, take, SearchCompositionStandard, SearchPMINumber, "");
+                var orders = service.GetOrder(skip, take, SearchCustomer, SearchCompositionStandard, SearchPMINumber, SearchOrderState);
                 MainOrders.Clear();
                 orders.ToList().ForEach(o => MainOrders.Add(o));
             }
         }
 
         #region Proeperties
+        private string searchCustomer;
+        public string SearchCustomer
+        {
+            get { return searchCustomer; }
+            set
+            {
+                if (searchCustomer == value)
+                    return;
+                searchCustomer = value;
+                RaisePropertyChanged(() => SearchCustomer);
+            }
+        }
         private string searchPMINumber;
         public string SearchPMINumber
         {
@@ -148,7 +174,18 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(() => SearchCompositionStandard);
             }
         }
-
+        private string searchOrderState;
+        public string SearchOrderState
+        {
+            get { return searchOrderState; }
+            set
+            {
+                if (searchOrderState == value)
+                    return;
+                searchOrderState = value;
+                RaisePropertyChanged(() => SearchOrderState);
+            }
+        }
         private ObservableCollection<DcOrder> mainOrders;
         public ObservableCollection<DcOrder> MainOrders
         {

@@ -1,4 +1,4 @@
-﻿using PMSClient.MainService;
+﻿using PMSClient.NewService;
 using PMSClient.ViewModel;
 using PMSCommon;
 using System;
@@ -41,6 +41,9 @@ namespace PMSClient.View
                             break;
                         case "暂停":
                             e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
+                            break;
+                        case "取消":
+                            e.Row.Background = this.FindResource("CancelledBrush") as SolidColorBrush;
                             break;
                         case "未完成":
                             e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;

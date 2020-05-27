@@ -26,6 +26,7 @@
             <TextBlock Text="{StaticResource OrderPMINumber}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
+            <ComboBox ItemsSource="{Binding SearchOrderStates}" SelectedItem="{Binding SearchOrderState}" Style="{StaticResource StyleComboBoxCommon}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommonNarrow}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonUnCompleted}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding OnlyUnCompleted}"/>
@@ -43,7 +44,8 @@
                 <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
             </StackPanel>
         </StackPanel>
-        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MainOrders}" LoadingRow="DataGrid_LoadingRow">
+        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MainOrders}" LoadingRow="DataGrid_LoadingRow"
+                  Name="dg">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>

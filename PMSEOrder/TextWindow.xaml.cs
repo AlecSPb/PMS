@@ -26,10 +26,17 @@ namespace PMSEOrder
 
         private void BtnCopy_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(MainText.Text))
+            try
             {
-                Clipboard.SetText(MainText.Text);
-                XSHelper.XS.MessageBox.ShowInfo("Copy To ClipBoard Sucessfully");
+                if (!string.IsNullOrEmpty(MainText.Text))
+                {
+                    Clipboard.SetText(MainText.Text);
+                    XSHelper.XS.MessageBox.ShowInfo("Copy To ClipBoard Sucessfully");
+                }
+            }
+            catch (Exception)
+            {
+
             }
         }
     }
