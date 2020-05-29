@@ -131,11 +131,9 @@ namespace PMSClient.ViewModel
                 () => _session.IsAuthorized(PMSAccess.ReadProduct)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
             GoToDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.Delivery),
-                () => _session.IsInGroup(AccessGrant.ViewDeliveryItemList)
-                || _session.IsInGroup(AccessGrant.ViewAllModule));
+                () => _session.IsInGroup("DeliveryView"));
             GoToDeliveryItemList = new RelayCommand(() => NavigationService.GoTo(PMSViews.DeliveryItemList),
-                () => _session.IsInGroup(AccessGrant.ViewDeliveryItemList)
-                || _session.IsInGroup(AccessGrant.ViewAllModule));
+                () => _session.IsInGroup("DeliveryView"));
 
             GoToBDCustomer = new RelayCommand(() => NavigationService.GoTo(PMSViews.Customer),
                 () => _session.IsAuthorized(PMSAccess.ReadCustomer)

@@ -6,6 +6,7 @@ using PMSDAL;
 using AutoMapper;
 using PMSWCFService.ServiceContracts;
 using PMSWCFService.DataContracts;
+using PMSWCFService.ServiceImplements.Helpers;
 
 namespace PMSWCFService
 {
@@ -97,12 +98,17 @@ namespace PMSWCFService
             try
             {
                 XS.RunLog();
+                var searchItem = CompositionHelper.GetSearchItems(composition);
+
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordDeMold, DcRecordDeMold>());
                     var query = from r in dc.RecordDeMolds
                                 where r.VHPPlanLot.Contains(vhpplanlot)
-                                && r.Composition.Contains(composition)
+                                && r.Composition.Contains(searchItem.Item1)
+                                && r.Composition.Contains(searchItem.Item2)
+                                && r.Composition.Contains(searchItem.Item3)
+                                && r.Composition.Contains(searchItem.Item4)
                                 && r.State != PMSCommon.SimpleState.作废.ToString()
                                 orderby r.CreateTime descending
                                 select r;
@@ -121,11 +127,16 @@ namespace PMSWCFService
             try
             {
                 XS.RunLog();
+                var searchItem = CompositionHelper.GetSearchItems(composition);
+
                 using (var dc = new PMSDbContext())
                 {
                     var query = from r in dc.RecordDeMolds
                                 where r.VHPPlanLot.Contains(vhpplanlot)
-                                && r.Composition.Contains(composition)
+                                && r.Composition.Contains(searchItem.Item1)
+                                && r.Composition.Contains(searchItem.Item2)
+                                && r.Composition.Contains(searchItem.Item3)
+                                && r.Composition.Contains(searchItem.Item4)
                                 && r.State != PMSCommon.SimpleState.作废.ToString()
                                 select r;
                     return query.Count();

@@ -23,6 +23,7 @@ namespace PMSWCFService.ServiceContracts
         int GetToolSieveUsedCount(string searchid, string materialGroup);
 
 
+
         [OperationContract]
         void AddToolSieve(DcToolSieve model);
         [OperationContract]
@@ -32,5 +33,7 @@ namespace PMSWCFService.ServiceContracts
         int CheckToolSieveExist(string searchid);
         [OperationContract]
         int CheckToolMillingBoxExist(string boxnumber);
+        [OperationContract]
+        string GetMaxToolSieveNumber();
     }
 }

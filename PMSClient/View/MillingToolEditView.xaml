@@ -64,9 +64,12 @@
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource TSSearchID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding SearchID}"
-                          Style="{StaticResource StyleTextBoxCommon}" Background="Red" Foreground="Yellow"/>
-                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
-                           Text="筛网编号，以S开头，唯一不得重复"/>
+                          Style="{StaticResource StyleTextBoxCommon}" Background="Red" Foreground="Yellow" Name="TxtSearchID"/>
+                <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="最大编号" Style="{StaticResource StyleButtonCommon}" Name="BtnGetMaxSieve" Click="BtnGetMaxSieve_Click"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}" Text="筛网编号，以S开头，唯一不得重复"/>
+                </StackPanel>
+
 
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource TSMaterialGroup}"

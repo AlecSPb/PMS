@@ -7,6 +7,7 @@ using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
 using AutoMapper;
 using PMSWCFService.ServiceImplements.Helpers;
+using System.Text;
 
 namespace PMSWCFService
 {
@@ -91,7 +92,7 @@ namespace PMSWCFService
                                 && i.MaterialGroup.Contains(searchItem.Item2)
                                 && i.MaterialGroup.Contains(searchItem.Item3)
                                 && i.MaterialGroup.Contains(searchItem.Item4)
-                                orderby i.MaterialGroup.Length descending, i.MaterialGroup, i.CreateTime descending
+                                orderby i.BoxNumber.Length descending, i.BoxNumber descending, i.CreateTime descending
                                 select i;
                     return Mapper.Map<List<ToolSieve>, List<DcToolSieve>>(query.Skip(s).Take(t).ToList());
                 }
@@ -146,7 +147,7 @@ namespace PMSWCFService
                                 && i.MaterialGroup.Contains(searchItem.Item2)
                                 && i.MaterialGroup.Contains(searchItem.Item3)
                                 && i.MaterialGroup.Contains(searchItem.Item4)
-                                orderby i.CreateTime descending
+                                orderby i.BoxNumber.Length descending, i.BoxNumber descending, i.CreateTime descending
                                 select i;
                     return Mapper.Map<List<ToolSieve>, List<DcToolSieve>>(query.Skip(s).Take(t).ToList());
                 }
@@ -196,6 +197,40 @@ namespace PMSWCFService
                     var entity = Mapper.Map<ToolSieve>(model);
                     dc.Entry(entity).State = System.Data.Entity.EntityState.Modified;
                     dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public string GetMaxToolSieveNumber()
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.ToolSieves
+                                where i.State != PMSCommon.ToolState.作废.ToString()
+                                orderby i.SearchID.Length descending, i.SearchID descending
+                                select i;
+
+                    int count = 0;
+                    StringBuilder sb = new StringBuilder();
+                    foreach (var item in query)
+                    {
+                        sb.Append(item.SearchID);
+                        sb.Append(";");
+                        count++;
+                        if (count > 4)
+                        {
+                            break;
+                        }
+                    }
+                    return sb.ToString();
                 }
             }
             catch (Exception ex)

@@ -285,6 +285,12 @@ namespace PMSClient.ToolService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/CheckToolMillingBoxExist", ReplyAction="http://tempuri.org/IToolSieveService/CheckToolMillingBoxExistResponse")]
         System.Threading.Tasks.Task<int> CheckToolMillingBoxExistAsync(string boxnumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/GetMaxToolSieveNumber", ReplyAction="http://tempuri.org/IToolSieveService/GetMaxToolSieveNumberResponse")]
+        string GetMaxToolSieveNumber();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToolSieveService/GetMaxToolSieveNumber", ReplyAction="http://tempuri.org/IToolSieveService/GetMaxToolSieveNumberResponse")]
+        System.Threading.Tasks.Task<string> GetMaxToolSieveNumberAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -376,6 +382,14 @@ namespace PMSClient.ToolService {
         
         public System.Threading.Tasks.Task<int> CheckToolMillingBoxExistAsync(string boxnumber) {
             return base.Channel.CheckToolMillingBoxExistAsync(boxnumber);
+        }
+        
+        public string GetMaxToolSieveNumber() {
+            return base.Channel.GetMaxToolSieveNumber();
+        }
+        
+        public System.Threading.Tasks.Task<string> GetMaxToolSieveNumberAsync() {
+            return base.Channel.GetMaxToolSieveNumberAsync();
         }
     }
 }

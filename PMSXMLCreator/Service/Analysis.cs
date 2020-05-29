@@ -159,7 +159,7 @@ namespace PMSXMLCreator.Service
                 string type = "Value", string qualifier = "", string ucl = "100", string lcl = "0", string mdl = "0", string clcalc = "Temp")
         {
             var p = new Parameter();
-            p.Type = "RawMaterial";
+            p.Type = "Measurement";
             //获取元素完整名称
             string fullname = dict_element.GetFullName(shortname);
             p.Characteristic = fullname;

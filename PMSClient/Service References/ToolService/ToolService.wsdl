@@ -55,6 +55,12 @@
   <wsdl:message name="IToolSieveService_CheckToolMillingBoxExist_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckToolMillingBoxExistResponse" />
   </wsdl:message>
+  <wsdl:message name="IToolSieveService_GetMaxToolSieveNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxToolSieveNumber" />
+  </wsdl:message>
+  <wsdl:message name="IToolSieveService_GetMaxToolSieveNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxToolSieveNumberResponse" />
+  </wsdl:message>
   <wsdl:portType name="IToolSieveService">
     <wsdl:operation name="GetToolSieve">
       <wsdl:input wsaw:Action="http://tempuri.org/IToolSieveService/GetToolSieve" message="tns:IToolSieveService_GetToolSieve_InputMessage" />
@@ -87,6 +93,10 @@
     <wsdl:operation name="CheckToolMillingBoxExist">
       <wsdl:input wsaw:Action="http://tempuri.org/IToolSieveService/CheckToolMillingBoxExist" message="tns:IToolSieveService_CheckToolMillingBoxExist_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IToolSieveService/CheckToolMillingBoxExistResponse" message="tns:IToolSieveService_CheckToolMillingBoxExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxToolSieveNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToolSieveService/GetMaxToolSieveNumber" message="tns:IToolSieveService_GetMaxToolSieveNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToolSieveService/GetMaxToolSieveNumberResponse" message="tns:IToolSieveService_GetMaxToolSieveNumber_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="sieve" type="tns:IToolSieveService">
@@ -156,6 +166,15 @@
     </wsdl:operation>
     <wsdl:operation name="CheckToolMillingBoxExist">
       <soap:operation soapAction="http://tempuri.org/IToolSieveService/CheckToolMillingBoxExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxToolSieveNumber">
+      <soap:operation soapAction="http://tempuri.org/IToolSieveService/GetMaxToolSieveNumber" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

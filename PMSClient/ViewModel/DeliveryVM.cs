@@ -310,12 +310,12 @@ namespace PMSClient.ViewModel
 
         private bool CanEditItem(DcDeliveryItem arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
+            return PMSHelper.CurrentSession.IsInGroup("DeliveryViewEdit");
         }
 
         private bool CanAddItem(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
+            return PMSHelper.CurrentSession.IsInGroup("DeliveryViewAdd");
         }
         /// <summary>
         /// 权限代码=编辑发货记录
@@ -323,12 +323,12 @@ namespace PMSClient.ViewModel
         /// <returns></returns>
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
+            return PMSHelper.CurrentSession.IsInGroup("DeliveryViewAdd");
         }
 
         private bool CanEdit(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
+            return PMSHelper.CurrentSession.IsInGroup("DeliveryViewEdit");
         }
 
         private void ActionAll()
