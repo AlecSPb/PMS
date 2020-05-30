@@ -21,5 +21,6 @@ namespace PMSDAL
         public string Email { get; set; }
         public string Memo { get; set; }
         public string State { get; set; }
+        public int ImportanceLevel { get; set; }
     }
 }

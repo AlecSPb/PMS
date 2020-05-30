@@ -48,7 +48,7 @@ namespace PMSClient.ViewModel
             searchCustomer = "";
             searchCompositionStandard = "";
             searchPMINumber = "";
-            searchOrderState = "";
+            searchOrderState = PMSCommon.OrderState.未完成.ToString();
             MainOrders = new ObservableCollection<DcOrder>();
             UnFinishedOrderCount = 0;
             UnFinishedTargetCount = 0;

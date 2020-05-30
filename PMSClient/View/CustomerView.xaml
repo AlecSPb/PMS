@@ -29,6 +29,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource CustomerImportanceLevel}" ElementStyle="{StaticResource StyleDGTextBlockCenter}"
+                                    Binding="{Binding ImportanceLevel}"/>
                 <DataGridTextColumn Header="{StaticResource CustomerCustomerName}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     Binding="{Binding CustomerName}"/>
                 <DataGridTextColumn Header="{StaticResource CustomerAddress}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
@@ -45,6 +47,7 @@
                                     Binding="{Binding Email}"/>
                 <DataGridTextColumn Header="{StaticResource CustomerMemo}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     Binding="{Binding Memo}"/>
+                
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -30,5 +30,7 @@ namespace PMSWCFService.DataContracts
         public string Email { get; set; }
         [DataMember]
         public string Memo { get; set; }
+        [DataMember]
+        public int ImportanceLevel { get; set; }
     }
 }

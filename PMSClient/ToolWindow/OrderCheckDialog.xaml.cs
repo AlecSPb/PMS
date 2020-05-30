@@ -70,6 +70,10 @@ namespace PMSClient.ToolWindow
                 }
             }
 
+            if (CurrentOrder.State == "最终完成")
+            {
+                CurrentOrder.FinishTime = DateTime.Now;
+            }
 
             string user = PMSHelper.CurrentSession.CurrentUser.UserName;
             CurrentOrder.Reviewer = user;

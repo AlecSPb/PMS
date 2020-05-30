@@ -165,10 +165,36 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    
                     <DataGridTextColumn Header="{StaticResource OrderCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                             Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                     <DataGridTextColumn Header="{StaticResource OrderDeadLine}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                             Binding="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}"/>
+
+                    <DataGridTemplateColumn Header="剩余">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border Margin="1" BorderBrush="Blue" BorderThickness="1" CornerRadius="4" Width="30">
+                                    <Border.Background>
+                                        <MultiBinding Converter="{StaticResource IsOverDueBGCT}">
+                                            <Binding Path="DeadLine"/>
+                                            <Binding Path="State"/>
+                                        </MultiBinding>
+                                    </Border.Background>
+                                    <TextBlock Style="{StaticResource StyleDGTextBlockCenter}" HorizontalAlignment="Stretch" TextAlignment="Center"
+                                           Padding="1" Foreground="Blue">
+                                        <TextBlock.Text>
+                                            <MultiBinding Converter="{StaticResource IsOverDueCT}">
+                                                <Binding Path="DeadLine"/>
+                                                <Binding Path="State"/>
+                                            </MultiBinding>
+                                        </TextBlock.Text>
+                                    </TextBlock>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    
                     <DataGridTextColumn Header="{StaticResource OrderPolicy}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                             Binding="{Binding PolicyType}"/>
                     <DataGridTextColumn Header="{StaticResource OrderPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

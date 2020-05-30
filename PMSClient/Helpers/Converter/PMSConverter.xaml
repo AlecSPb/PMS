@@ -14,4 +14,6 @@
     <local:CurrentVHPDateConverter x:Key="CurrentVHPDateCT"/>
     <local:IDToBarCodeConverter x:Key="IDToBarCode"/>
     <local:StringCutConverter x:Key="StringCutCT"/>
+    <local:IsOverDueConverter x:Key="IsOverDueCT"/>
+    <local:IsOverDueBGConverter x:Key="IsOverDueBGCT"/>
 </ResourceDictionary>

@@ -15,6 +15,7 @@
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="ImportanceLevel" type="xs:int" />
       <xs:element minOccurs="0" name="Memo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Phone1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Phone2" nillable="true" type="xs:string" />

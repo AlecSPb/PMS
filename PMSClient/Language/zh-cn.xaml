@@ -799,6 +799,7 @@
     <!--Customer-->
     <sys:String x:Key="CustomerState">状态</sys:String>
     <sys:String x:Key="CustomerCustomerName">客户名称</sys:String>
+    <sys:String x:Key="CustomerImportanceLevel">重要级别</sys:String>
     <sys:String x:Key="CustomerAddress">地址</sys:String>
     <sys:String x:Key="CustomerContactPerson">联系人</sys:String>
     <sys:String x:Key="CustomerPhone1">电话</sys:String>

@@ -787,6 +787,7 @@
 
     <!--Customer-->
     <sys:String x:Key="CustomerState">State</sys:String>
+    <sys:String x:Key="CustomerImportanceLevel">ImportanceLevel</sys:String>
     <sys:String x:Key="CustomerCustomerName">CustomerName</sys:String>
     <sys:String x:Key="CustomerAddress">Address</sys:String>
     <sys:String x:Key="CustomerContactPerson">Contact</sys:String>
