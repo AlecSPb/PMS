@@ -79,5 +79,7 @@ namespace PMSDAL
 
         public DateTime LastUpdateTime { get; set; }
 
+        public string OrderRemark { get; set; }
+
     }
 }

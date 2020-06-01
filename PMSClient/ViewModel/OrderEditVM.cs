@@ -154,7 +154,7 @@ namespace PMSClient.ViewModel
             order.SampleForAnlysisRemark = "无";
             order.ShipTo = "未定";
             order.SpecialRequirement = "无";
-
+            order.OrderRemark = "";
             //2020-3-18 添加
             order.PartNumber = "无";
             order.SecondMachineDetails = "无";

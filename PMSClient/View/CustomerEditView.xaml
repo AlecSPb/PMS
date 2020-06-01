@@ -57,7 +57,7 @@
             <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource CustomerImportanceLevel}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
             <ComboBox Grid.Row="1" Grid.Column="1"
-                      Style="{StaticResource StyleComboBoxCommon}" HorizontalAlignment="Stretch"
+                      Style="{StaticResource StyleComboBoxCommon}"
                       ItemsSource="{Binding DataContext.ImportanceLevels,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
                       SelectedItem="{Binding ImportanceLevel}"/>
             <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"

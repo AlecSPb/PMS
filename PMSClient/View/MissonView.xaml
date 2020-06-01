@@ -91,6 +91,8 @@
                                             Binding="{Binding State}"/>
                     <DataGridTextColumn Header="{StaticResource OrderPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                             Binding="{Binding Priority}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderDeadLine}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}"/>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.Header>
                             <TextBlock Text="样">

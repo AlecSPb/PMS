@@ -18,6 +18,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="请设置该订单的状态和优先级" Style="{StaticResource StyleDGTextBlockCommon}"/>
@@ -47,14 +48,18 @@
             <TextBlock Style="{StaticResource StyleDGTextBlockSpecial2}" Text="优先级数字越大，优先级越高"/>
         </StackPanel>
 
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="状态备注" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CurrentOrder.OrderRemark}"
+                 Style="{StaticResource StyleTextBoxCommon}"/>
 
-        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="BtnCancel" Click="BtnCancel_Click" Style="{StaticResource StyleButtonCommon}"
                  Content="取消"/>
             <Button Name="BtnSave" Click="BtnSave_Click" Style="{StaticResource StyleButtonCommon}"
                  Content="确定"/>
         </StackPanel>
-        <Border BorderBrush="Blue" Margin="1" BorderThickness="1" Grid.Row="6" Grid.ColumnSpan="2">
+        
+        <Border BorderBrush="Blue" Margin="1" BorderThickness="1" Grid.Row="7" Grid.ColumnSpan="2">
             <ScrollViewer  VerticalScrollBarVisibility="Auto" Margin="2">
                 <StackPanel>
                     <Border BorderBrush="Gray" BorderThickness="1" Margin="1">

@@ -71,7 +71,8 @@
                            Style="{StaticResource StyleTextBlockSpecial}"/>
                 <ComboBox Grid.Row="0" Grid.Column="1" Name="cboCustomerNames"
                       Style="{StaticResource StyleComboBoxCommon}" HorizontalAlignment="Stretch"
-                      ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" SelectedItem="{Binding CustomerName}"/>
+                      ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
+                      SelectedItem="{Binding CustomerName}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="*选择客户名称，如果没有该客户信息，请先添加客户信息" Background="LightGreen"/>
 

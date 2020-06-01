@@ -462,6 +462,7 @@
     <sys:String x:Key="OrderSecondMachineDetail">二次加工细节</sys:String>
     <sys:String x:Key="OrderSampleNeedRemark">客户样品备注</sys:String>
     <sys:String x:Key="OrderSampleForAnlysisRemark">自分析样品备注</sys:String>
+    <sys:String x:Key="OrderOrderRemark">订单更改备注</sys:String>
 
     <!--Plan-->
     <sys:String x:Key="PlanState">计划状态</sys:String>

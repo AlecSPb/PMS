@@ -24,6 +24,7 @@
       <xs:element minOccurs="0" name="LastUpdateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="MaterialIndex" type="xs:double" />
       <xs:element minOccurs="0" name="MinimumAcceptDefect" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderRemark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PartNumber" nillable="true" type="xs:string" />

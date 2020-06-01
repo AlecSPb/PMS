@@ -70,6 +70,7 @@ namespace PMSDAL
         public string SecondMachineDimension { get; set; }
         public string SecondMachineDetails { get; set; }
         public DateTime LastUpdateTime { get; set; }
+        public string OrderRemark { get; set; }
 
 
         //操作者和操作时间

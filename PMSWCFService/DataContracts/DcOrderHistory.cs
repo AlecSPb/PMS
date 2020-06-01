@@ -117,5 +117,7 @@ namespace PMSWCFService.DataContracts
         public string SampleNeedRemark { get; set; }//是否需要样品备注
         [DataMember]
         public string SampleForAnlysisRemark { get; set; }//PMI是否需要取样分析备注
+        [DataMember]
+        public string OrderRemark { get; set; }
     }
 }

@@ -1653,6 +1653,9 @@ namespace PMSClient.OutputService {
         private string MinimumAcceptDefectField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderRemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1928,6 +1931,19 @@ namespace PMSClient.OutputService {
                 if ((object.ReferenceEquals(this.MinimumAcceptDefectField, value) != true)) {
                     this.MinimumAcceptDefectField = value;
                     this.RaisePropertyChanged("MinimumAcceptDefect");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderRemark {
+            get {
+                return this.OrderRemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderRemarkField, value) != true)) {
+                    this.OrderRemarkField = value;
+                    this.RaisePropertyChanged("OrderRemark");
                 }
             }
         }

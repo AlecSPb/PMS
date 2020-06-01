@@ -22,16 +22,19 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
-            if (!PMSDialogService.ShowYesNo("", ""))
-            {
-                return;
-            }
-
             if (CurrentCustomer != null)
             {
                 using (var service = new CustomerServiceClient())
                 {
-                    service.AddCustomer(CurrentCustomer);
+                    if (IsNew)
+                    {
+                        service.AddCustomer(CurrentCustomer);
+
+                    }
+                    else
+                    {
+                        service.UpdateCustomer(CurrentCustomer);
+                    }
                 }
                 PMSHelper.ViewModels.Customer.RefreshData();
                 NavigationService.GoTo(PMSViews.Customer);

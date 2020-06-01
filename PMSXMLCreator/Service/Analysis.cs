@@ -26,8 +26,8 @@ namespace PMSXMLCreator.Service
             //parameters.AddRange(GetProductNameComposition(model.ProductName));
             parameters.AddRange(SolveXRFByKeyStr(model.XRF));
 
-            parameters.Add(GetOtherParameter("Density", model.Density, ParameterUnit.Density, ucl: "4.5", lcl: "4.3"));
-            parameters.Add(GetOtherParameter("Weight", model.Weight, ParameterUnit.Density, ucl: "5500", lcl: "5000"));
+            parameters.Add(GetOtherParameter("Density", model.Density));
+            parameters.Add(GetOtherParameter("Weight", model.Weight));
 
             parameters.AddRange(SolveDimension(model.TargetDimension));
 
@@ -83,7 +83,8 @@ namespace PMSXMLCreator.Service
             p.Characteristic = characteristic;
             //获取缩写名称
             p.Type = "Measurement";
-            p.ShortName = dict_parameter.GetShortName(characteristic);
+            var basicData = dict_parameter.GetShortName(characteristic);
+            p.ShortName = basicData.ShortName;
             p.UnitOfMeasure = unit;
 
             p.MeasurementQualifier = qualifier;
@@ -94,11 +95,11 @@ namespace PMSXMLCreator.Service
             {
                 MeasurementType = type,
                 MeasurementValue = value,
-                UCL = ucl,
-                LCL = lcl,
+                UCL = basicData.UCL.ToString(),
+                LCL = basicData.LCL.ToString(),
                 MDL = mdl,
                 CLCalc = clcalc
-            });
+            }); ;
             return p;
         }
 
@@ -123,7 +124,9 @@ namespace PMSXMLCreator.Service
             string fullname = dict_element.GetFullName(shortname);
             p.Characteristic = fullname;
             //获取缩写名称
-            p.ShortName = dict_parameter.GetShortName(fullname);
+            var basicData = dict_parameter.GetShortName(fullname);
+
+            p.ShortName = basicData.ShortName;
             p.UnitOfMeasure = unit;
 
             p.MeasurementQualifier = qualifier;
@@ -134,8 +137,8 @@ namespace PMSXMLCreator.Service
             {
                 MeasurementType = type,
                 MeasurementValue = value,
-                UCL = ucl,
-                LCL = lcl,
+                UCL = basicData.UCL.ToString(),
+                LCL = basicData.LCL.ToString(),
                 MDL = mdl,
                 CLCalc = clcalc
             });
@@ -164,7 +167,8 @@ namespace PMSXMLCreator.Service
             string fullname = dict_element.GetFullName(shortname);
             p.Characteristic = fullname;
             //获取缩写名称
-            p.ShortName = dict_parameter.GetShortName(fullname);
+            var basicData = dict_parameter.GetShortName(fullname);
+            p.ShortName = basicData.ShortName;
             p.UnitOfMeasure = unit;
 
             p.MeasurementQualifier = qualifier;
@@ -175,8 +179,8 @@ namespace PMSXMLCreator.Service
             {
                 MeasurementType = type,
                 MeasurementValue = value,
-                UCL = ucl,
-                LCL = lcl,
+                UCL = basicData.UCL.ToString(),
+                LCL = basicData.LCL.ToString(),
                 MDL = mdl,
                 CLCalc = clcalc
             });
