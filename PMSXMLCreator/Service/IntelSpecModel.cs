@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace PMSXMLCreator.Service
 {
     /// <summary>
-    /// 基本的Intel数据库
+    /// 基本的Intel规格模型
     /// </summary>
-    public class IntelData
+    public class IntelSpecModel
     {
-        public IntelData()
+        public IntelSpecModel()
         {
             MeasurementQualifier = "";
             MeasurementType = "Value";

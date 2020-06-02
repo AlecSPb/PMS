@@ -14,6 +14,9 @@
         <i:EventTrigger EventName="Closing">
             <i:InvokeCommandAction Command="{Binding ClosingCommand}"/>
         </i:EventTrigger>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}"/>
+        </i:EventTrigger>
     </i:Interaction.Triggers>
     <Grid>
         <Grid.RowDefinitions>
@@ -144,8 +147,9 @@
                     <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="New ECOA" Background="{StaticResource FileInfo}"/>
                     <CheckBox Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleCheckBoxCommon}"
-                              IsChecked="{Binding IsNew,UpdateSourceTrigger=PropertyChanged}" Content="Check For New,UnCheck for Replace"/>
-
+                              IsChecked="{Binding IsNew,UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}" Text="Check For New 00,UnCheck for Replace 05"/>
+                    
                     <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="ResponsiblePartyEmail" Background="{StaticResource FileInfo}"/>
                     <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
@@ -325,9 +329,9 @@
                     <TextBlock Grid.Row="26" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="LotNumber"   Background="{StaticResource TargetInfo}"/>
                     <TextBox Grid.Row="26" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding LotNumber}"/>
+                     Text="{Binding LotNumber}" Foreground="Blue" FontWeight="Bold" Background="Orange"/>
                     <TextBlock Grid.Row="26" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text=""/>
+                       Text="file name contains lot number"/>
 
                     <TextBlock Grid.Row="27" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="BackPlateNumber"   Background="{StaticResource TargetInfo}"/>
@@ -341,7 +345,7 @@
                     <TextBox Grid.Row="28" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
                      Text="{Binding Density}"/>
                     <TextBlock Grid.Row="28" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text=""/>
+                       Text="g/cm3"/>
 
 
                     <TextBlock Grid.Row="29" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
@@ -349,7 +353,7 @@
                     <TextBox Grid.Row="29" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
                      Text="{Binding Weight}"/>
                     <TextBlock Grid.Row="29" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text=""/>
+                       Text="g"/>
 
                     <TextBlock Grid.Row="30" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="Target Dimension"   Background="{StaticResource MaterialParameterInfo}"/>

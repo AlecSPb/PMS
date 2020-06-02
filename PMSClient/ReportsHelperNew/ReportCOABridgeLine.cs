@@ -75,6 +75,8 @@ namespace PMSClient.ReportsHelperNew
 
                 doc.ReplaceText("[OrderDate]", COAHelper.GetCreateDateFromPMINumber(model.PMINumber));
                 doc.ReplaceText("[CreateDate]", DateTime.Now.ToString("MM/dd/yyyy"));
+                //粗糙度值
+                doc.ReplaceText("[Roughness]", model.Roughness ?? "");
 
                 //写入CSCAN Flaw Data
                 string flawarea = "";
@@ -84,19 +86,11 @@ namespace PMSClient.ReportsHelperNew
                 }
                 else
                 {
-                    //var dict = new Dictionary<string, string>();
-                    //dict.Add("总空腔率", "Void Rate");
-                    //dict.Add("最大空腔直径", "Max Void Dia.");
-                    //dict.Add("深度", "Depth");
-                    //dict.Add("总空腔个数", "Void Count");
-                    //flawarea = COAHelper.ReplaceChineseCharacter(model.CScan, dict);
                     flawarea = model.CScan;
                 }
                 doc.ReplaceText("[FlawArea]", flawarea);
 
-                //粗糙度值
 
-                doc.ReplaceText("[Roughness]", model.Roughness ?? "");
 
 
 

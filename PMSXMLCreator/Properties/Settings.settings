@@ -17,5 +17,8 @@
     <Setting Name="IncomingFaxNumber" Type="System.String" Scope="User">
       <Value Profile="(Default)">028-66519527</Value>
     </Setting>
+    <Setting Name="LastOpenFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

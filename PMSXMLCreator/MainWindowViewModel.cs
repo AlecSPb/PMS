@@ -41,7 +41,26 @@ namespace PMSXMLCreator
             Save = new RelayCommand(ActionSave);
             OutputDirectory = new RelayCommand(ActionOutputDirectory);
             ClosingCommand = new RelayCommand(ActionClosing);
+            LoadedCommand = new RelayCommand(ActionLoaded);
             Log = new RelayCommand(ActionLog);
+        }
+
+        private void ActionLoaded()
+        {
+            try
+            {
+                FileHelper fh = XSHelper.FileHelper;
+                string filepath = Path.Combine(fh.GetCurrentFolderPath(), "SavedFile", "AutoSaved", "autosaved.json");
+                string json = XSHelper.FileHelper.ReadText(filepath);
+
+                CurrentCOA = JsonConvert.DeserializeObject<ECOA>(json);
+                //自动保存为临时文件
+                AutoSaveHelper.SaveCurrentJson(CurrentCOA);
+            }
+            catch (Exception)
+            {
+                //throw;
+            }
         }
 
         private void ActionLog()
@@ -78,16 +97,46 @@ namespace PMSXMLCreator
 
         private void ActionClosing()
         {
-            bool isChanged = !AutoSaveHelper.CompareJsonHash(CurrentCOA);
-            if (isChanged)
+            try
             {
-                if (XSHelper.MessageHelper.ShowYesNo("当前内容已更改，但未保存，是否保存?"))
+                if (CurrentCOA != null)
                 {
-                    ActionSave();
+                    FileHelper fh = XSHelper.FileHelper;
+                    string json = JsonConvert.SerializeObject(CurrentCOA);
+                    string filepath = Path.Combine(fh.GetCurrentFolderPath(), "SavedFile", "AutoSaved", "autosaved.json");
+                    XSHelper.FileHelper.SaveText(filepath, json);
+
+                    //自动保存为临时文件
+                    AutoSaveHelper.SaveCurrentJson(CurrentCOA);
+
+                    XSHelper.MessageHelper.ShowInfo("保存数据成功");
                 }
             }
-            //最后删除临时文件
-            AutoSaveHelper.CleanTempFile();
+            catch (Exception)
+            {
+
+            }
+        }
+
+
+        private void ActionSave()
+        {
+            //if (XSHelper.MessageHelper.ShowYesNo("请问确定要保存吗"))
+            //{
+            if (CurrentCOA != null)
+            {
+                FileHelper fh = XSHelper.FileHelper;
+                string json = JsonConvert.SerializeObject(CurrentCOA);
+                string filepath = fh.GetFullFileName(fh.GetGoodDateTimeFileName(CurrentCOA.LotNumber, "json"),
+                    fh.GetCurrentFolderPath(), "SavedFile");
+                XSHelper.FileHelper.SaveText(filepath, json);
+
+                //自动保存为临时文件
+                AutoSaveHelper.SaveCurrentJson(CurrentCOA);
+
+                XSHelper.MessageHelper.ShowInfo("保存数据成功");
+            }
+            //}
         }
 
         private void ActionLoadFromPMSFile()
@@ -116,25 +165,6 @@ namespace PMSXMLCreator
             }
         }
 
-        private void ActionSave()
-        {
-            //if (XSHelper.MessageHelper.ShowYesNo("请问确定要保存吗"))
-            //{
-            if (CurrentCOA != null)
-            {
-                FileHelper fh = XSHelper.FileHelper;
-                string json = JsonConvert.SerializeObject(CurrentCOA);
-                string filepath = fh.GetFullFileName(fh.GetGoodDateTimeFileName(CurrentCOA.LotNumber, "json"),
-                    fh.GetCurrentFolderPath(), "SavedFile");
-                XSHelper.FileHelper.SaveText(filepath, json);
-
-                //自动保存为临时文件
-                AutoSaveHelper.SaveCurrentJson(CurrentCOA);
-
-                XSHelper.MessageHelper.ShowInfo("保存数据成功");
-            }
-            //}
-        }
 
         /// <summary>
         /// 创建docx文件
@@ -337,6 +367,7 @@ namespace PMSXMLCreator
         public RelayCommand LoadFromPMSFile { get; set; }
         public RelayCommand Save { get; set; }
         public RelayCommand ClosingCommand { get; set; }
+        public RelayCommand LoadedCommand { get; set; }
 
         public RelayCommand<DcRecordTest> Select { get; set; }
 

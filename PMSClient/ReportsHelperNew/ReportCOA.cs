@@ -79,6 +79,18 @@ namespace PMSClient.ReportsHelperNew
                 //粗糙度值
                 doc.ReplaceText("[Roughness]", model.Roughness ?? "");
 
+                //写入CSCAN Flaw Data
+                string flawarea = "";
+                if (model.CScan == null || model.CScan == "" || model.CScan.Contains("无"))
+                {
+                    flawarea = "";
+                }
+                else
+                {
+                    flawarea = model.CScan;
+                }
+                doc.ReplaceText("[FlawArea]", flawarea);
+
                 //如果是是230mm的靶材，查找背板编号填入
                 if (model.Dimension.Contains("230"))
                 {

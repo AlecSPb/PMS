@@ -138,9 +138,12 @@ namespace PMSXMLCreator.Service
             List<Parameter> parameters = analysis.GetAllECOAParamenters(model);
 
 
-            StringBuilder sb = new StringBuilder();
+            StringBuilder log = new StringBuilder();
 
             double ucl = 0, lcl = 0,measureValue = 0 ;
+
+            //日志头部
+            log.AppendLine("Charactersitic;ShortName;MeasurementType;UnitOfMeasure;MeasurementValue;UCL;LCL;MeasurementValue;UCL Warning;LCL Warning");
 
             foreach (var p in parameters)
             {
@@ -156,27 +159,28 @@ namespace PMSXMLCreator.Service
                 {
                     AddMeasurementParameter(writer, p);
                 }
+
                 #region 日志记录
-                sb.Append($"{p.Characteristic}-{p.ShortName}-{p.Type}-{p.Measurements[0].MeasurementType}-{p.UnitOfMeasure}");
-                sb.Append($"-{p.Measurements[0].MeasurementValue}-{p.Measurements[0].UCL}-{p.Measurements[0].LCL}");
+                log.Append($"{p.Characteristic};{p.ShortName};{p.Type};{p.Measurements[0].MeasurementType};{p.UnitOfMeasure}");
+                log.Append($";{p.Measurements[0].MeasurementValue};{p.Measurements[0].UCL};{p.Measurements[0].LCL}");
 
                 double.TryParse(p.Measurements[0].UCL, out ucl);
                 double.TryParse(p.Measurements[0].LCL, out lcl);
                 double.TryParse(p.Measurements[0].MeasurementValue, out measureValue);
                 if (measureValue > ucl)
                 {
-                    sb.Append("-UCL warning");
+                    log.Append(";UCL warning");
                 }
                 if (measureValue <lcl)
                 {
-                    sb.Append("-LCL warning");
+                    log.Append(";LCL warning");
                 }
-                sb.AppendLine();
+                log.AppendLine();
 
                 #endregion
 
             }
-            new Log().LogIt(sb.ToString());
+            new Log().LogIt(log.ToString());
 
             writer.WriteEndElement();
             #endregion
@@ -206,7 +210,7 @@ namespace PMSXMLCreator.Service
         }
 
         /// <summary>
-        /// 添加MaterialParameter
+        /// 原材料参数
         /// </summary>
         /// <param name="writer"></param>
         /// <param name="p"></param>
@@ -243,6 +247,11 @@ namespace PMSXMLCreator.Service
             writer.WriteEndElement();
         }
 
+        /// <summary>
+        /// 测量参数
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="p"></param>
         private void AddMeasurementParameter(XmlWriter writer, Parameter p)
         {
             writer.WriteStartElement("MaterialParameter", ns);
@@ -275,6 +284,7 @@ namespace PMSXMLCreator.Service
         }
 
 
+        #region 暂时不用
         /// <summary>
         /// 暂时不用
         /// </summary>
@@ -376,6 +386,7 @@ namespace PMSXMLCreator.Service
             writer.WriteEndElement();
             writer.WriteEndElement();
         }
+        #endregion
 
 
     }

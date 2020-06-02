@@ -82,7 +82,7 @@
     </ApplicationDefinition>
     <Compile Include="Model\ParameterList.cs" />
     <Compile Include="Service\AutoSave.cs" />
-    <Compile Include="Service\IntelData.cs" />
+    <Compile Include="Service\IntelSpecModel.cs" />
     <Compile Include="Service\CheckLogic.cs" />
     <Compile Include="Service\DocxHelper.cs" />
     <Compile Include="Service\Analysis.cs" />
@@ -92,7 +92,7 @@
     <Compile Include="Model\Parameter.cs" />
     <Compile Include="Service\IXmlHelper.cs" />
     <Compile Include="Service\Log.cs" />
-    <Compile Include="Service\ParameterDict.cs" />
+    <Compile Include="Service\IntelSpecs.cs" />
     <Compile Include="Service\ParameterUnit.cs" />
     <Compile Include="Service\XmlHelper_ns1.cs" />
     <Compile Include="Service\XmlHelper.cs" />

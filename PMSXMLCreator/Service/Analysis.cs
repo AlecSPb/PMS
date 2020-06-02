@@ -12,7 +12,7 @@ namespace PMSXMLCreator.Service
     /// </summary>
     public class Analysis
     {
-        private ParameterDict dict_parameter = new ParameterDict();
+        private IntelSpecs dict_parameter = new IntelSpecs();
         private ElementFullNameDict dict_element = new ElementFullNameDict();
         /// <summary>
         /// 获取所有ECOA模型参数
@@ -107,12 +107,6 @@ namespace PMSXMLCreator.Service
         /// </summary>
         /// <param name="shortname"></param>
         /// <param name="value"></param>
-        /// <param name="unit"></param>
-        /// <param name="type"></param>
-        /// <param name="ucl"></param>
-        /// <param name="lcl"></param>
-        /// <param name="mdl"></param>
-        /// <param name="clcalc"></param>
         /// <returns></returns>
         public Parameter GetElementParameter(string shortname, string value)
         {
@@ -148,13 +142,6 @@ namespace PMSXMLCreator.Service
         /// </summary>
         /// <param name="shortname"></param>
         /// <param name="value"></param>
-        /// <param name="unit"></param>
-        /// <param name="type"></param>
-        /// <param name="qualifier"></param>
-        /// <param name="ucl"></param>
-        /// <param name="lcl"></param>
-        /// <param name="mdl"></param>
-        /// <param name="clcalc"></param>
         /// <returns></returns>
         public Parameter GetMainElementParameter(string shortname, string value)
         {
@@ -221,7 +208,6 @@ namespace PMSXMLCreator.Service
         /// </summary>
         /// <param name="str"></param>
         /// <param name="unit"></param>
-        /// <param name="type"></param>
         /// <returns></returns>
         public List<Parameter> SolvePlateByKeyStr(string str)
         {
@@ -231,17 +217,6 @@ namespace PMSXMLCreator.Service
             {
                 string element_name = item.Groups[1].Value;
                 string element_value = item.Groups[2].Value;
-                string tempUnit = ParameterUnit.MM;
-                //粗糙度单位单独设置
-                if (element_name.Contains("Roughness"))
-                {
-                    tempUnit = ParameterUnit.UM;
-                }
-                else
-                {
-                    tempUnit = ParameterUnit.MM;
-                }
-
                 parameters.Add(GetOtherParameter(element_name, element_value));
             }
 
@@ -264,12 +239,6 @@ namespace PMSXMLCreator.Service
             {
                 string short_name = item.Groups[1].Value;
                 string element_value = item.Groups[2].Value;
-                string tempUnit = ParameterUnit.PPM;
-                if (short_name == "W")
-                {
-                    tempUnit = ParameterUnit.PPB;
-                }
-
                 parameters.Add(GetElementParameter(short_name, element_value));
 
             }
