@@ -11,6 +11,8 @@ namespace PMSXMLCreator
     {
         public ECOA()
         {
+
+            IsNew = true;
             ResponsiblePartyEmail = "xs.zhou@cdpmi.net";
 
             ManufacturerNumber = "109575";
@@ -58,6 +60,7 @@ namespace PMSXMLCreator
             SelfLife = "12 months";
         }
 
+        public bool IsNew { get; set; }
 
         #region FileInfo
         public string ResponsiblePartyEmail { get; set; }

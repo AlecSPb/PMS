@@ -45,8 +45,8 @@ namespace PMSXMLCreator.Service
         public List<Parameter> GetPropertiesParameters(ECOA model)
         {
             List<Parameter> parameters = new List<Parameter>();
-            parameters.Add(GetOtherParameter("Density", model.Density, ParameterUnit.Density, ucl: "0"));
-            parameters.Add(GetOtherParameter("Weight", model.Weight, ParameterUnit.Weight, ucl: "0"));
+            parameters.Add(GetOtherParameter("Density", model.Density));
+            parameters.Add(GetOtherParameter("Weight", model.Weight));
 
             parameters.AddRange(SolveDimension(model.TargetDimension));
             parameters.AddRange(SolvePlateByKeyStr(model.PlateSpec));
@@ -70,14 +70,13 @@ namespace PMSXMLCreator.Service
             {
                 string short_name = item.Groups[1].Value;
                 string element_value = item.Groups[2].Value;
-                parameters.Add(GetMainElementParameter(short_name, element_value, ParameterUnit.Percent, ucl: "100"));
+                parameters.Add(GetMainElementParameter(short_name, element_value));
             }
 
             return parameters;
         }
 
-        public Parameter GetOtherParameter(string characteristic, string value, string unit = "mm",
-                string type = "Value", string qualifier = "", string ucl = "100", string lcl = "0", string mdl = "0", string clcalc = "Temp")
+        public Parameter GetOtherParameter(string characteristic, string value)
         {
             var p = new Parameter();
             p.Characteristic = characteristic;
@@ -85,21 +84,21 @@ namespace PMSXMLCreator.Service
             p.Type = "Measurement";
             var basicData = dict_parameter.GetShortName(characteristic);
             p.ShortName = basicData.ShortName;
-            p.UnitOfMeasure = unit;
+            p.UnitOfMeasure = basicData.UnitOfMeasure;
 
-            p.MeasurementQualifier = qualifier;
-            p.MeasurementType = type;
+            p.MeasurementQualifier = basicData.MeasurementQualifier;
+            p.MeasurementType = basicData.MeasurementType;
             p.MeasurementValue = value;
 
             p.Measurements.Add(new Measurement()
             {
-                MeasurementType = type,
+                MeasurementType = basicData.MeasurementType,
                 MeasurementValue = value,
                 UCL = basicData.UCL.ToString(),
                 LCL = basicData.LCL.ToString(),
-                MDL = mdl,
-                CLCalc = clcalc
-            }); ;
+                MDL = basicData.MDL.ToString(),
+                CLCalc = basicData.CLCalc
+            }); 
             return p;
         }
 
@@ -115,8 +114,7 @@ namespace PMSXMLCreator.Service
         /// <param name="mdl"></param>
         /// <param name="clcalc"></param>
         /// <returns></returns>
-        public Parameter GetElementParameter(string shortname, string value, string unit = "mm",
-        string type = "Value", string qualifier = "", string ucl = "100", string lcl = "0", string mdl = "0", string clcalc = "Temp")
+        public Parameter GetElementParameter(string shortname, string value)
         {
             var p = new Parameter();
             p.Type = "Measurement";
@@ -127,20 +125,20 @@ namespace PMSXMLCreator.Service
             var basicData = dict_parameter.GetShortName(fullname);
 
             p.ShortName = basicData.ShortName;
-            p.UnitOfMeasure = unit;
+            p.UnitOfMeasure = basicData.UnitOfMeasure;
 
-            p.MeasurementQualifier = qualifier;
-            p.MeasurementType = type;
+            p.MeasurementQualifier = basicData.MeasurementQualifier;
+            p.MeasurementType = basicData.MeasurementType;
             p.MeasurementValue = value;
 
             p.Measurements.Add(new Measurement()
             {
-                MeasurementType = type,
+                MeasurementType = basicData.MeasurementType,
                 MeasurementValue = value,
                 UCL = basicData.UCL.ToString(),
                 LCL = basicData.LCL.ToString(),
-                MDL = mdl,
-                CLCalc = clcalc
+                MDL = basicData.MDL.ToString(),
+                CLCalc = basicData.CLCalc
             });
             return p;
         }
@@ -158,8 +156,7 @@ namespace PMSXMLCreator.Service
         /// <param name="mdl"></param>
         /// <param name="clcalc"></param>
         /// <returns></returns>
-        public Parameter GetMainElementParameter(string shortname, string value, string unit = "mm",
-                string type = "Value", string qualifier = "", string ucl = "100", string lcl = "0", string mdl = "0", string clcalc = "Temp")
+        public Parameter GetMainElementParameter(string shortname, string value)
         {
             var p = new Parameter();
             p.Type = "Measurement";
@@ -169,20 +166,20 @@ namespace PMSXMLCreator.Service
             //获取缩写名称
             var basicData = dict_parameter.GetShortName(fullname);
             p.ShortName = basicData.ShortName;
-            p.UnitOfMeasure = unit;
+            p.UnitOfMeasure = basicData.UnitOfMeasure;
 
-            p.MeasurementQualifier = qualifier;
-            p.MeasurementType = type;
+            p.MeasurementQualifier = basicData.MeasurementQualifier;
+            p.MeasurementType = basicData.MeasurementType;
             p.MeasurementValue = value;
 
             p.Measurements.Add(new Measurement()
             {
-                MeasurementType = type,
+                MeasurementType = basicData.MeasurementType,
                 MeasurementValue = value,
                 UCL = basicData.UCL.ToString(),
                 LCL = basicData.LCL.ToString(),
-                MDL = mdl,
-                CLCalc = clcalc
+                MDL = basicData.MDL.ToString(),
+                CLCalc = basicData.CLCalc
             });
             return p;
         }
@@ -199,7 +196,7 @@ namespace PMSXMLCreator.Service
             {
                 string short_name = item.Groups[1].Value;
                 string element_value = item.Groups[2].Value;
-                parameters.Add(GetElementParameter(short_name, element_value, ParameterUnit.Percent));
+                parameters.Add(GetElementParameter(short_name, element_value));
             }
             return parameters;
         }
@@ -214,8 +211,8 @@ namespace PMSXMLCreator.Service
             var matches = Regex.Matches(str, @"[0-9]+([.]{1}[0-9]+){0,1}");
             string od_value = matches[0].Value;
             string th_value = matches[1].Value;
-            parameters.Add(GetOtherParameter("Target Blank OD", od_value, ucl: "1000"));
-            parameters.Add(GetOtherParameter("Target Blank Thickness", th_value, ucl: "20"));
+            parameters.Add(GetOtherParameter("Target Blank OD", od_value));
+            parameters.Add(GetOtherParameter("Target Blank Thickness", th_value));
             return parameters;
         }
 
@@ -244,16 +241,8 @@ namespace PMSXMLCreator.Service
                 {
                     tempUnit = ParameterUnit.MM;
                 }
-                double ucl_value = 100;
-                if (double.TryParse(element_value, out ucl_value))
-                {
-                    ucl_value = ucl_value + 20;
-                }
-                else
-                {
-                    ucl_value = 100;
-                }
-                parameters.Add(GetOtherParameter(element_name, element_value, tempUnit, ucl: ucl_value.ToString("F0")));
+
+                parameters.Add(GetOtherParameter(element_name, element_value));
             }
 
             return parameters;
@@ -281,16 +270,7 @@ namespace PMSXMLCreator.Service
                     tempUnit = ParameterUnit.PPB;
                 }
 
-                double ucl_value = 100;
-                if (double.TryParse(element_value, out ucl_value))
-                {
-                    ucl_value = ucl_value + 20;
-                }
-                else
-                {
-                    ucl_value = 100;
-                }
-                parameters.Add(GetElementParameter(short_name, element_value, tempUnit, ucl: ucl_value.ToString("F0")));
+                parameters.Add(GetElementParameter(short_name, element_value));
 
             }
 

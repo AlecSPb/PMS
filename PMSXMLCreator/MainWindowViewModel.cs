@@ -32,7 +32,6 @@ namespace PMSXMLCreator
             CurrentCOA = new ECOA();
             RecordTests = new ObservableCollection<DcRecordTest>();
 
-
             Search = new RelayCommand(ActionSearch, CanSearch);
             CreateXML = new RelayCommand(ActionCreateXML, CanCreateXML);
             CreateDocx = new RelayCommand(ActionCreateDocx, CanCreateDocx);
@@ -42,6 +41,27 @@ namespace PMSXMLCreator
             Save = new RelayCommand(ActionSave);
             OutputDirectory = new RelayCommand(ActionOutputDirectory);
             ClosingCommand = new RelayCommand(ActionClosing);
+            Log = new RelayCommand(ActionLog);
+        }
+
+        private void ActionLog()
+        {
+            try
+            {
+                string logfile = Path.Combine(Environment.CurrentDirectory, "log.txt");
+                if (File.Exists(logfile))
+                {
+                    System.Diagnostics.Process.Start(logfile);
+                }
+                else
+                {
+                    XSHelper.MessageHelper.ShowInfo("log file doesn't exist");
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void ActionOutputDirectory()
@@ -321,6 +341,7 @@ namespace PMSXMLCreator
         public RelayCommand<DcRecordTest> Select { get; set; }
 
         public RelayCommand OutputDirectory { get; set; }
+        public RelayCommand Log { get; set; }
 
     }
 }

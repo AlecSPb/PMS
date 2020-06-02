@@ -91,8 +91,15 @@ namespace PMSXMLCreator.Service
                 $"{model.ThisDocumentGenerationDateTime.ToString("yyyy-MM-ddTHH:mm:ss")}");//19个字符
 
             //00表示全新，05表示替换
+            if (model.IsNew)
+            {
+                model.ReleaseType = "00";
+            }
+            else
+            {
+                model.ReleaseType = "05";
+            }
             writer.WriteElementString("releaseType", ns, model.ReleaseType);
-
             #region ProductDescription
             writer.WriteStartElement("ProductDescription", ns);
             writer.WriteElementString("productName", ns, model.ProductName);
@@ -150,10 +157,8 @@ namespace PMSXMLCreator.Service
                     AddMeasurementParameter(writer, p);
                 }
                 #region 日志记录
-                //sb.AppendLine($"{p.Characteristic}-{p.ShortName}-{p.Measurements[0].MeasurementType}-{p.Type}-" +
-                //    $"{p.Measurements[0].MeasurementValue}-{p.Measurements[0].UCL}-{p.Measurements[0].LCL}");
                 sb.Append($"{p.Characteristic}-{p.ShortName}-{p.Type}-{p.Measurements[0].MeasurementType}-{p.UnitOfMeasure}");
-                sb.Append($"-{p.Measurements[0].MeasurementValue}-{p.Measurements[0].UCL}-{p.Measurements[0].MDL}-{p.Measurements[0].LCL}");
+                sb.Append($"-{p.Measurements[0].MeasurementValue}-{p.Measurements[0].UCL}-{p.Measurements[0].LCL}");
 
                 double.TryParse(p.Measurements[0].UCL, out ucl);
                 double.TryParse(p.Measurements[0].LCL, out lcl);
@@ -195,7 +200,7 @@ namespace PMSXMLCreator.Service
 
             if (XSHelper.MessageHelper.ShowYesNo("创建完毕,要打开吗？"))
             {
-                System.Diagnostics.Process.Start(folder);
+                //System.Diagnostics.Process.Start(folder);
                 System.Diagnostics.Process.Start(filePath);
             }
         }

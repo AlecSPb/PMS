@@ -82,7 +82,7 @@
     </ApplicationDefinition>
     <Compile Include="Model\ParameterList.cs" />
     <Compile Include="Service\AutoSave.cs" />
-    <Compile Include="Service\BasicData.cs" />
+    <Compile Include="Service\IntelData.cs" />
     <Compile Include="Service\CheckLogic.cs" />
     <Compile Include="Service\DocxHelper.cs" />
     <Compile Include="Service\Analysis.cs" />

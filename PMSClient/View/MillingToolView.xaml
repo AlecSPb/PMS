@@ -20,7 +20,10 @@
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
-            <TextBlock Text="索引" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBlock Text="箱号" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchElementC,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <TextBlock Text="筛号" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchElementA,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <TextBlock Text="原料组" Style="{StaticResource  StyleTextBlockNavigationBar}"/>

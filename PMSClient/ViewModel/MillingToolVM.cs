@@ -21,7 +21,7 @@ namespace PMSClient.ViewModel
 
         private void Intialize()
         {
-            searchElementA = searchElementB = "";
+            searchElementA = searchElementB=searchElementC = "";
             ToolSieves = new ObservableCollection<DcToolSieve>();
 
             PageChanged = new RelayCommand(ActionPaging);
@@ -73,7 +73,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            SearchElementA = SearchElementB = "";
+            SearchElementA = SearchElementB=SearchElementC = "";
 
             SetPageParametersWhenConditionChange();
         }
@@ -111,7 +111,7 @@ namespace PMSClient.ViewModel
             PageSize = 40;
             using (var service = new ToolSieveServiceClient())
             {
-                RecordCount = service.GetToolSieveCount(SearchElementA, SearchElementB);
+                RecordCount = service.GetToolSieveCount(SearchElementC, SearchElementA, SearchElementB);
             }
             ActionPaging();
         }
@@ -122,7 +122,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new ToolSieveServiceClient())
             {
-                var data = service.GetToolSieve(SearchElementA, SearchElementB, skip, take);
+                var data = service.GetToolSieve(SearchElementC, SearchElementA, SearchElementB, skip, take);
                 ToolSieves.Clear();
                 data.ToList().ForEach(o => ToolSieves.Add(o));
             }
@@ -153,6 +153,19 @@ namespace PMSClient.ViewModel
             {
                 searchElementB = value;
                 RaisePropertyChanged(nameof(SearchElementB));
+            }
+        }
+        private string searchElementC;
+        public string SearchElementC
+        {
+            get
+            {
+                return searchElementC;
+            }
+            set
+            {
+                searchElementC = value;
+                RaisePropertyChanged(nameof(SearchElementC));
             }
         }
         public ObservableCollection<DcToolSieve> ToolSieves { get; set; }

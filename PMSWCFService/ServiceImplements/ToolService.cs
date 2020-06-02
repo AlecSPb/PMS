@@ -74,7 +74,7 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-        public List<DcToolSieve> GetToolSieve(string searchid, string materialGroup, int s, int t)
+        public List<DcToolSieve> GetToolSieve(string boxnumber, string searchid, string materialGroup, int s, int t)
         {
             try
             {
@@ -88,6 +88,7 @@ namespace PMSWCFService
                                 where (i.State == PMSCommon.ToolState.正常.ToString()
                                 || i.State == PMSCommon.ToolState.停止使用.ToString())
                                 && i.SearchID.Contains(searchid)
+                                && i.BoxNumber.Contains(boxnumber)
                                 && i.MaterialGroup.Contains(searchItem.Item1)
                                 && i.MaterialGroup.Contains(searchItem.Item2)
                                 && i.MaterialGroup.Contains(searchItem.Item3)
@@ -104,7 +105,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetToolSieveCount(string searchid, string materialGroup)
+        public int GetToolSieveCount(string boxnumber, string searchid, string materialGroup)
         {
             try
             {
@@ -116,6 +117,7 @@ namespace PMSWCFService
                                 where (i.State == PMSCommon.ToolState.正常.ToString()
                                 || i.State == PMSCommon.ToolState.停止使用.ToString())
                                 && i.SearchID.Contains(searchid)
+                                && i.BoxNumber.Contains(boxnumber)
                                 && i.MaterialGroup.Contains(searchItem.Item1)
                                 && i.MaterialGroup.Contains(searchItem.Item2)
                                 && i.MaterialGroup.Contains(searchItem.Item3)
@@ -131,7 +133,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcToolSieve> GetToolSieveUsed(string searchid, string materialGroup, int s, int t)
+        public List<DcToolSieve> GetToolSieveUsed(string boxnumber, string searchid, string materialGroup, int s, int t)
         {
             try
             {
@@ -143,6 +145,7 @@ namespace PMSWCFService
                     var query = from i in dc.ToolSieves
                                 where i.State == PMSCommon.ToolState.正常.ToString()
                                 && i.SearchID.Contains(searchid)
+                                && i.BoxNumber.Contains(boxnumber)
                                 && i.MaterialGroup.Contains(searchItem.Item1)
                                 && i.MaterialGroup.Contains(searchItem.Item2)
                                 && i.MaterialGroup.Contains(searchItem.Item3)
@@ -159,7 +162,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetToolSieveUsedCount(string searchid, string materialGroup)
+        public int GetToolSieveUsedCount(string boxnumber, string searchid, string materialGroup)
         {
             try
             {
@@ -170,6 +173,7 @@ namespace PMSWCFService
                     var query = from i in dc.ToolSieves
                                 where i.State == PMSCommon.ToolState.正常.ToString()
                                 && i.SearchID.Contains(searchid)
+                                && i.BoxNumber.Contains(boxnumber)
                                 && i.MaterialGroup.Contains(searchItem.Item1)
                                 && i.MaterialGroup.Contains(searchItem.Item2)
                                 && i.MaterialGroup.Contains(searchItem.Item3)

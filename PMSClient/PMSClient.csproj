@@ -2023,6 +2023,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Resource Include="Components\CscanImageProcess\缓存思路.txt" />
+    <Resource Include="BeforePublish.txt" />
     <Content Include="densitychecklist.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

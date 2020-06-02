@@ -92,6 +92,14 @@ namespace PMSXMLCreator.Service
                 $"{model.ThisDocumentGenerationDateTime.ToString("yyyy-MM-ddTHH:mm:ss")}");//19个字符
 
             //00表示全新，05表示替换
+            if (model.IsNew)
+            {
+                model.ReleaseType = "00";
+            }
+            else
+            {
+                model.ReleaseType = "05";
+            }
             writer.WriteElementString(ns_prefix, "releaseType", ns, model.ReleaseType);
 
             #region ProductDescription
@@ -133,6 +141,8 @@ namespace PMSXMLCreator.Service
 
 
             StringBuilder sb = new StringBuilder();
+            double ucl = 0, lcl = 0, measureValue = 0;
+
             foreach (var p in parameters)
             {
                 if (p.Type == "RawMaterial")
@@ -147,9 +157,24 @@ namespace PMSXMLCreator.Service
                 {
                     AddMeasurementParameter(writer, p);
                 }
-                //sb.AppendLine($"{p.Characteristic}-{p.ShortName}-{p.Measurements[0].MeasurementType}-{p.Type}-" +
-                //    $"{p.Measurements[0].MeasurementValue}-{p.Measurements[0].UCL}-{p.Measurements[0].LCL}");
-                sb.AppendLine($"{p.Characteristic}-{p.ShortName}-{p.Type}-{p.Measurements[0].MeasurementType}-{p.Measurements[0].MeasurementValue}-{p.Measurements[0].UCL}-{p.Measurements[0].MDL}-{p.Measurements[0].LCL}-{p.UnitOfMeasure}");
+                #region 日志记录
+                sb.Append($"{p.Characteristic}-{p.ShortName}-{p.Type}-{p.Measurements[0].MeasurementType}-{p.UnitOfMeasure}");
+                sb.Append($"-{p.Measurements[0].MeasurementValue}-{p.Measurements[0].UCL}-{p.Measurements[0].LCL}");
+
+                double.TryParse(p.Measurements[0].UCL, out ucl);
+                double.TryParse(p.Measurements[0].LCL, out lcl);
+                double.TryParse(p.Measurements[0].MeasurementValue, out measureValue);
+                if (measureValue > ucl)
+                {
+                    sb.Append("-UCL warning");
+                }
+                if (measureValue < lcl)
+                {
+                    sb.Append("-LCL warning");
+                }
+                sb.AppendLine();
+
+                #endregion
             }
             new Log().LogIt(sb.ToString());
 
@@ -175,7 +200,7 @@ namespace PMSXMLCreator.Service
 
             if (XSHelper.MessageHelper.ShowYesNo("创建完毕,要打开吗？"))
             {
-                System.Diagnostics.Process.Start(folder);
+                //System.Diagnostics.Process.Start(folder);
                 System.Diagnostics.Process.Start(filePath);
             }
         }
