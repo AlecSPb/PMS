@@ -79,10 +79,10 @@ namespace PMSXMLCreator
                     foreach (var item in compositions)
                     {
                         main_table.Rows[start_index].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
-                        main_table.Rows[start_index].Cells[4].Paragraphs[0].Append("1" + "\r").FontSize(6);
-                        main_table.Rows[start_index].Cells[5].Paragraphs[0].Append("1" + "\r").FontSize(6);
+                        main_table.Rows[start_index].Cells[4].Paragraphs[0].Append(item.Measurements[0].LCL + "\r").FontSize(6);
+                        main_table.Rows[start_index].Cells[5].Paragraphs[0].Append(item.Measurements[0].UCL + "\r").FontSize(6);
                         main_table.Rows[start_index].Cells[6].Paragraphs[0].Append(item.Measurements[0]
-                            .MeasurementValue + "\r").FontSize(6);
+                            .MeasurementValue + "\r").FontSize(6).Bold();
                         main_table.Rows[start_index].Cells[7].Paragraphs[0].Append(item.UnitOfMeasure + "\r").FontSize(6);
                         main_table.Rows[start_index].Cells[8].Paragraphs[0].Append(item.ShortName + "\r").FontSize(6);
                         main_table.Rows[start_index].Cells[9].Paragraphs[0].Append($"{item.MeasurementQualifier}" + "\r").FontSize(6);
@@ -97,10 +97,10 @@ namespace PMSXMLCreator
                     foreach (var item in properties)
                     {
                         main_table.Rows[start_index + 3].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
-                        main_table.Rows[start_index + 3].Cells[4].Paragraphs[0].Append("1" + "\r").FontSize(6);
-                        main_table.Rows[start_index + 3].Cells[5].Paragraphs[0].Append("1" + "\r").FontSize(6);
+                        main_table.Rows[start_index + 3].Cells[4].Paragraphs[0].Append(item.Measurements[0].LCL + "\r").FontSize(6);
+                        main_table.Rows[start_index + 3].Cells[5].Paragraphs[0].Append(item.Measurements[0].UCL + "\r").FontSize(6);
                         main_table.Rows[start_index + 3].Cells[6].Paragraphs[0].Append(item.Measurements[0]
-                            .MeasurementValue + "\r").FontSize(6);
+                            .MeasurementValue + "\r").FontSize(6).Bold();
                         main_table.Rows[start_index + 3].Cells[7].Paragraphs[0].Append(item.UnitOfMeasure + "\r").FontSize(6);
                         main_table.Rows[start_index + 3].Cells[8].Paragraphs[0].Append(item.ShortName + "\r").FontSize(6);
                         main_table.Rows[start_index + 3].Cells[9].Paragraphs[0].Append($"{item.MeasurementQualifier}" + "\r").FontSize(6);
@@ -115,9 +115,10 @@ namespace PMSXMLCreator
                     {
 
                         main_table.Rows[start_index + 6].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
-
-                        main_table.Rows[start_index + 6].Cells[5].Paragraphs[0].Append(item.Measurements[0]
-                            .MeasurementValue + "\r").FontSize(6);
+                        main_table.Rows[start_index + 6].Cells[4].Paragraphs[0].Append(item.Measurements[0].LCL + "\r").FontSize(6);
+                        main_table.Rows[start_index + 6].Cells[5].Paragraphs[0].Append(item.Measurements[0].UCL + "\r").FontSize(6);
+                        main_table.Rows[start_index + 6].Cells[6].Paragraphs[0].Append(item.Measurements[0]
+                            .MeasurementValue + "\r").FontSize(6).Bold();
                         main_table.Rows[start_index + 6].Cells[7].Paragraphs[0].Append(item.UnitOfMeasure + "\r").FontSize(6);
                         main_table.Rows[start_index + 6].Cells[8].Paragraphs[0].Append(item.ShortName + "\r").FontSize(6);
                         main_table.Rows[start_index + 6].Cells[9].Paragraphs[0].Append($"{item.MeasurementQualifier}" + "\r").FontSize(6);
@@ -132,9 +133,10 @@ namespace PMSXMLCreator
                     {
 
                         main_table.Rows[start_index + 9].Cells[0].Paragraphs[0].Append(item.Characteristic + "\r").FontSize(6);
-
-                        main_table.Rows[start_index + 9].Cells[5].Paragraphs[0].Append(item.Measurements[0]
-                            .MeasurementValue + "\r").FontSize(6);
+                        main_table.Rows[start_index + 9].Cells[4].Paragraphs[0].Append(item.Measurements[0].LCL + "\r").FontSize(6);
+                        main_table.Rows[start_index + 9].Cells[5].Paragraphs[0].Append(item.Measurements[0].UCL + "\r").FontSize(6);
+                        main_table.Rows[start_index + 9].Cells[6].Paragraphs[0].Append(item.Measurements[0]
+                            .MeasurementValue + "\r").FontSize(6).Bold();
                         main_table.Rows[start_index + 9].Cells[7].Paragraphs[0].Append(item.UnitOfMeasure + "\r").FontSize(6);
                         main_table.Rows[start_index + 9].Cells[8].Paragraphs[0].Append(item.ShortName + "\r").FontSize(6);
                         main_table.Rows[start_index + 9].Cells[9].Paragraphs[0].Append($"{item.MeasurementQualifier}" + "\r").FontSize(6);

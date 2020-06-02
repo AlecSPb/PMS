@@ -109,7 +109,7 @@ namespace PMSXMLCreator
                     //自动保存为临时文件
                     AutoSaveHelper.SaveCurrentJson(CurrentCOA);
 
-                    XSHelper.MessageHelper.ShowInfo("保存数据成功");
+                    //XSHelper.MessageHelper.ShowInfo("保存数据成功");
                 }
             }
             catch (Exception)

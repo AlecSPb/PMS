@@ -144,7 +144,7 @@ namespace PMSXMLCreator.Service
 
             double ucl = 0, lcl = 0, measureValue = 0;
             //日志头部
-            log.AppendLine("Charactersitic;ShortName;MeasurementType;UnitOfMeasure;MeasurementValue;UCL;LCL;MeasurementValue;UCL Warning;LCL Warning");
+            log.AppendLine("Charactersitic;ShortName;Type;MeasurementType;UnitOfMeasure;MeasurementValue;UCL;LCL;UCL Warning;LCL Warning");
 
             foreach (var p in parameters)
             {

@@ -33,7 +33,7 @@ namespace PMSClient.ReportsHelperNew
                 Table table = doc.Tables[0];
                 using (var service = new ToolSieveServiceClient())
                 {
-                    recordCount = service.GetToolSieveCount(empty, empty);
+                    recordCount = service.GetToolSieveCount(empty,empty, empty);
                     pageCount = GetPageCount();
 
                     int s = 0, t = 0;
@@ -41,7 +41,7 @@ namespace PMSClient.ReportsHelperNew
                     {
                         s = pageIndex * pageSize;
                         t = pageSize;
-                        var pageData = service.GetToolSieve(empty, empty, s, t);
+                        var pageData = service.GetToolSieve(empty,empty, empty, s, t);
                         var ordered = pageData;
                         foreach (var item in ordered)
                         {

@@ -35,16 +35,16 @@ namespace PMSXMLCreator
             ProductName = "";
             ManufacturerPartNumber = "";
             ManufacturerOrderNumber = "";
-            PartNumber = "########";
-            PartRevisionNumber = "######";
-            PartNumberDesc = "##";
+            PartNumber = "#";
+            PartRevisionNumber = "#";
+            PartNumberDesc = "#";
             LotCreatedDate = DateTime.Now;
             LotNumber = "";
 
-            Density = "";
-            Weight = "";
+            Density = "0";
+            Weight = "0";
 
-            TargetDimension = "";
+            TargetDimension = "440mm OD x 4.0mm";
             PlateSpec = Helper.Plate;
 
             XRF = Helper.XRF;
