@@ -71,6 +71,8 @@
                   Click="btnDefects_Click" MinWidth="40"/>
             <Button Name="btnFailure" Style="{StaticResource StyleButtonCommon}" Content="此片报废"
                   Click="btnDefects_Click" MinWidth="40"/>
+            <Button Name="btnReBond" Style="{StaticResource StyleButtonCommon}" Content="解绑重新绑定"
+                  Click="btnDefects_Click" MinWidth="40"/>
         </StackPanel>
 
         <TextBlock Grid.Row="8" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"

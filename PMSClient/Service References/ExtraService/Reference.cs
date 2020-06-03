@@ -1125,6 +1125,9 @@ namespace PMSClient.ExtraService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BoxNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionAbbrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1152,6 +1155,19 @@ namespace PMSClient.ExtraService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BoxNumber {
+            get {
+                return this.BoxNumberField;
+            }
+            set {
+                if ((this.BoxNumberField.Equals(value) != true)) {
+                    this.BoxNumberField = value;
+                    this.RaisePropertyChanged("BoxNumber");
+                }
             }
         }
         

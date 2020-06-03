@@ -118,6 +118,7 @@ namespace PMSClient.Components.CscanImageGallery
                     else
                     {
                         cell.FillColor = System.Drawing.Color.Yellow;
+                        p.AppendLine($"{targets[i].Remark}");
                     }
 
                     column++;

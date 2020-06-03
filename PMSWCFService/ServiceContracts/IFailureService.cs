@@ -19,6 +19,9 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcFailure> GetFailuresBySearch(int s, int t, string productid, string composition, string stage);
         [OperationContract]
+        int GetFailuresCountBySearch(string productid, string composition, string stage);
+
+        [OperationContract]
         int GetFailuresCount(string stage);
         [OperationContract]
         int GetFailuresCountByProductID(string productid);

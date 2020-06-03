@@ -113,7 +113,7 @@ namespace PMSClient.ViewModel
             PageSize = 30;
             using (var service = new FailureServiceClient())
             {
-                RecordCount = service.GetFailuresCount(SearchStage);
+                RecordCount = service.GetFailuresCountBySearch(SearchProductID, SearchComposition, SearchStage);
             }
             ActionPaging();
         }

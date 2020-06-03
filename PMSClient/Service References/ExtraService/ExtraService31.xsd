@@ -127,6 +127,7 @@
   <xs:element name="ArrayOfDcToolMilling" nillable="true" type="tns:ArrayOfDcToolMilling" />
   <xs:complexType name="DcToolMilling">
     <xs:sequence>
+      <xs:element minOccurs="0" name="BoxNumber" type="xs:int" />
       <xs:element minOccurs="0" name="CompositionAbbr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />

@@ -35,6 +35,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetFailuresCountBySearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="stage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFailuresCountBySearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetFailuresCountBySearchResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetFailuresCount">
     <xs:complexType>
       <xs:sequence>

@@ -95,7 +95,7 @@ namespace PMSClient.ToolWindow
 
                 //年月选择对话框
                 //年月选择对话框
-                var dialog = new WPFControls.YearDateDailog();
+                var dialog = new WPFControls.YearDateDailog(-1);
                 if (dialog.ShowDialog() == false)
                 {
                     return;

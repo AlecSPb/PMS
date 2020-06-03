@@ -73,8 +73,10 @@ namespace PMSWCFService
                 using (var db = new PMSDbContext())
                 {
                     var query = from m in db.Failures
-                                where 
-                                m.Stage.Contains(stage)
+                                where m.ProductID.Contains(productid)
+                                && m.Composition.Contains(composition)
+                                && m.Stage.Contains(stage)
+                                && m.Stage.Contains(stage)
                                 && m.State.Contains(productid)
                                 && m.State.Contains(composition)
                                 && m.State != "作废"
@@ -125,6 +127,35 @@ namespace PMSWCFService
                                 where m.ProductID == productid && m.State != "作废"
                                 select m;
 
+
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetFailuresCountBySearch(string productid, string composition, string stage)
+        {
+            try
+            {
+                XS.RunLog();
+                Mapper.Initialize(cfg => cfg.CreateMap<Failure, DcFailure>());
+                using (var db = new PMSDbContext())
+                {
+                    var query = from m in db.Failures
+                                where m.ProductID.Contains(productid)
+                                && m.Composition.Contains(composition)
+                                && m.Stage.Contains(stage)
+                                && m.Stage.Contains(stage)
+                                && m.State.Contains(productid)
+                                && m.State.Contains(composition)
+                                && m.State != "作废"
+                                orderby m.CreateTime descending
+                                select m;
 
                     return query.Count();
                 }
