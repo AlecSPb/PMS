@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFControls"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
-        Title="Key-Value Editor" Height="600" Width="400">
+        Title="Key-Value Editor" Height="600" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>

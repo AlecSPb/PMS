@@ -43,6 +43,7 @@ namespace PMSEOrder.Service.Excel
                                     "BondingRequirement",
                                     "PartNumber",
                                     "Remark",
+                                    "Creator",
                                     "CreateTime",
                                     "OrderState"
                 };
@@ -80,6 +81,7 @@ namespace PMSEOrder.Service.Excel
                 helper.CreateAndSetCell(column_index++, item.BondingRequirement ?? "");
                 helper.CreateAndSetCell(column_index++, item.PartNumber ?? "");
                 helper.CreateAndSetCell(column_index++, item.Remark ?? "");
+                helper.CreateAndSetCell(column_index++, item.Creator ?? "");
                 helper.CreateAndSetCell(column_index++, item.CreateTime.ToString());
                 helper.CreateAndSetCell(column_index++, item.OrderState ?? "");
 

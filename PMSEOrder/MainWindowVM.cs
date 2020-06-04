@@ -45,8 +45,29 @@ namespace PMSEOrder
             PMSRefresh = new RelayCommand(ActionPMSRefresh);
             SelectionChanged = new RelayCommand<Order>(ActionSelectionChanged);
             Setting = new RelayCommand(ActionSetting);
+            Import = new RelayCommand(ActionImport);
 
             Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
+        }
+
+        private void ActionImport()
+        {
+            try
+            {
+                var dialog = XS.Dialog.ShowOpenDialog("please select the order json file", "json file(*.json)|*.json");
+                if (dialog.HasSelected)
+                {
+                    string json_str = XS.File.ReadText(dialog.SelectPath);
+                    if (ImportService.SaveToDB(json_str))
+                    {
+                        LoadData();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void ActionSetting()
@@ -321,5 +342,6 @@ namespace PMSEOrder
         public RelayCommand Excel { get; set; }
         public RelayCommand PMSRefresh { get; set; }
         public RelayCommand Setting { get; set; }
+        public RelayCommand Import { get; set; }
     }
 }

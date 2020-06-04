@@ -140,6 +140,7 @@
     <Compile Include="Service\Excel\ExcelOutputOrder.cs" />
     <Compile Include="Service\Excel\ExcelOutputBaseSimple.cs" />
     <Compile Include="Service\Excel\NPOIHelper.cs" />
+    <Compile Include="Service\ImportService.cs" />
     <Compile Include="Service\JsonService.cs" />
     <Compile Include="Service\StringUtil.cs" />
     <Compile Include="Service\TextService.cs" />

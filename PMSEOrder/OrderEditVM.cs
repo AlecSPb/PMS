@@ -122,7 +122,7 @@ namespace PMSEOrder
                     #region 新建检查逻辑
                     if (!CheckService.IsPONotRepeat(CurrentOrder))
                     {
-                        XSHelper.XS.MessageBox.ShowWarning($"PO#[{CurrentOrder.PO}] is repeated!");
+                        XSHelper.XS.MessageBox.ShowWarning($"PO#[{CurrentOrder.PO}] is repeated.\r\nThis may be a duplicate order; Please check");
                         return;
                     }
 

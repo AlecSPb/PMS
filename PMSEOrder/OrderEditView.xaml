@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSEOrder"
         mc:Ignorable="d"
-        Title="{Binding NewOrEditIndicator,StringFormat=OrderEdit-> [{0}] }" Height="1450" Width="1400" WindowStartupLocation="CenterScreen"> 
+        Title="{Binding NewOrEditIndicator,StringFormat=OrderEdit-> [{0}] }" Height="1450" Width="1500" WindowStartupLocation="CenterScreen"> 
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -254,7 +254,7 @@
                 <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding SpecialRequirement}"
                          Style="{StaticResource StyleTextBoxCommon}" Name="TxtSpecialRequirement"/>
                 <StackPanel Grid.Row="20" Grid.Column="2" Orientation="Horizontal">
-                    <Button Content="Key Value Edit Tool"
+                    <Button Content="Key Value Editor"
                         Style="{StaticResource StyleButtonStrench}" Name="BtnSpecialRequirement"
                         Click="BtnSpecialRequirement_Click"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"

@@ -51,7 +51,8 @@ namespace PMSEOrder.Service
         public static string GetJsonFileName(Order obj)
         {
             if (obj == null) return "empty";
-            return $"{obj.CreateTime.ToString("yyMMdd")} {StringUtil.RemoveSlash(obj.CustomerName)} {StringUtil.RemoveSlash(obj.Composition)} {obj.Quantity}";
+            return $"{obj.CreateTime.ToString("yyMMdd")}_{StringUtil.RemoveSlash(obj.CustomerName)}_[{StringUtil.RemoveSlash(obj.Composition)}]" +
+                   $"_{StringUtil.RemoveSlash(obj.PO)}_{obj.Quantity}pcs";
         }
 
     }
