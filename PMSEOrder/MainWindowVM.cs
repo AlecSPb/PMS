@@ -215,9 +215,13 @@ namespace PMSEOrder
         private void ActionEdit(Order obj)
         {
             if (obj == null) return;
-            var edit = new OrderEditView();
-            ((OrderEditVM)edit.DataContext).SetEdit(obj);
-            edit.ShowDialog();
+
+            if(XS.MessageBox.ShowYesNo("Do you want to edit this order?"))
+            {
+                var edit = new OrderEditView();
+                ((OrderEditVM)edit.DataContext).SetEdit(obj);
+                edit.ShowDialog();
+            }
         }
 
         private void ActionNew()

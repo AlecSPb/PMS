@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSEOrder"
         mc:Ignorable="d"
-        Title="{Binding NewOrEditIndicator,StringFormat=OrderEdit->[{0}]}" Height="1450" Width="1300" WindowStartupLocation="CenterScreen">
+        Title="{Binding NewOrEditIndicator,StringFormat=OrderEdit-> [{0}] }" Height="1450" Width="1400" WindowStartupLocation="CenterScreen"> 
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -64,24 +64,24 @@
                            Text="Order State"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="Customer"
-                           Style="{StaticResource StyleTextBlockSpecial}"/>
+                           Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="1" Grid.Column="1" Name="cboCustomerNames"
                       Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Stretch"
                       ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}" 
                       Text="{Binding CustomerName}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="Customer Name" Background="LightGreen"/>
+                           Text="* Customer Name" Background="LightGreen"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Composition"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox  Name="txtCompositionStandard" Grid.Row="2" Grid.Column="1" Text="{Binding Composition}" Background="Yellow"
                           Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="Composition Default by At%"  Background="LightGreen"/>
+                           Text="* Composition Default by At%"  Background="LightGreen"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="CompositionDetail"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox  Name="txtCompositionAbbr"  Grid.Row="3" Grid.Column="1" Text="{Binding CompositionDetail}"  Background="Yellow"
+                <TextBox  Name="txtCompositionAbbr"  Grid.Row="3" Grid.Column="1" Text="{Binding CompositionDetail}"
                           Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="Composition Detail"  Background="LightGreen"/>
@@ -112,18 +112,18 @@
                     <Button Name="BtnPurity3" Click="BtnPurity3_Click" Content="99.999" 
                             Style="{StaticResource StyleButtonCommonNarrow}"/>
                     <TextBlock Style="{StaticResource StyleTextBlockTip}"
-                           Text="Purity"/>
+                           Text="* Purity"/>
                 </StackPanel>
 
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="Quantity"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}" Background="Yellow" />
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="Quantity"  Background="LightGreen"/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="QuantityUnit"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource StyleTextBlockCommon}" />
                 <ComboBox Grid.Row="8" Grid.Column="1" 
                       Text="{Binding QuantityUnit}" 
                       Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Left"
@@ -132,13 +132,13 @@
                            Text="Unit"/>
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="Dimension"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Name="TxtDimension" Grid.Row="9" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}" Background="Yellow"/>
                 <StackPanel Grid.Row="9" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnDimension" Click="BtnDimension_Click" Content="mm OD x mm thickness" 
                             Style="{StaticResource StyleButtonCommon}" MinWidth="50"/>
                     <TextBlock Style="{StaticResource StyleTextBlockTip}"
-                           Text="Dimension like 230mm ODx 4mm"  Background="LightGreen"/>
+                           Text="* Dimension like 230mm ODx 4mm"  Background="LightGreen"/>
                 </StackPanel>
 
 

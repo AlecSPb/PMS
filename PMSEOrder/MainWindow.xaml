@@ -37,12 +37,12 @@
                     <TextBlock Text="UnFinished" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
                     <TextBlock Text="UnSend" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
                     <TextBlock Text="Sent" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
-                    <TextBlock Text="Received" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
+                    <!--<TextBlock Text="Received" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>-->
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right"  Background="{StaticResource BGNavigationBar}">
-                <Button Content="E-Order" Style="{StaticResource StyleButtonCommon}"  Command="{Binding AllEOrder}"/>
-                <Button Content="Text" Style="{StaticResource StyleButtonCommon}"  Command="{Binding AllTxt}"/>
+                <Button Content="E-Order [Green]" Style="{StaticResource StyleButtonCommon}"  Command="{Binding AllEOrder}"/>
+                <Button Content="Text [Green]" Style="{StaticResource StyleButtonCommon}"  Command="{Binding AllTxt}"/>
                 <Button Content="Excel" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Excel}"/>
                 <!--<Button Content="PMS" Style="{StaticResource StyleButtonCommon}"  Command="{Binding PMSRefresh}"/>-->
                 <Button Content="Backup" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Backup}"/>
@@ -161,6 +161,7 @@
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
                             <RowDefinition Height="0*"/>
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" Grid.Column="0" Text="GUID"
@@ -238,12 +239,15 @@
                         <TextBlock Grid.Row="24" Grid.Column="0" Text="Remark"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
-                        <TextBlock Grid.Row="25" Grid.Column="0" Text="CreateTime"
+                        <TextBlock Grid.Row="25" Grid.Column="0" Text="Creator"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="25" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBoxReadOnly}" />
-                        <TextBlock Grid.Row="26" Grid.Column="0" Text="OrderState"
+                        <TextBox Grid.Row="25" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="26" Grid.Column="0" Text="CreateTime"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="26" Grid.Column="1" Text="{Binding OrderState}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="26" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBlock Grid.Row="27" Grid.Column="0" Text="OrderState"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBox Grid.Row="27" Grid.Column="1" Text="{Binding OrderState}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
                     </Grid>
                 </ScrollViewer>

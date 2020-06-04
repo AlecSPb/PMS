@@ -110,7 +110,7 @@ namespace PMSEOrder
                 #region 检查逻辑
                 if (!CheckService.IsBasicItemNotEmpty(CurrentOrder))
                 {
-                    XSHelper.XS.MessageBox.ShowWarning("basic item like \r\n customer,composition,po,dimension etc \r\n can not be empty");
+                    XSHelper.XS.MessageBox.ShowWarning("basic item like \r\n[customer,composition,po,dimension etc] \r\ncan not be empty");
                     return;
                 }
 
@@ -122,7 +122,7 @@ namespace PMSEOrder
                     #region 新建检查逻辑
                     if (!CheckService.IsPONotRepeat(CurrentOrder))
                     {
-                        XSHelper.XS.MessageBox.ShowWarning("PO# repeat!");
+                        XSHelper.XS.MessageBox.ShowWarning($"PO#[{CurrentOrder.PO}] is repeated!");
                         return;
                     }
 
