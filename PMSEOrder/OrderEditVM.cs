@@ -9,7 +9,6 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 
-
 namespace PMSEOrder
 {
     public class OrderEditVM : ViewModelBase
@@ -41,6 +40,11 @@ namespace PMSEOrder
             OrderStates.Add("UnFinished");
             OrderStates.Add("UnSend");
             OrderStates.Add("Sent");
+
+            Creators = new List<string>();
+            Creators.Add("LChiu");
+            Creators.Add("ZLi");
+            Creators.Add("GFletcher");
         }
 
         private void ActionCloseWindow()
@@ -54,31 +58,32 @@ namespace PMSEOrder
             var model = new Order();
             model.GUIDID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
-            model.CustomerName = CustomerNames[0];
-            model.PO = "None";
-            model.Composition = "CuInGaSe";
-            model.CompositionDetail = "None";
+            model.CustomerName = "";
+            model.PO = "";
+            model.Composition = "";
+            model.CompositionDetail = "";
             model.ProductType = ProductTypes[0];
-            model.Purity = "99.995%";
+            model.Purity = "";
             model.Quantity = 1;
             model.QuantityUnit = QuantityUnits[0];
-            model.Dimension = "230mm OD x 4mm Thickness";
-            model.DimensionDetails = "None";
-            model.Drawing = "None";
-            model.SampleNeed = "None";
-            model.SampleNeedRemark = "None";
-            model.SampleForAnlysis = "None";
-            model.SampleForAnlysisRemark = "None";
+            model.Dimension = "";
+            model.DimensionDetails = "";
+            model.Drawing = "";
+            model.SampleNeed = "";
+            model.SampleNeedRemark = "";
+            model.SampleForAnlysis = "";
+            model.SampleForAnlysisRemark = "";
             model.DeadLine = DateTime.Now.AddDays(30);
-            model.MinimumAcceptDefect = "None";
-            model.ShipTo = "TCB";
-            model.WithBackingPlate = "No";
-            model.PlateDrawing = "None";
-            model.SpecialRequirement = "further polishing at Opticraft=no;final thickness to be polished at Opticraft=no;";
-            model.BondingRequirement = "None";
-            model.PartNumber = "None";
-            model.Remark = "None";
+            model.MinimumAcceptDefect = "";
+            model.ShipTo = "";
+            model.WithBackingPlate = "";
+            model.PlateDrawing = "";
+            model.SpecialRequirement = "";
+            model.BondingRequirement = "";
+            model.PartNumber = "";
+            model.Remark = "";
             model.OrderState = "UnSend";
+            model.Creator = Properties.Settings.Default.Creator;
 
             CurrentOrder = model;
         }
@@ -102,9 +107,28 @@ namespace PMSEOrder
         {
             try
             {
+                #region 检查逻辑
+                if (!CheckService.IsBasicItemNotEmpty(CurrentOrder))
+                {
+                    XSHelper.XS.MessageBox.ShowWarning("basic item like \r\n customer,composition,po,dimension etc \r\n can not be empty");
+                    return;
+                }
+
+
+                #endregion
                 var s = new DataService();
                 if (NewOrEditIndicator == "New")
                 {
+                    #region 新建检查逻辑
+                    if (!CheckService.IsPONotRepeat(CurrentOrder))
+                    {
+                        XSHelper.XS.MessageBox.ShowWarning("PO# repeat!");
+                        return;
+                    }
+
+                    #endregion
+
+
                     s.AddOrder(CurrentOrder);
                 }
                 else if (NewOrEditIndicator == "Edit")
@@ -126,6 +150,7 @@ namespace PMSEOrder
         public List<string> QuantityUnits { get; set; }
         public List<string> ProductTypes { get; set; }
         public List<string> OrderStates { get; set; }
+        public List<string> Creators { get; set; }
 
         private string newOrEditIndicator;
         public string NewOrEditIndicator

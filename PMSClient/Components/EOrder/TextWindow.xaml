@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.Components.EOrder"
         mc:Ignorable="d"
-        Title="Order Text" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Order Text" Height="800" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="Copy the following order text to Email" Background="Orange"
-                   Foreground="White"
+        <CheckBox Grid.Row="0" Content="保持在最前" Name="ChkTopMost" Click="ChkTopMost_Click" Style="{StaticResource StyleCheckBoxCommon}"/>
+        <TextBlock Grid.Row="1" Style="{StaticResource StyleTextBlockCommon}" Text="以下是易于阅读的订单项目" Background="Orange"
+                   Foreground="Blue"
                    HorizontalAlignment="Stretch"/>
-        <TextBox Grid.Row="1" Margin="5" Name="MainText" FontSize="16" IsReadOnly="True" Foreground="Blue"/>
+        <TextBox Grid.Row="2" Margin="5" Name="MainText" FontSize="16" IsReadOnly="True" Foreground="Blue"/>
     </Grid>
 </Window>

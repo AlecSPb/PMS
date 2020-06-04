@@ -1,0 +1,24 @@
+﻿<Window x:Class="PMSEOrder.BondingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSEOrder"
+        mc:Ignorable="d"
+        Title="BondingWindow" Height="350" Width="300" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <Grid Background="LightYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Style="{StaticResource StyleTextBlockCommon}" Text="Please select a bonding item"/>
+        <StackPanel Grid.Row="1" ButtonBase.Click="StackPanel_Click">
+            <Button Content="CDPMI-Indium" Style="{StaticResource StyleButtonStrench}"/>
+            <Button Content="TCB-Elastomer"  Style="{StaticResource StyleButtonStrench}"/>
+            <Button Content="TCB-Indium"  Style="{StaticResource StyleButtonStrench}"/>
+            <Button Content="Suzhou-Elastomer"  Style="{StaticResource StyleButtonStrench}"/>
+            <Button Content="Suzhou-Indium"  Style="{StaticResource StyleButtonStrench}"/>
+            <Button Content="Other"  Style="{StaticResource StyleButtonStrench}"/>
+        </StackPanel>
+    </Grid>
+</Window>

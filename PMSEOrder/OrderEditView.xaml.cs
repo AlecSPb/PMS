@@ -58,25 +58,33 @@ namespace PMSEOrder
 
         private void BtnSampleForAnlysisNone_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBox(TxtSampleForAnlysis, "None");
+            PMSMethods.SetTextBox(TxtSampleForAnlysis, "");
 
         }
 
         private void BtnSampleForAnlysisDefault_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBox(TxtSampleForAnlysis, "Bulk 15gx1 Powder 15gx1");
-
+            var sample = new SampleWindow();
+            if (sample.ShowDialog() == true)
+            {
+                string sample_str = sample.SampleResult;
+                PMSMethods.SetTextBoxAppend(TxtSampleForAnlysis, $"{sample_str};");
+            }
         }
 
         private void BtnSampleNeedDefault_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBox(TxtSampleNeed, "Bulk 15gx1 Powder 15gx1");
-
+            var sample = new SampleWindow();
+            if (sample.ShowDialog() == true)
+            {
+                string sample_str = sample.SampleResult;
+                PMSMethods.SetTextBoxAppend(TxtSampleNeed, $"{sample_str};");
+            }
         }
 
         private void BtnSampleNeedNone_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBox(TxtSampleNeed, "None");
+            PMSMethods.SetTextBox(TxtSampleNeed, "");
 
         }
 
@@ -134,6 +142,50 @@ namespace PMSEOrder
             if (dialog.DialogResult == true)
             {
                 PMSMethods.SetTextBox(textBox, dialog.KeyStrings);
+            }
+        }
+
+        private void BtnDimension_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtDimension, "mm OD x mm thickness");
+        }
+
+        private void BtnBondingRequirement_Click(object sender, RoutedEventArgs e)
+        {
+            var bonding = new BondingWindow();
+            if (bonding.ShowDialog() == true)
+            {
+                string bonding_str = bonding.BondingResult;
+                PMSMethods.SetTextBox(TxtBondingRequirement, $"{bonding_str}");
+            }
+        }
+
+        private void BtnBondingRequirementNone_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtBondingRequirement, "");
+
+        }
+
+        private void SPSpecialRequirement_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)e.OriginalSource;
+            switch (btn.Name)
+            {
+                case "BtnSpecial1":
+                    PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "further polishing at Opticraft=yes;");
+                    break;
+                case "BtnSpecial2":
+                    PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "final thickness to be polished at Opticraft=0mm;");
+                    break;
+                case "BtnSpecial3":
+                    PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "Laser Mark=both side;");
+                    break;
+                case "BtnSpecial4":
+                    PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "Part Number=value;");
+                    break;
+                default:
+                    PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "key=value;");
+                    break;
             }
         }
     }

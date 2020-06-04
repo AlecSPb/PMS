@@ -38,7 +38,7 @@ namespace PMSClient.ViewModel
                 CurrentOrder.ID = order.GUIDID;
                 CurrentOrder.CreateTime = order.CreateTime;
                 CurrentOrder.CustomerName = order.CustomerName;
-                CurrentOrder.CompositionOriginal = order.Composition;
+                CurrentOrder.CompositionOriginal = order.Composition.Replace("-", "").Replace(" ", "");
                 CurrentOrder.PO = order.PO;
 
                 if (order.ProductType.Contains("Target"))
@@ -80,7 +80,7 @@ namespace PMSClient.ViewModel
 
 
                 //产生窗口
-                var win =new TextWindow();
+                var win = new TextWindow();
                 win.MainText.Text = TextService.GetOrderText(order);
                 win.Show();
 

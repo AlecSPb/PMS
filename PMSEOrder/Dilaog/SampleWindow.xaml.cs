@@ -12,21 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace PMSClient.Components.EOrder
+namespace PMSEOrder
 {
     /// <summary>
-    /// TextWindow.xaml 的交互逻辑
+    /// SampleWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class TextWindow : Window
+    public partial class SampleWindow : Window
     {
-        public TextWindow()
+        public SampleWindow()
         {
             InitializeComponent();
         }
 
-        private void ChkTopMost_Click(object sender, RoutedEventArgs e)
+        public string SampleResult { get; set; }
+        private void StackPanel_Click(object sender, RoutedEventArgs e)
         {
-            this.Topmost = !this.Topmost;
+            Button btn = (Button)e.OriginalSource;
+            SampleResult = btn.Content.ToString();
+            e.Handled = true;
+            this.DialogResult = true;
         }
     }
 }

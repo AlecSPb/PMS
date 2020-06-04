@@ -41,7 +41,7 @@
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Output}"/>
             <Button Content="{StaticResource ButtonSample}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding SampleSheet}"/>
-            <Button Content="{StaticResource ButtonSpecialSituation}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding SpecialSituation}"/>
+            <Button Content="{StaticResource ButtonJsonCheck}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding JsonCheck}"/>
 
             <!--图例-->
             <StackPanel Orientation="Horizontal">

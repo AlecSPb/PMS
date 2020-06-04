@@ -40,5 +40,7 @@ namespace PMSEOrder.Model
         public string Remark { get; set; }
         public DateTime CreateTime { get; set; }
         public string OrderState { get; set; }//作废，未填完，未核对，未发送，已发送，已接受
+        public string Creator { get; set; }
+
     }
 }

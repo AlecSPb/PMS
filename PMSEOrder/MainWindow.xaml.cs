@@ -58,6 +58,11 @@ namespace PMSEOrder
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            if(!XSHelper.XS.MessageBox.ShowYesNo("Do you want to quit this program?"))
+            {
+                e.Cancel = true;
+                return;
+            }
             BackupService.BackUp();
         }
     }

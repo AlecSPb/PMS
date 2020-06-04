@@ -331,6 +331,7 @@
     <sys:String x:Key="ButtonLock">Express Lock</sys:String>
     <sys:String x:Key="ButtonUnLock">Express UnLock</sys:String>
     <sys:String x:Key="ButtonJson">Json</sys:String>
+    <sys:String x:Key="ButtonJsonCheck">JsonCheck</sys:String>
     <sys:String x:Key="ButtonXML">XML</sys:String>
     <sys:String x:Key="ButtonSieve">Sieve</sys:String>
     <sys:String x:Key="ButtonBarCode">Bar Code</sys:String>
@@ -348,6 +349,7 @@
     <sys:String x:Key="ButtonFailure">Failure</sys:String>
     <sys:String x:Key="ButtonAnlysis">Anlysis</sys:String>
     <sys:String x:Key="ButtonSpecialSituation">Special Situation</sys:String>
+    <sys:String x:Key="ButtonUnCheckOutput">UnCheck-Output</sys:String>
 
     <!--单字按钮-->
     <sys:String x:Key="ButtonSingleSend">S</sys:String>

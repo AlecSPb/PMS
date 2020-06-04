@@ -44,8 +44,15 @@ namespace PMSEOrder
             Excel = new RelayCommand(ActionExcel);
             PMSRefresh = new RelayCommand(ActionPMSRefresh);
             SelectionChanged = new RelayCommand<Order>(ActionSelectionChanged);
+            Setting = new RelayCommand(ActionSetting);
 
             Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
+        }
+
+        private void ActionSetting()
+        {
+            var setting = new SettingWindow();
+            setting.ShowDialog();
         }
 
         private void ActionSelectionChanged(Order obj)
@@ -309,5 +316,6 @@ namespace PMSEOrder
         public RelayCommand Backup { get; set; }
         public RelayCommand Excel { get; set; }
         public RelayCommand PMSRefresh { get; set; }
+        public RelayCommand Setting { get; set; }
     }
 }

@@ -7,6 +7,10 @@ using System.IO;
 using PMSClient.ToolWindow;
 using PMSClient.NewService;
 using System.Windows.Media.Imaging;
+using System.Text;
+using PMSClient.Components.EOrder;
+using XSHelper;
+using Newtonsoft.Json;
 
 namespace PMSClient.ViewModel
 {
@@ -83,6 +87,41 @@ namespace PMSClient.ViewModel
 
             ShowDetails = new RelayCommand<string>(ActionShowDetails);
             SpecialSituation = new RelayCommand(ActionSpecialSituation);
+            JsonCheck = new RelayCommand(ActionJsonCheck);
+        }
+
+        private void ActionJsonCheck()
+        {
+            try
+            {
+                var dialogResult = XS.Dialog.ShowFolderBrowserDialog("请选择json订单文件所在的文件夹");
+                if (dialogResult.HasSelected)
+                {
+                    string folderpath = dialogResult.SelectPath;
+                    if (Directory.Exists(folderpath))
+                    {
+                        StringBuilder sb = new StringBuilder();
+
+                        foreach (var item in Directory.GetFiles(folderpath, "*.json"))
+                        {
+                            string jsonFile = item;
+                            string jsonStr = XS.File.ReadText(jsonFile);
+                            var order = JsonConvert.DeserializeObject<Order>(jsonStr);
+                            var order_str = TextService.GetOrderText(order);
+                            sb.AppendLine(order_str);
+                            sb.AppendLine("======================================================");
+                        }
+                        //产生窗口
+                        var win = new TextWindow();
+                        win.MainText.Text = sb.ToString();
+                        win.Show();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void ActionSpecialSituation()
@@ -442,6 +481,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<string> ShowDetails { get; private set; }
 
         public RelayCommand SpecialSituation { get; set; }
+        public RelayCommand JsonCheck { get; set; }
 
         #endregion
     }
