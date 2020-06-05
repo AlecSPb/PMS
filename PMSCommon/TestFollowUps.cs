@@ -12,7 +12,8 @@ namespace PMSCommon
     public enum TestFollowUps
     {
         绑定,
-        发货,
+        正常发货,
+        异常发货,
         报废,
         试验,
         返工,

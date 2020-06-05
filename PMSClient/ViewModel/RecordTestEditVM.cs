@@ -78,7 +78,7 @@ namespace PMSClient.ViewModel
             model.Density = "0";
             model.Defects = "无";
             model.OrderDate = DateTime.Now.AddDays(-30);
-            model.FollowUps = PMSCommon.TestFollowUps.发货.ToString();
+            model.FollowUps = PMSCommon.TestFollowUps.正常发货.ToString();
             model.Roughness = "无";
             model.Warping = "未知";
             model.QC = "无";

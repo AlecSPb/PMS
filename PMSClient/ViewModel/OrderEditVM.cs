@@ -81,7 +81,7 @@ namespace PMSClient.ViewModel
 
                 //产生窗口
                 var win = new TextWindow();
-                win.MainText.Text = TextService.GetOrderText(order);
+                win.MainText.Text = TextService.GetChineseOrderText(order);
                 win.Show();
 
             }
@@ -247,6 +247,7 @@ namespace PMSClient.ViewModel
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
+                XS.MessageBox.ShowError(ex.Message);
             }
         }
 

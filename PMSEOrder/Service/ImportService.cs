@@ -12,12 +12,20 @@ namespace PMSEOrder.Service
     {
         public static bool SaveToDB(string json_str)
         {
-            Order model= JsonConvert.DeserializeObject<Order>(json_str);
+            Order model = JsonConvert.DeserializeObject<Order>(json_str);
             try
             {
                 if (model != null)
                 {
-                    new DataService().AddOrder(model);
+                    var dbservice = new DataService();
+                    if (dbservice.GetAllOrder().Where(i => i.GUIDID == model.GUIDID).Count() == 0)
+                    {
+                        dbservice.AddOrder(model);
+                    }
+                    else
+                    {
+                        XSHelper.XS.MessageBox.ShowInfo("repeat guid");
+                    }
                 }
                 return true;
             }

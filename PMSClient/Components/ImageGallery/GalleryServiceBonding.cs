@@ -10,14 +10,14 @@ using XSHelper;
 using System.IO;
 
 
-namespace PMSClient.Components.CscanImageGallery
+namespace PMSClient.Components.ImageGallery
 {
     /// <summary>
     /// 将超声照片汇集成图集
     /// </summary>
-    public class GalleryService
+    public class GalleryServiceBonding
     {
-        public GalleryService()
+        public GalleryServiceBonding()
         {
             bondingTargets = new List<DcRecordBonding>();
         }
@@ -103,8 +103,7 @@ namespace PMSClient.Components.CscanImageGallery
                     Cell cell = table.Rows[row].Cells[column];
                     cell.VerticalAlignment = VerticalAlignment.Center;
                     Paragraph p = cell.Paragraphs[0];
-                    p.Append($"{targets[i].TargetProductID} [{targets[i].WeldingRate}%]");
-                    p.FontSize(8);
+                    p.Append($"{targets[i].TargetProductID} [{targets[i].WeldingRate}%]").FontSize(8);
                     p.Alignment = Alignment.center;
 
                     //下载图片

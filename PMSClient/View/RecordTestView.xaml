@@ -389,7 +389,8 @@
 
                             <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTCSCAN}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding RecordTest.CScan}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <Button Grid.Row="14" Grid.Column="1" Content="{Binding RecordTest.CScan}" Style="{StaticResource StyleButtonStrench}"  
+                                    Name="BtnScan" Click="BtnScan_Click"/>
 
 
                             <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTWarping}"

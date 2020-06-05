@@ -102,18 +102,17 @@ namespace PMSClient.ViewModel
                     {
                         StringBuilder sb = new StringBuilder();
 
+                        List<Order> orders = new List<Order>();
                         foreach (var item in Directory.GetFiles(folderpath, "*.json"))
                         {
                             string jsonFile = item;
                             string jsonStr = XS.File.ReadText(jsonFile);
                             var order = JsonConvert.DeserializeObject<Order>(jsonStr);
-                            var order_str = TextService.GetOrderText(order);
-                            sb.AppendLine(order_str);
-                            sb.AppendLine("======================================================");
+                            orders.Add(order);
                         }
                         //产生窗口
                         var win = new TextWindow();
-                        win.MainText.Text = sb.ToString();
+                        win.CurrentOrders = orders;
                         win.Show();
                     }
                 }

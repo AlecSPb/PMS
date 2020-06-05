@@ -35,9 +35,9 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>155</ApplicationRevision>
+    <ApplicationRevision>159</ApplicationRevision>
     <ApplicationVersion>4.10.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
+    <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -209,7 +209,9 @@
       <DependentUpon>ConsumableWarning.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\ConsumableWarning\ConsumableWarningService.cs" />
-    <Compile Include="Components\CscanImageGallery\GalleryService.cs" />
+    <Compile Include="Components\ImageGallery\GalleryServiceTest440.cs" />
+    <Compile Include="Components\ImageGallery\GalleryServiceTest.cs" />
+    <Compile Include="Components\ImageGallery\GalleryServiceBonding.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputBase.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputFeedback.cs" />
     <Compile Include="Components\CsvOutputHelper\CsvOutputOutSource.cs" />
@@ -2196,6 +2198,9 @@
     <None Include="Service References\OutputService\PMSClient.OutputService.DcRecordBonding.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\OutputService\PMSClient.OutputService.DcRecordTest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PMSSettings\PMSSettingService.wsdl" />
     <None Include="Service References\PMSSettings\PMSSettingService.xsd">
       <SubType>Designer</SubType>
@@ -2894,12 +2899,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

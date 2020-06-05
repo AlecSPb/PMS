@@ -24,9 +24,42 @@ namespace PMSClient.Components.EOrder
             InitializeComponent();
         }
 
+        private List<Order> currentOrders;
+        public List<Order> CurrentOrders
+        {
+            get { return currentOrders; }
+            set
+            {
+                currentOrders = value;
+                MIChinse_Click(this, null);
+            }
+        }
+
         private void ChkTopMost_Click(object sender, RoutedEventArgs e)
         {
             this.Topmost = !this.Topmost;
+        }
+
+        private void MIChinse_Click(object sender, RoutedEventArgs e)
+        {
+            MainText.Text = "";
+            foreach (var item in CurrentOrders)
+            {
+                var order_str = TextService.GetChineseOrderText(item);
+                this.MainText.Text += order_str;
+            }
+
+        }
+
+        private void MIEnglish_Click(object sender, RoutedEventArgs e)
+        {
+            MainText.Text = "";
+            foreach (var item in CurrentOrders)
+            {
+                var order_str = TextService.GetEnglishOrderText(item);
+                this.MainText.Text += order_str;
+            }
+
         }
     }
 }

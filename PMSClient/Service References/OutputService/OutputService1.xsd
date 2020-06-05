@@ -393,4 +393,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfDcRecordBonding" nillable="true" type="tns:ArrayOfDcRecordBonding" />
+  <xs:complexType name="ArrayOfDcRecordTest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordTest" nillable="true" type="tns:DcRecordTest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcRecordTest" nillable="true" type="tns:ArrayOfDcRecordTest" />
 </xs:schema>

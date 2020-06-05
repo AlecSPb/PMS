@@ -115,6 +115,18 @@
   <wsdl:message name="IOutputService_GetRecordBondingCountByYearMonth_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordBondingCountByYearMonthResponse" />
   </wsdl:message>
+  <wsdl:message name="IOutputService_GetRecordTestByYearMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestByYearMonth" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetRecordTestByYearMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestByYearMonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetRecordTestCountByYearMonth_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestCountByYearMonth" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetRecordTestCountByYearMonth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestCountByYearMonthResponse" />
+  </wsdl:message>
   <wsdl:portType name="IOutputService">
     <wsdl:operation name="GetAll230Data">
       <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetAll230Data" message="tns:IOutputService_GetAll230Data_InputMessage" />
@@ -187,6 +199,14 @@
     <wsdl:operation name="GetRecordBondingCountByYearMonth">
       <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetRecordBondingCountByYearMonth" message="tns:IOutputService_GetRecordBondingCountByYearMonth_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetRecordBondingCountByYearMonthResponse" message="tns:IOutputService_GetRecordBondingCountByYearMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordTestByYearMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetRecordTestByYearMonth" message="tns:IOutputService_GetRecordTestByYearMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetRecordTestByYearMonthResponse" message="tns:IOutputService_GetRecordTestByYearMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordTestCountByYearMonth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetRecordTestCountByYearMonth" message="tns:IOutputService_GetRecordTestCountByYearMonth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetRecordTestCountByYearMonthResponse" message="tns:IOutputService_GetRecordTestCountByYearMonth_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="output" type="tns:IOutputService">
@@ -346,6 +366,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetRecordBondingCountByYearMonth">
       <soap:operation soapAction="http://tempuri.org/IOutputService/GetRecordBondingCountByYearMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordTestByYearMonth">
+      <soap:operation soapAction="http://tempuri.org/IOutputService/GetRecordTestByYearMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordTestCountByYearMonth">
+      <soap:operation soapAction="http://tempuri.org/IOutputService/GetRecordTestCountByYearMonth" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

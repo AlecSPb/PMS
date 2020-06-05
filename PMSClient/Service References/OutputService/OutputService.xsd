@@ -307,4 +307,40 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetRecordTestByYearMonth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" type="xs:int" />
+        <xs:element minOccurs="0" name="t" type="xs:int" />
+        <xs:element minOccurs="0" name="year_start" type="xs:int" />
+        <xs:element minOccurs="0" name="month_start" type="xs:int" />
+        <xs:element minOccurs="0" name="year_end" type="xs:int" />
+        <xs:element minOccurs="0" name="month_end" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecordTestByYearMonthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetRecordTestByYearMonthResult" nillable="true" type="q10:ArrayOfDcRecordTest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecordTestCountByYearMonth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year_start" type="xs:int" />
+        <xs:element minOccurs="0" name="month_start" type="xs:int" />
+        <xs:element minOccurs="0" name="year_end" type="xs:int" />
+        <xs:element minOccurs="0" name="month_end" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRecordTestCountByYearMonthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRecordTestCountByYearMonthResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

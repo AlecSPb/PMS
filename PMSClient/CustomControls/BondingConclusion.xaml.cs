@@ -89,7 +89,7 @@ namespace PMSClient.CustomControls
         private void StackPanel_Click(object sender, RoutedEventArgs e)
         {
             Button btn = e.OriginalSource as Button;
-            string csan_str = txtWeldingDefect.Text + " " + btn.Content.ToString() + ";";
+            string csan_str = txtWeldingDefect.Text + btn.Content.ToString() + ";";
             txtWeldingDefect.Text = csan_str.Replace("无", "").Trim();
             e.Handled = true;
         }

@@ -79,5 +79,24 @@ namespace PMSClient.View
             image_window.Show();
 
         }
+
+        private void BtnScan_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string s = BtnScan.Content.ToString();
+                if (!string.IsNullOrEmpty(s))
+                {
+
+                    var dialog = new WPFControls.NormalizedDataViewer();
+                    dialog.SetMainStrings(s);
+                    dialog.ShowDialog();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }

@@ -4597,6 +4597,18 @@ namespace PMSClient.OutputService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetRecordBondingCountByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetRecordBondingCountByYearMonthResponse")]
         System.Threading.Tasks.Task<int> GetRecordBondingCountByYearMonthAsync(int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetRecordTestByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetRecordTestByYearMonthResponse")]
+        PMSClient.OutputService.DcRecordTest[] GetRecordTestByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetRecordTestByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetRecordTestByYearMonthResponse")]
+        System.Threading.Tasks.Task<PMSClient.OutputService.DcRecordTest[]> GetRecordTestByYearMonthAsync(int s, int t, int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetRecordTestCountByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetRecordTestCountByYearMonthResponse")]
+        int GetRecordTestCountByYearMonth(int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetRecordTestCountByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetRecordTestCountByYearMonthResponse")]
+        System.Threading.Tasks.Task<int> GetRecordTestCountByYearMonthAsync(int year_start, int month_start, int year_end, int month_end);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4768,6 +4780,22 @@ namespace PMSClient.OutputService {
         
         public System.Threading.Tasks.Task<int> GetRecordBondingCountByYearMonthAsync(int year_start, int month_start, int year_end, int month_end) {
             return base.Channel.GetRecordBondingCountByYearMonthAsync(year_start, month_start, year_end, month_end);
+        }
+        
+        public PMSClient.OutputService.DcRecordTest[] GetRecordTestByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetRecordTestByYearMonth(s, t, year_start, month_start, year_end, month_end);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.OutputService.DcRecordTest[]> GetRecordTestByYearMonthAsync(int s, int t, int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetRecordTestByYearMonthAsync(s, t, year_start, month_start, year_end, month_end);
+        }
+        
+        public int GetRecordTestCountByYearMonth(int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetRecordTestCountByYearMonth(year_start, month_start, year_end, month_end);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRecordTestCountByYearMonthAsync(int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetRecordTestCountByYearMonthAsync(year_start, month_start, year_end, month_end);
         }
     }
 }
