@@ -82,10 +82,14 @@
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="CompositionDetail"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox  Name="txtCompositionAbbr"  Grid.Row="3" Grid.Column="1" Text="{Binding CompositionDetail}"
+                <TextBox  Name="txtCompositionDetail"  Grid.Row="3" Grid.Column="1" Text="{Binding CompositionDetail}"
                           Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnCompositionDetail" Content="SeAsGe+Si" Style="{StaticResource StyleButtonCommon}" Click="BtnCompositionDetail_Click"/>
+                    <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="Composition Detail"  Background="LightGreen"/>
+                </StackPanel>
+
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="PO"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -202,8 +206,12 @@
                 <TextBlock Grid.Row="15" Grid.Column="0" Text="SampleNeedRemark"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding SampleNeedRemark}"
-                         Style="{StaticResource StyleTextBoxCommon}"/>
+                         Style="{StaticResource StyleTextBoxCommon}" Name="TxtSampleNeedRemark"/>
                 <StackPanel Grid.Row="15" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnSampleNeedRemarkEGA" Content="EGA" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnSampleNeedRemarkEGA_Click"/>
+                    <Button Name="BtnSampleNeedRemarkNone" Content="None" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnSampleNeedRemarkNone_Click"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
                            Text="Other sample requirement"/>
                 </StackPanel>
@@ -224,8 +232,12 @@
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="SampleForAnlysisRemark"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding SampleForAnlysisRemark}"
-                         Style="{StaticResource StyleTextBoxCommon}"/>
+                         Style="{StaticResource StyleTextBoxCommon}" Name="TxtSampleAnlysisRemark"/>
                 <StackPanel Grid.Row="17" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnSampleAnlysisRemarkEGA" Content="EGA" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnSampleAnlysisRemarkEGA_Click"/>
+                    <Button Name="BtnSampleAnlysisRemarkNone" Content="None" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnSampleAnlysisRemarkNone_Click"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
                            Text="Other sample requirement"/>
                 </StackPanel>
@@ -278,7 +290,7 @@
                     <Button Name="BtnSpecial3" Content="Laser Mark" Style="{StaticResource StyleButtonCommonNarrow}"/>
                     <Button Name="BtnSpecial4" Content="Additive" Style="{StaticResource StyleButtonCommonNarrow}"/>
                     <Button Name="BtnSpecial5" Content="BondingRemark" Style="{StaticResource StyleButtonCommonNarrow}"/>
-                    <Button Name="BtnSpecial6" Content="ChengDu" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                    <Button Name="BtnSpecial6" Content="ChengDuWork" Style="{StaticResource StyleButtonCommonNarrow}"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="23" Grid.Column="0" Text="DeadLine"

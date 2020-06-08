@@ -171,7 +171,7 @@ namespace PMSEOrder
                     PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "BondingRemark=value;");
                     break;
                 case "BtnSpecial6":
-                    PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "ChengDu=value;");
+                    PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "ChengDuWork=value;");
                     break;
                 default:
                     PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "key=value;");
@@ -187,6 +187,32 @@ namespace PMSEOrder
                 string ship_str = ship.ShipResult;
                 PMSMethods.SetTextBox(TxtShipTo, $"{ship_str}");
             }
+        }
+
+        private void BtnCompositionDetail_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(txtCompositionDetail, "Sanjie cast Se/As/Ge and use standard Si-powder;");
+        }
+
+        private void BtnSampleNeedRemarkEGA_Click(object sender, RoutedEventArgs e)
+        {
+            
+            PMSMethods.SetTextBox(TxtSampleNeedRemark, "EGA,GDMS[Al/Cr/Ge/Mg/Ni/Sc/Ti/Y/Bi/Cu/Ga/Mn/Pb/S/Cl/W/Te/Sb]+ICP-OES+LECO(O/N);");
+
+        }
+        private void BtnSampleNeedRemarkNone_Click(object sender, RoutedEventArgs e)
+        {
+
+            PMSMethods.SetTextBox(TxtSampleNeedRemark, "");
+
+        }
+        private void BtnSampleAnlysisRemarkEGA_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtSampleAnlysisRemark, "EGA,GDMS[Al/Cr/Ge/Mg/Ni/Sc/Ti/Y/Bi/Cu/Ga/Mn/Pb/S/Cl/W/Te/Sb]+ICP-OES+LECO(O/N);");
+        }
+        private void BtnSampleAnlysisRemarkNone_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtSampleAnlysisRemark, "");
         }
     }
 }

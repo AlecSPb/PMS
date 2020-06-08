@@ -110,7 +110,7 @@
                     <DataGridTextColumn Header="SampleNeedRemark" Binding="{Binding SampleNeedRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="SampleForAnlysis" Binding="{Binding SampleForAnlysis}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="SampleForAnlysisRemark" Binding="{Binding SampleForAnlysisRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                    <DataGridTextColumn Header="DeadLine" Binding="{Binding DeadLine}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="DeadLine" Binding="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="MinimumAcceptDefect" Binding="{Binding MinimumAcceptDefect}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="ShipTo" Binding="{Binding ShipTo}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="WithBackingPlate" Binding="{Binding WithBackingPlate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
@@ -220,7 +220,7 @@
                         <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding SampleForAnlysisRemark}" Style="{StaticResource StyleTextBoxReadOnly}" />
                         <TextBlock Grid.Row="17" Grid.Column="0" Text="DeadLine"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding DeadLine}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBoxReadOnly}" />
                         <TextBlock Grid.Row="18" Grid.Column="0" Text="MinimumAcceptDefect"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding MinimumAcceptDefect}" Style="{StaticResource StyleTextBoxReadOnly}" />

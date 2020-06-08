@@ -4,3 +4,6 @@ mvvmlight=5.3.0
 automapper=5.2.0
 livecharts
 
+发布
+pms2=dogfood
+pms=stable

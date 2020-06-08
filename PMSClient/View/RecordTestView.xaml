@@ -390,7 +390,7 @@
                             <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTCSCAN}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                             <Button Grid.Row="14" Grid.Column="1" Content="{Binding RecordTest.CScan}" Style="{StaticResource StyleButtonStrench}"  
-                                    Name="BtnScan" Click="BtnScan_Click"/>
+                                    Name="BtnScan" Click="BtnScan_Click" VerticalAlignment="Stretch"/>
 
 
                             <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTWarping}"

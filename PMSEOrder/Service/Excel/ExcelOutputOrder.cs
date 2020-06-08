@@ -21,6 +21,7 @@ namespace PMSEOrder.Service.Excel
                                     "GUID",
                                     "CustomerName",
                                     "PO",
+                                    "PODate",
                                     "Composition",
                                     "CompositionDetail",
                                     "ProductType",
@@ -59,6 +60,7 @@ namespace PMSEOrder.Service.Excel
                 helper.CreateAndSetCell(column_index++, item.GUIDID.ToString());
                 helper.CreateAndSetCell(column_index++, item.CustomerName ?? "");
                 helper.CreateAndSetCell(column_index++, item.PO ?? "");
+                helper.CreateAndSetCell(column_index++, item.PODate.ToShortDateString());
                 helper.CreateAndSetCell(column_index++, item.Composition ?? "");
                 helper.CreateAndSetCell(column_index++, item.CompositionDetail ?? "");
                 helper.CreateAndSetCell(column_index++, item.ProductType ?? "");

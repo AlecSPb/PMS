@@ -112,13 +112,16 @@ namespace PMSEOrder
                 #region 检查逻辑
                 if (!CheckService.IsBasicItemNotEmpty(CurrentOrder))
                 {
-                    XSHelper.XS.MessageBox.ShowError("basic item like \r\n[customer,composition,po,dimension etc] \r\ncan not be empty");
+                    XSHelper.XS.MessageBox.ShowError("basic item like\r\n[customer,composition,po,dimension etc]\r\ncan not be empty");
                     return;
                 }
 
                 if (!CheckService.IsSeAsGeBondingUsingElastmer(CurrentOrder))
                 {
-                    XSHelper.XS.MessageBox.ShowWarning("440 or 444.7 diameter usually needs [Elaster] bonding,please check");
+                    if(!XSHelper.XS.MessageBox.ShowYesNo("440 or 444.7 diameter usually needs [Elastomer] bonding,\r\nContinue saving?"))
+                    {
+                        return;
+                    }
                 }
 
                 #endregion
