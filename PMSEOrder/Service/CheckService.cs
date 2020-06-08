@@ -28,7 +28,16 @@ namespace PMSEOrder.Service
             return query.Count() == 0;
         }
 
-
+        public static bool IsSeAsGeBondingUsingElastmer(Order currentOrder)
+        {
+            if (currentOrder == null) return true;
+            bool is440or444 = currentOrder.Dimension.Contains("440") || currentOrder.Dimension.Contains("444.7");
+            if (is440or444)
+            {
+                return currentOrder.BondingRequirement.Contains("Elastomer");
+            }
+            return true;
+        }
 
     }
 }

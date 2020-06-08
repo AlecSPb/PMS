@@ -60,6 +60,9 @@
     <Compile Include="KeyValueTestResultE.xaml.cs">
       <DependentUpon>KeyValueTestResultE.xaml</DependentUpon>
     </Compile>
+    <Compile Include="KeyValueTestResultReadOnlyE.xaml.cs">
+      <DependentUpon>KeyValueTestResultReadOnlyE.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KeyValueTestResultReadOnly.xaml.cs">
       <DependentUpon>KeyValueTestResultReadOnly.xaml</DependentUpon>
     </Compile>
@@ -85,6 +88,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="KeyValueTestResultE.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KeyValueTestResultReadOnlyE.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

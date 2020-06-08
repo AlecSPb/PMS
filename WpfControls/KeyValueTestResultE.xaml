@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="2" Background="Wheat">
             <Button Name="BtnSave" Content="Save" Width="80" Margin="2" Click="BtnSave_Click"/>
-            <TextBlock Text="Double Click to Edit,Delete Key to Delete Row" Foreground="Blue" 
+            <TextBlock Text="Double Click to Add or Edit,Delete Key to Delete Row" Foreground="Blue" 
                        Style="{StaticResource StyleTextBlockCommon}"/>
         </StackPanel>
         <DataGrid Grid.Row="1" Name="DgKeyValues" AutoGenerateColumns="False"

@@ -19,6 +19,8 @@ namespace PMSEOrder.Service
             sb.AppendLine(order.CustomerName ?? "");
             sb.Append("[PO]:");
             sb.AppendLine(order.PO ?? "");
+            sb.Append("[PO Date]:");
+            sb.AppendLine(order.PODate.ToString("yyyy-MM-dd"));
             sb.Append("[Composition]:");
             sb.AppendLine(order.Composition ?? "");
             sb.Append("[CompositionDetail]:");

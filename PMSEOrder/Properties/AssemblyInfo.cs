@@ -8,9 +8,9 @@ using System.Windows;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("PMSEOrder")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("designed by xs.zhou")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("pioneer materials inc.")]
 [assembly: AssemblyProduct("PMSEOrder")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]

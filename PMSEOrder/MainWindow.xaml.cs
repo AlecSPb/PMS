@@ -65,5 +65,17 @@ namespace PMSEOrder
             }
             BackupService.BackUp();
         }
+
+        private void BtnSpecialRequirement_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (btn != null)
+            {
+                var win = new WPFControls.KeyValueTestResultReadOnlyE();
+                win.Width = 600;
+                win.KeyStrings = btn.Content.ToString();
+                win.ShowDialog();
+            }
+        }
     }
 }

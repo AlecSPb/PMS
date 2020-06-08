@@ -40,6 +40,7 @@ namespace PMSClient.ViewModel
                 CurrentOrder.CustomerName = order.CustomerName;
                 CurrentOrder.CompositionOriginal = order.Composition.Replace("-", "").Replace(" ", "");
                 CurrentOrder.PO = order.PO;
+                CurrentOrder.PMINumber = $"CD{order.PODate.ToString("yyMMdd")}-A";
 
                 if (order.ProductType.Contains("Target"))
                 {
@@ -80,8 +81,10 @@ namespace PMSClient.ViewModel
 
 
                 //产生窗口
+                var orders = new List<Order>();
+                orders.Add(order);
                 var win = new TextWindow();
-                win.MainText.Text = TextService.GetChineseOrderText(order);
+                win.CurrentOrders = orders;
                 win.Show();
 
             }

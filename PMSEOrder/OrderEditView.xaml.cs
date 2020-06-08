@@ -24,7 +24,7 @@ namespace PMSEOrder
         public OrderEditView()
         {
             InitializeComponent();
-            this.Height = 800;
+            this.Height = 900;
             var vm = new OrderEditVM();
             this.DataContext = vm;
             Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
@@ -36,23 +36,6 @@ namespace PMSEOrder
             {
                 this.Close();
             }
-
-        }
-
-        private void BtnShipToTCB_Click(object sender, RoutedEventArgs e)
-        {
-            PMSMethods.SetTextBox(TxtShipTo, "TCB");
-        }
-
-        private void BtnShipToCustomer_Click(object sender, RoutedEventArgs e)
-        {
-            PMSMethods.SetTextBox(TxtShipTo, "Customer");
-
-        }
-
-        private void BtnShipToLeon_Click(object sender, RoutedEventArgs e)
-        {
-            PMSMethods.SetTextBox(TxtShipTo, "Leon");
 
         }
 
@@ -137,6 +120,7 @@ namespace PMSEOrder
         {
             if (textBox == null) return;
             var dialog = new WPFControls.KeyValueTestResultE();
+            dialog.Width = 600;
             dialog.KeyStrings = textBox.Text.Trim();
             dialog.ShowDialog();
             if (dialog.DialogResult == true)
@@ -181,11 +165,27 @@ namespace PMSEOrder
                     PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "Laser Mark=both side;");
                     break;
                 case "BtnSpecial4":
-                    PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "Part Number=value;");
+                    PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "Additive=value;");
+                    break;
+                case "BtnSpecial5":
+                    PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "BondingRemark=value;");
+                    break;
+                case "BtnSpecial6":
+                    PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "ChengDu=value;");
                     break;
                 default:
                     PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, "key=value;");
                     break;
+            }
+        }
+
+        private void BtnShip_Click(object sender, RoutedEventArgs e)
+        {
+            var ship = new ShipWindow();
+            if (ship.ShowDialog() == true)
+            {
+                string ship_str = ship.ShipResult;
+                PMSMethods.SetTextBox(TxtShipTo, $"{ship_str}");
             }
         }
     }

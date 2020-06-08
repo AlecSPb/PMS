@@ -18,6 +18,8 @@ namespace PMSClient.Components.EOrder
             sb.AppendLine(order.CustomerName ?? "");
             sb.Append("[PO]:");
             sb.AppendLine(order.PO ?? "");
+            sb.Append("[PO Date]:");
+            sb.AppendLine(order.PODate.ToString("yyyy-MM-dd"));
             sb.Append("[Composition]:");
             sb.AppendLine(order.Composition ?? "");
             sb.Append("[CompositionDetail]:");
@@ -78,6 +80,8 @@ namespace PMSClient.Components.EOrder
             sb.AppendLine(order.CustomerName ?? "");
             sb.Append("[PO]:");
             sb.AppendLine(order.PO ?? "");
+            sb.Append("[PO Date]:");
+            sb.AppendLine(order.PODate.ToString("yyyy-MM-dd"));
             sb.Append("[成分]:");
             sb.AppendLine(order.Composition ?? "");
             sb.Append("[成分细节]:");

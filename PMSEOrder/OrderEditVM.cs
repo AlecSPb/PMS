@@ -60,6 +60,7 @@ namespace PMSEOrder
             model.CreateTime = DateTime.Now;
             model.CustomerName = "";
             model.PO = "";
+            model.PODate = DateTime.Today;
             model.Composition = "";
             model.CompositionDetail = "";
             model.ProductType = ProductTypes[0];
@@ -101,6 +102,7 @@ namespace PMSEOrder
             CurrentOrder.GUIDID = Guid.NewGuid();
             CurrentOrder.CreateTime = DateTime.Now;
             CurrentOrder.OrderState = OrderState.UnSend.ToString();
+            CurrentOrder.PODate = DateTime.Today;
         }
 
         private void ActionSave()
@@ -110,10 +112,14 @@ namespace PMSEOrder
                 #region 检查逻辑
                 if (!CheckService.IsBasicItemNotEmpty(CurrentOrder))
                 {
-                    XSHelper.XS.MessageBox.ShowWarning("basic item like \r\n[customer,composition,po,dimension etc] \r\ncan not be empty");
+                    XSHelper.XS.MessageBox.ShowError("basic item like \r\n[customer,composition,po,dimension etc] \r\ncan not be empty");
                     return;
                 }
 
+                if (!CheckService.IsSeAsGeBondingUsingElastmer(CurrentOrder))
+                {
+                    XSHelper.XS.MessageBox.ShowWarning("440 or 444.7 diameter usually needs [Elaster] bonding,please check");
+                }
 
                 #endregion
                 var s = new DataService();
@@ -122,7 +128,7 @@ namespace PMSEOrder
                     #region 新建检查逻辑
                     if (!CheckService.IsPONotRepeat(CurrentOrder))
                     {
-                        XSHelper.XS.MessageBox.ShowWarning($"PO#[{CurrentOrder.PO}] is repeated.\r\nThis may be a duplicate order; Please check");
+                        XSHelper.XS.MessageBox.ShowError($"PO#[{CurrentOrder.PO}] is repeated.\r\nThis may be a duplicate order; Please check");
                         return;
                     }
 

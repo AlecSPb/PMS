@@ -13,6 +13,7 @@ namespace PMSEOrder.Model
         //基本信息
         [Key]
         public int ID { get; set; }//丘这里就生成GUID,PMS系统直接录入该ID ，作为唯一核对订单的标识
+        public DateTime PODate { get; set; }
         public Guid GUIDID { get; set; }
         public string CustomerName { get; set; }
         public string PO { get; set; }

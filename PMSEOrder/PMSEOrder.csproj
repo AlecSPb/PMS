@@ -125,6 +125,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dilaog\ShipWindow.xaml.cs">
+      <DependentUpon>ShipWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helper\PMSMethods.cs" />
     <Compile Include="Model\CustomerInfo.cs" />
     <Compile Include="OrderEditVM.cs" />
@@ -150,6 +153,10 @@
     <Compile Include="Dilaog\TextWindow.xaml.cs">
       <DependentUpon>TextWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Dilaog\ShipWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
