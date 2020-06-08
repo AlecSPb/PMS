@@ -212,8 +212,7 @@
                             Click="BtnSampleNeedRemarkEGA_Click"/>
                     <Button Name="BtnSampleNeedRemarkNone" Content="None" Style="{StaticResource StyleButtonCommon}"
                             Click="BtnSampleNeedRemarkNone_Click"/>
-                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="Other sample requirement"/>
+                    <CheckBox Name="ChkSampleNeedRemark" Content="With Elements" Style="{StaticResource StyleCheckBoxCommon}"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="16" Grid.Column="0" Text="SampleForAnlysis"
@@ -238,8 +237,7 @@
                             Click="BtnSampleAnlysisRemarkEGA_Click"/>
                     <Button Name="BtnSampleAnlysisRemarkNone" Content="None" Style="{StaticResource StyleButtonCommon}"
                             Click="BtnSampleAnlysisRemarkNone_Click"/>
-                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="Other sample requirement"/>
+                    <CheckBox Name="ChkSampleAnlysisRemark" Content="With Elements" Style="{StaticResource StyleCheckBoxCommon}"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="WithBackingPlate"
