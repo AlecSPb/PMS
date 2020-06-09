@@ -7,7 +7,7 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Icon="email_compose.png"
-        Title="PMI E-Order Tool (Offline) version 1.2" Height="1000" Width="1400" WindowState="Maximized"
+        Title="PMI E-Order Tool (Offline) version 1.2" Height="1000" Width="1600" WindowState="Maximized"
         Closing="Window_Closing">
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
@@ -36,7 +36,7 @@
                     <TextBlock Text="Deleted" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CancelledBrush}"/>
                     <TextBlock Text="UnFinished" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
                     <TextBlock Text="UnSend" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
-                    <TextBlock Text="Sent" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
+                    <TextBlock Text="Sent" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CheckedBrush}"/>
                     <!--<TextBlock Text="Received" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>-->
                 </StackPanel>
             </StackPanel>
@@ -96,7 +96,8 @@
 
                     <DataGridTextColumn Header="CustomerName" Binding="{Binding CustomerName}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="Composition" Binding="{Binding Composition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Foreground="Blue"/>
-                    <DataGridTextColumn Header="CompositionDetail" Binding="{Binding CompositionDetail}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="CompositionDetail" Binding="{Binding CompositionDetail}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Width="200"/>
                     <DataGridTextColumn Header="PO" Binding="{Binding PO}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="PO Date" Binding="{Binding PODate,StringFormat={}{0:yyyy-MM-dd}}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="ProductType" Binding="{Binding ProductType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
@@ -107,15 +108,18 @@
                     <DataGridTextColumn Header="DimensionDetail" Binding="{Binding DimensionDetails}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="Drawing" Binding="{Binding Drawing}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="SampleNeed" Binding="{Binding SampleNeed}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                    <DataGridTextColumn Header="SampleNeedRemark" Binding="{Binding SampleNeedRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="SampleNeedRemark" Binding="{Binding SampleNeedRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Width="200"/>
                     <DataGridTextColumn Header="SampleForAnlysis" Binding="{Binding SampleForAnlysis}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                    <DataGridTextColumn Header="SampleForAnlysisRemark" Binding="{Binding SampleForAnlysisRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="SampleForAnlysisRemark" Binding="{Binding SampleForAnlysisRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Width="200"/>
                     <DataGridTextColumn Header="DeadLine" Binding="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="MinimumAcceptDefect" Binding="{Binding MinimumAcceptDefect}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="ShipTo" Binding="{Binding ShipTo}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="WithBackingPlate" Binding="{Binding WithBackingPlate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="PlateDrawing" Binding="{Binding PlateDrawing}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                    <DataGridTextColumn Header="SpecialRequirement" Binding="{Binding SpecialRequirement}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="SpecialRequirement" Binding="{Binding SpecialRequirement}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Width="200"/>
                     <DataGridTextColumn Header="BondingRequirement" Binding="{Binding BondingRequirement}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="PartNumber" Binding="{Binding PartNumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="Remark" Binding="{Binding Remark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>

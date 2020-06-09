@@ -484,5 +484,46 @@ namespace PMSWCFService
             }
             return dcStatistics;
         }
+
+        public List<DcAnlysisCustomer> GetStatisticCustomer(int year_start, int month_start, int year_end, int month_end)
+        {
+
+            List<DcAnlysisCustomer> customers = new List<DcAnlysisCustomer>();
+            try
+            {
+                XS.RunLog();
+                using (var db = new PMSDbContext())
+                {
+                    DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                    DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
+                    var query = from c in db.Customers
+                                join o in db.Orders on c.CustomerName equals o.CustomerName into g
+                                from gr in g.DefaultIfEmpty()
+                                where gr.State != PMSCommon.OrderState.作废.ToString()
+                                && gr.ProductType == PMSCommon.ProductType.靶材.ToString()
+                                && gr.CreateTime >= startTime
+                                && gr.CreateTime <= endTime
+                                group gr by gr.CustomerName into gp
+                                orderby gp.Key, gp.Count(), gp.Sum(i => i.Quantity)
+                                select new DcAnlysisCustomer
+                                {
+                                    CustomerName = gp.Key,
+                                    OrderCount = gp.Count(),
+                                    TargetQuantity = gp.Sum(i => i.Quantity)
+                                };
+
+                    foreach (var item in query)
+                    {
+                        customers.Add(item);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+            return customers;
+        }
     }
 }

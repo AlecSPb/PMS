@@ -124,6 +124,7 @@
     <Compile Include="DataContracts\DcMaterialOrderItemExtra.cs" />
     <Compile Include="DataContracts\DcModelBase.cs" />
     <Compile Include="DataContracts\DcNotice.cs" />
+    <Compile Include="DataContracts\DcAnlysisCustomer.cs" />
     <Compile Include="DataContracts\DcOutsideProcess.cs" />
     <Compile Include="DataContracts\DcPlanTrace.cs" />
     <Compile Include="DataContracts\DcPlanWithMisson.cs" />

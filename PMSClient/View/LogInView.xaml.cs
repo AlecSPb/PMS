@@ -71,6 +71,9 @@ namespace PMSClient.View
                     //读取本地权限表-只在登录的时候初始化一次
                     PMSHelper.CurrentSession.ReadAccessSheetFromLocal();
 
+                    //检查是否需要显示新文档
+                    new Components.NewFeatureDocShow.NewFeatureShowService().Run();
+
                     //DEBUG下不运行
                     if (PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewExpressTrackAtLogin)
                         && Properties.Settings.Default.CheckExpressAtStartup)
@@ -82,9 +85,6 @@ namespace PMSClient.View
                         //检查消耗品库存预警情况
                         new Components.ConsumableWarning.ConsumableWarningService().Run();
                     }
-
-                    //检查是否需要显示新文档
-                    new Components.NewFeatureDocShow.NewFeatureShowService().Run();
                 }
                 else
                 {

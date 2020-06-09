@@ -25,6 +25,12 @@
   <wsdl:message name="IAnlysisService_GetStatistic_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetStatisticResponse" />
   </wsdl:message>
+  <wsdl:message name="IAnlysisService_GetStatisticCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatisticCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IAnlysisService_GetStatisticCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatisticCustomerResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAnlysisService">
     <wsdl:operation name="GetPlanTrace">
       <wsdl:input wsaw:Action="http://tempuri.org/IAnlysisService/GetPlanTrace" message="tns:IAnlysisService_GetPlanTrace_InputMessage" />
@@ -37,6 +43,10 @@
     <wsdl:operation name="GetStatistic">
       <wsdl:input wsaw:Action="http://tempuri.org/IAnlysisService/GetStatistic" message="tns:IAnlysisService_GetStatistic_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAnlysisService/GetStatisticResponse" message="tns:IAnlysisService_GetStatistic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAnlysisService/GetStatisticCustomer" message="tns:IAnlysisService_GetStatisticCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAnlysisService/GetStatisticCustomerResponse" message="tns:IAnlysisService_GetStatisticCustomer_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAnlysisService" type="tns:IAnlysisService">
@@ -61,6 +71,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetStatistic">
       <soap:operation soapAction="http://tempuri.org/IAnlysisService/GetStatistic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticCustomer">
+      <soap:operation soapAction="http://tempuri.org/IAnlysisService/GetStatisticCustomer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

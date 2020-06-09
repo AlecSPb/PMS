@@ -423,6 +423,83 @@ namespace PMSClient.AnlysisService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcAnlysisCustomer", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcAnlysisCustomer : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderCountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double TargetQuantityField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerName {
+            get {
+                return this.CustomerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerNameField, value) != true)) {
+                    this.CustomerNameField = value;
+                    this.RaisePropertyChanged("CustomerName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderCount {
+            get {
+                return this.OrderCountField;
+            }
+            set {
+                if ((this.OrderCountField.Equals(value) != true)) {
+                    this.OrderCountField = value;
+                    this.RaisePropertyChanged("OrderCount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double TargetQuantity {
+            get {
+                return this.TargetQuantityField;
+            }
+            set {
+                if ((this.TargetQuantityField.Equals(value) != true)) {
+                    this.TargetQuantityField = value;
+                    this.RaisePropertyChanged("TargetQuantity");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AnlysisService.IAnlysisService")]
     public interface IAnlysisService {
@@ -444,6 +521,12 @@ namespace PMSClient.AnlysisService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnlysisService/GetStatistic", ReplyAction="http://tempuri.org/IAnlysisService/GetStatisticResponse")]
         System.Threading.Tasks.Task<PMSClient.AnlysisService.DcAnlysis[]> GetStatisticAsync(int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnlysisService/GetStatisticCustomer", ReplyAction="http://tempuri.org/IAnlysisService/GetStatisticCustomerResponse")]
+        PMSClient.AnlysisService.DcAnlysisCustomer[] GetStatisticCustomer(int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAnlysisService/GetStatisticCustomer", ReplyAction="http://tempuri.org/IAnlysisService/GetStatisticCustomerResponse")]
+        System.Threading.Tasks.Task<PMSClient.AnlysisService.DcAnlysisCustomer[]> GetStatisticCustomerAsync(int year_start, int month_start, int year_end, int month_end);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -495,6 +578,14 @@ namespace PMSClient.AnlysisService {
         
         public System.Threading.Tasks.Task<PMSClient.AnlysisService.DcAnlysis[]> GetStatisticAsync(int year_start, int month_start, int year_end, int month_end) {
             return base.Channel.GetStatisticAsync(year_start, month_start, year_end, month_end);
+        }
+        
+        public PMSClient.AnlysisService.DcAnlysisCustomer[] GetStatisticCustomer(int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetStatisticCustomer(year_start, month_start, year_end, month_end);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.AnlysisService.DcAnlysisCustomer[]> GetStatisticCustomerAsync(int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetStatisticCustomerAsync(year_start, month_start, year_end, month_end);
         }
     }
 }

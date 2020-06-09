@@ -83,11 +83,62 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             Output = new RelayCommand(ActionOutput);
 
-            SampleSheet = new RelayCommand(ActionSampleSheet);
+            SampleSheet = new RelayCommand(ActionSampleSheet, CanAdd);
 
             ShowDetails = new RelayCommand<string>(ActionShowDetails);
-            SpecialSituation = new RelayCommand(ActionSpecialSituation);
-            JsonCheck = new RelayCommand(ActionJsonCheck);
+            SpecialSituation = new RelayCommand(ActionSpecialSituation, CanAdd);
+            JsonCheck = new RelayCommand(ActionJsonCheck, CanAdd);
+            CustomerAnlysis = new RelayCommand(ActionCustomerAnlysis, CanAdd);
+        }
+
+        private void ActionCustomerAnlysis()
+        {
+            try
+            {
+                //年月选择对话框
+                var dialog = new WPFControls.YearDateDailog(-5);
+
+                if (dialog.ShowDialog() == false)
+                {
+                    return;
+                }
+
+                int year_start = dialog.YearStart;
+                int month_start = dialog.MonthStart;
+                int year_end = dialog.YearEnd;
+                int month_end = dialog.MonthEnd;
+
+                using (var server=new AnlysisService.AnlysisServiceClient())
+                {
+                    var results = server.GetStatisticCustomer(year_start,month_start,year_end,month_end);
+                    if (results.Count() == 0)
+                    {
+                        XS.MessageBox.ShowInfo("No Statistic Data");
+                        return;
+                    }
+                    StringBuilder sb = new StringBuilder();
+                    sb.AppendLine($"统计日期:从[{year_start}-{month_start}]到[{year_end}-{month_end}]");
+                    foreach (var item in results)
+                    {
+                        sb.Append("客户");
+                        sb.Append(item.CustomerName);
+                        sb.Append("+订单数");
+                        sb.Append(item.OrderCount.ToString());
+                        sb.Append("+靶材数");
+                        sb.Append(item.TargetQuantity.ToString());
+                        sb.AppendLine();
+                    }
+
+
+                    var win = new PlainTextWindow();
+                    win.ContentText = sb.ToString();
+                    win.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private void ActionJsonCheck()
@@ -481,6 +532,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand SpecialSituation { get; set; }
         public RelayCommand JsonCheck { get; set; }
+        public RelayCommand CustomerAnlysis { get; set; }
 
         #endregion
     }

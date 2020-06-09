@@ -45,10 +45,7 @@ namespace PMSEOrder
                         e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
                         break;
                     case "Sent":
-                        e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
-                        break;
-                    case "Received":
-                        e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
+                        e.Row.Background = this.FindResource("CheckedBrush") as SolidColorBrush;
                         break;
                     default:
                         break;

@@ -52,4 +52,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetStatisticCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year_start" type="xs:int" />
+        <xs:element minOccurs="0" name="month_start" type="xs:int" />
+        <xs:element minOccurs="0" name="year_end" type="xs:int" />
+        <xs:element minOccurs="0" name="month_end" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatisticCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetStatisticCustomerResult" nillable="true" type="q3:ArrayOfDcAnlysisCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
