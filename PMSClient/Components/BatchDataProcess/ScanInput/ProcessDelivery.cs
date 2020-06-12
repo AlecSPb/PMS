@@ -45,12 +45,39 @@ namespace PMSClient.DataProcess.ScanInput
                         CheckInDeliveryItem(item);
                     }
 
-                    count++;
-                    progressValue = count * 100 / Lots.Count;
-                    if (DoSomething != null)
+                    if (item.IsValid)
                     {
-                        DoSomething(progressValue);
-                        System.Threading.Thread.Sleep(50);
+                        if (GetDSType(item.Lot) == TableSource.Plate)
+                        {
+
+                        }
+                        else
+                        {
+                            //读取产品记录并转换
+                            using (var ss = new ProductServiceClient())
+                            {
+                                var record = ss.GetProductByProductID(item.Lot).FirstOrDefault();
+
+                                //确定是否将库存置为发货
+                                if (record != null)
+                                {
+                                    //检查230产品的绑定记录
+                                    if (record.Dimension.Contains("230"))
+                                    {
+                                        CheckBondingState(item);
+                                    }
+                                }
+                            }
+
+                        }
+
+                        count++;
+                        progressValue = count * 100 / Lots.Count;
+                        if (DoSomething != null)
+                        {
+                            DoSomething(progressValue);
+                            System.Threading.Thread.Sleep(50);
+                        }
                     }
                 }
             }
@@ -117,6 +144,11 @@ namespace PMSClient.DataProcess.ScanInput
                                 //确定是否将库存置为发货
                                 if (record != null)
                                 {
+                                    //检查230产品的绑定记录
+                                    if (record.Dimension.Contains("230"))
+                                    {
+                                        CheckBondingState(item);
+                                    }
 
                                     record.State = PMSCommon.InventoryState.发货.ToString();
                                     ss.UpdateProductByUID(record, uid);
@@ -124,13 +156,10 @@ namespace PMSClient.DataProcess.ScanInput
 
                                 model = ModelHelper.GetDeliveryItem(record, Number, DeliveryType);
                             }
+
                         }
 
-
-
-
-
-                        //插入到绑定记录
+                        //插入到发货记录
                         using (var service = new DeliveryServiceClient())
                         {
                             if (model != null)
@@ -158,6 +187,27 @@ namespace PMSClient.DataProcess.ScanInput
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
+
+        private void CheckBondingState(LotModel item)
+        {
+            using (var service = new RecordBondingServiceClient())
+            {
+                var result = service.GetRecordBondingByProductID(item.Lot).FirstOrDefault();
+                if (result != null)
+                {
+                    if (result.State != PMSCommon.BondingState.最终完成.ToString())
+                    {
+                        item.AppendMessage("230的[绑定记录] 还未设置为 完成");
+                    }
+                }
+                else
+                {
+                    item.AppendMessage("230的[绑定记录]不存在");
+                }
+            }
+        }
+
+
         private void CheckInProduct(LotModel item)
         {
             if (item.IsValid)

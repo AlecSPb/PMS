@@ -96,6 +96,7 @@
     <Content Include="EditLockService.svc" />
     <Content Include="ServiceContracts\API设计.txt" />
     <Content Include="AnlysisService.svc" />
+    <Content Include="EOrderService.svc" />
     <Content Include="ToolService.svc" />
     <Content Include="StatisticService.svc" />
     <Content Include="SanjieService.svc" />
@@ -201,6 +202,7 @@
     <Compile Include="ServiceContracts\IConsumableService.cs" />
     <Compile Include="ServiceContracts\IDeliveryChaseService.cs" />
     <Compile Include="ServiceContracts\IEditLockService.cs" />
+    <Compile Include="ServiceContracts\IEOrderService.cs" />
     <Compile Include="ServiceContracts\IFailureService.cs" />
     <Compile Include="ServiceContracts\IMachineFixService.cs" />
     <Compile Include="ServiceContracts\INewService.cs" />
@@ -228,6 +230,7 @@
     <Compile Include="ServiceImplements\ConsumableService.cs" />
     <Compile Include="ServiceImplements\DrawingService.cs" />
     <Compile Include="ServiceImplements\EditLockService.cs" />
+    <Compile Include="ServiceImplements\EOrderService.cs" />
     <Compile Include="ServiceImplements\ExtraService.cs" />
     <Compile Include="ServiceContracts\ICheckListService.cs" />
     <Compile Include="ServiceContracts\IItemDebitService.cs" />

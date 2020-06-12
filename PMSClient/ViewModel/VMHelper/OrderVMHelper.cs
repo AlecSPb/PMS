@@ -55,9 +55,9 @@ namespace PMSClient.ViewModel.VMHelper
                 model.SampleID = "无";
                 model.TrackingStage = PMSCommon.SampleTrackingStage.未取样.ToString();
                 model.TraceInformation = "";
-                model.ICPOES = VMHelper.SampleVMHelper.ICPOES;
-                model.GDMS = VMHelper.SampleVMHelper.GDMS;
-                model.IGA = VMHelper.SampleVMHelper.IGA;
+                model.ICPOES ="";
+                model.GDMS = "";
+                model.IGA = "";
                 model.Thermal = VMHelper.SampleVMHelper.Thermal;
                 model.Permittivity = VMHelper.SampleVMHelper.Permittivity;
                 model.OtherTestResult = "";

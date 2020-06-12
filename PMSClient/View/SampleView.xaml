@@ -251,39 +251,45 @@
 
                         <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource SICPOES}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <Button Grid.Row="15" Grid.Column="1" Content="{StaticResource SICPOES}" 
+                        <Button Grid.Row="15" Grid.Column="1" Content="{Binding ICPOES}" 
                                 Command="{Binding DataContext.ShowTestResult,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
-                                CommandParameter="ICPOES" Style="{StaticResource StyleButtonStrench}"/>
+                                CommandParameter="ICPOES" Style="{StaticResource StyleButtonStrench}"
+                                VerticalAlignment="Stretch"/>
 
                         <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource SGDMS}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <Button Grid.Row="16" Grid.Column="1" Content="{StaticResource SGDMS}" 
+                        <Button Grid.Row="16" Grid.Column="1" Content="{Binding GDMS}" 
                                 Command="{Binding DataContext.ShowTestResult,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
-                                CommandParameter="GDMS" Style="{StaticResource StyleButtonStrench}"/>
+                                CommandParameter="GDMS" Style="{StaticResource StyleButtonStrench}"
+                                VerticalAlignment="Stretch"/>
 
                         <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource SIGA}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <Button Grid.Row="17" Grid.Column="1" Content="{StaticResource SIGA}" 
+                        <Button Grid.Row="17" Grid.Column="1" Content="{Binding IGA}" 
                                 Command="{Binding DataContext.ShowTestResult,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
-                                CommandParameter="IGA" Style="{StaticResource StyleButtonStrench}"/>
+                                CommandParameter="IGA" Style="{StaticResource StyleButtonStrench}"
+                                VerticalAlignment="Stretch"/>
 
                         <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource SThermal}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <Button Grid.Row="18" Grid.Column="1" Content="{StaticResource SThermal}" 
+                        <Button Grid.Row="18" Grid.Column="1" Content="{Binding Thermal}" 
                                 Command="{Binding DataContext.ShowTestResult,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
-                                CommandParameter="Thermal" Style="{StaticResource StyleButtonStrench}"/>
+                                CommandParameter="Thermal" Style="{StaticResource StyleButtonStrench}"
+                                VerticalAlignment="Stretch"/>
 
                         <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource SPermittivity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <Button Grid.Row="19" Grid.Column="1" Content="{StaticResource SPermittivity}" 
+                        <Button Grid.Row="19" Grid.Column="1" Content="{Binding Permittivity}" 
                                 Command="{Binding DataContext.ShowTestResult,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
-                                CommandParameter="Permittivity" Style="{StaticResource StyleButtonStrench}"/>
+                                CommandParameter="Permittivity" Style="{StaticResource StyleButtonStrench}"
+                                VerticalAlignment="Stretch"/>
 
                         <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource SOtherTestResult}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <Button Grid.Row="20" Grid.Column="1" Content="{StaticResource SOtherTestResult}" 
+                        <Button Grid.Row="20" Grid.Column="1" Content="{Binding OtherTestResult}" 
                                 Command="{Binding DataContext.ShowTestResult,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 
-                                CommandParameter="OtherTestResult" Style="{StaticResource StyleButtonStrench}"/>
+                                CommandParameter="OtherTestResult" Style="{StaticResource StyleButtonStrench}"
+                                VerticalAlignment="Stretch"/>
 
                         <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource SRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

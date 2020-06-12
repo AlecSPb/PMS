@@ -73,37 +73,39 @@
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="* Customer Name" Background="LightGreen"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Composition"
-                           Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox  Name="txtCompositionStandard" Grid.Row="2" Grid.Column="1" Text="{Binding Composition}" Background="Yellow"
-                          Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="PO"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="PO"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="PO Date"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <DatePicker Grid.Row="3" Grid.Column="1" SelectedDate="{Binding PODate,Mode=TwoWay}"
+                            Style="{StaticResource StyleDatePickerCommon}"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="PO Date"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Composition"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBox  Name="txtCompositionStandard" Grid.Row="4" Grid.Column="1" Text="{Binding Composition}" Background="Yellow"
+                          Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="* Composition Default by At%"  Background="LightGreen"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="CompositionDetail"
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="CompositionDetail"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox  Name="txtCompositionDetail"  Grid.Row="3" Grid.Column="1" Text="{Binding CompositionDetail}"
+                <TextBox  Name="txtCompositionDetail"  Grid.Row="5" Grid.Column="1" Text="{Binding CompositionDetail}"
                           Style="{StaticResource StyleTextBoxCommon}"/>
-                <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
+                <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnCompositionDetail" Content="SeAsGe+Si" Style="{StaticResource StyleButtonCommon}" Click="BtnCompositionDetail_Click"/>
-                    <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
                            Text="Composition Detail"  Background="LightGreen"/>
                 </StackPanel>
 
 
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="PO"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="PO"/>
 
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="PO Date"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <DatePicker Grid.Row="5" Grid.Column="1" SelectedDate="{Binding PODate,Mode=TwoWay}"
-                            Style="{StaticResource StyleDatePickerCommon}"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="PO Date"/>
-                
+
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="ProductType"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <ComboBox Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"

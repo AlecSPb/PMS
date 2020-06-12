@@ -13,7 +13,7 @@ using Newtonsoft.Json;
 using PMSEOrder.Service;
 using System.IO;
 using PMSEOrder.Service.Excel;
-
+using PMSEOrder.PMS;
 
 namespace PMSEOrder
 {
@@ -29,7 +29,7 @@ namespace PMSEOrder
         {
             Orders = new ObservableCollection<Order>();
             searchCustomer = searchPO = searchComposition = "";
-
+            hideDeleted = true;
 
             New = new RelayCommand(ActionNew);
             Edit = new RelayCommand<Order>(ActionEdit);
@@ -46,8 +46,53 @@ namespace PMSEOrder
             SelectionChanged = new RelayCommand<Order>(ActionSelectionChanged);
             Setting = new RelayCommand(ActionSetting);
             Import = new RelayCommand(ActionImport);
+            CheckOnline = new RelayCommand(ActionCheckOnline);
 
             Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
+        }
+
+        private void ActionCheckOnline()
+        {
+
+            if (XS.MessageBox.ShowYesNo("Going to Check the order state from pms database?\r\nonline"))
+            {
+                try
+                {
+                    using (var s = new EOrderServiceClient())
+                    {
+
+                        var filterOrder = Orders.Where(i => i.OrderState == OrderState.UnSend.ToString());
+
+                        List<OrderCheckState> orderCheckStates = new List<OrderCheckState>();
+                        foreach (var item in filterOrder)
+                        {
+                            var checkResult = new OrderCheckState();
+                            checkResult.GUIDID = item.GUIDID;
+                            checkResult.CustomerName = item.CustomerName;
+                            checkResult.Composition = item.Composition;
+                            checkResult.PO = item.PO;
+                            checkResult.CreateTime = item.CreateTime;
+                            checkResult.CheckState = s.CheckEOrderGuid(item.GUIDID.ToString());
+                            orderCheckStates.Add(checkResult);
+                        }
+                        //这里显示一个窗口
+
+
+                        if(XS.MessageBox.ShowYesNo("Set the order whose check value as True to [Sent]?"))
+                        {
+                            foreach (var item in orderCheckStates)
+                            {
+                                System.Diagnostics.Debug.WriteLine($"{item.GUIDID}-{item.CustomerName}-{item.CheckState}");
+                            }
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+
         }
 
         private void ActionImport()
@@ -237,7 +282,7 @@ namespace PMSEOrder
         {
             if (obj == null) return;
 
-            if(XS.MessageBox.ShowYesNo("Do you want to edit this order?"))
+            if (XS.MessageBox.ShowYesNo("Do you want to edit this order?"))
             {
                 var edit = new OrderEditView();
                 ((OrderEditVM)edit.DataContext).SetEdit(obj);
@@ -260,9 +305,16 @@ namespace PMSEOrder
                                             i.CustomerName.ToLower().Contains(SearchCustomer.ToLower())
                                             && i.Composition.ToLower().Contains(SearchComposition.ToLower())
                                             && i.PO.ToLower().Contains(SearchPO.ToLower()))
-                                      .OrderByDescending(i => i.CreateTime).ToList();
+                                      .OrderByDescending(i => i.CreateTime);
             Orders.Clear();
-            filter_orders.ForEach(i => Orders.Add(i));
+            if (HideDeleted)
+            {
+                filter_orders.Where(i => i.OrderState != "Deleted").ToList().ForEach(i => Orders.Add(i));
+            }
+            else
+            {
+                filter_orders.ToList().ForEach(i => Orders.Add(i));
+            }
             CurrentOrder = orders.FirstOrDefault();
         }
 
@@ -322,7 +374,19 @@ namespace PMSEOrder
             }
         }
 
-
+        private bool hideDeleted;
+        public bool HideDeleted
+        {
+            get
+            {
+                return hideDeleted;
+            }
+            set
+            {
+                hideDeleted = value;
+                RaisePropertyChanged(nameof(HideDeleted));
+            }
+        }
         public ObservableCollection<Order> Orders { get; set; }
         public RelayCommand New { get; set; }
         public RelayCommand<Order> Edit { get; set; }
@@ -335,6 +399,7 @@ namespace PMSEOrder
 
 
 
+        public RelayCommand CheckOnline { get; set; }
         public RelayCommand AllEOrder { get; set; }
         public RelayCommand AllTxt { get; set; }
         public RelayCommand Search { get; set; }

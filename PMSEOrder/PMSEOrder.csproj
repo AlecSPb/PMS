@@ -125,11 +125,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Connected Services\PMS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Dilaog\ShipWindow.xaml.cs">
       <DependentUpon>ShipWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helper\PMSMethods.cs" />
     <Compile Include="Model\CustomerInfo.cs" />
+    <Compile Include="Model\OrderCheckState.cs" />
     <Compile Include="OrderEditVM.cs" />
     <Compile Include="Dilaog\BondingWindow.xaml.cs">
       <DependentUpon>BondingWindow.xaml</DependentUpon>
@@ -223,8 +229,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Connected Services\PMS\EOrderService.wsdl" />
+    <None Include="Connected Services\PMS\EOrderService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PMS\EOrderService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="DB\AutoBackUp\DontDeleteThisFolder.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Connected Services\PMS\EOrderService.disco" />
+    <None Include="Connected Services\PMS\configuration91.svcinfo" />
+    <None Include="Connected Services\PMS\configuration.svcinfo" />
+    <None Include="Connected Services\PMS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="DB\createtable.sql" />
     <Resource Include="email_compose.ico" />
@@ -283,6 +303,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\PMSService\" />
+    <WCFMetadataStorage Include="Connected Services\PMS\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\PMSService\NewService.disco" />

@@ -247,7 +247,10 @@ namespace PMSClient.ViewModel
 
         private bool CanDeliverySheet(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
+            return (PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) ||
+                PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet) ||
+                PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" })
+                ) && arg?.State != "未核验";
         }
 
         private void ActionDeliverySheet(DcDelivery model)
@@ -305,7 +308,10 @@ namespace PMSClient.ViewModel
 
         private bool CanLabel(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet) || PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" });
+            return (PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || 
+                PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet) || 
+                PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" })
+                ) && arg?.State != "未核验";
         }
 
         private bool CanEditItem(DcDeliveryItem arg)

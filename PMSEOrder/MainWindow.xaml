@@ -7,7 +7,7 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Icon="email_compose.png"
-        Title="PMI E-Order Tool (Offline) version 1.2" Height="1000" Width="1600" WindowState="Maximized"
+        Title="PMI E-Order Tool (Offline) version 1.3" Height="1000" Width="1600" WindowState="Maximized"
         Closing="Window_Closing">
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
@@ -30,6 +30,8 @@
                 <TextBlock Text="PO" Style="{StaticResource StyleTextBlockNavigationBar}"/>
                 <TextBox Text="{Binding SearchPO,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
+                <CheckBox IsChecked="{Binding HideDeleted,UpdateSourceTrigger=PropertyChanged}" Content="Hide Deleted"
+                          Style="{StaticResource StyleCheckBoxCommon}" Foreground="White"/>
                 <Button Content="Search" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
                 <!--图例-->
                 <StackPanel Orientation="Horizontal">
@@ -41,6 +43,7 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right"  Background="{StaticResource BGNavigationBar}">
+                <Button Content="Check Online" Style="{StaticResource StyleButtonCommon}"  Command="{Binding CheckOnline}"/>
                 <Button Content="E-Order [Green]" Style="{StaticResource StyleButtonCommon}"  Command="{Binding AllEOrder}"/>
                 <Button Content="Text [Green]" Style="{StaticResource StyleButtonCommon}"  Command="{Binding AllTxt}"/>
                 <Button Content="Excel" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Excel}"/>

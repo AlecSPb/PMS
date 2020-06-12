@@ -53,7 +53,7 @@ namespace PMSClient.ViewModel
 
                 CurrentOrder.Purity = order.Purity;
                 CurrentOrder.Quantity = order.Quantity;
-                if (order.ProductType.Contains("pcs"))
+                if (order.QuantityUnit.Contains("pcs"))
                 {
                     CurrentOrder.QuantityUnit = PMSCommon.OrderUnit.片.ToString();
                 }

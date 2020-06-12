@@ -9,9 +9,10 @@ namespace PMSCommon
     public enum TestDefectsTypes
     {
         无缺陷,
+        低密度,
         开裂_未裂穿,
         开裂_裂穿,
-        纹单面花,
+        花纹单面,
         花纹两面,
         多个暗点,
         斑点腐蚀,
