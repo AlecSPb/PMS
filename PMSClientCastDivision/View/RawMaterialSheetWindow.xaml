@@ -49,6 +49,8 @@
                                     Binding="{Binding Lot}"/>
                 <DataGridTextColumn Header="{StaticResource RMSComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
+                <DataGridTextColumn Header="{StaticResource OrderPurity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Purity}"/>
                 <DataGridTextColumn Header="{StaticResource RMSSupplier}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding Supplier}"/>
                 <DataGridTextColumn Header="{StaticResource RMSWeight}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

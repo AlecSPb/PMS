@@ -13,6 +13,7 @@ namespace PMSDAL
     {
         public string Lot { get; set; }
         public string Composition { get; set; }
+        public string Purity { get; set; }
         public string Supplier { get; set; }
         public double Weight { get; set; }//kg
         public string Remark { get; set; }
@@ -20,7 +21,7 @@ namespace PMSDAL
         public bool IsSampleTaking { get; set; }
         public DateTime SampleTakingTime { get; set; }
         public string SampleRemark { get; set; }
-        public string  GDMS { get; set; }
+        public string GDMS { get; set; }
         public string ICPOES { get; set; }
         //State 作废 [在库] 耗尽 取消
     }

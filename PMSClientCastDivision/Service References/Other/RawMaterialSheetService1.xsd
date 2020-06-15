@@ -16,6 +16,7 @@
           <xs:element minOccurs="0" name="ICPOES" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="IsSampleTaking" type="xs:boolean" />
           <xs:element minOccurs="0" name="Lot" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SampleRemark" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="SampleTakingTime" type="xs:dateTime" />

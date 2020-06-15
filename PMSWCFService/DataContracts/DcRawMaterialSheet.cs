@@ -18,6 +18,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Composition { get; set; }
         [DataMember]
+        public string Purity { get; set; }
+        [DataMember]
         public string Supplier { get; set; }
         [DataMember]
         public double Weight { get; set; }//kg

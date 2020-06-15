@@ -404,6 +404,67 @@ namespace PMSClient.UserSimpleService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcAccessGrant", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcAccessGrant : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ControlNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RoleGroupStringField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ControlName {
+            get {
+                return this.ControlNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ControlNameField, value) != true)) {
+                    this.ControlNameField = value;
+                    this.RaisePropertyChanged("ControlName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RoleGroupString {
+            get {
+                return this.RoleGroupStringField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RoleGroupStringField, value) != true)) {
+                    this.RoleGroupStringField = value;
+                    this.RaisePropertyChanged("RoleGroupString");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserSimpleService.IUserSimpleService")]
     public interface IUserSimpleService {
@@ -431,6 +492,12 @@ namespace PMSClient.UserSimpleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserSimpleService/GetAccessGrantByControl", ReplyAction="http://tempuri.org/IUserSimpleService/GetAccessGrantByControlResponse")]
         System.Threading.Tasks.Task<string> GetAccessGrantByControlAsync(string controlName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserSimpleService/GetAllAccessGrant", ReplyAction="http://tempuri.org/IUserSimpleService/GetAllAccessGrantResponse")]
+        PMSClient.UserSimpleService.DcAccessGrant[] GetAllAccessGrant();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserSimpleService/GetAllAccessGrant", ReplyAction="http://tempuri.org/IUserSimpleService/GetAllAccessGrantResponse")]
+        System.Threading.Tasks.Task<PMSClient.UserSimpleService.DcAccessGrant[]> GetAllAccessGrantAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -490,6 +557,14 @@ namespace PMSClient.UserSimpleService {
         
         public System.Threading.Tasks.Task<string> GetAccessGrantByControlAsync(string controlName) {
             return base.Channel.GetAccessGrantByControlAsync(controlName);
+        }
+        
+        public PMSClient.UserSimpleService.DcAccessGrant[] GetAllAccessGrant() {
+            return base.Channel.GetAllAccessGrant();
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.UserSimpleService.DcAccessGrant[]> GetAllAccessGrantAsync() {
+            return base.Channel.GetAllAccessGrantAsync();
         }
     }
 }

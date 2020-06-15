@@ -35,6 +35,9 @@ namespace PMSClient.Other {
         private string LotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PurityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -113,6 +116,19 @@ namespace PMSClient.Other {
                 if ((object.ReferenceEquals(this.LotField, value) != true)) {
                     this.LotField = value;
                     this.RaisePropertyChanged("Lot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Purity {
+            get {
+                return this.PurityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PurityField, value) != true)) {
+                    this.PurityField = value;
+                    this.RaisePropertyChanged("Purity");
                 }
             }
         }

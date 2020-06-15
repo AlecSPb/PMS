@@ -44,6 +44,7 @@ namespace PMSClient.ViewModel
             model.State = PMSCommon.RawMaterialSheetState.在库.ToString();
             model.Lot= "无";
             model.Composition = "无";
+            model.Purity = "5N";
             model.Supplier = "中国";
             model.Weight = 0;
             model.StoreTime = DateTime.Now;

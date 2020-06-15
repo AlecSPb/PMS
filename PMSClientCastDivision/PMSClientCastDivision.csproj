@@ -33,7 +33,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>26</ApplicationRevision>
+    <ApplicationRevision>27</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -503,6 +503,9 @@
     </None>
     <None Include="Service References\SanjieService\SanjieService32.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSimpleService\PMSClient.UserSimpleService.DcAccessGrant.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\UserSimpleService\UserSimpleService1.disco" />
     <None Include="Service References\HeartBeatService\HeartBeatService1.disco" />

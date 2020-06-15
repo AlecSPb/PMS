@@ -41,6 +41,9 @@ namespace PMSClient.BasicService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ImportanceLevelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MemoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -136,6 +139,19 @@ namespace PMSClient.BasicService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ImportanceLevel {
+            get {
+                return this.ImportanceLevelField;
+            }
+            set {
+                if ((this.ImportanceLevelField.Equals(value) != true)) {
+                    this.ImportanceLevelField = value;
+                    this.RaisePropertyChanged("ImportanceLevel");
                 }
             }
         }

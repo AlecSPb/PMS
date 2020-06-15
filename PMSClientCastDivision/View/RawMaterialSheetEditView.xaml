@@ -38,6 +38,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -77,48 +78,54 @@
                           Background="LightGreen"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
                            Text="材料成分(必填)"/>
-
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RMSSupplier}"
+                
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource OrderPurity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Supplier}"
-                          Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="供应商名称"/>
-
-                <TextBlock  Grid.Row="4"  Grid.Column="0" Text="{StaticResource RMSWeight}"
+                <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
+                           Text="材料纯度"/>
+                
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RMSSupplier}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Weight}"
+                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Supplier}"
                           Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="供应商名称"/>
+
+                <TextBlock  Grid.Row="5"  Grid.Column="0" Text="{StaticResource RMSWeight}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding Weight}"
+                          Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="kg"/>
 
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMSRemark}"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMSRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMSIsSampleTaking}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <CheckBox Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleCheckBoxCommon}"
-                          IsChecked="{Binding IsSampleTaking,UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMSSampleTakingTime}"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMSIsSampleTaking}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <DatePicker Grid.Row="7" Grid.Column="1" SelectedDate="{Binding SampleTakingTime}" 
-                            Style="{StaticResource StyleDatePickerCommon}"/>
+                <CheckBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleCheckBoxCommon}"
+                          IsChecked="{Binding IsSampleTaking,UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
-                
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMSSampleRemark}"
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMSSampleTakingTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding SampleRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <DatePicker Grid.Row="8" Grid.Column="1" SelectedDate="{Binding SampleTakingTime}" 
+                            Style="{StaticResource StyleDatePickerCommon}"/>
                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-                <Grid Grid.Row="9" Grid.Column="0">
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RMSSampleRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding SampleRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+
+                <Grid Grid.Row="10" Grid.Column="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -128,34 +135,34 @@
                     <Button Name="BtnGDMS2" Grid.Column="1"  Content="导入"
                         Style="{StaticResource StyleButtonStrench}" Click="BtnGDMS2_Click" MinWidth="10"/>
                 </Grid>
-                <TextBox Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2" Name="TxtGDMS"
+                <TextBox Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Name="TxtGDMS"
                          Text="{Binding GDMS}" Style="{StaticResource StyleTextBoxCommon}"/>
 
-                <Button Name="BtnICPOES1" Content="ICPOES" Grid.Row="10" Grid.Column="0"
+                <Button Name="BtnICPOES1" Content="ICPOES" Grid.Row="11" Grid.Column="0"
                         Style="{StaticResource StyleButtonStrench}" Click="BtnICPOES1_Click"/>
-                <TextBox Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2" Name="TxtICPOES"
+                <TextBox Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Name="TxtICPOES"
                          Text="{Binding ICPOES}" Style="{StaticResource StyleTextBoxCommon}"/>
 
-                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RMSState}"
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RMSState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="11" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="12" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="只有[在库]状态会显示给选择窗口"/>
 
 
 
-                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RMSCreateTime}"
+                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RMSCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="13" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建时间"/>
 
-                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RMSCreator}"
+                <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RMSCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="13" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="14" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建者"/>
             </Grid>
         </ScrollViewer>
