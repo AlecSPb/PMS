@@ -40,6 +40,7 @@ namespace PMSClient.ViewModel
             model.QC = "无";
             model.BackingPlateLot = "无";
             model.CScan = "无";
+            model.Parallelism = "F-A=M0.02mm;F-B=M0.02mm";
             return model;
         }
         public static DcRecordMachine NewRecordMachine()

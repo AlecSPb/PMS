@@ -55,9 +55,10 @@ namespace PMSClient.Components.CscanImageProcess
                 }
                 return dir;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                PMSHelper.CurrentLog.Error(ex);
+                return "";
             }
         }
 
@@ -139,6 +140,8 @@ namespace PMSClient.Components.CscanImageProcess
                 catch (Exception ex)
                 {
                     PMSDialogService.ShowWarning(ex.Message);
+                    PMSHelper.CurrentLog.Error(ex);
+
                 }
                 finally
                 {

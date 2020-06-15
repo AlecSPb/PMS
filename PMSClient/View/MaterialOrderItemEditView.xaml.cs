@@ -37,9 +37,9 @@ namespace PMSClient.View
                 PMSMethods.SetTextBox(TxtMaterialPrice, temp.ToString("F2"));
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
 
         }

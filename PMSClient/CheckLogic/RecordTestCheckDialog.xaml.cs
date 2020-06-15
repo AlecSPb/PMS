@@ -230,9 +230,10 @@ namespace PMSClient.CheckLogic
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 sb.AppendLine("检查出错，核对尺寸格式");
+                PMSHelper.CurrentLog.Error(ex);
             }
 
             return sb.ToString();

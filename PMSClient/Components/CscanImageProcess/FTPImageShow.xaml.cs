@@ -32,9 +32,9 @@ namespace PMSClient.Components.CscanImageProcess
             {
                 System.Diagnostics.Process.Start(System.IO.Path.GetDirectoryName(CurrentFile));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
     }

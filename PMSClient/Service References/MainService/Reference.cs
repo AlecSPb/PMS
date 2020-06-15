@@ -5510,6 +5510,9 @@ namespace PMSClient.MainService {
         private string DimensionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionActualField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string HardnessField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5517,6 +5520,9 @@ namespace PMSClient.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LastWeldMaterialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ParallelismField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlateLotField;
@@ -5618,6 +5624,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DimensionActual {
+            get {
+                return this.DimensionActualField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionActualField, value) != true)) {
+                    this.DimensionActualField = value;
+                    this.RaisePropertyChanged("DimensionActual");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Hardness {
             get {
                 return this.HardnessField;
@@ -5652,6 +5671,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.LastWeldMaterialField, value) != true)) {
                     this.LastWeldMaterialField = value;
                     this.RaisePropertyChanged("LastWeldMaterial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parallelism {
+            get {
+                return this.ParallelismField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ParallelismField, value) != true)) {
+                    this.ParallelismField = value;
+                    this.RaisePropertyChanged("Parallelism");
                 }
             }
         }
@@ -6119,6 +6151,9 @@ namespace PMSClient.MainService {
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ParallelismField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProductIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -6388,6 +6423,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.POField, value) != true)) {
                     this.POField = value;
                     this.RaisePropertyChanged("PO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parallelism {
+            get {
+                return this.ParallelismField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ParallelismField, value) != true)) {
+                    this.ParallelismField = value;
+                    this.RaisePropertyChanged("Parallelism");
                 }
             }
         }

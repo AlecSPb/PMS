@@ -63,9 +63,9 @@ namespace PMSClient.Components.NewFeatureDocShow
                     Properties.Settings.Default.Save();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
     }

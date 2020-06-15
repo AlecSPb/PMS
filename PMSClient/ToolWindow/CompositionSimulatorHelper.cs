@@ -54,7 +54,7 @@ namespace PMSClient.ToolWindow
             }
             catch (Exception ex)
             {
-                throw ex;
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 
@@ -118,7 +118,8 @@ namespace PMSClient.ToolWindow
             }
             catch (Exception ex)
             {
-                throw ex;
+                PMSHelper.CurrentLog.Error(ex);
+                return "";
             }
         }
 
@@ -168,7 +169,7 @@ namespace PMSClient.ToolWindow
             catch (Exception ex)
             {
 
-                throw ex;
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
     }

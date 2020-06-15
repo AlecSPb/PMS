@@ -10,5 +10,6 @@ namespace PMSClient.Helper
     {
         void Log(string message);
         void Error(Exception ex);
+        void Error(Exception ex, string position);
     }
 }

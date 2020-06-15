@@ -130,6 +130,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Dilaog\OrderCheckStateWindow.xaml.cs">
+      <DependentUpon>OrderCheckStateWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dilaog\ShipWindow.xaml.cs">
       <DependentUpon>ShipWindow.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,10 @@
     <Compile Include="Dilaog\TextWindow.xaml.cs">
       <DependentUpon>TextWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Dilaog\OrderCheckStateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dilaog\ShipWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

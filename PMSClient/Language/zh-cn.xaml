@@ -569,6 +569,8 @@
     <sys:String x:Key="PlateAppearance">外观</sys:String>
     <sys:String x:Key="PlateDefects">缺陷</sys:String>
     <sys:String x:Key="PlateRemark">备注</sys:String>
+    <sys:String x:Key="PlateDimensionActual">实际尺寸</sys:String>
+    <sys:String x:Key="PlateParallelism">平行度</sys:String>
 
 
 
@@ -688,6 +690,7 @@
     <sys:String x:Key="RTQC">QC</sys:String>
     <sys:String x:Key="RTBP">附带背板</sys:String>
     <sys:String x:Key="RTCSCAN">超声情况</sys:String>
+    <sys:String x:Key="RTParallelism">平行度</sys:String>
     <sys:String x:Key="RTLastUpdateTime">最后更新时间</sys:String>
 
     <!--Delivery-->

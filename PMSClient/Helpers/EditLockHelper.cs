@@ -59,9 +59,9 @@ namespace PMSClient.Helpers
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
             return null;
 
@@ -80,9 +80,9 @@ namespace PMSClient.Helpers
                     s.Lock(locker);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 
@@ -96,9 +96,9 @@ namespace PMSClient.Helpers
                     s.UnLock(fingerprint);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 
@@ -111,9 +111,9 @@ namespace PMSClient.Helpers
                     s.UnLockByLocker(PMSHelper.CurrentSession.CurrentUser.UserName);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
 
         }
@@ -126,9 +126,9 @@ namespace PMSClient.Helpers
                     s.UnLockAll();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
 
         }

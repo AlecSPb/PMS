@@ -1,0 +1,36 @@
+﻿<Window x:Class="PMSEOrder.Dilaog.OrderCheckStateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSEOrder.Dilaog"
+        mc:Ignorable="d"
+        Title="OrderCheckStateWindow" Height="450" Width="1200" WindowStartupLocation="CenterScreen"
+        WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Button Name="BtnUpdateOrderState" Content="Update Order State" Style="{StaticResource StyleButtonCommon}"
+                    Click="BtnUpdateOrderState_Click"/>
+        </StackPanel>
+        <DataGrid Grid.Row="1" Style="{StaticResource StyleDataGridCommon}" Name="dg">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="Exist In PMS" Binding="{Binding ExistInPMS}" 
+                                        ElementStyle="{StaticResource StyleDGCheckBoxCommonReadOnly}"/>
+                <DataGridTextColumn Header="CustomerName" Binding="{Binding CurrentOrder.CustomerName}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockCommon}"/>
+                <DataGridTextColumn Header="PO" Binding="{Binding CurrentOrder.PO}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockCommon}"/>
+                <DataGridTextColumn Header="Composition" Binding="{Binding CurrentOrder.Composition}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockCommon}"/>
+                <DataGridTextColumn Header="CreateTime" Binding="{Binding CurrentOrder.CreateTime}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockCommon}"/>
+                <DataGridTextColumn Header="GUIIDID" Binding="{Binding CurrentOrder.GUIDID}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockCommon}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

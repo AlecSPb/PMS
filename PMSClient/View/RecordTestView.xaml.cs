@@ -93,9 +93,9 @@ namespace PMSClient.View
                     dialog.ShowDialog();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
     }

@@ -52,9 +52,9 @@ namespace PMSClient.Helper
                     sw.Close();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-               
+                PMSHelper.CurrentLog.Error(ex);
             }
 
         }
@@ -86,11 +86,43 @@ namespace PMSClient.Helper
                     sw.Close();
                 }
             }
-            catch (Exception)
+            catch (Exception exx)
             {
-
+                PMSHelper.CurrentLog.Error(exx);
             }
         }
 
+        public void Error(Exception ex, string position)
+        {
+            try
+            {
+                var date = DateTime.Now;
+                var user = "none";
+                if (_currentSession.CurrentUser != null)
+                {
+                    user = _currentSession.CurrentUser.UserName;
+                }
+
+                if (!File.Exists(_errorfile))
+                {
+                    File.Create(_errorfile);
+                }
+
+                var error = "未知错误发生";
+                if (ex != null)
+                {
+                    error = ex.Message;
+                }
+                using (var sw = new StreamWriter(_errorfile, true))
+                {
+                    sw.WriteLine($"[{user}]+[{position}]+[{date.ToString()}]+{error}");
+                    sw.Close();
+                }
+            }
+            catch (Exception exx)
+            {
+                PMSHelper.CurrentLog.Error(exx);
+            }
+        }
     }
 }

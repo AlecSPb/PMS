@@ -900,6 +900,9 @@ namespace PMSClient.OutputService {
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ParallelismField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProductIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1169,6 +1172,19 @@ namespace PMSClient.OutputService {
                 if ((object.ReferenceEquals(this.POField, value) != true)) {
                     this.POField = value;
                     this.RaisePropertyChanged("PO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parallelism {
+            get {
+                return this.ParallelismField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ParallelismField, value) != true)) {
+                    this.ParallelismField = value;
+                    this.RaisePropertyChanged("Parallelism");
                 }
             }
         }

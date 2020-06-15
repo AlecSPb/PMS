@@ -24,5 +24,8 @@ namespace PMSDAL
         public string Appearance { get; set; }
         public string Defects { get; set; }
         public string Remark { get; set; }
+        public string Parallelism { get; set; }
+        public string DimensionActual { get; set; }
+
     }
 }

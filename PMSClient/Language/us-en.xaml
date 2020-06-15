@@ -558,7 +558,8 @@
     <sys:String x:Key="PlateAppearance">Appearance</sys:String>
     <sys:String x:Key="PlateDefects">Defects</sys:String>
     <sys:String x:Key="PlateRemark">Remark</sys:String>
-
+    <sys:String x:Key="PlateDimensionActual">Dimension Actual</sys:String>
+    <sys:String x:Key="PlateParallelism">Parallelism</sys:String>
 
 
     <!--RecordMilling-->
@@ -678,8 +679,9 @@
     <sys:String x:Key="RTBP">BP</sys:String>
     <sys:String x:Key="RTQC">QC</sys:String>
     <sys:String x:Key="RTCSCAN">CSCAN</sys:String>
+    <sys:String x:Key="RTParallelism">Parallelism</sys:String>
     <sys:String x:Key="RTLastUpdateTime">LastUpdateTime</sys:String>
-
+    
     <!--Delivery-->
     <sys:String x:Key="RDCreator">Creator</sys:String>
     <sys:String x:Key="RDCreateTime">Create Time</sys:String>

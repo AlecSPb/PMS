@@ -39,9 +39,9 @@ namespace PMSClient.View
 
                 XSHelper.XS.MessageBox.ShowInfo($"筛号从大到小排序为 [{s}]");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
     }

@@ -109,9 +109,9 @@ namespace PMSClient.ViewModel
                     CurrentMaterialOrder.Remark = sb.ToString();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 

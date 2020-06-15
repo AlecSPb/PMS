@@ -38,10 +38,11 @@ namespace PMSClient.Components.DeliveryItemSampleCheck
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                PMSHelper.CurrentLog.Error(ex);
+
             }
         }
     }

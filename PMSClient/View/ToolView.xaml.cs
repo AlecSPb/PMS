@@ -38,9 +38,9 @@ namespace PMSClient.View
                 CompositionToOne window = new CompositionToOne();
                 window.Show();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 
@@ -51,9 +51,9 @@ namespace PMSClient.View
                 PressureChangeTool window = new PressureChangeTool();
                 window.Show();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 

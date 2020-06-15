@@ -214,5 +214,10 @@ namespace PMSClient.View
         {
             PMSMethods.SetTextBoxAppend(txtRemark, $"{DateTime.Now.ToString("yyMMdd")}[]拿走报废靶材;");
         }
+
+        private void BtnParallelism_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(TxtParallelism, "F-A=M0.0mm;F-B=M0.0mm");
+        }
     }
 }

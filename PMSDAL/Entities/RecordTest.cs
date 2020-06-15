@@ -45,6 +45,8 @@ namespace PMSDAL
         [DefaultValue("无")]
         public string CScan { get; set; }
 
+        public string Parallelism { get; set; }
+
         public DateTime LastUpdateTime { get; set; }
     }
 }

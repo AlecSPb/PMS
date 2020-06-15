@@ -112,8 +112,9 @@ namespace PMSClient.DataProcess.QuickCheck
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                PMSHelper.CurrentLog.Error(ex);
 
             }
         }

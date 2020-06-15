@@ -25,6 +25,9 @@ namespace PMSDAL
         public string Appearance { get; set; }
         public string Defects { get; set; }
         public string Remark { get; set; }
+
+        public string Parallelism { get; set; }
+        public string DimensionActual { get; set; }
         //操作者和操作时间
         [Key]
         public Guid HistoryID { get; set; }

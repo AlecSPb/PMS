@@ -56,6 +56,8 @@ namespace PMSClient.ViewModel
             model.PrintNumber = "无";
             model.PlateMaterial = PMSCommon.PlateMaterial.Cu.ToString();
             model.Dimension = PMSCommon.CustomData.PlateDimension[0];
+            model.Parallelism = "F-A=M0.02mm;F-B=M0.02mm";
+            model.DimensionActual = model.Dimension;
             model.Supplier = PMSCommon.CustomData.PlateSupplier[0];
             model.UseCount = "0";
             model.Hardness = "未知";

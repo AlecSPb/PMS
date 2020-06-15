@@ -203,6 +203,8 @@
                                             Binding="{Binding RecordTest.Roughness}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource RTWarping}"
                                             Binding="{Binding RecordTest.Warping}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource RTParallelism}"
+                                            Binding="{Binding RecordTest.Parallelism}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource RTQC}"
                                             Binding="{Binding RecordTest.QC}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource RTBP}"
@@ -261,7 +263,7 @@
                                 BorderBrush="LightBlue" BorderThickness="2" Margin="2">
                             <Image Source="{Binding RecordTest.ProductID,Converter={StaticResource IDToBarCode}}" Name="ImageBarCode" MouseDown="ImageBarCode_MouseDown"/>
                         </Border>
-                        
+
                         <Button Content="{StaticResource ButtonMisson}" Grid.Column="1" Grid.Row="0"
                                     Style="{StaticResource StyleButtonStrench}" HorizontalAlignment="Stretch"
                                     Command="{Binding DataContext.ShowOrderInformation,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
@@ -325,6 +327,7 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
+                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
@@ -397,29 +400,33 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                             <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding RecordTest.Warping}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RTQC}"
+                            <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RTParallelism}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding RecordTest.QC}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding RecordTest.Parallelism}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTBP}"
+                            <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTQC}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding RecordTest.BackingPlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding RecordTest.QC}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RTRemark}"
+                            <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RTBP}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding RecordTest.Remark}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding RecordTest.BackingPlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RTCreator}"
+                            <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding RecordTest.Creator}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding RecordTest.Remark}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RTCreateTime}"
+                            <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RTCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding RecordTest.CreateTime}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding RecordTest.Creator}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RTLastUpdateTime}"
+                            <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RTCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding RecordTest.LastUpdateTime}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding RecordTest.CreateTime}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+
+                            <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource RTLastUpdateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding RecordTest.LastUpdateTime}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
                         </Grid>
                     </ScrollViewer>

@@ -25,6 +25,10 @@ namespace PMSClient.Helper
             CurrentUserRole = null;
             CurrentAccesses = new List<DcUserAccess>();
             AccessGrants = new List<DcAccessGrant>();
+            //下载最新权限表到本地-只在启动的时候下载一次
+            DownloadAccessSheet();
+            ReadAccessSheetFromLocal();
+
         }
         /// <summary>
         /// 注销
@@ -59,8 +63,7 @@ namespace PMSClient.Helper
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                PMSHelper.CurrentLog.Error(ex, "LogInformation");
             }
         }
 
@@ -122,7 +125,7 @@ namespace PMSClient.Helper
             }
             catch (Exception ex)
             {
-                PMSHelper.CurrentLog.Error(ex);
+                PMSHelper.CurrentLog.Error(ex, "LogInformation");
                 return null;
             }
         }
@@ -162,8 +165,9 @@ namespace PMSClient.Helper
                     return groups;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                PMSHelper.CurrentLog.Error(ex, "LogInformation");
                 return null;
             }
 
@@ -177,13 +181,14 @@ namespace PMSClient.Helper
         {
             try
             {
-                var groupstring = AccessGrants.Where(i => i.ControlName == controlName).Select(i=>i.RoleGroupString).FirstOrDefault();
+                var groupstring = AccessGrants.Where(i => i.ControlName == controlName).Select(i => i.RoleGroupString).FirstOrDefault();
                 string[] groups = groupstring.Split(new string[] { "+" }, StringSplitOptions.RemoveEmptyEntries);
                 return groups;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                PMSHelper.CurrentLog.Error(ex, "LogInformation");
                 return null;
             }
 
@@ -211,7 +216,7 @@ namespace PMSClient.Helper
             }
             catch (Exception ex)
             {
-                PMSHelper.CurrentLog.Error(ex);
+                PMSHelper.CurrentLog.Error(ex, "LogInformation");
             }
         }
 
@@ -236,7 +241,7 @@ namespace PMSClient.Helper
             }
             catch (Exception ex)
             {
-                PMSHelper.CurrentLog.Error(ex);
+                PMSHelper.CurrentLog.Error(ex, "LogInformation");
             }
         }
 

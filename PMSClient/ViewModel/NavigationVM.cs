@@ -439,9 +439,9 @@ namespace PMSClient.ViewModel
                     PlanedCount = service.GetPlanCount();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
         #region 属性

@@ -59,11 +59,12 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="0*"/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RTTestType}"
@@ -242,12 +243,24 @@
                            Text=""/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RTQC}"
+                <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RTParallelism}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtQC" Grid.Row="20" Grid.Column="1" Text="{Binding QC}" 
+                <TextBox Name="TxtParallelism" Grid.Row="20" Grid.Column="1" Text="{Binding Parallelism}" 
                          Style="{StaticResource StyleTextBoxBig}"/>
 
                 <StackPanel Grid.Row="20" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnParallelism" Content="标准格式" Style="{StaticResource StyleButtonCommon}"
+                            Click="BtnParallelism_Click"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="单位mm，数字前加M=表示凸，F=表示凹"/>
+                </StackPanel>
+
+                <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RTQC}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="TxtQC" Grid.Row="21" Grid.Column="1" Text="{Binding QC}" 
+                         Style="{StaticResource StyleTextBoxBig}"/>
+
+                <StackPanel Grid.Row="21" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnQC" Content="标准格式" Style="{StaticResource StyleButtonCommon}"
                             Click="BtnQC_Click"/>
 
@@ -255,31 +268,31 @@
                            Text="高度计测量数据及其他：厚度1 厚度2 厚度3 厚度4 中心厚度"/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RTBP}"
+                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource RTBP}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtBP" Grid.Row="21" Grid.Column="1" Text="{Binding BackingPlateLot}" 
+                <TextBox Name="TxtBP" Grid.Row="22" Grid.Column="1" Text="{Binding BackingPlateLot}" 
                          Style="{StaticResource StyleTextBoxBig}"/>
-                <StackPanel Grid.Row="21" Grid.Column="2" Orientation="Horizontal">
+                <StackPanel Grid.Row="22" Grid.Column="2" Orientation="Horizontal">
                     <Button Content="辅助填写" Name="btnAddBP" Style="{StaticResource StyleButtonCommon}" Click="btnAddBP_Click"/>
                     <TextBlock Grid.Row="21" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="如附带有背板，请在此处填写对应背板Lot号，如果没有填无"/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource RTCSCAN}"
+                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource RTCSCAN}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtCSCAN" Grid.Row="22" Grid.Column="1" Text="{Binding CScan}" 
+                <TextBox Name="TxtCSCAN" Grid.Row="23" Grid.Column="1" Text="{Binding CScan}" 
                          Style="{StaticResource StyleTextBoxBig}"/>
-                <StackPanel Grid.Row="22" Grid.Column="2" Orientation="Horizontal">
+                <StackPanel Grid.Row="23" Grid.Column="2" Orientation="Horizontal">
                     <Button Content="辅助填写" Name="btnAddCSCAN" Style="{StaticResource StyleButtonCommon}" Click="btnAddCSCAN_Click"/>
                     <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="如超声有缺陷，填写缺陷，如果没有填无"/>
                 </StackPanel>
 
 
-                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource RTRemark}"
+                <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="txtRemark" Grid.Row="23" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
-                <StackPanel Grid.Row="23" Grid.Column="2" Orientation="Horizontal">
+                <TextBox Name="txtRemark" Grid.Row="24" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
+                <StackPanel Grid.Row="24" Grid.Column="2" Orientation="Horizontal">
                     <Button Content="附有背板" Name="BtnAddPlate" Style="{StaticResource StyleButtonCommon}" Click="BtnAddPlate_Click"/>
                     <Button Content="回收重做" Name="BtnRecycle" Style="{StaticResource StyleButtonCommon}" Click="BtnRecycle_Click"/>
                     <Button Content="报废拿走" Name="BtnTakeAway" Style="{StaticResource StyleButtonCommon}" Click="BtnTakeAway_Click"/>
@@ -291,22 +304,22 @@
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"   Text=""/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource RTState}"  Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="24" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"  FontSize="{StaticResource TabletFontLG}"
+                <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource RTState}"  Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="25" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"  FontSize="{StaticResource TabletFontLG}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="24" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"    Text="状态"/>
+                <TextBlock Grid.Row="25" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"    Text="状态"/>
 
-                <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource RTCreator}"
+                <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource RTCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="25" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"   />
-                <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource RTCreateTime}"
+                <TextBlock Grid.Row="26" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"   />
+                <TextBlock Grid.Row="27" Grid.Column="0" Text="{StaticResource RTCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="26" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
+                <TextBlock Grid.Row="27" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
 
-                <TextBlock Grid.Row="27" Grid.Column="0" Text="{StaticResource RTLastUpdateTime}"
+                <TextBlock Grid.Row="28" Grid.Column="0" Text="{StaticResource RTLastUpdateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="27" Grid.Column="1" Text="{Binding LastUpdateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
+                <TextBlock Grid.Row="28" Grid.Column="1" Text="{Binding LastUpdateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
             </Grid>
         </ScrollViewer>
     </Grid>

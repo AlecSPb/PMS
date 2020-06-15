@@ -23,9 +23,9 @@ namespace PMSClient.Simulator
                 OutputModel output = GetOutputModel(input);
                 s = GetCsvResult(output);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
             return s;
         }
@@ -77,7 +77,7 @@ namespace PMSClient.Simulator
             }
             catch (Exception ex)
             {
-                throw ex;
+                                PMSHelper.CurrentLog.Error(ex);
             }
             return input;
         }

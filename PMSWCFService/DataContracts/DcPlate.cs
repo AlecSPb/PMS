@@ -42,5 +42,11 @@ namespace PMSWCFService.DataContracts
         public string Defects { get; set; }
         [DataMember]
         public string Remark { get; set; }
+
+        [DataMember]
+        public string DimensionActual { get; set; }
+
+        [DataMember]
+        public string Parallelism { get; set; }
     }
 }

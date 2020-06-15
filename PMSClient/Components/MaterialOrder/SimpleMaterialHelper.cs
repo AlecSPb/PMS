@@ -37,9 +37,9 @@ namespace PMSClient.Components.MaterialOrder
 
                 s = SimpleMaterialToStr(simpleMaterials);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
             return s;
         }
@@ -65,9 +65,9 @@ namespace PMSClient.Components.MaterialOrder
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
             return unit_price;
         }
@@ -104,9 +104,9 @@ namespace PMSClient.Components.MaterialOrder
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
 
             return simpleMaterials;

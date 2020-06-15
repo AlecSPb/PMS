@@ -158,8 +158,9 @@ namespace PMSClient.ToolWindow
 
                 txtCondition.Text = sb.ToString();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                PMSHelper.CurrentLog.Error(ex);
                 PMSDialogService.ShowWarning("读取错误，请手动按照格式输入");
             }
         }

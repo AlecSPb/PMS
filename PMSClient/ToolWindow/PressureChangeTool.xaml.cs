@@ -47,9 +47,9 @@ namespace PMSClient.ToolWindow
                 pressure1.Text = p1.ToString("F3");
                 pressure2.Text = p2.ToString("F3");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                //throw;
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 

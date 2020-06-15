@@ -24,9 +24,10 @@ namespace PMSClient.Components.PMSSettingHelper
 					return s.GetValueByKey(key);
 				}
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-                return "";
+				PMSHelper.CurrentLog.Error(ex);
+				return "";
 			}
         }
 		/// <summary>
@@ -48,8 +49,9 @@ namespace PMSClient.Components.PMSSettingHelper
 					return "";
 				}
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
+				PMSHelper.CurrentLog.Error(ex);
 				return "";
 			}
 		}

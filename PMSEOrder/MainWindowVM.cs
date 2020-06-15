@@ -14,6 +14,8 @@ using PMSEOrder.Service;
 using System.IO;
 using PMSEOrder.Service.Excel;
 using PMSEOrder.PMS;
+using PMSEOrder.Dilaog;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSEOrder
 {
@@ -49,6 +51,7 @@ namespace PMSEOrder
             CheckOnline = new RelayCommand(ActionCheckOnline);
 
             Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
+
         }
 
         private void ActionCheckOnline()
@@ -60,36 +63,37 @@ namespace PMSEOrder
                 {
                     using (var s = new EOrderServiceClient())
                     {
-
-                        var filterOrder = Orders.Where(i => i.OrderState == OrderState.UnSend.ToString());
+                        IEnumerable<Order> filterOrder = new List<Order>();
+                        if (XS.MessageBox.ShowYesNo("Check UnSend Orders or Check All Orders?\r\n Yes=UnSend,No=All"))
+                        {
+                            filterOrder = Orders.Where(i => i.OrderState == OrderState.UnSend.ToString());
+                        }
+                        else
+                        {
+                            filterOrder = Orders;
+                        }
 
                         List<OrderCheckState> orderCheckStates = new List<OrderCheckState>();
                         foreach (var item in filterOrder)
                         {
                             var checkResult = new OrderCheckState();
-                            checkResult.GUIDID = item.GUIDID;
-                            checkResult.CustomerName = item.CustomerName;
-                            checkResult.Composition = item.Composition;
-                            checkResult.PO = item.PO;
-                            checkResult.CreateTime = item.CreateTime;
-                            checkResult.CheckState = s.CheckEOrderGuid(item.GUIDID.ToString());
+                            checkResult.CurrentOrder = item;
+                            checkResult.ExistInPMS = s.CheckEOrderGuid(item.GUIDID.ToString());
                             orderCheckStates.Add(checkResult);
                         }
                         //这里显示一个窗口
+                        var win = new OrderCheckStateWindow();
+                        win.SetDataSource(orderCheckStates);
+                        win.ShowDialog();
 
 
-                        if(XS.MessageBox.ShowYesNo("Set the order whose check value as True to [Sent]?"))
-                        {
-                            foreach (var item in orderCheckStates)
-                            {
-                                System.Diagnostics.Debug.WriteLine($"{item.GUIDID}-{item.CustomerName}-{item.CheckState}");
-                            }
-                        }
+
+
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    XS.MessageBox.ShowError(ex.Message);
                 }
             }
 

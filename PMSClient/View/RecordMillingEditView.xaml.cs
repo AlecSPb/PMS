@@ -41,9 +41,9 @@ namespace PMSClient.View
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 

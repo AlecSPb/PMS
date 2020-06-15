@@ -50,8 +50,9 @@ namespace PMSClient.View
                 PMSMethods.SetTextBox(txtSingleWeight, singleWeight.ToString("F3"));
                 PMSMethods.SetTextBox(txtAllWeight, (singleWeight * quantity).ToString("F3"));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 

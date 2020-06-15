@@ -47,9 +47,10 @@ namespace PMSClient.Components.GDMSHelper
                 var service = new GDMSAnlysis();
                 TxtOutput.Text = service.Run(TxtInput.Text.Trim());
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 PMSDialogService.ShowWarning("处理出错，格式有问题,请修改后再试");
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 
@@ -70,9 +71,9 @@ namespace PMSClient.Components.GDMSHelper
                     TxtInput.Text = txt;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 
@@ -83,9 +84,9 @@ namespace PMSClient.Components.GDMSHelper
 
                 File.WriteAllText(filePath, TxtInput.Text.Trim());
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
     }

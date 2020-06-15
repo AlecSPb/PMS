@@ -40,9 +40,9 @@ namespace PMSClient.ViewModel
             {
                 System.Diagnostics.Process.Start("Documents\\储备库整理操作说明.docx");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 

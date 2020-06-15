@@ -101,7 +101,8 @@ namespace PMSClient.ViewModel
 
                         model.Remark = obj.ItemDetails;
                         model.Dimension = obj.ItemSpecification;
-
+                        model.DimensionActual = obj.ItemSpecification;
+                        model.Parallelism = "F-A=M0.02mm;F-B=M0.02mm";
                         #endregion
                         double number = dialog.Counter;
                         string prefix = model.PlateLot.Substring(0, 10);

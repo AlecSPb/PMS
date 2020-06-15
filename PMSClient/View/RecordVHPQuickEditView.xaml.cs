@@ -46,8 +46,9 @@ namespace PMSClient.View
                     txtCurrentTime.Text = $"现在时间:{DateTime.Now.ToString("yyyy-MM-dd dddd HH:mm:ss")}";
                 });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 

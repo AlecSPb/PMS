@@ -45,9 +45,9 @@ namespace PMSClient.ToolWindow
                     s.UpdateSettings("sf_sender_phone", TxtSenderPhone.Text.Trim());
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
             this.Close();
         }

@@ -55,15 +55,18 @@ namespace PMSClient.ReportsHelperNew
                 doc.ReplaceText("[PO]", model.PO ?? "");
 
                 string purity = "99.995%默认";
+                string specDetail = "None";
                 using (var orderService = new OrderServiceClient())
                 {
                     var order = orderService.GetOrderByPMINumber(model.PMINumber);
                     if (order != null)
                     {
                         purity = order.Purity;
+                        specDetail = order.DimensionDetails;
                     }
                 }
                 doc.ReplaceText("[Purity]", purity);
+                doc.ReplaceText("[SpecDetail]", specDetail);
 
                 doc.ReplaceText("[COADate]", DateTime.Now.ToString("MM/dd/yyyy"));
                 doc.ReplaceText("[Composition]", model.Composition ?? "");
@@ -78,6 +81,51 @@ namespace PMSClient.ReportsHelperNew
                 //粗糙度值
                 doc.ReplaceText("[Roughness]", model.Roughness ?? "");
 
+                doc.ReplaceText("[TargetParallelism]", model.Parallelism ?? "");
+
+                //如果是是230mm的靶材，查找背板编号填入,从绑定记录中查询
+                string platelot = "None", platespec = "None", plateDimensionActual = "None", plateParallelism = "None";
+                if (model.Dimension.Contains("230"))
+                {
+                    using (var service = new RecordBondingServiceClient())
+                    {
+                        var record = service.GetRecordBondingByProductID(model.ProductID.Trim()).FirstOrDefault();
+                        if (record != null)
+                        {
+                            string plateid = record.PlateLot;
+                            platelot = plateid;
+                        }
+                        else
+                        {
+                            platelot = "No Bonding";
+                        }
+                    }
+                }
+                else
+                {
+                    //查询附带背板信息
+                    if (!string.IsNullOrEmpty(model.BackingPlateLot) || model.BackingPlateLot != "无")
+                    {
+                        using (var plateServer = new PlateServiceClient())
+                        {
+                            var plateInfo = plateServer.GetPlateByPlateID(model.BackingPlateLot).FirstOrDefault();
+
+                            if (plateInfo != null)
+                            {
+                                platespec = plateInfo.Dimension;
+                                platelot = plateInfo.PlateLot;
+                                plateDimensionActual = plateInfo.DimensionActual;
+                                plateParallelism = plateInfo.Parallelism;
+                            }
+                        }
+                    }
+                }
+                doc.ReplaceText("[PlateSpec]", platespec);
+                doc.ReplaceText("[PlateLot]", platelot);
+                doc.ReplaceText("[PlateActual]", plateDimensionActual);
+                doc.ReplaceText("[PlateParallelism]", plateParallelism);
+
+
                 //写入CSCAN Flaw Data
                 string flawarea = "";
                 if (model.CScan == null || model.CScan == "" || model.CScan.Contains("无"))
@@ -91,10 +139,7 @@ namespace PMSClient.ReportsHelperNew
                 doc.ReplaceText("[FlawArea]", flawarea);
 
 
-
-
-
-                int currentRowIndex = 16;
+                int currentRowIndex = 17;
 
                 #region 填充表格
                 //填充XRF表格
@@ -109,7 +154,7 @@ namespace PMSClient.ReportsHelperNew
                         int cell_index = 0;
                         foreach (var item in GetCompositionNameAndValues(model.Composition))
                         {
-                            specRow.Cells[cell_index].Paragraphs[0].Append($"{item.Name}={item.Value}Atm%")
+                            specRow.Cells[cell_index].Paragraphs[0].Append($"{item.Name}={item.Value}")
                                 .Font(new System.Drawing.FontFamily("等线"))
                                 .FontSize(8);
                             cell_index++;
@@ -149,7 +194,7 @@ namespace PMSClient.ReportsHelperNew
                     {
                         Novacode.Image img = doc.AddImage(result.ImagePath);
                         var pic = img.CreatePicture();
-                        int fix_size = 140;
+                        int fix_size = 250;
                         pic.Width = fix_size;
                         pic.Height = fix_size;
                         image_p.AppendPicture(pic);

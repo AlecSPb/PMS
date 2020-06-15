@@ -33,9 +33,9 @@ namespace PMSClient.ViewModel.VMHelper
                         counter = s.GetSampleByPMINumberCount(obj.PMINumber);
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    PMSHelper.CurrentLog.Error(ex);
                 }
                 if (counter > 0)
                 {
@@ -113,9 +113,9 @@ namespace PMSClient.ViewModel.VMHelper
                     }
                     PMSDialogService.Show("已成功添加样品到样品管理");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    PMSHelper.CurrentLog.Error(ex);
                 }
             }
         }

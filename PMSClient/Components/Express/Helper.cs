@@ -56,10 +56,10 @@ namespace PMSClient.Express
                 }
                 return result.ToLower();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                PMSHelper.CurrentLog.Error(ex);
+                return "";
             }
         }
     }

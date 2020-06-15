@@ -65,9 +65,9 @@ namespace PMSClient
                 var versonName = Properties.Settings.Default.Version;
                 Title = $"{titleName}-{versonName}";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex, "Main Window_Loaded");
             }
             #endregion
 
@@ -100,8 +100,8 @@ namespace PMSClient
             //加载底部工具栏
             BottomToolBar.Content = new Navbar();
 
-            //下载最新权限表到本地-只在启动的时候下载一次
-            PMSHelper.CurrentSession.DownloadAccessSheet();
+            ////下载最新权限表到本地-只在启动的时候下载一次
+            //PMSHelper.CurrentSession.DownloadAccessSheet();
 
             //加载配置
             PMSClient.Components.PMSSettingHelper.PMSSettingService.CacheSettings();
@@ -153,7 +153,7 @@ namespace PMSClient
                 {
                     TxtRemoteHeartBeat.Text = "外网心跳检测出错";
                 });
-                PMSHelper.CurrentLog.Error(ex);
+                PMSHelper.CurrentLog.Error(ex, "Heart BeatWWW");
                 return false;
             }
 
@@ -195,7 +195,7 @@ namespace PMSClient
                     txtHeartBeat.Text = "内网心跳检测出错";
                     TxtInformationLog.Text = "Error";
                 });
-                PMSHelper.CurrentLog.Error(ex);
+                PMSHelper.CurrentLog.Error(ex, "Heart BeatLAN");
                 return false;
             }
         }
@@ -710,9 +710,9 @@ namespace PMSClient
                 string errorPath = System.IO.Path.Combine(Environment.CurrentDirectory, "Error");
                 System.Diagnostics.Process.Start(errorPath);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex, "BtnMainLog_Click");
             }
         }
 

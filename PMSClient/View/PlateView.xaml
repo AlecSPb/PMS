@@ -78,6 +78,10 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource PlateDimensionActual}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding DimensionActual}"/>
+                <DataGridTextColumn Header="{StaticResource PlateParallelism}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Parallelism}"/>
                 <DataGridTemplateColumn Header="{StaticResource PlateSupplier}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

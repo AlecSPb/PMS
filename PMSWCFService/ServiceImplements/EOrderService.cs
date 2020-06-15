@@ -11,6 +11,7 @@ namespace PMSWCFService
     {
         public bool CheckEOrderGuid(string guidid)
         {
+            XS.RunLog();
             try
             {
                 using (var db = new PMSDbContext())

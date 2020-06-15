@@ -42,9 +42,9 @@ namespace PMSClient.ToolWindow
                     txtText.Text = txt;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 
@@ -56,9 +56,9 @@ namespace PMSClient.ToolWindow
                 File.WriteAllText(filePath, txtText.Text.Trim());
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 

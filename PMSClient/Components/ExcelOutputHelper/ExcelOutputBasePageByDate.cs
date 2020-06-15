@@ -114,7 +114,7 @@ namespace PMSClient.ExcelOutputHelper
             }
             catch (Exception ex)
             {
-                throw ex;
+                                PMSHelper.CurrentLog.Error(ex);
             }
         }
 

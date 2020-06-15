@@ -50,9 +50,10 @@ namespace PMSClient.ToolWindow
                 total_price = unit_price * weight;
                 TxtTotalPrice.Text = total_price.ToString("F2");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 PMSDialogService.ShowWarning("填写的不是数字吧");
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 

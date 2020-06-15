@@ -29,9 +29,9 @@ namespace PMSClient.ViewModel.VMHelper
                         }
                         PMSDialogService.Show("转单成功");
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-
+                        PMSHelper.CurrentLog.Error(ex);
                     }
                 }
             }

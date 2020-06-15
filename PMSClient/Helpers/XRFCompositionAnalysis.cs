@@ -88,7 +88,7 @@ namespace PMSClient.Helpers
             catch (Exception ex)
             {
 
-                throw ex;
+             PMSHelper.CurrentLog.Error(ex);
             }
 
             return result;

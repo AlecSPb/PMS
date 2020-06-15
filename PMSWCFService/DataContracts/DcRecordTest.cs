@@ -68,5 +68,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public DateTime LastUpdateTime { get; set; }
 
+        [DataMember]
+        public string Parallelism { get; set; }
+
     }
 }

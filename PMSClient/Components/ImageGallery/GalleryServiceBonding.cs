@@ -140,9 +140,9 @@ namespace PMSClient.Components.ImageGallery
                 System.Diagnostics.Process.Start(filepath);
                 OnUpdateButtonEnable();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
             #endregion
         }

@@ -173,9 +173,9 @@ namespace PMSClient.ViewModel
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    PMSHelper.CurrentLog.Error(ex);
                 }
 
                 //编辑锁定检查，如果有锁定提示，没有锁定继续
@@ -192,9 +192,9 @@ namespace PMSClient.ViewModel
                     }
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    PMSHelper.CurrentLog.Error(ex);
                 }
 
 
@@ -655,9 +655,9 @@ namespace PMSClient.ViewModel
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
 
 
@@ -680,9 +680,9 @@ namespace PMSClient.ViewModel
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
 
             PMSHelper.ViewModels.RecordTestEdit.SetEdit(model.RecordTest);

@@ -137,9 +137,10 @@ namespace PMSClient.ViewModel
                 ActionSelectionChanged(CurrentSelectItem);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 PMSDialogService.Show("保存失败");
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 
@@ -407,7 +408,7 @@ namespace PMSClient.ViewModel
             //}
             //catch (Exception ex)
             //{
-            //    throw ex;
+            //                    PMSHelper.CurrentLog.Error(ex);
             //}
             //finally
             //{
@@ -505,9 +506,9 @@ namespace PMSClient.ViewModel
                                 }
                             }
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
-
+                            PMSHelper.CurrentLog.Error(ex);
                         }
 
                     }
@@ -535,9 +536,9 @@ namespace PMSClient.ViewModel
                             }
 
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
-
+                            PMSHelper.CurrentLog.Error(ex);
                         }
                     }
 
@@ -601,10 +602,9 @@ namespace PMSClient.ViewModel
                     NavigationService.GoTo(PMSViews.DeliveryEdit);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                PMSHelper.CurrentLog.Error(ex);
             }
 
         }
