@@ -34,51 +34,51 @@ namespace PMSClient.ViewModel
                 string jsonFile = result.SelectPath;
                 string jsonStr = XS.File.ReadText(jsonFile);
                 var order = JsonConvert.DeserializeObject<Order>(jsonStr);
-                #region 赋值
-                CurrentOrder.ID = order.GUIDID;
-                CurrentOrder.CreateTime = order.CreateTime;
-                CurrentOrder.CustomerName = order.CustomerName;
-                CurrentOrder.CompositionOriginal = order.Composition.Replace("-", "").Replace(" ", "");
-                CurrentOrder.PO = order.PO;
-                CurrentOrder.PMINumber = $"CD{order.PODate.ToString("yyMMdd")}-A";
-
-                if (order.ProductType.Contains("Target"))
+                if (XSHelper.XS.MessageBox.ShowYesNo("Y=导入并显示 N=仅显示"))
                 {
-                    CurrentOrder.ProductType = PMSCommon.ProductType.靶材.ToString();
+                    #region 赋值
+                    CurrentOrder.ID = order.GUIDID;
+                    CurrentOrder.CreateTime = order.CreateTime;
+                    CurrentOrder.CustomerName = order.CustomerName;
+                    CurrentOrder.CompositionOriginal = order.Composition.Replace("-", "").Replace(" ", "");
+                    CurrentOrder.PO = order.PO;
+                    CurrentOrder.PMINumber = $"CD{order.PODate.ToString("yyMMdd")}-A";
+
+                    if (order.ProductType.Contains("Target"))
+                    {
+                        CurrentOrder.ProductType = PMSCommon.ProductType.靶材.ToString();
+                    }
+                    else
+                    {
+                        CurrentOrder.QuantityUnit = order.QuantityUnit;
+                    }
+
+                    CurrentOrder.Purity = order.Purity;
+                    CurrentOrder.Quantity = order.Quantity;
+                    if (order.QuantityUnit.Contains("pcs"))
+                    {
+                        CurrentOrder.QuantityUnit = PMSCommon.OrderUnit.片.ToString();
+                    }
+                    else
+                    {
+                        CurrentOrder.QuantityUnit = order.QuantityUnit;
+                    }
+
+                    CurrentOrder.Dimension = order.Dimension;
+                    CurrentOrder.DimensionDetails = order.DimensionDetails;
+                    CurrentOrder.Drawing = order.Drawing;
+                    CurrentOrder.SampleNeed = order.SampleNeed;
+                    CurrentOrder.SampleNeedRemark = order.SampleNeedRemark;
+                    CurrentOrder.SampleForAnlysis = order.SampleForAnlysis;
+                    CurrentOrder.SampleForAnlysisRemark = order.SampleForAnlysisRemark;
+                    CurrentOrder.DeadLine = order.DeadLine;
+                    CurrentOrder.ShipTo = order.ShipTo;
+                    CurrentOrder.WithBackingPlate = order.WithBackingPlate;
+                    CurrentOrder.PlateDrawing = order.PlateDrawing;
+                    CurrentOrder.SpecialRequirement = order.SpecialRequirement;
+                    CurrentOrder.PartNumber = order.PartNumber;
+                    #endregion
                 }
-                else
-                {
-                    CurrentOrder.QuantityUnit = order.QuantityUnit;
-                }
-
-                CurrentOrder.Purity = order.Purity;
-                CurrentOrder.Quantity = order.Quantity;
-                if (order.QuantityUnit.Contains("pcs"))
-                {
-                    CurrentOrder.QuantityUnit = PMSCommon.OrderUnit.片.ToString();
-                }
-                else
-                {
-                    CurrentOrder.QuantityUnit = order.QuantityUnit;
-                }
-
-
-                #endregion
-
-                CurrentOrder.Dimension = order.Dimension;
-                CurrentOrder.DimensionDetails = order.DimensionDetails;
-                CurrentOrder.Drawing = order.Drawing;
-                CurrentOrder.SampleNeed = order.SampleNeed;
-                CurrentOrder.SampleNeedRemark = order.SampleNeedRemark;
-                CurrentOrder.SampleForAnlysis = order.SampleForAnlysis;
-                CurrentOrder.SampleForAnlysisRemark = order.SampleForAnlysisRemark;
-                CurrentOrder.DeadLine = order.DeadLine;
-                CurrentOrder.ShipTo = order.ShipTo;
-                CurrentOrder.WithBackingPlate = order.WithBackingPlate;
-                CurrentOrder.PlateDrawing = order.PlateDrawing;
-                CurrentOrder.SpecialRequirement = order.SpecialRequirement;
-                CurrentOrder.PartNumber = order.PartNumber;
-
 
                 //产生窗口
                 var orders = new List<Order>();

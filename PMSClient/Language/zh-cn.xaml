@@ -344,6 +344,8 @@
 
     <sys:String x:Key="ButtonJson">Json</sys:String>
     <sys:String x:Key="ButtonJsonCheck">Json检查</sys:String>
+    <sys:String x:Key="ButtonJsonSingle">Json-单</sys:String>
+    <sys:String x:Key="ButtonJsonCollection">Json-多</sys:String>
     <sys:String x:Key="ButtonXML">XML</sys:String>
     <sys:String x:Key="ButtonSieve">制粉工具</sys:String>
     <sys:String x:Key="ButtonBarCode">条码</sys:String>

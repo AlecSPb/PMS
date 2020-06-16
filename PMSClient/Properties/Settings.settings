@@ -30,7 +30,7 @@
       <Value Profile="(Default)">0.2</Value>
     </Setting>
     <Setting Name="Version" Type="System.String" Scope="User">
-      <Value Profile="(Default)">4.11.6.15</Value>
+      <Value Profile="(Default)">4.11.6.16</Value>
     </Setting>
     <Setting Name="ShowHelpDocSilenceCode" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
@@ -46,6 +46,9 @@
     </Setting>
     <Setting Name="FtpImageCache" Type="System.String" Scope="User">
       <Value Profile="(Default)">PMI_IMAGE_CACHE</Value>
+    </Setting>
+    <Setting Name="ErrorDebugMsg" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

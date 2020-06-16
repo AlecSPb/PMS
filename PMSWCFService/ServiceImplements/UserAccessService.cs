@@ -30,7 +30,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return 0;
             }
         }
 
@@ -53,7 +53,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return 0;
             }
 
         }
@@ -77,7 +77,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return 0;
             }
 
         }
@@ -99,7 +99,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return 0;
             }
 
         }
@@ -120,7 +120,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return 0;
             }
 
         }
@@ -141,7 +141,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return 0;
             }
 
         }
@@ -168,7 +168,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return null;
             }
         }
         /// <summary>
@@ -190,7 +190,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return false;
             }
         }
 
@@ -209,7 +209,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return null;
             }
         }
 
@@ -235,7 +235,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return null;
             }
         }
 
@@ -249,7 +249,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return null;
             }
 
         }
@@ -263,7 +263,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return null;
             }
 
         }
@@ -277,7 +277,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return null;
             }
 
         }
@@ -299,7 +299,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return 0;
             }
 
         }
@@ -319,7 +319,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return 0;
             }
 
         }
@@ -339,7 +339,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return 0;
             }
         }
     }

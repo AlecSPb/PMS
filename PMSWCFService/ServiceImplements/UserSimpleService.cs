@@ -33,7 +33,8 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return null;
+
             }
         }
 
@@ -58,7 +59,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return null;
             }
         }
 
@@ -77,7 +78,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return null;
             }
         }
 
@@ -96,7 +97,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return null;
             }
         }
 
@@ -117,7 +118,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 XS.Current.Error(ex);
-                throw ex;
+                return null;
             }
         }
     }

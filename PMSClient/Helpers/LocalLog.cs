@@ -34,94 +34,114 @@ namespace PMSClient.Helper
         }
         public void Log(string message)
         {
+            var date = DateTime.Now;
+            var user = "none";
+            if (_currentSession.CurrentUser != null)
+            {
+                user = _currentSession.CurrentUser.UserName;
+            }
+            if (!File.Exists(_logfile))
+            {
+                var fs = File.Create(_logfile);
+                fs.Close();
+                fs.Dispose();
+            }
+            var sw = new StreamWriter(_logfile, true);
             try
             {
-                var date = DateTime.Now;
-                var user = "none";
-                if (_currentSession.CurrentUser != null)
-                {
-                    user = _currentSession.CurrentUser.UserName;
-                }
-                if (!File.Exists(_logfile))
-                {
-                    File.Create(_logfile);
-                }
-                using (var sw = new StreamWriter(_logfile, true))
-                {
-                    sw.WriteLine($"{user}+{date.ToString()}+{message}");
-                    sw.Close();
-                }
+                sw.WriteLine($"{user}+{date.ToString()}+{message}");
             }
-            catch (Exception ex)
+            catch (Exception exx)
             {
-                PMSHelper.CurrentLog.Error(ex);
+                XSHelper.XS.MessageBox.ShowError(exx.Message);
+            }
+            finally
+            {
+                sw.Close();
             }
 
         }
 
         public void Error(Exception ex)
         {
+            if (Properties.Settings.Default.ErrorDebugMsg)
+            {
+                XSHelper.XS.MessageBox.ShowError(ex.Message);
+            }
+
+            var date = DateTime.Now;
+            var user = "none";
+            if (_currentSession.CurrentUser != null)
+            {
+                user = _currentSession.CurrentUser.UserName;
+            }
+
+            if (!File.Exists(_errorfile))
+            {
+                var fs = File.Create(_errorfile);
+                fs.Close();
+                fs.Dispose();
+            }
+
+            var error = "未知错误发生";
+            if (ex != null)
+            {
+                error = ex.Message;
+            }
+            var sw = new StreamWriter(_errorfile, true);
             try
             {
-                var date = DateTime.Now;
-                var user = "none";
-                if (_currentSession.CurrentUser != null)
-                {
-                    user = _currentSession.CurrentUser.UserName;
-                }
+                sw.WriteLine($"{user}+{date.ToString()}+{error}");
 
-                if (!File.Exists(_errorfile))
-                {
-                    File.Create(_errorfile);
-                }
-
-                var error = "未知错误发生";
-                if (ex != null)
-                {
-                    error = ex.Message;
-                }
-                using (var sw = new StreamWriter(_errorfile, true))
-                {
-                    sw.WriteLine($"{user}+{date.ToString()}+{error}");
-                    sw.Close();
-                }
             }
             catch (Exception exx)
             {
-                PMSHelper.CurrentLog.Error(exx);
+                XSHelper.XS.MessageBox.ShowError(exx.Message);
+            }
+            finally
+            {
+                sw.Close();
             }
         }
 
         public void Error(Exception ex, string position)
         {
+            if (Properties.Settings.Default.ErrorDebugMsg)
+            {
+                XSHelper.XS.MessageBox.ShowError(ex.Message);
+            }
+
+            var date = DateTime.Now;
+            var user = "none";
+            if (_currentSession.CurrentUser != null)
+            {
+                user = _currentSession.CurrentUser.UserName;
+            }
+
+            if (!File.Exists(_errorfile))
+            {
+                var fs = File.Create(_errorfile);
+                fs.Close();
+                fs.Dispose();
+            }
+
+            var error = "未知错误发生";
+            if (ex != null)
+            {
+                error = ex.Message;
+            }
+            var sw = new StreamWriter(_errorfile, true);
             try
             {
-                var date = DateTime.Now;
-                var user = "none";
-                if (_currentSession.CurrentUser != null)
-                {
-                    user = _currentSession.CurrentUser.UserName;
-                }
-
-                if (!File.Exists(_errorfile))
-                {
-                    File.Create(_errorfile);
-                }
-
-                var error = "未知错误发生";
-                if (ex != null)
-                {
-                    error = ex.Message;
-                }
-                using (var sw = new StreamWriter(_errorfile, true))
-                {
-                    sw.WriteLine($"[{user}]+[{position}]+[{date.ToString()}]+{error}");
-                    sw.Close();
-                }
+                sw.WriteLine($"[{user}]+[{position}]+[{date.ToString()}]+{error}");
             }
             catch (Exception exx)
             {
-                PMSHelper.CurrentLog.Error(exx);
+                XSHelper.XS.MessageBox.ShowError(exx.Message);
+            }
+            finally
+            {
+                sw.Close();
             }
         }
     }

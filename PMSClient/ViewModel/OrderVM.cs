@@ -87,8 +87,38 @@ namespace PMSClient.ViewModel
 
             ShowDetails = new RelayCommand<string>(ActionShowDetails);
             SpecialSituation = new RelayCommand(ActionSpecialSituation, CanAdd);
-            JsonCheck = new RelayCommand(ActionJsonCheck, CanAdd);
+            JsonCollection = new RelayCommand(ActionJsonCollection, CanAdd);
+            JsonSingle = new RelayCommand(ActionJsonSingle, CanAdd);
             CustomerAnlysis = new RelayCommand(ActionCustomerAnlysis, CanAdd);
+        }
+
+        private void ActionJsonSingle()
+        {
+            try
+            {
+                var dialogResult = XSHelper.XS.Dialog.ShowOpenDialog(XSHelper.XS.File.GetDesktopPath(), "json文件(*.json)|*.json");
+                if (dialogResult.HasSelected)
+                {
+                    string filepath = dialogResult.SelectPath;
+                    if (File.Exists(filepath))
+                    {
+                        string jsonFile = dialogResult.SelectPath;
+                        string jsonStr = XS.File.ReadText(jsonFile);
+                        var order = JsonConvert.DeserializeObject<Order>(jsonStr);
+
+                        //产生窗口
+                        var orders = new List<Order>();
+                        orders.Add(order);
+                        var win = new TextWindow();
+                        win.CurrentOrders = orders;
+                        win.Show();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private void ActionCustomerAnlysis()
@@ -108,9 +138,9 @@ namespace PMSClient.ViewModel
                 int year_end = dialog.YearEnd;
                 int month_end = dialog.MonthEnd;
 
-                using (var server=new AnlysisService.AnlysisServiceClient())
+                using (var server = new AnlysisService.AnlysisServiceClient())
                 {
-                    var results = server.GetStatisticCustomer(year_start,month_start,year_end,month_end);
+                    var results = server.GetStatisticCustomer(year_start, month_start, year_end, month_end);
                     if (results.Count() == 0)
                     {
                         XS.MessageBox.ShowInfo("No Statistic Data");
@@ -141,7 +171,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private void ActionJsonCheck()
+        private void ActionJsonCollection()
         {
             try
             {
@@ -531,7 +561,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<string> ShowDetails { get; private set; }
 
         public RelayCommand SpecialSituation { get; set; }
-        public RelayCommand JsonCheck { get; set; }
+        public RelayCommand JsonCollection { get; set; }
+        public RelayCommand JsonSingle { get; set; }
         public RelayCommand CustomerAnlysis { get; set; }
 
         #endregion

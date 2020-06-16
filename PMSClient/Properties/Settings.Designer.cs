@@ -133,7 +133,7 @@ namespace PMSClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4.11.6.15")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4.11.6.16")]
         public string Version {
             get {
                 return ((string)(this["Version"]));
@@ -200,6 +200,18 @@ namespace PMSClient.Properties {
             }
             set {
                 this["FtpImageCache"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ErrorDebugMsg {
+            get {
+                return ((bool)(this["ErrorDebugMsg"]));
+            }
+            set {
+                this["ErrorDebugMsg"] = value;
             }
         }
     }
