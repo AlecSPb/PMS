@@ -1,0 +1,286 @@
+[
+  {
+    "ControlName": "PlanView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "SampleView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组+生产经理+制粉组+热压组+加工组+发货组"
+  },
+  {
+    "ControlName": "MaterialOutViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "MaterialNeedView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "ConsumableInventoryEdit",
+    "RoleGroupString": "管理员+统筹组+生产经理"
+  },
+  {
+    "ControlName": "MillToolViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "PlanViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "ProductionTraceView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "DeliveryViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组+发货组"
+  },
+  {
+    "ControlName": "BondingQuickButton",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "MissonView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "OrderView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "DeliveryView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组+发货组"
+  },
+  {
+    "ControlName": "ProductViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "MissonViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "StatisticPlanView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "FailureViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "MillingViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "MillToolView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "SampleViewEditSend",
+    "RoleGroupString": "管理员+统筹组"
+  },
+  {
+    "ControlName": "MachineViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "DeliveryViewAdd",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "OutsideProcessViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "VHPViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "FillToolView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "MillingView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "HisotoryView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "BondingView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "SampleViewEditCheck",
+    "RoleGroupString": "管理员+统筹组+测试组+生产经理"
+  },
+  {
+    "ControlName": "RemainView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "OutsourceView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "FeedbackViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "BPViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "ConsumablePurchaseEdit",
+    "RoleGroupString": "管理员+统筹组"
+  },
+  {
+    "ControlName": "FillToolViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "OrderViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "ConsumableInventoryQuickChange",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组+生产经理+热压组+制粉组+加工组+发货组"
+  },
+  {
+    "ControlName": "TaskButton",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "ProductionTraceViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "BPView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "ConsumableInventory",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组+生产经理+热压组+制粉组+加工组+发货组"
+  },
+  {
+    "ControlName": "TestView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "TestViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "MachineView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "SampleViewEditPrepare",
+    "RoleGroupString": "管理员+统筹组+测试组+制粉组+加工组+热压组+生产经理"
+  },
+  {
+    "ControlName": "FailureView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "CustomViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "OutsideProcessView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "VHPView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "DebugView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "CscanButton",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "MaterialNeedViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "SampleViewEdit",
+    "RoleGroupString": "管理员+统筹组"
+  },
+  {
+    "ControlName": "PMICountViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "MaterialOrderViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "MaterialOrderView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "StatisticDeliveryView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "StatisticProductView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "ConsumablePurchase",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "MaterialInView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "CustomView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "RemainViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "PMICountView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "MaterialInViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "ProductView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "OutsourceViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "BondingViewEdit",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "StatisticOrderView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "MaterialOutView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "DataoutputView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  },
+  {
+    "ControlName": "FeedbackView",
+    "RoleGroupString": "管理员+统筹组+只读账户+财务组+测试组"
+  }
+]

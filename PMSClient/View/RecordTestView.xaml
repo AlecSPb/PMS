@@ -115,6 +115,15 @@
                         </DataGridTemplateColumn>
                         <DataGridTextColumn Header="{StaticResource RTState}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                             Binding="{Binding RecordTest.State}"/>
+                        <!--<DataGridTemplateColumn Header="{StaticResource RTState}">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Border Background="{Binding RecordTest.State}">
+                                        <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding RecordTest.State}"/>
+                                    </Border>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>-->
                         <DataGridTextColumn Header="{StaticResource RTFollowUp}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                             Binding="{Binding RecordTest.FollowUps}"/>
                         <DataGridTemplateColumn Header="{StaticResource RTProductID}">

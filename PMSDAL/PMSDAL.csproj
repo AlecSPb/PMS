@@ -53,6 +53,7 @@
     <Compile Include="BasicDictionary.cs" />
     <Compile Include="Entities\ConsumableInventory.cs" />
     <Compile Include="Entities\ConsumablePurchase.cs" />
+    <Compile Include="Entities\Criteria.cs" />
     <Compile Include="Entities\SimpleMaterial.cs" />
     <Compile Include="Entities\UserAccessGrant.cs" />
     <Compile Include="Entities\BDElement.cs" />

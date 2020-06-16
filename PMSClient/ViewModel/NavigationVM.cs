@@ -57,7 +57,6 @@ namespace PMSClient.ViewModel
         #endregion
 
 
-
         #region 导航信息
         private void InitialNavigations()
         {
@@ -69,9 +68,9 @@ namespace PMSClient.ViewModel
             GoToNavigation = new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
             GoToNavigationWorkFlow = new RelayCommand(() => NavigationService.GoTo(PMSViews.NavigationWorkFlow));
 
-            GoToOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.Order),
-                () => _session.IsAuthorized(PMSAccess.ReadOrder)
-            || _session.IsInGroup(AccessGrant.ViewAllModule));
+            GoToOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.Order), 
+                ()=>PMSHelper.CurrentSession.IsInGroup("OrderView"));
+
             GoToOutSource = new RelayCommand(() => NavigationService.GoTo(PMSViews.OutSource),
                 () => _session.IsAuthorized(PMSAccess.ReadOutSource)
             || _session.IsInGroup(AccessGrant.ViewAllModule));

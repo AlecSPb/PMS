@@ -100,8 +100,10 @@ namespace PMSClient
             //加载底部工具栏
             BottomToolBar.Content = new Navbar();
 
-            ////下载最新权限表到本地-只在启动的时候下载一次
-            //PMSHelper.CurrentSession.DownloadAccessSheet();
+            //下载最新权限表到本地-只在启动的时候下载一次
+            PMSHelper.CurrentSession.DownloadAccessSheet();
+            //读取本地权限表
+            PMSHelper.CurrentSession.ReadAccessSheetFromLocal();
 
             //加载配置
             PMSClient.Components.PMSSettingHelper.PMSSettingService.CacheSettings();

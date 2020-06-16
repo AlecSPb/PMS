@@ -60,7 +60,7 @@ namespace PMSClient.View
             }
             try
             {
-                PMSHelper.CurrentSession.LogIn(uid, pwd);
+                PMSHelper.CurrentSession.LogIn(userModel);
 
                 if (PMSHelper.CurrentSession.CurrentUser != null)
                 {

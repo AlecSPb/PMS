@@ -48,6 +48,7 @@ namespace PMSClient.View
             var uid = txtUserName.Text.Trim();
             var pwd = txtPassword.Password.Trim();
             var userModel = new DcUser() { UserName = uid, Password = pwd };
+
             if (string.IsNullOrEmpty(uid))
             {
                 txtLogInStatus.Text = "请输入用户名";
@@ -60,24 +61,20 @@ namespace PMSClient.View
             }
             try
             {
-                PMSHelper.CurrentSession.LogIn(uid, pwd);
+
+                PMSHelper.CurrentSession.LogIn(userModel);
 
                 if (PMSHelper.CurrentSession.CurrentUser != null)
                 {
                     //PMSHelper.CurrentLog.Log("登录成功");
                     NavigationService.GoTo(PMSViews.Navigation);
 
-
-                    //读取本地权限表-只在登录的时候初始化一次
-                    PMSHelper.CurrentSession.ReadAccessSheetFromLocal();
-
-                    //检查是否需要显示新文档
-                    new Components.NewFeatureDocShow.NewFeatureShowService().Run();
-
                     //DEBUG下不运行
                     if (PMSHelper.CurrentSession.IsInGroup(AccessGrant.ViewExpressTrackAtLogin)
                         && Properties.Settings.Default.CheckExpressAtStartup)
                     {
+                        //检查是否需要显示新文档
+                        new Components.NewFeatureDocShow.NewFeatureShowService().Run();
                         //加载快递追踪情况
                         new Express.Operation().TraceUnCompleted();
                         //检查发货靶材的样品发出情况
@@ -93,7 +90,7 @@ namespace PMSClient.View
             }
             catch (Exception ex)
             {
-                PMSHelper.CurrentLog.Error(ex);
+                PMSHelper.CurrentLog.Error(ex,"BtnLogIn");
             }
         }
 

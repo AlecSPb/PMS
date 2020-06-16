@@ -67,6 +67,29 @@ namespace PMSClient.Helper
             }
         }
 
+        public void LogIn(DcUser userModel)
+        {
+            try
+            {
+                using (var service = new UserSimpleServiceClient())
+                {
+                    CurrentUser = service.GetUser(userModel.UserName, userModel.Password);
+                    if (CurrentUser != null)
+                    {
+                        CurrentUserRole = service.GetRole(CurrentUser.RoleID);
+
+                        var accesses = service.GetAccesses(CurrentUser.RoleID);
+                        CurrentAccesses.Clear();
+                        accesses.ToList().ForEach(i => CurrentAccesses.Add(i));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex, "LogInformation");
+            }
+        }
+
         public bool IsAuthorized(string accessCode)
         {
             if (CurrentUser == null)
@@ -182,14 +205,17 @@ namespace PMSClient.Helper
             try
             {
                 var groupstring = AccessGrants.Where(i => i.ControlName == controlName).Select(i => i.RoleGroupString).FirstOrDefault();
-                string[] groups = groupstring.Split(new string[] { "+" }, StringSplitOptions.RemoveEmptyEntries);
-                return groups;
-
+                if (!string.IsNullOrEmpty(groupstring))
+                {
+                    string[] groups = groupstring.Split(new string[] { "+" }, StringSplitOptions.RemoveEmptyEntries);
+                    return groups;
+                }
+                return new string[] { };
             }
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex, "LogInformation");
-                return null;
+                return new string[] { };
             }
 
         }

@@ -290,7 +290,7 @@ namespace PMSClient.ViewModel
         /// <returns></returns>
         private bool CanCheck(DcOrder arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditOrderCheck);
+            return PMSHelper.CurrentSession.IsInGroup("OrderViewEdit");
         }
 
         private void ActionCheck(DcOrder order)
@@ -316,7 +316,7 @@ namespace PMSClient.ViewModel
         #region 权限控制代码=编辑订单
         private bool CanDuplicate(DcOrder arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑订单");
+            return PMSHelper.CurrentSession.IsInGroup("OrderViewEdit");
         }
         private bool CanEdit(DcOrder arg)
         {
@@ -328,11 +328,11 @@ namespace PMSClient.ViewModel
                     isOK = false;
                 }
             }
-            return PMSHelper.CurrentSession.IsAuthorized("编辑订单") && isOK;
+            return PMSHelper.CurrentSession.IsInGroup("OrderViewEdit") && isOK;
         }
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑订单");
+            return PMSHelper.CurrentSession.IsInGroup("OrderViewEdit");
         }
         #endregion
 
