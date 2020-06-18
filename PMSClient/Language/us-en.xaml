@@ -993,6 +993,7 @@
     <sys:String x:Key="SMoreInformation">MoreInformation</sys:String>
     <sys:String x:Key="SCustomer">Customer</sys:String>
     <sys:String x:Key="SOriginalRequirement">OriginalRequirement</sys:String>
+    <sys:String x:Key="SOriginalRequirementRemark">OriginalRequirementRemark</sys:String>
     <sys:String x:Key="STraceInformation">TraceInformation</sys:String>
 
     <sys:String x:Key="SICPOES">ICPOES</sys:String>

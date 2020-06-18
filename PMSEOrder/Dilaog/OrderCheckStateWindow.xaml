@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSEOrder.Dilaog"
         mc:Ignorable="d"
-        Title="OrderCheckStateWindow" Height="450" Width="1200" WindowStartupLocation="CenterScreen"
+        Title="OrderCheckStateWindow" Height="600" Width="1200" WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow">
     <Grid>
         <Grid.RowDefinitions>
