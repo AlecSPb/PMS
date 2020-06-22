@@ -31,6 +31,19 @@ namespace PMSEOrder.Service
         public static bool IsSeAsGeBondingUsingElastmer(Order currentOrder)
         {
             if (currentOrder == null) return true;
+            bool isOK = currentOrder.Composition.Contains("Se") &&
+                currentOrder.Composition.Contains("As") &&
+                currentOrder.Composition.Contains("Ge");
+            if (isOK)
+            {
+                return currentOrder.BondingRequirement.Contains("Elastomer");
+            }
+            return true;
+        }
+
+        public static bool IsTarget440(Order currentOrder)
+        {
+            if (currentOrder == null) return true;
             bool is440or444 = currentOrder.Dimension.Contains("440") || currentOrder.Dimension.Contains("444.7");
             if (is440or444)
             {

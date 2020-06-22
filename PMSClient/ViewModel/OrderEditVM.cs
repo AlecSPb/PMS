@@ -24,6 +24,13 @@ namespace PMSClient.ViewModel
             GiveUp = new RelayCommand(GoBack);
             CheckPMINumber = new RelayCommand(ActionCheckPMINumber);
             Input = new RelayCommand(ActionInput);
+            RefreshCustomer = new RelayCommand(ActionRefreshCustomer);
+        }
+
+        private void ActionRefreshCustomer()
+        {
+            CustomerNames.Clear();
+            PMSBasicDataService.SetListDS(BasicData.Customers, CustomerNames, i => i.CustomerName);
         }
 
         private void ActionInput()
@@ -279,6 +286,8 @@ namespace PMSClient.ViewModel
 
         public RelayCommand CheckPMINumber { get; set; }
         public RelayCommand Input { get; set; }
+
+        public RelayCommand RefreshCustomer { get; set; }
 
         public List<string> CustomerNames { get; set; }
         public List<string> ProductTypes { get; set; }

@@ -559,6 +559,9 @@ namespace PMSClient
                 case PMSViews.Sample:
                     NavigateTo(_views.Sample);
                     break;
+                case PMSViews.SampleSelect:
+                    NavigateTo(_views.SampleSelect);
+                    break;
                 case PMSViews.SampleEdit:
                     NavigateTo(_views.SampleEdit);
                     break;

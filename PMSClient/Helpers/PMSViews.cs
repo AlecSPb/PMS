@@ -123,6 +123,7 @@ namespace PMSClient
         ConsumableInventorySelect,
         ConsumablePurchase,
         ConsumablePurchaseEdit,
-        OrderSelect
+        OrderSelect,
+        SampleSelect
     }
 }

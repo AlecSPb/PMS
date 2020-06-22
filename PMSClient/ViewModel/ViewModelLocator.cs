@@ -160,6 +160,7 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<OutsideProcessEditVM>();
 
             SimpleIoc.Default.Register<SampleVM>();
+            SimpleIoc.Default.Register<SampleSelectVM>();
             SimpleIoc.Default.Register<SampleEditVM>();
 
             SimpleIoc.Default.Register<RawMaterialSheetVM>();
@@ -201,6 +202,7 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<SimpleMaterialVM>(); }
         }
+
         public SimpleMaterialEditVM SimpleMaterialEdit
         {
             get { return SimpleIoc.Default.GetInstance<SimpleMaterialEditVM>(); }
@@ -218,6 +220,10 @@ namespace PMSClient.ViewModel
         public SampleVM Sample
         {
             get { return SimpleIoc.Default.GetInstance<SampleVM>(); }
+        }
+        public SampleSelectVM SampleSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<SampleSelectVM>(); }
         }
         public SampleEditVM SampleEdit
         {

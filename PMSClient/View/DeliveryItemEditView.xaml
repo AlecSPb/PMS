@@ -26,6 +26,8 @@
                     Command="{Binding SelectProduct}" Width="100"/>
             <Button Content="{StaticResource ButtonSelectPlate}" Style="{StaticResource  StyleButtonSpecial}"
                     Command="{Binding SelectPlate}" Width="100"/>
+            <Button Content="{StaticResource ButtonSelectSample}" Style="{StaticResource  StyleButtonSpecial}"
+                    Command="{Binding SelectSample}" Width="100"/>
             <Button Content="{StaticResource ButtonSelectOther}" Style="{StaticResource  StyleButtonSpecial}"
                     Command="{Binding SelectOther}" Width="100"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>

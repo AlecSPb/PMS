@@ -118,10 +118,16 @@ namespace PMSEOrder
 
                 if (!CheckService.IsSeAsGeBondingUsingElastmer(CurrentOrder))
                 {
-                    if(!XSHelper.XS.MessageBox.ShowYesNo("440 or 444.7 diameter usually needs [Elastomer] bonding,\r\nContinue saving?"))
+                    if(!XSHelper.XS.MessageBox.ShowYesNo("Se-As-Ge usually needs [Elastomer] bonding,\r\nContinue saving?"))
                     {
                         return;
                     }
+                }
+
+                if (CurrentOrder.PODate < DateTime.Today.AddDays(-100))
+                {
+                    XSHelper.XS.MessageBox.ShowError($"Please check your PODate, It is not normal");
+                    return;
                 }
 
                 #endregion
@@ -129,6 +135,7 @@ namespace PMSEOrder
                 if (NewOrEditIndicator == "New")
                 {
                     #region 新建检查逻辑
+
                     if (!CheckService.IsPONotRepeat(CurrentOrder))
                     {
                         XSHelper.XS.MessageBox.ShowError($"PO#[{CurrentOrder.PO}] is repeated.\r\nThis may be a duplicate order; Please check");

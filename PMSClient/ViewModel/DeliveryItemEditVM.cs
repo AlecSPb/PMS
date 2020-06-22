@@ -8,6 +8,8 @@ using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
+using PMSClient.SampleService;
+using PMSCommon;
 
 namespace PMSClient.ViewModel
 {
@@ -79,6 +81,29 @@ namespace PMSClient.ViewModel
                 CurrentDeliveryItem = model;
             }
         }
+
+        /// <summary>
+        /// 从样品记录中获取发货信息
+        /// </summary>
+        /// <param name="model"></param>
+        public void SetBySelect(DcSample model)
+        {
+            if (model != null)
+            {
+                CurrentDeliveryItem.ProductType = ProductType.样品.ToString();
+                CurrentDeliveryItem.ProductID = model.ProductID;
+                CurrentDeliveryItem.Composition = model.Composition;
+                CurrentDeliveryItem.Abbr = Helpers.CompositionHelper.GetCompositionAbbr(model.Composition);
+                CurrentDeliveryItem.Customer = model.Customer;
+                CurrentDeliveryItem.Weight = model.Weight;
+                CurrentDeliveryItem.PO = model.PO;
+                CurrentDeliveryItem.Dimension = "Sample";
+                CurrentDeliveryItem.DimensionActual = "Sample";
+                CurrentDeliveryItem.Defects = "";
+                //RaisePropertyChanged(nameof(CurrentDeliveryItem));
+            }
+        }
+
 
         /// <summary>
         /// 从测试记录中获得发货信息
@@ -171,6 +196,14 @@ namespace PMSClient.ViewModel
             SelectProduct = new RelayCommand(ActionSelectProduct);
             SelectPlate = new RelayCommand(ActionSelectPlate);
             SelectOther = new RelayCommand(ActionSelectOther);
+            SelectSample = new RelayCommand(ActionSelectSample);
+        }
+
+        private void ActionSelectSample()
+        {
+            PMSHelper.ViewModels.SampleSelect.SetRequestView(PMSViews.DeliveryItemEdit);
+            PMSHelper.ViewModels.SampleSelect.RefreshData();
+            NavigationService.GoTo(PMSViews.SampleSelect);
         }
 
         private void ActionSelectOther()
@@ -260,6 +293,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand SelectProduct { get; set; }
         public RelayCommand SelectPlate { get; set; }
+        public RelayCommand SelectSample { get; set; }
         public RelayCommand SelectOther { get; set; }
     }
 }

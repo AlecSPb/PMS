@@ -145,6 +145,7 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<OutsideProcessEditView>();
 
             SimpleIoc.Default.Register<SampleView>();
+            SimpleIoc.Default.Register<SampleSelectView>();
             SimpleIoc.Default.Register<SampleEditView>();
 
             SimpleIoc.Default.Register<RawMaterialSheetView>();
@@ -206,6 +207,13 @@ namespace PMSClient.View
             get
             {
                 return SimpleIoc.Default.GetInstance<SampleView>();
+            }
+        }
+        public SampleSelectView SampleSelect
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<SampleSelectView>();
             }
         }
         public SampleEditView SampleEdit

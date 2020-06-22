@@ -15,7 +15,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>C:\Users\XS\source\publish\ClickOncePublish\PMS\</PublishUrl>
+    <PublishUrl>C:\Users\XS\source\publish\ClickOncePublish\PMS2\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,8 +25,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://192.168.16.254:8001/PMS/</InstallUrl>
-    <UpdateUrl>http://192.168.16.254:8001/pms/</UpdateUrl>
+    <InstallUrl>http://192.168.16.254:8001/PMS2/</InstallUrl>
+    <UpdateUrl>http://192.168.16.254:8001/pms2/</UpdateUrl>
     <SupportUrl>http://www.cd-pmi.com</SupportUrl>
     <ProductName>PMS</ProductName>
     <PublisherName>xs.zhou</PublisherName>
@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>191</ApplicationRevision>
+    <ApplicationRevision>193</ApplicationRevision>
     <ApplicationVersion>4.10.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -732,6 +732,7 @@
     <Compile Include="ViewModel\ConsumableInventoryVM.cs" />
     <Compile Include="ViewModel\ConsumableInventorySelectVM.cs" />
     <Compile Include="Components\EOrder\Order.cs" />
+    <Compile Include="ViewModel\SampleSelectVM.cs" />
     <Compile Include="ViewModel\SimpleMaterialEditVM.cs" />
     <Compile Include="ViewModel\SimpleMaterialVM.cs" />
     <Compile Include="ViewModel\RawMaterialSheetEditVM.cs" />
@@ -850,6 +851,9 @@
     </Compile>
     <Compile Include="View\ConsumableInventorySelectView.xaml.cs">
       <DependentUpon>ConsumableInventorySelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SampleSelectView.xaml.cs">
+      <DependentUpon>SampleSelectView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SimpleMaterialEditView.xaml.cs">
       <DependentUpon>SimpleMaterialEditView.xaml</DependentUpon>
@@ -1586,6 +1590,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\ConsumableInventorySelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SampleSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

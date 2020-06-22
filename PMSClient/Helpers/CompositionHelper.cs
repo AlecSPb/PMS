@@ -21,6 +21,33 @@ namespace PMSClient.Helpers
 
     public static class CompositionHelper
     {
+
+        public static string GetCompositionAbbr(string s)
+        {
+            //成分标准化
+            string std = s.Replace(" ", "")
+                .Replace("(", "").Replace(")", "").Replace("atomic", "").Replace("%", "");
+            //成分缩写
+            string abbr = "";
+            if (IsCIGS(std))
+            {
+                abbr = "CIGS";
+            }
+            else
+            {
+                var matches = System.Text.RegularExpressions.Regex.Matches(std, @"[a-zA-Z]", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+                foreach (var item in matches)
+                {
+                    abbr += item.ToString();
+                }
+            }
+            return abbr;
+        }
+        private static bool IsCIGS(string source)
+        {
+            var s = source.ToLower();
+            return s.Contains("cu") && s.Contains("in") && s.Contains("ga") && s.Contains("se");
+        }
         /// <summary>
         /// 将靶材成分按照原子数降序重排
         /// </summary>
