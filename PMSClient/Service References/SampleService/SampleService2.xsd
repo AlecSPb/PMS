@@ -7,6 +7,7 @@
         <xs:element minOccurs="0" name="s" type="xs:int" />
         <xs:element minOccurs="0" name="t" type="xs:int" />
         <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sampleid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="trackingstage" nillable="true" type="xs:string" />
@@ -24,6 +25,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sampleid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="trackingstage" nillable="true" type="xs:string" />
@@ -34,6 +36,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="GetSampleAllCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSampleBySampleID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sampleid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSampleBySampleIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetSampleBySampleIDResult" nillable="true" type="q2:ArrayOfDcSample" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -54,7 +70,7 @@
   <xs:element name="AddSample">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q2:DcSample" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q3:DcSample" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -66,7 +82,7 @@
   <xs:element name="UpdateSample">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q3:DcSample" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q4:DcSample" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -83,7 +99,7 @@
   <xs:element name="CheckDeliveryItemSampleStatusResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="CheckDeliveryItemSampleStatusResult" nillable="true" type="q4:ArrayOfDcDeliveryItemSampleCheckModel" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="CheckDeliveryItemSampleStatusResult" nillable="true" type="q5:ArrayOfDcDeliveryItemSampleCheckModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

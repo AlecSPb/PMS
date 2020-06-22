@@ -612,16 +612,22 @@ namespace PMSClient.SampleService {
     public interface ISampleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAll", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllResponse")]
-        PMSClient.SampleService.DcSample[] GetSampleAll(int s, int t, string pminumber, string productid, string composition, string trackingstage);
+        PMSClient.SampleService.DcSample[] GetSampleAll(int s, int t, string pminumber, string sampleid, string productid, string composition, string trackingstage);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAll", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllResponse")]
-        System.Threading.Tasks.Task<PMSClient.SampleService.DcSample[]> GetSampleAllAsync(int s, int t, string pminumber, string productid, string composition, string trackingstage);
+        System.Threading.Tasks.Task<PMSClient.SampleService.DcSample[]> GetSampleAllAsync(int s, int t, string pminumber, string sampleid, string productid, string composition, string trackingstage);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAllCount", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllCountResponse")]
-        int GetSampleAllCount(string pminumber, string productid, string composition, string trackingstage);
+        int GetSampleAllCount(string pminumber, string sampleid, string productid, string composition, string trackingstage);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleAllCount", ReplyAction="http://tempuri.org/ISampleService/GetSampleAllCountResponse")]
-        System.Threading.Tasks.Task<int> GetSampleAllCountAsync(string pminumber, string productid, string composition, string trackingstage);
+        System.Threading.Tasks.Task<int> GetSampleAllCountAsync(string pminumber, string sampleid, string productid, string composition, string trackingstage);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleBySampleID", ReplyAction="http://tempuri.org/ISampleService/GetSampleBySampleIDResponse")]
+        PMSClient.SampleService.DcSample[] GetSampleBySampleID(string sampleid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleBySampleID", ReplyAction="http://tempuri.org/ISampleService/GetSampleBySampleIDResponse")]
+        System.Threading.Tasks.Task<PMSClient.SampleService.DcSample[]> GetSampleBySampleIDAsync(string sampleid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISampleService/GetSampleByPMINumberCount", ReplyAction="http://tempuri.org/ISampleService/GetSampleByPMINumberCountResponse")]
         int GetSampleByPMINumberCount(string pminumber);
@@ -675,20 +681,28 @@ namespace PMSClient.SampleService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.SampleService.DcSample[] GetSampleAll(int s, int t, string pminumber, string productid, string composition, string trackingstage) {
-            return base.Channel.GetSampleAll(s, t, pminumber, productid, composition, trackingstage);
+        public PMSClient.SampleService.DcSample[] GetSampleAll(int s, int t, string pminumber, string sampleid, string productid, string composition, string trackingstage) {
+            return base.Channel.GetSampleAll(s, t, pminumber, sampleid, productid, composition, trackingstage);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.SampleService.DcSample[]> GetSampleAllAsync(int s, int t, string pminumber, string productid, string composition, string trackingstage) {
-            return base.Channel.GetSampleAllAsync(s, t, pminumber, productid, composition, trackingstage);
+        public System.Threading.Tasks.Task<PMSClient.SampleService.DcSample[]> GetSampleAllAsync(int s, int t, string pminumber, string sampleid, string productid, string composition, string trackingstage) {
+            return base.Channel.GetSampleAllAsync(s, t, pminumber, sampleid, productid, composition, trackingstage);
         }
         
-        public int GetSampleAllCount(string pminumber, string productid, string composition, string trackingstage) {
-            return base.Channel.GetSampleAllCount(pminumber, productid, composition, trackingstage);
+        public int GetSampleAllCount(string pminumber, string sampleid, string productid, string composition, string trackingstage) {
+            return base.Channel.GetSampleAllCount(pminumber, sampleid, productid, composition, trackingstage);
         }
         
-        public System.Threading.Tasks.Task<int> GetSampleAllCountAsync(string pminumber, string productid, string composition, string trackingstage) {
-            return base.Channel.GetSampleAllCountAsync(pminumber, productid, composition, trackingstage);
+        public System.Threading.Tasks.Task<int> GetSampleAllCountAsync(string pminumber, string sampleid, string productid, string composition, string trackingstage) {
+            return base.Channel.GetSampleAllCountAsync(pminumber, sampleid, productid, composition, trackingstage);
+        }
+        
+        public PMSClient.SampleService.DcSample[] GetSampleBySampleID(string sampleid) {
+            return base.Channel.GetSampleBySampleID(sampleid);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.SampleService.DcSample[]> GetSampleBySampleIDAsync(string sampleid) {
+            return base.Channel.GetSampleBySampleIDAsync(sampleid);
         }
         
         public int GetSampleByPMINumberCount(string pminumber) {

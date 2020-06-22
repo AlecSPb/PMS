@@ -33,6 +33,7 @@ namespace PMSClient.DataProcess.ScanInput
             CurrentText = Texts[0];
 
             currentCheck = false;
+            currentCheck2 = false;
 
         }
         public ObservableCollection<LotModel> Lots { get; set; }
@@ -127,6 +128,20 @@ namespace PMSClient.DataProcess.ScanInput
             {
                 currentCheck = value;
                 RaisePropertyChanged(nameof(CurrentCheck));
+            }
+        }
+
+        private bool currentCheck2;
+        public bool CurrentCheck2
+        {
+            get
+            {
+                return currentCheck2;
+            }
+            set
+            {
+                currentCheck2 = value;
+                RaisePropertyChanged(nameof(CurrentCheck2));
             }
         }
 

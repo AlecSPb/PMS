@@ -155,7 +155,7 @@
                         Command="{Binding DataContext.SelectPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
                 <TextBox  Grid.Row="11" Grid.Column="1" Text="{Binding SampleID}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="样品ID，一般和靶材ID相同,可以点击最左边按钮从生产计划中选择   准备样品的时候再确定和输入"/>
+                           Text="S开头，唯一标识样品, 一般和靶材ID相同,可以点击最左边按钮从生产计划中选择   准备样品的时候再确定和输入"/>
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource SProductID}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>

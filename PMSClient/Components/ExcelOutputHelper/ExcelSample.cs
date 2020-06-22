@@ -22,7 +22,7 @@ namespace PMSClient.ExcelOutputHelper
             ResetParameters();
             using (var service = new SampleServiceClient())
             {
-                recordCount = service.GetSampleAllCount(empty,empty, empty, empty);
+                recordCount = service.GetSampleAllCount(empty,empty, empty, empty,empty);
                 pageCount = GetPageCount();
                 NPOIHelper helper = new NPOIHelper();
                 helper.CreateNew(sheetName);
@@ -63,7 +63,7 @@ namespace PMSClient.ExcelOutputHelper
                 {
                     s = pageIndex * pageSize;
                     t = pageSize;
-                    var pageData = service.GetSampleAll(s, t,empty, empty, empty, empty);
+                    var pageData = service.GetSampleAll(s, t,empty, empty, empty, empty,empty);
 
 
                     foreach (var item in pageData)

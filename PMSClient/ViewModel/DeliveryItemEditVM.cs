@@ -91,7 +91,7 @@ namespace PMSClient.ViewModel
             if (model != null)
             {
                 CurrentDeliveryItem.ProductType = ProductType.样品.ToString();
-                CurrentDeliveryItem.ProductID = model.ProductID;
+                CurrentDeliveryItem.ProductID = model.SampleID;
                 CurrentDeliveryItem.Composition = model.Composition;
                 CurrentDeliveryItem.Abbr = Helpers.CompositionHelper.GetCompositionAbbr(model.Composition);
                 CurrentDeliveryItem.Customer = model.Customer;

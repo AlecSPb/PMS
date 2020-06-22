@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSClient.MainService;
+using PMSClient.SampleService;
 
 namespace PMSClient.DataProcess.ScanInput
 {
@@ -19,6 +20,7 @@ namespace PMSClient.DataProcess.ScanInput
         public string DeliveryType { get; set; } = PMSCommon.DeliveryType.最终发货.ToString();
 
         public bool CheckExist { get; set; } = true;
+        public bool IsInputSample { get; set; } = false;
 
         public override void Check(Action<double> DoSomething)
         {
@@ -29,48 +31,61 @@ namespace PMSClient.DataProcess.ScanInput
                 double count = 0;
                 foreach (var item in Lots)
                 {
-                    //默认有效，多次否决
-                    CheckIsStandard(item);
-                    if (GetDSType(item.Lot) == TableSource.Plate)
+                    if (IsInputSample)
                     {
-                        CheckInPlate(item);
+                        CheckInSample(item);
                     }
                     else
                     {
-                        CheckInProduct(item);
-                    }
-                    //检查是否已存在
-                    if (CheckExist)
-                    {
-                        CheckInDeliveryItem(item);
+                        //默认有效，多次否决
+                        CheckIsStandard(item);
+                        if (GetDSType(item.Lot) == TableSource.Plate)
+                        {
+                            CheckInPlate(item);
+                        }
+                        else
+                        {
+                            CheckInProduct(item);
+                        }
+                        //检查是否已存在
+                        if (CheckExist)
+                        {
+                            CheckInDeliveryItem(item);
+                        }
                     }
 
                     if (item.IsValid)
                     {
-                        if (GetDSType(item.Lot) == TableSource.Plate)
+                        if (IsInputSample)
                         {
 
                         }
                         else
                         {
-                            //读取产品记录并转换
-                            using (var ss = new ProductServiceClient())
+                            if (GetDSType(item.Lot) == TableSource.Plate)
                             {
-                                var record = ss.GetProductByProductID(item.Lot).FirstOrDefault();
 
-                                //确定是否将库存置为发货
-                                if (record != null)
+                            }
+                            else
+                            {
+                                //读取产品记录并转换
+                                using (var ss = new ProductServiceClient())
                                 {
-                                    //检查230产品的绑定记录
-                                    if (record.Dimension.Contains("230"))
+                                    var record = ss.GetProductByProductID(item.Lot).FirstOrDefault();
+
+                                    //确定是否将库存置为发货
+                                    if (record != null)
                                     {
-                                        CheckBondingState(item);
+                                        //检查230产品的绑定记录
+                                        if (record.Dimension.Contains("230"))
+                                        {
+                                            CheckBondingState(item);
+                                        }
                                     }
                                 }
+
                             }
-
                         }
-
                         count++;
                         progressValue = count * 100 / Lots.Count;
                         if (DoSomething != null)
@@ -80,6 +95,8 @@ namespace PMSClient.DataProcess.ScanInput
                         }
                     }
                 }
+
+
             }
             catch (Exception ex)
             {
@@ -94,69 +111,92 @@ namespace PMSClient.DataProcess.ScanInput
                 ReSet();
                 double progressValue = 0;
                 double count = 0;
+
                 foreach (var item in Lots)
                 {
-                    //默认有效，多次否决
-                    CheckIsStandard(item);
-                    if (GetDSType(item.Lot) == TableSource.Plate)
+                    if (IsInputSample)
                     {
-                        CheckInPlate(item);
+                        CheckInSample(item);
                     }
                     else
                     {
-                        CheckInProduct(item);
+                        //默认有效，多次否决
+                        CheckIsStandard(item);
+                        if (GetDSType(item.Lot) == TableSource.Plate)
+                        {
+                            CheckInPlate(item);
+                        }
+                        else
+                        {
+                            CheckInProduct(item);
+                        }
+                        //检查是否已存在
+                        if (CheckExist)
+                        {
+                            CheckInDeliveryItem(item);
+                        }
                     }
-                    //检查是否已存在
-                    if (CheckExist)
-                    {
-                        CheckInDeliveryItem(item);
-                    }
+
 
                     //有效继续
                     if (item.IsValid)
                     {
+
                         DcDeliveryItem model = null;
-
-                        if (GetDSType(item.Lot) == TableSource.Plate)
+                        if (IsInputSample)
                         {
-                            //读取背板记录并转换
-                            using (var ss = new PlateServiceClient())
+                            using (var sample_service = new SampleServiceClient())
                             {
-                                var record = ss.GetPlateByPlateID(item.Lot).FirstOrDefault();
-
-                                //确定是否将库存置为发货
-                                if (record != null)
+                                var sample = sample_service.GetSampleBySampleID(item.Lot).FirstOrDefault();
+                                if (sample != null)
                                 {
-
-                                    record.State = PMSCommon.InventoryState.发货.ToString();
-                                    ss.UpdatePlateByUID(record, uid);
+                                    model = ModelHelper.GetDeliveryItem(sample);
                                 }
-                                model = ModelHelper.GetDeliveryItem(record, Number, DeliveryType);
                             }
                         }
                         else
                         {
-                            //读取产品记录并转换
-                            using (var ss = new ProductServiceClient())
+                            if (GetDSType(item.Lot) == TableSource.Plate)
                             {
-                                var record = ss.GetProductByProductID(item.Lot).FirstOrDefault();
-
-                                //确定是否将库存置为发货
-                                if (record != null)
+                                //读取背板记录并转换
+                                using (var ss = new PlateServiceClient())
                                 {
-                                    //检查230产品的绑定记录
-                                    if (record.Dimension.Contains("230"))
+                                    var record = ss.GetPlateByPlateID(item.Lot).FirstOrDefault();
+
+                                    //确定是否将库存置为发货
+                                    if (record != null)
                                     {
-                                        CheckBondingState(item);
+
+                                        record.State = PMSCommon.InventoryState.发货.ToString();
+                                        ss.UpdatePlateByUID(record, uid);
+                                    }
+                                    model = ModelHelper.GetDeliveryItem(record, Number, DeliveryType);
+                                }
+                            }
+                            else
+                            {
+                                //读取产品记录并转换
+                                using (var ss = new ProductServiceClient())
+                                {
+                                    var record = ss.GetProductByProductID(item.Lot).FirstOrDefault();
+
+                                    //确定是否将库存置为发货
+                                    if (record != null)
+                                    {
+                                        //检查230产品的绑定记录
+                                        if (record.Dimension.Contains("230"))
+                                        {
+                                            CheckBondingState(item);
+                                        }
+
+                                        record.State = PMSCommon.InventoryState.发货.ToString();
+                                        ss.UpdateProductByUID(record, uid);
                                     }
 
-                                    record.State = PMSCommon.InventoryState.发货.ToString();
-                                    ss.UpdateProductByUID(record, uid);
+                                    model = ModelHelper.GetDeliveryItem(record, Number, DeliveryType);
                                 }
 
-                                model = ModelHelper.GetDeliveryItem(record, Number, DeliveryType);
                             }
-
                         }
 
                         //插入到发货记录
@@ -207,7 +247,21 @@ namespace PMSClient.DataProcess.ScanInput
             }
         }
 
-
+        private void CheckInSample(LotModel item)
+        {
+            if (item.IsValid)
+            {
+                using (var service = new SampleServiceClient())
+                {
+                    int count = service.GetSampleAllCount(string.Empty, item.Lot, string.Empty, string.Empty, string.Empty);
+                    if (count == 0)
+                    {
+                        item.IsValid = false;
+                        item.AppendMessage("[样品记录]中不存在");
+                    }
+                }
+            }
+        }
         private void CheckInProduct(LotModel item)
         {
             if (item.IsValid)

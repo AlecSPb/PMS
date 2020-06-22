@@ -14,7 +14,8 @@ namespace PMSClient.ViewModel
     {
         public SampleSelectVM()
         {
-            searchComposition = searchProductID = searchTrackingStage = searchPMINumber = "";
+            searchComposition = searchProductID = searchTrackingStage = searchSampleID = searchPMINumber = "";
+
             Samples = new ObservableCollection<DcSample>();
 
             InitializeCommands();
@@ -114,7 +115,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            SearchProductID = SearchPMINumber = SearchComposition = "";
+            SearchProductID = SearchPMINumber = SearchComposition = SearchSampleID = "";
             SearchTrackingStage = "";
             SetPageParametersWhenConditionChange();
         }
@@ -138,13 +139,20 @@ namespace PMSClient.ViewModel
         {
             requestView = request;
         }
-
+        private string searchSampleID;
+        public string SearchSampleID
+        {
+            get { return searchSampleID; }
+            set { searchSampleID = value; RaisePropertyChanged(nameof(SearchSampleID)); }
+        }
         private string searchProductID;
         public string SearchProductID
         {
             get { return searchProductID; }
             set { searchProductID = value; RaisePropertyChanged(nameof(SearchProductID)); }
         }
+
+
         private string searchComposition;
         public string SearchComposition
         {
@@ -179,7 +187,7 @@ namespace PMSClient.ViewModel
             PageSize = 30;
             using (var service = new SampleServiceClient())
             {
-                RecordCount = service.GetSampleAllCount(SearchPMINumber, SearchProductID, SearchComposition, SearchTrackingStage);
+                RecordCount = service.GetSampleAllCount(SearchPMINumber, SearchSampleID, SearchProductID, SearchComposition, SearchTrackingStage);
             }
             ActionPaging();
         }
@@ -190,7 +198,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new SampleServiceClient())
             {
-                var orders = service.GetSampleAll(skip, take, SearchPMINumber,
+                var orders = service.GetSampleAll(skip, take, SearchPMINumber, SearchSampleID,
                     SearchProductID, SearchComposition, SearchTrackingStage);
                 Samples.Clear();
                 orders.ToList().ForEach(o => Samples.Add(o));

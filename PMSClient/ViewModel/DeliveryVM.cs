@@ -179,7 +179,10 @@ namespace PMSClient.ViewModel
             tool.TxtValue.Text = "箱号";
             tool.TxtText.Text = "发货类型";
             tool.ChkCurrentCheck.Visibility = System.Windows.Visibility.Visible;
-            tool.ChkCurrentCheck.Content = "重复检查";
+            tool.ChkCurrentCheck.Content = "进行ID重复检查";
+            tool.ChkCurrentCheck2.Visibility = System.Windows.Visibility.Visible;
+            tool.ChkCurrentCheck2.Content = "此次为样品发货";
+
             //传入delivery到vm中
             var context = new DataProcess.ScanInput.ScanInputDeliveryVM(obj);
             var list = new List<string>();

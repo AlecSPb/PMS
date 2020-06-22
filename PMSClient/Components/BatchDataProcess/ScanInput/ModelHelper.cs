@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PMSClient.MainService;
 using PMSClient.OutsideProcessService;
+using PMSClient.SampleService;
 
 namespace PMSClient.DataProcess.ScanInput
 {
@@ -161,6 +162,40 @@ namespace PMSClient.DataProcess.ScanInput
 
             return model;
         }
+
+        public static DcDeliveryItem GetDeliveryItem(DcSample ss, int boxNumber = 1, string deliverytype = "最终发货")
+        {
+            if (ss == null)
+                return null;
+            var model = new DcDeliveryItem();
+            #region 初始化
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.ProductType = PMSCommon.ProductType.样品.ToString();
+            model.ProductID = ss.SampleID;
+            model.Composition = ss.Composition;
+            model.Abbr = Helpers.CompositionHelper.GetCompositionAbbr(model.Composition);
+            model.PO = ss.PO;
+            model.Customer = ss.Customer;
+            model.Weight = ss.Weight;
+            model.DetailRecord = ss.ProductID;
+            model.PackNumber = boxNumber;
+            model.Position = "无";
+            model.Dimension = "Sample";
+            model.DimensionActual = "Sample";
+            model.Defects = "";
+            model.State = PMSCommon.SimpleState.正常.ToString();
+            model.OrderNumber = 0;
+            model.DeliveryType = deliverytype;
+
+            model.Remark = "无";
+            #endregion
+
+            return model;
+        }
+
+
 
     }
 }

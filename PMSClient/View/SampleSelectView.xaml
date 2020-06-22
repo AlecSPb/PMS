@@ -24,6 +24,9 @@
             <TextBlock Text="{StaticResource SPMINumber}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource SSampleID}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchSampleID,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource SProductID}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
@@ -93,7 +96,7 @@
                                     Binding="{Binding TraceInformation}"/>
 
                     <DataGridTextColumn Header="{StaticResource SSampleID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding SampleID}"/>
+                                    Binding="{Binding SampleID}" Foreground="Blue" FontWeight="Bold"/>
                     <DataGridTextColumn Header="{StaticResource SProductID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding ProductID}"/>
                     <DataGridTextColumn Header="{StaticResource SQuantity}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"

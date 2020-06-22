@@ -14,7 +14,7 @@ namespace PMSClient.ViewModel
     {
         public SampleVM()
         {
-            searchComposition = searchProductID = searchTrackingStage = searchPMINumber = "";
+            searchComposition = searchProductID = searchTrackingStage = searchSampleID = searchPMINumber = "";
             Samples = new ObservableCollection<DcSample>();
 
             InitializeCommands();
@@ -232,7 +232,7 @@ namespace PMSClient.ViewModel
             if (plan != null)
             {
                 sample.ProductID = plan.Plan.SearchCode + "-1";
-                sample.SampleID = plan.Plan.SearchCode + "-1";
+                sample.SampleID = $"{plan.Plan.SearchCode}-1";
                 if (PMSDialogService.ShowYesNo("请问", $"确定要填入[{sample.ProductID}-{plan.Misson.CompositionStandard}]" +
                     $"到样品准备[{sample.Composition}-{sample.PMINumber}]吗？"))
                 {
@@ -304,7 +304,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            SearchProductID = SearchPMINumber = SearchComposition = "";
+            SearchProductID = SearchPMINumber = SearchComposition = SearchSampleID = "";
             SearchTrackingStage = "";
             SetPageParametersWhenConditionChange();
         }
@@ -340,7 +340,12 @@ namespace PMSClient.ViewModel
         {
             SetPageParametersWhenConditionChange();
         }
-
+        private string searchSampleID;
+        public string SearchSampleID
+        {
+            get { return searchSampleID; }
+            set { searchSampleID = value; RaisePropertyChanged(nameof(SearchSampleID)); }
+        }
         private string searchProductID;
         public string SearchProductID
         {
@@ -381,7 +386,7 @@ namespace PMSClient.ViewModel
             PageSize = 30;
             using (var service = new SampleServiceClient())
             {
-                RecordCount = service.GetSampleAllCount(SearchPMINumber, SearchProductID, SearchComposition, SearchTrackingStage);
+                RecordCount = service.GetSampleAllCount(SearchPMINumber, SearchSampleID, SearchProductID, SearchComposition, SearchTrackingStage);
             }
             ActionPaging();
         }
@@ -392,7 +397,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new SampleServiceClient())
             {
-                var orders = service.GetSampleAll(skip, take, SearchPMINumber,
+                var orders = service.GetSampleAll(skip, take, SearchPMINumber, SearchSampleID,
                     SearchProductID, SearchComposition, SearchTrackingStage);
                 Samples.Clear();
                 orders.ToList().ForEach(o => Samples.Add(o));

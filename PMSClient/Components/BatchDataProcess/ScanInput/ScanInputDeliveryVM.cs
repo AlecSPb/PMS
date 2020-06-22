@@ -17,7 +17,7 @@ namespace PMSClient.DataProcess.ScanInput
             if (delivery == null)
                 throw new ArgumentNullException();
 
-            SourceTarget = $"产品记录+背板记录 => 发货记录[{delivery.DeliveryName}]";
+            SourceTarget = $"产品记录+背板记录+[样品记录] => 发货记录[{delivery.DeliveryName}]";
             process = new ProcessDelivery(delivery);
 
             Process = new RelayCommand(ActionProcess,CanCheck);
@@ -44,7 +44,7 @@ namespace PMSClient.DataProcess.ScanInput
                 process.Number = CurrentValue;
                 process.DeliveryType = CurrentText;
                 process.CheckExist = CurrentCheck;
-
+                process.IsInputSample = CurrentCheck2;
 
                 process.Check(i =>
                 {
@@ -72,6 +72,7 @@ namespace PMSClient.DataProcess.ScanInput
                 process.Number = CurrentValue;
                 process.DeliveryType = CurrentText;
                 process.CheckExist = CurrentCheck;
+                process.IsInputSample = CurrentCheck2;
 
 
                 process.Process(i =>

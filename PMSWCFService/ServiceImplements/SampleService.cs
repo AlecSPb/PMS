@@ -95,7 +95,7 @@ namespace PMSWCFService
 
         }
 
-        public List<DcSample> GetSampleAll(int s, int t, string pminumber, string productid, string composition, string trackingstage)
+        public List<DcSample> GetSampleAll(int s, int t, string pminumber, string sampleid, string productid, string composition, string trackingstage)
         {
             try
             {
@@ -107,6 +107,7 @@ namespace PMSWCFService
                                 where m.State != PMSCommon.SimpleState.作废.ToString()
                                 && m.PMINumber.Contains(pminumber)
                                 && m.ProductID.Contains(productid)
+                                && m.SampleID.Contains(sampleid)
                                 && m.Composition.Contains(composition)
                                 && m.TrackingStage.Contains(trackingstage)
                                 orderby m.CreateTime descending
@@ -121,7 +122,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetSampleAllCount(string pminumber, string productid, string composition, string trackingstage)
+        public int GetSampleAllCount(string pminumber, string sampleid, string productid, string composition, string trackingstage)
         {
             try
             {
@@ -132,6 +133,7 @@ namespace PMSWCFService
                                 where m.State != PMSCommon.SimpleState.作废.ToString()
                                 && m.PMINumber.Contains(pminumber)
                                 && m.ProductID.Contains(productid)
+                                && m.SampleID.Contains(sampleid)
                                 && m.Composition.Contains(composition)
                                 && m.TrackingStage.Contains(trackingstage)
                                 select m;
@@ -163,6 +165,29 @@ namespace PMSWCFService
             {
                 XS.Current.Error(ex);
                 return 0;
+            }
+        }
+
+        public List<DcSample> GetSampleBySampleID(string sampleid)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var db = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<Sample, DcSample>());
+                    var query = from m in db.Samples
+                                where m.State != PMSCommon.SimpleState.作废.ToString()
+                                && m.SampleID.Contains(sampleid)
+                                orderby m.CreateTime descending
+                                select m;
+                    return Mapper.Map<List<Sample>, List<DcSample>>(query.ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                return new List<DcSample>();
             }
         }
 
