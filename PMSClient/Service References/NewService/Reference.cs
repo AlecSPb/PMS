@@ -23,6 +23,9 @@ namespace PMSClient.NewService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BondingRequirementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionAbbrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -152,6 +155,19 @@ namespace PMSClient.NewService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BondingRequirement {
+            get {
+                return this.BondingRequirementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BondingRequirementField, value) != true)) {
+                    this.BondingRequirementField = value;
+                    this.RaisePropertyChanged("BondingRequirement");
+                }
             }
         }
         
@@ -1490,6 +1506,12 @@ namespace PMSClient.NewService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetEmergencyOrderCount", ReplyAction="http://tempuri.org/INewService/GetEmergencyOrderCountResponse")]
         System.Threading.Tasks.Task<int> GetEmergencyOrderCountAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetProductPlanCountByOrderID", ReplyAction="http://tempuri.org/INewService/GetProductPlanCountByOrderIDResponse")]
+        int GetProductPlanCountByOrderID(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetProductPlanCountByOrderID", ReplyAction="http://tempuri.org/INewService/GetProductPlanCountByOrderIDResponse")]
+        System.Threading.Tasks.Task<int> GetProductPlanCountByOrderIDAsync(System.Guid id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetPlansByOrderID", ReplyAction="http://tempuri.org/INewService/GetPlansByOrderIDResponse")]
         PMSClient.NewService.DcPlanVHP[] GetPlansByOrderID(System.Guid id);
         
@@ -1684,6 +1706,14 @@ namespace PMSClient.NewService {
         
         public System.Threading.Tasks.Task<int> GetEmergencyOrderCountAsync() {
             return base.Channel.GetEmergencyOrderCountAsync();
+        }
+        
+        public int GetProductPlanCountByOrderID(System.Guid id) {
+            return base.Channel.GetProductPlanCountByOrderID(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetProductPlanCountByOrderIDAsync(System.Guid id) {
+            return base.Channel.GetProductPlanCountByOrderIDAsync(id);
         }
         
         public PMSClient.NewService.DcPlanVHP[] GetPlansByOrderID(System.Guid id) {

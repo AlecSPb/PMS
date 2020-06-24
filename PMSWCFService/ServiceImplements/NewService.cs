@@ -679,5 +679,30 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public int GetProductPlanCountByOrderID(Guid id)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var result = from p in dc.VHPPlans
+                                 where p.OrderID == id 
+                                 && (p.PlanType==VHPPlanType.加工.ToString()
+                                 || p.PlanType == VHPPlanType.外协.ToString() 
+                                 || p.PlanType == VHPPlanType.发货.ToString())
+                                 && p.State != VHPPlanState.作废.ToString()
+                                 orderby p.PlanDate descending, p.PlanLot, p.VHPDeviceCode
+                                 select p;
+                    return result.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

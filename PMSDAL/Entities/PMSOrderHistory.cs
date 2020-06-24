@@ -72,6 +72,7 @@ namespace PMSDAL
         public DateTime LastUpdateTime { get; set; }
         public string OrderRemark { get; set; }
 
+        public string BondingRequirement { get; set; }
 
         //操作者和操作时间
         [Key]

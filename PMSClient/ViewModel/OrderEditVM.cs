@@ -84,6 +84,7 @@ namespace PMSClient.ViewModel
                     CurrentOrder.PlateDrawing = order.PlateDrawing;
                     CurrentOrder.SpecialRequirement = order.SpecialRequirement;
                     CurrentOrder.PartNumber = order.PartNumber;
+                    CurrentOrder.BondingRequirement = order.BondingRequirement;
                     #endregion
                 }
 
@@ -169,6 +170,7 @@ namespace PMSClient.ViewModel
             order.PartNumber = "无";
             order.SecondMachineDetails = "无";
             order.SecondMachineDimension = "无";
+            order.BondingRequirement = "Chengdu-Indium";
             #endregion
             CurrentOrder = order;
         }

@@ -97,6 +97,12 @@
   <wsdl:message name="INewService_GetEmergencyOrderCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetEmergencyOrderCountResponse" />
   </wsdl:message>
+  <wsdl:message name="INewService_GetProductPlanCountByOrderID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductPlanCountByOrderID" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetProductPlanCountByOrderID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductPlanCountByOrderIDResponse" />
+  </wsdl:message>
   <wsdl:message name="INewService_GetPlansByOrderID_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPlansByOrderID" />
   </wsdl:message>
@@ -205,6 +211,10 @@
     <wsdl:operation name="GetEmergencyOrderCount">
       <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetEmergencyOrderCount" message="tns:INewService_GetEmergencyOrderCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetEmergencyOrderCountResponse" message="tns:INewService_GetEmergencyOrderCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductPlanCountByOrderID">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetProductPlanCountByOrderID" message="tns:INewService_GetProductPlanCountByOrderID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetProductPlanCountByOrderIDResponse" message="tns:INewService_GetProductPlanCountByOrderID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetPlansByOrderID">
       <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetPlansByOrderID" message="tns:INewService_GetPlansByOrderID_InputMessage" />
@@ -369,6 +379,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetEmergencyOrderCount">
       <soap:operation soapAction="http://tempuri.org/INewService/GetEmergencyOrderCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductPlanCountByOrderID">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetProductPlanCountByOrderID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

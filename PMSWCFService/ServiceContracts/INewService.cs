@@ -72,6 +72,9 @@ namespace PMSWCFService.ServiceContracts
 
 
         [OperationContract]
+        int GetProductPlanCountByOrderID(Guid id);
+
+        [OperationContract]
         List<DcPlanVHP> GetPlansByOrderID(Guid id);
 
 

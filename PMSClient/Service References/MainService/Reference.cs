@@ -23,6 +23,9 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BondingRequirementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionAbbrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -152,6 +155,19 @@ namespace PMSClient.MainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BondingRequirement {
+            get {
+                return this.BondingRequirementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BondingRequirementField, value) != true)) {
+                    this.BondingRequirementField = value;
+                    this.RaisePropertyChanged("BondingRequirement");
+                }
             }
         }
         
@@ -708,6 +724,9 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BondingRequirementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionAbbrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -846,6 +865,19 @@ namespace PMSClient.MainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BondingRequirement {
+            get {
+                return this.BondingRequirementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BondingRequirementField, value) != true)) {
+                    this.BondingRequirementField = value;
+                    this.RaisePropertyChanged("BondingRequirement");
+                }
             }
         }
         

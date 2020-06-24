@@ -9,6 +9,7 @@
   <xs:element name="ArrayOfDcOrder" nillable="true" type="tns:ArrayOfDcOrder" />
   <xs:complexType name="DcOrder">
     <xs:sequence>
+      <xs:element minOccurs="0" name="BondingRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionAbbr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionOriginal" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionStandard" nillable="true" type="xs:string" />
@@ -61,6 +62,7 @@
   <xs:element name="ArrayOfDcOrderHistory" nillable="true" type="tns:ArrayOfDcOrderHistory" />
   <xs:complexType name="DcOrderHistory">
     <xs:sequence>
+      <xs:element minOccurs="0" name="BondingRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionAbbr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionOriginal" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionStandard" nillable="true" type="xs:string" />
