@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7e4cbd04-2176-4e11-ac45-d7c8bcefea40" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.16.254:8002/TCBService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TCBService.xsd" MetadataType="Schema" ID="1cca45bd-f0f7-4cd9-a43a-992d0c1f1865" SourceId="1" SourceUrl="http://192.168.16.254:8002/TCBService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TCBService1.xsd" MetadataType="Schema" ID="c2c82440-973a-4303-ade3-043d14ac89aa" SourceId="1" SourceUrl="http://192.168.16.254:8002/TCBService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TCBService2.xsd" MetadataType="Schema" ID="0390d227-a37b-4b74-a777-76f2a49eb9ee" SourceId="1" SourceUrl="http://192.168.16.254:8002/TCBService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TCBService.disco" MetadataType="Disco" ID="40249ef1-9512-4d8e-b49d-943b8755c6ae" SourceId="1" SourceUrl="http://192.168.16.254:8002/TCBService.svc?disco" />
+    <MetadataFile FileName="TCBService.wsdl" MetadataType="Wsdl" ID="2c4e2305-8a57-418b-8246-3b54351f6cb0" SourceId="1" SourceUrl="http://192.168.16.254:8002/TCBService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

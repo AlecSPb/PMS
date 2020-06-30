@@ -22,5 +22,16 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         void UpdateDeliveryItemTCB(DcDeliveryItemTCB model);
 
+
+
+        [OperationContract]
+        List<DcDelivery> GetDelivery(int s, int t, string deliveryname);
+        [OperationContract]
+        int GetDeliveryCount(string deliveryname);
+
+
+        [OperationContract]
+        List<DcDeliveryItemTCB> GetDeliveryItemTCBByDeliveryID(Guid id);
+
     }
 }

@@ -26,14 +26,13 @@ namespace PMSDAL
         public string Defects { get; set; }
         public string Remark { get; set; }
 
-
+        public Guid DeliveryID { get; set; }
 
 
         public string BondingPO { get; set; }
-        public string DeliveryName { get; set; }
-        public string ExpressName { get; set; }
-        public string ExpressNumber { get; set; }
         public string TrackingHistory { get; set; }
+
+        public string TCBRemark { get; set; }
 
         public string State { get; set; }
     }

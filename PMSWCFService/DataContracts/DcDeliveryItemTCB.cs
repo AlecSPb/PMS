@@ -41,21 +41,14 @@ namespace PMSWCFService.DataContracts
         public string Remark { get; set; }
 
 
-
+        [DataMember]
+        public Guid DeliveryID { get; set; }
         [DataMember]
         public string BondingPO { get; set; }
-
-
-        [DataMember]
-        public string DeliveryName { get; set; }
-        [DataMember]
-        public string ExpressName { get; set; }
-        [DataMember]
-        public string ExpressNumber { get; set; }
-
         [DataMember]
         public string TrackingHistory { get; set; }
-
+        [DataMember]
+        public string TCBRemark { get; set; }
         [DataMember]
         public string State { get; set; }
     }

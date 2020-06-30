@@ -519,6 +519,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\TCB\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ToolService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2228,6 +2233,22 @@
     <None Include="Service References\SimpleMaterialService\SimpleMaterialService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\TCB\PMSClient.TCB.DcDelivery.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TCB\PMSClient.TCB.DcDeliveryItemTCB.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TCB\TCBService.wsdl" />
+    <None Include="Service References\TCB\TCBService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TCB\TCBService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TCB\TCBService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ToolService\PMSClient.ToolService.DcToolSieve.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -2292,6 +2313,13 @@
     <None Include="Service References\ConsumableService\configuration91.svcinfo" />
     <None Include="Service References\ConsumableService\configuration.svcinfo" />
     <None Include="Service References\ConsumableService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\TCB\TCBService.disco" />
+    <None Include="Service References\TCB\configuration91.svcinfo" />
+    <None Include="Service References\TCB\configuration.svcinfo" />
+    <None Include="Service References\TCB\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -2923,6 +2951,7 @@
     <WCFMetadataStorage Include="Service References\SF\" />
     <WCFMetadataStorage Include="Service References\SimpleMaterialService\" />
     <WCFMetadataStorage Include="Service References\StatisticService\" />
+    <WCFMetadataStorage Include="Service References\TCB\" />
     <WCFMetadataStorage Include="Service References\ToolService\" />
     <WCFMetadataStorage Include="Service References\UserSimpleService\" />
   </ItemGroup>

@@ -34,7 +34,7 @@ namespace PMSDAL
         public DateTime CustomerSignedDate { get; set; }
         public string CustomerSignedDetails { get; set; }
         public DateTime LastUpdateTime { get; set; }
-
+        public string Receiver { get; set; }//接收者
 
         //操作者和操作时间
         [Key]
