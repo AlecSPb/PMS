@@ -54,6 +54,7 @@
     <Compile Include="Entities\ConsumableInventory.cs" />
     <Compile Include="Entities\ConsumablePurchase.cs" />
     <Compile Include="Entities\Criteria.cs" />
+    <Compile Include="Entities\DeliveryItemTCB.cs" />
     <Compile Include="Entities\SimpleMaterial.cs" />
     <Compile Include="Entities\UserAccessGrant.cs" />
     <Compile Include="Entities\BDElement.cs" />
@@ -887,6 +888,18 @@
     <Compile Include="Migrations\202006240127056_change133.Designer.cs">
       <DependentUpon>202006240127056_change133.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006300254453_change134.cs" />
+    <Compile Include="Migrations\202006300254453_change134.Designer.cs">
+      <DependentUpon>202006300254453_change134.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006300309313_change135.cs" />
+    <Compile Include="Migrations\202006300309313_change135.Designer.cs">
+      <DependentUpon>202006300309313_change135.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006300319213_change136.cs" />
+    <Compile Include="Migrations\202006300319213_change136.Designer.cs">
+      <DependentUpon>202006300319213_change136.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -1497,6 +1510,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006240127056_change133.resx">
       <DependentUpon>202006240127056_change133.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006300254453_change134.resx">
+      <DependentUpon>202006300254453_change134.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006300309313_change135.resx">
+      <DependentUpon>202006300309313_change135.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006300319213_change136.resx">
+      <DependentUpon>202006300319213_change136.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -75,6 +75,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TCBService.svc" />
     <Content Include="ConsumableService.svc" />
     <Content Include="SimpleMaterialService.svc" />
     <Content Include="NewService.svc" />
@@ -119,6 +120,7 @@
     <Compile Include="DataContracts\DcComplexQueryResult.cs" />
     <Compile Include="DataContracts\DcConsumablePurchase.cs" />
     <Compile Include="DataContracts\DcConsumableInventory.cs" />
+    <Compile Include="DataContracts\DcDeliveryItemTCB.cs" />
     <Compile Include="DataContracts\DcEditLock.cs" />
     <Compile Include="DataContracts\DcFailure.cs" />
     <Compile Include="DataContracts\DcMachineFix.cs" />
@@ -224,6 +226,7 @@
     <Compile Include="ServiceContracts\IToDoService.cs" />
     <Compile Include="ServiceContracts\IToolInventoryService.cs" />
     <Compile Include="ServiceContracts\IToolSieveService.cs" />
+    <Compile Include="ServiceContracts\ITCBService.cs" />
     <Compile Include="ServiceImplements\AnlysisHelper.cs" />
     <Compile Include="ServiceImplements\AnlysisService.cs" />
     <Compile Include="ServiceImplements\ComplexQueryService.cs" />
@@ -303,6 +306,7 @@
     <Compile Include="ServiceImplements\SanjieService.cs" />
     <Compile Include="ServiceImplements\SimpleMaterialService.cs" />
     <Compile Include="ServiceImplements\StatisticService.cs" />
+    <Compile Include="ServiceImplements\TCBService.cs" />
     <Compile Include="ServiceImplements\ToolInventoryService.cs" />
     <Compile Include="ServiceImplements\ToolService.cs" />
     <Compile Include="ServiceImplements\UserAccessService.cs" />

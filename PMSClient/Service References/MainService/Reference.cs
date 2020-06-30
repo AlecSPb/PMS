@@ -4790,6 +4790,9 @@ namespace PMSClient.MainService {
         private string PackageWeightField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReceiverField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5038,6 +5041,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PackageWeightField, value) != true)) {
                     this.PackageWeightField = value;
                     this.RaisePropertyChanged("PackageWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Receiver {
+            get {
+                return this.ReceiverField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReceiverField, value) != true)) {
+                    this.ReceiverField = value;
+                    this.RaisePropertyChanged("Receiver");
                 }
             }
         }

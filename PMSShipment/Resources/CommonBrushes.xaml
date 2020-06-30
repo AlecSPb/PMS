@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="CompletedBrush" Color="White"/>
+    <SolidColorBrush x:Key="VHPCompletedBrush" Color="Wheat"/>
+    <SolidColorBrush x:Key="UnCompletedBrush" Color="#00FF80"/>
+    <SolidColorBrush x:Key="UnknownBrush" Color="#04A8DD"/>
+    <SolidColorBrush x:Key="WastedBrush" Color="LightGray"/>
+
+    <SolidColorBrush x:Key="PausedBrush" Color="LightGray"/>
+    <SolidColorBrush x:Key="CancelledBrush" Color="Gray"/>
+    <SolidColorBrush x:Key="UnCheckedBrush" Color="Yellow"/>
+    <SolidColorBrush x:Key="EmergencyBrush" Color="LightCoral"/>
+    <SolidColorBrush x:Key="CheckedBrush" Color="White"/>
+    <SolidColorBrush x:Key="FailedBrush" Color="LightGray"/>
+    <SolidColorBrush x:Key="NoInputBrush" Color="LightSalmon"/>
+    <SolidColorBrush x:Key="InventoryWarningBrush" Color="LightGoldenrodYellow"/>
+    <SolidColorBrush x:Key="InventoryMaxWarningBrush" Color="LightGreen"/>
+    <SolidColorBrush x:Key="InventoryMinWarningBrush" Color="LightCoral"/>
+
+    <SolidColorBrush x:Key="YesterdayBrush" Color="LightBlue"/>
+    <SolidColorBrush x:Key="TodayBrush" Color="LightGreen"/>
+    <SolidColorBrush x:Key="TomorrowBrush" Color="LightSalmon"/>
+
+    <SolidColorBrush x:Key="StoredBrush" Color="LightGreen"/>
+    <SolidColorBrush x:Key="DeliveredBrush" Color="White"/>
+
+    <SolidColorBrush x:Key="ReadOnlyTextBoxBrush" Color="LightSteelBlue"/>
+    
+    <SolidColorBrush x:Key="UnPreparedBrush" Color="LightGreen"/>
+    <SolidColorBrush x:Key="UnCheckBrush" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="UnSentBrush" Color="LightPink"/>
+    
+</ResourceDictionary>

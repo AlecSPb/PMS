@@ -51,6 +51,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string CustomerSignedDetails { get; set; }//签收细节
         [DataMember]
+        public string Receiver { get; set; }//接收者
+        [DataMember]
         public string State { get; set; }//取消，未审核，审核通过，已发货
 
         [DataMember]

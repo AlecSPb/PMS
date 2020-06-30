@@ -58,6 +58,7 @@
     <Compile Include="ConsumableStorePosition.cs" />
     <Compile Include="ConsumableUnit.cs" />
     <Compile Include="DeliveryExpress.cs" />
+    <Compile Include="DeliveryItemTCBState.cs" />
     <Compile Include="DeliveryState.cs" />
     <Compile Include="DeliveryType.cs" />
     <Compile Include="FailureStage.cs" />

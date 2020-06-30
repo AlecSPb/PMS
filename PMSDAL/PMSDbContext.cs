@@ -161,6 +161,6 @@ namespace PMSDAL
 
         public DbSet<SimpleMaterial> SimpleMaterials { get; set; }
 
-
+        public DbSet<DeliveryItemTCB> DeliveryItemTCBs { get; set; }
     }
 }

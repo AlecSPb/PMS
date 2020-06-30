@@ -718,6 +718,7 @@
     <sys:String x:Key="RDCustomerSignedDate">签收日期</sys:String>
     <sys:String x:Key="RDCustomerSignedDetails">签收备注</sys:String>
     <sys:String x:Key="RDDeliveryType">发货类型</sys:String>
+    <sys:String x:Key="RDReceiver">接收者</sys:String>
 
     <sys:String x:Key="RDProductType">产品类型</sys:String>
     <sys:String x:Key="RDProductID">产品ID</sys:String>

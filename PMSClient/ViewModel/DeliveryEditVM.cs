@@ -45,6 +45,7 @@ namespace PMSClient.ViewModel
             model.CustomerSignedDate = DateTime.Today;
             model.CustomerSignedDetails = "";
             model.LastUpdateTime = DateTime.Now;
+            model.Receiver = "";
             #endregion
             CurrentDelivery = model;
         }

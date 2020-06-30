@@ -1624,6 +1624,9 @@ namespace PMSClient.OutputService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BondingRequirementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionAbbrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1753,6 +1756,19 @@ namespace PMSClient.OutputService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BondingRequirement {
+            get {
+                return this.BondingRequirementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BondingRequirementField, value) != true)) {
+                    this.BondingRequirementField = value;
+                    this.RaisePropertyChanged("BondingRequirement");
+                }
             }
         }
         

@@ -139,6 +139,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RDReceiver}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Receiver}"/>
                 <DataGridTemplateColumn Header="{StaticResource RDRemark}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
