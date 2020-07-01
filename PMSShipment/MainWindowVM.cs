@@ -55,8 +55,8 @@ namespace PMSShipment
 
         private void ActionExpressTrack()
         {
-            //if (!PMSDialogService.ShowYesNo("请问", "确定追踪【未完成】的发货物流情况吗？"))
-            //    return;
+            if (!XSHelper.XS.MessageBox.ShowYesNo("Ask", "Track All Green One?"))
+                return;
             ////追踪物流情况
             //new Express.Operation().TraceUnCompleted();
         }

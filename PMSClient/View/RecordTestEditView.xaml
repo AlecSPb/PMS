@@ -296,7 +296,7 @@
                     <Button Content="附有背板" Name="BtnAddPlate" Style="{StaticResource StyleButtonCommon}" Click="BtnAddPlate_Click"/>
                     <Button Content="回收重做" Name="BtnRecycle" Style="{StaticResource StyleButtonCommon}" Click="BtnRecycle_Click"/>
                     <Button Content="报废拿走" Name="BtnTakeAway" Style="{StaticResource StyleButtonCommon}" Click="BtnTakeAway_Click"/>
-                    <Button Content="报废拿走" Name="BtnGas" Style="{StaticResource StyleButtonCommon}" Click="BtnGas_Click"/>
+                    <Button Content="气体测试" Name="BtnGas" Style="{StaticResource StyleButtonCommon}" Click="BtnGas_Click"/>
                     <Button Content="异常发货" Name="BtnSpecial" Style="{StaticResource StyleButtonCommon}" Click="BtnSpecial_Click">
                         <Button.ToolTip>
                             <TextBlock Text="不符合发货标准，但是同意发货"/>
