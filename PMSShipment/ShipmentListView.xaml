@@ -1,0 +1,41 @@
+﻿<Window x:Class="PMSShipment.ShipmentListView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSShipment"
+        xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+        mc:Ignorable="d"
+        Title="Shipment List" Height="600" Width="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="{StaticResource BGNavigationBar}">
+            <TextBlock Style="{StaticResource StyleTextBlockNavigationBar}" Text="Product ID"/>
+            <TextBox Style="{StaticResource StyleTextBoxSearch}" Text="{Binding SearchProductID}"/>
+            <TextBlock Style="{StaticResource StyleTextBlockNavigationBar}" Text="Composition"/>
+            <TextBox Style="{StaticResource StyleTextBoxSearch}" Text="{Binding SearchComposition}"/>
+            <TextBlock Style="{StaticResource StyleTextBlockNavigationBar}" Text="PO"/>
+            <TextBox Style="{StaticResource StyleTextBoxSearch}" Text=""/>
+            <TextBlock Style="{StaticResource StyleTextBlockNavigationBar}" Text="BondingPO"/>
+            <TextBox Style="{StaticResource StyleTextBoxSearch}" Text=""/>
+            <TextBlock Style="{StaticResource StyleTextBlockNavigationBar}" Text="Customer"/>
+            <TextBox Style="{StaticResource StyleTextBoxSearch}" Text=""/>
+            <Button Style="{StaticResource StyleButtonCommon}" Content="Search"/>
+            <Button Style="{StaticResource StyleButtonCommon}" Content="All"/>
+        </StackPanel>
+        <DataGrid Grid.Row="1" Style="{StaticResource StyleDataGridCommon}">
+
+        </DataGrid>
+
+        <control:SimplePager Grid.Row="2" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" 
+                             LabelPageIndex="Page Index" 
+                             LabelPageCount="PageCount"
+                             LabelPageSize="PageSize" 
+                             LabelRecordCount="RecordCount"/>
+
+    </Grid>
+</Window>

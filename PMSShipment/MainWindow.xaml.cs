@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using PMSShipment.TCB;
 namespace PMSShipment
 {
     /// <summary>
@@ -23,6 +23,35 @@ namespace PMSShipment
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowVM();
+        }
+
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            try
+            {
+                var order = (DcDelivery)e.Row.DataContext;
+                if (order != null)
+                {
+                    switch (order.State)
+                    {
+                        case "未核验":
+                            e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
+                            break;
+                        case "未完成":
+                            e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
+                            break;
+                        case "最终完成":
+                            e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
     }
 }

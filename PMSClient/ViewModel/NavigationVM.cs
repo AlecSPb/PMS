@@ -68,8 +68,8 @@ namespace PMSClient.ViewModel
             GoToNavigation = new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
             GoToNavigationWorkFlow = new RelayCommand(() => NavigationService.GoTo(PMSViews.NavigationWorkFlow));
 
-            GoToOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.Order), 
-                ()=>PMSHelper.CurrentSession.IsInGroup("OrderView"));
+            GoToOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.Order),
+                () => PMSHelper.CurrentSession.IsInGroup("OrderView"));
 
             GoToOutSource = new RelayCommand(() => NavigationService.GoTo(PMSViews.OutSource),
                 () => _session.IsAuthorized(PMSAccess.ReadOutSource)
@@ -118,9 +118,8 @@ namespace PMSClient.ViewModel
             GoToRecordMachine = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordMachine),
                 () => _session.IsAuthorized(PMSAccess.ReadRecordMachine)
             || _session.IsInGroup(AccessGrant.ViewAllModule));
-            GoToRecordTest = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordTest),
-                () => _session.IsAuthorized(PMSAccess.ReadRecordTest)
-            || _session.IsInGroup(AccessGrant.ViewAllModule));
+            GoToRecordTest = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordTest), 
+                () => PMSHelper.CurrentSession.IsInGroup("TestView"));
             GoToRecordBonding = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordBonding),
                 () => _session.IsAuthorized(PMSAccess.ReadRecordBonding)
             || _session.IsInGroup(AccessGrant.ViewAllModule));

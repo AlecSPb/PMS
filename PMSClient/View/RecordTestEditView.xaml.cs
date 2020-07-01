@@ -219,5 +219,10 @@ namespace PMSClient.View
         {
             PMSMethods.SetTextBox(TxtParallelism, "F-A=M0.0mm;F-B=M0.0mm");
         }
+
+        private void BtnGas_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBoxAppend(txtRemark, "AsH3=0ppb;PH3=0ppb;B2H6=0ppb;SiH4=0ppb;GeH4=0ppb;H2Se=0ppb;H2S=0ppb;");
+        }
     }
 }

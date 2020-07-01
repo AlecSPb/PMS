@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolDialog"
         mc:Ignorable="d"
-        Title="输入超声扫描的结果" Height="400" Width="900" 
+        Title="输入超声扫描的结果" Height="500" Width="900" 
         WindowStartupLocation="CenterScreen" 
         WindowStyle="ToolWindow">
     <Grid>
@@ -25,20 +25,32 @@
         <TextBlock Grid.Row="1" Style="{StaticResource StyleDGTextBlockCommon}" Text="" Name="TxtProductInformation"
                    Background="Yellow" FontWeight="Bold" FontSize="20" Foreground="Blue"/>
         <TextBlock Grid.Row="2" Style="{StaticResource StyleDGTextBlockCommon}" Text="输入或者修改该靶材的超声扫描结果"/>
-        <TextBox Grid.Row="3" Style="{StaticResource StyleTextBoxCommon}" Name="TxtCscan"/>
+        <TextBox Grid.Row="3" Style="{StaticResource StyleTextBoxCommon}" Name="TxtCscan" TextWrapping="Wrap"
+                 Height="100"/>
         <StackPanel Grid.Row="4" Orientation="Horizontal" Button.Click="StackPanel_Click">
             <Button Content="Void Area=%" Style="{StaticResource StyleButtonCommonNarrow}"/>
             <Button Content="Void Count(0.25)=" Style="{StaticResource StyleButtonCommonNarrow}"/>
         </StackPanel>
-        <StackPanel Grid.Row="5" Orientation="Horizontal" Button.Click="StackPanel_Click">
-            <Button Content="Void1-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
-            <Button Content="Void2-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
-            <Button Content="Void3-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
-            <Button Content="Void4-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
-            <Button Content="Void5-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
-            <Button Content="Void6-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
-            <Button Content="Void7-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
-            <Button Content="Void8-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+        <StackPanel Grid.Row="5" Button.Click="StackPanel_Click">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="V1-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                <Button Content="V2-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                <Button Content="V3-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                <Button Content="V4-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                <Button Content="V5-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                <Button Content="V6-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                <Button Content="V7-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                <Button Content="V8-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                <Button Content="V9-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                <Button Content="V10-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="V11-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                <Button Content="V12-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                <Button Content="V13-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                <Button Content="V14-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                <Button Content="V15-DH=+" Style="{StaticResource StyleButtonCommonNarrow}"/>
+            </StackPanel>
         </StackPanel>
         <TextBlock Grid.Row="6" Style="{StaticResource StyleTextBlockCommon}" Text="Void1-DH=2.56+2.6 代表，第一个空腔直径为2.56深度为2.6" 
                    Background="Orange" HorizontalAlignment="Stretch"/>
