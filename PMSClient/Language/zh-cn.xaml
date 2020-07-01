@@ -733,6 +733,14 @@
     <sys:String x:Key="RDItemState">状态</sys:String>
     <sys:String x:Key="RDDimension">尺寸</sys:String>
     <sys:String x:Key="RDOrderNumber">自定义次序</sys:String>
+
+    <sys:String x:Key="RDTCBState">TCBState</sys:String>
+    <sys:String x:Key="RDTCBRemark">TCBRemark</sys:String>
+    <sys:String x:Key="RDTCBHistory">TCBHistory</sys:String>
+    <sys:String x:Key="RDTCBBondingPO">TCBBondingPO</sys:String>
+
+
+
     <!--Product-->
     <sys:String x:Key="RPCreator">创建者</sys:String>
     <sys:String x:Key="RPCreateTime">创建时间</sys:String>

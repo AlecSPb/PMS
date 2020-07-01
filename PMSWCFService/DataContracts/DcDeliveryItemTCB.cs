@@ -6,6 +6,9 @@ using System.Web;
 
 namespace PMSWCFService.DataContracts
 {
+    /// <summary>
+    /// 暂时不用
+    /// </summary>
     [DataContract]
     public class DcDeliveryItemTCB
     {

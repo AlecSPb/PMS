@@ -41,5 +41,13 @@ namespace PMSDAL
         public string State { get; set; }
 
         public Guid DeliveryID { get; set; }
+
+
+
+        //for greg tcb tracking
+        public string BondingPO { get; set; }
+        public string TrackingHistory { get; set; }
+        public string TCBRemark { get; set; }
+        public string TCBState { get; set; }
     }
 }

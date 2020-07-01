@@ -118,8 +118,12 @@ namespace PMSClient.DataProcess.ScanInput
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.OrderNumber = 0;
             model.DeliveryType = deliverytype;
-
             model.Remark = "无";
+
+            model.BondingPO = "";
+            model.TrackingHistory = "";
+            model.TCBState = PMSCommon.DeliveryItemTCBState.UnKnown.ToString();
+            model.TCBRemark = "";
             #endregion
 
             return model;
@@ -158,6 +162,11 @@ namespace PMSClient.DataProcess.ScanInput
                 var platelot = Helpers.DeliveryHelper.GetBPLotFromTest(model.ProductID);
                 model.Remark = platelot;
             }
+
+            model.BondingPO = "";
+            model.TrackingHistory = "";
+            model.TCBState = PMSCommon.DeliveryItemTCBState.UnKnown.ToString();
+            model.TCBRemark = "";
             #endregion
 
             return model;
@@ -190,6 +199,11 @@ namespace PMSClient.DataProcess.ScanInput
             model.DeliveryType = deliverytype;
 
             model.Remark = "无";
+
+            model.BondingPO = "";
+            model.TrackingHistory = "";
+            model.TCBState = PMSCommon.DeliveryItemTCBState.UnKnown.ToString();
+            model.TCBRemark = "";
             #endregion
 
             return model;

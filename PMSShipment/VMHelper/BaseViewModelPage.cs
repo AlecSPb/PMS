@@ -16,7 +16,7 @@ namespace PMSShipment.VMHelper
 
         public BaseViewModelPage()
         {
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
+            //GoToNavigation = new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
         }
 
         #region PageRelated

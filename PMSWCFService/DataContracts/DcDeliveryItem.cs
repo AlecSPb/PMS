@@ -58,5 +58,16 @@ namespace PMSWCFService.DataContracts
         public string State { get; set; }
         [DataMember]
         public Guid DeliveryID { get; set; }
+
+
+        //for greg tcb tracking
+        [DataMember]
+        public string BondingPO { get; set; }
+        [DataMember]
+        public string TrackingHistory { get; set; }
+        [DataMember]
+        public string TCBRemark { get; set; }
+        [DataMember]
+        public string TCBState { get; set; }
     }
 }

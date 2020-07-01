@@ -12,13 +12,14 @@
         <xs:element minOccurs="0" name="po" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="customer" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="bondingpo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="state" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDeliveryItemTCBResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetDeliveryItemTCBResult" nillable="true" type="q1:ArrayOfDcDeliveryItemTCB" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetDeliveryItemTCBResult" nillable="true" type="q1:ArrayOfDcDeliveryItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -30,6 +31,7 @@
         <xs:element minOccurs="0" name="po" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="customer" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="bondingpo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="state" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -43,7 +45,7 @@
   <xs:element name="AddDeliveryItemTCB">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q2:DcDeliveryItemTCB" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q2:DcDeliveryItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -55,7 +57,7 @@
   <xs:element name="UpdateDeliveryItemTCB">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q3:DcDeliveryItemTCB" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q3:DcDeliveryItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -104,7 +106,7 @@
   <xs:element name="GetDeliveryItemTCBByDeliveryIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetDeliveryItemTCBByDeliveryIDResult" nillable="true" type="q6:ArrayOfDcDeliveryItemTCB" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetDeliveryItemTCBByDeliveryIDResult" nillable="true" type="q6:ArrayOfDcDeliveryItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

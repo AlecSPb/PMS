@@ -437,6 +437,7 @@
   <xs:complexType name="DcDeliveryItem">
     <xs:sequence>
       <xs:element minOccurs="0" name="Abbr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BondingPO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
@@ -456,6 +457,9 @@
       <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TCBRemark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TCBState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrackingHistory" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

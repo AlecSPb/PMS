@@ -40,6 +40,11 @@ namespace PMSDAL
 
         public Guid DeliveryID { get; set; }
 
+        //for greg tcb tracking
+        public string BondingPO { get; set; }
+        public string TrackingHistory { get; set; }
+        public string TCBRemark { get; set; }
+        public string TCBState { get; set; }
 
         //操作者和操作时间
         [Key]

@@ -12,15 +12,15 @@ namespace PMSWCFService.ServiceContracts
     public interface ITCBService
     {
         [OperationContract]
-        List<DcDeliveryItemTCB> GetDeliveryItemTCB(int s, int t, string productid, string composition, string po, string customer,string bondingpo);
+        List<DcDeliveryItem> GetDeliveryItemTCB(int s, int t, string productid, string composition, string po, string customer,string bondingpo,string state);
 
         [OperationContract]
-        int GetDeliveryItemTCBCount(string productid, string composition, string po, string customer, string bondingpo);
+        int GetDeliveryItemTCBCount(string productid, string composition, string po, string customer, string bondingpo,string state);
 
         [OperationContract]
-        void AddDeliveryItemTCB(DcDeliveryItemTCB model);
+        void AddDeliveryItemTCB(DcDeliveryItem model);
         [OperationContract]
-        void UpdateDeliveryItemTCB(DcDeliveryItemTCB model);
+        void UpdateDeliveryItemTCB(DcDeliveryItem model);
 
 
 
@@ -31,7 +31,7 @@ namespace PMSWCFService.ServiceContracts
 
 
         [OperationContract]
-        List<DcDeliveryItemTCB> GetDeliveryItemTCBByDeliveryID(Guid id);
+        List<DcDeliveryItem> GetDeliveryItemTCBByDeliveryID(Guid id);
 
     }
 }

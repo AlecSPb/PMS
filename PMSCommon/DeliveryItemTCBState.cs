@@ -11,8 +11,9 @@ namespace PMSCommon
     /// </summary>
     public enum DeliveryItemTCBState
     {
-        Deleted,
+        UnKnown,
         Paused,
+        Broken,
         Enroute_TCB,
         Arrived_TCB,
         Bonding_TCB,

@@ -12,16 +12,16 @@ namespace PMSWCFService
 {
     public class TCBService : ITCBService
     {
-        public void AddDeliveryItemTCB(DcDeliveryItemTCB model)
+        public void AddDeliveryItemTCB(DcDeliveryItem model)
         {
             try
             {
                 XS.RunLog();
                 using (var db = new PMSDbContext())
                 {
-                    Mapper.Initialize(cfg => cfg.CreateMap<DcDeliveryItemTCB, DeliveryItemTCB>());
-                    var entity = Mapper.Map<DeliveryItemTCB>(model);
-                    db.DeliveryItemTCBs.Add(entity);
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcDeliveryItem, DeliveryItem>());
+                    var entity = Mapper.Map<DeliveryItem>(model);
+                    db.DeliveryItems.Add(entity);
                     db.SaveChanges();
                 }
             }
@@ -81,8 +81,31 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcDeliveryItemTCB> GetDeliveryItemTCB(int s, int t, string productid, string composition, string po,
-            string customer, string bondingpo)
+        public List<DcDeliveryItem> GetDeliveryItemTCBByDeliveryID(Guid id)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DeliveryItem, DcDeliveryItem>());
+
+                    var result = dc.DeliveryItems
+                        .Where(i => i.DeliveryID == id && i.State != PMSCommon.SimpleState.作废.ToString())
+                        .OrderByDescending(i => i.CreateTime)
+                        .ToList();
+                    return Mapper.Map<List<DeliveryItem>, List<DcDeliveryItem>>(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcDeliveryItem> GetDeliveryItemTCB(int s, int t, string productid, string composition, string po,
+            string customer, string bondingpo, string state)
         {
             try
             {
@@ -90,12 +113,13 @@ namespace PMSWCFService
                 var searchItem = CompositionHelper.GetSearchItems(composition);
                 using (var dc = new PMSDbContext())
                 {
-                    var query = from d in dc.DeliveryItemTCBs
-                                where d.State != PMSCommon.DeliveryItemTCBState.Deleted.ToString()
+                    var query = from d in dc.DeliveryItems
+                                where d.State != PMSCommon.SimpleState.作废.ToString()
                                 && d.ProductID.Contains(productid)
                                 && d.PO.Contains(po)
                                 && d.Customer.Contains(customer)
                                 && d.BondingPO.Contains(bondingpo)
+                                && d.TCBState.Contains(state)
                                 && d.Composition.Contains(searchItem.Item1)
                                 && d.Composition.Contains(searchItem.Item2)
                                 && d.Composition.Contains(searchItem.Item3)
@@ -104,10 +128,10 @@ namespace PMSWCFService
                                 select d;
                     Mapper.Initialize(cfg =>
                     {
-                        cfg.CreateMap<DeliveryItemTCB, DcDeliveryItemTCB>();
+                        cfg.CreateMap<DeliveryItem, DcDeliveryItem>();
                     });
 
-                    var records = Mapper.Map<List<DeliveryItemTCB>, List<DcDeliveryItemTCB>>(query.Skip(s).Take(t).ToList());
+                    var records = Mapper.Map<List<DeliveryItem>, List<DcDeliveryItem>>(query.Skip(s).Take(t).ToList());
                     return records;
                 }
             }
@@ -118,30 +142,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcDeliveryItemTCB> GetDeliveryItemTCBByDeliveryID(Guid id)
-        {
-            try
-            {
-                XS.RunLog();
-                using (var dc = new PMSDbContext())
-                {
-                    Mapper.Initialize(cfg => cfg.CreateMap<DeliveryItem, DcDeliveryItem>());
-
-                    var result = dc.DeliveryItemTCBs
-                        .Where(i => i.DeliveryID == id && i.State != PMSCommon.DeliveryItemTCBState.Deleted.ToString())
-                        .OrderByDescending(i => i.CreateTime)
-                        .ToList();
-                    return Mapper.Map<List<DeliveryItemTCB>, List<DcDeliveryItemTCB>>(result);
-                }
-            }
-            catch (Exception ex)
-            {
-                XS.Current.Error(ex);
-                throw ex;
-            }
-        }
-
-        public int GetDeliveryItemTCBCount(string productid, string composition, string po, string customer, string bondingpo)
+        public int GetDeliveryItemTCBCount(string productid, string composition, string po, string customer, string bondingpo, string state)
         {
             try
             {
@@ -149,12 +150,13 @@ namespace PMSWCFService
                 var searchItem = CompositionHelper.GetSearchItems(composition);
                 using (var dc = new PMSDbContext())
                 {
-                    var query = from d in dc.DeliveryItemTCBs
-                                where d.State != PMSCommon.DeliveryItemTCBState.Deleted.ToString()
+                    var query = from d in dc.DeliveryItems
+                                where d.State != PMSCommon.SimpleState.作废.ToString()
                                 && d.ProductID.Contains(productid)
                                 && d.PO.Contains(po)
                                 && d.Customer.Contains(customer)
                                 && d.BondingPO.Contains(bondingpo)
+                                && d.TCBState.Contains(state)
                                 && d.Composition.Contains(searchItem.Item1)
                                 && d.Composition.Contains(searchItem.Item2)
                                 && d.Composition.Contains(searchItem.Item3)
@@ -171,7 +173,7 @@ namespace PMSWCFService
             }
         }
 
-        public void UpdateDeliveryItemTCB(DcDeliveryItemTCB model)
+        public void UpdateDeliveryItemTCB(DcDeliveryItem model)
         {
             try
             {
@@ -181,10 +183,10 @@ namespace PMSWCFService
                 {
                     var config = new MapperConfiguration(cfg =>
                     {
-                        cfg.CreateMap<DcDeliveryItemTCB, DeliveryItemTCB>();
+                        cfg.CreateMap<DcDeliveryItem, DeliveryItem>();
                     });
                     var mapper = config.CreateMapper();
-                    var entity = mapper.Map<DeliveryItemTCB>(model);
+                    var entity = mapper.Map<DeliveryItem>(model);
                     dc.Entry(entity).State = System.Data.Entity.EntityState.Modified;
                     dc.SaveChanges();
 

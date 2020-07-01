@@ -725,6 +725,10 @@
     <sys:String x:Key="RDDimension">Dimension</sys:String>
     <sys:String x:Key="RDOrderNumber">Order Number</sys:String>
 
+    <sys:String x:Key="RDTCBState">TCBState</sys:String>
+    <sys:String x:Key="RDTCBRemark">TCBRemark</sys:String>
+    <sys:String x:Key="RDTCBHistory">TCBHistory</sys:String>
+    <sys:String x:Key="RDTCBBondingPO">TCBBondingPO</sys:String>
     <!--Product-->
     <sys:String x:Key="RPCreator">Creator</sys:String>
     <sys:String x:Key="RPCreateTime">Create Time</sys:String>

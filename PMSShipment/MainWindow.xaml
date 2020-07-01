@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:PMSShipment"
         xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1200" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="PMS Shipment Tracking version 1.0"
+        Icon="tracking.png"
+        Height="600" Width="1200" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -14,8 +16,15 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" Background="{StaticResource BGNavigationBar}">
-            <Button Style="{StaticResource StyleButtonCommon}" Content="Add"/>
             <TextBlock Style="{StaticResource StyleTextBlockNavigationBar}" Text="Product ID"/>
+            <TextBox Style="{StaticResource StyleTextBoxSearch}" Text=""/>
+            <TextBlock Style="{StaticResource StyleTextBlockNavigationBar}" Text="Composition"/>
+            <TextBox Style="{StaticResource StyleTextBoxSearch}" Text=""/>
+            <TextBlock Style="{StaticResource StyleTextBlockNavigationBar}" Text="PO"/>
+            <TextBox Style="{StaticResource StyleTextBoxSearch}" Text=""/>
+            <TextBlock Style="{StaticResource StyleTextBlockNavigationBar}" Text="BondingPO"/>
+            <TextBox Style="{StaticResource StyleTextBoxSearch}" Text=""/>
+            <TextBlock Style="{StaticResource StyleTextBlockNavigationBar}" Text="Customer"/>
             <TextBox Style="{StaticResource StyleTextBoxSearch}" Text=""/>
             <Button Style="{StaticResource StyleButtonCommon}" Content="Search"/>
             <Button Style="{StaticResource StyleButtonCommon}" Content="All"/>

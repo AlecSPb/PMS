@@ -69,6 +69,10 @@ namespace PMSClient.ViewModel
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.OrderNumber = 0;
             model.DeliveryType = PMSCommon.DeliveryType.最终发货.ToString();
+            model.BondingPO = "";
+            model.TrackingHistory = "";
+            model.TCBState = PMSCommon.DeliveryItemTCBState.UnKnown.ToString(); 
+            model.TCBRemark = "";
             #endregion
             CurrentDeliveryItem = model;
         }

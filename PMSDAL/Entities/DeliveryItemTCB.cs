@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
+    /// <summary>
+    /// 暂时不用
+    /// </summary>
     public class DeliveryItemTCB
     {
         [Key]

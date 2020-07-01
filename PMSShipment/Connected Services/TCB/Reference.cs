@@ -15,9 +15,9 @@ namespace PMSShipment.TCB {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DcDeliveryItemTCB", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcDeliveryItem", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
-    public partial class DcDeliveryItemTCB : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class DcDeliveryItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -47,6 +47,9 @@ namespace PMSShipment.TCB {
         private System.Guid DeliveryIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeliveryTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DetailRecordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -59,7 +62,16 @@ namespace PMSShipment.TCB {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string POField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PackNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProductIDField;
@@ -75,6 +87,9 @@ namespace PMSShipment.TCB {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TCBRemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TCBStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TrackingHistoryField;
@@ -197,6 +212,19 @@ namespace PMSShipment.TCB {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeliveryType {
+            get {
+                return this.DeliveryTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryTypeField, value) != true)) {
+                    this.DeliveryTypeField = value;
+                    this.RaisePropertyChanged("DeliveryType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string DetailRecord {
             get {
                 return this.DetailRecordField;
@@ -249,6 +277,19 @@ namespace PMSShipment.TCB {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderNumber {
+            get {
+                return this.OrderNumberField;
+            }
+            set {
+                if ((this.OrderNumberField.Equals(value) != true)) {
+                    this.OrderNumberField = value;
+                    this.RaisePropertyChanged("OrderNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string PO {
             get {
                 return this.POField;
@@ -257,6 +298,32 @@ namespace PMSShipment.TCB {
                 if ((object.ReferenceEquals(this.POField, value) != true)) {
                     this.POField = value;
                     this.RaisePropertyChanged("PO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PackNumber {
+            get {
+                return this.PackNumberField;
+            }
+            set {
+                if ((this.PackNumberField.Equals(value) != true)) {
+                    this.PackNumberField = value;
+                    this.RaisePropertyChanged("PackNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Position {
+            get {
+                return this.PositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PositionField, value) != true)) {
+                    this.PositionField = value;
+                    this.RaisePropertyChanged("Position");
                 }
             }
         }
@@ -322,6 +389,19 @@ namespace PMSShipment.TCB {
                 if ((object.ReferenceEquals(this.TCBRemarkField, value) != true)) {
                     this.TCBRemarkField = value;
                     this.RaisePropertyChanged("TCBRemark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TCBState {
+            get {
+                return this.TCBStateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TCBStateField, value) != true)) {
+                    this.TCBStateField = value;
+                    this.RaisePropertyChanged("TCBState");
                 }
             }
         }
@@ -748,28 +828,28 @@ namespace PMSShipment.TCB {
     public interface ITCBService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/GetDeliveryItemTCB", ReplyAction="http://tempuri.org/ITCBService/GetDeliveryItemTCBResponse")]
-        PMSShipment.TCB.DcDeliveryItemTCB[] GetDeliveryItemTCB(int s, int t, string productid, string composition, string po, string customer, string bondingpo);
+        PMSShipment.TCB.DcDeliveryItem[] GetDeliveryItemTCB(int s, int t, string productid, string composition, string po, string customer, string bondingpo, string state);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/GetDeliveryItemTCB", ReplyAction="http://tempuri.org/ITCBService/GetDeliveryItemTCBResponse")]
-        System.Threading.Tasks.Task<PMSShipment.TCB.DcDeliveryItemTCB[]> GetDeliveryItemTCBAsync(int s, int t, string productid, string composition, string po, string customer, string bondingpo);
+        System.Threading.Tasks.Task<PMSShipment.TCB.DcDeliveryItem[]> GetDeliveryItemTCBAsync(int s, int t, string productid, string composition, string po, string customer, string bondingpo, string state);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/GetDeliveryItemTCBCount", ReplyAction="http://tempuri.org/ITCBService/GetDeliveryItemTCBCountResponse")]
-        int GetDeliveryItemTCBCount(string productid, string composition, string po, string customer, string bondingpo);
+        int GetDeliveryItemTCBCount(string productid, string composition, string po, string customer, string bondingpo, string state);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/GetDeliveryItemTCBCount", ReplyAction="http://tempuri.org/ITCBService/GetDeliveryItemTCBCountResponse")]
-        System.Threading.Tasks.Task<int> GetDeliveryItemTCBCountAsync(string productid, string composition, string po, string customer, string bondingpo);
+        System.Threading.Tasks.Task<int> GetDeliveryItemTCBCountAsync(string productid, string composition, string po, string customer, string bondingpo, string state);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/AddDeliveryItemTCB", ReplyAction="http://tempuri.org/ITCBService/AddDeliveryItemTCBResponse")]
-        void AddDeliveryItemTCB(PMSShipment.TCB.DcDeliveryItemTCB model);
+        void AddDeliveryItemTCB(PMSShipment.TCB.DcDeliveryItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/AddDeliveryItemTCB", ReplyAction="http://tempuri.org/ITCBService/AddDeliveryItemTCBResponse")]
-        System.Threading.Tasks.Task AddDeliveryItemTCBAsync(PMSShipment.TCB.DcDeliveryItemTCB model);
+        System.Threading.Tasks.Task AddDeliveryItemTCBAsync(PMSShipment.TCB.DcDeliveryItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/UpdateDeliveryItemTCB", ReplyAction="http://tempuri.org/ITCBService/UpdateDeliveryItemTCBResponse")]
-        void UpdateDeliveryItemTCB(PMSShipment.TCB.DcDeliveryItemTCB model);
+        void UpdateDeliveryItemTCB(PMSShipment.TCB.DcDeliveryItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/UpdateDeliveryItemTCB", ReplyAction="http://tempuri.org/ITCBService/UpdateDeliveryItemTCBResponse")]
-        System.Threading.Tasks.Task UpdateDeliveryItemTCBAsync(PMSShipment.TCB.DcDeliveryItemTCB model);
+        System.Threading.Tasks.Task UpdateDeliveryItemTCBAsync(PMSShipment.TCB.DcDeliveryItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/GetDelivery", ReplyAction="http://tempuri.org/ITCBService/GetDeliveryResponse")]
         PMSShipment.TCB.DcDelivery[] GetDelivery(int s, int t, string deliveryname);
@@ -784,10 +864,10 @@ namespace PMSShipment.TCB {
         System.Threading.Tasks.Task<int> GetDeliveryCountAsync(string deliveryname);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/GetDeliveryItemTCBByDeliveryID", ReplyAction="http://tempuri.org/ITCBService/GetDeliveryItemTCBByDeliveryIDResponse")]
-        PMSShipment.TCB.DcDeliveryItemTCB[] GetDeliveryItemTCBByDeliveryID(System.Guid id);
+        PMSShipment.TCB.DcDeliveryItem[] GetDeliveryItemTCBByDeliveryID(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/GetDeliveryItemTCBByDeliveryID", ReplyAction="http://tempuri.org/ITCBService/GetDeliveryItemTCBByDeliveryIDResponse")]
-        System.Threading.Tasks.Task<PMSShipment.TCB.DcDeliveryItemTCB[]> GetDeliveryItemTCBByDeliveryIDAsync(System.Guid id);
+        System.Threading.Tasks.Task<PMSShipment.TCB.DcDeliveryItem[]> GetDeliveryItemTCBByDeliveryIDAsync(System.Guid id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -817,35 +897,35 @@ namespace PMSShipment.TCB {
                 base(binding, remoteAddress) {
         }
         
-        public PMSShipment.TCB.DcDeliveryItemTCB[] GetDeliveryItemTCB(int s, int t, string productid, string composition, string po, string customer, string bondingpo) {
-            return base.Channel.GetDeliveryItemTCB(s, t, productid, composition, po, customer, bondingpo);
+        public PMSShipment.TCB.DcDeliveryItem[] GetDeliveryItemTCB(int s, int t, string productid, string composition, string po, string customer, string bondingpo, string state) {
+            return base.Channel.GetDeliveryItemTCB(s, t, productid, composition, po, customer, bondingpo, state);
         }
         
-        public System.Threading.Tasks.Task<PMSShipment.TCB.DcDeliveryItemTCB[]> GetDeliveryItemTCBAsync(int s, int t, string productid, string composition, string po, string customer, string bondingpo) {
-            return base.Channel.GetDeliveryItemTCBAsync(s, t, productid, composition, po, customer, bondingpo);
+        public System.Threading.Tasks.Task<PMSShipment.TCB.DcDeliveryItem[]> GetDeliveryItemTCBAsync(int s, int t, string productid, string composition, string po, string customer, string bondingpo, string state) {
+            return base.Channel.GetDeliveryItemTCBAsync(s, t, productid, composition, po, customer, bondingpo, state);
         }
         
-        public int GetDeliveryItemTCBCount(string productid, string composition, string po, string customer, string bondingpo) {
-            return base.Channel.GetDeliveryItemTCBCount(productid, composition, po, customer, bondingpo);
+        public int GetDeliveryItemTCBCount(string productid, string composition, string po, string customer, string bondingpo, string state) {
+            return base.Channel.GetDeliveryItemTCBCount(productid, composition, po, customer, bondingpo, state);
         }
         
-        public System.Threading.Tasks.Task<int> GetDeliveryItemTCBCountAsync(string productid, string composition, string po, string customer, string bondingpo) {
-            return base.Channel.GetDeliveryItemTCBCountAsync(productid, composition, po, customer, bondingpo);
+        public System.Threading.Tasks.Task<int> GetDeliveryItemTCBCountAsync(string productid, string composition, string po, string customer, string bondingpo, string state) {
+            return base.Channel.GetDeliveryItemTCBCountAsync(productid, composition, po, customer, bondingpo, state);
         }
         
-        public void AddDeliveryItemTCB(PMSShipment.TCB.DcDeliveryItemTCB model) {
+        public void AddDeliveryItemTCB(PMSShipment.TCB.DcDeliveryItem model) {
             base.Channel.AddDeliveryItemTCB(model);
         }
         
-        public System.Threading.Tasks.Task AddDeliveryItemTCBAsync(PMSShipment.TCB.DcDeliveryItemTCB model) {
+        public System.Threading.Tasks.Task AddDeliveryItemTCBAsync(PMSShipment.TCB.DcDeliveryItem model) {
             return base.Channel.AddDeliveryItemTCBAsync(model);
         }
         
-        public void UpdateDeliveryItemTCB(PMSShipment.TCB.DcDeliveryItemTCB model) {
+        public void UpdateDeliveryItemTCB(PMSShipment.TCB.DcDeliveryItem model) {
             base.Channel.UpdateDeliveryItemTCB(model);
         }
         
-        public System.Threading.Tasks.Task UpdateDeliveryItemTCBAsync(PMSShipment.TCB.DcDeliveryItemTCB model) {
+        public System.Threading.Tasks.Task UpdateDeliveryItemTCBAsync(PMSShipment.TCB.DcDeliveryItem model) {
             return base.Channel.UpdateDeliveryItemTCBAsync(model);
         }
         
@@ -865,11 +945,11 @@ namespace PMSShipment.TCB {
             return base.Channel.GetDeliveryCountAsync(deliveryname);
         }
         
-        public PMSShipment.TCB.DcDeliveryItemTCB[] GetDeliveryItemTCBByDeliveryID(System.Guid id) {
+        public PMSShipment.TCB.DcDeliveryItem[] GetDeliveryItemTCBByDeliveryID(System.Guid id) {
             return base.Channel.GetDeliveryItemTCBByDeliveryID(id);
         }
         
-        public System.Threading.Tasks.Task<PMSShipment.TCB.DcDeliveryItemTCB[]> GetDeliveryItemTCBByDeliveryIDAsync(System.Guid id) {
+        public System.Threading.Tasks.Task<PMSShipment.TCB.DcDeliveryItem[]> GetDeliveryItemTCBByDeliveryIDAsync(System.Guid id) {
             return base.Channel.GetDeliveryItemTCBByDeliveryIDAsync(id);
         }
     }

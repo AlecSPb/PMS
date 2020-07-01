@@ -224,6 +224,11 @@ namespace PMSClient.ViewModel
             model.DimensionActual = "";
             model.Defects = "无";
             model.State = PMSCommon.SimpleState.正常.ToString();
+
+            model.BondingPO = "";
+            model.TrackingHistory = "";
+            model.TCBState = PMSCommon.DeliveryItemTCBState.UnKnown.ToString();
+            model.TCBRemark = "";
             return model;
         }
     }
