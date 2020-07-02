@@ -9,6 +9,7 @@ using PMSXMLCreator.Model;
 using System.Diagnostics;
 using System.Windows;
 using CommonHelper;
+using PMSXMLCreator.Service;
 
 namespace PMSXMLCreator
 {
@@ -17,6 +18,7 @@ namespace PMSXMLCreator
     /// </summary>
     public class DocxHelper
     {
+        private Analysis anlysis;
         public void CreateFile(ECOA model)
         {
             #region 检查逻辑
@@ -27,6 +29,7 @@ namespace PMSXMLCreator
             }
             #endregion
 
+            anlysis= new Analysis(model.CurrentSpec);
 
             string folder = XSHelper.FileHelper.GetCurrentFolderPath("OutputFile");
             if (!Directory.Exists(folder))
@@ -41,13 +44,12 @@ namespace PMSXMLCreator
             try
             {
                 File.Copy(current_template, temp, true);
-                //引入分析类
-                var anlysis = new Service.Analysis();
+
 
                 using (var doc = DocX.Load(temp))
                 {
                     #region 填写基础信息
-                    doc.ReplaceText("[ProductName]", model.ProductName??"");
+                    doc.ReplaceText("[ProductName]", model.ProductName ?? "");
                     doc.ReplaceText("[ProductID]", model.LotNumber ?? "");
                     doc.ReplaceText("[PrintTime]", DateTime.Now.ToString());
                     doc.ReplaceText("[CreateTime]", model.LotCreatedDate.ToString() ?? "");

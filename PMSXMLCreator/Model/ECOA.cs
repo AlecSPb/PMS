@@ -11,7 +11,7 @@ namespace PMSXMLCreator
     {
         public ECOA()
         {
-
+            CurrentSpec = new IntelSpecs();
             IsNew = true;
             ResponsiblePartyEmail = "xs.zhou@cdpmi.net";
 
@@ -59,7 +59,7 @@ namespace PMSXMLCreator
             BackPlateNumber = "none";
             SelfLife = "12 months";
         }
-
+        public ISpecs CurrentSpec { get; set; }
         public bool IsNew { get; set; }
 
         #region FileInfo

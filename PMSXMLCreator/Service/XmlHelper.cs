@@ -15,8 +15,7 @@ namespace PMSXMLCreator.Service
     /// </summary>
     public class XmlHelper : IXmlHelper
     {
-
-        private Analysis analysis = new Analysis();
+        private Analysis analysis;
         //设定命名空间参数
         private string ns = "x-schema:../Schema/UltQualityCertificateSchema2016Dec.xml";
         public void CreateFile(ECOA model)
@@ -29,6 +28,7 @@ namespace PMSXMLCreator.Service
             }
             #endregion
 
+            analysis = new Analysis(model.CurrentSpec);
 
             string folder = XSHelper.FileHelper.GetCurrentFolderPath("OutputFile");
             if (!Directory.Exists(folder))
@@ -143,6 +143,7 @@ namespace PMSXMLCreator.Service
             double ucl = 0, lcl = 0,measureValue = 0 ;
 
             //日志头部
+            log.AppendLine($"Use Specs:{nameof(model.CurrentSpec)}");
             log.AppendLine("Charactersitic;ShortName;Type;MeasurementType;UnitOfMeasure;MeasurementValue;UCL;LCL;UCL Warning;LCL Warning");
 
             foreach (var p in parameters)

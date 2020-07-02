@@ -71,6 +71,7 @@ namespace PMSWCFService
                     var query = from d in dc.Deliverys
                                 where d.State != PMSCommon.DeliveryState.作废.ToString()
                                 && d.DeliveryName.Contains(deliveryname)
+                                && d.Receiver.Contains("TCB")
                                 select d;
                     return query.Count();
                 }

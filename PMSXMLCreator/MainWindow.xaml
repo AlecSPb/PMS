@@ -87,6 +87,9 @@
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="2">
                 <TextBlock Text="Generate - &gt;" Style="{StaticResource StyleTextBlockCommon}" Background="Green" 
                            Foreground="White"/>
+                <TextBlock Text="Specs" Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox ItemsSource="{Binding SpecList}" SelectedItem="{Binding CurrentSpec,UpdateSourceTrigger=PropertyChanged}" 
+                          Style="{StaticResource StyleComboBoxCommon}"/>
                 <Button Content="Create XML" Style="{StaticResource StyleButtonCommon}"
                         Command="{Binding CreateXML}"/>
                 <Button Content="Create Docx" Style="{StaticResource StyleButtonCommon}"

@@ -38,7 +38,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Edit" Style="{StaticResource StyleDGButton}"
+                                <Button Content="Set" Style="{StaticResource StyleDGButton}"
                                             Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
                             </StackPanel>
@@ -84,7 +84,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Edit" Style="{StaticResource StyleDGButton}"
+                                <Button Content="Set" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.EditItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
@@ -113,14 +113,17 @@
                                     Binding="{Binding Weight}"/>
                 <DataGridTextColumn Header="DetailRecord" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding DetailRecord}"/>
-                <DataGridTextColumn Header="TCBState" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding TCBState}"/>
-                <DataGridTextColumn Header="TCBHistory" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding TrackingHistory}"/>
-                <DataGridTextColumn Header="TCBRemark" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Remark}"/>
+                
                 <DataGridTextColumn Header="TCBBondingPO" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding BondingPO}"/>
+                                    Binding="{Binding BondingPO}"  Foreground="Blue"/>
+                <DataGridTextColumn Header="TCBRemark" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding TCBRemark}" Foreground="Blue"/>
+                <DataGridTextColumn Header="TCBState" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding TCBState}"  Foreground="Blue"/>
+                <DataGridTextColumn Header="TCBHistory" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding TrackingHistory}"  Foreground="Blue"/>
+
+
                 <DataGridTextColumn Header="CreateTime" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime}"/>
                 <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

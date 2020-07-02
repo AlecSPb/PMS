@@ -75,6 +75,8 @@ namespace PMSClient.Components.PMSSettingHelper
 					settingCache.Add(key, s.GetValueByKey(key));
 					key = "bonding_ok_rate";
 					settingCache.Add(key, s.GetValueByKey(key));
+					key = "history_log_count";
+					settingCache.Add(key, s.GetValueByKey(key));
 				}
 			}
 			catch (Exception ex)

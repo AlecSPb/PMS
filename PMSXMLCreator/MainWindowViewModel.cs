@@ -43,6 +43,11 @@ namespace PMSXMLCreator
             ClosingCommand = new RelayCommand(ActionClosing);
             LoadedCommand = new RelayCommand(ActionLoaded);
             Log = new RelayCommand(ActionLog);
+
+            SpecList = new List<string>();
+            SpecList.Add("Intel");
+            SpecList.Add("AMAT");
+            CurrentSpec = SpecList[0];
         }
 
         private void ActionLoaded()
@@ -178,6 +183,15 @@ namespace PMSXMLCreator
             }
             if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据[{CurrentCOA.LotNumber}]生成Docx文件？"))
             {
+                //选择不同的specs
+                if (CurrentSpec == "Intel")
+                {
+                    CurrentCOA.CurrentSpec = new IntelSpecs();
+                }
+                else if (CurrentSpec == "AMAT")
+                {
+                    CurrentCOA.CurrentSpec = new AMATSpecs();
+                }
                 helper_docx.CreateFile(CurrentCOA);
                 //XSHelper.MessageHelper.ShowInfo("此docx文件email给leon");
             }
@@ -253,8 +267,8 @@ namespace PMSXMLCreator
             return true;
         }
 
-        private IXmlHelper helper_xml = new XmlHelper();
-        private DocxHelper helper_docx = new DocxHelper();
+        private IXmlHelper helper_xml=new XmlHelper();
+        private DocxHelper helper_docx=new DocxHelper();
         /// <summary>
         /// 创建xml文件
         /// </summary>
@@ -267,6 +281,15 @@ namespace PMSXMLCreator
             }
             if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据[{CurrentCOA.LotNumber}]生成xml文件？"))
             {
+                //选择不同的specs
+                if (CurrentSpec == "Intel")
+                {
+                    CurrentCOA.CurrentSpec = new IntelSpecs();
+                }
+                else if(CurrentSpec=="AMAT")
+                {
+                    CurrentCOA.CurrentSpec = new AMATSpecs();
+                }
                 helper_xml.CreateFile(CurrentCOA);
                 //XSHelper.MessageHelper.ShowInfo("此xml文件使用[HubSpan PartnerConnect]发送给intel");
 
@@ -358,8 +381,18 @@ namespace PMSXMLCreator
         public ObservableCollection<DcRecordTest> RecordTests { get; set; }
 
 
+        public List<string> SpecList { get; set; }
 
-
+        private string currentSpec;
+        public string CurrentSpec
+        {
+            get { return currentSpec; }
+            set
+            {
+                currentSpec = value;
+                RaisePropertyChanged(nameof(CurrentSpec));
+            }
+        }
         public RelayCommand Search { get; set; }
         public RelayCommand CreateXML { get; set; }
         public RelayCommand CreateDocx { get; set; }

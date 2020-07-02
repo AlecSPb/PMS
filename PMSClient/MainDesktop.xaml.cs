@@ -22,6 +22,7 @@ using System.Timers;
 using fm = System.Windows.Forms;
 using System.Windows.Threading;
 using PMSClient.Helpers;
+using PMSClient.Components.PMSSettingHelper;
 
 namespace PMSClient
 {
@@ -167,6 +168,9 @@ namespace PMSClient
             {
                 System.Diagnostics.Debug.WriteLine("内网心跳检测");
 
+                int all_ready = 0;
+                int.TryParse(PMSSettingService.ReadKeyFromCache("history_log_count"), out all_ready);
+
                 using (var lan_heartbeat = new PMSClient.HeartBeatService.HeartBeatSeriveClient())
                 {
                     //读取日志信息
@@ -182,7 +186,7 @@ namespace PMSClient
 
                             if (PMSHelper.CurrentSession?.CurrentUserRole?.GroupName != "")
                             {
-                                TxtInformationLog.Text = $"访问信息 昨日:{count_yesterday}次 今日:{count_today}次 共{(count_all / 10000)}w次";
+                                TxtInformationLog.Text = $"访问信息 昨日:{count_yesterday}次 今日:{count_today}次 共{((count_all + all_ready) / 10000)}w次";
                             }
                         });
                         //txtHeartBeat.Text = "服务器通信正常";

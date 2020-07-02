@@ -12,7 +12,11 @@ namespace PMSXMLCreator.Service
     /// </summary>
     public class Analysis
     {
-        private IntelSpecs dict_parameter = new IntelSpecs();
+        public Analysis(ISpecs currentSpec)
+        {
+            dict_parameter = currentSpec;
+        }
+        private ISpecs dict_parameter;
         private ElementFullNameDict dict_element = new ElementFullNameDict();
         /// <summary>
         /// 获取所有ECOA模型参数
@@ -98,7 +102,7 @@ namespace PMSXMLCreator.Service
                 LCL = basicData.LCL.ToString(),
                 MDL = basicData.MDL.ToString(),
                 CLCalc = basicData.CLCalc
-            }); 
+            });
             return p;
         }
 

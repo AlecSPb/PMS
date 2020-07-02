@@ -9,9 +9,9 @@ namespace PMSXMLCreator.Service
     /// <summary>
     /// 基本的Intel规格模型
     /// </summary>
-    public class IntelSpecModel
+    public class SpecModel
     {
-        public IntelSpecModel()
+        public SpecModel()
         {
             MeasurementQualifier = "";
             MeasurementType = "Value";

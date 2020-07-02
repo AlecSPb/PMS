@@ -55,7 +55,7 @@ namespace PMSShipment
 
         private void ActionExpressTrack()
         {
-            if (!XSHelper.XS.MessageBox.ShowYesNo("Ask", "Track All Green One?"))
+            if (!XSHelper.XS.MessageBox.ShowYesNo("Track All Green One?"))
                 return;
             ////追踪物流情况
             //new Express.Operation().TraceUnCompleted();
