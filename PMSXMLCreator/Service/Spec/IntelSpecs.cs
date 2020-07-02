@@ -13,6 +13,9 @@ namespace PMSXMLCreator.Service
     public class IntelSpecs:ISpecs
     {
         private Dictionary<string, SpecModel> parameters;
+
+        public string SpecName { get => "IntelSpecs"; }
+
         public IntelSpecs()
         {
             parameters = new Dictionary<string, SpecModel>();

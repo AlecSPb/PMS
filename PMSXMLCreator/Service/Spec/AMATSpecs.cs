@@ -13,6 +13,7 @@ namespace PMSXMLCreator.Service
     public class AMATSpecs : ISpecs
     {
         private Dictionary<string, SpecModel> parameters;
+        public string SpecName { get => "AMATSpecs"; }
         public AMATSpecs()
         {
             parameters = new Dictionary<string, SpecModel>();

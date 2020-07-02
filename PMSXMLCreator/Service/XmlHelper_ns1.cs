@@ -144,7 +144,7 @@ namespace PMSXMLCreator.Service
 
             double ucl = 0, lcl = 0, measureValue = 0;
             //日志头部
-            log.AppendLine($"Use Specs:{nameof(model.CurrentSpec)}");
+            log.AppendLine($"Use Specs:{model.CurrentSpec.SpecName}");
 
             log.AppendLine("Charactersitic;ShortName;Type;MeasurementType;UnitOfMeasure;MeasurementValue;UCL;LCL;UCL Warning;LCL Warning");
 

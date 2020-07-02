@@ -9,5 +9,6 @@ namespace PMSXMLCreator.Service
     public interface ISpecs
     {
         SpecModel GetShortName(string key);
+        string SpecName { get; }
     }
 }

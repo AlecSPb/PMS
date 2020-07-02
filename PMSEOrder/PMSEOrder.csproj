@@ -130,20 +130,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Dilaog\OrderCheckStateWindow.xaml.cs">
+    <Compile Include="Dialog\OrderCheckStateWindow.xaml.cs">
       <DependentUpon>OrderCheckStateWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Dilaog\ShipWindow.xaml.cs">
+    <Compile Include="Dialog\ShipWindow.xaml.cs">
       <DependentUpon>ShipWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helper\PMSMethods.cs" />
     <Compile Include="Model\CustomerInfo.cs" />
     <Compile Include="Model\OrderCheckState.cs" />
     <Compile Include="OrderEditVM.cs" />
-    <Compile Include="Dilaog\BondingWindow.xaml.cs">
+    <Compile Include="Dialog\BondingWindow.xaml.cs">
       <DependentUpon>BondingWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Dilaog\SampleWindow.xaml.cs">
+    <Compile Include="Dialog\SampleWindow.xaml.cs">
       <DependentUpon>SampleWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Service\BackupService.cs" />
@@ -156,17 +156,17 @@
     <Compile Include="Service\JsonService.cs" />
     <Compile Include="Service\StringUtil.cs" />
     <Compile Include="Service\TextService.cs" />
-    <Compile Include="Dilaog\SettingWindow.xaml.cs">
+    <Compile Include="Dialog\SettingWindow.xaml.cs">
       <DependentUpon>SettingWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Dilaog\TextWindow.xaml.cs">
+    <Compile Include="Dialog\TextWindow.xaml.cs">
       <DependentUpon>TextWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Dilaog\OrderCheckStateWindow.xaml">
+    <Page Include="Dialog\OrderCheckStateWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dilaog\ShipWindow.xaml">
+    <Page Include="Dialog\ShipWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -199,19 +199,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Dilaog\BondingWindow.xaml">
+    <Page Include="Dialog\BondingWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Dilaog\SampleWindow.xaml">
+    <Page Include="Dialog\SampleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dilaog\SettingWindow.xaml">
+    <Page Include="Dialog\SettingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Dilaog\TextWindow.xaml">
+    <Page Include="Dialog\TextWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

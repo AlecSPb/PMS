@@ -15,7 +15,6 @@ using System.IO;
 using PMSEOrder.Service.Excel;
 using PMSEOrder.PMS;
 using PMSEOrder.Dilaog;
-using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSEOrder
 {
@@ -84,7 +83,7 @@ namespace PMSEOrder
                         //这里显示一个窗口
                         var win = new OrderCheckStateWindow();
                         win.SetDataSource(orderCheckStates);
-                        win.ShowDialog();
+                        win.Show();
 
 
 

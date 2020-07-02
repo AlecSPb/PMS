@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Icon="xml2.png"
         WindowStartupLocation="CenterScreen"
-        Title="eCoA Creator for Intel, Pioneer Materials,Inc. v1.5" Height="2000" Width="1200"
+        Title="eCoA Creator for Intel, Pioneer Materials,Inc. v1.6" Height="2000" Width="1200"
         WindowState="Maximized">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Closing">
