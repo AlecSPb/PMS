@@ -45,7 +45,7 @@ namespace PMSXMLCreator
             Log = new RelayCommand(ActionLog);
 
             SpecList = new List<string>();
-            SpecList.Add("Intel");
+            SpecList.Add("ULVAC");
             SpecList.Add("AMAT");
             CurrentSpec = SpecList[0];
         }
@@ -184,9 +184,9 @@ namespace PMSXMLCreator
             if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据[{CurrentCOA.LotNumber}]生成Docx文件？"))
             {
                 //选择不同的specs
-                if (CurrentSpec == "Intel")
+                if (CurrentSpec == "ULVAC")
                 {
-                    CurrentCOA.CurrentSpec = new IntelSpecs();
+                    CurrentCOA.CurrentSpec = new ULVACSpecs();
                 }
                 else if (CurrentSpec == "AMAT")
                 {
@@ -282,9 +282,9 @@ namespace PMSXMLCreator
             if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据[{CurrentCOA.LotNumber}]生成xml文件？"))
             {
                 //选择不同的specs
-                if (CurrentSpec == "Intel")
+                if (CurrentSpec == "ULVAC")
                 {
-                    CurrentCOA.CurrentSpec = new IntelSpecs();
+                    CurrentCOA.CurrentSpec = new ULVACSpecs();
                 }
                 else if(CurrentSpec=="AMAT")
                 {

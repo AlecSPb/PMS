@@ -11,7 +11,7 @@ namespace PMSXMLCreator
     {
         public ECOA()
         {
-            CurrentSpec = new IntelSpecs();
+            CurrentSpec = new ULVACSpecs();
             IsNew = true;
             ResponsiblePartyEmail = "xs.zhou@cdpmi.net";
 

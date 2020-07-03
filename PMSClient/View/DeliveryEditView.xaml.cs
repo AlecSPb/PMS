@@ -25,5 +25,16 @@ namespace PMSClient.View
         {
             InitializeComponent();
         }
+
+        private void StackPanel_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = e.OriginalSource as Button;
+            if (btn != null)
+            {
+                string s = btn.Content.ToString();
+                PMSMethods.SetTextBox(TxtReceiver, s);
+            }
+            e.Handled = true;
+        }
     }
 }

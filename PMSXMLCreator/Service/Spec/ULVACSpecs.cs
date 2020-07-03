@@ -10,13 +10,13 @@ namespace PMSXMLCreator.Service
     /// Intel提供的项缩写和上下限关系集合
     /// 按照其提供的spec
     /// </summary>
-    public class IntelSpecs:ISpecs
+    public class ULVACSpecs:ISpecs
     {
         private Dictionary<string, SpecModel> parameters;
 
         public string SpecName { get => "IntelSpecs"; }
 
-        public IntelSpecs()
+        public ULVACSpecs()
         {
             parameters = new Dictionary<string, SpecModel>();
             Init();

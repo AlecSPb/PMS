@@ -166,6 +166,7 @@ namespace PMSClient.ViewModel
             order.ShipTo = "未定";
             order.SpecialRequirement = "无";
             order.OrderRemark = "";
+            order.LaserNeed = "";
             //2020-3-18 添加
             order.PartNumber = "无";
             order.SecondMachineDetails = "无";

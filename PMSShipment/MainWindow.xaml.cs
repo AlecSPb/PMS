@@ -10,9 +10,8 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PMSShipment.TCB;
+
 namespace PMSShipment
 {
     /// <summary>
@@ -23,34 +22,30 @@ namespace PMSShipment
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowVM();
+            NavigateTo(new ShipmentView());
         }
 
-        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        private void NavigateTo(UserControl view)
         {
-            try
+            if (view != null)
             {
-                var order = (DcDelivery)e.Row.DataContext;
-                if (order != null)
-                {
-                    switch (order.State)
-                    {
-                        case "未核验":
-                            e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
-                            break;
-                        case "未完成":
-                            e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
-                            break;
-                        case "最终完成":
-                            e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
-                            break;
-                        default:
-                            break;
-                    }
-                }
+                mainArea.Content = view;
             }
-            catch (Exception ex)
+        }
+
+        private void StackPanel_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = e.OriginalSource as Button;
+            switch (btn.Name)
             {
+                case "BtnShipment":
+                    NavigateTo(new ShipmentView());
+                    break;
+                case "BtnShipmentList":
+                    NavigateTo(new ShipmentListView());
+                    break;
+                default:
+                    break;
             }
         }
     }

@@ -11,9 +11,9 @@ using PMSShipment.VMHelper;
 
 namespace PMSShipment
 {
-    public class MainWindowVM : BaseViewModelPage
+    public class ShipmentVM : BaseViewModelPage
     {
-        public MainWindowVM()
+        public ShipmentVM()
         {
             InitializeProperties();
             InitializeCommands();
@@ -109,24 +109,16 @@ namespace PMSShipment
             }
         }
 
-        /// <summary>
-        /// 发货单标签打印区域
-        /// </summary>
-        //private bt.Application btApp;
-        //private bt.Format btnFormat;
-        private void ActionLabel(DcDelivery model)
-        {
-
-        }
-
         private void ActionEditItem(DcDeliveryItem model)
         {
-
+            var win = new SetWindow();
+            win.ShowDialog();
         }
 
         private void ActionEdit(DcDelivery model)
         {
-
+            var win = new SetWindow();
+            win.ShowDialog();
         }
 
         private void SetPageParametersWhenConditionChange()

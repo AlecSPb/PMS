@@ -106,9 +106,16 @@
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RDReceiver}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding Receiver}" 
-                          Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                          Style="{StaticResource StyleTextBoxCommon}" Name="TxtReceiver"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="2" ButtonBase.Click="StackPanel_Click">
+                    <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="TCB"/>
+                    <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="Customer"/>
+                    <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="Lesker"/>
+                    <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="Leon"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
                            Text="接收者,比如TCB"/>
+                </StackPanel>
+
                 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RDAddress}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

@@ -61,5 +61,23 @@ namespace PMSClient.View
 
         }
 
+        private void BtnLaserNeed_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            try
+            {
+                Button btn = sender as Button;
+                if (btn != null)
+                {
+                    var dialog = new Components.LaserNeed.LaserNeedResultReadOnly();
+                    dialog.KeyStrings = btn.Content.ToString();
+                    dialog.ShowDialog();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
     }
 }

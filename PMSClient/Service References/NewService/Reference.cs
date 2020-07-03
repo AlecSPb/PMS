@@ -62,6 +62,9 @@ namespace PMSClient.NewService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LaserNeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime LastUpdateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -323,6 +326,19 @@ namespace PMSClient.NewService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LaserNeed {
+            get {
+                return this.LaserNeedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LaserNeedField, value) != true)) {
+                    this.LaserNeedField = value;
+                    this.RaisePropertyChanged("LaserNeed");
                 }
             }
         }

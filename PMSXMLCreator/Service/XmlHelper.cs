@@ -144,7 +144,7 @@ namespace PMSXMLCreator.Service
 
             //日志头部
             log.AppendLine($"Use Specs:{model.CurrentSpec.SpecName}");
-            log.AppendLine("Charactersitic;ShortName;Type;MeasurementType;UnitOfMeasure;MeasurementValue;UCL;LCL;UCL Warning;LCL Warning");
+            log.AppendLine("Charactersitic;ShortName;Type;MeasurementType;UnitOfMeasure;MeasurementValue;UCL;LCL;UCL LCL Warning");
 
             foreach (var p in parameters)
             {

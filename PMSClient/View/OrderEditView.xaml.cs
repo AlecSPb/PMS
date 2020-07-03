@@ -179,7 +179,7 @@ namespace PMSClient.View
             Button btn = sender as Button;
             if (btn != null)
             {
-                PMSMethods.SetTextBoxAppend(TxtSpecialRequirement, $"{btn.Content};");
+                PMSMethods.SetTextBoxAppend(TxtLaserNeed, $"{btn.Content};");
             }
         }
 
@@ -216,6 +216,35 @@ namespace PMSClient.View
         private void BtnSampleForAnlysis_Click(object sender, RoutedEventArgs e)
         {
             PMSMethods.SetTextBox(TxtSampleForAnlysis, "块15gx1 粉15gx1");
+        }
+
+        private void BtnCurveAuto_Click(object sender, RoutedEventArgs e)
+        {
+            string customername = cboCustomerNames.SelectedItem.ToString();
+            if (customername.Contains("Bridgeline"))
+            {
+                PMSMethods.SetTextBoxAppend(TxtLaserNeed, $"靶+单面+边缘+ID;背板+单面+边缘+成分缩写ID;");
+            }
+
+        }
+
+        private void BtnLaserEditor_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (TxtLaserNeed == null) return;
+                var dialog = new Components.LaserNeed.LaserNeedResult();
+                dialog.KeyStrings = TxtLaserNeed.Text.Trim();
+                dialog.ShowDialog();
+                if (dialog.DialogResult == true)
+                {
+                    PMSMethods.SetTextBox(TxtLaserNeed, dialog.KeyStrings);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

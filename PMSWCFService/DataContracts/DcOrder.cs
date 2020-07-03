@@ -108,6 +108,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string BondingRequirement { get; set; }
 
+        [DataMember]
+        public string LaserNeed { get; set; }
 
     }
 }

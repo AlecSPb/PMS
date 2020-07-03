@@ -26,7 +26,7 @@ namespace PMSXMLCreator.Service
             parameters.Add("Arsenic", new SpecModel { ShortName = "ZAS", LCL = 30.12, UCL = 31.08, UnitOfMeasure = ParameterUnit.Percent });
             parameters.Add("Germanium", new SpecModel { ShortName = "ZGE", LCL = 12.29, UCL = 13.16, UnitOfMeasure = ParameterUnit.Percent });
             parameters.Add("Silicon", new SpecModel { ShortName = "ZSI", LCL = 5.37, UCL = 6.21, UnitOfMeasure = ParameterUnit.Percent });
-            parameters.Add("Target Blank OD", new SpecModel { ShortName = "TAR_BOD", LCL = 439.74, UCL = 440.17, UnitOfMeasure = ParameterUnit.MM });
+            parameters.Add("Target Blank OD", new SpecModel { ShortName = "TAR_BOD", LCL = 439.74, UCL = 444.7, UnitOfMeasure = ParameterUnit.MM });
             parameters.Add("Target Blank Thickness", new SpecModel { ShortName = "TAR_BTHK", LCL = 7.701, UCL = 7.899, UnitOfMeasure = ParameterUnit.MM });
             parameters.Add("Target Blank 2mm Top Rad", new SpecModel { ShortName = "TAR_BTOP", LCL = 0, UCL = 100, UnitOfMeasure = ParameterUnit.MM });
             parameters.Add("BP Diameter", new SpecModel { ShortName = "BP_DIA", LCL = 573.5, UCL = 576.5, UnitOfMeasure = ParameterUnit.MM });

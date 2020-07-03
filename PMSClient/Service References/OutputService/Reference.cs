@@ -484,6 +484,9 @@ namespace PMSClient.OutputService {
         private string AbbrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BondingPOField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -541,6 +544,15 @@ namespace PMSClient.OutputService {
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TCBRemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TCBStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TrackingHistoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WeightField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -562,6 +574,19 @@ namespace PMSClient.OutputService {
                 if ((object.ReferenceEquals(this.AbbrField, value) != true)) {
                     this.AbbrField = value;
                     this.RaisePropertyChanged("Abbr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BondingPO {
+            get {
+                return this.BondingPOField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BondingPOField, value) != true)) {
+                    this.BondingPOField = value;
+                    this.RaisePropertyChanged("BondingPO");
                 }
             }
         }
@@ -809,6 +834,45 @@ namespace PMSClient.OutputService {
                 if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TCBRemark {
+            get {
+                return this.TCBRemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TCBRemarkField, value) != true)) {
+                    this.TCBRemarkField = value;
+                    this.RaisePropertyChanged("TCBRemark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TCBState {
+            get {
+                return this.TCBStateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TCBStateField, value) != true)) {
+                    this.TCBStateField = value;
+                    this.RaisePropertyChanged("TCBState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TrackingHistory {
+            get {
+                return this.TrackingHistoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TrackingHistoryField, value) != true)) {
+                    this.TrackingHistoryField = value;
+                    this.RaisePropertyChanged("TrackingHistory");
                 }
             }
         }
@@ -1663,6 +1727,9 @@ namespace PMSClient.OutputService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LaserNeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime LastUpdateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1924,6 +1991,19 @@ namespace PMSClient.OutputService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LaserNeed {
+            get {
+                return this.LaserNeedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LaserNeedField, value) != true)) {
+                    this.LaserNeedField = value;
+                    this.RaisePropertyChanged("LaserNeed");
                 }
             }
         }

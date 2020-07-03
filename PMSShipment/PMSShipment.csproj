@@ -83,9 +83,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SetWindow.xaml.cs">
+      <DependentUpon>SetWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShipmentListView.xaml.cs">
       <DependentUpon>ShipmentListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ShipmentListVM.cs" />
     <Compile Include="VMHelper\BaseViewModel.cs" />
     <Compile Include="VMHelper\BaseViewModelEdit.cs" />
     <Compile Include="VMHelper\BaseViewModelPage.cs" />
@@ -95,6 +102,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SetWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShipmentView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -105,8 +120,8 @@
     <Compile Include="DeliveryEditView.xaml.cs">
       <DependentUpon>DeliveryEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="ShipmentView.xaml.cs">
+      <DependentUpon>ShipmentView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Resources\CommonBrushes.xaml">
@@ -124,7 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeliveryEditVM.cs" />
-    <Compile Include="MainWindowVM.cs" />
+    <Compile Include="ShipmentVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace PMSShipment
 {
     /// <summary>
-    /// ShipmentListView.xaml 的交互逻辑
+    /// SetWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class ShipmentListView : UserControl
+    public partial class SetWindow : Window
     {
-        public ShipmentListView()
+        public SetWindow()
         {
             InitializeComponent();
         }
