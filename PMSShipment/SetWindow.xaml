@@ -5,8 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSShipment"
         mc:Ignorable="d"
-        Title="SetWindow" Height="450" Width="600" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
-    <Grid>
-        
+        Title="Set Window" Height="450" Width="600" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" DataContext="{Binding CurrentDeliveryItem}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="ProductID"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}" Text="{Binding ProductID}"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="Composition"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}" Text="{Binding Composition}"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="Dimension"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}" Text="{Binding Dimension}"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="BondingPO"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="{Binding BondingPO}"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="TrackState"/>
+            <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding DataContext.TrackStates,RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}}" 
+                      SelectedItem="{Binding TCBState,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                      Style="{StaticResource StyleComboBoxCommon}"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="TrackHistory"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="{Binding TrackingHistory}"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="TrackRemark"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="{Binding TCBRemark}"/>
+        </Grid>
+
+        <Button  Grid.Column="0" Grid.Row="1" Style="{StaticResource StyleButtonStrench}" Content="Save" 
+                 Command="{Binding Save}" Height="50"/>
+
     </Grid>
 </Window>

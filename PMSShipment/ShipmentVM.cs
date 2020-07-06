@@ -8,6 +8,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSShipment.TCB;
 using PMSShipment.VMHelper;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSShipment
 {
@@ -17,6 +18,13 @@ namespace PMSShipment
         {
             InitializeProperties();
             InitializeCommands();
+            SetPageParametersWhenConditionChange();
+
+            Messenger.Default.Register<NotificationMessage>(this, "Refresh", ActionDo);
+        }
+
+        private void ActionDo(NotificationMessage obj)
+        {
             SetPageParametersWhenConditionChange();
         }
 
@@ -48,7 +56,6 @@ namespace PMSShipment
 
             SelectionChanged = new RelayCommand<DcDelivery>(ActionSelectionChanged);
 
-            QuickSave = new RelayCommand<DcDeliveryItem>(ActionQuickSave);
             ExpressTrack = new RelayCommand(ActionExpressTrack);
 
         }
@@ -59,17 +66,6 @@ namespace PMSShipment
                 return;
             ////追踪物流情况
             new Express.Operation().TraceUnCompleted();
-        }
-
-        private void ActionQuickSave(DcDeliveryItem obj)
-        {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-            }
         }
 
         private void ActionSearch()
@@ -111,13 +107,19 @@ namespace PMSShipment
 
         private void ActionEditItem(DcDeliveryItem model)
         {
+            if (model == null) return;
             var win = new SetWindow();
+            var vm = new SetVM();
+            vm.SetCurrentDeliveryItem(model);
+            win.DataContext = vm;
             win.ShowDialog();
         }
 
         private void ActionEdit(DcDelivery model)
         {
-            var win = new SetWindow();
+            if (model == null) return;
+            var win = new SetAllWindow();
+            win.SetModel(model);
             win.ShowDialog();
         }
 
@@ -188,7 +190,6 @@ namespace PMSShipment
         public RelayCommand<DcDeliveryItem> SearchRecordTest { get; set; }
         public RelayCommand<DcDelivery> SelectionChanged { get; set; }
 
-        public RelayCommand<DcDeliveryItem> QuickSave { get; set; }
         public RelayCommand ExpressTrack { get; set; }
 
 

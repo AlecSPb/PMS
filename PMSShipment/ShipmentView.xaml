@@ -37,7 +37,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Set" Style="{StaticResource StyleDGButton}"
+                                <Button Content="Set All" Style="{StaticResource StyleDGButton}"
                                             Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
                             </StackPanel>
@@ -112,14 +112,14 @@
                                     Binding="{Binding Weight}"/>
                 <DataGridTextColumn Header="DetailRecord" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding DetailRecord}"/>
-                
-                <DataGridTextColumn Header="TCBBondingPO" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding BondingPO}"  Foreground="Blue"/>
-                <DataGridTextColumn Header="TCBRemark" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding TCBRemark}" Foreground="Blue"/>
-                <DataGridTextColumn Header="TCBState" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+
+                <DataGridTextColumn Header="TrackingState" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding TCBState}"  Foreground="Blue"/>
-                <DataGridTextColumn Header="TCBHistory" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="BondingPO" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding BondingPO}"  Foreground="Blue"/>
+                <DataGridTextColumn Header="TrackingRemark" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding TCBRemark}" Foreground="Blue"/>
+                <DataGridTextColumn Header="TrackingHistory" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding TrackingHistory}"  Foreground="Blue"/>
 
 

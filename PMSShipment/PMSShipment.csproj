@@ -109,6 +109,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="PMSMethods.cs" />
+    <Compile Include="SetAllWindow.xaml.cs">
+      <DependentUpon>SetAllWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SetVM.cs" />
     <Compile Include="SetWindow.xaml.cs">
       <DependentUpon>SetWindow.xaml</DependentUpon>
     </Compile>
@@ -129,6 +133,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SetAllWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

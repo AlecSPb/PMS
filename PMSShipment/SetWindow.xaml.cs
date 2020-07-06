@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSShipment
 {
@@ -22,6 +23,12 @@ namespace PMSShipment
         public SetWindow()
         {
             InitializeComponent();
+            Messenger.Default.Register<NotificationMessage>(this, "CloseSetWindow", ActionDo);
+        }
+
+        private void ActionDo(NotificationMessage obj)
+        {
+            this.Close();
         }
     }
 }

@@ -54,7 +54,16 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="TrackState" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                        Binding="{Binding DeliveryItem.TCBState}"/>
+                    <DataGridTextColumn Header="BondingPO" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                        Binding="{Binding DeliveryItem.BondingPO}"/>
+                    <DataGridTextColumn Header="TrackRemark" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                        Binding="{Binding DeliveryItem.TCBRemark}"/>
+                    <DataGridTextColumn Header="TrackHistory" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                        Binding="{Binding DeliveryItem.TrackingHistory}"/>
 
+                    
                     <DataGridTextColumn Header="CreateTime" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding DeliveryItem.CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                     <DataGridTextColumn Header="DeliveryType" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -187,138 +196,144 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
-                <Grid  DataContext="{Binding CurrentDeliveryItemExtra}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="300"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="DeliveryType"
+            <Expander Grid.Column="1" ExpandDirection="Left" IsExpanded="False">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <Grid  DataContext="{Binding CurrentDeliveryItemExtra}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="300"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="DeliveryType"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding DeliveryItem.DeliveryType}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding DeliveryItem.DeliveryType}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="ProductType"
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="ProductType"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding DeliveryItem.ProductType}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding DeliveryItem.ProductType}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="ProductID"
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="ProductID"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
-                    <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding DeliveryItem.ProductID}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding DeliveryItem.ProductID}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Composition"
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Composition"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding DeliveryItem.Composition}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding DeliveryItem.Composition}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Abbr"
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Abbr"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding DeliveryItem.Abbr}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding DeliveryItem.Abbr}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Customer"
+                        <TextBlock Grid.Row="5" Grid.Column="0" Text="Customer"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding DeliveryItem.Customer}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding DeliveryItem.Customer}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                    <TextBlock Grid.Row="6" Grid.Column="0" Text="PO"
+                        <TextBlock Grid.Row="6" Grid.Column="0" Text="PO"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding DeliveryItem.PO}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding DeliveryItem.PO}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
 
-                    <TextBlock Grid.Row="7" Grid.Column="0" Text="Dimension"
+                        <TextBlock Grid.Row="7" Grid.Column="0" Text="Dimension"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding DeliveryItem.Dimension}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding DeliveryItem.Dimension}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                    <TextBlock Grid.Row="8" Grid.Column="0" Text="Weight"
+                        <TextBlock Grid.Row="8" Grid.Column="0" Text="Weight"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding DeliveryItem.Weight}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding DeliveryItem.Weight}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                    <TextBlock Grid.Row="9" Grid.Column="0" Text="PackNumber"
+                        <TextBlock Grid.Row="9" Grid.Column="0" Text="PackNumber"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox  Grid.Row="9" Grid.Column="1" Text="{Binding DeliveryItem.ProductID}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox  Grid.Row="9" Grid.Column="1" Text="{Binding DeliveryItem.ProductID}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                    <TextBlock Grid.Row="10" Grid.Column="0" Text="Position"
+                        <TextBlock Grid.Row="10" Grid.Column="0" Text="Position"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox  Grid.Row="10" Grid.Column="1" Text="{Binding DeliveryItem.Position}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox  Grid.Row="10" Grid.Column="1" Text="{Binding DeliveryItem.Position}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                    <TextBlock Grid.Row="11" Grid.Column="0" Text="DetailRecord"
+                        <TextBlock Grid.Row="11" Grid.Column="0" Text="DetailRecord"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding DeliveryItem.DetailRecord}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding DeliveryItem.DetailRecord}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                    <TextBlock Grid.Row="12" Grid.Column="0" Text="Remark"
+                        <TextBlock Grid.Row="12" Grid.Column="0" Text="Remark"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding DeliveryItem.Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding DeliveryItem.Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                    <TextBlock Grid.Row="13" Grid.Column="0" Text="IsCustomerSigned"
+                        <TextBlock Grid.Row="13" Grid.Column="0" Text="IsCustomerSigned"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding Delivery.IsCustomerSigned}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding Delivery.IsCustomerSigned}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                    <TextBlock Grid.Row="14" Grid.Column="0" Text="CustomerSignedDate"
+                        <TextBlock Grid.Row="14" Grid.Column="0" Text="CustomerSignedDate"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Delivery.CustomerSignedDate}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Delivery.CustomerSignedDate}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                    <TextBlock Grid.Row="15" Grid.Column="0" Text="CustomerSignedDetails"
+                        <TextBlock Grid.Row="15" Grid.Column="0" Text="CustomerSignedDetails"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Delivery.CustomerSignedDetails}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Delivery.CustomerSignedDetails}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                    <TextBlock Grid.Row="16" Grid.Column="0" Text="TCBState"
+                        <TextBlock Grid.Row="16" Grid.Column="0" Text="TCBState"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding DeliveryItem.TCBState}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding DeliveryItem.TCBState}" Style="{StaticResource StyleTextBoxReadOnly}" 
+                                 Background="LightGreen"/>
 
-                    <TextBlock Grid.Row="17" Grid.Column="0" Text="TCBRemark"
+                        <TextBlock Grid.Row="17" Grid.Column="0" Text="TCBRemark"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding DeliveryItem.TCBRemark}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding DeliveryItem.TCBRemark}" Style="{StaticResource StyleTextBoxReadOnly}" 
+                                 Background="LightGreen"/>
 
-                    <TextBlock Grid.Row="18" Grid.Column="0" Text="TCBBondingPO"
+                        <TextBlock Grid.Row="18" Grid.Column="0" Text="TCBBondingPO"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding DeliveryItem.BondingPO}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding DeliveryItem.BondingPO}" Style="{StaticResource StyleTextBoxReadOnly}" 
+                                 Background="LightGreen"/>
 
-                    <TextBlock Grid.Row="19" Grid.Column="0" Text="TCBHistory"
+                        <TextBlock Grid.Row="19" Grid.Column="0" Text="TCBHistory"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding DeliveryItem.TrackingHistory}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding DeliveryItem.TrackingHistory}" Style="{StaticResource StyleTextBoxReadOnly}" 
+                                 Background="LightGreen"/>
 
 
-                    <TextBlock Grid.Row="20" Grid.Column="0" Text="State"
+                        <TextBlock Grid.Row="20" Grid.Column="0" Text="State"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="20" Grid.Column="1" Text="{Binding DeliveryItem.State}" Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBlock Grid.Row="20" Grid.Column="1" Text="{Binding DeliveryItem.State}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                    <TextBlock Grid.Row="21" Grid.Column="0" Text="CreateTime"
+                        <TextBlock Grid.Row="21" Grid.Column="0" Text="CreateTime"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="21" Grid.Column="1" Text="{Binding DeliveryItem.CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                        <TextBlock Grid.Row="21" Grid.Column="1" Text="{Binding DeliveryItem.CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                    <TextBlock Grid.Row="22" Grid.Column="0" Text="Creator"
+                        <TextBlock Grid.Row="22" Grid.Column="0" Text="Creator"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="22" Grid.Column="1" Text="{Binding DeliveryItem.Creator}" Style="{StaticResource StyleTextBlockCommon}" />
-                </Grid>
-            </ScrollViewer>
+                        <TextBlock Grid.Row="22" Grid.Column="1" Text="{Binding DeliveryItem.Creator}" Style="{StaticResource StyleTextBlockCommon}" />
+                    </Grid>
+                </ScrollViewer>
+            </Expander>
         </Grid>
 
         <control:SimplePager Grid.Row="2" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" 

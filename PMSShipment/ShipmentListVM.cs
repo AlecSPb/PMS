@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSCommon;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSShipment
 {
@@ -19,6 +20,13 @@ namespace PMSShipment
             InitializeProperties();
             InitializeCommands();
 
+            SetPageParametersWhenConditionChange();
+
+            Messenger.Default.Register<NotificationMessage>(this, "Refresh", ActionDo);
+        }
+
+        private void ActionDo(NotificationMessage obj)
+        {
             SetPageParametersWhenConditionChange();
         }
 
@@ -59,10 +67,12 @@ namespace PMSShipment
 
         private void ActionSet(DcDeliveryItemExtra model)
         {
-            if (model != null)
-            {
-
-            }
+            if (model == null) return;
+            var win = new SetWindow();
+            var vm = new SetVM();
+            vm.SetCurrentDeliveryItem(model.DeliveryItem);
+            win.DataContext = vm;
+            win.ShowDialog();
         }
 
         private void ActionSelectionChanged(DcDeliveryItemExtra model)
