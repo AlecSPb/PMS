@@ -10,7 +10,7 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSShipment
 {
-    public class SetVM:ViewModelBase
+    public class SetVM : ViewModelBase
     {
         public SetVM()
         {
@@ -31,8 +31,10 @@ namespace PMSShipment
         {
             try
             {
-                using (var service=new TCBServiceClient())
+                using (var service = new TCBServiceClient())
                 {
+                    CurrentDeliveryItem.TrackingHistory = CommonHelper.AppendHistory(CurrentDeliveryItem.TrackingHistory,
+                        CurrentDeliveryItem.TCBState);
                     service.UpdateDeliveryItemTCB(CurrentDeliveryItem);
                 }
                 Messenger.Default.Send<NotificationMessage>(null, "CloseSetWindow");

@@ -105,6 +105,7 @@
     <Compile Include="Express\SystemParameter.cs" />
     <Compile Include="Express\Trace.cs" />
     <Compile Include="Express\Url.cs" />
+    <Compile Include="Helper\CommonHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>

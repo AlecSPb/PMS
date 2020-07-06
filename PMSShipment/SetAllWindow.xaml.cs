@@ -54,6 +54,7 @@ namespace PMSShipment
                         foreach (var item in list)
                         {
                             item.TCBState = CboTrackState.SelectedItem.ToString();
+                            item.TrackingHistory = CommonHelper.AppendHistory(item.TrackingHistory, item.TCBState);
                             s.UpdateDeliveryItemTCB(item);
                         }
                         Messenger.Default.Send<NotificationMessage>(null, "Refresh");

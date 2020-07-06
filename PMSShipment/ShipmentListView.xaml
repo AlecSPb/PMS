@@ -299,22 +299,22 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Delivery.CustomerSignedDetails}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                        <TextBlock Grid.Row="16" Grid.Column="0" Text="TCBState"
+                        <TextBlock Grid.Row="16" Grid.Column="0" Text="TrackState"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding DeliveryItem.TCBState}" Style="{StaticResource StyleTextBoxReadOnly}" 
                                  Background="LightGreen"/>
 
-                        <TextBlock Grid.Row="17" Grid.Column="0" Text="TCBRemark"
+                        <TextBlock Grid.Row="17" Grid.Column="0" Text="TrackRemark"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding DeliveryItem.TCBRemark}" Style="{StaticResource StyleTextBoxReadOnly}" 
                                  Background="LightGreen"/>
 
-                        <TextBlock Grid.Row="18" Grid.Column="0" Text="TCBBondingPO"
+                        <TextBlock Grid.Row="18" Grid.Column="0" Text="BondingPO"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding DeliveryItem.BondingPO}" Style="{StaticResource StyleTextBoxReadOnly}" 
                                  Background="LightGreen"/>
 
-                        <TextBlock Grid.Row="19" Grid.Column="0" Text="TCBHistory"
+                        <TextBlock Grid.Row="19" Grid.Column="0" Text="TrackingHistory"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding DeliveryItem.TrackingHistory}" Style="{StaticResource StyleTextBoxReadOnly}" 
                                  Background="LightGreen"/>

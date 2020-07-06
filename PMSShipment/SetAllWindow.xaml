@@ -15,20 +15,24 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
-                <RowDefinition />
+                <RowDefinition Height="0*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="DeliveryName"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}" Text="" Name="TxtDeliveryName"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="TrackState"/>
-            <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding TrackStates}" SelectedItem="{Binding TrackState}" Width="150"
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource StyleTextBlockTip}" Background="LightGreen"
+                       HorizontalAlignment="Stretch"
+                       Text="It will take effect to all the records in these [DeliveryName]"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="DeliveryName"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}" Text="" Name="TxtDeliveryName"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="TrackState"/>
+            <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding TrackStates}" SelectedItem="{Binding TrackState}" Width="150"
                       Style="{StaticResource StyleComboBoxCommon}" Name="CboTrackState"/>
         </Grid>
 
