@@ -50,10 +50,14 @@
     <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -83,9 +87,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Express\CheckHelper\ErrorMessage.cs" />
+    <Compile Include="Express\CheckHelper\ExpressHelper.cs" />
+    <Compile Include="Express\ExpressTrack.xaml.cs">
+      <DependentUpon>ExpressTrack.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Express\Helper.cs" />
+    <Compile Include="Express\ID.cs" />
+    <Compile Include="Express\KD100.cs" />
+    <Compile Include="Express\KDBird.cs" />
+    <Compile Include="Express\KDRequest.cs" />
+    <Compile Include="Express\KDResponse.cs" />
+    <Compile Include="Express\Operation.cs" />
+    <Compile Include="Express\Request.cs" />
+    <Compile Include="Express\Response.cs" />
+    <Compile Include="Express\Shipper.cs" />
+    <Compile Include="Express\SystemParameter.cs" />
+    <Compile Include="Express\Trace.cs" />
+    <Compile Include="Express\Url.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PMSMethods.cs" />
     <Compile Include="SetWindow.xaml.cs">
       <DependentUpon>SetWindow.xaml</DependentUpon>
     </Compile>
@@ -100,6 +123,10 @@
     <Page Include="DeliveryEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Express\ExpressTrack.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
@@ -163,6 +190,9 @@
     <None Include="Connected Services\TCB\PMSShipment.TCB.DcDeliveryItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\TCB\PMSShipment.TCB.DcDeliveryItemExtra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\TCB\TCBService.wsdl" />
     <None Include="Connected Services\TCB\TCBService.xsd">
       <SubType>Designer</SubType>
@@ -214,6 +244,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Express\express-info.txt" />
     <Content Include="tracking.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

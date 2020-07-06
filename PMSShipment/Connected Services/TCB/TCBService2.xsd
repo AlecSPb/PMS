@@ -110,4 +110,56 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetDeliveryUnFinished">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeliveryUnFinishedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetDeliveryUnFinishedResult" nillable="true" type="q7:ArrayOfDcDelivery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeliveryItemExtra">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" type="xs:int" />
+        <xs:element minOccurs="0" name="t" type="xs:int" />
+        <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="po" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bondingpo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="state" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeliveryItemExtraResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetDeliveryItemExtraResult" nillable="true" type="q8:ArrayOfDcDeliveryItemExtra" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeliveryItemExtraCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="po" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bondingpo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="state" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeliveryItemExtraCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDeliveryItemExtraCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

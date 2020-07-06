@@ -7,15 +7,16 @@
         mc:Ignorable="d"
         Title="PMS Shipment Tracking version 1.0"
         Icon="tracking.png"
-        Height="600" Width="1200" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Height="600" Width="1200" WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" ButtonBase.Click="StackPanel_Click" Background="LightBlue">
-            <Button Content="Shipment" Style="{StaticResource StyleButtonNavigation}" Name="BtnShipment" Width="200"/>
-            <Button Content="Shipment List" Style="{StaticResource StyleButtonNavigation}" Name="BtnShipmentList" Width="200"/>
+            <Button Content="Shipment View" Style="{StaticResource StyleButtonCommon}" Name="BtnShipment" Width="200" Height="40"/>
+            <Button Content="Target View" Style="{StaticResource StyleButtonCommon}" Name="BtnShipmentList" Width="200" Height="40"/>
         </StackPanel>
         <Border Grid.Row="1">
             <ContentControl x:Name="mainArea"/>

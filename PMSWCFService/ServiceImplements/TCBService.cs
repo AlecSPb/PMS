@@ -200,5 +200,120 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public List<DcDelivery> GetDeliveryUnFinished()
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from d in dc.Deliverys
+                                where d.State == PMSCommon.DeliveryState.未完成.ToString()
+                                orderby d.CreateTime descending
+                                select d;
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<Delivery, DcDelivery>();
+                    });
+
+                    var records = Mapper.Map<List<Delivery>, List<DcDelivery>>(query.ToList());
+                    return records;
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcDeliveryItemExtra> GetDeliveryItemExtra(int s, int t, string productid, string composition, string po,
+            string customer, string bondingpo, string state)
+        {
+            try
+            {
+                XS.RunLog();
+                var searchItem = CompositionHelper.GetSearchItems(composition);
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from d in dc.DeliveryItems
+                                join dd in dc.Deliverys
+                                on d.DeliveryID equals dd.ID
+                                where d.State != PMSCommon.SimpleState.作废.ToString()
+                                && dd.State != PMSCommon.DeliveryState.作废.ToString()
+                                && d.ProductID.Contains(productid)
+                                && d.PO.Contains(po)
+                                && d.Customer.Contains(customer)
+                                && d.BondingPO.Contains(bondingpo)
+                                && d.TCBState.Contains(state)
+                                && d.Composition.Contains(searchItem.Item1)
+                                && d.Composition.Contains(searchItem.Item2)
+                                && d.Composition.Contains(searchItem.Item3)
+                                && d.Composition.Contains(searchItem.Item4)
+                                && dd.Receiver.Contains("TCB")
+                                orderby dd.CreateTime descending, d.CreateTime descending
+                                select new PMSDeliveryItemExtra()
+                                {
+                                    Delivery = dd,
+                                    DeliveryItem = d
+                                };
+
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<PMSDeliveryItemExtra, DcDeliveryItemExtra>();
+                        cfg.CreateMap<Delivery, DcDelivery>();
+                        cfg.CreateMap<DeliveryItem, DcDeliveryItem>();
+                    });
+
+                    var records = Mapper.Map<List<PMSDeliveryItemExtra>, List<DcDeliveryItemExtra>>(query.Skip(s).Take(t).ToList());
+                    return records;
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetDeliveryItemExtraCount(string productid, string composition, string po, string customer, 
+            string bondingpo, string state)
+        {
+            try
+            {
+                XS.RunLog();
+                var searchItem = CompositionHelper.GetSearchItems(composition);
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from d in dc.DeliveryItems
+                                join dd in dc.Deliverys
+                                on d.DeliveryID equals dd.ID
+                                where d.State != PMSCommon.SimpleState.作废.ToString()
+                                && dd.State != PMSCommon.DeliveryState.作废.ToString()
+                                && d.ProductID.Contains(productid)
+                                && d.PO.Contains(po)
+                                && d.Customer.Contains(customer)
+                                && d.BondingPO.Contains(bondingpo)
+                                && d.TCBState.Contains(state)
+                                && d.Composition.Contains(searchItem.Item1)
+                                && d.Composition.Contains(searchItem.Item2)
+                                && d.Composition.Contains(searchItem.Item3)
+                                && d.Composition.Contains(searchItem.Item4)
+                                && dd.Receiver.Contains("TCB")
+                                select new PMSDeliveryItemExtra()
+                                {
+                                    Delivery = dd,
+                                    DeliveryItem = d
+                                };
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

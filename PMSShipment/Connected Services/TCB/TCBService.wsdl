@@ -49,6 +49,24 @@
   <wsdl:message name="ITCBService_GetDeliveryItemTCBByDeliveryID_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDeliveryItemTCBByDeliveryIDResponse" />
   </wsdl:message>
+  <wsdl:message name="ITCBService_GetDeliveryUnFinished_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryUnFinished" />
+  </wsdl:message>
+  <wsdl:message name="ITCBService_GetDeliveryUnFinished_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryUnFinishedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCBService_GetDeliveryItemExtra_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemExtra" />
+  </wsdl:message>
+  <wsdl:message name="ITCBService_GetDeliveryItemExtra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemExtraResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITCBService_GetDeliveryItemExtraCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemExtraCount" />
+  </wsdl:message>
+  <wsdl:message name="ITCBService_GetDeliveryItemExtraCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemExtraCountResponse" />
+  </wsdl:message>
   <wsdl:portType name="ITCBService">
     <wsdl:operation name="GetDeliveryItemTCB">
       <wsdl:input wsaw:Action="http://tempuri.org/ITCBService/GetDeliveryItemTCB" message="tns:ITCBService_GetDeliveryItemTCB_InputMessage" />
@@ -77,6 +95,18 @@
     <wsdl:operation name="GetDeliveryItemTCBByDeliveryID">
       <wsdl:input wsaw:Action="http://tempuri.org/ITCBService/GetDeliveryItemTCBByDeliveryID" message="tns:ITCBService_GetDeliveryItemTCBByDeliveryID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITCBService/GetDeliveryItemTCBByDeliveryIDResponse" message="tns:ITCBService_GetDeliveryItemTCBByDeliveryID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryUnFinished">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCBService/GetDeliveryUnFinished" message="tns:ITCBService_GetDeliveryUnFinished_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCBService/GetDeliveryUnFinishedResponse" message="tns:ITCBService_GetDeliveryUnFinished_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemExtra">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCBService/GetDeliveryItemExtra" message="tns:ITCBService_GetDeliveryItemExtra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCBService/GetDeliveryItemExtraResponse" message="tns:ITCBService_GetDeliveryItemExtra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemExtraCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITCBService/GetDeliveryItemExtraCount" message="tns:ITCBService_GetDeliveryItemExtraCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITCBService/GetDeliveryItemExtraCountResponse" message="tns:ITCBService_GetDeliveryItemExtraCount_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="tcb" type="tns:ITCBService">
@@ -137,6 +167,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetDeliveryItemTCBByDeliveryID">
       <soap:operation soapAction="http://tempuri.org/ITCBService/GetDeliveryItemTCBByDeliveryID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryUnFinished">
+      <soap:operation soapAction="http://tempuri.org/ITCBService/GetDeliveryUnFinished" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemExtra">
+      <soap:operation soapAction="http://tempuri.org/ITCBService/GetDeliveryItemExtra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemExtraCount">
+      <soap:operation soapAction="http://tempuri.org/ITCBService/GetDeliveryItemExtraCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

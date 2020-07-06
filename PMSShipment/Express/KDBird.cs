@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Newtonsoft.Json;
 
-namespace PMSClient.Express
+namespace PMSShipment.Express
 {
     public class KDBird
     {

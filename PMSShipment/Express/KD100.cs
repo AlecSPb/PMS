@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace PMSClient.Express
+namespace PMSShipment.Express
 {
     public class KD100
     {

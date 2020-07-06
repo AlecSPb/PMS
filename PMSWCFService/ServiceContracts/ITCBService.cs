@@ -33,5 +33,16 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcDeliveryItem> GetDeliveryItemTCBByDeliveryID(Guid id);
 
+        [OperationContract]
+        List<DcDelivery> GetDeliveryUnFinished();
+
+
+        [OperationContract]
+        List<DcDeliveryItemExtra> GetDeliveryItemExtra(int s, int t, string productid, string composition, string po, string customer, string bondingpo, string state);
+
+        [OperationContract]
+        int GetDeliveryItemExtraCount(string productid, string composition, string po, string customer, string bondingpo, string state);
+
+
     }
 }

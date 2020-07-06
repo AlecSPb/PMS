@@ -22,6 +22,7 @@ namespace PMSShipment
         public ShipmentListView()
         {
             InitializeComponent();
+            this.DataContext = new ShipmentListVM();
         }
     }
 }

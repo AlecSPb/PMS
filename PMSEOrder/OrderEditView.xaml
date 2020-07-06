@@ -210,7 +210,7 @@
                 <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding SampleNeedRemark}"
                          Style="{StaticResource StyleTextBoxCommon}" Name="TxtSampleNeedRemark"/>
                 <StackPanel Grid.Row="15" Grid.Column="2" Orientation="Horizontal">
-                    <Button Name="BtnSampleNeedRemarkEGA" Content="EGA" Style="{StaticResource StyleButtonCommon}"
+                    <Button Name="BtnSampleNeedRemarkEGA" Content="EGA-Analysis" Style="{StaticResource StyleButtonCommon}"
                             Click="BtnSampleNeedRemarkEGA_Click"/>
                     <Button Name="BtnSampleNeedRemarkNone" Content="None" Style="{StaticResource StyleButtonCommon}"
                             Click="BtnSampleNeedRemarkNone_Click"/>
@@ -235,7 +235,7 @@
                 <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding SampleForAnlysisRemark}"
                          Style="{StaticResource StyleTextBoxCommon}" Name="TxtSampleAnlysisRemark"/>
                 <StackPanel Grid.Row="17" Grid.Column="2" Orientation="Horizontal">
-                    <Button Name="BtnSampleAnlysisRemarkEGA" Content="EGA" Style="{StaticResource StyleButtonCommon}"
+                    <Button Name="BtnSampleAnlysisRemarkEGA" Content="EGA-Analysis" Style="{StaticResource StyleButtonCommon}"
                             Click="BtnSampleAnlysisRemarkEGA_Click"/>
                     <Button Name="BtnSampleAnlysisRemarkNone" Content="None" Style="{StaticResource StyleButtonCommon}"
                             Click="BtnSampleAnlysisRemarkNone_Click"/>

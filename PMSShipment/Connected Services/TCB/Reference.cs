@@ -823,6 +823,67 @@ namespace PMSShipment.TCB {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcDeliveryItemExtra", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcDeliveryItemExtra : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSShipment.TCB.DcDelivery DeliveryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSShipment.TCB.DcDeliveryItem DeliveryItemField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSShipment.TCB.DcDelivery Delivery {
+            get {
+                return this.DeliveryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryField, value) != true)) {
+                    this.DeliveryField = value;
+                    this.RaisePropertyChanged("Delivery");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSShipment.TCB.DcDeliveryItem DeliveryItem {
+            get {
+                return this.DeliveryItemField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryItemField, value) != true)) {
+                    this.DeliveryItemField = value;
+                    this.RaisePropertyChanged("DeliveryItem");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TCB.ITCBService")]
     public interface ITCBService {
@@ -868,6 +929,24 @@ namespace PMSShipment.TCB {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/GetDeliveryItemTCBByDeliveryID", ReplyAction="http://tempuri.org/ITCBService/GetDeliveryItemTCBByDeliveryIDResponse")]
         System.Threading.Tasks.Task<PMSShipment.TCB.DcDeliveryItem[]> GetDeliveryItemTCBByDeliveryIDAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/GetDeliveryUnFinished", ReplyAction="http://tempuri.org/ITCBService/GetDeliveryUnFinishedResponse")]
+        PMSShipment.TCB.DcDelivery[] GetDeliveryUnFinished();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/GetDeliveryUnFinished", ReplyAction="http://tempuri.org/ITCBService/GetDeliveryUnFinishedResponse")]
+        System.Threading.Tasks.Task<PMSShipment.TCB.DcDelivery[]> GetDeliveryUnFinishedAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/GetDeliveryItemExtra", ReplyAction="http://tempuri.org/ITCBService/GetDeliveryItemExtraResponse")]
+        PMSShipment.TCB.DcDeliveryItemExtra[] GetDeliveryItemExtra(int s, int t, string productid, string composition, string po, string customer, string bondingpo, string state);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/GetDeliveryItemExtra", ReplyAction="http://tempuri.org/ITCBService/GetDeliveryItemExtraResponse")]
+        System.Threading.Tasks.Task<PMSShipment.TCB.DcDeliveryItemExtra[]> GetDeliveryItemExtraAsync(int s, int t, string productid, string composition, string po, string customer, string bondingpo, string state);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/GetDeliveryItemExtraCount", ReplyAction="http://tempuri.org/ITCBService/GetDeliveryItemExtraCountResponse")]
+        int GetDeliveryItemExtraCount(string productid, string composition, string po, string customer, string bondingpo, string state);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITCBService/GetDeliveryItemExtraCount", ReplyAction="http://tempuri.org/ITCBService/GetDeliveryItemExtraCountResponse")]
+        System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition, string po, string customer, string bondingpo, string state);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -951,6 +1030,30 @@ namespace PMSShipment.TCB {
         
         public System.Threading.Tasks.Task<PMSShipment.TCB.DcDeliveryItem[]> GetDeliveryItemTCBByDeliveryIDAsync(System.Guid id) {
             return base.Channel.GetDeliveryItemTCBByDeliveryIDAsync(id);
+        }
+        
+        public PMSShipment.TCB.DcDelivery[] GetDeliveryUnFinished() {
+            return base.Channel.GetDeliveryUnFinished();
+        }
+        
+        public System.Threading.Tasks.Task<PMSShipment.TCB.DcDelivery[]> GetDeliveryUnFinishedAsync() {
+            return base.Channel.GetDeliveryUnFinishedAsync();
+        }
+        
+        public PMSShipment.TCB.DcDeliveryItemExtra[] GetDeliveryItemExtra(int s, int t, string productid, string composition, string po, string customer, string bondingpo, string state) {
+            return base.Channel.GetDeliveryItemExtra(s, t, productid, composition, po, customer, bondingpo, state);
+        }
+        
+        public System.Threading.Tasks.Task<PMSShipment.TCB.DcDeliveryItemExtra[]> GetDeliveryItemExtraAsync(int s, int t, string productid, string composition, string po, string customer, string bondingpo, string state) {
+            return base.Channel.GetDeliveryItemExtraAsync(s, t, productid, composition, po, customer, bondingpo, state);
+        }
+        
+        public int GetDeliveryItemExtraCount(string productid, string composition, string po, string customer, string bondingpo, string state) {
+            return base.Channel.GetDeliveryItemExtraCount(productid, composition, po, customer, bondingpo, state);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition, string po, string customer, string bondingpo, string state) {
+            return base.Channel.GetDeliveryItemExtraCountAsync(productid, composition, po, customer, bondingpo, state);
         }
     }
 }

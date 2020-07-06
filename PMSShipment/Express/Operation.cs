@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSClient.MainService;
+using PMSShipment.TCB;
 using Newtonsoft.Json;
-namespace PMSClient.Express
+namespace PMSShipment.Express
 {
     public class Operation
     {
@@ -16,13 +16,13 @@ namespace PMSClient.Express
         {
             try
             {
-                using (var service = new DeliveryServiceClient())
+                using (var service = new TCBServiceClient())
                 {
                     var result = service.GetDeliveryUnFinished();
 
                     if (result.Length > 0)
                     {
-                        if (!PMSDialogService.ShowYesNo("请问", "确定要查看[快递追踪]信息吗？Y=查看，N=跳过"))
+                        if (!XSHelper.XS.MessageBox.ShowYesNo("Are you sure to see tracking info？Y=View，N=Skip", "Ask"))
                         {
                             return;
                         }
@@ -32,14 +32,14 @@ namespace PMSClient.Express
             }
             catch (Exception ex)
             {
-                PMSDialogService.ShowWarning(ex.Message);
+                XSHelper.XS.MessageBox.ShowWarning(ex.Message);
             }
         }
 
         private async void Trace(DcDelivery[] models)
         {
             var express_track = new ToolDialog.ExpressTrack();
-            express_track.Tip = "需要自动查询的物流记录请设置状态为【未完成】 绿色，不需要则设置为其他状态；目前只支持UPS和SF";
+            express_track.Tip = "Will Track Green Ones";
             express_track.TrackInfo = await GetTraceInformationAsync(models);
             express_track.Show();
         }
@@ -59,8 +59,8 @@ namespace PMSClient.Express
                 //分别实现不同快递公司的服务接口
                 foreach (var item in models)
                 {
-                    sb.AppendLine($"【{item.DeliveryName}查询结果如下】");
-                    sb.AppendLine($"发货目的地:{item.Country}");
+                    sb.AppendLine($"【{item.DeliveryName} Tracking Results】");
+                    sb.AppendLine($"Shipment Denstination:{item.Country}");
 
                     string express = item.DeliveryExpress;
                     string[] numbers = item.DeliveryNumber.Split(new string[] { "+" }, StringSplitOptions.RemoveEmptyEntries);
@@ -80,29 +80,18 @@ namespace PMSClient.Express
         {
             var checker = new CheckHelper.ExpressHelper();
             var api = new KDBird();
-            var sf = new SF();
             if (numbers.Length == 0)
             {
-                sb.AppendLine("还没有填写单号");
+                sb.AppendLine("No Tracking Number");
                 return;
             }
             foreach (var number in numbers)
             {
                 switch (express)
                 {
-                    case Shipper.SF:
-                        {
-                            string result = sf.SFOrder(number);
-                            sb.AppendLine($"查询的SF单号为{number}");
-                            sb.AppendLine($"此单按照发件人为{sf.Sender}-{sf.SenderPhone}来查询，如有变化，联系管理员");
-                            sb.AppendLine("--------------------------------------------------------");
-                            sb.AppendLine(checker.ConcatErrorMessage(checker.CheckSF(number)));
-                            sb.AppendLine(result);
-                        }
-                        break;
                     case Shipper.UPS:
                         {
-                            sb.Append("查询单号");
+                            sb.Append("Tracking Number");
                             sb.Append(express);
                             sb.Append(":");
                             sb.AppendLine(number);
@@ -114,7 +103,7 @@ namespace PMSClient.Express
                         }
                         break;
                     default:
-                        sb.AppendLine($"暂未实现【{express}】快递追踪功能");
+                        sb.AppendLine($"No Impelement【{express}】Tracking Function");
                         break;
                 }
             }
@@ -133,7 +122,7 @@ namespace PMSClient.Express
             {
                 if (response.Traces.Length == 0)
                 {
-                    sb.AppendLine("没找到追踪记录");
+                    sb.AppendLine("No Tracking Results");
                 }
                 else
                 {

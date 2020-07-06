@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 
-namespace PMSClient.Express
+namespace PMSShipment.Express
 {
     public static class Helper
     {
@@ -58,7 +58,6 @@ namespace PMSClient.Express
             }
             catch (Exception ex)
             {
-                PMSHelper.CurrentLog.Error(ex);
                 return "";
             }
         }

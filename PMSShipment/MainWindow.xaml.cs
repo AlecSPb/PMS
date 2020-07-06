@@ -48,5 +48,13 @@ namespace PMSShipment
                     break;
             }
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if(!XSHelper.XS.MessageBox.ShowYesNo("Are you sure to quit?"))
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

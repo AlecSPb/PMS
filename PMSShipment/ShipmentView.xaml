@@ -20,7 +20,8 @@
             <TextBox Style="{StaticResource StyleTextBoxSearch}" Text="{Binding SearchDeliveryName}"/>
             <Button Style="{StaticResource StyleButtonCommon}" Content="Search" Command="{Binding Search}"/>
             <Button Style="{StaticResource StyleButtonCommon}" Content="All"  Command="{Binding All}"/>
-            <Button Style="{StaticResource StyleButtonCommon}" Content="Express Track"  Command="{Binding ExpressTrack}"/>
+            <Button Style="{StaticResource StyleButtonCommon}" Content="Express Track"  Command="{Binding ExpressTrack}"
+                    Width="150"/>
         </StackPanel>
 
         <DataGrid Grid.Row="1" Style="{StaticResource StyleDataGridCommon}" SelectedIndex="{Binding CurrentSelectIndex}"

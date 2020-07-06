@@ -58,7 +58,7 @@ namespace PMSShipment
             if (!XSHelper.XS.MessageBox.ShowYesNo("Track All Green One?"))
                 return;
             ////追踪物流情况
-            //new Express.Operation().TraceUnCompleted();
+            new Express.Operation().TraceUnCompleted();
         }
 
         private void ActionQuickSave(DcDeliveryItem obj)
