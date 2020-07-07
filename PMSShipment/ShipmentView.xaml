@@ -46,11 +46,11 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="State" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding State}"/>
-                <DataGridTextColumn Header="DeliveryName" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="ShipmentName" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding DeliveryName}"/>
-                <DataGridTextColumn Header="DeliveryExpress" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="Express" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding DeliveryExpress}"/>
-                <DataGridTextColumn Header="DeliveryNumber" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="ExpressNumber" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding DeliveryNumber}"/>
                 <DataGridTextColumn Header="Country" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Country}"/>
@@ -90,6 +90,15 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="TrackingState" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding TCBState}"  Foreground="Blue"/>
+                <DataGridTextColumn Header="BondingPO" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding BondingPO}"  Foreground="Blue"/>
+                <DataGridTextColumn Header="TrackingRemark" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding TCBRemark}" Foreground="Blue" Width="100"/>
+                <DataGridTextColumn Header="TrackingHistory" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding TrackingHistory}"  Foreground="Blue"  Width="100"/>
+                
                 <DataGridTextColumn Header="No." ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding OrderNumber}"/>
                 <DataGridTextColumn Header="DeliveryType" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -112,15 +121,6 @@
                                     Binding="{Binding Weight}"/>
                 <DataGridTextColumn Header="DetailRecord" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding DetailRecord}"/>
-
-                <DataGridTextColumn Header="TrackingState" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding TCBState}"  Foreground="Blue"/>
-                <DataGridTextColumn Header="BondingPO" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding BondingPO}"  Foreground="Blue"/>
-                <DataGridTextColumn Header="TrackingRemark" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding TCBRemark}" Foreground="Blue"/>
-                <DataGridTextColumn Header="TrackingHistory" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding TrackingHistory}"  Foreground="Blue"/>
 
 
                 <DataGridTextColumn Header="CreateTime" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

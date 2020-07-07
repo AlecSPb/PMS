@@ -59,9 +59,9 @@
                     <DataGridTextColumn Header="BondingPO" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                         Binding="{Binding DeliveryItem.BondingPO}"/>
                     <DataGridTextColumn Header="TrackRemark" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                        Binding="{Binding DeliveryItem.TCBRemark}"/>
+                                        Binding="{Binding DeliveryItem.TCBRemark}" Width="100"/>
                     <DataGridTextColumn Header="TrackHistory" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                        Binding="{Binding DeliveryItem.TrackingHistory}"/>
+                                        Binding="{Binding DeliveryItem.TrackingHistory}" Width="100"/>
 
                     
                     <DataGridTextColumn Header="CreateTime" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSShipment"
         mc:Ignorable="d"
-        Title="PMS Shipment Tracking version 1.0"
+        Title="PMS Shipment Tracking version 1.0 online"
         Icon="tracking.png"
         Height="600" Width="1200" WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Closing="Window_Closing">

@@ -20,11 +20,11 @@ namespace PMSShipment
             {
                 if (string.IsNullOrEmpty(currenthistory))
                 {
-                    s = $"{DateTime.Today.ToString("yyMMdd")}{state};";
+                    s = $"{DateTime.Today.ToString("yyMMdd")}-{state};";
                 }
                 else
                 {
-                    s = $"{currenthistory}{DateTime.Today.ToString("yyMMdd")}{state};";
+                    s = $"{DateTime.Today.ToString("yyMMdd")}-{state};{currenthistory}";
                 }
             }
 

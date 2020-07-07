@@ -89,7 +89,7 @@ namespace PMSShipment
         }
         private void ActionAll()
         {
-            SearchProductID = SearchComposition = SearchCustomer = SearchBondingPO = SearchPO = "";
+            SearchProductID = SearchComposition = SearchCustomer = SearchBondingPO = SearchPO = TrackState = "";
             SetPageParametersWhenConditionChange();
         }
 
