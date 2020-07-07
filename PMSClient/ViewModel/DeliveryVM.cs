@@ -70,6 +70,20 @@ namespace PMSClient.ViewModel
             ExpressSetting = new RelayCommand(ActionExpressSetting, CanExpressTrack);
 
             SampleTrace = new RelayCommand(ActionSampleTrace, CanAdd);
+
+            TCB = new RelayCommand<DcDelivery>(ActionTCB, CanEdit);
+        }
+
+        private void ActionTCB(DcDelivery obj)
+        {
+            if (obj == null) return;
+
+            if (XSHelper.XS.MessageBox.ShowYesNo("此功能为TCB后续追踪专用\r\n请在发出后设置为Enroute_TCB，对方收到后设置为Arrived_TCB\r\n继续？"))
+            {
+                var win = new SetAllWindow();
+                win.SetModel(obj);
+                win.ShowDialog();
+            }
         }
 
         private void ActionSampleTrace()
@@ -221,8 +235,23 @@ namespace PMSClient.ViewModel
                 }
                 try
                 {
+
                     using (var service = new DeliveryServiceClient())
                     {
+                        //设置tcb的为arrived_TCB
+                        if (model.Receiver.Contains("TCB"))
+                        {
+                            var list = service.GetDeliveryItemByDeliveryID(model.ID);
+                            foreach (var item in list)
+                            {
+                                item.TCBState = PMSCommon.DeliveryItemTCBState.Arrived_TCB.ToString();
+                                item.TrackingHistory = PMSClient.ToolDialog.CommonHelper.AppendHistory(item.TrackingHistory, item.TCBState);
+                                service.UpdateDeliveryItem(item);
+                            }
+
+                        }
+
+
                         model.State = PMSCommon.DeliveryState.最终完成.ToString();
                         model.FinishTime = DateTime.Now;
                         model.LastUpdateTime = DateTime.Now;
@@ -312,8 +341,8 @@ namespace PMSClient.ViewModel
 
         private bool CanLabel(DcDelivery arg)
         {
-            return (PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || 
-                PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet) || 
+            return (PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) ||
+                PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet) ||
                 PMSHelper.CurrentSession.IsInGroup(new string[] { "发货组" })
                 ) && arg?.State != "未核验";
         }
@@ -683,6 +712,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcDelivery> Check { get; set; }
         public RelayCommand<DcDelivery> DeliverySheet { get; set; }
         public RelayCommand<DcDelivery> BarCode { get; set; }
+        public RelayCommand<DcDelivery> TCB { get; set; }
         public RelayCommand<DcDelivery> AddItem { get; set; }
         public RelayCommand<DcDeliveryItem> EditItem { get; set; }
         public RelayCommand<DcDeliveryItem> SearchRecordTest { get; set; }

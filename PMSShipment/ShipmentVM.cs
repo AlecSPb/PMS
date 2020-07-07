@@ -33,7 +33,6 @@ namespace PMSShipment
             SetPageParametersWhenConditionChange();
         }
 
-
         public void RefreshDataItem()
         {
             ActionSelectionChanged(CurrentSelectItem);
@@ -132,6 +131,7 @@ namespace PMSShipment
             service.Close();
             ActionPaging();
         }
+
         private void ActionPaging()
         {
 
@@ -148,6 +148,7 @@ namespace PMSShipment
             CurrentSelectItem = Deliveries.FirstOrDefault();
             ActionSelectionChanged(CurrentSelectItem);
         }
+
         #region Properties
         public ObservableCollection<DcDelivery> Deliveries { get; set; }
         public ObservableCollection<DcDeliveryItem> DeliveryItems { get; set; }

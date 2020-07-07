@@ -75,6 +75,10 @@
                                 <Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
                                                 Command="{Binding Path=DataContext.Finish,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}"
                                         CommandParameter="{Binding}"/>
+
+                                <Button Content="TCB" Style="{StaticResource StyleDGButton}"
+                                                Command="{Binding Path=DataContext.TCB,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}"
+                                        CommandParameter="{Binding}"/>
                                 <!--<Button Content="{StaticResource ButtonBarCode}" Style="{StaticResource StyleDGButton}"
                                                 Command="{Binding Path=DataContext.BarCode,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}"
                                         CommandParameter="{Binding}"/>-->
@@ -300,6 +304,15 @@
                                     Binding="{Binding CreateTime}"/>
                 <DataGridTextColumn Header="{StaticResource RDCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
+
+                <DataGridTextColumn Header="TrackingState" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding TCBState}"  Foreground="Blue"/>
+                <DataGridTextColumn Header="BondingPO" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding BondingPO}"  Foreground="Blue"/>
+                <DataGridTextColumn Header="TrackingRemark" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding TCBRemark}" Foreground="Blue" Width="100"/>
+                <DataGridTextColumn Header="TrackingHistory" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding TrackingHistory}"  Foreground="Blue"  Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
 

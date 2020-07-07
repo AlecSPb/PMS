@@ -569,6 +569,7 @@
     <Compile Include="Components\Simulator\CompositionSimulatorService.cs" />
     <Compile Include="Components\Simulator\OutputValue.cs" />
     <Compile Include="Components\Simulator\OutputModel.cs" />
+    <Compile Include="ToolDialog\CommonHelper.cs" />
     <Compile Include="ToolDialog\EnterCSCAN.xaml.cs">
       <DependentUpon>EnterCSCAN.xaml</DependentUpon>
     </Compile>
@@ -583,6 +584,9 @@
       <DependentUpon>QuickRemainInventoryWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolDialog\QuickRemainInventoryVM.cs" />
+    <Compile Include="ToolDialog\SetAllWindow.xaml.cs">
+      <DependentUpon>SetAllWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolWindow\BigFontWarningWindow.xaml.cs">
       <DependentUpon>BigFontWarningWindow.xaml</DependentUpon>
     </Compile>
@@ -1373,6 +1377,10 @@
     <Page Include="ToolDialog\QuickRemainInventoryWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolDialog\SetAllWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ToolWindow\BigFontWarningWindow.xaml">
       <SubType>Designer</SubType>
