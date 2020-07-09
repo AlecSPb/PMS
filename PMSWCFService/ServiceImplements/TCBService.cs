@@ -210,6 +210,7 @@ namespace PMSWCFService
                 {
                     var query = from d in dc.Deliverys
                                 where d.State == PMSCommon.DeliveryState.未完成.ToString()
+                                && d.Receiver.Contains("TCB")
                                 orderby d.CreateTime descending
                                 select d;
                     Mapper.Initialize(cfg =>
