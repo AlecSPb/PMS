@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.View"
              mc:Ignorable="d" 
-                 d:DesignHeight="800" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordMillingEdit}">
+                 d:DesignHeight="1000" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordMillingEdit}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -54,6 +54,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -231,23 +232,31 @@
                            Text="供应商提供的材料熔点信息，单位℃"/>
                 <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RMRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="20" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox Grid.Row="20" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"
+                         Name="TxtRemark"/>
 
-                <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RMState}"
+                <StackPanel Grid.Row="21" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal" Name="SRemark"
+                            ButtonBase.Click="SRemark_Click">
+                    <Button Style="{StaticResource StyleButtonCommon}" Content="制粉难" />
+                    <Button Style="{StaticResource StyleButtonCommon}" Content="发生燃烧" />
+                    <Button Style="{StaticResource StyleButtonCommon}" Content="刺激性气味" />
+                </StackPanel>
+                
+                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource RMState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="21" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"  FontSize="{StaticResource TabletFontLG}"
+                <ComboBox Grid.Row="22" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"  FontSize="{StaticResource TabletFontLG}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="21" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="状态"/>
 
-                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource RMCreator}"
+                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource RMCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="22" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Grid.Row="23" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}" />
 
-                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource RMCreateTime}"
+                <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource RMCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="23" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
+                <TextBlock Grid.Row="24" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
             </Grid>
         </ScrollViewer>
     </Grid>

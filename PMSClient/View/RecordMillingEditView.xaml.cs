@@ -52,5 +52,21 @@ namespace PMSClient.View
             var win = new View.MillingToolWindow();
             win.Show();
         }
+
+        private void SRemark_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Button btn = e.OriginalSource as Button;
+                if (btn != null)
+                {
+                    PMSMethods.SetTextBoxAppend(TxtRemark,$"{btn.Content.ToString()};");
+                }
+            }
+            catch (Exception ex)
+            {
+               
+            }
+        }
     }
 }

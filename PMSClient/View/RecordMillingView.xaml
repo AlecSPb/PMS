@@ -85,6 +85,22 @@
                                     Binding="{Binding VHPPlanLot}"/>
                     <!--<DataGridTextColumn Header="{StaticResource RMPlanBatchNumber}" ElementStyle="{StaticResource StyleDGTextBlockCenter}"
                                     Binding="{Binding PlanBatchNumber}"/>-->
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="难">
+                                <TextBlock.ToolTip>
+                                    <TextBlock Text="制粉困难"/>
+                                </TextBlock.ToolTip>
+                            </TextBlock>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Ellipse Grid.Column="0" Width="10" Height="10" Fill="Green" Margin="2" 
+                                         Visibility="{Binding Remark,Converter={StaticResource VisibilityConverter5}}">
+                                </Ellipse>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Header="{StaticResource RMComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
                     <DataGridTextColumn Header="{StaticResource RMPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

@@ -7,6 +7,7 @@
     <local:VisibilityConverter2 x:Key="VisibilityConverter2"/>
     <local:VisibilityConverter3 x:Key="VisibilityConverter3"/>
     <local:VisibilityConverter4 x:Key="VisibilityConverter4"/>
+    <local:VisibilityConverter5 x:Key="VisibilityConverter5"/>
     <local:IsLockedConverter x:Key="IsLockedCT"/>
     <local:PlateUseNumberConverter x:Key="PlateUseNumberConverter"/>
     <local:MinimumBGConverter1 x:Key="MinimumBGCT1"/>
