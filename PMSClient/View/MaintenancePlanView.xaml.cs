@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace PMSClient.View
 {
     /// <summary>
-    /// MaintenanceItemView.xaml 的交互逻辑
+    /// MaintenanceView.xaml 的交互逻辑
     /// </summary>
-    public partial class MaintenanceItemView : UserControl
+    public partial class MaintenancePlanView : UserControl
     {
-        public MaintenanceItemView()
+        public MaintenancePlanView()
         {
             InitializeComponent();
         }

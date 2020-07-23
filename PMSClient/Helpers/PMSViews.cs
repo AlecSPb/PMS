@@ -124,6 +124,11 @@ namespace PMSClient
         ConsumablePurchase,
         ConsumablePurchaseEdit,
         OrderSelect,
-        SampleSelect
+        SampleSelect,
+        MaintainPlan,
+        MaintainPlanEdit,
+        MaintainRecord,
+        MaintainRecordEdit,
+        MaintainPlanSelect
     }
 }

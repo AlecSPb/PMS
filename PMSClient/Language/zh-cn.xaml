@@ -1116,26 +1116,37 @@
     <sys:String x:Key="CPRemark">备注</sys:String>
 
     <!--维护计划-->
+    <sys:String x:Key="PageMaintainPlan">维护计划</sys:String>
+    <sys:String x:Key="PageMaintainPlanEdit">维护计划-编辑</sys:String>
     <sys:String x:Key="MPID">ID</sys:String>
-    <sys:String x:Key="MPCreator">Creator</sys:String>
-    <sys:String x:Key="MPCreateTime">CreateTime</sys:String>
-    <sys:String x:Key="MPState">State</sys:String>
-    <sys:String x:Key="MPDeviceCode">Device Code</sys:String>
-    <sys:String x:Key="MPPlanItem">Plan Item</sys:String>
-    <sys:String x:Key="MPIntervalCount">IntervalCount</sys:String>
-    <sys:String x:Key="MPCurrentCount">Current Count</sys:String>
-    <sys:String x:Key="MPRemark">Remark</sys:String>
+    <sys:String x:Key="MPCreator">创建者</sys:String>
+    <sys:String x:Key="MPCreateTime">创建时间</sys:String>
+    <sys:String x:Key="MPState">状态</sys:String>
+    <sys:String x:Key="MPVHPMachineCode">设备代码</sys:String>
+    <sys:String x:Key="MPPlanItem">维护项目</sys:String>
+    <sys:String x:Key="MPPlanType">维护类型</sys:String>
+    <sys:String x:Key="MPPlanInterval">维护间隔</sys:String>
+    <sys:String x:Key="MPContent">维护内容</sys:String>
+    <sys:String x:Key="MPStandard">维护标准</sys:String>
+    <sys:String x:Key="MPCommonFailure">常见问题</sys:String>
+    <sys:String x:Key="MPProcessMethod">处理方法</sys:String>
+    <sys:String x:Key="MPRemark">备注</sys:String>
    
     <!--维护记录-->
+    <sys:String x:Key="PageMaintainRecord">维护日志</sys:String>
+    <sys:String x:Key="PageMaintainRecordEdit">维护日志-编辑</sys:String>
     <sys:String x:Key="MRID">ID</sys:String>
-    <sys:String x:Key="MRCreator">Creator</sys:String>
-    <sys:String x:Key="MRCreateTime">CreateTime</sys:String>
-    <sys:String x:Key="MRState">State</sys:String>
-    <sys:String x:Key="MRDevice">Device</sys:String>
-    <sys:String x:Key="MRPart">Part</sys:String>
-    <sys:String x:Key="MPRPersons">Persons</sys:String>
-    <sys:String x:Key="MRContent">Content</sys:String>
-    <sys:String x:Key="MRRemark">Remark</sys:String>
+    <sys:String x:Key="MRCreator">创建者</sys:String>
+    <sys:String x:Key="MRCreateTime">创建时间</sys:String>
+    <sys:String x:Key="MRState">状态</sys:String>
+    <sys:String x:Key="MRVHPMachineCode">设备代码"</sys:String>
+    <sys:String x:Key="MRPlanItem">维护项目</sys:String>
+    <sys:String x:Key="MRPlanType">维护类型</sys:String>
+    <sys:String x:Key="MRPlanInterval">维护间隔</sys:String>
+    <sys:String x:Key="MRContent">维护内容</sys:String>
+    <sys:String x:Key="MRPersons">维护人员</sys:String>
+    <sys:String x:Key="MRLog">维护日志</sys:String>
+    <sys:String x:Key="MRRemark">备注</sys:String>
 
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">公共</sys:String>

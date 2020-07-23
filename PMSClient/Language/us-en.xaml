@@ -1096,6 +1096,40 @@
     <sys:String x:Key="CPLastUpdateTime">Last Update Time</sys:String>
     <sys:String x:Key="CPRemark">Remark</sys:String>
 
+    <!--维护计划-->
+    <sys:String x:Key="PageMaintainPlan">M-Plan</sys:String>
+    <sys:String x:Key="PageMaintainPlanEdit">M-Plan Edit</sys:String>
+    <sys:String x:Key="MPID">ID</sys:String>
+    <sys:String x:Key="MPCreator">Creator</sys:String>
+    <sys:String x:Key="MPCreateTime">CreateTime</sys:String>
+    <sys:String x:Key="MPState">State</sys:String>
+    <sys:String x:Key="MPVHPMachineCode">Device Code</sys:String>
+    <sys:String x:Key="MPPlanItem">Plan Item</sys:String>
+    <sys:String x:Key="MPPlanType">Plan Type</sys:String>
+    <sys:String x:Key="MPPlanInterval">Plan Interval</sys:String>
+    <sys:String x:Key="MPContent">Content</sys:String>
+    <sys:String x:Key="MPStandard">Standard</sys:String>
+    <sys:String x:Key="MPCommonFailure">Common Failure</sys:String>
+    <sys:String x:Key="MPProcessMethod">ProcessMethod</sys:String>
+    <sys:String x:Key="MPRemark">Remark</sys:String>
+
+    <!--维护记录-->
+    <sys:String x:Key="PageMaintainRecord">M-Record</sys:String>
+    <sys:String x:Key="PageMaintainRecordEdit">M-Record Edit</sys:String>
+    <sys:String x:Key="MRID">ID</sys:String>
+    <sys:String x:Key="MRCreator">Creator</sys:String>
+    <sys:String x:Key="MRCreateTime">CreateTime</sys:String>
+    <sys:String x:Key="MRState">State</sys:String>
+    <sys:String x:Key="MRVHPMachineCode">VHPMachineCode"</sys:String>
+    <sys:String x:Key="MRPlanItem">PlanItem</sys:String>
+    <sys:String x:Key="MRPlanType">PlanType</sys:String>
+    <sys:String x:Key="MRPlanInterval">PlanInterval</sys:String>
+    <sys:String x:Key="MRContent">Content</sys:String>
+    <sys:String x:Key="MRPersons">Persons</sys:String>
+    <sys:String x:Key="MRLog">Log</sys:String>
+    <sys:String x:Key="MRRemark">Remark</sys:String>
+
+
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">Public</sys:String>
     <sys:String x:Key="BottomBarPlan">Plan</sys:String>

@@ -871,6 +871,9 @@
     <Compile Include="View\ConsumableInventorySelectView.xaml.cs">
       <DependentUpon>ConsumableInventorySelectView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MaintenancePlanSelectView.xaml.cs">
+      <DependentUpon>MaintenancePlanSelectView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SampleSelectView.xaml.cs">
       <DependentUpon>SampleSelectView.xaml</DependentUpon>
     </Compile>
@@ -1051,17 +1054,17 @@
     <Compile Include="View\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MaintenanceEditView.xaml.cs">
-      <DependentUpon>MaintenanceEditView.xaml</DependentUpon>
+    <Compile Include="View\MaintenancePlanEditView.xaml.cs">
+      <DependentUpon>MaintenancePlanEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MaintenanceItemEditView.xaml.cs">
-      <DependentUpon>MaintenanceItemEditView.xaml</DependentUpon>
+    <Compile Include="View\MaintenanceRecordEditView.xaml.cs">
+      <DependentUpon>MaintenanceRecordEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MaintenanceItemView.xaml.cs">
-      <DependentUpon>MaintenanceItemView.xaml</DependentUpon>
+    <Compile Include="View\MaintenanceRecordView.xaml.cs">
+      <DependentUpon>MaintenanceRecordView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MaintenanceView.xaml.cs">
-      <DependentUpon>MaintenanceView.xaml</DependentUpon>
+    <Compile Include="View\MaintenancePlanView.xaml.cs">
+      <DependentUpon>MaintenancePlanView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MaterialInventoryInSelectView.xaml.cs">
       <DependentUpon>MaterialInventoryInSelectView.xaml</DependentUpon>
@@ -1624,6 +1627,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\MaintenancePlanSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\SampleSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1864,19 +1871,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MaintenanceEditView.xaml">
+    <Page Include="View\MaintenancePlanEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MaintenanceItemEditView.xaml">
+    <Page Include="View\MaintenanceRecordEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MaintenanceItemView.xaml">
+    <Page Include="View\MaintenanceRecordView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MaintenanceView.xaml">
+    <Page Include="View\MaintenancePlanView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

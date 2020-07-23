@@ -596,6 +596,21 @@ namespace PMSClient
                 case PMSViews.ConsumablePurchaseEdit:
                     NavigateTo(_views.ConsumablePurchaseEdit);
                     break;
+                case PMSViews.MaintainPlan:
+                    NavigateTo(_views.MaintenancePlan);
+                    break;
+                case PMSViews.MaintainPlanSelect:
+                    NavigateTo(_views.MaintenancePlanSelect);
+                    break;
+                case PMSViews.MaintainPlanEdit:
+                    NavigateTo(_views.MaintenancePlanEdit);
+                    break;
+                case PMSViews.MaintainRecord:
+                    NavigateTo(_views.MaintenanceRecord);
+                    break;
+                case PMSViews.MaintainRecordEdit:
+                    NavigateTo(_views.MaintenanceRecordEdit);
+                    break;
                 default:
                     break;
             }

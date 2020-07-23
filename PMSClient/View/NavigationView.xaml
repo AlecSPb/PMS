@@ -143,8 +143,10 @@
                                 Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToMillingTool}"/>
                         <Button Content="{StaticResource PageFailure}" Grid.Row="2" Grid.Column="5"
                                 Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToFailure}"/>
-                        <Button Content="{StaticResource PagePlanConclusion}" Grid.Row="2" Grid.Column="6"
-                        Command="{Binding GoToPlanConclusion}" Style="{StaticResource StyleButtonNavigation}"/>
+                        <Button Content="{StaticResource PageMaintainPlan}" Grid.Row="2" Grid.Column="6"
+                                Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToMaintainPlan}"/>
+                        <Button Content="{StaticResource PageMaintainRecord}" Grid.Row="2" Grid.Column="7"
+                                Style="{StaticResource StyleButtonNavigation}" Command="{Binding GoToMaintainRecord}"/>
 
                         <Button Content="{StaticResource PageOutsideProcess}" Grid.Row="3" Grid.Column="1"
                         Command="{Binding GoToOutsideProcess}" Style="{StaticResource StyleButtonNavigation}"/>
@@ -152,6 +154,8 @@
                         Command="{Binding GoToBDCompound}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageConsumableInventory}" Grid.Row="3" Grid.Column="3"
                         Command="{Binding GoToConsumableInventory}" Style="{StaticResource StyleButtonNavigation}"/>
+                        <Button Content="{StaticResource PagePlanConclusion}" Grid.Row="3" Grid.Column="4"
+                        Command="{Binding GoToPlanConclusion}" Style="{StaticResource StyleButtonNavigation}"/>
                         
                         <Button Content="{StaticResource PageRecord}" Grid.Row="4" Grid.Column="0"  Style="{StaticResource StyleButtonNavigationTitle}" />
                         <Button Content="{StaticResource PageRecordMilling}" Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleButtonNavigation}"

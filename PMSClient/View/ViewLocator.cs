@@ -159,9 +159,41 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<ConsumableInventoryEditView>();
             SimpleIoc.Default.Register<ConsumablePurchaseView>();
             SimpleIoc.Default.Register<ConsumablePurchaseEditView>();
+
+            SimpleIoc.Default.Register<MaintenancePlanView>();
+            SimpleIoc.Default.Register<MaintenancePlanSelectView>();
+            SimpleIoc.Default.Register<MaintenancePlanEditView>();
+            SimpleIoc.Default.Register<MaintenanceRecordView>();
+            SimpleIoc.Default.Register<MaintenanceRecordEditView>();
+
         }
 
         #region NavigationProperties
+        public MaintenanceRecordView MaintenanceRecord
+        {
+            get { return SimpleIoc.Default.GetInstance<MaintenanceRecordView>(); }
+        }
+
+        public MaintenanceRecordEditView MaintenanceRecordEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<MaintenanceRecordEditView>(); }
+        }
+
+        public MaintenancePlanView MaintenancePlan
+        {
+            get { return SimpleIoc.Default.GetInstance<MaintenancePlanView>(); }
+        }
+
+        public MaintenancePlanEditView MaintenancePlanEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<MaintenancePlanEditView>(); }
+        }
+
+        public MaintenancePlanSelectView MaintenancePlanSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<MaintenancePlanSelectView>(); }
+        }
+
         public ConsumableInventoryView ConsumableInventory
         {
             get { return SimpleIoc.Default.GetInstance<ConsumableInventoryView>(); }
