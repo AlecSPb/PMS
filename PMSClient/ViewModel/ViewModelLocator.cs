@@ -174,8 +174,38 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<ConsumableInventoryEditVM>();
             SimpleIoc.Default.Register<ConsumablePurchaseVM>();
             SimpleIoc.Default.Register<ConsumablePurchaseEditVM>();
+
+            SimpleIoc.Default.Register<MaintenancePlanVM>();
+            SimpleIoc.Default.Register<MaintenancePlanSelectVM>();
+            SimpleIoc.Default.Register<MaintenancePlanEditVM>();
+            SimpleIoc.Default.Register<MaintenanceRecordVM>();
+            SimpleIoc.Default.Register<MaintenanceRecordEditVM>();
+
+
+
         }
         #region Properties
+
+        public MaintenancePlanVM MaintenancePlan
+        {
+            get { return SimpleIoc.Default.GetInstance<MaintenancePlanVM>(); }
+        }
+        public MaintenancePlanSelectVM MaintenancePlanSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<MaintenancePlanSelectVM>(); }
+        }
+        public MaintenancePlanEditVM MaintenancePlanEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<MaintenancePlanEditVM>(); }
+        }
+        public MaintenanceRecordVM MaintenanceRecord
+        {
+            get { return SimpleIoc.Default.GetInstance<MaintenanceRecordVM>(); }
+        }
+        public MaintenanceRecordEditVM MaintenanceRecordEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<MaintenanceRecordEditVM>(); }
+        }
         public ConsumableInventoryVM ConsumableInventory
         {
             get { return SimpleIoc.Default.GetInstance<ConsumableInventoryVM>(); }

@@ -751,6 +751,11 @@
     <Compile Include="ViewModel\ConsumableInventoryVM.cs" />
     <Compile Include="ViewModel\ConsumableInventorySelectVM.cs" />
     <Compile Include="Components\EOrder\Order.cs" />
+    <Compile Include="ViewModel\MaintenanceRecordEditVM.cs" />
+    <Compile Include="ViewModel\MaintenancePlanEditVM.cs" />
+    <Compile Include="ViewModel\MaintenancePlanSelectVM.cs" />
+    <Compile Include="ViewModel\MaintenanceRecordVM.cs" />
+    <Compile Include="ViewModel\MaintenancePlanVM.cs" />
     <Compile Include="ViewModel\SampleSelectVM.cs" />
     <Compile Include="ViewModel\SimpleMaterialEditVM.cs" />
     <Compile Include="ViewModel\SimpleMaterialVM.cs" />
