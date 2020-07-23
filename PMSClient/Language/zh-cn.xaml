@@ -1115,6 +1115,27 @@
     <sys:String x:Key="CPLastUpdateTime">最后更新时间</sys:String>
     <sys:String x:Key="CPRemark">备注</sys:String>
 
+    <!--维护计划-->
+    <sys:String x:Key="MPID">ID</sys:String>
+    <sys:String x:Key="MPCreator">Creator</sys:String>
+    <sys:String x:Key="MPCreateTime">CreateTime</sys:String>
+    <sys:String x:Key="MPState">State</sys:String>
+    <sys:String x:Key="MPDeviceCode">Device Code</sys:String>
+    <sys:String x:Key="MPPlanItem">Plan Item</sys:String>
+    <sys:String x:Key="MPIntervalCount">IntervalCount</sys:String>
+    <sys:String x:Key="MPCurrentCount">Current Count</sys:String>
+    <sys:String x:Key="MPRemark">Remark</sys:String>
+   
+    <!--维护记录-->
+    <sys:String x:Key="MRID">ID</sys:String>
+    <sys:String x:Key="MRCreator">Creator</sys:String>
+    <sys:String x:Key="MRCreateTime">CreateTime</sys:String>
+    <sys:String x:Key="MRState">State</sys:String>
+    <sys:String x:Key="MRDevice">Device</sys:String>
+    <sys:String x:Key="MRPart">Part</sys:String>
+    <sys:String x:Key="MPRPersons">Persons</sys:String>
+    <sys:String x:Key="MRContent">Content</sys:String>
+    <sys:String x:Key="MRRemark">Remark</sys:String>
 
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarPublic">公共</sys:String>

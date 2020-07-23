@@ -13,12 +13,17 @@ namespace PMSDAL
         public DateTime CreateTime { get;  set; }
         public string State { get; set; }//Run,Stop,Paused
 
-        public string DeviceCode { get; set; }
-        public string PlanItem { get; set; }
 
-        public int IntervalCount { get; set; }
-        public int CurrentCount { get; set; }
+        public string VHPMachineCode { get; set; }//计划
+        public string PlanItem { get; set; }//计划
+        public string PlanType { get; set; }//计划类型，一级保养，二级保养，三级保养,
+        public string PlanInterval { get; set; }//计划周期
+        public string Content { get; set; }//计划内容
 
-        public string Remark { get; set; }
+        public string Standard { get; set; }//完成标准
+        public string CommonFailure { get; set; }//常见问题
+        public string ProcessMethod { get; set; }//处理方法
+
+        public string Remark { get; set; }//备注
     }
 }

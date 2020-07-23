@@ -13,11 +13,14 @@ namespace PMSDAL
         public DateTime CreateTime { get; set; }
         public string State { get; set; }
 
-        public string Device { get; set; }
-        public string Part { get; set; }
+        public string VHPMachineCode { get; set; }//计划
+        public string PlanItem { get; set; }//计划
+        public string PlanType { get; set; }//计划类型，一级保养，二级保养，三级保养,
+        public string PlanInterval { get; set; }//计划周期
+        public string Content { get; set; }//计划内容
 
         public string Persons { get; set; }//负责维护的人员
-        public string Content { get; set; }//维护日志
+        public string Log { get; set; }//维护日志
 
         public string Remark { get; set; }
     }

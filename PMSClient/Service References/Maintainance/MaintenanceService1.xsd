@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.16.254:8002/MaintenanceService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfDcMaintenancePlan">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcMaintenancePlan" nillable="true" type="tns:DcMaintenancePlan" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcMaintenancePlan" nillable="true" type="tns:ArrayOfDcMaintenancePlan" />
+  <xs:complexType name="DcMaintenancePlan">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommonFailure" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlanInterval" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanItem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Standard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VHPMachineCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcMaintenancePlan" nillable="true" type="tns:DcMaintenancePlan" />
+  <xs:complexType name="ArrayOfDcMaintenanceRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcMaintenanceRecord" nillable="true" type="tns:DcMaintenanceRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcMaintenanceRecord" nillable="true" type="tns:ArrayOfDcMaintenanceRecord" />
+  <xs:complexType name="DcMaintenanceRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Log" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Persons" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanInterval" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanItem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VHPMachineCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcMaintenanceRecord" nillable="true" type="tns:DcMaintenanceRecord" />
+</xs:schema>

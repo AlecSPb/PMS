@@ -9,14 +9,14 @@ using PMSWCFService.DataContracts;
 
 namespace PMSWCFService
 {
-    public partial class PMSService : IMaintenanceService
+    public class MaintenanceService : IMaintenanceService
     {
         public int AddMainitenancePlan(DcMaintenancePlan model)
         {
             try
             {
                 XS.RunLog();
-                using (var dc=new PMSDbContext())
+                using (var dc = new PMSDbContext())
                 {
                     int result = 0;
                     Mapper.Initialize(cfg => cfg.CreateMap<DcMaintenancePlan, MaintenancePlan>());
@@ -55,81 +55,19 @@ namespace PMSWCFService
 
         }
 
-        public int DeleteMainitenancePlan(Guid id)
+        public int GetMaintenancePlanCount(string devicecode, string planitem)
         {
             try
             {
                 XS.RunLog();
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                XS.Current.Error(ex);
-                throw;
-            }
-
-        }
-
-        public int DeleteMainitenanceRecord(Guid id)
-        {
-            try
-            {
-                XS.RunLog();
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                XS.Current.Error(ex);
-                throw;
-            }
-
-        }
-
-        public int GetMaintenancePlanCount()
-        {
-            try
-            {
-                XS.RunLog();
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                XS.Current.Error(ex);
-                throw;
-            }
-
-        }
-
-        public List<DcMaintenancePlan> GetMaintenancePlans(int skip, int take)
-        {
-            try
-            {
-                XS.RunLog();
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                XS.Current.Error(ex);
-                throw;
-            }
-
-        }
-
-        public List<DcMaintenanceRecord> GetMaintenanceRecords(string device, string part, int s, int t)
-        {
-            try
-            {
-                XS.RunLog();
-                using (var db=new PMSDbContext())
+                using (var db = new PMSDbContext())
                 {
-                    Mapper.Initialize(cfg => cfg.CreateMap<MaintenanceRecord, DcMaintenanceRecord>());
-                    var query = from m in db.MaintenanceRecords
+                    var query = from m in db.MaintenancePlans
                                 where m.State != PMSCommon.SimpleState.作废.ToString()
-                                && m.Device.Contains(device)
-                                && m.Part.Contains(part)
+                                && m.VHPMachineCode.Contains(devicecode)
+                                && m.PlanItem.Contains(planitem)
                                 select m;
-                    var result = query.ToList().Skip(s).Take(t);
-                    return Mapper.Map<List<MaintenanceRecord>,List<DcMaintenanceRecord>>(result.ToList());
+                    return query.Count();
                 }
             }
             catch (Exception ex)
@@ -139,7 +77,56 @@ namespace PMSWCFService
             }
         }
 
-        public int GetMaintenanceRecordsCount(string device, string part)
+
+        public List<DcMaintenancePlan> GetMaintenancePlans(int s, int t, string devicecode, string planitem)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var db = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<MaintenancePlan, DcMaintenancePlan>());
+                    var query = from m in db.MaintenancePlans
+                                where m.State != PMSCommon.SimpleState.作废.ToString()
+                                && m.VHPMachineCode.Contains(devicecode)
+                                && m.PlanItem.Contains(planitem)
+                                select m;
+                    var result = query.ToList().Skip(s).Take(t);
+                    return Mapper.Map<List<MaintenancePlan>, List<DcMaintenancePlan>>(result.ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw;
+            }
+        }
+
+        public List<DcMaintenanceRecord> GetMaintenanceRecords(int s, int t, string devicecode, string planitem)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var db = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<MaintenanceRecord, DcMaintenanceRecord>());
+                    var query = from m in db.MaintenanceRecords
+                                where m.State != PMSCommon.SimpleState.作废.ToString()
+                                && m.VHPMachineCode.Contains(devicecode)
+                                && m.PlanItem.Contains(planitem)
+                                select m;
+                    var result = query.ToList().Skip(s).Take(t);
+                    return Mapper.Map<List<MaintenanceRecord>, List<DcMaintenanceRecord>>(result.ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw;
+            }
+        }
+
+        public int GetMaintenanceRecordsCount(string devicecode, string planitem)
         {
             try
             {
@@ -148,8 +135,8 @@ namespace PMSWCFService
                 {
                     var query = from m in db.MaintenanceRecords
                                 where m.State != PMSCommon.SimpleState.作废.ToString()
-                                && m.Device.Contains(device)
-                                && m.Part.Contains(part)
+                                && m.VHPMachineCode.Contains(devicecode)
+                                && m.PlanItem.Contains(planitem)
                                 select m;
                     return query.Count();
                 }

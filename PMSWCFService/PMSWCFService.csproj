@@ -75,6 +75,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MaintenanceService.svc" />
     <Content Include="TCBService.svc" />
     <Content Include="ConsumableService.svc" />
     <Content Include="SimpleMaterialService.svc" />

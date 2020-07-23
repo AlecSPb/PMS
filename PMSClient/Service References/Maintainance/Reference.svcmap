@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ab83a9fe-c332-450b-9da8-d6047dabe668" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.16.254:8002/MaintenanceService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MaintenanceService.wsdl" MetadataType="Wsdl" ID="3817f09a-bdd7-422b-8bbe-cacd96649f91" SourceId="1" SourceUrl="http://192.168.16.254:8002/MaintenanceService.svc?wsdl" />
+    <MetadataFile FileName="MaintenanceService.disco" MetadataType="Disco" ID="6b54905e-5d6e-4a98-b9db-f864ca39371c" SourceId="1" SourceUrl="http://192.168.16.254:8002/MaintenanceService.svc?disco" />
+    <MetadataFile FileName="MaintenanceService.xsd" MetadataType="Schema" ID="abbfe376-5550-4d60-bcb7-9c459767ff7d" SourceId="1" SourceUrl="http://192.168.16.254:8002/MaintenanceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MaintenanceService1.xsd" MetadataType="Schema" ID="8010b900-f46a-49e5-8c40-9b6c44d0676f" SourceId="1" SourceUrl="http://192.168.16.254:8002/MaintenanceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MaintenanceService2.xsd" MetadataType="Schema" ID="5c988b8f-5293-4347-bf87-e8f2b129a2f7" SourceId="1" SourceUrl="http://192.168.16.254:8002/MaintenanceService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

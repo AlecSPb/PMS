@@ -15,20 +15,31 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Creator { get; set; }
         [DataMember]
-        public string CreateTime { get; set; }
+        public DateTime CreateTime { get; set; }
         [DataMember]
         public string State { get; set; }//Run,Stop,Paused
+
+
         [DataMember]
-        public string Device { get; set; }//设备
+        public string VHPMachineCode { get; set; }//计划
         [DataMember]
-        public string Item { get; set; }//部件
+        public string PlanItem { get; set; }//计划
         [DataMember]
-        public string Grade { get; set; }//保养级别
+        public string PlanType { get; set; }//计划类型，一级保养，二级保养，三级保养,
         [DataMember]
-        public int Interval { get; set; }//保养周期，单位天
+        public string PlanInterval { get; set; }//计划周期
         [DataMember]
-        public string Content { get; set; }//保养具体内容
+        public string Content { get; set; }//计划内容
+
         [DataMember]
-        public string Remark { get; set; }
+        public string Standard { get; set; }//完成标准
+        [DataMember]
+        public string CommonFailure { get; set; }//常见问题
+        [DataMember]
+        public string ProcessMethod { get; set; }//处理方法
+
+        [DataMember]
+        public string Remark { get; set; }//备注
+
     }
 }
