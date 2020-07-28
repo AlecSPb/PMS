@@ -67,7 +67,7 @@
         <xs:element minOccurs="0" name="s" type="xs:int" />
         <xs:element minOccurs="0" name="t" type="xs:int" />
         <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="part" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="planitem" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -82,7 +82,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="part" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="planitem" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

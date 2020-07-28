@@ -1117,6 +1117,7 @@
 
     <!--维护计划-->
     <sys:String x:Key="PageMaintainPlan">维护计划</sys:String>
+    <sys:String x:Key="PageMaintainPlanSelect">维护计划-选择</sys:String>
     <sys:String x:Key="PageMaintainPlanEdit">维护计划-编辑</sys:String>
     <sys:String x:Key="MPID">ID</sys:String>
     <sys:String x:Key="MPCreator">创建者</sys:String>
@@ -1139,7 +1140,7 @@
     <sys:String x:Key="MRCreator">创建者</sys:String>
     <sys:String x:Key="MRCreateTime">创建时间</sys:String>
     <sys:String x:Key="MRState">状态</sys:String>
-    <sys:String x:Key="MRVHPMachineCode">设备代码"</sys:String>
+    <sys:String x:Key="MRVHPMachineCode">设备代码</sys:String>
     <sys:String x:Key="MRPlanItem">维护项目</sys:String>
     <sys:String x:Key="MRPlanType">维护类型</sys:String>
     <sys:String x:Key="MRPlanInterval">维护间隔</sys:String>

@@ -257,6 +257,10 @@ namespace PMSClient.ViewModel
             {
                 NavigationService.GoTo(PMSViews.ConsumablePurchase);
             }, () => _session.IsInGroup("ConsumablePurchase"));
+
+            GoToMaintainPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaintainPlan), () => _session.IsInGroup("MaintainPlan"));
+            GoToMaintainRecord = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaintainRecord), () => _session.IsInGroup("MaintainPlan"));
+
             #endregion
         }
 
@@ -422,6 +426,10 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToSimpleMaterial { get; set; }
         public RelayCommand GoToConsumableInventory { get; set; }
         public RelayCommand GoToConsumablePurchase { get; set; }
+
+
+        public RelayCommand GoToMaintainPlan { get; set; }
+        public RelayCommand GoToMaintainRecord { get; set; }
 
         private void InitializeData()
         {

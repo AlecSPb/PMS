@@ -63,6 +63,7 @@
     <Compile Include="DeliveryType.cs" />
     <Compile Include="FailureStage.cs" />
     <Compile Include="MaintainInterval.cs" />
+    <Compile Include="MaintainMachine.cs" />
     <Compile Include="MaintainType.cs" />
     <Compile Include="MaterialOrderItemPriority.cs" />
     <Compile Include="MaterialOrderItemState.cs" />

@@ -23,9 +23,9 @@ namespace PMSWCFService.ServiceContracts
 
 
         [OperationContract]
-        List<DcMaintenanceRecord> GetMaintenanceRecords(int s, int t,string device,string part);
+        List<DcMaintenanceRecord> GetMaintenanceRecords(int s, int t,string device,string planitem);
         [OperationContract]
-        int GetMaintenanceRecordsCount(string device, string part);
+        int GetMaintenanceRecordsCount(string device, string planitem);
 
         [OperationContract]
         int AddMainitenanceRecord(DcMaintenanceRecord model);

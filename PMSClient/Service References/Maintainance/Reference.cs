@@ -500,16 +500,16 @@ namespace PMSClient.Maintainance {
         System.Threading.Tasks.Task<int> UpdateMainitenancePlanAsync(PMSClient.Maintainance.DcMaintenancePlan model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaintenanceService/GetMaintenanceRecords", ReplyAction="http://tempuri.org/IMaintenanceService/GetMaintenanceRecordsResponse")]
-        PMSClient.Maintainance.DcMaintenanceRecord[] GetMaintenanceRecords(int s, int t, string device, string part);
+        PMSClient.Maintainance.DcMaintenanceRecord[] GetMaintenanceRecords(int s, int t, string device, string planitem);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaintenanceService/GetMaintenanceRecords", ReplyAction="http://tempuri.org/IMaintenanceService/GetMaintenanceRecordsResponse")]
-        System.Threading.Tasks.Task<PMSClient.Maintainance.DcMaintenanceRecord[]> GetMaintenanceRecordsAsync(int s, int t, string device, string part);
+        System.Threading.Tasks.Task<PMSClient.Maintainance.DcMaintenanceRecord[]> GetMaintenanceRecordsAsync(int s, int t, string device, string planitem);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaintenanceService/GetMaintenanceRecordsCount", ReplyAction="http://tempuri.org/IMaintenanceService/GetMaintenanceRecordsCountResponse")]
-        int GetMaintenanceRecordsCount(string device, string part);
+        int GetMaintenanceRecordsCount(string device, string planitem);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaintenanceService/GetMaintenanceRecordsCount", ReplyAction="http://tempuri.org/IMaintenanceService/GetMaintenanceRecordsCountResponse")]
-        System.Threading.Tasks.Task<int> GetMaintenanceRecordsCountAsync(string device, string part);
+        System.Threading.Tasks.Task<int> GetMaintenanceRecordsCountAsync(string device, string planitem);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaintenanceService/AddMainitenanceRecord", ReplyAction="http://tempuri.org/IMaintenanceService/AddMainitenanceRecordResponse")]
         int AddMainitenanceRecord(PMSClient.Maintainance.DcMaintenanceRecord model);
@@ -583,20 +583,20 @@ namespace PMSClient.Maintainance {
             return base.Channel.UpdateMainitenancePlanAsync(model);
         }
         
-        public PMSClient.Maintainance.DcMaintenanceRecord[] GetMaintenanceRecords(int s, int t, string device, string part) {
-            return base.Channel.GetMaintenanceRecords(s, t, device, part);
+        public PMSClient.Maintainance.DcMaintenanceRecord[] GetMaintenanceRecords(int s, int t, string device, string planitem) {
+            return base.Channel.GetMaintenanceRecords(s, t, device, planitem);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.Maintainance.DcMaintenanceRecord[]> GetMaintenanceRecordsAsync(int s, int t, string device, string part) {
-            return base.Channel.GetMaintenanceRecordsAsync(s, t, device, part);
+        public System.Threading.Tasks.Task<PMSClient.Maintainance.DcMaintenanceRecord[]> GetMaintenanceRecordsAsync(int s, int t, string device, string planitem) {
+            return base.Channel.GetMaintenanceRecordsAsync(s, t, device, planitem);
         }
         
-        public int GetMaintenanceRecordsCount(string device, string part) {
-            return base.Channel.GetMaintenanceRecordsCount(device, part);
+        public int GetMaintenanceRecordsCount(string device, string planitem) {
+            return base.Channel.GetMaintenanceRecordsCount(device, planitem);
         }
         
-        public System.Threading.Tasks.Task<int> GetMaintenanceRecordsCountAsync(string device, string part) {
-            return base.Channel.GetMaintenanceRecordsCountAsync(device, part);
+        public System.Threading.Tasks.Task<int> GetMaintenanceRecordsCountAsync(string device, string planitem) {
+            return base.Channel.GetMaintenanceRecordsCountAsync(device, planitem);
         }
         
         public int AddMainitenanceRecord(PMSClient.Maintainance.DcMaintenanceRecord model) {

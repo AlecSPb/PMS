@@ -11,10 +11,11 @@ namespace PMSCommon
     /// </summary>
     public enum MaintainType
     {
-        Grade_1,
-        Grade_2,
-        Grade_3,
-        Season,
-        Fix
+        Routine例行保养,
+        Level_1一级保养,
+        Level_2二级保养,
+        Quarterly季节保养,
+        Annually年度保养,
+        EmergencyFix突发故障维修
     }
 }

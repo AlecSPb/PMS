@@ -21,7 +21,8 @@ namespace PMSWCFService
                     int result = 0;
                     Mapper.Initialize(cfg => cfg.CreateMap<DcMaintenancePlan, MaintenancePlan>());
                     var plan = Mapper.Map<MaintenancePlan>(model);
-
+                    dc.MaintenancePlans.Add(plan);
+                    result = dc.SaveChanges();
                     return result;
                 }
             }
@@ -43,7 +44,8 @@ namespace PMSWCFService
                     int result = 0;
                     Mapper.Initialize(cfg => cfg.CreateMap<DcMaintenanceRecord, MaintenanceRecord>());
                     var record = Mapper.Map<MaintenanceRecord>(model);
-
+                    dc.MaintenanceRecords.Add(record);
+                    result = dc.SaveChanges();
                     return result;
                 }
             }
@@ -90,6 +92,7 @@ namespace PMSWCFService
                                 where m.State != PMSCommon.SimpleState.作废.ToString()
                                 && m.VHPMachineCode.Contains(devicecode)
                                 && m.PlanItem.Contains(planitem)
+                                orderby m.VHPMachineCode ascending
                                 select m;
                     var result = query.ToList().Skip(s).Take(t);
                     return Mapper.Map<List<MaintenancePlan>, List<DcMaintenancePlan>>(result.ToList());
@@ -114,6 +117,7 @@ namespace PMSWCFService
                                 where m.State != PMSCommon.SimpleState.作废.ToString()
                                 && m.VHPMachineCode.Contains(devicecode)
                                 && m.PlanItem.Contains(planitem)
+                                orderby m.VHPMachineCode ascending
                                 select m;
                     var result = query.ToList().Skip(s).Take(t);
                     return Mapper.Map<List<MaintenanceRecord>, List<DcMaintenanceRecord>>(result.ToList());
@@ -158,7 +162,8 @@ namespace PMSWCFService
                     int result = 0;
                     Mapper.Initialize(cfg => cfg.CreateMap<DcMaintenancePlan, MaintenancePlan>());
                     var plan = Mapper.Map<MaintenancePlan>(model);
-
+                    dc.Entry(plan).State = System.Data.Entity.EntityState.Modified;
+                    result = dc.SaveChanges();
                     return result;
                 }
             }
@@ -180,7 +185,8 @@ namespace PMSWCFService
                     int result = 0;
                     Mapper.Initialize(cfg => cfg.CreateMap<DcMaintenanceRecord, MaintenanceRecord>());
                     var record = Mapper.Map<MaintenanceRecord>(model);
-
+                    dc.Entry(record).State = System.Data.Entity.EntityState.Modified;
+                    result = dc.SaveChanges();
                     return result;
                 }
             }

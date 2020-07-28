@@ -1098,6 +1098,7 @@
 
     <!--维护计划-->
     <sys:String x:Key="PageMaintainPlan">M-Plan</sys:String>
+    <sys:String x:Key="PageMaintainPlanSelect">M-Plan Select</sys:String>
     <sys:String x:Key="PageMaintainPlanEdit">M-Plan Edit</sys:String>
     <sys:String x:Key="MPID">ID</sys:String>
     <sys:String x:Key="MPCreator">Creator</sys:String>

@@ -11,11 +11,12 @@ namespace PMSCommon
     /// </summary>
     public enum MaintainInterval
     {
-        EveryDay,
-        EveryWeek,
-        Every1Month,
-        Every2Month,
-        Every3Month,
-        Every1Year
+        EveryDay每天,
+        EveryWeek每周,
+        Every2Week每两周,
+        EveryMonth每月,
+        Every2Month每两月,
+        EverySeason每季度,
+        EveryYear每年
     }
 }
