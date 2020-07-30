@@ -28,6 +28,11 @@ namespace PMSXMLCreator.Service
             parameters.Add("Arsenic", new SpecModel { ShortName = "ZAS", LCL = 30.12, UCL = 31.08, UnitOfMeasure = ParameterUnit.Percent });
             parameters.Add("Germanium", new SpecModel { ShortName = "ZGE", LCL = 12.29, UCL = 13.16, UnitOfMeasure = ParameterUnit.Percent });
             parameters.Add("Silicon", new SpecModel { ShortName = "ZSI", LCL = 5.37, UCL = 6.21, UnitOfMeasure = ParameterUnit.Percent });
+
+            //AMAT特有
+            parameters.Add("Target Diameter", new SpecModel { ShortName = "DIA_TAR", LCL = 444.57, UCL = 444.83, UnitOfMeasure = ParameterUnit.MM });//后面要改成mm
+            parameters.Add("Target Thickness", new SpecModel { ShortName = "THK_TAR", LCL = 5.87, UCL = 6.07, UnitOfMeasure = ParameterUnit.MM });
+
             parameters.Add("Target Blank OD", new SpecModel { ShortName = "TAR_BOD", LCL = 439.74, UCL = 440.17, UnitOfMeasure = ParameterUnit.MM });
             parameters.Add("Target Blank Thickness", new SpecModel { ShortName = "TAR_BTHK", LCL = 7.701, UCL = 7.899, UnitOfMeasure = ParameterUnit.MM });
             parameters.Add("Target Blank 2mm Top Rad", new SpecModel { ShortName = "TAR_BTOP", LCL = 0, UCL = 100, UnitOfMeasure = ParameterUnit.MM });
@@ -39,8 +44,8 @@ namespace PMSXMLCreator.Service
             parameters.Add("BP Side Wall Dia", new SpecModel { ShortName = "BP_SDIA", LCL = 484.5, UCL = 487.5, UnitOfMeasure = ParameterUnit.MM });
             parameters.Add("BP Pocket Dia", new SpecModel { ShortName = "BP_PDIA", LCL = 456.5, UCL = 459.5, UnitOfMeasure = ParameterUnit.MM });
             parameters.Add("BP Bonded Surface Flatness", new SpecModel { ShortName = "BP_BSF", LCL = 0, UCL = 1.0, UnitOfMeasure = ParameterUnit.MM });
-            parameters.Add("BP Backside Flatness", new SpecModel { ShortName = "BP_BF", LCL = 0, UCL = 0, UnitOfMeasure = ParameterUnit.MM });
-            parameters.Add("BP Overall Height", new SpecModel { ShortName = "BP_OH", LCL = 0, UCL = 0, UnitOfMeasure = ParameterUnit.MM });
+            parameters.Add("BP Backside Flatness", new SpecModel { ShortName = "BP_BF", LCL = 0, UCL = 0.13, UnitOfMeasure = ParameterUnit.MM });
+            parameters.Add("BP Overall Height", new SpecModel { ShortName = "BP_OH", LCL = 17.52, UCL = 17.78, UnitOfMeasure = ParameterUnit.MM });
 
             parameters.Add("Density", new SpecModel { ShortName = "DEN", LCL = 4.3011, UCL = 4.3937, UnitOfMeasure = ParameterUnit.Density });
             parameters.Add("Weight", new SpecModel { ShortName = "Weight", LCL = 5077.2, UCL = 5232.3, UnitOfMeasure = ParameterUnit.Weight });
@@ -63,6 +68,7 @@ namespace PMSXMLCreator.Service
             parameters.Add("Titanium", new SpecModel { ShortName = "ZTI", LCL = 0, UCL = 5.4, UnitOfMeasure = ParameterUnit.PPM });
             parameters.Add("Tungsten", new SpecModel { ShortName = "TUNG", LCL = 0, UCL = 5.0, UnitOfMeasure = ParameterUnit.PPM });
             parameters.Add("Yttrium", new SpecModel { ShortName = "YTR", LCL = 0, UCL = 5.0, UnitOfMeasure = ParameterUnit.PPM });
+            parameters.Add("Zirconium", new SpecModel { ShortName = "ZZR", LCL = 0, UCL = 10.0, UnitOfMeasure = ParameterUnit.PPM });
             parameters.Add("Total Metallic Impurities", new SpecModel { ShortName = "TMI", LCL = 0, UCL = 50.0, UnitOfMeasure = ParameterUnit.PPM });
             parameters.Add("Oxygen", new SpecModel { ShortName = "ZO", LCL = 214.3, UCL = 452.90, UnitOfMeasure = ParameterUnit.PPM });
             parameters.Add("Nitrogen", new SpecModel { ShortName = "ZN", LCL = 0, UCL = 30, UnitOfMeasure = ParameterUnit.PPM });

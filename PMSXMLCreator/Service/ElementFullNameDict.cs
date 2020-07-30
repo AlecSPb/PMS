@@ -36,6 +36,7 @@ namespace PMSXMLCreator.Service
             elements.Add("Ti", "Titanium");
             elements.Add("W", "Tungsten");
             elements.Add("Y", "Yttrium");
+            elements.Add("Zr", "Zirconium");
             elements.Add("O", "Oxygen");
             elements.Add("N", "Nitrogen");
         }

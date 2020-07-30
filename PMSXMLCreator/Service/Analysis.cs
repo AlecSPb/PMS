@@ -202,8 +202,16 @@ namespace PMSXMLCreator.Service
             var matches = Regex.Matches(str, @"[0-9]+([.]{1}[0-9]+){0,1}");
             string od_value = matches[0].Value;
             string th_value = matches[1].Value;
-            parameters.Add(GetOtherParameter("Target Blank OD", od_value));
-            parameters.Add(GetOtherParameter("Target Blank Thickness", th_value));
+            if (dict_parameter.SpecName == "IntelSpecs")
+            {
+                parameters.Add(GetOtherParameter("Target Blank OD", od_value));
+                parameters.Add(GetOtherParameter("Target Blank Thickness", th_value));
+            }
+            else
+            {
+                parameters.Add(GetOtherParameter("Target Diameter", od_value));
+                parameters.Add(GetOtherParameter("Target Thickness", th_value));
+            }
             return parameters;
         }
 
