@@ -165,7 +165,7 @@
                     <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
                      Text="{Binding ManufacturerNumber}" />
                     <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text=""/>
+                       Text="like 109575"/>
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="ManufacturerName"  Background="{StaticResource SupplierInfo}"/>
@@ -179,7 +179,7 @@
                     <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
                      Text="{Binding ManufacturerPlantCode}" />
                     <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text=""/>
+                       Text="same as number"/>
 
                     <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="IncomingFaxNumber"  Background="{StaticResource SupplierInfo}"/>
@@ -290,7 +290,7 @@
                     <TextBlock Grid.Row="20" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="ManufacturerPartNumber"  Background="{StaticResource TargetInfo}"/>
                     <TextBox Grid.Row="20" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding ManufacturerPartNumber}"/>
+                     Text="{Binding ManufacturerPartNumber}" FontWeight="Bold"/>
                     <TextBlock Grid.Row="20" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text=""/>
 
@@ -306,21 +306,21 @@
                     <TextBox Grid.Row="22" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
                      Text="{Binding PartNumberDesc}"/>
                     <TextBlock Grid.Row="22" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text=""/>
+                       Text="like 500390396"/>
 
                     <TextBlock Grid.Row="23" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="IntelPartNumber"   Background="{StaticResource TargetInfo}"/>
                     <TextBox Grid.Row="23" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding PartNumber}"/>
+                     Text="{Binding PartNumber}" FontWeight="Bold"/>
                     <TextBlock Grid.Row="23" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text=""/>
 
                     <TextBlock Grid.Row="24" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="IntelPartRevisionNumber"   Background="{StaticResource TargetInfo}"/>
                     <TextBox Grid.Row="24" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding PartRevisionNumber}"/>
+                     Text="{Binding PartRevisionNumber}" FontWeight="Bold"/>
                     <TextBlock Grid.Row="24" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
-                       Text=""/>
+                       Text="ULVAC=02;AMAT=05;"/>
 
                     <TextBlock Grid.Row="25" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="LotCreatedDate"   Background="{StaticResource TargetInfo}"/>
@@ -361,7 +361,9 @@
                     <TextBlock Grid.Row="30" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
                        Text="Target Dimension"   Background="{StaticResource MaterialParameterInfo}"/>
                     <TextBox Grid.Row="30" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
-                     Text="{Binding TargetDimension}" Grid.ColumnSpan="2"/>
+                     Text="{Binding TargetDimension}"/>
+                    <TextBlock Grid.Row="30" Grid.Column="2" Style="{StaticResource StyleDGTextBlockCommon}"
+                       Text="AMAT=final dimension"/>
 
                     <Button Name="BtnMoreSpec" Grid.Row="31" Grid.Column="0" Style="{StaticResource StyleButtonStrench}"
                             Content="More Specification" Margin="0" Click="BtnMoreSpec_Click"/>

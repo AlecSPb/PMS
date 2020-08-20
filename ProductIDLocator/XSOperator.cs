@@ -61,6 +61,7 @@ namespace ProductIDLocator
             {
                 foreach (var id in ProductIDs)
                 {
+                    if (id == null) continue;
                     var rt = s.GetRecordTestByProductID(id.Trim()).FirstOrDefault();
                     if (rt != null)
                     {
@@ -77,6 +78,10 @@ namespace ProductIDLocator
                         sb.Append(rt.PO);
                         sb.Append(",");
                         sb.Append(rt.PMINumber);
+                        sb.Append(",");
+                        sb.Append(rt.ProductID);
+                        sb.Append("-");
+                        sb.Append(rt.Composition);
                         sb.AppendLine();
                     }
                     else

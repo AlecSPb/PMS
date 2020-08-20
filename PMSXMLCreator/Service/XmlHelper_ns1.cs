@@ -144,6 +144,8 @@ namespace PMSXMLCreator.Service
 
             double ucl = 0, lcl = 0, measureValue = 0;
             //日志头部
+            log.AppendLine($"Lot Number:{model.LotNumber}");
+            log.AppendLine($"Product Name:{model.ProductName}");
             log.AppendLine($"Use Specs:{model.CurrentSpec.SpecName}");
             log.AppendLine($"Part Desc:{model.PartNumberDesc}");
             log.AppendLine($"Part Nbr:{model.PartNumber}");

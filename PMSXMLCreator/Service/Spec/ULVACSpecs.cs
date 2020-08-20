@@ -30,7 +30,7 @@ namespace PMSXMLCreator.Service
             parameters.Add("Silicon", new SpecModel { ShortName = "ZSI", LCL = 5.37, UCL = 6.21, UnitOfMeasure = ParameterUnit.Percent });
 
             //AMAT特有
-            parameters.Add("Target Diameter", new SpecModel { ShortName = "DIA_TAR", LCL = 444.57, UCL = 444.83, UnitOfMeasure = ParameterUnit.MM });//后面要改成mm
+            parameters.Add("Target Diameter", new SpecModel { ShortName = "DIA_TAR", LCL = 444.57, UCL = 444.83, UnitOfMeasure = ParameterUnit.MM });
             parameters.Add("Target Thickness", new SpecModel { ShortName = "THK_TAR", LCL = 5.87, UCL = 6.07, UnitOfMeasure = ParameterUnit.MM });
 
             parameters.Add("Target Blank OD", new SpecModel { ShortName = "TAR_BOD", LCL = 439.74, UCL = 440.17, UnitOfMeasure = ParameterUnit.MM });

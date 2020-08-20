@@ -330,8 +330,8 @@
 
                 <TextBlock Grid.Row="28" Grid.Column="0" Text="CreateTime"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBlock Grid.Row="28" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
-
+                <DatePicker Grid.Row="28" Grid.Column="1" SelectedDate="{Binding CreateTime,Mode=TwoWay}"
+                            Style="{StaticResource StyleDatePickerCommon}"/>
             </Grid>
         </ScrollViewer>
     </Grid>

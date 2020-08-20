@@ -209,6 +209,7 @@ namespace PMSXMLCreator.Service
             }
             else
             {
+                //AMAT
                 parameters.Add(GetOtherParameter("Target Diameter", od_value));
                 parameters.Add(GetOtherParameter("Target Thickness", th_value));
             }

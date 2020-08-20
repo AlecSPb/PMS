@@ -28,11 +28,11 @@ namespace PMSXMLCreator.Service
             parameters.Add("Silicon", new SpecModel { ShortName = "ZSI", LCL = 5.37, UCL = 6.21, UnitOfMeasure = ParameterUnit.Percent });
 
             //AMAT特有
-            parameters.Add("Target Diameter", new SpecModel { ShortName = "DIA_TAR", LCL = 444.57, UCL = 444.83, UnitOfMeasure = ParameterUnit.Density });//后面要改成mm
-            parameters.Add("Target Thickness", new SpecModel { ShortName = "THK_TAR", LCL = 5.87, UCL = 6.07, UnitOfMeasure = ParameterUnit.MM });
+            parameters.Add("Target Diameter", new SpecModel { ShortName = "DIA_TAR", LCL = 444.57, UCL = 444.83, UnitOfMeasure = ParameterUnit.MM });
+            parameters.Add("Target Thickness", new SpecModel { ShortName = "THK_TAR", LCL = 5.84, UCL = 6.10, UnitOfMeasure = ParameterUnit.MM });
 
             parameters.Add("Target Blank OD", new SpecModel { ShortName = "TAR_BOD", LCL = 444.57, UCL = 444.83, UnitOfMeasure = ParameterUnit.MM });
-            parameters.Add("Target Blank Thickness", new SpecModel { ShortName = "TAR_BTHK", LCL =5.87, UCL = 6.07, UnitOfMeasure = ParameterUnit.MM });
+            parameters.Add("Target Blank Thickness", new SpecModel { ShortName = "TAR_BTHK", LCL =7, UCL = 7.6, UnitOfMeasure = ParameterUnit.MM });
             parameters.Add("Target Blank 2mm Top Rad", new SpecModel { ShortName = "TAR_BTOP", LCL = 0, UCL = 100, UnitOfMeasure = ParameterUnit.MM });
             parameters.Add("BP Diameter", new SpecModel { ShortName = "BP_DIA", LCL = 523.75, UCL = 524.01, UnitOfMeasure = ParameterUnit.MM });
             parameters.Add("BP Flange Thickness", new SpecModel { ShortName = "BP_FTHK", LCL = 12.57, UCL = 12.83, UnitOfMeasure = ParameterUnit.MM });
