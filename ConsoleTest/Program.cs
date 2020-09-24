@@ -16,8 +16,8 @@ namespace ConsoleTest
             //new Test().TestSF();
             //new Test().TestCompositionSimulator();
             //new Test().TestCompositionHelper_Desend();
-            new Test().TestFTPImage();
-
+            //new Test().TestFTPImage();
+            new Test().TestKDBird();
 
             Console.Read();
         }

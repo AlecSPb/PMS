@@ -10,8 +10,9 @@ namespace PMSClient.Express
     {
         public SystemParameter()
         {
-            //即时查询接口
-            RequestType = "1002";
+            //即时查询接口1002
+            //收费接口-在途服务为8001
+            RequestType = "8001";
         }
 
         //请求内容

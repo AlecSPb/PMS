@@ -49,7 +49,7 @@ namespace PMSXMLCreator.Service
             parameters.Add("Weight", new SpecModel { ShortName = "Weight", LCL = 3898.1, UCL = 4168.9, UnitOfMeasure = ParameterUnit.Weight });
             parameters.Add("Target Blank Flatness", new SpecModel { ShortName = "TAR_BFLA", LCL = 0, UCL = 1.0, UnitOfMeasure = ParameterUnit.MM });
             parameters.Add("Target Blank Parallism", new SpecModel { ShortName = "TAR_BPAR", LCL = 0, UCL = 1.0, UnitOfMeasure = ParameterUnit.MM });
-            parameters.Add("Target Blank Surface Roughness", new SpecModel { ShortName = "TAR_BSUR", LCL = 3, UCL = 4, UnitOfMeasure = ParameterUnit.UM });
+            parameters.Add("Target Blank Surface Roughness", new SpecModel { ShortName = "TAR_BSUR", LCL = 0.5, UCL = 1, UnitOfMeasure = ParameterUnit.UM });
 
             parameters.Add("Aluminum", new SpecModel { ShortName = "ZAL", LCL = 0, UCL = 10, UnitOfMeasure = ParameterUnit.PPM });
             parameters.Add("Bismuth", new SpecModel { ShortName = "ZBI", LCL = 0, UCL = 5.0, UnitOfMeasure = ParameterUnit.PPM });

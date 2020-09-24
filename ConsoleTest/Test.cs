@@ -6,21 +6,33 @@ using System.Threading.Tasks;
 using PMSClient.ReportsHelperNew;
 using PMSClient.Express;
 using System.IO;
-using PMSClient.Components.FTPDownloader;
 
 namespace ConsoleTest
 {
 
     public class Test
     {
-        public void TestFTPImage()
+
+        public void TestKDBird()
         {
-            var service = new ImageService();
-            ImageFoundResult result = service.FindBondingImage("200321-AA-2");
-            Console.WriteLine(result.IsFound);
-            Console.WriteLine(result.ImagePath);
-            Console.WriteLine(result.InfoMessage);
+            var api = new KDBird();
+            var req = new Request("", Shipper.UPS, "1Z468F2V0496895335");
+            //ZTO+75384842803543
+            //var req = new Request("", "HTKY", "557024789905228");
+            string json =api.GetOrderTracesByJson(req);
+            Console.WriteLine(json);
         }
+
+
+
+        //public void TestFTPImage()
+        //{
+        //    var service = new ImageService();
+        //    ImageFoundResult result = service.FindBondingImage("200321-AA-2");
+        //    Console.WriteLine(result.IsFound);
+        //    Console.WriteLine(result.ImagePath);
+        //    Console.WriteLine(result.InfoMessage);
+        //}
 
 
 

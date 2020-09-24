@@ -248,6 +248,8 @@
     <Content Include="DocTemplate\Intel COA.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Docs\Intel_spec_AMAT_MAT_Y_AMAT_K71893_rev5_20200819_IPN500390396.pdf" />
+    <None Include="Docs\Intel_spec_K71954_rev2_IPN_500383762_ULVAC_MAT_Y_20200601.pdf" />
     <None Include="Docs\MQCS_ProcessOverview.docx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

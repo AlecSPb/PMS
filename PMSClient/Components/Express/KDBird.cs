@@ -18,25 +18,29 @@ namespace PMSClient.Express
         /// <returns></returns>
         public string GetOrderTracesByJson(Request request)
         {
-            string requestData =JsonConvert.SerializeObject(request);
+            string requestData = JsonConvert.SerializeObject(request);
+
+            Console.WriteLine("RequestData:" + requestData);
 
             Dictionary<string, string> param = new Dictionary<string, string>();
             param.Add("RequestData", HttpUtility.UrlEncode(requestData, Encoding.UTF8));
             param.Add("EBusinessID", ID.EBusinessID);
-            param.Add("RequestType", "1002");
+            //免费1002，收费8001
+            param.Add("RequestType", "8001");
             string dataSign = Helper.Encrypt(requestData, ID.ApiKey, "UTF-8");
             param.Add("DataSign", HttpUtility.UrlEncode(dataSign, Encoding.UTF8));
             param.Add("DataType", "2");
 
-            string result = SendPost(Url.FormalUrl,param);
+            string result = SendPost(Url.FormalUrl, param);
 
             //根据公司业务处理返回的信息......
 
             return result;
         }
 
-        private string SendPost(string url,Dictionary<string,string> param)
+        private string SendPost(string url, Dictionary<string, string> param)
         {
+            Console.WriteLine("Request Url:" + url);
             string result = "";
             StringBuilder postData = new StringBuilder();
             if (param != null && param.Count > 0)
@@ -52,12 +56,14 @@ namespace PMSClient.Express
                     postData.Append(p.Value);
                 }
             }
+
+            Console.WriteLine("PostData:" + postData.ToString());
             byte[] byteData = Encoding.GetEncoding("UTF-8").GetBytes(postData.ToString());
             try
             {
 
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                request.ContentType = "application/x-www-form-urlencoded";
+                request.ContentType = "application/x-www-form-urlencoded;charset=utf-8";
                 request.Referer = url;
                 request.Accept = "*/*";
                 request.Timeout = 30 * 1000;
