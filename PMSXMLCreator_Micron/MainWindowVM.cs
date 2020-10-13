@@ -7,6 +7,9 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using CommonHelper;
+using PMSXMLCreator_Micron.Model;
+using PMSXMLCreator_Micron.Service;
+
 
 namespace PMSXMLCreator_Micron
 {
@@ -56,7 +59,15 @@ namespace PMSXMLCreator_Micron
 
         private void ActionCreate()
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(InputText))
+            {
+                XSHelper.MessageHelper.ShowWarning("输入内容为空，请确认");
+                return;
+            }
+            var service = new Analyzer();
+            Micon_COA coa = service.Resolve(InputText);
+
+
         }
 
         private void ActionSave()

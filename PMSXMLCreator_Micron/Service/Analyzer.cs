@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSXMLCreator_Micron.Model;
+using System.IO;
 
 
 namespace PMSXMLCreator_Micron.Service
@@ -17,10 +18,14 @@ namespace PMSXMLCreator_Micron.Service
         {
             var coa = new Micon_COA();
 
+            string[] lines = format_txt.Split(new string[] { "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+
+
 
             return null;
         }
-        
+
 
 
 
