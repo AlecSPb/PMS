@@ -9,7 +9,7 @@ using GalaSoft.MvvmLight.Messaging;
 using CommonHelper;
 using PMSXMLCreator_Micron.Model;
 using PMSXMLCreator_Micron.Service;
-
+using System.IO;
 
 namespace PMSXMLCreator_Micron
 {
@@ -49,7 +49,22 @@ namespace PMSXMLCreator_Micron
 
         private void ActionLog()
         {
-            throw new NotImplementedException();
+            try
+            {
+                string logfile = Path.Combine(Environment.CurrentDirectory, "log.txt");
+                if (File.Exists(logfile))
+                {
+                    System.Diagnostics.Process.Start(logfile);
+                }
+                else
+                {
+                    XSHelper.MessageHelper.ShowInfo("log file doesn't exist");
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void ActionOutputFolder()
@@ -59,14 +74,20 @@ namespace PMSXMLCreator_Micron
 
         private void ActionCreate()
         {
+
             if (string.IsNullOrEmpty(InputText))
             {
                 XSHelper.MessageHelper.ShowWarning("输入内容为空，请确认");
                 return;
             }
+
             var service = new Analyzer();
             Micon_COA coa = service.Resolve(InputText);
-
+            if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据[{coa.ProductId}]生成Docx文件？"))
+            {
+                var xmlhelper = new XMLHelper();
+                xmlhelper.CreateECOA(coa);
+            }
 
         }
 
@@ -93,7 +114,7 @@ namespace PMSXMLCreator_Micron
         public string InputText
         {
             get { return inputText; }
-            set { inputText = value;RaisePropertyChanged(nameof(InputText)); }
+            set { inputText = value; RaisePropertyChanged(nameof(InputText)); }
         }
 
 

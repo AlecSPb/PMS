@@ -55,8 +55,12 @@ namespace PMSXMLCreator_Micron.Service
 
                     coa.InspectionItems.Add(inspectionItem_temp);
                 }
-            }
 
+
+
+            }
+            //记录产品ID
+            coa.ProductId = coa.Header.Where(i => i.FiledName.Contains("LotNumber")).FirstOrDefault().FiledValue;
             return coa;
         }
 

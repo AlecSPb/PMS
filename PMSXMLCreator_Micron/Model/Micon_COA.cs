@@ -13,6 +13,10 @@ namespace PMSXMLCreator_Micron.Model
             Header = new List<BasicInfoField>();
             InspectionItems = new List<InspectionItem>();
         }
+
+        public string ProductId { get; set; }
+
+
         public List<BasicInfoField> Header { get; set; }
 
         //Content/UnitId

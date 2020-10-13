@@ -79,7 +79,7 @@
     <Compile Include="MainWindowVM.cs" />
     <Compile Include="Service\Analyzer.cs" />
     <Compile Include="Service\Logger.cs" />
-    <Compile Include="Service\XMLService.cs" />
+    <Compile Include="Service\XMLHelper.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -139,6 +139,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="SavedFiles\donotdeletethisfolder.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="OutputFile\donotdeletethisfolder.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="logo.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
