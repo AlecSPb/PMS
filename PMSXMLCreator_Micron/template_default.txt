@@ -1,33 +1,33 @@
 ﻿## Header 使用+号分隔开 FiledName 和 FiledValue
 ## XXX表示NULL
 
-Purno+XXX
-POLine+XXX
-Spec.no+FE_Target_2020_0034
-Version+01
-DeliveryNote+0001
-COANumber+IM02_190-00290_200618-C-1
-MaterialType+Target
-MaterialName+MatY-V12
-SupplierPartNo+NA
-MaterialNumber+190-00290
-Supplier+PIONEER MATERIALS
-Agency+1043398
-DataSource+PIONEER MATERIALS
-Company_UID+XXX
-BatchNumber+200618-C-1
-LotNumber+200618-C-1
-FAB+IM02
-LotQuantity+1
-QuantityUn+EA
-ManufacturingSite+XXX, CHINA
-Productiondate+2020/08/13
-ExpiredDate+2022/02/13
-Expect_FABInDate+2020/09/13
-Author+Leon Chiu
-Author_Email+IMFT_Quality_Control@micron.com, leon.chiu@pioneer-materials.com
-DataInDate+2020/08/17
-Remark+XXX
+$Purno+XXX
+$POLine+XXX
+$Spec.no+FE_Target_2020_0034
+$Version+01
+$DeliveryNote+0001
+$COANumber+IM02_190-00290_200618-C-1
+$MaterialType+Target
+$MaterialName+MatY-V12
+$SupplierPartNo+NA
+$MaterialNumber+190-00290
+$Supplier+PIONEER MATERIALS
+$Agency+1043398
+$DataSource+PIONEER MATERIALS
+$Company_UID+XXX
+$BatchNumber+200618-C-1
+$LotNumber+200618-C-1
+$FAB+IM02
+$LotQuantity+1
+$QuantityUn+EA
+$ManufacturingSite+XXX, CHINA
+$Productiondate+2020/08/13
+$ExpiredDate+2022/02/13
+$Expect_FABInDate+2020/09/13
+$Author+Leon Chiu
+$Author_Email+IMFT_Quality_Control@micron.com, leon.chiu@pioneer-materials.com
+$DataInDate+2020/08/17
+$Remark+XXX
 
 ## InspectionItems 以*开头 按照下面格式书写
 ## ItemName+Unit+Specification+DelectionLimit+InspectionValue
