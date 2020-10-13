@@ -32,7 +32,7 @@ namespace PMSClient.Components.CscanImageProcess
                 win.MainImage.Source = bmp;
                 win.MainInfo.Content = $"{result.InfoMessage}-本地地址{result.ImagePath}";
                 win.CurrentFile = result.ImagePath;
-                win.ShowDialog();
+                win.Show();
             }
             else
             {

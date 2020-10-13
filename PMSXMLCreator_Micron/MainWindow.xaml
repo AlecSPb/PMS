@@ -1,0 +1,36 @@
+﻿<Window x:Class="PMSXMLCreator_Micron.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSXMLCreator_Micron"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        Title="PMS Micron ECOA Creator" Height="450" Width="800">
+    <Grid Background="Wheat">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Button  Content="Default Input" Style="{StaticResource StyleButtonCommon}" Command="{Binding DefaultInput}"/>
+                <Button  Content="Open" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding Open}"/>
+                <Button  Content="Save" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding Save}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button  Content="Output Folder" Style="{StaticResource StyleButtonCommon}" Command="{Binding OutputFolder}"/>
+                <Button  Content="Log" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding Save}"/>
+                <Button  Content="Create" Style="{StaticResource StyleButtonCommon}" Command="{Binding Create}"/>
+            </StackPanel>
+        </Grid>
+
+        <TextBox Grid.Row="1" Margin="2" Text="{Binding InputText,Mode=TwoWay}" 
+                 VerticalScrollBarVisibility="Visible" FontSize="14"/>
+    </Grid>
+</Window>

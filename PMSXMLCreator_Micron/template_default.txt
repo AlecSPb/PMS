@@ -1,0 +1,61 @@
+﻿## Header 使用+号分隔开 FiledName 和 FiledValue
+## XXX表示NULL
+
+Purno+XXX
+POLine+XXX
+Spec.no+FE_Target_2020_0034
+Version+01
+DeliveryNote+0001
+COANumber+IM02_190-00290_200618-C-1
+MaterialType+Target
+MaterialName+MatY-V12
+SupplierPartNo+NA
+MaterialNumber+190-00290
+Supplier+PIONEER MATERIALS
+Agency+1043398
+DataSource+PIONEER MATERIALS
+Company_UID+XXX
+BatchNumber+200618-C-1
+LotNumber+200618-C-1
+FAB+IM02
+LotQuantity+1
+QuantityUn+EA
+ManufacturingSite+XXX, CHINA
+Productiondate+2020/08/13
+ExpiredDate+2022/02/13
+Expect_FABInDate+2020/09/13
+Author+Leon Chiu
+Author_Email+IMFT_Quality_Control@micron.com, leon.chiu@pioneer-materials.com
+DataInDate+2020/08/17
+Remark+XXX
+
+## InspectionItems 以*开头 按照下面格式书写
+## ItemName+Unit+Specification+DelectionLimit+InspectionValue
+
+*ALUMINUM+ppm+<=10+XXX+0.18
+*BONDING RATIO+%+95-100+XXX+XXX
+*BP DIAMETER+mm+574.7-575.3+XXX+XXX
+
+*CHROMIUM+ppm+<=10+XXX+0.18
+*COMPONENT A+%+50-52+XXX+50.95
+*COMPONENT B+%+50-52+XXX+50.95
+*COMPONENT C+%+50-52+XXX+50.95
+*COMPONENT D+%+50-52+XXX+50.95
+*COPPER+ppm+<=10+XXX+0.18
+*DENSITY+g/cm3+4.3-4.4+XXX+4.32
+
+*DIAMETER+mm+574.7-575.3+XXX+XXX
+*IRON+ppm+<=10+XXX+0.18
+*LEAD+ppm+<=10+XXX+0.18
+*MAGNESIUM+ppm+<=10+XXX+0.18
+*MANGANESE+ppm+<=10+XXX+0.18
+*NICKEL+ppm+<=10+XXX+0.18
+*OXYGEN+ppm+<=10+XXX+0.18
+*SURFACE ROUGHNESS+micon+<=10+XXX+0.18
+*THICKNESS+mm+7.7-7.9+XXX+7.79
+*TITANIUM+ppm+<=10+XXX+0.18
+*TOTAL METALLIC IMPURITIES+ppm+<=10+XXX+0.18
+*TOTAL THICKNESS+ppm+<=10+XXX+0.18
+*TUNGSTEN+ppm+<=10+XXX+0.18
+*WEIGHT+g+<=10+XXX+0.18
+

@@ -10,7 +10,7 @@ namespace PMSCommon
     {
         成都炬科光学,
         成都超纯金属,
-        苏州精美科光,
+        苏州精美,
         美国TCB
 
     }
