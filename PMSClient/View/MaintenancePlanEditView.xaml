@@ -60,7 +60,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}"
                            ItemsSource="{Binding DataContext.VHPMachineCodes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                           SelectedItem="{Binding VHPMachineCode}"/>
+                           SelectedItem="{Binding VHPMachineCode,UpdateSourceTrigger=PropertyChanged}"/>
                 <StackPanel Grid.Column="2" Orientation="Horizontal">
                     <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="设备代码,格式：设备名称_编号"/>
@@ -87,7 +87,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}"
                            ItemsSource="{Binding DataContext.PlanIntervals,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                           SelectedItem="{Binding PlanInterval}"/>
+                           SelectedItem="{Binding PlanInterval,UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="维护间隔时间"/>
 

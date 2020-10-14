@@ -69,7 +69,14 @@ namespace PMSXMLCreator_Micron
 
         private void ActionOutputFolder()
         {
-            throw new NotImplementedException();
+            try
+            {
+                System.Diagnostics.Process.Start(XSHelper.FileHelper.GetCurrentFolderPath("OutputFile"));
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void ActionCreate()
@@ -83,7 +90,7 @@ namespace PMSXMLCreator_Micron
 
             var service = new Analyzer();
             Micon_COA coa = service.Resolve(InputText);
-            if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据[{coa.ProductId}]生成Docx文件？"))
+            if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据[{coa.ProductId}]生成xml文件？"))
             {
                 var xmlhelper = new XMLHelper();
                 xmlhelper.CreateECOA(coa);

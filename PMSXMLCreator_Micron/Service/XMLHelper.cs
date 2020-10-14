@@ -53,7 +53,7 @@ namespace PMSXMLCreator_Micron.Service
             //Header
             #region Header
             writer.WriteStartElement("Header");
-            sb_log.AppendLine($"Headers");
+            sb_log.AppendLine($"[Headers]");
             foreach (var item in model.Header)
             {
                 writer.WriteStartElement("BasicInfoField");
@@ -72,7 +72,7 @@ namespace PMSXMLCreator_Micron.Service
             writer.WriteStartElement("UnitId");
             writer.WriteAttributeString("Value", "");
 
-            sb_log.AppendLine($"Content");
+            sb_log.AppendLine($"[Content]");
 
 
             foreach (var item in model.InspectionItems)
