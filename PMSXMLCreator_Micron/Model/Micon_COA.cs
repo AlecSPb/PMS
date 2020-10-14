@@ -15,6 +15,7 @@ namespace PMSXMLCreator_Micron.Model
         }
 
         public string ProductId { get; set; }
+        public string COANumber { get; set; }
 
 
         public List<BasicInfoField> Header { get; set; }

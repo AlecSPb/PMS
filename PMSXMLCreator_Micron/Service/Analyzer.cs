@@ -61,6 +61,7 @@ namespace PMSXMLCreator_Micron.Service
             }
             //记录产品ID
             coa.ProductId = coa.Header.Where(i => i.FiledName.Contains("LotNumber")).FirstOrDefault().FiledValue;
+            coa.COANumber = coa.Header.Where(i => i.FiledName.Contains("COANumber")).FirstOrDefault().FiledValue;
             return coa;
         }
 

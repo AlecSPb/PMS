@@ -12,7 +12,7 @@ $POLine+XXX
 $Spec.no+FE_Target_2020_0034
 $Version+01
 $DeliveryNote+0001
-$COANumber+IM02_190-05076_200602-D-1
+$COANumber+US01_190-05076_200602-D-1
 $MaterialType+Target
 $MaterialName+MatY-XMA2
 $SupplierPartNo+NA
@@ -23,7 +23,7 @@ $DataSource+PIONEER MATERIALS
 $Company_UID+XXX
 $BatchNumber+200602-D-1
 $LotNumber+200602-D-1
-$FAB+IM02
+$FAB+US01
 $LotQuantity+1
 $QuantityUn+EA
 $ManufacturingSite+XXX, CHINA

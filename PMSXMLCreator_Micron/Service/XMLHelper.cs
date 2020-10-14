@@ -26,7 +26,7 @@ namespace PMSXMLCreator_Micron.Service
                 Directory.CreateDirectory(folder);
             }
 
-            string filename = $"{model.ProductId}-{DateTime.Now.ToString("yyyyMMddHHmmss")}.xml";
+            string filename = $"{model.COANumber}-{DateTime.Now.ToString("yyyyMMddHHmmss")}.xml";
             string filePath = Path.Combine(folder, filename.Replace("#", "-"));
             FileInfo file = new FileInfo(filePath);
 
