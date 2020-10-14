@@ -78,8 +78,9 @@
     </ApplicationDefinition>
     <Compile Include="MainWindowVM.cs" />
     <Compile Include="Service\Analyzer.cs" />
+    <Compile Include="Service\FileSaver.cs" />
     <Compile Include="Service\Logger.cs" />
-    <Compile Include="Service\XMLHelper.cs" />
+    <Compile Include="Service\XmlHelper.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -139,12 +140,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="SavedFiles\donotdeletethisfolder.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="OutputFile\donotdeletethisfolder.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <None Include="SavedFile\donotdeletethisfolder.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="OutputFile\donotdeletethisfolder.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Resource Include="logo.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -154,6 +155,13 @@
     <Resource Include="Sample\IM02_190-00290_200618-C-1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Specifications.txt" />
+    <None Include="SavedFile\template_default_V12.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="SavedFile\template_default_XMA2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="template_default.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

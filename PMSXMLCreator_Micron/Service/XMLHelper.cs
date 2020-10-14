@@ -11,7 +11,7 @@ using PMSXMLCreator_Micron.Service;
 
 namespace PMSXMLCreator_Micron.Service
 {
-    public class XMLHelper
+    public class XmlHelper
     {
         public void CreateECOA(Micon_COA model)
         {
@@ -60,7 +60,7 @@ namespace PMSXMLCreator_Micron.Service
                 writer.WriteAttributeString("FieldName", item.FiledName);
                 writer.WriteAttributeString("FieldValue", item.FiledValue);
                 writer.WriteEndElement();
-                sb_log.AppendLine($"{item.FiledName}+{item.FiledValue}");
+                sb_log.AppendLine($"{item.FiledName};{item.FiledValue}");
             }
 
             writer.WriteEndElement();
@@ -73,20 +73,26 @@ namespace PMSXMLCreator_Micron.Service
             writer.WriteAttributeString("Value", "");
 
             sb_log.AppendLine($"[Content]");
-
+            sb_log.AppendLine($"ItemName;ResultItem;ResultName;DetectionLimit;Value;");
 
             foreach (var item in model.InspectionItems)
             {
                 writer.WriteStartElement("InspectionItem");
                 writer.WriteAttributeString("ItemName", item.ItemName);
-                sb_log.Append($"{item.ItemName}+");
+                sb_log.Append($"{item.ItemName};");
                 foreach (var resultItem in item.ResultItems)
                 {
+                    sb_log.Append($"{resultItem.Value};");
+
+                    if (resultItem.ResultName.Contains("DetectionLimit"))
+                    {
+                        continue;
+                    }
                     writer.WriteStartElement("ResultItem");
                     writer.WriteAttributeString("ResultName", resultItem.ResultName);
                     writer.WriteAttributeString("Value", resultItem.Value);
                     writer.WriteEndElement();
-                    sb_log.Append($"{resultItem.Value}+");
+
                 }
                 sb_log.AppendLine();
                 writer.WriteEndElement();

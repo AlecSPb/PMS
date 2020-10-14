@@ -18,7 +18,7 @@ namespace PMSXMLCreator_Micron
         public MainWindowVM()
         {
             Init();
-            ReadDefaultTemplate();
+            //ReadDefaultTemplate();
         }
 
         private void Init()
@@ -30,6 +30,19 @@ namespace PMSXMLCreator_Micron
             Create = new RelayCommand(ActionCreate);
             OutputFolder = new RelayCommand(ActionOutputFolder);
             Log = new RelayCommand(ActionLog);
+            ClosingCommand = new RelayCommand(ActionClosingCommand);
+            LoadedCommand = new RelayCommand(ActionLoadedCommand);
+        }
+
+        private string temp_saved_file = "temp_current_model.txt";
+        private void ActionLoadedCommand()
+        {
+            InputText = FileSaver.LoadText(temp_saved_file);
+        }
+
+        private void ActionClosingCommand()
+        {
+            FileSaver.SaveText(InputText, temp_saved_file);
         }
 
         private void ReadDefaultTemplate()
@@ -92,7 +105,7 @@ namespace PMSXMLCreator_Micron
             Micon_COA coa = service.Resolve(InputText);
             if (XSHelper.MessageHelper.ShowYesNo($"确定使用该条数据[{coa.ProductId}]生成xml文件？"))
             {
-                var xmlhelper = new XMLHelper();
+                var xmlhelper = new XmlHelper();
                 xmlhelper.CreateECOA(coa);
             }
 
@@ -100,12 +113,27 @@ namespace PMSXMLCreator_Micron
 
         private void ActionSave()
         {
-            throw new NotImplementedException();
+            string initialDirectory = XSHelper.FileHelper.GetCurrentFolderPath("SavedFile");
+            var service = new Analyzer();
+            Micon_COA coa = service.Resolve(InputText);
+
+            string saved_file = Path.Combine(initialDirectory, $"{coa.ProductId}-{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt");
+            FileSaver.SaveText(InputText, saved_file);
+
+            XSHelper.MessageHelper.ShowInfo($"[{coa.ProductId}] Saved Success");
         }
 
         private void ActionOpen()
         {
-            throw new NotImplementedException();
+            string initialDirectory = XSHelper.FileHelper.GetCurrentFolderPath("SavedFile");
+            string filter = "Data|*.txt";
+            XSDialogResult savePath = XSHelper.DialogHelper.ShowOpenDialog(initialDirectory, filter);
+
+            if (savePath.HasSelected == true)
+            {
+                InputText = FileSaver.LoadText(savePath.SelectPath);
+                XSHelper.MessageHelper.ShowInfo("Loaded Success");
+            }
         }
 
         private void ActionDefaultInput()
@@ -132,6 +160,8 @@ namespace PMSXMLCreator_Micron
         public RelayCommand Create { get; set; }
         public RelayCommand OutputFolder { get; set; }
         public RelayCommand Log { get; set; }
+        public RelayCommand ClosingCommand { get; set; }
+        public RelayCommand LoadedCommand { get; set; }
 
     }
 }

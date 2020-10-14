@@ -1,4 +1,4 @@
-﻿## 模板名称 MAT-Y [V12] (4N5) 默认模版
+﻿## 模板名称 MAT-Y [V12] (4N5)
 ## 190-00290
 ## 对应规范文件Global Fab FILMS - PIONEER Material Specification MatY V12 (4N5)_modified.docx
 

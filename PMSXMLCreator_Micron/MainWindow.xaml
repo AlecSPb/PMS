@@ -6,8 +6,17 @@
         xmlns:local="clr-namespace:PMSXMLCreator_Micron"
         mc:Ignorable="d"
         Icon="logo.png"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         WindowStartupLocation="CenterScreen" WindowState="Maximized"
         Title="PMS Micron ECOA Creator" Height="450" Width="800">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <i:InvokeCommandAction Command="{Binding ClosingCommand}"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid Background="Wheat">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -27,11 +36,11 @@
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button  Content="Output Folder" Style="{StaticResource StyleButtonCommon}" Command="{Binding OutputFolder}"/>
                 <Button  Content="Log" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding Log}"/>
-                <Button  Content="Create" Style="{StaticResource StyleButtonCommon}" Command="{Binding Create}"/>
+                <Button  Content="Create" Style="{StaticResource StyleButtonCommon}" Command="{Binding Create}" FontWeight="Bold"/>
             </StackPanel>
         </Grid>
 
         <TextBox Grid.Row="1" Margin="2" Text="{Binding InputText,Mode=TwoWay}" 
-                 VerticalScrollBarVisibility="Visible" FontSize="14"/>
+                 VerticalScrollBarVisibility="Visible" FontSize="15" AcceptsReturn="True"/>
     </Grid>
 </Window>
