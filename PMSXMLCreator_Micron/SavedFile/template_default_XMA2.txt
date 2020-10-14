@@ -6,6 +6,7 @@
 ## Header 使用+号分隔开 FiledName 和 FiledValue
 ## 需要更改ID等信息
 ## XXX表示NULL
+## 行以$开头
 
 $Purno+XXX
 $POLine+XXX
@@ -37,8 +38,8 @@ $Remark+XXX
 
 ## InspectionItems 以*开头 按照下面格式书写
 ## ItemName+Unit+Specification+DelectionLimit+InspectionValue
-
 ## 目前共25个
+## 行以*开头
 
 *COMPONENT A+%+48.4-50.4+XXX+49.50
 *COMPONENT B+%+20.4-22.4+XXX+21.43
