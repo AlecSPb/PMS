@@ -8,7 +8,7 @@
         Icon="logo.png"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         WindowStartupLocation="CenterScreen" WindowState="Maximized"
-        Title="PMS Micron ECOA Creator v1.0" Height="450" Width="800">
+        Title="PMS Micron ECOA Creator v1.0" Height="600" Width="1000">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Closing">
             <i:InvokeCommandAction Command="{Binding ClosingCommand}"/>
@@ -31,16 +31,18 @@
             <StackPanel Grid.Column="0" Orientation="Horizontal">
                 <Button  Content="Open" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding Open}"/>
                 <Button  Content="Save" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding Save}"/>
-                <Button  Content="Default Input" Style="{StaticResource StyleButtonCommon}" Command="{Binding DefaultInput}"/>
+                <Button  Content="Default Template" Style="{StaticResource StyleButtonCommon}" Command="{Binding DefaultInput}"/>
+                <Button Content="Editor" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding Editor}"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button  Content="Output Folder" Style="{StaticResource StyleButtonCommon}" Command="{Binding OutputFolder}"/>
                 <Button  Content="Log" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding Log}"/>
-                <Button  Content="Create" Style="{StaticResource StyleButtonCommon}" Command="{Binding Create}" FontWeight="Bold"/>
+                <Button  Content="Create Xml" Style="{StaticResource StyleButtonCommon}" Command="{Binding Create}" FontWeight="Bold"/>
             </StackPanel>
         </Grid>
 
         <TextBox Grid.Row="1" Margin="2" Text="{Binding InputText,Mode=TwoWay}" 
-                 VerticalScrollBarVisibility="Visible" FontSize="15" AcceptsReturn="True"/>
+                 VerticalScrollBarVisibility="Visible" FontSize="15" AcceptsReturn="True"
+                 FontFamily="微软雅黑"/>
     </Grid>
 </Window>

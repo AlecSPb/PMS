@@ -44,6 +44,10 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource MRCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource MRCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Creator}"/>
                 <DataGridTextColumn Header="{StaticResource MRVHPMachineCode}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding VHPMachineCode}"/>
                 <DataGridTextColumn Header="{StaticResource MRPlanItem}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
@@ -58,10 +62,7 @@
                                     Binding="{Binding Persons}"/>
                 <DataGridTextColumn Header="{StaticResource MRLog}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Log}"/>
-                <DataGridTextColumn Header="{StaticResource MRCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
-                <DataGridTextColumn Header="{StaticResource MRCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Creator}"/>
+
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"

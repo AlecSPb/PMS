@@ -3,6 +3,9 @@
 ## 对应规范文件Global Fab FILMS - PIONEER Material Specification MatY XMA2 (4N5)_modified.docx
 
 ## Se49.4As19.9Ge21.4In9.3
+
+## 除$和*开头的行外，其余均为注释行，解析的时候会被忽略掉
+
 ## Header 使用+号分隔开 FiledName 和 FiledValue
 ## 需要更改ID等信息
 ## XXX表示NULL

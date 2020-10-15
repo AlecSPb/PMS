@@ -19,6 +19,21 @@ namespace PMSXMLCreator_Micron
         {
             Init();
             //ReadDefaultTemplate();
+
+            Messenger.Default.Register<Micon_COA>(this, "SaveString", ActionSaveString);
+        }
+
+        private void ActionSaveString(Micon_COA obj)
+        {
+            if (obj != null)
+            {
+                StringBuilder sb = new StringBuilder();
+                obj.Header.ForEach(i => sb.AppendLine($"${i.FieldName}+{i.FieldValue}"));
+                sb.AppendLine();
+                obj.InspectionItems.ForEach(i => sb.AppendLine($"*{i.ItemName}+{i.ResultItems[0].Value}+" +
+                    $"{i.ResultItems[1].Value}+{i.ResultItems[2].Value}+{i.ResultItems[3].Value}"));
+                InputText = sb.ToString();
+            }
         }
 
         private void Init()
@@ -32,6 +47,29 @@ namespace PMSXMLCreator_Micron
             Log = new RelayCommand(ActionLog);
             ClosingCommand = new RelayCommand(ActionClosingCommand);
             LoadedCommand = new RelayCommand(ActionLoadedCommand);
+
+            Editor = new RelayCommand(ActionEditor);
+        }
+
+        private void ActionEditor()
+        {
+            try
+            {
+                var service = new Analyzer();
+                Micon_COA coa = service.Resolve(InputText);
+                var editor = new ECOAEditor();
+                var editorvm = new ECOAEditorVM();
+                coa.Header.ForEach(i => editorvm.Headers.Add(i));
+
+                coa.InspectionItems.ForEach(i => editorvm.Contents.Add(i));
+
+                editor.DataContext = editorvm;
+                editor.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private string temp_saved_file = "temp_current_model.txt";
@@ -162,6 +200,7 @@ namespace PMSXMLCreator_Micron
         public RelayCommand Log { get; set; }
         public RelayCommand ClosingCommand { get; set; }
         public RelayCommand LoadedCommand { get; set; }
+        public RelayCommand Editor { get; set; }
 
     }
 }

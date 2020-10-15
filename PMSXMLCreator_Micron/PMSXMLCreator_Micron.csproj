@@ -76,11 +76,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ECOAEditor.xaml.cs">
+      <DependentUpon>ECOAEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ECOAEditorVM.cs" />
     <Compile Include="MainWindowVM.cs" />
     <Compile Include="Service\Analyzer.cs" />
     <Compile Include="Service\FileSaver.cs" />
     <Compile Include="Service\Logger.cs" />
     <Compile Include="Service\XmlHelper.cs" />
+    <Page Include="ECOAEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

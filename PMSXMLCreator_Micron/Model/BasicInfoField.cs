@@ -8,8 +8,8 @@ namespace PMSXMLCreator_Micron.Model
 {
     public class BasicInfoField
     {
-        public string FiledName { get; set; }
-        public string FiledValue { get; set; }
+        public string FieldName { get; set; }
+        public string FieldValue { get; set; }
 
     }
 }

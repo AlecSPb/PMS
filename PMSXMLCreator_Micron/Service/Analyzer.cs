@@ -31,8 +31,8 @@ namespace PMSXMLCreator_Micron.Service
                     var header_temp = new BasicInfoField();
                     if (fields.Count() >= 2)
                     {
-                        header_temp.FiledName = fields[0] ?? "";
-                        header_temp.FiledValue = fields[1] ?? "";
+                        header_temp.FieldName = fields[0] ?? "";
+                        header_temp.FieldValue = fields[1] ?? "";
                     }
 
                     coa.Header.Add(header_temp);
@@ -60,13 +60,16 @@ namespace PMSXMLCreator_Micron.Service
 
             }
             //记录产品ID
-            coa.ProductId = coa.Header.Where(i => i.FiledName.Contains("LotNumber")).FirstOrDefault().FiledValue;
-            coa.COANumber = coa.Header.Where(i => i.FiledName.Contains("COANumber")).FirstOrDefault().FiledValue;
+            coa.ProductId = coa.Header.Where(i => i.FieldName.Contains("LotNumber")).FirstOrDefault().FieldValue;
+            coa.COANumber = coa.Header.Where(i => i.FieldName.Contains("COANumber")).FirstOrDefault().FieldValue;
             return coa;
         }
 
 
-
+        public string Model2String(string inputtext,Micon_COA model)
+        {
+            return "";
+        }
 
 
 

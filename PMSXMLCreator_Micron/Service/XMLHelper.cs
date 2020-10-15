@@ -57,10 +57,10 @@ namespace PMSXMLCreator_Micron.Service
             foreach (var item in model.Header)
             {
                 writer.WriteStartElement("BasicInfoField");
-                writer.WriteAttributeString("FieldName", item.FiledName);
-                writer.WriteAttributeString("FieldValue", item.FiledValue);
+                writer.WriteAttributeString("FieldName", item.FieldName);
+                writer.WriteAttributeString("FieldValue", item.FieldValue);
                 writer.WriteEndElement();
-                sb_log.AppendLine($"{item.FiledName};{item.FiledValue}");
+                sb_log.AppendLine($"{item.FieldName};{item.FieldValue}");
             }
 
             writer.WriteEndElement();

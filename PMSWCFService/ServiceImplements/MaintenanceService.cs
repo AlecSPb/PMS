@@ -117,7 +117,7 @@ namespace PMSWCFService
                                 where m.State != PMSCommon.SimpleState.作废.ToString()
                                 && m.VHPMachineCode.Contains(devicecode)
                                 && m.PlanItem.Contains(planitem)
-                                orderby m.VHPMachineCode ascending
+                                orderby m.CreateTime descending
                                 select m;
                     var result = query.ToList().Skip(s).Take(t);
                     return Mapper.Map<List<MaintenanceRecord>, List<DcMaintenanceRecord>>(result.ToList());
