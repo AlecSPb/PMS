@@ -20,7 +20,7 @@ namespace PMSClient.Express
         {
             string requestData = JsonConvert.SerializeObject(request);
 
-            Console.WriteLine("RequestData:" + requestData);
+            //Console.WriteLine("RequestData:" + requestData);
 
             Dictionary<string, string> param = new Dictionary<string, string>();
             param.Add("RequestData", HttpUtility.UrlEncode(requestData, Encoding.UTF8));
@@ -57,7 +57,7 @@ namespace PMSClient.Express
                 }
             }
 
-            Console.WriteLine("PostData:" + postData.ToString());
+            //Console.WriteLine("PostData:" + postData.ToString());
             byte[] byteData = Encoding.GetEncoding("UTF-8").GetBytes(postData.ToString());
             try
             {

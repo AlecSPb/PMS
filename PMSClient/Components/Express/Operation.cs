@@ -5,10 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using PMSClient.MainService;
 using Newtonsoft.Json;
+using PMSClient.Components.PMSSettingHelper;
+
 namespace PMSClient.Express
 {
     public class Operation
     {
+
+
+        public Operation()
+        {
+            Sender = PMSSettingService.ReadKeyFromCache("sf_sender");
+            SenderPhone = PMSSettingService.ReadKeyFromCache("sf_sender_phone");
+        }
+        public string Sender { get; set; } = "秦雪梅";
+        public string SenderPhone { get; set; } = "13808071935";
         /// <summary>
         /// 追踪所有未完成的发货计划
         /// </summary>
@@ -92,12 +103,33 @@ namespace PMSClient.Express
                 {
                     case Shipper.SF:
                         {
+                            //通过顺丰丰桥来查询
                             string result = sf.SFOrder(number);
                             sb.AppendLine($"查询的SF单号为{number}");
                             sb.AppendLine($"此单按照发件人为{sf.Sender}-{sf.SenderPhone}来查询，如有变化，联系管理员");
                             sb.AppendLine("--------------------------------------------------------");
                             sb.AppendLine(checker.ConcatErrorMessage(checker.CheckSF(number)));
                             sb.AppendLine(result);
+
+
+                            //通过快递鸟来查询SF
+                            //sb.Append("查询单号");
+                            //sb.Append(express);
+                            //sb.Append(":");
+                            //sb.AppendLine(number);
+                            //sb.AppendLine("--------------------------------------------------------");
+                            //sb.AppendLine($"此单按照发件人为{Sender}-{SenderPhone}来查询，如有变化，联系管理员");
+
+                            //sb.AppendLine(checker.ConcatErrorMessage(checker.CheckSF(number)));
+
+                            //string last4Digital = SenderPhone.Substring(SenderPhone.Length - 4, 4);
+
+                            //string json = api.GetOrderTracesByJson(new Request("", last4Digital, Shipper.SF, number));
+                            //string ok_str = ProcessResponce(json);
+                            //sb.AppendLine(ok_str);
+
+
+
                         }
                         break;
                     case Shipper.UPS:

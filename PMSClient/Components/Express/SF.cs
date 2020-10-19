@@ -65,7 +65,8 @@ namespace PMSClient.Express
             xml = xml.Replace("306975876140", trackingNumber);
 
             string verifyCode = MD5ToBase64String(xml + checkWord);
-            string requestUrl = @"http://bsp-oisp.sf-express.com/bsp-oisp/sfexpressService";
+            //string requestUrl = @"http://bsp-oisp.sf-express.com/bsp-oisp/sfexpressService";
+            string requestUrl = @"https://bspsw.sf-express.com/sfexpressService";
             string xml_response = DoPost(requestUrl, xml, verifyCode);
 
             string format_str = ResolveXMLResponse(xml_response);
