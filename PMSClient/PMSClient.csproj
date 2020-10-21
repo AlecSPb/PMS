@@ -209,6 +209,8 @@
       <DependentUpon>ConsumableWarning.xaml</DependentUpon>
     </Compile>
     <Compile Include="Components\ConsumableWarning\ConsumableWarningService.cs" />
+    <Compile Include="Components\EOrder\Midsummer\MidModel.cs" />
+    <Compile Include="Components\EOrder\Midsummer\MidXmlProcessor.cs" />
     <Compile Include="Components\ImageGallery\GalleryServiceTest440.cs" />
     <Compile Include="Components\ImageGallery\GalleryServiceTest.cs" />
     <Compile Include="Components\ImageGallery\GalleryServiceBonding.cs" />
@@ -2077,6 +2079,7 @@
     </Compile>
     <Resource Include="Components\CscanImageProcess\缓存思路.txt" />
     <Resource Include="BeforePublish.txt" />
+    <Resource Include="Components\EOrder\Midsummer\Examples\MidSummerOrder27376.xml" />
     <Content Include="densitychecklist.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2136,6 +2139,7 @@
     <Content Include="al.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Components\EOrder\Midsummer\Examples\Purchase Order 27376.pdf" />
     <None Include="Documents\图示.pptx" />
     <Content Include="HelpDocs\新功能使用介绍200609.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -2387,7 +2391,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Resource Include="Sample\MidSummerOrder27376.xml" />
     <Content Include="StandardDocs\成都先锋材料有限公司靶材检验标准.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
