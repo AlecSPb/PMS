@@ -9,12 +9,14 @@ namespace PMSXMLCreator_Micron.Service
 {
     public class Logger
     {
-        private string file_name = "log.txt";
-        public void LogIt(string info)
+        public void LogIt(string info,string logfilename= "OutputFile\\log.txt")
         {
-            StreamWriter sw = File.CreateText(file_name);
+            StreamWriter sw = File.CreateText(logfilename);
             sw.WriteLine(info);
             sw.Close();
+
+            Properties.Settings.Default.LastLogFileName = logfilename;
+            Properties.Settings.Default.Save();
         }
     }
 }

@@ -21,7 +21,7 @@ namespace PMSXMLCreator_Micron.Service
             {
                 return File.ReadAllText(filename);
             }
-            return File.ReadAllText("template_default.txt");
+            return File.ReadAllText("SavedFile\\template_default.txt");
         }
 
 

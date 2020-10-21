@@ -165,7 +165,7 @@ namespace PMSClient.Express
             {
                 if (response.Traces.Length == 0)
                 {
-                    sb.AppendLine("没找到追踪记录");
+                    sb.AppendLine("快递接口没有返回任何追踪信息");
                 }
                 else
                 {

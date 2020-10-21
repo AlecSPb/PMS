@@ -26,7 +26,8 @@ namespace PMSXMLCreator_Micron.Service
                 Directory.CreateDirectory(folder);
             }
 
-            string filename = $"{model.COANumber}-{DateTime.Now.ToString("yyyyMMddHHmmss")}.xml";
+            string filerawname = $"{model.COANumber}-{DateTime.Now.ToString("yyyyMMddHHmmss")}";
+            string filename = $"{filerawname}.xml";
             string filePath = Path.Combine(folder, filename.Replace("#", "-"));
             FileInfo file = new FileInfo(filePath);
 
@@ -99,7 +100,7 @@ namespace PMSXMLCreator_Micron.Service
 
             }
 
-            log.LogIt(sb_log.ToString());
+            log.LogIt(sb_log.ToString(),$"OutputFile\\{filerawname}-log.txt");
             writer.WriteEndElement();
             writer.WriteEndElement();
             #endregion

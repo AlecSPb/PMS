@@ -8,7 +8,7 @@
         Icon="logo.png"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         WindowStartupLocation="CenterScreen" WindowState="Maximized"
-        Title="PMS Micron ECOA Creator v1.0" Height="600" Width="1000">
+        Title="PMS Micron ECOA Creator v1.1" Height="600" Width="1000">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Closing">
             <i:InvokeCommandAction Command="{Binding ClosingCommand}"/>

@@ -46,12 +46,16 @@ namespace PMSClient.Express
             }
         }
 
-        //private string clientCode = "ZXS_5uJOL";
-        //private string checkWord = "BpbhlYBX5xal4wqTp1DdBPwQubuqty4c";
+        //丰桥接口
+        private string requestUrl = @"https://sfapi-sbox.sf-express.com/sfexpressService";
+        private string clientCode = "ZXS_5uJOL";
+        private string checkWord = "BpbhlYBX5xal4wqTp1DdBPwQubuqty4c";
 
         //利用丰桥里的第三方TrackingMore 功能
-        private string clientCode = "ZXS_TM";
-        private string checkWord = "UxfmVRiKnTHjD3My8jUGduBJndgNvtwf";
+        //private string requestUrl = @"http://bsp-oisp.sf-express.com/bsp-oisp/sfexpressService";
+        //private string requestUrl = @"https://bspsw.sf-express.com/sfexpressService";
+        //private string clientCode = "ZXS_TM";
+        //private string checkWord = "UxfmVRiKnTHjD3My8jUGduBJndgNvtwf";
         public string SFOrder(string trackingNumber)
         {
             string last4Digital = SenderPhone.Substring(SenderPhone.Length - 4, 4);
@@ -65,8 +69,7 @@ namespace PMSClient.Express
             xml = xml.Replace("306975876140", trackingNumber);
 
             string verifyCode = MD5ToBase64String(xml + checkWord);
-            //string requestUrl = @"http://bsp-oisp.sf-express.com/bsp-oisp/sfexpressService";
-            string requestUrl = @"https://bspsw.sf-express.com/sfexpressService";
+
             string xml_response = DoPost(requestUrl, xml, verifyCode);
 
             string format_str = ResolveXMLResponse(xml_response);
@@ -90,12 +93,19 @@ namespace PMSClient.Express
             else
             {
                 XmlNodeList routes = document.SelectNodes(@"Response/Body/RouteResponse/Route");
-                foreach (XmlNode route in routes)
+                if (routes.Count > 0)
                 {
-                    string accept_address = route.Attributes["accept_address"].Value;
-                    string accept_time = route.Attributes["accept_time"].Value;
-                    string remark = route.Attributes["remark"].Value;
-                    sb.AppendLine($"{accept_time}-{accept_address}-{remark}");
+                    foreach (XmlNode route in routes)
+                    {
+                        string accept_address = route.Attributes["accept_address"].Value;
+                        string accept_time = route.Attributes["accept_time"].Value;
+                        string remark = route.Attributes["remark"].Value;
+                        sb.AppendLine($"{accept_time}-{accept_address}-{remark}");
+                    }
+                }
+                else
+                {
+                    sb.AppendLine("顺丰接口未返回任何快递追踪信息，可能有问题，请先手动查询");
                 }
             }
 

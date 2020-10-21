@@ -72,7 +72,7 @@ namespace PMSXMLCreator_Micron
             }
         }
 
-        private string temp_saved_file = "temp_current_model.txt";
+        private string temp_saved_file = "SavedFile\\temp_current_model.txt";
         private void ActionLoadedCommand()
         {
             InputText = FileSaver.LoadText(temp_saved_file);
@@ -87,7 +87,7 @@ namespace PMSXMLCreator_Micron
         {
             try
             {
-                string s = XSHelper.FileHelper.ReadText("template_default.txt");
+                string s = XSHelper.FileHelper.ReadText("SavedFile\\template_default.txt");
                 InputText = s;
             }
             catch (Exception)
@@ -102,10 +102,10 @@ namespace PMSXMLCreator_Micron
         {
             try
             {
-                string logfile = Path.Combine(Environment.CurrentDirectory, "log.txt");
-                if (File.Exists(logfile))
+                string lastlogfilename = Properties.Settings.Default.LastLogFileName;
+                if (File.Exists(lastlogfilename))
                 {
-                    System.Diagnostics.Process.Start(logfile);
+                    System.Diagnostics.Process.Start(lastlogfilename);
                 }
                 else
                 {
