@@ -48,12 +48,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Examples\Purchase Order 27376.pdf" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PMSClient\PMSClient.csproj">
       <Project>{4c091e29-8472-49d5-bd5e-87858f6198a1}</Project>
       <Name>PMSClient</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Examples\MidSummerOrder27376.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

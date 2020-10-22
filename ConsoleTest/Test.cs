@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PMSClient.ReportsHelperNew;
 using PMSClient.Express;
 using System.IO;
+using PMSClient.Components.EOrder.Midsummer;
 
 namespace ConsoleTest
 {
@@ -13,13 +14,24 @@ namespace ConsoleTest
     public class Test
     {
 
+        public void TestMidSummerXml()
+        {
+            var s = new MidXmlProcessor();
+            var result = s.Anlysis("Examples\\MidSummerOrder27376.xml");
+
+            //Console.WriteLine(s.ModelToString(result));
+
+            Console.WriteLine(s.GetGoodOrder(result));
+        }
+
         public void TestKDBird()
         {
-            var api = new KDBird();
-            var req = new Request("", Shipper.UPS, "1Z468F2V0496895335");
+            var api = new SF();
+            //var req = new Request("", "1935", Shipper.SF, "SF1093354712812");
             //ZTO+75384842803543
             //var req = new Request("", "HTKY", "557024789905228");
-            string json =api.GetOrderTracesByJson(req);
+            api.SenderPhone = "13808071935";
+            string json = api.SFOrder("SF1093354712812");
             Console.WriteLine(json);
         }
 

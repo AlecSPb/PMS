@@ -210,7 +210,9 @@
     </Compile>
     <Compile Include="Components\ConsumableWarning\ConsumableWarningService.cs" />
     <Compile Include="Components\EOrder\Midsummer\MidModel.cs" />
+    <Compile Include="Components\EOrder\Midsummer\MidOrder.cs" />
     <Compile Include="Components\EOrder\Midsummer\MidXmlProcessor.cs" />
+    <Compile Include="Components\EOrder\Midsummer\MidModelItem.cs" />
     <Compile Include="Components\ImageGallery\GalleryServiceTest440.cs" />
     <Compile Include="Components\ImageGallery\GalleryServiceTest.cs" />
     <Compile Include="Components\ImageGallery\GalleryServiceBonding.cs" />

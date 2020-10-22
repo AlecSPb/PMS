@@ -12,7 +12,7 @@
 ## 行以$开头
 
 $Purno+4508802570
-$POLine+line#2
+$POLine+2
 $Spec.no+FE_Target_2020_0034
 $Version+01
 $DeliveryNote+0001
@@ -30,7 +30,7 @@ $LotNumber+200602-D-1
 $FAB+US01
 $LotQuantity+1
 $QuantityUn+EA
-$ManufacturingSite+XXX, CHINA
+$ManufacturingSite+CHENGDU,CHINA
 $Productiondate+2020/08/13
 $ExpiredDate+2022/02/13
 $Expect_FABInDate+2020/09/13

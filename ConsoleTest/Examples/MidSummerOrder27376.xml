@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ORDERS420 SoftwareManufacturer="Monitor ERP System AB" SoftwareName="Monitor" SoftwareVersion="9.0.10p109">
+  <Order OrderNumber="27376">
+    <Head>
+      <Supplier SupplierCodeEdi="1200">
+        <Name>Pioneer Materials, Inc</Name>
+        <StreetBox1>3357 Candlewood Road</StreetBox1>
+        <StreetBox2>Torrance</StreetBox2>
+        <ZipCity1>CA 90505</ZipCity1>
+        <ZipCity2/>
+        <Country>USA</Country>
+      </Supplier>
+      <Buyer>
+        <Name>Midsummer AB</Name>
+        <StreetBox1>Elektronikhöjden 6</StreetBox1>
+        <StreetBox2/>
+        <ZipCity1>175 43 JÄRFÄLLA</ZipCity1>
+        <ZipCity2/>
+        <Country>SWEDEN</Country>
+      </Buyer>
+      <References>
+        <BuyerReference>Terje Paroll</BuyerReference>
+        <BuyerComment>Cecilia L.</BuyerComment>
+        <GoodsLabeling>
+          <Row1>WP501</Row1>
+          <Row2>BA162</Row2>
+        </GoodsLabeling>
+      </References>
+      <DeliveryAddress>
+        <Name>Midsummer AB</Name>
+        <StreetBox1>Elektronikhöjden 6</StreetBox1>
+        <StreetBox2/>
+        <ZipCity1>175 43 JÄRFÄLLA</ZipCity1>
+        <ZipCity2/>
+        <Country>SWEDEN</Country>
+        <CompanyAdressFlag>1</CompanyAdressFlag>
+      </DeliveryAddress>
+      <Terms>
+        <DeliveryTerms>
+          <IncoTermCombiTerm/>
+          <DeliveryMethod/>
+          <TransportPayer>B</TransportPayer>
+          <CustomerTransportTimeDays>0</CustomerTransportTimeDays>
+        </DeliveryTerms>
+        <CustomerInvoiceCode/>
+        <OrderDate>2020-10-20</OrderDate>
+        <PaymentTerms>
+          <TermsOfPaymentDays>30</TermsOfPaymentDays>
+        </PaymentTerms>
+      </Terms>
+      <Export>
+        <Currency>USD</Currency>
+      </Export>
+    </Head>
+    <Rows>
+      <Row RowNumber="1" RowType="1">
+        <Part PartNumber="PV000004" SupplierPartNumber="CuInGa1040Se-230-4-No BP and no bonding "/>
+        <Text>TARGET/CIGS/10%Ga</Text>
+        <ReferenceNumber/>
+        <Quantity>3</Quantity>
+        <Unit>pcs</Unit>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>1425</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="1" RowType="4">
+        <Part PartNumber="PV000004" SupplierPartNumber=" "/>
+        <Text>230mm OD x 4mm</Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="1" RowType="4">
+        <Part PartNumber="PV000004" SupplierPartNumber=" "/>
+        <Text>DUO CIGS (23.72/17.68/10.40/48.20) </Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="2" RowType="1">
+        <Part PartNumber="PV000005" SupplierPartNumber="CuInGa936Se-230-4- No BP and No bonding"/>
+        <Text>TARGET/CIGS/9%Ga</Text>
+        <ReferenceNumber/>
+        <Quantity>2</Quantity>
+        <Unit>pcs</Unit>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>1425</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="2" RowType="4">
+        <Part PartNumber="PV000005" SupplierPartNumber=" "/>
+        <Text>230mm OD x 4mm</Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="2" RowType="4">
+        <Part PartNumber="PV000005" SupplierPartNumber=" "/>
+        <Text>DUO CIGS (23.72/18.72/9.36/48.20) </Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="3" RowType="1">
+        <Part PartNumber="PV000006" SupplierPartNumber="CuInGa832Se-230-4- No BP and No bonding"/>
+        <Text>TARGET/CIGS/8%Ga</Text>
+        <ReferenceNumber/>
+        <Quantity>2</Quantity>
+        <Unit>pcs</Unit>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>1425</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="3" RowType="4">
+        <Part PartNumber="PV000006" SupplierPartNumber=" "/>
+        <Text>230mm OD x 4mm</Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="3" RowType="4">
+        <Part PartNumber="PV000006" SupplierPartNumber=" "/>
+        <Text>Duo CIGS (23.72/19.76/8.32/48.20)</Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="4" RowType="1">
+        <Part PartNumber="PV000008" SupplierPartNumber="CuInGa650Se-230-4- No BP andNo bonding"/>
+        <Text>TARGET/CIGS/6,5%Ga</Text>
+        <ReferenceNumber/>
+        <Quantity>3</Quantity>
+        <Unit>pcs</Unit>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>1425</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="4" RowType="4">
+        <Part PartNumber="PV000008" SupplierPartNumber=" "/>
+        <Text>230mm OD x 4mm</Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="4" RowType="4">
+        <Part PartNumber="PV000008" SupplierPartNumber=" "/>
+        <Text>DUO CIGS       (22,8/20,5/6,5/50,2)</Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="5" RowType="1">
+        <Part PartNumber="PV000010" SupplierPartNumber="CuInGa550Se-230-4- No BP and No bonding"/>
+        <Text>TARGET/CIGS/5,5%Ga</Text>
+        <ReferenceNumber/>
+        <Quantity>2</Quantity>
+        <Unit>pcs</Unit>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>1425</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="5" RowType="4">
+        <Part PartNumber="PV000010" SupplierPartNumber=" "/>
+        <Text>230mm OD x 4mm</Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="5" RowType="4">
+        <Part PartNumber="PV000010" SupplierPartNumber=" "/>
+        <Text>DUO CIGS (22,8/21,5/5,5/50,2)</Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="6" RowType="1">
+        <Part PartNumber="PV000011" SupplierPartNumber="CuInGa500Se-230-4- No BP and No bonding"/>
+        <Text>TARGET/CIGS/5%Ga</Text>
+        <ReferenceNumber/>
+        <Quantity>2</Quantity>
+        <Unit>pcs</Unit>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>1425</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="6" RowType="4">
+        <Part PartNumber="PV000011" SupplierPartNumber=" "/>
+        <Text> 230mm OD x 4mm</Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="6" RowType="4">
+        <Part PartNumber="PV000011" SupplierPartNumber=" "/>
+        <Text>DUO CIGS       (22,8/22/5/50,2)</Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="7" RowType="1">
+        <Part PartNumber="PV000012" SupplierPartNumber="In2Se3-230-4-UsedBP and bonding"/>
+        <Text>TARGET/In2Se3</Text>
+        <ReferenceNumber/>
+        <Quantity>2</Quantity>
+        <Unit>pcs</Unit>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>1615</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="7" RowType="4">
+        <Part PartNumber="PV000012" SupplierPartNumber=" "/>
+        <Text>DUO In2Se3        230mm OD x 4mm</Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="8" RowType="1">
+        <Part PartNumber="PV000013" SupplierPartNumber="In2S3-230-4-UsedBP and bonding"/>
+        <Text>TARGET/In2S3</Text>
+        <ReferenceNumber/>
+        <Quantity>9</Quantity>
+        <Unit>pcs</Unit>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>1615</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="8" RowType="4">
+        <Part PartNumber="PV000013" SupplierPartNumber=" "/>
+        <Text>230mm OD x 4mm</Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="8" RowType="4">
+        <Part PartNumber="PV000013" SupplierPartNumber=" "/>
+        <Text>DuoIn2S3       230mm OD x 4mm</Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+      <Row RowNumber="8" RowType="4">
+        <Part PartNumber="PV000013" SupplierPartNumber=" " Revision=""/>
+        <Text>We are sending back 11 pcs of  backing plates !</Text>
+        <ReferenceNumber/>
+        <Quantity>1</Quantity>
+        <Unit/>
+        <DeliveryPeriod>2020-12-10</DeliveryPeriod>
+        <Each>0</Each>
+        <Discount>0</Discount>
+        <Setup>0</Setup>
+        <Alloy>0</Alloy>
+      </Row>
+    </Rows>
+  </Order>
+</ORDERS420>

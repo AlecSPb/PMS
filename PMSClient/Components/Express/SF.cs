@@ -47,15 +47,15 @@ namespace PMSClient.Express
         }
 
         //丰桥接口
-        private string requestUrl = @"https://sfapi-sbox.sf-express.com/sfexpressService";
-        private string clientCode = "ZXS_5uJOL";
-        private string checkWord = "BpbhlYBX5xal4wqTp1DdBPwQubuqty4c";
+        //private string requestUrl = @"https://sfapi-sbox.sf-express.com/sfexpressService";
+        //private string clientCode = "ZXS_5uJOL";
+        //private string checkWord = "BpbhlYBX5xal4wqTp1DdBPwQubuqty4c";
 
         //利用丰桥里的第三方TrackingMore 功能
         //private string requestUrl = @"http://bsp-oisp.sf-express.com/bsp-oisp/sfexpressService";
-        //private string requestUrl = @"https://bspsw.sf-express.com/sfexpressService";
-        //private string clientCode = "ZXS_TM";
-        //private string checkWord = "UxfmVRiKnTHjD3My8jUGduBJndgNvtwf";
+        private string requestUrl = @"https://bspsw.sf-express.com/sfexpressService";
+        private string clientCode = "ZXS_TM";
+        private string checkWord = "UxfmVRiKnTHjD3My8jUGduBJndgNvtwf";
         public string SFOrder(string trackingNumber)
         {
             string last4Digital = SenderPhone.Substring(SenderPhone.Length - 4, 4);
