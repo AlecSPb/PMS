@@ -17,8 +17,8 @@ namespace ConsoleTest
             //new Test().TestCompositionSimulator();
             //new Test().TestCompositionHelper_Desend();
             //new Test().TestFTPImage();
-            //new Test().TestKDBird();
-            new Test().TestMidSummerXml();
+            new Test().TestKDBird();
+            //new Test().TestMidSummerXml();
 
 
             Console.Read();
