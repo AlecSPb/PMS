@@ -46,7 +46,7 @@ namespace PMSClient
                 var titleName = (App.Current as App).FindResource("AppNameDesktop").ToString();
                 //var versonName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 //Title = $"{titleName}-{versonName}";
-                Title = $"{titleName} 版本1.7.1.0";
+                Title = $"{titleName} 版本1.7.1.5";
             }
             catch (Exception)
             {

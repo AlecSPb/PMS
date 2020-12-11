@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PMSXMLCreator_Micron.Model;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace PMSXMLCreator_Micron.Service
 {
@@ -71,9 +72,17 @@ namespace PMSXMLCreator_Micron.Service
             return "";
         }
 
+        public ValueLimit GetRange(string specifcationStr)
+        {
+            ValueLimit limit;
+            limit.Max = 100;
+            limit.Min = 0;
+            if (!string.IsNullOrEmpty(specifcationStr))
+            {
 
-
-
+            }
+            return limit;
+        }
 
 
     }

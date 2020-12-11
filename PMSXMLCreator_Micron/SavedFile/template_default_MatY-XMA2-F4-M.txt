@@ -1,6 +1,22 @@
-﻿## 模板名称 MatY XMA2 (4N5)
+﻿## 模板名称 XMA2 (4N5)
 ## 190-05076
 ## 对应规范文件Global Fab FILMS - PIONEER Material Specification MatY XMA2 (4N5)_modified.docx
+##
+##Micron fab
+##Fab Field Value
+##Micron eSupplier contact
+##Author E-mail
+
+##F2
+##IM02
+##Brandon Brown
+##IMFT_Quality_Control@micron.com
+
+##F4
+##US01
+##Oliver DeMill
+##BOISE_COFA_CONTACTS@micron.com
+##
 
 ## Se49.4As19.9Ge21.4In9.3
 
@@ -11,12 +27,15 @@
 ## XXX表示NULL
 ## 行以$开头
 
-$Purno+4508802570
-$POLine+2
+
+## Micron Fab F4
+
+$Purno+4507626896
+$POLine+1
 $Spec.no+FE_Target_2020_0034
 $Version+01
 $DeliveryNote+0001
-$COANumber+US01_190-05076_200602-D-1
+$COANumber+US01_190-05076_190430-D-1
 $MaterialType+Target
 $MaterialName+MatY-XMA2
 $SupplierPartNo+NA
@@ -25,8 +44,8 @@ $Supplier+PIONEER MATERIALS
 $Agency+1043398
 $DataSource+PIONEER MATERIALS
 $Company_UID+XXX
-$BatchNumber+200602-D-1
-$LotNumber+200602-D-1
+$BatchNumber+190430-D-1
+$LotNumber+190430-D-1
 $FAB+US01
 $LotQuantity+1
 $QuantityUn+EA

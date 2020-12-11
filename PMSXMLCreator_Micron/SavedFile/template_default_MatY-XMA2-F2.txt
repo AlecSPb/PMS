@@ -1,6 +1,6 @@
-﻿## 模板名称 MAT-Y [V12] (4N5)
-## 190-00290
-## 对应规范文件Global Fab FILMS - PIONEER Material Specification MatY V12 (4N5)_modified.docx
+﻿## 模板名称 XMA2 (4N5)
+## 190-05076
+## 对应规范文件Global Fab FILMS - PIONEER Material Specification MatY XMA2 (4N5)_modified.docx
 ##
 ##Micron fab
 ##Fab Field Value
@@ -18,31 +18,34 @@
 ##BOISE_COFA_CONTACTS@micron.com
 ##
 
-## Se51.0As30.6Ge12.7Si5.7
+## Se49.4As19.9Ge21.4In9.3
 
 ## 除$和*开头的行外，其余均为注释行，解析的时候会被忽略掉
 
 ## Header 使用+号分隔开 FiledName 和 FiledValue
+## 需要更改ID等信息
 ## XXX表示NULL
 ## 行以$开头
+
+
 ## Micron Fab F2
 
-$Purno+4508826399
-$POLine+10
+$Purno+4508802570
+$POLine+2
 $Spec.no+FE_Target_2020_0034
 $Version+01
 $DeliveryNote+0001
-$COANumber+IM02_190-00290_200618-C-1
+$COANumber+IM02_190-05076_200602-D-1
 $MaterialType+Target
-$MaterialName+MatY-V12
+$MaterialName+MatY-XMA2
 $SupplierPartNo+NA
-$MaterialNumber+190-00290
+$MaterialNumber+190-05076
 $Supplier+PIONEER MATERIALS
 $Agency+1043398
 $DataSource+PIONEER MATERIALS
 $Company_UID+XXX
-$BatchNumber+200618-C-1
-$LotNumber+200618-C-1
+$BatchNumber+200602-D-1
+$LotNumber+200602-D-1
 $FAB+IM02
 $LotQuantity+1
 $QuantityUn+EA
@@ -60,10 +63,10 @@ $Remark+XXX
 ## 目前共25个
 ## 行以*开头
 
-*COMPONENT A+%+50-52+XXX+50.95
-*COMPONENT B+%+29.6-31.6+XXX+30.95
-*COMPONENT C+%+12.0-13.4+XXX+12.49
-*COMPONENT D+%+5.2-6.2+XXX+5.61
+*COMPONENT A+%+48.4-50.4+XXX+49.50
+*COMPONENT B+%+19.2-20.6+XXX+19.94
+*COMPONENT C+%+20.4-22.4+XXX+21.43
+*COMPONENT E+%+8.6-10.0+XXX+9.13
 
 *ALUMINUM+ppm+<=10+XXX+0.18
 *CHROMIUM+ppm+<=5+XXX+0.35
@@ -73,19 +76,19 @@ $Remark+XXX
 *MANGANESE+ppm+<=5+XXX+0.04
 *NICKEL+ppm+<=5+XXX+0.11
 *LEAD+ppm+<=5+XXX+0.07
-*TITANIUM+ppm+<=10+XXX+0.23
+*TITANIUM+ppm+<=5+XXX+0.23
 *TUNGSTEN+ppm+<=5+XXX+0.005
 *TOTAL METALLIC IMPURITIES+ppm+<=50+XXX+1.825
 *OXYGEN+ppm+<=700+XXX+220
 
-*DIAMETER+mm+439.8-440.2+XXX+439.90
-*THICKNESS+mm+7.7-7.9+XXX+7.79
+*DIAMETER+mm+439.8-440.2+XXX+439.99
+*THICKNESS+mm+7.7-7.9+XXX+7.84
 
-*BP DIAMETER+mm+574.7-575.3+XXX+575.05
-*TOTAL THICKNESS+mm+99.20-99.80+XXX+99.79
-*BONDING RATIO+%+95-100+XXX+98.05
+*BP DIAMETER+mm+574.7-575.3+XXX+575.10
+*TOTAL THICKNESS+mm+99.20-99.80+XXX+99.76
+*BONDING RATIO+%+95-100+XXX+97.44
 *SURFACE ROUGHNESS+micron+1.0-3.5+XXX+1.8
 
-*DENSITY+g/cm3+4.3-4.4+XXX+4.32
-*WEIGHT+g+5030-5290+XXX+5120
+*DENSITY+g/cm3+4.60-4.80+XXX+4.72
+*WEIGHT+g+5381-5771+XXX+5622
 

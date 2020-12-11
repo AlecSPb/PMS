@@ -55,7 +55,7 @@
                 <DataGridTextColumn Header="{StaticResource MRPlanType}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Binding="{Binding PlanType}"/>
                 <DataGridTextColumn Header="{StaticResource MRPlanInterval}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding PlanInterval}"/>
+                                    Binding="{Binding PlanInterval}"  Visibility="Collapsed"/>
                 <DataGridTextColumn Header="{StaticResource MRContent}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Content}"/>
                 <DataGridTextColumn Header="{StaticResource MRPersons}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

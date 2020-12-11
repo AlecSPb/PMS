@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="ECOAEditorVM.cs" />
     <Compile Include="MainWindowVM.cs" />
+    <Compile Include="Model\ValueLimit.cs" />
     <Compile Include="Service\Analyzer.cs" />
     <Compile Include="Service\FileSaver.cs" />
     <Compile Include="Service\Logger.cs" />
@@ -148,6 +149,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="SavedFile\template_default_MatY-XMA2-F4-M.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Resource Include="logo.ico" />
     <Resource Include="logo.png" />
     <None Include="SavedFile\donotdeletethisfolder.txt">
@@ -160,10 +164,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Specifications.txt" />
-    <None Include="SavedFile\template_default_V12.txt">
+    <None Include="SavedFile\template_default_MatY_V12.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="SavedFile\template_default_XMA2.txt">
+    <None Include="SavedFile\template_default_MatY-XMA2-F2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Content Include="SavedFile\template_default.txt">

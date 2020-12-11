@@ -56,10 +56,10 @@
                                         CommandParameter="{Binding}"/>
                                 <!--<Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.Finish,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
+                                        CommandParameter="{Binding}"/>-->
                                 <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>-->
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

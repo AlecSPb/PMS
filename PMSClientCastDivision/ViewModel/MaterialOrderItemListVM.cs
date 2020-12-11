@@ -100,7 +100,6 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-
                 var sb = new StringBuilder();
                 sb.Append("编号:");
                 sb.AppendLine(model.Item.MaterialOrderItem.PMINumber);
@@ -124,7 +123,7 @@ namespace PMSClient.ViewModel
                     tips, template, mainContent, helpimage);
                 //NavigationService.GoTo(PMSViews.LabelOutPut);
                 var win = new Tool.LabelOutPutWindow();
-                win.ShowDialog();
+                win.Show();
             }
         }
 

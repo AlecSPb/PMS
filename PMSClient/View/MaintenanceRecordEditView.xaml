@@ -87,12 +87,12 @@
                            Text="维护类型"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource MRPlanInterval}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
+                           Style="{StaticResource StyleTextBlockCommon}" Visibility="Collapsed"/>
                 <ComboBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}"
                            ItemsSource="{Binding DataContext.PlanIntervals,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                           SelectedItem="{Binding PlanInterval,UpdateSourceTrigger=PropertyChanged}"/>
+                           SelectedItem="{Binding PlanInterval,UpdateSourceTrigger=PropertyChanged}"  Visibility="Collapsed"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="维护间隔时间"/>
+                           Text="维护间隔时间"  Visibility="Collapsed"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource MRContent}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

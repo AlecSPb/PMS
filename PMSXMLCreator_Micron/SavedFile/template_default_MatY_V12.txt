@@ -1,6 +1,22 @@
 ﻿## 模板名称 MAT-Y [V12] (4N5)
 ## 190-00290
 ## 对应规范文件Global Fab FILMS - PIONEER Material Specification MatY V12 (4N5)_modified.docx
+##
+##Micron fab
+##Fab Field Value
+##Micron eSupplier contact
+##Author E-mail
+
+##F2
+##IM02
+##Brandon Brown
+##IMFT_Quality_Control@micron.com
+
+##F4
+##US01
+##Oliver DeMill
+##BOISE_COFA_CONTACTS@micron.com
+##
 
 ## Se51.0As30.6Ge12.7Si5.7
 
@@ -9,6 +25,7 @@
 ## Header 使用+号分隔开 FiledName 和 FiledValue
 ## XXX表示NULL
 ## 行以$开头
+## Micron Fab F2
 
 $Purno+4508826399
 $POLine+10
