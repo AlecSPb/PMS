@@ -56,6 +56,7 @@
     </Style>
     
     <Style TargetType="Button" x:Key="btnBase">
+        <!--<Setter Property="FontSize" Value="18"/>-->
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -114,6 +115,7 @@
     </Style>
 
     <Style TargetType="TextBox" x:Key="txtBase">
+        <!--<Setter Property="FontSize" Value="18"/>-->
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -198,6 +200,9 @@
     </Style>
     <!--通用-->
     <Style x:Key="StyleButtonCommon" TargetType="Button" BasedOn="{StaticResource btnBase}">
+
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
+
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -230,6 +235,7 @@
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
     </Style>
 
 
@@ -263,6 +269,8 @@
     </Style>
     <Style x:Key="StyleTextBlockNavigationBar" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
+
     </Style>
     <Style x:Key="StyleTextBlockBig" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="FontSize" Value="{StaticResource TabletFontLG}"/>
@@ -285,6 +293,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="80"/>
         <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
     </Style>
     <Style x:Key="StyleDGTextBoxStrench" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -302,6 +311,8 @@
     <Style x:Key="StyleTextBoxSearch" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
         <Setter Property="Background" Value="White"/>
         <Setter Property="Width" Value="100"/>
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
+
     </Style>
 
     <Style x:Key="StyleTextBoxBig" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
@@ -336,6 +347,8 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="80"/>
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
+
     </Style>
     <Style x:Key="StyleDGCheckBoxCommon" TargetType="CheckBox">
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
@@ -360,10 +373,14 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="80"/>
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
+
     </Style>
     <Style x:Key="StyleComboBoxEditable" TargetType="ComboBox" BasedOn="{StaticResource StyleComboBoxCommon}">
         <Setter Property="IsEditable" Value="True"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
+
     </Style>
 
     <Style x:Key="StyleComboBoxEditableTouch" TargetType="ComboBox" BasedOn="{StaticResource StyleComboBoxCommon}">
@@ -373,6 +390,7 @@
     </Style>
 
     <Style x:Key="StyleDatePickerCommon" TargetType="DatePicker">
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
@@ -411,6 +429,8 @@
     
     <Style x:Key="StyleDGTextBlockLeft" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
+
     </Style>
     <Style x:Key="StyleDGTextBlockCenter" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -444,10 +464,14 @@
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
     <Style x:Key="StyleDGButton" TargetType="Button" BasedOn="{StaticResource btnBase}">
+        
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
+        
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="50"/>
+        <Setter Property="Margin" Value="1 0"/>
     </Style>
     <Style x:Key="StyleDGButtonOriginal" TargetType="Button">
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>

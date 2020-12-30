@@ -21,7 +21,7 @@
             <Grid  DataContext="{Binding CurrentOrder}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="500"/>
+                    <ColumnDefinition Width="600"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>

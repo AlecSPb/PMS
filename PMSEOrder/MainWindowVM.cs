@@ -48,9 +48,23 @@ namespace PMSEOrder
             Setting = new RelayCommand(ActionSetting);
             Import = new RelayCommand(ActionImport);
             CheckOnline = new RelayCommand(ActionCheckOnline);
+            DBFolder = new RelayCommand(ActionDBFolder);
 
             Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
 
+        }
+
+        private void ActionDBFolder()
+        {
+            try
+            {
+                string dbpath = @"DB\";
+                System.Diagnostics.Process.Start(dbpath);
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void ActionCheckOnline()
@@ -411,5 +425,6 @@ namespace PMSEOrder
         public RelayCommand PMSRefresh { get; set; }
         public RelayCommand Setting { get; set; }
         public RelayCommand Import { get; set; }
+        public RelayCommand DBFolder { get; set; }
     }
 }

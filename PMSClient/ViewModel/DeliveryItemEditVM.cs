@@ -256,13 +256,14 @@ namespace PMSClient.ViewModel
                 if (CurrentDeliveryItem != null)
                 {
                     var service = new DeliveryServiceClient();
+                    string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                     if (IsNew)
                     {
-                        service.AddDeliveryItem(CurrentDeliveryItem);
+                        service.AddDeliveryItemByUID(CurrentDeliveryItem,uid);
                     }
                     else
                     {
-                        service.UpdateDeliveryItem(CurrentDeliveryItem);
+                        service.UpdateDeliveryItemByUID(CurrentDeliveryItem,uid);
                     }
                     service.Close();
                     PMSHelper.ViewModels.Delivery.RefreshDataItem();

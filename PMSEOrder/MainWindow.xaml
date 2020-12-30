@@ -8,7 +8,7 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Icon="email_compose.png"
-        Title="PMI E-Order Tool (Offline) version 1.3" Height="1000" Width="1600" WindowState="Maximized"
+        Title="PMI E-Order Tool (Offline) version 1.4" Height="1000" Width="1600" WindowState="Maximized"
         Closing="Window_Closing">
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
@@ -51,6 +51,7 @@
                 <!--<Button Content="PMS" Style="{StaticResource StyleButtonCommon}"  Command="{Binding PMSRefresh}"/>-->
                 <Button Content="Backup" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Backup}"/>
                 <Button Content="Import" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Import}"/>
+                <Button Content="DB Folder" Style="{StaticResource StyleButtonCommon}"  Command="{Binding DBFolder}"/>
                 <Button Content="Setting" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Setting}"/>
 
             </StackPanel>
