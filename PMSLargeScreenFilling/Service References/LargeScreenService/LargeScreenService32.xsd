@@ -16,6 +16,7 @@
   <xs:element name="DcPlanExtra" nillable="true" type="tns:DcPlanExtra" />
   <xs:complexType name="DcOrder">
     <xs:sequence>
+      <xs:element minOccurs="0" name="BondingRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionAbbr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionOriginal" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionStandard" nillable="true" type="xs:string" />
@@ -28,9 +29,11 @@
       <xs:element minOccurs="0" name="Drawing" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FinishTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="LaserNeed" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="LastUpdateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="MaterialIndex" type="xs:double" />
       <xs:element minOccurs="0" name="MinimumAcceptDefect" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderRemark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PartNumber" nillable="true" type="xs:string" />
@@ -46,7 +49,9 @@
       <xs:element minOccurs="0" name="ReviewTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Reviewer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SampleForAnlysis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SampleForAnlysisRemark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SampleNeed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SampleNeedRemark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SecondMachineDetails" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SecondMachineDimension" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ShipTo" nillable="true" type="xs:string" />
@@ -73,6 +78,7 @@
       <xs:element minOccurs="0" name="MachineRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MillingRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MoldDiameter" type="xs:double" />
+      <xs:element minOccurs="0" name="MoldNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MoldType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OrderID" type="ser:guid" />
       <xs:element minOccurs="0" name="PlanDate" type="xs:dateTime" />
@@ -141,6 +147,7 @@
       <xs:element minOccurs="0" name="TargetPO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetProductID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetWeight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WeldingDefect" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WeldingRate" type="xs:double" />
     </xs:sequence>
   </xs:complexType>

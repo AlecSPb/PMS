@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="LVkYjhjdaeAcpCcqxGepA6jdHPo=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="IF8SL7ibe2VmkJrWdSgAYCk9Rcu4cqN/te3qLxJ2m1o=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="itemdebit">
       <properties>
@@ -34,7 +34,7 @@
           <serializedValue>65536</serializedValue>
         </property>
         <property path="/maxReceivedMessageSize" isComplexType="false" isExplicitlyDefined="true" clrType="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
+          <serializedValue>2147483647</serializedValue>
         </property>
         <property path="/proxyAddress" isComplexType="false" isExplicitlyDefined="false" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -143,7 +143,7 @@
           <serializedValue>65536</serializedValue>
         </property>
         <property path="/maxReceivedMessageSize" isComplexType="false" isExplicitlyDefined="true" clrType="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
+          <serializedValue>2147483647</serializedValue>
         </property>
         <property path="/proxyAddress" isComplexType="false" isExplicitlyDefined="false" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -252,7 +252,7 @@
           <serializedValue>65536</serializedValue>
         </property>
         <property path="/maxReceivedMessageSize" isComplexType="false" isExplicitlyDefined="true" clrType="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
+          <serializedValue>2147483647</serializedValue>
         </property>
         <property path="/proxyAddress" isComplexType="false" isExplicitlyDefined="false" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -361,7 +361,7 @@
           <serializedValue>65536</serializedValue>
         </property>
         <property path="/maxReceivedMessageSize" isComplexType="false" isExplicitlyDefined="true" clrType="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
+          <serializedValue>2147483647</serializedValue>
         </property>
         <property path="/proxyAddress" isComplexType="false" isExplicitlyDefined="false" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -470,7 +470,7 @@
           <serializedValue>65536</serializedValue>
         </property>
         <property path="/maxReceivedMessageSize" isComplexType="false" isExplicitlyDefined="true" clrType="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
+          <serializedValue>2147483647</serializedValue>
         </property>
         <property path="/proxyAddress" isComplexType="false" isExplicitlyDefined="false" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -579,7 +579,7 @@
           <serializedValue>65536</serializedValue>
         </property>
         <property path="/maxReceivedMessageSize" isComplexType="false" isExplicitlyDefined="true" clrType="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
+          <serializedValue>2147483647</serializedValue>
         </property>
         <property path="/proxyAddress" isComplexType="false" isExplicitlyDefined="false" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -875,7 +875,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="itemdebit" contract="ExtraService.IItemDebitService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="itemdebit">
+    <endpoint name="itemdebit1" contract="ExtraService.IItemDebitService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="itemdebit">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/ExtraService.svc</serializedValue>
@@ -950,7 +950,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>itemdebit</serializedValue>
+          <serializedValue>itemdebit1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -960,7 +960,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="checklist" contract="ExtraService.ICheckListService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="checklist">
+    <endpoint name="checklist1" contract="ExtraService.ICheckListService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="checklist">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/ExtraService.svc</serializedValue>
@@ -1035,7 +1035,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>checklist</serializedValue>
+          <serializedValue>checklist1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1045,7 +1045,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="feedback" contract="ExtraService.IFeedBackService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="feedback">
+    <endpoint name="feedback1" contract="ExtraService.IFeedBackService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="feedback">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/ExtraService.svc</serializedValue>
@@ -1120,7 +1120,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>feedback</serializedValue>
+          <serializedValue>feedback1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1130,7 +1130,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="environment" contract="ExtraService.IEnvironmentInfoService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="environment">
+    <endpoint name="environment1" contract="ExtraService.IEnvironmentInfoService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="environment">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/ExtraService.svc</serializedValue>
@@ -1205,7 +1205,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>environment</serializedValue>
+          <serializedValue>environment1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1215,7 +1215,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="todo" contract="ExtraService.IToDoService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="todo">
+    <endpoint name="todo1" contract="ExtraService.IToDoService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="todo">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/ExtraService.svc</serializedValue>
@@ -1290,7 +1290,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>todo</serializedValue>
+          <serializedValue>todo1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1300,7 +1300,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="toolinventory" contract="ExtraService.IToolInventoryService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="toolinventory">
+    <endpoint name="toolinventory1" contract="ExtraService.IToolInventoryService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="toolinventory">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/ExtraService.svc</serializedValue>
@@ -1375,7 +1375,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>toolinventory</serializedValue>
+          <serializedValue>toolinventory1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1385,7 +1385,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="remaininventory" contract="ExtraService.IRemainInventoryService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="remaininventory">
+    <endpoint name="remaininventory1" contract="ExtraService.IRemainInventoryService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="remaininventory">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/ExtraService.svc</serializedValue>
@@ -1460,7 +1460,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>remaininventory</serializedValue>
+          <serializedValue>remaininventory1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1470,7 +1470,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="pmicounter" contract="ExtraService.IPMICounterService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="pmicounter">
+    <endpoint name="pmicounter1" contract="ExtraService.IPMICounterService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="pmicounter">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/ExtraService.svc</serializedValue>
@@ -1545,7 +1545,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>pmicounter</serializedValue>
+          <serializedValue>pmicounter1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

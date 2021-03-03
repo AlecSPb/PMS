@@ -489,6 +489,7 @@
     <sys:String x:Key="PlanFillingRequirement">Filling Details</sys:String>
     <sys:String x:Key="PlanMachineRequirement">Machine Details</sys:String>
     <sys:String x:Key="PlanSpecialRequirement">Special Details</sys:String>
+    <sys:String x:Key="PlanMoldNumber">MoldNumber</sys:String>
     <sys:String x:Key="PlanRemark">Remark</sys:String>
     <sys:String x:Key="PlanGrade">Grade</sys:String>
     <sys:String x:Key="PlanConclusion">Conclusion</sys:String>

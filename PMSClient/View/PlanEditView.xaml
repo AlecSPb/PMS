@@ -60,6 +60,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -279,21 +280,29 @@
                           Text="{Binding SpecialRequirement}"/>
                 <TextBlock Grid.Row="25" Grid.Column="2" Text="如果此次计划产生的毛坯用于其他订单，请在此处填写其他的订单的内部编号" Style="{StaticResource StyleTextBlockTip}"/>
 
-                <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource PlanState}"
+                <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource PlanMoldNumber}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <ComboBox Grid.Row="26" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox  Grid.Row="26" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" 
+                          ItemsSource="{Binding DataContext.MoldNumbers,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          Text="{Binding MoldNumber}"/>
+                <TextBlock Grid.Row="26" Grid.Column="2" Text="填写模具编码，有则选择，无则手填" Style="{StaticResource StyleTextBlockTip}"/>
+
+
+                <TextBlock Grid.Row="27" Grid.Column="0" Text="{StaticResource PlanState}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <ComboBox Grid.Row="27" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State,Mode=TwoWay}"/>
-                <TextBlock Grid.Row="26" Grid.Column="2" Text="状态含义,已核验的才会公布" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="27" Grid.Column="2" Text="状态含义,已核验的才会公布" Style="{StaticResource StyleTextBlockTip}"/>
 
 
-                <TextBlock Grid.Row="27" Grid.Column="0" Text="{StaticResource PlanCreateTime}"
+                <TextBlock Grid.Row="28" Grid.Column="0" Text="{StaticResource PlanCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBlock Grid.Row="27" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="28" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="28" Grid.Column="0" Text="{StaticResource PlanCreator}"
+                <TextBlock Grid.Row="29" Grid.Column="0" Text="{StaticResource PlanCreator}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBlock Grid.Row="28" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Grid.Row="29" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}" />
 
             </Grid>
         </ScrollViewer>

@@ -2508,6 +2508,9 @@ namespace PMSClient.OutputService {
         private double MoldDiameterField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MoldNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MoldTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2767,6 +2770,19 @@ namespace PMSClient.OutputService {
                 if ((this.MoldDiameterField.Equals(value) != true)) {
                     this.MoldDiameterField = value;
                     this.RaisePropertyChanged("MoldDiameter");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MoldNumber {
+            get {
+                return this.MoldNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MoldNumberField, value) != true)) {
+                    this.MoldNumberField = value;
+                    this.RaisePropertyChanged("MoldNumber");
                 }
             }
         }

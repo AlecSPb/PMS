@@ -64,6 +64,7 @@ namespace PMSClient.ViewModel
                 CurrentPlan.FillingRequirement = model.FillingRequirement;
                 CurrentPlan.SpecialRequirement = model.SpecialRequirement;
                 CurrentPlan.VHPRequirement = model.VHPRequirement;
+                CurrentPlan.MoldNumber = model.MoldNumber;
                 CurrentPlan.IsLocked = false;
             }
         }
@@ -108,6 +109,7 @@ namespace PMSClient.ViewModel
             plan.FillingRequirement = PMSCommon.CustomData.FillingRequirement[2];
             plan.SpecialRequirement = "无";
             plan.VHPRequirement = "无";
+            plan.MoldNumber = "无";
             plan.Grade = 0;
             plan.Conclusion = "无";
             plan.UpdateTime = DateTime.Now;
@@ -188,7 +190,8 @@ namespace PMSClient.ViewModel
             PMSBasicDataService.SetListDS(PMSCommon.CustomData.MachineRequirement, MachineRequirements);
             SpecialRequirements = new List<string>();
             PMSBasicDataService.SetListDS(PMSCommon.CustomData.SpecialRequirement, SpecialRequirements);
-
+            MoldNumbers = new List<string>();
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.MoldNumbers, MoldNumbers);
         }
 
 
@@ -285,6 +288,7 @@ namespace PMSClient.ViewModel
         public List<string> FillingRequirements { get; set; }
         public List<string> MachineRequirements { get; set; }
         public List<string> SpecialRequirements { get; set; }
+        public List<string> MoldNumbers { get; set; }
 
         private DcPlanVHP currentPlan;
         public DcPlanVHP CurrentPlan

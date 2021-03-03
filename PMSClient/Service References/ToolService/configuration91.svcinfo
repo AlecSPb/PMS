@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="pbSust72HeNCldnU/uFzsLR0fZ0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="Ur8DlU5Iet6B4WOzbLwFlZd1F1rziuIsjrj3dKNk7rE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="sieve">
       <properties>
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="sieve" contract="ToolService.IToolSieveService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ToolService.svc" bindingConfiguration="sieve">
+    <endpoint name="sieve1" contract="ToolService.IToolSieveService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ToolService.svc" bindingConfiguration="sieve">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/ToolService.svc</serializedValue>
@@ -187,7 +187,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>sieve</serializedValue>
+          <serializedValue>sieve1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

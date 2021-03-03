@@ -73,8 +73,10 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="内部编号" ElementStyle="{StaticResource StyleTextBlockCenter}"
-                                    Binding="{Binding Misson.PMINumber}"/>
+                <!--<DataGridTextColumn Header="内部编号" ElementStyle="{StaticResource StyleTextBlockCenter}"
+                                    Binding="{Binding Misson.PMINumber}"/>-->
+                <DataGridTextColumn Header="模具编码" ElementStyle="{StaticResource StyleTextBlockCenter}"
+                                    Binding="{Binding Plan.MoldNumber}"/>
                 <DataGridTextColumn Header="计划类型" ElementStyle="{StaticResource StyleTextBlockCenter}"
                                     Binding="{Binding Plan.PlanType}"/>
                 <DataGridTextColumn Header="工艺" ElementStyle="{StaticResource StyleTextBlockCenter}"

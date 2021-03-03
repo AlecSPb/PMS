@@ -102,7 +102,7 @@
                         <DataGridTemplateColumn Header="{StaticResource PlanVHPDeviceCode}">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                        <TextBlock Style="{StaticResource StyleDGTextBlockCommon}"
+                                    <TextBlock Style="{StaticResource StyleDGTextBlockCommon}"
                                                Text="{Binding Plan.VHPDeviceCode}"
                                                Margin="0 2" HorizontalAlignment="Stretch"
                                                Foreground="Blue" TextAlignment="Center"
@@ -247,6 +247,7 @@
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.PlanDate,StringFormat=热压日期:{0:yyMMdd}}"/>
@@ -257,6 +258,7 @@
                         <TextBlock Grid.Column="5" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.Vaccum,StringFormat=真空:{0:#.###E00}Pa}"/>
                         <TextBlock Grid.Column="6" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.PreTemperature,StringFormat=预压温度:{0}℃}"/>
                         <TextBlock Grid.Column="7" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.PrePressure,StringFormat=预压压力:{0}ton}"/>
+                        <TextBlock Grid.Column="8" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.MoldNumber,StringFormat=模具编码:{0}}"/>
                     </Grid>
                 </Border>
                 <Border Grid.Row="2" Style="{StaticResource StyleBorderCommon}"

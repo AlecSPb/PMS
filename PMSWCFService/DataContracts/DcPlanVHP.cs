@@ -76,6 +76,10 @@ namespace PMSWCFService.DataContracts
         public string MachineRequirement { get; set; }
         [DataMember]
         public string SpecialRequirement { get; set; }
+
+        [DataMember]
+        public string MoldNumber { get; set; }
+
         [DataMember]
         public bool IsLocked { get; set; }
         [DataMember]

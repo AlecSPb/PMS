@@ -8,6 +8,20 @@ namespace PMSCommon
 {
     public static class CustomData
     {
+        public static List<string> MoldNumbers
+        {
+            get
+            {
+                var data = new List<string>
+                {
+                    "A001",
+                    "A002",
+                    "A003",
+                    "A004"
+                };
+                return data;
+            }
+        }
         public static List<string> MaterialReOrderReason
         {
             get

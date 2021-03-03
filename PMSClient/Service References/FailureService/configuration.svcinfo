@@ -2,9 +2,9 @@
 <configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
   <behaviors />
   <bindings>
-    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;failures&quot; /&gt;" bindingType="basicHttpBinding" name="failures" />
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;failures1&quot; /&gt;" bindingType="basicHttpBinding" name="failures1" />
   </bindings>
   <endpoints>
-    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://192.168.16.254:8002/FailureService.svc&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;failures&quot; contract=&quot;FailureService.IFailureService&quot; name=&quot;failures&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://192.168.16.254:8002/FailureService.svc&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;failures&quot; contract=&quot;FailureService.IFailureService&quot; name=&quot;failures&quot; /&gt;" contractName="FailureService.IFailureService" name="failures" />
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://192.168.16.254:8002/FailureService.svc&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;failures1&quot; contract=&quot;FailureService.IFailureService&quot; name=&quot;failures1&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://192.168.16.254:8002/FailureService.svc&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;failures1&quot; contract=&quot;FailureService.IFailureService&quot; name=&quot;failures1&quot; /&gt;" contractName="FailureService.IFailureService" name="failures1" />
   </endpoints>
 </configurationSnapshot>

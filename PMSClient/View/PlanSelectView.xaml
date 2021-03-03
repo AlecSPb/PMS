@@ -150,6 +150,8 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanSpecialRequirement}" Binding="{Binding PlanMisson.Plan.SpecialRequirement}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="{StaticResource PlanMoldNumber}" Binding="{Binding PlanMisson.Plan.MoldNumber}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanRoomHumidity}" Binding="{Binding PlanMisson.Plan.RoomHumidity}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanRoomTemperature}" Binding="{Binding PlanMisson.Plan.RoomTemperature}"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="i5GT5+Nj5udWiQMqax32l1rRaKU=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="EA5XlZzGmT+KFHkhHlI0jbyiRdBNYT0UF5oU/Txnn/A=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="editlock">
       <properties>
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="editlock" contract="EditLockService.IEditLockService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/EditLockService.svc" bindingConfiguration="editlock">
+    <endpoint name="editlock1" contract="EditLockService.IEditLockService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/EditLockService.svc" bindingConfiguration="editlock">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/EditLockService.svc</serializedValue>
@@ -187,7 +187,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>editlock</serializedValue>
+          <serializedValue>editlock1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

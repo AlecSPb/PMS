@@ -58,6 +58,7 @@ namespace PMSDAL
         public string MachineRequirement { get; set; }
         public string SpecialRequirement { get; set; }
 
+        public string MoldNumber { get; set; }
 
         public string Remark { get; set; }
 

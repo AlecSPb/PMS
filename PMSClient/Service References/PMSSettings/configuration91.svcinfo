@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="umgTlKea5NLxuXdBfct12zHmtU8=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="DQIMV/XOeZ9dFvJK29zNNnuA8VQNZHRwDxEz2tz9zh4=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="config">
       <properties>
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="config" contract="PMSSettings.IPMSSettingService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSSettingService.svc" bindingConfiguration="config">
+    <endpoint name="config1" contract="PMSSettings.IPMSSettingService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSSettingService.svc" bindingConfiguration="config">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSSettingService.svc</serializedValue>
@@ -187,7 +187,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>config</serializedValue>
+          <serializedValue>config1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

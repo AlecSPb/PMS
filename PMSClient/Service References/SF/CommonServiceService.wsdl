@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.expressservice.integration.sf.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="CommonServiceService" targetNamespace="http://service.expressservice.integration.sf.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://service.expressservice.integration.sf.com/">
-      <xsd:element name="sfexpressService" type="tns:sfexpressService" />
-      <xsd:complexType name="sfexpressService">
-        <xsd:sequence>
-          <xsd:element minOccurs="0" name="arg0" type="xsd:string" />
-        </xsd:sequence>
-      </xsd:complexType>
-      <xsd:element name="sfexpressServiceResponse" type="tns:sfexpressServiceResponse" />
-      <xsd:complexType name="sfexpressServiceResponse">
-        <xsd:sequence>
-          <xsd:element minOccurs="0" name="return" type="xsd:string" />
-        </xsd:sequence>
-      </xsd:complexType>
-      <xsd:element name="expressServiceForRouteLabel" type="tns:expressServiceForRouteLabel" />
-      <xsd:complexType name="expressServiceForRouteLabel">
-        <xsd:sequence>
-          <xsd:element minOccurs="0" name="arg0" type="xsd:string" />
-        </xsd:sequence>
-      </xsd:complexType>
-      <xsd:element name="expressServiceForRouteLabelResponse" type="tns:expressServiceForRouteLabelResponse" />
-      <xsd:complexType name="expressServiceForRouteLabelResponse">
-        <xsd:sequence>
-          <xsd:element minOccurs="0" name="return" type="xsd:string" />
-        </xsd:sequence>
-      </xsd:complexType>
-    </xsd:schema>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://service.expressservice.integration.sf.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="expressServiceForRouteLabel" type="tns:expressServiceForRouteLabel" />
+      <xs:element name="expressServiceForRouteLabelResponse" type="tns:expressServiceForRouteLabelResponse" />
+      <xs:element name="sfexpressService" type="tns:sfexpressService" />
+      <xs:element name="sfexpressServiceResponse" type="tns:sfexpressServiceResponse" />
+      <xs:complexType name="sfexpressService">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sfexpressServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="expressServiceForRouteLabel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="expressServiceForRouteLabelResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
   </wsdl:types>
   <wsdl:message name="sfexpressService">
     <wsdl:part name="parameters" element="tns:sfexpressService" />

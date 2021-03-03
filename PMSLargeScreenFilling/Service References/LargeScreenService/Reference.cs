@@ -84,6 +84,9 @@ namespace PMSLargeScreen.LargeScreenService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BondingRequirementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionAbbrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -120,6 +123,9 @@ namespace PMSLargeScreen.LargeScreenService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LaserNeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime LastUpdateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -127,6 +133,9 @@ namespace PMSLargeScreen.LargeScreenService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MinimumAcceptDefectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderRemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PMINumberField;
@@ -174,7 +183,13 @@ namespace PMSLargeScreen.LargeScreenService {
         private string SampleForAnlysisField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SampleForAnlysisRemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SampleNeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SampleNeedRemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SecondMachineDetailsField;
@@ -204,6 +219,19 @@ namespace PMSLargeScreen.LargeScreenService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BondingRequirement {
+            get {
+                return this.BondingRequirementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BondingRequirementField, value) != true)) {
+                    this.BondingRequirementField = value;
+                    this.RaisePropertyChanged("BondingRequirement");
+                }
             }
         }
         
@@ -364,6 +392,19 @@ namespace PMSLargeScreen.LargeScreenService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LaserNeed {
+            get {
+                return this.LaserNeedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LaserNeedField, value) != true)) {
+                    this.LaserNeedField = value;
+                    this.RaisePropertyChanged("LaserNeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime LastUpdateTime {
             get {
                 return this.LastUpdateTimeField;
@@ -398,6 +439,19 @@ namespace PMSLargeScreen.LargeScreenService {
                 if ((object.ReferenceEquals(this.MinimumAcceptDefectField, value) != true)) {
                     this.MinimumAcceptDefectField = value;
                     this.RaisePropertyChanged("MinimumAcceptDefect");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderRemark {
+            get {
+                return this.OrderRemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderRemarkField, value) != true)) {
+                    this.OrderRemarkField = value;
+                    this.RaisePropertyChanged("OrderRemark");
                 }
             }
         }
@@ -598,6 +652,19 @@ namespace PMSLargeScreen.LargeScreenService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SampleForAnlysisRemark {
+            get {
+                return this.SampleForAnlysisRemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SampleForAnlysisRemarkField, value) != true)) {
+                    this.SampleForAnlysisRemarkField = value;
+                    this.RaisePropertyChanged("SampleForAnlysisRemark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string SampleNeed {
             get {
                 return this.SampleNeedField;
@@ -606,6 +673,19 @@ namespace PMSLargeScreen.LargeScreenService {
                 if ((object.ReferenceEquals(this.SampleNeedField, value) != true)) {
                     this.SampleNeedField = value;
                     this.RaisePropertyChanged("SampleNeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SampleNeedRemark {
+            get {
+                return this.SampleNeedRemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SampleNeedRemarkField, value) != true)) {
+                    this.SampleNeedRemarkField = value;
+                    this.RaisePropertyChanged("SampleNeedRemark");
                 }
             }
         }
@@ -761,6 +841,9 @@ namespace PMSLargeScreen.LargeScreenService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double MoldDiameterField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MoldNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MoldTypeField;
@@ -1022,6 +1105,19 @@ namespace PMSLargeScreen.LargeScreenService {
                 if ((this.MoldDiameterField.Equals(value) != true)) {
                     this.MoldDiameterField = value;
                     this.RaisePropertyChanged("MoldDiameter");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MoldNumber {
+            get {
+                return this.MoldNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MoldNumberField, value) != true)) {
+                    this.MoldNumberField = value;
+                    this.RaisePropertyChanged("MoldNumber");
                 }
             }
         }
@@ -1479,6 +1575,9 @@ namespace PMSLargeScreen.LargeScreenService {
         private string TargetWeightField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WeldingDefectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double WeldingRateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -1747,6 +1846,19 @@ namespace PMSLargeScreen.LargeScreenService {
                 if ((object.ReferenceEquals(this.TargetWeightField, value) != true)) {
                     this.TargetWeightField = value;
                     this.RaisePropertyChanged("TargetWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WeldingDefect {
+            get {
+                return this.WeldingDefectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WeldingDefectField, value) != true)) {
+                    this.WeldingDefectField = value;
+                    this.RaisePropertyChanged("WeldingDefect");
                 }
             }
         }

@@ -1125,6 +1125,9 @@ namespace PMSLargeScreen.ExtraService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BoxNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionAbbrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1152,6 +1155,19 @@ namespace PMSLargeScreen.ExtraService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BoxNumber {
+            get {
+                return this.BoxNumberField;
+            }
+            set {
+                if ((this.BoxNumberField.Equals(value) != true)) {
+                    this.BoxNumberField = value;
+                    this.RaisePropertyChanged("BoxNumber");
+                }
             }
         }
         
@@ -1450,6 +1466,9 @@ namespace PMSLargeScreen.ExtraService {
         private string ItemSpecificationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int RowOrderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1581,6 +1600,19 @@ namespace PMSLargeScreen.ExtraService {
                 if ((object.ReferenceEquals(this.ItemSpecificationField, value) != true)) {
                     this.ItemSpecificationField = value;
                     this.RaisePropertyChanged("ItemSpecification");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
                 }
             }
         }
