@@ -283,7 +283,23 @@ namespace PMSClient.ViewModel
                         sb.AppendLine(result.SecondMachineDimension);
                         sb.Append("【二次加工细节】:");
                         sb.AppendLine(result.SecondMachineDetails);
+
+
+                        string ts = result.ShipTo ?? "" + result.BondingRequirement ?? "";
+                        if (ts.Contains("TCB"))
+                        {
+                            sb.AppendLine("【TCB要求】:该靶材将发送到TCB，请制作条码标签+绑定面靶材中央铅笔标记BTS");
+                        }
+
+                        if (result.CustomerName.Contains("YMTC"))
+                        {
+                            sb.AppendLine("【YMTC要求】:该靶材将发送到YMTC，请制作专门标签+双层包装");
+                        }
                         #endregion
+
+
+
+
                         if (result.DimensionDetails.Contains("FR="))
                         {
                             window.WindowWarning = "此靶材有倒角要求";

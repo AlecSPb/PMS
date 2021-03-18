@@ -54,8 +54,6 @@
                 Command="{Binding UpdateInfo}"/>
             <Button Content="{StaticResource BottomBarHelp}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding HelpInfo}"/>
-            <Button Content="{StaticResource BottomBarUpdate}" Style="{StaticResource StyleButtonCommonNarrow}"
-                Command="{Binding UpdateInfo}"/>
             <Button Content="{StaticResource BottomBarElement}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding Element}"/>
             <Button Content="{StaticResource BottomBarPeriodicTable}" Style="{StaticResource StyleButtonCommonNarrow}"
