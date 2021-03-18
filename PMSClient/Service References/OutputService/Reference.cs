@@ -4614,6 +4614,387 @@ namespace PMSClient.OutputService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcDelivery", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcDelivery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CountryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CustomerSignedDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerSignedDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeliveryExpressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeliveryNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeliveryNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FinishTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InvoiceNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsCustomerSignedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastCheckIDCollectionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastUpdateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PackageInformationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PackageTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PackageWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReceiverField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ShipTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Country {
+            get {
+                return this.CountryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CountryField, value) != true)) {
+                    this.CountryField = value;
+                    this.RaisePropertyChanged("Country");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CustomerSignedDate {
+            get {
+                return this.CustomerSignedDateField;
+            }
+            set {
+                if ((this.CustomerSignedDateField.Equals(value) != true)) {
+                    this.CustomerSignedDateField = value;
+                    this.RaisePropertyChanged("CustomerSignedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerSignedDetails {
+            get {
+                return this.CustomerSignedDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerSignedDetailsField, value) != true)) {
+                    this.CustomerSignedDetailsField = value;
+                    this.RaisePropertyChanged("CustomerSignedDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeliveryExpress {
+            get {
+                return this.DeliveryExpressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryExpressField, value) != true)) {
+                    this.DeliveryExpressField = value;
+                    this.RaisePropertyChanged("DeliveryExpress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeliveryName {
+            get {
+                return this.DeliveryNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryNameField, value) != true)) {
+                    this.DeliveryNameField = value;
+                    this.RaisePropertyChanged("DeliveryName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeliveryNumber {
+            get {
+                return this.DeliveryNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryNumberField, value) != true)) {
+                    this.DeliveryNumberField = value;
+                    this.RaisePropertyChanged("DeliveryNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime FinishTime {
+            get {
+                return this.FinishTimeField;
+            }
+            set {
+                if ((this.FinishTimeField.Equals(value) != true)) {
+                    this.FinishTimeField = value;
+                    this.RaisePropertyChanged("FinishTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InvoiceNumber {
+            get {
+                return this.InvoiceNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoiceNumberField, value) != true)) {
+                    this.InvoiceNumberField = value;
+                    this.RaisePropertyChanged("InvoiceNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsCustomerSigned {
+            get {
+                return this.IsCustomerSignedField;
+            }
+            set {
+                if ((this.IsCustomerSignedField.Equals(value) != true)) {
+                    this.IsCustomerSignedField = value;
+                    this.RaisePropertyChanged("IsCustomerSigned");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastCheckIDCollection {
+            get {
+                return this.LastCheckIDCollectionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastCheckIDCollectionField, value) != true)) {
+                    this.LastCheckIDCollectionField = value;
+                    this.RaisePropertyChanged("LastCheckIDCollection");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastUpdateTime {
+            get {
+                return this.LastUpdateTimeField;
+            }
+            set {
+                if ((this.LastUpdateTimeField.Equals(value) != true)) {
+                    this.LastUpdateTimeField = value;
+                    this.RaisePropertyChanged("LastUpdateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PackageInformation {
+            get {
+                return this.PackageInformationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PackageInformationField, value) != true)) {
+                    this.PackageInformationField = value;
+                    this.RaisePropertyChanged("PackageInformation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PackageType {
+            get {
+                return this.PackageTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PackageTypeField, value) != true)) {
+                    this.PackageTypeField = value;
+                    this.RaisePropertyChanged("PackageType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PackageWeight {
+            get {
+                return this.PackageWeightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PackageWeightField, value) != true)) {
+                    this.PackageWeightField = value;
+                    this.RaisePropertyChanged("PackageWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Receiver {
+            get {
+                return this.ReceiverField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReceiverField, value) != true)) {
+                    this.ReceiverField = value;
+                    this.RaisePropertyChanged("Receiver");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ShipTime {
+            get {
+                return this.ShipTimeField;
+            }
+            set {
+                if ((this.ShipTimeField.Equals(value) != true)) {
+                    this.ShipTimeField = value;
+                    this.RaisePropertyChanged("ShipTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="OutputService.IOutputService")]
     public interface IOutputService {
@@ -4737,6 +5118,12 @@ namespace PMSClient.OutputService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetRecordTestCountByYearMonth", ReplyAction="http://tempuri.org/IOutputService/GetRecordTestCountByYearMonthResponse")]
         System.Threading.Tasks.Task<int> GetRecordTestCountByYearMonthAsync(int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetDeliveries", ReplyAction="http://tempuri.org/IOutputService/GetDeliveriesResponse")]
+        PMSClient.OutputService.DcDelivery[] GetDeliveries(int year_start, int month_start, int year_end, int month_end);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutputService/GetDeliveries", ReplyAction="http://tempuri.org/IOutputService/GetDeliveriesResponse")]
+        System.Threading.Tasks.Task<PMSClient.OutputService.DcDelivery[]> GetDeliveriesAsync(int year_start, int month_start, int year_end, int month_end);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4924,6 +5311,14 @@ namespace PMSClient.OutputService {
         
         public System.Threading.Tasks.Task<int> GetRecordTestCountByYearMonthAsync(int year_start, int month_start, int year_end, int month_end) {
             return base.Channel.GetRecordTestCountByYearMonthAsync(year_start, month_start, year_end, month_end);
+        }
+        
+        public PMSClient.OutputService.DcDelivery[] GetDeliveries(int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetDeliveries(year_start, month_start, year_end, month_end);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.OutputService.DcDelivery[]> GetDeliveriesAsync(int year_start, int month_start, int year_end, int month_end) {
+            return base.Channel.GetDeliveriesAsync(year_start, month_start, year_end, month_end);
         }
     }
 }

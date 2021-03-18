@@ -127,6 +127,12 @@
   <wsdl:message name="IOutputService_GetRecordTestCountByYearMonth_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordTestCountByYearMonthResponse" />
   </wsdl:message>
+  <wsdl:message name="IOutputService_GetDeliveries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveries" />
+  </wsdl:message>
+  <wsdl:message name="IOutputService_GetDeliveries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveriesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IOutputService">
     <wsdl:operation name="GetAll230Data">
       <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetAll230Data" message="tns:IOutputService_GetAll230Data_InputMessage" />
@@ -207,6 +213,10 @@
     <wsdl:operation name="GetRecordTestCountByYearMonth">
       <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetRecordTestCountByYearMonth" message="tns:IOutputService_GetRecordTestCountByYearMonth_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetRecordTestCountByYearMonthResponse" message="tns:IOutputService_GetRecordTestCountByYearMonth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutputService/GetDeliveries" message="tns:IOutputService_GetDeliveries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutputService/GetDeliveriesResponse" message="tns:IOutputService_GetDeliveries_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="output" type="tns:IOutputService">
@@ -384,6 +394,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetRecordTestCountByYearMonth">
       <soap:operation soapAction="http://tempuri.org/IOutputService/GetRecordTestCountByYearMonth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveries">
+      <soap:operation soapAction="http://tempuri.org/IOutputService/GetDeliveries" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

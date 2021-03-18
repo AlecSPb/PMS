@@ -407,4 +407,37 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfDcRecordTest" nillable="true" type="tns:ArrayOfDcRecordTest" />
+  <xs:complexType name="ArrayOfDcDelivery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcDelivery" nillable="true" type="tns:DcDelivery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcDelivery" nillable="true" type="tns:ArrayOfDcDelivery" />
+  <xs:complexType name="DcDelivery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerSignedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CustomerSignedDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryExpress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinishTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCustomerSigned" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastCheckIDCollection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastUpdateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PackageInformation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PackageType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PackageWeight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShipTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcDelivery" nillable="true" type="tns:DcDelivery" />
 </xs:schema>

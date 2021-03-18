@@ -343,4 +343,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetDeliveries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year_start" type="xs:int" />
+        <xs:element minOccurs="0" name="month_start" type="xs:int" />
+        <xs:element minOccurs="0" name="year_end" type="xs:int" />
+        <xs:element minOccurs="0" name="month_end" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeliveriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetDeliveriesResult" nillable="true" type="q11:ArrayOfDcDelivery" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

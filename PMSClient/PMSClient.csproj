@@ -15,7 +15,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>C:\Users\XS\source\publish\ClickOncePublish\PMS2\</PublishUrl>
+    <PublishUrl>C:\Users\XS\source\publish\ClickOncePublish\PMS\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -25,8 +25,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://192.168.16.254:8001/PMS2/</InstallUrl>
-    <UpdateUrl>http://192.168.16.254:8001/pms2/</UpdateUrl>
+    <InstallUrl>http://192.168.16.254:8001/PMS/</InstallUrl>
+    <UpdateUrl>http://192.168.16.254:8001/pms/</UpdateUrl>
     <SupportUrl>http://www.cd-pmi.com</SupportUrl>
     <ErrorReportUrl>http://www.cd-pmi.com</ErrorReportUrl>
     <ProductName>pms</ProductName>
@@ -35,7 +35,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>223</ApplicationRevision>
+    <ApplicationRevision>225</ApplicationRevision>
     <ApplicationVersion>4.10.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -152,6 +152,15 @@
     <Reference Include="QRCoder, Version=1.3.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\QRCoder.1.3.6\lib\net40\QRCoder.dll</HintPath>
     </Reference>
+    <Reference Include="Spire.License, Version=1.3.7.46, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Presentation.4.11.0\lib\net46\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=5.11.9.18046, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Presentation.4.11.0\lib\net46\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Presentation, Version=4.11.12.10046, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Presentation.4.11.0\lib\net46\Spire.Presentation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -213,6 +222,7 @@
     <Compile Include="Components\EOrder\Midsummer\MidOrder.cs" />
     <Compile Include="Components\EOrder\Midsummer\MidXmlProcessor.cs" />
     <Compile Include="Components\EOrder\Midsummer\MidModelItem.cs" />
+    <Compile Include="Components\Express\AllExpressTrack.cs" />
     <Compile Include="Components\ImageGallery\GalleryServiceTest440.cs" />
     <Compile Include="Components\ImageGallery\GalleryServiceTest.cs" />
     <Compile Include="Components\ImageGallery\GalleryServiceBonding.cs" />
@@ -429,6 +439,7 @@
     <Compile Include="ReportsHelperNew\ReportBase.cs" />
     <Compile Include="ReportsHelperNew\ReportCOABridgeLine.cs" />
     <Compile Include="ReportsHelperNew\ReportCOA.cs" />
+    <Compile Include="ReportsHelperNew\ReportDefectPPTX.cs" />
     <Compile Include="ReportsHelperNew\ReportSample.cs" />
     <Compile Include="ReportsHelperNew\ReportBondingTargetDefects.cs" />
     <Compile Include="ReportsHelperNew\ReportDeliveryQRCode.cs" />
@@ -2079,6 +2090,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="StandardDocs\Target Defects Notification.pptx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Components\CscanImageProcess\缓存思路.txt" />
     <Resource Include="BeforePublish.txt" />
     <Resource Include="Components\EOrder\Midsummer\Examples\MidSummerOrder27376.xml" />
@@ -2260,6 +2274,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\OutputService\PMSClient.OutputService.DcConsumablePurchase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OutputService\PMSClient.OutputService.DcDelivery.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\OutputService\PMSClient.OutputService.DcMaterialOrderItemExtra.datasource">
@@ -2988,12 +3005,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

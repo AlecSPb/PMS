@@ -286,6 +286,37 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcDelivery> GetDeliveries(int year_start, int month_start, int year_end, int month_end)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
+                    DateTime endTime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
+
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<Delivery, DcDelivery>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var query = from m in dc.Deliverys
+                                where m.CreateTime >= startTime
+                                && m.CreateTime <= endTime
+                                && m.State != PMSCommon.DeliveryState.作废.ToString()
+                                orderby m.CreateTime descending
+                                select m;
+                    return mapper.Map<List<Delivery>, List<DcDelivery>>(query.ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcMaterialOrderItemExtra> GetMaterialOrderItemsByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end)
         {
             try

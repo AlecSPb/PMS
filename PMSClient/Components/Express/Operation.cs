@@ -47,7 +47,7 @@ namespace PMSClient.Express
             }
         }
 
-        private async void Trace(DcDelivery[] models)
+        public async void Trace(DcDelivery[] models)
         {
             var express_track = new ToolDialog.ExpressTrack();
             express_track.Tip = "需要自动查询的物流记录请设置状态为【未完成】 绿色，不需要则设置为其他状态；目前只支持UPS和SF";
@@ -87,7 +87,7 @@ namespace PMSClient.Express
 
 
 
-        private void TraceNumber(string express, string[] numbers, StringBuilder sb)
+        public void TraceNumber(string express, string[] numbers, StringBuilder sb)
         {
             var checker = new CheckHelper.ExpressHelper();
             var api = new KDBird();

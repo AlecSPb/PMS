@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
-        Title="标签信息拷贝窗口" Height="700" Width="600" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+        Title="标签信息拷贝窗口" Height="800" Width="600" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -25,7 +25,7 @@
             </StackPanel>
             <Button Name="btnCloseIt" Click="btnCloseIt_Click" Content="关闭"  Style="{StaticResource StyleButtonCommon}" Grid.Column="1"/>
         </Grid>
-        <TextBox Name="TxtLabel" Grid.Row="1"  TextWrapping="WrapWithOverflow" FontSize="18" Background="White"
+        <TextBox Name="TxtLabel" Grid.Row="1"  TextWrapping="WrapWithOverflow" FontSize="12" Background="White"
                  VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible"/>
     </Grid>
 </Window>

@@ -40,6 +40,18 @@ namespace PMSClient.ViewModel.VMHelper
             lb.AppendLine(model.ProductID);
             lb.AppendLine();
             lb.AppendLine("************************************");
+
+            lb.AppendLine("==== 缺陷报告信息 ====");
+            lb.AppendLine($"ProductID:{model.ProductID}");
+            lb.AppendLine($"Composition:{model.Composition}");
+            lb.AppendLine($"Dimension:{model.Dimension}");
+            lb.AppendLine($"PO:{model.PO}");
+            lb.AppendLine($"Weight:{model.Weight}");
+            lb.AppendLine($"Density:{model.Density}");
+            lb.AppendLine($"Roughtness:{model.Roughness}");
+            lb.AppendLine($"ASCAN Info:{model.CScan}");
+
+
             var mainContent = lb.ToString();
 
             return lb.ToString();

@@ -267,6 +267,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"
                                 BorderBrush="LightBlue" BorderThickness="2" Margin="2">
@@ -312,6 +313,17 @@
                         <Button Content="{StaticResource ButtonCompare}" Grid.Column="4" Grid.Row="1"
                                     Style="{StaticResource StyleButtonStrench}" HorizontalAlignment="Stretch"
                                     Command="{Binding DataContext.Compare,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"
+                                    />
+                        
+                        <Button Content="{StaticResource ButtonLabel}" Grid.Column="5" Grid.Row="0"
+                                    Style="{StaticResource StyleButtonStrench}" HorizontalAlignment="Stretch"
+                                    Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"
+                                    />
+                        <Button Content="{StaticResource ButtonDefectReport}" Grid.Column="5" Grid.Row="1"
+                                    Style="{StaticResource StyleButtonStrench}" HorizontalAlignment="Stretch"
+                                    Command="{Binding DataContext.DefectReport,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                     CommandParameter="{Binding}"
                                     />
                     </Grid>

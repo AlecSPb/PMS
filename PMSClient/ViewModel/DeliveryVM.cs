@@ -11,8 +11,7 @@ using GalaSoft.MvvmLight.Messaging;
 using PMSClient.ReportsHelper;
 //using bt = BarTender;
 using PMSClient.Helpers;
-
-
+using PMSClient.Components.Express;
 
 namespace PMSClient.ViewModel
 {
@@ -72,6 +71,36 @@ namespace PMSClient.ViewModel
             SampleTrace = new RelayCommand(ActionSampleTrace, CanAdd);
 
             TCB = new RelayCommand<DcDelivery>(ActionTCB, CanEdit);
+
+            AllDeliveryRecord = new RelayCommand(ActionAllDeliveryRecord, CanExpressTrack);
+        }
+
+        private void ActionAllDeliveryRecord()
+        {
+            try
+            {
+                //年月选择对话框
+                var dialog = new WPFControls.YearDateDailog(-1);
+                if (dialog.ShowDialog() == false)
+                {
+                    return;
+                }
+                int year_start = dialog.YearStart;
+                int month_start = dialog.MonthStart;
+                int year_end = dialog.YearEnd;
+                int month_end = dialog.MonthEnd;
+
+                var express = new AllExpressTrack();
+                string s = express.Run(year_start,month_start,year_end,month_end);
+
+                var txt = new ToolWindow.PlainTextWindow();
+                txt.ContentText = s;
+                txt.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
 
         private void ActionTCB(DcDelivery obj)
@@ -727,6 +756,8 @@ namespace PMSClient.ViewModel
         public RelayCommand ExpressTrack { get; set; }
         public RelayCommand SampleTrace { get; set; }
         public RelayCommand ExpressSetting { get; set; }
+
+        public RelayCommand AllDeliveryRecord { get; set; }
 
         #endregion
 

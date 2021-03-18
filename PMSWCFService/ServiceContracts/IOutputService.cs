@@ -76,5 +76,8 @@ namespace PMSWCFService.ServiceContracts
         int GetRecordTestCountByYearMonth(int year_start, int month_start, int year_end, int month_end);
 
 
+        [OperationContract]
+        List<DcDelivery> GetDeliveries(int year_start, int month_start, int year_end, int month_end);
+
     }
 }

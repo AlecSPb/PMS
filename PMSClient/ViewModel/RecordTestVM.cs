@@ -88,6 +88,22 @@ namespace PMSClient.ViewModel
 
             ViewImage = new RelayCommand<RecordTestExtra>(ActionViewImage, obj => true);
 
+            DefectReport = new RelayCommand<RecordTestExtra>(ActionDefectReport, CanDefectReport);
+
+        }
+
+        private void ActionDefectReport(RecordTestExtra obj)
+        {
+            if (PMSDialogService.ShowYesNo("请问", "确定PPTX格式的生成缺陷报告吗？"))
+            {
+                var service = new ReportsHelperNew.ReportDefectPPTX();
+                service.Create(obj.RecordTest);
+            }
+        }
+
+        private bool CanDefectReport(RecordTestExtra arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest);
         }
 
         private void ActionViewImage(RecordTestExtra obj)
@@ -821,6 +837,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<RecordTestExtra> ViewImage { get; set; }
 
         public RelayCommand OneKeyCheck { get; set; }
+
+        public RelayCommand<RecordTestExtra> DefectReport { get; set; }
         #endregion
     }
 }

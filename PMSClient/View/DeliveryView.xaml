@@ -34,6 +34,8 @@
             <Button Content="设置" Style="{StaticResource StyleButtonCommon}" Command="{Binding ExpressSetting}"/>
             <Button Content="{StaticResource ButtonDeliveryItemList}" Style="{StaticResource StyleButtonSpecial}"
                     Command="{Binding GoToDeliveryItemList}"/>
+            <Button Content="全物流记录" Style="{StaticResource StyleButtonCommon}"
+                    Command="{Binding AllDeliveryRecord}" Visibility="Collapsed"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
             <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>

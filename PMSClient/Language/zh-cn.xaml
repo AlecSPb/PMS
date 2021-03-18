@@ -365,6 +365,7 @@
     <sys:String x:Key="ButtonSpecialSituation">特例</sys:String>
     <sys:String x:Key="ButtonUnCheckOutput">未核验导出</sys:String>
     <sys:String x:Key="ButtonCustomerAnlysis">客户分析</sys:String>
+    <sys:String x:Key="ButtonDefectReport">报告</sys:String>
 
 
     <!--单字按钮-->
