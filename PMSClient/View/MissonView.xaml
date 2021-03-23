@@ -82,7 +82,10 @@
                                         Command="{Binding DataContext.Finish,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}" />
                                     <Button Content="{StaticResource ButtonFindMaterial}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.FindMaterial,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}" />
-
+                                    <Button Content="{StaticResource ButtonSingleCompare}" Style="{StaticResource StyleDGButtonSingleLetter}"
+                                        Command="{Binding DataContext.Compare,
+                                            RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

@@ -48,7 +48,7 @@
                                     Binding="{Binding VHPMachineCode}"/>
                 <DataGridTextColumn Header="{StaticResource MPPlanItem}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding PlanItem}"/>
-                <DataGridTextColumn Header="{StaticResource MPPlanType}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                <DataGridTextColumn Header="{StaticResource MPPlanType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding PlanType}"/>
                 <DataGridTextColumn Header="{StaticResource MPPlanInterval}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding PlanInterval}"/>

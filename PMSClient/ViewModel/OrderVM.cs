@@ -90,6 +90,16 @@ namespace PMSClient.ViewModel
             JsonCollection = new RelayCommand(ActionJsonCollection, CanAdd);
             JsonSingle = new RelayCommand(ActionJsonSingle, CanAdd);
             CustomerAnlysis = new RelayCommand(ActionCustomerAnlysis, CanAdd);
+            Compare = new RelayCommand<DcOrder>(ActionCompare);
+        }
+
+        private void ActionCompare(DcOrder obj)
+        {
+            SearchCustomer = "";
+            SearchCompositionStandard = obj.CompositionStandard;
+            SearchPMINumber = "";
+            SearchOrderState = "";
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionJsonSingle()
@@ -556,6 +566,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcOrder> Check { get; private set; }
         public RelayCommand<DcOrder> Sample { get; private set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
+        public RelayCommand<DcOrder> Compare { get; set; }
+
         public RelayCommand Output { get; set; }
         public RelayCommand SampleSheet { get; set; }
         public RelayCommand<string> ShowDetails { get; private set; }

@@ -76,6 +76,15 @@ namespace PMSClient.ViewModel
             FindMaterial = new RelayCommand<DcOrder>(ActionFindMaterial, CanFindMaterial);
 
             SampleSheet = new RelayCommand(ActionSampleSheet);
+            Compare = new RelayCommand<DcOrder>(ActionCompare);
+        }
+
+        private void ActionCompare(DcOrder obj)
+        {
+            SearchCompositionStandard = obj.CompositionStandard;
+            SearchPMINumber = "";
+            SearchOrderState = "";
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionChangeOrder(DcPlanVHP obj)
@@ -417,6 +426,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPlanVHP> ChangeOrder { get; set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
         public RelayCommand<DcOrder> FindMaterial { get; set; }
+        public RelayCommand<DcOrder> Compare { get; set; }
 
         public RelayCommand SampleSheet { get; set; }
         #endregion

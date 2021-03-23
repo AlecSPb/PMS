@@ -429,6 +429,7 @@ namespace PMSClient.ViewModel
         private void ActionCompare(RecordTestExtra obj)
         {
             if (obj == null) return;
+            SearchProductID = "";
             SearchCompositionStd = obj.RecordTest.Composition;
             SetPageParametersWhenConditionChange();
         }

@@ -55,6 +55,7 @@ namespace PMSClient.ViewModel
 
         private void ActionCompare(DcPlanExtra obj)
         {
+            SearchVHPDate = "";
             SearchComposition = obj.Misson.CompositionStandard.Trim();
             SetPageParametersWhenConditionChange();
         }
