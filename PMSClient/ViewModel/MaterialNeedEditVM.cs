@@ -113,6 +113,62 @@ namespace PMSClient.ViewModel
                     return;
                 };
             }
+            if (CurrentMaterialNeed.Composition.Contains("O"))
+            {
+                if (!PMSDialogService.ShowYesNo("请注意", "请注意成分中含有[O],确定使用这个成分？"))
+                {
+                    return;
+                };
+            }
+            if (CurrentMaterialNeed.Composition.Contains("B"))
+            {
+                if (!PMSDialogService.ShowYesNo("请注意", "请注意成分中含有[B],确定使用这个成分？"))
+                {
+                    return;
+                };
+            }
+            if (CurrentMaterialNeed.Composition.Contains("C"))
+            {
+                if (!PMSDialogService.ShowYesNo("请注意", "请注意成分中含有[C],确定使用这个成分？"))
+                {
+                    return;
+                };
+            }
+            if (CurrentMaterialNeed.Composition.Contains("F"))
+            {
+                if (!PMSDialogService.ShowYesNo("请注意", "请注意成分中含有[F],确定使用这个成分？"))
+                {
+                    return;
+                };
+            }
+            if (CurrentMaterialNeed.Composition.Contains("Na"))
+            {
+                if (!PMSDialogService.ShowYesNo("请注意", "请注意成分中含有[Na],确定使用这个成分？"))
+                {
+                    return;
+                };
+            }
+            if (CurrentMaterialNeed.Composition.Contains("K"))
+            {
+                if (!PMSDialogService.ShowYesNo("请注意", "请注意成分中含有[K],确定使用这个成分？"))
+                {
+                    return;
+                };
+            }
+            if (CurrentMaterialNeed.Composition.Contains("Cs"))
+            {
+                if (!PMSDialogService.ShowYesNo("请注意", "请注意成分中含有[Cs],确定使用这个成分？"))
+                {
+                    return;
+                };
+            }
+            if (CurrentMaterialNeed.Composition.Contains("Cl"))
+            {
+                if (!PMSDialogService.ShowYesNo("请注意", "请注意成分中含有[Cl],确定使用这个成分？"))
+                {
+                    return;
+                };
+            }
 
             if (!PMSDialogService.ShowYesNo("请问", "确定保存这条记录？"))
             {

@@ -84,14 +84,6 @@ namespace PMSClient
             RefreshLogInformation();
             NavigateTo(_views.LogIn);
 
-            #region 设置主定时器
-            //设置主定时器
-            _timerMain = new Timer();
-            _timerMain.Interval = 30000;
-            _timerMain.Elapsed += _timerMain_Tick;
-            _timerMain.Start();
-            #endregion
-
             #region 托盘部分
             // InitializeTray();
             #endregion
@@ -108,6 +100,14 @@ namespace PMSClient
 
             //加载配置
             PMSClient.Components.PMSSettingHelper.PMSSettingService.CacheSettings();
+
+            #region 设置主定时器
+            //设置主定时器
+            _timerMain = new Timer();
+            _timerMain.Interval = 30000;
+            _timerMain.Elapsed += _timerMain_Tick;
+            _timerMain.Start();
+            #endregion
         }
         #region 定时器设定
         /// <summary>

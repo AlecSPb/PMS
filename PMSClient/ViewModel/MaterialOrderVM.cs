@@ -159,9 +159,13 @@ namespace PMSClient.ViewModel
 
         private void ActionEditItem(DcMaterialOrderItem item)
         {
-            //修改提示
-            if (!PMSDialogService.ShowYesNo("请问", "确定要【修改】这个订单项吗？"))
-                return;
+            if (CurrentSelectItem.State == PMSCommon.MaterialOrderState.已核验.ToString())
+            {
+                //修改提示
+                if (!PMSDialogService.ShowYesNo("请问", "此订单已是[已核验状态]，需要慎重修改，依然确定要【修改】这个订单项吗？"))
+                    return;
+            }
+
 
             if (item != null)
             {
