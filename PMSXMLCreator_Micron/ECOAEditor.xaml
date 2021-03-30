@@ -11,22 +11,28 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" Background="{StaticResource BGNavigationBar}">
             <Button Content="Save" Style="{StaticResource StyleButtonCommon}" Command="{Binding Save}"/>
         </StackPanel>
         <TextBlock Grid.Row="1" Style="{StaticResource StyleTextBlockCommon}" Text="Headers" FontWeight="Bold"/>
-        <DataGrid Name="DgHeaders" Grid.Row="2" Style="{StaticResource StyleDataGridNotReadOnly}" ItemsSource="{Binding Headers}">
+        <TextBlock Grid.Row="2" Style="{StaticResource StyleTextBlockCommon}" Margin="1 0"
+                   Text="Date format should be like 2020-01-01" Foreground="Blue"/>
+        <DataGrid Name="DgHeaders" Grid.Row="3" Style="{StaticResource StyleDataGridNotReadOnly}" ItemsSource="{Binding Headers}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="FieldName" Binding="{Binding FieldName}"/>
                 <DataGridTextColumn Header="FieldValue" Binding="{Binding FieldValue}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Grid.Row="3" Style="{StaticResource StyleTextBlockCommon}" Text="Contents" FontWeight="Bold"/>
-        <DataGrid Name="DgContents" Grid.Row="4" Style="{StaticResource StyleDataGridNotReadOnly}" ItemsSource="{Binding Contents}">
+        <TextBlock Grid.Row="4" Style="{StaticResource StyleTextBlockCommon}" Text="Contents" FontWeight="Bold"/>
+        <TextBlock Grid.Row="5" Style="{StaticResource StyleTextBlockCommon}" Margin="1 0"
+                   Text="Double click to change or just directly input" Foreground="Blue"/>
+        <DataGrid Name="DgContents" Grid.Row="6" Style="{StaticResource StyleDataGridNotReadOnly}" ItemsSource="{Binding Contents}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ResultName" Binding="{Binding ItemName}"/>
                 <DataGridTextColumn Header="Unit" Binding="{Binding ResultItems[0].Value}"/>
