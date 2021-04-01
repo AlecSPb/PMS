@@ -304,7 +304,11 @@ namespace PMSClient.ViewModel
                     return;
                 };
             }
-            if (CurrentMaterialOrderItem.Composition.Contains("C"))
+            if (CurrentMaterialOrderItem.Composition.Contains("C") 
+                && !CurrentMaterialOrderItem.Composition.Contains("Cu")
+                && !CurrentMaterialOrderItem.Composition.Contains("Co")
+                && !CurrentMaterialOrderItem.Composition.Contains("Cr")
+                && !CurrentMaterialOrderItem.Composition.Contains("Cs"))
             {
                 if (!PMSDialogService.ShowYesNo("请注意", "请注意成分中含有[C],确定使用这个成分？"))
                 {

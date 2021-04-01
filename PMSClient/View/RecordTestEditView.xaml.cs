@@ -65,9 +65,9 @@ namespace PMSClient.View
             PMSMethods.SetTextBox(txtResistance, "Out Of Range");
         }
 
-        private void BtnAddPlate_Click(object sender, RoutedEventArgs e)
+        private void BtnSuspiciousComposition_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBoxAppend(txtRemark, "附有背板;");
+            PMSMethods.SetTextBoxAppend(txtRemark, "成分可疑;");
         }
 
 

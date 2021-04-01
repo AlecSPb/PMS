@@ -99,12 +99,12 @@
                     <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="AA-2"/>
                     <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="AB-1"/>
                     <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="AB-2"/>
-                    <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="" MinWidth="20" IsEnabled="False"/>
+                    <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="" MinWidth="10" IsEnabled="False"/>
                     <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="CA-1"/>
                     <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="CA-2"/>
                     <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="CB-1"/>
                     <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="CB-2"/>
-                    <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="" MinWidth="20" IsEnabled="False"/>
+                    <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="" MinWidth="10" IsEnabled="False"/>
                     <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="更多"/>
                 </StackPanel>
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RTComposition}"
@@ -293,7 +293,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Name="txtRemark" Grid.Row="24" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
                 <StackPanel Grid.Row="24" Grid.Column="2" Orientation="Horizontal">
-                    <Button Content="附有背板" Name="BtnAddPlate" Style="{StaticResource StyleButtonCommon}" Click="BtnAddPlate_Click"/>
+                    <Button Content="成分可疑" Name="BtnSuspiciousComposition" Style="{StaticResource StyleButtonCommon}" Click="BtnSuspiciousComposition_Click"/>
                     <Button Content="回收重做" Name="BtnRecycle" Style="{StaticResource StyleButtonCommon}" Click="BtnRecycle_Click"/>
                     <Button Content="报废拿走" Name="BtnTakeAway" Style="{StaticResource StyleButtonCommon}" Click="BtnTakeAway_Click"/>
                     <Button Content="气体测试" Name="BtnGas" Style="{StaticResource StyleButtonCommon}" Click="BtnGas_Click"/>
