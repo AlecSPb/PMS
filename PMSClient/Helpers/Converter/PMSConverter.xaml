@@ -17,4 +17,5 @@
     <local:StringCutConverter x:Key="StringCutCT"/>
     <local:IsOverDueConverter x:Key="IsOverDueCT"/>
     <local:IsOverDueBGConverter x:Key="IsOverDueBGCT"/>
+    <local:StateVisibleCovnerter x:Key="StateVisibleCT"/>
 </ResourceDictionary>

@@ -161,6 +161,15 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="超期">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding DeliveryDate,Converter={StaticResource LastDayImageConverter}}"
+                                   Height="15" Width="15" 
+                                   Visibility="{Binding State,Converter={StaticResource StateVisibleCT}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource MOIState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding State}"/>
                 <DataGridTextColumn Header="{StaticResource MOIPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

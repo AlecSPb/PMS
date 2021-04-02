@@ -72,7 +72,12 @@ namespace PMSClient.ViewModel
 
             TCB = new RelayCommand<DcDelivery>(ActionTCB, CanEdit);
 
-            AllDeliveryRecord = new RelayCommand(ActionAllDeliveryRecord, CanExpressTrack);
+            AllDeliveryRecord = new RelayCommand(ActionAllDeliveryRecord, CanAllDeliveryRecord);
+        }
+
+        private bool CanAllDeliveryRecord()
+        {
+            return PMSHelper.CurrentSession.CurrentUserRole.GroupName == "管理员"; 
         }
 
         private void ActionAllDeliveryRecord()

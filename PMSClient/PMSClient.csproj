@@ -382,6 +382,7 @@
     <Compile Include="Helpers\Converter\MissonStateToBoolConverter.cs" />
     <Compile Include="Helpers\Converter\PlateUseNumberConverter.cs" />
     <Compile Include="Helpers\Converter\MinimumBGConverter1.cs" />
+    <Compile Include="Helpers\Converter\StateVisibleCovnerter.cs" />
     <Compile Include="Helpers\Converter\StringCutConverter.cs" />
     <Compile Include="Helpers\Converter\VisibilityConverter5.cs" />
     <Compile Include="Helpers\Converter\VisibilityConverter4.cs" />
@@ -2090,6 +2091,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Resource\Icons\flag.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="StandardDocs\Target Defects Notification.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -2763,7 +2767,6 @@
     <Content Include="Resource\HelpImages\materialorder.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Resource\Icons\flag.png" />
     <Content Include="Resource\NoticeData.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
