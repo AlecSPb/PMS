@@ -56,7 +56,7 @@ namespace PMSClient.ViewModel
             searchSupplier = "";
             searchComposition = "";
             searchOrderItemNumber = "";
-            searchItemState = "";
+            searchItemState = PMSCommon.MaterialOrderItemState.未完成.ToString();
             SearchItemStates = new List<string>();
             PMSMethods.SetListDS<PMSCommon.MaterialOrderItemState>(SearchItemStates);
             SearchItemStates.Remove(PMSCommon.MaterialOrderItemState.作废.ToString());

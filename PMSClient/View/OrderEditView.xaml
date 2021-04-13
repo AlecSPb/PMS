@@ -186,15 +186,17 @@
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Name="TxtDimensionDetails" Grid.Row="12" Grid.Column="1" Text="{Binding DimensionDetails}" Style="{StaticResource StyleTextBoxCommon}" />
                 <StackPanel Grid.Row="12" Grid.Column="2" Orientation="Horizontal">
-                    <Button Name="BtnBasicRequirement1" Click="BtnBasicRequirement1_Click" Content="正负公差" 
-                            Style="{StaticResource StyleButtonCommon}" MinWidth="50"/>
-                    <Button Name="BtnBasicRequirement2" Click="BtnBasicRequirement2_Click" Content="正公差" 
-                            Style="{StaticResource StyleButtonCommon}" MinWidth="50"/>
-                    <Button Name="BtnBasicRequirement3" Click="BtnBasicRequirement3_Click" Content="负公差" 
+                    <Button Name="BtnBasicRequirement1" Click="BtnBasicRequirement1_Click" Content="正负" 
+                            Style="{StaticResource StyleButtonCommon}" MinWidth="30"/>
+                    <Button Name="BtnBasicRequirement2" Click="BtnBasicRequirement2_Click" Content="正" 
+                            Style="{StaticResource StyleButtonCommon}" MinWidth="30"/>
+                    <Button Name="BtnBasicRequirement3" Click="BtnBasicRequirement3_Click" Content="负" 
+                            Style="{StaticResource StyleButtonCommon}" MinWidth="30"/>
+                    <Button Name="BtnBasicRequirement4" Click="BtnBasicRequirement4_Click" Content="PL+FT" 
                             Style="{StaticResource StyleButtonCommon}" MinWidth="50"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
-                           Text="公差直径TD;厚度TH;粗糙度Ra;溅射面圆角FR，无需写单位 除Ra单位um外，其余均为mm"
-                                Background="LightGreen"/>
+                           Text="公差直径TD;厚度TH;粗糙度Ra;溅射面圆角FR,平行度PL;平面度FT，无需写单位 除Ra单位um外，均为mm"
+                                Background="LightGreen" FontSize="11"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource OrderMIniummAcceptDefect}"

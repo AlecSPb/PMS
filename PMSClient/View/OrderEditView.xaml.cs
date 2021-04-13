@@ -150,7 +150,11 @@ namespace PMSClient.View
             PMSMethods.SetTextBox(TxtDimensionDetails, s);
 
         }
+        private void BtnBasicRequirement4_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBoxAppend(TxtDimensionDetails, " PL=0.1 FT=0.1");
 
+        }
         private void BtnAcceptDefects_Click(object sender, RoutedEventArgs e)
         {
             string s = @"ρ>3g/cm3 允许小缺陷";

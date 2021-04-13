@@ -49,14 +49,30 @@ namespace PMSClient.ReportsHelperNew
                     {
                         s = pageIndex * pageSize;
                         t = pageSize;
-                        var pageData = service.GetOutsideProcessUnCompleted(s, t).OrderBy(i=>i.ProductID);
+                        var pageData = service.GetOutsideProcessUnCompleted(s, t).OrderBy(i => i.ProductID);
                         foreach (var item in pageData)
                         {
                             Row row = table.InsertRow();
                             row.Cells[0].Paragraphs[0].Append(item.ProductID);
                             row.Cells[1].Paragraphs[0].Append(item.PMINumber);
-                            row.Cells[2].Paragraphs[0].Append("和上一片性质类似");
-                            row.Cells[3].Paragraphs[0].Append(item.Dimension);
+                            row.Cells[2].Paragraphs[0].Append("同前");
+
+                            string moredetail = "";
+                            if(!string.IsNullOrEmpty(item.PMINumber))
+                            {
+                                using (var o_s = new OrderServiceClient())
+                                {
+                                    var order = o_s.GetOrderByPMINumber(item.PMINumber);
+                                    if (order != null)
+                                    {
+                                        moredetail = order.DimensionDetails??"";
+                                    }
+                                }
+                            }
+
+                            string ss = $"{item.Dimension}**{moredetail}";
+
+                            row.Cells[3].Paragraphs[0].Append(ss);
                             row.Cells[4].Paragraphs[0].Append("");
 
                         }
