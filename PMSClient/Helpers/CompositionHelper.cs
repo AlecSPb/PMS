@@ -157,5 +157,20 @@ namespace PMSClient.Helpers
                 }
             }
         }
+
+        public static string GetRoughCompositon(string composition, string split = "-")
+        {
+            if (string.IsNullOrEmpty(composition))
+                return composition;
+
+            string pattern = @"[0-9]+(\.?[0-9]+)?";
+            string result = Regex.Replace(composition, pattern, split, RegexOptions.IgnoreCase);
+            if (result.EndsWith(split))
+                result = result.Remove(result.Length - 1);
+            return result;
+        }
+
+
+
     }
 }

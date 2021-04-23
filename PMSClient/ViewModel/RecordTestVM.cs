@@ -15,7 +15,7 @@ using PMSClient.ToolWindow;
 using PMSClient.CheckLogic;
 using CommonHelper;
 using Newtonsoft.Json;
-
+using PMSClient.Helpers;
 
 namespace PMSClient.ViewModel
 {
@@ -430,7 +430,14 @@ namespace PMSClient.ViewModel
         {
             if (obj == null) return;
             SearchProductID = "";
-            SearchCompositionStd = obj.RecordTest.Composition;
+            if (PMSDialogService.ShowYesNo("请问", "Yes=精确对比,No=粗略对比(只对比元素)"))
+            {
+                SearchCompositionStd = obj.RecordTest.Composition;
+            }
+            else
+            {
+                SearchCompositionStd = CompositionHelper.GetRoughCompositon(obj.RecordTest.Composition);
+            }
             SetPageParametersWhenConditionChange();
         }
 

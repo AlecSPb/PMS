@@ -44,10 +44,11 @@ namespace PMSClient.ViewModel.VMHelper
             lb.AppendLine("==== 缺陷报告信息 ====");
             lb.AppendLine($"ProductID:{model.ProductID ?? ""}");
             lb.AppendLine($"Composition:{model.Composition ?? ""}");
-            lb.AppendLine($"Dimension:{model.Dimension ?? ""}");
+            lb.AppendLine($"Dimension:{model.DimensionActual ?? ""}");
             lb.AppendLine($"PO:{model.PO ?? ""}");
             lb.AppendLine($"Weight:{model.Weight ?? ""}");
             lb.AppendLine($"Density:{model.Density ?? ""}");
+            lb.AppendLine($"Resistance:{model.Resistance ?? ""}");
             lb.AppendLine($"Roughtness:{model.Roughness ?? ""}");
             string scan = model.CScan ?? "";
             scan = scan.Replace(";", "\r\n");

@@ -1,0 +1,21 @@
+﻿<Window x:Class="PMSAnalysis.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSAnalysis"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Canvas Margin="5" Name="mainCanvas">
+            <!--<TextBlock Text="210422"  Canvas.Left="0" Canvas.Top="0"/>
+        <Rectangle Height="8" Width="8" Stroke="Blue" Fill="Blue" StrokeThickness="1" Canvas.Left="50" Canvas.Top="4"/>
+        <Rectangle Height="8" Width="8" Stroke="Blue" Fill="Blue" StrokeThickness="1" Canvas.Left="60" Canvas.Top="4"/>
+        <Rectangle Height="8" Width="8" Stroke="Blue" Fill="Red" StrokeThickness="1" Canvas.Left="70" Canvas.Top="4"/>
+        <Rectangle Height="8" Width="8" Stroke="Blue" StrokeThickness="1" Canvas.Left="80" Canvas.Top="4"/>
+        <Rectangle Height="8" Width="8" Stroke="Blue" Fill="Gray" StrokeThickness="1" Canvas.Left="90" Canvas.Top="4"/>
+        <Rectangle Height="8" Width="8" Stroke="Blue" Fill="gray" StrokeThickness="1" Canvas.Left="100" Canvas.Top="4"/>-->
+        </Canvas>
+    </Grid>
+
+</Window>
