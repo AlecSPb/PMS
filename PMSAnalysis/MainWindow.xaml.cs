@@ -37,6 +37,8 @@ namespace PMSAnalysis
             double left = 0;
             double top = 0;
             double step = 22;
+            int count = 0;
+            double currenttop = 0;
             foreach (var item in rr)
             {
                 AddRect(left, top, item.A);
@@ -51,9 +53,18 @@ namespace PMSAnalysis
                 top += step;
                 AddRect(left, top, item.F);
 
+                count++;
+                if (count % 31 == 0)
+                {
+                    currenttop += (rectSize+2) * 6 + 10;
+                    left = 0;
+                }
+                else
+                {
+                    left += step;
+                    top = currenttop;
+                }
 
-                left += step;
-                top = 0;
             }
         }
 

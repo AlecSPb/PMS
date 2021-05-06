@@ -430,7 +430,7 @@ namespace PMSClient.ViewModel
         {
             if (obj == null) return;
             SearchProductID = "";
-            if (PMSDialogService.ShowYesNo("请问", "Yes=精确对比,No=粗略对比(只对比元素)"))
+            if (PMSDialogService.ShowYesNo("请问", "Yes=精确对比,No=粗略对比(只比元素)"))
             {
                 SearchCompositionStd = obj.RecordTest.Composition;
             }

@@ -23,7 +23,7 @@ namespace PMSAnalysis.Services
             SqlCommand cmd = conn.CreateCommand();
 
             DateTime start = DateTime.Parse("2021-3-1");
-            DateTime end = DateTime.Parse("2021-4-23");
+            DateTime end = DateTime.Parse("2021-4-30");
 
             conn.Open();
             cmd.CommandText = "select vhpdevicecode,plantype from pmsplanvhps where plandate=@plandate and state!='作废'";

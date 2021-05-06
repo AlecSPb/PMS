@@ -11,6 +11,7 @@ using System.Text;
 using PMSClient.Components.EOrder;
 using XSHelper;
 using Newtonsoft.Json;
+using PMSClient.Helpers;
 
 namespace PMSClient.ViewModel
 {
@@ -97,6 +98,16 @@ namespace PMSClient.ViewModel
         {
             SearchCustomer = "";
             SearchCompositionStandard = obj.CompositionStandard;
+
+            if (PMSDialogService.ShowYesNo("请问", "Yes=精确对比,No=粗略对比(只比元素)"))
+            {
+                SearchCompositionStandard = obj.CompositionStandard;
+            }
+            else
+            {
+                SearchCompositionStandard = CompositionHelper.GetRoughCompositon(obj.CompositionStandard);
+            }
+
             SearchPMINumber = "";
             SearchOrderState = "";
             SetPageParametersWhenConditionChange();
