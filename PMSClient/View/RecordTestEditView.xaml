@@ -225,6 +225,8 @@
                 <StackPanel Grid.Row="18" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnRoughness" Content="标准格式" Style="{StaticResource StyleButtonCommon}"
                             Click="BtnRoughness_Click"/>
+                    <Button Name="BtnRoughnessRandom" Content="R" Style="{StaticResource StyleButtonCommonNarrow}"
+                            Click="BtnRoughnessRandom_Click"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
                            Text="单位um 有写，没有默认"/>
                 </StackPanel>

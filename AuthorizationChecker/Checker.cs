@@ -12,7 +12,7 @@ namespace AuthorizationChecker
         public static void CheckIfCanRun()
         {
             //最后使用期限 To Protect My Self
-            var untilTime = new DateTime(2021, 10, 1);
+            var untilTime = new DateTime(2022, 1, 1);
             Random r = new Random();
             //当超期后，有50%的概率触发异常
             if (DateTime.Now > untilTime && r.Next(10) > 3)

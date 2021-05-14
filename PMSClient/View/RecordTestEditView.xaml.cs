@@ -224,5 +224,14 @@ namespace PMSClient.View
         {
             PMSMethods.SetTextBoxAppend(txtRemark, "AsH3=0ppb;PH3=0ppb;B2H6=0ppb;SiH4=0ppb;GeH4=0ppb;H2Se=0ppb;H2S=0ppb;");
         }
+
+        private void BtnRoughnessRandom_Click(object sender, RoutedEventArgs e)
+        {
+            Random r = new Random();
+            double r1 = (double)r.Next(2000, 3000)/1000;
+            double r2 = (double)r.Next(2000, 3000)/1000;
+
+            PMSMethods.SetTextBox(TxtRoughness, $"Ra-A={r1.ToString("0.000")}um Ra-B={r2.ToString("0.000")}um");
+        }
     }
 }

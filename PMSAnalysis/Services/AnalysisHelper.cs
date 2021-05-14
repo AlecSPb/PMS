@@ -14,16 +14,13 @@ namespace PMSAnalysis.Services
         private string conStr = "server=192.168.16.254;database=PMS;uid=sa;pwd=newlifechou;";
 
 
-        public List<AnalysisModel> GetAnalysis()
+        public List<AnalysisModel> GetAnalysis(DateTime start,DateTime end)
         {
 
             List<AnalysisModel> models = new List<AnalysisModel>();
 
             SqlConnection conn = new SqlConnection(conStr);
             SqlCommand cmd = conn.CreateCommand();
-
-            DateTime start = DateTime.Parse("2021-3-1");
-            DateTime end = DateTime.Parse("2021-4-30");
 
             conn.Open();
             cmd.CommandText = "select vhpdevicecode,plantype from pmsplanvhps where plandate=@plandate and state!='作废'";
@@ -89,7 +86,7 @@ namespace PMSAnalysis.Services
 
             SqlConnection conn = new SqlConnection(conStr);
             SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandText = "select count(*) from recordtests where productid like '%'+@productid+'%' and state!='作废'";
+            cmd.CommandText = "select count(*) from deliveryitems where productid like '%'+@productid+'%' and state!='作废'";
             cmd.Parameters.Add(new SqlParameter("@productid", date.ToString("yyMMdd") + "-" + vhpdevicecode));
             conn.Open();
             int result = (int)cmd.ExecuteScalar();

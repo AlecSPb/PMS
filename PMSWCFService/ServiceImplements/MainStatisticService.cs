@@ -22,6 +22,7 @@ namespace PMSWCFService
                                 where i.State != PMSCommon.CommonState.作废.ToString()
                                 && i.DeliveryType == PMSCommon.DeliveryType.最终发货.ToString()
                                 && i.CreateTime.Year == year
+                                && i.ProductType==PMSCommon.ProductType.靶材.ToString()
                                 group i by i.Customer into g
                                 orderby g.Count() descending
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
@@ -46,6 +47,7 @@ namespace PMSWCFService
                                 where i.State != PMSCommon.CommonState.作废.ToString()
                                 && i.DeliveryType == PMSCommon.DeliveryType.最终发货.ToString()
                                 && i.CreateTime.Year == year
+                                && i.ProductType == PMSCommon.ProductType.靶材.ToString()
                                 group i by i.CreateTime.Month into g
                                 orderby g.Key
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
@@ -70,6 +72,7 @@ namespace PMSWCFService
                                 where i.State != PMSCommon.CommonState.作废.ToString()
                                 && i.DeliveryType == PMSCommon.DeliveryType.最终发货.ToString()
                                 && i.CreateTime.Year == year
+                                && i.ProductType == PMSCommon.ProductType.靶材.ToString()
                                 group i by ((i.CreateTime.Month - 1) / 3 + 1) into g
                                 orderby g.Key
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
@@ -94,6 +97,7 @@ namespace PMSWCFService
                                 where i.State != PMSCommon.CommonState.作废.ToString() 
                                 && i.DeliveryType == PMSCommon.DeliveryType.最终发货.ToString()
                                 && i.CreateTime.Year == year
+                                && i.ProductType == PMSCommon.ProductType.靶材.ToString()
                                 group i by i.ProductType into g
                                 orderby g.Key
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
@@ -117,6 +121,7 @@ namespace PMSWCFService
                     var query = from i in dc.DeliveryItems
                                 where i.State != PMSCommon.CommonState.作废.ToString()
                                 && i.DeliveryType == PMSCommon.DeliveryType.最终发货.ToString()
+                                && i.ProductType == PMSCommon.ProductType.靶材.ToString()
                                 group i by i.CreateTime.Year into g
                                 orderby g.Key
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };

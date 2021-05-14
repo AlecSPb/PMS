@@ -4,18 +4,75 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSAnalysis"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
-    <Grid>
-        <Canvas Margin="5" Name="mainCanvas">
-            <!--<TextBlock Text="210422"  Canvas.Left="0" Canvas.Top="0"/>
-        <Rectangle Height="8" Width="8" Stroke="Blue" Fill="Blue" StrokeThickness="1" Canvas.Left="50" Canvas.Top="4"/>
-        <Rectangle Height="8" Width="8" Stroke="Blue" Fill="Blue" StrokeThickness="1" Canvas.Left="60" Canvas.Top="4"/>
-        <Rectangle Height="8" Width="8" Stroke="Blue" Fill="Red" StrokeThickness="1" Canvas.Left="70" Canvas.Top="4"/>
-        <Rectangle Height="8" Width="8" Stroke="Blue" StrokeThickness="1" Canvas.Left="80" Canvas.Top="4"/>
-        <Rectangle Height="8" Width="8" Stroke="Blue" Fill="Gray" StrokeThickness="1" Canvas.Left="90" Canvas.Top="4"/>
-        <Rectangle Height="8" Width="8" Stroke="Blue" Fill="gray" StrokeThickness="1" Canvas.Left="100" Canvas.Top="4"/>-->
-        </Canvas>
+        mc:Ignorable="d" WindowState="Maximized"
+        xmlns:lv="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        Title="真空热压机使用情况统计分析 VHP Usage Anlysis" 
+        Height="800" Width="1000" Loaded="Window_Loaded">
+    <Grid Background="Wheat">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Padding="5" Text="Yellow=W2 with Product Sent,Black=W2 with No Product Sent,Gray=W1,White=Idle 黄色=W2有产品发出 黑色=W2没产品发出 灰色=W1 白色=空闲 小横线=周末" 
+                   Background="LightGreen"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="500"/>
+            </Grid.ColumnDefinitions>
+            <Canvas Margin="5" Name="mainCanvas"/>
+            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="2">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <lv:CartesianChart Grid.Row="0">
+                        <lv:CartesianChart.AxisX>
+                            <lv:Axis Title="热压机名称" Labels="A,B,C,D,E,F"/>
+                        </lv:CartesianChart.AxisX>
+                        <lv:CartesianChart.AxisY>
+                            <lv:Axis Title="使用次数"/>
+                        </lv:CartesianChart.AxisY>
+                        <lv:CartesianChart.Series>
+                            <lv:ColumnSeries Name="Chart_VHP_Count" Title="VHP_Count"/>
+                        </lv:CartesianChart.Series>
+                    </lv:CartesianChart>
+                    <lv:CartesianChart Grid.Row="1">
+                        <lv:CartesianChart.AxisX>
+                            <lv:Axis Title="热压机名称" Labels="A,B,C,D,E,F"/>
+                        </lv:CartesianChart.AxisX>
+                        <lv:CartesianChart.AxisY>
+                            <lv:Axis Title="使用次数百分比"/>
+                        </lv:CartesianChart.AxisY>
+                        <lv:CartesianChart.Series>
+                            <lv:ColumnSeries Name="Chart_VHP_Percent_Count" Title="VHP_Percent_Count"/>
+                        </lv:CartesianChart.Series>
+                    </lv:CartesianChart>
+
+                    <lv:PieChart Grid.Row="2" LegendLocation="Left">
+                        <lv:PieChart.Series>
+                            <lv:PieSeries x:Name="Chart_W1" Values="3" Title="W1" Fill="Gray"/>
+                            <lv:PieSeries x:Name="Chart_W2_Sucess" Values="4" Title="W2_Sucess" Fill="Yellow"/>
+                            <lv:PieSeries x:Name="Chart_W2_Failed" Values="5" Title="W2_Failed" Fill="Black"/>
+                        </lv:PieChart.Series>
+                    </lv:PieChart>
+
+                    <lv:PieChart Grid.Row="3" LegendLocation="Left">
+                        <lv:PieChart.Series>
+                            <lv:PieSeries x:Name="Chart_All_W0" Values="3" Title="NoUse" Fill="white"/>
+                            <lv:PieSeries x:Name="Chart_All_W1" Values="3" Title="W1" Fill="Gray"/>
+                            <lv:PieSeries x:Name="Chart_All_W2_Sucess" Values="4" Title="W2_Sucess" Fill="Yellow"/>
+                            <lv:PieSeries x:Name="Chart_All_W2_Failed" Values="5" Title="W2_Failed" Fill="Black"/>
+                        </lv:PieChart.Series>
+                    </lv:PieChart>
+                </Grid>
+            </Border>
+
+        </Grid>
     </Grid>
+
 
 </Window>

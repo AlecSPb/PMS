@@ -354,7 +354,7 @@
     <sys:String x:Key="ButtonSpecialSituation">Special Situation</sys:String>
     <sys:String x:Key="ButtonUnCheckOutput">UnCheck-Output</sys:String>
     <sys:String x:Key="ButtonCustomerAnlysis">CustomerAnlysis</sys:String>
-    <sys:String x:Key="ButtonDefectReport">Report</sys:String>
+    <sys:String x:Key="ButtonDefectReport">NCA</sys:String>
 
     <!--单字按钮-->
     <sys:String x:Key="ButtonSingleSend">S</sys:String>

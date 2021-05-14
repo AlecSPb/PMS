@@ -105,10 +105,10 @@ namespace PMSClient.ViewModel
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
-                CurrentPlan.Creator = uid;
                 var service = new MaintenanceServiceClient();
                 if (IsNew)
                 {
+                    CurrentPlan.Creator = uid;
                     service.AddMainitenancePlan(CurrentPlan);
                 }
                 else

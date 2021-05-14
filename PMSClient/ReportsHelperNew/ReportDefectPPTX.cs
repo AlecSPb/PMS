@@ -18,11 +18,11 @@ namespace PMSClient.ReportsHelperNew
         {
             if (model == null) return;
 
-            string templatePath = Path.Combine(Environment.CurrentDirectory, "StandardDocs", "Target Defects Notification.pptx");
+            string templatePath = Path.Combine(Environment.CurrentDirectory, "StandardDocs", "PMI Non-Conformance Alert.pptx");
 
-            string tempPath = Path.Combine(Environment.CurrentDirectory, "Temp", $"Defects Report {model.ProductID}.pptx");
-     
-            string targetPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"Defects Report {model.ProductID}.pptx");
+            string tempPath = Path.Combine(Environment.CurrentDirectory, "Temp", $"PMI Non-Conformance Alert {model.ProductID}.pptx");
+
+            string targetPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"PMI Non-Conformance Alert {model.ProductID}.pptx");
 
 
 
@@ -38,20 +38,20 @@ namespace PMSClient.ReportsHelperNew
                 ReplaceTags(pptx.Slides[0], "[maintitle]", s);
                 ReplaceTags(pptx.Slides[0], "[today]", DateTime.Today.ToShortDateString());
 
-                ReplaceTags(pptx.Slides[1], "[ProductID]", model.ProductID??"");
-                ReplaceTags(pptx.Slides[1], "[Composition]", model.Composition??"");
-                ReplaceTags(pptx.Slides[1], "[PO]", model.PO??"");
-                ReplaceTags(pptx.Slides[1], "[Dimension]", model.DimensionActual??"");
-                ReplaceTags(pptx.Slides[1], "[Weight]", model.Weight??"");
-                ReplaceTags(pptx.Slides[1], "[Density]", model.Density??"");
-                ReplaceTags(pptx.Slides[1], "[Roughness]", model.Roughness??"");
+                ReplaceTags(pptx.Slides[1], "[ProductID]", model.ProductID ?? "");
+                ReplaceTags(pptx.Slides[1], "[Composition]", model.Composition ?? "");
+                ReplaceTags(pptx.Slides[1], "[PO]", model.PO ?? "");
+                ReplaceTags(pptx.Slides[1], "[Dimension]", model.DimensionActual ?? "");
+                ReplaceTags(pptx.Slides[1], "[Weight]", model.Weight ?? "");
+                ReplaceTags(pptx.Slides[1], "[Density]", model.Density ?? "");
+                ReplaceTags(pptx.Slides[1], "[Roughness]", model.Roughness ?? "");
                 //ReplaceTags(pptx.Slides[1], "[ACSCAN]", model.CScan??"");
 
 
                 //填充超声图片
                 //填充图像
                 var manager = new Components.CscanImageProcess.ImageManager();
-                var result = manager.GetImage(model.ProductID,ImageType.Target);
+                var result = manager.GetImage(model.ProductID, ImageType.Target);
 
                 if (result.IsFound)
                 {
@@ -82,7 +82,7 @@ namespace PMSClient.ReportsHelperNew
                 pptx.SaveToFile(targetPath, FileFormat.Pptx2007);
                 System.Diagnostics.Process.Start(targetPath);
 
-                PMSDialogService.Show("请到桌面查看对应的PPTX文件");
+                //PMSDialogService.Show("请到桌面查看对应的PPTX文件");
             }
             catch (Exception)
             {
