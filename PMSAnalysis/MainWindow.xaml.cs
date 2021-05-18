@@ -37,7 +37,7 @@ namespace PMSAnalysis
         {
 
             DateTime start = DateTime.Parse("2020-7-1");
-            DateTime end = DateTime.Parse("2021-5-10");
+            DateTime end = DateTime.Parse("2021-5-18");
 
 
             //check cache file
@@ -123,7 +123,7 @@ namespace PMSAnalysis
                 }
                 else
                 {
-                    currenttop += rectSize * 6 + 20;
+                    currenttop += rectSize * 6 + 30;
                     left = 0;
                 }
             }
