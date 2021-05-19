@@ -34,7 +34,7 @@ namespace PMSSPC
 
             try
             {
-                LoadDataFromFile(@"DataSaved\190101-210518-In40S60-Density.json");
+                LoadDataFromFile($"DataSaved\\{Properties.Settings.Default.LastSavedFile}");
             }
             catch (Exception)
             {
@@ -74,18 +74,21 @@ namespace PMSSPC
 
         private void LoadSPCModel(SPCModel model)
         {
-            SetSPCModel(model.Items, model.Unit);
+            SetSPCModel(model.Items, model.SPCType, model.Unit);
             DpStart.SelectedDate = model.Start;
             DpEnd.SelectedDate = model.End;
+            CboComposition.SelectedItem = spc_model.Items[0].Composition;
+            CboSPCType.SelectedItem = model.SPCType;
         }
 
-        private void SetSPCModel(List<SPCDataItem> data,string unit)
+        private void SetSPCModel(List<SPCDataItem> data, string spctype, string unit)
         {
             spc_model.Items.Clear();
             spc_model.Items.AddRange(data);
             spc_model.Unit = unit;
-            spc_model.Start = DpStart.SelectedDate??DateTime.Now;
-            spc_model.End = DpEnd.SelectedDate??DateTime.Now;
+            spc_model.SPCType = spctype;
+            spc_model.Start = DpStart.SelectedDate ?? DateTime.Now;
+            spc_model.End = DpEnd.SelectedDate ?? DateTime.Now;
 
             spc_model.Calc();
 
@@ -113,11 +116,11 @@ namespace PMSSPC
 
         private void BtnFetch_Click(object sender, RoutedEventArgs e)
         {
-            if(XSHelper.XS.MessageBox.ShowYesNo("Fetch Data From PMS?"))
+            if (XSHelper.XS.MessageBox.ShowYesNo("Fetch Data From PMS?"))
             {
                 var data = service.GetCleanedSPCDataItemDensity(CboComposition.SelectedItem.ToString(), DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
                     DpEnd.SelectedDate?.ToString("yyyy-MM-dd"));
-                SetSPCModel(data, "g/cm3");
+                SetSPCModel(data, CboSPCType.SelectedItem.ToString(), "g/cm3");
             }
 
         }
@@ -196,19 +199,7 @@ namespace PMSSPC
             {
                 if (XSHelper.XS.MessageBox.ShowYesNo("save the current spc data?"))
                 {
-                    string filename = $"{DpStart.SelectedDate?.ToString("yyMMdd")}-{DpEnd.SelectedDate?.ToString("yyMMdd")}-" +
-                                      $"{CboComposition.SelectedItem.ToString()}-{CboSPCType.SelectedItem.ToString()}.json";
-
-                    string savedFolder = System.IO.Path.Combine(Environment.CurrentDirectory, "DataSaved");
-
-                    string fullfilename = System.IO.Path.Combine(savedFolder, filename);
-
-                    var savedData = spc_model;
-
-                    string json = JsonConvert.SerializeObject(savedData,Formatting.Indented);
-
-                    File.WriteAllText(fullfilename, json);
-
+                    SaveFile(false);
                 }
             }
             catch (Exception)
@@ -217,9 +208,39 @@ namespace PMSSPC
             }
         }
 
+
+        private void SaveFile(bool isAuto=false)
+        {
+            string filename = "";
+            if (isAuto)
+            {
+                filename= "auto";
+            }
+
+            filename += $"{DpStart.SelectedDate?.ToString("yyMMdd")}-{DpEnd.SelectedDate?.ToString("yyMMdd")}-" +
+                  $"{CboComposition.SelectedItem.ToString()}-{CboSPCType.SelectedItem.ToString()}.json";
+
+            string fullfilename = System.IO.Path.Combine(savedFolder, filename);
+
+            var savedData = spc_model;
+
+            string json = JsonConvert.SerializeObject(savedData, Formatting.Indented);
+
+            File.WriteAllText(fullfilename, json);
+
+
+            Properties.Settings.Default.LastSavedFile = filename;
+            Properties.Settings.Default.Save();
+        }
+
         private void BtnFolder_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start(savedFolder);
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SaveFile(true);
         }
     }
 }

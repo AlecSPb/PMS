@@ -20,6 +20,7 @@ namespace PMSSPC.Models
 
         public List<SPCDataItem> Items { get; set; }
         public string Unit { get; set; } = "g/cm3";
+        public string SPCType { get; set; } = "Density";
 
 
         //calculate values
