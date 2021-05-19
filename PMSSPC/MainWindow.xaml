@@ -15,7 +15,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
         Title="PMS SPC Analysis Program 1.0" Height="800" Width="1000" WindowState="Maximized"
-        Closing="Window_Closing">
+        Closing="Window_Closing" Icon="wagon wheel.png">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
