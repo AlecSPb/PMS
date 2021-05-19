@@ -772,6 +772,7 @@
     <Compile Include="ViewModel\MaintenancePlanSelectVM.cs" />
     <Compile Include="ViewModel\MaintenanceRecordVM.cs" />
     <Compile Include="ViewModel\MaintenancePlanVM.cs" />
+    <Compile Include="ViewModel\Model\CustomerExtra.cs" />
     <Compile Include="ViewModel\SampleSelectVM.cs" />
     <Compile Include="ViewModel\SimpleMaterialEditVM.cs" />
     <Compile Include="ViewModel\SimpleMaterialVM.cs" />

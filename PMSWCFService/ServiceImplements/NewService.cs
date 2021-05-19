@@ -688,14 +688,45 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var result = from p in dc.VHPPlans
-                                 where p.OrderID == id 
-                                 && (p.PlanType==VHPPlanType.加工.ToString()
-                                 || p.PlanType == VHPPlanType.外协.ToString() 
+                                 where p.OrderID == id
+                                 && (p.PlanType == VHPPlanType.加工.ToString()
+                                 || p.PlanType == VHPPlanType.外协.ToString()
                                  || p.PlanType == VHPPlanType.发货.ToString())
                                  && p.State != VHPPlanState.作废.ToString()
                                  orderby p.PlanDate descending, p.PlanLot, p.VHPDeviceCode
                                  select p;
                     return result.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.Current.Error(ex);
+                throw ex;
+            }
+        }
+
+        public DateTime GetLastOrderDateByCustomerName(string customername)
+        {
+            try
+            {
+                XS.RunLog();
+                using (var dc = new PMSDbContext())
+                {
+                    var result = from o in dc.Orders
+                                 where o.CustomerName.Contains(customername)
+                                 && o.State != VHPPlanState.作废.ToString()
+                                 orderby o.CreateTime descending
+                                 select new { CreateTime = o.CreateTime };
+                    DateTime lastOrderDate;
+                    if (result.FirstOrDefault()!=null)
+                    {
+                        lastOrderDate = result.FirstOrDefault().CreateTime;
+                    }
+                    else
+                    {
+                        lastOrderDate = new DateTime(1900,1,1);
+                    }
+                    return lastOrderDate;
                 }
             }
             catch (Exception ex)

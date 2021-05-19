@@ -346,4 +346,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetLastOrderDateByCustomerName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customername" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastOrderDateByCustomerNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLastOrderDateByCustomerNameResult" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

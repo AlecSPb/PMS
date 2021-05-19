@@ -1591,6 +1591,12 @@ namespace PMSClient.NewService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/LockTodayPlans", ReplyAction="http://tempuri.org/INewService/LockTodayPlansResponse")]
         System.Threading.Tasks.Task LockTodayPlansAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetLastOrderDateByCustomerName", ReplyAction="http://tempuri.org/INewService/GetLastOrderDateByCustomerNameResponse")]
+        System.DateTime GetLastOrderDateByCustomerName(string customername);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/INewService/GetLastOrderDateByCustomerName", ReplyAction="http://tempuri.org/INewService/GetLastOrderDateByCustomerNameResponse")]
+        System.Threading.Tasks.Task<System.DateTime> GetLastOrderDateByCustomerNameAsync(string customername);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1810,6 +1816,14 @@ namespace PMSClient.NewService {
         
         public System.Threading.Tasks.Task LockTodayPlansAsync() {
             return base.Channel.LockTodayPlansAsync();
+        }
+        
+        public System.DateTime GetLastOrderDateByCustomerName(string customername) {
+            return base.Channel.GetLastOrderDateByCustomerName(customername);
+        }
+        
+        public System.Threading.Tasks.Task<System.DateTime> GetLastOrderDateByCustomerNameAsync(string customername) {
+            return base.Channel.GetLastOrderDateByCustomerNameAsync(customername);
         }
     }
 }

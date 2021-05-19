@@ -7,20 +7,21 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.BasicService;
 using System.Collections.ObjectModel;
+using PMSClient.ViewModel.Model;
 
 namespace PMSClient.ViewModel
 {
-    public class CustomerVM: BaseViewModel
+    public class CustomerVM : BaseViewModel
     {
         public CustomerVM()
         {
-            Customers = new ObservableCollection<DcBDCustomer>();
-            Add = new RelayCommand(ActionAdd,CanAdd);
-            Edit = new RelayCommand<DcBDCustomer>(ActionEdit,CanEdit);
+            Customers = new ObservableCollection<CustomerExtra>();
+            Add = new RelayCommand(ActionAdd, CanAdd);
+            Edit = new RelayCommand<CustomerExtra>(ActionEdit, CanEdit);
             RefreshData();
         }
 
-        private bool CanEdit(DcBDCustomer arg)
+        private bool CanEdit(CustomerExtra arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditCustomer);
         }
@@ -30,9 +31,9 @@ namespace PMSClient.ViewModel
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditCustomer);
         }
 
-        private void ActionEdit(DcBDCustomer model)
+        private void ActionEdit(CustomerExtra model)
         {
-            PMSHelper.ViewModels.CustomerEdit.SetEdit(model);
+            PMSHelper.ViewModels.CustomerEdit.SetEdit(model.Customer);
             NavigationService.GoTo(PMSViews.CustomerEdit);
         }
 
@@ -47,9 +48,18 @@ namespace PMSClient.ViewModel
             try
             {
                 Customers.Clear();
-                using (var service=new CustomerServiceClient())
+                
+                using (var service = new CustomerServiceClient())
                 {
-                    service.GetCustomer().OrderBy(i=>i.CustomerName).ToList().ForEach(i => Customers.Add(i));
+                    var s = service.GetCustomer().OrderBy(i => i.CustomerName).ToList();
+                    using (var newservice=new NewService.NewServiceClient())
+                    {
+                        s.ForEach(i =>
+                        {
+                            DateTime lastorderdate = newservice.GetLastOrderDateByCustomerName(i.CustomerName);
+                            Customers.Add(new CustomerExtra { Customer = i, LastOrderDate =lastorderdate});
+                        });
+                    }
                 }
             }
             catch (Exception ex)
@@ -57,9 +67,9 @@ namespace PMSClient.ViewModel
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
-        public ObservableCollection<DcBDCustomer> Customers { get; set; }
+        public ObservableCollection<CustomerExtra> Customers { get; set; }
 
         public RelayCommand Add { get; set; }
-        public RelayCommand<DcBDCustomer> Edit { get; set; }
+        public RelayCommand<CustomerExtra> Edit { get; set; }
     }
 }

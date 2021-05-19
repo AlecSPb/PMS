@@ -151,6 +151,12 @@
   <wsdl:message name="INewService_LockTodayPlans_OutputMessage">
     <wsdl:part name="parameters" element="tns:LockTodayPlansResponse" />
   </wsdl:message>
+  <wsdl:message name="INewService_GetLastOrderDateByCustomerName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastOrderDateByCustomerName" />
+  </wsdl:message>
+  <wsdl:message name="INewService_GetLastOrderDateByCustomerName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastOrderDateByCustomerNameResponse" />
+  </wsdl:message>
   <wsdl:portType name="INewService">
     <wsdl:operation name="GetOrder">
       <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetOrder" message="tns:INewService_GetOrder_InputMessage" />
@@ -247,6 +253,10 @@
     <wsdl:operation name="LockTodayPlans">
       <wsdl:input wsaw:Action="http://tempuri.org/INewService/LockTodayPlans" message="tns:INewService_LockTodayPlans_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/INewService/LockTodayPlansResponse" message="tns:INewService_LockTodayPlans_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastOrderDateByCustomerName">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewService/GetLastOrderDateByCustomerName" message="tns:INewService_GetLastOrderDateByCustomerName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewService/GetLastOrderDateByCustomerNameResponse" message="tns:INewService_GetLastOrderDateByCustomerName_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_INewService" type="tns:INewService">
@@ -460,6 +470,15 @@
     </wsdl:operation>
     <wsdl:operation name="LockTodayPlans">
       <soap:operation soapAction="http://tempuri.org/INewService/LockTodayPlans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastOrderDateByCustomerName">
+      <soap:operation soapAction="http://tempuri.org/INewService/GetLastOrderDateByCustomerName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

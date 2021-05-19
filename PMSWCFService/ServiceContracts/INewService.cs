@@ -96,6 +96,14 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         void LockTodayPlans();
+
+        /// <summary>
+        /// 按照客户名称获取最后一次下单时间
+        /// </summary>
+        /// <param name="customername"></param>
+        /// <returns></returns>
+        [OperationContract]
+        DateTime GetLastOrderDateByCustomerName(string customername);
         #endregion
 
     }

@@ -30,24 +30,25 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource CustomerImportanceLevel}" ElementStyle="{StaticResource StyleDGTextBlockCenter}"
-                                    Binding="{Binding ImportanceLevel}"/>
+                                    Binding="{Binding Customer.ImportanceLevel}"/>
                 <DataGridTextColumn Header="{StaticResource CustomerCustomerName}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Binding="{Binding CustomerName}"/>
+                                    Binding="{Binding Customer.CustomerName}"/>
                 <DataGridTextColumn Header="{StaticResource CustomerAddress}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Binding="{Binding Address}"/>
+                                    Binding="{Binding Customer.Address}"/>
                 <DataGridTextColumn Header="{StaticResource CustomerContactPerson}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Binding="{Binding ContactPerson}"/>
+                                    Binding="{Binding Customer.ContactPerson}"/>
                 <DataGridTextColumn Header="{StaticResource CustomerPhone1}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Binding="{Binding Phone1}"/>
+                                    Binding="{Binding Customer.Phone1}"/>
                 <DataGridTextColumn Header="{StaticResource CustomerPhone2}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Binding="{Binding Phone2}"/>
+                                    Binding="{Binding Customer.Phone2}"/>
                 <DataGridTextColumn Header="{StaticResource CustomerFax}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Binding="{Binding Fax}"/>
+                                    Binding="{Binding Customer.Fax}"/>
                 <DataGridTextColumn Header="{StaticResource CustomerEmail}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Binding="{Binding Email}"/>
+                                    Binding="{Binding Customer.Email}"/>
                 <DataGridTextColumn Header="{StaticResource CustomerMemo}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Binding="{Binding Memo}"/>
-                
+                                    Binding="{Binding Customer.Memo}"/>
+                <DataGridTextColumn Header="最后下单日期" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding LastOrderDate,StringFormat={}{0:yyyy-MM-dd}}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
