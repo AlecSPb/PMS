@@ -19,9 +19,9 @@ namespace PMSSPC.Services
         {
             IDbConnection conn = new SqlConnection(conStr);
 
-            string sql = "select id,productid,composition,density,dimensionactual,resistance,weight from recordtests " +
+            string sql = "select id,productid,composition,density,dimensionactual,resistance,weight,createtime from recordtests " +
                 "where composition like '%'+@compo+'%' and [state]!='作废' and dimension like '%230%'" +
-                "and (createtime between @start and @end)";
+                "and (createtime between @start and @end) and composition not like '%F%'";
 
             var testResults = conn.Query<RecordTestModel>(sql, new { @compo = composition,@start=start,@end=end });
 
@@ -40,7 +40,7 @@ namespace PMSSPC.Services
 
             data_cleaned.ForEach(i =>
             {
-                items.Add(new SPCDataItem { ProductID = i.ProductID, Composition = i.Composition, Value = i.Density });
+                items.Add(new SPCDataItem { ProductID = i.ProductID, Composition = i.Composition, Value = i.Density,CreateTime=i.CreateTime });
             });
 
             return items;

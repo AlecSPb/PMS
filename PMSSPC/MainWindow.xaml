@@ -54,7 +54,8 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ProductID" Binding="{Binding ProductID}"/>
                         <DataGridTextColumn Header="Composition" Binding="{Binding Composition}"/>
-                        <DataGridTextColumn Header="Value" Binding="{Binding Value}"/>
+                        <DataGridTextColumn Header="Value" Binding="{Binding Value}" Foreground="Blue"/>
+                        <DataGridTextColumn Header="CreateTime" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Border>

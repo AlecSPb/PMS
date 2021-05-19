@@ -217,8 +217,8 @@ namespace PMSSPC
                 filename= "auto";
             }
 
-            filename += $"{DpStart.SelectedDate?.ToString("yyMMdd")}-{DpEnd.SelectedDate?.ToString("yyMMdd")}-" +
-                  $"{CboComposition.SelectedItem.ToString()}-{CboSPCType.SelectedItem.ToString()}.json";
+            filename += $"{spc_model.Start.ToString("yyMMdd")}-{spc_model.End.ToString("yyMMdd")}-" +
+                  $"{spc_model.Items[0].Composition.ToString()}-{spc_model.SPCType.ToString()}.json";
 
             string fullfilename = System.IO.Path.Combine(savedFolder, filename);
 
