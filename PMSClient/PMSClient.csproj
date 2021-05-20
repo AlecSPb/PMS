@@ -373,6 +373,7 @@
     <Compile Include="Helpers\CompositionHelper.cs" />
     <Compile Include="Helpers\CompositionModel.cs" />
     <Compile Include="Helpers\Converter\CurrentVHPDateConverter.cs" />
+    <Compile Include="Helpers\Converter\CustomerLastOrderDateConverter.cs" />
     <Compile Include="Helpers\Converter\IDToBarCodeConverter.cs" />
     <Compile Include="Helpers\Converter\IsOverDueBGConverter.cs" />
     <Compile Include="Helpers\Converter\IsOverDueConverter.cs" />

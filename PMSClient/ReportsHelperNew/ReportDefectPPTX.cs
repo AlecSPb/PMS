@@ -22,8 +22,8 @@ namespace PMSClient.ReportsHelperNew
 
             string tempPath = Path.Combine(Environment.CurrentDirectory, "Temp", $"PMI Non-Conformance Alert {model.ProductID}.pptx");
 
-            string targetPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"PMI Non-Conformance Alert {model.ProductID}.pptx");
-
+            string targetPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), 
+                $"PMI Non-Conformance Alert {model.ProductID}-{model.Composition}.pptx");
 
 
             try

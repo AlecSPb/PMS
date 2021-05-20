@@ -18,7 +18,41 @@ namespace PMSClient.ViewModel
             Customers = new ObservableCollection<CustomerExtra>();
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<CustomerExtra>(ActionEdit, CanEdit);
+            ReOrder = new RelayCommand(ActionReOrder);
             RefreshData();
+        }
+
+        private void ActionReOrder()
+        {
+            try
+            {
+                Customers.Clear();
+
+                List<CustomerExtra> customers = new List<CustomerExtra>();
+
+                using (var service = new CustomerServiceClient())
+                {
+                    var s = service.GetCustomer().OrderBy(i => i.CustomerName).ToList();
+                    using (var newservice = new NewService.NewServiceClient())
+                    {
+                        s.ForEach(i =>
+                        {
+                            DateTime lastorderdate = newservice.GetLastOrderDateByCustomerName(i.CustomerName);
+                            customers.Add(new CustomerExtra { Customer = i, LastOrderDate = lastorderdate });
+                        });
+                    }
+
+                    customers.OrderByDescending(i => i.LastOrderDate).ToList().ForEach(i =>
+                    {
+                        Customers.Add(i);
+                    });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private bool CanEdit(CustomerExtra arg)
@@ -48,16 +82,16 @@ namespace PMSClient.ViewModel
             try
             {
                 Customers.Clear();
-                
+
                 using (var service = new CustomerServiceClient())
                 {
                     var s = service.GetCustomer().OrderBy(i => i.CustomerName).ToList();
-                    using (var newservice=new NewService.NewServiceClient())
+                    using (var newservice = new NewService.NewServiceClient())
                     {
                         s.ForEach(i =>
                         {
                             DateTime lastorderdate = newservice.GetLastOrderDateByCustomerName(i.CustomerName);
-                            Customers.Add(new CustomerExtra { Customer = i, LastOrderDate =lastorderdate});
+                            Customers.Add(new CustomerExtra { Customer = i, LastOrderDate = lastorderdate });
                         });
                     }
                 }
@@ -70,6 +104,7 @@ namespace PMSClient.ViewModel
         public ObservableCollection<CustomerExtra> Customers { get; set; }
 
         public RelayCommand Add { get; set; }
+        public RelayCommand ReOrder { get; set; }
         public RelayCommand<CustomerExtra> Edit { get; set; }
     }
 }

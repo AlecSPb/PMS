@@ -17,6 +17,7 @@
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
+            <Button Content="按最近下单排序" Style="{StaticResource StyleButtonCommon}" Command="{Binding ReOrder}"/>
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Customers}">
             <DataGrid.Columns>
@@ -47,8 +48,17 @@
                                     Binding="{Binding Customer.Email}"/>
                 <DataGridTextColumn Header="{StaticResource CustomerMemo}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     Binding="{Binding Customer.Memo}"/>
-                <DataGridTextColumn Header="最后下单日期" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Binding="{Binding LastOrderDate,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <!--<DataGridTextColumn Header="最后下单日期" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding LastOrderDate,StringFormat={}{0:yyyy-MM-dd}}"/>-->
+                <DataGridTemplateColumn Header="最后下单日期">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding LastOrderDate,StringFormat={}{0:yyyy-MM-dd}}"
+                                       Foreground="{Binding LastOrderDate,Converter={StaticResource CustomerLastOrderDateCT}}"
+                                       Style="{StaticResource StyleDGTextBlockCommon}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

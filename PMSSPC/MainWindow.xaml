@@ -19,8 +19,9 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="Wheat">
             <Grid.ColumnDefinitions>
@@ -92,6 +93,10 @@
                 </lvc:CartesianChart.Series>
             </lvc:CartesianChart>
         </Border>
-
+        <Border Grid.Row="3" BorderBrush="Orange" BorderThickness="1" Margin="2" Background="LightBlue">
+            <TextBlock Margin="2" 
+                       Text="[Fetch]=Get From PMS;[Save]=To File;[Open]=From File;[Folder]=SavedPlace;Algorithm:USL=Max,LSL=Min,SL=(USL+LSL)/2,UCL=CL+3*sigma,LCL=CL-3*sigma,CL=Avg" 
+                       TextAlignment="Left" Foreground="Black" FontSize="12"/>
+        </Border>
     </Grid>
 </Window>

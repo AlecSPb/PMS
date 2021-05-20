@@ -18,4 +18,5 @@
     <local:IsOverDueConverter x:Key="IsOverDueCT"/>
     <local:IsOverDueBGConverter x:Key="IsOverDueBGCT"/>
     <local:StateVisibleCovnerter x:Key="StateVisibleCT"/>
+    <local:CustomerLastOrderDateConverter x:Key="CustomerLastOrderDateCT"/>
 </ResourceDictionary>
