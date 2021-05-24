@@ -11,17 +11,26 @@
     <Grid Background="Wheat">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Padding="5" Text="Yellow=W2 with Product Sent,Black=W2 with No Product Sent,Gray=W1,White=Idle 黄色=W2有产品发出 黑色=W2没产品发出 灰色=W1 白色=空闲 小横线=周末" 
-                   Background="LightGreen"/>
-        <Grid Grid.Row="1">
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <DatePicker Name="DpStart" Margin="2"/>
+            <DatePicker Name="DpEnd" Margin="2"/>
+            <Button Name="BtnFetch" Content="Fetch" Padding="2" Margin="2" Width="60" Click="BtnFetch_Click"/>
+        </StackPanel>
+        <TextBlock Grid.Row="3" Padding="5" Text="Orange=W2 Product Sent,Black=W2 No Product Sent,Gray=W1,White=Idle 橙色=W2有产品发出 黑色=W2没产品发出 灰色=W1 白色=空闲 小横线=周末" 
+                   TextWrapping="WrapWithOverflow" FontSize="16"/>
+        <TextBlock Grid.Row="1" Padding="5" Text="" Name="TxtResult"
+                   Background="LightBlue" TextWrapping="WrapWithOverflow" FontSize="16"/>
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="500"/>
             </Grid.ColumnDefinitions>
             <Canvas Margin="5" Name="mainCanvas"/>
-            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="2">
+            <Border Grid.Column="1" BorderBrush="LightBlue" BorderThickness="1" Margin="2" Background="Wheat">
                 <Grid >
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -37,7 +46,7 @@
                             <lv:Axis Title="使用次数"/>
                         </lv:CartesianChart.AxisY>
                         <lv:CartesianChart.Series>
-                            <lv:ColumnSeries Name="Chart_VHP_Count" Title="VHP_Count"/>
+                            <lv:ColumnSeries Name="Chart_VHP_Count" Title="VHP_Count"  DataLabels="True"/>
                         </lv:CartesianChart.Series>
                     </lv:CartesianChart>
                     <lv:CartesianChart Grid.Row="1">
@@ -48,24 +57,24 @@
                             <lv:Axis Title="使用次数百分比"/>
                         </lv:CartesianChart.AxisY>
                         <lv:CartesianChart.Series>
-                            <lv:ColumnSeries Name="Chart_VHP_Percent_Count" Title="VHP_Percent_Count"/>
+                            <lv:ColumnSeries Name="Chart_VHP_Percent_Count" Title="VHP_Percent_Count" DataLabels="True" Fill="Red"/>
                         </lv:CartesianChart.Series>
                     </lv:CartesianChart>
 
-                    <lv:PieChart Grid.Row="2" LegendLocation="Left">
+                    <lv:PieChart Grid.Row="2" LegendLocation="Bottom">
                         <lv:PieChart.Series>
-                            <lv:PieSeries x:Name="Chart_W1" Values="3" Title="W1" Fill="Gray"/>
-                            <lv:PieSeries x:Name="Chart_W2_Sucess" Values="4" Title="W2_Sucess" Fill="Yellow"/>
-                            <lv:PieSeries x:Name="Chart_W2_Failed" Values="5" Title="W2_Failed" Fill="Black"/>
+                            <lv:PieSeries x:Name="Chart_W1" Values="3" Title="W1" Fill="Gray" DataLabels="True"/>
+                            <lv:PieSeries x:Name="Chart_W2_Sucess" Values="4" Title="W2_Sucess" Fill="Orange" DataLabels="True"/>
+                            <lv:PieSeries x:Name="Chart_W2_Failed" Values="5" Title="W2_Failed" Fill="Black" DataLabels="True"/>
                         </lv:PieChart.Series>
                     </lv:PieChart>
 
-                    <lv:PieChart Grid.Row="3" LegendLocation="Left">
+                    <lv:PieChart Grid.Row="3" LegendLocation="Bottom">
                         <lv:PieChart.Series>
-                            <lv:PieSeries x:Name="Chart_All_W0" Values="3" Title="NoUse" Fill="white"/>
-                            <lv:PieSeries x:Name="Chart_All_W1" Values="3" Title="W1" Fill="Gray"/>
-                            <lv:PieSeries x:Name="Chart_All_W2_Sucess" Values="4" Title="W2_Sucess" Fill="Yellow"/>
-                            <lv:PieSeries x:Name="Chart_All_W2_Failed" Values="5" Title="W2_Failed" Fill="Black"/>
+                            <lv:PieSeries x:Name="Chart_All_W0" Values="3" Title="NoUse(be exclusive of Holiday)" Fill="white"  DataLabels="True"/>
+                            <lv:PieSeries x:Name="Chart_All_W1" Values="3" Title="W1" Fill="Gray"  DataLabels="True"/>
+                            <lv:PieSeries x:Name="Chart_All_W2_Sucess" Values="4" Title="W2_Sucess" Fill="Orange"  DataLabels="True"/>
+                            <lv:PieSeries x:Name="Chart_All_W2_Failed" Values="5" Title="W2_Failed" Fill="Black" DataLabels="True"/>
                         </lv:PieChart.Series>
                     </lv:PieChart>
                 </Grid>

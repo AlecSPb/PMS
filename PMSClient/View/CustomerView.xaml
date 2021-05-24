@@ -54,7 +54,8 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding LastOrderDate,StringFormat={}{0:yyyy-MM-dd}}"
-                                       Foreground="{Binding LastOrderDate,Converter={StaticResource CustomerLastOrderDateCT}}"
+                                       Background="{Binding LastOrderDate,Converter={StaticResource CustomerLastOrderDateCT}}"
+                                       Foreground="Blue"
                                        Style="{StaticResource StyleDGTextBlockCommon}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

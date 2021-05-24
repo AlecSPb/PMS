@@ -165,9 +165,12 @@ namespace PMSSPC
 
         private void LoadDataFromFile(string filename)
         {
-            string json_str = File.ReadAllText(filename);
-            SPCModel model = JsonConvert.DeserializeObject<SPCModel>(json_str);
-            LoadSPCModel(model);
+            if (File.Exists(filename))
+            {
+                string json_str = File.ReadAllText(filename);
+                SPCModel model = JsonConvert.DeserializeObject<SPCModel>(json_str);
+                LoadSPCModel(model);
+            }
         }
 
         private string savedFolder = System.IO.Path.Combine(Environment.CurrentDirectory, "DataSaved");
@@ -219,6 +222,12 @@ namespace PMSSPC
 
             filename += $"{spc_model.Start.ToString("yyMMdd")}-{spc_model.End.ToString("yyMMdd")}-" +
                   $"{spc_model.Items[0].Composition.ToString()}-{spc_model.SPCType.ToString()}.json";
+
+            if (!Directory.Exists(savedFolder))
+            {
+                Directory.CreateDirectory(savedFolder);
+            }
+
 
             string fullfilename = System.IO.Path.Combine(savedFolder, filename);
 

@@ -17,11 +17,10 @@ namespace PMSClient.Helpers.Converter
             DateTime date = (DateTime)value;
             if(date.Year==DateTime.Now.Year)
             {
-                System.Diagnostics.Debug.Print("color.blue");
-                return new SolidColorBrush(Colors.Blue);
+                return new SolidColorBrush(Colors.LightGreen);
             }
             {
-                return new SolidColorBrush(Colors.Black);
+                return new SolidColorBrush(Colors.White);
             }
 
         }
