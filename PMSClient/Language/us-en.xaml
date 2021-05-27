@@ -355,7 +355,9 @@
     <sys:String x:Key="ButtonUnCheckOutput">UnCheck-Output</sys:String>
     <sys:String x:Key="ButtonCustomerAnlysis">CustomerAnlysis</sys:String>
     <sys:String x:Key="ButtonDefectReport">NCA</sys:String>
+    <sys:String x:Key="ButtonPrepare">Prepare</sys:String>
 
+    
     <!--单字按钮-->
     <sys:String x:Key="ButtonSingleSend">S</sys:String>
     <sys:String x:Key="ButtonSingleReceive">R</sys:String>
@@ -687,6 +689,7 @@
     <sys:String x:Key="RTQC">QC</sys:String>
     <sys:String x:Key="RTCSCAN">CSCAN</sys:String>
     <sys:String x:Key="RTParallelism">Flatness</sys:String>
+    <sys:String x:Key="RTLaserEngraved">Laser Engraved Content</sys:String>
     <sys:String x:Key="RTLastUpdateTime">LastUpdateTime</sys:String>
     
     <!--Delivery-->

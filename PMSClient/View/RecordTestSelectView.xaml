@@ -145,6 +145,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RTLaserEngraved}"
+                                            Binding="{Binding RecordTest.LaserEngraved}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource RTSample}" Binding="{Binding RecordTest.Sample}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTemplateColumn Header="{StaticResource RTCreateTime}">
                     <DataGridTemplateColumn.CellTemplate>

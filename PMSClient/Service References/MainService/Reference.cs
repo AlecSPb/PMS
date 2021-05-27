@@ -6299,6 +6299,9 @@ namespace PMSClient.MainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LaserEngravedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime LastUpdateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -6531,6 +6534,19 @@ namespace PMSClient.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LaserEngraved {
+            get {
+                return this.LaserEngravedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LaserEngravedField, value) != true)) {
+                    this.LaserEngravedField = value;
+                    this.RaisePropertyChanged("LaserEngraved");
                 }
             }
         }

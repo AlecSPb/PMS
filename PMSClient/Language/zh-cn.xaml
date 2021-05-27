@@ -366,6 +366,7 @@
     <sys:String x:Key="ButtonUnCheckOutput">未核验导出</sys:String>
     <sys:String x:Key="ButtonCustomerAnlysis">客户分析</sys:String>
     <sys:String x:Key="ButtonDefectReport">NCA</sys:String>
+    <sys:String x:Key="ButtonPrepare">预备</sys:String>
 
 
     <!--单字按钮-->
@@ -698,6 +699,7 @@
     <sys:String x:Key="RTBP">附带背板</sys:String>
     <sys:String x:Key="RTCSCAN">超声情况</sys:String>
     <sys:String x:Key="RTParallelism">平行度</sys:String>
+    <sys:String x:Key="RTLaserEngraved">激光刻字内容</sys:String>
     <sys:String x:Key="RTLastUpdateTime">最后更新时间</sys:String>
 
     <!--Delivery-->

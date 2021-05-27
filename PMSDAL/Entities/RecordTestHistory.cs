@@ -38,6 +38,9 @@ namespace PMSDAL
         public string Roughness { get; set; }
 
         public string Warping { get; set; }
+        public string LaserEngraved { get; set; }
+
+
         public string QC { get; set; }
 
         [DefaultValue("无")]

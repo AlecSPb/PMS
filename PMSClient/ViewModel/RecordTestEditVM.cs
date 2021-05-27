@@ -24,6 +24,83 @@ namespace PMSClient.ViewModel
             Select = new RelayCommand(ActionSelect);
             SelectMisson = new RelayCommand(ActionSelectMisson);
             SelectDimensionActual = new RelayCommand(ActionSelectDimensionActual);
+            TaskRequirement = new RelayCommand(ActionTaskRequirement);
+
+            ActionTaskRequirement();
+        }
+
+        public void ActionTaskRequirement()
+        {
+            string pminumber = "";
+            if (CurrentRecordTest != null)
+            {
+                pminumber = CurrentRecordTest.PMINumber.Trim();
+
+                if (!string.IsNullOrEmpty(pminumber))
+                {
+                    using (var service = new OrderServiceClient())
+                    {
+                        var result = service.GetOrders(0, 1, "", "", pminumber).FirstOrDefault();
+                        if (result != null)
+                        {
+                            StringBuilder sb = new StringBuilder();
+                            #region 订单信息
+                            sb.Append("【成分】:");
+                            sb.AppendLine(result.CompositionStandard);
+                            sb.Append("【客户】:");
+                            sb.AppendLine(result.CustomerName);
+                            sb.Append("【PO】:");
+                            sb.AppendLine(result.PO);
+                            sb.Append("【尺寸】:");
+                            sb.AppendLine(result.Dimension ?? "");
+                            sb.Append("【尺寸要求】:");
+                            sb.AppendLine(result.DimensionDetails ?? "");
+                            sb.Append("【数量】:");
+                            sb.AppendLine($"{result.Quantity}{result.QuantityUnit}");
+                            sb.Append("【最低要求】:");
+                            sb.AppendLine(result.MinimumAcceptDefect ?? "");
+                            sb.Append("【客户样品】:");
+                            sb.AppendLine(result.SampleNeed ?? "");
+                            sb.Append("【自分析样品】:");
+                            sb.AppendLine(result.SampleForAnlysis ?? "");
+                            sb.Append("【配有背板】:");
+                            sb.AppendLine(result.WithBackingPlate ?? "");
+                            sb.Append("【特殊要求】:");
+                            sb.AppendLine(result.SpecialRequirement ?? "");
+                            sb.Append("【激光标刻】:");
+                            sb.AppendLine(result.LaserNeed ?? "");
+                            sb.Append("【交付日期】:");
+                            sb.AppendLine(result.DeadLine.ToLongDateString());
+                            sb.Append("【PartNumber】:");
+                            sb.AppendLine(result.PartNumber);
+                            sb.Append("【二次加工尺寸】:");
+                            sb.AppendLine(result.SecondMachineDimension);
+                            sb.Append("【二次加工细节】:");
+                            sb.AppendLine(result.SecondMachineDetails);
+
+
+                            string ts = result.ShipTo ?? "" + result.BondingRequirement ?? "";
+                            if (ts.Contains("TCB"))
+                            {
+                                sb.AppendLine("【TCB要求】:该靶材将发送到TCB，请制作条码标签+绑定面靶材中央铅笔标记BTS");
+                            }
+
+                            if (result.CustomerName.Contains("YMTC"))
+                            {
+                                sb.AppendLine("【YMTC要求】:该靶材将发送到YMTC，请制作专门标签+双层包装");
+                            }
+                            #endregion
+
+                            TaskRequirementText = sb.ToString();
+
+                        }
+                    }
+                }
+                else
+                {
+                    TaskRequirementText = "请检查PMINumber是否正确";
+                }
+            }
         }
 
         private void InitializeBasic()
@@ -85,6 +162,7 @@ namespace PMSClient.ViewModel
             model.BackingPlateLot = "无";
             model.CScan = "无";
             model.Parallelism = "F-A=M0.02mm;F-B=M0.02mm";
+            model.LaserEngraved = "无";
             #endregion
             CurrentRecordTest = model;
 
@@ -404,9 +482,26 @@ namespace PMSClient.ViewModel
                 Set(nameof(CurrentRecordTest), ref currentRecordTest, value);
             }
         }
+
+        private string taskRequirementText;
+        public string TaskRequirementText
+        {
+            get { return taskRequirementText; }
+            set
+            {
+                if (taskRequirementText == value)
+                    return;
+                taskRequirementText = value;
+                RaisePropertyChanged(() => TaskRequirementText);
+            }
+        }
+
+
         public RelayCommand Select { get; set; }
         public RelayCommand SelectMisson { get; set; }
 
         public RelayCommand SelectDimensionActual { get; set; }
+        public RelayCommand TaskRequirement { get; set; }
+
     }
 }

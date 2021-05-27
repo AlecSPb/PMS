@@ -71,5 +71,9 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Parallelism { get; set; }
 
+        [DataMember]
+        public string LaserEngraved { get; set; }
+
+
     }
 }

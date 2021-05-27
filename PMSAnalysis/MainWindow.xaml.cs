@@ -27,7 +27,7 @@ namespace PMSAnalysis
         {
             InitializeComponent();
             DpStart.SelectedDate = DateTime.Today.AddYears(-1);
-            DpEnd.SelectedDate = DateTime.Today.AddMonths(-1);
+            DpEnd.SelectedDate = DateTime.Today;
         }
 
         private void BtnFetch_Click(object sender, RoutedEventArgs e)
@@ -78,7 +78,7 @@ namespace PMSAnalysis
             vhp_count.Add(E);
             vhp_count.Add(F);
 
-
+            mainCanvas.Children.Clear();
 
             foreach (var item in rr)
             {
@@ -103,8 +103,6 @@ namespace PMSAnalysis
                     r.SetValue(Canvas.LeftProperty, left);
                     r.SetValue(Canvas.TopProperty, top - 4);
                     mainCanvas.Children.Add(r);
-
-
                 }
 
 
@@ -190,6 +188,7 @@ namespace PMSAnalysis
 
 
         private int A = 0, B = 0, C = 0, D = 0, E = 0, F = 0;
+
 
 
         private void AddRect(double l, double t, PlanResult ptype)

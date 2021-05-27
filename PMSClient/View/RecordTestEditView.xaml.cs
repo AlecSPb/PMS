@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
 using PMSClient.ToolWindow;
+using PMSClient.MainService;
 
 namespace PMSClient.View
 {
@@ -233,5 +234,7 @@ namespace PMSClient.View
 
             PMSMethods.SetTextBox(TxtRoughness, $"Ra-A={r1.ToString("0.000")}um Ra-B={r2.ToString("0.000")}um");
         }
+
+
     }
 }

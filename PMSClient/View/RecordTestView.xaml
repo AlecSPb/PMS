@@ -46,8 +46,9 @@
             <Button Content="{StaticResource ButtonQuickLabel}" Style="{StaticResource    StyleButtonCommonNarrow}"
                     Command="{Binding QuickLabel}"/>
             <Button Content="{StaticResource ButtonQuickCheck}" Style="{StaticResource    StyleButtonCommonNarrow}"
-                    Command="{Binding OneKeyCheck}"
-                    Foreground="Blue" FontWeight="Bold"/>
+                    Command="{Binding OneKeyCheck}"/>
+            <Button Content="{StaticResource ButtonPrepare}" Style="{StaticResource    StyleButtonCommonNarrow}"
+                    Command="{Binding Prepare}" FontWeight="Bold"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorNoInput}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource NoInputBrush}"/>
 
@@ -220,6 +221,8 @@
                                             Binding="{Binding RecordTest.BackingPlateLot}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource RTCSCAN}"
                                             Binding="{Binding RecordTest.CScan}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource RTLaserEngraved}"
+                                            Binding="{Binding RecordTest.LaserEngraved}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
 
                         <DataGridTemplateColumn Header="{StaticResource RTRemark}">
                             <DataGridTemplateColumn.CellTemplate>
@@ -315,7 +318,7 @@
                                     Command="{Binding DataContext.Compare,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                     CommandParameter="{Binding}"
                                     />
-                        
+
                         <Button Content="{StaticResource ButtonLabel}" Grid.Column="5" Grid.Row="0"
                                     Style="{StaticResource StyleButtonStrench}" HorizontalAlignment="Stretch"
                                     Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
@@ -348,6 +351,7 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
+                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
@@ -416,38 +420,41 @@
                             <Button Grid.Row="14" Grid.Column="1" Content="{Binding RecordTest.CScan}" Style="{StaticResource StyleButtonStrench}"  
                                     Name="BtnScan" Click="BtnScan_Click" VerticalAlignment="Stretch"/>
 
-
-                            <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTWarping}"
+                            <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTLaserEngraved}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding RecordTest.Warping}" Style="{StaticResource StyleTextBoxReadOnly}"   />
-
-                            <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RTParallelism}"
+                            <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding RecordTest.LaserEngraved}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            
+                            <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RTWarping}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding RecordTest.Parallelism}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding RecordTest.Warping}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTQC}"
+                            <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTParallelism}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding RecordTest.QC}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding RecordTest.Parallelism}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RTBP}"
+                            <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RTQC}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding RecordTest.BackingPlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding RecordTest.QC}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RTRemark}"
+                            <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RTBP}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding RecordTest.Remark}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding RecordTest.BackingPlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RTCreator}"
+                            <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding RecordTest.Creator}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding RecordTest.Remark}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RTCreateTime}"
+                            <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RTCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding RecordTest.CreateTime}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding RecordTest.Creator}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
-                            <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource RTLastUpdateTime}"
+                            <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource RTCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding RecordTest.LastUpdateTime}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+                            <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding RecordTest.CreateTime}" Style="{StaticResource StyleTextBoxReadOnly}"   />
+
+                            <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource RTLastUpdateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding RecordTest.LastUpdateTime}" Style="{StaticResource StyleTextBoxReadOnly}"   />
 
                         </Grid>
                     </ScrollViewer>

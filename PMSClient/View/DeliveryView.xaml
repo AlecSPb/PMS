@@ -285,7 +285,15 @@
                 </DataGridTemplateColumn>
                 <!--<DataGridTextColumn Header="{StaticResource RDPackNumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding PackNumber}"/>-->
-
+                <DataGridTemplateColumn Header="{StaticResource RTDefects}" Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Defects}"
+                                       Background="{Binding Defects,Converter={StaticResource DefectsCT}}"
+                                     Style="{StaticResource StyleDGTextBlockCommon}" HorizontalAlignment="Stretch"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RDPosition}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

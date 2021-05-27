@@ -82,6 +82,7 @@ namespace PMSClient.ViewModel
             EnterCSCAN = new RelayCommand<RecordTestExtra>(ActionEnterCscan, CanEnterCscan);
 
             OneKeyCheck = new RelayCommand(ActonOneKeyCheck);
+            Prepare = new RelayCommand(ActionPrepare);
 
             DeepSearch = new RelayCommand<RecordTestExtra>(ActionDeepSearch, CanDeepSearch);
             SaveJson = new RelayCommand<RecordTestExtra>(ActionSaveJson, CanSaveJson);
@@ -90,6 +91,11 @@ namespace PMSClient.ViewModel
 
             DefectReport = new RelayCommand<RecordTestExtra>(ActionDefectReport, CanDefectReport);
 
+        }
+
+        private void ActionPrepare()
+        {
+            
         }
 
         private void ActionDefectReport(RecordTestExtra obj)
@@ -728,6 +734,8 @@ namespace PMSClient.ViewModel
             }
 
             PMSHelper.ViewModels.RecordTestEdit.SetEdit(model.RecordTest);
+            PMSHelper.ViewModels.RecordTestEdit.ActionTaskRequirement();
+
             NavigationService.GoTo(PMSViews.RecordTestEdit);
         }
 
@@ -852,6 +860,7 @@ namespace PMSClient.ViewModel
         public RelayCommand QuickDoc { get; set; }
         public RelayCommand QuickChart { get; set; }
         public RelayCommand QuickLabel { get; set; }
+        public RelayCommand Prepare { get; set; }
 
 
         public RelayCommand<RecordTestExtra> ShowOrderInformation { get; set; }
