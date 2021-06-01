@@ -69,6 +69,16 @@ namespace PMSWCFService
 
         }
 
+        //private RecordBonding GetDefaultRecordBonding()
+        //{
+        //    RecordBonding bonding_default = new RecordBonding();
+        //    bonding_default.CreateTime = new DateTime(1900, 1, 1);
+        //    bonding_default.PlateLot = "未绑定";
+        //    bonding_default.PlateType = "Naked Target";
+        //    bonding_default.WeldingRate = 0;
+        //    return bonding_default;
+        //}
+
         public List<DcOutputSpecialFor230Model> GetAll230DataByYearMonth(int s, int t, int year_start, int month_start, int year_end, int month_end)
         {
             try
@@ -79,14 +89,16 @@ namespace PMSWCFService
                     DateTime startTime = new DateTime(year_start, month_start, 1, 0, 0, 0);
                     DateTime endtime = new DateTime(year_end, month_end, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
 
+
+
                     var query = from dd in db.DeliveryItems
                                 join tt in db.RecordTests on dd.ProductID equals tt.ProductID into bb
                                 from bbdata in bb.DefaultIfEmpty()
                                 join b in db.RecordBondings on dd.ProductID equals b.TargetProductID into cc
                                 from ccdata in cc.DefaultIfEmpty()
                                 where dd.State == PMSCommon.SimpleState.正常.ToString()
-                                && bbdata.State == PMSCommon.CommonState.已核验.ToString()
-                                && ccdata.State == PMSCommon.BondingState.最终完成.ToString()
+                                //&& bbdata.State == PMSCommon.CommonState.已核验.ToString()
+                                //&& ccdata.State == PMSCommon.BondingState.最终完成.ToString()
                                 && (dd.Customer == "Midsummer" || dd.Customer == "Chaozhou")
                                 && dd.Dimension.Contains("230")
                                 && dd.CreateTime >= startTime
@@ -103,10 +115,10 @@ namespace PMSWCFService
                                     Weight = dd.Weight,
                                     Density = bbdata.Density,
                                     Resistance = bbdata.Resistance,
-                                    PlateLot = ccdata.PlateLot,
-                                    PlateType = ccdata.PlateType,
-                                    BondCreateTime = ccdata.CreateTime,
-                                    WeldingRate = ccdata.WeldingRate,
+                                    PlateLot = ccdata != null ? ccdata.PlateLot:"No Bonding",
+                                    PlateType = ccdata != null ? ccdata.PlateType:"No Bonding",
+                                    BondCreateTime = ccdata!=null?ccdata.CreateTime:new DateTime(1900,1,1),
+                                    WeldingRate = ccdata != null ? ccdata.WeldingRate:0,
                                     DeliveryCreateTime = dd.CreateTime,
                                     Position = dd.Position,
                                     CompositionXRF = bbdata.CompositionXRF
@@ -140,8 +152,8 @@ namespace PMSWCFService
                                 join b in db.RecordBondings on dd.ProductID equals b.TargetProductID into cc
                                 from ccdata in cc.DefaultIfEmpty()
                                 where dd.State == PMSCommon.SimpleState.正常.ToString()
-                                && bbdata.State == PMSCommon.CommonState.已核验.ToString()
-                                && ccdata.State == PMSCommon.BondingState.最终完成.ToString()
+                                //&& bbdata.State == PMSCommon.CommonState.已核验.ToString()
+                                //&& ccdata.State == PMSCommon.BondingState.最终完成.ToString()
                                 && (dd.Customer == "Midsummer" || dd.Customer == "Chaozhou")
                                 && dd.Dimension.Contains("230")
                                 && dd.CreateTime >= startTime

@@ -81,7 +81,7 @@ namespace PMSAnalysis.Services
             if (string.IsNullOrEmpty(vhpdevicecode))
                 return PlanResult.Empty;
 
-            if (plantype != "加工")
+            if (plantype != "加工" && plantype!="外协")
                 return PlanResult.W1;
 
             SqlConnection conn = new SqlConnection(conStr);
