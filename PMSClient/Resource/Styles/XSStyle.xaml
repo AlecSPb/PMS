@@ -329,6 +329,11 @@
         <Setter Property="MinHeight" Value="60"/>
     </Style>
 
+    <Style x:Key="StyleTextBoxMultiline2" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
+        <Setter Property="AcceptsReturn" Value="True"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+    </Style>
+
     <Style x:Key="StyleCheckBoxCommon" TargetType="CheckBox">
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>

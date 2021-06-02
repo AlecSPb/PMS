@@ -16,6 +16,7 @@ using PMSClient.CheckLogic;
 using CommonHelper;
 using Newtonsoft.Json;
 using PMSClient.Helpers;
+using PMSClient.Components.RecordTestCheck;
 
 namespace PMSClient.ViewModel
 {
@@ -95,7 +96,8 @@ namespace PMSClient.ViewModel
 
         private void ActionPrepare()
         {
-            
+            RTCWindow win = new RTCWindow();
+            win.Show();
         }
 
         private void ActionDefectReport(RecordTestExtra obj)

@@ -242,7 +242,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding LaserEngraved}" Style="{StaticResource StyleTextBoxBig}"/>
                     <TextBlock Grid.Row="19" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="激光标刻内容"/>
+                           Text="激光标刻内容,靶材和背板用+号分开"/>
 
                     <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RTWarping}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

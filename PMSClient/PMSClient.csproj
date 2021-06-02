@@ -299,6 +299,10 @@
     <Compile Include="Components\MaterialOrder\SimpleMaterial.cs" />
     <Compile Include="Components\NewFeatureDocShow\NewFeatureShowConfig.cs" />
     <Compile Include="Components\NewFeatureDocShow\NewFeatureShowService.cs" />
+    <Compile Include="Components\RecordTestCheck\RTCService.cs" />
+    <Compile Include="Components\RecordTestCheck\RTCWindow.xaml.cs">
+      <DependentUpon>RTCWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\BatchDuplicateDialog.xaml.cs">
       <DependentUpon>BatchDuplicateDialog.xaml</DependentUpon>
     </Compile>
@@ -1314,6 +1318,10 @@
     <Page Include="Components\MaterialOrder\SimpleMaterialResult.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\RecordTestCheck\RTCWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomControls\BatchDuplicateDialog.xaml">
       <SubType>Designer</SubType>
