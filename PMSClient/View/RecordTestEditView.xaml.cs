@@ -235,6 +235,31 @@ namespace PMSClient.View
             PMSMethods.SetTextBox(TxtRoughness, $"Ra-A={r1.ToString("0.000")}um Ra-B={r2.ToString("0.000")}um");
         }
 
+        private void BtnAddProductID_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBoxAppend(TxtLaserEngraved, $"{TxtProductID.Text.Trim()}");
+        }
 
+        private void BtnAddCompAbbr_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBoxAppend(TxtLaserEngraved, $"{TxtCompositionAbbr.Text.Trim()}");
+        }
+
+        private void BtnAddPMI_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBoxAppend(TxtLaserEngraved, $"PMI");
+        }
+
+        private void BtnAddPlus_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBoxAppend(TxtLaserEngraved, $"+");
+
+        }
+
+        private void BtnAddDash_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBoxAppend(TxtLaserEngraved, $"-");
+
+        }
     }
 }

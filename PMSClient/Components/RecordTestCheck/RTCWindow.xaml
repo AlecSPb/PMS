@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.Components.RecordTestCheck"
         mc:Ignorable="d"
-        Title="测试结果检查窗口-检查单生成" Height="600" Width="600" WindowStartupLocation="CenterScreen">
+        Title="测试结果检查窗口-检查单生成" Height="600" Width="600" WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

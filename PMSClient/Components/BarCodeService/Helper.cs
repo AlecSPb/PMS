@@ -22,6 +22,15 @@ namespace PMSClient.BarCodeService
             }
             return Path.Combine(folder, filename);
         }
+        public string GetTempFileInDocumentFolder(string filename)
+        {
+            string folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "PMSTemp");
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+            return Path.Combine(folder, filename);
+        }
 
         public void DelAll()
         {

@@ -22,7 +22,7 @@ namespace PMSClient.BarCodeService
 
         public string CreateQRCodeImage(string s)
         {
-            filename = helper.GetTempFile($"temp{Guid.NewGuid().ToString()}.png");
+            filename = helper.GetTempFileInDocumentFolder($"temp{Guid.NewGuid().ToString()}.png");
             QRCodeGenerator qrgenerator = new QRCodeGenerator();
             QRCodeData data = qrgenerator.CreateQrCode(s, QRCodeGenerator.ECCLevel.Q);
             QRCode qrcode = new QRCode(data);

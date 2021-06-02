@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.View"
              mc:Ignorable="d" 
-             d:DesignHeight="1500" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordTestEdit}">
+             d:DesignHeight="1500" d:DesignWidth="1500" DataContext="{Binding Source={StaticResource Locator},Path=RecordTestEdit}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -121,7 +121,8 @@
 
                     <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RTCompositionAbbr}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxBig}"   />
+                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxBig}"   
+                             Name="TxtCompositionAbbr"/>
                     <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"    Text="#"/>
 
                     <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RTPMINumber}" Style="{StaticResource StyleTextBlockCommon}"/>
@@ -240,9 +241,23 @@
 
                     <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RTLaserEngraved}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding LaserEngraved}" Style="{StaticResource StyleTextBoxBig}"/>
-                    <TextBlock Grid.Row="19" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="激光标刻内容,靶材和背板用+号分开"/>
+                    <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding LaserEngraved}" Style="{StaticResource StyleTextBoxBig}"
+                             Name="TxtLaserEngraved"/>
+                    <StackPanel Grid.Row="19" Grid.Column="2" Orientation="Horizontal">
+                        <Button Name="BtnAddPlus" Style="{StaticResource StyleButtonCommonNarrow}" Content="+"
+                                Click="BtnAddPlus_Click"/>
+                        <Button Name="BtnAddDash" Style="{StaticResource StyleButtonCommonNarrow}" Content="-"
+                                Click="BtnAddDash_Click"/>
+                        <Button Name="BtnAddPMI" Style="{StaticResource StyleButtonCommonNarrow}" Content="PMI"
+                                Click="BtnAddPMI_Click"/>
+                        <Button Name="BtnAddCompAbbr" Style="{StaticResource StyleButtonCommonNarrow}" Content="Abbr"
+                                Click="BtnAddCompAbbr_Click"/>
+                        <Button Name="BtnAddProductID" Style="{StaticResource StyleButtonCommonNarrow}" Content="ID"
+                                Click="BtnAddProductID_Click"/>
+                        <TextBlock Style="{StaticResource StyleTextBlockTip}"
+                           Text="靶直接输入;靶材和背板用+号分开;只有背板以+号开头"/>
+                    </StackPanel>
+
 
                     <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RTWarping}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

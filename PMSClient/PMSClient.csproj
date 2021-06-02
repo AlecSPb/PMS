@@ -299,6 +299,7 @@
     <Compile Include="Components\MaterialOrder\SimpleMaterial.cs" />
     <Compile Include="Components\NewFeatureDocShow\NewFeatureShowConfig.cs" />
     <Compile Include="Components\NewFeatureDocShow\NewFeatureShowService.cs" />
+    <Compile Include="Components\RecordTestCheck\LaserContent.cs" />
     <Compile Include="Components\RecordTestCheck\RTCService.cs" />
     <Compile Include="Components\RecordTestCheck\RTCWindow.xaml.cs">
       <DependentUpon>RTCWindow.xaml</DependentUpon>
@@ -3019,12 +3020,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

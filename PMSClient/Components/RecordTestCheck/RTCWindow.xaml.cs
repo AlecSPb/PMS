@@ -23,21 +23,45 @@ namespace PMSClient.Components.RecordTestCheck
         public RTCWindow()
         {
             InitializeComponent();
+            Read();
         }
 
         private void BtnRead_Click(object sender, RoutedEventArgs e)
         {
+
+            if (XSHelper.XS.MessageBox.ShowYesNo("确定要从服务器读取并替代当前产品ID输入？"))
+            {
+                Read();
+            }
+        }
+
+        private void Read()
+        {
             try
             {
-                if (XSHelper.XS.MessageBox.ShowYesNo("确定要从服务器读取并替代当前产品ID输入？"))
+                using (var s = new PMSSettingServiceClient())
                 {
-                    using (var s = new PMSSettingServiceClient())
-                    {
-                        var str = s.GetValueByKey("record_check_ids");
-                        TxtInput.Text = str;
-                    }
-                    UpdateStatus("读取成功");
+                    var str = s.GetValueByKey("record_check_ids");
+                    TxtInput.Text = str;
                 }
+                UpdateStatus("读取成功");
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void Save()
+        {
+            try
+            {
+                using (var s = new PMSSettingServiceClient())
+                {
+                    string str = TxtInput.Text;
+                    s.UpdateSettings("record_check_ids", str);
+                }
+                UpdateStatus("保存成功");
+
             }
             catch (Exception)
             {
@@ -46,20 +70,8 @@ namespace PMSClient.Components.RecordTestCheck
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                using (var s = new PMSSettingServiceClient())
-                {
-                    string str = TxtInput.Text;
-                    s.UpdateSettings("record_check_ids", str);
-                    XSHelper.XS.MessageBox.ShowInfo("当前输入的产品ID已保存到服务器，可以从其他客户端查看");
-                }
-                UpdateStatus("保存成功");
-
-            }
-            catch (Exception)
-            {
-            }
+            Save();
+            XSHelper.XS.MessageBox.ShowInfo("当前输入的产品ID已保存到服务器，可以从其他客户端查看");
         }
 
         private void BtnGenerate_Click(object sender, RoutedEventArgs e)
@@ -79,13 +91,17 @@ namespace PMSClient.Components.RecordTestCheck
 
         private void AppendStatus(string msg)
         {
-            TxtStatus.Text =$"{msg}\r\n{TxtStatus.Text}";
+            TxtStatus.Text = $"{msg}\r\n{TxtStatus.Text}";
         }
 
-        private void AppendStatus(object sender,string msg)
+        private void AppendStatus(object sender, string msg)
         {
             AppendStatus(msg);
         }
 
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Save();
+        }
     }
 }
