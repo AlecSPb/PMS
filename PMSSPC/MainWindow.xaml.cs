@@ -64,6 +64,7 @@ namespace PMSSPC
 
             CboSPCType.Items.Clear();
             CboSPCType.Items.Add("Density");
+            CboSPCType.Items.Add("Weight");
 
             DpStart.SelectedDate = new DateTime(2019, 1, 1);
             DpEnd.SelectedDate = DateTime.Today.AddDays(1);
@@ -118,8 +119,22 @@ namespace PMSSPC
         {
             if (XSHelper.XS.MessageBox.ShowYesNo("Fetch Data From PMS?"))
             {
-                var data = service.GetCleanedSPCDataItemDensity(CboComposition.SelectedItem.ToString(), DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
-                    DpEnd.SelectedDate?.ToString("yyyy-MM-dd"));
+                List<SPCDataItem> data = new List<SPCDataItem>();
+                switch (CboSPCType.SelectedItem.ToString())
+                {
+                    case "Density":
+                        data = service.GetCleanedSPCDataItemDensity(CboComposition.SelectedItem.ToString(), 
+                                            DpStart.SelectedDate?.ToString("yyyy-MM-dd"), 
+                                            DpEnd.SelectedDate?.ToString("yyyy-MM-dd"));
+                        break;
+                    case "Weight":
+                        data = service.GetCleanedSPCDataItemWeight(CboComposition.SelectedItem.ToString(),
+                                            DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
+                                            DpEnd.SelectedDate?.ToString("yyyy-MM-dd"));
+                        break;
+                    default:
+                        break;
+                }
                 SetSPCModel(data, CboSPCType.SelectedItem.ToString(), "g/cm3");
             }
 

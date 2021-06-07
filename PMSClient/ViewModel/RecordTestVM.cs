@@ -17,6 +17,7 @@ using CommonHelper;
 using Newtonsoft.Json;
 using PMSClient.Helpers;
 using PMSClient.Components.RecordTestCheck;
+using PMSClient.Components.BatchLabels;
 
 namespace PMSClient.ViewModel
 {
@@ -325,17 +326,25 @@ namespace PMSClient.ViewModel
 
         private void ActionQuickLabel()
         {
+
             using (var service = new RecordTestServiceClient())
             {
-                StringBuilder sb = new StringBuilder();
-                var result = service.GetRecordTestBySearch(1, 30, "", "", "");
-                foreach (var item in result)
-                {
-                    sb.AppendLine(VMHelper.RecordTestVMHelper.CreateLabel(item));
-                }
-                var win = new LabelCopyWindow();
-                win.LabelInformation = sb.ToString();
+
+
+                //StringBuilder sb = new StringBuilder();
+                //var result = service.GetRecordTestBySearch(1, 30, "", "", "");
+                //foreach (var item in result)
+                //{
+                //    sb.AppendLine(VMHelper.RecordTestVMHelper.CreateLabel(item));
+                //}
+                //var win = new LabelCopyWindow();
+                //win.LabelInformation = sb.ToString();
+                //win.Show();
+
+                var win = new BLWindow();
                 win.Show();
+
+
             }
         }
 

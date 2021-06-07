@@ -18,6 +18,7 @@ namespace PMSClient.Components.RecordTestCheck
     {
         //更新状态时间
         public event EventHandler<string> UpdateStatus;
+        public event EventHandler ClearStatus;
 
         //生成检查单文件
         public void Generate(string idstrs)
@@ -48,6 +49,8 @@ namespace PMSClient.Components.RecordTestCheck
                                 $"检测检查单文件{DateTime.Today.ToString("yyMMdd")}.docx");
 
             var doc = DocX.Create(filename);
+            doc.MarginTop = 30;
+            doc.MarginBottom = 20;
             Novacode.Paragraph title = doc.InsertParagraph($"{DateTime.Today.ToShortDateString()}靶材准备检查单");
             title.FontSize(16);
             title.Alignment = Alignment.center;
@@ -55,6 +58,8 @@ namespace PMSClient.Components.RecordTestCheck
 
             using (var test_s = new RecordTestServiceClient())
             {
+                ClearStatus?.Invoke(this, null);
+
                 foreach (var productid in idlist)
                 {
                     var t = test_s.GetRecordTestByProductID(productid).FirstOrDefault();
@@ -93,6 +98,7 @@ namespace PMSClient.Components.RecordTestCheck
                             LaserContent laser = GetLaserContent(t.LaserEngraved);
 
                             StringBuilder sb = new StringBuilder();
+                            sb.Clear();
                             sb.Append("已处理:");
                             if (t.ProductID != null)
                             {
@@ -127,9 +133,12 @@ namespace PMSClient.Components.RecordTestCheck
 
 
                             doc.InsertParagraph().InsertTableAfterSelf(table);
-
                             UpdateStatus?.Invoke(this, sb.ToString());
                         }
+                    }
+                    else
+                    {
+                        UpdateStatus?.Invoke(this,$"未找到{productid}");
                     }
                 }
             }
@@ -171,7 +180,7 @@ namespace PMSClient.Components.RecordTestCheck
         private LaserContent GetLaserContent(string s)
         {
             LaserContent result = new LaserContent();
-            if (!(string.IsNullOrEmpty(s) && s.Contains("无")))
+            if (!(string.IsNullOrEmpty(s) || s.Contains("无")))
             {
                 //如果不包含+号就是只有靶材
                 if (!s.Contains("+"))

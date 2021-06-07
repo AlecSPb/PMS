@@ -78,11 +78,16 @@ namespace PMSClient.Components.RecordTestCheck
         {
             var service = new RTCService();
             service.UpdateStatus += AppendStatus;
+            service.ClearStatus += ClearStatus;
 
             service.Generate(TxtInput.Text.Trim());
 
         }
 
+        private void ClearStatus(object sender, EventArgs e)
+        {
+            TxtStatus.Text = "";
+        }
 
         private void UpdateStatus(string msg)
         {

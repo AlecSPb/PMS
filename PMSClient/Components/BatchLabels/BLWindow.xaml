@@ -1,0 +1,28 @@
+﻿<Window x:Class="PMSClient.Components.BatchLabels.BLWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.Components.BatchLabels"
+        mc:Ignorable="d"
+        Title="快速标签" Height="600" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource StyleTextBlockTip}" Text="请使用二维码扫描器扫描输入产品ID"/>
+        <TextBox Grid.Row="1"  Style="{StaticResource StyleTextBoxMultiline2}" VerticalContentAlignment="Stretch"
+                 Name="TxtInput"/>
+        <StackPanel Grid.Row="2" Style="{StaticResource StyleStackPanelCommon}">
+            <!--<Button Style="{StaticResource StyleButtonCommon}" Content="从服务器读取" Name="BtnRead" Click="BtnRead_Click"/>
+            <Button Style="{StaticResource StyleButtonCommon}" Content="保存到服务器" Name="BtnSave" Click="BtnSave_Click"/>-->
+            <Button Style="{StaticResource StyleButtonCommon}" Content="生成标签" Name="BtnGenerate" Click="BtnGenerate_Click"/>
+        </StackPanel>
+        <TextBox Grid.Row="3" Style="{StaticResource StyleTextBoxMultiline2}" VerticalContentAlignment="Stretch"
+                 Name="TxtStatus" IsReadOnly="True"/>
+    </Grid>
+
+</Window>
