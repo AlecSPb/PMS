@@ -33,12 +33,17 @@
             <Border Grid.Column="1" BorderBrush="LightBlue" BorderThickness="1" Margin="2" Background="Wheat">
                 <Grid >
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <lv:CartesianChart Grid.Row="0">
+                    <Grid Grid.Row="0">
+                        <ProgressBar Maximum="100" Height="20" Margin="5 10" Name="PbVHPUsed"/>
+                        <TextBlock Name="TxtVHPUsed" Text="100%" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Grid>
+                    <lv:CartesianChart Grid.Row="1">
                         <lv:CartesianChart.AxisX>
                             <lv:Axis Title="热压机名称" Labels="A,B,C,D,E,F"/>
                         </lv:CartesianChart.AxisX>
@@ -49,7 +54,7 @@
                             <lv:ColumnSeries Name="Chart_VHP_Count" Title="VHP_Count"  DataLabels="True"/>
                         </lv:CartesianChart.Series>
                     </lv:CartesianChart>
-                    <lv:CartesianChart Grid.Row="1">
+                    <lv:CartesianChart Grid.Row="2">
                         <lv:CartesianChart.AxisX>
                             <lv:Axis Title="热压机名称" Labels="A,B,C,D,E,F"/>
                         </lv:CartesianChart.AxisX>
@@ -61,7 +66,7 @@
                         </lv:CartesianChart.Series>
                     </lv:CartesianChart>
 
-                    <lv:PieChart Grid.Row="2" LegendLocation="Bottom">
+                    <lv:PieChart Grid.Row="3" LegendLocation="Bottom">
                         <lv:PieChart.Series>
                             <lv:PieSeries x:Name="Chart_W1" Values="3" Title="W1" Fill="Gray" DataLabels="True"/>
                             <lv:PieSeries x:Name="Chart_W2_Sucess" Values="4" Title="W2_Sucess" Fill="Orange" DataLabels="True"/>
@@ -69,7 +74,7 @@
                         </lv:PieChart.Series>
                     </lv:PieChart>
 
-                    <lv:PieChart Grid.Row="3" LegendLocation="Bottom">
+                    <lv:PieChart Grid.Row="4" LegendLocation="Bottom">
                         <lv:PieChart.Series>
                             <lv:PieSeries x:Name="Chart_All_W0" Values="3" Title="NoUse(be exclusive of Holiday)" Fill="white"  DataLabels="True"/>
                             <lv:PieSeries x:Name="Chart_All_W1" Values="3" Title="W1" Fill="Gray"  DataLabels="True"/>

@@ -20,7 +20,7 @@ namespace PMSSPC.Services
             IDbConnection conn = new SqlConnection(conStr);
 
             string sql = "select id,productid,composition,density,dimensionactual,resistance,weight,createtime from recordtests " +
-                "where composition like '%'+@compo+'%' and [state]!='作废' and dimension like '%230%'" +
+                "where composition like '%'+@compo+'%' and [state]!='作废' and dimension like '%230%'"+
                 "and (createtime between @start and @end) and composition not like '%F%'";
 
             var testResults = conn.Query<RecordTestModel>(sql, new { @compo = composition, @start = start, @end = end });

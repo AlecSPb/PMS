@@ -15,6 +15,7 @@
         <StackPanel Grid.Row="1" ButtonBase.Click="StackPanel_Click">
             <Button Content="CDPMI-Indium" Style="{StaticResource StyleButtonStrench}"/>
             <Button Content="TCB-Elastomer"  Style="{StaticResource StyleButtonStrench}"/>
+            <Button Content="TCB-Elastomer-with BSM"  Style="{StaticResource StyleButtonStrench}"/>
             <Button Content="TCB-Indium"  Style="{StaticResource StyleButtonStrench}"/>
             <Button Content="Suzhou-Elastomer"  Style="{StaticResource StyleButtonStrench}"/>
             <Button Content="Suzhou-Indium"  Style="{StaticResource StyleButtonStrench}"/>

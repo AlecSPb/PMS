@@ -32,7 +32,7 @@ namespace PMSAnalysis
 
         private void BtnFetch_Click(object sender, RoutedEventArgs e)
         {
-            FetchData(DpStart.SelectedDate ?? DateTime.Parse("2020-7-1"), DpEnd.SelectedDate ?? DateTime.Parse("2021-5-20"));
+            FetchData(DpStart.SelectedDate ?? DateTime.Parse("2020-7-1"), DpEnd.SelectedDate ?? DateTime.Parse("2021-6-8"));
         }
 
         private double rectSize = 16;
@@ -41,7 +41,7 @@ namespace PMSAnalysis
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            FetchData(DpStart.SelectedDate??DateTime.Parse("2020-7-1"), DpEnd.SelectedDate??DateTime.Parse("2021-5-20"));
+            FetchData(DpStart.SelectedDate??DateTime.Parse("2020-7-1"), DpEnd.SelectedDate??DateTime.Parse("2021-6-8"));
         }
 
         private void FetchData(DateTime start,DateTime end)
@@ -66,8 +66,6 @@ namespace PMSAnalysis
             D = rr.Count(i => i.D != PlanResult.Empty);
             E = rr.Count(i => i.E != PlanResult.Empty);
             F = rr.Count(i => i.F != PlanResult.Empty);
-
-
 
             List<int> vhp_count = new List<int>();
 
@@ -179,6 +177,13 @@ namespace PMSAnalysis
             Chart_All_W1.Values = new ChartValues<double>(new List<double> { w1w2_all_percent[1] });
             Chart_All_W2_Sucess.Values = new ChartValues<double>(new List<double> { w1w2_all_percent[2] });
             Chart_All_W2_Failed.Values = new ChartValues<double>(new List<double> { w1w2_all_percent[3] });
+
+
+            double SUM = A + B + C + D + E + F;
+
+
+            PbVHPUsed.Value = SUM *100/ ((double)max_VHP * 6);
+            TxtVHPUsed.Text = PbVHPUsed.Value.ToString("F2");
         }
 
 

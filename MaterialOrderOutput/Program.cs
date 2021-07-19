@@ -15,7 +15,7 @@ namespace MaterialOrderOutput
         static void Main(string[] args)
         {
             string conStr = "server=192.168.16.254;uid=sa;pwd=newlifechou;database=PMS";
-            string sqlMaterialOrder = "select * from materialorders where createtime >= '2021-5-1' and createtime <='2021-6-1' and state !='作废' order by createtime desc";
+            string sqlMaterialOrder = "select * from materialorders where createtime >= '2021-6-1' and createtime <='2021-7-1' and state !='作废' order by createtime desc";
             string sqlMaterialOrderItem = "select * from materialorderitems where materialorderid=@id and state !='作废' order by pminumber";
 
             using (var conn=new SqlConnection(conStr))
