@@ -17,7 +17,7 @@
             </Grid.RowDefinitions>
 
             <StackPanel  Orientation="Horizontal" Grid.Row="0" Background="LightGreen">
-                <TextBlock Text="{Binding PlanLot,StringFormat=批{0}}" Style="{StaticResource StyleTextBlockBig}" Foreground="Red"/>
+                <!--<TextBlock Text="{Binding PlanLot,StringFormat=批{0}}" Style="{StaticResource StyleTextBlockBig}" Foreground="Red"/>-->
                 <TextBlock Text="{Binding DeviceCode,StringFormat=设备{0}}" Style="{StaticResource StyleTextBlockBig}" Foreground="Blue"/>
                 <TextBlock Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockBigDarkBlue}" VerticalAlignment="Bottom"/>
                 <TextBlock Text="{Binding MoldInnerDiameter,StringFormat={}{0}mm}" Style="{StaticResource StyleTextBlockBigDarkBlue}" VerticalAlignment="Bottom"/>

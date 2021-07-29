@@ -4,7 +4,6 @@ using System;
 using System.IO;
 using System.Linq;
 
-
 namespace PMSClient.ReportsHelper
 {
     public class WordDeliverySheetTCB : ReportBase
@@ -38,6 +37,14 @@ namespace PMSClient.ReportsHelper
                     return;
                 }
                 ReportHelper.FileCopy(sourceFile, tempFile);
+
+
+                bool isCompositonCoverd = false;
+                if (PMSDialogService.ShowYesNo("请问", "要隐藏真实成分吗？"))
+                {
+                    isCompositonCoverd = true;
+                }
+
                 //写入数据到文件
                 #region 创建文档
                 using (DocX document = DocX.Load(tempFile))
@@ -47,7 +54,7 @@ namespace PMSClient.ReportsHelper
                     document.ReplaceText("[ShipTime]", model.ShipTime.ToString("yyyy-MM-dd"));
                     document.ReplaceText("[Country]", model.Country ?? "");
                     document.ReplaceText("[DeliveryName]", model.DeliveryName ?? "");
-                    document.ReplaceText("[DeliveryNumber]", (model.DeliveryExpress ?? "") +" "+(model.DeliveryNumber ?? ""));
+                    document.ReplaceText("[DeliveryNumber]", (model.DeliveryExpress ?? "") + " " + (model.DeliveryNumber ?? ""));
                     document.ReplaceText("[InvoiceNumber]", model.InvoiceNumber ?? "");
 
                     if (document.Tables[0] != null)
@@ -70,7 +77,17 @@ namespace PMSClient.ReportsHelper
                                     .FontSize(table_font_size).Alignment = Alignment.center;
                                 mainTable.Rows[rownumber].Cells[1].Paragraphs[0].Append(item.ProductID).FontSize(table_font_size);
 
-                                mainTable.Rows[rownumber].Cells[3].Paragraphs[0].Append(item.Composition).FontSize(table_font_size);
+                                string compositon = "";
+                                if (isCompositonCoverd)
+                                {
+                                    compositon = "BiTeSe";
+                                }
+                                else
+                                {
+                                    compositon = item.Composition;
+                                }
+                                mainTable.Rows[rownumber].Cells[3].Paragraphs[0].Append(compositon).FontSize(table_font_size);
+
                                 mainTable.Rows[rownumber].Cells[4].Paragraphs[0].Append(item.Customer).FontSize(table_font_size);
                                 mainTable.Rows[rownumber].Cells[5].Paragraphs[0].Append(item.Dimension).FontSize(table_font_size);
 

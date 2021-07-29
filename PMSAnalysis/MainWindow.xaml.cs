@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 using PMSAnalysis.Models;
 using LiveCharts.Wpf;
 using LiveCharts;
+using Newtonsoft.Json;
+using System.IO;
+using CommonHelper;
 
 namespace PMSAnalysis
 {
@@ -26,13 +29,13 @@ namespace PMSAnalysis
         public MainWindow()
         {
             InitializeComponent();
-            DpStart.SelectedDate = DateTime.Today.AddYears(-1);
+            DpStart.SelectedDate = DateTime.Today.AddMonths(-1);
             DpEnd.SelectedDate = DateTime.Today;
         }
 
         private void BtnFetch_Click(object sender, RoutedEventArgs e)
         {
-            FetchData(DpStart.SelectedDate ?? DateTime.Parse("2020-7-1"), DpEnd.SelectedDate ?? DateTime.Parse("2021-6-8"));
+            FetchData(DpStart.SelectedDate ?? DateTime.Parse("2021-1-1"), DpEnd.SelectedDate ?? DateTime.Parse("2021-6-8"));
         }
 
         private double rectSize = 16;
@@ -41,17 +44,52 @@ namespace PMSAnalysis
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            FetchData(DpStart.SelectedDate??DateTime.Parse("2020-7-1"), DpEnd.SelectedDate??DateTime.Parse("2021-6-8"));
+            Load();
         }
 
-        private void FetchData(DateTime start,DateTime end)
+        private void Load()
+        {
+            try
+            {
+                string jsonStr = File.ReadAllText("data.json");
+                var dataModel = JsonConvert.DeserializeObject<DataModel>(jsonStr);
+                DrawGraph(dataModel);
+                DpStart.SelectedDate = dataModel.Start;
+                DpEnd.SelectedDate = dataModel.End;
+                TxtUsedCache.Text = "Cached";
+            }
+            catch (Exception)
+            {
+                FetchData(DpStart.SelectedDate ?? DateTime.Parse("2021-1-1"), DpEnd.SelectedDate ?? DateTime.Parse("2021-6-8"));
+            }
+
+        }
+        private void SaveJson(DataModel model)
+        {
+            string json = JsonConvert.SerializeObject(model);
+            File.WriteAllText("data.json", json);
+            //XSHelper.MessageHelper.ShowInfo("保存成功");
+        }
+
+        private void FetchData(DateTime start, DateTime end)
         {
             //check cache file
-
             var h = new Services.AnalysisHelper();
             var rr = h.GetAnalysis(start, end);
+            var dataModel = new DataModel();
+            dataModel.Models = rr;
+            dataModel.Start = start;
+            dataModel.End = end;
 
+            SaveJson(dataModel);
             //save cache file
+            DrawGraph(dataModel);
+            TxtUsedCache.Text = "Lastest";
+        }
+
+        private void DrawGraph(DataModel model)
+        {
+            var rr = model.Models;
 
             double currenttop = 20;
 
@@ -59,6 +97,13 @@ namespace PMSAnalysis
             double top = currenttop;
             double step = 18;
             int count = 0;
+            EffectiveVHPDay = 0;
+            W1 = 0;
+            W2_Sucess = 0;
+            W2_Failed = 0;
+
+
+            A = B = C = D = E = F = 0;
 
             A = rr.Count(i => i.A != PlanResult.Empty);
             B = rr.Count(i => i.B != PlanResult.Empty);
@@ -133,7 +178,7 @@ namespace PMSAnalysis
 
             int max_VHP = vhp_count.Max();
 
-            TxtResult.Text = $"Start Date={start.ToShortDateString()} End Date={end.ToShortDateString()} " +
+            TxtResult.Text = $"Start Date={model.Start.ToShortDateString()} End Date={model.End.ToShortDateString()} " +
                 $"W1={W1}-{((double)W1 / (W1 + W2_Sucess + W2_Failed)).ToString("P")} W1/All," +
                 $"W2_Sucess={W2_Sucess}-{((double)W2_Sucess / (W1 + W2_Sucess + W2_Failed)).ToString("P")} W2_Sucess/All," +
                 $"W2_Failed={W2_Failed}-{((double)W2_Failed / (W2_Sucess + W2_Failed)).ToString("P")} W2_Sucess/W2_All" +
@@ -182,8 +227,10 @@ namespace PMSAnalysis
             double SUM = A + B + C + D + E + F;
 
 
-            PbVHPUsed.Value = SUM *100/ ((double)max_VHP * 6);
-            TxtVHPUsed.Text = PbVHPUsed.Value.ToString("F2");
+            PbVHPUsed.Value = SUM * 100 / ((double)max_VHP * 6);
+            TxtVHPUsed.Text = PbVHPUsed.Value.ToString("F2") + "%";
+
+            TxtVHPUsedPerDay.Text = (SUM / EffectiveVHPDay).ToString("F2") + " VHP Per Day";
         }
 
 

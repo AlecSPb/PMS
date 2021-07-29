@@ -40,6 +40,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -48,9 +49,11 @@
             <local:SingleUnit Grid.Row="0"  Grid.Column="0" x:Name="unit1" CurrentModel="{Binding Model1}" />
             <local:SingleUnit Grid.Row="0"  Grid.Column="1" x:Name="unit2" CurrentModel="{Binding Model2}" />
             <local:SingleUnit Grid.Row="0"  Grid.Column="2" x:Name="unit3" CurrentModel="{Binding Model3}" />
-            <local:SingleUnit Grid.Row="1"  Grid.Column="0" x:Name="unit4" CurrentModel="{Binding Model4}" />
-            <local:SingleUnit Grid.Row="1"  Grid.Column="1" x:Name="unit5" CurrentModel="{Binding Model5}" />
-            <local:SingleUnit Grid.Row="1"  Grid.Column="2" x:Name="unit6" CurrentModel="{Binding Model6}" />
+            <local:SingleUnit Grid.Row="0"  Grid.Column="3" x:Name="unit4" CurrentModel="{Binding Model4}" />
+            <local:SingleUnit Grid.Row="1"  Grid.Column="0" x:Name="unit5" CurrentModel="{Binding Model5}" />
+            <local:SingleUnit Grid.Row="1"  Grid.Column="1" x:Name="unit6" CurrentModel="{Binding Model6}" />
+            <local:SingleUnit Grid.Row="1"  Grid.Column="2" x:Name="unit7" CurrentModel="{Binding Model7}" />
+            <local:SingleUnit Grid.Row="1"  Grid.Column="3" x:Name="unit8" CurrentModel="{Binding Model8}" />
         </Grid>
         <TextBlock Grid.Row="1"  Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig}"
                    HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Background="Orange"

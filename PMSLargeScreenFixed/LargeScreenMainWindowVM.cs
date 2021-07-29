@@ -36,8 +36,8 @@ namespace PMSLargeScreen
             CompositionVisibility = Visibility.Visible;
             Hide = new RelayCommand(ActionHide);
 
-        #region 设定定时器
-        _timerLoadData = new Timer();
+            #region 设定定时器
+            _timerLoadData = new Timer();
             _timerLoadData.Interval = IntervalLoadData;
             _timerLoadData.Elapsed += _timerLoadData_Elapsed;
             _timerLoadData.Start();
@@ -107,6 +107,15 @@ namespace PMSLargeScreen
                     deviceCode = Properties.Settings.Default.Device6;
                     plans = service.GetPlanByDateDeviceCode(planLot, CurrentDate.Date, deviceCode);
                     Model6 = CreateUnitModel(planLot, deviceCode, plans);
+
+                    deviceCode = Properties.Settings.Default.Device7;
+                    plans = service.GetPlanByDateDeviceCode(planLot, CurrentDate.Date, deviceCode);
+                    Model7 = CreateUnitModel(planLot, deviceCode, plans);
+
+                    deviceCode = Properties.Settings.Default.Device8;
+                    plans = service.GetPlanByDateDeviceCode(planLot, CurrentDate.Date, deviceCode);
+                    Model8 = CreateUnitModel(planLot, deviceCode, plans);
+
                     #endregion
 
                 }
@@ -129,12 +138,13 @@ namespace PMSLargeScreen
         private UnitModel CreateUnitModel(int planLot, string deviceCode, DcPlanExtra[] plans)
         {
             var model = new UnitModel();
-            if (plans.Count() == 0)
-                return model;
             //标题部分
             model.DeviceCode = deviceCode;
             model.PlanLot = planLot;
             model.Items.Clear();
+
+            if (plans.Count() == 0)
+                return model;
             foreach (var item in plans)
             {
                 //热压工艺必须一样
@@ -201,6 +211,21 @@ namespace PMSLargeScreen
             get { return model6; }
             set { model6 = value; RaisePropertyChanged(nameof(Model6)); }
         }
+
+        private UnitModel model7;
+        public UnitModel Model7
+        {
+            get { return model7; }
+            set { model7 = value; RaisePropertyChanged(nameof(Model7)); }
+        }
+
+        private UnitModel model8;
+        public UnitModel Model8
+        {
+            get { return model8; }
+            set { model8 = value; RaisePropertyChanged(nameof(Model8)); }
+        }
+
         #endregion
 
         #region 其他属性

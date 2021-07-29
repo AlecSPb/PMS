@@ -19,6 +19,8 @@
             <DatePicker Name="DpStart" Margin="2"/>
             <DatePicker Name="DpEnd" Margin="2"/>
             <Button Name="BtnFetch" Content="Fetch" Padding="2" Margin="2" Width="60" Click="BtnFetch_Click"/>
+            <TextBlock Name="TxtUsedCache" Margin="2" Padding="2" Text="" Background="Green" 
+                       VerticalAlignment="Center" Foreground="White"/>
         </StackPanel>
         <TextBlock Grid.Row="3" Padding="5" Text="Orange=W2 Product Sent,Black=W2 No Product Sent,Gray=W1,White=Idle 橙色=W2有产品发出 黑色=W2没产品发出 灰色=W1 白色=空闲 小横线=周末" 
                    TextWrapping="WrapWithOverflow" FontSize="16"/>
@@ -34,16 +36,21 @@
                 <Grid >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="134*"/>
+                        <RowDefinition Height="134*"/>
+                        <RowDefinition Height="133*"/>
+                        <RowDefinition Height="133*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0">
                         <ProgressBar Maximum="100" Height="20" Margin="5 10" Name="PbVHPUsed"/>
                         <TextBlock Name="TxtVHPUsed" Text="100%" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     </Grid>
-                    <lv:CartesianChart Grid.Row="1">
+                    <Grid Grid.Row="1">
+                        <TextBlock Name="TxtVHPUsedPerDay" Text="6" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                   FontWeight="Bold" Background="Orange" Foreground="White"/>
+                    </Grid>
+                    <lv:CartesianChart Grid.Row="2">
                         <lv:CartesianChart.AxisX>
                             <lv:Axis Title="热压机名称" Labels="A,B,C,D,E,F"/>
                         </lv:CartesianChart.AxisX>
@@ -54,7 +61,7 @@
                             <lv:ColumnSeries Name="Chart_VHP_Count" Title="VHP_Count"  DataLabels="True"/>
                         </lv:CartesianChart.Series>
                     </lv:CartesianChart>
-                    <lv:CartesianChart Grid.Row="2">
+                    <lv:CartesianChart Grid.Row="3">
                         <lv:CartesianChart.AxisX>
                             <lv:Axis Title="热压机名称" Labels="A,B,C,D,E,F"/>
                         </lv:CartesianChart.AxisX>
@@ -66,7 +73,7 @@
                         </lv:CartesianChart.Series>
                     </lv:CartesianChart>
 
-                    <lv:PieChart Grid.Row="3" LegendLocation="Bottom">
+                    <lv:PieChart Grid.Row="4" LegendLocation="Bottom">
                         <lv:PieChart.Series>
                             <lv:PieSeries x:Name="Chart_W1" Values="3" Title="W1" Fill="Gray" DataLabels="True"/>
                             <lv:PieSeries x:Name="Chart_W2_Sucess" Values="4" Title="W2_Sucess" Fill="Orange" DataLabels="True"/>
@@ -74,7 +81,7 @@
                         </lv:PieChart.Series>
                     </lv:PieChart>
 
-                    <lv:PieChart Grid.Row="4" LegendLocation="Bottom">
+                    <lv:PieChart Grid.Row="5" LegendLocation="Bottom">
                         <lv:PieChart.Series>
                             <lv:PieSeries x:Name="Chart_All_W0" Values="3" Title="NoUse(be exclusive of Holiday)" Fill="white"  DataLabels="True"/>
                             <lv:PieSeries x:Name="Chart_All_W1" Values="3" Title="W1" Fill="Gray"  DataLabels="True"/>
