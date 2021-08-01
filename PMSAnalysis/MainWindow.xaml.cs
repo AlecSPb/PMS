@@ -41,6 +41,7 @@ namespace PMSAnalysis
         private double rectSize = 16;
 
         private double EffectiveVHPDay = 0;
+        private double ShouldVHPSum = 0;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -98,12 +99,13 @@ namespace PMSAnalysis
             double step = 18;
             int count = 0;
             EffectiveVHPDay = 0;
+            ShouldVHPSum = 0;
             W1 = 0;
             W2_Sucess = 0;
             W2_Failed = 0;
 
 
-            A = B = C = D = E = F = 0;
+            A = B = C = D = E = F = G = 0;
 
             A = rr.Count(i => i.A != PlanResult.Empty);
             B = rr.Count(i => i.B != PlanResult.Empty);
@@ -111,6 +113,7 @@ namespace PMSAnalysis
             D = rr.Count(i => i.D != PlanResult.Empty);
             E = rr.Count(i => i.E != PlanResult.Empty);
             F = rr.Count(i => i.F != PlanResult.Empty);
+            G = rr.Count(i => i.G != PlanResult.Empty);
 
             List<int> vhp_count = new List<int>();
 
@@ -120,15 +123,24 @@ namespace PMSAnalysis
             vhp_count.Add(D);
             vhp_count.Add(E);
             vhp_count.Add(F);
+            vhp_count.Add(G);
 
             mainCanvas.Children.Clear();
 
             foreach (var item in rr)
             {
                 if (item.A != PlanResult.Empty || item.B != PlanResult.Empty || item.C != PlanResult.Empty ||
-                    item.D != PlanResult.Empty || item.E != PlanResult.Empty || item.F != PlanResult.Empty)
+                    item.D != PlanResult.Empty || item.E != PlanResult.Empty || item.F != PlanResult.Empty || item.G != PlanResult.Empty)
                 {
                     EffectiveVHPDay++;
+                    if (item.PlanDate > new DateTime(2021, 7, 8))
+                    {
+                        ShouldVHPSum += 7;
+                    }
+                    else
+                    {
+                        ShouldVHPSum += 6;
+                    }
                 }
 
                 top = currenttop;
@@ -137,14 +149,14 @@ namespace PMSAnalysis
                     || item.PlanDate.DayOfWeek == DayOfWeek.Sunday)
                 {
                     Rectangle r = new Rectangle();
-                    r.Height = 2;
+                    r.Height = 4;
                     r.Width = rectSize;
                     r.Stroke = Brushes.Blue;
                     r.StrokeThickness = 0.5;
                     r.Fill = Brushes.Red;
 
                     r.SetValue(Canvas.LeftProperty, left);
-                    r.SetValue(Canvas.TopProperty, top - 4);
+                    r.SetValue(Canvas.TopProperty, top - 6);
                     mainCanvas.Children.Add(r);
                 }
 
@@ -161,16 +173,30 @@ namespace PMSAnalysis
                 top += step;
                 AddRect(left, top, item.F);
 
+                if (item.PlanDate > new DateTime(2021, 7, 8))
+                {
+                    top += step;
+                    AddRect(left, top, item.G);
+                }
+
                 count++;
 
-                if (count % 70 != 0)
+                if (count % 68 != 0)
                 {
                     left += step;
                     top = currenttop;
                 }
                 else
                 {
-                    currenttop += rectSize * 6 + 20;
+                    if (item.PlanDate > new DateTime(2021, 7, 8))
+                    {
+                        currenttop += rectSize * 7 + 20;
+                    }
+                    else
+                    {
+                        currenttop += rectSize * 6 + 20;
+
+                    }
                     left = 0;
                 }
             }
@@ -183,7 +209,8 @@ namespace PMSAnalysis
                 $"W2_Sucess={W2_Sucess}-{((double)W2_Sucess / (W1 + W2_Sucess + W2_Failed)).ToString("P")} W2_Sucess/All," +
                 $"W2_Failed={W2_Failed}-{((double)W2_Failed / (W2_Sucess + W2_Failed)).ToString("P")} W2_Sucess/W2_All" +
                 $" [A={A} {((double)A / max_VHP).ToString("P")},B={B} {((double)B / max_VHP).ToString("P")},C={C} {((double)C / max_VHP).ToString("P")}," +
-                $"D={D} {((double)D / max_VHP).ToString("P")},E={E} {((double)E / max_VHP).ToString("P")},F={F} {((double)F / max_VHP).ToString("P")}]";
+                $"D={D} {((double)D / max_VHP).ToString("P")},E={E} {((double)E / max_VHP).ToString("P")},F={F} {((double)F / max_VHP).ToString("P")}]" +
+                $"G={G} {((double)G / max_VHP).ToString("P")}]";
 
 
             //livechart
@@ -197,6 +224,7 @@ namespace PMSAnalysis
             vhp_count_percent.Add(Math.Round((double)D / max_VHP * 100, 2));
             vhp_count_percent.Add(Math.Round((double)E / max_VHP * 100, 2));
             vhp_count_percent.Add(Math.Round((double)F / max_VHP * 100, 2));
+            vhp_count_percent.Add(Math.Round((double)G / max_VHP * 100, 2));
 
 
             Chart_VHP_Percent_Count.Values = new ChartValues<double>(vhp_count_percent);
@@ -213,10 +241,10 @@ namespace PMSAnalysis
             Chart_W2_Failed.Values = new ChartValues<double>(new List<double> { w1w2_percent[2] });
 
             List<double> w1w2_all_percent = new List<double>();
-            w1w2_all_percent.Add(Math.Round((double)(EffectiveVHPDay * 6 - W1 - W2_Sucess - W2_Failed) / (EffectiveVHPDay * 6) * 100, 2));
-            w1w2_all_percent.Add(Math.Round((double)W1 / (EffectiveVHPDay * 6) * 100, 2));
-            w1w2_all_percent.Add(Math.Round((double)W2_Sucess / (EffectiveVHPDay * 6) * 100, 2));
-            w1w2_all_percent.Add(Math.Round((double)W2_Failed / (EffectiveVHPDay * 6) * 100, 2));
+            w1w2_all_percent.Add(Math.Round((double)(ShouldVHPSum - W1 - W2_Sucess - W2_Failed) / ShouldVHPSum * 100, 2));
+            w1w2_all_percent.Add(Math.Round((double)W1 / ShouldVHPSum * 100, 2));
+            w1w2_all_percent.Add(Math.Round((double)W2_Sucess / ShouldVHPSum * 100, 2));
+            w1w2_all_percent.Add(Math.Round((double)W2_Failed / ShouldVHPSum * 100, 2));
 
             Chart_All_W0.Values = new ChartValues<double>(new List<double> { w1w2_all_percent[0] });
             Chart_All_W1.Values = new ChartValues<double>(new List<double> { w1w2_all_percent[1] });
@@ -227,7 +255,7 @@ namespace PMSAnalysis
             double SUM = A + B + C + D + E + F;
 
 
-            PbVHPUsed.Value = SUM * 100 / ((double)max_VHP * 6);
+            PbVHPUsed.Value = SUM * 100 / ShouldVHPSum;
             TxtVHPUsed.Text = PbVHPUsed.Value.ToString("F2") + "%";
 
             TxtVHPUsedPerDay.Text = (SUM / EffectiveVHPDay).ToString("F2") + " VHP Per Day";
@@ -239,7 +267,7 @@ namespace PMSAnalysis
         private int W2_Failed = 0;
 
 
-        private int A = 0, B = 0, C = 0, D = 0, E = 0, F = 0;
+        private int A = 0, B = 0, C = 0, D = 0, E = 0, F = 0, G = 0;
 
 
 

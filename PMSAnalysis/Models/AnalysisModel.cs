@@ -15,5 +15,6 @@ namespace PMSAnalysis.Models
         public PlanResult D { get; set; }
         public PlanResult E { get; set; }
         public PlanResult F { get; set; }
+        public PlanResult G { get; set; }
     }
 }

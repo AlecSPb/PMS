@@ -57,6 +57,9 @@ namespace PMSAnalysis.Services
                         case "F":
                             model.F = CheckResult(start, dr.GetString(0), dr.GetString(1));
                             break;
+                        case "G":
+                            model.G = CheckResult(start, dr.GetString(0), dr.GetString(1));
+                            break;
                         default:
                             break;
                     }
