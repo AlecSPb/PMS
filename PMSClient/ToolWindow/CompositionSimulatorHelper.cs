@@ -89,7 +89,7 @@ namespace PMSClient.ToolWindow
                 elements.ForEach(s =>
                 {
                     sb.Append(",");
-                    sb.Append(s.Element + " atm%");
+                    sb.Append(s.Element + " at%");
                 });
                 sb.AppendLine();
 

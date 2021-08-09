@@ -43,7 +43,7 @@ namespace PMSClient.ReportsHelperNew
 
             using (var doc = DocX.Load(temp))
             {
-                string printTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                string printTime = DateTime.Now.ToString("yyyy-MM-dd");
                 doc.ReplaceText("[PrintTime]", printTime ?? "");
                 Table table = doc.Tables[0];
                 #region 基本字段

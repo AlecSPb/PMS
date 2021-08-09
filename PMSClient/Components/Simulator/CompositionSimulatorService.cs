@@ -96,7 +96,7 @@ namespace PMSClient.Simulator
             for (int i = 0; i < input.Elements.Count(); i++)
             {
                 title.Append(input.Elements[i].Element);
-                title.Append(" atm%");
+                title.Append(" at%");
                 if (i < input.Elements.Count() - 1)
                 {
                     title.Append(",");

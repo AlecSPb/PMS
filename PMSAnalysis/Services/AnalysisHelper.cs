@@ -28,7 +28,7 @@ namespace PMSAnalysis.Services
             while (start <= end)
             {
                 AnalysisModel model = new AnalysisModel();
-                model.PlanDate = start;
+                model.PlanDate = start.Date;
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.Add(new SqlParameter("@plandate", start));

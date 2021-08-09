@@ -18,14 +18,20 @@
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <DatePicker Name="DpStart" Margin="2"/>
             <DatePicker Name="DpEnd" Margin="2"/>
-            <Button Name="BtnFetch" Content="Fetch" Padding="2" Margin="2" Width="60" Click="BtnFetch_Click"/>
+            <Button Name="BtnOneMonth" Content="1 Month" Padding="2" Margin="2" Width="70" Click="BtnOneMonth_Click"/>
+            <Button Name="BtnTwoMonth" Content="2 Month" Padding="2" Margin="2" Width="70" Click="BtnTwoMonth_Click"/>
+            <Button Name="BtnThreeMonth" Content="3 Month" Padding="2" Margin="2" Width="70" Click="BtnThreeMonth_Click"/>
+            <Button Name="BtnOneYear" Content="1 Year" Padding="2" Margin="2" Width="70" Click="BtnOneYear_Click"/>
+            
+            <Button Name="BtnFetch" Content="Fetch" Padding="2" Margin="2" Width="60" Click="BtnFetch_Click" FontWeight="Bold"
+                    Foreground="Blue"/>
             <TextBlock Name="TxtUsedCache" Margin="2" Padding="2" Text="" Background="Green" 
                        VerticalAlignment="Center" Foreground="White"/>
         </StackPanel>
         <TextBlock Grid.Row="3" Padding="5" Text="Orange=W2 Product Sent,Black=W2 No Product Sent,Gray=W1,White=Idle 橙色=W2有产品发出 黑色=W2没产品发出 灰色=W1 白色=空闲 小横线=周末" 
                    TextWrapping="WrapWithOverflow" FontSize="16"/>
         <TextBlock Grid.Row="1" Padding="5" Text="" Name="TxtResult"
-                   Background="LightBlue" TextWrapping="WrapWithOverflow" FontSize="16"/>
+                   Background="LightBlue" TextWrapping="WrapWithOverflow" FontSize="14"/>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

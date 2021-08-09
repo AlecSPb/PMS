@@ -162,7 +162,7 @@ namespace PMSClient.View
 
         private void BtnRoughness_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBox(TxtRoughness, "Ra-A=5um Ra-B=5um");
+            PMSMethods.SetTextBox(TxtRoughness, "Ra-A=5μm Ra-B=5μm");
 
         }
 
@@ -232,7 +232,7 @@ namespace PMSClient.View
             double r1 = (double)r.Next(2000, 3000)/1000;
             double r2 = (double)r.Next(2000, 3000)/1000;
 
-            PMSMethods.SetTextBox(TxtRoughness, $"Ra-A={r1.ToString("0.000")}um Ra-B={r2.ToString("0.000")}um");
+            PMSMethods.SetTextBox(TxtRoughness, $"Ra-A={r1.ToString("0.000")}μm Ra-B={r2.ToString("0.000")}μm");
         }
 
         private void BtnAddProductID_Click(object sender, RoutedEventArgs e)

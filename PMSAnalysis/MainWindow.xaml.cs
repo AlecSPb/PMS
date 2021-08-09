@@ -38,6 +38,28 @@ namespace PMSAnalysis
             FetchData(DpStart.SelectedDate ?? DateTime.Parse("2021-1-1"), DpEnd.SelectedDate ?? DateTime.Parse("2021-6-8"));
         }
 
+
+        private void BtnOneYear_Click(object sender, RoutedEventArgs e)
+        {
+            DpStart.SelectedDate = DateTime.Today.AddYears(-1);
+            DpEnd.SelectedDate = DateTime.Today;
+        }
+
+        private void BtnOneMonth_Click(object sender, RoutedEventArgs e)
+        {
+            DpStart.SelectedDate = DateTime.Today.AddMonths(-1);
+            DpEnd.SelectedDate = DateTime.Today;
+        }
+        private void BtnTwoMonth_Click(object sender, RoutedEventArgs e)
+        {
+            DpStart.SelectedDate = DateTime.Today.AddMonths(-2);
+            DpEnd.SelectedDate = DateTime.Today;
+        }
+        private void BtnThreeMonth_Click(object sender, RoutedEventArgs e)
+        {
+            DpStart.SelectedDate = DateTime.Today.AddMonths(-3);
+            DpEnd.SelectedDate = DateTime.Today;
+        }
         private double rectSize = 16;
 
         private double EffectiveVHPDay = 0;
@@ -53,11 +75,14 @@ namespace PMSAnalysis
             try
             {
                 string jsonStr = File.ReadAllText("data.json");
+                FileInfo info = new FileInfo("data.json");
+                DateTime fileUpdateTime = info.LastWriteTime;
+
                 var dataModel = JsonConvert.DeserializeObject<DataModel>(jsonStr);
                 DrawGraph(dataModel);
                 DpStart.SelectedDate = dataModel.Start;
                 DpEnd.SelectedDate = dataModel.End;
-                TxtUsedCache.Text = "Cached";
+                TxtUsedCache.Text = $"Cached at {fileUpdateTime.ToString()}";
             }
             catch (Exception)
             {
@@ -74,18 +99,26 @@ namespace PMSAnalysis
 
         private void FetchData(DateTime start, DateTime end)
         {
-            //check cache file
-            var h = new Services.AnalysisHelper();
-            var rr = h.GetAnalysis(start, end);
-            var dataModel = new DataModel();
-            dataModel.Models = rr;
-            dataModel.Start = start;
-            dataModel.End = end;
+            try
+            {
+                //check cache file
+                var h = new Services.AnalysisHelper();
+                var rr = h.GetAnalysis(start, end);
+                var dataModel = new DataModel();
+                dataModel.Models = rr;
+                dataModel.Start = start;
+                dataModel.End = end;
 
-            SaveJson(dataModel);
-            //save cache file
-            DrawGraph(dataModel);
-            TxtUsedCache.Text = "Lastest";
+                SaveJson(dataModel);
+                //save cache file
+                DrawGraph(dataModel);
+                TxtUsedCache.Text = $"Lastest at {DateTime.Now.ToString()}";
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
         private void DrawGraph(DataModel model)
@@ -161,22 +194,22 @@ namespace PMSAnalysis
                 }
 
 
-                AddRect(left, top, item.A);
+                AddRect(left, top, item.A, item.PlanDate, "A");
                 top += step;
-                AddRect(left, top, item.B);
+                AddRect(left, top, item.B, item.PlanDate, "B");
                 top += step;
-                AddRect(left, top, item.C);
+                AddRect(left, top, item.C, item.PlanDate, "C");
                 top += step;
-                AddRect(left, top, item.D);
+                AddRect(left, top, item.D, item.PlanDate, "D");
                 top += step;
-                AddRect(left, top, item.E);
+                AddRect(left, top, item.E, item.PlanDate, "E");
                 top += step;
-                AddRect(left, top, item.F);
+                AddRect(left, top, item.F, item.PlanDate, "F");
 
                 if (item.PlanDate > new DateTime(2021, 7, 8))
                 {
                     top += step;
-                    AddRect(left, top, item.G);
+                    AddRect(left, top, item.G, item.PlanDate,"G");
                 }
 
                 count++;
@@ -269,16 +302,14 @@ namespace PMSAnalysis
 
         private int A = 0, B = 0, C = 0, D = 0, E = 0, F = 0, G = 0;
 
-
-
-        private void AddRect(double l, double t, PlanResult ptype)
+        private void AddRect(double l, double t, PlanResult ptype,DateTime date,string vhpcode)
         {
             Rectangle r = new Rectangle();
             r.Height = rectSize;
             r.Width = rectSize;
             r.Stroke = Brushes.Blue;
             r.StrokeThickness = 1.0;
-
+            r.ToolTip = $"{date.ToString("yyMMdd dddd")} {vhpcode}";
             switch (ptype)
             {
                 case PlanResult.Empty:
