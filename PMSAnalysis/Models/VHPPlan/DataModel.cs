@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSAnalysis.Models
+namespace PMSAnalysis.VHPPlan.Models
 {
-    public class DataModel
+    public class VHPPlanDataModel
     {
-        public DataModel()
+        public VHPPlanDataModel()
         {
             Models = new List<AnalysisModel>();
         }

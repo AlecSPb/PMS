@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSAnalysis.Models
+namespace PMSAnalysis.VHPPlan.Models
 {
     /// <summary>
     /// 热压结果状态

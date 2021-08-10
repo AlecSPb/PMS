@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PMSAnalysis.Models;
+using PMSAnalysis.VHPPlan.Models;
 using LiveCharts.Wpf;
 using LiveCharts;
 using Newtonsoft.Json;
@@ -24,9 +24,9 @@ namespace PMSAnalysis
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class VHPPlanAnalysisWindow : Window
     {
-        public MainWindow()
+        public VHPPlanAnalysisWindow()
         {
             InitializeComponent();
             DpStart.SelectedDate = DateTime.Today.AddMonths(-1);
@@ -78,7 +78,7 @@ namespace PMSAnalysis
                 FileInfo info = new FileInfo("data.json");
                 DateTime fileUpdateTime = info.LastWriteTime;
 
-                var dataModel = JsonConvert.DeserializeObject<DataModel>(jsonStr);
+                var dataModel = JsonConvert.DeserializeObject<VHPPlanDataModel>(jsonStr);
                 DrawGraph(dataModel);
                 DpStart.SelectedDate = dataModel.Start;
                 DpEnd.SelectedDate = dataModel.End;
@@ -90,7 +90,7 @@ namespace PMSAnalysis
             }
 
         }
-        private void SaveJson(DataModel model)
+        private void SaveJson(VHPPlanDataModel model)
         {
             string json = JsonConvert.SerializeObject(model);
             File.WriteAllText("data.json", json);
@@ -102,9 +102,9 @@ namespace PMSAnalysis
             try
             {
                 //check cache file
-                var h = new Services.AnalysisHelper();
+                var h = new Services.VHPPlanAnalysisHelper();
                 var rr = h.GetAnalysis(start, end);
-                var dataModel = new DataModel();
+                var dataModel = new VHPPlanDataModel();
                 dataModel.Models = rr;
                 dataModel.Start = start;
                 dataModel.End = end;
@@ -121,7 +121,7 @@ namespace PMSAnalysis
 
         }
 
-        private void DrawGraph(DataModel model)
+        private void DrawGraph(VHPPlanDataModel model)
         {
             var rr = model.Models;
 

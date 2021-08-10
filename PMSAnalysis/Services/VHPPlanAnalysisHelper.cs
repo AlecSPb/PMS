@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using PMSAnalysis.Models;
+using PMSAnalysis.VHPPlan.Models;
 
 namespace PMSAnalysis.Services
 {
-    public class AnalysisHelper
+    public class VHPPlanAnalysisHelper
     {
         private string conStr = "server=192.168.16.254;database=PMS;uid=sa;pwd=newlifechou;";
 

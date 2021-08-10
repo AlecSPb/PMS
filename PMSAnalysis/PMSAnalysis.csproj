@@ -66,20 +66,20 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Compile Include="Models\DataModel.cs" />
-    <Compile Include="Models\PlanResult.cs" />
-    <Compile Include="Services\AnalysisHelper.cs" />
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Models\VHPPlan\DataModel.cs" />
+    <Compile Include="Models\VHPPlan\PlanResult.cs" />
+    <Compile Include="Services\VHPPlanAnalysisHelper.cs" />
+    <Page Include="VHPPlanAnalysisWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Models\AnalysisModel.cs" />
+    <Compile Include="Models\VHPPlan\AnalysisModel.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="VHPPlanAnalysisWindow.xaml.cs">
+      <DependentUpon>VHPPlanAnalysisWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
