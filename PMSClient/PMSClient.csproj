@@ -452,6 +452,7 @@
     <Compile Include="ReportsHelperNew\ReportCOABridgeLine.cs" />
     <Compile Include="ReportsHelperNew\ReportCOA.cs" />
     <Compile Include="ReportsHelperNew\ReportDefectPPTX.cs" />
+    <Compile Include="ReportsHelperNew\ReportMaintenance.cs" />
     <Compile Include="ReportsHelperNew\ReportSample.cs" />
     <Compile Include="ReportsHelperNew\ReportBondingTargetDefects.cs" />
     <Compile Include="ReportsHelperNew\ReportDeliveryQRCode.cs" />
@@ -2182,6 +2183,9 @@
     <None Include="Components\EOrder\Midsummer\Examples\Purchase Order 27376.pdf" />
     <None Include="Documents\图示.pptx" />
     <Content Include="HelpDocs\新功能使用介绍200609.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\DocTemplate\Reports\MR.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resource\DocTemplate\Reports\MaterialOrderHorizontalOld.docx" />

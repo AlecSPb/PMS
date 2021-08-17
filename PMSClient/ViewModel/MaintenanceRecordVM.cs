@@ -38,6 +38,15 @@ namespace PMSClient.ViewModel
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcMaintenanceRecord>(ActionEdit, CanEdit);
             Duplicate = new RelayCommand<DcMaintenanceRecord>(ActionDuplicate, CanEdit);
+            Print = new RelayCommand(ActionPrint);
+        }
+
+        private void ActionPrint()
+        {
+            var report = new ReportsHelperNew.ReportMaintenance();
+            report.Intialize("设备维护记录单签字版");
+            report.SetParameters(true);
+            report.Output();
         }
 
         private void ActionDuplicate(DcMaintenanceRecord model)
@@ -181,6 +190,7 @@ namespace PMSClient.ViewModel
         public RelayCommand Add { get; private set; }
         public RelayCommand<DcMaintenanceRecord> Edit { get; private set; }
         public RelayCommand<DcMaintenanceRecord> Duplicate { get; private set; }
+        public RelayCommand Print { get; private set; }
         #endregion
     }
 }
