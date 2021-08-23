@@ -50,9 +50,6 @@ namespace PMSSPC
             spc_model = new SPCModel();
             #region set default value
             CboComposition.Items.Clear();
-            CboComposition.Items.Add("In40S60");
-            CboComposition.Items.Add("In40Se60");
-            CboComposition.Items.Add("Cu25Ga25Se50");
             CboComposition.Items.Add("Cu22.8In22.0Ga5.0Se50.2");
             CboComposition.Items.Add("Cu22.8In21.5Ga5.5Se50.2");
             CboComposition.Items.Add("Cu22.8In21.0Ga6.0Se50.2");
@@ -61,6 +58,9 @@ namespace PMSSPC
             CboComposition.Items.Add("Cu23.72In19.76Ga8.32Se48.20");
             CboComposition.Items.Add("Cu23.72In18.72Ga9.36Se48.20");
             CboComposition.Items.Add("Cu23.72In17.68Ga10.40Se48.20");
+            CboComposition.Items.Add("Cu25Ga25Se50");
+            CboComposition.Items.Add("In40S60");
+            CboComposition.Items.Add("In40Se60");
 
             CboSPCType.Items.Clear();
             CboSPCType.Items.Add("Density");
