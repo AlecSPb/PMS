@@ -16,6 +16,7 @@ using System.IO;
 using Microsoft.Win32;
 using PMSClient.ToolWindow;
 using PMSClient.MainService;
+using System.Text.RegularExpressions;
 
 namespace PMSClient.View
 {
@@ -229,8 +230,8 @@ namespace PMSClient.View
         private void BtnRoughnessRandom_Click(object sender, RoutedEventArgs e)
         {
             Random r = new Random();
-            double r1 = (double)r.Next(2000, 3000)/1000;
-            double r2 = (double)r.Next(2000, 3000)/1000;
+            double r1 = (double)r.Next(2000, 3000) / 1000;
+            double r2 = (double)r.Next(2000, 3000) / 1000;
 
             PMSMethods.SetTextBox(TxtRoughness, $"Ra-A={r1.ToString("0.000")}μm Ra-B={r2.ToString("0.000")}μm");
         }
@@ -260,6 +261,14 @@ namespace PMSClient.View
         {
             PMSMethods.SetTextBoxAppend(TxtLaserEngraved, $"-");
 
+        }
+
+        private void BtnDimensionEmpty_Click(object sender, RoutedEventArgs e)
+        {
+            string s = TxtDimension.Text;
+            string number_pattern = @"(\d+(\.\d+)?)";
+            string result=Regex.Replace(s, number_pattern, "");
+            PMSMethods.SetTextBox(TxtDimension, result);
         }
     }
 }

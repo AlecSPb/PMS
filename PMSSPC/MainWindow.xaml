@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="PMS SPC Analysis Program 1.1" Height="800" Width="1000" WindowState="Maximized"
+        Title="PMS SPC Analysis Program 1.3" Height="800" Width="1000" WindowState="Maximized"
         Closing="Window_Closing" Icon="wagon wheel.png">
     <Grid>
         <Grid.RowDefinitions>
@@ -35,10 +35,15 @@
                 <ComboBox Width="150" SelectedIndex="0" Margin="10 5" Name="CboComposition"/>
                 <ComboBox Width="100" SelectedIndex="0" Margin="10 5" Name="CboSPCType"/>
 
+                <Button Content="1M" Margin="2" Name="Btn1Month" Click="BtnOneMonth_Click" ToolTip="1 Month" Visibility="Collapsed"/>
+                <Button Content="3M" Margin="2" Name="Btn3Month" Click="BtnOneMonth_Click" ToolTip="3 Month"/>
+                <Button Content="6M" Margin="2" Name="Btn6Month" Click="BtnOneMonth_Click" ToolTip="6 Month"/>
+                <Button Content="1Y" Margin="2" Name="Btn1Year" Click="BtnOneMonth_Click" ToolTip="1 Year"/>
                 <Button Content="Fetch" Margin="2" Name="BtnFetch" Click="BtnFetch_Click" Background="Green"/>
                 <Button Content="Save" Margin="2" Name="BtnSave" Click="BtnSave_Click" IsDefault="True"/>
                 <Button Content="Open" Margin="2" Name="BtnOpen" Click="BtnOpen_Click"/>
                 <Button Content="Folder" Margin="2" Name="BtnFolder" Click="BtnFolder_Click"/>
+                <Button Content="Excel" Margin="2" Name="BtnExcel" Click="BtnExcel_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
                 <Button Content="Excel" Margin="2" Visibility="Hidden"/>

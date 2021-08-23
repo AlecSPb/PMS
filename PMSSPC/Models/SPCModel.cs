@@ -38,6 +38,8 @@ namespace PMSSPC.Models
 
         public void Calc()
         {
+            if (Items.Count == 0) return;
+
             USL = Items.Max(i => i.Value);
             LSL = Items.Min(i => i.Value);
             SL = (USL + LSL) / 2;

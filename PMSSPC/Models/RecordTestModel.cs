@@ -15,6 +15,7 @@ namespace PMSSPC.Models
         public string Weight { get; set; }
         public string Resistance { get; set; }
         public string DimensionActual { get; set; }
+        public string CompositionXRF { get; set; }
         public DateTime CreateTime { get; set; }
     }
 }

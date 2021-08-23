@@ -65,8 +65,14 @@ namespace PMSSPC
             CboSPCType.Items.Clear();
             CboSPCType.Items.Add("Density");
             CboSPCType.Items.Add("Weight");
+            CboSPCType.Items.Add("Diameter");
+            CboSPCType.Items.Add("Thickness");
+            CboSPCType.Items.Add("Compositon_1");
+            CboSPCType.Items.Add("Compositon_2");
+            CboSPCType.Items.Add("Compositon_3");
+            CboSPCType.Items.Add("Compositon_4");
 
-            DpStart.SelectedDate = new DateTime(2019, 1, 1);
+            DpStart.SelectedDate = DateTime.Today.AddYears(-1);
             DpEnd.SelectedDate = DateTime.Today.AddDays(1);
             #endregion
         }
@@ -96,23 +102,31 @@ namespace PMSSPC
             DgSPCData.ItemsSource = null;
             DgSPCData.ItemsSource = spc_model.Items;
 
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"From [{spc_model.Start.ToShortDateString()}] to [{spc_model.End.ToShortDateString()}]");
-            sb.AppendLine($"Unit:{spc_model.Unit}");
-            sb.AppendLine($"Composition:{spc_model.Items[0].Composition}");
-            sb.AppendLine($"Data Count:{spc_model.Items.Count}");
-            sb.AppendLine($"USL={spc_model.USL.ToString("F2")}");
-            sb.AppendLine($"SL={spc_model.SL.ToString("F2")}");
-            sb.AppendLine($"LSL={spc_model.LSL.ToString("F2")}");
-            sb.AppendLine($"UCL={spc_model.UCL.ToString("F2")}");
-            sb.AppendLine($"CL={spc_model.CL.ToString("F2")}");
-            sb.AppendLine($"LCL={spc_model.LCL.ToString("F2")}");
-            sb.AppendLine($"Sigma={spc_model.Sigma.ToString("F2")}");
-            sb.AppendLine($"Cp={spc_model.Cp.ToString("F2")}");
-            sb.AppendLine($"Cpk={spc_model.Cpk.ToString("F2")}");
-            TxtCpk.Text = sb.ToString();
+            if (spc_model.Items.Count > 0)
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine($"From [{spc_model.Start.ToShortDateString()}] to [{spc_model.End.ToShortDateString()}]");
+                sb.AppendLine($"Unit:{spc_model.Unit}");
+                sb.AppendLine($"Composition:{spc_model.Items[0].Composition}");
+                sb.AppendLine($"Data Count:{spc_model.Items.Count}");
+                sb.AppendLine($"USL={spc_model.USL.ToString("F2")}");
+                sb.AppendLine($"SL={spc_model.SL.ToString("F2")}");
+                sb.AppendLine($"LSL={spc_model.LSL.ToString("F2")}");
+                sb.AppendLine($"UCL={spc_model.UCL.ToString("F2")}");
+                sb.AppendLine($"CL={spc_model.CL.ToString("F2")}");
+                sb.AppendLine($"LCL={spc_model.LCL.ToString("F2")}");
+                sb.AppendLine($"Sigma={spc_model.Sigma.ToString("F2")}");
+                sb.AppendLine($"Cp={spc_model.Cp.ToString("F2")}");
+                sb.AppendLine($"Cpk={spc_model.Cpk.ToString("F2")}");
+                TxtCpk.Text = sb.ToString();
 
-            Plot(spc_model);
+                Plot(spc_model);
+            }
+            else
+            {
+                TxtCpk.Text = "没有找到所需要数据,请检查筛选条件设置";
+            }
+
         }
 
         private void BtnFetch_Click(object sender, RoutedEventArgs e)
@@ -131,6 +145,36 @@ namespace PMSSPC
                         data = service.GetCleanedSPCDataItemWeight(CboComposition.SelectedItem.ToString(),
                                             DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
                                             DpEnd.SelectedDate?.ToString("yyyy-MM-dd"));
+                        break;
+                    case "Diameter":
+                        data = service.GetCleanedSPCDataItemDiameter(CboComposition.SelectedItem.ToString(),
+                                            DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
+                                            DpEnd.SelectedDate?.ToString("yyyy-MM-dd"));
+                        break;
+                    case "Thickness":
+                        data = service.GetCleanedSPCDataItemThickness(CboComposition.SelectedItem.ToString(),
+                                            DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
+                                            DpEnd.SelectedDate?.ToString("yyyy-MM-dd"));
+                        break;
+                    case "Compositon_1":
+                        data = service.GetCleanedSPCDataItemCompositionXRF(CboComposition.SelectedItem.ToString(),
+                                            DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
+                                            DpEnd.SelectedDate?.ToString("yyyy-MM-dd"),1);
+                        break;
+                    case "Compositon_2":
+                        data = service.GetCleanedSPCDataItemCompositionXRF(CboComposition.SelectedItem.ToString(),
+                                            DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
+                                            DpEnd.SelectedDate?.ToString("yyyy-MM-dd"), 2);
+                        break;
+                    case "Compositon_3":
+                        data = service.GetCleanedSPCDataItemCompositionXRF(CboComposition.SelectedItem.ToString(),
+                                            DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
+                                            DpEnd.SelectedDate?.ToString("yyyy-MM-dd"), 3);
+                        break;
+                    case "Compositon_4":
+                        data = service.GetCleanedSPCDataItemCompositionXRF(CboComposition.SelectedItem.ToString(),
+                                            DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
+                                            DpEnd.SelectedDate?.ToString("yyyy-MM-dd"), 4);
                         break;
                     default:
                         break;
@@ -265,6 +309,37 @@ namespace PMSSPC
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             SaveFile(true);
+        }
+
+        private void BtnExcel_Click(object sender, RoutedEventArgs e)
+        {
+            new SPCOutputService().Output(spc_model);
+        }
+
+        private void BtnOneMonth_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            switch (btn.Name)
+            {
+                case "Btn1Month":
+                    DpEnd.SelectedDate = DateTime.Today;
+                    DpStart.SelectedDate = DateTime.Today.AddMonths(-1);
+                    break;
+                case "Btn3Month":
+                    DpEnd.SelectedDate = DateTime.Today;
+                    DpStart.SelectedDate = DateTime.Today.AddMonths(-3);
+                    break;
+                case "Btn6Month":
+                    DpEnd.SelectedDate = DateTime.Today;
+                    DpStart.SelectedDate = DateTime.Today.AddMonths(-6);
+                    break;
+                case "Btn1Year":
+                    DpEnd.SelectedDate = DateTime.Today;
+                    DpStart.SelectedDate = DateTime.Today.AddYears(-1);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

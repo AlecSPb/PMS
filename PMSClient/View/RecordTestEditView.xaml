@@ -36,7 +36,7 @@
                 <Grid  DataContext="{Binding CurrentRecordTest}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="400"/>
+                        <ColumnDefinition Width="300"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
@@ -150,44 +150,48 @@
 
                     <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Name="TxtWeight" Grid.Row="10" Grid.Column="1" Text="{Binding Weight,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxBig}" />
+                    <TextBox Name="TxtWeight" Grid.Row="10" Grid.Column="1" Text="{Binding Weight,UpdateSourceTrigger=PropertyChanged}" 
+                             Style="{StaticResource StyleTextBoxBig}" />
                     <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="单位：g"/>
 
-                    <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RTDensity}"
+                    <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal">
-                        <TextBox Name="TxtDensity" Grid.Row="10" Grid.Column="1" Text="{Binding Density,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxBig}" 
-                             HorizontalAlignment="Left"/>
-                        <Button Name="btnCalculator" Click="BtnCalculator_Click" Content="计算器" Style="{StaticResource StyleButtonCommon}"/>
-                    </StackPanel>
-                    <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位:g/cm3"/>
-
-                    <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RTResistance}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="12" Grid.Column="1" Name="txtResistance" Text="{Binding Resistance,UpdateSourceTrigger=PropertyChanged}"
-                             Style="{StaticResource StyleTextBoxCommon}" />
-                    <StackPanel Grid.Row="12" Grid.Column="2" Orientation="Horizontal">
-                        <Button Content="超限" Style="{StaticResource StyleButtonCommon}" Click="BtnResistance_Click"/>
-                        <TextBlock  Style="{StaticResource StyleTextBlockTip}"  Text="单位：Ωcm，最多两位有效数字即可"/>
-                    </StackPanel>
-
-                    <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="13" Grid.Column="1" Name="TxtDimension" Text="{Binding DimensionActual,UpdateSourceTrigger=PropertyChanged}"
-                             Style="{StaticResource StyleTextBoxCommon}" />
-                    <StackPanel Grid.Row="13" Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal">
+                    <TextBox Grid.Row="11" Grid.Column="1" Name="TxtDimension" Text="{Binding DimensionActual,UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource StyleTextBoxBig}" />
+                    <StackPanel Grid.Row="11" Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal">
                         <Button Content="选择" Style="{StaticResource StyleButtonCommon}"
                             Command="{Binding DataContext.SelectDimensionActual,
                                 RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
                         <Button Content="标记" Name="BtnDimensionMark" Click="BtnDimensionMark_Click"
                             Style="{StaticResource StyleButtonCommonNarrow}"/>
+                        <Button Content="空" Name="BtnDimensionEmpty" Click="BtnDimensionEmpty_Click" 
+                                Style="{StaticResource StyleButtonCommonNarrow}"/>
                         <TextBlock  Style="{StaticResource StyleTextBlockWarning2}"
                            Text="请优先使用重新测量的数据，不要使用加工记录里的数据；如果尺寸不符合尺寸要求，请标记一下。"/>
                     </StackPanel>
+                    
+                    <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RTDensity}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <StackPanel Grid.Row="12" Grid.Column="1" Orientation="Horizontal">
+                        <TextBox Name="TxtDensity" Grid.Row="10" Grid.Column="1" Text="{Binding Density,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxBig}" 
+                             HorizontalAlignment="Left"/>
+                        <Button Name="btnCalculator" Click="BtnCalculator_Click" Content="计算器" Style="{StaticResource StyleButtonCommon}"/>
+                    </StackPanel>
+                    <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位:g/cm3"/>
+
+                    <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTResistance}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="13" Grid.Column="1" Name="txtResistance" Text="{Binding Resistance,UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource StyleTextBoxBig}" />
+                    <StackPanel Grid.Row="13" Grid.Column="2" Orientation="Horizontal">
+                        <Button Content="超限" Style="{StaticResource StyleButtonCommon}" Click="BtnResistance_Click"/>
+                        <TextBlock  Style="{StaticResource StyleTextBlockTip}"  Text="单位：Ωcm，最多两位有效数字即可"/>
+                    </StackPanel>
+
 
                     <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTDefects}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox  Grid.Row="14" Grid.Column="1" Name="TxtDefects" Style="{StaticResource StyleTextBoxCommon}"
+                    <TextBox  Grid.Row="14" Grid.Column="1" Name="TxtDefects" Style="{StaticResource StyleTextBoxBig}"
                              Text="{Binding Defects,UpdateSourceTrigger=PropertyChanged}" />
                     <StackPanel Grid.Row="14" Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal">
                         <Button Content="缺陷" Style="{StaticResource StyleButtonCommon}"
