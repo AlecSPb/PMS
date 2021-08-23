@@ -108,6 +108,7 @@ namespace PMSSPC
                 sb.AppendLine($"From [{spc_model.Start.ToShortDateString()}] to [{spc_model.End.ToShortDateString()}]");
                 sb.AppendLine($"Unit:{spc_model.Unit}");
                 sb.AppendLine($"Composition:{spc_model.Items[0].Composition}");
+                sb.AppendLine($"SPCType:{spc_model.SPCType}");
                 sb.AppendLine($"Data Count:{spc_model.Items.Count}");
                 sb.AppendLine($"USL={spc_model.USL.ToString("F2")}");
                 sb.AppendLine($"SL={spc_model.SL.ToString("F2")}");
@@ -118,6 +119,14 @@ namespace PMSSPC
                 sb.AppendLine($"Sigma={spc_model.Sigma.ToString("F2")}");
                 sb.AppendLine($"Cp={spc_model.Cp.ToString("F2")}");
                 sb.AppendLine($"Cpk={spc_model.Cpk.ToString("F2")}");
+
+                //sb.AppendLine("Data Details:");
+
+                //foreach (var item in spc_model.Items)
+                //{
+                //    sb.AppendLine($"{item.ProductID},{item.Value}");
+                //}
+
                 TxtCpk.Text = sb.ToString();
 
                 Plot(spc_model);
