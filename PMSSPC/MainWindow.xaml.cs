@@ -50,6 +50,7 @@ namespace PMSSPC
             spc_model = new SPCModel();
             #region set default value
             CboComposition.Items.Clear();
+            CboComposition.Items.Add("Cu22.8In22.5Ga4.5Se50.2");
             CboComposition.Items.Add("Cu22.8In22.0Ga5.0Se50.2");
             CboComposition.Items.Add("Cu22.8In21.5Ga5.5Se50.2");
             CboComposition.Items.Add("Cu22.8In21.0Ga6.0Se50.2");
@@ -61,6 +62,8 @@ namespace PMSSPC
             CboComposition.Items.Add("Cu25Ga25Se50");
             CboComposition.Items.Add("In40S60");
             CboComposition.Items.Add("In40Se60");
+            CboComposition.Items.Add("Se51.0As30.6Ge12.7Si5.7");
+            CboComposition.Items.Add("Ge22.22Sb22.22Te55.56");
 
             CboSPCType.Items.Clear();
             CboSPCType.Items.Add("Density");
@@ -342,9 +345,21 @@ namespace PMSSPC
                     DpEnd.SelectedDate = DateTime.Today;
                     DpStart.SelectedDate = DateTime.Today.AddMonths(-6);
                     break;
+                case "Btn9Month":
+                    DpEnd.SelectedDate = DateTime.Today;
+                    DpStart.SelectedDate = DateTime.Today.AddMonths(-9);
+                    break;
                 case "Btn1Year":
                     DpEnd.SelectedDate = DateTime.Today;
                     DpStart.SelectedDate = DateTime.Today.AddYears(-1);
+                    break;
+                case "Btn2Year":
+                    DpEnd.SelectedDate = DateTime.Today;
+                    DpStart.SelectedDate = DateTime.Today.AddYears(-2);
+                    break;
+                case "Btn3Year":
+                    DpEnd.SelectedDate = DateTime.Today;
+                    DpStart.SelectedDate = DateTime.Today.AddYears(-3);
                     break;
                 default:
                     break;

@@ -21,9 +21,10 @@ namespace PMSSPC.Services
         {
             IDbConnection conn = new SqlConnection(conStr);
 
-            string sql = "select id,productid,composition,density,dimensionactual,resistance,weight,createtime,compositionxrf from recordtests " +
-                "where composition like '%'+@compo+'%' and [state]!='作废' and dimension like '%230%'" +
-                "and (createtime between @start and @end) and composition not like '%F%'";
+            string sql = "select id,productid,composition,density,dimension,dimensionactual,resistance,weight,createtime,compositionxrf " +
+                "from recordtests " +
+                "where composition like '%'+@compo+'%' and [state]!='作废'" +
+                "and (createtime between @start and @end)";
 
             var testResults = conn.Query<RecordTestModel>(sql, new { @compo = composition, @start = start, @end = end });
 
@@ -32,9 +33,29 @@ namespace PMSSPC.Services
             return testResults.ToList();
         }
 
+        public List<RecordTestModel> GetRecordTestModelsFilter(string composition, string start, string end)
+        {
+            var result = GetRecordTestModels(composition, start, end);
+            if (composition == "Ge22.22Sb22.22Te55.56")
+            {
+                return result.Where(i => i.Composition.Contains(composition)).ToList();
+            }
+            else if (composition == "Se51.0As30.6Ge12.7Si5.7")
+            {
+                return result.Where(i => i.Composition.Contains(composition) 
+                && i.Dimension.Contains("440") 
+                && double.Parse(i.Weight) > 4000).ToList();
+            }
+            else
+            {
+                return result.Where(i => i.Dimension.Contains("230") && !i.Composition.Contains("F")).ToList();
+            }
+        }
+
+
         public List<SPCDataItem> GetCleanedSPCDataItemDensity(string composition, string start, string end)
         {
-            var data = GetRecordTestModels(composition, start, end);
+            var data = GetRecordTestModelsFilter(composition, start, end);
 
             var data_cleaned = data.Where(i => i.Density > 0).OrderBy(i => i.ProductID).ToList();
 
@@ -50,7 +71,7 @@ namespace PMSSPC.Services
 
         public List<SPCDataItem> GetCleanedSPCDataItemWeight(string composition, string start, string end)
         {
-            var data = GetRecordTestModels(composition, start, end);
+            var data = GetRecordTestModelsFilter(composition, start, end);
 
             var data_cleaned = data.Where(i => !string.IsNullOrEmpty(i.Weight)).OrderBy(i => i.ProductID).ToList();
 
@@ -83,7 +104,7 @@ namespace PMSSPC.Services
 
         public List<SPCDataItem> GetCleanedSPCDataItemDiameter(string compositon, string start, string end)
         {
-            var data = GetRecordTestModels(compositon, start, end);
+            var data = GetRecordTestModelsFilter(compositon, start, end);
             var data_cleaned = data.Where(i => !string.IsNullOrEmpty(i.DimensionActual)).OrderBy(i => i.ProductID).ToList();
             List<SPCDataItem> items = new List<SPCDataItem>();
 
@@ -110,7 +131,7 @@ namespace PMSSPC.Services
         }
         public List<SPCDataItem> GetCleanedSPCDataItemThickness(string compositon, string start, string end)
         {
-            var data = GetRecordTestModels(compositon, start, end);
+            var data = GetRecordTestModelsFilter(compositon, start, end);
             var data_cleaned = data.Where(i => !string.IsNullOrEmpty(i.DimensionActual)).OrderBy(i => i.ProductID).ToList();
             List<SPCDataItem> items = new List<SPCDataItem>();
 
@@ -167,7 +188,7 @@ namespace PMSSPC.Services
 
         public List<SPCDataItem> GetCleanedSPCDataItemCompositionXRF(string compositon, string start, string end, int i_compo = 1)
         {
-            var data = GetRecordTestModels(compositon, start, end);
+            var data = GetRecordTestModelsFilter(compositon, start, end);
             var data_cleaned = data.Where(i => !string.IsNullOrEmpty(i.CompositionXRF)).OrderBy(i => i.ProductID).ToList();
             List<SPCDataItem> items = new List<SPCDataItem>();
 

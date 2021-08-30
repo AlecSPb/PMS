@@ -14,6 +14,7 @@ namespace PMSSPC.Models
         public double Density { get; set; }
         public string Weight { get; set; }
         public string Resistance { get; set; }
+        public string Dimension { get; set; }
         public string DimensionActual { get; set; }
         public string CompositionXRF { get; set; }
         public DateTime CreateTime { get; set; }
