@@ -60,6 +60,18 @@ namespace PMSAnalysis
             DpStart.SelectedDate = DateTime.Today.AddMonths(-3);
             DpEnd.SelectedDate = DateTime.Today;
         }
+
+        private void BtnNineMonth_Click(object sender, RoutedEventArgs e)
+        {
+            DpStart.SelectedDate = DateTime.Today.AddMonths(-9);
+            DpEnd.SelectedDate = DateTime.Today;
+        }
+
+        private void BtnSixMonth_Click(object sender, RoutedEventArgs e)
+        {
+            DpStart.SelectedDate = DateTime.Today.AddMonths(-6);
+            DpEnd.SelectedDate = DateTime.Today;
+        }
         private double rectSize = 16;
 
         private double EffectiveVHPDay = 0;
@@ -301,6 +313,7 @@ namespace PMSAnalysis
 
 
         private int A = 0, B = 0, C = 0, D = 0, E = 0, F = 0, G = 0;
+
 
         private void AddRect(double l, double t, PlanResult ptype,DateTime date,string vhpcode)
         {

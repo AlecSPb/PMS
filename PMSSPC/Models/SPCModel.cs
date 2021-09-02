@@ -35,14 +35,21 @@ namespace PMSSPC.Models
         public double Sigma { get; set; }
         public double Cpk { get; set; }
 
+        /// <summary>
+        /// SPC 计算方法
+        /// </summary>
 
         public void Calc()
         {
             if (Items.Count == 0) return;
 
-            USL = Items.Max(i => i.Value);
-            LSL = Items.Min(i => i.Value);
-            SL = (USL + LSL) / 2;
+            //如果USL LSL SL没有设置的话，自动计算生成
+            if (USL == 0 || LSL == 0 || SL == 0)
+            {
+                USL = Items.Max(i => i.Value);
+                LSL = Items.Min(i => i.Value);
+                SL = (USL + LSL) / 2;
+            }
 
             CL = Items.Average(i => i.Value);
 

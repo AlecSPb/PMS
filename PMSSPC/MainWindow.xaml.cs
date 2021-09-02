@@ -84,21 +84,38 @@ namespace PMSSPC
 
         private void LoadSPCModel(SPCModel model)
         {
-            SetSPCModel(model.Items, model.SPCType, model.Unit);
+            SetSPCModel(model);
             DpStart.SelectedDate = model.Start;
             DpEnd.SelectedDate = model.End;
             CboComposition.SelectedItem = spc_model.Items[0].Composition;
             CboSPCType.SelectedItem = model.SPCType;
         }
 
-        private void SetSPCModel(List<SPCDataItem> data, string spctype, string unit)
+        private void SetSPCModel(SPCModel model)
         {
+            spc_model = new SPCModel();
             spc_model.Items.Clear();
-            spc_model.Items.AddRange(data);
-            spc_model.Unit = unit;
-            spc_model.SPCType = spctype;
-            spc_model.Start = DpStart.SelectedDate ?? DateTime.Now;
-            spc_model.End = DpEnd.SelectedDate ?? DateTime.Now;
+
+            spc_model.Items.AddRange(model.Items);
+
+            spc_model.Unit = model.Unit;
+            spc_model.SPCType = model.SPCType;
+            spc_model.Start = model.Start;
+            spc_model.End = model.End;
+            //以下可能需要自动生成
+            spc_model.USL = model.USL;
+            spc_model.LSL = model.LSL;
+            spc_model.SL = model.SL;
+
+
+            //以下需要计算
+            spc_model.UCL = model.UCL;
+            spc_model.LCL = model.LCL;
+            spc_model.CL = model.CL;
+            spc_model.Sigma = model.Sigma;
+            spc_model.Cp = model.Cp;
+            spc_model.Cpk = model.Cpk;
+
 
             spc_model.Calc();
 
@@ -122,6 +139,8 @@ namespace PMSSPC
                 sb.AppendLine($"Sigma={spc_model.Sigma.ToString("F2")}");
                 sb.AppendLine($"Cp={spc_model.Cp.ToString("F2")}");
                 sb.AppendLine($"Cpk={spc_model.Cpk.ToString("F2")}");
+                sb.AppendLine("如果需要调整，请Save后再用记事本打开对应json文件，添加或者删除对应项目,USL SL LSL也可以人工设定，保存后然后重新Open，会根据修改自动计算和显示。");
+
 
                 //sb.AppendLine("Data Details:");
 
@@ -145,53 +164,67 @@ namespace PMSSPC
         {
             if (XSHelper.XS.MessageBox.ShowYesNo("Fetch Data From PMS?"))
             {
+                SPCModel model = new SPCModel();
+                model.Start = DpStart.SelectedDate ?? DateTime.Today.AddYears(-1);
+                model.End = DpEnd.SelectedDate ?? DateTime.Today.AddDays(1);
+                model.SPCType = CboSPCType.SelectedItem.ToString();
                 List<SPCDataItem> data = new List<SPCDataItem>();
                 switch (CboSPCType.SelectedItem.ToString())
                 {
                     case "Density":
-                        data = service.GetCleanedSPCDataItemDensity(CboComposition.SelectedItem.ToString(), 
-                                            DpStart.SelectedDate?.ToString("yyyy-MM-dd"), 
+                        data = service.GetCleanedSPCDataItemDensity(CboComposition.SelectedItem.ToString(),
+                                            DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
                                             DpEnd.SelectedDate?.ToString("yyyy-MM-dd"));
+                        model.Unit = "g/cm3";
                         break;
                     case "Weight":
                         data = service.GetCleanedSPCDataItemWeight(CboComposition.SelectedItem.ToString(),
                                             DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
                                             DpEnd.SelectedDate?.ToString("yyyy-MM-dd"));
+                        model.Unit = "g";
                         break;
                     case "Diameter":
                         data = service.GetCleanedSPCDataItemDiameter(CboComposition.SelectedItem.ToString(),
                                             DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
                                             DpEnd.SelectedDate?.ToString("yyyy-MM-dd"));
+                        model.Unit = "mm";
                         break;
                     case "Thickness":
                         data = service.GetCleanedSPCDataItemThickness(CboComposition.SelectedItem.ToString(),
                                             DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
                                             DpEnd.SelectedDate?.ToString("yyyy-MM-dd"));
+                        model.Unit = "mm";
                         break;
                     case "Compositon_1":
                         data = service.GetCleanedSPCDataItemCompositionXRF(CboComposition.SelectedItem.ToString(),
                                             DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
-                                            DpEnd.SelectedDate?.ToString("yyyy-MM-dd"),1);
+                                            DpEnd.SelectedDate?.ToString("yyyy-MM-dd"), 1);
+                        model.Unit = "At%";
                         break;
                     case "Compositon_2":
                         data = service.GetCleanedSPCDataItemCompositionXRF(CboComposition.SelectedItem.ToString(),
                                             DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
                                             DpEnd.SelectedDate?.ToString("yyyy-MM-dd"), 2);
+                        model.Unit = "At%";
                         break;
                     case "Compositon_3":
                         data = service.GetCleanedSPCDataItemCompositionXRF(CboComposition.SelectedItem.ToString(),
                                             DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
                                             DpEnd.SelectedDate?.ToString("yyyy-MM-dd"), 3);
+                        model.Unit = "At%";
                         break;
                     case "Compositon_4":
                         data = service.GetCleanedSPCDataItemCompositionXRF(CboComposition.SelectedItem.ToString(),
                                             DpStart.SelectedDate?.ToString("yyyy-MM-dd"),
                                             DpEnd.SelectedDate?.ToString("yyyy-MM-dd"), 4);
+                        model.Unit = "At%";
                         break;
                     default:
                         break;
                 }
-                SetSPCModel(data, CboSPCType.SelectedItem.ToString(), "g/cm3");
+                model.Items.Clear();
+                model.Items.AddRange(data);
+                SetSPCModel(model);
             }
 
         }
@@ -283,12 +316,12 @@ namespace PMSSPC
         }
 
 
-        private void SaveFile(bool isAuto=false)
+        private void SaveFile(bool isAuto = false)
         {
             string filename = "";
             if (isAuto)
             {
-                filename= "auto";
+                filename = "auto";
             }
 
             filename += $"{spc_model.Start.ToString("yyMMdd")}-{spc_model.End.ToString("yyMMdd")}-" +

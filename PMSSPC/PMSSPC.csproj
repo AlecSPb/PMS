@@ -145,6 +145,7 @@
     </ApplicationDefinition>
     <Compile Include="Models\SPCModel.cs" />
     <Compile Include="Models\SPCDataItem.cs" />
+    <Compile Include="Models\SPCModelSpecDefault.cs" />
     <Compile Include="Services\SPCOutputService.cs" />
     <Compile Include="Services\SPCServce.cs" />
     <Page Include="MainWindow.xaml">

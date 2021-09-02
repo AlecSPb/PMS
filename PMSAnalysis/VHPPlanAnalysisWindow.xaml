@@ -21,6 +21,8 @@
             <Button Name="BtnOneMonth" Content="1 Month" Padding="2" Margin="2" Width="70" Click="BtnOneMonth_Click"/>
             <Button Name="BtnTwoMonth" Content="2 Month" Padding="2" Margin="2" Width="70" Click="BtnTwoMonth_Click"/>
             <Button Name="BtnThreeMonth" Content="3 Month" Padding="2" Margin="2" Width="70" Click="BtnThreeMonth_Click"/>
+            <Button Name="BtnSixMonth" Content="6 Month" Padding="2" Margin="2" Width="70" Click="BtnSixMonth_Click"/>
+            <Button Name="BtnNineMonth" Content="9 Month" Padding="2" Margin="2" Width="70" Click="BtnNineMonth_Click"/>
             <Button Name="BtnOneYear" Content="1 Year" Padding="2" Margin="2" Width="70" Click="BtnOneYear_Click"/>
             
             <Button Name="BtnFetch" Content="Fetch" Padding="2" Margin="2" Width="60" Click="BtnFetch_Click" FontWeight="Bold"

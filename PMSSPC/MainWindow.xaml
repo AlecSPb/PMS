@@ -77,7 +77,7 @@
             </Border>
             <Border Grid.Column="1" BorderBrush="Orange" BorderThickness="1" Margin="2">
                 <TextBox Margin="2" AcceptsReturn="True" Name="TxtCpk" FontSize="20" IsReadOnly="True" Foreground="Blue" FontWeight="Bold"
-                     VerticalScrollBarVisibility="Visible"/>
+                     VerticalScrollBarVisibility="Visible" TextWrapping="WrapWithOverflow"/>
             </Border>
         </Grid>
         <Border Grid.Row="2" BorderBrush="Orange" BorderThickness="1" Margin="2">
