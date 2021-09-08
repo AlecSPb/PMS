@@ -71,8 +71,8 @@
                                     <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                    <Button Content="{StaticResource ButtonTrace}" Style="{StaticResource StyleDGButton}"
-                                    Command="{Binding DataContext.Trace,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                    <Button Content="{StaticResource ButtonCompare}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Compare,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                                     <Button Content="{StaticResource ButtonFailure}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Fail,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"

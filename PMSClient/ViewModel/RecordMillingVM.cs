@@ -20,8 +20,21 @@ namespace PMSClient.ViewModel
             searchVHPPlanLot = searchComposition = "";
             AllPowderWeight = 0;
             RecordMillings = new ObservableCollection<DcRecordMilling>();
+
+            Compare = new RelayCommand<DcRecordMilling>(ActionCompare);
+
             SetPageParametersWhenConditionChange();
             InitializeCommands();
+        }
+
+        private void ActionCompare(DcRecordMilling obj)
+        {
+            if (obj != null)
+            {
+                SearchVHPPlanLot = "";
+                SearchComposition = obj.Composition;
+                SetPageParametersWhenConditionChange();
+            }
         }
 
         /// <summary>
@@ -291,6 +304,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand<DcRecordMilling> Label { get; set; }
         public RelayCommand<DcRecordMilling> Trace { get; set; }
+        public RelayCommand<DcRecordMilling> Compare { get; set; }
         public RelayCommand<DcRecordMilling> Fail { get; set; }
 
         public RelayCommand QuickAdd { get; set; }
