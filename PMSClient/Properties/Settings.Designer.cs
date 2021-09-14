@@ -133,7 +133,7 @@ namespace PMSClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4.12.10.87")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4.12.10.88")]
         public string Version {
             get {
                 return ((string)(this["Version"]));
