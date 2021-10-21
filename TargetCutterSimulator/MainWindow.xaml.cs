@@ -30,7 +30,7 @@ namespace TargetCutterSimulator
 
         private void Initialize()
         {
-            this.Title = "靶材切割设计器 designed by xs.zhou";
+            this.Title = "Target Cutter Designer designed by xs.zhou";
         }
 
         private const double ratio = 2.0;
@@ -263,7 +263,7 @@ namespace TargetCutterSimulator
                     enc.Save(stm);
                 }
 
-                MessageBox.Show("保存成功", "保存", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Save Success", "Save", MessageBoxButton.OK, MessageBoxImage.Information);
                 //System.Diagnostics.Process.Start(targetFolder);
             }
             catch (Exception ex)
@@ -285,7 +285,7 @@ namespace TargetCutterSimulator
 
         private void BtnClearAll_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("清除画布上所有的形状?", "请问", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Clear all shapes?", "Asking", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 if (MainCanvas.Children.Count > 0)
                 {

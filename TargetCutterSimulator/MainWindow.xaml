@@ -10,11 +10,11 @@
         Title="MainWindow" Height="600" Width="900">
     <Window.Resources>
         <ContextMenu x:Key="ShapeContextMenu">
-            <MenuItem Name="CmCopy" Header="复制" Click="CmCopy_Click"/>
-            <MenuItem Name="CmDelete" Header="删除" Click="CmDelete_Click"/>
+            <MenuItem Name="CmCopy" Header="Copy" Click="CmCopy_Click"/>
+            <MenuItem Name="CmDelete" Header="Delete" Click="CmDelete_Click"/>
             <Separator/>
-            <MenuItem Name="CmMoveTop" Header="置顶" Click="CmMoveTop_Click"/>
-            <MenuItem Name="CmMoveBottom" Header="置底" Click="CmMoveBottom_Click"/>
+            <MenuItem Name="CmMoveTop" Header="Top" Click="CmMoveTop_Click"/>
+            <MenuItem Name="CmMoveBottom" Header="Bottom" Click="CmMoveBottom_Click"/>
         </ContextMenu>
     </Window.Resources>
     <Grid>
@@ -25,17 +25,17 @@
         <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Wheat">
             <TextBlock Text="D=" Style="{StaticResource tb}"/>
             <TextBox Name="TxtDiameter"  Style="{StaticResource txt}" Text="50.8"/>
-            <Button Name="BtnAddCircle" Content="圆" Style="{StaticResource btn}" Click="BtnAddCircle_Click"/>
+            <Button Name="BtnAddCircle" Content="Circle" Style="{StaticResource btn}" Click="BtnAddCircle_Click"/>
             <TextBlock Text="W=" Style="{StaticResource tb}"/>
             <TextBox Name="TxtWidth"  Style="{StaticResource txt}" Text="100"/>
             <TextBlock Text="H=" Style="{StaticResource tb}"/>
             <TextBox Name="TxtHeight"  Style="{StaticResource txt}" Text="80"/>
-            <Button Name="BtnAddRectangle" Content="方" Style="{StaticResource btn}" Click="BtnAddRectangle_Click"/>
-            <TextBlock Text="右键复制删除置顶" Style="{StaticResource tb}"/>
-            <Button Name="BtnClearAll" Content="清除所有" Style="{StaticResource btn}" Click="BtnClearAll_Click"/>
+            <Button Name="BtnAddRectangle" Content="Rectangle" Style="{StaticResource btn}" Click="BtnAddRectangle_Click"/>
+            <TextBlock Text="Using Right Click" Style="{StaticResource tb}"/>
+            <Button Name="BtnClearAll" Content="Clear All" Style="{StaticResource btn}" Click="BtnClearAll_Click"/>
 
-            <Button Name="BtnSaveAs" Content="保存图片" Style="{StaticResource btn}" Click="BtnSaveAs_Click"/>
-            <Button Name="BtnOpenSaveFolder" Content="历史图片" Style="{StaticResource btn}" Click="BtnOpenSaveFolder_Click"/>
+            <Button Name="BtnSaveAs" Content="Save As" Style="{StaticResource btn}" Click="BtnSaveAs_Click"/>
+            <Button Name="BtnOpenSaveFolder" Content="Image Folder" Style="{StaticResource btn}" Click="BtnOpenSaveFolder_Click"/>
 
         </StackPanel>
 

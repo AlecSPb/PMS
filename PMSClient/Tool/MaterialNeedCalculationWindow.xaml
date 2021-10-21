@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PMSClient.Tool"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
-             Title="原料需求计算"
+             Title="Material Need Calculator"
              Height="600" Width="600"
              WindowStartupLocation="CenterScreen"
              WindowStyle="ToolWindow"
