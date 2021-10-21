@@ -309,5 +309,25 @@ namespace TargetCutterSimulator
         {
 
         }
+
+        private void CmFillColor_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentShape != null)
+            {
+                var dialog = new System.Windows.Forms.ColorDialog();
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    var color = dialog.Color;
+                    var wpfcolor = new System.Windows.Media.Color();
+                    wpfcolor.A = color.A;
+                    wpfcolor.R = color.R;
+                    wpfcolor.G = color.G;
+                    wpfcolor.B = color.B;
+                    fill_brush= new SolidColorBrush(wpfcolor);
+                    currentShape.Fill = fill_brush;
+                }
+            }
+
+        }
     }
 }
