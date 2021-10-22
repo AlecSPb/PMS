@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSQuotation"
         mc:Ignorable="d"
-        Title="PMS Quotation v1.0" Height="450" Width="1200" WindowStartupLocation="CenterScreen"
+        Title="PMS Quotation v1.0" Height="800" Width="1200" 
+        WindowStartupLocation="CenterScreen"
         WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
@@ -27,6 +28,8 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
                 <Button Content="Excel" Style="{StaticResource StyleButtonCommon}"/>
+                <Button Content="DB Folder" Style="{StaticResource StyleButtonCommon}"  Command="{Binding DBFolder}"/>
+                <Button Content="Setting" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Setting}"/>
             </StackPanel>
         </Grid>
         <DataGrid Style="{StaticResource StyleDataGridCommon}" Grid.Row="1">
