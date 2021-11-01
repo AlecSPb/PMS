@@ -27,10 +27,39 @@ namespace TargetCutterSimulator
             Initialize();
         }
 
-
         private void Initialize()
         {
             this.Title = "Target Cutter Designer designed by xs.zhou";
+            var data = new List<double>();
+            #region 数据
+            data.Add(50);
+            data.Add(50.8);
+            data.Add(76.2);
+            data.Add(80);
+            data.Add(100);
+            data.Add(105);
+            data.Add(110);
+            data.Add(124.5);
+            data.Add(128);
+            data.Add(152);
+            data.Add(155);
+            data.Add(168);
+            data.Add(200);
+            data.Add(205);
+            data.Add(206);
+            data.Add(230);
+            data.Add(233);
+            data.Add(255);
+            data.Add(300);
+            data.Add(303);
+            data.Add(319);
+            data.Add(330);
+            data.Add(336);
+            data.Add(440);
+            data.Add(444.7);
+            data.Add(450);
+            #endregion
+            CboDiameter.ItemsSource = data;
         }
 
         private const double ratio = 2.0;
@@ -148,7 +177,7 @@ namespace TargetCutterSimulator
         private void BtnAddCircle_Click(object sender, RoutedEventArgs e)
         {
 
-            if (double.TryParse(TxtDiameter.Text.Trim(), out double diameter)
+            if (double.TryParse(CboDiameter.Text.Trim(), out double diameter)
                             && diameter > 0)
             {
                 AddEllipse(diameter);
