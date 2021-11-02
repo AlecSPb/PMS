@@ -8,7 +8,7 @@ namespace PMSQuotation.Models
 {
     public class Contacts
     {
-        public Guid ID { get; set; }
+        public int ID { get; set; }
         public string CustomerType { get; set; }//self,customer
         public string CompanyName { get; set; }
         public string Address { get; set; }
@@ -17,6 +17,8 @@ namespace PMSQuotation.Models
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Fax { get; set; }
+        public string State { get; set; }
+
 
 
     }

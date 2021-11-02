@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSQuotation.Services
+namespace PMSQuotation.Models
 {
-    public class CalculationSheet
+    public enum ModelState
     {
-
+        UnFinished,
+        Finished,
+        Deleted
     }
 }

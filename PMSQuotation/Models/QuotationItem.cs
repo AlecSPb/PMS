@@ -12,16 +12,15 @@ namespace PMSQuotation.Models
     /// </summary>
     public class QuotationItem
     {
-        public Guid ID { get; set; }
-        public Guid QuotationID { get; set; }
+        public int ID { get; set; }
+        public int QuotationID { get; set; }
 
         public string Composition { get; set; }
-        public string Dimension { get; set; }
+        public string Specification { get; set; }
         public double UnitPrice { get; set; }
         public int Quantity { get; set; }
         public double TotalPrice { get; set; }
-        public string DeliveryDate { get; set; }
-        public bool WithTax { get; set; }
+        public string DeliveryTime { get; set; }
         public string Note { get; set; }
 
         /// <summary>
@@ -37,7 +36,11 @@ namespace PMSQuotation.Models
         /// 关税
         /// 增值税
         /// </summary>
-        public string CalcualtionJson { get; set; }
+        public string UnitPriceDetail { get; set; }
+
+        public DateTime CreateTime { get; set; }
+        public string Creator{ get; set; }
+        public string State { get; set; }
 
     }
 }

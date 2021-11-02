@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMSQuotation.Models;
 
 namespace PMSQuotation
 {
@@ -23,6 +24,29 @@ namespace PMSQuotation
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowVM();
+        }
+
+        private void mainDg_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            Quotation model = (Quotation)e.Row.DataContext;
+            if (model != null)
+            {
+                switch (model.State)
+                {
+                    case "Deleted":
+                        e.Row.Background = Brushes.Gray;
+                        break;
+                    case "UnFinished":
+                        e.Row.Background = Brushes.Yellow;
+                        break;
+                    case "Finished":
+                        e.Row.Background = Brushes.White;
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
     }
 }

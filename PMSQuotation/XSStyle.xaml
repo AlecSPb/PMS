@@ -434,9 +434,11 @@
     </Style>
     <Style x:Key="StyleDGTextBlockCenter" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
     </Style>
     <Style x:Key="StyleDGTextBlockRight" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
     </Style>
     <Style x:Key="StyleDGTextBlockRightBlue" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="HorizontalAlignment" Value="Right"/>

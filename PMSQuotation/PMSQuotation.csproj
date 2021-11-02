@@ -126,18 +126,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataDictionaryView.xaml.cs">
+      <DependentUpon>DataDictionaryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataDictionaryVM.cs" />
     <Compile Include="MainWindowVM.cs" />
+    <Compile Include="Models\ModelState.cs" />
     <Compile Include="Models\DataDicts.cs" />
     <Compile Include="Models\QuotationItem.cs" />
+    <Compile Include="Models\QuotationItemUnitPrice.cs" />
     <Compile Include="QuotationEditView.xaml.cs">
       <DependentUpon>QuotationEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="QuotationEditVM.cs" />
-    <Compile Include="Services\CalculationSheet.cs" />
+    <Compile Include="QuotationItemEditView.xaml.cs">
+      <DependentUpon>QuotationItemEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QuotationItemEditVM.cs" />
+    <Compile Include="Services\CalculationService.cs" />
     <Compile Include="Services\OutputService.cs" />
-    <Compile Include="Services\QuotationHelper.cs" />
-    <Compile Include="Services\QuotationService.cs" />
+    <Compile Include="Helpers\QuotationHelper.cs" />
+    <Compile Include="Services\QuotationDbService.cs" />
     <Compile Include="Services\RMB.cs" />
+    <Compile Include="VMState.cs" />
+    <Page Include="DataDictionaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -151,6 +166,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="QuotationEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QuotationItemEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -201,7 +220,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dialogs\" />
+    <Folder Include="Images\" />
+    <Folder Include="Tools\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

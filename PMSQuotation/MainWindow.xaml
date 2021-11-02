@@ -5,50 +5,197 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSQuotation"
         mc:Ignorable="d"
-        Title="PMS Quotation v1.0" Height="800" Width="1200" 
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        Title="PMS Quotation v1.0" Height="800" Width="1400" 
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized">
-    <Grid>
+    
+    <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Grid Background="Wheat">
+        <Grid Background="{StaticResource BGNavigationBar}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal">
-                <Button Content="New" Style="{StaticResource StyleButtonCommon}"/>
-                <TextBlock Text="Customer" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Text="" Style="{StaticResource StyleTextBoxSearch}"/>
-                <TextBlock Text="Title" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Text="" Style="{StaticResource StyleTextBoxSearch}"/>
-                <Button Content="Search" Style="{StaticResource StyleButtonCommon}"/>
+                <Button Content="New" Style="{StaticResource StyleButtonCommon}" Command="{Binding New}"/>
+                <TextBlock Text="Customer" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+                <TextBox Text="{Binding SearchCustomer}" Style="{StaticResource StyleTextBoxSearch}"/>
+                <TextBlock Text="Keyword" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+                <TextBox Text="{Binding SearchKeyword}" Style="{StaticResource StyleTextBoxSearch}"/>
+                <TextBlock Text="State" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+                <ComboBox Style="{StaticResource StyleComboBoxCommon}" ItemsSource="{Binding SearchStates}"
+                          SelectedItem="{Binding SearchState}"/>
+                <Button Content="Search" Style="{StaticResource StyleButtonCommon}" Command="{Binding Search}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
-                <Button Content="Calculator" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding Calc}"/>
+                <Button Content="Contacts" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding Contacts}"/>
+                <Button Content="Data Dictionary" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding DataDictionary}"/>
                 <Button Content="DB Folder" Style="{StaticResource StyleButtonCommon}"  Command="{Binding DBFolder}"/>
-                <Button Content="Setting" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Setting}"/>
             </StackPanel>
         </Grid>
-        <DataGrid Style="{StaticResource StyleDataGridCommon}" Grid.Row="1">
+        <DataGrid Style="{StaticResource StyleDataGridCommon}" Grid.Row="1" x:Name="mainDg"
+                  ItemsSource="{Binding Quotations}" FrozenColumnCount="1"  LoadingRow="mainDg_LoadingRow">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,
+                        RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                           CommandParameter="{Binding ElementName=mainDg,Path=SelectedItem}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Edit" Style="{StaticResource StyleDGButton}"/>
-                                <Button Content="Del" Style="{StaticResource StyleDGButton}"/>
-                                <Button Content="View" Style="{StaticResource StyleDGButton}"/>
-                                <Button Content="Sheet" Style="{StaticResource StyleDGButton}"/>
+                                <Button Content="Edit" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Edit, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
+                                <Button Content="Clone" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Clone, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
+                                <Button Content="Del" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Delete, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
+                                <Button Content="Doc" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Doc, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
+                                <Button Content="Item" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ItemNew, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="CreateTime" Binding="{Binding CreateTime}"/>
+                <DataGridTextColumn Header="State" Binding="{Binding State}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="CreateTime" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Creator" Binding="{Binding Creator}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="LastUpdateTime" Binding="{Binding LastUpdateTime,StringFormat={}{0:yyyy-MM-dd}}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="ExpirationTime" Binding="{Binding ExpirationTime,StringFormat={}{0:yyyy-MM-dd}}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="CurrencyType" Binding="{Binding CurrencyType}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="TotalCost" Binding="{Binding TotalCost,StringFormat={}{0:F2}}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                <DataGridTextColumn Header="Lot" Binding="{Binding Lot}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="KeyWord" Binding="{Binding KeyWord}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+
+                <DataGridTextColumn Header="Customer_CompanyName" Binding="{Binding Customer_CompanyName}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Customer_Contact" Binding="{Binding Customer_Contact}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Customer_Phone" Binding="{Binding Customer_Phone}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Customer_Email" Binding="{Binding Customer_Email}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Customer_Fax" Binding="{Binding Customer_Fax}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Customer_Address" Binding="{Binding Customer_Address}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Customer_PostCode" Binding="{Binding Customer_PostCode}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+
+                <DataGridTextColumn Header="Basic_CompanyName" Binding="{Binding Basic_CompanyName}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Basic_Contact" Binding="{Binding Basic_Contact}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Basic_Phone" Binding="{Binding Basic_Phone}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Basic_Email" Binding="{Binding Basic_Email}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Basic_Fax" Binding="{Binding Basic_Fax}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Basic_Address" Binding="{Binding Basic_Address}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Basic_PostCode" Binding="{Binding Basic_PostCode}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+
+                <DataGridTextColumn Header="PackageFee" Binding="{Binding PackageFee,StringFormat={}{0:F2}}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                <DataGridTextColumn Header="PackageRemark" Binding="{Binding PackageRemark}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="ShippingFee" Binding="{Binding ShippingFee,StringFormat={}{0:F2}}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                <DataGridTextColumn Header="ShippingRemark" Binding="{Binding ShippingRemark}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="CustomFee" Binding="{Binding CustomFee,StringFormat={}{0:F2}}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                <DataGridTextColumn Header="CustomRemark" Binding="{Binding CustomRemark}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="TaxFee" Binding="{Binding TaxFee,StringFormat={}{0:F2}}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                <DataGridTextColumn Header="TaxRemark" Binding="{Binding TaxRemark}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+
+
+                <DataGridTextColumn Header="Remark" Binding="{Binding Remark}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
             </DataGrid.Columns>
         </DataGrid>
-        
+        <DataGrid Style="{StaticResource StyleDataGridCommon}" Grid.Row="2" ItemsSource="{Binding CurrentQuotationItems}"
+                  FrozenColumnCount="1">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Edit" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ItemEdit, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
+                                <Button Content="Del" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ItemDelete, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
+                                <Button Content="Clone" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ItemClone, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="State" Binding="{Binding State}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="CreateTime" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Creator" Binding="{Binding Creator}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+
+                <DataGridTextColumn Header="Composition" Binding="{Binding Composition}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Specification" Binding="{Binding Specification}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="UnitPrice" Binding="{Binding UnitPrice,StringFormat={}{0:F2}}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                <DataGridTextColumn Header="TotalPrice" Binding="{Binding TotalPrice,StringFormat={}{0:F2}}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                <DataGridTextColumn Header="DeliveryTime" Binding="{Binding DeliveryTime}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Note" Binding="{Binding Note}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="TotalPrice" Style="{StaticResource StyleDGTextBlockBig}"/>
+            <TextBlock Text="TotalPrice" Style="{StaticResource StyleDGTextBlockBig}" Grid.Column="1"/>
+            <TextBlock Text="TotalPrice" Style="{StaticResource StyleDGTextBlockBig}" Grid.Column="2"/>
+        </Grid>
     </Grid>
 </Window>

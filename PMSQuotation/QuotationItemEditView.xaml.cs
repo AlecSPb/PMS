@@ -15,14 +15,13 @@ using System.Windows.Shapes;
 namespace PMSQuotation
 {
     /// <summary>
-    /// QuotationEditView.xaml 的交互逻辑
+    /// QuotationItemEditView.xaml 的交互逻辑
     /// </summary>
-    public partial class QuotationEditView : Window
+    public partial class QuotationItemEditView : Window
     {
-        public QuotationEditView()
+        public QuotationItemEditView()
         {
             InitializeComponent();
-            this.Height = 800;
         }
     }
 }

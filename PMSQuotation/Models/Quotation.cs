@@ -11,7 +11,21 @@ namespace PMSQuotation.Models
     /// </summary>
     public class Quotation
     {
-        public Guid ID { get; set; }
+        public int ID { get; set; }
+        #region SheetInfo
+        public string CurrencyType { get; set; }
+        public double TotalCost { get; set; }
+        public DateTime CreateTime { get; set; }
+        public DateTime LastUpdateTime { get; set; }
+        public DateTime ExpirationTime { get; set; }
+        public string Creator { get; set; }
+
+        public string State { get; set; }
+        public string Lot { get; set; }
+        public string Remark { get; set; }
+        public string KeyWord { get; set; }//方便检索
+
+        #endregion
 
         #region CustomerInfo
         public string Customer_CompanyName { get; set; }
@@ -35,23 +49,24 @@ namespace PMSQuotation.Models
         #endregion
 
 
-        #region SheetInfo
-        public string CurrencyType { get; set; }
-        public DateTime CreateTime { get; set; }
-        public DateTime LastUpdateTime { get; set; }
-        public string Creator { get; set; }
-        public DateTime ExpirationTime { get; set; }
 
-        public string Lot { get; set; }
-        public string KeyWord { get; set; }
-
-        #endregion
 
         #region QuotationContent
-        
+
         public List<QuotationItem> Items { get; set; }
 
+        public double PackageFee { get; set; }
+        public string PackageRemark { get; set; }
+        public double ShippingFee { get; set; }
+        public string ShippingRemark { get; set; }
+        public double CustomFee { get; set; }
+        public string CustomRemark { get; set; }
+        public double TaxFee { get; set; }
+        public string TaxRemark { get; set; }
+
         #endregion
+
+
 
 
     }
