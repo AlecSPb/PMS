@@ -27,7 +27,7 @@
                 <Button Content="Search" Style="{StaticResource StyleButtonCommon}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
-                <Button Content="Excel" Style="{StaticResource StyleButtonCommon}"/>
+                <Button Content="Calculator" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding Calc}"/>
                 <Button Content="DB Folder" Style="{StaticResource StyleButtonCommon}"  Command="{Binding DBFolder}"/>
                 <Button Content="Setting" Style="{StaticResource StyleButtonCommon}"  Command="{Binding Setting}"/>
             </StackPanel>

@@ -12,34 +12,47 @@ namespace PMSQuotation.Models
     public class Quotation
     {
         public Guid ID { get; set; }
-        public BasicInfo BasicInformation { get; set; }//json
-        public CustomerInfo CustomerInformation { get; set; }//json
 
-        public string Number { get; set; }
-        public string Title { get; set; }
-        public List<QuotationUnit> Units { get; set; }//json
+        #region CustomerInfo
+        public string Customer_CompanyName { get; set; }
+        public string Customer_Address { get; set; }
+        public string Customer_PostCode { get; set; }
+        public string Customer_Contact { get; set; }
+        public string Customer_Phone { get; set; }
+        public string Customer_Email { get; set; }
+        public string Customer_Fax { get; set; }
+        #endregion
 
-        public double ExtraFee { get; set; }
 
-        public double ServiceFee { get; set; }
+        #region BasicInfo
+        public string Basic_CompanyName { get; set; }
+        public string Basic_Address { get; set; }
+        public string Basic_PostCode { get; set; }
+        public string Basic_Contact { get; set; }
+        public string Basic_Phone { get; set; }
+        public string Basic_Email { get; set; }
+        public string Basic_Fax { get; set; }
+        #endregion
 
 
-        public double TotalFee { get; set; }
-
-        public string MoneyType { get; set; }
-
-        public string TotalType { get; set; }
-
+        #region SheetInfo
+        public string CurrencyType { get; set; }
         public DateTime CreateTime { get; set; }
         public DateTime LastUpdateTime { get; set; }
         public string Creator { get; set; }
+        public DateTime ExpirationTime { get; set; }
 
-        public string GeneralClause { get; set; }
-        public string LegalClause { get; set; }
-        public string SpecialClause { get; set; }
+        public string Lot { get; set; }
+        public string KeyWord { get; set; }
 
-        public DeliveryContent DeliveryContent { get; set; }
+        #endregion
 
-        public DateTime ExpirationDate { get; set; }
+        #region QuotationContent
+        
+        public List<QuotationItem> Items { get; set; }
+
+        #endregion
+
+
     }
 }

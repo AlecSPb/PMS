@@ -270,7 +270,7 @@
                 <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding BondingRequirement}"
                          Style="{StaticResource StyleTextBoxCommon}" />
                 <TextBlock Grid.Row="19" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="绑定要求-比如TCB-Indium,TCB-Elastmer"/>
+                           Text="绑定要求-比如TCB-Indium,TCB-Elastomer"/>
 
                 <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource OrderWithBackingPlate}"
                            Style="{StaticResource StyleTextBlockCommon}" />

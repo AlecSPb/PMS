@@ -59,5 +59,38 @@
 
 
 
+2021-11-02
+
+Quotation Infrustructure
+
+1#Raw Materials
+Cutter Caculator
+Blank Weight Loss UnitPrice
+
+
+2#Powder Process
+Weight UnitPrice
+
+3#VHP-Cost
+ABCDEFG
+Machine x 4 UnitPrice
+
+4#Machine
+Pieces
+
+5#Bonding
+ref TCB document
+
+6#Analysis
+XRF+CSCAN+ICP-OES+MS+LECO
+
+7#Packaging+Shipping
+
+8#Cusomter And Tax
+
+9#VAT
+
+
+
 
 

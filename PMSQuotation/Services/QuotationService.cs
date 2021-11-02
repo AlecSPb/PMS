@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSQuotation.Models;
-
+using Dapper;
+using System.Data.SQLite;
+using System.Data;
+using System.Configuration;
 
 namespace PMSQuotation.Services
 {
@@ -13,6 +16,12 @@ namespace PMSQuotation.Services
     /// </summary>
     public class QuotationService
     {
+        private string conn_str;
+        public QuotationService()
+        {
+            conn_str = ConfigurationManager.ConnectionStrings["sqlDb"].ConnectionString;
+        }
+
         public List<Quotation> GetQuotations(string customer,string title)
         {
             return null;
@@ -28,18 +37,22 @@ namespace PMSQuotation.Services
 
         }
 
-        public List<CustomerInfo> GetCustomerInfos()
+        public List<Contacts> GetCustomerInfos()
         {
-
-            return null;
+            IDbConnection conn = new SQLiteConnection(conn_str);
+            conn.Open();
+            string sql_cmd = "select * from customerinfos";
+            var customerinfos = conn.Query<Contacts>(sql_cmd);
+            conn.Close();
+            return customerinfos.ToList();
         }
 
-        public void Add(CustomerInfo model)
+        public void Add(Contacts model)
         {
 
         }
 
-        public void Update(CustomerInfo model)
+        public void Update(Contacts model)
         {
 
         }
