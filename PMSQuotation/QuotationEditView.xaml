@@ -146,16 +146,18 @@
                             Click="BtnVAT_Click"/>
                     <Button Content="None" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnNone"
                             Click="BtnNone_Click"/>
-                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBlock Text="0 means no Tax,other numbers will trigger automatically calculation" 
+                               Style="{StaticResource StyleTextBlockCommon}" Background="LightGreen"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="15" Grid.Column="0" Text="TaxRemark" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Name="TxtTaxRemark" Grid.Row="15" Grid.Column="1" Text="{Binding TaxRemark}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightCoral"/>
-                <TextBlock Grid.Row="15" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="15" Grid.Column="2" Text="" 
+                           Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="16" Grid.Column="0" Text="TotalCost" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding TatalCost}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding TotalCost}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                 <TextBlock Grid.Row="16" Grid.Column="2" Text="Auto Calculate When Saving" Style="{StaticResource StyleTextBlockCommon}"/>
             </Grid>
         </ScrollViewer>

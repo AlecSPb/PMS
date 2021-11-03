@@ -66,9 +66,11 @@
                 </StackPanel>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="UnitPrice" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtUnitPrice" Grid.Row="3" Grid.Column="1" Text="{Binding UnitPrice}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Name="TxtUnitPrice" Grid.Row="3" Grid.Column="1" Text="{Binding UnitPrice}" 
+                         Style="{StaticResource StyleTextBoxCommon}"
+                         Foreground="Blue"/>
                 <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
-                    <Button Content="Tool" Style="{StaticResource StyleButtonCommon}" Name="BtnUnitPriceTool"
+                    <Button Content="Tools" Style="{StaticResource StyleButtonCommon}" Name="BtnUnitPriceTool"
                             Click="BtnUnitPriceTool_Click"/>
                     <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
                 </StackPanel>
@@ -79,7 +81,8 @@
                 <TextBlock Grid.Row="4" Grid.Column="2" Text="" Style="{StaticResource StyleTextBlockCommon}"/>
                 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="Quantity" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}"
+                         Foreground="Blue"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="TotalPrice" Style="{StaticResource StyleTextBlockCommon}"/>

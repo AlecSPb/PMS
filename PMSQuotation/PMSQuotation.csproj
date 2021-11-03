@@ -149,6 +149,7 @@
       <DependentUpon>QuotationItemEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="QuotationItemEditVM.cs" />
+    <Compile Include="Services\CalculationResult.cs" />
     <Compile Include="Services\CalculationService.cs" />
     <Compile Include="Services\OutputService.cs" />
     <Compile Include="Helpers\QuotationHelper.cs" />

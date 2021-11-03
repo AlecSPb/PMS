@@ -112,7 +112,11 @@ namespace PMSQuotation
             if (CurrentQuotation == null) return;
             try
             {
-                CurrentQuotation.TotalCost = calc_service.GetTotalCost(CurrentQuotation).Item1;
+                #region AutoCalculation
+                var result = calc_service.Calculate(CurrentQuotation);
+                CurrentQuotation.TaxFee = result.TaxFee;
+                CurrentQuotation.TotalCost = result.TargetFee + result.ExtraFee + result.TaxFee;
+                #endregion
 
                 if (vMState == VMState.New)
                 {

@@ -18,49 +18,42 @@ namespace PMSQuotation.Services
         }
 
         private QuotationDbService db_service;
-        public Tuple<double, double, double, double, string> GetTotalCost(Quotation model)
+
+        public CalculationResult Calculate(Quotation model)
         {
-            if (model == null) return Tuple.Create(0.0, 0.0, 0.0, 0.0, model.CurrencyType);
-
-            var quotation_items = db_service.GetQuotationItems(model.ID);
-
-            if (quotation_items.Count == 0) Tuple.Create(0.0, 0.0, 0.0, 0.0, model.CurrencyType);
-
-            double extra_fee = 0;
-            double target_fee = 0;
-            extra_fee = model.PackageFee + model.ShippingFee + model.CustomFee + model.TaxFee;
-
-            foreach (var item in quotation_items)
+            CalculationResult result = new CalculationResult();
+            if (model != null)
             {
-                target_fee += item.UnitPrice * item.Quantity;
+                result.ExtraFee = model.PackageFee + model.ShippingFee + model.CustomFee;
+
+                var quotation_items = db_service.GetQuotationItems(model.ID);
+                if (quotation_items.Count != 0)
+                {
+                    foreach (var item in quotation_items)
+                    {
+                        result.TargetFee += item.UnitPrice * item.Quantity;
+                    }
+                }
+
+                if (model.TaxFee != 0)
+                {
+                    double vat_rate = 0;
+                    double.TryParse(db_service.GetDataDictByKey("vat_rate").DataValue, out vat_rate);
+
+                    result.TaxFee = (result.TargetFee + result.ExtraFee) * vat_rate;
+                }
             }
 
 
-            return Tuple.Create(target_fee + extra_fee, target_fee, extra_fee, model.TaxFee, model.CurrencyType);
+            return result;
         }
 
-        public Tuple<double, double, double, string> GetTotalCostWithOutTaxFee(Quotation model)
-        {
-            if (model == null) return Tuple.Create(0.0, 0.0, 0.0, model.CurrencyType);
-
-            var quotation_items = db_service.GetQuotationItems(model.ID);
-
-            if (quotation_items.Count == 0) Tuple.Create(0.0, 0.0, 0.0, model.CurrencyType);
-
-            double extra_fee = 0;
-            double target_fee = 0;
-            extra_fee = model.PackageFee + model.ShippingFee + model.CustomFee;
-
-            foreach (var item in quotation_items)
-            {
-                target_fee += item.UnitPrice * item.Quantity;
-            }
-
-
-            return Tuple.Create(target_fee + extra_fee, target_fee, extra_fee, model.CurrencyType);
-        }
-
-        public double GetQuotationItemsTotalPrice(List<QuotationItem> quotation_items)
+        /// <summary>
+        /// 计算一组QuotationItem的TargetFee
+        /// </summary>
+        /// <param name="quotation_items"></param>
+        /// <returns></returns>
+        public double GetQuotationItemsTargetFee(List<QuotationItem> quotation_items)
         {
             double target_fee = 0;
             foreach (var item in quotation_items)
@@ -70,6 +63,11 @@ namespace PMSQuotation.Services
             return target_fee;
         }
 
+        /// <summary>
+        /// 计算单个QuotationItemTotalPrice
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public double GetQuotationItemTotalPrice(QuotationItem model)
         {
             if (model == null) return 0.0;

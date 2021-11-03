@@ -49,6 +49,8 @@ namespace PMSQuotation.Tools
         {
             if (string.IsNullOrEmpty(json_str))
             {
+                XSHelper.XS.MessageBox.ShowInfo("Empty Template Will Be Showed");
+
                 SetEmpty();
                 DgUnitPrice.ItemsSource = Items;
                 return;

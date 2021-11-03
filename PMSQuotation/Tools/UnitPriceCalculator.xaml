@@ -23,7 +23,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Edit" Style="{StaticResource StyleDGButton}" Name="BtnDgRowEdit"
+                                <Button Content="Tool" Style="{StaticResource StyleDGButton}" Name="BtnDgRowEdit"
                                         Click="BtnDgRowEdit_Click"/>
                             </StackPanel>
                         </DataTemplate>

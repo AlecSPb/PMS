@@ -266,22 +266,22 @@ namespace PMSQuotation
 
         private void CalculateFee()
         {
-            var result = calc_service.GetTotalCost(CurrentQuotation);
+            var result = calc_service.Calculate(CurrentQuotation);
 
             string currencyType = "";
-            if (result.Item5 == "RMB")
+            if (CurrentQuotation.CurrencyType == "RMB")
             {
                 currencyType = "￥";
             }
-            else if (result.Item5 == "USD")
+            else if (CurrentQuotation.CurrencyType == "USD")
             {
                 currencyType = "$";
             }
 
-            StatusBarInfo = $"Total={currencyType}{result.Item1.ToString("F2")} "+ 
-                $"Target={currencyType}{result.Item2.ToString("F2")} "+
-                $"Extra={currencyType}{result.Item3.ToString("F2")} "+ 
-                $"Tax={currencyType}{result.Item4.ToString("F2")}"; 
+            StatusBarInfo = $"Total={currencyType}{(result.TargetFee + result.ExtraFee + result.TaxFee).ToString("F2")} " +
+                $"Target={currencyType}{result.TargetFee.ToString("F2")} " +
+                $"Extra={currencyType}{result.ExtraFee.ToString("F2")} " +
+                $"Tax={currencyType}{result.TaxFee.ToString("F2")}";
         }
 
         #region Fee
@@ -290,7 +290,7 @@ namespace PMSQuotation
         public string StatusBarInfo
         {
             get { return statusBarInfo; }
-            set { statusBarInfo = value;RaisePropertyChanged(nameof(StatusBarInfo)); }
+            set { statusBarInfo = value; RaisePropertyChanged(nameof(StatusBarInfo)); }
         }
 
         #endregion
