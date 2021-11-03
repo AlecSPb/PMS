@@ -133,6 +133,10 @@
       <DependentUpon>DataDictionaryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataDictionaryVM.cs" />
+    <Compile Include="Docs\DocService.cs" />
+    <Compile Include="Docs\SelectDocTypeDialog.xaml.cs">
+      <DependentUpon>SelectDocTypeDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\PMSMethods.cs" />
     <Compile Include="MainWindowVM.cs" />
     <Compile Include="Models\QuotationItemState.cs" />
@@ -167,6 +171,10 @@
     <Compile Include="Models\UnitPriceModelItem.cs" />
     <Compile Include="VMState.cs" />
     <Page Include="DataDictionaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Docs\SelectDocTypeDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

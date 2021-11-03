@@ -49,7 +49,7 @@
                 <DataGridTemplateColumn Header="ItemRemark" Width="500">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding ItemRemark,UpdateSourceTrigger=PropertyChanged}" 
+                            <TextBox Text="{Binding Remark,UpdateSourceTrigger=PropertyChanged}" 
                                      Style="{StaticResource StyleTextBoxCommon}"
                                      TextAlignment="Left"
                                      Background="LightYellow"/>
