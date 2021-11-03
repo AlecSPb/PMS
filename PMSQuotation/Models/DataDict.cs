@@ -15,6 +15,7 @@ namespace PMSQuotation.Models
         public string DataKey { get; set; }
         public string DataValue { get; set; }
         public string Description { get; set; }
+        public DateTime LastUpdateTime { get; set; }
         public string State { get; set; }
     }
 }

@@ -177,7 +177,29 @@ namespace PMSQuotation.Services
         /// <param name="model"></param>
         public void AddItem(QuotationItem model)
         {
-
+            using (IDbConnection conn = new SQLiteConnection(conn_str))
+            {
+                string sql = "insert into quotationitems (QuotationID,Composition,Specification,UnitPrice,Quantity,TotalPrice,DeliveryTime,Note," +
+                    "UnitPriceDetail,CreateTime,Creator,State) " +
+                    "values (@QuotationID,@Composition,@Specification,@UnitPrice,@Quantity,@TotalPrice,@DeliveryTime,@Note," +
+                    "@UnitPriceDetail,@CreateTime,@Creator,@State)";
+                var parameters = new QuotationItem
+                {
+                    QuotationID = model.QuotationID,
+                    Composition = model.Composition,
+                    Specification = model.Specification,
+                    UnitPrice = model.UnitPrice,
+                    Quantity = model.Quantity,
+                    TotalPrice = model.TotalPrice,
+                    DeliveryTime = model.DeliveryTime,
+                    Note = model.Note,
+                    UnitPriceDetail = model.UnitPriceDetail,
+                    CreateTime = model.CreateTime,
+                    Creator = model.Creator,
+                    State = model.State
+                };
+                conn.Execute(sql, parameters);
+            }
         }
 
         /// <summary>
@@ -186,7 +208,30 @@ namespace PMSQuotation.Services
         /// <param name="model"></param>
         public void UpdateItem(QuotationItem model)
         {
-
+            using (IDbConnection conn = new SQLiteConnection(conn_str))
+            {
+                string sql = "update quotationitems set QuotationID=@QuotationID,Composition=@Composition,Specification=@Specification," +
+                    "UnitPrice=@UnitPrice,Quantity=@Quantity,TotalPrice=@TotalPrice,DeliveryTime=@DeliveryTime," +
+                    "Note=@Note,UnitPriceDetail=@UnitPriceDetail,CreateTime=@CreateTime,Creator=@Creator,State=@State " +
+                    " where id=@id";
+                var parameters = new QuotationItem
+                {
+                    QuotationID = model.QuotationID,
+                    Composition = model.Composition,
+                    Specification = model.Specification,
+                    UnitPrice = model.UnitPrice,
+                    Quantity = model.Quantity,
+                    TotalPrice = model.TotalPrice,
+                    DeliveryTime = model.DeliveryTime,
+                    Note = model.Note,
+                    UnitPriceDetail = model.UnitPriceDetail,
+                    CreateTime = model.CreateTime,
+                    Creator = model.Creator,
+                    State = model.State,
+                    ID = model.ID
+                };
+                conn.Execute(sql, parameters);
+            }
         }
 
         /// <summary>
@@ -205,6 +250,55 @@ namespace PMSQuotation.Services
                 };
                 var result = conn.Query<DataDict>(sql, parameters);
                 return result.FirstOrDefault();
+            }
+        }
+
+
+        public List<DataDict> GetDataDicts()
+        {
+            using (IDbConnection conn = new SQLiteConnection(conn_str))
+            {
+                string sql = "select * from datadicts";
+                var result = conn.Query<DataDict>(sql);
+                return result.ToList();
+            }
+        }
+
+
+        public void AddDataDict(DataDict model)
+        {
+            using (IDbConnection conn = new SQLiteConnection(conn_str))
+            {
+                string sql = "insert into datadicts (DataKey,DataValue,Description,LastUpdateTime,State) values " +
+                    "(@DataKey,@DataValue,@Description,@LastUpdateTime,@State)";
+                var parameters = new DataDict()
+                {
+                    DataKey = model.DataKey,
+                    DataValue = model.DataValue,
+                    Description = model.Description,
+                    LastUpdateTime = model.LastUpdateTime,
+                    State = model.State
+                };
+                conn.Execute(sql);
+            }
+        }
+
+        public void UpdateDataDict(DataDict model)
+        {
+            using (IDbConnection conn = new SQLiteConnection(conn_str))
+            {
+                string sql = "update datadicts set DataKey=@DataKey,DataValue=@DataValue,Description=@Description," +
+                    "LastUpdateTime=@LastUpdateTime,State=@State where id=@id";
+                var parameters = new DataDict()
+                {
+                    DataKey = model.DataKey,
+                    DataValue = model.DataValue,
+                    Description = model.Description,
+                    LastUpdateTime = model.LastUpdateTime,
+                    State = model.State,
+                    ID=model.ID
+                };
+                conn.Execute(sql);
             }
         }
 

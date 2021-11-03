@@ -5,8 +5,95 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSQuotation"
         mc:Ignorable="d"
-        Title="QuotationItemEditView" Height="450" Width="800">
-    <Grid>
-        
+        Title="QuotationItemEditView" Height="800"
+        WindowStartupLocation="CenterScreen"
+        d:DesignWidth="1200" d:DesignHeight="1500">
+    <Grid Background="LightYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="{StaticResource BGNavigationBar}">
+            <Button Style="{StaticResource StyleButtonCommon}" Content="Save" Command="{Binding Save}"/>
+            <TextBlock Style="{StaticResource StyleDGTextBlockLeft}" Text="{Binding EditState}" Foreground="Yellow" Background="Red"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Visible">
+            <Grid Margin="10" DataContext="{Binding CurrentQuotationItem}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="State" Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                          ItemsSource="{Binding DataContext.ModelStates,
+                          RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}}"
+                          SelectedItem="{Binding State,UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Composition" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                </StackPanel>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Specification" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Specification}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="UnitPrice" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding UnitPrice}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="UnitPriceDetail" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding UnitPriceDetail}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="4" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Quantity" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="5" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="TotalPrice" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding TotalPrice}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="DeliveryTime" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding DeliveryTime}" 
+                         Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="7" Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                </StackPanel>
+
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="Note" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Note}" 
+                         Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="8" Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                </StackPanel>
+
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Window>

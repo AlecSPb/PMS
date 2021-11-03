@@ -8,7 +8,8 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         Title="PMS Quotation v1.0" Height="800" Width="1400" 
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        Icon="Images/checklist.png">
     
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
@@ -130,10 +131,10 @@
                                 <Button Content="Edit" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ItemEdit, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
-                                <Button Content="Del" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ItemDelete, 
+                                <Button Content="Clone" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ItemClone, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
-                                <Button Content="Clone" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ItemClone, 
+                                <Button Content="Del" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ItemDelete, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
                             </StackPanel>

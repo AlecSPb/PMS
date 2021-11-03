@@ -59,6 +59,57 @@ namespace PMSQuotation
             }
         }
 
+
+        private void ActionItemDelete(QuotationItem obj)
+        {
+            if (obj != null)
+            {
+                if (XSHelper.XS.MessageBox.ShowYesNo("Are you sure to delete?", "Ask"))
+                {
+                    obj.State = QuotationState.Deleted.ToString();
+                    db_service.UpdateItem(obj);
+                    LoadQuotations();
+                }
+            }
+        }
+
+        private void ActionItemClone(QuotationItem obj)
+        {
+            if (obj == null) return;
+            var win = new QuotationItemEditView();
+            var vm = new QuotationItemEditVM();
+            vm.SetClone(obj);
+            win.DataContext = vm;
+
+            win.ShowDialog();
+        }
+
+        private void ActionItemEdit(QuotationItem obj)
+        {
+            if (obj == null) return;
+            var win = new QuotationItemEditView();
+            var vm = new QuotationItemEditVM();
+            vm.SetEdit(obj);
+            win.DataContext = vm;
+
+            win.ShowDialog();
+        }
+
+        private void ActionItemNew(Quotation obj)
+        {
+            if (obj == null) return;
+            var win = new QuotationItemEditView();
+            var vm = new QuotationItemEditVM();
+            vm.SetNew(obj.ID);
+            win.DataContext = vm;
+
+            win.ShowDialog();
+        }
+
+        private void ActionDoc(Quotation obj)
+        {
+            throw new NotImplementedException();
+        }
         private void ActionDelete(Quotation obj)
         {
             if (obj != null)
@@ -71,31 +122,6 @@ namespace PMSQuotation
                     LoadQuotations();
                 }
             }
-        }
-
-        private void ActionItemClone(QuotationItem obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void ActionItemDelete(QuotationItem obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void ActionItemEdit(QuotationItem obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void ActionItemNew(Quotation obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void ActionDoc(Quotation obj)
-        {
-            throw new NotImplementedException();
         }
 
         private void ActionClone(Quotation obj)
