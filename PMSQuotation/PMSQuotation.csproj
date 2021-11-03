@@ -160,6 +160,10 @@
     <Compile Include="Tools\SpecificationEdit.xaml.cs">
       <DependentUpon>SpecificationEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tools\UnitPriceCalculator.xaml.cs">
+      <DependentUpon>UnitPriceCalculator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UnitPriceModelItem.cs" />
     <Compile Include="VMState.cs" />
     <Page Include="DataDictionaryView.xaml">
       <SubType>Designer</SubType>
@@ -190,6 +194,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tools\SpecificationEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\UnitPriceCalculator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

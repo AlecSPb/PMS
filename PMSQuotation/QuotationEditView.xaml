@@ -156,7 +156,7 @@
 
                 <TextBlock Grid.Row="16" Grid.Column="0" Text="TotalCost" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding TatalCost}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                <TextBlock Grid.Row="16" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="16" Grid.Column="2" Text="Auto Calculate When Saving" Style="{StaticResource StyleTextBlockCommon}"/>
             </Grid>
         </ScrollViewer>
     </Grid>

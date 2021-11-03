@@ -167,6 +167,9 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="Note" Binding="{Binding Note}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="UnitPriceDetail" Binding="{Binding UnitPriceDetail}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Width="500"/>
             </DataGrid.Columns>
         </DataGrid>
         <Grid Grid.Row="3">

@@ -60,10 +60,20 @@ namespace PMSQuotation.Services
             return Tuple.Create(target_fee + extra_fee, target_fee, extra_fee, model.CurrencyType);
         }
 
-        public double GetTotalQuotationItems(List<QuotationItem> models)
+        public double GetQuotationItemsTotalPrice(List<QuotationItem> quotation_items)
         {
+            double target_fee = 0;
+            foreach (var item in quotation_items)
+            {
+                target_fee += item.UnitPrice * item.Quantity;
+            }
+            return target_fee;
+        }
 
-            return 0;
+        public double GetQuotationItemTotalPrice(QuotationItem model)
+        {
+            if (model == null) return 0.0;
+            return model.UnitPrice * model.Quantity;
         }
 
         public double GetRawMaterial(double unit_price, double weight)

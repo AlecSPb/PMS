@@ -1,0 +1,62 @@
+﻿<Window x:Class="PMSQuotation.Tools.UnitPriceCalculator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSQuotation.Tools"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
+        Title="UnitPriceCalculator" Height="450" Width="800">
+    <Grid Background="LightYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="{StaticResource BGNavigationBar}">
+            <Button Content="Save" Style="{StaticResource StyleButtonCommon}"
+                    Name="BtnSave" Click="BtnSave_Click"/>
+            <TextBlock Text="Double Click Blue Fonts to Change" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+        </StackPanel>
+        <DataGrid Grid.Row="1" Name="DgUnitPrice" Style="{StaticResource StyleDataGridNotReadOnly}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Edit" Style="{StaticResource StyleDGButton}" Name="BtnDgRowEdit"
+                                        Click="BtnDgRowEdit_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="ItemName" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Binding="{Binding ItemName}" 
+                                    IsReadOnly="True"/>
+                <!--<DataGridTextColumn Header="ItemUnitPrice" ElementStyle="{StaticResource StyleDGTextBlockRight}" 
+                                    Binding="{Binding ItemUnitPrice}"
+                                    Foreground="Blue"/>-->
+                <DataGridTemplateColumn Header="ItemUnitPrice" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding ItemUnitPrice,UpdateSourceTrigger=PropertyChanged}" 
+                                     Style="{StaticResource StyleTextBoxCommon}"
+                                     TextAlignment="Right"
+                                     Background="LightYellow"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridTextColumn Header="ItemRemark" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Binding="{Binding ItemRemark}" 
+                                    IsReadOnly="True"/>-->
+                <DataGridTemplateColumn Header="ItemRemark" Width="500">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding ItemRemark,UpdateSourceTrigger=PropertyChanged}" 
+                                     Style="{StaticResource StyleTextBoxCommon}"
+                                     TextAlignment="Left"
+                                     Background="LightYellow"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

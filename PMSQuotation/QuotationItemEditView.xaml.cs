@@ -43,5 +43,23 @@ namespace PMSQuotation
                 PMSQuotation.Helpers.PMSMethods.SetTextBox(TxtSpecification, win.GetContactInStrValue());
             }
         }
+
+        private void BtnUnitPriceTool_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new Tools.UnitPriceCalculator();
+            win.SetJson(TxtUnitPriceDetail.Text);
+            if (win.ShowDialog() == true)
+            {
+                double sum = 0;
+                //XSHelper.XS.MessageBox.ShowInfo(win.GetItemsJson());
+                foreach (var item in win.Items)
+                {
+                    sum += item.ItemUnitPrice;
+                }
+                Helpers.PMSMethods.SetTextBox(TxtUnitPrice, sum.ToString());
+                Helpers.PMSMethods.SetTextBox(TxtUnitPriceDetail, win.GetJson());
+
+            }
+        }
     }
 }

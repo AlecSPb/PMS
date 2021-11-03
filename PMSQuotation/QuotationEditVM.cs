@@ -17,7 +17,7 @@ namespace PMSQuotation
         public QuotationEditVM()
         {
             db_service = new QuotationDbService();
-
+            calc_service = new CalculationService();
 
             CurrencyTypes = new List<string>();
             CurrencyTypes.Add("RMB");
@@ -106,11 +106,14 @@ namespace PMSQuotation
         }
 
         private QuotationDbService db_service;
+        private CalculationService calc_service;
         private void ActionSave()
         {
             if (CurrentQuotation == null) return;
             try
             {
+                CurrentQuotation.TotalCost = calc_service.GetTotalCost(CurrentQuotation).Item1;
+
                 if (vMState == VMState.New)
                 {
                     db_service.Add(CurrentQuotation);

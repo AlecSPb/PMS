@@ -21,6 +21,8 @@ namespace PMSQuotation
 
 
             db_service = new QuotationDbService();
+            calc_service = new CalculationService();
+
             Save = new RelayCommand(ActionSave);
         }
 
@@ -76,6 +78,9 @@ namespace PMSQuotation
             if (CurrentQuotationItem == null) return;
             try
             {
+
+                CurrentQuotationItem.TotalPrice = calc_service.GetQuotationItemTotalPrice(CurrentQuotationItem);
+
                 if (vMState == VMState.New)
                 {
                     db_service.AddItem(CurrentQuotationItem);
@@ -99,6 +104,7 @@ namespace PMSQuotation
 
         public List<string> ModelStates { get; set; }
         private QuotationDbService db_service;
+        private CalculationService calc_service;
 
         private QuotationItem currentQuotationItem;
 
