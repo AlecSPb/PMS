@@ -174,10 +174,17 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="{Binding StatusBarInfo}" Style="{StaticResource StyleDGTextBlockBig}" FontSize="20"/>
             <TextBlock Grid.Column="1" Style="{StaticResource StyleDGTextBlockBig}" FontSize="20"
                        Text="Total=Target+Extra;Extra=Package+Shiping+Custom+Tax;" Foreground="Green"/>
+            <StackPanel Grid.Column="3" Orientation="Horizontal">
+                <Button Name="BtnCalculator" Style="{StaticResource StyleButtonCommonNarrow}" Content="Calculator"
+                        Click="BtnCalculator_Click"/>
+                <Button Name="BtnNotepad" Style="{StaticResource StyleButtonCommonNarrow}" Content="Notepad"
+                        Click="BtnNotepad_Click"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>

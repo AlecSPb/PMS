@@ -16,7 +16,7 @@
             <Button Content="Save" Style="{StaticResource StyleButtonCommon}" Name="BtnSave"
                     Click="BtnSave_Click"/>
         </StackPanel>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>

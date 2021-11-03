@@ -48,5 +48,29 @@ namespace PMSQuotation
                 }
             }
         }
+
+        private void BtnCalculator_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("calc.exe");
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void BtnNotepad_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("notepad.exe");
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }
