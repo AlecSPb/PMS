@@ -25,7 +25,7 @@ namespace PMSQuotation
 
 
             ModelStates = new List<string>();
-            ModelStates.AddRange(Helpers.QuotationHelper.GetModelStates());
+            ModelStates.AddRange(Helpers.QuotationHelper.GetQuotationStates());
 
             #region Commands
             Save = new RelayCommand(ActionSave);
@@ -48,11 +48,11 @@ namespace PMSQuotation
             CurrentQuotation.LastUpdateTime = DateTime.Now;
             CurrentQuotation.ExpirationTime = DateTime.Now.AddMonths(1);
             CurrentQuotation.Lot = Helpers.QuotationHelper.GetDefaultLot();
-            CurrentQuotation.Creator = db_service.GetDataDictByKey("Creator").DataValue;
+            CurrentQuotation.Creator = db_service.GetDataDictByKey("creator").DataValue;
             CurrentQuotation.KeyWord = "";
 
-            CurrentQuotation.ContactInfo_Customer = "";
-            CurrentQuotation.ContactInfo_Self = "";
+            CurrentQuotation.ContactInfo_Customer = "++++";
+            CurrentQuotation.ContactInfo_Self = db_service.GetDataDictByKey("contactInfo_self_zh_cn").DataValue; 
 
 
             CurrentQuotation.PackageFee = 0;
@@ -84,7 +84,7 @@ namespace PMSQuotation
             CurrentQuotation.LastUpdateTime = DateTime.Now;
             CurrentQuotation.ExpirationTime = DateTime.Now.AddMonths(1);
             CurrentQuotation.Lot = Helpers.QuotationHelper.GetDefaultLot();
-            CurrentQuotation.Creator = db_service.GetDataDictByKey("Creator").DataValue;
+            CurrentQuotation.Creator = db_service.GetDataDictByKey("creator").DataValue;
             CurrentQuotation.KeyWord = model.KeyWord;
 
             CurrentQuotation.ContactInfo_Customer = model.ContactInfo_Customer;

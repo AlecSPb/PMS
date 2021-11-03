@@ -58,15 +58,22 @@
                 </StackPanel>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Specification" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Specification}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="2" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="TxtSpecification" Grid.Row="2" Grid.Column="1" Text="{Binding Specification}" 
+                         Style="{StaticResource StyleTextBoxReadOnly}"/>
+                <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="Edit" Style="{StaticResource StyleButtonCommon}" Name="BtnEdit" Click="BtnEdit_Click"/>
+                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                </StackPanel>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="UnitPrice" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding UnitPrice}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="Edit" Style="{StaticResource StyleButtonCommon}" Name="BtnUnitPriceEdit"/>
+                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                </StackPanel>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="UnitPriceDetail" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding UnitPriceDetail}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding UnitPriceDetail}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
                 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="Quantity" Style="{StaticResource StyleTextBlockCommon}"/>
@@ -74,7 +81,7 @@
                 <TextBlock Grid.Row="5" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="TotalPrice" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding TotalPrice}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding TotalPrice}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
 

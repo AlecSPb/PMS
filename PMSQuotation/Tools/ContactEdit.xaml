@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSQuotation.Tools"
         mc:Ignorable="d"
-        Title="ContactEdit" Height="450" Width="500"
+        Title="ContactEdit" Height="450" Width="800"
         WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
         <Grid.RowDefinitions>
@@ -28,11 +28,16 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Row="0" Grid.Column="0" Text="CompanyName" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBox Name="TxtCompanyName" Grid.Row="0" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
-
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+                <Button Content="中" Name="BtnChinese" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnChinese_Click"/>
+                <Button Content="En" Name="BtnEnglish" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnEnglish_Click"/>
+                <Button Content="Empty" Name="BtnEmpty" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnEmpty_Click"/>
+            </StackPanel>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="ContactPerson" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBox Name="TxtContactPerson" Grid.Row="1" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
 

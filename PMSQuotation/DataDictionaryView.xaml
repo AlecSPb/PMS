@@ -23,7 +23,7 @@
                 <DataGridTextColumn Header="DataKey" Binding="{Binding DataKey}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     IsReadOnly="True"/>
                 <DataGridTextColumn Header="DataValue" Binding="{Binding DataValue}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Foreground="Blue"/>
+                                    Foreground="Blue" MaxWidth="600"/>
                 <DataGridTextColumn Header="Description" Binding="{Binding Description}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     IsReadOnly="True"/>
             </DataGrid.Columns>

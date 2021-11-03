@@ -1,0 +1,70 @@
+﻿<Window x:Class="PMSQuotation.Tools.SpecificationEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSQuotation.Tools"
+        mc:Ignorable="d"
+        Title="SpecificationEdit" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="{StaticResource BGNavigationBar}">
+            <Button Content="Save" Style="{StaticResource StyleButtonCommon}" Name="BtnSave"
+                    Click="BtnSave_Click"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Dimension" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Name="TxtDimension" Grid.Row="0" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+                <Button Content="Default" Name="BtnDimension" Style="{StaticResource StyleButtonCommon}"
+                        Click="BtnDimension_Click"/>
+            </StackPanel>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Purity" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Name="TxtPurity" Grid.Row="1" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+            <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
+                <Button Content="Default" Name="BtnPurity" Style="{StaticResource StyleButtonCommon}"
+                        Click="BtnPurity_Click"/>
+            </StackPanel>
+            
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Plate" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Name="TxtPlate" Grid.Row="2" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
+                <Button Content="Yes" Name="BtnPlateYes" Style="{StaticResource StyleButtonCommonNarrow}"
+                        Click="BtnPlateYes_Click"/>
+                <Button Content="No" Name="BtnPlateNo" Style="{StaticResource StyleButtonCommonNarrow}"
+                        Click="BtnPlateNo_Click"/>
+            </StackPanel>
+            
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Bonding" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Name="TxtBonding" Grid.Row="3" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+            <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
+                <Button Content="Yes" Name="BtnBondingYes" Style="{StaticResource StyleButtonCommonNarrow}"
+                        Click="BtnBondingYes_Click"/>
+                <Button Content="No" Name="BtnBondingNo" Style="{StaticResource StyleButtonCommonNarrow}"
+                        Click="BtnBondingNo_Click"/>
+            </StackPanel>
+            
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Other" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Name="TxtOther" Grid.Row="4" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+        </Grid>
+    </Grid>
+</Window>

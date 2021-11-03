@@ -33,5 +33,15 @@ namespace PMSQuotation
                 this.Close();
             }
         }
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new Tools.SpecificationEdit();
+            win.SetContactWithStrValue(TxtSpecification.Text.Trim());
+            if (win.ShowDialog() == true)
+            {
+                PMSQuotation.Helpers.PMSMethods.SetTextBox(TxtSpecification, win.GetContactInStrValue());
+            }
+        }
     }
 }

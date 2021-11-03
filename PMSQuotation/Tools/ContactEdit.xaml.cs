@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PMSQuotation.Services;
 
 namespace PMSQuotation.Tools
 {
@@ -31,7 +32,7 @@ namespace PMSQuotation.Tools
 
         public void SetContactWithStrValue(string str)
         {
-            string[] strs = str.Split(new string[] { "+" }, StringSplitOptions.RemoveEmptyEntries);
+            string[] strs = str.Split(new string[] { "+" }, StringSplitOptions.None);
             if (strs.Length >= 5)
             {
                 TxtCompanyName.Text = strs[0];
@@ -49,5 +50,31 @@ namespace PMSQuotation.Tools
             this.Close();
         }
 
+        private void BtnChinese_Click(object sender, RoutedEventArgs e)
+        {
+            LoadFromDataDictByKey("contactInfo_self_zh_cn");
+        }
+
+        private void BtnEnglish_Click(object sender, RoutedEventArgs e)
+        {
+            LoadFromDataDictByKey("contactInfo_self_us_en");
+        }
+        private void BtnEmpty_Click(object sender, RoutedEventArgs e)
+        {
+            LoadFromDataDictByKey("contactInfo_empty");
+        }
+        private void LoadFromDataDictByKey(string key)
+        {
+            try
+            {
+                var db_service = new QuotationDbService();
+                var contactinfo_self = db_service.GetDataDictByKey(key).DataValue;
+                SetContactWithStrValue(contactinfo_self);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
 }

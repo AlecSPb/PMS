@@ -18,10 +18,15 @@ namespace PMSQuotation
         public MainWindowVM()
         {
             db_service = new QuotationDbService();
+            calc_service = new CalculationService();
+
 
             searchCustomer = searchKeyword = "";
 
             ShowDeleted = false;
+
+            totalFee = targetFee = extraFee = "";
+
 
             Quotations = new ObservableCollection<Quotation>();
             CurrentQuotationItems = new ObservableCollection<QuotationItem>();
@@ -51,6 +56,8 @@ namespace PMSQuotation
 
             Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
         }
+
+        private CalculationService calc_service;
 
         private void ActionDataDictionary()
         {
@@ -224,7 +231,7 @@ namespace PMSQuotation
 
         public void LoadQuotations()
         {
-            var models = db_service.GetQuotations(SearchCustomer, SearchKeyword,ShowDeleted);
+            var models = db_service.GetQuotations(SearchCustomer, SearchKeyword, ShowDeleted);
 
             Quotations.Clear();
             foreach (var item in models)
@@ -236,6 +243,8 @@ namespace PMSQuotation
             {
                 CurrentQuotation = Quotations.FirstOrDefault();
                 LoadQuotationItems();
+
+
             }
         }
 
@@ -249,8 +258,58 @@ namespace PMSQuotation
                 {
                     CurrentQuotationItems.Add(item);
                 }
+                //calculate all fee
+                CalculateFee();
             }
         }
+
+
+        private void CalculateFee()
+        {
+            var result = calc_service.GetTotalCost(CurrentQuotation);
+
+            string currencyType = "";
+            if (result.Item4 == "RMB")
+            {
+                currencyType = "￥";
+            }
+            else if (result.Item4 == "USD")
+            {
+                currencyType = "$";
+            }
+
+            TotalFee = $"Total Fee={currencyType}{result.Item1.ToString("F2")}";
+            TargetFee = $"Target Fee={currencyType}{result.Item2.ToString("F2")}";
+            ExtraFee = $"Extra Fee={currencyType}{result.Item3.ToString("F2")}";
+        }
+
+        #region Fee
+        private string targetFee;
+
+        public string TargetFee
+        {
+            get { return targetFee; }
+            set { targetFee = value;RaisePropertyChanged(nameof(TargetFee)); }
+        }
+        private string extraFee;
+
+        public string ExtraFee
+        {
+            get { return extraFee; }
+            set { extraFee = value; RaisePropertyChanged(nameof(ExtraFee)); }
+        }
+
+        private string totalFee;
+
+        public string TotalFee
+        {
+            get { return totalFee; }
+            set { totalFee = value; RaisePropertyChanged(nameof(TotalFee)); }
+        }
+
+        #endregion
+
+
 
         public Quotation CurrentQuotation { get; set; }
 

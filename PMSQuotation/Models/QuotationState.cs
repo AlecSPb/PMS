@@ -10,6 +10,7 @@ namespace PMSQuotation.Models
     {
         UnFinished,
         Checked,
+        Ordered,
         Deleted
     }
 }

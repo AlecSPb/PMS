@@ -56,9 +56,10 @@
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="Lot" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Lot}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Name="TxtLot" Grid.Row="1" Grid.Column="1" Text="{Binding Lot}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
-                    <Button Content="Auto" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                    <Button Content="Auto Lot" Style="{StaticResource StyleButtonCommonNarrow}"
+                            Name="BtnLot" Click="BtnLot_Click"/>
                     <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
                 </StackPanel>
 
@@ -70,9 +71,17 @@
                 <TextBlock Grid.Row="2" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="ExpirationTime" Style="{StaticResource StyleTextBlockCommon}"/>
-                <DatePicker Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleDatePickerCommon}"
+                <DatePicker Name="DptExpirationTime" Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleDatePickerCommon}"
                             SelectedDate="{Binding ExpirationTime,UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="1 Month" Style="{StaticResource StyleButtonCommonNarrow}" Name="Btn1Mon"
+                            Click="Btn1Mon_Click"/>
+                    <Button Content="2 Month" Style="{StaticResource StyleButtonCommonNarrow}" Name="Btn2Mon"
+                            Click="Btn2Mon_Click"/>
+                    <Button Content="3 Month" Style="{StaticResource StyleButtonCommonNarrow}" Name="Btn3Mon"
+                            Click="Btn3Mon_Click"/>
+                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                </StackPanel>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="Remark" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
@@ -80,7 +89,7 @@
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="KeyWord" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding KeyWord}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="5" Grid.Column="2" Text="keywords for later search" Style="{StaticResource StyleTextBlockCommon}"/>
 
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="ContactInfo_Customer" Style="{StaticResource StyleTextBlockCommon}"
@@ -88,8 +97,8 @@
                 <TextBox Name="TxtContactInfo_Customer" Grid.Row="6" Grid.Column="1" Text="{Binding ContactInfo_Customer}" 
                          Style="{StaticResource StyleTextBoxReadOnly}"/>
                 <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal">
-                    <Button Content="Choose" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnCHooseCustomerInfo"
-                            Click="BtnCHooseCustomerInfo_Click"/>
+                    <Button Content="Edit" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnEditCustomerInfo"
+                            Click="BtnEditCustomerInfo_Click"/>
                     <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
                 </StackPanel>
 
@@ -99,8 +108,8 @@
                 <TextBox Name="TxtContactInfo_Self" Grid.Row="7" Grid.Column="1" Text="{Binding ContactInfo_Self}" 
                          Style="{StaticResource StyleTextBoxReadOnly}"/>
                 <StackPanel Grid.Row="7" Grid.Column="2" Orientation="Horizontal">
-                    <Button Content="Choose" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnChooseSelfInfo"
-                            Click="BtnChooseSelfInfo_Click"/>
+                    <Button Content="Edit" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnEditSelfInfo"
+                            Click="BtnEditSelfInfo_Click"/>
                     <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
                 </StackPanel>
 
@@ -138,7 +147,7 @@
                 <TextBlock Grid.Row="15" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="16" Grid.Column="0" Text="TotalCost" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding TatalCost}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding TatalCost}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                 <TextBlock Grid.Row="16" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
             </Grid>
         </ScrollViewer>

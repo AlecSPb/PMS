@@ -35,7 +35,7 @@ namespace PMSQuotation
             }
         }
 
-        private void BtnCHooseCustomerInfo_Click(object sender, RoutedEventArgs e)
+        private void BtnEditCustomerInfo_Click(object sender, RoutedEventArgs e)
         {
             var win = new Tools.ContactEdit();
             win.SetContactWithStrValue(TxtContactInfo_Customer.Text.Trim());
@@ -45,7 +45,7 @@ namespace PMSQuotation
             }
         }
 
-        private void BtnChooseSelfInfo_Click(object sender, RoutedEventArgs e)
+        private void BtnEditSelfInfo_Click(object sender, RoutedEventArgs e)
         {
             var win = new Tools.ContactEdit();
             win.SetContactWithStrValue(TxtContactInfo_Self.Text.Trim());
@@ -53,6 +53,24 @@ namespace PMSQuotation
             {
                 PMSQuotation.Helpers.PMSMethods.SetTextBox(TxtContactInfo_Self, win.GetContactInStrValue());
             }
+        }
+
+        private void BtnLot_Click(object sender, RoutedEventArgs e)
+        {
+            PMSQuotation.Helpers.PMSMethods.SetTextBox(TxtLot, Helpers.QuotationHelper.GetDefaultLot());
+        }
+
+        private void Btn1Mon_Click(object sender, RoutedEventArgs e)
+        {
+            DptExpirationTime.SelectedDate = DateTime.Now.AddMonths(1);
+        }
+        private void Btn2Mon_Click(object sender, RoutedEventArgs e)
+        {
+            DptExpirationTime.SelectedDate = DateTime.Now.AddMonths(2);
+        }
+        private void Btn3Mon_Click(object sender, RoutedEventArgs e)
+        {
+            DptExpirationTime.SelectedDate = DateTime.Now.AddMonths(3);
         }
     }
 }

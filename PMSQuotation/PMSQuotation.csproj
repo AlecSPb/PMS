@@ -157,6 +157,9 @@
     <Compile Include="Tools\ContactEdit.xaml.cs">
       <DependentUpon>ContactEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tools\SpecificationEdit.xaml.cs">
+      <DependentUpon>SpecificationEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VMState.cs" />
     <Page Include="DataDictionaryView.xaml">
       <SubType>Designer</SubType>
@@ -183,6 +186,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tools\ContactEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\SpecificationEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -17,7 +17,7 @@ namespace PMSQuotation
         public QuotationItemEditVM()
         {
             ModelStates = new List<string>();
-            ModelStates.AddRange(Helpers.QuotationHelper.GetModelStates());
+            ModelStates.AddRange(Helpers.QuotationHelper.GetQuotationItemStates());
 
 
             db_service = new QuotationDbService();
@@ -32,7 +32,7 @@ namespace PMSQuotation
             EditState = vMState.ToString();
             CurrentQuotationItem = new QuotationItem();
             CurrentQuotationItem.CreateTime = DateTime.Now;
-            CurrentQuotationItem.Creator = db_service.GetDataDictByKey("Creator").DataValue;
+            CurrentQuotationItem.Creator = db_service.GetDataDictByKey("creator").DataValue;
             CurrentQuotationItem.QuotationID = quotationid;
             CurrentQuotationItem.Composition = "";
             CurrentQuotationItem.Specification = "";
@@ -41,7 +41,8 @@ namespace PMSQuotation
             CurrentQuotationItem.TotalPrice = 0;
             CurrentQuotationItem.Note = "";
             CurrentQuotationItem.UnitPriceDetail = "";
-            CurrentQuotationItem.State = QuotationState.Checked.ToString();
+            CurrentQuotationItem.State = QuotationItemState.Checked.ToString();
+            CurrentQuotationItem.DeliveryTime = "8 weeks";
 
         }
         public void SetEdit(QuotationItem model)
@@ -57,7 +58,7 @@ namespace PMSQuotation
             EditState = vMState.ToString();
             CurrentQuotationItem = new QuotationItem();
             CurrentQuotationItem.CreateTime = DateTime.Now;
-            CurrentQuotationItem.Creator = db_service.GetDataDictByKey("Creator").DataValue;
+            CurrentQuotationItem.Creator = db_service.GetDataDictByKey("creator").DataValue;
             CurrentQuotationItem.QuotationID = item.QuotationID;
             CurrentQuotationItem.Composition = item.Composition;
             CurrentQuotationItem.Specification = item.Specification;
@@ -67,6 +68,7 @@ namespace PMSQuotation
             CurrentQuotationItem.Note = item.Note;
             CurrentQuotationItem.UnitPriceDetail = item.UnitPriceDetail;
             CurrentQuotationItem.State = item.State;
+            CurrentQuotationItem.DeliveryTime = item.DeliveryTime;
 
         }
         private void ActionSave()

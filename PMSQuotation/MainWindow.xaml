@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:PMSQuotation"
         mc:Ignorable="d"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        Title="PMS Quotation v1.0" Height="800" Width="1400" 
+        Title="PMS Quotation v1.0 Alpha Edition" Height="800" Width="1400" 
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Icon="Images/checklist.png">
-    
+
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -85,18 +85,16 @@
                 <DataGridTextColumn Header="CurrencyType" Binding="{Binding CurrencyType}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="TotalCost" Binding="{Binding TotalCost,StringFormat={}{0:F2}}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Foreground="Blue"/>
                 <DataGridTextColumn Header="Lot" Binding="{Binding Lot}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="KeyWord" Binding="{Binding KeyWord}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
 
                 <DataGridTextColumn Header="ContactInfo_Customer" Binding="{Binding ContactInfo_Customer}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-
-
-                <DataGridTextColumn Header="ContactInfo_Self" Binding="{Binding ContactInfo_Self}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    MaxWidth="500"/>
 
 
                 <DataGridTextColumn Header="PackageFee" Binding="{Binding PackageFee,StringFormat={}{0:F2}}" 
@@ -118,6 +116,11 @@
 
 
                 <DataGridTextColumn Header="Remark" Binding="{Binding Remark}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+
+
+
+                <DataGridTextColumn Header="ContactInfo_Self" Binding="{Binding ContactInfo_Self}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
             </DataGrid.Columns>
         </DataGrid>
@@ -153,11 +156,13 @@
                 <DataGridTextColumn Header="Specification" Binding="{Binding Specification}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="UnitPrice" Binding="{Binding UnitPrice,StringFormat={}{0:F2}}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Foreground="Blue"/>
                 <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="TotalPrice" Binding="{Binding TotalPrice,StringFormat={}{0:F2}}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Foreground="Blue"/>
                 <DataGridTextColumn Header="DeliveryTime" Binding="{Binding DeliveryTime}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="Note" Binding="{Binding Note}" 
@@ -171,9 +176,11 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="TotalPrice" Style="{StaticResource StyleDGTextBlockBig}"/>
-            <TextBlock Text="TotalPrice" Style="{StaticResource StyleDGTextBlockBig}" Grid.Column="1"/>
-            <TextBlock Text="TotalPrice" Style="{StaticResource StyleDGTextBlockBig}" Grid.Column="2"/>
+            <TextBlock Text="{Binding TotalFee}" Style="{StaticResource StyleDGTextBlockBig}" FontSize="20"/>
+            <TextBlock Text="{Binding TargetFee}" Style="{StaticResource StyleDGTextBlockBig}"
+                       FontSize="20" Grid.Column="1"/>
+            <TextBlock Text="{Binding ExtraFee}" Style="{StaticResource StyleDGTextBlockBig}" 
+                       FontSize="20" Grid.Column="2"/>
         </Grid>
     </Grid>
 </Window>
