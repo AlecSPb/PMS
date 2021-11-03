@@ -18,7 +18,28 @@ namespace PMSQuotation.Services
         }
 
         private QuotationDbService db_service;
-        public Tuple<double, double, double, string> GetTotalCost(Quotation model)
+        public Tuple<double, double, double, double, string> GetTotalCost(Quotation model)
+        {
+            if (model == null) return Tuple.Create(0.0, 0.0, 0.0, 0.0, model.CurrencyType);
+
+            var quotation_items = db_service.GetQuotationItems(model.ID);
+
+            if (quotation_items.Count == 0) Tuple.Create(0.0, 0.0, 0.0, 0.0, model.CurrencyType);
+
+            double extra_fee = 0;
+            double target_fee = 0;
+            extra_fee = model.PackageFee + model.ShippingFee + model.CustomFee + model.TaxFee;
+
+            foreach (var item in quotation_items)
+            {
+                target_fee += item.UnitPrice * item.Quantity;
+            }
+
+
+            return Tuple.Create(target_fee + extra_fee, target_fee, extra_fee, model.TaxFee, model.CurrencyType);
+        }
+
+        public Tuple<double, double, double, string> GetTotalCostWithOutTaxFee(Quotation model)
         {
             if (model == null) return Tuple.Create(0.0, 0.0, 0.0, model.CurrencyType);
 
@@ -28,7 +49,7 @@ namespace PMSQuotation.Services
 
             double extra_fee = 0;
             double target_fee = 0;
-            extra_fee = model.PackageFee + model.ShippingFee + model.CustomFee + model.TaxFee;
+            extra_fee = model.PackageFee + model.ShippingFee + model.CustomFee;
 
             foreach (var item in quotation_items)
             {

@@ -173,14 +173,11 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="{Binding TotalFee}" Style="{StaticResource StyleDGTextBlockBig}" FontSize="20"/>
-            <TextBlock Text="{Binding TargetFee}" Style="{StaticResource StyleDGTextBlockBig}"
-                       FontSize="20" Grid.Column="1"/>
-            <TextBlock Text="{Binding ExtraFee}" Style="{StaticResource StyleDGTextBlockBig}" 
-                       FontSize="20" Grid.Column="2"/>
+            <TextBlock Text="{Binding StatusBarInfo}" Style="{StaticResource StyleDGTextBlockBig}" FontSize="20"/>
+            <TextBlock Grid.Column="1" Style="{StaticResource StyleDGTextBlockBig}" FontSize="20"
+                       Text="Total=Target+Extra;Extra=Package+Shiping+Custom+Tax;" Foreground="Green"/>
         </Grid>
     </Grid>
 </Window>

@@ -25,7 +25,7 @@ namespace PMSQuotation
 
             ShowDeleted = false;
 
-            totalFee = targetFee = extraFee = "";
+            statusBarInfo = "";
 
 
             Quotations = new ObservableCollection<Quotation>();
@@ -269,42 +269,28 @@ namespace PMSQuotation
             var result = calc_service.GetTotalCost(CurrentQuotation);
 
             string currencyType = "";
-            if (result.Item4 == "RMB")
+            if (result.Item5 == "RMB")
             {
                 currencyType = "￥";
             }
-            else if (result.Item4 == "USD")
+            else if (result.Item5 == "USD")
             {
                 currencyType = "$";
             }
 
-            TotalFee = $"Total Fee={currencyType}{result.Item1.ToString("F2")}";
-            TargetFee = $"Target Fee={currencyType}{result.Item2.ToString("F2")}";
-            ExtraFee = $"Extra Fee={currencyType}{result.Item3.ToString("F2")}";
+            StatusBarInfo = $"Total={currencyType}{result.Item1.ToString("F2")} "+ 
+                $"Target={currencyType}{result.Item2.ToString("F2")} "+
+                $"Extra={currencyType}{result.Item3.ToString("F2")} "+ 
+                $"Tax={currencyType}{result.Item4.ToString("F2")}"; 
         }
 
         #region Fee
-        private string targetFee;
+        private string statusBarInfo;
 
-        public string TargetFee
+        public string StatusBarInfo
         {
-            get { return targetFee; }
-            set { targetFee = value;RaisePropertyChanged(nameof(TargetFee)); }
-        }
-        private string extraFee;
-
-        public string ExtraFee
-        {
-            get { return extraFee; }
-            set { extraFee = value; RaisePropertyChanged(nameof(ExtraFee)); }
-        }
-
-        private string totalFee;
-
-        public string TotalFee
-        {
-            get { return totalFee; }
-            set { totalFee = value; RaisePropertyChanged(nameof(TotalFee)); }
+            get { return statusBarInfo; }
+            set { statusBarInfo = value;RaisePropertyChanged(nameof(StatusBarInfo)); }
         }
 
         #endregion

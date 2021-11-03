@@ -40,8 +40,8 @@ namespace PMSQuotation
                     case "UnFinished":
                         e.Row.Background = Brushes.Yellow;
                         break;
-                    case "Finished":
-                        e.Row.Background = Brushes.White;
+                    case "Ordered":
+                        e.Row.Background = Brushes.LightGreen;
                         break;
                     default:
                         break;

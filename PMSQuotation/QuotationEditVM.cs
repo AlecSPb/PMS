@@ -33,6 +33,7 @@ namespace PMSQuotation
 
         }
 
+
         private VMState vMState;
 
         public void SetNew()
@@ -52,7 +53,7 @@ namespace PMSQuotation
             CurrentQuotation.KeyWord = "";
 
             CurrentQuotation.ContactInfo_Customer = "++++";
-            CurrentQuotation.ContactInfo_Self = db_service.GetDataDictByKey("contactInfo_self_zh_cn").DataValue; 
+            CurrentQuotation.ContactInfo_Self = db_service.GetDataDictByKey("contactInfo_self_zh_cn").DataValue;
 
 
             CurrentQuotation.PackageFee = 0;
