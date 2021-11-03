@@ -39,18 +39,6 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
                     <RowDefinition />
 
                 </Grid.RowDefinitions>
@@ -66,7 +54,7 @@
                           RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}}"
                           SelectedItem="{Binding State,UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-                
+
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="Lot" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Lot}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
@@ -95,119 +83,63 @@
                 <TextBlock Grid.Row="5" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="Customer_CompanyName" Style="{StaticResource StyleTextBlockCommon}"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="ContactInfo_Customer" Style="{StaticResource StyleTextBlockCommon}"
                            Foreground="Blue"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Customer_CompanyName}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Name="TxtContactInfo_Customer" Grid.Row="6" Grid.Column="1" Text="{Binding ContactInfo_Customer}" 
+                         Style="{StaticResource StyleTextBoxReadOnly}"/>
                 <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal">
-                    <Button Content="Choose" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                    <Button Content="Choose" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnCHooseCustomerInfo"
+                            Click="BtnCHooseCustomerInfo_Click"/>
                     <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="Customer_Contact" Style="{StaticResource StyleTextBlockCommon}"
-                           Foreground="Blue"/>
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Customer_Contact}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="7" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="Customer_Phone" Style="{StaticResource StyleTextBlockCommon}"
-                           Foreground="Blue"/>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Customer_Phone}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="ContactInfo_Self" Style="{StaticResource StyleTextBlockCommon}"
+                           Foreground="Green"/>
+                <TextBox Name="TxtContactInfo_Self" Grid.Row="7" Grid.Column="1" Text="{Binding ContactInfo_Self}" 
+                         Style="{StaticResource StyleTextBoxReadOnly}"/>
+                <StackPanel Grid.Row="7" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="Choose" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnChooseSelfInfo"
+                            Click="BtnChooseSelfInfo_Click"/>
+                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                </StackPanel>
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="PackageFee" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding PackageFee}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="8" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="Customer_Email" Style="{StaticResource StyleTextBlockCommon}"
-                           Foreground="Blue"/>
-                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Customer_Email}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="PackageRemark" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding PackageRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="9" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="Customer_Fax" Style="{StaticResource StyleTextBlockCommon}"
-                           Foreground="Blue"/>
-                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Customer_Fax}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="ShippingFee" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding ShippingFee}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="10" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="11" Grid.Column="0" Text="Customer_PostCode" Style="{StaticResource StyleTextBlockCommon}"
-                           Foreground="Blue"/>
-                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Customer_PostCode}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="ShippingRemark" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding ShippingRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="11" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="12" Grid.Column="0" Text="Customer_Address" Style="{StaticResource StyleTextBlockCommon}"
-                           Foreground="Blue"/>
-                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Customer_Address}" Style="{StaticResource StyleTextBoxCommon}"/>
+
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="CustomFee" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding CustomFee}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="12" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
+                <TextBlock Grid.Row="13" Grid.Column="0" Text="CustomRemark" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding CustomRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="13" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="13" Grid.Column="0" Text="Basic_CompanyName" Style="{StaticResource StyleTextBlockCommon}"
-                           Foreground="Green"/>
-                <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding Basic_CompanyName}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <StackPanel Grid.Row="13" Grid.Column="2" Orientation="Horizontal">
-                    <Button Content="Choose" Style="{StaticResource StyleButtonCommonNarrow}"/>
-                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-                </StackPanel>
-
-                <TextBlock Grid.Row="14" Grid.Column="0" Text="Basic_Contact" Style="{StaticResource StyleTextBlockCommon}"
-                           Foreground="Green"/>
-                <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Basic_Contact}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="14" Grid.Column="0" Text="TaxFee" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding TaxFee}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="14" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="15" Grid.Column="0" Text="Basic_Phone" Style="{StaticResource StyleTextBlockCommon}"
-                           Foreground="Green"/>
-                <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Basic_Phone}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="15" Grid.Column="0" Text="TaxRemark" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding TaxRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="15" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="16" Grid.Column="0" Text="Basic_Email" Style="{StaticResource StyleTextBlockCommon}"
-                           Foreground="Green"/>
-                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding Basic_Email}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="16" Grid.Column="0" Text="TotalCost" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding TatalCost}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="16" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                <TextBlock Grid.Row="17" Grid.Column="0" Text="Basic_Fax" Style="{StaticResource StyleTextBlockCommon}"
-                           Foreground="Green"/>
-                <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding Basic_Fax}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="17" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                <TextBlock Grid.Row="18" Grid.Column="0" Text="Basic_PostCode" Style="{StaticResource StyleTextBlockCommon}"
-                           Foreground="Green"/>
-                <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding Basic_PostCode}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="18" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                <TextBlock Grid.Row="19" Grid.Column="0" Text="Basic_Address" Style="{StaticResource StyleTextBlockCommon}"
-                           Foreground="Green"/>
-                <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding Basic_Address}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="19" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                <TextBlock Grid.Row="20" Grid.Column="0" Text="PackageFee" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding PackageFee}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="20" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                <TextBlock Grid.Row="21" Grid.Column="0" Text="PackageRemark" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding PackageRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="21" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                <TextBlock Grid.Row="22" Grid.Column="0" Text="ShippingFee" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding ShippingFee}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="22" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                <TextBlock Grid.Row="23" Grid.Column="0" Text="ShippingRemark" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding ShippingRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="23" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-
-
-                <TextBlock Grid.Row="24" Grid.Column="0" Text="CustomFee" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding CustomFee}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="24" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                <TextBlock Grid.Row="25" Grid.Column="0" Text="CustomRemark" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="25" Grid.Column="1" Text="{Binding CustomRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="25" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                <TextBlock Grid.Row="26" Grid.Column="0" Text="TaxFee" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="26" Grid.Column="1" Text="{Binding TaxFee}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="26" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                <TextBlock Grid.Row="27" Grid.Column="0" Text="TaxRemark" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="27" Grid.Column="1" Text="{Binding TaxRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="27" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                <TextBlock Grid.Row="28" Grid.Column="0" Text="TotalCost" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="28" Grid.Column="1" Text="{Binding TatalCost}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="28" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
             </Grid>
         </ScrollViewer>
     </Grid>

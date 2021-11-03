@@ -10,7 +10,7 @@ using PMSQuotation.Models;
 
 namespace PMSQuotation
 {
-    public class QuotationItemEditVM:ViewModelBase;
+    public class QuotationItemEditVM:ViewModelBase
     {
         public QuotationItemEditVM()
         {

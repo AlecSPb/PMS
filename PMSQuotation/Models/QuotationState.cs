@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace PMSQuotation.Models
 {
-    public enum ModelState
+    public enum QuotationState
     {
         UnFinished,
-        Finished,
+        Checked,
         Deleted
     }
 }

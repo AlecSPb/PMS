@@ -19,22 +19,39 @@ namespace PMSQuotation.Services
         private string conn_str;
         public QuotationDbService()
         {
-            string dbPath = Path.Combine(XSHelper.XS.File.GetCurrentFolderPath("DB"), "pmsquotation.db");
+            //string dbPath = Path.Combine(XSHelper.XS.File.GetCurrentFolderPath("DB"), "pmsquotation.db");
+            string dbPath = @"D:\Fine\source\repos\PMS\PMSQuotation\DB\pmsquotation.db";
+            //发布后修改
             conn_str = $"Data Source={dbPath};Version=3";
         }
 
-        public List<Quotation> GetQuotations(string customer, string keyword, string state)
+        /// <summary>
+        /// 获取报价单项目
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <param name="keyword"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public List<Quotation> GetQuotations(string customer, string keyword, bool showDeleted)
         {
             List<Quotation> models = new List<Quotation>();
             using (IDbConnection conn = new SQLiteConnection(conn_str))
             {
-                string sql = "select * from quotations where customer_companyname like @cc and keyword like @kw and state like @st" +
-                    " order by createtime desc";
+                string sql = "";
+                if (showDeleted)
+                {
+                    sql = "select * from quotations where contactInfo_customer like @cc and keyword like @kw order by createtime desc";
+                }
+                else
+                {
+                    sql = "select * from quotations where contactInfo_customer like @cc and keyword like @kw and" +
+                        " state !='Deleted' order by createtime desc";
+                }
+
                 var parameters = new
                 {
                     cc = $"%{customer}%",
-                    kw = $"%{keyword}%",
-                    st = $"%{state}%"
+                    kw = $"%{keyword}%"
                 };
                 var result = conn.Query<Quotation>(sql, parameters);
                 models.Clear();
@@ -45,14 +62,88 @@ namespace PMSQuotation.Services
             return models;
         }
 
+        /// <summary>
+        /// 添加报价单项目
+        /// </summary>
+        /// <param name="model"></param>
         public void Add(Quotation model)
         {
+            using (IDbConnection conn = new SQLiteConnection(conn_str))
+            {
+                string sql = "insert into quotations(CurrencyType,TotalCost,CreateTime,LastUpdateTime,ExpirationTime,Creator,Lot," +
+                    "Remark,KeyWord,ContactInfo_Customer,ContactInfo_Self,PackageFee,PackageRemark,ShippingFee,ShippingRemark," +
+                    "CustomFee,CustomRemark,TaxFee,TaxRemark,State) values (@CurrencyType,@TotalCost,@CreateTime,@LastUpdateTime,@ExpirationTime,@Creator,@Lot," +
+                    "@Remark,@KeyWord,@ContactInfo_Customer,@ContactInfo_Self,@PackageFee,@PackageRemark,@ShippingFee,@ShippingRemark," +
+                    "@CustomFee,@CustomRemark,@TaxFee,@TaxRemark,@State)";
+                var parameters = new Quotation
+                {
+                    CurrencyType = model.CurrencyType,
+                    TotalCost = model.TotalCost,
+                    CreateTime = model.CreateTime,
+                    LastUpdateTime = model.LastUpdateTime,
+                    ExpirationTime = model.ExpirationTime,
+                    Creator = model.Creator,
+                    Lot = model.Lot,
+                    Remark = model.Remark,
+                    KeyWord = model.KeyWord,
+                    ContactInfo_Customer = model.ContactInfo_Customer,
+                    ContactInfo_Self = model.ContactInfo_Self,
+                    PackageFee = model.PackageFee,
+                    PackageRemark = model.PackageRemark,
+                    ShippingFee = model.ShippingFee,
+                    ShippingRemark = model.ShippingRemark,
+                    CustomFee = model.CustomFee,
+                    CustomRemark = model.CustomRemark,
+                    TaxFee = model.TaxFee,
+                    TaxRemark = model.TaxRemark,
+                    State = model.State
+                };
 
+                conn.Execute(sql, parameters);
+            }
         }
 
+        /// <summary>
+        /// 更新Quotation
+        /// </summary>
+        /// <param name="model"></param>
         public void Update(Quotation model)
         {
+            using (IDbConnection conn = new SQLiteConnection(conn_str))
+            {
+                string sql = "update quotations set CurrencyType=@CurrencyType,TotalCost=@TotalCost,CreateTime=@CreateTime," +
+                    "LastUpdateTime=@LastUpdateTime,ExpirationTime=@ExpirationTime,Creator=@Creator,Lot=@Lot," +
+                    "Remark=@Remark,KeyWord=@KeyWord,ContactInfo_Customer=@ContactInfo_Customer,ContactInfo_Self=@ContactInfo_Self," +
+                    "PackageFee=@PackageFee,PackageRemark=@PackageRemark,ShippingFee=@ShippingFee,ShippingRemark=@ShippingRemark," +
+                    "CustomFee=@CustomFee,CustomRemark=@CustomRemark,TaxFee=@TaxFee,TaxRemark=@TaxRemark,State=@State" +
+                    " where id=@id";
+                var parameters = new Quotation
+                {
+                    CurrencyType = model.CurrencyType,
+                    TotalCost = model.TotalCost,
+                    CreateTime = model.CreateTime,
+                    LastUpdateTime = model.LastUpdateTime,
+                    ExpirationTime = model.ExpirationTime,
+                    Creator = model.Creator,
+                    Lot = model.Lot,
+                    Remark = model.Remark,
+                    KeyWord = model.KeyWord,
+                    ContactInfo_Customer = model.ContactInfo_Customer,
+                    ContactInfo_Self = model.ContactInfo_Self,
+                    PackageFee = model.PackageFee,
+                    PackageRemark = model.PackageRemark,
+                    ShippingFee = model.ShippingFee,
+                    ShippingRemark = model.ShippingRemark,
+                    CustomFee = model.CustomFee,
+                    CustomRemark = model.CustomRemark,
+                    TaxFee = model.TaxFee,
+                    TaxRemark = model.TaxRemark,
+                    State = model.State,
+                    ID = model.ID
+                };
 
+                conn.Execute(sql, parameters);
+            }
         }
 
 
@@ -79,25 +170,44 @@ namespace PMSQuotation.Services
             return models;
 
         }
-        public List<Contacts> GetCustomerInfos()
-        {
-            IDbConnection conn = new SQLiteConnection(conn_str);
-            conn.Open();
-            string sql_cmd = "select * from customerinfos";
-            var customerinfos = conn.Query<Contacts>(sql_cmd);
-            conn.Close();
-            return customerinfos.ToList();
-        }
 
-        public void Add(Contacts model)
+        /// <summary>
+        /// 添加
+        /// </summary>
+        /// <param name="model"></param>
+        public void AddItem(QuotationItem model)
         {
 
         }
 
-        public void Update(Contacts model)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
+        public void UpdateItem(QuotationItem model)
         {
 
         }
+
+        /// <summary>
+        /// 获取数据字典项目
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public DataDict GetDataDictByKey(string key)
+        {
+            using (IDbConnection conn = new SQLiteConnection(conn_str))
+            {
+                string sql = "select * from datadicts where datakey=@datakey";
+                var parameters = new
+                {
+                    datakey = key
+                };
+                var result = conn.Query<DataDict>(sql, parameters);
+                return result.FirstOrDefault();
+            }
+        }
+
 
     }
 }

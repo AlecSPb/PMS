@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Messaging;
 using PMSQuotation.Models;
 using PMSQuotation.Services;
 using XSHelper;
@@ -16,15 +17,11 @@ namespace PMSQuotation
     {
         public MainWindowVM()
         {
+            db_service = new QuotationDbService();
+
             searchCustomer = searchKeyword = "";
 
-            SearchStates = new List<string>();
-            SearchStates.Add("");
-            foreach (var item in Enum.GetValues(typeof(ModelState)))
-            {
-                SearchStates.Add(item.ToString());
-            }
-            SearchState = ModelState.Finished.ToString();
+            ShowDeleted = false;
 
             Quotations = new ObservableCollection<Quotation>();
             CurrentQuotationItems = new ObservableCollection<QuotationItem>();
@@ -50,11 +47,30 @@ namespace PMSQuotation
 
 
             LoadQuotations();
+
+            Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
+        }
+
+        private void ActionDo(NotificationMessage obj)
+        {
+            if (obj.Notification == "RefreshMain")
+            {
+                LoadQuotations();
+            }
         }
 
         private void ActionDelete(Quotation obj)
         {
-            throw new NotImplementedException();
+            if (obj != null)
+            {
+                if (XSHelper.XS.MessageBox.ShowYesNo("Are you sure to delete?", "Ask"))
+                {
+                    obj.LastUpdateTime = DateTime.Now;
+                    obj.State = QuotationState.Deleted.ToString();
+                    db_service.Update(obj);
+                    LoadQuotations();
+                }
+            }
         }
 
         private void ActionItemClone(QuotationItem obj)
@@ -156,19 +172,24 @@ namespace PMSQuotation
             set { searchKeyword = value; RaisePropertyChanged(nameof(SearchKeyword)); }
         }
 
-        public string SearchState { get; set; }
+        private bool showDeleted;
 
-        public List<string> SearchStates { get; set; }
+        public bool ShowDeleted
+        {
+            get { return showDeleted; }
+            set { showDeleted = value; RaisePropertyChanged(nameof(ShowDeleted)); }
+        }
+
 
         public ObservableCollection<Quotation> Quotations { get; set; }
 
         public ObservableCollection<QuotationItem> CurrentQuotationItems { get; set; }
 
-        private QuotationDbService service = new QuotationDbService();
+        private QuotationDbService db_service;
 
         public void LoadQuotations()
         {
-            var models = service.GetQuotations(SearchCustomer, SearchKeyword, SearchState);
+            var models = db_service.GetQuotations(SearchCustomer, SearchKeyword,ShowDeleted);
 
             Quotations.Clear();
             foreach (var item in models)
@@ -187,7 +208,7 @@ namespace PMSQuotation
         {
             if (CurrentQuotation != null)
             {
-                var models = service.GetQuotationItems(CurrentQuotation.ID);
+                var models = db_service.GetQuotationItems(CurrentQuotation.ID);
                 CurrentQuotationItems.Clear();
                 foreach (var item in models)
                 {

@@ -130,9 +130,12 @@
       <DependentUpon>DataDictionaryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataDictionaryVM.cs" />
+    <Compile Include="Helpers\PMSMethods.cs" />
     <Compile Include="MainWindowVM.cs" />
-    <Compile Include="Models\ModelState.cs" />
-    <Compile Include="Models\DataDicts.cs" />
+    <Compile Include="Models\QuotationItemState.cs" />
+    <Compile Include="Models\QuotationState.cs" />
+    <Compile Include="Models\DataDict.cs" />
+    <Compile Include="Models\QuotationDbContext.cs" />
     <Compile Include="Models\QuotationItem.cs" />
     <Compile Include="Models\QuotationItemUnitPrice.cs" />
     <Compile Include="QuotationEditView.xaml.cs">
@@ -148,6 +151,9 @@
     <Compile Include="Helpers\QuotationHelper.cs" />
     <Compile Include="Services\QuotationDbService.cs" />
     <Compile Include="Services\RMB.cs" />
+    <Compile Include="Tools\ContactEdit.xaml.cs">
+      <DependentUpon>ContactEdit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VMState.cs" />
     <Page Include="DataDictionaryView.xaml">
       <SubType>Designer</SubType>
@@ -173,13 +179,16 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tools\ContactEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="XSStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Contacts.cs" />
     <Compile Include="Models\Quotation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -221,7 +230,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="Tools\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

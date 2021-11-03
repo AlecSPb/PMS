@@ -28,13 +28,12 @@
                 <TextBox Text="{Binding SearchCustomer}" Style="{StaticResource StyleTextBoxSearch}"/>
                 <TextBlock Text="Keyword" Style="{StaticResource StyleTextBlockNavigationBar}"/>
                 <TextBox Text="{Binding SearchKeyword}" Style="{StaticResource StyleTextBoxSearch}"/>
-                <TextBlock Text="State" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-                <ComboBox Style="{StaticResource StyleComboBoxCommon}" ItemsSource="{Binding SearchStates}"
-                          SelectedItem="{Binding SearchState}"/>
+                <CheckBox IsChecked="{Binding ShowDeleted,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleCheckBoxCommon}" 
+                          Content="Show Deleted"
+                          Foreground="White"/>
                 <Button Content="Search" Style="{StaticResource StyleButtonCommon}" Command="{Binding Search}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
-                <Button Content="Contacts" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding Contacts}"/>
                 <Button Content="Data Dictionary" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding DataDictionary}"/>
                 <Button Content="DB Folder" Style="{StaticResource StyleButtonCommon}"  Command="{Binding DBFolder}"/>
             </StackPanel>
@@ -91,35 +90,13 @@
                 <DataGridTextColumn Header="KeyWord" Binding="{Binding KeyWord}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
 
-                <DataGridTextColumn Header="Customer_CompanyName" Binding="{Binding Customer_CompanyName}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="Customer_Contact" Binding="{Binding Customer_Contact}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="Customer_Phone" Binding="{Binding Customer_Phone}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="Customer_Email" Binding="{Binding Customer_Email}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="Customer_Fax" Binding="{Binding Customer_Fax}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="Customer_Address" Binding="{Binding Customer_Address}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="Customer_PostCode" Binding="{Binding Customer_PostCode}" 
+                <DataGridTextColumn Header="ContactInfo_Customer" Binding="{Binding ContactInfo_Customer}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
 
-                <DataGridTextColumn Header="Basic_CompanyName" Binding="{Binding Basic_CompanyName}" 
+
+                <DataGridTextColumn Header="ContactInfo_Self" Binding="{Binding ContactInfo_Self}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="Basic_Contact" Binding="{Binding Basic_Contact}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="Basic_Phone" Binding="{Binding Basic_Phone}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="Basic_Email" Binding="{Binding Basic_Email}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="Basic_Fax" Binding="{Binding Basic_Fax}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="Basic_Address" Binding="{Binding Basic_Address}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="Basic_PostCode" Binding="{Binding Basic_PostCode}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+
 
                 <DataGridTextColumn Header="PackageFee" Binding="{Binding PackageFee,StringFormat={}{0:F2}}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
@@ -165,7 +142,7 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="State" Binding="{Binding State}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="CreateTime" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" 
+                <DataGridTextColumn Header="CreateTime" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="Creator" Binding="{Binding Creator}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>

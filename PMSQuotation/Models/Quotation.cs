@@ -28,24 +28,12 @@ namespace PMSQuotation.Models
         #endregion
 
         #region CustomerInfo
-        public string Customer_CompanyName { get; set; }
-        public string Customer_Address { get; set; }
-        public string Customer_PostCode { get; set; }
-        public string Customer_Contact { get; set; }
-        public string Customer_Phone { get; set; }
-        public string Customer_Email { get; set; }
-        public string Customer_Fax { get; set; }
+        public string ContactInfo_Customer { get; set; }
         #endregion
 
 
         #region BasicInfo
-        public string Basic_CompanyName { get; set; }
-        public string Basic_Address { get; set; }
-        public string Basic_PostCode { get; set; }
-        public string Basic_Contact { get; set; }
-        public string Basic_Phone { get; set; }
-        public string Basic_Email { get; set; }
-        public string Basic_Fax { get; set; }
+        public string ContactInfo_Self { get; set; }
         #endregion
 
 

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSQuotation.Models;
+using PMSQuotation.Services;
 using XSHelper;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSQuotation
 {
@@ -14,6 +16,9 @@ namespace PMSQuotation
     {
         public QuotationEditVM()
         {
+            db_service = new QuotationDbService();
+
+
             CurrencyTypes = new List<string>();
             CurrencyTypes.Add("RMB");
             CurrencyTypes.Add("USD");
@@ -37,12 +42,17 @@ namespace PMSQuotation
 
             CurrentQuotation = new Quotation();
 
-            CurrentQuotation.State = ModelState.Finished.ToString();
+            CurrentQuotation.State = QuotationState.UnFinished.ToString();
             CurrentQuotation.CurrencyType = CurrencyTypes[0];
             CurrentQuotation.CreateTime = DateTime.Now;
             CurrentQuotation.LastUpdateTime = DateTime.Now;
             CurrentQuotation.ExpirationTime = DateTime.Now.AddMonths(1);
             CurrentQuotation.Lot = Helpers.QuotationHelper.GetDefaultLot();
+            CurrentQuotation.Creator = db_service.GetDataDictByKey("Creator").DataValue;
+            CurrentQuotation.KeyWord = "";
+
+            CurrentQuotation.ContactInfo_Customer = "";
+            CurrentQuotation.ContactInfo_Self = "";
 
 
             CurrentQuotation.PackageFee = 0;
@@ -68,24 +78,59 @@ namespace PMSQuotation
             vMState = VMState.New;
             EditState = vMState.ToString();
             CurrentQuotation = new Quotation();
+            CurrentQuotation.State = QuotationState.UnFinished.ToString();
+            CurrentQuotation.CurrencyType = model.CurrencyType;
+            CurrentQuotation.CreateTime = DateTime.Now;
+            CurrentQuotation.LastUpdateTime = DateTime.Now;
+            CurrentQuotation.ExpirationTime = DateTime.Now.AddMonths(1);
+            CurrentQuotation.Lot = Helpers.QuotationHelper.GetDefaultLot();
+            CurrentQuotation.Creator = db_service.GetDataDictByKey("Creator").DataValue;
+            CurrentQuotation.KeyWord = model.KeyWord;
 
+            CurrentQuotation.ContactInfo_Customer = model.ContactInfo_Customer;
+            CurrentQuotation.ContactInfo_Self = model.ContactInfo_Self;
+
+
+            CurrentQuotation.PackageFee = model.PackageFee;
+            CurrentQuotation.PackageRemark = model.PackageRemark;
+            CurrentQuotation.ShippingFee = model.ShippingFee;
+            CurrentQuotation.ShippingRemark = model.ShippingRemark;
+            CurrentQuotation.CustomFee = model.CustomFee;
+            CurrentQuotation.CustomRemark = model.CustomRemark;
+            CurrentQuotation.TaxFee = model.TaxFee;
+            CurrentQuotation.TaxRemark = model.TaxRemark;
+            CurrentQuotation.Remark = model.Remark;
 
 
         }
 
-
+        private QuotationDbService db_service;
         private void ActionSave()
         {
-            if (vMState == VMState.New)
+            if (CurrentQuotation == null) return;
+            try
+            {
+                if (vMState == VMState.New)
+                {
+                    db_service.Add(CurrentQuotation);
+                    XS.MessageBox.ShowInfo("New Saved");
+                }
+                else if (vMState == VMState.Edit)
+                {
+                    CurrentQuotation.LastUpdateTime = DateTime.Now;
+                    db_service.Update(CurrentQuotation);
+                    XS.MessageBox.ShowInfo("Edit Saved");
+                }
+
+                Messenger.Default.Send(new NotificationMessage("CloseEditWindow"), "MSG");
+                Messenger.Default.Send(new NotificationMessage("RefreshMain"), "MSG");
+            }
+            catch (Exception ex)
             {
 
-                XS.MessageBox.ShowInfo("New Saved");
+                XSHelper.XS.MessageBox.ShowError(ex.Message);
             }
-            else if (vMState == VMState.Edit)
-            {
 
-                XS.MessageBox.ShowInfo("Edit Saved");
-            }
         }
 
         public List<string> CurrencyTypes { get; set; }

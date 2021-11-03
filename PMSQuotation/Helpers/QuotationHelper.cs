@@ -21,7 +21,7 @@ namespace PMSQuotation.Helpers
         public static List<string> GetModelStates()
         {
             List<string> states = new List<string>();
-            foreach (var item in Enum.GetValues(typeof(ModelState)))
+            foreach (var item in Enum.GetValues(typeof(QuotationState)))
             {
                 states.Add(item.ToString());
             }

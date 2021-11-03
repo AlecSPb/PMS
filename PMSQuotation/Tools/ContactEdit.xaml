@@ -1,0 +1,50 @@
+﻿<Window x:Class="PMSQuotation.Tools.ContactEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSQuotation.Tools"
+        mc:Ignorable="d"
+        Title="ContactEdit" Height="450" Width="500"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Background="{StaticResource BGNavigationBar}">
+            <Button Content="Save" Style="{StaticResource StyleButtonCommon}" Name="BtnSave"
+                    Click="BtnSave_Click"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="CompanyName" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Name="TxtCompanyName" Grid.Row="0" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="ContactPerson" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Name="TxtContactPerson" Grid.Row="1" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Phone" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Name="TxtPhone" Grid.Row="2" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Email" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Name="TxtEmail" Grid.Row="3" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Address" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Name="TxtAddress" Grid.Row="4" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+        </Grid>
+    </Grid>
+
+</Window>
