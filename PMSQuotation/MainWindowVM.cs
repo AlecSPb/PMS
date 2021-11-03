@@ -43,12 +43,21 @@ namespace PMSQuotation
 
 
             DBFolder = new RelayCommand(ActionDBFolder);
+            DataDictionary = new RelayCommand(ActionDataDictionary);
             #endregion
 
 
             LoadQuotations();
 
             Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
+        }
+
+        private void ActionDataDictionary()
+        {
+            var win = new DataDictionaryView();
+            var vm = new DataDictionaryVM();
+            win.DataContext = vm;
+            win.ShowDialog();
         }
 
         private void ActionDo(NotificationMessage obj)
@@ -262,7 +271,7 @@ namespace PMSQuotation
 
         public RelayCommand<Quotation> SelectionChanged { get; set; }
 
-
+        public RelayCommand DataDictionary { get; set; }
 
         public RelayCommand DBFolder { get; set; }
     }

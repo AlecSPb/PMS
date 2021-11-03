@@ -279,7 +279,7 @@ namespace PMSQuotation.Services
                     LastUpdateTime = model.LastUpdateTime,
                     State = model.State
                 };
-                conn.Execute(sql);
+                conn.Execute(sql,parameters);
             }
         }
 
@@ -298,7 +298,7 @@ namespace PMSQuotation.Services
                     State = model.State,
                     ID=model.ID
                 };
-                conn.Execute(sql);
+                conn.Execute(sql,parameters);
             }
         }
 
