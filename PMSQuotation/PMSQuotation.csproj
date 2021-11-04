@@ -140,6 +140,7 @@
     </Compile>
     <Compile Include="Helpers\PMSMethods.cs" />
     <Compile Include="MainWindowVM.cs" />
+    <Compile Include="Models\RawMaterialItem.cs" />
     <Compile Include="Models\Specification.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\QuotationItemState.cs" />
@@ -167,6 +168,9 @@
     </Compile>
     <Compile Include="Tools\SpecificationEdit.xaml.cs">
       <DependentUpon>SpecificationEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ToolRawMaterial.xaml.cs">
+      <DependentUpon>ToolRawMaterial.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tools\UnitPriceCalculator.xaml.cs">
       <DependentUpon>UnitPriceCalculator.xaml</DependentUpon>
@@ -206,6 +210,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tools\SpecificationEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\ToolRawMaterial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

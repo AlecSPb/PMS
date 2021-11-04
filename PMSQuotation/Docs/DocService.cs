@@ -152,14 +152,7 @@ namespace PMSQuotation.Docs
 
                 string money_capital = GetRMBCaptical(total_fee);
 
-                if (!string.IsNullOrEmpty(money_capital))
-                {
-                    doc.ReplaceText("[RMBCapital]", $"{money_capital}整" ?? "");
-                }
-                else
-                {
-                    doc.ReplaceText("[RMBCapital]", "");
-                }
+                doc.ReplaceText("[RMBCapital]", $"{money_capital}" ?? "");
 
                 doc.Save();
             }
@@ -242,14 +235,9 @@ namespace PMSQuotation.Docs
 
                 string money_capital = GetRMBCaptical(total_fee);
 
-                if (!string.IsNullOrEmpty(money_capital))
-                {
-                    doc.ReplaceText("[RMBCapital]", $"{money_capital}整" ?? "");
-                }
-                else
-                {
-                    doc.ReplaceText("[RMBCapital]", "");
-                }
+
+                doc.ReplaceText("[RMBCapital]", $"{money_capital}" ?? "");
+
 
                 doc.Save();
             }

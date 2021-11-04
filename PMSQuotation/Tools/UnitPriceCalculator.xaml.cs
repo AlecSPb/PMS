@@ -85,13 +85,20 @@ namespace PMSQuotation.Tools
         {
             int index = DgUnitPrice.SelectedIndex;
 
-            Items[index].ItemUnitPrice = 100;
-
-            var name = Items[index].ItemName;
+            var current_item = Items[index];
+            //Items[index].ItemUnitPrice = 100;
+            var name = current_item.ItemName;
             switch (name)
             {
-                case "RawMaterial":
+                case "Raw Material":
                     XSHelper.XS.MessageBox.ShowInfo("RawMaterials");
+                    var win = new ToolRawMaterial();
+                    win.SetJson(current_item.Remark);
+                    if (win.ShowDialog() == true)
+                    {
+                        current_item.ItemUnitPrice = SumRawMaterialPrice(win.Items.ToList());
+                        current_item.Remark = win.GetJson();
+                    }
                     break;
                 default:
                     XSHelper.XS.MessageBox.ShowInfo(name);
@@ -104,5 +111,17 @@ namespace PMSQuotation.Tools
             DgUnitPrice.ItemsSource = null;
             DgUnitPrice.ItemsSource = Items;
         }
+
+        private double SumRawMaterialPrice(List<RawMaterialItem> items)
+        {
+            double sum = 0;
+            foreach (var item in items)
+            {
+                sum += item.UnitPrice * item.Weight;
+            }
+            return sum;
+        }
+
+
     }
 }

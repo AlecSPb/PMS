@@ -31,30 +31,37 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="ItemName" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Binding="{Binding ItemName}" 
                                     IsReadOnly="True"/>
-                <!--<DataGridTextColumn Header="ItemUnitPrice" ElementStyle="{StaticResource StyleDGTextBlockRight}" 
-                                    Binding="{Binding ItemUnitPrice}"
-                                    Foreground="Blue"/>-->
                 <DataGridTemplateColumn Header="ItemUnitPrice" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding ItemUnitPrice,UpdateSourceTrigger=PropertyChanged}" 
-                                     Style="{StaticResource StyleTextBoxCommon}"
+                            <TextBlock Text="{Binding ItemUnitPrice}" 
+                                     Style="{StaticResource StyleDGTextBlockRight}" Foreground="Blue"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding ItemUnitPrice}" 
+                                     Style="{StaticResource StyleDGTextBoxStrench}"
                                      TextAlignment="Right"
                                      Background="LightYellow"/>
                         </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
-                <!--<DataGridTextColumn Header="ItemRemark" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Binding="{Binding ItemRemark}" 
-                                    IsReadOnly="True"/>-->
-                <DataGridTemplateColumn Header="ItemRemark" Width="500">
+                <DataGridTemplateColumn Header="ItemRemark" Width="500" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Remark,UpdateSourceTrigger=PropertyChanged}" 
-                                     Style="{StaticResource StyleTextBoxCommon}"
+                            <TextBlock Text="{Binding Remark}" 
+                                     Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding Remark}" 
+                                     Style="{StaticResource StyleDGTextBoxStrench}"
                                      TextAlignment="Left"
                                      Background="LightYellow"/>
                         </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
