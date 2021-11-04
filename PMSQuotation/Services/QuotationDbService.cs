@@ -258,7 +258,7 @@ namespace PMSQuotation.Services
         {
             using (IDbConnection conn = new SQLiteConnection(conn_str))
             {
-                string sql = "select * from datadicts";
+                string sql = "select * from datadicts order by numberorder asc";
                 var result = conn.Query<DataDict>(sql);
                 return result.ToList();
             }
