@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSQuotation
 {
@@ -22,6 +23,15 @@ namespace PMSQuotation
         public DataDictionaryView()
         {
             InitializeComponent();
+            Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
+        }
+
+        private void ActionDo(NotificationMessage obj)
+        {
+            if (obj.Notification == "CloseDataDictionaryWindow")
+            {
+                this.Close();
+            }
         }
     }
 }

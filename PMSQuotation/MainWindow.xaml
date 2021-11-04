@@ -187,6 +187,8 @@
                         Click="BtnCalculator_Click"/>
                 <Button Name="BtnNotepad" Style="{StaticResource StyleButtonCommonNarrow}" Content="Notepad"
                         Click="BtnNotepad_Click"/>
+                <Button Name="BtnTargetCutter" Style="{StaticResource StyleButtonCommonNarrow}" Content="TargetCutter"
+                        Click="BtnTargetCutter_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

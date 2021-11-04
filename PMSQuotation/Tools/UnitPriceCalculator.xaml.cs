@@ -215,5 +215,19 @@ namespace PMSQuotation.Tools
             }
             return sum;
         }
+
+        private void BtnDgRowReset_Click(object sender, RoutedEventArgs e)
+        {
+            int index = DgUnitPrice.SelectedIndex;
+
+            var current_item = Items[index];
+            if (!XSHelper.XS.MessageBox.ShowYesNo("are you sure to reset this?"))
+                return;
+            current_item.ItemUnitPrice = 0;
+            current_item.Remark = "";
+
+            DgUnitPrice.ItemsSource = null;
+            DgUnitPrice.ItemsSource = Items;
+        }
     }
 }

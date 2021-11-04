@@ -72,5 +72,17 @@ namespace PMSQuotation
 
             }
         }
+
+        private void BtnTargetCutter_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("TargetCutterSimulator.exe");
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }

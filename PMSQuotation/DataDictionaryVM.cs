@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Messaging;
 using PMSQuotation.Models;
 using PMSQuotation.Services;
 
@@ -47,6 +48,8 @@ namespace PMSQuotation
                     db_service.UpdateDataDict(item);
                 }
                 XSHelper.XS.MessageBox.ShowInfo("Data Dict Saved Successful");
+                Messenger.Default.Send(new NotificationMessage("CloseDataDictionaryWindow"), "MSG");
+
             }
         }
 

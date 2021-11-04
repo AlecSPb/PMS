@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PMSQuotation.Tools"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
-        Title="UnitPriceCalculator" Height="450" Width="800">
+        Title="UnitPriceCalculator" Height="450" Width="1000">
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -25,6 +25,8 @@
                             <StackPanel Orientation="Horizontal">
                                 <Button Content="Tool" Style="{StaticResource StyleDGButton}" Name="BtnDgRowEdit"
                                         Click="BtnDgRowEdit_Click"/>
+                                <Button Content="Reset" Style="{StaticResource StyleDGButton}" Name="BtnDgRowReset"
+                                        Click="BtnDgRowReset_Click"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

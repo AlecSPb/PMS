@@ -312,7 +312,12 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TargetCutterSimulator\TargetCutterSimulator.csproj">
+      <Project>{32a0b9c1-7441-4ebe-a1bf-21854bd2a57a}</Project>
+      <Name>TargetCutterSimulator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
