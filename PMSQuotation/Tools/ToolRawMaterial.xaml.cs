@@ -30,8 +30,8 @@ namespace PMSQuotation.Tools
         public void SetEmpty()
         {
             Items.Add(new CostItemRawMaterial { Material = "Main", UnitPrice = 0, Weight = 0 });
-            Items.Add(new CostItemRawMaterial { Material = "Additive", UnitPrice = 0, Weight = 0 });
-            Items.Add(new CostItemRawMaterial { Material = "", UnitPrice = 0, Weight = 0 });
+            Items.Add(new CostItemRawMaterial { Material = "Additive1", UnitPrice = 0, Weight = 0 });
+            Items.Add(new CostItemRawMaterial { Material = "Additive2", UnitPrice = 0, Weight = 0 });
         }
         public ObservableCollection<CostItemRawMaterial> Items { get; set; }
         private void BtnSave_Click(object sender, RoutedEventArgs e)

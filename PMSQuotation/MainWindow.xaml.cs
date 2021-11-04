@@ -84,5 +84,18 @@ namespace PMSQuotation
 
             }
         }
+
+        private void BtnMaterialNeedCalculator_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var win = new Tools.MaterialNeedCalculationWindow();
+                win.Show();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }

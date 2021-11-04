@@ -1,0 +1,109 @@
+﻿<Window x:Class="PMSQuotation.Tools.MaterialNeedCalculationWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSQuotation.Tools"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d" 
+             Title="Material Need Calculator"
+             Height="600" Width="600"
+             WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Grid Background="LightYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource StyleTextBlockPageTitle}" Text="Raw Material Calculation"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" DataContext="{Binding Condition}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Density" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtDensity" Style="{StaticResource StyleTextBoxCommon}"
+                             Text="{Binding Density}"
+                             Background="LightGreen"/>
+
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="g/cm3" Style="{StaticResource StyleTextBlockTip}"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Mold Diameter" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}"
+                              Text="{Binding Diameter}"
+                              ItemsSource="{Binding DataContext.Molds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="mm" Style="{StaticResource StyleTextBlockTip}"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Blank Thickness" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Thickness}" Style="{StaticResource StyleTextBoxCommon}"/>
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="mm" Style="{StaticResource StyleTextBlockTip}"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Quantity" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}"/>
+                    <TextBlock Grid.Row="3" Grid.Column="2" Text="pieces" Style="{StaticResource StyleTextBlockTip}"/>
+
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Loss" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Loss}"  Style="{StaticResource StyleTextBoxCommon}"/>
+                    <TextBlock Grid.Row="4" Grid.Column="2" Text="g" Style="{StaticResource StyleTextBlockTip}"/>
+
+                </Grid>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" >
+                    <Button Content="Add" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
+                </StackPanel>
+                <DataGrid Grid.Row="2" ItemsSource="{Binding Results}" Style="{StaticResource StyleDataGridCommon}">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="Del" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.Delete,RelativeSource={RelativeSource AncestorType=Window,
+                                            Mode=FindAncestor}}"
+                                        CommandParameter="{Binding}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Diameter" Binding="{Binding Diameter}" ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                        <DataGridTextColumn Header="Thickness" Binding="{Binding Thickness}" ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                        <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                        <DataGridTextColumn Header="Loss" Binding="{Binding Loss}" ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                        <DataGridTextColumn Header="Weight" Binding="{Binding Weight,StringFormat={}{0:F2}}" 
+                                            ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Grid.Row="3"  Orientation="Horizontal">
+                    <TextBlock Text="Total:" Style="{StaticResource StyleTextBlockCommon}" FontSize="25"/>
+                    <TextBox Text="{Binding TotalWeight,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxCommon}" 
+                               Foreground="Orange" FontSize="25" Width="150" TextAlignment="Right"
+                             IsReadOnly="True"/>
+                    <TextBlock Text="g" Style="{StaticResource StyleTextBlockCommon}" FontSize="25"/>
+                </StackPanel>
+            </Grid>
+
+
+
+        </Grid>
+    </Grid>
+</Window>

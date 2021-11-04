@@ -229,5 +229,54 @@ namespace PMSQuotation.Tools
             DgUnitPrice.ItemsSource = null;
             DgUnitPrice.ItemsSource = Items;
         }
+
+        private void BtnMaterialNeedCalculator_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var win = new Tools.MaterialNeedCalculationWindow();
+                win.Show();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void BtnTargetCutter_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("TargetCutterSimulator.exe");
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void BtnCalculator_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("calc.exe");
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void BtnNotepad_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("notepad.exe");
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }

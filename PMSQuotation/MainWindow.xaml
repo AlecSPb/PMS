@@ -180,7 +180,7 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="{Binding StatusBarInfo}" Style="{StaticResource StyleDGTextBlockBig}" FontSize="20"/>
-            <TextBlock Grid.Column="1" Style="{StaticResource StyleDGTextBlockBig}" FontSize="20"
+            <TextBlock Grid.Column="1" Style="{StaticResource StyleDGTextBlockBig}" FontSize="15"
                        Text="Total=Target+Extra+Tax;Extra=Package+Shiping+Custom;" Foreground="Green"/>
             <StackPanel Grid.Column="3" Orientation="Horizontal">
                 <Button Name="BtnCalculator" Style="{StaticResource StyleButtonCommonNarrow}" Content="Calculator"
@@ -189,6 +189,8 @@
                         Click="BtnNotepad_Click"/>
                 <Button Name="BtnTargetCutter" Style="{StaticResource StyleButtonCommonNarrow}" Content="TargetCutter"
                         Click="BtnTargetCutter_Click"/>
+                <Button Name="BtnMaterialNeedCalculator" Style="{StaticResource StyleButtonCommonNarrow}" Content="MaterialNeedCalculator"
+                        Click="BtnMaterialNeedCalculator_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

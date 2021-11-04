@@ -6,18 +6,37 @@
         xmlns:local="clr-namespace:PMSQuotation.Tools"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
-        Title="UnitPriceCalculator" Height="450" Width="1000">
+        Title="UnitPriceCalculator (trial)" Height="600" Width="1000">
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="{StaticResource BGNavigationBar}">
-            <Button Content="Save" Style="{StaticResource StyleButtonCommon}"
+        <Grid Grid.Row="0" Background="{StaticResource BGNavigationBar}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Button Content="Save" Style="{StaticResource StyleButtonCommon}"
                     Name="BtnSave" Click="BtnSave_Click"/>
-            <TextBlock Text="Double Click Blue Fonts to Change" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-        </StackPanel>
-        <DataGrid Grid.Row="1" Name="DgUnitPrice" Style="{StaticResource StyleDataGridNotReadOnly}">
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="BtnCalculator" Style="{StaticResource StyleButtonCommonNarrow}" Content="Calculator"
+                        Click="BtnCalculator_Click"/>
+                <Button Name="BtnNotepad" Style="{StaticResource StyleButtonCommonNarrow}" Content="Notepad"
+                        Click="BtnNotepad_Click"/>
+                <Button Name="BtnTargetCutter" Style="{StaticResource StyleButtonCommonNarrow}" Content="TargetCutter"
+                        Click="BtnTargetCutter_Click"/>
+                <Button Name="BtnMaterialNeedCalculator" Style="{StaticResource StyleButtonCommonNarrow}" Content="MaterialNeedCalculator"
+                        Click="BtnMaterialNeedCalculator_Click"/>
+            </StackPanel>
+        </Grid>
+        <TextBlock Grid.Row="1" Text="double click blue fonts to change or use tool" 
+                   Style="{StaticResource StyleTextBlockCommon}"
+                   Background="LightGreen" HorizontalAlignment="Stretch"/>
+        <DataGrid Grid.Row="2" Name="DgUnitPrice" Style="{StaticResource StyleDataGridNotReadOnly}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>

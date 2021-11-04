@@ -126,14 +126,14 @@ namespace PMSQuotation
         {
             if (obj != null)
             {
-                var dialog =new Docs.SelectDocTypeDialog();
+                var dialog = new Docs.SelectDocTypeDialog();
                 if (dialog.ShowDialog() == true)
                 {
                     string selectedDocType = dialog.SelectedDocType;
 
                     var option = new Docs.DocOptions();
                     option.DocType = selectedDocType;
-                    var doc_service = new Docs.DocService(obj,option);
+                    var doc_service = new Docs.DocService(obj, option);
                     doc_service.CreateDocument();
                 }
             }
@@ -166,12 +166,17 @@ namespace PMSQuotation
         private void ActionEdit(Quotation obj)
         {
             if (obj == null) return;
+            if (obj.State != "UnFinished" && !XS.MessageBox.ShowYesNo("are you sure to edit this record?"))
+            {
+                return;
+            }
 
             QuotationEditView view = new QuotationEditView();
             var vm = new QuotationEditVM();
             vm.SetEdit(obj);
             view.DataContext = vm;
             view.ShowDialog();
+
         }
 
         private void ActionNew()

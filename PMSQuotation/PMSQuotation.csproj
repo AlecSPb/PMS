@@ -172,6 +172,10 @@
     <Compile Include="Tools\ContactEdit.xaml.cs">
       <DependentUpon>ContactEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tools\MaterialNeedCalculationVM.cs" />
+    <Compile Include="Tools\MaterialNeedCalculationWindow.xaml.cs">
+      <DependentUpon>MaterialNeedCalculationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tools\SpecificationEdit.xaml.cs">
       <DependentUpon>SpecificationEdit.xaml</DependentUpon>
     </Compile>
@@ -229,6 +233,10 @@
     <Page Include="Tools\ContactEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\MaterialNeedCalculationWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Tools\SpecificationEdit.xaml">
       <SubType>Designer</SubType>
