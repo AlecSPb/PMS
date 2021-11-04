@@ -124,7 +124,19 @@ namespace PMSQuotation
 
         private void ActionDoc(Quotation obj)
         {
-            throw new NotImplementedException();
+            if (obj != null)
+            {
+                var dialog =new Docs.SelectDocTypeDialog();
+                if (dialog.ShowDialog() == true)
+                {
+                    string selectedDocType = dialog.SelectedDocType;
+
+                    var option = new Docs.DocOptions();
+                    option.DocType = selectedDocType;
+                    var doc_service = new Docs.DocService(obj,option);
+                    doc_service.CreateDocument();
+                }
+            }
         }
         private void ActionDelete(Quotation obj)
         {

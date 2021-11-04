@@ -133,12 +133,15 @@
       <DependentUpon>DataDictionaryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataDictionaryVM.cs" />
+    <Compile Include="Docs\DocOptions.cs" />
     <Compile Include="Docs\DocService.cs" />
     <Compile Include="Docs\SelectDocTypeDialog.xaml.cs">
       <DependentUpon>SelectDocTypeDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\PMSMethods.cs" />
     <Compile Include="MainWindowVM.cs" />
+    <Compile Include="Models\Specification.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\QuotationItemState.cs" />
     <Compile Include="Models\QuotationState.cs" />
     <Compile Include="Models\DataDict.cs" />
@@ -236,10 +239,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Content Include="Docs\quotation_template_zh_cn.docx">
+    <Content Include="DB\pmsquotation.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="DB\pmsquotation.db">
+    <Content Include="Docs\quotation_template_en.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Docs\quotation_template_zh.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
