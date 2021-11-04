@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace PMSQuotation.Models
 {
-    public class RawMaterialItem
+    public class CostItemBonding
     {
-        public string Material { get; set; }
+        public string BondingGrade { get; set; }
         public double UnitPrice { get; set; }
-        public double Weight { get; set; }
+        public int Quantity { get; set; }
     }
 }

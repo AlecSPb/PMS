@@ -14,26 +14,32 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Newtonsoft.Json;
 using PMSQuotation.Models;
+using PMSQuotation.Services;
 
 namespace PMSQuotation.Tools
 {
     /// <summary>
     /// ToolRawMaterial.xaml 的交互逻辑
     /// </summary>
-    public partial class ToolRawMaterial : Window
+    public partial class ToolBonding : Window
     {
-        public ToolRawMaterial()
+        public ToolBonding()
         {
             InitializeComponent();
-            Items = new ObservableCollection<CostItemRawMaterial>();
+            Items = new ObservableCollection<CostItemBonding>();
         }
+
         public void SetEmpty()
         {
-            Items.Add(new CostItemRawMaterial { Material = "Main", UnitPrice = 0, Weight = 0 });
-            Items.Add(new CostItemRawMaterial { Material = "Additive", UnitPrice = 0, Weight = 0 });
-            Items.Add(new CostItemRawMaterial { Material = "", UnitPrice = 0, Weight = 0 });
+            var dds_service = new DataDictionaryService();
+            var dicts = dds_service.GetKeyValue("bonding_price_rule");
+            foreach (var item in dicts)
+            {
+                Items.Add(new CostItemBonding { BondingGrade = item.Key, UnitPrice = item.Value, Quantity = 0 });
+            }
+
         }
-        public ObservableCollection<CostItemRawMaterial> Items { get; set; }
+        public ObservableCollection<CostItemBonding> Items { get; set; }
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
@@ -42,7 +48,7 @@ namespace PMSQuotation.Tools
 
         public string GetJson()
         {
-            var items = Items.Where(i => i.Material != "");
+            var items = Items.Where(i => i.BondingGrade != "");
             string json = JsonConvert.SerializeObject(items);
             return json;
         }
@@ -60,7 +66,7 @@ namespace PMSQuotation.Tools
 
             try
             {
-                var models = JsonConvert.DeserializeObject<List<CostItemRawMaterial>>(json_str);
+                var models = JsonConvert.DeserializeObject<List<CostItemBonding>>(json_str);
                 Items.Clear();
                 foreach (var item in models)
                 {

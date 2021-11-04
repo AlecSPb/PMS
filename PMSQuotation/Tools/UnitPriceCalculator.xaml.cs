@@ -88,20 +88,65 @@ namespace PMSQuotation.Tools
             var current_item = Items[index];
             //Items[index].ItemUnitPrice = 100;
             var name = current_item.ItemName;
+            XSHelper.XS.MessageBox.ShowInfo($"you are using {name} tool");
+
             switch (name)
             {
                 case "Raw Material":
-                    XSHelper.XS.MessageBox.ShowInfo("RawMaterials");
-                    var win = new ToolRawMaterial();
-                    win.SetJson(current_item.Remark);
-                    if (win.ShowDialog() == true)
+                    var win1 = new ToolRawMaterial();
+                    win1.SetJson(current_item.Remark);
+                    if (win1.ShowDialog() == true)
                     {
-                        current_item.ItemUnitPrice = SumRawMaterialPrice(win.Items.ToList());
-                        current_item.Remark = win.GetJson();
+                        current_item.ItemUnitPrice = SumPriceRawMaterial(win1.Items.ToList());
+                        current_item.Remark = win1.GetJson();
+                    }
+                    break;
+                case "Powder":
+                    var win2 = new ToolPowder();
+                    win2.SetJson(current_item.Remark);
+                    if (win2.ShowDialog() == true)
+                    {
+                        current_item.ItemUnitPrice = SumPricePowder(win2.Items.ToList());
+                        current_item.Remark = win2.GetJson();
+                    }
+                    break;
+                case "VHP":
+                    var win3 = new ToolVHP();
+                    win3.SetJson(current_item.Remark);
+                    if (win3.ShowDialog() == true)
+                    {
+                        current_item.ItemUnitPrice = SumPriceVHP(win3.Items.ToList());
+                        current_item.Remark = win3.GetJson();
+                    }
+                    break;
+                case "Machine":
+                    var win4 = new ToolMachine();
+                    win4.SetJson(current_item.Remark);
+                    if (win4.ShowDialog() == true)
+                    {
+                        current_item.ItemUnitPrice = SumPriceMachine(win4.Items.ToList());
+                        current_item.Remark = win4.GetJson();
+                    }
+                    break;
+                case "Bonding":
+                    var win5 = new ToolBonding();
+                    win5.SetJson(current_item.Remark);
+                    if (win5.ShowDialog() == true)
+                    {
+                        current_item.ItemUnitPrice = SumPriceBonding(win5.Items.ToList());
+                        current_item.Remark = win5.GetJson();
+                    }
+                    break;
+                case "Analysis":
+                    var win6 = new ToolAnalysis();
+                    win6.SetJson(current_item.Remark);
+                    if (win6.ShowDialog() == true)
+                    {
+                        current_item.ItemUnitPrice = SumPriceAnalysis(win6.Items.ToList());
+                        current_item.Remark = win6.GetJson();
                     }
                     break;
                 default:
-                    XSHelper.XS.MessageBox.ShowInfo(name);
                     break;
             }
 
@@ -112,7 +157,7 @@ namespace PMSQuotation.Tools
             DgUnitPrice.ItemsSource = Items;
         }
 
-        private double SumRawMaterialPrice(List<RawMaterialItem> items)
+        private double SumPriceRawMaterial(List<CostItemRawMaterial> items)
         {
             double sum = 0;
             foreach (var item in items)
@@ -122,6 +167,53 @@ namespace PMSQuotation.Tools
             return sum;
         }
 
+        private double SumPricePowder(List<CostItemPowder> items)
+        {
+            double sum = 0;
+            foreach (var item in items)
+            {
+                sum += item.UnitPrice * item.Weight;
+            }
+            return sum;
+        }
 
+        private double SumPriceVHP(List<CostItemVHPCost> items)
+        {
+            double sum = 0;
+            foreach (var item in items)
+            {
+                sum += item.UnitPrice * item.MachineTime;
+            }
+            return sum;
+        }
+
+        private double SumPriceMachine(List<CostItemMachine> items)
+        {
+            double sum = 0;
+            foreach (var item in items)
+            {
+                sum += item.UnitPrice * item.Quantity;
+            }
+            return sum;
+        }
+
+        private double SumPriceBonding(List<CostItemBonding> items)
+        {
+            double sum = 0;
+            foreach (var item in items)
+            {
+                sum += item.UnitPrice * item.Quantity;
+            }
+            return sum;
+        }
+        private double SumPriceAnalysis(List<CostItemAnalysis> items)
+        {
+            double sum = 0;
+            foreach (var item in items)
+            {
+                sum += item.UnitPrice * item.Quantity;
+            }
+            return sum;
+        }
     }
 }

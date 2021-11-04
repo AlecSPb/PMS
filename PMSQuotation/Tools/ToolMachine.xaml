@@ -1,4 +1,4 @@
-﻿<Window x:Class="PMSQuotation.Tools.ToolRawMaterial"
+﻿<Window x:Class="PMSQuotation.Tools.ToolMachine"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PMSQuotation.Tools"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize"
-        Title="ToolRawMaterial" Height="450" Width="400">
+        Title="ToolMachine" Height="450" Width="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -20,24 +20,24 @@
         <DataGrid Grid.Row="1" Style="{StaticResource StyleDataGridNotReadOnly}"
                   Name="DgMain">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Material" Width="100">
+                <DataGridTemplateColumn Header="MachineGrade" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Material}" 
+                            <TextBlock Text="{Binding MachineGrade}" 
                                      Style="{StaticResource StyleDGTextBlockLeft}"
                                      TextAlignment="Right" Foreground="Blue"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Material}" 
+                            <TextBox Text="{Binding MachineGrade}" 
                                      Style="{StaticResource  StyleDGTextBoxStrench}"
                                      TextAlignment="Right"
                                      Background="LightYellow"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Price Per Kilo" Width="100">
+                <DataGridTemplateColumn Header="UnitPrice" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding UnitPrice}" 
@@ -54,17 +54,17 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Weight" Width="100">
+                <DataGridTemplateColumn Header="Quantity" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Weight}" 
+                            <TextBlock Text="{Binding Quantity}" 
                                      Style="{StaticResource StyleDGTextBlockRight}"
                                      TextAlignment="Right" Foreground="Blue"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Weight}" 
+                            <TextBox Text="{Binding Quantity}" 
                                      Style="{StaticResource  StyleDGTextBoxStrench}"
                                      TextAlignment="Right"
                                      Background="LightYellow"/>

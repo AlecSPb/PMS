@@ -140,7 +140,11 @@
     </Compile>
     <Compile Include="Helpers\PMSMethods.cs" />
     <Compile Include="MainWindowVM.cs" />
-    <Compile Include="Models\RawMaterialItem.cs" />
+    <Compile Include="Models\CostItemAnalysis.cs" />
+    <Compile Include="Models\CostItemBonding.cs" />
+    <Compile Include="Models\CostItemMachine.cs" />
+    <Compile Include="Models\CostItemPowder.cs" />
+    <Compile Include="Models\CostItemRawMaterial.cs" />
     <Compile Include="Models\Specification.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\QuotationItemState.cs" />
@@ -149,6 +153,7 @@
     <Compile Include="Models\QuotationDbContext.cs" />
     <Compile Include="Models\QuotationItem.cs" />
     <Compile Include="Models\QuotationItemUnitPrice.cs" />
+    <Compile Include="Models\CostItemVHPCost.cs" />
     <Compile Include="QuotationEditView.xaml.cs">
       <DependentUpon>QuotationEditView.xaml</DependentUpon>
     </Compile>
@@ -159,6 +164,7 @@
     <Compile Include="QuotationItemEditVM.cs" />
     <Compile Include="Services\CalculationResult.cs" />
     <Compile Include="Services\CalculationService.cs" />
+    <Compile Include="Services\DataDictionaryService.cs" />
     <Compile Include="Services\OutputService.cs" />
     <Compile Include="Helpers\QuotationHelper.cs" />
     <Compile Include="Services\QuotationDbService.cs" />
@@ -168,6 +174,21 @@
     </Compile>
     <Compile Include="Tools\SpecificationEdit.xaml.cs">
       <DependentUpon>SpecificationEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ToolAnalysis.xaml.cs">
+      <DependentUpon>ToolAnalysis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ToolBonding.xaml.cs">
+      <DependentUpon>ToolBonding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ToolMachine.xaml.cs">
+      <DependentUpon>ToolMachine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ToolVHP.xaml.cs">
+      <DependentUpon>ToolVHP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ToolPowder.xaml.cs">
+      <DependentUpon>ToolPowder.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tools\ToolRawMaterial.xaml.cs">
       <DependentUpon>ToolRawMaterial.xaml</DependentUpon>
@@ -212,6 +233,26 @@
     <Page Include="Tools\SpecificationEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\ToolAnalysis.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tools\ToolBonding.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tools\ToolMachine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tools\ToolVHP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tools\ToolPowder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Tools\ToolRawMaterial.xaml">
       <SubType>Designer</SubType>
