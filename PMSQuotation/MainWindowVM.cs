@@ -269,7 +269,7 @@ namespace PMSQuotation
         {
             if (CurrentQuotation != null)
             {
-                var models = db_service.GetQuotationItems(CurrentQuotation.ID);
+                var models = db_service.GetQuotationItems(CurrentQuotation.ID,ShowDeleted);
                 CurrentQuotationItems.Clear();
                 foreach (var item in models)
                 {

@@ -20,17 +20,17 @@
         <DataGrid Grid.Row="1" Style="{StaticResource StyleDataGridNotReadOnly}"
                   Name="DgMain">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Material" Width="100">
+                <DataGridTemplateColumn Header="MaterialGrade" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Material}" 
+                            <TextBlock Text="{Binding MaterialGrade}" 
                                      Style="{StaticResource StyleDGTextBlockLeft}"
                                      TextAlignment="Right" Foreground="Blue"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Material}" 
+                            <TextBox Text="{Binding MaterialGrade}" 
                                      Style="{StaticResource  StyleDGTextBoxStrench}"
                                      TextAlignment="Right"
                                      Background="LightYellow"/>

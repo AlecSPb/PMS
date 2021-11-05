@@ -29,8 +29,10 @@
                         Click="BtnNotepad_Click"/>
                 <Button Name="BtnTargetCutter" Style="{StaticResource StyleButtonCommonNarrow}" Content="TargetCutter"
                         Click="BtnTargetCutter_Click"/>
-                <Button Name="BtnMaterialNeedCalculator" Style="{StaticResource StyleButtonCommonNarrow}" Content="MaterialNeedCalculator"
+                <Button Name="BtnMaterialNeedCalculator" Style="{StaticResource StyleButtonCommonNarrow}" Content="MaterialNeed"
                         Click="BtnMaterialNeedCalculator_Click"/>
+                <Button Name="BtnWeightedDensityCalculator" Style="{StaticResource StyleButtonCommonNarrow}" Content="WeightedDensity"
+                        Click="BtnWeightedDensityCalculator_Click"/>
             </StackPanel>
         </Grid>
         <TextBlock Grid.Row="1" Text="double click blue fonts to change or use tool" 
@@ -68,16 +70,16 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="ItemRemark" Width="500" IsReadOnly="True">
+                <DataGridTemplateColumn Header="ItemUnitPriceDetail" Width="500" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Remark}" 
+                            <TextBlock Text="{Binding ItemUnitPriceDetail}" 
                                      Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding Remark}" 
+                            <TextBox Text="{Binding ItemUnitPriceDetail}" 
                                      Style="{StaticResource StyleDGTextBoxStrench}"
                                      TextAlignment="Left"
                                      Background="LightYellow"/>

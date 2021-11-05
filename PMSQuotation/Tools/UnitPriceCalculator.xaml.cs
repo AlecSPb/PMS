@@ -30,12 +30,12 @@ namespace PMSQuotation.Tools
 
         public void SetEmpty()
         {
-            Items.Add(new UnitPriceModelItem { ItemName = "Raw Material", ItemUnitPrice = 0, Remark = "" });
-            Items.Add(new UnitPriceModelItem { ItemName = "Powder", ItemUnitPrice = 0, Remark = "" });
-            Items.Add(new UnitPriceModelItem { ItemName = "VHP", ItemUnitPrice = 0, Remark = "" });
-            Items.Add(new UnitPriceModelItem { ItemName = "Machine", ItemUnitPrice = 0, Remark = "" });
-            Items.Add(new UnitPriceModelItem { ItemName = "Bonding", ItemUnitPrice = 0, Remark = "" });
-            Items.Add(new UnitPriceModelItem { ItemName = "Analysis", ItemUnitPrice = 0, Remark = "" });
+            Items.Add(new UnitPriceModelItem { ItemName = "Raw Material", ItemUnitPrice = 0, ItemUnitPriceDetail = "" });
+            Items.Add(new UnitPriceModelItem { ItemName = "Powder", ItemUnitPrice = 0, ItemUnitPriceDetail = "" });
+            Items.Add(new UnitPriceModelItem { ItemName = "VHP", ItemUnitPrice = 0, ItemUnitPriceDetail = "" });
+            Items.Add(new UnitPriceModelItem { ItemName = "Machine", ItemUnitPrice = 0, ItemUnitPriceDetail = "" });
+            Items.Add(new UnitPriceModelItem { ItemName = "Bonding", ItemUnitPrice = 0, ItemUnitPriceDetail = "" });
+            Items.Add(new UnitPriceModelItem { ItemName = "Analysis", ItemUnitPrice = 0, ItemUnitPriceDetail = "" });
         }
         public ObservableCollection<UnitPriceModelItem> Items { get; set; }
 
@@ -94,56 +94,56 @@ namespace PMSQuotation.Tools
             {
                 case "Raw Material":
                     var win1 = new ToolRawMaterial();
-                    win1.SetJson(current_item.Remark);
+                    win1.SetJson(current_item.ItemUnitPriceDetail);
                     if (win1.ShowDialog() == true)
                     {
                         current_item.ItemUnitPrice = SumPriceRawMaterial(win1.Items.ToList());
-                        current_item.Remark = win1.GetJson();
+                        current_item.ItemUnitPriceDetail = win1.GetJson();
                     }
                     break;
                 case "Powder":
                     var win2 = new ToolPowder();
-                    win2.SetJson(current_item.Remark);
+                    win2.SetJson(current_item.ItemUnitPriceDetail);
                     if (win2.ShowDialog() == true)
                     {
                         current_item.ItemUnitPrice = SumPricePowder(win2.Items.ToList());
-                        current_item.Remark = win2.GetJson();
+                        current_item.ItemUnitPriceDetail = win2.GetJson();
                     }
                     break;
                 case "VHP":
                     var win3 = new ToolVHP();
-                    win3.SetJson(current_item.Remark);
+                    win3.SetJson(current_item.ItemUnitPriceDetail);
                     if (win3.ShowDialog() == true)
                     {
                         current_item.ItemUnitPrice = SumPriceVHP(win3.Items.ToList());
-                        current_item.Remark = win3.GetJson();
+                        current_item.ItemUnitPriceDetail = win3.GetJson();
                     }
                     break;
                 case "Machine":
                     var win4 = new ToolMachine();
-                    win4.SetJson(current_item.Remark);
+                    win4.SetJson(current_item.ItemUnitPriceDetail);
                     if (win4.ShowDialog() == true)
                     {
                         current_item.ItemUnitPrice = SumPriceMachine(win4.Items.ToList());
-                        current_item.Remark = win4.GetJson();
+                        current_item.ItemUnitPriceDetail = win4.GetJson();
                     }
                     break;
                 case "Bonding":
                     var win5 = new ToolBonding();
-                    win5.SetJson(current_item.Remark);
+                    win5.SetJson(current_item.ItemUnitPriceDetail);
                     if (win5.ShowDialog() == true)
                     {
                         current_item.ItemUnitPrice = SumPriceBonding(win5.Items.ToList());
-                        current_item.Remark = win5.GetJson();
+                        current_item.ItemUnitPriceDetail = win5.GetJson();
                     }
                     break;
                 case "Analysis":
                     var win6 = new ToolAnalysis();
-                    win6.SetJson(current_item.Remark);
+                    win6.SetJson(current_item.ItemUnitPriceDetail);
                     if (win6.ShowDialog() == true)
                     {
                         current_item.ItemUnitPrice = SumPriceAnalysis(win6.Items.ToList());
-                        current_item.Remark = win6.GetJson();
+                        current_item.ItemUnitPriceDetail = win6.GetJson();
                     }
                     break;
                 default:
@@ -224,7 +224,7 @@ namespace PMSQuotation.Tools
             if (!XSHelper.XS.MessageBox.ShowYesNo("are you sure to reset this?"))
                 return;
             current_item.ItemUnitPrice = 0;
-            current_item.Remark = "";
+            current_item.ItemUnitPriceDetail = "";
 
             DgUnitPrice.ItemsSource = null;
             DgUnitPrice.ItemsSource = Items;
@@ -272,6 +272,22 @@ namespace PMSQuotation.Tools
             try
             {
                 System.Diagnostics.Process.Start("notepad.exe");
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void BtnWeightedDensityCalculator_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string wd = XSHelper.XS.File.GetCurrentFolderPath("WDC");
+                var process = new System.Diagnostics.Process();
+                process.StartInfo.FileName = System.IO.Path.Combine(wd, "WeightedDensityCalculator.exe");
+                process.StartInfo.WorkingDirectory = wd;
+                var result = process.Start();
             }
             catch (Exception)
             {

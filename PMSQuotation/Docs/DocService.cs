@@ -103,7 +103,7 @@ namespace PMSQuotation.Docs
                 doc.ReplaceText("[SelfEmail]", contact_self.Email ?? "");
                 doc.ReplaceText("[SelfAddress]", contact_self.Address ?? "");
 
-                var items = db_service.GetQuotationItems(model.ID);
+                var items = db_service.GetQuotationItems(model.ID,false);
 
                 var table = doc.Tables[1];
 
@@ -186,7 +186,7 @@ namespace PMSQuotation.Docs
                 doc.ReplaceText("[SelfEmail]", contact_self.Email ?? "");
                 doc.ReplaceText("[SelfAddress]", contact_self.Address ?? "");
 
-                var items = db_service.GetQuotationItems(model.ID);
+                var items = db_service.GetQuotationItems(model.ID,false);
 
                 var table = doc.Tables[1];
 

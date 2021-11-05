@@ -125,7 +125,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid Style="{StaticResource StyleDataGridCommon}" Grid.Row="2" ItemsSource="{Binding CurrentQuotationItems}"
-                  FrozenColumnCount="1">
+                  FrozenColumnCount="1" Name="DgItems" LoadingRow="DgItems_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -189,8 +189,10 @@
                         Click="BtnNotepad_Click"/>
                 <Button Name="BtnTargetCutter" Style="{StaticResource StyleButtonCommonNarrow}" Content="TargetCutter"
                         Click="BtnTargetCutter_Click"/>
-                <Button Name="BtnMaterialNeedCalculator" Style="{StaticResource StyleButtonCommonNarrow}" Content="MaterialNeedCalculator"
+                <Button Name="BtnMaterialNeedCalculator" Style="{StaticResource StyleButtonCommonNarrow}" Content="MaterialNeed"
                         Click="BtnMaterialNeedCalculator_Click"/>
+                <Button Name="BtnWeightedDensityCalculator" Style="{StaticResource StyleButtonCommonNarrow}" Content="WeightedDensity"
+                        Click="BtnWeightedDensityCalculator_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

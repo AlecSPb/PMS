@@ -150,13 +150,22 @@ namespace PMSQuotation.Services
 
 
 
-        public List<QuotationItem> GetQuotationItems(int quotationId)
+        public List<QuotationItem> GetQuotationItems(int quotationId, bool showDeleted)
         {
 
             List<QuotationItem> models = new List<QuotationItem>();
             using (IDbConnection conn = new SQLiteConnection(conn_str))
             {
-                string sql = "select * from quotationitems where quotationid=@quotationid order by createtime desc";
+                string sql = "";
+                if (showDeleted)
+                {
+                    sql = "select * from quotationitems where quotationid=@quotationid order by createtime desc";
+                }
+                else
+                {
+                    sql = "select * from quotationitems where quotationid=@quotationid and state!='Deleted' order by createtime desc";
+                }
+
                 var parameters = new
                 {
                     quotationid = quotationId
@@ -279,7 +288,7 @@ namespace PMSQuotation.Services
                     LastUpdateTime = model.LastUpdateTime,
                     State = model.State
                 };
-                conn.Execute(sql,parameters);
+                conn.Execute(sql, parameters);
             }
         }
 
@@ -296,9 +305,9 @@ namespace PMSQuotation.Services
                     Description = model.Description,
                     LastUpdateTime = model.LastUpdateTime,
                     State = model.State,
-                    ID=model.ID
+                    ID = model.ID
                 };
-                conn.Execute(sql,parameters);
+                conn.Execute(sql, parameters);
             }
         }
 

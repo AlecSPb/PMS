@@ -35,7 +35,7 @@ namespace PMSQuotation.Tools
             var dicts = dds_service.GetKeyValue("powder_price_rule");
             foreach (var item in dicts)
             {
-                Items.Add(new CostItemPowder { Material = item.Key, UnitPrice = item.Value, Weight = 0 });
+                Items.Add(new CostItemPowder { MaterialGrade = item.Key, UnitPrice = item.Value, Weight = 0 });
             }
 
         }
@@ -48,7 +48,7 @@ namespace PMSQuotation.Tools
 
         public string GetJson()
         {
-            var items = Items.Where(i => i.Material != "");
+            var items = Items.Where(i => i.MaterialGrade != "");
             string json = JsonConvert.SerializeObject(items);
             return json;
         }

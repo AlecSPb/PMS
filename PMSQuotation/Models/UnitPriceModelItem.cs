@@ -11,6 +11,6 @@ namespace PMSQuotation.Models
         public string ItemName { get; set; }
         public double ItemUnitPrice { get; set; }
     
-        public string Remark { get; set; }
+        public string ItemUnitPriceDetail { get; set; }
     }
 }

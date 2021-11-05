@@ -48,7 +48,21 @@ namespace PMSQuotation
                 }
             }
         }
-
+        private void DgItems_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            QuotationItem model = (QuotationItem)e.Row.DataContext;
+            if (model != null)
+            {
+                switch (model.State)
+                {
+                    case "Deleted":
+                        e.Row.Background = Brushes.Gray;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
         private void BtnCalculator_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -97,5 +111,23 @@ namespace PMSQuotation
 
             }
         }
+
+        private void BtnWeightedDensityCalculator_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string wd = XSHelper.XS.File.GetCurrentFolderPath("WDC");
+                var process = new System.Diagnostics.Process();
+                process.StartInfo.FileName = System.IO.Path.Combine(wd, "WeightedDensityCalculator.exe");
+                process.StartInfo.WorkingDirectory = wd;
+                var result=process.Start();
+            }
+            catch (Exception ex)
+            {
+                XSHelper.XS.MessageBox.ShowError(ex.Message);
+            }
+        }
+
+
     }
 }

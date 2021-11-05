@@ -8,7 +8,7 @@ namespace PMSQuotation.Models
 {
     public class CostItemPowder
     {
-        public string Material { get; set; }
+        public string MaterialGrade { get; set; }
         public double UnitPrice { get; set; }
         public double Weight { get; set; }
     }

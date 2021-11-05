@@ -26,7 +26,7 @@ namespace PMSQuotation.Services
             {
                 result.ExtraFee = model.PackageFee + model.ShippingFee + model.CustomFee;
 
-                var quotation_items = db_service.GetQuotationItems(model.ID);
+                var quotation_items = db_service.GetQuotationItems(model.ID,false);
                 if (quotation_items.Count != 0)
                 {
                     foreach (var item in quotation_items)
