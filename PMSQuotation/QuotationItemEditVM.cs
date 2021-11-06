@@ -78,7 +78,6 @@ namespace PMSQuotation
             if (CurrentQuotationItem == null) return;
             try
             {
-
                 CurrentQuotationItem.TotalPrice = calc_service.GetQuotationItemTotalPrice(CurrentQuotationItem);
 
                 if (vMState == VMState.New)
@@ -90,6 +89,19 @@ namespace PMSQuotation
                 {
                     db_service.UpdateItem(CurrentQuotationItem);
                     XS.MessageBox.ShowInfo("Edit Saved");
+                }
+
+                //update quotation info
+                var quotation_model = db_service.GetQuotationByID(CurrentQuotationItem.QuotationID);
+                if (quotation_model != null)
+                {
+                    if (XSHelper.XS.MessageBox.ShowYesNo("Do you want to update quotation's tax and totalcost calculation?", "Ask"))
+                    {
+                        var calc_result = calc_service.Calculate(quotation_model);
+                        quotation_model.TaxFee = calc_result.TaxFee;
+                        quotation_model.TotalCost = calc_result.TargetFee + calc_result.ExtraFee + calc_result.TaxFee;
+                        db_service.Update(quotation_model);
+                    }
                 }
 
                 Messenger.Default.Send(new NotificationMessage("CloseItemEditWindow"), "MSG");

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="SpecificationEdit" Height="450" Width="800"
         WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
-    <Grid>
+    <Grid  Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
@@ -28,20 +28,22 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Dimension" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBox Name="TxtDimension" Grid.Row="0" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
             <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
-                <Button Content="Default" Name="BtnDimension" Style="{StaticResource StyleButtonCommon}"
-                        Click="BtnDimension_Click"/>
+                <Button Content="Circle" Name="BtnDimensionCircle" Style="{StaticResource StyleButtonCommonNarrow}"
+                        Click="BtnDimensionCircle_Click"/>
+                <Button Content="Rectangle" Name="BtnDimensionRect" Style="{StaticResource StyleButtonCommonNarrow}"
+                        Click="BtnDimensionRect_Click"/>
             </StackPanel>
 
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Purity" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBox Name="TxtPurity" Grid.Row="1" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
             <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
-                <Button Content="Default" Name="BtnPurity" Style="{StaticResource StyleButtonCommon}"
+                <Button Content="4N5" Name="BtnPurity" Style="{StaticResource StyleButtonCommon}"
                         Click="BtnPurity_Click"/>
             </StackPanel>
             

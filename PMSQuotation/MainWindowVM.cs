@@ -45,7 +45,7 @@ namespace PMSQuotation
             ItemEdit = new RelayCommand<QuotationItem>(ActionItemEdit);
             ItemDelete = new RelayCommand<QuotationItem>(ActionItemDelete);
             ItemClone = new RelayCommand<QuotationItem>(ActionItemClone);
-
+            ShowUnitPriceDetail = new RelayCommand<QuotationItem>(ActionShowUnitPriceDetail);
 
             DBFolder = new RelayCommand(ActionDBFolder);
             DataDictionary = new RelayCommand(ActionDataDictionary);
@@ -55,6 +55,16 @@ namespace PMSQuotation
             LoadQuotations();
 
             Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
+        }
+
+        private void ActionShowUnitPriceDetail(QuotationItem obj)
+        {
+            if (obj != null && !string.IsNullOrEmpty(obj.UnitPriceDetail))
+            {
+                var win = new Tools.UnitPriceCalculatorReadOnly();
+                win.SetJson(obj.UnitPriceDetail);
+                win.ShowDialog();
+            }
         }
 
         private CalculationService calc_service;
@@ -269,7 +279,7 @@ namespace PMSQuotation
         {
             if (CurrentQuotation != null)
             {
-                var models = db_service.GetQuotationItems(CurrentQuotation.ID,ShowDeleted);
+                var models = db_service.GetQuotationItems(CurrentQuotation.ID, ShowDeleted);
                 CurrentQuotationItems.Clear();
                 foreach (var item in models)
                 {
@@ -330,6 +340,7 @@ namespace PMSQuotation
         public RelayCommand<QuotationItem> ItemEdit { get; set; }
         public RelayCommand<QuotationItem> ItemDelete { get; set; }
         public RelayCommand<QuotationItem> ItemClone { get; set; }
+        public RelayCommand<QuotationItem> ShowUnitPriceDetail { get; set; }
 
         public RelayCommand<Quotation> SelectionChanged { get; set; }
 

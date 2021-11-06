@@ -49,6 +49,8 @@ namespace PMSQuotation.Models
         public string ShippingRemark { get; set; }
         public double CustomFee { get; set; }
         public string CustomRemark { get; set; }
+
+        public bool IsAutoTax { get; set; }
         public double TaxFee { get; set; }
         public string TaxRemark { get; set; }
 

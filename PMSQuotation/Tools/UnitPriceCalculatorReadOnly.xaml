@@ -1,0 +1,53 @@
+﻿<Window x:Class="PMSQuotation.Tools.UnitPriceCalculatorReadOnly"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSQuotation.Tools"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
+        Title="UnitPriceCalculator ReadOnly" Height="600" Width="1000">
+    <Grid Background="LightYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="0" Name="DgUnitPrice" Style="{StaticResource StyleDataGridCommon}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ItemName" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Binding="{Binding ItemName}" 
+                                    IsReadOnly="True"/>
+                <DataGridTemplateColumn Header="ItemUnitPrice" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ItemUnitPrice}" 
+                                     Style="{StaticResource StyleDGTextBlockRight}" Foreground="Blue"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding ItemUnitPrice}" 
+                                     Style="{StaticResource StyleDGTextBoxStrench}"
+                                     TextAlignment="Right"
+                                     Background="LightYellow"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="ItemUnitPriceDetail" Width="500" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ItemUnitPriceDetail}" 
+                                     Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding ItemUnitPriceDetail}" 
+                                     Style="{StaticResource StyleDGTextBoxStrench}"
+                                     TextAlignment="Left"
+                                     Background="LightYellow"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

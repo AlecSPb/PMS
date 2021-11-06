@@ -70,9 +70,10 @@
                          Style="{StaticResource StyleTextBoxCommon}"
                          Foreground="Blue"/>
                 <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
-                    <Button Content="Tools" Style="{StaticResource StyleButtonCommon}" Name="BtnUnitPriceTool"
+                    <Button Content="Unit Price Tools" Style="{StaticResource StyleButtonCommon}" Name="BtnUnitPriceTool"
+                            FontWeight="Bold" Foreground="Blue"
                             Click="BtnUnitPriceTool_Click"/>
-                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBlock Text="you can directly input the unit price per target or use tools" Style="{StaticResource StyleTextBlockCommon}"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="UnitPriceDetail" Style="{StaticResource StyleTextBlockCommon}"/>

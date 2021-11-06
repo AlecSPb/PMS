@@ -410,6 +410,7 @@
         <Setter Property="CanUserSortColumns" Value="False"/>
         <Setter Property="CanUserReorderColumns" Value="False"/>
         <Setter Property="VirtualizingPanel.IsVirtualizing" Value="False"/>
+        <Setter Property="Background" Value="LightYellow"/>
         <!--关闭虚拟化，防止窗口缩小时候，row背景色显示错误-->
     </Style>
     <Style x:Key="StyleDataGridNotReadOnly" TargetType="DataGrid" BasedOn="{StaticResource StyleDataGridCommon}">

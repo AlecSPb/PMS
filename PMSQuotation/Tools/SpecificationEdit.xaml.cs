@@ -50,11 +50,14 @@ namespace PMSQuotation.Tools
             this.Close();
         }
 
-        private void BtnDimension_Click(object sender, RoutedEventArgs e)
+        private void BtnDimensionCircle_Click(object sender, RoutedEventArgs e)
         {
             TxtDimension.Text = "50mm OD x 4mm";
         }
-
+        private void BtnDimensionRect_Click(object sender, RoutedEventArgs e)
+        {
+            TxtDimension.Text = "80mm x 50mm x 4mm";
+        }
         private void BtnPurity_Click(object sender, RoutedEventArgs e)
         {
             TxtPurity.Text = "99.995%";
@@ -79,5 +82,7 @@ namespace PMSQuotation.Tools
         {
             TxtBonding.Text = "No";
         }
+
+
     }
 }

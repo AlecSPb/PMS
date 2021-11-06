@@ -26,7 +26,7 @@ namespace PMSQuotation.Services
             {
                 result.ExtraFee = model.PackageFee + model.ShippingFee + model.CustomFee;
 
-                var quotation_items = db_service.GetQuotationItems(model.ID,false);
+                var quotation_items = db_service.GetQuotationItems(model.ID, false);
                 if (quotation_items.Count != 0)
                 {
                     foreach (var item in quotation_items)
@@ -35,12 +35,16 @@ namespace PMSQuotation.Services
                     }
                 }
 
-                if (model.TaxFee != 0)
+                if (model.IsAutoTax)
                 {
                     double vat_rate = 0;
                     double.TryParse(db_service.GetDataDictByKey("vat_rate").DataValue, out vat_rate);
 
                     result.TaxFee = (result.TargetFee + result.ExtraFee) * vat_rate;
+                }
+                else
+                {
+                    result.TaxFee = model.TaxFee;
                 }
             }
 

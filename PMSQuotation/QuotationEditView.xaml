@@ -34,6 +34,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -138,27 +139,31 @@
                 <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding CustomRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="13" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="14" Grid.Column="0" Text="TaxFee" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtTaxFee" Grid.Row="14" Grid.Column="1" Text="{Binding TaxFee}" Style="{StaticResource StyleTextBoxCommon}"
+                <CheckBox Grid.Row="14" Grid.Column="1" Content="IsAutoTax" 
+                          Style="{StaticResource StyleCheckBoxCommon}"
+                          IsChecked="{Binding IsAutoTax,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Grid.Row="14" Grid.Column="2" Text="check mean auto,uncheck means manual" 
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                
+                <TextBlock Grid.Row="15" Grid.Column="0" Text="TaxFee" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="TxtTaxFee" Grid.Row="15" Grid.Column="1" Text="{Binding TaxFee}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightCoral"/>
-                <StackPanel Grid.Row="14" Grid.Column="2" Orientation="Horizontal">
-                    <Button Content="VAT" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnVAT"
-                            Click="BtnVAT_Click"/>
+                <StackPanel Grid.Row="15" Grid.Column="2" Orientation="Horizontal">
                     <Button Content="None" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnNone"
                             Click="BtnNone_Click"/>
                     <TextBlock Text="" 
                                Style="{StaticResource StyleTextBlockCommon}"/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="15" Grid.Column="0" Text="TaxRemark" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtTaxRemark" Grid.Row="15" Grid.Column="1" Text="{Binding TaxRemark}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBlock Grid.Row="16" Grid.Column="0" Text="TaxRemark" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="TxtTaxRemark" Grid.Row="16" Grid.Column="1" Text="{Binding TaxRemark}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightCoral"/>
-                <TextBlock Grid.Row="15" Grid.Column="2" Text="0 means no Tax,other numbers will trigger automatically calculation" 
-                           Style="{StaticResource StyleTextBlockCommon}" Background="LightGreen"/>
+                <TextBlock Grid.Row="16" Grid.Column="2" Text="" 
+                           Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="16" Grid.Column="0" Text="TotalCost" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding TotalCost}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                <TextBlock Grid.Row="16" Grid.Column="2" Text="Auto Calculate When Saving" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="17" Grid.Column="0" Text="TotalCost" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding TotalCost}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                <TextBlock Grid.Row="17" Grid.Column="2" Text="Auto Calculate When Saving" Style="{StaticResource StyleTextBlockCommon}"/>
             </Grid>
         </ScrollViewer>
     </Grid>

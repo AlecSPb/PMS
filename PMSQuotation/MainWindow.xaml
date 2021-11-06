@@ -109,6 +109,8 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="CustomRemark" Binding="{Binding CustomRemark}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridCheckBoxColumn Header="IsAutoTax" Binding="{Binding IsAutoTax}"
+                                        ElementStyle="{StaticResource StyleDGCheckBoxCommonReadOnly}"/>
                 <DataGridTextColumn Header="TaxFee" Binding="{Binding TaxFee,StringFormat={}{0:F2}}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="TaxRemark" Binding="{Binding TaxRemark}" 
@@ -167,9 +169,20 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="Note" Binding="{Binding Note}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="UnitPriceDetail" Binding="{Binding UnitPriceDetail}" 
+                <!--<DataGridTextColumn Header="UnitPriceDetail" Binding="{Binding UnitPriceDetail}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Width="500"/>
+                                    Width="500"/>-->
+                <DataGridTemplateColumn Header="UnitPriceDetail" Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="{Binding UnitPriceDetail}" 
+                                        Style="{StaticResource StyleDGButton}" HorizontalAlignment="Stretch" 
+                                        Command="{Binding DataContext.ShowUnitPriceDetail, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Grid Grid.Row="3">

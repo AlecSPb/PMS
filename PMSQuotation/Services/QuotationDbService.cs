@@ -20,7 +20,8 @@ namespace PMSQuotation.Services
         public QuotationDbService()
         {
             //string dbPath = Path.Combine(XSHelper.XS.File.GetCurrentFolderPath("DB"), "pmsquotation.db");
-            string dbPath = @"D:\Fine\source\repos\PMS\PMSQuotation\DB\pmsquotation.db";
+            //string dbPath = @"D:\Fine\source\repos\PMS\PMSQuotation\DB\pmsquotation.db";
+            string dbPath = @"D:\source\repos\PMS\PMSQuotation\DB\pmsquotation.db";
             //发布后修改
             conn_str = $"Data Source={dbPath};Version=3";
         }
@@ -62,6 +63,22 @@ namespace PMSQuotation.Services
             return models;
         }
 
+        public Quotation GetQuotationByID(int id)
+        {
+            using (IDbConnection conn = new SQLiteConnection(conn_str))
+            {
+                string sql = "select * from quotations where id=@id order by createtime desc";
+
+
+                var parameters = new
+                {
+                    id = id
+                };
+                var result = conn.Query<Quotation>(sql, parameters).FirstOrDefault();
+                return result;
+            }
+        }
+
         /// <summary>
         /// 添加报价单项目
         /// </summary>
@@ -72,9 +89,9 @@ namespace PMSQuotation.Services
             {
                 string sql = "insert into quotations(CurrencyType,TotalCost,CreateTime,LastUpdateTime,ExpirationTime,Creator,Lot," +
                     "Remark,KeyWord,ContactInfo_Customer,ContactInfo_Self,PackageFee,PackageRemark,ShippingFee,ShippingRemark," +
-                    "CustomFee,CustomRemark,TaxFee,TaxRemark,State) values (@CurrencyType,@TotalCost,@CreateTime,@LastUpdateTime,@ExpirationTime,@Creator,@Lot," +
+                    "CustomFee,CustomRemark,IsAutoTax,TaxFee,TaxRemark,State) values (@CurrencyType,@TotalCost,@CreateTime,@LastUpdateTime,@ExpirationTime,@Creator,@Lot," +
                     "@Remark,@KeyWord,@ContactInfo_Customer,@ContactInfo_Self,@PackageFee,@PackageRemark,@ShippingFee,@ShippingRemark," +
-                    "@CustomFee,@CustomRemark,@TaxFee,@TaxRemark,@State)";
+                    "@CustomFee,@CustomRemark,@IsAutoTax,@TaxFee,@TaxRemark,@State)";
                 var parameters = new Quotation
                 {
                     CurrencyType = model.CurrencyType,
@@ -94,6 +111,7 @@ namespace PMSQuotation.Services
                     ShippingRemark = model.ShippingRemark,
                     CustomFee = model.CustomFee,
                     CustomRemark = model.CustomRemark,
+                    IsAutoTax = model.IsAutoTax,
                     TaxFee = model.TaxFee,
                     TaxRemark = model.TaxRemark,
                     State = model.State
@@ -115,7 +133,7 @@ namespace PMSQuotation.Services
                     "LastUpdateTime=@LastUpdateTime,ExpirationTime=@ExpirationTime,Creator=@Creator,Lot=@Lot," +
                     "Remark=@Remark,KeyWord=@KeyWord,ContactInfo_Customer=@ContactInfo_Customer,ContactInfo_Self=@ContactInfo_Self," +
                     "PackageFee=@PackageFee,PackageRemark=@PackageRemark,ShippingFee=@ShippingFee,ShippingRemark=@ShippingRemark," +
-                    "CustomFee=@CustomFee,CustomRemark=@CustomRemark,TaxFee=@TaxFee,TaxRemark=@TaxRemark,State=@State" +
+                    "CustomFee=@CustomFee,CustomRemark=@CustomRemark,IsAutoTax=@IsAutoTax,TaxFee=@TaxFee,TaxRemark=@TaxRemark,State=@State" +
                     " where id=@id";
                 var parameters = new Quotation
                 {
@@ -136,6 +154,7 @@ namespace PMSQuotation.Services
                     ShippingRemark = model.ShippingRemark,
                     CustomFee = model.CustomFee,
                     CustomRemark = model.CustomRemark,
+                    IsAutoTax = model.IsAutoTax,
                     TaxFee = model.TaxFee,
                     TaxRemark = model.TaxRemark,
                     State = model.State,
