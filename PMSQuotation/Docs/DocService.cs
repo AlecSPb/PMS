@@ -28,7 +28,8 @@ namespace PMSQuotation.Docs
             sourceFile_zh = Path.Combine(source_folder, "quotation_template_zh.docx");
             tempFile = Path.Combine(source_folder, "temp.docx");
             string target_folder = XS.File.GetDesktopPath();
-            targetFile = Path.Combine(target_folder, $"{model.Lot}.docx");
+            targetFile_en = Path.Combine(target_folder, $"{model.Lot}_en.docx");
+            targetFile_zh = Path.Combine(target_folder, $"{model.Lot}_zh.docx");
 
 
             db_service = new QuotationDbService();
@@ -39,6 +40,8 @@ namespace PMSQuotation.Docs
         private Quotation model;
         private DocOptions options;
 
+        private string targetFile_en;
+        private string targetFile_zh;
         private string targetFile;
         private string sourceFile_en;
         private string sourceFile_zh;
@@ -78,6 +81,7 @@ namespace PMSQuotation.Docs
 
         private void CreateEn()
         {
+            targetFile = targetFile_en;
             File.Copy(sourceFile_en, tempFile, true);
 
             using (var doc = DocX.Load(tempFile))
@@ -161,6 +165,7 @@ namespace PMSQuotation.Docs
 
         private void CreateZh()
         {
+            targetFile = targetFile_zh;
             File.Copy(sourceFile_zh, tempFile, true);
 
             using (var doc = DocX.Load(tempFile))
