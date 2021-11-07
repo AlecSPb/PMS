@@ -146,6 +146,7 @@
     <Compile Include="Models\CostItemMachine.cs" />
     <Compile Include="Models\CostItemPowder.cs" />
     <Compile Include="Models\CostItemRawMaterial.cs" />
+    <Compile Include="Models\QuotationJsonModel.cs" />
     <Compile Include="Models\Specification.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\QuotationItemState.cs" />

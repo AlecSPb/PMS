@@ -25,6 +25,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal">
                 <Button Content="New" Style="{StaticResource StyleButtonCommon}" Command="{Binding New}"/>
+                <!--<Button Content="Json" Style="{StaticResource StyleButtonCommon}" Command="{Binding Json}"/>-->
                 <TextBlock Text="Customer" Style="{StaticResource StyleTextBlockNavigationBar}"/>
                 <TextBox Text="{Binding SearchCustomer}" Style="{StaticResource StyleTextBoxSearch}"/>
                 <TextBlock Text="Keyword" Style="{StaticResource StyleTextBlockNavigationBar}"/>
@@ -82,6 +83,9 @@
                                 <Button Content="Item" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ItemNew, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
+                                <!--<Button Content="Json" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Json, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>-->
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
