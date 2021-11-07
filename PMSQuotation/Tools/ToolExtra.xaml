@@ -1,4 +1,4 @@
-﻿<Window x:Class="PMSQuotation.Tools.ToolMachine"
+﻿<Window x:Class="PMSQuotation.Tools.ToolExtra"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PMSQuotation.Tools"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize"
-        Title="ToolMachine" Height="450" Width="400">
+        Title="ToolVHP" Height="450" Width="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -24,17 +24,17 @@
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridNotReadOnly}"
                   Name="DgMain">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="MachineGrade" Width="100">
+                <DataGridTemplateColumn Header="Item" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding MachineGrade}" 
+                            <TextBlock Text="{Binding Item}" 
                                      Style="{StaticResource StyleDGTextBlockLeft}"
                                      TextAlignment="Right" Foreground="Blue"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
-                            <TextBox Text="{Binding MachineGrade}" 
+                            <TextBox Text="{Binding Item}" 
                                      Style="{StaticResource  StyleDGTextBoxStrench}"
                                      TextAlignment="Right"
                                      Background="LightYellow"/>

@@ -32,7 +32,7 @@ namespace PMSQuotation
 
         private void ActionUSD()
         {
-            if (XSHelper.XS.MessageBox.ShowYesNo("Are you going to change all setting value to USD?"))
+            if (XSHelper.XS.MessageBox.ShowYesNo("Are you going to change all setting value to USD in batch mode?"))
             {
                 string current_currency = dict_servce.GetString("basecurrency");
                 if (current_currency == "USD")
@@ -46,6 +46,7 @@ namespace PMSQuotation
 
                     #region MyRegion
 
+                    ChangeDataDicts("material_price_rule", currency_rate, true);
                     ChangeDataDicts("powder_price_rule", currency_rate, true);
                     ChangeDataDicts("machine_price_rule", currency_rate, true);
                     ChangeDataDicts("vhp_price_rule", currency_rate, true);
@@ -67,7 +68,7 @@ namespace PMSQuotation
 
         private void ActionRMB()
         {
-            if (XSHelper.XS.MessageBox.ShowYesNo("Are you going to change all setting value to RMB?"))
+            if (XSHelper.XS.MessageBox.ShowYesNo("Are you going to change all setting value to RMB in batch mode?"))
             {
                 string current_currency = dict_servce.GetString("basecurrency");
                 if (current_currency == "RMB")
@@ -81,6 +82,7 @@ namespace PMSQuotation
 
                     #region MyRegion
 
+                    ChangeDataDicts("material_price_rule", currency_rate, false);
                     ChangeDataDicts("powder_price_rule", currency_rate, false);
                     ChangeDataDicts("machine_price_rule", currency_rate, false);
                     ChangeDataDicts("vhp_price_rule", currency_rate, false);
@@ -137,7 +139,7 @@ namespace PMSQuotation
                         sb.Append(t_key);
                         sb.Append("=");
                         double new_t_key = 0;
-                        if (to_usd)
+                        if (to_usd && currency_rate != 0)
                         {
                             new_t_key = t_value / currency_rate;
                         }
@@ -160,11 +162,8 @@ namespace PMSQuotation
             DataDicts.Clear();
             foreach (var item in result)
             {
-                if (item.DataKey != "basecurrency")
-                {
-                    DataDicts.Add(item);
-                }
-                else
+                DataDicts.Add(item);
+                if (item.DataKey == "basecurrency")
                 {
                     CalculationCurrency = item.DataValue;
                 }

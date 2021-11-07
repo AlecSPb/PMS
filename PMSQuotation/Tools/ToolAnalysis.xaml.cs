@@ -27,6 +27,8 @@ namespace PMSQuotation.Tools
         {
             InitializeComponent();
             Items = new ObservableCollection<CostItemAnalysis>();
+            TxtCalculationCurrency.Text = $"Current Calculation Currency Is :[{new DataDictionaryService().GetString("basecurrency")}]";
+
         }
 
         public void SetEmpty()

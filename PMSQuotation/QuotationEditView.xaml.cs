@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using GalaSoft.MvvmLight.Messaging;
+using PMSQuotation.Models;
 using PMSQuotation.Services;
+using PMSQuotation.Tools;
 
 namespace PMSQuotation
 {
@@ -78,6 +80,67 @@ namespace PMSQuotation
         {
             Helpers.PMSMethods.SetTextBox(TxtTaxFee, "0");
             Helpers.PMSMethods.SetTextBox(TxtTaxRemark, "No Tax");
+        }
+
+        private void BtnToolPackageFee_Click(object sender, RoutedEventArgs e)
+        {
+            var win1 = new ToolExtra("Tool Package Fee");
+            win1.SetJson(TxtPackageRemark.Text, "package_fee");
+            if (win1.ShowDialog() == true)
+            {
+                Helpers.PMSMethods.SetTextBox(TxtPackageFee, SumExtraFee(win1.Items.ToList()).ToString("F2"));
+                Helpers.PMSMethods.SetTextBox(TxtPackageRemark, win1.GetJson());
+            }
+        }
+
+        private void BtnToolCustomFee_Click(object sender, RoutedEventArgs e)
+        {
+            var win1 = new ToolExtra("Tool Custom Fee");
+            win1.SetJson(TxtCustomRemark.Text, "custom_fee");
+            if (win1.ShowDialog() == true)
+            {
+                Helpers.PMSMethods.SetTextBox(TxtCustomFee, SumExtraFee(win1.Items.ToList()).ToString("F2"));
+                Helpers.PMSMethods.SetTextBox(TxtCustomRemark, win1.GetJson());
+            }
+        }
+
+        private void BtnToolShippingFee_Click(object sender, RoutedEventArgs e)
+        {
+            var win1 = new ToolExtra("Tool Shipping Fee");
+            win1.SetJson(TxtShippingRemark.Text, "shipping_fee");
+            if (win1.ShowDialog() == true)
+            {
+                Helpers.PMSMethods.SetTextBox(TxtShippingFee, SumExtraFee(win1.Items.ToList()).ToString("F2"));
+                Helpers.PMSMethods.SetTextBox(TxtShippingRemark, win1.GetJson());
+            }
+        }
+
+        private double SumExtraFee(List<CostItemExtra> items)
+        {
+            double sum = 0;
+            foreach (var item in items)
+            {
+                sum += item.UnitPrice * item.Quantity;
+            }
+            return sum;
+        }
+
+        private void BtnToolCustomFeeReset_Click(object sender, RoutedEventArgs e)
+        {
+            Helpers.PMSMethods.SetTextBox(TxtCustomFee, "0");
+            Helpers.PMSMethods.SetTextBox(TxtCustomRemark, "");
+        }
+
+        private void BtnToolShippingFeeReset_Click(object sender, RoutedEventArgs e)
+        {
+            Helpers.PMSMethods.SetTextBox(TxtShippingFee, "0");
+            Helpers.PMSMethods.SetTextBox(TxtShippingRemark,"");
+        }
+
+        private void BtnToolPackageFeeReset_Click(object sender, RoutedEventArgs e)
+        {
+            Helpers.PMSMethods.SetTextBox(TxtPackageFee, "0");
+            Helpers.PMSMethods.SetTextBox(TxtPackageRemark, "");
         }
     }
 }

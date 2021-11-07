@@ -113,28 +113,49 @@
                 </StackPanel>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="PackageFee" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding PackageFee}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="8" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="TxtPackageFee" Grid.Row="8" Grid.Column="1" Text="{Binding PackageFee}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="8" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="Tool" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnToolPackageFee"
+                            Click="BtnToolPackageFee_Click"/>
+                    <Button Content="Reset" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnToolPackageFeeReset"
+                            Click="BtnToolPackageFeeReset_Click"/>
+                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                </StackPanel>
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="PackageRemark" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding PackageRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Name="TxtPackageRemark" Grid.Row="9" Grid.Column="1" Text="{Binding PackageRemark}" 
+                         Style="{StaticResource StyleTextBoxReadOnly}"/>
                 <TextBlock Grid.Row="9" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="ShippingFee" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding ShippingFee}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="10" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
-
+                <TextBox Name="TxtShippingFee" Grid.Row="10" Grid.Column="1" Text="{Binding ShippingFee}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="10" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="Tool" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnToolShippingFee"
+                            Click="BtnToolShippingFee_Click"/>
+                    <Button Content="Reset" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnToolShippingFeeReset"
+                            Click="BtnToolShippingFeeReset_Click"/>
+                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                </StackPanel>
+                
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="ShippingRemark" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding ShippingRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Name="TxtShippingRemark" Grid.Row="11" Grid.Column="1" Text="{Binding ShippingRemark}" 
+                         Style="{StaticResource StyleTextBoxReadOnly}"/>
                 <TextBlock Grid.Row="11" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="CustomFee" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding CustomFee}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="12" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="TxtCustomFee"  Grid.Row="12" Grid.Column="1" Text="{Binding CustomFee}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="12" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="Tool" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnToolCustomFee"
+                            Click="BtnToolCustomFee_Click"/>
+                    <Button Content="Reset" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnToolCustomFeeReset"
+                            Click="BtnToolCustomFeeReset_Click"/>
+                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                </StackPanel>
 
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="CustomRemark" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding CustomRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox  Name="TxtCustomRemark" Grid.Row="13" Grid.Column="1" Text="{Binding CustomRemark}" 
+                          Style="{StaticResource StyleTextBoxReadOnly}"/>
                 <TextBlock Grid.Row="13" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <CheckBox Grid.Row="14" Grid.Column="1" Content="IsAutoTax" 

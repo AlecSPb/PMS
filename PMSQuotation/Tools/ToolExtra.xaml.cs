@@ -21,26 +21,27 @@ namespace PMSQuotation.Tools
     /// <summary>
     /// ToolRawMaterial.xaml 的交互逻辑
     /// </summary>
-    public partial class ToolVHP : Window
+    public partial class ToolExtra : Window
     {
-        public ToolVHP()
+        public ToolExtra(string title)
         {
             InitializeComponent();
-            Items = new ObservableCollection<CostItemVHPCost>();
+            this.Title = title;
+            Items = new ObservableCollection<CostItemExtra>();
             TxtCalculationCurrency.Text = $"Current Calculation Currency Is :[{new DataDictionaryService().GetString("basecurrency")}]";
         }
 
-        public void SetEmpty()
+        public void SetEmpty(string key)
         {
             var dds_service = new DataDictionaryService();
-            var dicts = dds_service.GetKeyValue("vhp_price_rule");
+            var dicts = dds_service.GetKeyValue(key);
             foreach (var item in dicts)
             {
-                Items.Add(new CostItemVHPCost { Machine = item.Key, UnitPrice = item.Value, MachineTime = 0 });
+                Items.Add(new CostItemExtra { Item = item.Key, UnitPrice = item.Value, Quantity = 0 });
             }
 
         }
-        public ObservableCollection<CostItemVHPCost> Items { get; set; }
+        public ObservableCollection<CostItemExtra> Items { get; set; }
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
@@ -49,25 +50,25 @@ namespace PMSQuotation.Tools
 
         public string GetJson()
         {
-            var items = Items.Where(i => i.Machine != "");
+            var items = Items.Where(i => i.Item != "");
             string json = JsonConvert.SerializeObject(items);
             return json;
         }
 
-        public void SetJson(string json_str)
+        public void SetJson(string json_str, string key)
         {
             if (string.IsNullOrEmpty(json_str))
             {
                 XSHelper.XS.MessageBox.ShowInfo("Empty Template Will Be Showed");
 
-                SetEmpty();
+                SetEmpty(key);
                 DgMain.ItemsSource = Items;
                 return;
             }
 
             try
             {
-                var models = JsonConvert.DeserializeObject<List<CostItemVHPCost>>(json_str);
+                var models = JsonConvert.DeserializeObject<List<CostItemExtra>>(json_str);
                 Items.Clear();
                 foreach (var item in models)
                 {

@@ -140,6 +140,7 @@
     </Compile>
     <Compile Include="Helpers\PMSMethods.cs" />
     <Compile Include="MainWindowVM.cs" />
+    <Compile Include="Models\CostItemExtra.cs" />
     <Compile Include="Models\CostItemAnalysis.cs" />
     <Compile Include="Models\CostItemBonding.cs" />
     <Compile Include="Models\CostItemMachine.cs" />
@@ -187,6 +188,9 @@
     </Compile>
     <Compile Include="Tools\ToolMachine.xaml.cs">
       <DependentUpon>ToolMachine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\ToolExtra.xaml.cs">
+      <DependentUpon>ToolExtra.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tools\ToolVHP.xaml.cs">
       <DependentUpon>ToolVHP.xaml</DependentUpon>
@@ -254,6 +258,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Tools\ToolMachine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tools\ToolExtra.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

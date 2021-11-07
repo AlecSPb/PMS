@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Newtonsoft.Json;
 using PMSQuotation.Models;
+using PMSQuotation.Services;
 
 namespace PMSQuotation.Tools
 {
@@ -26,12 +27,18 @@ namespace PMSQuotation.Tools
         {
             InitializeComponent();
             Items = new ObservableCollection<CostItemRawMaterial>();
+            TxtCalculationCurrency.Text = $"Current Calculation Currency Is :[{new DataDictionaryService().GetString("basecurrency")}]";
+
         }
         public void SetEmpty()
         {
-            Items.Add(new CostItemRawMaterial { Material = "Main", UnitPrice = 0, Weight = 0 });
-            Items.Add(new CostItemRawMaterial { Material = "Additive1", UnitPrice = 0, Weight = 0 });
-            Items.Add(new CostItemRawMaterial { Material = "Additive2", UnitPrice = 0, Weight = 0 });
+            var dds_service = new DataDictionaryService();
+            var dicts = dds_service.GetKeyValue("material_price_rule");
+
+            foreach (var item in dicts)
+            {
+                Items.Add(new CostItemRawMaterial { Material = item.Key, UnitPrice = item.Value, Weight = 0 });
+            }
         }
         public ObservableCollection<CostItemRawMaterial> Items { get; set; }
         private void BtnSave_Click(object sender, RoutedEventArgs e)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSQuotation"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
-        Title="DataDictionaryView" Height="800" Width="1200">
+        Title="DataDictionaryView" Height="800" Width="1400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -42,7 +42,7 @@
                                     IsReadOnly="True"/>
                 <!--<DataGridTextColumn Header="DataValue" Binding="{Binding DataValue}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     Foreground="Blue" MaxWidth="600"/>-->
-                <DataGridTemplateColumn Header="DataValue">
+                <DataGridTemplateColumn Header="DataValue" MaxWidth="600">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding DataValue}" Style="{StaticResource StyleDGTextBlockCommon}"
