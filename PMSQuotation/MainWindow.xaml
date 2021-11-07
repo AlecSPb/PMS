@@ -71,6 +71,9 @@
                                 <Button Content="D Clone" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.DeepClone, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
+                                <Button Content="Json" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ToJson, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>
                                 <Button Content="Del" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Delete, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
@@ -81,9 +84,6 @@
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
                                 <Button Content="Item" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ItemNew, 
-                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
-                                            CommandParameter="{Binding}"/>
-                                <Button Content="Json" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ToJson, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
                             </StackPanel>

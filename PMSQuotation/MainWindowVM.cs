@@ -65,7 +65,78 @@ namespace PMSQuotation
 
         private void ActionChangeCurrency(Quotation obj)
         {
-            throw new NotImplementedException();
+            if (obj == null) return;
+            if (!XS.MessageBox.ShowYesNo("are you going to change the currency type?")) return;
+
+            try
+            {
+                double currency_rate = dict_service.GetDouble("rmb_usd_exchange_rate");
+                if (currency_rate <= 0) return;
+
+                if (obj.CurrencyType == "RMB")
+                {
+                    if (!XS.MessageBox.ShowYesNo("will change to USD,go on?")) return;
+
+                    obj.CurrencyType = "USD";
+                    #region change_to_usd
+                    obj.TotalCost = obj.TotalCost / currency_rate;
+                    obj.PackageFee = obj.PackageFee / currency_rate;
+                    obj.ShippingFee = obj.ShippingFee / currency_rate;
+                    obj.CustomFee = obj.CustomFee / currency_rate;
+                    obj.TaxFee = obj.TaxFee / currency_rate;
+
+                    obj.LastUpdateTime = DateTime.Now;
+                    db_service.Update(obj);
+
+                    var items = db_service.GetQuotationItems(obj.ID, false);
+                    foreach (var item in items)
+                    {
+                        item.UnitPrice = item.UnitPrice / currency_rate;
+                        item.TotalPrice = item.TotalPrice / currency_rate;
+
+                        item.Note += $"currency is changed to {obj.CurrencyType} at {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")};";
+
+                        db_service.UpdateItem(item);
+                    }
+                    #endregion
+                }
+                else
+                {
+                    if (!XS.MessageBox.ShowYesNo("will change to RMB,go on?")) return;
+
+                    obj.CurrencyType = "RMB";
+                    #region change_to_usd
+                    obj.TotalCost = obj.TotalCost * currency_rate;
+                    obj.PackageFee = obj.PackageFee * currency_rate;
+                    obj.ShippingFee = obj.ShippingFee * currency_rate;
+                    obj.CustomFee = obj.CustomFee * currency_rate;
+                    obj.TaxFee = obj.TaxFee * currency_rate;
+
+                    obj.LastUpdateTime = DateTime.Now;
+                    db_service.Update(obj);
+
+                    var items = db_service.GetQuotationItems(obj.ID, false);
+                    foreach (var item in items)
+                    {
+                        item.UnitPrice = item.UnitPrice * currency_rate;
+                        item.TotalPrice = item.TotalPrice * currency_rate;
+
+                        item.Note += $"currency is changed to {obj.CurrencyType} at {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")};";
+
+                        db_service.UpdateItem(item);
+                    }
+                    #endregion
+                }
+
+                LoadQuotations();
+
+                XS.MessageBox.ShowInfo("change currency type success");
+            }
+            catch (Exception ex)
+            {
+                XS.MessageBox.ShowError(ex.Message);
+            }
+
         }
 
         private void ActionFromJson()
@@ -103,6 +174,7 @@ namespace PMSQuotation
                             }
                             #endregion
                             XS.MessageBox.ShowInfo("import json success");
+                            LoadQuotations();
                         }
                     }
                 }
@@ -132,6 +204,7 @@ namespace PMSQuotation
                     XS.File.SaveText(dialog_result.SelectPath, s_json);
                 }
                 XS.MessageBox.ShowInfo("export json success");
+                LoadQuotations();
             }
             catch (Exception ex)
             {
