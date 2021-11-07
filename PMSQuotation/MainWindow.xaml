@@ -67,9 +67,15 @@
                                 <Button Content="Clone" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Clone, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
+                                <!--<Button Content="D Clone" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.DeepClone, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>-->
                                 <Button Content="Del" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Delete, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
+                                <!--<Button Content="CUR" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Currency, 
+                                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                                            CommandParameter="{Binding}"/>-->
                                 <Button Content="Doc" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Doc, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
