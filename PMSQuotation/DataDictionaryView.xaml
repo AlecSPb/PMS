@@ -11,19 +11,51 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
-        <StackPanel Orientation="Horizontal" Background="{StaticResource BGNavigationBar}">
-            <Button Content="Save" Style="{StaticResource StyleButtonCommon}" Command="{Binding Save}"/>
-            <TextBlock Text="Double Click Blue Fonts to Change" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-        </StackPanel>
+        <Grid  Background="{StaticResource BGNavigationBar}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Save" Style="{StaticResource StyleButtonCommon}" Command="{Binding Save}"/>
+                <TextBlock Text="Double Click Blue Fonts to Change" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="2">
+                <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="Calculation Currency"
+                           Foreground="white">
+                    <TextBlock.ToolTip>
+                        <TextBlock Text="the data dictionary will used this currency"/>
+                    </TextBlock.ToolTip>
+                </TextBlock>
+                <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="{Binding CalculationCurrency}"
+                           Foreground="white" Background="Red"/>
+                <Button Content="To RMB" Style="{StaticResource StyleButtonCommon}" Command="{Binding ToRMB}"/>
+                <Button Content="To USD" Style="{StaticResource StyleButtonCommon}" Command="{Binding ToUSD}"/>
+            </StackPanel>
+        </Grid>
 
         <DataGrid Grid.Row="1" Style="{StaticResource StyleDataGridNotReadOnly}"
                   ItemsSource="{Binding DataDicts}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="DataKey" Binding="{Binding DataKey}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     IsReadOnly="True"/>
-                <DataGridTextColumn Header="DataValue" Binding="{Binding DataValue}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Foreground="Blue" MaxWidth="600"/>
+                <!--<DataGridTextColumn Header="DataValue" Binding="{Binding DataValue}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Foreground="Blue" MaxWidth="600"/>-->
+                <DataGridTemplateColumn Header="DataValue">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding DataValue}" Style="{StaticResource StyleDGTextBlockCommon}"
+                                       Foreground="Blue"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding DataValue}" Style="{StaticResource StyleDGTextBoxStrench}"
+                                     Foreground="Yellow"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Description" Binding="{Binding Description}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     IsReadOnly="True"/>
             </DataGrid.Columns>

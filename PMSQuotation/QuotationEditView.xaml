@@ -65,10 +65,8 @@
                 </StackPanel>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="CurrencyType" Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
-                          ItemsSource="{Binding DataContext.CurrencyTypes,
-                          RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}}"
-                          SelectedItem="{Binding CurrencyType,UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBlockCommon}"
+                           Text="{Binding CurrencyType}" Background="Red" Foreground="White"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="ExpirationTime" Style="{StaticResource StyleTextBlockCommon}"/>

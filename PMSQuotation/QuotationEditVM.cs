@@ -18,10 +18,7 @@ namespace PMSQuotation
         {
             db_service = new QuotationDbService();
             calc_service = new CalculationService();
-
-            CurrencyTypes = new List<string>();
-            CurrencyTypes.Add("RMB");
-            CurrencyTypes.Add("USD");
+            dict_service = new DataDictionaryService();
 
 
             ModelStates = new List<string>();
@@ -38,13 +35,15 @@ namespace PMSQuotation
 
         public void SetNew()
         {
+
+            string calculationCurrency = dict_service.GetString("basecurrency");
             vMState = VMState.New;
             EditState = vMState.ToString();
 
             CurrentQuotation = new Quotation();
 
             CurrentQuotation.State = QuotationState.UnFinished.ToString();
-            CurrentQuotation.CurrencyType = CurrencyTypes[0];
+            CurrentQuotation.CurrencyType = calculationCurrency;
             CurrentQuotation.CreateTime = DateTime.Now;
             CurrentQuotation.LastUpdateTime = DateTime.Now;
             CurrentQuotation.ExpirationTime = DateTime.Now.AddMonths(1);
@@ -107,6 +106,7 @@ namespace PMSQuotation
 
         private QuotationDbService db_service;
         private CalculationService calc_service;
+        private DataDictionaryService dict_service;
         private void ActionSave()
         {
             if (CurrentQuotation == null) return;
@@ -140,8 +140,6 @@ namespace PMSQuotation
             }
 
         }
-
-        public List<string> CurrencyTypes { get; set; }
         public List<string> ModelStates { get; set; }
 
         public string EditState { get; set; }

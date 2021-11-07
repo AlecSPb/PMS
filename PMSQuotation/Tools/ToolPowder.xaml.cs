@@ -33,6 +33,7 @@ namespace PMSQuotation.Tools
         {
             var dds_service = new DataDictionaryService();
             var dicts = dds_service.GetKeyValue("powder_price_rule");
+
             foreach (var item in dicts)
             {
                 Items.Add(new CostItemPowder { MaterialGrade = item.Key, UnitPrice = item.Value, Weight = 0 });

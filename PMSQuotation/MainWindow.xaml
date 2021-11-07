@@ -35,6 +35,14 @@
                 <Button Content="Search" Style="{StaticResource StyleButtonCommon}" Command="{Binding Search}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
+                <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="Calculation Currency"
+                           Foreground="white">
+                    <TextBlock.ToolTip>
+                        <TextBlock Text="the data dictionary will used this currency"/>
+                    </TextBlock.ToolTip>
+                </TextBlock>
+                <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="{Binding CalculationCurrency}"
+                           Foreground="white" Background="Red"/>
                 <Button Content="Data Dictionary" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding DataDictionary}"/>
                 <Button Content="DB Folder" Style="{StaticResource StyleButtonCommon}"  Command="{Binding DBFolder}"/>
             </StackPanel>

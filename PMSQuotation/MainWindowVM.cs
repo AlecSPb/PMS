@@ -19,14 +19,13 @@ namespace PMSQuotation
         {
             db_service = new QuotationDbService();
             calc_service = new CalculationService();
-
+            dict_service = new DataDictionaryService();
 
             searchCustomer = searchKeyword = "";
 
             ShowDeleted = false;
 
             statusBarInfo = "";
-
 
             Quotations = new ObservableCollection<Quotation>();
             CurrentQuotationItems = new ObservableCollection<QuotationItem>();
@@ -57,6 +56,10 @@ namespace PMSQuotation
             Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
         }
 
+        private QuotationDbService db_service;
+        private CalculationService calc_service;
+        private DataDictionaryService dict_service;
+
         private void ActionShowUnitPriceDetail(QuotationItem obj)
         {
             if (obj != null && !string.IsNullOrEmpty(obj.UnitPriceDetail))
@@ -67,14 +70,16 @@ namespace PMSQuotation
             }
         }
 
-        private CalculationService calc_service;
-
         private void ActionDataDictionary()
         {
             var win = new DataDictionaryView();
             var vm = new DataDictionaryVM();
             win.DataContext = vm;
             win.ShowDialog();
+
+
+            //refresh CalculationCurrency
+            CalculationCurrency = dict_service.GetString("basecurrency") ?? "None";
         }
 
         private void ActionDo(NotificationMessage obj)
@@ -249,12 +254,25 @@ namespace PMSQuotation
             set { showDeleted = value; RaisePropertyChanged(nameof(ShowDeleted)); }
         }
 
+        private string statusBarInfo;
+
+        public string StatusBarInfo
+        {
+            get { return statusBarInfo; }
+            set { statusBarInfo = value; RaisePropertyChanged(nameof(StatusBarInfo)); }
+        }
+
+        private string calculationCurrency;
+
+        public string CalculationCurrency
+        {
+            get { return calculationCurrency; }
+            set { calculationCurrency = value; RaisePropertyChanged(nameof(CalculationCurrency)); }
+        }
 
         public ObservableCollection<Quotation> Quotations { get; set; }
 
         public ObservableCollection<QuotationItem> CurrentQuotationItems { get; set; }
-
-        private QuotationDbService db_service;
 
         public void LoadQuotations()
         {
@@ -270,9 +288,10 @@ namespace PMSQuotation
             {
                 CurrentQuotation = Quotations.FirstOrDefault();
                 LoadQuotationItems();
-
-
             }
+
+            //refresh CalculationCurrency
+            CalculationCurrency = dict_service.GetString("basecurrency") ?? "None";
         }
 
         public void LoadQuotationItems()
@@ -310,17 +329,6 @@ namespace PMSQuotation
                 $"Extra={currencyType}{result.ExtraFee.ToString("F2")} " +
                 $"Tax={currencyType}{result.TaxFee.ToString("F2")}";
         }
-
-        #region Fee
-        private string statusBarInfo;
-
-        public string StatusBarInfo
-        {
-            get { return statusBarInfo; }
-            set { statusBarInfo = value; RaisePropertyChanged(nameof(StatusBarInfo)); }
-        }
-
-        #endregion
 
 
 
