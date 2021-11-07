@@ -117,16 +117,16 @@
 
                 <DataGridTextColumn Header="PackageFee" Binding="{Binding PackageFee,StringFormat={}{0:F2}}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                <DataGridTextColumn Header="PackageRemark" Binding="{Binding PackageRemark}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <!--<DataGridTextColumn Header="PackageRemark" Binding="{Binding PackageRemark}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>-->
                 <DataGridTextColumn Header="ShippingFee" Binding="{Binding ShippingFee,StringFormat={}{0:F2}}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                <DataGridTextColumn Header="ShippingRemark" Binding="{Binding ShippingRemark}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <!--<DataGridTextColumn Header="ShippingRemark" Binding="{Binding ShippingRemark}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>-->
                 <DataGridTextColumn Header="CustomFee" Binding="{Binding CustomFee,StringFormat={}{0:F2}}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                <DataGridTextColumn Header="CustomRemark" Binding="{Binding CustomRemark}" 
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <!--<DataGridTextColumn Header="CustomRemark" Binding="{Binding CustomRemark}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>-->
                 <DataGridCheckBoxColumn Header="IsAutoTax" Binding="{Binding IsAutoTax}"
                                         ElementStyle="{StaticResource StyleDGCheckBoxCommonReadOnly}"/>
                 <DataGridTextColumn Header="TaxFee" Binding="{Binding TaxFee,StringFormat={}{0:F2}}" 
