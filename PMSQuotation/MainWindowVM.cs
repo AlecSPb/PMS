@@ -10,6 +10,8 @@ using GalaSoft.MvvmLight.Messaging;
 using PMSQuotation.Models;
 using PMSQuotation.Services;
 using XSHelper;
+using AutoMapper;
+using Newtonsoft.Json;
 
 namespace PMSQuotation
 {
@@ -35,9 +37,14 @@ namespace PMSQuotation
             SelectionChanged = new RelayCommand<Quotation>(ActionSelectionChanged);
 
             New = new RelayCommand(ActionNew);
+            FromJson = new RelayCommand(ActionFromJson);
+
             Edit = new RelayCommand<Quotation>(ActionEdit);
             Clone = new RelayCommand<Quotation>(ActionClone);
+            DeepClone = new RelayCommand<Quotation>(ActionDeepClone);
+            ChangeCurrency = new RelayCommand<Quotation>(ActionChangeCurrency);
             Doc = new RelayCommand<Quotation>(ActionDoc);
+            ToJson = new RelayCommand<Quotation>(ActionToJson);
             ItemNew = new RelayCommand<Quotation>(ActionItemNew);
             Delete = new RelayCommand<Quotation>(ActionDelete);
 
@@ -55,6 +62,125 @@ namespace PMSQuotation
 
             Messenger.Default.Register<NotificationMessage>(this, "MSG", ActionDo);
         }
+
+        private void ActionChangeCurrency(Quotation obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ActionFromJson()
+        {
+            try
+            {
+                var dialog_result = XS.Dialog.ShowOpenDialog(XS.File.GetDesktopPath(), "(*.json)|*.json");
+                if (dialog_result.HasSelected)
+                {
+                    string s_json = XS.File.ReadText(dialog_result.SelectPath);
+                    QuotationJsonModel model = JsonConvert.DeserializeObject<QuotationJsonModel>(s_json);
+                    if (model != null)
+                    {
+                        if (model.Quotation != null && model.QuotationItems != null)
+                        {
+                            #region Import
+                            Quotation new_obj = model.Quotation;
+                            new_obj.CreateTime = DateTime.Now;
+                            new_obj.LastUpdateTime = DateTime.Now;
+                            new_obj.ExpirationTime = DateTime.Now.AddMonths(1);
+                            new_obj.State = QuotationState.UnFinished.ToString();
+                            new_obj.Creator = dict_service.GetString("creator");
+                            db_service.Add(new_obj);
+
+                            var new_quotation = db_service.GetQuotationLastestCreateTime();
+                            var items = model.QuotationItems;
+                            foreach (var item in items)
+                            {
+                                var new_item = item;
+                                new_item.QuotationID = new_quotation.ID;
+                                new_item.CreateTime = DateTime.Now;
+                                new_item.Creator = dict_service.GetString("creator");
+                                new_item.State = QuotationItemState.Checked.ToString();
+                                db_service.AddItem(new_item);
+                            }
+                            #endregion
+                            XS.MessageBox.ShowInfo("import json success");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                XS.MessageBox.ShowError(ex.Message);
+            }
+        }
+
+        private void ActionToJson(Quotation obj)
+        {
+            if (obj == null) return;
+            if (!XS.MessageBox.ShowYesNo("export json file?")) return;
+
+            try
+            {
+                QuotationJsonModel model = new QuotationJsonModel();
+                model.Quotation = obj;
+                model.QuotationItems = db_service.GetQuotationItems(obj.ID, false);
+
+                string s_json = JsonConvert.SerializeObject(model);
+                var dialog_result = XS.Dialog.ShowSaveDialog(XS.File.GetDesktopPath(), "(*.json)|*.json",
+                    $"PMI{DateTime.Now.ToString("yyyyMMddHHmmss")}.json");
+                if (dialog_result.HasSelected)
+                {
+                    XS.File.SaveText(dialog_result.SelectPath, s_json);
+                }
+                XS.MessageBox.ShowInfo("export json success");
+            }
+            catch (Exception ex)
+            {
+                XS.MessageBox.ShowError(ex.Message);
+            }
+        }
+
+        private void ActionDeepClone(Quotation obj)
+        {
+            if (obj == null) return;
+            if (!XS.MessageBox.ShowYesNo("Are you sure to deep clone this quotation?")) return;
+            try
+            {
+                Mapper.Initialize(cfg =>
+                {
+                    cfg.CreateMap<Quotation, Quotation>();
+                    cfg.CreateMap<QuotationItem, QuotationItem>();
+                });
+
+                Quotation new_obj = Mapper.Map<Quotation>(obj);
+                new_obj.CreateTime = DateTime.Now;
+                new_obj.LastUpdateTime = DateTime.Now;
+                new_obj.ExpirationTime = DateTime.Now.AddMonths(1);
+                new_obj.State = QuotationState.UnFinished.ToString();
+                new_obj.Creator = dict_service.GetString("creator");
+                db_service.Add(new_obj);
+
+                var new_quotation = db_service.GetQuotationLastestCreateTime();
+                var items = db_service.GetQuotationItems(obj.ID, false);
+                foreach (var item in items)
+                {
+                    var new_item = Mapper.Map<QuotationItem>(item);
+                    new_item.QuotationID = new_quotation.ID;
+                    new_item.CreateTime = DateTime.Now;
+                    new_item.Creator = dict_service.GetString("creator");
+                    new_item.State = QuotationItemState.Checked.ToString();
+                    db_service.AddItem(new_item);
+                }
+
+                XS.MessageBox.ShowInfo("Deep Copy Success");
+                LoadQuotations();
+            }
+            catch (Exception ex)
+            {
+                XS.MessageBox.ShowError(ex.Message);
+            }
+
+        }
+
 
         private QuotationDbService db_service;
         private CalculationService calc_service;
@@ -338,10 +464,14 @@ namespace PMSQuotation
         public RelayCommand Search { get; set; }
 
         public RelayCommand New { get; set; }
+        public RelayCommand FromJson { get; set; }
         public RelayCommand<Quotation> Edit { get; set; }
         public RelayCommand<Quotation> Delete { get; set; }
         public RelayCommand<Quotation> Clone { get; set; }
+        public RelayCommand<Quotation> DeepClone { get; set; }
         public RelayCommand<Quotation> Doc { get; set; }
+        public RelayCommand<Quotation> ChangeCurrency { get; set; }
+        public RelayCommand<Quotation> ToJson { get; set; }
 
         public RelayCommand<Quotation> ItemNew { get; set; }
 

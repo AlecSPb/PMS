@@ -12,6 +12,6 @@ namespace PMSQuotation.Models
     public class QuotationJsonModel
     {
         public Quotation Quotation { get; set; }
-        public List<QuotationItem> Items { get; set; }
+        public List<QuotationItem> QuotationItems { get; set; }
     }
 }

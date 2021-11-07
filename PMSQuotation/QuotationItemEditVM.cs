@@ -22,6 +22,7 @@ namespace PMSQuotation
 
             db_service = new QuotationDbService();
             calc_service = new CalculationService();
+            dict_service = new DataDictionaryService();
 
             Save = new RelayCommand(ActionSave);
         }
@@ -34,7 +35,7 @@ namespace PMSQuotation
             EditState = vMState.ToString();
             CurrentQuotationItem = new QuotationItem();
             CurrentQuotationItem.CreateTime = DateTime.Now;
-            CurrentQuotationItem.Creator = db_service.GetDataDictByKey("creator").DataValue;
+            CurrentQuotationItem.Creator = dict_service.GetString("creator");
             CurrentQuotationItem.QuotationID = quotationid;
             CurrentQuotationItem.Composition = "";
             CurrentQuotationItem.Specification = "";
@@ -60,7 +61,7 @@ namespace PMSQuotation
             EditState = vMState.ToString();
             CurrentQuotationItem = new QuotationItem();
             CurrentQuotationItem.CreateTime = DateTime.Now;
-            CurrentQuotationItem.Creator = db_service.GetDataDictByKey("creator").DataValue;
+            CurrentQuotationItem.Creator = dict_service.GetString("creator");
             CurrentQuotationItem.QuotationID = item.QuotationID;
             CurrentQuotationItem.Composition = item.Composition;
             CurrentQuotationItem.Specification = item.Specification;
@@ -117,6 +118,7 @@ namespace PMSQuotation
         public List<string> ModelStates { get; set; }
         private QuotationDbService db_service;
         private CalculationService calc_service;
+        private DataDictionaryService dict_service;
 
         private QuotationItem currentQuotationItem;
 

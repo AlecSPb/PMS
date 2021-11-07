@@ -48,11 +48,11 @@ namespace PMSQuotation
             CurrentQuotation.LastUpdateTime = DateTime.Now;
             CurrentQuotation.ExpirationTime = DateTime.Now.AddMonths(1);
             CurrentQuotation.Lot = Helpers.QuotationHelper.GetDefaultLot();
-            CurrentQuotation.Creator = db_service.GetDataDictByKey("creator").DataValue;
+            CurrentQuotation.Creator = dict_service.GetString("creator");
             CurrentQuotation.KeyWord = "";
 
             CurrentQuotation.ContactInfo_Customer = "++++";
-            CurrentQuotation.ContactInfo_Self = db_service.GetDataDictByKey("contactInfo_self_zh_cn").DataValue;
+            CurrentQuotation.ContactInfo_Self = dict_service.GetString("contactInfo_self_zh_cn");
 
 
             CurrentQuotation.PackageFee = 0;
@@ -84,7 +84,7 @@ namespace PMSQuotation
             CurrentQuotation.LastUpdateTime = DateTime.Now;
             CurrentQuotation.ExpirationTime = DateTime.Now.AddMonths(1);
             CurrentQuotation.Lot = Helpers.QuotationHelper.GetDefaultLot();
-            CurrentQuotation.Creator = db_service.GetDataDictByKey("creator").DataValue;
+            CurrentQuotation.Creator = dict_service.GetString("creator");
             CurrentQuotation.KeyWord = model.KeyWord;
 
             CurrentQuotation.ContactInfo_Customer = model.ContactInfo_Customer;

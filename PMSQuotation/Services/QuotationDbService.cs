@@ -80,6 +80,21 @@ namespace PMSQuotation.Services
         }
 
         /// <summary>
+        /// 返回时间最近的Quotation
+        /// </summary>
+        /// <returns></returns>
+        public Quotation GetQuotationLastestCreateTime()
+        {
+            using (IDbConnection conn = new SQLiteConnection(conn_str))
+            {
+                string sql = "select * from quotations order by createtime desc";
+
+                var result = conn.Query<Quotation>(sql).FirstOrDefault();
+                return result;
+            }
+        }
+
+        /// <summary>
         /// 添加报价单项目
         /// </summary>
         /// <param name="model"></param>
@@ -178,11 +193,11 @@ namespace PMSQuotation.Services
                 string sql = "";
                 if (showDeleted)
                 {
-                    sql = "select * from quotationitems where quotationid=@quotationid order by createtime desc";
+                    sql = "select * from quotationitems where quotationid=@quotationid order by createtime asc";
                 }
                 else
                 {
-                    sql = "select * from quotationitems where quotationid=@quotationid and state!='Deleted' order by createtime desc";
+                    sql = "select * from quotationitems where quotationid=@quotationid and state!='Deleted' order by createtime asc";
                 }
 
                 var parameters = new

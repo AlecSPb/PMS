@@ -25,7 +25,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal">
                 <Button Content="New" Style="{StaticResource StyleButtonCommon}" Command="{Binding New}"/>
-                <!--<Button Content="Json" Style="{StaticResource StyleButtonCommon}" Command="{Binding Json}"/>-->
+                <Button Content="Json" Style="{StaticResource StyleButtonCommon}" Command="{Binding FromJson}"/>
                 <TextBlock Text="Customer" Style="{StaticResource StyleTextBlockNavigationBar}"/>
                 <TextBox Text="{Binding SearchCustomer}" Style="{StaticResource StyleTextBoxSearch}"/>
                 <TextBlock Text="Keyword" Style="{StaticResource StyleTextBlockNavigationBar}"/>
@@ -68,24 +68,24 @@
                                 <Button Content="Clone" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Clone, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
-                                <!--<Button Content="D Clone" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.DeepClone, 
+                                <Button Content="D Clone" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.DeepClone, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
-                                            CommandParameter="{Binding}"/>-->
+                                            CommandParameter="{Binding}"/>
                                 <Button Content="Del" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Delete, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
-                                <!--<Button Content="CUR" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Currency, 
+                                <Button Content="CUR" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ChangeCurrency, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
-                                            CommandParameter="{Binding}"/>-->
+                                            CommandParameter="{Binding}"/>
                                 <Button Content="Doc" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Doc, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
                                 <Button Content="Item" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ItemNew, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
-                                <!--<Button Content="Json" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Json, 
+                                <Button Content="Json" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ToJson, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
-                                            CommandParameter="{Binding}"/>-->
+                                            CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -166,7 +166,7 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="State" Binding="{Binding State}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="CreateTime" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}" 
+                <DataGridTextColumn Header="CreateTime" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="Creator" Binding="{Binding Creator}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
