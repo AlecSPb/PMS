@@ -42,7 +42,7 @@
                                     IsReadOnly="True"/>
                 <!--<DataGridTextColumn Header="DataValue" Binding="{Binding DataValue}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     Foreground="Blue" MaxWidth="600"/>-->
-                <DataGridTemplateColumn Header="DataValue" MaxWidth="600">
+                <DataGridTemplateColumn Header="DataValue" Width="600">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding DataValue}" Style="{StaticResource StyleDGTextBlockCommon}"
