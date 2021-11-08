@@ -20,8 +20,8 @@ namespace PMSQuotation.Services
         public QuotationDbService()
         {
             //string dbPath = Path.Combine(XSHelper.XS.File.GetCurrentFolderPath("DB"), "pmsquotation.db");
-            //string dbPath = @"D:\Fine\source\repos\PMS\PMSQuotation\DB\pmsquotation.db";
-            string dbPath = @"D:\source\repos\PMS\PMSQuotation\DB\pmsquotation.db";
+            string dbPath = @"D:\Fine\source\repos\PMS\PMSQuotation\DB\pmsquotation.db";
+            //string dbPath = @"D:\source\repos\PMS\PMSQuotation\DB\pmsquotation.db";
             //发布后修改
             conn_str = $"Data Source={dbPath};Version=3";
         }

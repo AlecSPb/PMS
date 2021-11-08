@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PMSQuotation"
         mc:Ignorable="d"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        Title="PMS Quotation v1.0 Alpha Edition" Height="800" Width="1400" 
+        Title="PMS Quotation v1.0 Trial Edition" Height="800" Width="1400" 
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Icon="Images/checklist.png">
@@ -25,7 +25,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal">
                 <Button Content="New" Style="{StaticResource StyleButtonCommon}" Command="{Binding New}"/>
-                <Button Content="Json" Style="{StaticResource StyleButtonCommon}" Command="{Binding FromJson}"/>
+                <Button Content="Json" Style="{StaticResource StyleButtonCommon}" Command="{Binding FromJson}" Visibility="Collapsed"/>
                 <TextBlock Text="Customer" Style="{StaticResource StyleTextBlockNavigationBar}"/>
                 <TextBox Text="{Binding SearchCustomer}" Style="{StaticResource StyleTextBoxSearch}"/>
                 <TextBlock Text="Keyword" Style="{StaticResource StyleTextBlockNavigationBar}"/>
@@ -70,16 +70,16 @@
                                             CommandParameter="{Binding}"/>
                                 <Button Content="D Clone" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.DeepClone, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
-                                            CommandParameter="{Binding}"/>
+                                            CommandParameter="{Binding}" Visibility="Collapsed"/>
                                 <Button Content="Json" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ToJson, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
-                                            CommandParameter="{Binding}"/>
+                                            CommandParameter="{Binding}" Visibility="Collapsed"/>
                                 <Button Content="Del" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Delete, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>
                                 <Button Content="CUR" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.ChangeCurrency, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
-                                            CommandParameter="{Binding}"/>
+                                            CommandParameter="{Binding}"  Visibility="Collapsed"/>
                                 <Button Content="Doc" Style="{StaticResource StyleDGButton}" Command="{Binding DataContext.Doc, 
                                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                             CommandParameter="{Binding}"/>

@@ -86,6 +86,7 @@ namespace PMSQuotation
                     obj.TaxFee = obj.TaxFee / currency_rate;
 
                     obj.LastUpdateTime = DateTime.Now;
+                    obj.Remark = $"currency is changed to {obj.CurrencyType} at {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")};";
                     db_service.Update(obj);
 
                     var items = db_service.GetQuotationItems(obj.ID, false);
@@ -93,8 +94,6 @@ namespace PMSQuotation
                     {
                         item.UnitPrice = item.UnitPrice / currency_rate;
                         item.TotalPrice = item.TotalPrice / currency_rate;
-
-                        item.Note += $"currency is changed to {obj.CurrencyType} at {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")};";
 
                         db_service.UpdateItem(item);
                     }
