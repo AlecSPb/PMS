@@ -522,10 +522,11 @@ namespace PMSQuotation
                 currencyType = "$";
             }
 
-            StatusBarInfo = $"Total={currencyType}{(result.TargetFee + result.ExtraFee + result.TaxFee).ToString("F2")} " +
+            StatusBarInfo = $"Total={currencyType}{result.TotalCost.ToString("F2")} " +
                 $"Target={currencyType}{result.TargetFee.ToString("F2")} " +
                 $"Extra={currencyType}{result.ExtraFee.ToString("F2")} " +
-                $"Tax={currencyType}{result.TaxFee.ToString("F2")}";
+                $"Tax={currencyType}{result.TaxFee.ToString("F2")} " +
+                $"Discount={CurrentQuotation.Discount.ToString("P0")}";
         }
 
 

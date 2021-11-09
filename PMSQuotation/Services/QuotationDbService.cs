@@ -102,14 +102,15 @@ namespace PMSQuotation.Services
         {
             using (IDbConnection conn = new SQLiteConnection(conn_str))
             {
-                string sql = "insert into quotations(CurrencyType,TotalCost,CreateTime,LastUpdateTime,ExpirationTime,Creator,Lot," +
+                string sql = "insert into quotations(CurrencyType,TotalCost,Discount,CreateTime,LastUpdateTime,ExpirationTime,Creator,Lot," +
                     "Remark,KeyWord,ContactInfo_Customer,ContactInfo_Self,PackageFee,PackageRemark,ShippingFee,ShippingRemark," +
-                    "CustomFee,CustomRemark,IsAutoTax,TaxFee,TaxRemark,State) values (@CurrencyType,@TotalCost,@CreateTime,@LastUpdateTime,@ExpirationTime,@Creator,@Lot," +
+                    "CustomFee,CustomRemark,IsAutoTax,TaxFee,TaxRemark,State) values (@CurrencyType,@TotalCost,@Discount,@CreateTime,@LastUpdateTime,@ExpirationTime,@Creator,@Lot," +
                     "@Remark,@KeyWord,@ContactInfo_Customer,@ContactInfo_Self,@PackageFee,@PackageRemark,@ShippingFee,@ShippingRemark," +
                     "@CustomFee,@CustomRemark,@IsAutoTax,@TaxFee,@TaxRemark,@State)";
                 var parameters = new Quotation
                 {
                     CurrencyType = model.CurrencyType,
+                    Discount=model.Discount,
                     TotalCost = model.TotalCost,
                     CreateTime = model.CreateTime,
                     LastUpdateTime = model.LastUpdateTime,
@@ -144,7 +145,7 @@ namespace PMSQuotation.Services
         {
             using (IDbConnection conn = new SQLiteConnection(conn_str))
             {
-                string sql = "update quotations set CurrencyType=@CurrencyType,TotalCost=@TotalCost,CreateTime=@CreateTime," +
+                string sql = "update quotations set CurrencyType=@CurrencyType,TotalCost=@TotalCost,Discount=@Discount,CreateTime=@CreateTime," +
                     "LastUpdateTime=@LastUpdateTime,ExpirationTime=@ExpirationTime,Creator=@Creator,Lot=@Lot," +
                     "Remark=@Remark,KeyWord=@KeyWord,ContactInfo_Customer=@ContactInfo_Customer,ContactInfo_Self=@ContactInfo_Self," +
                     "PackageFee=@PackageFee,PackageRemark=@PackageRemark,ShippingFee=@ShippingFee,ShippingRemark=@ShippingRemark," +
@@ -153,6 +154,7 @@ namespace PMSQuotation.Services
                 var parameters = new Quotation
                 {
                     CurrencyType = model.CurrencyType,
+                    Discount=model.Discount,
                     TotalCost = model.TotalCost,
                     CreateTime = model.CreateTime,
                     LastUpdateTime = model.LastUpdateTime,

@@ -10,8 +10,9 @@ namespace PMSQuotation.Services
     {
         public CalculationResult()
         {
-            TargetFee = ExtraFee = TaxFee = 0.0;
+            TotalCost = TargetFee = ExtraFee = TaxFee = 0.0;
         }
+        public double TotalCost { get; set; }
         public double TargetFee { get; set; }
         public double ExtraFee { get; set; }
         public double TaxFee { get; set; }

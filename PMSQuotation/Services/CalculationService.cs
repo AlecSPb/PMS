@@ -46,6 +46,8 @@ namespace PMSQuotation.Services
                 {
                     result.TaxFee = model.TaxFee;
                 }
+
+                result.TotalCost = (result.TargetFee + result.ExtraFee + result.TaxFee) * model.Discount;
             }
 
 

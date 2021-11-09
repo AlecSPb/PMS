@@ -100,8 +100,11 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="ExpirationTime" Binding="{Binding ExpirationTime,StringFormat={}{0:yyyy-MM-dd}}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="CurrencyType" Binding="{Binding CurrencyType}" 
+                <DataGridTextColumn Header="Currency" Binding="{Binding CurrencyType}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Discount" Binding="{Binding Discount,StringFormat={}{0:P0}}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Foreground="Blue"/>
                 <DataGridTextColumn Header="TotalCost" Binding="{Binding TotalCost,StringFormat={}{0:F2}}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Foreground="Blue"/>
@@ -210,9 +213,10 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="{Binding StatusBarInfo}" Style="{StaticResource StyleDGTextBlockBig}" FontSize="20"/>
+            <TextBlock Text="{Binding StatusBarInfo}" Style="{StaticResource StyleDGTextBlockBig}" FontSize="18"
+                       Foreground="Blue"/>
             <TextBlock Grid.Column="1" Style="{StaticResource StyleDGTextBlockBig}" FontSize="15"
-                       Text="Total=Target+Extra+Tax;Extra=Package+Shiping+Custom;" Foreground="Green"/>
+                       Text="Total=(Target+Extra+Tax)*Discount;Extra=Package+Shiping+Custom;" Foreground="Green"/>
             <StackPanel Grid.Column="3" Orientation="Horizontal">
                 <Button Name="BtnCalculator" Style="{StaticResource StyleButtonCommonNarrow}" Content="Calculator"
                         Click="BtnCalculator_Click"/>

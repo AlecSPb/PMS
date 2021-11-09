@@ -37,6 +37,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -136,7 +137,7 @@
                             Click="BtnToolShippingFeeReset_Click"/>
                     <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
                 </StackPanel>
-                
+
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="ShippingRemark" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Name="TxtShippingRemark" Grid.Row="11" Grid.Column="1" Text="{Binding ShippingRemark}" 
                          Style="{StaticResource StyleTextBoxReadOnly}"/>
@@ -163,7 +164,7 @@
                           IsChecked="{Binding IsAutoTax,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Grid.Row="14" Grid.Column="2" Text="check mean auto,uncheck means manual" 
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                
+
                 <TextBlock Grid.Row="15" Grid.Column="0" Text="TaxFee" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Name="TxtTaxFee" Grid.Row="15" Grid.Column="1" Text="{Binding TaxFee}" Style="{StaticResource StyleTextBoxCommon}"
                          Background="LightCoral"/>
@@ -179,10 +180,14 @@
                          Background="LightCoral"/>
                 <TextBlock Grid.Row="16" Grid.Column="2" Text="" 
                            Style="{StaticResource StyleTextBlockCommon}"/>
-
-                <TextBlock Grid.Row="17" Grid.Column="0" Text="TotalCost" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding TotalCost}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                <TextBlock Grid.Row="17" Grid.Column="2" Text="Auto Calculate When Saving" Style="{StaticResource StyleTextBlockCommon}"/>
+                
+                <TextBlock Grid.Row="17" Grid.Column="0" Text="Discount" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding Discount,StringFormat={}{0:P0}}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="17" Grid.Column="2" Text="Default Discount is 100%" Style="{StaticResource StyleTextBlockCommon}"/>
+                
+                <TextBlock Grid.Row="18" Grid.Column="0" Text="TotalCost" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding TotalCost}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                <TextBlock Grid.Row="18" Grid.Column="2" Text="Auto Calculate When Saving" Style="{StaticResource StyleTextBlockCommon}"/>
             </Grid>
         </ScrollViewer>
     </Grid>

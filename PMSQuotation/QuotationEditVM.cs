@@ -50,6 +50,8 @@ namespace PMSQuotation
             CurrentQuotation.Lot = Helpers.QuotationHelper.GetDefaultLot();
             CurrentQuotation.Creator = dict_service.GetString("creator");
             CurrentQuotation.KeyWord = "";
+            CurrentQuotation.TotalCost = 0;
+            CurrentQuotation.Discount = 1;
 
             CurrentQuotation.ContactInfo_Customer = "++++";
             CurrentQuotation.ContactInfo_Self = dict_service.GetString("contactInfo_self_zh_cn");
@@ -86,6 +88,8 @@ namespace PMSQuotation
             CurrentQuotation.Lot = Helpers.QuotationHelper.GetDefaultLot();
             CurrentQuotation.Creator = dict_service.GetString("creator");
             CurrentQuotation.KeyWord = model.KeyWord;
+            CurrentQuotation.TotalCost = model.TotalCost;
+            CurrentQuotation.Discount = model.Discount;
 
             CurrentQuotation.ContactInfo_Customer = model.ContactInfo_Customer;
             CurrentQuotation.ContactInfo_Self = model.ContactInfo_Self;
@@ -115,7 +119,7 @@ namespace PMSQuotation
                 #region AutoCalculation
                 var result = calc_service.Calculate(CurrentQuotation);
                 CurrentQuotation.TaxFee = result.TaxFee;
-                CurrentQuotation.TotalCost = result.TargetFee + result.ExtraFee + result.TaxFee;
+                CurrentQuotation.TotalCost = result.TotalCost;
                 #endregion
 
                 if (vMState == VMState.New)

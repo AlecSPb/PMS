@@ -15,6 +15,7 @@ namespace PMSQuotation.Models
         #region SheetInfo
         public string CurrencyType { get; set; }
         public double TotalCost { get; set; }
+        public double Discount { get; set; }
         public DateTime CreateTime { get; set; }
         public DateTime LastUpdateTime { get; set; }
         public DateTime ExpirationTime { get; set; }

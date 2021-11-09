@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PMSQuotation.Tools"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
-        Title="UnitPriceCalculator ReadOnly" Height="600" Width="1000">
+        Title="UnitPriceCalculator ReadOnly" Height="600" Width="600">
     <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -31,7 +31,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="ItemUnitPriceDetail" Width="500" IsReadOnly="True">
+                <!--<DataGridTemplateColumn Header="ItemUnitPriceDetail" Width="500" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding ItemUnitPriceDetail}" 
@@ -46,7 +46,7 @@
                                      Background="LightYellow"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
