@@ -96,9 +96,11 @@
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MIOWeightActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding ActualWeight,StringFormat={}{0:F3}}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding ActualWeight,StringFormat={}{0:F3}}" 
+                         Style="{StaticResource StyleTextBoxCommon}" Background="Yellow"
+                         FontSize="25"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="实际收到原料的净重，单位kg"/>
+                           Text="实际收到原料的净重,单位kg,由接收者填写" Foreground="Blue"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MIORemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

@@ -33,6 +33,7 @@ namespace PMSQuotation
             if (model != null)
             {
                 switch (model.State)
+
                 {
                     case "Deleted":
                         e.Row.Background = Brushes.Gray;
@@ -48,6 +49,7 @@ namespace PMSQuotation
                 }
             }
         }
+
         private void DgItems_LoadingRow(object sender, DataGridRowEventArgs e)
         {
             QuotationItem model = (QuotationItem)e.Row.DataContext;
@@ -63,6 +65,7 @@ namespace PMSQuotation
                 }
             }
         }
+
         private void BtnCalculator_Click(object sender, RoutedEventArgs e)
         {
             try

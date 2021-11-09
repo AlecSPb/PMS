@@ -140,17 +140,21 @@ namespace PMSXMLCreator.Service
 
             StringBuilder log = new StringBuilder();
 
-            double ucl = 0, lcl = 0,measureValue = 0 ;
+            double ucl = 0, lcl = 0, measureValue = 0;
 
             //日志头部
-            log.AppendLine($"Lot Number:{model.LotNumber}");
-            log.AppendLine($"Product Name:{model.ProductName}");
-            log.AppendLine($"Use Specs:{model.CurrentSpec.SpecName}");
-            log.AppendLine($"Part Desc:{model.PartNumberDesc}");
-            log.AppendLine($"Part Nbr:{model.PartNumber}");
-            log.AppendLine($"Part Rev:{model.PartRevisionNumber}");
-            log.AppendLine($"Supply Nbr:{model.ManufacturerPlantCode}");
-            log.AppendLine($"Supply Part Nbr:{model.ManufacturerPartNumber}");
+            log.AppendLine($"Lot Number;{model.LotNumber}");
+            log.AppendLine($"Product Name;{model.ProductName}");
+            log.AppendLine($"Use Specs;{model.CurrentSpec.SpecName}");
+            log.AppendLine($"Part Desc;{model.PartNumberDesc}");
+            log.AppendLine($"Part Nbr;{model.PartNumber}");
+            log.AppendLine($"Part Rev;{model.PartRevisionNumber}");
+            log.AppendLine($"Supply Nbr;{model.ManufacturerPlantCode}");
+            log.AppendLine($"Supply Part Nbr;{model.ManufacturerPartNumber}");
+            log.AppendLine($"ShippingTime;{model.ScheduledShipDate.ToLongDateString()}");
+            log.AppendLine($"GenerateTime;{model.ThisDocumentGenerationDateTime.ToLongDateString()}");
+            log.AppendLine($"Comments;{model.Comment.Replace(";", " ")}");
+
             log.AppendLine("Charactersitic;ShortName;Type;MeasurementType;UnitOfMeasure;MeasurementValue;UCL;LCL;UCL LCL Warning");
 
             foreach (var p in parameters)
@@ -179,7 +183,7 @@ namespace PMSXMLCreator.Service
                 {
                     log.Append(";UCL warning");
                 }
-                if (measureValue <lcl)
+                if (measureValue < lcl)
                 {
                     log.Append(";LCL warning");
                 }

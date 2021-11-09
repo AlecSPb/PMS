@@ -62,10 +62,6 @@ namespace PMSClient.ViewModel
                 switch (requestView)
                 {
                     case PMSViews.MaterialInventoryOutEdit:
-                        if (!PMSDialogService.ShowYesNo("请问", "确定标记这个原料记录的入库记录状态为[出库]？"))
-                        {
-                            return;
-                        }
                         PMSHelper.ViewModels.MaterialInventoryOutEdit.SetBySelect(model);
                         break;
                     case PMSViews.BDCompoundEdit:
@@ -98,9 +94,9 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 30;
             var service = new MaterialInventoryServiceClient();
-            RecordCount = service.GetMaterialInventoryInCountUnCompleted(SearchSupplier, SearchComposition, SearchMaterialLot, SearchPMINumber);
+            RecordCount = service.GetMaterialInventoryInCountBySearch(SearchSupplier, SearchComposition, SearchMaterialLot, SearchPMINumber);
             service.Close();
             ActionPaging();
         }
@@ -113,7 +109,7 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new MaterialInventoryServiceClient();
-            var result = service.GetMaterialInventoryInUnCompleted(skip, take, SearchSupplier, SearchComposition, SearchMaterialLot, SearchPMINumber);
+            var result = service.GetMaterialInventoryInsBySearch(skip, take, SearchSupplier, SearchComposition, SearchMaterialLot, SearchPMINumber);
             service.Close();
             MaterialInventoryIns.Clear();
             result.ToList().ForEach(o => MaterialInventoryIns.Add(o));
