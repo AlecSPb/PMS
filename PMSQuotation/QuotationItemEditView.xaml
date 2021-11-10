@@ -23,6 +23,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
@@ -65,44 +66,53 @@
                     <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="UnitPrice" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtUnitPrice" Grid.Row="3" Grid.Column="1" Text="{Binding UnitPrice}" 
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Unit" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="TxtUnit" Grid.Row="3" Grid.Column="1" Text="{Binding Unit}" 
+                         Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="Piece" Style="{StaticResource StyleButtonCommon}" Name="BtnUnitEdit1" Click="BtnUnitEdit1_Click"/>
+                    <Button Content="Set" Style="{StaticResource StyleButtonCommon}" Name="BtnUnitEdit2" Click="BtnUnitEdit2_Click"/>
+                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                </StackPanel>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="UnitPrice" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="TxtUnitPrice" Grid.Row="4" Grid.Column="1" Text="{Binding UnitPrice}" 
                          Style="{StaticResource StyleTextBoxCommon}"
                          Foreground="Blue"/>
-                <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
+                <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Horizontal">
                     <Button Content="Unit Price Tools" Style="{StaticResource StyleButtonCommon}" Name="BtnUnitPriceTool"
                             FontWeight="Bold" Foreground="Blue"
                             Click="BtnUnitPriceTool_Click"/>
                     <TextBlock Text="you can directly input the unit price per target or use tools" Style="{StaticResource StyleTextBlockCommon}"/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="UnitPriceDetail" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtUnitPriceDetail" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="UnitPriceDetail" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="TxtUnitPriceDetail" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"
                          Text="{Binding UnitPriceDetail}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                <TextBlock Grid.Row="4" Grid.Column="2" Text="" Style="{StaticResource StyleTextBlockCommon}"/>
-                
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="Quantity" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBlock Grid.Row="5" Grid.Column="2" Text="" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Quantity" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}"
                          Foreground="Blue"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="TotalPrice" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding TotalPrice}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                <TextBlock Grid.Row="6" Grid.Column="2" Text="Auto Calculate When Saving" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="TotalPrice" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding TotalPrice}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Text="Auto Calculate When Saving" Style="{StaticResource StyleTextBlockCommon}"/>
 
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="DeliveryTime" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding DeliveryTime}" 
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="DeliveryTime" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding DeliveryTime}" 
                          Style="{StaticResource StyleTextBoxCommon}"/>
-                <StackPanel Grid.Row="7" Grid.Column="2" Orientation="Horizontal">
+                <StackPanel Grid.Row="8" Grid.Column="2" Orientation="Horizontal">
                     <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
                 </StackPanel>
 
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="Note" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Note}" 
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="Note" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Note}" 
                          Style="{StaticResource StyleTextBoxCommon}"/>
-                <StackPanel Grid.Row="8" Grid.Column="2" Orientation="Horizontal">
+                <StackPanel Grid.Row="9" Grid.Column="2" Orientation="Horizontal">
                     <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
                 </StackPanel>
 

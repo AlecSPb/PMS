@@ -198,7 +198,7 @@
 
                 <TextBlock Grid.Row="20" Grid.Column="0" Text="Discount" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding Discount,StringFormat={}{0:P0}}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="20" Grid.Column="2" Text="Default Discount is 100%" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="20" Grid.Column="2" Text="Default Discount is 0%,means no discount" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="21" Grid.Column="0" Text="TotalCost" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding TotalCost}" Style="{StaticResource StyleTextBoxReadOnly}"/>

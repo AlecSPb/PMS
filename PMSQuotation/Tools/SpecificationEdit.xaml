@@ -31,7 +31,7 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Dimension" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Specification" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBox Name="TxtDimension" Grid.Row="0" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
             <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
                 <Button Content="Circle" Name="BtnDimensionCircle" Style="{StaticResource StyleButtonCommonNarrow}"

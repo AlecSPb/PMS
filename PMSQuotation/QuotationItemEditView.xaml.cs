@@ -61,5 +61,17 @@ namespace PMSQuotation
 
             }
         }
+
+        private void BtnUnitEdit1_Click(object sender, RoutedEventArgs e)
+        {
+            Helpers.PMSMethods.SetTextBox(TxtUnit, "Piece");
+
+        }
+
+        private void BtnUnitEdit2_Click(object sender, RoutedEventArgs e)
+        {
+            Helpers.PMSMethods.SetTextBox(TxtUnit, "Set");
+
+        }
     }
 }

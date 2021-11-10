@@ -231,15 +231,16 @@ namespace PMSQuotation.Services
         {
             using (IDbConnection conn = new SQLiteConnection(conn_str))
             {
-                string sql = "insert into quotationitems (QuotationID,Composition,Specification,UnitPrice,Quantity,TotalPrice,DeliveryTime,Note," +
+                string sql = "insert into quotationitems (QuotationID,Composition,Specification,Unit,UnitPrice,Quantity,TotalPrice,DeliveryTime,Note," +
                     "UnitPriceDetail,CreateTime,Creator,State) " +
-                    "values (@QuotationID,@Composition,@Specification,@UnitPrice,@Quantity,@TotalPrice,@DeliveryTime,@Note," +
+                    "values (@QuotationID,@Composition,@Specification,@Unit,@UnitPrice,@Quantity,@TotalPrice,@DeliveryTime,@Note," +
                     "@UnitPriceDetail,@CreateTime,@Creator,@State)";
                 var parameters = new QuotationItem
                 {
                     QuotationID = model.QuotationID,
                     Composition = model.Composition,
                     Specification = model.Specification,
+                    Unit=model.Unit,
                     UnitPrice = model.UnitPrice,
                     Quantity = model.Quantity,
                     TotalPrice = model.TotalPrice,
@@ -264,13 +265,14 @@ namespace PMSQuotation.Services
             {
                 string sql = "update quotationitems set QuotationID=@QuotationID,Composition=@Composition,Specification=@Specification," +
                     "UnitPrice=@UnitPrice,Quantity=@Quantity,TotalPrice=@TotalPrice,DeliveryTime=@DeliveryTime," +
-                    "Note=@Note,UnitPriceDetail=@UnitPriceDetail,CreateTime=@CreateTime,Creator=@Creator,State=@State " +
+                    "Note=@Note,Unit=@Unit,UnitPriceDetail=@UnitPriceDetail,CreateTime=@CreateTime,Creator=@Creator,State=@State " +
                     " where id=@id";
                 var parameters = new QuotationItem
                 {
                     QuotationID = model.QuotationID,
                     Composition = model.Composition,
                     Specification = model.Specification,
+                    Unit = model.Unit,
                     UnitPrice = model.UnitPrice,
                     Quantity = model.Quantity,
                     TotalPrice = model.TotalPrice,

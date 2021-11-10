@@ -71,7 +71,8 @@ namespace PMSQuotation.Tools
                 item.Quantity = Condition.Quantity;
                 item.Loss = Condition.Loss;
 
-                item.Weight = Condition.Density * Math.PI * Condition.Diameter * Condition.Diameter * Condition.Thickness / 4000.0 + Condition.Loss;
+                item.Weight = (Condition.Density * Math.PI * Condition.Diameter * Condition.Diameter * Condition.Thickness / 4000.0)
+                    * condition.Quantity + Condition.Loss;
 
                 Results.Add(item);
                 CalculateTotalWeight();

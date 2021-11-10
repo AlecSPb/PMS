@@ -226,10 +226,10 @@ namespace PMSQuotation.Docs
                             .Alignment = Xceed.Document.NET.Alignment.center;
                         currentrow.Cells[1].Paragraphs[0].Append(item.Quantity.ToString() ?? "")
                             .Alignment = Xceed.Document.NET.Alignment.center;
-                        currentrow.Cells[2].Paragraphs[0].Append("Set")
+                        currentrow.Cells[2].Paragraphs[0].Append(item.Unit ?? "")
                             .Alignment = Xceed.Document.NET.Alignment.center;
                         string spec_str = $"{specification.Purity ?? ""}{item.Composition ?? ""} " +
-                            $"{specification.Dimension ?? ""} {item.DeliveryTime ?? ""}";
+                            $"{specification.Dimension ?? ""} {specification.Other ?? ""};{item.DeliveryTime ?? ""}";
                         currentrow.Cells[3].Paragraphs[0].Append(spec_str)
                             .Alignment = Xceed.Document.NET.Alignment.left;
 

@@ -51,10 +51,10 @@ namespace PMSQuotation
             CurrentQuotation.Creator = dict_service.GetString("creator");
             CurrentQuotation.KeyWord = "";
             CurrentQuotation.TotalCost = 0;
-            CurrentQuotation.Discount = 1;
+            CurrentQuotation.Discount = 0;
 
             CurrentQuotation.ContactInfo_Customer = "++++";
-            CurrentQuotation.ContactInfo_Self = dict_service.GetString("contactInfo_self_zh_cn");
+            CurrentQuotation.ContactInfo_Self = dict_service.GetString("contactInfo_self_us_en");
 
 
             CurrentQuotation.PackageFee = 0;

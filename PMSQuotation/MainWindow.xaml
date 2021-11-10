@@ -183,6 +183,8 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="Specification" Binding="{Binding Specification}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Unit" Binding="{Binding Unit}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="UnitPrice" Binding="{Binding UnitPrice,StringFormat={}{0:F2}}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Foreground="Blue"/>
@@ -221,7 +223,7 @@
             <TextBlock Text="{Binding StatusBarInfo}" Style="{StaticResource StyleDGTextBlockBig}" FontSize="18"
                        Foreground="Blue"/>
             <TextBlock Grid.Column="1" Style="{StaticResource StyleDGTextBlockBig}" FontSize="15"
-                       Text="Total=(Target+Extra+Tax)*Discount;Extra=Package+Shiping+Custom;" Foreground="Green"/>
+                       Text="Total=(Target+Extra+Tax)*(1-Discount);Extra=Package+Shiping+Custom;" Foreground="Green"/>
             <StackPanel Grid.Column="3" Orientation="Horizontal">
                 <Button Name="BtnCalculator" Style="{StaticResource StyleButtonCommonNarrow}" Content="Calculator"
                         Click="BtnCalculator_Click"/>
