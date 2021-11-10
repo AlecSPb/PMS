@@ -103,9 +103,9 @@ namespace PMSQuotation.Services
             using (IDbConnection conn = new SQLiteConnection(conn_str))
             {
                 string sql = "insert into quotations(CurrencyType,TotalCost,Discount,CreateTime,LastUpdateTime,ExpirationTime,Creator,Lot," +
-                    "Remark,KeyWord,ContactInfo_Customer,ContactInfo_Self,PackageFee,PackageRemark,ShippingFee,ShippingRemark," +
+                    "RFQNumber,ShipVia,Terms,Remark,KeyWord,ContactInfo_Customer,ContactInfo_Self,PackageFee,PackageRemark,ShippingFee,ShippingRemark," +
                     "CustomFee,CustomRemark,IsAutoTax,TaxFee,TaxRemark,State) values (@CurrencyType,@TotalCost,@Discount,@CreateTime,@LastUpdateTime,@ExpirationTime,@Creator,@Lot," +
-                    "@Remark,@KeyWord,@ContactInfo_Customer,@ContactInfo_Self,@PackageFee,@PackageRemark,@ShippingFee,@ShippingRemark," +
+                    "@RFQNumber,@ShipVia,@Terms,@Remark,@KeyWord,@ContactInfo_Customer,@ContactInfo_Self,@PackageFee,@PackageRemark,@ShippingFee,@ShippingRemark," +
                     "@CustomFee,@CustomRemark,@IsAutoTax,@TaxFee,@TaxRemark,@State)";
                 var parameters = new Quotation
                 {
@@ -117,6 +117,9 @@ namespace PMSQuotation.Services
                     ExpirationTime = model.ExpirationTime,
                     Creator = model.Creator,
                     Lot = model.Lot,
+                    RFQNumber = model.RFQNumber,
+                    ShipVia = model.ShipVia,
+                    Terms=model.Terms,
                     Remark = model.Remark,
                     KeyWord = model.KeyWord,
                     ContactInfo_Customer = model.ContactInfo_Customer,
@@ -147,6 +150,7 @@ namespace PMSQuotation.Services
             {
                 string sql = "update quotations set CurrencyType=@CurrencyType,TotalCost=@TotalCost,Discount=@Discount,CreateTime=@CreateTime," +
                     "LastUpdateTime=@LastUpdateTime,ExpirationTime=@ExpirationTime,Creator=@Creator,Lot=@Lot," +
+                    "RFQNumber=@RFQNumber,Terms=@Terms,ShipVia=@ShipVia," +
                     "Remark=@Remark,KeyWord=@KeyWord,ContactInfo_Customer=@ContactInfo_Customer,ContactInfo_Self=@ContactInfo_Self," +
                     "PackageFee=@PackageFee,PackageRemark=@PackageRemark,ShippingFee=@ShippingFee,ShippingRemark=@ShippingRemark," +
                     "CustomFee=@CustomFee,CustomRemark=@CustomRemark,IsAutoTax=@IsAutoTax,TaxFee=@TaxFee,TaxRemark=@TaxRemark,State=@State" +
@@ -161,6 +165,9 @@ namespace PMSQuotation.Services
                     ExpirationTime = model.ExpirationTime,
                     Creator = model.Creator,
                     Lot = model.Lot,
+                    RFQNumber = model.RFQNumber,
+                    ShipVia = model.ShipVia,
+                    Terms = model.Terms,
                     Remark = model.Remark,
                     KeyWord = model.KeyWord,
                     ContactInfo_Customer = model.ContactInfo_Customer,

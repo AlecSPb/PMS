@@ -46,7 +46,7 @@ namespace PMSQuotation
             CurrentQuotation.CurrencyType = calculationCurrency;
             CurrentQuotation.CreateTime = DateTime.Now;
             CurrentQuotation.LastUpdateTime = DateTime.Now;
-            CurrentQuotation.ExpirationTime = DateTime.Now.AddMonths(1);
+            CurrentQuotation.ExpirationTime = DateTime.Now.AddMonths(6);
             CurrentQuotation.Lot = Helpers.QuotationHelper.GetDefaultLot();
             CurrentQuotation.Creator = dict_service.GetString("creator");
             CurrentQuotation.KeyWord = "";
@@ -66,6 +66,9 @@ namespace PMSQuotation
             CurrentQuotation.TaxFee = 0;
             CurrentQuotation.TaxRemark = "";
             CurrentQuotation.Remark = "none";
+            CurrentQuotation.ShipVia = "TBD";
+            CurrentQuotation.Terms = "50% on order,50% 30 days net DDU";
+            CurrentQuotation.RFQNumber = "";
         }
 
         public void SetEdit(Quotation model)
@@ -104,7 +107,9 @@ namespace PMSQuotation
             CurrentQuotation.TaxFee = model.TaxFee;
             CurrentQuotation.TaxRemark = model.TaxRemark;
             CurrentQuotation.Remark = model.Remark;
-
+            CurrentQuotation.ShipVia = model.ShipVia;
+            CurrentQuotation.Terms = model.Terms;
+            CurrentQuotation.RFQNumber = model.RFQNumber;
 
         }
 

@@ -91,6 +91,9 @@ namespace PMSQuotation.Docs
                 doc.ReplaceText("[Lot]", model.Lot ?? "");
 
                 doc.ReplaceText("[Remark]", model.Remark ?? "");
+                doc.ReplaceText("[ShipVia]", model.ShipVia ?? "");
+                doc.ReplaceText("[Terms]", model.Terms ?? "");
+                doc.ReplaceText("[RFQNumber]", model.RFQNumber ?? "");
 
                 var contact_customer = GetContactBySplit(model.ContactInfo_Customer);
                 var contact_self = GetContactBySplit(model.ContactInfo_Self);
@@ -105,6 +108,7 @@ namespace PMSQuotation.Docs
                 doc.ReplaceText("[SelfContactPerson]", contact_self.ContactPerson ?? "");
                 doc.ReplaceText("[SelfPhone]", contact_self.Phone ?? "");
                 doc.ReplaceText("[SelfEmail]", contact_self.Email ?? "");
+                doc.ReplaceText("[SelfAddress]", contact_self.Address ?? "");
                 doc.ReplaceText("[SelfAddress]", contact_self.Address ?? "");
 
                 var items = db_service.GetQuotationItems(model.ID,false);
@@ -175,6 +179,9 @@ namespace PMSQuotation.Docs
                 doc.ReplaceText("[Lot]", model.Lot ?? "");
 
                 doc.ReplaceText("[Remark]", model.Remark ?? "");
+                doc.ReplaceText("[ShipVia]", model.ShipVia ?? "");
+                doc.ReplaceText("[Terms]", model.Terms ?? "");
+                doc.ReplaceText("[RFQNumber]", model.RFQNumber ?? "");
 
                 var contact_customer = GetContactBySplit(model.ContactInfo_Customer);
                 var contact_self = GetContactBySplit(model.ContactInfo_Self);

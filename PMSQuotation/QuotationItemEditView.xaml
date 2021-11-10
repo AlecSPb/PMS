@@ -51,7 +51,7 @@
                           SelectedItem="{Binding State,UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="Composition" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Item" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
                     <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>

@@ -108,7 +108,7 @@
                 <DataGridTextColumn Header="TotalCost" Binding="{Binding TotalCost,StringFormat={}{0:F2}}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Foreground="Blue"/>
-                <DataGridTextColumn Header="Lot" Binding="{Binding Lot}" 
+                <DataGridTextColumn Header="Q_Number" Binding="{Binding Lot}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="KeyWord" Binding="{Binding KeyWord}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
@@ -137,7 +137,12 @@
                 <DataGridTextColumn Header="TaxRemark" Binding="{Binding TaxRemark}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
 
-
+                <DataGridTextColumn Header="ShipVia" Binding="{Binding ShipVia}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="RFQNumber" Binding="{Binding RFQNumber}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="Terms" Binding="{Binding Terms}" 
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="Remark" Binding="{Binding Remark}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
 
@@ -174,7 +179,7 @@
                 <DataGridTextColumn Header="Creator" Binding="{Binding Creator}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
 
-                <DataGridTextColumn Header="Composition" Binding="{Binding Composition}" 
+                <DataGridTextColumn Header="Item" Binding="{Binding Composition}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="Specification" Binding="{Binding Specification}" 
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>

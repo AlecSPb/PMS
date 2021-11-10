@@ -24,6 +24,9 @@ namespace PMSQuotation.Models
         public string State { get; set; }
         public string Lot { get; set; }
         public string Remark { get; set; }
+        public string RFQNumber { get; set; }
+        public string Terms { get; set; }
+        public string ShipVia { get; set; }
         public string KeyWord { get; set; }//方便检索
 
         #endregion

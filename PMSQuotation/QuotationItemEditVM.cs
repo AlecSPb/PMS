@@ -45,7 +45,7 @@ namespace PMSQuotation
             CurrentQuotationItem.Note = "";
             CurrentQuotationItem.UnitPriceDetail = "";
             CurrentQuotationItem.State = QuotationItemState.Checked.ToString();
-            CurrentQuotationItem.DeliveryTime = "8 weeks";
+            CurrentQuotationItem.DeliveryTime = "10 weeks";
 
         }
         public void SetEdit(QuotationItem model)

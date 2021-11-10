@@ -65,15 +65,15 @@ namespace PMSQuotation
 
         private void Btn1Mon_Click(object sender, RoutedEventArgs e)
         {
-            DptExpirationTime.SelectedDate = DateTime.Now.AddMonths(1);
+            DptExpirationTime.SelectedDate = DateTime.Now.AddMonths(3);
         }
         private void Btn2Mon_Click(object sender, RoutedEventArgs e)
         {
-            DptExpirationTime.SelectedDate = DateTime.Now.AddMonths(2);
+            DptExpirationTime.SelectedDate = DateTime.Now.AddMonths(6);
         }
         private void Btn3Mon_Click(object sender, RoutedEventArgs e)
         {
-            DptExpirationTime.SelectedDate = DateTime.Now.AddMonths(3);
+            DptExpirationTime.SelectedDate = DateTime.Now.AddMonths(9);
         }
 
         private void BtnNone_Click(object sender, RoutedEventArgs e)
