@@ -349,9 +349,12 @@ namespace PMSClient.ViewModel
                 || composition.Contains("P atm%")
                 || composition.Contains("B atm%")
                 || composition.Contains("C atm%")
+                || composition.Contains("N atm%")
+                || composition.Contains("O atm%")
+                || composition.Contains("H atm%")
                 )
             {
-                if (!PMSDialogService.ShowYesNo("请问", "成分误包含有Si，S，P，B，C,确定继续保存吗？"))
+                if (!PMSDialogService.ShowYesNo("请问", "成分误包含有Si，S，P，B，C,N,O,H确定继续保存吗？"))
                 {
                     return;
                 }
