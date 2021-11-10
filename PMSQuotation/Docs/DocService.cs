@@ -25,10 +25,13 @@ namespace PMSQuotation.Docs
 
             string source_folder = XS.File.GetCurrentFolderPath("Docs");
             sourceFile_en = Path.Combine(source_folder, "quotation_template_en.docx");
+            sourceFile_en_leon = Path.Combine(source_folder, "quotation_template_leon.docx");
             sourceFile_zh = Path.Combine(source_folder, "quotation_template_zh.docx");
             tempFile = Path.Combine(source_folder, "temp.docx");
+
             string target_folder = XS.File.GetDesktopPath();
             targetFile_en = Path.Combine(target_folder, $"{model.Lot}_en.docx");
+            targetFile_en_leon = Path.Combine(target_folder, $"{model.Lot}_en_l.docx");
             targetFile_zh = Path.Combine(target_folder, $"{model.Lot}_zh.docx");
 
 
@@ -41,9 +44,12 @@ namespace PMSQuotation.Docs
         private DocOptions options;
 
         private string targetFile_en;
+        private string targetFile_en_leon;
         private string targetFile_zh;
         private string targetFile;
+
         private string sourceFile_en;
+        private string sourceFile_en_leon;
         private string sourceFile_zh;
         private string tempFile;
 
@@ -70,6 +76,10 @@ namespace PMSQuotation.Docs
             {
                 CreateEn();
             }
+            else if (options.DocType == "English_LEON")
+            {
+                CreateEn_LEON();
+            }
             else
             {
                 CreateZh();
@@ -86,8 +96,8 @@ namespace PMSQuotation.Docs
 
             using (var doc = DocX.Load(tempFile))
             {
-                doc.ReplaceText("[CreateTime]", model.CreateTime.ToString("yyyy-MM-dd"));
-                doc.ReplaceText("[ExpirationTime]", model.ExpirationTime.ToString("yyyy-MM-dd"));
+                doc.ReplaceText("[CreateTime]", model.CreateTime.ToString("MM/dd/yyyy"));
+                doc.ReplaceText("[ExpirationTime]", model.ExpirationTime.ToString("MM/dd/yyyy"));
                 doc.ReplaceText("[Lot]", model.Lot ?? "");
 
                 doc.ReplaceText("[Remark]", model.Remark ?? "");
@@ -111,7 +121,7 @@ namespace PMSQuotation.Docs
                 doc.ReplaceText("[SelfAddress]", contact_self.Address ?? "");
                 doc.ReplaceText("[SelfAddress]", contact_self.Address ?? "");
 
-                var items = db_service.GetQuotationItems(model.ID,false);
+                var items = db_service.GetQuotationItems(model.ID, false);
 
                 var table = doc.Tables[1];
 
@@ -128,7 +138,8 @@ namespace PMSQuotation.Docs
                         currentrow.Cells[1].Paragraphs[0].Append(item.Composition ?? "");
                         currentrow.Cells[2].Paragraphs[0].Append(specification.Purity ?? "")
                             .Alignment = Xceed.Document.NET.Alignment.center; ;
-                        currentrow.Cells[3].Paragraphs[0].Append(specification.Dimension ?? "");
+                        currentrow.Cells[3].Paragraphs[0].Append(specification.Dimension ?? "")
+                            .Alignment = Xceed.Document.NET.Alignment.left;
                         currentrow.Cells[4].Paragraphs[0].Append(specification.Plate ?? "")
                             .Alignment = Xceed.Document.NET.Alignment.center;
                         currentrow.Cells[5].Paragraphs[0].Append(specification.Bonding ?? "")
@@ -150,7 +161,7 @@ namespace PMSQuotation.Docs
                 double target_fee = calculation_result.TargetFee;
                 double extra_fee = calculation_result.ExtraFee;
                 double tax_fee = calculation_result.TaxFee;
-                double total_fee = calculation_result.TargetFee + calculation_result.ExtraFee + calculation_result.TaxFee;
+                double total_fee = calculation_result.TotalCost;
 
 
                 doc.ReplaceText("[TargetFee]", $"{currencySymbol}{target_fee.ToString("F2")}" ?? "");
@@ -167,6 +178,91 @@ namespace PMSQuotation.Docs
             File.Copy(tempFile, targetFile, true);
         }
 
+        private void CreateEn_LEON()
+        {
+            targetFile = targetFile_en_leon;
+            File.Copy(sourceFile_en_leon, tempFile, true);
+
+            using (var doc = DocX.Load(tempFile))
+            {
+                doc.ReplaceText("[CreateTime]", model.CreateTime.ToString("MM/dd/yyyy"));
+                doc.ReplaceText("[ExpirationTime]", model.ExpirationTime.ToString("MM/dd/yyyy"));
+                doc.ReplaceText("[Lot]", model.Lot ?? "");
+
+                doc.ReplaceText("[Remark]", model.Remark ?? "");
+                doc.ReplaceText("[ShipVia]", model.ShipVia ?? "");
+                doc.ReplaceText("[Terms]", model.Terms ?? "");
+                doc.ReplaceText("[RFQNumber]", model.RFQNumber ?? "");
+
+                var contact_customer = GetContactBySplit(model.ContactInfo_Customer);
+                var contact_self = GetContactBySplit(model.ContactInfo_Self);
+
+                doc.ReplaceText("[CustomerCompanyName]", contact_customer.CompanyName ?? "");
+                doc.ReplaceText("[CustomerContactPerson]", contact_customer.ContactPerson ?? "");
+                doc.ReplaceText("[CustomerPhone]", contact_customer.Phone ?? "");
+                doc.ReplaceText("[CustomerEmail]", contact_customer.Email ?? "");
+                doc.ReplaceText("[CustomerAddress]", contact_customer.Address ?? "");
+
+                doc.ReplaceText("[SelfCompanyName]", contact_self.CompanyName ?? "");
+                doc.ReplaceText("[SelfContactPerson]", contact_self.ContactPerson ?? "");
+                doc.ReplaceText("[SelfPhone]", contact_self.Phone ?? "");
+                doc.ReplaceText("[SelfEmail]", contact_self.Email ?? "");
+                doc.ReplaceText("[SelfAddress]", contact_self.Address ?? "");
+                doc.ReplaceText("[SelfAddress]", contact_self.Address ?? "");
+
+                var items = db_service.GetQuotationItems(model.ID, false);
+
+                var table = doc.Tables[3];
+
+                if (items.Count > 0)
+                {
+                    int row_number = 1;
+                    foreach (var item in items)
+                    {
+                        var specification = GetSpecificationBySplit(item.Specification);
+
+                        var currentrow = table.InsertRow(row_number);
+                        currentrow.Cells[0].Paragraphs[0].Append(row_number.ToString())
+                            .Alignment = Xceed.Document.NET.Alignment.center;
+                        currentrow.Cells[1].Paragraphs[0].Append(item.Quantity.ToString() ?? "")
+                            .Alignment = Xceed.Document.NET.Alignment.center;
+                        currentrow.Cells[2].Paragraphs[0].Append("Set")
+                            .Alignment = Xceed.Document.NET.Alignment.center;
+                        string spec_str = $"{specification.Purity ?? ""}{item.Composition ?? ""} " +
+                            $"{specification.Dimension ?? ""} {item.DeliveryTime ?? ""}";
+                        currentrow.Cells[3].Paragraphs[0].Append(spec_str)
+                            .Alignment = Xceed.Document.NET.Alignment.left;
+
+                        currentrow.Cells[4].Paragraphs[0].Append($"{currencySymbol}{item.UnitPrice.ToString("F2") ?? ""}")
+                            .Alignment = Xceed.Document.NET.Alignment.right;
+
+                        currentrow.Cells[5].Paragraphs[0].Append($"{currencySymbol}{item.TotalPrice.ToString("F2") ?? ""}")
+                            .Alignment = Xceed.Document.NET.Alignment.right;
+                        row_number++;
+                    }
+                }
+
+                var calculation_result = calc_service.Calculate(model);
+
+                double target_fee = calculation_result.TargetFee;
+                double extra_fee = calculation_result.ExtraFee;
+                double tax_fee = calculation_result.TaxFee;
+                double total_fee = calculation_result.TotalCost;
+
+
+                doc.ReplaceText("[TargetFee]", $"{currencySymbol}{target_fee.ToString("F2")}" ?? "");
+                doc.ReplaceText("[ExtraFee]", $"{currencySymbol}{extra_fee.ToString("F2")}" ?? "");
+                doc.ReplaceText("[TaxFee]", $"{currencySymbol}{tax_fee.ToString("F2")}" ?? "");
+                doc.ReplaceText("[TotalFee]", $"{currencySymbol}{total_fee.ToString("F2")}" ?? "");
+
+                string money_capital = GetRMBCaptical(total_fee);
+
+                doc.ReplaceText("[RMBCapital]", $"{money_capital}" ?? "");
+
+                doc.Save();
+            }
+            File.Copy(tempFile, targetFile, true);
+        }
         private void CreateZh()
         {
             targetFile = targetFile_zh;
@@ -198,7 +294,7 @@ namespace PMSQuotation.Docs
                 doc.ReplaceText("[SelfEmail]", contact_self.Email ?? "");
                 doc.ReplaceText("[SelfAddress]", contact_self.Address ?? "");
 
-                var items = db_service.GetQuotationItems(model.ID,false);
+                var items = db_service.GetQuotationItems(model.ID, false);
 
                 var table = doc.Tables[1];
 
@@ -237,7 +333,7 @@ namespace PMSQuotation.Docs
                 double target_fee = calculation_result.TargetFee;
                 double extra_fee = calculation_result.ExtraFee;
                 double tax_fee = calculation_result.TaxFee;
-                double total_fee = calculation_result.TargetFee + calculation_result.ExtraFee + calculation_result.TaxFee;
+                double total_fee = calculation_result.TotalCost;
 
 
                 doc.ReplaceText("[TargetFee]", $"{currencySymbol}{target_fee.ToString("F2")}" ?? "");

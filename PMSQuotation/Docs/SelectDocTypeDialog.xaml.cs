@@ -24,7 +24,7 @@ namespace PMSQuotation.Docs
             InitializeComponent();
         }
 
-        public string SelectedDocType { get; set; } = "English";
+        public string SelectedDocType { get; set; } = "English_LEON";
 
         private void BtnChinese_Click(object sender, RoutedEventArgs e)
         {
@@ -36,6 +36,13 @@ namespace PMSQuotation.Docs
         private void BtnEnglish_Click(object sender, RoutedEventArgs e)
         {
             SelectedDocType = "English";
+            DialogResult = true;
+            this.Close();
+        }
+
+        private void BtnEnglish_Leon_Click(object sender, RoutedEventArgs e)
+        {
+            SelectedDocType = "English_LEON";
             DialogResult = true;
             this.Close();
         }

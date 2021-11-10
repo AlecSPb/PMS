@@ -73,7 +73,7 @@ namespace PMSQuotation.Tools
             }
             catch (Exception ex)
             {
-
+                XSHelper.XS.MessageBox.ShowError(ex.Message);
             }
         }
     }

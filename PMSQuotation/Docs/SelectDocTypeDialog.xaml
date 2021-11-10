@@ -13,6 +13,8 @@
                     Click="BtnChinese_Click"/>
             <Button Content="English" Style="{StaticResource StyleButtonStrench}" Name="BtnEnglish"
                     Click="BtnEnglish_Click"/>
+            <Button Content="English_Leon" Style="{StaticResource StyleButtonStrench}" Name="BtnEnglish_Leon"
+                    Click="BtnEnglish_Leon_Click"/>
         </StackPanel>
     </Grid>
 </Window>

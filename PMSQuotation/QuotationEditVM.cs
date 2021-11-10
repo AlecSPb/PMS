@@ -68,7 +68,7 @@ namespace PMSQuotation
             CurrentQuotation.Remark = "none";
             CurrentQuotation.ShipVia = "TBD";
             CurrentQuotation.Terms = "50% on order,50% 30 days net DDU";
-            CurrentQuotation.RFQNumber = "";
+            CurrentQuotation.RFQNumber = $"LEON+Email{DateTime.Now.ToString("MM/dd/yyyy")}";
         }
 
         public void SetEdit(Quotation model)
