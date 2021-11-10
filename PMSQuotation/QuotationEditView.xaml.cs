@@ -134,13 +134,35 @@ namespace PMSQuotation
         private void BtnToolShippingFeeReset_Click(object sender, RoutedEventArgs e)
         {
             Helpers.PMSMethods.SetTextBox(TxtShippingFee, "0");
-            Helpers.PMSMethods.SetTextBox(TxtShippingRemark,"");
+            Helpers.PMSMethods.SetTextBox(TxtShippingRemark, "");
         }
 
         private void BtnToolPackageFeeReset_Click(object sender, RoutedEventArgs e)
         {
             Helpers.PMSMethods.SetTextBox(TxtPackageFee, "0");
             Helpers.PMSMethods.SetTextBox(TxtPackageRemark, "");
+        }
+
+        private void BtnIncoterms_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var file = XSHelper.XS.File.GetCurrentFolderPath("Docs\\Incoterms.pdf");
+                System.Diagnostics.Process.Start(file);
+            }
+            catch (Exception ex)
+            {
+                XSHelper.XS.MessageBox.ShowError(ex.Message);
+            }
+        }
+
+        private void BtnShipVia_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                Helpers.PMSMethods.SetTextBox(TxtShipVia, btn.Content.ToString());
+            }
         }
     }
 }

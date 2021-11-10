@@ -87,16 +87,30 @@
                 </StackPanel>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="ShipVia" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding ShipVia}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="4" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="TxtShipVia" Grid.Row="4" Grid.Column="1" Text="{Binding ShipVia}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="TBD" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnShipVia1"
+                            Click="BtnShipVia_Click"/>
+                    <Button Content="Air" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnShipVia2"
+                            Click="BtnShipVia_Click"/>
+                    <Button Content="Sea" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnShipVia3"
+                            Click="BtnShipVia_Click"/>
+                    <Button Content="Land" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnShipVia4"
+                            Click="BtnShipVia_Click"/>
+                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                </StackPanel>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="Terms" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Terms}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="Incoterms Document" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnIncoterms"
+                            Click="BtnIncoterms_Click"/>
+                    <TextBlock Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                </StackPanel>
                 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="RFQNumber" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding RFQNumber}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="6" Grid.Column="2" Text="*" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Text="Prefix can be setted in dictionary" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="Remark" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
@@ -181,8 +195,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="TaxFee" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtTaxFee" Grid.Row="18" Grid.Column="1" Text="{Binding TaxFee}" Style="{StaticResource StyleTextBoxCommon}"
-                         Background="LightCoral"/>
+                <TextBox Name="TxtTaxFee" Grid.Row="18" Grid.Column="1" Text="{Binding TaxFee}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <StackPanel Grid.Row="18" Grid.Column="2" Orientation="Horizontal">
                     <Button Content="None" Style="{StaticResource StyleButtonCommonNarrow}" Name="BtnNone"
                             Click="BtnNone_Click"/>
@@ -191,8 +204,7 @@
                 </StackPanel>
 
                 <TextBlock Grid.Row="19" Grid.Column="0" Text="TaxRemark" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TxtTaxRemark" Grid.Row="19" Grid.Column="1" Text="{Binding TaxRemark}" Style="{StaticResource StyleTextBoxCommon}"
-                         Background="LightCoral"/>
+                <TextBox Name="TxtTaxRemark" Grid.Row="19" Grid.Column="1" Text="{Binding TaxRemark}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="19" Grid.Column="2" Text="" 
                            Style="{StaticResource StyleTextBlockCommon}"/>
 
