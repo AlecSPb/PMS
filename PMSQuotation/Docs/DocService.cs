@@ -146,9 +146,9 @@ namespace PMSQuotation.Docs
                             .Alignment = Xceed.Document.NET.Alignment.center;
                         currentrow.Cells[6].Paragraphs[0].Append(item.Quantity.ToString() ?? "")
                             .Alignment = Xceed.Document.NET.Alignment.center;
-                        currentrow.Cells[7].Paragraphs[0].Append($"{currencySymbol}{item.UnitPrice.ToString("F2") ?? ""}")
+                        currentrow.Cells[7].Paragraphs[0].Append($"{currencySymbol}{item.UnitPrice.ToString("N2") ?? ""}")
                             .Alignment = Xceed.Document.NET.Alignment.right;
-                        currentrow.Cells[8].Paragraphs[0].Append($"{currencySymbol}{item.TotalPrice.ToString("F2") ?? ""}")
+                        currentrow.Cells[8].Paragraphs[0].Append($"{currencySymbol}{item.TotalPrice.ToString("N2") ?? ""}")
                             .Alignment = Xceed.Document.NET.Alignment.right;
                         currentrow.Cells[9].Paragraphs[0].Append(item.DeliveryTime ?? "")
                             .Alignment = Xceed.Document.NET.Alignment.center;
@@ -164,10 +164,10 @@ namespace PMSQuotation.Docs
                 double total_fee = calculation_result.TotalCost;
 
 
-                doc.ReplaceText("[TargetFee]", $"{currencySymbol}{target_fee.ToString("F2")}" ?? "");
-                doc.ReplaceText("[ExtraFee]", $"{currencySymbol}{extra_fee.ToString("F2")}" ?? "");
-                doc.ReplaceText("[TaxFee]", $"{currencySymbol}{tax_fee.ToString("F2")}" ?? "");
-                doc.ReplaceText("[TotalFee]", $"{currencySymbol}{total_fee.ToString("F2")}" ?? "");
+                doc.ReplaceText("[TargetFee]", $"{currencySymbol}{target_fee.ToString("N2")}" ?? "");
+                doc.ReplaceText("[ExtraFee]", $"{currencySymbol}{extra_fee.ToString("N2")}" ?? "");
+                doc.ReplaceText("[TaxFee]", $"{currencySymbol}{tax_fee.ToString("N2")}" ?? "");
+                doc.ReplaceText("[TotalFee]", $"{currencySymbol}{total_fee.ToString("N2")}" ?? "");
 
                 string money_capital = GetRMBCaptical(total_fee);
 
@@ -233,10 +233,10 @@ namespace PMSQuotation.Docs
                         currentrow.Cells[3].Paragraphs[0].Append(spec_str)
                             .Alignment = Xceed.Document.NET.Alignment.left;
 
-                        currentrow.Cells[4].Paragraphs[0].Append($"{currencySymbol}{item.UnitPrice.ToString("F2") ?? ""}")
+                        currentrow.Cells[4].Paragraphs[0].Append($"{currencySymbol}{item.UnitPrice.ToString("N2") ?? ""}")
                             .Alignment = Xceed.Document.NET.Alignment.right;
 
-                        currentrow.Cells[5].Paragraphs[0].Append($"{currencySymbol}{item.TotalPrice.ToString("F2") ?? ""}")
+                        currentrow.Cells[5].Paragraphs[0].Append($"{currencySymbol}{item.TotalPrice.ToString("N2") ?? ""}")
                             .Alignment = Xceed.Document.NET.Alignment.right;
                         row_number++;
                     }
@@ -250,10 +250,10 @@ namespace PMSQuotation.Docs
                 double total_fee = calculation_result.TotalCost;
 
 
-                doc.ReplaceText("[TargetFee]", $"{currencySymbol}{target_fee.ToString("F2")}" ?? "");
-                doc.ReplaceText("[ExtraFee]", $"{currencySymbol}{extra_fee.ToString("F2")}" ?? "");
-                doc.ReplaceText("[TaxFee]", $"{currencySymbol}{tax_fee.ToString("F2")}" ?? "");
-                doc.ReplaceText("[TotalFee]", $"{currencySymbol}{total_fee.ToString("F2")}" ?? "");
+                doc.ReplaceText("[TargetFee]", $"{currencySymbol}{target_fee.ToString("N2")}" ?? "");
+                doc.ReplaceText("[ExtraFee]", $"{currencySymbol}{extra_fee.ToString("N2")}" ?? "");
+                doc.ReplaceText("[TaxFee]", $"{currencySymbol}{tax_fee.ToString("N2")}" ?? "");
+                doc.ReplaceText("[TotalFee]", $"{currencySymbol}{total_fee.ToString("N2")}" ?? "");
 
                 string money_capital = GetRMBCaptical(total_fee);
 
@@ -318,9 +318,9 @@ namespace PMSQuotation.Docs
                             .Alignment = Xceed.Document.NET.Alignment.center;
                         currentrow.Cells[6].Paragraphs[0].Append(item.Quantity.ToString() ?? "")
                             .Alignment = Xceed.Document.NET.Alignment.center;
-                        currentrow.Cells[7].Paragraphs[0].Append($"{currencySymbol}{item.UnitPrice.ToString("F2") ?? ""}")
+                        currentrow.Cells[7].Paragraphs[0].Append($"{currencySymbol}{item.UnitPrice.ToString("N2") ?? ""}")
                             .Alignment = Xceed.Document.NET.Alignment.right;
-                        currentrow.Cells[8].Paragraphs[0].Append($"{currencySymbol}{item.TotalPrice.ToString("F2") ?? ""}")
+                        currentrow.Cells[8].Paragraphs[0].Append($"{currencySymbol}{item.TotalPrice.ToString("N2") ?? ""}")
                             .Alignment = Xceed.Document.NET.Alignment.right;
                         currentrow.Cells[9].Paragraphs[0].Append(item.DeliveryTime ?? "")
                             .Alignment = Xceed.Document.NET.Alignment.center;
@@ -336,10 +336,10 @@ namespace PMSQuotation.Docs
                 double total_fee = calculation_result.TotalCost;
 
 
-                doc.ReplaceText("[TargetFee]", $"{currencySymbol}{target_fee.ToString("F2")}" ?? "");
-                doc.ReplaceText("[ExtraFee]", $"{currencySymbol}{extra_fee.ToString("F2")}" ?? "");
-                doc.ReplaceText("[TaxFee]", $"{currencySymbol}{tax_fee.ToString("F2")}" ?? "");
-                doc.ReplaceText("[TotalFee]", $"{currencySymbol}{total_fee.ToString("F2")}" ?? "");
+                doc.ReplaceText("[TargetFee]", $"{currencySymbol}{target_fee.ToString("N2")}" ?? "");
+                doc.ReplaceText("[ExtraFee]", $"{currencySymbol}{extra_fee.ToString("N2")}" ?? "");
+                doc.ReplaceText("[TaxFee]", $"{currencySymbol}{tax_fee.ToString("N2")}" ?? "");
+                doc.ReplaceText("[TotalFee]", $"{currencySymbol}{total_fee.ToString("N2")}" ?? "");
 
                 string money_capital = GetRMBCaptical(total_fee);
 

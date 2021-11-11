@@ -474,37 +474,52 @@ namespace PMSQuotation
 
         public void LoadQuotations()
         {
-            var models = db_service.GetQuotations(SearchCustomer, SearchKeyword, ShowDeleted);
-
-            Quotations.Clear();
-            foreach (var item in models)
+            try
             {
-                Quotations.Add(item);
-            }
+                var models = db_service.GetQuotations(SearchCustomer, SearchKeyword, ShowDeleted);
 
-            if (Quotations.Count > 0)
+                Quotations.Clear();
+                foreach (var item in models)
+                {
+                    Quotations.Add(item);
+                }
+
+                if (Quotations.Count > 0)
+                {
+                    CurrentQuotation = Quotations.FirstOrDefault();
+                    LoadQuotationItems();
+                }
+
+                //refresh CalculationCurrency
+                CalculationCurrency = dict_service.GetString("basecurrency") ?? "None";
+            }
+            catch (Exception ex)
             {
-                CurrentQuotation = Quotations.FirstOrDefault();
-                LoadQuotationItems();
+                XSHelper.XS.MessageBox.ShowError(ex.Message);
             }
-
-            //refresh CalculationCurrency
-            CalculationCurrency = dict_service.GetString("basecurrency") ?? "None";
         }
 
         public void LoadQuotationItems()
         {
-            if (CurrentQuotation != null)
+            try
             {
-                var models = db_service.GetQuotationItems(CurrentQuotation.ID, ShowDeleted);
-                CurrentQuotationItems.Clear();
-                foreach (var item in models)
+                if (CurrentQuotation != null)
                 {
-                    CurrentQuotationItems.Add(item);
+                    var models = db_service.GetQuotationItems(CurrentQuotation.ID, ShowDeleted);
+                    CurrentQuotationItems.Clear();
+                    foreach (var item in models)
+                    {
+                        CurrentQuotationItems.Add(item);
+                    }
+                    //calculate all fee
+                    CalculateFee();
                 }
-                //calculate all fee
-                CalculateFee();
             }
+            catch (Exception ex)
+            {
+                XSHelper.XS.MessageBox.ShowError(ex.Message);
+            }
+
         }
 
 

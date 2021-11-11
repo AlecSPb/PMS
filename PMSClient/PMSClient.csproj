@@ -29,7 +29,7 @@
     <UpdateUrl>http://192.168.16.254:8001/pms/</UpdateUrl>
     <SupportUrl>http://www.cd-pmi.com</SupportUrl>
     <ErrorReportUrl>http://www.cd-pmi.com</ErrorReportUrl>
-    <ProductName>pms</ProductName>
+    <ProductName>PMS</ProductName>
     <PublisherName>xs.zhou</PublisherName>
     <SuiteName>ImaginationStudio</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
