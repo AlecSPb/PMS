@@ -50,7 +50,7 @@ namespace PMSAnalysis
         private void LoadPowder()
         {
             this.Title = "制粉情况统计分析 Powder Anlysis";
-            CCMain.Content = null;
+            CCMain.Content = new PowderAnalysisView();
         }
 
 

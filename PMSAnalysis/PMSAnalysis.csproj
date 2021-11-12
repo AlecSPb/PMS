@@ -113,8 +113,15 @@
     </Compile>
     <Compile Include="Models\VHPPlan\DataModel.cs" />
     <Compile Include="Models\VHPPlan\PlanResult.cs" />
+    <Compile Include="PowderAnalysisView.xaml.cs">
+      <DependentUpon>PowderAnalysisView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Services\VHPPlanAnalysisHelper.cs" />
     <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PowderAnalysisView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
