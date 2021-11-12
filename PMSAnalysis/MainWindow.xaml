@@ -1,0 +1,21 @@
+﻿<Window x:Class="PMSAnalysis.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSAnalysis"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Icon="Comp8.ico"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="{StaticResource BGNavigationBar}">
+            <Button Style="{StaticResource StyleButtonCommon}" Content="VHP" Click="Button_Click"/>
+            <Button Style="{StaticResource StyleButtonCommon}" Content="Powder" Click="Button_Click"/>
+        </StackPanel>
+        <ContentControl Grid.Row="1" Name="CCMain"/>
+    </Grid>
+</Window>

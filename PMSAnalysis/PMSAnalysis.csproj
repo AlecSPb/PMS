@@ -108,10 +108,17 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\VHPPlan\DataModel.cs" />
     <Compile Include="Models\VHPPlan\PlanResult.cs" />
     <Compile Include="Services\VHPPlanAnalysisHelper.cs" />
-    <Page Include="VHPPlanAnalysisWindow.xaml">
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VHPPlanAnalysisView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -120,10 +127,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="VHPPlanAnalysisWindow.xaml.cs">
-      <DependentUpon>VHPPlanAnalysisWindow.xaml</DependentUpon>
+    <Compile Include="VHPPlanAnalysisView.xaml.cs">
+      <DependentUpon>VHPPlanAnalysisView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="XSStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

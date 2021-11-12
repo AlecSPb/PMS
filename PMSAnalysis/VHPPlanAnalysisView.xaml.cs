@@ -24,9 +24,9 @@ namespace PMSAnalysis
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class VHPPlanAnalysisWindow : Window
+    public partial class VHPPlanAnalysisView : UserControl
     {
-        public VHPPlanAnalysisWindow()
+        public VHPPlanAnalysisView()
         {
             InitializeComponent();
             DpStart.SelectedDate = DateTime.Today.AddMonths(-1);
